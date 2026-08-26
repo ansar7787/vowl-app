@@ -1,36 +1,62 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum TrophyFilter { all, legendary, standard }
+enum TrophyFilter { all, standard, legendary }
 
 class TrophyRoomState {
-  final List<String> allBadges;
-  final List<String> filteredBadges;
+  final List<String> allEarnedBadges;
+  final List<String> filteredEarnedBadges;
+  final List<String> filteredLockedBadges;
   final TrophyFilter currentFilter;
+  final int totalPossibleBadges;
 
   const TrophyRoomState({
-    required this.allBadges,
-    required this.filteredBadges,
+    required this.allEarnedBadges,
+    required this.filteredEarnedBadges,
+    required this.filteredLockedBadges,
     required this.currentFilter,
+    required this.totalPossibleBadges,
   });
 
-  factory TrophyRoomState.initial(List<String> badges) {
+  factory TrophyRoomState.initial(List<String> earnedBadges) {
     return TrophyRoomState(
-      allBadges: badges,
-      filteredBadges: badges,
+      allEarnedBadges: earnedBadges,
+      filteredEarnedBadges: earnedBadges,
+      filteredLockedBadges: _calculateLocked(earnedBadges, TrophyFilter.all),
       currentFilter: TrophyFilter.all,
+      totalPossibleBadges: TrophyRoomCubit.allAppBadges.length,
     );
   }
 
   TrophyRoomState copyWith({
-    List<String>? allBadges,
-    List<String>? filteredBadges,
+    List<String>? allEarnedBadges,
+    List<String>? filteredEarnedBadges,
+    List<String>? filteredLockedBadges,
     TrophyFilter? currentFilter,
+    int? totalPossibleBadges,
   }) {
     return TrophyRoomState(
-      allBadges: allBadges ?? this.allBadges,
-      filteredBadges: filteredBadges ?? this.filteredBadges,
+      allEarnedBadges: allEarnedBadges ?? this.allEarnedBadges,
+      filteredEarnedBadges: filteredEarnedBadges ?? this.filteredEarnedBadges,
+      filteredLockedBadges: filteredLockedBadges ?? this.filteredLockedBadges,
       currentFilter: currentFilter ?? this.currentFilter,
+      totalPossibleBadges: totalPossibleBadges ?? this.totalPossibleBadges,
     );
+  }
+
+  static List<String> _calculateLocked(
+    List<String> earned,
+    TrophyFilter filter,
+  ) {
+    final unearned = TrophyRoomCubit.allAppBadges
+        .where((b) => !earned.contains(b))
+        .toList();
+    if (filter == TrophyFilter.legendary) {
+      return unearned.where((b) => TrophyRoomCubit.isLegendary(b)).toList();
+    }
+    if (filter == TrophyFilter.standard) {
+      return unearned.where((b) => !TrophyRoomCubit.isLegendary(b)).toList();
+    }
+    return unearned;
   }
 }
 
@@ -38,23 +64,55 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
   TrophyRoomCubit(List<String> initialBadges)
     : super(TrophyRoomState.initial(initialBadges));
 
+  // The real master list of 30 possible achievements in VOWL
+  static const List<String> allAppBadges = [
+    // Standard Badges (24)
+    'novice_vocabulary', 'scholar_vocabulary', 'expert_vocabulary',
+    'novice_grammar', 'scholar_grammar', 'expert_grammar',
+    'novice_listening', 'scholar_listening', 'expert_listening',
+    'novice_reading', 'scholar_reading', 'expert_reading',
+    'novice_speaking', 'scholar_speaking', 'expert_speaking',
+    'novice_writing', 'scholar_writing', 'expert_writing',
+    'novice_idioms', 'scholar_idioms', 'expert_idioms',
+    'streak_7', 'streak_30', 'perfect_week',
+    // Legendary Badges (6)
+    'master_vocabulary', 'master_grammar', 'master_listening',
+    'master_speaking', 'streak_100', 'vowl_legend',
+  ];
+
   void updateFilter(TrophyFilter filter) {
-    List<String> filtered;
+    List<String> earnedFiltered;
     switch (filter) {
       case TrophyFilter.legendary:
-        filtered = state.allBadges.where((b) => _isLegendary(b)).toList();
+        earnedFiltered = state.allEarnedBadges
+            .where((b) => isLegendary(b))
+            .toList();
         break;
       case TrophyFilter.standard:
-        filtered = state.allBadges.where((b) => !_isLegendary(b)).toList();
+        earnedFiltered = state.allEarnedBadges
+            .where((b) => !isLegendary(b))
+            .toList();
         break;
       case TrophyFilter.all:
-        filtered = List.from(state.allBadges);
+        earnedFiltered = List.from(state.allEarnedBadges);
         break;
     }
-    emit(state.copyWith(currentFilter: filter, filteredBadges: filtered));
+
+    final lockedFiltered = TrophyRoomState._calculateLocked(
+      state.allEarnedBadges,
+      filter,
+    );
+
+    emit(
+      state.copyWith(
+        currentFilter: filter,
+        filteredEarnedBadges: earnedFiltered,
+        filteredLockedBadges: lockedFiltered,
+      ),
+    );
   }
 
-  bool _isLegendary(String badgeId) {
+  static bool isLegendary(String badgeId) {
     return badgeId.contains('master') ||
         badgeId.contains('legend') ||
         badgeId.contains('100');

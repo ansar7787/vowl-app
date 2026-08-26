@@ -120,7 +120,7 @@ class _TrophyRoomView extends StatelessWidget {
   Widget _buildTrophySummary(BuildContext context, bool isDark) {
     return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
       builder: (context, state) {
-        final totalEarned = state.allBadges.length;
+        final totalEarned = state.allEarnedBadges.length;
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -139,7 +139,7 @@ class _TrophyRoomView extends StatelessWidget {
                 ),
                 SizedBox(height: 4.h),
                 Text(
-                  '$totalEarned',
+                  '$totalEarned / ${state.totalPossibleBadges}',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 36.sp,
@@ -285,7 +285,9 @@ class _TrophyRoomView extends StatelessWidget {
   Widget _buildStatusMessage(BuildContext context, bool isDark) {
     return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
       builder: (context, state) {
-        if (state.filteredBadges.isNotEmpty) return const SizedBox.shrink();
+        if (state.filteredEarnedBadges.isNotEmpty) {
+          return const SizedBox.shrink();
+        }
 
         final text = state.currentFilter == TrophyFilter.legendary
             ? context.tr(
@@ -326,9 +328,9 @@ class _TrophyRoomView extends StatelessWidget {
   Widget _buildBadgeGrid(BuildContext context, bool isDark) {
     return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
       builder: (context, state) {
-        final totalSlots = state.filteredBadges.length < 15
-            ? 15
-            : state.filteredBadges.length;
+        final totalSlots =
+            state.filteredEarnedBadges.length +
+            state.filteredLockedBadges.length;
 
         return SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -340,16 +342,22 @@ class _TrophyRoomView extends StatelessWidget {
               childAspectRatio: 0.75,
             ),
             delegate: SliverChildBuilderDelegate((context, index) {
-              final isLocked = index >= state.filteredBadges.length;
-              if (isLocked) {
-                return _buildLockedSlot(isDark, index, state.currentFilter);
+              if (index < state.filteredEarnedBadges.length) {
+                return _buildBadgeCard(
+                  state.filteredEarnedBadges[index],
+                  isDark,
+                  index,
+                  state.currentFilter,
+                );
+              } else {
+                final lockedIndex = index - state.filteredEarnedBadges.length;
+                return _buildLockedSlot(
+                  state.filteredLockedBadges[lockedIndex],
+                  isDark,
+                  index,
+                  state.currentFilter,
+                );
               }
-              return _buildBadgeCard(
-                state.filteredBadges[index],
-                isDark,
-                index,
-                state.currentFilter,
-              );
             }, childCount: totalSlots),
           ),
         );
@@ -363,14 +371,8 @@ class _TrophyRoomView extends StatelessWidget {
     int index,
     TrophyFilter filter,
   ) {
-    final isLegendary =
-        badgeId.contains('master') ||
-        badgeId.contains('legend') ||
-        badgeId.contains('100');
-
-    final colorPair = isLegendary
-        ? [const Color(0xFFFFD700), const Color(0xFFF59E0B)] // Gold
-        : [const Color(0xFF94A3B8), const Color(0xFF64748B)]; // Silver
+    final isLegendary = TrophyRoomCubit.isLegendary(badgeId);
+    final colorPair = _getCategoryColors(badgeId, isLegendary);
 
     return ScaleButton(
           key: ValueKey('${filter.name}_${badgeId}_$index'),
@@ -407,8 +409,10 @@ class _TrophyRoomView extends StatelessWidget {
                         ),
                       ],
                       border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.4),
-                        width: 1.5,
+                        color: isLegendary
+                            ? const Color(0xFFFFD700).withValues(alpha: 0.8)
+                            : Colors.white.withValues(alpha: 0.4),
+                        width: isLegendary ? 2.5 : 1.5,
                       ),
                     ),
                     child: Center(
@@ -459,9 +463,14 @@ class _TrophyRoomView extends StatelessWidget {
         .fadeIn(delay: (50 * (index % 6)).ms);
   }
 
-  Widget _buildLockedSlot(bool isDark, int index, TrophyFilter filter) {
+  Widget _buildLockedSlot(
+    String badgeId,
+    bool isDark,
+    int index,
+    TrophyFilter filter,
+  ) {
     return GlassTile(
-          key: ValueKey('${filter.name}_locked_$index'),
+          key: ValueKey('${filter.name}_locked_$badgeId'),
           borderRadius: BorderRadius.circular(20.r),
           padding: EdgeInsets.all(2.r),
           borderColor: Colors.white.withValues(alpha: 0.05),
@@ -472,12 +481,32 @@ class _TrophyRoomView extends StatelessWidget {
                   ? Colors.white.withValues(alpha: 0.02)
                   : Colors.black.withValues(alpha: 0.02),
             ),
-            child: Center(
-              child: Icon(
-                Icons.lock_rounded,
-                color: isDark ? Colors.white24 : Colors.black26,
-                size: 40.r,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.lock_rounded,
+                  color: isDark ? Colors.white24 : Colors.black26,
+                  size: 32.r,
+                ),
+                SizedBox(height: 8.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: Text(
+                    badgeId.replaceAll('_', ' ').toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 8.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white30 : Colors.black38,
+                      height: 1.1,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
             ),
           ),
         )
@@ -488,5 +517,31 @@ class _TrophyRoomView extends StatelessWidget {
           curve: Curves.easeOutBack,
         )
         .fadeIn(delay: (50 * (index % 6)).ms);
+  }
+
+  List<Color> _getCategoryColors(String badgeId, bool isLegendary) {
+    if (isLegendary) {
+      return [
+        const Color(0xFFFFD700),
+        const Color(0xFFF59E0B),
+      ]; // Deep Gold Glow
+    }
+
+    if (badgeId.contains('vocabulary')) {
+      return [const Color(0xFF3B82F6), const Color(0xFF2563EB)]; // Blue
+    } else if (badgeId.contains('grammar')) {
+      return [const Color(0xFF8B5CF6), const Color(0xFF6D28D9)]; // Purple
+    } else if (badgeId.contains('listening')) {
+      return [const Color(0xFF10B981), const Color(0xFF059669)]; // Green
+    } else if (badgeId.contains('reading')) {
+      return [const Color(0xFFF43F5E), const Color(0xFFE11D48)]; // Rose
+    } else if (badgeId.contains('speaking')) {
+      return [const Color(0xFFF59E0B), const Color(0xFFD97706)]; // Amber
+    } else if (badgeId.contains('streak')) {
+      return [const Color(0xFF06B6D4), const Color(0xFF0891B2)]; // Cyan
+    }
+
+    // Default Silver for unmapped standards
+    return [const Color(0xFF94A3B8), const Color(0xFF64748B)];
   }
 }
