@@ -451,20 +451,8 @@ class _TrophyRoomView extends StatelessWidget {
                   ),
                   SizedBox(height: 12.h),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    child: Text(
-                      badgeId.replaceAll('_', ' ').toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                        height: 1.1,
-                      ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 4.w),
+                    child: _buildBadgeText(badgeId, isDark, isLocked: false),
                   ),
                 ],
               ),
@@ -509,20 +497,8 @@ class _TrophyRoomView extends StatelessWidget {
                 ),
                 SizedBox(height: 8.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w),
-                  child: Text(
-                    badgeId.replaceAll('_', ' ').toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 8.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white30 : Colors.black38,
-                      height: 1.1,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  child: _buildBadgeText(badgeId, isDark, isLocked: true),
                 ),
               ],
             ),
@@ -583,6 +559,72 @@ class _TrophyRoomView extends StatelessWidget {
     if (badgeId.contains('elitemastery')) return "💎";
     if (badgeId.contains('streak')) return "🔥";
     if (badgeId.contains('perfect')) return "🎯";
+    if (badgeId.contains('first')) return "🥇";
+    if (badgeId.contains('night')) return "🦉";
+    if (badgeId.contains('early')) return "🌅";
+    if (badgeId.contains('speed')) return "⚡";
+    if (badgeId.contains('flawless')) return "✨";
     return "🏆";
+  }
+
+  Widget _buildBadgeText(
+    String badgeId,
+    bool isDark, {
+    required bool isLocked,
+  }) {
+    final parts = badgeId.split('_');
+    if (parts.length >= 2) {
+      final tier = parts[0].toUpperCase();
+      final category = parts.sublist(1).join(' ').toUpperCase();
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            tier,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isLocked ? 7.sp : 8.sp,
+              fontWeight: FontWeight.w800,
+              color: isLocked
+                  ? (isDark ? Colors.white24 : Colors.black26)
+                  : (isDark ? Colors.white54 : Colors.black54),
+              letterSpacing: 1,
+            ),
+          ),
+          SizedBox(height: 2.h),
+          Text(
+            category,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isLocked ? 9.sp : 11.sp,
+              fontWeight: FontWeight.w900,
+              color: isLocked
+                  ? (isDark ? Colors.white30 : Colors.black38)
+                  : (isDark ? Colors.white : const Color(0xFF0F172A)),
+              height: 1.1,
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      );
+    } else {
+      return Text(
+        badgeId.toUpperCase(),
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: isLocked ? 9.sp : 11.sp,
+          fontWeight: FontWeight.w900,
+          color: isLocked
+              ? (isDark ? Colors.white30 : Colors.black38)
+              : (isDark ? Colors.white : const Color(0xFF0F172A)),
+          height: 1.1,
+        ),
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+      );
+    }
   }
 }

@@ -64,9 +64,9 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
   TrophyRoomCubit(List<String> initialBadges)
     : super(TrophyRoomState.initial(initialBadges));
 
-  // The real master list of 40 possible achievements in VOWL
+  // The real master list of 50 possible achievements in VOWL
   static const List<String> allAppBadges = [
-    // Standard Badges (30)
+    // Standard Badges (40)
     'novice_speaking', 'scholar_speaking', 'expert_speaking',
     'novice_listening', 'scholar_listening', 'expert_listening',
     'novice_reading', 'scholar_reading', 'expert_reading',
@@ -77,10 +77,17 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
     'novice_roleplay', 'scholar_roleplay', 'expert_roleplay',
     'novice_elitemastery', 'scholar_elitemastery', 'expert_elitemastery',
     'streak_7', 'streak_30', 'perfect_week',
+    // 10 General Milestones
+    'first_blood', 'night_owl', 'early_bird', 'speed_demon', 'flawless_victory',
+    'weekend_warrior',
+    'unstoppable',
+    'social_butterfly',
+    'knowledge_sponge',
+    'comeback_kid',
     // Legendary Badges (10)
     'master_speaking', 'master_listening', 'master_reading',
     'master_writing', 'master_grammar', 'master_vocabulary',
-    'master_accent', 'master_roleplay', 'master_elitemastery', 
+    'master_accent', 'master_roleplay', 'master_elitemastery',
     'streak_100',
   ];
 
