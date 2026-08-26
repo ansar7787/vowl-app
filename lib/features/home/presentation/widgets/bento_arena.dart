@@ -133,14 +133,10 @@ class _BentoArenaState extends State<BentoArena> {
                 curve: Curves.easeInOut,
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : Colors.black.withValues(alpha: 0.04),
+                  color: const Color(0xFF6366F1).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20.r),
                   border: Border.all(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.06),
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.3),
                   ),
                 ),
                 child: Row(
@@ -160,7 +156,7 @@ class _BentoArenaState extends State<BentoArena> {
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white70 : Colors.black54,
+                        color: const Color(0xFF6366F1),
                         letterSpacing: 0.5,
                       ),
                     ),
@@ -170,7 +166,7 @@ class _BentoArenaState extends State<BentoArena> {
                       duration: const Duration(milliseconds: 300),
                       child: Icon(
                         Icons.keyboard_arrow_down_rounded,
-                        color: isDark ? Colors.white54 : Colors.black45,
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.7),
                         size: 20.r,
                       ),
                     ),
