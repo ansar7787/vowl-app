@@ -64,20 +64,24 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
   TrophyRoomCubit(List<String> initialBadges)
     : super(TrophyRoomState.initial(initialBadges));
 
-  // The real master list of 30 possible achievements in VOWL
+  // The real master list of 40 possible achievements in VOWL
   static const List<String> allAppBadges = [
-    // Standard Badges (24)
-    'novice_vocabulary', 'scholar_vocabulary', 'expert_vocabulary',
-    'novice_grammar', 'scholar_grammar', 'expert_grammar',
+    // Standard Badges (30)
+    'novice_speaking', 'scholar_speaking', 'expert_speaking',
     'novice_listening', 'scholar_listening', 'expert_listening',
     'novice_reading', 'scholar_reading', 'expert_reading',
-    'novice_speaking', 'scholar_speaking', 'expert_speaking',
     'novice_writing', 'scholar_writing', 'expert_writing',
-    'novice_idioms', 'scholar_idioms', 'expert_idioms',
+    'novice_grammar', 'scholar_grammar', 'expert_grammar',
+    'novice_vocabulary', 'scholar_vocabulary', 'expert_vocabulary',
+    'novice_accent', 'scholar_accent', 'expert_accent',
+    'novice_roleplay', 'scholar_roleplay', 'expert_roleplay',
+    'novice_elitemastery', 'scholar_elitemastery', 'expert_elitemastery',
     'streak_7', 'streak_30', 'perfect_week',
-    // Legendary Badges (6)
-    'master_vocabulary', 'master_grammar', 'master_listening',
-    'master_speaking', 'streak_100', 'vowl_legend',
+    // Legendary Badges (10)
+    'master_speaking', 'master_listening', 'master_reading',
+    'master_writing', 'master_grammar', 'master_vocabulary',
+    'master_accent', 'master_roleplay', 'master_elitemastery', 
+    'streak_100',
   ];
 
   void updateFilter(TrophyFilter filter) {

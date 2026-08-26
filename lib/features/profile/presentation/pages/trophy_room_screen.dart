@@ -527,18 +527,26 @@ class _TrophyRoomView extends StatelessWidget {
       ]; // Deep Gold Glow
     }
 
-    if (badgeId.contains('vocabulary')) {
-      return [const Color(0xFF3B82F6), const Color(0xFF2563EB)]; // Blue
-    } else if (badgeId.contains('grammar')) {
-      return [const Color(0xFF8B5CF6), const Color(0xFF6D28D9)]; // Purple
-    } else if (badgeId.contains('listening')) {
-      return [const Color(0xFF10B981), const Color(0xFF059669)]; // Green
+    if (badgeId.contains('speaking')) {
+      return [const Color(0xFFF44336), const Color(0xFFD32F2F)]; // Red
+    } else if (badgeId.contains('writing')) {
+      return [const Color(0xFFFF9800), const Color(0xFFF57C00)]; // Orange
+    } else if (badgeId.contains('vocabulary')) {
+      return [const Color(0xFF673AB7), const Color(0xFF512DA8)]; // Purple
     } else if (badgeId.contains('reading')) {
-      return [const Color(0xFFF43F5E), const Color(0xFFE11D48)]; // Rose
-    } else if (badgeId.contains('speaking')) {
-      return [const Color(0xFFF59E0B), const Color(0xFFD97706)]; // Amber
+      return [const Color(0xFF4CAF50), const Color(0xFF388E3C)]; // Green
+    } else if (badgeId.contains('accent')) {
+      return [const Color(0xFF00BCD4), const Color(0xFF0097A7)]; // Cyan
+    } else if (badgeId.contains('grammar')) {
+      return [const Color(0xFF2196F3), const Color(0xFF1976D2)]; // Blue
+    } else if (badgeId.contains('listening')) {
+      return [const Color(0xFFE91E63), const Color(0xFFC2185B)]; // Pink
+    } else if (badgeId.contains('roleplay')) {
+      return [const Color(0xFF8BC34A), const Color(0xFF689F38)]; // Lime
+    } else if (badgeId.contains('elitemastery')) {
+      return [const Color(0xFFFFC107), const Color(0xFFFFA000)]; // Amber
     } else if (badgeId.contains('streak')) {
-      return [const Color(0xFF06B6D4), const Color(0xFF0891B2)]; // Cyan
+      return [const Color(0xFF0EA5E9), const Color(0xFF0284C7)]; // Sky Blue
     }
 
     // Default Silver for unmapped standards
