@@ -65,7 +65,22 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
+    
+    // Calculate initial scroll position so the user instantly lands on their current level
+    double initialOffset = 0.0;
+    final authState = context.read<AuthBloc>().state;
+    if (authState.user != null) {
+      final unlockedLevel = authState.user!.unlockedLevels[widget.gameType] ?? 1;
+      final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
+      final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+      final targetLevel = (highestCompleted + 1).clamp(1, unlockedLevel);
+      
+      final targetOffset = (targetLevel - 1) * 200.h;
+      initialOffset = max(0, targetOffset - 300.h);
+      _previousUnlockedLevel = unlockedLevel;
+    }
+
+    _scrollController = ScrollController(initialScrollOffset: initialOffset);
 
     // 1. Staggered screen-entry animation (nodes cascade in)
     _entryController = AnimationController(
@@ -91,7 +106,6 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     });
 
     _checkAndShowStoryBeat();
-    _scrollToUnlockedLevel();
   }
 
   @override

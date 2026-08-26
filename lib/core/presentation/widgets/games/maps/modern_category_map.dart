@@ -85,7 +85,23 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
+    
+    // Calculate initial scroll position so the user instantly lands on their current level
+    double initialOffset = 0.0;
+    final authState = context.read<AuthBloc>().state;
+    if (authState.user != null) {
+      final unlockedLevel = authState.user!.unlockedLevels[widget.gameType] ?? 1;
+      final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
+      final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+      final targetLevel = (highestCompleted + 1).clamp(1, unlockedLevel);
+      
+      final double rowSpacing = _getVerticalSpacing(widget.categoryId);
+      final targetOffset = (targetLevel - 1) * rowSpacing;
+      initialOffset = max(0, targetOffset - 300.h);
+      _previousUnlockedLevel = unlockedLevel;
+    }
+
+    _scrollController = ScrollController(initialScrollOffset: initialOffset);
 
     // 1. Unified fade-in entry animation (path + nodes together)
     _entryController = AnimationController(
@@ -140,11 +156,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       }
 
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted) {
-            _scrollToCurrentLevel(animate: true);
-          }
-        });
         _checkAndShowStoryBeat();
       });
     }
