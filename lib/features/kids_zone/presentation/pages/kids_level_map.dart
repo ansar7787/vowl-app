@@ -672,7 +672,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                         return Transform.scale(
                           scale: 0.5 + 0.5 * bounceValue,
                           child: Opacity(
-                            opacity: popProgress.clamp(0.0, 1.0),
+                            // Snaps to full opacity in the first 20% of the pop (0.12s) so the user actually sees the physical bounce
+                            opacity: (popProgress * 5).clamp(0.0, 1.0),
                             child: node,
                           ),
                         );

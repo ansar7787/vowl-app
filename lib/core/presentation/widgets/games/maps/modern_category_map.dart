@@ -508,7 +508,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                         double outgoingProgress = 1.0;
                         
                         if (_justUnlockedLevel != null) {
-                          final double rawValue = _unlockPathController.value;
+                          final double rawValue = Curves.easeInOutCubic.transform(_unlockPathController.value);
                           if (isJustUnlocked) {
                             incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
                             // Outgoing progress of the just-unlocked node remains 0 until it's completed later
@@ -531,7 +531,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                 nodeWidget = Transform.scale(
                                   scale: 0.5 + 0.5 * popScale,
                                   child: Opacity(
-                                    opacity: popProgress.clamp(0.0, 1.0),
+                                    // Snaps to full opacity in the first 20% of the pop (0.12s) so the user actually sees the physical bounce
+                                    opacity: (popProgress * 5).clamp(0.0, 1.0),
                                     child: nodeWidget,
                                   ),
                                 );
