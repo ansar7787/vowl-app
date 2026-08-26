@@ -520,23 +520,19 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                   isLast: index == _totalLevels - 1,
                                   isDark: isDark,
                                   isTollGate: isTollGateSegment,
+                                  pathProgress: isJustUnlocked ? _unlockPathController.value : 1.0,
                                   glowAnimation: isCurrent ? _glowController : null,
                                 ),
                                 child: child,
                               );
 
-                              // Unlock celebration: elastic scale bounce
+                              // Unlock celebration: elastic scale bounce for the node
                               if (isJustUnlocked) {
                                 final bounceValue = Curves.elasticOut.transform(
                                   _unlockPathController.value.clamp(0.0, 1.0),
                                 );
-                                result = Transform.scale(
-                                  scale: 0.6 + 0.4 * bounceValue,
-                                  child: Opacity(
-                                    opacity: _unlockPathController.value.clamp(0.0, 1.0),
-                                    child: result,
-                                  ),
-                                );
+                                // Ensure node itself starts invisible and scales in, but the path drawn by CustomPaint remains visible
+                                // We apply the transform/opacity ONLY to the child node, not the CustomPaint result!
                               }
 
                               return result;
@@ -558,6 +554,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                     isDark,
                                     theme,
                                     isPremium,
+                                    isJustUnlocked: isJustUnlocked,
+                                    unlockValue: _unlockPathController.value.clamp(0.0, 1.0),
                                   ),
                                 ),
                               ),
@@ -919,8 +917,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     int completedLevels,
     bool isDark,
     ThemeResult theme,
-    bool isPremium,
-  ) {
+    bool isPremium, {
+    bool isJustUnlocked = false,
+    double unlockValue = 1.0,
+  }) {
     final bool isCompleted = level <= completedLevels;
     final bool isPlayable =
         level == completedLevels + 1 && (level <= unlockedLevels || isPremium);
@@ -974,7 +974,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       statusLabel = context.tr('games.level_locked', fallback: 'Locked');
     }
 
-    return SizedBox(
+    Widget result = SizedBox(
       width: 160.r,
       height: 220.h,
       child: Stack(
@@ -1081,6 +1081,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         ],
       ),
     );
+
+    if (isJustUnlocked) {
+      final bounceValue = Curves.elasticOut.transform(unlockValue);
+      return Transform.scale(
+        scale: 0.6 + 0.4 * bounceValue,
+        child: Opacity(
+          opacity: unlockValue,
+          child: result,
+        ),
+      );
+    }
+    return result;
   }
 
   void _showLockedFeedback(BuildContext context, Color color) {

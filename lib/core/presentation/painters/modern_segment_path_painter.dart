@@ -11,6 +11,19 @@ class ModernSegmentPathPainter extends CustomPainter {
   final Offset? prevPoint;
   final double? prevPrevX;
   final double? nextNextX;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+/// Per-segment path painter for the Modern Category Map.
+///
+/// Draws a thick, rich, 3D-shadowed path line with exact midpoint continuity math.
+/// Guarantees 100% seamless alignment between adjacent SliverList items.
+class ModernSegmentPathPainter extends CustomPainter {
+  final Offset currentPoint;
+  final Offset? nextPoint;
+  final Offset? prevPoint;
+  final double? prevPrevX;
+  final double? nextNextX;
   final Color activeColor;
   final bool isCompleted;
   final bool isPrevCompleted;
@@ -18,6 +31,7 @@ class ModernSegmentPathPainter extends CustomPainter {
   final bool isLast;
   final bool isDark;
   final bool isTollGate;
+  final double pathProgress;
   final Animation<double>? glowAnimation;
 
   const ModernSegmentPathPainter({
@@ -33,6 +47,7 @@ class ModernSegmentPathPainter extends CustomPainter {
     required this.isLast,
     required this.isDark,
     this.isTollGate = false,
+    this.pathProgress = 1.0,
     this.glowAnimation,
   }) : super(repaint: glowAnimation);
 
@@ -119,24 +134,33 @@ class ModernSegmentPathPainter extends CustomPainter {
       canvas.drawPath(
         incomingPath,
         Paint()
-          ..color = isActive
-              ? activeColor
-              : lockedColor
+          ..color = lockedColor
           ..style = PaintingStyle.stroke
           ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.butt,
       );
 
-      if (isActive) {
-        canvas.drawPath(
-          incomingPath,
-          Paint()
-            ..color = activeColor.withValues(alpha: 0.35)
-            ..strokeWidth = strokeW + 12.0
-            ..style = PaintingStyle.stroke
-            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
-        );
-      }
+        if (isActive && pathProgress > 0.0) {
+          for (final metric in incomingPath.computeMetrics()) {
+            final extracted = metric.extractPath(0, metric.length * pathProgress);
+            canvas.drawPath(
+              extracted,
+              Paint()
+                ..color = activeColor.withValues(alpha: 0.35)
+                ..strokeWidth = strokeW + 12.0
+                ..style = PaintingStyle.stroke
+                ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
+            );
+            canvas.drawPath(
+              extracted,
+              Paint()
+                ..color = activeColor
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = strokeW
+                ..strokeCap = StrokeCap.round,
+            );
+          }
+        }
     }
 
     // ── Outgoing path from node center (y=centerY) to bottom boundary (y=size.height) ──
@@ -252,6 +276,7 @@ class ModernSegmentPathPainter extends CustomPainter {
         oldDelegate.isLast != isLast ||
         oldDelegate.isDark != isDark ||
         oldDelegate.isTollGate != isTollGate ||
+        oldDelegate.pathProgress != pathProgress ||
         oldDelegate.glowAnimation != glowAnimation ||
         oldDelegate.currentPoint != currentPoint ||
         oldDelegate.nextPoint != nextPoint ||
