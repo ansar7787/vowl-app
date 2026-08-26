@@ -595,7 +595,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   double _getVerticalSpacing(GameCategory category) {
-    // 170.h is the industry standard density for 7-node maps.
+    // 170.h is the true Diamond Standard. It keeps the map content-rich 
+    // and perfectly dense without feeling squished.
     return 170.h;
   }
 
@@ -639,11 +640,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       // Base pure sine wave that creates the sweeping S-shape
       final double baseSine = math.sin((i * freq) + phase);
       
-      // Smoothly vary the width of the S-curves (between 50% and 100% width)
-      final double slowAmplitude = 0.75 + math.sin(i * 0.15 + category.index * 3) * 0.25;
+      // ── STABILITY FIX ──
+      // Previously, the amplitude could drop to 50% width, making certain sections 
+      // (like the first 20 levels) look narrow, tight, or "straight". 
+      // Now it varies smoothly between 85% and 100%, so the curves are ALWAYS 
+      // wide, gorgeous, and sweeping everywhere.
+      final double slowAmplitude = 0.925 + math.sin(i * 0.15 + category.index * 3) * 0.075;
       
-      // Smoothly drift the entire S-curve left or right across the screen
-      final double slowDrift = math.sin(i * 0.08 + category.index * 7) * 0.25;
+      // Smoothly drift the entire S-curve slightly left or right across the screen
+      final double slowDrift = math.sin(i * 0.08 + category.index * 7) * 0.12;
       
       // Add a slight per-node organic jitter (±3%) so it feels beautifully hand-placed
       final double jitter = (rng.nextDouble() - 0.5) * 0.06;

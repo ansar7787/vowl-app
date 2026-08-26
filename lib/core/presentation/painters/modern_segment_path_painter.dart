@@ -95,12 +95,13 @@ class ModernSegmentPathPainter extends CustomPainter {
       final t0 = (x1 - (prevPrevX ?? x0)) / 2;
       final t1 = ((nextPoint?.dx ?? x1) - x0) / 2;
       
-      final startX = 0.5 * x0 + 0.5 * x1 + (t0 - t1) / 6;
+      // PERFECT MATHEMATICAL SPLIT at t=0.5
+      final startX = 0.5 * x0 + 0.5 * x1 + (t0 - t1) / 8;
 
       final incomingPath = Path()
         ..moveTo(startX, 0)
         ..cubicTo(
-          0.25 * x0 + 0.75 * x1 + t0 / 12 - t1 / 4,    // cp1.x
+          0.25 * x0 + 0.75 * x1 + t0 / 12 - t1 / 6,    // cp1.x
           centerY * 0.333333,                          // cp1.y 
           x1 - t1 / 6,                                 // cp2.x 
           centerY * 0.666667,                          // cp2.y 
@@ -144,7 +145,8 @@ class ModernSegmentPathPainter extends CustomPainter {
       final t1 = (x2 - x0) / 2;
       final t2 = ((nextNextX ?? x2) - x1) / 2;
       
-      final endX = 0.5 * x1 + 0.5 * x2 + (t1 - t2) / 6;
+      // PERFECT MATHEMATICAL SPLIT at t=0.5
+      final endX = 0.5 * x1 + 0.5 * x2 + (t1 - t2) / 8;
       final bottomY = size.height;
 
       final outgoingPath = Path()
@@ -152,7 +154,7 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..cubicTo(
           x1 + t1 / 6,                                 // cp1.x 
           centerY * 1.333333,                          // cp1.y 
-          0.75 * x1 + 0.25 * x2 + t1 / 4 - t2 / 12,    // cp2.x 
+          0.75 * x1 + 0.25 * x2 + t1 / 6 - t2 / 12,    // cp2.x 
           centerY * 1.666667,                          // cp2.y 
           endX,
           bottomY,
