@@ -68,9 +68,12 @@ class _TrophyRoomView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 24.h),
+                        SizedBox(height: 16.h),
+                        _buildTrophySummary(context, isDark),
+                        SizedBox(height: 32.h),
                         _buildFilterTabs(context, isDark),
                         SizedBox(height: 24.h),
+                        _buildStatusMessage(context, isDark),
                       ],
                     ),
                   ),
@@ -111,6 +114,68 @@ class _TrophyRoomView extends StatelessWidget {
           letterSpacing: -0.5,
         ),
       ),
+    );
+  }
+
+  Widget _buildTrophySummary(BuildContext context, bool isDark) {
+    return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
+      builder: (context, state) {
+        final totalEarned = state.allBadges.length;
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.tr('profile.total_earned', fallback: 'Total Earned'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isDark ? Colors.white54 : Colors.black54,
+                    letterSpacing: 1,
+                  ),
+                ),
+                SizedBox(height: 4.h),
+                Text(
+                  '$totalEarned',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 36.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    height: 1.1,
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              padding: EdgeInsets.all(16.r),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFFFFD700), Color(0xFFF59E0B)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                    blurRadius: 15,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: Icon(
+                Icons.emoji_events_rounded,
+                color: Colors.white,
+                size: 32.r,
+              ),
+            ).animate().scale(duration: 600.ms, curve: Curves.easeOutBack),
+          ],
+        );
+      },
     );
   }
 
@@ -205,17 +270,53 @@ class _TrophyRoomView extends StatelessWidget {
     );
   }
 
+  Widget _buildStatusMessage(BuildContext context, bool isDark) {
+    return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
+      builder: (context, state) {
+        if (state.filteredBadges.isNotEmpty) return const SizedBox.shrink();
+
+        final text = state.currentFilter == TrophyFilter.legendary
+            ? context.tr(
+                'profile.no_legendary',
+                fallback: 'No legendary trophies unlocked yet.',
+              )
+            : context.tr(
+                'profile.no_trophies',
+                fallback: 'No trophies unlocked yet.',
+              );
+
+        return Padding(
+          padding: EdgeInsets.only(bottom: 16.h),
+          child: Row(
+            children: [
+              Icon(
+                Icons.info_outline_rounded,
+                size: 16.r,
+                color: isDark ? Colors.white54 : Colors.black54,
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white54 : Colors.black54,
+                ),
+              ),
+            ],
+          ).animate(key: ValueKey(text)).fadeIn().slideX(begin: -0.1),
+        );
+      },
+    );
+  }
+
   Widget _buildBadgeGrid(BuildContext context, bool isDark) {
     return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
       builder: (context, state) {
-        if (state.filteredBadges.isEmpty) {
-          return SliverFillRemaining(
-            hasScrollBody: false,
-            child: Center(
-              child: _buildEmptyState(context, isDark, state.currentFilter),
-            ),
-          );
-        }
+        final totalSlots = state.filteredBadges.length < 15
+            ? 15
+            : state.filteredBadges.length;
 
         return SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -226,23 +327,18 @@ class _TrophyRoomView extends StatelessWidget {
               crossAxisSpacing: 16.r,
               childAspectRatio: 0.75,
             ),
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                final isLocked = index >= state.filteredBadges.length;
-                if (isLocked) {
-                  return _buildLockedSlot(isDark, index, state.currentFilter);
-                }
-                return _buildBadgeCard(
-                  state.filteredBadges[index],
-                  isDark,
-                  index,
-                  state.currentFilter,
-                );
-              },
-              childCount: state.filteredBadges.length < 15
-                  ? 15
-                  : state.filteredBadges.length,
-            ),
+            delegate: SliverChildBuilderDelegate((context, index) {
+              final isLocked = index >= state.filteredBadges.length;
+              if (isLocked) {
+                return _buildLockedSlot(isDark, index, state.currentFilter);
+              }
+              return _buildBadgeCard(
+                state.filteredBadges[index],
+                isDark,
+                index,
+                state.currentFilter,
+              );
+            }, childCount: totalSlots),
           ),
         );
       },
@@ -349,57 +445,6 @@ class _TrophyRoomView extends StatelessWidget {
           curve: Curves.easeOutBack,
         )
         .fadeIn(delay: (50 * (index % 6)).ms);
-  }
-
-  Widget _buildEmptyState(
-    BuildContext context,
-    bool isDark,
-    TrophyFilter filter,
-  ) {
-    final text = filter == TrophyFilter.legendary
-        ? context.tr(
-            'profile.no_legendary_trophies',
-            fallback: 'No legendary trophies yet.\nKeep mastering categories!',
-          )
-        : context.tr(
-            'profile.no_trophies',
-            fallback: 'No trophies yet.\nComplete quests to earn them!',
-          );
-
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 48.h),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            padding: EdgeInsets.all(24.r),
-            decoration: BoxDecoration(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.black.withValues(alpha: 0.03),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(
-              Icons.emoji_events_outlined,
-              size: 64.r,
-              color: isDark ? Colors.white24 : Colors.black26,
-            ),
-          ),
-          SizedBox(height: 24.h),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: isDark ? Colors.white54 : const Color(0xFF64748B),
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-              height: 1.4,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn().slideY(begin: 0.1);
   }
 
   Widget _buildLockedSlot(bool isDark, int index, TrophyFilter filter) {
