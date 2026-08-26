@@ -32,16 +32,30 @@ class ContinueLearningCard extends StatelessWidget {
     QuestType.eliteMastery,
   ];
 
-  /// Finds the first category that isn't 100% completed, or falls back
-  /// to vocabulary if everything is done.
+  /// Implements a "Skill Balancing" algorithm. Instead of waiting for a user
+  /// to clear 2000 levels of Vocabulary, it automatically recommends the
+  /// category where they have the LOWEST progress, forcing a balanced,
+  /// well-rounded learning journey that changes dynamically every few levels.
   QuestType _resolveNextCategory() {
+    if (user.totalLevelsCompleted == 0) return QuestType.vocabulary;
+
+    QuestType recommendedType = _journeyOrder.first;
+    int lowestCleared = 999999;
+
     for (final type in _journeyOrder) {
       final cleared = user.getTotalCategoryLevelsCleared(type);
       final max = user.getMaxCategoryLevels(type);
-      if (max > 0 && cleared < max) return type;
+
+      // Only consider categories that actually have levels available
+      if (max > 0) {
+        if (cleared < lowestCleared) {
+          lowestCleared = cleared;
+          recommendedType = type;
+        }
+      }
     }
-    // All complete — loop back to the beginning
-    return QuestType.vocabulary;
+
+    return recommendedType;
   }
 
   @override
