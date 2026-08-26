@@ -386,9 +386,25 @@ class _TrophyRoomView extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18.r),
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.02)
-                    : Colors.white.withValues(alpha: 0.5),
+                gradient: isLegendary
+                    ? LinearGradient(
+                        colors: [
+                          const Color(0xFF451A03).withValues(
+                            alpha: isDark ? 0.6 : 0.8,
+                          ), // Deep Amber Dark
+                          const Color(
+                            0xFF78350F,
+                          ).withValues(alpha: isDark ? 0.3 : 0.6), // Brown Gold
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )
+                    : null,
+                color: isLegendary
+                    ? null
+                    : (isDark
+                          ? Colors.white.withValues(alpha: 0.02)
+                          : Colors.white.withValues(alpha: 0.5)),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -419,9 +435,9 @@ class _TrophyRoomView extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        isLegendary ? "👑" : "🏆",
+                        isLegendary ? "👑" : _getCategoryEmoji(badgeId),
                         style: TextStyle(
-                          fontSize: 28.sp,
+                          fontSize: isLegendary ? 28.sp : 24.sp,
                           shadows: const [
                             Shadow(
                               color: Colors.black26,
@@ -553,5 +569,20 @@ class _TrophyRoomView extends StatelessWidget {
 
     // Default Silver for unmapped standards
     return [const Color(0xFF94A3B8), const Color(0xFF64748B)];
+  }
+
+  String _getCategoryEmoji(String badgeId) {
+    if (badgeId.contains('speaking')) return "🎙️";
+    if (badgeId.contains('writing')) return "✍️";
+    if (badgeId.contains('vocabulary')) return "📖";
+    if (badgeId.contains('reading')) return "📚";
+    if (badgeId.contains('accent')) return "🗣️";
+    if (badgeId.contains('grammar')) return "🧩";
+    if (badgeId.contains('listening')) return "🎧";
+    if (badgeId.contains('roleplay')) return "🎭";
+    if (badgeId.contains('elitemastery')) return "💎";
+    if (badgeId.contains('streak')) return "🔥";
+    if (badgeId.contains('perfect')) return "🎯";
+    return "🏆";
   }
 }
