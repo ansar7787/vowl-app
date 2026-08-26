@@ -8,10 +8,11 @@ import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-class BentoArena extends StatelessWidget {
-  const BentoArena({super.key, required this.user});
+class BentoArena extends StatefulWidget {
+  const BentoArena({super.key, required this.user, this.collapsed = false});
 
   final UserEntity user;
+  final bool collapsed;
 
   static const List<QuestType> _journeySteps = [
     QuestType.vocabulary, // Step 1: Words
@@ -26,10 +27,48 @@ class BentoArena extends StatelessWidget {
   ];
 
   @override
+  State<BentoArena> createState() => _BentoArenaState();
+}
+
+class _BentoArenaState extends State<BentoArena> {
+  late bool _isExpanded;
+
+  @override
+  void initState() {
+    super.initState();
+    _isExpanded = !widget.collapsed;
+  }
+
+  /// Returns the indices of the 3 categories to show in collapsed mode:
+  /// the first uncompleted category and its neighbors.
+  List<int> _getCollapsedIndices() {
+    final steps = BentoArena._journeySteps;
+    // Find first uncompleted category
+    int focusIndex = 0;
+    for (int i = 0; i < steps.length; i++) {
+      final cleared = widget.user.getTotalCategoryLevelsCleared(steps[i]);
+      final max = widget.user.getMaxCategoryLevels(steps[i]);
+      if (max > 0 && cleared < max) {
+        focusIndex = i;
+        break;
+      }
+    }
+    // Show: previous, current, next (clamped to bounds)
+    final start = (focusIndex - 1).clamp(0, steps.length - 3);
+    return [start, start + 1, start + 2];
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
-    final types = _journeySteps;
+    final allSteps = BentoArena._journeySteps;
+
+    // Determine which steps to render
+    final collapsedIndices = _getCollapsedIndices();
+    final visibleSteps = _isExpanded
+        ? List.generate(allSteps.length, (i) => i)
+        : collapsedIndices;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,8 +82,8 @@ class BentoArena extends StatelessWidget {
                   painter: JourneyPathPainter(
                     isDark: isDark,
                     isRtl: isRtl,
-                    stepsCount: types.length,
-                    types: types,
+                    stepsCount: visibleSteps.length,
+                    types: visibleSteps.map((i) => allSteps[i]).toList(),
                   ),
                 ),
               ),
@@ -53,9 +92,10 @@ class BentoArena extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20.h),
               child: Column(
-                children: List.generate(types.length, (index) {
-                  final isLeft = index % 2 == 0;
-                  final isLast = index == types.length - 1;
+                children: List.generate(visibleSteps.length, (vi) {
+                  final actualIndex = visibleSteps[vi];
+                  final isLeft = vi % 2 == 0;
+                  final isLast = vi == visibleSteps.length - 1;
                   // Mirror the zig-zag so the journey still visually winds
                   // from the reading-start side in RTL locales.
                   final visualLeft = isRtl ? !isLeft : isLeft;
@@ -68,9 +108,9 @@ class BentoArena extends StatelessWidget {
                       child: FractionallySizedBox(
                         widthFactor: 0.85,
                         child: _BentoCategoryTile(
-                          type: types[index],
-                          user: user,
-                          step: index + 1,
+                          type: allSteps[actualIndex],
+                          user: widget.user,
+                          step: actualIndex + 1,
                           isLeft: visualLeft,
                         ),
                       ),
@@ -81,6 +121,65 @@ class BentoArena extends StatelessWidget {
             ),
           ],
         ),
+
+        // Expand / Collapse button
+        if (widget.collapsed) ...[
+          SizedBox(height: 16.h),
+          Center(
+            child: ScaleButton(
+              onTap: () => setState(() => _isExpanded = !_isExpanded),
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.black.withValues(alpha: 0.04),
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : Colors.black.withValues(alpha: 0.06),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      _isExpanded
+                          ? context.tr(
+                              'home.show_less',
+                              fallback: 'Show Less',
+                            )
+                          : context.tr(
+                              'home.see_all_categories',
+                              fallback: 'See All 9 Categories',
+                            ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white70 : Colors.black54,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    AnimatedRotation(
+                      turns: _isExpanded ? 0.5 : 0,
+                      duration: const Duration(milliseconds: 300),
+                      child: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: isDark ? Colors.white54 : Colors.black45,
+                        size: 20.r,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }

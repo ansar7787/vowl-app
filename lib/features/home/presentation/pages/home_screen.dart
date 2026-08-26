@@ -17,22 +17,16 @@ import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
 import 'package:vowl/features/home/presentation/widgets/command_pod.dart';
+import 'package:vowl/features/home/presentation/widgets/continue_learning_card.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_reward_ad_card.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_global_progress_card.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
-import 'package:vowl/features/home/presentation/widgets/home_quick_stats.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
-import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
-import 'package:vowl/features/home/presentation/widgets/daily_words_home_card.dart';
-import 'package:vowl/features/home/presentation/widgets/translation_home_card.dart';
-import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
-import 'package:vowl/features/home/presentation/widgets/ai_lab_grid.dart';
+import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
+import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,10 +37,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int? _globalRank;
-  int? _kidsGlobalRank;
   bool _hasCheckedDailyChestThisSession = false;
-  final ValueNotifier<int> _carouselIndex = ValueNotifier(1);
-  final PageController _carouselController = PageController(viewportFraction: 0.88, initialPage: 1);
 
   @override
   void initState() {
@@ -63,18 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  @override
-  void dispose() {
-    _carouselIndex.dispose();
-    _carouselController.dispose();
-    super.dispose();
-  }
-
   Future<void> _fetchGlobalRank() async {
     try {
       final repo = di.sl<LeaderboardRepository>();
       final result = await repo.getTopUsers(limit: 100);
-      final kidsResult = await repo.getTopKidsUsers(limit: 100);
 
       // CRITICAL: this is an async gap — the widget may have been disposed
       // (e.g. the user logged out / navigated away) while the request was
@@ -98,27 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
         if (currentUser != null && mounted) {
           final idx = sorted.indexWhere((u) => u.id == currentUser.id);
           setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
-        }
-      });
-
-      kidsResult.fold((_) {}, (data) {
-        final sorted = List<UserEntity>.from(data.users)
-          ..sort((a, b) {
-            final aL = a.kidsTotalLevelsCompleted;
-            final bL = b.kidsTotalLevelsCompleted;
-            if (bL != aL) return bL.compareTo(aL);
-            if (b.kidsCoins != a.kidsCoins) {
-              return b.kidsCoins.compareTo(a.kidsCoins);
-            }
-            if (b.currentStreak != a.currentStreak) {
-              return b.currentStreak.compareTo(a.currentStreak);
-            }
-            return b.totalExp.compareTo(a.totalExp);
-          });
-        final currentUser = context.read<AuthBloc>().state.user;
-        if (currentUser != null && mounted) {
-          final idx = sorted.indexWhere((u) => u.id == currentUser.id);
-          setState(() => _kidsGlobalRank = idx >= 0 ? idx + 1 : null);
         }
       });
     } catch (e) {
@@ -208,13 +170,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     controller: di.sl<ScrollController>(instanceName: 'home'),
                     physics: const BouncingScrollPhysics(),
                     slivers: [
+                      // ── Top Safe Area ────────────────────────────────
                       SliverToBoxAdapter(
                         child: SizedBox(
                           height: MediaQuery.of(context).padding.top + 16.h,
                         ),
                       ),
 
-                      // 1. COMMAND HEADER (Identity & XP)
+                      // ══════════════════════════════════════════════════
+                      // 1. HERO HEADER (Identity & XP)
+                      // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -225,98 +190,42 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 2. STREAK
+                      // ══════════════════════════════════════════════════
+                      // 2. PRIMARY CTA — "Continue Learning"
+                      // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 12.h), // Reduced from 16.h
-                              InlineNotificationCard(
-                                streak: user.currentStreak,
-                              ),
+                              SizedBox(height: 16.h),
+                              ContinueLearningCard(user: user),
                             ],
                           ),
                         ),
                       ),
 
-                      // 3. DASHBOARD (Stats, Leaderboards & Utility)
+                      // ══════════════════════════════════════════════════
+                      // 3. UNIFIED STATS ROW (Streak | Coins | Badges | Level)
+                      // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 12.h), // Reduced from 24.h
-                              TranslationHomeCard(isDark: isDark),
-                              SizedBox(height: 12.h),
-                              GlobalProgressCard(
+                              SizedBox(height: 16.h),
+                              UnifiedStatsRow(
                                 user: user,
                                 globalRank: _globalRank,
                               ),
-                              SizedBox(height: 12.h),
-                              HomeQuickStats(user: user),
-                              SizedBox(height: 12.h),
-                              KidsGlobalProgressCard(
-                                user: user,
-                                globalRank: _kidsGlobalRank,
-                              ),
-                              SizedBox(height: 12.h),
-                              CommandPod(
-                                user: user,
-                                mode: CommandPodMode.vaultOnly,
-                              ),
                             ],
                           ),
                         ),
                       ),
 
-                      // 5. HERO CAROUSEL (Daily Words & Junior Adventure)
-                      SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            SizedBox(
-                              height: 190.h, // 160.h for card + 30.h for shadow
-                              child: PageView(
-                                clipBehavior: Clip.none,
-                                controller: _carouselController,
-                                physics: const BouncingScrollPhysics(),
-                                onPageChanged: (idx) {
-                                  _carouselIndex.value = idx;
-                                },
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: CommandPod(
-                                      user: user,
-                                      mode: CommandPodMode.kidsOnly,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: DailyWordsHomeCard(isDark: isDark),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: const VowlMascotCard(),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            ValueListenableBuilder<int>(
-                              valueListenable: _carouselIndex,
-                              builder: (context, currentIndex, _) {
-                                return AnimatedPageIndicator(
-                                  itemCount: 3,
-                                  currentIndex: currentIndex,
-                                );
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      // 4. QUEST ARENA (Deep Work, Core Journey)
+                      // ══════════════════════════════════════════════════
+                      // 4. JOURNEY PROGRESS (Collapsed BentoArena)
+                      // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -338,80 +247,51 @@ class _HomeScreenState extends State<HomeScreen> {
                                 categoryColor: const Color(0xFF6366F1),
                                 onSeeAll: () =>
                                     context.push(AppRouter.libraryRoute),
-                                badge: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 8.w,
-                                    vertical: 2.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: const Color(
-                                      0xFFF59E0B,
-                                    ).withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    border: Border.all(
-                                      color: const Color(
-                                        0xFFF59E0B,
-                                      ).withValues(alpha: 0.3),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        Icons.auto_awesome_rounded,
-                                        color: const Color(0xFFF59E0B),
-                                        size: 10.r,
-                                      ),
-                                      SizedBox(width: 4.w),
-                                      Text(
-                                        context.tr(
-                                          'home.quest_arena_steps',
-                                          fallback: 'Steps',
-                                        ),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 8.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: const Color(0xFFF59E0B),
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ],
-                                  ),
-                                ),
                               ),
-                              SizedBox(height: 12.h),
-                              BentoArena(user: user),
+                              SizedBox(height: 16.h),
+                              BentoArena(user: user, collapsed: true),
                             ],
                           ),
                         ),
                       ),
 
-                      // 5.5 AI EXPERIMENTS
-                      HomeSliverSectionHeader(
-                        title: context.tr(
-                          'home.ai_lab_title',
-                          fallback: 'AI Experiments',
-                        ),
-                        subtitle: context.tr(
-                          'home.ai_lab_subtitle',
-                          fallback: 'Explore new ways to learn',
-                        ),
-                        categoryColor: const Color(0xFFA855F7),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 8.h),
-                            const AiLabGrid(),
-                            SizedBox(height: 16.h),
-                          ],
+                      // ══════════════════════════════════════════════════
+                      // 5. PROGRESS CARD (Total levels + Rank)
+                      // ══════════════════════════════════════════════════
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 24.h),
+                              GlobalProgressCard(
+                                user: user,
+                                globalRank: _globalRank,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
 
-                      // 6. DISCOVERY HUB (Audio Deck)
+                      // ══════════════════════════════════════════════════
+                      // 6. EXPLORE & TOOLS (Horizontal strip)
+                      // ══════════════════════════════════════════════════
+                      HomeSliverSectionHeader(
+                        title: context.tr(
+                          'home.tools_title',
+                          fallback: 'Explore & Tools',
+                        ),
+                        subtitle: context.tr(
+                          'home.tools_subtitle',
+                          fallback: 'Quick access to learning tools',
+                        ),
+                        categoryColor: const Color(0xFF10B981),
+                      ),
+                      const SliverToBoxAdapter(child: ToolsStrip()),
+
+                      // ══════════════════════════════════════════════════
+                      // 7. DISCOVERY HUB (Quest Recommendations)
+                      // ══════════════════════════════════════════════════
                       HomeSliverSectionHeader(
                         title: context.tr(
                           'home.discovery_hub_title',
@@ -431,19 +311,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 7. FOOTER (Quote, Ads)
+                      // ══════════════════════════════════════════════════
+                      // 8. DAILY WISDOM + EARN
+                      // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
-                            SizedBox(height: 28.h),
+                            SizedBox(height: 32.h),
                             DailyMotivationCard(
                               streakCount: user.currentStreak,
                             ),
                             SizedBox(height: 24.h),
                             const AdRewardCard(margin: EdgeInsets.zero),
-                            SizedBox(height: 16.h),
-                            const KidsRewardAdCard(),
                             SizedBox(height: 80.h),
                           ]),
                         ),
