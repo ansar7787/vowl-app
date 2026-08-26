@@ -18,6 +18,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
 import 'package:vowl/features/home/presentation/widgets/command_pod.dart';
 import 'package:vowl/features/home/presentation/widgets/continue_learning_card.dart';
+import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
@@ -188,6 +189,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             mode: CommandPodMode.headerOnly,
                           ),
                         ),
+                      ),
+
+                      // ══════════════════════════════════════════════════
+                      // 1.5 INLINE NOTIFICATION (Conditional)
+                      // ══════════════════════════════════════════════════
+                      SliverToBoxAdapter(
+                        child: InlineNotificationCard(streak: user.currentStreak),
                       ),
 
                       // ══════════════════════════════════════════════════

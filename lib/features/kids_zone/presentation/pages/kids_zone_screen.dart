@@ -14,6 +14,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_magic_chest.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_watch_earn_card.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_global_progress_card.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_category_grid.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_smart_mix_widget.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_zone_home_header.dart';
@@ -133,6 +134,18 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   KidsZoneHomeHeader(
                     mascot: user.kidsMascot ?? 'owly',
                     isDark: isDark,
+                  ),
+
+                  SliverPadding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    sliver: SliverToBoxAdapter(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 16.h),
+                          KidsGlobalProgressCard(user: user),
+                        ],
+                      ),
+                    ),
                   ),
 
                   SliverPadding(

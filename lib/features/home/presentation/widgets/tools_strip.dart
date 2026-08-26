@@ -39,6 +39,22 @@ class ToolsStrip extends StatelessWidget {
         requiresAd: false,
       ),
       (
+        title: context.tr('home.tools_kids_zone', fallback: 'Kids Zone'),
+        subtitle: context.tr('home.tools_play', fallback: 'Play'),
+        icon: Icons.child_care_rounded,
+        color: const Color(0xFFF43F5E), // Rose color for kids
+        route: AppRouter.kidsZoneRoute,
+        requiresAd: false,
+      ),
+      (
+        title: context.tr('home.tools_vowl_mascot', fallback: 'Vowl Buddy'),
+        subtitle: context.tr('home.tools_pet', fallback: 'Pet'),
+        icon: Icons.pets_rounded,
+        color: const Color(0xFF8B5CF6), // Purple color for mascot
+        route: AppRouter.vowlMascotRoute,
+        requiresAd: false,
+      ),
+      (
         title: context.tr('home.tools_scan_learn', fallback: 'Scan & Learn'),
         subtitle: context.tr('home.tools_scan', fallback: 'Scanner'),
         icon: Icons.document_scanner_rounded,
