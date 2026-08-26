@@ -343,7 +343,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             DailyMotivationCard(
                               streakCount: user.currentStreak,
                             ),
-                            SizedBox(height: 80.h),
+                            SizedBox(height: 140.h),
                           ]),
                         ),
                       ),
