@@ -93,10 +93,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       duration: const Duration(milliseconds: 800),
     );
 
-    // 2. Path-draw animation when a level unlocks
+    // 2. Path-draw animation when a level unlocks (Real world standard: slow, deliberate 2s draw)
     _unlockPathController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 2000),
     );
 
     // 3. Current-node subtle glow pulse (like Kids map)
@@ -312,12 +312,21 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             }
             if (ModalRoute.of(context)?.isCurrent == true) {
               timer.cancel();
-              // Slight delay for dramatic effect after the screen transition finishes
-              Future.delayed(const Duration(milliseconds: 600), () {
+              
+              // 1. Wait a beat (400ms) for the screen pop transition to completely settle
+              Future.delayed(const Duration(milliseconds: 400), () {
                 if (mounted) {
-                  _scrollToCurrentLevel(animate: true); // Scroll exactly as the animation starts
-                  _unlockPathController.forward().then((_) {
-                    if (mounted) setState(() => _justUnlockedLevel = null);
+                  // 2. Scroll smoothly to the new node (takes 1200ms)
+                  _scrollToCurrentLevel(animate: true); 
+                  
+                  // 3. Wait for the scroll to completely finish before drawing the line
+                  Future.delayed(const Duration(milliseconds: 1200), () {
+                    if (mounted) {
+                      // 4. Draw the 2-second organic line
+                      _unlockPathController.forward().then((_) {
+                        if (mounted) setState(() => _justUnlockedLevel = null);
+                      });
+                    }
                   });
                 }
               });

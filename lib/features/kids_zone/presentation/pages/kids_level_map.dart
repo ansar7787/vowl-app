@@ -73,10 +73,10 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       duration: const Duration(milliseconds: 1200),
     );
 
-    // 2. Path-draw animation when a level unlocks
+    // 2. Path-draw animation when a level unlocks (Real world standard: slow, deliberate 2s draw)
     _unlockPathController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 2000),
     );
 
     // 3. Current-node glow pulse (loops forever)
@@ -104,12 +104,12 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     super.dispose();
   }
 
-  void _scrollToUnlockedLevel() {
+  void _scrollToUnlockedLevel({int delayMs = 1500, bool animate = true}) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
 
       // Delay slightly to ensure page transition is finished and allow user to see their completion
-      Future.delayed(const Duration(milliseconds: 1500), () {
+      Future.delayed(Duration(milliseconds: delayMs), () {
         if (!mounted) return;
 
         final user = context.read<AuthBloc>().state.user;
@@ -122,11 +122,15 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           final double centeredOffset = max(0, targetOffset - 300.h);
 
           if (targetOffset > 100) {
-            _scrollController.animateTo(
-              centeredOffset,
-              duration: 1200.milliseconds,
-              curve: Curves.easeInOutCubic,
-            );
+            if (animate) {
+              _scrollController.animateTo(
+                centeredOffset,
+                duration: 1200.milliseconds,
+                curve: Curves.easeInOutCubic,
+              );
+            } else {
+              _scrollController.jumpTo(centeredOffset);
+            }
           }
         }
       });
@@ -251,12 +255,21 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             }
             if (ModalRoute.of(context)?.isCurrent == true) {
               timer.cancel();
-              // Slight delay for dramatic effect after the screen transition finishes
-              Future.delayed(const Duration(milliseconds: 600), () {
+              
+              // 1. Wait a beat (400ms) for the screen pop transition to completely settle
+              Future.delayed(const Duration(milliseconds: 400), () {
                 if (mounted) {
-                  _scrollToUnlockedLevel(); // Scroll exactly as the animation starts
-                  _unlockPathController.forward().then((_) {
-                    if (mounted) setState(() => _isUnlockAnimating = false);
+                  // 2. Scroll smoothly to the new node (takes 1200ms)
+                  _scrollToUnlockedLevel(delayMs: 0, animate: true); 
+                  
+                  // 3. Wait for the scroll to completely finish before drawing the line
+                  Future.delayed(const Duration(milliseconds: 1200), () {
+                    if (mounted) {
+                      // 4. Draw the 2-second organic line
+                      _unlockPathController.forward().then((_) {
+                        if (mounted) setState(() => _isUnlockAnimating = false);
+                      });
+                    }
                   });
                 }
               });
