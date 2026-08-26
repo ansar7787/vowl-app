@@ -40,8 +40,13 @@ class ModernSegmentPathPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final double nodeX = currentPoint.dx;
     final double centerY = size.height / 2;
-    const double strokeW = 12.0;
-    final double lockedAlpha = isDark ? 0.08 : 0.05;
+    const double strokeW = 18.0;
+    
+    // Instead of a barely-visible 5% opacity, we use a solid structural grey
+    // to make the locked path look like a real, physical "unpaved road".
+    final Color lockedColor = isDark 
+        ? const Color(0xFF374151) 
+        : const Color(0xFFE5E7EB);
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {
@@ -63,7 +68,7 @@ class ModernSegmentPathPainter extends CustomPainter {
         Paint()
           ..color = isActive
               ? activeColor
-              : activeColor.withValues(alpha: lockedAlpha)
+              : lockedColor
           ..style = PaintingStyle.stroke
           ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.round,
@@ -74,7 +79,7 @@ class ModernSegmentPathPainter extends CustomPainter {
           headerPath,
           Paint()
             ..color = activeColor.withValues(alpha: 0.35)
-            ..strokeWidth = strokeW + 8.0
+            ..strokeWidth = strokeW + 12.0
             ..style = PaintingStyle.stroke
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
         );
@@ -116,7 +121,7 @@ class ModernSegmentPathPainter extends CustomPainter {
         Paint()
           ..color = isActive
               ? activeColor
-              : activeColor.withValues(alpha: lockedAlpha)
+              : lockedColor
           ..style = PaintingStyle.stroke
           ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.butt,
@@ -127,7 +132,7 @@ class ModernSegmentPathPainter extends CustomPainter {
           incomingPath,
           Paint()
             ..color = activeColor.withValues(alpha: 0.35)
-            ..strokeWidth = strokeW + 8.0
+            ..strokeWidth = strokeW + 12.0
             ..style = PaintingStyle.stroke
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
         );
@@ -167,18 +172,32 @@ class ModernSegmentPathPainter extends CustomPainter {
           canvas,
           outgoingPath,
           Paint()
-            ..color = Colors.amber
+            ..color = isActive
+                ? activeColor
+                : lockedColor
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 8.0
-            ..strokeCap = StrokeCap.round,
+            ..strokeWidth = strokeW
+            ..strokeCap = StrokeCap.butt,
         );
+
+        if (isActive) {
+          _drawDashedPath(
+            canvas,
+            outgoingPath,
+            Paint()
+              ..color = activeColor.withValues(alpha: 0.35)
+              ..strokeWidth = strokeW + 12.0
+              ..style = PaintingStyle.stroke
+              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
+          );
+        }
       } else {
         canvas.drawPath(
           outgoingPath,
           Paint()
             ..color = isActive
                 ? activeColor
-                : activeColor.withValues(alpha: lockedAlpha)
+                : lockedColor
             ..style = PaintingStyle.stroke
             ..strokeWidth = strokeW
             ..strokeCap = StrokeCap.butt,
@@ -189,7 +208,7 @@ class ModernSegmentPathPainter extends CustomPainter {
             outgoingPath,
             Paint()
               ..color = activeColor.withValues(alpha: 0.35)
-              ..strokeWidth = strokeW + 8.0
+              ..strokeWidth = strokeW + 12.0
               ..style = PaintingStyle.stroke
               ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
           );
@@ -213,8 +232,8 @@ class ModernSegmentPathPainter extends CustomPainter {
   }
 
   void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
-    const dashWidth = 14.0;
-    const dashSpace = 10.0;
+    const dashWidth = 24.0;
+    const dashSpace = 16.0;
     for (final metric in path.computeMetrics()) {
       double distance = 0.0;
       while (distance < metric.length) {
