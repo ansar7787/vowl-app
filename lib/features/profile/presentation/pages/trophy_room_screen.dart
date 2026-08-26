@@ -409,100 +409,86 @@ class _TrophyRoomView extends StatelessWidget {
     final colorPair = _getCategoryColors(badgeId, isLegendary);
 
     return ScaleButton(
-          key: ValueKey('${filter.name}_${badgeId}_$index'),
-          onTap: () => Haptics.vibrate(HapticsType.light),
-          child: GlassTile(
-            borderRadius: BorderRadius.circular(20.r),
-            padding: EdgeInsets.all(2.r),
-            borderColor: colorPair[0].withValues(alpha: 0.3),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18.r),
-                gradient: LinearGradient(
-                  colors: isLegendary
-                      ? [
-                          const Color(0xFF451A03).withValues(
-                            alpha: isDark ? 0.8 : 0.9,
-                          ), // Deep Amber Dark
-                          const Color(
-                            0xFF78350F,
-                          ).withValues(alpha: isDark ? 0.5 : 0.8), // Brown Gold
-                        ]
-                      : colorPair
-                            .map(
-                              (c) => c.withValues(alpha: isDark ? 0.15 : 0.4),
-                            )
-                            .toList(),
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                border: Border.all(
-                  color: isLegendary
-                      ? const Color(0xFFFFD700).withValues(alpha: 0.8)
-                      : colorPair[0].withValues(alpha: 0.5),
-                  width: isLegendary ? 2.5 : 1.5,
-                ),
-                boxShadow: isLegendary
-                    ? [
-                        BoxShadow(
-                          color: const Color(0xFFFFD700).withValues(alpha: 0.2),
-                          blurRadius: 15,
-                          spreadRadius: 2,
-                        ),
-                      ]
-                    : null,
-              ),
-              child: Stack(
-                children: [
-                  Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        bottom: 24.h,
-                      ), // Push up to leave room for text
-                      child: Text(
-                        isLegendary ? "👑" : _getCategoryEmoji(badgeId),
-                        style: TextStyle(
-                          fontSize: isLegendary ? 48.sp : 40.sp,
-                          shadows: const [
-                            Shadow(
-                              color: Colors.black45,
-                              blurRadius: 8,
-                              offset: Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        bottom: 12.h,
-                        left: 4.w,
-                        right: 4.w,
-                      ),
-                      child: _buildBadgeText(
-                        badgeId,
-                        isDark,
-                        isLocked: false,
-                        isLegendary: isLegendary,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+      key: ValueKey('${filter.name}_${badgeId}_$index'),
+      onTap: () => Haptics.vibrate(HapticsType.light),
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(20.r),
+        padding: EdgeInsets.all(2.r),
+        borderColor: colorPair[0].withValues(alpha: 0.3),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18.r),
+            gradient: LinearGradient(
+              colors: isLegendary
+                  ? [
+                      const Color(0xFF451A03).withValues(
+                        alpha: isDark ? 0.8 : 0.9,
+                      ), // Deep Amber Dark
+                      const Color(
+                        0xFF78350F,
+                      ).withValues(alpha: isDark ? 0.5 : 0.8), // Brown Gold
+                    ]
+                  : colorPair
+                        .map((c) => c.withValues(alpha: isDark ? 0.15 : 0.4))
+                        .toList(),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
+            border: Border.all(
+              color: isLegendary
+                  ? const Color(0xFFFFD700).withValues(alpha: 0.8)
+                  : colorPair[0].withValues(alpha: 0.5),
+              width: isLegendary ? 2.5 : 1.5,
+            ),
+            boxShadow: isLegendary
+                ? [
+                    BoxShadow(
+                      color: const Color(0xFFFFD700).withValues(alpha: 0.2),
+                      blurRadius: 15,
+                      spreadRadius: 2,
+                    ),
+                  ]
+                : null,
           ),
-        )
-        .animate()
-        .scale(
-          delay: (50 * (index % 6))
-              .ms, // Cap delay to avoid huge waits on large lists
-          duration: 400.ms,
-          curve: Curves.easeOutBack,
-        )
-        .fadeIn(delay: (50 * (index % 6)).ms);
+          child: Stack(
+            children: [
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    bottom: 24.h,
+                  ), // Push up to leave room for text
+                  child: Text(
+                    isLegendary ? "👑" : _getCategoryEmoji(badgeId),
+                    style: TextStyle(
+                      fontSize: isLegendary ? 48.sp : 40.sp,
+                      shadows: const [
+                        Shadow(
+                          color: Colors.black45,
+                          blurRadius: 8,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 12.h, left: 4.w, right: 4.w),
+                  child: _buildBadgeText(
+                    badgeId,
+                    isDark,
+                    isLocked: false,
+                    isLegendary: isLegendary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget _buildLockedSlot(
@@ -512,56 +498,45 @@ class _TrophyRoomView extends StatelessWidget {
     TrophyFilter filter,
   ) {
     return GlassTile(
-          key: ValueKey('${filter.name}_locked_$badgeId'),
-          borderRadius: BorderRadius.circular(20.r),
-          padding: EdgeInsets.all(2.r),
-          borderColor: Colors.white.withValues(alpha: 0.05),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18.r),
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.02)
-                  : Colors.black.withValues(alpha: 0.02),
-            ),
-            child: Stack(
-              children: [
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 24.h),
-                    child: Icon(
-                      Icons.lock_rounded,
-                      color: isDark ? Colors.white24 : Colors.black26,
-                      size: 36.r,
-                    ),
-                  ),
+      key: ValueKey('${filter.name}_locked_$badgeId'),
+      borderRadius: BorderRadius.circular(20.r),
+      padding: EdgeInsets.all(2.r),
+      borderColor: Colors.white.withValues(alpha: 0.05),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18.r),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.02)
+              : Colors.black.withValues(alpha: 0.02),
+        ),
+        child: Stack(
+          children: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 24.h),
+                child: Icon(
+                  Icons.lock_rounded,
+                  color: isDark ? Colors.white24 : Colors.black26,
+                  size: 36.r,
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      bottom: 12.h,
-                      left: 4.w,
-                      right: 4.w,
-                    ),
-                    child: _buildBadgeText(
-                      badgeId,
-                      isDark,
-                      isLocked: true,
-                      isLegendary: false,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-        )
-        .animate()
-        .scale(
-          delay: (50 * (index % 6)).ms,
-          duration: 400.ms,
-          curve: Curves.easeOutBack,
-        )
-        .fadeIn(delay: (50 * (index % 6)).ms);
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 12.h, left: 4.w, right: 4.w),
+                child: _buildBadgeText(
+                  badgeId,
+                  isDark,
+                  isLocked: true,
+                  isLegendary: false,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   List<Color> _getCategoryColors(String badgeId, bool isLegendary) {
