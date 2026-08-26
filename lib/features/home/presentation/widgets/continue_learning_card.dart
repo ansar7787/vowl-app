@@ -83,7 +83,7 @@ class ContinueLearningCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Container(
             width: double.infinity,
-            padding: EdgeInsets.all(20.r),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [color, color.withValues(alpha: 0.85)],
@@ -107,12 +107,12 @@ class ContinueLearningCard extends StatelessWidget {
                   children: [
                     // Category icon
                     Container(
-                      padding: EdgeInsets.all(12.r),
+                      padding: EdgeInsets.all(10.r),
                       decoration: BoxDecoration(
                         color: Colors.white.withValues(alpha: 0.2),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(icon, color: Colors.white, size: 24.r),
+                      child: Icon(icon, color: Colors.white, size: 20.r),
                     ),
                     // Category eyebrow
                     Container(
@@ -138,13 +138,13 @@ class ContinueLearningCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 12.h),
                 // Title given full horizontal width
                 Text(
                   title,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 28.sp,
+                    fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
                     letterSpacing: -0.5,
@@ -162,7 +162,7 @@ class ContinueLearningCard extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),
-                SizedBox(height: 24.h),
+                SizedBox(height: 16.h),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -266,7 +266,7 @@ class ContinueLearningCard extends StatelessWidget {
                     if (!isNewUser) SizedBox(width: 20.w),
                     // Floating Action Play Button
                     Container(
-                      padding: EdgeInsets.all(16.r),
+                      padding: EdgeInsets.all(12.r),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
@@ -282,7 +282,7 @@ class ContinueLearningCard extends StatelessWidget {
                         Icons.play_arrow_rounded,
                         color:
                             color, // The icon takes the dynamic category color
-                        size: 32.r,
+                        size: 28.r,
                       ),
                     ).animate().scale(
                       begin: const Offset(0.8, 0.8),
