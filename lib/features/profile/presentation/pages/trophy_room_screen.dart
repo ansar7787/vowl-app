@@ -142,33 +142,33 @@ class _TrophyRoomView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 2.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
-                    children: [
-                      Text(
-                        '$totalEarned',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 36.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
-                          height: 1.1,
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '$totalEarned',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 36.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark
+                                ? Colors.white
+                                : const Color(0xFF0F172A),
+                            height: 1.1,
+                          ),
                         ),
-                      ),
-                      Text(
-                        ' / ${state.totalPossibleBadges}',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white30 : Colors.black38,
-                          height: 1.1,
+                        TextSpan(
+                          text: ' / ${state.totalPossibleBadges}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark ? Colors.white30 : Colors.black38,
+                            height: 1.1,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   SizedBox(height: 12.h),
                   ClipRRect(
