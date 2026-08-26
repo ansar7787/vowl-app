@@ -83,7 +83,8 @@ class ContinueLearningCard extends StatelessWidget {
         child: ExcludeSemantics(
           child: Container(
             width: double.infinity,
-            padding: EdgeInsets.all(14.r),
+            padding: EdgeInsets.all(20.r),
+            clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [color, color.withValues(alpha: 0.85)],
@@ -245,8 +246,8 @@ class ContinueLearningCard extends StatelessWidget {
                                                 BoxShadow(
                                                   color: Colors.white
                                                       .withValues(alpha: 0.6),
-                                                  blurRadius: 12,
-                                                  spreadRadius: 2,
+                                                  blurRadius: 8,
+                                                  spreadRadius: 0,
                                                 ),
                                               ],
                                             ),
