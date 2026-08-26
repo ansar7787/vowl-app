@@ -13,7 +13,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_magic_chest.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_watch_earn_card.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_global_progress_card.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_category_grid.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_smart_mix_widget.dart';
@@ -206,18 +205,6 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   SliverToBoxAdapter(child: KidsSmartMixWidget(isDark: isDark)),
 
                   KidsCategoryGrid(isDark: isDark),
-
-                  SliverPadding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
-                      vertical: 32.h,
-                    ),
-                    sliver: SliverToBoxAdapter(
-                      child: KidsWatchEarnCard(
-                        showNotification: _showModernNotification,
-                      ),
-                    ),
-                  ),
 
                   SliverToBoxAdapter(child: SizedBox(height: 140.h)),
                 ],

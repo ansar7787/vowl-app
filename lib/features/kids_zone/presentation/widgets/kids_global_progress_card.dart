@@ -283,33 +283,25 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         ),
                         FractionallySizedBox(
                           widthFactor: progress.clamp(0.02, 1.0),
-                          child:
-                              Container(
-                                    height: 8.h,
-                                    decoration: BoxDecoration(
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFFF43F5E),
-                                          Color(0xFFE11D48),
-                                          Color(0xFFBE123C),
-                                        ],
-                                      ),
-                                      borderRadius: BorderRadius.circular(4.r),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: const Color(
-                                            0xFFE11D48,
-                                          ).withValues(alpha: 0.4),
-                                          blurRadius: 6,
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .shimmer(
-                                    duration: 2500.ms,
-                                    color: Colors.white24,
-                                  ),
+                          child: Container(
+                            height: 8.h,
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color(0xFFF43F5E),
+                                  Color(0xFFE11D48),
+                                  Color(0xFFBE123C),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(4.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0xFFE11D48).withValues(alpha: 0.4),
+                                  blurRadius: 6,
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),

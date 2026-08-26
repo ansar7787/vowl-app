@@ -236,24 +236,19 @@ class ContinueLearningCard extends StatelessWidget {
                       FractionallySizedBox(
                         widthFactor: progress.clamp(0.0, 1.0),
                         child: Container(
-                              height: 12.h,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(6.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.white.withValues(alpha: 0.5),
-                                    blurRadius: 10,
-                                    spreadRadius: 1,
-                                  ),
-                                ],
+                          height: 12.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.white.withValues(alpha: 0.5),
+                                blurRadius: 10,
+                                spreadRadius: 1,
                               ),
-                            )
-                            .animate(onPlay: (c) => c.repeat())
-                            .shimmer(
-                              duration: 2000.ms,
-                              color: Colors.white.withValues(alpha: 0.6),
-                            ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
