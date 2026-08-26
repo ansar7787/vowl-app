@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:confetti/confetti.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -61,6 +62,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   late AnimationController _glowController;
   int? _previousUnlockedLevel;
   bool _isUnlockAnimating = false;
+  int? _celebratingLevel;
+  late ConfettiController _confettiController;
 
   @override
   void initState() {
@@ -81,6 +84,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     }
 
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
+    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
 
     // 1. Staggered screen-entry animation (nodes cascade in)
     _entryController = AnimationController(
@@ -115,6 +119,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     _entryController.dispose();
     _unlockPathController.dispose();
     _glowController.dispose();
+    _confettiController.dispose();
     super.dispose();
   }
 
@@ -297,7 +302,15 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                     if (mounted) {
                       // 4. Draw the 2-second organic line
                       _unlockPathController.forward().then((_) {
-                        if (mounted) setState(() => _isUnlockAnimating = false);
+                        if (mounted) {
+                          _celebratingLevel = currLevel;
+                          _confettiController.play();
+                          setState(() => _isUnlockAnimating = false);
+                          
+                          Future.delayed(const Duration(seconds: 3), () {
+                            if (mounted) setState(() => _celebratingLevel = null);
+                          });
+                        }
                       });
                     }
                   });
@@ -1205,6 +1218,22 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       child: Stack(
         alignment: Alignment.center,
         children: [
+          if (_celebratingLevel == level)
+            ConfettiWidget(
+              confettiController: _confettiController,
+              blastDirectionality: BlastDirectionality.explosive,
+              shouldLoop: false,
+              emissionFrequency: 0.1,
+              numberOfParticles: 20,
+              gravity: 0.2,
+              colors: const [
+                Colors.green,
+                Colors.blue,
+                Colors.pink,
+                Colors.orange,
+                Colors.purple
+              ],
+            ),
           // 1. Clean Drop Shadow
           Container(
             width: 100.r,

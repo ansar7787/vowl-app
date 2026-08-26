@@ -109,7 +109,18 @@ class SegmentPathPainter extends CustomPainter {
       final pathMetrics = incomingPath.computeMetrics();
       for (final metric in pathMetrics) {
         final extractedPath = metric.extractPath(0, metric.length * incomingPathProgress);
+        
         canvas.drawPath(extractedPath, incomingPaint);
+        
+        final double glowValue = glowAnimation?.value ?? 0.0;
+        if (glowValue > 0.0 && incomingPathProgress == 1.0) {
+          final glowPaint = Paint()
+            ..color = Colors.white.withValues(alpha: 0.4 * glowValue)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 22.r - 8.r
+            ..strokeCap = StrokeCap.butt;
+          canvas.drawPath(extractedPath, glowPaint);
+        }
         
         if (incomingPathProgress > 0.0 && incomingPathProgress < 1.0 && isCurrent) {
           final tangent = metric.getTangentForOffset(metric.length * incomingPathProgress);
@@ -138,19 +149,6 @@ class SegmentPathPainter extends CustomPainter {
           0,
           metric.length * outgoingPathProgress,
         );
-
-        final double glowValue = glowAnimation?.value ?? 0.0;
-        
-        // If this is the "just-unlocked" path, draw a glow underneath
-        if (glowValue > 0.0) {
-          final glowPaint = Paint()
-            ..color = outgoingColor.withValues(alpha: 0.3 * glowValue)
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = (22.r + 14.r * glowValue)
-            ..strokeCap = StrokeCap.butt
-            ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r * glowValue);
-          canvas.drawPath(extractedPath, glowPaint);
-        }
 
         final outgoingPaint = Paint()
           ..color = outgoingColor
