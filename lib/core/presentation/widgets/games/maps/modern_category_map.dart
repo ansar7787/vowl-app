@@ -496,6 +496,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                   nextPoint: index < _totalLevels - 1
                                       ? Offset(points[index + 1].dx, rowSpacing)
                                       : null,
+                                  prevPrevX: index > 1
+                                      ? points[index - 2].dx
+                                      : null,
+                                  nextNextX: index < _totalLevels - 2
+                                      ? points[index + 2].dx
+                                      : null,
                                   activeColor: theme.primaryColor,
                                   isCompleted: isNodeCompleted,
                                   isPrevCompleted: isPrevNodeCompleted,
@@ -589,9 +595,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   double _getVerticalSpacing(GameCategory category) {
-    // A unified 190.h across all categories ensures the exact same
-    // premium "Diamond Standard" layout consistency everywhere.
-    return 190.h;
+    // Set to 170.h for the perfect balance between tight S-curves and node spacing.
+    return 170.h;
   }
 
   /// Cached wrapper around [_generatePoints]: recomputes only when
@@ -620,40 +625,37 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
     // ── Beautiful Premium S-Curve Path ──
     // 
-    // The user requested a beautiful, smooth S-curve that feels organic and 
-    // never repetitive.
+    // 1. PERFECT 4-NODE S-CURVE (freq = pi / 2):
+    //    We use exactly 4 nodes to form a full S-curve so it fits beautifully
+    //    on a single mobile screen.
     // 
-    // 1. SMOOTH WAVE (freq = pi / 3.5):
-    //    This creates a pure, unmistakable sweeping S-curve.
-    // 
-    // 2. VARIABLE AMPLITUDE & JITTER:
-    //    To prevent the curve from looking artificial and exactly identical
-    //    on every screen ("duplicate scrolling"), we use a seeded random
-    //    number generator to give each sweep a unique width and slight jitter,
-    //    while maintaining the perfect mathematical flow.
+    // 2. EQUAL LINE LENGTHS (Phase = 0):
+    //    By starting exactly at phase 0, the nodes follow a strict pattern:
+    //    Center -> Edge -> Center -> Edge. 
+    //    Because the horizontal jump is always exactly 50% of the screen width,
+    //    the distance between EVERY node is mathematically identical. No more 
+    //    "short" or "long" lines!
     
     final rng = math.Random(category.index * 7919 + 31);
-    const double freq = math.pi / 3.5; 
+    const double freq = math.pi / 2; 
     
     for (int i = 0; i < _totalLevels; i++) {
-      // Offset by category index to give each category a slightly different starting phase
-      final double phase = (category.index * math.pi / 2);
+      // Alternate phase between categories (0 or pi) so some maps start by 
+      // swinging Right, and others start by swinging Left, but they ALWAYS 
+      // start perfectly Centered.
+      final double phase = (category.index % 2 == 0) ? 0.0 : math.pi;
       
-      // Base pure sine wave
+      // Base pure sine wave (Center, Edge, Center, Edge)
       final double baseSine = math.sin((i * freq) + phase);
       
-      // Randomize the amplitude so some S-curves swing wide and some stay tighter
-      // (Random value between 0.60 and 1.0)
-      final double swingAmplitude = 0.60 + (rng.nextDouble() * 0.40);
+      // Smoothly vary the width of the S-curves (between 60% and 100% width)
+      final double slowAmplitude = 0.80 + math.sin(i * 0.15 + category.index * 3) * 0.20;
       
-      // A very subtle, slow secondary wave to add a premium organic drift
-      final double drift = math.sin(i * 0.12 + category.index) * 0.20;
+      // Add a slight per-node organic jitter (±2%) so it feels beautifully hand-placed
+      final double jitter = (rng.nextDouble() - 0.5) * 0.04;
       
-      // Add a slight per-node organic jitter (±4%) so it feels beautifully hand-placed
-      final double jitter = (rng.nextDouble() - 0.5) * 0.08;
-      
-      // Combine it all
-      final double combined = (baseSine * swingAmplitude + drift + jitter).clamp(-1.0, 1.0);
+      // Combine it all. (Removed drift because it would break the perfect line lengths)
+      final double combined = (baseSine * slowAmplitude + jitter).clamp(-1.0, 1.0);
 
       final offsetX = centerX + (combined * maxOffset);
       final y = (i * spacing) + (spacing / 2);

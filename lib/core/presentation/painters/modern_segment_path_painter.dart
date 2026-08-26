@@ -9,6 +9,8 @@ class ModernSegmentPathPainter extends CustomPainter {
   final Offset currentPoint;
   final Offset? nextPoint;
   final Offset? prevPoint;
+  final double? prevPrevX;
+  final double? nextNextX;
   final Color activeColor;
   final bool isCompleted;
   final bool isPrevCompleted;
@@ -22,6 +24,8 @@ class ModernSegmentPathPainter extends CustomPainter {
     required this.currentPoint,
     this.nextPoint,
     this.prevPoint,
+    this.prevPrevX,
+    this.nextNextX,
     required this.activeColor,
     required this.isCompleted,
     required this.isPrevCompleted,
@@ -46,16 +50,11 @@ class ModernSegmentPathPainter extends CustomPainter {
       final topCenter = Offset(size.width / 2, headerGap);
       canvas.drawCircle(topCenter, 8.0, Paint()..color = activeColor);
 
+      // The user requested a clean, straight diagonal line pulling from the header 
+      // rather than a boring curve.
       final headerPath = Path()
         ..moveTo(topCenter.dx, topCenter.dy)
-        ..cubicTo(
-          topCenter.dx,
-          centerY * 0.50,
-          nodeX,
-          centerY * 0.50,
-          nodeX,
-          centerY,
-        );
+        ..lineTo(nodeX, centerY);
 
       final isActive = isPrevCompleted;
 
@@ -82,11 +81,12 @@ class ModernSegmentPathPainter extends CustomPainter {
       }
     }
 
+
     // ── Incoming path from top boundary (y=0) to node center (y=centerY) ──
     //
     // Uses a mathematically continuous split Bezier curve with k=1.0 tension.
-    // This perfectly matches the beautiful 'S' curve of the header while
-    // maintaining zero kinks at the hand-off boundary.
+    // The user specifically requested that lines MUST enter and exit the node 
+    // perfectly vertically to feel "centered" (anter time and exit time).
     if (!isFirst && prevPoint != null) {
       final prevX = prevPoint!.dx;
       final midX = (prevX + nodeX) / 2;
@@ -95,9 +95,9 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..moveTo(midX, 0)
         ..cubicTo(
           0.25 * prevX + 0.75 * nodeX,       // cp1.x
-          centerY * 0.25,                    // cp1.y (was 0.33)
-          nodeX,                             // cp2.x
-          centerY * 0.50,                    // cp2.y (was 0.66)
+          centerY * 0.25,                    // cp1.y 
+          nodeX,                             // cp2.x (Forces perfectly vertical entry)
+          centerY * 0.50,                    // cp2.y 
           nodeX,
           centerY,
         );
@@ -129,8 +129,7 @@ class ModernSegmentPathPainter extends CustomPainter {
 
     // ── Outgoing path from node center (y=centerY) to bottom boundary (y=size.height) ──
     //
-    // The exact mirror of the incoming path, forming the top half (t=0.0 to t=0.5)
-    // of the continuous Bezier curve leading to the next node.
+    // The exact mirror of the incoming path, guaranteeing a perfectly vertical exit.
     if (!isLast && nextPoint != null) {
       final nextX = nextPoint!.dx;
       final midNextX = (nodeX + nextX) / 2;
@@ -139,10 +138,10 @@ class ModernSegmentPathPainter extends CustomPainter {
       final outgoingPath = Path()
         ..moveTo(nodeX, centerY)
         ..cubicTo(
-          nodeX,                             // cp1.x
-          centerY * 1.50,                    // cp1.y (was 1.33)
+          nodeX,                             // cp1.x (Forces perfectly vertical exit)
+          centerY * 1.50,                    // cp1.y 
           0.75 * nodeX + 0.25 * nextX,       // cp2.x
-          centerY * 1.75,                    // cp2.y (was 1.66)
+          centerY * 1.75,                    // cp2.y 
           midNextX,
           bottomY,
         );
