@@ -266,7 +266,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 onSeeAll: () =>
                                     context.push(AppRouter.libraryRoute),
                               ),
-                              SizedBox(height: 16.h),
                               BentoArena(user: user, collapsed: true),
                             ],
                           ),
