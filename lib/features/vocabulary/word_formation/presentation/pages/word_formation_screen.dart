@@ -15,7 +15,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/morph_injection_rail.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/reaction_core.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/instruction_panel.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
@@ -178,7 +177,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                     // Spacing calculations
                     final double estimatedContentHeight =
                         (isCompact ? 60.h : 80.h) +
-                        (isCompact ? 120.h : 180.h) +
+                        (isCompact ? 120.h : 140.h) +
                         (options.length * (isCompact ? 46.h : 72.h)) +
                         20.h;
                     final remainingHeight = maxHeight - estimatedContentHeight;
@@ -283,42 +282,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         ),
                         if (_controller.isFirstStagePassed && !_controller.isAnswered)
                           SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-                              child: Column(
-                                children: [
-                                  if (quest.familyTree != null && quest.familyTree!.isNotEmpty)
-                                    WordFormationFamilyTree(
-                                      familyTree: quest.familyTree!,
-                                      color: theme.primaryColor,
-                                    ),
-                                  if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
-                                    SizedBox(height: 16.h),
-                                    Container(
-                                      width: double.infinity,
-                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                                      decoration: BoxDecoration(
-                                        color: theme.primaryColor.withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(16.r),
-                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
-                                      ),
-                                      child: Text(
-                                        quest.explanation!,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 13.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
-                                          height: 1.4,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                  SizedBox(height: 160.h),
-                                ],
-                              ),
-                            ),
+                            child: SizedBox(height: 160.h),
                           ),
                       ],
                     ),

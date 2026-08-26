@@ -11,6 +11,7 @@ import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.d
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 
 class VocabularyBaseLayout extends StatelessWidget {
   final GameSubtype gameType;
@@ -144,6 +145,12 @@ class VocabularyBaseLayout extends StatelessWidget {
           finalExplanation = quest.explanation;
         } else if (gameType == GameSubtype.wordFormation) {
           ruleTitle = 'WORD BUILDING';
+          if (quest.familyTree != null && quest.familyTree!.isNotEmpty) {
+            customContent = WordFormationFamilyTree(
+              familyTree: quest.familyTree!,
+              color: isCorrect == true ? const Color(0xFF10B981) : theme.primaryColor,
+            );
+          }
         } else if (gameType == GameSubtype.prefixSuffix) {
           ruleTitle = 'WORD BREAKDOWN';
           if (quest.meaningBreakdown != null) {

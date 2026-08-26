@@ -14,12 +14,14 @@ class PrefixSuffixMissionControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
-      width: MediaQuery.of(context).size.width * 0.9,
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      width: double.infinity,
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(16.r),
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: primaryColor.withValues(alpha: 0.3),
           width: 1.5,
@@ -27,8 +29,7 @@ class PrefixSuffixMissionControl extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: primaryColor.withValues(alpha: 0.05),
-            blurRadius: 20,
-            spreadRadius: 2,
+            blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
@@ -39,41 +40,47 @@ class PrefixSuffixMissionControl extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.lightbulb_circle,
-                color: primaryColor,
-                size: 18.sp,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                'MISSION',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w900,
-                  color: primaryColor,
-                  letterSpacing: 2,
+              Icon(Icons.school_rounded, color: primaryColor, size: 14.r),
+              SizedBox(width: 6.w),
+              Flexible(
+                child: Text(
+                  "TARGET MEANING",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: primaryColor,
+                    letterSpacing: 2.0,
+                  ),
                 ),
               ),
             ],
           ),
           SizedBox(height: 12.h),
-          Text(
-            instruction,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w600,
-              color: Theme.of(context).brightness == Brightness.dark 
-                  ? Colors.white 
-                  : Colors.black87,
-              height: 1.4,
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              color: primaryColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(16.r),
             ),
-            textAlign: TextAlign.center,
+            child: Text(
+              instruction, // This variable holds the 'hint' content
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: isDark ? Colors.white.withValues(alpha: 0.95) : const Color(0xFF0F172A),
+                letterSpacing: 0.3,
+                height: 1.4,
+              ),
+            ),
           ),
         ],
       ),
     ).animate(onPlay: (c) => c.repeat(reverse: true))
-     .shimmer(duration: 3.seconds, color: primaryColor.withValues(alpha: 0.2));
+     .shimmer(duration: 3.seconds, color: primaryColor.withValues(alpha: 0.15));
   }
 }

@@ -25,7 +25,7 @@ class ReactionCore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 180.h,
+      height: 140.h,
       width: 1.sw,
       child: Stack(
         alignment: Alignment.center,
@@ -33,8 +33,8 @@ class ReactionCore extends StatelessWidget {
           // Energy Field Glow - RepaintBoundary for optimization
           RepaintBoundary(
             child: Container(
-              width: 200.r,
-              height: 200.r,
+              width: 150.r,
+              height: 150.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 boxShadow: [
@@ -57,8 +57,8 @@ class ReactionCore extends StatelessWidget {
           // Hexagonal Chamber
           RepaintBoundary(
             child: Container(
-              width: 240.w,
-              height: 140.h,
+              width: 260.w,
+              height: 100.h,
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.white.withValues(alpha: 0.05)
@@ -176,8 +176,8 @@ class ReactionCore extends StatelessWidget {
   Widget _buildEnergyOrbit(int index, Color color) {
     final duration = (2 + index).seconds;
     return Container(
-      width: (260 + (index * 20)).w,
-      height: (160 + (index * 20)).h,
+      width: (280 + (index * 20)).w,
+      height: (120 + (index * 20)).h,
       decoration: BoxDecoration(
         border: Border.all(color: color.withValues(alpha: 0.1), width: 1),
         borderRadius: BorderRadius.circular(100.r),

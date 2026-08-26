@@ -11,32 +11,74 @@ class InstructionPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final text =
-        quest?.hint ??
-        quest?.instruction ??
-        "Analyze the meaning and select the correct ending.";
+    final hint = quest?.hint;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
-      ),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        softWrap: true,
-        overflow: TextOverflow.visible,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w600,
-          color: color,
-          letterSpacing: 0.2,
-          height: 1.3,
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.3),
+          width: 1.5,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.school_rounded, color: color, size: 14.r),
+              SizedBox(width: 6.w),
+              Flexible(
+                child: Text(
+                  "TARGET MEANING",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: color,
+                    letterSpacing: 2.0,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          if (hint != null && hint.isNotEmpty) ...[
+            SizedBox(height: 12.h),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Text(
+                hint,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white.withValues(alpha: 0.95) : const Color(0xFF0F172A),
+                  letterSpacing: 0.3,
+                  height: 1.4,
+                ),
+              ),
+            ),
+          ],
+        ],
       ),
     );
   }

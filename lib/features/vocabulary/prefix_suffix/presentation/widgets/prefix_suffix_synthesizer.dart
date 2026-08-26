@@ -179,51 +179,59 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
                  .scale(begin: const Offset(1.0, 1.0), end: const Offset(1.05, 1.05), duration: 500.ms);
     }
 
-    return Draggable<String>(
-      data: affix,
-      dragAnchorStrategy: childDragAnchorStrategy,
-      onDragStarted: () {
-        HapticFeedback.selectionClick();
+    return GestureDetector(
+      onTap: () {
+        HapticFeedback.lightImpact();
+        // A prefix ends with a hyphen (e.g., "RE-"), a suffix starts with one (e.g., "-FUL")
+        final isPrefix = affix.endsWith('-');
+        widget.onAffixSelected(affix, isPrefix);
       },
-      onDragEnd: (details) {
-        // DragTarget automatically fires onLeave, so no need to clear local state manually.
-      },
-      feedback: Transform.scale(
-        scale: 1.05,
-        child: Material(
-          color: Colors.transparent,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-            decoration: BoxDecoration(
-              color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: widget.primaryColor, width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  blurRadius: 20,
-                  spreadRadius: 5,
-                  offset: const Offset(0, 10),
-                )
-              ],
-            ),
-            child: Text(
-              affix.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w800,
-                color: widget.isDark ? Colors.white : Colors.black87,
+      child: Draggable<String>(
+        data: affix,
+        dragAnchorStrategy: childDragAnchorStrategy,
+        onDragStarted: () {
+          HapticFeedback.selectionClick();
+        },
+        onDragEnd: (details) {
+          // DragTarget automatically fires onLeave, so no need to clear local state manually.
+        },
+        feedback: Transform.scale(
+          scale: 1.05,
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+              decoration: BoxDecoration(
+                color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: widget.primaryColor, width: 2),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.3),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                    offset: const Offset(0, 10),
+                  )
+                ],
+              ),
+              child: Text(
+                affix.toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w800,
+                  color: widget.isDark ? Colors.white : Colors.black87,
+                ),
               ),
             ),
           ),
         ),
-      ),
-      childWhenDragging: Opacity(
-        opacity: 0.2,
+        childWhenDragging: Opacity(
+          opacity: 0.2,
+          child: chip,
+        ),
         child: chip,
       ),
-      child: chip,
     );
   }
 
