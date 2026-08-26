@@ -88,6 +88,18 @@ class ModernSegmentPathPainter extends CustomPainter {
             ..style = PaintingStyle.stroke
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
         );
+        
+        if (glowAnimation != null) {
+          final glowValue = Curves.easeInOutSine.transform(glowAnimation!.value);
+          canvas.drawPath(
+            headerPath,
+            Paint()
+              ..color = Colors.white.withValues(alpha: 0.4 * glowValue)
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = strokeW - 8.0
+              ..strokeCap = StrokeCap.round,
+          );
+        }
       }
     }
 
@@ -149,6 +161,18 @@ class ModernSegmentPathPainter extends CustomPainter {
                 ..strokeWidth = strokeW
                 ..strokeCap = StrokeCap.round,
             );
+            
+            if (glowAnimation != null && incomingPathProgress == 1.0) {
+              final glowValue = Curves.easeInOutSine.transform(glowAnimation!.value);
+              canvas.drawPath(
+                extracted,
+                Paint()
+                  ..color = Colors.white.withValues(alpha: 0.4 * glowValue)
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = strokeW - 8.0
+                  ..strokeCap = StrokeCap.round,
+              );
+            }
           }
         }
     }

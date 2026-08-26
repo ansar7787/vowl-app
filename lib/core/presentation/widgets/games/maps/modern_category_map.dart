@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:confetti/confetti.dart';
 
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -54,6 +55,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   int _totalLevels = 10;
   bool _isLoading = true;
   int? _justUnlockedLevel;
+  int? _celebratingLevel;
+  late ConfettiController _confettiController;
 
   // ── Smooth Animation Controllers ──
   late AnimationController _entryController;
@@ -107,6 +110,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     }
 
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
+    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
 
     // 1. Unified fade-in entry animation (path + nodes together)
     _entryController = AnimationController(
@@ -272,6 +276,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     _entryController.dispose();
     _unlockPathController.dispose();
     _glowController.dispose();
+    _confettiController.dispose();
     super.dispose();
   }
 
@@ -361,7 +366,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                     if (mounted) {
                       // 4. Draw the 2-second organic line
                       _unlockPathController.forward().then((_) {
-                        if (mounted) setState(() => _justUnlockedLevel = null);
+                        if (mounted) {
+                          _celebratingLevel = _justUnlockedLevel;
+                          _confettiController.play();
+                          setState(() => _justUnlockedLevel = null);
+                          
+                          Future.delayed(const Duration(seconds: 3), () {
+                            if (mounted) setState(() => _celebratingLevel = null);
+                          });
+                        }
                       });
                     }
                   });
@@ -1113,6 +1126,22 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
+                    if (_celebratingLevel == level)
+                      ConfettiWidget(
+                        confettiController: _confettiController,
+                        blastDirectionality: BlastDirectionality.explosive,
+                        shouldLoop: false,
+                        emissionFrequency: 0.1,
+                        numberOfParticles: 20,
+                        gravity: 0.2,
+                        colors: const [
+                          Colors.green,
+                          Colors.blue,
+                          Colors.pink,
+                          Colors.orange,
+                          Colors.purple
+                        ],
+                      ),
                     _buildNodeCircle(
                       context,
                       level,
