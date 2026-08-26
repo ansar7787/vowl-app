@@ -526,14 +526,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                 child: child,
                               );
 
-                              // Unlock celebration: elastic scale bounce for the node
-                              if (isJustUnlocked) {
-                                final bounceValue = Curves.elasticOut.transform(
-                                  _unlockPathController.value.clamp(0.0, 1.0),
-                                );
-                                // Ensure node itself starts invisible and scales in, but the path drawn by CustomPaint remains visible
-                                // We apply the transform/opacity ONLY to the child node, not the CustomPaint result!
-                              }
+
 
                               return result;
                             },

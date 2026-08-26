@@ -11,19 +11,7 @@ class ModernSegmentPathPainter extends CustomPainter {
   final Offset? prevPoint;
   final double? prevPrevX;
   final double? nextNextX;
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-/// Per-segment path painter for the Modern Category Map.
-///
-/// Draws a thick, rich, 3D-shadowed path line with exact midpoint continuity math.
-/// Guarantees 100% seamless alignment between adjacent SliverList items.
-class ModernSegmentPathPainter extends CustomPainter {
-  final Offset currentPoint;
-  final Offset? nextPoint;
-  final Offset? prevPoint;
-  final double? prevPrevX;
-  final double? nextNextX;
   final Color activeColor;
   final bool isCompleted;
   final bool isPrevCompleted;
