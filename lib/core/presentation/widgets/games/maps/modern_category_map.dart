@@ -96,7 +96,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       final unlockedLevel = authState.user!.unlockedLevels[widget.gameType] ?? 1;
       final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
       final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
-      final targetLevel = (highestCompleted + 1).clamp(1, math.min(_totalLevels, unlockedLevel));
+      final targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevel));
       
       // Obtain GameCategory using a dummy isDark value (doesn't affect category mapping)
       final theme = LevelThemeHelper.getCategoryTheme(
@@ -245,7 +245,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
 
     // Always scroll to the node the user actually needs to interact with next
-    final int targetLevel = (highestCompleted + 1).clamp(1, math.min(_totalLevels, unlockedLevels));
+    final int targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevels));
 
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
