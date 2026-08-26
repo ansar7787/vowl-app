@@ -124,32 +124,72 @@ class _TrophyRoomView extends StatelessWidget {
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  context.tr('profile.total_earned', fallback: 'Total Earned'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isDark ? Colors.white54 : Colors.black54,
-                    letterSpacing: 1,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.tr(
+                      'profile.total_earned',
+                      fallback: 'Total Earned',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white54 : Colors.black54,
+                      letterSpacing: 1,
+                    ),
                   ),
-                ),
-                SizedBox(height: 4.h),
-                Text(
-                  '$totalEarned / ${state.totalPossibleBadges}',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 36.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    height: 1.1,
+                  SizedBox(height: 2.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        '$totalEarned',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 36.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                          height: 1.1,
+                        ),
+                      ),
+                      Text(
+                        ' / ${state.totalPossibleBadges}',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white30 : Colors.black38,
+                          height: 1.1,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  SizedBox(height: 12.h),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: LinearProgressIndicator(
+                      value: state.totalPossibleBadges > 0
+                          ? totalEarned / state.totalPossibleBadges
+                          : 0,
+                      minHeight: 8.h,
+                      backgroundColor: isDark
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.05),
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                        Color(0xFFFFD700),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
+            SizedBox(width: 24.w),
             Container(
               padding: EdgeInsets.all(16.r),
               decoration: BoxDecoration(
@@ -192,15 +232,7 @@ class _TrophyRoomView extends StatelessWidget {
           ),
           child: Row(
             children: [
-              _buildTab(
-                context,
-                title: context.tr('profile.filter_all', fallback: 'All'),
-                isSelected: state.currentFilter == TrophyFilter.all,
-                onTap: () => context.read<TrophyRoomCubit>().updateFilter(
-                  TrophyFilter.all,
-                ),
-                isDark: isDark,
-              ),
+              // 'All' tab removed for a cleaner 50/50 split design
               _buildTab(
                 context,
                 title: context.tr(

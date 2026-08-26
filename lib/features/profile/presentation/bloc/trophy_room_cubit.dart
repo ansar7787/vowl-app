@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum TrophyFilter { all, standard, legendary }
+enum TrophyFilter { standard, legendary }
 
 class TrophyRoomState {
   final List<String> allEarnedBadges;
@@ -20,9 +20,14 @@ class TrophyRoomState {
   factory TrophyRoomState.initial(List<String> earnedBadges) {
     return TrophyRoomState(
       allEarnedBadges: earnedBadges,
-      filteredEarnedBadges: earnedBadges,
-      filteredLockedBadges: _calculateLocked(earnedBadges, TrophyFilter.all),
-      currentFilter: TrophyFilter.all,
+      filteredEarnedBadges: earnedBadges
+          .where((b) => !TrophyRoomCubit.isLegendary(b))
+          .toList(),
+      filteredLockedBadges: _calculateLocked(
+        earnedBadges,
+        TrophyFilter.standard,
+      ),
+      currentFilter: TrophyFilter.standard,
       totalPossibleBadges: TrophyRoomCubit.allAppBadges.length,
     );
   }
@@ -53,10 +58,7 @@ class TrophyRoomState {
     if (filter == TrophyFilter.legendary) {
       return unearned.where((b) => TrophyRoomCubit.isLegendary(b)).toList();
     }
-    if (filter == TrophyFilter.standard) {
-      return unearned.where((b) => !TrophyRoomCubit.isLegendary(b)).toList();
-    }
-    return unearned;
+    return unearned.where((b) => !TrophyRoomCubit.isLegendary(b)).toList();
   }
 }
 
@@ -103,9 +105,6 @@ class TrophyRoomCubit extends Cubit<TrophyRoomState> {
         earnedFiltered = state.allEarnedBadges
             .where((b) => !isLegendary(b))
             .toList();
-        break;
-      case TrophyFilter.all:
-        earnedFiltered = List.from(state.allEarnedBadges);
         break;
     }
 
