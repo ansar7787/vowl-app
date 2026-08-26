@@ -7,6 +7,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/game_helper.dart';
+import 'package:collection/collection.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
@@ -32,13 +33,36 @@ class ContinueLearningCard extends StatelessWidget {
     QuestType.eliteMastery,
   ];
 
-  /// Implements a "Skill Balancing" algorithm. Instead of waiting for a user
-  /// to clear 2000 levels of Vocabulary, it automatically recommends the
-  /// category where they have the LOWEST progress, forcing a balanced,
-  /// well-rounded learning journey that changes dynamically every few levels.
+  /// Implements a "Hybrid" algorithm for the absolute best UX:
+  /// 1. "True Resume": First, checks `recentActivities` to find the exact
+  ///    category the user was just playing. If it's not finished, it recommends it.
+  /// 2. "Skill Balancing": If they have no recent activities, or they just 100%
+  ///    completed their last category, it falls back to recommending the category
+  ///    where they have the LOWEST progress, forcing a well-rounded skillset.
   QuestType _resolveNextCategory() {
     if (user.totalLevelsCompleted == 0) return QuestType.vocabulary;
 
+    // 1. "True Resume": Check what they were literally just doing.
+    for (final activity in user.recentActivities) {
+      if (activity['type'] == 'quest') {
+        final gameTypeStr = activity['gameType'] as String?;
+        if (gameTypeStr != null) {
+          final subtype = GameSubtype.values.firstWhereOrNull(
+            (s) => s.name == gameTypeStr,
+          );
+          if (subtype != null) {
+            final type = subtype.category;
+            final cleared = user.getTotalCategoryLevelsCleared(type);
+            final max = user.getMaxCategoryLevels(type);
+            if (max > 0 && cleared < max) {
+              return type; // Perfect match: Pick up exactly where they left off.
+            }
+          }
+        }
+      }
+    }
+
+    // 2. "Skill Balancing": Fallback to the lowest progress category.
     QuestType recommendedType = _journeyOrder.first;
     int lowestCleared = 999999;
 
