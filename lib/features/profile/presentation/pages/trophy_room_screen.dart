@@ -450,7 +450,12 @@ class _TrophyRoomView extends StatelessWidget {
                         left: 4.w,
                         right: 4.w,
                       ),
-                      child: _buildBadgeText(badgeId, isDark, isLocked: false),
+                      child: _buildBadgeText(
+                        badgeId,
+                        isDark,
+                        isLocked: false,
+                        isLegendary: isLegendary,
+                      ),
                     ),
                   ),
                 ],
@@ -506,7 +511,12 @@ class _TrophyRoomView extends StatelessWidget {
                       left: 4.w,
                       right: 4.w,
                     ),
-                    child: _buildBadgeText(badgeId, isDark, isLocked: true),
+                    child: _buildBadgeText(
+                      badgeId,
+                      isDark,
+                      isLocked: true,
+                      isLegendary: false,
+                    ),
                   ),
                 ),
               ],
@@ -580,11 +590,29 @@ class _TrophyRoomView extends StatelessWidget {
     String badgeId,
     bool isDark, {
     required bool isLocked,
+    required bool isLegendary,
   }) {
     final parts = badgeId.split('_');
     if (parts.length >= 2) {
       final tier = parts[0].toUpperCase();
       final category = parts.sublist(1).join(' ').toUpperCase();
+
+      final Color tierColor;
+      final Color categoryColor;
+
+      if (isLocked) {
+        tierColor = isDark ? Colors.white24 : Colors.black26;
+        categoryColor = isDark ? Colors.white30 : Colors.black38;
+      } else if (isLegendary) {
+        tierColor = const Color(
+          0xFFFFD700,
+        ).withValues(alpha: 0.8); // Glowing Gold
+        categoryColor = Colors.white; // Pure White on dark brown
+      } else {
+        tierColor = isDark ? Colors.white54 : Colors.black54;
+        categoryColor = isDark ? Colors.white : const Color(0xFF0F172A);
+      }
+
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -594,9 +622,7 @@ class _TrophyRoomView extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: isLocked ? 7.sp : 8.sp,
               fontWeight: FontWeight.w800,
-              color: isLocked
-                  ? (isDark ? Colors.white24 : Colors.black26)
-                  : (isDark ? Colors.white54 : Colors.black54),
+              color: tierColor,
               letterSpacing: 1,
             ),
           ),
@@ -607,10 +633,17 @@ class _TrophyRoomView extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: isLocked ? 9.sp : 11.sp,
               fontWeight: FontWeight.w900,
-              color: isLocked
-                  ? (isDark ? Colors.white30 : Colors.black38)
-                  : (isDark ? Colors.white : const Color(0xFF0F172A)),
+              color: categoryColor,
               height: 1.1,
+              shadows: isLegendary
+                  ? const [
+                      Shadow(
+                        color: Colors.black45,
+                        blurRadius: 2,
+                        offset: Offset(0, 1),
+                      ),
+                    ]
+                  : null,
             ),
             textAlign: TextAlign.center,
             maxLines: 2,
@@ -628,8 +661,19 @@ class _TrophyRoomView extends StatelessWidget {
           fontWeight: FontWeight.w900,
           color: isLocked
               ? (isDark ? Colors.white30 : Colors.black38)
-              : (isDark ? Colors.white : const Color(0xFF0F172A)),
+              : (isLegendary
+                    ? Colors.white
+                    : (isDark ? Colors.white : const Color(0xFF0F172A))),
           height: 1.1,
+          shadows: isLegendary
+              ? const [
+                  Shadow(
+                    color: Colors.black45,
+                    blurRadius: 2,
+                    offset: Offset(0, 1),
+                  ),
+                ]
+              : null,
         ),
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
