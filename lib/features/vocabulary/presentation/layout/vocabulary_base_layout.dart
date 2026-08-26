@@ -144,6 +144,12 @@ class VocabularyBaseLayout extends StatelessWidget {
           finalExplanation = quest.explanation;
         } else if (gameType == GameSubtype.wordFormation) {
           ruleTitle = 'WORD BUILDING';
+        } else if (gameType == GameSubtype.prefixSuffix) {
+          ruleTitle = 'WORD BREAKDOWN';
+          if (quest.meaningBreakdown != null) {
+            ruleContent = quest.meaningBreakdown;
+            finalExplanation = quest.explanation;
+          }
         }
 
         return GameFeedbackCard(

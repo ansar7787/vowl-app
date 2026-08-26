@@ -7,8 +7,6 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
   final String rootWord;
   final List<String> options;
   final String correctAnswer;
-  final String? explanation;
-  final String? meaningBreakdown;
   final String? selectedAffix;
   final String? hintedAffix;
   final bool isFirstStagePassed;
@@ -21,8 +19,6 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
     required this.rootWord,
     required this.options,
     required this.correctAnswer,
-    this.explanation,
-    this.meaningBreakdown,
     this.selectedAffix,
     this.hintedAffix,
     required this.isFirstStagePassed,
@@ -36,9 +32,7 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
 }
 
 class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
-  // Track hovered state for the drop zones
-  bool _isHoveringPrefix = false;
-  bool _isHoveringSuffix = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,47 +55,6 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
 
         // ── EXPLANATION OR ARSENAL DOCK ──
         if (widget.isFirstStagePassed) ...[
-          if (widget.explanation != null && widget.explanation!.isNotEmpty)
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 24.w),
-              padding: EdgeInsets.all(20.r),
-              decoration: BoxDecoration(
-                color: widget.primaryColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3)),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (widget.meaningBreakdown != null && widget.meaningBreakdown!.isNotEmpty) ...[
-                    Text(
-                      widget.meaningBreakdown!,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.primaryColor,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                    SizedBox(height: 8.h),
-                  ],
-                  Text(
-                    widget.explanation!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: widget.isDark ? Colors.white : Colors.black87,
-                      height: 1.4,
-                    ),
-                  ),
-                ],
-              ),
-            ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0, duration: 400.ms),
-          
           SizedBox(height: 120.h), // extra space for the typing overlay
         ] else ...[
           // Arsenal Dock (Draggable Chips)
@@ -138,132 +91,26 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildDropZone(isPrefixSlot: true),
+              _MagneticDropZone(
+                isPrefixSlot: true,
+                selectedAffix: widget.selectedAffix,
+                primaryColor: widget.primaryColor,
+                isDark: widget.isDark,
+                onAffixSelected: widget.onAffixSelected,
+              ),
               _buildRootBlock(),
-              _buildDropZone(isPrefixSlot: false),
+              _MagneticDropZone(
+                isPrefixSlot: false,
+                selectedAffix: widget.selectedAffix,
+                primaryColor: widget.primaryColor,
+                isDark: widget.isDark,
+                onAffixSelected: widget.onAffixSelected,
+              ),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Widget _buildDropZone({required bool isPrefixSlot}) {
-    // If an affix is selected and snapping into this side
-    if (widget.selectedAffix != null) {
-      final isSelectedPrefix = widget.selectedAffix!.endsWith('-');
-      if (isPrefixSlot == isSelectedPrefix) {
-        return Container(
-          padding: EdgeInsets.only(
-            left: isPrefixSlot ? 60.w : 6.w,
-            right: isPrefixSlot ? 6.w : 60.w,
-            top: 40.h,
-            bottom: 40.h,
-          ),
-          child: _buildSnappedAffix(widget.selectedAffix!),
-        );
-      }
-    }
-
-    final isHovering = isPrefixSlot ? _isHoveringPrefix : _isHoveringSuffix;
-    
-    return DragTarget<String>(
-      onWillAcceptWithDetails: (details) {
-        HapticFeedback.lightImpact();
-        setState(() {
-          if (isPrefixSlot) {
-            _isHoveringPrefix = true;
-          } else {
-            _isHoveringSuffix = true;
-          }
-        });
-        return true;
-      },
-      onLeave: (data) {
-        setState(() {
-          if (isPrefixSlot) {
-            _isHoveringPrefix = false;
-          } else {
-            _isHoveringSuffix = false;
-          }
-        });
-      },
-      onAcceptWithDetails: (details) {
-        setState(() {
-          _isHoveringPrefix = false;
-          _isHoveringSuffix = false;
-        });
-        widget.onAffixSelected(details.data, isPrefixSlot);
-      },
-      builder: (context, candidateData, rejectedData) {
-        return Container(
-          color: Colors.transparent, // Massive hit area for ultra-magnetic feel
-          padding: EdgeInsets.only(
-            left: isPrefixSlot ? 60.w : 6.w,
-            right: isPrefixSlot ? 6.w : 60.w,
-            top: 40.h,
-            bottom: 40.h,
-          ),
-          child: SizedBox(
-            width: 100.w,
-            height: 80.h,
-            child: Align(
-              alignment: isPrefixSlot ? Alignment.centerRight : Alignment.centerLeft,
-              child: AnimatedContainer(
-                duration: 200.ms,
-                width: isHovering ? 100.w : 80.w,
-                height: isHovering ? 80.h : 70.h,
-                decoration: BoxDecoration(
-                  color: isHovering 
-                      ? widget.primaryColor.withValues(alpha: 0.2)
-                      : (widget.isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03)),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: isHovering ? widget.primaryColor : widget.primaryColor.withValues(alpha: 0.3),
-                    width: isHovering ? 3 : 2,
-                    style: BorderStyle.solid,
-                  ),
-                  boxShadow: isHovering 
-                      ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.4), blurRadius: 16, spreadRadius: 4)]
-                      : null,
-                ),
-                alignment: Alignment.center,
-                child: isHovering
-                    ? Icon(Icons.bolt_rounded, color: widget.primaryColor, size: 36.r) // Lightning bolt implies magnetic snap
-                    : Icon(Icons.add, color: widget.primaryColor.withValues(alpha: 0.4), size: 28.r),
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildSnappedAffix(String affix) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-      decoration: BoxDecoration(
-        color: widget.primaryColor,
-        borderRadius: BorderRadius.circular(16.r),
-        boxShadow: [
-          BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.4),
-            blurRadius: 12,
-            spreadRadius: 2,
-          )
-        ],
-      ),
-      child: Text(
-        affix.toUpperCase(),
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 24.sp,
-          fontWeight: FontWeight.w900,
-          color: Colors.white,
-          letterSpacing: 2,
-        ),
-      ),
-    ).animate().scale(begin: const Offset(1.3, 1.3), end: const Offset(1.0, 1.0), duration: 250.ms, curve: Curves.easeOutBack);
   }
 
   Widget _buildRootBlock() {
@@ -339,10 +186,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
         HapticFeedback.selectionClick();
       },
       onDragEnd: (details) {
-        setState(() {
-          _isHoveringPrefix = false;
-          _isHoveringSuffix = false;
-        });
+        // DragTarget automatically fires onLeave, so no need to clear local state manually.
       },
       feedback: Transform.scale(
         scale: 1.05,
@@ -416,5 +260,145 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     )).animate()
      .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack, duration: 400.ms)
      .shimmer(color: Colors.white.withValues(alpha: 0.5), duration: 800.ms, delay: 200.ms);
+  }
+}
+
+class _MagneticDropZone extends StatefulWidget {
+  final bool isPrefixSlot;
+  final String? selectedAffix;
+  final Color primaryColor;
+  final bool isDark;
+  final Function(String, bool) onAffixSelected;
+
+  const _MagneticDropZone({
+    required this.isPrefixSlot,
+    required this.selectedAffix,
+    required this.primaryColor,
+    required this.isDark,
+    required this.onAffixSelected,
+  });
+
+  @override
+  State<_MagneticDropZone> createState() => _MagneticDropZoneState();
+}
+
+class _MagneticDropZoneState extends State<_MagneticDropZone> {
+  bool _isHovering = false;
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.selectedAffix != null) {
+      final isSelectedPrefix = widget.selectedAffix!.endsWith('-');
+      if (widget.isPrefixSlot == isSelectedPrefix) {
+        return Container(
+          padding: EdgeInsets.only(
+            left: widget.isPrefixSlot ? 16.w : 8.w,
+            right: widget.isPrefixSlot ? 8.w : 16.w,
+            top: 24.h,
+            bottom: 24.h,
+          ),
+          child: _buildSnappedAffix(widget.selectedAffix!),
+        );
+      }
+    }
+
+    return DragTarget<String>(
+      onWillAcceptWithDetails: (details) {
+        HapticFeedback.lightImpact();
+        setState(() => _isHovering = true);
+        return true;
+      },
+      onLeave: (data) {
+        setState(() => _isHovering = false);
+      },
+      onAcceptWithDetails: (details) {
+        setState(() => _isHovering = false);
+        widget.onAffixSelected(details.data, widget.isPrefixSlot);
+      },
+      builder: (context, candidateData, rejectedData) {
+        return Container(
+          color: Colors.transparent,
+          padding: EdgeInsets.only(
+            left: widget.isPrefixSlot ? 16.w : 8.w,
+            right: widget.isPrefixSlot ? 8.w : 16.w,
+            top: 24.h,
+            bottom: 24.h,
+          ),
+          child: SizedBox(
+            width: 130.w,
+            height: 85.h,
+            child: Align(
+              alignment: widget.isPrefixSlot ? Alignment.centerRight : Alignment.centerLeft,
+              child: AnimatedContainer(
+                duration: 200.ms,
+                width: _isHovering ? 130.w : 110.w,
+                height: _isHovering ? 75.h : 65.h,
+                decoration: BoxDecoration(
+                  color: _isHovering 
+                      ? widget.primaryColor.withValues(alpha: 0.2)
+                      : (widget.isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03)),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: _isHovering ? widget.primaryColor : (widget.isDark ? Colors.white38 : Colors.black26),
+                    width: _isHovering ? 3 : 2,
+                    style: BorderStyle.solid,
+                  ),
+                  boxShadow: _isHovering 
+                      ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.4), blurRadius: 16, spreadRadius: 4)]
+                      : null,
+                ),
+                alignment: Alignment.center,
+                child: _isHovering
+                    ? Icon(Icons.bolt_rounded, color: widget.primaryColor, size: 36.r)
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.add_rounded, color: widget.isDark ? Colors.white54 : Colors.black45, size: 24.r),
+                          SizedBox(height: 2.h),
+                          Text(
+                            widget.isPrefixSlot ? "PREFIX" : "SUFFIX",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              color: widget.isDark ? Colors.white54 : Colors.black45,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                        ],
+                      ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildSnappedAffix(String affix) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+      decoration: BoxDecoration(
+        color: widget.primaryColor,
+        borderRadius: BorderRadius.circular(16.r),
+        boxShadow: [
+          BoxShadow(
+            color: widget.primaryColor.withValues(alpha: 0.4),
+            blurRadius: 12,
+            spreadRadius: 2,
+          )
+        ],
+      ),
+      child: Text(
+        affix.toUpperCase(),
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 24.sp,
+          fontWeight: FontWeight.w900,
+          color: Colors.white,
+          letterSpacing: 2,
+        ),
+      ),
+    ).animate().scale(begin: const Offset(1.3, 1.3), end: const Offset(1.0, 1.0), duration: 250.ms, curve: Curves.easeOutBack);
   }
 }

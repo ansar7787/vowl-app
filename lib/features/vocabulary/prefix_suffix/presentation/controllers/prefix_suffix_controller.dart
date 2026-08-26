@@ -63,7 +63,7 @@ class PrefixSuffixController extends ChangeNotifier {
 
 
   void onAffixSelected(String option, VocabularyQuest quest, bool droppedAsPrefix) {
-    if (isAnswered || isFirstStagePassed) return;
+    if (isAnswered || isFirstStagePassed || selectedAffix != null) return;
     
     // Check if they dropped a prefix in a suffix slot or vice versa
     bool isOptionPrefix = option.endsWith('-');
@@ -94,24 +94,36 @@ class PrefixSuffixController extends ChangeNotifier {
     _submitAffix(option, quest);
   }
 
-  /// DRY Helper: Consistently evaluates if an affix matches the target word.
-  bool _isAffixMatch(String option, String correctWord) {
+  bool _isAffixMatch(String option, String correctWord, String rootWord) {
     final cleanOption = option.replaceAll('-', '').trim().toLowerCase();
+    correctWord = correctWord.toLowerCase();
+    rootWord = rootWord.toLowerCase();
+
+    String remainder = "";
     
     if (option.endsWith('-')) {
-      // Prefix (e.g., UN-)
-      return correctWord.startsWith(cleanOption);
+      if (!correctWord.startsWith(cleanOption)) return false;
+      remainder = correctWord.substring(cleanOption.length);
     } else if (option.startsWith('-')) {
-      // Suffix (e.g., -NESS)
-      return correctWord.endsWith(cleanOption);
+      if (!correctWord.endsWith(cleanOption)) return false;
+      remainder = correctWord.substring(0, correctWord.length - cleanOption.length);
+    } else {
+      return correctWord.contains(cleanOption);
     }
     
-    return correctWord.contains(cleanOption);
+    // The remainder of the word must be heavily related to the root word.
+    // If we just check "startsWith", a prefix like UN- will incorrectly match UNDERGROUND.
+    if (remainder.contains(rootWord) || rootWord.contains(remainder)) {
+      return true;
+    }
+    
+    return false;
   }
 
   void _submitAffix(String option, VocabularyQuest quest) {
     final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
-    final isCorrectAns = _isAffixMatch(option, correctWord);
+    final rootWord = quest.rootWord?.toLowerCase() ?? "";
+    final isCorrectAns = _isAffixMatch(option, correctWord, rootWord);
 
     if (isCorrectAns) {
       _soundService.playCorrect();
@@ -170,10 +182,12 @@ class PrefixSuffixController extends ChangeNotifier {
       return;
     }
 
+    final rootWord = quest?.rootWord?.toLowerCase() ?? "";
+
     // Find the correct option using the DRY helper
     for (int i = 0; i < options.length; i++) {
       final option = options[i];
-      if (_isAffixMatch(option, correctWord)) {
+      if (_isAffixMatch(option, correctWord, rootWord)) {
         hintedAffix = option;
         notifyListeners();
         
