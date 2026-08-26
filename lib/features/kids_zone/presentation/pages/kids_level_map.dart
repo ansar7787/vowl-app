@@ -115,10 +115,16 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
           final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+          final completedLevels = user.completedLevels[widget.gameType] ?? [];
+          final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+          
+          // Always scroll to the node the user actually needs to interact with next
+          final targetLevel = (highestCompleted + 1).clamp(1, unlockedLevel);
+
           // Store for unlock-animation delta detection
           _previousUnlockedLevel ??= unlockedLevel;
 
-          final double targetOffset = (unlockedLevel - 1) * 200.h;
+          final double targetOffset = (targetLevel - 1) * 200.h;
           final double centeredOffset = max(0, targetOffset - 300.h);
 
           if (targetOffset > 100) {
@@ -242,6 +248,14 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         _previousUnlockedLevel = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
+          // If multiple levels were unlocked at once (e.g., Tollgate Magic Lock),
+          // skip the slow path-draw animation since the bottom sheet already celebrated it.
+          if (currLevel - prevLevel > 1) {
+            _unlockPathController.value = 1.0;
+            _scrollToUnlockedLevel(delayMs: 400, animate: true);
+            return;
+          }
+
           setState(() {
             _isUnlockAnimating = true;
           });

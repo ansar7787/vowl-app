@@ -219,6 +219,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final authState = context.read<AuthBloc>().state;
     final int unlockedLevels =
         authState.user?.unlockedLevels[widget.gameType] ?? 1;
+    final List<int> completedLevels =
+        authState.user?.completedLevels[widget.gameType] ?? [];
+    final int highestCompleted =
+        completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+
+    // Always scroll to the node the user actually needs to interact with next
+    final int targetLevel = (highestCompleted + 1).clamp(1, unlockedLevels);
 
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
@@ -226,7 +233,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
     final double rowSpacing = _getVerticalSpacing(theme.category);
 
-    final double targetOffset = (unlockedLevels - 1) * rowSpacing;
+    final double targetOffset = (targetLevel - 1) * rowSpacing;
     // Uses the exact math from the Kids Map: ignoring header heights pushes the
     // node perfectly into the comfortable lower-middle of the screen.
     final double targetY = math.max(0.0, targetOffset - 300.h);
@@ -299,6 +306,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         _previousUnlockedLevel = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
+          // If multiple levels were unlocked at once (e.g., Tollgate Magic Lock),
+          // skip the slow path-draw animation since the bottom sheet already celebrated it.
+          if (currLevel - prevLevel > 1) {
+            _unlockPathController.value = 1.0;
+            Future.delayed(const Duration(milliseconds: 400), () {
+              if (mounted) _scrollToCurrentLevel(animate: true);
+            });
+            return;
+          }
+
           setState(() {
             _justUnlockedLevel = currLevel;
           });
