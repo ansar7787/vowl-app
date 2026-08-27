@@ -115,10 +115,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       duration: const Duration(milliseconds: 800),
     );
 
-    // 2. Path-draw animation when a level unlocks (Peaceful and organic 2s draw)
+    // 2. Path-draw animation when a level unlocks (Peaceful and organic)
     _unlockPathController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 1500),
     );
 
     // 3. Current-node subtle glow pulse (like Kids map)
@@ -279,14 +279,22 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   Future<void> _playUnlockSequence(BuildContext context) async {
     // 1. Wait until the user has fully returned to the map screen
     while (mounted && context.mounted && ModalRoute.of(context)?.isCurrent != true) {
-      await Future.delayed(const Duration(milliseconds: 100));
+      await Future.delayed(const Duration(milliseconds: 200));
     }
     if (!mounted) return;
 
-    // 2. Trigger the smooth scroll to the new node
+    // 2. Wait a tiny beat for the screen pop route transition to finish completely
+    await Future.delayed(const Duration(milliseconds: 100));
+    if (!mounted) return;
+
+    // 3. Trigger the smooth scroll to the new node
     _scrollToCurrentLevel(animate: true);
 
-    // 3. Play the smooth, organic 2-second path draw animation
+    // 4. Wait a tiny fraction of a second for the scroll to gain momentum
+    await Future.delayed(const Duration(milliseconds: 50));
+    if (!mounted) return;
+
+    // 5. Play the smooth, organic path draw animation
     await _unlockPathController.forward();
     if (!mounted) return;
 
