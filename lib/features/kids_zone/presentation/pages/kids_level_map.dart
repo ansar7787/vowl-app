@@ -122,6 +122,49 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     super.dispose();
   }
 
+  /// True AAA Standard: A completely linear, async/await timeline orchestrated top-to-bottom.
+  Future<void> _playUnlockSequence(BuildContext context, int currLevel) async {
+    // 1. Wait until the user has fully returned to the map screen
+    while (mounted && context.mounted && ModalRoute.of(context)?.isCurrent != true) {
+      await Future.delayed(const Duration(milliseconds: 200));
+    }
+    if (!mounted) return;
+
+    // 2. Wait a tiny beat for the screen pop route transition to finish completely
+    await Future.delayed(const Duration(milliseconds: 100));
+    if (!mounted) return;
+
+    // 3. Trigger the smooth scroll to the new node
+    _scrollToUnlockedLevel(delayMs: 0, animate: true);
+
+    // 4. Wait a tiny fraction of a second for the scroll to gain momentum
+    await Future.delayed(const Duration(milliseconds: 50));
+    if (!mounted) return;
+
+    // 5. Play the smooth, fast organic path draw animation
+    await _unlockPathController.forward();
+    if (!mounted) return;
+
+    // 6. Complete the node unlock pop
+    setState(() {
+      _celebratingLevel = currLevel;
+      _isUnlockAnimating = false;
+    });
+
+    // 7. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _confettiController.play();
+    });
+
+    // 8. Wait 3 seconds, then cleanup celebration memory
+    await Future.delayed(const Duration(seconds: 3));
+    if (mounted) {
+      setState(() {
+        _celebratingLevel = null;
+      });
+    }
+  }
+
   void _scrollToUnlockedLevel({int delayMs = 1500, bool animate = true}) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
@@ -281,50 +324,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           });
           _unlockPathController.reset();
 
-          // Wait until the user returns to the map before playing the animation
-          Timer.periodic(const Duration(milliseconds: 200), (timer) {
-            if (!mounted) {
-              timer.cancel();
-              return;
-            }
-            if (ModalRoute.of(context)?.isCurrent == true) {
-              timer.cancel();
-              
-              // 1. Wait a tiny beat for the screen pop transition
-              Future.delayed(const Duration(milliseconds: 100), () {
-                if (mounted) {
-                  // 2. Scroll smoothly to the new node
-                  _scrollToUnlockedLevel(delayMs: 0, animate: true); 
-                  
-                  // 3. Start drawing the line immediately with scroll
-                  Future.delayed(const Duration(milliseconds: 50), () {
-                    if (mounted) {
-                      // 4. Draw the smooth organic line
-                      _unlockPathController.forward().then((_) {
-                        if (mounted) {
-                          setState(() {
-                            _celebratingLevel = currLevel;
-                            _isUnlockAnimating = false;
-                          });
-                          
-                          // Wait a tiny bit for the ConfettiWidget to be inserted into the tree before playing
-                          Future.delayed(const Duration(milliseconds: 50), () {
-                            if (mounted) {
-                              _confettiController.play();
-                            }
-                          });
-                          
-                          Future.delayed(const Duration(seconds: 3), () {
-                            if (mounted) setState(() => _celebratingLevel = null);
-                          });
-                        }
-                      });
-                    }
-                  });
-                }
-              });
-            }
-          });
+          // Orchestrate the full unlock animation sequence via a pristine async state machine
+          _playUnlockSequence(context, currLevel);
         } else {
           // Wait until the user returns to the map before scrolling so they can watch it happen
           Timer.periodic(const Duration(milliseconds: 200), (timer) {
@@ -657,11 +658,14 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
           final currActive = math.min(200, highest + 1);
           
-          final double rawValue = Curves.easeInOutCubic.transform(_unlockPathController.value);
+          // easeOutSine starts instantly (no starting delay) and flows smoothly, slowing down gracefully at the end
+          final double rawValue = Curves.easeOutSine.transform(_unlockPathController.value);
           
           if (level == currActive) {
+            // Draws the second half of the path (from the midpoint to the new node)
             incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
           } else if (level == currActive - 1) {
+            // Draws the first half of the path (from the previous node to the midpoint)
             outgoingProgress = (rawValue * 2).clamp(0.0, 1.0);
           }
         }
@@ -727,12 +731,13 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
                       final currActive = math.min(200, highest + 1);
                       if (level == currActive) {
-                        // The node only pops in during the last 30% of the animation (after the line reaches it)
-                        final double popProgress = ((_unlockPathController.value - 0.7) * (1.0 / 0.3)).clamp(0.0, 1.0);
-                        final bounceValue = Curves.elasticOut.transform(popProgress);
+                        final double rawValue = Curves.easeOutSine.transform(_unlockPathController.value);
+                        // The path mathematically touches the node's edge at rawValue = 0.74
+                        final double popProgress = ((rawValue - 0.74) * (1.0 / 0.26)).clamp(0.0, 1.0);
+                        final double pulseScale = math.sin(popProgress * math.pi); // 0.0 -> 1.0 -> 0.0
                         
                         return Transform.scale(
-                          scale: 0.5 + 0.5 * bounceValue, // Node starts small (50%) and fully visible, then pops to 100%
+                          scale: 1.0 + 0.3 * pulseScale, // Node stays 100%, swells to 130%, and settles back to 100%
                           child: node,
                         );
                       }
@@ -1221,7 +1226,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       child: Stack(
         alignment: Alignment.center,
         children: [
-          if (_celebratingLevel == level)
+          if (isCurrent || _celebratingLevel == level)
             Builder(
               builder: (context) {
                 final isMilestone = level == 10 || level == 50 || level == 100 || level == 200;
