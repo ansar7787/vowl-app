@@ -508,26 +508,25 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: _remainingClaims <= 0
-                            ? [Colors.grey.shade400, Colors.grey.shade500]
+                            ? const [Color(0xFF94A3B8), Color(0xFF64748B)] // Premium Slate grey
                             : const [Color(0xFF0EA5E9), Color(0xFF0284C7)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.3),
+                        color: Colors.white.withValues(alpha: _remainingClaims <= 0 ? 0.15 : 0.3),
                         width: 1.w,
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: (_remainingClaims <= 0 
-                                  ? Colors.grey.shade500 
-                                  : const Color(0xFF0EA5E9))
-                              .withValues(alpha: 0.4),
-                          offset: Offset(0, 4.h),
-                          blurRadius: 8.r,
-                        ),
-                      ],
+                      boxShadow: _remainingClaims <= 0
+                          ? [] // No glowing shadow for inactive buttons
+                          : [
+                              BoxShadow(
+                                color: const Color(0xFF0EA5E9).withValues(alpha: 0.4),
+                                offset: Offset(0, 4.h),
+                                blurRadius: 8.r,
+                              ),
+                            ],
                     ),
                     alignment: Alignment.center,
                     child: Row(
@@ -541,7 +540,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                   : isPremium
                                       ? Icons.redeem_rounded
                                       : Icons.play_circle_fill_rounded,
-                          color: Colors.white,
+                          color: Colors.white.withValues(alpha: _remainingClaims <= 0 ? 0.8 : 1.0),
                           size: 20.r,
                         ),
                         SizedBox(width: 8.w),
@@ -549,7 +548,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                           _isLoadingLimits
                               ? context.tr('store.loading_ad', fallback: 'Loading...')
                               : _remainingClaims <= 0
-                                  ? context.tr('store.daily_limit_reached', fallback: "Daily Limit Reached")
+                                  ? context.tr('store.out_of_ads_today', fallback: "Out of Ads Today") // Better UX copy
                                   : isPremium
                                       ? context.tr(
                                           'store.claim_free_key',
@@ -563,7 +562,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w800,
-                            color: Colors.white,
+                            color: Colors.white.withValues(alpha: _remainingClaims <= 0 ? 0.8 : 1.0),
                             letterSpacing: 0.5,
                           ),
                         ),
