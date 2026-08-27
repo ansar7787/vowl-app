@@ -62,7 +62,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   late AnimationController _entryController;
   late AnimationController _unlockPathController;
   late AnimationController _glowController;
-  int? _previousUnlockedLevel;
+  int? _previousActiveNode;
 
   // PERF: point geometry only actually depends on `_totalLevels` and the
   // (constant for this widget's lifetime) category — not on every build
@@ -93,10 +93,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     double initialOffset = 0.0;
     final authState = context.read<AuthBloc>().state;
     if (authState.user != null) {
-      final unlockedLevel = authState.user!.unlockedLevels[widget.gameType] ?? 1;
       final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
       final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
-      final targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevel));
+      final targetLevel = math.min(200, highestCompleted + 1);
       
       // Obtain GameCategory using a dummy isDark value (doesn't affect category mapping)
       final theme = LevelThemeHelper.getCategoryTheme(
@@ -106,7 +105,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       final double rowSpacing = _getVerticalSpacing(theme.category);
       final targetOffset = (targetLevel - 1) * rowSpacing;
       initialOffset = math.max(0.0, targetOffset - 300.h);
-      _previousUnlockedLevel = unlockedLevel;
+      _previousActiveNode = targetLevel;
     }
 
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
@@ -118,7 +117,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       duration: const Duration(milliseconds: 800),
     );
 
-    // 2. Path-draw animation when a level unlocks (Real world standard: slow, deliberate 2s draw)
+    // 2. Path-draw animation when a level unlocks (Peaceful and organic 2s draw)
     _unlockPathController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 2000),
@@ -237,15 +236,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     if (!_scrollController.hasClients) return;
 
     final authState = context.read<AuthBloc>().state;
-    final int unlockedLevels =
-        authState.user?.unlockedLevels[widget.gameType] ?? 1;
     final List<int> completedLevels =
         authState.user?.completedLevels[widget.gameType] ?? [];
     final int highestCompleted =
         completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
 
     // Always scroll to the node the user actually needs to interact with next
-    final int targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevels));
+    final int targetLevel = math.min(200, highestCompleted + 1);
 
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
@@ -261,7 +258,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     if (animate) {
       _scrollController.animateTo(
         targetY,
-        duration: 1200.milliseconds,
+        duration: 800.milliseconds,
         curve: Curves.easeInOutCubic,
       );
     } else {
@@ -313,8 +310,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final List<Offset> points = _generatePointsCached(theme.category);
     final double rowSpacing = _getVerticalSpacing(theme.category);
 
-    // Store initial unlocked level for delta detection
-    _previousUnlockedLevel ??= unlockedLevels;
+    // Store initial active node for delta detection
+    _previousActiveNode ??= math.min(200, completedLevels + 1);
 
     return BlocListener<AuthBloc, AuthState>(
       listenWhen: (prev, curr) {
@@ -326,9 +323,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       },
       listener: (context, state) {
         // Trigger smooth unlock-path-draw animation
-        final prevLevel = _previousUnlockedLevel;
-        final currLevel = state.user?.unlockedLevels[widget.gameType] ?? 1;
-        _previousUnlockedLevel = currLevel;
+        final prevLevel = _previousActiveNode;
+        final completed = state.user?.completedLevels[widget.gameType] ?? [];
+        final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
+        final currLevel = math.min(200, highest + 1);
+        _previousActiveNode = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
           // If multiple levels were unlocked at once (e.g., Tollgate Magic Lock),
@@ -355,21 +354,26 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             if (ModalRoute.of(context)?.isCurrent == true) {
               timer.cancel();
               
-              // 1. Wait a beat (400ms) for the screen pop transition to completely settle
-              Future.delayed(const Duration(milliseconds: 400), () {
+              // 1. Wait a tiny beat for the screen pop transition
+              Future.delayed(const Duration(milliseconds: 100), () {
                 if (mounted) {
-                  // 2. Scroll smoothly to the new node (takes 1200ms)
+                  // 2. Scroll smoothly to the new node
                   _scrollToCurrentLevel(animate: true); 
                   
-                  // 3. Wait for the scroll to completely finish before drawing the line
-                  Future.delayed(const Duration(milliseconds: 1200), () {
+                  // 3. Start drawing the line immediately with scroll
+                  Future.delayed(const Duration(milliseconds: 50), () {
                     if (mounted) {
-                      // 4. Draw the 2-second organic line
+                      // 4. Draw the smooth organic line
                       _unlockPathController.forward().then((_) {
                         if (mounted) {
-                          _celebratingLevel = _justUnlockedLevel;
-                          _confettiController.play();
-                          setState(() => _justUnlockedLevel = null);
+                          setState(() {
+                            _celebratingLevel = _justUnlockedLevel;
+                            _justUnlockedLevel = null;
+                          });
+                          
+                          Future.delayed(const Duration(milliseconds: 50), () {
+                            if (mounted) _confettiController.play();
+                          });
                           
                           Future.delayed(const Duration(seconds: 3), () {
                             if (mounted) setState(() => _celebratingLevel = null);
@@ -587,12 +591,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                 final double popScale = Curves.elasticOut.transform(popProgress);
                                 
                                 nodeWidget = Transform.scale(
-                                  scale: 0.5 + 0.5 * popScale,
-                                  child: Opacity(
-                                    // Snaps to full opacity in the first 20% of the pop (0.12s) so the user actually sees the physical bounce
-                                    opacity: (popProgress * 5).clamp(0.0, 1.0),
-                                    child: nodeWidget,
-                                  ),
+                                  scale: 0.5 + 0.5 * popScale, // Node starts small (50%) and fully visible, then pops to 100%
+                                  child: nodeWidget,
                                 );
                               }
 
@@ -1127,20 +1127,26 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                   alignment: Alignment.center,
                   children: [
                     if (_celebratingLevel == level)
-                      ConfettiWidget(
-                        confettiController: _confettiController,
-                        blastDirectionality: BlastDirectionality.explosive,
-                        shouldLoop: false,
-                        emissionFrequency: 0.1,
-                        numberOfParticles: 20,
-                        gravity: 0.2,
-                        colors: const [
-                          Colors.green,
-                          Colors.blue,
-                          Colors.pink,
-                          Colors.orange,
-                          Colors.purple
-                        ],
+                      Builder(
+                        builder: (context) {
+                          final isMilestone = level == 10 || level == 50 || level == 100 || level == 200;
+                          return ConfettiWidget(
+                            confettiController: _confettiController,
+                            blastDirectionality: BlastDirectionality.explosive,
+                            shouldLoop: false,
+                            emissionFrequency: isMilestone ? 0.05 : 0.1,
+                            numberOfParticles: isMilestone ? 80 : 20,
+                            gravity: isMilestone ? 0.1 : 0.2,
+                            colors: const [
+                              Colors.green,
+                              Colors.blue,
+                              Colors.pink,
+                              Colors.orange,
+                              Colors.purple,
+                              Colors.amber,
+                            ],
+                          );
+                        },
                       ),
                     _buildNodeCircle(
                       context,
@@ -1192,16 +1198,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       ),
     );
 
-    if (isJustUnlocked) {
-      final bounceValue = Curves.elasticOut.transform(unlockValue);
-      return Transform.scale(
-        scale: 0.6 + 0.4 * bounceValue,
-        child: Opacity(
-          opacity: unlockValue,
-          child: result,
-        ),
-      );
-    }
     return result;
   }
 

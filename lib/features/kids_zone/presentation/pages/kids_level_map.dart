@@ -60,7 +60,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   late AnimationController _entryController;
   late AnimationController _unlockPathController;
   late AnimationController _glowController;
-  int? _previousUnlockedLevel;
+  int? _previousActiveNode;
   bool _isUnlockAnimating = false;
   int? _celebratingLevel;
   late ConfettiController _confettiController;
@@ -73,29 +73,28 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     double initialOffset = 0.0;
     final authState = context.read<AuthBloc>().state;
     if (authState.user != null) {
-      final unlockedLevel = authState.user!.unlockedLevels[widget.gameType] ?? 1;
       final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
       final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
-      final targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevel));
+      final targetLevel = math.min(200, highestCompleted + 1);
       
       final targetOffset = (targetLevel - 1) * 200.h;
       initialOffset = math.max(0.0, targetOffset - 300.h);
-      _previousUnlockedLevel = unlockedLevel;
+      _previousActiveNode = targetLevel;
     }
 
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
     _confettiController = ConfettiController(duration: const Duration(seconds: 2));
 
-    // 1. Staggered screen-entry animation (nodes cascade in)
+    // 1. Screen-entry animation (nodes fade and scale in instantly)
     _entryController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 800),
     );
 
-    // 2. Path-draw animation when a level unlocks (Real world standard: slow, deliberate 2s draw)
+    // 2. Path-draw animation when a level unlocks (Smooth and organic)
     _unlockPathController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 1500),
     );
 
     // 3. Current-node glow pulse (loops forever)
@@ -133,15 +132,14 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
-          final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
           final completedLevels = user.completedLevels[widget.gameType] ?? [];
           final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
           
           // Always scroll to the node the user actually needs to interact with next
-          final targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevel));
+          final targetLevel = math.min(200, highestCompleted + 1);
 
           // Store for unlock-animation delta detection
-          _previousUnlockedLevel ??= unlockedLevel;
+          _previousActiveNode ??= targetLevel;
 
           final double targetOffset = (targetLevel - 1) * 200.h;
           final double centeredOffset = max(0, targetOffset - 300.h);
@@ -150,7 +148,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             if (animate) {
               _scrollController.animateTo(
                 centeredOffset,
-                duration: 1200.milliseconds,
+                duration: 800.milliseconds,
                 curve: Curves.easeInOutCubic,
               );
             } else {
@@ -264,13 +262,14 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       },
       listener: (context, state) {
         // Trigger smooth unlock-path-draw animation
-        final prevLevel = _previousUnlockedLevel;
-        final currLevel = state.user?.unlockedLevels[widget.gameType] ?? 1;
-        _previousUnlockedLevel = currLevel;
+        final prevLevel = _previousActiveNode;
+        final completedLevels = state.user?.completedLevels[widget.gameType] ?? [];
+        final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+        final currLevel = math.min(200, highestCompleted + 1);
+        _previousActiveNode = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
-          // If multiple levels were unlocked at once (e.g., Tollgate Magic Lock),
-          // skip the slow path-draw animation since the bottom sheet already celebrated it.
+          // If multiple levels were skipped at once, skip the slow animation
           if (currLevel - prevLevel > 1) {
             _unlockPathController.value = 1.0;
             _scrollToUnlockedLevel(delayMs: 400, animate: true);
@@ -291,21 +290,29 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             if (ModalRoute.of(context)?.isCurrent == true) {
               timer.cancel();
               
-              // 1. Wait a beat (400ms) for the screen pop transition to completely settle
-              Future.delayed(const Duration(milliseconds: 400), () {
+              // 1. Wait a tiny beat for the screen pop transition
+              Future.delayed(const Duration(milliseconds: 100), () {
                 if (mounted) {
-                  // 2. Scroll smoothly to the new node (takes 1200ms)
+                  // 2. Scroll smoothly to the new node
                   _scrollToUnlockedLevel(delayMs: 0, animate: true); 
                   
-                  // 3. Wait for the scroll to completely finish before drawing the line
-                  Future.delayed(const Duration(milliseconds: 1200), () {
+                  // 3. Start drawing the line immediately with scroll
+                  Future.delayed(const Duration(milliseconds: 50), () {
                     if (mounted) {
-                      // 4. Draw the 2-second organic line
+                      // 4. Draw the smooth organic line
                       _unlockPathController.forward().then((_) {
                         if (mounted) {
-                          _celebratingLevel = currLevel;
-                          _confettiController.play();
-                          setState(() => _isUnlockAnimating = false);
+                          setState(() {
+                            _celebratingLevel = currLevel;
+                            _isUnlockAnimating = false;
+                          });
+                          
+                          // Wait a tiny bit for the ConfettiWidget to be inserted into the tree before playing
+                          Future.delayed(const Duration(milliseconds: 50), () {
+                            if (mounted) {
+                              _confettiController.play();
+                            }
+                          });
                           
                           Future.delayed(const Duration(seconds: 3), () {
                             if (mounted) setState(() => _celebratingLevel = null);
@@ -637,12 +644,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         _entryController,
       ]),
       builder: (context, child) {
-        // Staggered entry: each level fades in with a slight cascade
-        final entryDelay = (level.clamp(1, 10) - 1) * 0.08;
-        final entryT = Curves.easeOutCubic.transform(
-          (_entryController.value - entryDelay).clamp(0.0, 1.0) /
-              (1.0 - entryDelay).clamp(0.01, 1.0),
-        );
+        // Immediate entry for all visible nodes (removes the empty-screen delay)
+        final entryT = Curves.easeOutCubic.transform(_entryController.value);
 
         // Path-draw progress for the segment right before the current node
         double incomingProgress = 1.0;
@@ -650,13 +653,15 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         
         if (_isUnlockAnimating) {
           final user = context.read<AuthBloc>().state.user;
-          final currUnlocked = user?.unlockedLevels[widget.gameType] ?? 1;
+          final completed = user?.completedLevels[widget.gameType] ?? [];
+          final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
+          final currActive = math.min(200, highest + 1);
           
           final double rawValue = Curves.easeInOutCubic.transform(_unlockPathController.value);
           
-          if (level == currUnlocked) {
+          if (level == currActive) {
             incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
-          } else if (level == currUnlocked - 1) {
+          } else if (level == currActive - 1) {
             outgoingProgress = (rawValue * 2).clamp(0.0, 1.0);
           }
         }
@@ -718,19 +723,17 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                     
                     if (_isUnlockAnimating) {
                       final user = context.read<AuthBloc>().state.user;
-                      final currUnlocked = user?.unlockedLevels[widget.gameType] ?? 1;
-                      if (level == currUnlocked) {
-                        // The node only pops in during the last 30% of the 2-second animation (after the line reaches it)
+                      final completed = user?.completedLevels[widget.gameType] ?? [];
+                      final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
+                      final currActive = math.min(200, highest + 1);
+                      if (level == currActive) {
+                        // The node only pops in during the last 30% of the animation (after the line reaches it)
                         final double popProgress = ((_unlockPathController.value - 0.7) * (1.0 / 0.3)).clamp(0.0, 1.0);
                         final bounceValue = Curves.elasticOut.transform(popProgress);
                         
                         return Transform.scale(
-                          scale: 0.5 + 0.5 * bounceValue,
-                          child: Opacity(
-                            // Snaps to full opacity in the first 20% of the pop (0.12s) so the user actually sees the physical bounce
-                            opacity: (popProgress * 5).clamp(0.0, 1.0),
-                            child: node,
-                          ),
+                          scale: 0.5 + 0.5 * bounceValue, // Node starts small (50%) and fully visible, then pops to 100%
+                          child: node,
                         );
                       }
                     }
@@ -1219,20 +1222,26 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         alignment: Alignment.center,
         children: [
           if (_celebratingLevel == level)
-            ConfettiWidget(
-              confettiController: _confettiController,
-              blastDirectionality: BlastDirectionality.explosive,
-              shouldLoop: false,
-              emissionFrequency: 0.1,
-              numberOfParticles: 20,
-              gravity: 0.2,
-              colors: const [
-                Colors.green,
-                Colors.blue,
-                Colors.pink,
-                Colors.orange,
-                Colors.purple
-              ],
+            Builder(
+              builder: (context) {
+                final isMilestone = level == 10 || level == 50 || level == 100 || level == 200;
+                return ConfettiWidget(
+                  confettiController: _confettiController,
+                  blastDirectionality: BlastDirectionality.explosive,
+                  shouldLoop: false,
+                  emissionFrequency: isMilestone ? 0.05 : 0.1,
+                  numberOfParticles: isMilestone ? 80 : 20,
+                  gravity: isMilestone ? 0.1 : 0.2,
+                  colors: const [
+                    Colors.green,
+                    Colors.blue,
+                    Colors.pink,
+                    Colors.orange,
+                    Colors.purple,
+                    Colors.amber,
+                  ],
+                );
+              },
             ),
           // 1. Clean Drop Shadow
           Container(
