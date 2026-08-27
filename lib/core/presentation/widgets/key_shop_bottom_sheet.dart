@@ -323,26 +323,24 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                           gradient: LinearGradient(
                             colors: userCoins >= cost
                                 ? [widget.primaryColor, Colors.amber.shade700]
-                                : [Colors.grey.shade400, Colors.grey.shade500],
+                                : const [Color(0xFF94A3B8), Color(0xFF64748B)], // Premium Slate
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
                           borderRadius: BorderRadius.circular(16.r),
                           border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.3),
+                            color: Colors.white.withValues(alpha: userCoins >= cost ? 0.3 : 0.15),
                             width: 1.w,
                           ),
-                          boxShadow: [
-                            BoxShadow(
-                              color:
-                                  (userCoins >= cost
-                                          ? widget.primaryColor
-                                          : Colors.grey.shade500)
-                                      .withValues(alpha: 0.4),
-                              offset: Offset(0, 4.h),
-                              blurRadius: 8.r,
-                            ),
-                          ],
+                          boxShadow: userCoins >= cost 
+                              ? [
+                                  BoxShadow(
+                                    color: widget.primaryColor.withValues(alpha: 0.4),
+                                    offset: Offset(0, 4.h),
+                                    blurRadius: 8.r,
+                                  ),
+                                ]
+                              : [], // No glowing shadow for inactive button
                         ),
                         alignment: Alignment.center,
                         child: Row(
@@ -350,7 +348,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                           children: [
                             Icon(
                               Icons.monetization_on_rounded,
-                              color: Colors.white,
+                              color: Colors.white.withValues(alpha: userCoins >= cost ? 1.0 : 0.8),
                               size: 20.r,
                             ),
                             SizedBox(width: 8.w),
@@ -364,7 +362,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                 fontFamily: 'Outfit',
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w800,
-                                color: Colors.white,
+                                color: Colors.white.withValues(alpha: userCoins >= cost ? 1.0 : 0.8),
                                 letterSpacing: 0.5,
                               ),
                             ),
