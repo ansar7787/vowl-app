@@ -6,6 +6,8 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class ProfileBadgesList extends StatefulWidget {
   final UserEntity user;
@@ -30,7 +32,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 0.7);
+    _pageController = PageController(viewportFraction: 0.55);
   }
 
   @override
@@ -89,14 +91,44 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
     }
 
     return SizedBox(
-      height: 220.h,
+      height: 190.h,
       child: PageView.builder(
         controller: _pageController,
         physics: const BouncingScrollPhysics(),
+        padEnds: false,
+        onPageChanged: (index) {
+          di.sl<HapticService>().selection();
+        },
         itemCount: earnedBadgesList.length,
         itemBuilder: (context, index) {
           final badge = earnedBadgesList[index];
-          return Container(
+
+          return AnimatedBuilder(
+            animation: _pageController,
+            builder: (context, child) {
+              double value = 0.0;
+              if (_pageController.position.haveDimensions) {
+                value = _pageController.page! - index;
+              } else {
+                // Initialize correctly before first layout
+                value = (0.0 - index).toDouble();
+              }
+
+              // Card Physical 3D Tilt based on swipe position
+              final tiltY = (value * 0.4).clamp(-0.8, 0.8);
+              final scale = 1.0 - (value.abs() * 0.15).clamp(0.0, 0.3);
+              
+              // Holographic foil reflection shift
+              final foilShift = value * 1.5;
+
+              return Transform(
+                transform: Matrix4.identity()
+                  ..setEntry(3, 2, 0.001)
+                  ..rotateY(tiltY),
+                alignment: FractionalOffset.center,
+                child: Transform.scale(
+                  scale: scale,
+                  child: Container(
             margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32.r),
@@ -120,36 +152,36 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                 children: [
                   // Abstract glowing background meshes (holographic feel)
                   Positioned(
-                    top: -60.h,
-                    right: -40.w,
+                    top: -40.h,
+                    right: -30.w,
                     child: Container(
-                      width: 180.r,
-                      height: 180.r,
+                      width: 130.r,
+                      height: 130.r,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
                             color: badge.color.withValues(alpha: 0.6),
-                            blurRadius: 60,
-                            spreadRadius: 20,
+                            blurRadius: 50,
+                            spreadRadius: 15,
                           ),
                         ],
                       ),
                     ),
                   ),
                   Positioned(
-                    bottom: -30.h,
-                    left: -40.w,
+                    bottom: -20.h,
+                    left: -30.w,
                     child: Container(
-                      width: 140.r,
-                      height: 140.r,
+                      width: 100.r,
+                      height: 100.r,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
                             color: badge.color.withValues(alpha: 0.4),
-                            blurRadius: 50,
-                            spreadRadius: 10,
+                            blurRadius: 40,
+                            spreadRadius: 8,
                           ),
                         ],
                       ),
@@ -173,8 +205,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                           alignment: FractionalOffset.center,
                           child: ShaderMask(
                             shaderCallback: (bounds) => LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
+                              begin: Alignment(-1.0 + foilShift, -1.0),
+                              end: Alignment(1.0 + foilShift, 1.0),
                               colors: [
                                 Colors.white,
                                 badge.color,
@@ -183,12 +215,12 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                             ).createShader(bounds),
                             child: Icon(
                               badge.icon,
-                              size: 100.r,
+                              size: 80.r,
                               color: Colors.white,
                             ),
                           )
                               .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .moveY(begin: -8, end: 8, duration: 3000.ms)
+                              .moveY(begin: -5, end: 5, duration: 3000.ms)
                               .scale(
                                 begin: const Offset(0.95, 0.95),
                                 end: const Offset(1.05, 1.05),
@@ -201,7 +233,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
 
                   // Modern Typography UI
                   Positioned(
-                    bottom: 24.h,
+                    bottom: 20.h,
                     left: 0,
                     right: 0,
                     child: Column(
@@ -219,23 +251,23 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               color: Colors.white,
-                              fontSize: 18.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w900,
-                              letterSpacing: 4,
+                              letterSpacing: 2,
                               shadows: [
                                 Shadow(
                                   color: badge.color,
-                                  blurRadius: 12,
+                                  blurRadius: 8,
                                 ),
                               ],
                             ),
                           ),
                         ),
-                        SizedBox(height: 8.h),
+                        SizedBox(height: 6.h),
                         Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 6.h,
+                            horizontal: 10.w,
+                            vertical: 4.h,
                           ),
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
@@ -244,7 +276,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                 badge.color.withValues(alpha: 0.1),
                               ],
                             ),
-                            borderRadius: BorderRadius.circular(20.r),
+                            borderRadius: BorderRadius.circular(16.r),
                             border: Border.all(
                               color: badge.color.withValues(alpha: 0.6),
                               width: 1,
@@ -260,9 +292,9 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               color: Colors.white,
-                              fontSize: 10.sp,
+                              fontSize: 8.sp,
                               fontWeight: FontWeight.w800,
-                              letterSpacing: 2,
+                              letterSpacing: 1.5,
                             ),
                           ),
                         ),
@@ -272,7 +304,11 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                 ],
               ),
             ),
-          );
+          ),
+         ),
+        );
+      },
+    );
         },
       ),
     );

@@ -206,15 +206,27 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: Padding(
-          padding: EdgeInsets.only(bottom: 24.h),
+          padding: EdgeInsets.only(
+            left: 24.w,
+            right: 24.w,
+            top: 24.h,
+            bottom: 8.h,
+          ),
           child: Container(
             decoration: BoxDecoration(
               color: isDark ? const Color(0xFF1E293B) : Colors.white,
               borderRadius: BorderRadius.circular(24.r),
               border: Border.all(
-                color: Colors.orange.withValues(alpha: 0.3),
-                width: 1.5,
+                color: const Color(0xFFF97316).withValues(alpha: 0.15),
+                width: 1.0,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFFF97316).withValues(alpha: 0.08),
+                  blurRadius: 24.r,
+                  offset: const Offset(0, 8),
+                ),
+              ],
             ),
             child: Stack(
               children: [
@@ -228,7 +240,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                           width: 48.r,
                           height: 48.r,
                           decoration: BoxDecoration(
-                            color: Colors.orange.withValues(alpha: 0.15),
+                            color: const Color(0xFFF97316).withValues(alpha: 0.15),
                             shape: BoxShape.circle,
                           ),
                           child: Stack(
@@ -236,18 +248,22 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                             children: [
                               Icon(
                                 Icons.notifications_active_rounded,
-                                color: Colors.orange,
+                                color: const Color(0xFFF97316),
                                 size: 24.r,
                               ),
                               PositionedDirectional(
                                 top: 10.r,
                                 end: 12.r,
                                 child: Container(
-                                  width: 8.r,
-                                  height: 8.r,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.redAccent,
+                                  width: 10.r,
+                                  height: 10.r,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFEF4444),
                                     shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                                      width: 1.5.r,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -269,7 +285,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
+                                    fontWeight: FontWeight.w700,
                                     color: isDark
                                         ? Colors.white
                                         : const Color(0xFF0F172A),
@@ -296,11 +312,11 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                               children: [
                                 Expanded(
                                   child: SizedBox(
-                                    height: 40.h,
+                                    height: 44.h,
                                     child: ElevatedButton(
                                       onPressed: _requestPermission,
                                       style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.orange,
+                                        backgroundColor: const Color(0xFFF97316),
                                         foregroundColor: Colors.white,
                                         elevation: 0,
                                         padding: EdgeInsets.zero,
@@ -317,8 +333,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                         ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: 13.sp,
-                                          fontWeight: FontWeight.w900,
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w700,
                                           letterSpacing: 0.5,
                                         ),
                                         maxLines: 1,
@@ -330,7 +346,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                 SizedBox(width: 12.w),
                                 Expanded(
                                   child: SizedBox(
-                                    height: 40.h,
+                                    height: 44.h,
                                     child: TextButton(
                                       onPressed: _dismissCard,
                                       style: TextButton.styleFrom(
@@ -358,8 +374,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
                                         ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: 13.sp,
-                                          fontWeight: FontWeight.w800,
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w700,
                                           letterSpacing: 0.5,
                                         ),
                                         maxLines: 1,
