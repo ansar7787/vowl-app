@@ -15,6 +15,7 @@ import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 
 class StarVaultBottomSheet extends StatefulWidget {
@@ -55,6 +56,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   bool _isProcessing = false;
   int _remainingClaims = RewardLimitService.maxClaimsPerDay;
   bool _isLoadingLimits = true;
+  int _outOfAdsShake = 0;
 
   @override
   void initState() {
@@ -199,7 +201,32 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   }
 
   Future<void> _watchAdForMagicStars() async {
-    if (_isProcessing || _remainingClaims <= 0) return;
+    if (_isProcessing) return;
+    if (_remainingClaims <= 0) {
+      setState(() => _outOfAdsShake++);
+      showDialog(
+        context: context,
+        builder: (ctx) => ModernGameDialog(
+          title: context.tr(
+            'store.limit_reached_title',
+            fallback: 'DAILY LIMIT REACHED',
+          ),
+          description: context.tr(
+            'store.limit_reached_desc_stars',
+            fallback: 'You have claimed all your free stars for today! Come back tomorrow or visit the Premium Store for unlimited access.',
+          ),
+          buttonText: context.tr('store.got_it', fallback: 'GOT IT'),
+          isSuccess: false,
+          onButtonPressed: () => Navigator.of(ctx).pop(),
+          customIcon: Icon(
+            Icons.lock_clock_rounded,
+            color: Colors.orange,
+            size: 48.sp,
+          ),
+        ),
+      );
+      return;
+    }
     setState(() => _isProcessing = true);
 
     final adService = di.sl<AdService>();
@@ -834,7 +861,9 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                               padding: EdgeInsets.symmetric(horizontal: 24.w),
                               child: ScaleButton(
                                 onTap: _watchAdForMagicStars,
-                                child: Container(
+                                child: ShakeableWrapper(
+                                  shakeCount: _outOfAdsShake,
+                                  child: Container(
                                   width: double.infinity,
                                   padding: EdgeInsets.symmetric(vertical: 16.h),
                                   decoration: BoxDecoration(
@@ -940,6 +969,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                             ),
                                           ],
                                         ),
+                                  ),
                                 ),
                               ),
                             ),

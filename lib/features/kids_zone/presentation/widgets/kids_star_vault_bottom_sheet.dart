@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 
 class KidsStarVaultBottomSheet extends StatefulWidget {
@@ -55,6 +56,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
   bool _isProcessing = false;
   int _remainingClaims = RewardLimitService.maxClaimsPerDay;
   bool _isLoadingLimits = true;
+  int _outOfAdsShake = 0;
 
   @override
   void initState() {
@@ -153,7 +155,26 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
   }
 
   Future<void> _watchAdForMagicStars() async {
-    if (_isProcessing || _remainingClaims <= 0) return;
+    if (_isProcessing) return;
+    if (_remainingClaims <= 0) {
+      setState(() => _outOfAdsShake++);
+      showDialog(
+        context: context,
+        builder: (ctx) => ModernGameDialog(
+          title: 'DAILY LIMIT REACHED',
+          description: 'You have claimed all your free stars for today! Come back tomorrow or visit the Premium Store for unlimited access.',
+          buttonText: 'GOT IT',
+          isSuccess: false,
+          onButtonPressed: () => Navigator.of(ctx).pop(),
+          customIcon: Icon(
+            Icons.lock_clock_rounded,
+            color: Colors.orange,
+            size: 48.sp,
+          ),
+        ),
+      );
+      return;
+    }
     setState(() => _isProcessing = true);
 
     final adService = di.sl<AdService>();
@@ -661,7 +682,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                   ),
                                   child: ScaleButton(
                                     onTap: _watchAdForMagicStars,
-                                    child: Container(
+                                    child: ShakeableWrapper(
+                                      shakeCount: _outOfAdsShake,
+                                      child: Container(
                                       width: double.infinity,
                                       padding: EdgeInsets.symmetric(
                                         vertical: 18.h,
@@ -753,11 +776,12 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                     ),
                                                   ],
                                                 ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                  SizedBox(height: 12.h),
-                                  Text(
+                                SizedBox(height: 12.h),
+                                Text(
                                     _remainingClaims <= 0
                                         ? "Come back tomorrow for more free stars!"
                                         : "Magic Stars permanently count towards your total! ($_remainingClaims left today)",
