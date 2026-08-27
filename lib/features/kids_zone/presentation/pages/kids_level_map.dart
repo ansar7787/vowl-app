@@ -110,14 +110,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
   /// True AAA Standard: A completely linear, async/await timeline orchestrated top-to-bottom.
   Future<void> _playUnlockSequence(BuildContext context, int currLevel) async {
-    // 1. Wait until the user has fully returned to the map screen
-    while (mounted && context.mounted && ModalRoute.of(context)?.isCurrent != true) {
-      await Future.delayed(const Duration(milliseconds: 200));
-    }
-    if (!mounted) return;
-
-    // 2. Wait a tiny beat for the screen pop route transition to finish completely
-    await Future.delayed(const Duration(milliseconds: 100));
+    // 1. Wait for the screen pop route transition to finish completely
+    await Future.delayed(const Duration(milliseconds: 800));
     if (!mounted) return;
 
     // 3. Trigger the smooth scroll to the new node
@@ -259,18 +253,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           // Orchestrate the full unlock animation sequence via a pristine async state machine
           _playUnlockSequence(context, currLevel);
         } else {
-          // Wait until the user returns to the map before scrolling so they can watch it happen
-          Timer.periodic(const Duration(milliseconds: 200), (timer) {
-            if (!mounted) {
-              timer.cancel();
-              return;
-            }
-            if (ModalRoute.of(context)?.isCurrent == true) {
-              timer.cancel();
-              Future.delayed(const Duration(milliseconds: 600), () {
-                if (mounted) _scrollToUnlockedLevel(delayMs: 0, animate: true);
-              });
-            }
+          // Wait a beat for the route transition to finish before scrolling
+          Future.delayed(const Duration(milliseconds: 800), () {
+            if (mounted) _scrollToUnlockedLevel(delayMs: 0, animate: true);
           });
         }
       },

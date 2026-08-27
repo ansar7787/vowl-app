@@ -277,24 +277,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
   /// True AAA Standard: A completely linear, async/await timeline orchestrated top-to-bottom.
   Future<void> _playUnlockSequence(BuildContext context) async {
-    // 1. Wait until the user has fully returned to the map screen
-    while (mounted && context.mounted && ModalRoute.of(context)?.isCurrent != true) {
-      await Future.delayed(const Duration(milliseconds: 200));
-    }
+    // 1. Wait for the screen pop route transition to finish completely
+    await Future.delayed(const Duration(milliseconds: 800));
     if (!mounted) return;
 
-    // 2. Wait a tiny beat for the screen pop route transition to finish completely
-    await Future.delayed(const Duration(milliseconds: 100));
-    if (!mounted) return;
-
-    // 3. Trigger the smooth scroll to the new node
+    // 2. Trigger the smooth scroll to the new node
     _scrollToCurrentLevel(animate: true);
 
-    // 4. Wait a tiny fraction of a second for the scroll to gain momentum
+    // 3. Wait a tiny fraction of a second for the scroll to gain momentum
     await Future.delayed(const Duration(milliseconds: 50));
     if (!mounted) return;
 
-    // 5. Play the smooth, organic path draw animation
+    // 4. Play the smooth, organic path draw animation
     await _unlockPathController.forward();
     if (!mounted) return;
 
@@ -389,18 +383,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
           // Orchestrate the full unlock animation sequence via a pristine async state machine
           _playUnlockSequence(context);
         } else {
-          // Wait until the user returns to the map before scrolling so they can watch it happen
-          Timer.periodic(const Duration(milliseconds: 200), (timer) {
-            if (!mounted) {
-              timer.cancel();
-              return;
-            }
-            if (ModalRoute.of(context)?.isCurrent == true) {
-              timer.cancel();
-              Future.delayed(const Duration(milliseconds: 600), () {
-                if (mounted) _scrollToCurrentLevel(animate: true);
-              });
-            }
+          // Wait a beat for the route transition to finish before scrolling
+          Future.delayed(const Duration(milliseconds: 800), () {
+            if (mounted) _scrollToCurrentLevel(animate: true);
           });
         }
       },
