@@ -198,10 +198,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         // PERF: reduced from 1600ms → 400ms. The previous 1600ms delay
         // stacked on top of the async curriculum load time, making the
         // story card feel sluggish (appearing 2-3s after the map was
-        // already fully visible). 400ms is enough for the route fade
-        // transition (250ms) to finish cleanly, so the card entrance
-        // animation plays on a settled frame.
-        Future.delayed(const Duration(milliseconds: 400), () {
+        // already fully visible). We now wait for the exact frame the route
+        // transition finishes cleanly, so the card entrance animation plays
+        // on a mathematically settled frame.
+        _executeWhenRouteSettled(() {
           if (mounted) {
             setState(() {
               _activeStoryBeat = beat;
@@ -288,7 +288,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     }
     
     // 1. Wait for overlaying screens (like the victory game screen) to finish popping
-    if (route.secondaryAnimation != null && route.secondaryAnimation!.status == AnimationStatus.reverse) {
+    if (route.secondaryAnimation != null && !route.secondaryAnimation!.isDismissed) {
       void listener(AnimationStatus status) {
         if (status == AnimationStatus.dismissed) {
           route.secondaryAnimation!.removeStatusListener(listener);
@@ -943,6 +943,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
   }
 }
+
 
 
 

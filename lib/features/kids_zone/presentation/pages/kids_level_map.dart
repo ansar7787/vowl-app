@@ -120,7 +120,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     }
     
     // 1. Wait for overlaying screens (like the victory game screen) to finish popping
-    if (route.secondaryAnimation != null && route.secondaryAnimation!.status == AnimationStatus.reverse) {
+    if (route.secondaryAnimation != null && !route.secondaryAnimation!.isDismissed) {
       void listener(AnimationStatus status) {
         if (status == AnimationStatus.dismissed) {
           route.secondaryAnimation!.removeStatusListener(listener);
@@ -735,6 +735,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     );
   }
 }
+
 
 
 
