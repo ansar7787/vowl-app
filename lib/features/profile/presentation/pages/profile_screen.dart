@@ -192,10 +192,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           SizedBox(height: 20.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: ProfileBadgesList(user: user),
-                          ),
+                          ProfileBadgesList(user: user),
 
                           SizedBox(height: 40.h),
                           Padding(

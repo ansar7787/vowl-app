@@ -5,6 +5,7 @@ import 'package:vowl/core/constants/badge_constants.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -95,7 +96,6 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
       child: PageView.builder(
         controller: _pageController,
         physics: const BouncingScrollPhysics(),
-        padEnds: false,
         onPageChanged: (index) {
           di.sl<HapticService>().selection();
         },
@@ -132,18 +132,11 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
             margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32.r),
-              boxShadow: [
-                BoxShadow(
-                  color: badge.color.withValues(alpha: 0.3),
-                  blurRadius: 30,
-                  spreadRadius: -10,
-                  offset: const Offset(0, 15),
-                ),
-              ],
             ),
             child: GlassTile(
               borderRadius: BorderRadius.circular(32.r),
               usePremiumStyle: true,
+              showShadow: false,
               border: Border.all(
                 color: badge.color.withValues(alpha: 0.5),
                 width: 1.5,
@@ -244,10 +237,10 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                             end: Alignment.bottomCenter,
                             colors: [Colors.white, Color(0xFFE2E8F0)],
                           ).createShader(bounds),
-                          child: Text(
+                          child: AutoSizeText(
                             context.tr(badge.nameKey).toUpperCase(),
                             maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            minFontSize: 8,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               color: Colors.white,
