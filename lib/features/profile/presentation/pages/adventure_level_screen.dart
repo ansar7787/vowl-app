@@ -17,6 +17,10 @@ import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class AdventureLevelScreen extends StatelessWidget {
   const AdventureLevelScreen({super.key});
@@ -31,16 +35,79 @@ class AdventureLevelScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: bgColor,
-      body: BlocBuilder<AuthBloc, AuthState>(
-        builder: (context, state) {
-          final user = state.user;
-          if (user == null) return const SizedBox.shrink();
+      body: BlocListener<ProgressionBloc, ProgressionState>(
+        listenWhen: (previous, current) =>
+            previous.message != current.message && current.message != null,
+        listener: (context, state) {
+          final msg = state.message ?? '';
+          if (msg.startsWith('progression.milestone_claimed')) {
+            final parts = msg.split(':');
+            final rewardAmount = parts.length > 1 ? parts[1] : '';
 
-          final currentLevel = user.level;
-          final xpInCurrentLevel = user.totalExp % 100;
-          final progress = xpInCurrentLevel / 100;
+            di.sl<HapticService>().success();
+            di.sl<SoundService>().playLevelComplete();
 
-          return Stack(
+            showDialog(
+              context: context,
+              barrierDismissible: false,
+              builder: (dialogCtx) => Stack(
+                children: [
+                  ModernGameDialog(
+                    title: context.tr(
+                      'adventure.milestone_unlocked',
+                      fallback: 'MILESTONE UNLOCKED!',
+                    ),
+                    description: context.tr(
+                      'adventure.milestone_reward_desc',
+                      args: [rewardAmount],
+                      fallback: 'You claimed $rewardAmount Coins for your epic journey!',
+                    ),
+                    buttonText: context.tr(
+                      'common.awesome',
+                      fallback: 'AWESOME',
+                    ),
+                    isSuccess: true,
+                    onButtonPressed: () {
+                      Navigator.of(dialogCtx).pop();
+                    },
+                  ),
+                  const Positioned.fill(
+                    child: IgnorePointer(
+                      child: RepaintBoundary(
+                        child: GameConfetti(shouldPop: false),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+            context.read<ProgressionBloc>().add(
+              const ProgressionClearMessageRequested(),
+            );
+          } else if (msg.isNotEmpty && !msg.startsWith('progression.')) {
+            CustomSnackBar.show(
+              context: context,
+              message: context.tr(
+                'adventure.${msg.replaceAll('-', '_')}',
+                fallback: msg.replaceAll('-', ' ').toUpperCase(),
+              ),
+              type: CustomSnackBarType.error,
+            );
+            context.read<ProgressionBloc>().add(
+              const ProgressionClearMessageRequested(),
+            );
+          }
+        },
+        child: BlocBuilder<AuthBloc, AuthState>(
+          builder: (context, state) {
+            final user = state.user;
+            if (user == null) return const SizedBox.shrink();
+
+            final currentLevel = user.level;
+            final xpInCurrentLevel = user.totalExp % 100;
+            final progress = xpInCurrentLevel / 100;
+
+            return Stack(
             children: [
               const MeshGradientBackground(),
               SafeArea(
@@ -176,6 +243,7 @@ class AdventureLevelScreen extends StatelessWidget {
             ],
           );
         },
+      ),
       ),
     );
   }
@@ -624,12 +692,13 @@ class AdventureLevelScreen extends StatelessWidget {
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: (isReached && !isClaimed)
           ? () {
               context.read<ProgressionBloc>().add(
                 ProgressionClaimLevelMilestoneRequested(
                   level,
-                  250, // Standard reward
+                  level * 25, // Dynamic reward based on level
                 ),
               );
             }
@@ -717,8 +786,6 @@ class AdventureLevelScreen extends StatelessWidget {
                       ),
                     ),
                   )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .shimmer(duration: 2000.ms)
             else
               Icon(
                 Icons.lock_outline_rounded,

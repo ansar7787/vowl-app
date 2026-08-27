@@ -508,7 +508,11 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
-        emit(state.copyWith(message: () => 'progression.milestone_claimed'));
+        emit(
+          state.copyWith(
+            message: () => 'progression.milestone_claimed:${event.reward}',
+          ),
+        );
         authBloc.add(const AuthRefreshUser());
       },
     );

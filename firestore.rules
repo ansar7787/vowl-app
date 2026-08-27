@@ -30,7 +30,11 @@ service cloud.firestore {
         // Normal game rewards are 10-50. Buying a key subtracts 150.
         && (
           !request.resource.data.diff(resource.data).affectedKeys().hasAny(['coins'])
-          || (request.resource.data.coins <= resource.data.coins + 250) // Max 250 earned at once
+          || (
+            request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
+              ? request.resource.data.coins <= resource.data.coins + 15000 // Milestone rewards can be huge
+              : request.resource.data.coins <= resource.data.coins + 250 // Max 250 earned at once for normal games
+          )
         )
         && (
           !request.resource.data.diff(resource.data).affectedKeys().hasAny(['kidsCoins'])
@@ -47,7 +51,9 @@ service cloud.firestore {
               request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) &&
               request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0)
             )
-            // If they increased, enforce the timestamp cooldown
+            // Bypass rate limit for milestone claims (already protected by array uniqueness check)
+            || request.resource.data.diff(resource.data).affectedKeys().hasAny(['claimedLevelMilestones', 'claimedStreakMilestones'])
+            // If they increased normally, enforce the timestamp cooldown
             || (
               request.resource.data.lastRewardTimestamp == request.time &&
               (
