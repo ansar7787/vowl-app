@@ -16,6 +16,8 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 
+import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
+
 class KeyShopBottomSheet {
   static void show({
     required BuildContext context,
@@ -24,9 +26,10 @@ class KeyShopBottomSheet {
   }) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.transparent,
       isScrollControlled: true,
-      builder: (sheetContext) {
+      backgroundColor: Colors.transparent,
+      barrierColor: Colors.black.withValues(alpha: 0.6),
+      builder: (context) {
         return _KeyShopContent(
           parentContext: context,
           isKidsMode: isKidsMode,
@@ -55,6 +58,7 @@ class _KeyShopContent extends StatefulWidget {
 class _KeyShopContentState extends State<_KeyShopContent> {
   int _remainingClaims = RewardLimitService.maxClaimsPerDay;
   bool _isLoadingLimits = true;
+  int _outOfAdsShake = 0;
 
   @override
   void initState() {
@@ -377,9 +381,32 @@ class _KeyShopContentState extends State<_KeyShopContent> {
 
                 // Get with Ad
                 ScaleButton(
-                  onTap: _remainingClaims <= 0
-                      ? null
-                      : () {
+                  onTap: () {
+                    if (_remainingClaims <= 0) {
+                      setState(() => _outOfAdsShake++);
+                      showDialog(
+                        context: context,
+                        builder: (ctx) => ModernGameDialog(
+                          title: context.tr(
+                            'store.limit_reached_title',
+                            fallback: 'DAILY LIMIT REACHED',
+                          ),
+                          description: context.tr(
+                            'store.limit_reached_desc',
+                            fallback: 'You have claimed all your free keys for today! Come back tomorrow or visit the Premium Store for unlimited access.',
+                          ),
+                          buttonText: context.tr('store.got_it', fallback: 'GOT IT'),
+                          isSuccess: false,
+                          onButtonPressed: () => Navigator.of(ctx).pop(),
+                          customIcon: Icon(
+                            Icons.lock_clock_rounded,
+                            color: Colors.orange,
+                            size: 48.sp,
+                          ),
+                        ),
+                      );
+                      return;
+                    }
                     final adService = di.sl<AdService>();
                     // FIX: Read premium status from AuthBloc instead of
                     // hardcoding `false`. Premium users who open the key
@@ -500,9 +527,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       onDismissed: () {},
                     );
                   },
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
+                  child: ShakeableWrapper(
+                    shakeCount: _outOfAdsShake,
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 14.h),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: _remainingClaims <= 0
@@ -566,6 +595,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         ),
                       ],
                     ),
+                  ),
                   ),
                 ),
                 SizedBox(height: 16.h),
