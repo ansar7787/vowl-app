@@ -473,12 +473,20 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                               // Chests ListView
                               SizedBox(
                                 height: 170.h,
-                                child: ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  itemCount: _chestTiers.length,
+                                child: Builder(
+                                  builder: (context) {
+                                    final tileWidth = 130.w + 16.w;
+                                    final viewportWidth = ScreenUtil().screenWidth - 48.w;
+                                    final initialOffset = (nextTierIndex * tileWidth - viewportWidth / 2 + tileWidth / 2)
+                                        .clamp(0.0, double.infinity);
+
+                                    return ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      controller: ScrollController(initialScrollOffset: initialOffset),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 24.w,
+                                      ),
+                                      itemCount: _chestTiers.length,
                                   itemBuilder: (context, index) {
                                     final requirement = _chestTiers[index];
                                     final isClaimed = claimedTier > index;
@@ -668,7 +676,8 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                       ),
                                     );
                                   },
-                                ),
+                                );
+                                }),
                               ),
 
                               SizedBox(height: 32.h),
