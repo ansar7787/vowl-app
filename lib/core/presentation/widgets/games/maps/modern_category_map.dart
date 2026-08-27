@@ -52,6 +52,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   StoryBeat? _activeStoryBeat;
   int _totalLevels = 10;
   bool _isLoading = true;
+  bool _isSequenceAnimating = false;
   int? _justUnlockedLevel;
   int? _celebratingLevel;
   late ConfettiController _confettiController;
@@ -316,37 +317,41 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
   /// True AAA Standard: A completely linear, async/await timeline orchestrated top-to-bottom.
   Future<void> _playUnlockSequence(BuildContext context) async {
-    // 1. Wait a tiny beat just to let the final settled frame render
-    await Future.delayed(const Duration(milliseconds: 50));
+    setState(() => _isSequenceAnimating = true);
+
+    // 1. Wait perfectly for the final settled frame to render (GPU Sync)
+    await WidgetsBinding.instance.endOfFrame;
     if (!mounted) return;
 
     // 2. Trigger the smooth scroll to the new node
     _scrollToCurrentLevel(animate: true);
 
-    // 3. Wait a tiny fraction of a second for the scroll to gain momentum
-    await Future.delayed(const Duration(milliseconds: 50));
+    // 3. Wait exactly three frames for scroll physics momentum to engage
+    for (int i = 0; i < 3; i++) {
+      await WidgetsBinding.instance.endOfFrame;
+    }
     if (!mounted) return;
 
     // 4. Play the smooth, organic path draw animation
     await _unlockPathController.forward();
     if (!mounted) return;
 
-    // 6. Complete the node unlock pop
+    // 5. Complete the node unlock pop
     setState(() {
       _celebratingLevel = _justUnlockedLevel;
       _justUnlockedLevel = null;
     });
 
-    // 7. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) _confettiController.play();
-    });
+    // 6. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
+    await WidgetsBinding.instance.endOfFrame;
+    if (mounted) _confettiController.play();
 
-    // 8. Wait 3 seconds, then cleanup celebration memory
+    // 7. Wait 3 seconds, then cleanup celebration memory
     await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
       setState(() {
         _celebratingLevel = null;
+        _isSequenceAnimating = false;
       });
     }
   }
@@ -440,10 +445,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             context.go('/home');
           }
         },
-        child: Scaffold(
-          backgroundColor: theme.backgroundColors[1],
-          extendBody: true,
-          body: Stack(
+        child: AbsorbPointer(
+          absorbing: _isSequenceAnimating,
+          child: Scaffold(
+            backgroundColor: theme.backgroundColors[1],
+            extendBody: true,
+            body: Stack(
             children: [
               // 1. Clean Minimal Static Background
               _buildBackground(theme, isDark),
@@ -620,9 +627,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                 bottom: 32.h,
                 left: 24.w,
                 child: _buildGoldenKeysButton(theme),
-              ),
+              ), // end of Positioned
             ],
           ),
+        ),
         ),
       ),
     );
