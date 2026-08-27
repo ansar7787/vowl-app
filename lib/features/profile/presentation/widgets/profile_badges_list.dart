@@ -100,32 +100,63 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
             margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32.r),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  badge.color.withValues(alpha: 0.2),
-                  Colors.black.withValues(alpha: 0.3),
-                ],
-              ),
               boxShadow: [
                 BoxShadow(
-                  color: badge.color.withValues(alpha: 0.2),
-                  blurRadius: 20,
-                  spreadRadius: -5,
-                  offset: const Offset(0, 10),
+                  color: badge.color.withValues(alpha: 0.3),
+                  blurRadius: 30,
+                  spreadRadius: -10,
+                  offset: const Offset(0, 15),
                 ),
               ],
             ),
             child: GlassTile(
               borderRadius: BorderRadius.circular(32.r),
               usePremiumStyle: true,
+              border: Border.all(
+                color: badge.color.withValues(alpha: 0.5),
+                width: 1.5,
+              ),
               child: Stack(
                 children: [
-                  // ACCESSIBILITY FIX: a trophy image with no semantic
-                  // label conveys nothing to TalkBack/VoiceOver users
-                  // beyond "image" - the badge name and level (already
-                  // shown visually below) are now announced together.
+                  // Abstract glowing background meshes (holographic feel)
+                  Positioned(
+                    top: -60.h,
+                    right: -40.w,
+                    child: Container(
+                      width: 180.r,
+                      height: 180.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: badge.color.withValues(alpha: 0.6),
+                            blurRadius: 60,
+                            spreadRadius: 20,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: -30.h,
+                    left: -40.w,
+                    child: Container(
+                      width: 140.r,
+                      height: 140.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: badge.color.withValues(alpha: 0.4),
+                            blurRadius: 50,
+                            spreadRadius: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // ACCESSIBILITY FIX: badge name and level announced
                   Semantics(
                     label: context.tr(
                       'profile.badge_semantic_label',
@@ -135,69 +166,104 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                     image: true,
                     child: ExcludeSemantics(
                       child: Center(
-                        child:
-                            Transform(
-                                  transform: Matrix4.identity()
-                                    ..setEntry(3, 2, 0.001)
-                                    ..rotateY(0.1),
-                                  alignment: FractionalOffset.center,
-                                  child: Image.asset(
-                                    'assets/images/mascot/gold_trophy.webp',
-                                    height: 140.h,
-                                    color: badge.color.withValues(alpha: 0.9),
-                                    colorBlendMode: BlendMode.screen,
-                                    // PRODUCTION SAFETY: falls back to a plain
-                                    // icon instead of a red error box if the
-                                    // asset is ever missing/corrupted in a
-                                    // build, rather than crashing this section
-                                    // of the Profile screen.
-                                    errorBuilder:
-                                        (context, error, stackTrace) => Icon(
-                                          Icons.emoji_events_rounded,
-                                          size: 100.r,
-                                          color: badge.color.withValues(
-                                            alpha: 0.9,
-                                          ),
-                                        ),
-                                  ),
-                                )
-                                .animate(onPlay: (c) => c.repeat(reverse: true))
-                                .moveY(begin: -5, end: 5, duration: 2000.ms),
+                        child: Transform(
+                          transform: Matrix4.identity()
+                            ..setEntry(3, 2, 0.001)
+                            ..rotateY(0.1),
+                          alignment: FractionalOffset.center,
+                          child: ShaderMask(
+                            shaderCallback: (bounds) => LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Colors.white,
+                                badge.color,
+                                badge.color.withValues(alpha: 0.5),
+                              ],
+                            ).createShader(bounds),
+                            child: Icon(
+                              badge.icon,
+                              size: 100.r,
+                              color: Colors.white,
+                            ),
+                          )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .moveY(begin: -8, end: 8, duration: 3000.ms)
+                              .scale(
+                                begin: const Offset(0.95, 0.95),
+                                end: const Offset(1.05, 1.05),
+                                duration: 2500.ms,
+                              ),
+                        ),
                       ),
                     ),
                   ),
 
+                  // Modern Typography UI
                   Positioned(
-                    bottom: 20.h,
+                    bottom: 24.h,
                     left: 0,
                     right: 0,
                     child: Column(
                       children: [
-                        Text(
-                          context.tr(badge.nameKey).toUpperCase(),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: Colors.white,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 2,
+                        ShaderMask(
+                          shaderCallback: (bounds) => const LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Colors.white, Color(0xFFE2E8F0)],
+                          ).createShader(bounds),
+                          child: Text(
+                            context.tr(badge.nameKey).toUpperCase(),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: Colors.white,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 4,
+                              shadows: [
+                                Shadow(
+                                  color: badge.color,
+                                  blurRadius: 12,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Text(
-                          context.tr(
-                            'profile.level_achieved',
-                            fallback: 'Level Achieved',
-                            args: ['${badge.minLevel}'],
+                        SizedBox(height: 8.h),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 6.h,
                           ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: Colors.white70,
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w700,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                badge.color.withValues(alpha: 0.4),
+                                badge.color.withValues(alpha: 0.1),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                            border: Border.all(
+                              color: badge.color.withValues(alpha: 0.6),
+                              width: 1,
+                            ),
+                          ),
+                          child: Text(
+                            context.tr(
+                              'profile.level_achieved',
+                              fallback: 'LEVEL ACHIEVED',
+                              args: ['${badge.minLevel}'],
+                            ).toUpperCase(),
+                            maxLines: 1,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: Colors.white,
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 2,
+                            ),
                           ),
                         ),
                       ],
