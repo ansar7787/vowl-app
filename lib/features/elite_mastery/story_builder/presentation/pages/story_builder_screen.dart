@@ -397,6 +397,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   ],
                   Expanded(
                     child: ReorderableListView(
+                      physics: _isFirstStagePassed && !_isAnswered
+                          ? const NeverScrollableScrollPhysics()
+                          : const BouncingScrollPhysics(),
                       onReorder: _onReorder,
                       buildDefaultDragHandles: false,
                       proxyDecorator: (child, index, animation) => Material(

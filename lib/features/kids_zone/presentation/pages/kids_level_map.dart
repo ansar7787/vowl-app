@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math' as math;
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -172,7 +171,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           _previousActiveNode ??= targetLevel;
 
           final double targetOffset = (targetLevel - 1) * 200.h;
-          final double centeredOffset = max(0, targetOffset - 300.h);
+          final double centeredOffset = math.max(0, targetOffset - 300.h);
 
           if (targetOffset > 100) {
             if (animate) {
@@ -216,7 +215,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
   double _getHorizontalOffset(int level, double screenWidth) {
     // Seeded random to keep map consistent across rebuilds
-    final random = Random(level * 123);
+    final random = math.Random(level * 123);
     // Map width minus node size (90.r) and safe edge padding (50.w * 2)
     final double availableWidth = screenWidth - 190.r;
     return 50.w + random.nextDouble() * availableWidth;
