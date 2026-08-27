@@ -149,37 +149,40 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
   /// True AAA Standard: A completely linear, async/await timeline orchestrated top-to-bottom.
   Future<void> _playUnlockSequence(BuildContext context, int currLevel) async {
-    // 1. Wait a tiny beat just to let the final settled frame render
-    await Future.delayed(const Duration(milliseconds: 50));
+    setState(() => _isUnlockAnimating = true);
+
+    // 1. Wait perfectly for the final settled frame to render (GPU Sync)
+    await WidgetsBinding.instance.endOfFrame;
     if (!mounted) return;
 
-    // 3. Trigger the smooth scroll to the new node
+    // 2. Trigger the smooth scroll to the new node
     _scrollToUnlockedLevel(delayMs: 0, animate: true);
 
-    // 4. Wait a tiny fraction of a second for the scroll to gain momentum
-    await Future.delayed(const Duration(milliseconds: 50));
+    // 3. Wait exactly three frames for scroll physics momentum to engage
+    for (int i = 0; i < 3; i++) {
+      await WidgetsBinding.instance.endOfFrame;
+    }
     if (!mounted) return;
 
-    // 5. Play the smooth, fast organic path draw animation
+    // 4. Play the smooth, fast organic path draw animation
     await _unlockPathController.forward();
     if (!mounted) return;
 
-    // 6. Complete the node unlock pop
+    // 5. Complete the node unlock pop
     setState(() {
       _celebratingLevel = currLevel;
-      _isUnlockAnimating = false;
     });
 
-    // 7. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) _confettiController.play();
-    });
+    // 6. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
+    await WidgetsBinding.instance.endOfFrame;
+    if (mounted) _confettiController.play();
 
-    // 8. Wait 3 seconds, then cleanup celebration memory
+    // 7. Wait 3 seconds, then cleanup celebration memory
     await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
       setState(() {
         _celebratingLevel = null;
+        _isUnlockAnimating = false;
       });
     }
   }
@@ -327,10 +330,12 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                         const Color(0xFFF8FAFC),
                       ));
 
-          return Scaffold(
-            backgroundColor: bgColor,
-            body: Stack(
-              children: [
+          return AbsorbPointer(
+            absorbing: _isUnlockAnimating,
+            child: Scaffold(
+              backgroundColor: bgColor,
+              body: Stack(
+                children: [
                 _buildBackground(context),
                 CustomScrollView(
                   controller: _scrollController,
@@ -491,6 +496,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                 ),
               ],
             ),
+          ),
           );
         },
       ),
