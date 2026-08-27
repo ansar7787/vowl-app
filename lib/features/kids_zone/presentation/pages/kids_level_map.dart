@@ -108,10 +108,49 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     super.dispose();
   }
 
+  /// AAA Standard: Mathematically binds to the Flutter rendering pipeline.
+  /// Ensures actions only execute once the navigation route animation is 100% complete,
+  /// completely eliminating race conditions or timing bugs on slow devices.
+  void _executeWhenRouteSettled(VoidCallback action) {
+    if (!mounted) return;
+    final route = ModalRoute.of(context);
+    if (route == null) {
+      action();
+      return;
+    }
+    
+    // 1. Wait for overlaying screens (like the victory game screen) to finish popping
+    if (route.secondaryAnimation != null && route.secondaryAnimation!.status == AnimationStatus.reverse) {
+      void listener(AnimationStatus status) {
+        if (status == AnimationStatus.dismissed) {
+          route.secondaryAnimation!.removeStatusListener(listener);
+          if (mounted) action();
+        }
+      }
+      route.secondaryAnimation!.addStatusListener(listener);
+      return;
+    }
+
+    // 2. Otherwise, wait for THIS screen to finish pushing (if we just loaded the map)
+    if (route.animation != null && !route.animation!.isCompleted) {
+      void listener(AnimationStatus status) {
+        if (status == AnimationStatus.completed) {
+          route.animation!.removeStatusListener(listener);
+          if (mounted) action();
+        }
+      }
+      route.animation!.addStatusListener(listener);
+      return;
+    }
+
+    // 3. Screen is completely settled
+    action();
+  }
+
   /// True AAA Standard: A completely linear, async/await timeline orchestrated top-to-bottom.
   Future<void> _playUnlockSequence(BuildContext context, int currLevel) async {
-    // 1. Wait for the screen pop route transition to finish completely
-    await Future.delayed(const Duration(milliseconds: 800));
+    // 1. Wait a tiny beat just to let the final settled frame render
+    await Future.delayed(const Duration(milliseconds: 50));
     if (!mounted) return;
 
     // 3. Trigger the smooth scroll to the new node
@@ -241,7 +280,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           // If multiple levels were skipped at once, skip the slow animation
           if (currLevel - prevLevel > 1) {
             _unlockPathController.value = 1.0;
-            _scrollToUnlockedLevel(delayMs: 400, animate: true);
+            _executeWhenRouteSettled(() {
+              if (mounted) _scrollToUnlockedLevel(delayMs: 0, animate: true);
+            });
             return;
           }
 
@@ -251,10 +292,12 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           _unlockPathController.reset();
 
           // Orchestrate the full unlock animation sequence via a pristine async state machine
-          _playUnlockSequence(context, currLevel);
+          _executeWhenRouteSettled(() {
+            if (mounted) _playUnlockSequence(context, currLevel);
+          });
         } else {
           // Wait a beat for the route transition to finish before scrolling
-          Future.delayed(const Duration(milliseconds: 800), () {
+          _executeWhenRouteSettled(() {
             if (mounted) _scrollToUnlockedLevel(delayMs: 0, animate: true);
           });
         }
@@ -686,3 +729,6 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     );
   }
 }
+
+
+
