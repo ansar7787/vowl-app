@@ -325,18 +325,11 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
       builder: (context, constraints) {
         return Stack(
           children: [
-            CustomScrollView(
-              physics: _isFirstStagePassed && !_isAnswered
-                  ? const NeverScrollableScrollPhysics()
-                  : const BouncingScrollPhysics(),
-              slivers: [
-        SliverFillRemaining(
-          hasScrollBody: false,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+            Builder(
+              builder: (context) {
+                final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
-              return Column(
+                return Column(
                 children: [
             // FIX: every Story Builder quest carries a real, hand-written
             // narrative hint (verified across all four sample batches), and
@@ -494,9 +487,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               );
             },
           ),
-        ),
-      ],
-    ),
     if (_isFirstStagePassed && !_isAnswered)
       SpeakToConfirmOverlay(
         expectedText: quest.sentences != null && quest.sentences!.isNotEmpty 
