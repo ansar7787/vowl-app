@@ -506,8 +506,10 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(vertical: 14.h),
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF0EA5E9), Color(0xFF0284C7)],
+                      gradient: LinearGradient(
+                        colors: _remainingClaims <= 0
+                            ? [Colors.grey.shade400, Colors.grey.shade500]
+                            : const [Color(0xFF0EA5E9), Color(0xFF0284C7)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -518,7 +520,10 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF0EA5E9).withValues(alpha: 0.4),
+                          color: (_remainingClaims <= 0 
+                                  ? Colors.grey.shade500 
+                                  : const Color(0xFF0EA5E9))
+                              .withValues(alpha: 0.4),
                           offset: Offset(0, 4.h),
                           blurRadius: 8.r,
                         ),
@@ -529,7 +534,13 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          isPremium ? Icons.redeem_rounded : Icons.play_circle_fill_rounded,
+                          _isLoadingLimits
+                              ? Icons.hourglass_empty_rounded
+                              : _remainingClaims <= 0
+                                  ? Icons.lock_clock_rounded
+                                  : isPremium
+                                      ? Icons.redeem_rounded
+                                      : Icons.play_circle_fill_rounded,
                           color: Colors.white,
                           size: 20.r,
                         ),
