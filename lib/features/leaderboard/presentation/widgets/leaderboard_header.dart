@@ -22,7 +22,7 @@ class LeaderboardHeader extends StatelessWidget {
       // FIX (HIGH-5): Screen readers now announce the leaderboard title,
       // subtitle, and when it was last updated in a single label.
       label:
-          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank')}. ${context.tr('leaderboard.updated_at', fallback: 'Updated at', args: [timeAgo])}',
+          '${context.tr('leaderboard.title', fallback: 'Leaderboard')}. ${context.tr('leaderboard.subtitle', fallback: 'See how you rank')}. ${context.tr('leaderboard.updated_at', fallback: 'Updated {0}', args: [timeAgo])}',
       header: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -154,20 +154,20 @@ class LeaderboardHeader extends StatelessWidget {
     if (difference.inMinutes < 60) {
       return context.tr(
         'leaderboard.mins_ago',
-        fallback: 'mins ago',
+        fallback: '{0} mins ago',
         args: [difference.inMinutes.toString()],
       );
     }
     if (difference.inHours < 24) {
       return context.tr(
         'leaderboard.hours_ago',
-        fallback: 'hours ago',
+        fallback: '{0} hours ago',
         args: [difference.inHours.toString()],
       );
     }
     return context.tr(
       'leaderboard.days_ago',
-      fallback: 'days ago',
+      fallback: '{0} days ago',
       args: [difference.inDays.toString()],
     );
   }
