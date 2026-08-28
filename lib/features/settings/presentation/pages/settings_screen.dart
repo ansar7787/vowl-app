@@ -256,70 +256,105 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SettingsProfileSection(
-                        user: context.watch<AuthBloc>().state.user,
-                        isDark: isDark,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SettingsProfileSection(
+                            user: context.watch<AuthBloc>().state.user,
+                            isDark: isDark,
+                          ),
+                          SizedBox(height: 32.h),
+                        ],
                       ),
-                      SizedBox(height: 32.h),
-                      // FIX (HIGH-4): Sections extracted to private widgets.
-                      _SettingsAccountGroup(isDark: isDark)
-                          .animate()
-                          .fadeIn(delay: 80.ms, duration: 400.ms)
-                          .slideY(begin: 0.15, curve: Curves.easeOut),
-                      SizedBox(height: 32.h),
-                      _SettingsPreferencesGroup(
-                        translationLanguageName: _translationLanguageName,
-                        isDark: isDark,
-                        soundEnabled: _soundEnabled,
-                        notificationsEnabled: _notificationsEnabled,
-                        speechConfirmEnabled: _speechConfirmEnabled,
-                        isLoading: _isLoading,
-                        onToggleSound: _toggleSound,
-                        onToggleNotifications: _toggleNotifications,
-                        onTapTranslationLanguage: () async {
-                          await LanguageSelectionBottomSheet.show(context);
-                          if (!mounted) return;
-                          _loadTranslationLanguageName();
-                        },
-                        onToggleSpeechConfirm: (value) async {
-                          if (!value) {
-                            if (!mounted) return;
-                            final confirmed =
-                                await SettingsDialogs.showDisableSpeechConfirmation(
-                                  context,
-                                );
-                            if (confirmed != true) return;
-                          }
-                          final prefs = await SharedPreferences.getInstance();
-                          await prefs.setBool('skip_speech_enabled', !value);
-                          if (!mounted) return;
-                          setState(() => _speechConfirmEnabled = value);
-                        },
-                      )
-                          .animate()
-                          .fadeIn(delay: 160.ms, duration: 400.ms)
-                          .slideY(begin: 0.15, curve: Curves.easeOut),
-                      SizedBox(height: 32.h),
-                      _SettingsSupportGroup(
-                        isDark: isDark,
-                        appVersion: _appVersion,
-                        buildNumber: _buildNumber,
-                        onSupportTap: () => _handleSupportLink(context),
-                        onLegalTap: (title) => _handleLegalLink(context, title),
-                      )
-                          .animate()
-                          .fadeIn(delay: 240.ms, duration: 400.ms)
-                          .slideY(begin: 0.15, curve: Curves.easeOut),
-                      SizedBox(height: 32.h),
-                      _SettingsDangerGroup(
-                        onClearCache: () => _handleClearCache(context),
-                      )
-                          .animate()
-                          .fadeIn(delay: 320.ms, duration: 400.ms)
-                          .slideY(begin: 0.15, curve: Curves.easeOut),
-                      SizedBox(height: 40.h),
-                      const SettingsLogoutButton(),
-                    ],
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // FIX (HIGH-4): Sections extracted to private widgets.
+                          _SettingsAccountGroup(isDark: isDark),
+                          SizedBox(height: 32.h),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _SettingsPreferencesGroup(
+                            translationLanguageName: _translationLanguageName,
+                            isDark: isDark,
+                            soundEnabled: _soundEnabled,
+                            notificationsEnabled: _notificationsEnabled,
+                            speechConfirmEnabled: _speechConfirmEnabled,
+                            isLoading: _isLoading,
+                            onToggleSound: _toggleSound,
+                            onToggleNotifications: _toggleNotifications,
+                            onTapTranslationLanguage: () async {
+                              await LanguageSelectionBottomSheet.show(context);
+                              if (!mounted) return;
+                              _loadTranslationLanguageName();
+                            },
+                            onToggleSpeechConfirm: (value) async {
+                              if (!value) {
+                                if (!mounted) return;
+                                final confirmed =
+                                    await SettingsDialogs.showDisableSpeechConfirmation(
+                                      context,
+                                    );
+                                if (confirmed != true) return;
+                              }
+                              final prefs = await SharedPreferences.getInstance();
+                              await prefs.setBool('skip_speech_enabled', !value);
+                              if (!mounted) return;
+                              setState(() => _speechConfirmEnabled = value);
+                            },
+                          ),
+                          SizedBox(height: 32.h),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _SettingsSupportGroup(
+                            isDark: isDark,
+                            appVersion: _appVersion,
+                            buildNumber: _buildNumber,
+                            onSupportTap: () => _handleSupportLink(context),
+                            onLegalTap: (title) => _handleLegalLink(context, title),
+                          ),
+                          SizedBox(height: 32.h),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _SettingsDangerGroup(
+                            onClearCache: () => _handleClearCache(context),
+                          ),
+                          SizedBox(height: 40.h),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SettingsLogoutButton(),
+                        ],
+                      ),
+                    ]
+                        .animate(interval: 80.ms)
+                        .fadeIn(
+                          duration: 600.ms,
+                          curve: Curves.easeOutCubic,
+                        )
+                        .scaleXY(
+                          begin: 0.95,
+                          end: 1.0,
+                          duration: 600.ms,
+                          curve: Curves.easeOutBack,
+                        )
+                        .slideY(
+                          begin: 0.05,
+                          end: 0,
+                          duration: 600.ms,
+                          curve: Curves.easeOutCubic,
+                        ),
                   ),
                 ),
               ),

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -124,7 +125,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               onEditPhoto: () =>
                                                   _showImageSourceSheet(
                                                       context),
-                                            );
+                                            )
+                                                .animate()
+                                                .fadeIn(
+                                                  duration: 800.ms,
+                                                  curve: Curves.easeOutCubic,
+                                                );
                                           },
                                         ),
                                       ],
@@ -191,128 +197,177 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           // ── 1. Adventure Stats ──
-                          SizedBox(height: 8.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildSectionHeader(
-                              context,
-                              context.tr(
-                                'profile.adventure_stats',
-                                fallback: 'Adventure Stats',
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 8.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: _buildSectionHeader(
+                                  context,
+                                  context.tr(
+                                    'profile.adventure_stats',
+                                    fallback: 'Adventure Stats',
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                          SizedBox(height: 12.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: ProfileBentoStats(user: user),
-                          ),
-                          SizedBox(height: 16.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: ProfileFeatureCard(
-                              iconContent: Icon(
-                                Icons.insights_rounded,
-                                color: Colors.white,
-                                size: 24.r,
+                              SizedBox(height: 12.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: ProfileBentoStats(user: user),
                               ),
-                              color: const Color(0xFF10B981), // Emerald
-                              shadowColor: const Color(0xFF059669),
-                              title: context.tr(
-                                'profile.learning_report',
-                                fallback: 'Learning Report',
+                              SizedBox(height: 16.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: ProfileFeatureCard(
+                                  iconContent: Icon(
+                                    Icons.insights_rounded,
+                                    color: Colors.white,
+                                    size: 24.r,
+                                  ),
+                                  color: const Color(0xFF10B981), // Emerald
+                                  shadowColor: const Color(0xFF059669),
+                                  title: context.tr(
+                                    'profile.learning_report',
+                                    fallback: 'Learning Report',
+                                  ),
+                                  subtitle: context.tr(
+                                    'profile.learning_report_subtitle',
+                                    fallback:
+                                        'Weekly XP, mastery overview & quick resume.',
+                                  ),
+                                  onTap: () {
+                                    di.sl<HapticService>().selection();
+                                    context.push(
+                                        AppRouter.progressDashboardRoute);
+                                  },
+                                ),
                               ),
-                              subtitle: context.tr(
-                                'profile.learning_report_subtitle',
-                                fallback:
-                                    'Weekly XP, mastery overview & quick resume.',
-                              ),
-                              onTap: () {
-                                di.sl<HapticService>().selection();
-                                context.push(
-                                    AppRouter.progressDashboardRoute);
-                              },
-                            ),
+                            ],
                           ),
 
                           // ── 2. Key Shop (inline, compact) ──
-                          SizedBox(height: 16.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildKeyShopBanner(context, user),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 16.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: _buildKeyShopBanner(context, user),
+                              ),
+                            ],
                           ),
 
                           // ── 3. Hall of Fame ──
-                          SizedBox(height: 40.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildSectionHeader(
-                              context,
-                              context.tr(
-                                'profile.hall_of_fame',
-                                fallback: 'Hall of Fame',
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 40.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: _buildSectionHeader(
+                                  context,
+                                  context.tr(
+                                    'profile.hall_of_fame',
+                                    fallback: 'Hall of Fame',
+                                  ),
+                                ),
                               ),
-                            ),
+                              SizedBox(height: 20.h),
+                              ProfileBadgesList(user: user),
+                            ],
                           ),
-                          SizedBox(height: 20.h),
-                          ProfileBadgesList(user: user),
 
                           // ── 4. Kids Zone (conditional) ──
                           if (user.kidsStickers.isNotEmpty ||
-                              user.kidsTotalLevelsCompleted > 0) ...[
-                            SizedBox(height: 40.h),
-                            Padding(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: 24.w),
-                              child: _buildSectionHeader(
-                                context,
-                                context.tr(
-                                  'profile.kids_zone',
-                                  fallback: 'Kids Zone',
+                              user.kidsTotalLevelsCompleted > 0)
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 40.h),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: _buildSectionHeader(
+                                    context,
+                                    context.tr(
+                                      'profile.kids_zone',
+                                      fallback: 'Kids Zone',
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                SizedBox(height: 20.h),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: _buildKidsRoomCard(context),
+                                ),
+                                SizedBox(height: 16.h),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 24.w),
+                                  child:
+                                      ProfileStickersProgress(user: user),
+                                ),
+                              ],
                             ),
-                            SizedBox(height: 20.h),
-                            Padding(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: 24.w),
-                              child: _buildKidsRoomCard(context),
-                            ),
-                            SizedBox(height: 16.h),
-                            Padding(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: 24.w),
-                              child:
-                                  ProfileStickersProgress(user: user),
-                            ),
-                          ],
 
                           // ── 5. Premium CTA (single, after value) ──
-                          if (!user.isPremium) ...[
-                            SizedBox(height: 40.h),
-                            Padding(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: 24.w),
-                              child: _buildPremiumBanner(context),
+                          if (!user.isPremium)
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 40.h),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: _buildPremiumBanner(context),
+                                ),
+                              ],
                             ),
-                          ],
 
                           // ── 6. Settings ──
-                          SizedBox(height: 40.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: ProfilePreferencesList(user: user),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 40.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: ProfilePreferencesList(user: user),
+                              ),
+                            ],
                           ),
 
                           // ── 7. Sign Out ──
-                          SizedBox(height: 24.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildSignOutButton(context),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 24.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: _buildSignOutButton(context),
+                              ),
+                              SizedBox(height: 100.h),
+                            ],
                           ),
-
-                          SizedBox(height: 100.h),
-                        ],
+                        ]
+                            .animate(interval: 80.ms)
+                            .fadeIn(
+                              duration: 600.ms,
+                              curve: Curves.easeOutCubic,
+                            )
+                            .scaleXY(
+                              begin: 0.95,
+                              end: 1.0,
+                              duration: 600.ms,
+                              curve: Curves.easeOutBack,
+                            )
+                            .slideY(
+                              begin: 0.05,
+                              end: 0,
+                              duration: 600.ms,
+                              curve: Curves.easeOutCubic,
+                            ),
                       ),
                     ),
                   ],

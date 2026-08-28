@@ -98,15 +98,27 @@ class ProfileHeader extends StatelessWidget {
                       SizedBox(
                         width: 132.r,
                         height: 132.r,
-                        child: CircularProgressIndicator(
-                          value: xpProgress,
-                          strokeWidth: 3.5,
-                          strokeCap: StrokeCap.round,
-                          backgroundColor: isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : Colors.black.withValues(alpha: 0.06),
-                          valueColor:
-                              AlwaysStoppedAnimation<Color>(glowColor),
+                        child: TweenAnimationBuilder<double>(
+                          tween: Tween<double>(begin: 0, end: xpProgress),
+                          duration: const Duration(milliseconds: 1500),
+                          curve: Curves.easeOutCubic,
+                          onEnd: () {
+                            if (xpProgress > 0) {
+                              di.sl<HapticService>().light();
+                            }
+                          },
+                          builder: (context, value, child) {
+                            return CircularProgressIndicator(
+                              value: value,
+                              strokeWidth: 3.5,
+                              strokeCap: StrokeCap.round,
+                              backgroundColor: isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : Colors.black.withValues(alpha: 0.06),
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(glowColor),
+                            );
+                          },
                         ),
                       ),
                       // Avatar
