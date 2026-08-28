@@ -343,6 +343,7 @@ class _PodiumSlot extends StatelessWidget {
     )
         .animate(delay: delay.ms)
         .fadeIn(duration: 400.ms, curve: Curves.easeOut)
+        .blurXY(begin: 8, end: 0, duration: 400.ms, curve: Curves.easeOut)
         .slideY(
           begin: 0.4,
           end: 0,
@@ -354,6 +355,11 @@ class _PodiumSlot extends StatelessWidget {
           end: 1.0,
           curve: Curves.easeOutBack,
           duration: 700.ms,
+        )
+        .shimmer(
+          delay: (delay + 300).ms,
+          duration: 1200.ms,
+          color: Colors.white.withValues(alpha: 0.3),
         );
   }
 

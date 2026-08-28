@@ -315,6 +315,13 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                     delay: (index < 12 ? index * 40 : 0).ms,
                                     curve: Curves.easeOut,
                                   )
+                                  .blurXY(
+                                    begin: 4,
+                                    end: 0,
+                                    duration: 400.ms,
+                                    delay: (index < 12 ? index * 40 : 0).ms,
+                                    curve: Curves.easeOut,
+                                  )
                                   .slideX(
                                     begin: 0.1,
                                     end: 0,
