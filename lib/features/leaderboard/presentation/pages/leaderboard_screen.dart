@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -122,179 +123,329 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 // ---------------------------------------------------------------------------
 // Loaded content — extracted to reduce BlocBuilder body complexity
 // ---------------------------------------------------------------------------
-
-class _LeaderboardContent extends StatelessWidget {
+class _LeaderboardContent extends StatefulWidget {
   final LeaderboardLoaded state;
   final UserEntity? currentUser;
 
   const _LeaderboardContent({required this.state, required this.currentUser});
 
   @override
+  State<_LeaderboardContent> createState() => _LeaderboardContentState();
+}
+
+class _LeaderboardContentState extends State<_LeaderboardContent> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  /// Approximate scroll offset to the current user's rank tile.
+  /// Header + podium + sticky card ≈ fixed overhead; each tile ≈ 74.h.
+  void _scrollToMe() {
+    final rankIndex = widget.state.users.indexWhere(
+      (u) => u.id == widget.currentUser?.id,
+    );
+    if (rankIndex < 3) return; // User is on podium, no need to scroll
+
+    // Approximate overhead: header(70) + podium(280) + spacing(64) + sticky(110) + section(40)
+    final overheadEstimate = 564.0;
+    final tileHeight = 74.0;
+    final targetOffset = overheadEstimate + ((rankIndex - 3) * tileHeight);
+    final clampedOffset = targetOffset.clamp(
+      0.0,
+      _scrollController.position.maxScrollExtent,
+    );
+
+    HapticFeedback.mediumImpact();
+    _scrollController.animateTo(
+      clampedOffset,
+      duration: const Duration(milliseconds: 600),
+      curve: Curves.easeOutCubic,
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      onRefresh: () async {
-        final completer = Completer<void>();
-        context.read<LeaderboardBloc>().add(
-          LoadLeaderboard(completer: completer, isKids: state.isKids),
-        );
-        await completer.future;
-      },
-      backgroundColor: Colors.transparent,
-      color: const Color(0xFF6366F1),
-      child: CustomScrollView(
-        physics: const AlwaysScrollableScrollPhysics(
-          parent: BouncingScrollPhysics(),
-        ),
-        slivers: [
-          // Padding to push content slightly below AppBar
-          SliverToBoxAdapter(child: SizedBox(height: 16.h)),
+    final rankIndex = widget.state.users.indexWhere(
+      (u) => u.id == widget.currentUser?.id,
+    );
+    final showFindMe = rankIndex >= 6; // Only show if not naturally visible
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-          // Header with last-updated timestamp
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: LeaderboardHeader(
-                lastUpdated: state.lastUpdated,
-                isKids: state.isKids,
-              ),
+    return Stack(
+      children: [
+        RefreshIndicator(
+          onRefresh: () async {
+            final completer = Completer<void>();
+            context.read<LeaderboardBloc>().add(
+              LoadLeaderboard(completer: completer, isKids: widget.state.isKids),
+            );
+            await completer.future;
+          },
+          backgroundColor: Colors.transparent,
+          color: const Color(0xFF6366F1),
+          child: CustomScrollView(
+            controller: _scrollController,
+            physics: const AlwaysScrollableScrollPhysics(
+              parent: BouncingScrollPhysics(),
             ),
-          ),
+            slivers: [
+              // Padding to push content slightly below AppBar
+              SliverToBoxAdapter(child: SizedBox(height: 16.h)),
 
-          SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-
-          // Podium (Top 3)
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: LeaderboardPodium(
-                top3: state.users.take(3).toList(),
-                isKids: state.isKids,
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(child: SizedBox(height: 24.h)),
-
-          // Sticky Current User Rank (Pins to top when scrolling)
-          SliverPersistentHeader(
-            pinned: true,
-            delegate: _StickyRankCardDelegate(
-              minHeight: 140.h,
-              maxHeight: 140.h,
-              child: LeaderboardRankCard(
-                allUsers: state.users,
-                isKids: state.isKids,
-              ),
-            ),
-          ),
-
-          // Section label
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-              child: Text(
-                context.tr(
-                  'leaderboard.top_challengers',
-                  fallback: 'Top Challengers',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white38
-                      : Colors.black38,
-                  letterSpacing: 2.5,
+              // Header with last-updated timestamp
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: LeaderboardHeader(
+                    lastUpdated: widget.state.lastUpdated,
+                    isKids: widget.state.isKids,
+                  ),
                 ),
               ),
-            ),
-          ),
 
-          // Rank 4-N list
-          if (state.users.length > 3)
-            SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate((context, index) {
-                  final userIndex = index + 3;
-                  if (userIndex >= state.users.length) {
-                    return const SizedBox.shrink();
-                  }
-                  final user = state.users[userIndex];
-                  final rank = userIndex + 1;
-                  final isMe = currentUser?.id == user.id;
-                  final isLast = userIndex == state.users.length - 1;
+              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
 
-                  return RepaintBoundary(
-                    // ValueKey prevents animation replay when tiles
-                    // are recycled by the SliverChildBuilderDelegate.
-                    key: ValueKey('rank_tile_${user.id}'),
-                    child: Padding(
-                      padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
-                      child:
-                          LeaderboardRankTile(
-                                user: user,
-                                rank: rank,
-                                isMe: isMe,
-                              )
-                              .animate()
-                              .fadeIn(duration: 250.ms, curve: Curves.easeOut)
-                              .slideX(
-                                begin: 0.05,
-                                end: 0,
-                                curve: Curves.easeOut,
-                              ),
+              // Podium (Top 3)
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: LeaderboardPodium(
+                    top3: widget.state.users.take(3).toList(),
+                    isKids: widget.state.isKids,
+                    currentUserId: widget.currentUser?.id,
+                  ),
+                ),
+              ),
+
+              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+
+              // Sticky Current User Rank (Pins to top when scrolling)
+              SliverPersistentHeader(
+                pinned: true,
+                delegate: _StickyRankCardDelegate(
+                  minHeight: 80.h,
+                  maxHeight: 115.h,
+                  child: LeaderboardRankCard(
+                    allUsers: widget.state.users,
+                    isKids: widget.state.isKids,
+                  ),
+                ),
+              ),
+
+              // Section label with divider
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 3.w,
+                        height: 14.h,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              const Color(0xFF6366F1).withValues(alpha: 0.8),
+                              const Color(0xFF3B82F6).withValues(alpha: 0.4),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        context.tr(
+                          'leaderboard.top_challengers',
+                          fallback: 'Top Challengers',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark ? Colors.white54 : Colors.black45,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: (isDark ? Colors.white : Colors.black)
+                              .withValues(alpha: 0.06),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Rank 4-N list
+              if (widget.state.users.length > 3)
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate((context, index) {
+                      final userIndex = index + 3;
+                      if (userIndex >= widget.state.users.length) {
+                        return const SizedBox.shrink();
+                      }
+                      final user = widget.state.users[userIndex];
+                      final rank = userIndex + 1;
+                      final isMe = widget.currentUser?.id == user.id;
+                      final isLast = userIndex == widget.state.users.length - 1;
+
+                      return RepaintBoundary(
+                        key: ValueKey('rank_tile_${user.id}'),
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
+                          child:
+                              LeaderboardRankTile(
+                                    user: user,
+                                    rank: rank,
+                                    isMe: isMe,
+                                  )
+                                  .animate()
+                                  .fadeIn(
+                                    duration: 300.ms,
+                                    delay: (index < 12 ? index * 40 : 0).ms,
+                                    curve: Curves.easeOut,
+                                  )
+                                  .slideX(
+                                    begin: 0.06,
+                                    end: 0,
+                                    duration: 350.ms,
+                                    delay: (index < 12 ? index * 40 : 0).ms,
+                                    curve: Curves.easeOutCubic,
+                                  ),
+                        ),
+                      );
+                    }, childCount: widget.state.users.length - 3),
+                  ),
+                )
+              else
+                // Empty state when no users beyond top 3 (e.g. Kids Zone)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 48.h, horizontal: 32.w),
+                    child: Column(
+                      children: [
+                        // Animated trophy icon
+                        Icon(
+                          widget.state.isKids
+                              ? Icons.child_care_rounded
+                              : Icons.emoji_events_outlined,
+                          size: 56.r,
+                          color: isDark
+                              ? const Color(0xFF6366F1).withValues(alpha: 0.4)
+                              : const Color(0xFF6366F1).withValues(alpha: 0.3),
+                        )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .scaleXY(begin: 0.95, end: 1.05, duration: 1800.ms)
+                            .fade(begin: 0.7, end: 1.0),
+                        SizedBox(height: 16.h),
+                        Text(
+                          widget.state.isKids
+                              ? context.tr(
+                                  'leaderboard.kids_empty',
+                                  fallback: 'Be the first kid on the leaderboard!',
+                                )
+                              : context.tr(
+                                  'leaderboard.empty',
+                                  fallback:
+                                      'Complete more quests to climb the ranks!',
+                                ),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark ? Colors.white54 : Colors.black45,
+                            height: 1.4,
+                          ),
+                        ),
+                        SizedBox(height: 8.h),
+                        Text(
+                          widget.state.isKids
+                              ? context.tr(
+                                  'leaderboard.kids_subtitle',
+                                  fallback: 'See how your child ranks globally!',
+                                )
+                              : context.tr(
+                                  'leaderboard.subtitle',
+                                  fallback: 'See how you rank globally!',
+                                ),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark ? Colors.white30 : Colors.black26,
+                          ),
+                        ),
+                      ],
                     ),
-                  );
-                }, childCount: state.users.length - 3),
-              ),
-            )
-          else
-            // Empty state when no users beyond top 3 (e.g. Kids Zone)
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 32.w),
-                child: Column(
+                  ),
+                ),
+
+              SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+            ],
+          ),
+        ),
+
+        // "Find Me" FAB — only visible when user's rank is deep in the list
+        if (showFindMe)
+          Positioned(
+            bottom: 24.h,
+            right: 20.w,
+            child: GestureDetector(
+              onTap: _scrollToMe,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
+                  ),
+                  borderRadius: BorderRadius.circular(24.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                      blurRadius: 16,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      state.isKids
-                          ? Icons.child_care_rounded
-                          : Icons.emoji_events_outlined,
-                      size: 48.r,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white24
-                          : Colors.black26,
+                      Icons.my_location_rounded,
+                      color: Colors.white,
+                      size: 16.r,
                     ),
-                    SizedBox(height: 12.h),
+                    SizedBox(width: 6.w),
                     Text(
-                      state.isKids
-                          ? context.tr(
-                              'leaderboard.kids_empty',
-                              fallback: 'Be the first kid on the leaderboard!',
-                            )
-                          : context.tr(
-                              'leaderboard.empty',
-                              fallback:
-                                  'Complete more quests to climb the ranks!',
-                            ),
-                      textAlign: TextAlign.center,
+                      '#${rankIndex + 1}',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white38
-                            : Colors.black38,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
                       ),
                     ),
                   ],
                 ),
-              ),
+              )
+                  .animate()
+                  .fadeIn(duration: 400.ms, delay: 800.ms)
+                  .slideY(begin: 0.3, end: 0, curve: Curves.easeOutBack),
             ),
-
-          SliverToBoxAdapter(child: SizedBox(height: 120.h)),
-        ],
-      ),
+          ),
+      ],
     );
   }
 }
@@ -350,8 +501,17 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
           ),
           // Rank card content
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
-            child: Center(child: child),
+            padding: EdgeInsets.symmetric(
+              horizontal: 24.w,
+              vertical: isPinned ? 8.h : 12.h,
+            ),
+            child: Center(
+              child: LeaderboardRankCard(
+                allUsers: (child as LeaderboardRankCard).allUsers,
+                isKids: (child as LeaderboardRankCard).isKids,
+                isCollapsed: isPinned,
+              ),
+            ),
           ),
           // Bottom shadow/divider — only visible when pinned
           if (isPinned)
@@ -474,7 +634,10 @@ class _LeaderboardToggle extends StatelessWidget {
         children: [
           Expanded(
             child: GestureDetector(
-              onTap: () => onToggle(false),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                onToggle(false);
+              },
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,
@@ -528,7 +691,10 @@ class _LeaderboardToggle extends StatelessWidget {
           ),
           Expanded(
             child: GestureDetector(
-              onTap: () => onToggle(true),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                onToggle(true);
+              },
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,

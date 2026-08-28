@@ -30,9 +30,13 @@ class LeaderboardRankTile extends StatelessWidget {
     final scoreLabel = isKids
         ? context.tr('leaderboard.coins', fallback: 'Coins')
         : context.tr('leaderboard.xp', fallback: 'XP');
-    final tierColor = rank <= 10
-        ? const Color(0xFF3B82F6)
-        : const Color(0xFF94A3B8);
+    final tierColor = rank <= 5
+        ? const Color(0xFF6366F1)
+        : rank <= 10
+            ? const Color(0xFF3B82F6)
+            : rank <= 25
+                ? const Color(0xFF06B6D4)
+                : const Color(0xFF94A3B8);
     final displayName =
         user.displayName ??
         context.tr('leaderboard.player', fallback: 'Player');
@@ -70,21 +74,30 @@ class LeaderboardRankTile extends StatelessWidget {
         borderWidth: isMe ? 1.5 : 1,
         child: Row(
           children: [
-            // Rank number
+            // Rank number & Change Indicator
             SizedBox(
               width: 44.w,
-              child: Text(
-                '$rank',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: -1,
-                  color: isDark
-                      ? tierColor.withValues(alpha: 0.9)
-                      : tierColor.withValues(alpha: 0.8),
-                ),
-                textAlign: TextAlign.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '$rank',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: -1,
+                      color: isDark
+                          ? tierColor.withValues(alpha: 0.9)
+                          : tierColor.withValues(alpha: 0.8),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  if (user.previousRank != null) ...[
+                    SizedBox(height: 2.h),
+                    _buildRankChangeIndicator(user.previousRank!, rank),
+                  ],
+                ],
               ),
             ),
             SizedBox(width: 12.w),
@@ -117,7 +130,7 @@ class LeaderboardRankTile extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          displayName.toUpperCase(),
+                          displayName,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 13.sp,
@@ -194,7 +207,7 @@ class LeaderboardRankTile extends StatelessWidget {
               child: Text(
                 context.tr(
                   'leaderboard.lvs',
-                  fallback: 'Lvs',
+                  fallback: 'Lv. {0}',
                   args: [levelsCleared.toString()],
                 ),
                 style: TextStyle(
@@ -209,5 +222,59 @@ class LeaderboardRankTile extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildRankChangeIndicator(int previousRank, int currentRank) {
+    final diff = previousRank - currentRank;
+    if (diff > 0) {
+      // Improved rank (e.g. from 10 to 5)
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.arrow_upward_rounded, color: const Color(0xFF10B981), size: 10.r),
+          Text(
+            '$diff',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 9.sp,
+              fontWeight: FontWeight.w800,
+              color: const Color(0xFF10B981),
+            ),
+          ),
+        ],
+      );
+    } else if (diff < 0) {
+      // Dropped rank (e.g. from 5 to 10)
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.arrow_downward_rounded, color: const Color(0xFFEF4444), size: 10.r),
+          Text(
+            '${diff.abs()}',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 9.sp,
+              fontWeight: FontWeight.w800,
+              color: const Color(0xFFEF4444),
+            ),
+          ),
+        ],
+      );
+    } else {
+      // No change
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 6.w,
+            height: 2.h,
+            decoration: BoxDecoration(
+              color: Colors.grey.withValues(alpha: 0.6),
+              borderRadius: BorderRadius.circular(2.r),
+            ),
+          ),
+        ],
+      );
+    }
   }
 }

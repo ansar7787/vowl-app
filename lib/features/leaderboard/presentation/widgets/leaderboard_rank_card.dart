@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class LeaderboardRankCard extends StatelessWidget {
   final List<UserEntity> allUsers;
   final bool isKids;
+  final bool isCollapsed;
   static const int _totalLevels = AppConstants.totalCurriculumLevels;
   static const int _totalKidsLevels = 25;
 
@@ -19,6 +20,7 @@ class LeaderboardRankCard extends StatelessWidget {
     super.key,
     required this.allUsers,
     this.isKids = false,
+    this.isCollapsed = false,
   });
 
   @override
@@ -70,7 +72,7 @@ class LeaderboardRankCard extends StatelessWidget {
           ],
         ),
         child: GlassTile(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: isCollapsed ? 12.h : 12.h),
           borderRadius: BorderRadius.circular(24.r),
           borderColor: isDark
               ? const Color(0xFF3B82F6).withValues(alpha: 0.5)
@@ -161,7 +163,7 @@ class LeaderboardRankCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                         Text(
-                          currentUser.displayName?.toUpperCase() ??
+                          currentUser.displayName ??
                               context.tr(
                                 'leaderboard.player',
                                 fallback: 'Player',
@@ -178,123 +180,80 @@ class LeaderboardRankCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(width: 12.w),
-                  // Levels badge
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 8.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.12)
-                          : const Color(0xFF94A3B8).withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(14.r),
-                      border: Border.all(
+                ],
+              ),
+              if (!isCollapsed) ...[
+                SizedBox(height: 12.h),
+                // Progress bar with animated fill
+                Stack(
+                  children: [
+                    Container(
+                      height: 6.h,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
                         color: isDark
-                            ? Colors.white.withValues(alpha: 0.15)
-                            : const Color(0xFF94A3B8).withValues(alpha: 0.25),
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : Colors.black.withValues(alpha: 0.03),
+                        borderRadius: BorderRadius.circular(3.r),
                       ),
                     ),
-                    child: Column(
-                      children: [
-                        Text(
-                          '$levelsCleared',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF334155),
-                            height: 1,
-                          ),
-                        ),
-                        Text(
-                          context.tr('leaderboard.levels', fallback: 'Levels'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 7.sp,
-                            fontWeight: FontWeight.w800,
-                            color: isDark
-                                ? Colors.white60
-                                : const Color(0xFF64748B),
-                            letterSpacing: 1,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 12.h),
-              // Progress bar with animated fill
-              Stack(
-                children: [
-                  Container(
-                    height: 6.h,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : Colors.black.withValues(alpha: 0.03),
-                      borderRadius: BorderRadius.circular(3.r),
-                    ),
-                  ),
-                  TweenAnimationBuilder<double>(
-                    tween: Tween(begin: 0.0, end: progress.clamp(0.02, 1.0)),
-                    duration: const Duration(milliseconds: 800),
-                    curve: Curves.easeOutCubic,
-                    builder: (context, value, _) {
-                      return FractionallySizedBox(
-                        widthFactor: value,
-                        child: Container(
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                    TweenAnimationBuilder<double>(
+                      tween: Tween(begin: 0.0, end: progress.clamp(0.02, 1.0)),
+                      duration: const Duration(milliseconds: 800),
+                      curve: Curves.easeOutCubic,
+                      builder: (context, value, _) {
+                        return FractionallySizedBox(
+                          widthFactor: value,
+                          child: Container(
+                            height: 6.h,
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                              ),
+                              borderRadius: BorderRadius.circular(3.r),
                             ),
-                            borderRadius: BorderRadius.circular(3.r),
                           ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                SizedBox(height: 6.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        isKids
+                            ? context.tr(
+                                'leaderboard.all_kids_quests',
+                                fallback: 'Kids Quests',
+                              )
+                            : context.tr(
+                                'leaderboard.all_quests',
+                                fallback: 'All Quests',
+                              ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w700,
+                          color: secondaryTextColor.withValues(alpha: 0.6),
                         ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-              SizedBox(height: 6.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Flexible(
-                    child: Text(
-                      context.tr(
-                        'leaderboard.all_quests',
-                        fallback: 'All Quests',
-                        args: [(progress * 100).toStringAsFixed(1)],
+                        overflow: TextOverflow.ellipsis,
                       ),
+                    ),
+                    Text(
+                      '$levelsCleared / $maxLevels',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 9.sp,
                         fontWeight: FontWeight.w700,
                         color: secondaryTextColor.withValues(alpha: 0.6),
                       ),
-                      overflow: TextOverflow.ellipsis,
                     ),
-                  ),
-                  Text(
-                    '$levelsCleared / $maxLevels',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.w700,
-                      color: secondaryTextColor.withValues(alpha: 0.6),
-                    ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              ],
             ],
           ),
         ),

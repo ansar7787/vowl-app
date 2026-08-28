@@ -10,8 +10,14 @@ import 'package:auto_size_text/auto_size_text.dart';
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
   final bool isKids;
+  final String? currentUserId;
 
-  const LeaderboardPodium({super.key, required this.top3, this.isKids = false});
+  const LeaderboardPodium({
+    super.key,
+    required this.top3,
+    this.isKids = false,
+    this.currentUserId,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +43,7 @@ class LeaderboardPodium extends StatelessWidget {
                         rank: 2,
                         maxHeight: maxPodiumHeight,
                         isKids: isKids,
+                        currentUserId: currentUserId,
                       ),
                     )
                   else
@@ -51,6 +58,7 @@ class LeaderboardPodium extends StatelessWidget {
                       rank: 1,
                       maxHeight: maxPodiumHeight,
                       isKids: isKids,
+                      currentUserId: currentUserId,
                     ),
                   ),
 
@@ -64,6 +72,7 @@ class LeaderboardPodium extends StatelessWidget {
                         rank: 3,
                         maxHeight: maxPodiumHeight,
                         isKids: isKids,
+                        currentUserId: currentUserId,
                       ),
                     )
                   else
@@ -92,12 +101,14 @@ class _PodiumSlot extends StatelessWidget {
   final int rank;
   final double maxHeight;
   final bool isKids;
+  final String? currentUserId;
 
   const _PodiumSlot({
     required this.user,
     required this.rank,
     required this.maxHeight,
     this.isKids = false,
+    this.currentUserId,
   });
 
   @override
@@ -116,7 +127,8 @@ class _PodiumSlot extends StatelessWidget {
     final scoreLabel = isKids
         ? context.tr('leaderboard.coins', fallback: 'Coins')
         : context.tr('leaderboard.xp', fallback: 'XP');
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMe = currentUserId != null && user.id == currentUserId;
+    final glowColor = isMe ? const Color(0xFF6366F1) : colors[0];
 
     return Semantics(
       // FIX (HIGH-5): Screen readers now announce the rank, player name,
@@ -142,14 +154,14 @@ class _PodiumSlot extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: colors[0].withValues(alpha: 0.4),
-                        width: 2.5,
+                        color: glowColor.withValues(alpha: isMe ? 0.7 : 0.4),
+                        width: isMe ? 3.0 : 2.5,
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: colors[0].withValues(alpha: 0.25),
-                          blurRadius: 16,
-                          spreadRadius: 2,
+                          color: glowColor.withValues(alpha: isMe ? 0.4 : 0.25),
+                          blurRadius: isMe ? 22 : 16,
+                          spreadRadius: isMe ? 4 : 2,
                         ),
                       ],
                     ),
@@ -212,6 +224,40 @@ class _PodiumSlot extends StatelessWidget {
                   ),
                 ),
               ),
+              // "YOU" badge — only visible when current user is on podium
+              if (isMe)
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.h,
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
+                      ),
+                      borderRadius: BorderRadius.circular(8.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                          blurRadius: 6,
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      context.tr('leaderboard.you', fallback: 'You'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 7.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
 
@@ -250,8 +296,7 @@ class _PodiumSlot extends StatelessWidget {
                         child: AutoSizeText(
                           (user.displayName ?? 'Player')
                               .split(' ')
-                              .first
-                              .toUpperCase(),
+                              .first,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: isFirst ? 11.sp : 9.sp,
@@ -279,46 +324,23 @@ class _PodiumSlot extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 2.h),
-                  // Levels cleared badge
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 4.w,
-                      vertical: 2.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: colors[0].withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(6.r),
-                    ),
-                    child: AutoSizeText(
-                      context.tr(
-                        'leaderboard.lvs',
-                        fallback: 'Lvs',
-                        args: [levelsCleared.toString()],
-                      ),
-                      maxLines: 1,
-                      minFontSize: 4,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: isFirst ? 8.sp : 7.sp,
-                        fontWeight: FontWeight.w900,
-                        color: colors[0],
-                        height: 1.1,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 1.h),
+                  // Primary score — single metric, no clutter
                   AutoSizeText(
                     '$score $scoreLabel',
                     maxLines: 1,
-                    minFontSize: 4,
+                    minFontSize: 5,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: isFirst ? 7.sp : 6.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white70 : Colors.black54,
+                      fontSize: isFirst ? 9.sp : 7.sp,
+                      fontWeight: FontWeight.w800,
+                      color: colors[0].withValues(alpha: 0.9),
                       height: 1.1,
                     ),
                   ),
+                  if (user.previousRank != null) ...[
+                    SizedBox(height: 2.h),
+                    _buildRankChangeIndicator(user.previousRank!, rank),
+                  ],
                 ],
               ),
             ),
@@ -326,6 +348,57 @@ class _PodiumSlot extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _buildRankChangeIndicator(int previousRank, int currentRank) {
+    final diff = previousRank - currentRank;
+    if (diff > 0) {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.arrow_upward_rounded, color: const Color(0xFF10B981), size: 8.r),
+          Text(
+            '$diff',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 7.sp,
+              fontWeight: FontWeight.w800,
+              color: const Color(0xFF10B981),
+            ),
+          ),
+        ],
+      );
+    } else if (diff < 0) {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.arrow_downward_rounded, color: const Color(0xFFEF4444), size: 8.r),
+          Text(
+            '${diff.abs()}',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 7.sp,
+              fontWeight: FontWeight.w800,
+              color: const Color(0xFFEF4444),
+            ),
+          ),
+        ],
+      );
+    } else {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 4.w,
+            height: 1.5.h,
+            decoration: BoxDecoration(
+              color: Colors.grey.withValues(alpha: 0.6),
+              borderRadius: BorderRadius.circular(1.r),
+            ),
+          ),
+        ],
+      );
+    }
   }
 
   static List<Color> _rankColors(int rank) {

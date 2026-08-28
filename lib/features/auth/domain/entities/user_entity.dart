@@ -94,6 +94,7 @@ class UserEntity {
   final List<String> kidsOwnedFurniture;
   final Map<String, String> kidsEquippedFurniture;
   final int keys;
+  final int? previousRank;
 
   // ---------------------------------------------------------------------------
   // Kids Room — Buddy Lifecycle (persisted)
@@ -160,6 +161,7 @@ class UserEntity {
     this.lastAdSpinDate,
     this.adSpinsUsedToday = 0,
     this.keys = 0,
+    this.previousRank,
     this.kidsBuddyMood = 'happy',
     this.kidsBuddyEnergy = 100,
     this.kidsBuddyHunger = 0,
@@ -326,6 +328,7 @@ class UserEntity {
     Map<String, String>? kidsEquippedFurniture,
     List<Map<String, dynamic>>? recentActivities,
     int? keys,
+    int? previousRank,
     String? kidsBuddyMood,
     int? kidsBuddyEnergy,
     int? kidsBuddyHunger,
@@ -393,6 +396,7 @@ class UserEntity {
           kidsEquippedFurniture ?? this.kidsEquippedFurniture,
       recentActivities: recentActivities ?? this.recentActivities,
       keys: keys ?? this.keys,
+      previousRank: previousRank ?? this.previousRank,
       kidsBuddyMood: kidsBuddyMood ?? this.kidsBuddyMood,
       kidsBuddyEnergy: kidsBuddyEnergy ?? this.kidsBuddyEnergy,
       kidsBuddyHunger: kidsBuddyHunger ?? this.kidsBuddyHunger,
@@ -521,6 +525,7 @@ class UserEntity {
         _listEq.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
         _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture) &&
         other.keys == keys &&
+        other.previousRank == previousRank &&
         other.kidsBuddyMood == kidsBuddyMood &&
         other.kidsBuddyEnergy == kidsBuddyEnergy &&
         other.kidsBuddyHunger == kidsBuddyHunger &&
@@ -590,6 +595,7 @@ class UserEntity {
       _listEq.hash(kidsOwnedFurniture),
       _mapEq.hash(kidsEquippedFurniture),
       keys,
+      previousRank,
       kidsBuddyMood,
       kidsBuddyEnergy,
       kidsBuddyHunger,
