@@ -52,15 +52,6 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     QuestType.eliteMastery,
   ];
 
-  // ── Milestone tiers for progress psychology ────────────────────────────
-  static const List<({int threshold, String label, String emoji})> _milestones =
-      [
-    (threshold: 10, label: 'Starter', emoji: '🌱'),
-    (threshold: 25, label: 'Bronze', emoji: '🥉'),
-    (threshold: 50, label: 'Silver', emoji: '🥈'),
-    (threshold: 100, label: 'Gold', emoji: '🥇'),
-    (threshold: 200, label: 'Platinum', emoji: '💎'),
-  ];
 
   // ── Cached state ────────────────────────────────────────────────────────
   late QuestType _nextType;
@@ -139,94 +130,32 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     return recommendedType;
   }
 
-  /// Resolves the next game subtype the user will encounter in this category.
-  GameSubtype? _resolveNextSubtype() {
-    final subtypes =
-        _nextType.subtypes.where((s) => !s.isLegacy).toList();
-    for (final subtype in subtypes) {
-      final cleared =
-          widget.user.completedLevels[subtype.name]?.length ?? 0;
-      if (cleared < 200) return subtype;
-    }
-    return subtypes.isNotEmpty ? subtypes.first : null;
-  }
 
-  /// Builds a contextual, motivational subtitle based on streak, progress, time.
-  String _buildMotivationalSubtitle(BuildContext context) {
-    final streak = widget.user.currentStreak;
-    final hour = DateTime.now().hour;
 
-    // Streak-driven urgency for users with active streaks
-    if (streak >= 7) {
-      return context.tr(
-        'home.cl_streak_strong',
-        fallback: 'Day $streak — Keep your streak alive!',
-        args: [streak.toString()],
-      );
-    }
-    if (streak >= 3) {
-      return context.tr(
-        'home.cl_streak_growing',
-        fallback: '$streak-day streak — Don\'t break it!',
-        args: [streak.toString()],
-      );
+
+  /// Returns the (base, target) milestone dynamically to ensure tight, achievable gaps.
+  ({int baseTarget, int target}) _getNextMilestone() {
+    int baseTarget = 0;
+    int target = 0;
+    
+    // Dynamic chunk sizes: Keep the gap small and achievable.
+    if (_cleared < 50) {
+      baseTarget = (_cleared ~/ 10) * 10;
+      target = baseTarget + 10;
+    } else if (_cleared < 200) {
+      baseTarget = (_cleared ~/ 25) * 25;
+      target = baseTarget + 25;
+    } else if (_cleared < 1000) {
+      baseTarget = (_cleared ~/ 50) * 50;
+      target = baseTarget + 50;
+    } else {
+      baseTarget = (_cleared ~/ 100) * 100;
+      target = baseTarget + 100;
     }
 
-    // Milestone-driven for users near a tier boundary
-    final nextMilestone = _milestones.firstWhereOrNull(
-      (m) => _cleared < m.threshold,
-    );
-    if (nextMilestone != null) {
-      final remaining = nextMilestone.threshold - _cleared;
-      if (remaining <= 5) {
-        return context.tr(
-          'home.cl_almost_milestone',
-          fallback: '$remaining more to ${nextMilestone.label}!',
-          args: [remaining.toString(), nextMilestone.label],
-        );
-      }
-    }
+    if (target > _max && _max > 0) target = _max;
 
-    // Time-of-day fallback
-    if (hour >= 5 && hour < 12) {
-      return context.tr(
-        'home.cl_morning_prompt',
-        fallback: 'Start your morning right',
-      );
-    } else if (hour >= 12 && hour < 17) {
-      return context.tr(
-        'home.cl_afternoon_prompt',
-        fallback: 'Quick afternoon session',
-      );
-    } else if (hour >= 17 && hour < 22) {
-      return context.tr(
-        'home.cl_evening_prompt',
-        fallback: 'Wind down with a lesson',
-      );
-    }
-    return context.tr(
-      'home.cl_night_prompt',
-      fallback: 'Late night learner — respect!',
-    );
-  }
-
-  /// Returns the next milestone info for progress display.
-  ({int target, String label, String emoji}) _getNextMilestone() {
-    for (final m in _milestones) {
-      if (_cleared < m.threshold) {
-        return (
-          target: m.threshold,
-          label: m.label,
-          emoji: m.emoji,
-        );
-      }
-    }
-    // All milestones reached — show the max
-    return (
-      target: _max,
-      label: 'Master',
-      emoji: '👑',
-    );
+    return (baseTarget: baseTarget, target: target);
   }
 
   /// Generates a complementary darker shade for the gradient endpoint.
@@ -254,33 +183,25 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         ? context.tr('home.start_your_journey', fallback: 'Start Your Journey')
         : context.tr('home.continue_learning', fallback: 'Continue Learning');
 
-    final subtitle = isNewUser
-        ? context.tr(
-            'home.first_lesson_prompt',
-            fallback: 'Begin with Vocabulary basics',
-          )
-        : _buildMotivationalSubtitle(context);
+
 
     final milestone = _getNextMilestone();
-    final nextSubtype = _resolveNextSubtype();
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Resolve game title for "Up next" preview
-    String? nextGameTitle;
-    if (nextSubtype != null) {
-      nextGameTitle = GameHelper.getGameMetadata(
-        nextSubtype,
-        isDark: isDark,
-      ).title;
-    }
 
-    final milestoneProgress = milestone.target > 0
-        ? (_cleared / milestone.target).clamp(0.0, 1.0)
-        : 0.0;
+    final chunkSpan = milestone.target - milestone.baseTarget;
+    final progressInChunk = _cleared - milestone.baseTarget;
+    
+    final milestoneProgress = chunkSpan > 0
+        ? (progressInChunk / chunkSpan).clamp(0.0, 1.0)
+        : (_cleared >= _max && _max > 0 ? 1.0 : 0.0);
+
+    final semanticLabel = isNewUser
+        ? '$title. $categoryLabel.'
+        : '$title. $categoryLabel. $_cleared out of ${milestone.target} levels cleared.';
 
     final card = Semantics(
       button: true,
-      label: '$title. $subtitle',
+      label: semanticLabel,
       child: ScaleButton(
         onTap: () {
           try {
@@ -412,22 +333,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                           height: 1.1,
                         ),
                       ),
-                      SizedBox(height: 4.h),
 
-                      // Dynamic motivational subtitle
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white.withValues(alpha: 0.8),
-                          height: 1.3,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 16.h),
 
                       // ── Bottom section: Progress + Play button ─────
                       Row(
@@ -438,9 +344,8 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                                 ? _buildNewUserSection(context)
                                 : _buildProgressSection(
                                     context,
-                                    milestone,
+                                    milestone.target,
                                     milestoneProgress,
-                                    nextGameTitle,
                                   ),
                           ),
                           SizedBox(width: 16.w),
@@ -513,91 +418,35 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     );
   }
 
-  /// Returning user: milestone-based progress + next game preview.
   Widget _buildProgressSection(
     BuildContext context,
-    ({int target, String label, String emoji}) milestone,
+    int target,
     double milestoneProgress,
-    String? nextGameTitle,
   ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Next game preview
-        if (nextGameTitle != null) ...[
-          Row(
-            children: [
-              Icon(
-                Icons.play_circle_outline_rounded,
-                color: Colors.white.withValues(alpha: 0.7),
-                size: 13.r,
-              ),
-              SizedBox(width: 6.w),
-              Expanded(
-                child: Text(
-                  context.tr(
-                    'home.cl_up_next',
-                    fallback: 'Up next: $nextGameTitle',
-                    args: [nextGameTitle],
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white.withValues(alpha: 0.7),
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 10.h),
-        ],
+
 
         // Milestone progress header
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Text(
-                context.tr(
-                  'home.cl_milestone_target',
-                  fallback: '$_cleared → ${milestone.target} for ${milestone.label}',
-                  args: [
-                    _cleared.toString(),
-                    milestone.target.toString(),
-                    milestone.label,
-                  ],
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white.withValues(alpha: 0.85),
-                  letterSpacing: 0.3,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            SizedBox(width: 8.w),
-            // Milestone emoji badge
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 8.w,
-                vertical: 3.h,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.black.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Text(
-                milestone.emoji,
-                style: TextStyle(fontSize: 14.sp),
-              ),
-            ),
-          ],
+        Text(
+          context.tr(
+            'home.cl_levels_target',
+            fallback: '$_cleared → $target Levels 🎯',
+            args: [
+              _cleared.toString(),
+              target.toString(),
+            ],
+          ),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 11.sp,
+            fontWeight: FontWeight.w700,
+            color: Colors.white.withValues(alpha: 0.85),
+            letterSpacing: 0.3,
+          ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         SizedBox(height: 8.h),
 
@@ -607,18 +456,18 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
             children: [
               // Track
               Container(
-                height: 10.h,
+                height: 6.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.2),
-                  borderRadius: BorderRadius.circular(6.r),
+                  color: Colors.white.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(100.r),
                 ),
               ),
               // Fill
               FractionallySizedBox(
                 widthFactor: milestoneProgress.clamp(0.02, 1.0),
                 child: Container(
-                  height: 10.h,
+                  height: 6.h,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -626,14 +475,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                         Colors.white.withValues(alpha: 0.85),
                       ],
                     ),
-                    borderRadius: BorderRadius.circular(6.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        blurRadius: 8,
-                        spreadRadius: 0,
-                      ),
-                    ],
+                    borderRadius: BorderRadius.circular(100.r),
                   ),
                 )
                     .animate()
@@ -648,7 +490,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                     .shimmer(
                       delay: 400.ms,
                       duration: 1800.ms,
-                      color: Colors.white.withValues(alpha: 0.3),
+                      color: Colors.white.withValues(alpha: 0.5),
                     ),
               ),
             ],
