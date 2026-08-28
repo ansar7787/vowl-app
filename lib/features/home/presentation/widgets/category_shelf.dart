@@ -11,11 +11,30 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-class CategoryShelf extends StatelessWidget {
+class CategoryShelf extends StatefulWidget {
   const CategoryShelf({super.key, required this.user, required this.subtypes});
 
   final UserEntity user;
   final List<GameSubtype> subtypes;
+
+  @override
+  State<CategoryShelf> createState() => _CategoryShelfState();
+}
+
+class _CategoryShelfState extends State<CategoryShelf> {
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,30 +49,75 @@ class CategoryShelf extends StatelessWidget {
         maxScaleFactor: 1.3,
         child: RepaintBoundary(
           child: ListView.builder(
+            controller: _scrollController,
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             addAutomaticKeepAlives: false,
-            itemCount: subtypes.length,
+            itemCount: widget.subtypes.length,
             itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.only(right: 16.w),
-                child: _GameEntryCard(subtype: subtypes[index], user: user),
-              )
-                  .animate(delay: (50 * index).ms)
-                  .fade(duration: 400.ms)
-                  .scale(
-                    begin: const Offset(0.9, 0.9),
-                    end: const Offset(1, 1),
-                    curve: Curves.easeOutBack,
-                    duration: 500.ms,
-                  )
-                  .slideX(
-                    begin: 0.1,
-                    end: 0,
-                    curve: Curves.easeOutCubic,
-                    duration: 400.ms,
+              return AnimatedBuilder(
+                animation: _scrollController,
+                builder: (context, child) {
+                  double scrollPixels = 0;
+                  if (_scrollController.hasClients) {
+                    scrollPixels = _scrollController.position.pixels;
+                  }
+
+                  // Mathematical approximation of the card's position on screen
+                  final itemWidth = 150.w + 16.w; // Card width + right margin
+                  final itemCenter = 24.w + (index * itemWidth) + (150.w / 2);
+                  // 2026 Spatial Physics: Left-Aligned Focal Lens
+                  // Instead of screen center, the "focus point" is exactly where 
+                  // the first item rests when scroll is at 0.
+                  final focalPoint =
+                      scrollPixels + 24.w + (150.w / 2);
+
+                  // Distance from focus point (-1.0 to 1.0 across the screen)
+                  final distance =
+                      (itemCenter - focalPoint) / MediaQuery.of(context).size.width;
+
+                  // 2026 Spatial Physics:
+                  // 1. Tilt (Rotate Y) - tilts towards the user as it approaches center
+                  final tilt = distance * 0.6; // Max 0.6 radians tilt at edges
+
+                  // 2. Scale - peaks at center, shrinks slightly at edges
+                  final scale = 1.0 - (distance.abs() * 0.15).clamp(0.0, 0.2);
+
+                  // 3. Dynamic Opacity - brighter in center, darker on edges
+                  final opacity = 1.0 - (distance.abs() * 0.4).clamp(0.0, 0.6);
+
+                  return Transform(
+                    transform: Matrix4.identity()
+                      ..setEntry(3, 2, 0.002) // Deep perspective
+                      ..rotateY(tilt)
+                      ..scaleByDouble(scale, scale, 1.0, 1.0),
+                    alignment: FractionalOffset.center,
+                    child: Opacity(
+                      opacity: opacity,
+                      child: child,
+                    ),
                   );
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(right: 16.w),
+                  child: _GameEntryCard(subtype: widget.subtypes[index], user: widget.user),
+                )
+                    .animate(delay: (index < 3 ? 50 * index : 0).ms)
+                    .fade(duration: 400.ms)
+                    .scale(
+                      begin: const Offset(0.9, 0.9),
+                      end: const Offset(1, 1),
+                      curve: Curves.easeOutBack,
+                      duration: 500.ms,
+                    )
+                    .slideX(
+                      begin: 0.1,
+                      end: 0,
+                      curve: Curves.easeOutCubic,
+                      duration: 400.ms,
+                    ),
+              );
             },
           ),
         ),

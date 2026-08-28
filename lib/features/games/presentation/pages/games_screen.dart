@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -335,6 +336,8 @@ class _AnimatedSectionState extends State<_AnimatedSection>
   late final AnimationController _controller;
   late final Animation<double> _opacity;
   late final Animation<Offset> _slide;
+  ScrollController? _scrollController;
+  bool _hasTriggered = false;
 
   @override
   void initState() {
@@ -354,16 +357,54 @@ class _AnimatedSectionState extends State<_AnimatedSection>
       parent: _controller,
       curve: Curves.easeOutCubic,
     ));
+  }
 
-    // Staggered delay based on section index
-    final delay = Duration(milliseconds: 80 * widget.index);
-    Future.delayed(delay, () {
-      if (mounted) _controller.forward();
-    });
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_scrollController == null && !_hasTriggered) {
+      _scrollController = di.sl<ScrollController>(instanceName: 'games');
+      _scrollController?.addListener(_checkVisibility);
+      
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _checkVisibility();
+      });
+    }
+  }
+
+  void _checkVisibility() {
+    if (_hasTriggered || !mounted || _scrollController == null) return;
+    if (!_scrollController!.hasClients) return;
+
+    final renderObject = context.findRenderObject();
+    if (renderObject == null || !renderObject.attached) return;
+
+    try {
+      final viewport = RenderAbstractViewport.of(renderObject);
+      final offsetToReveal = viewport.getOffsetToReveal(renderObject, 0.0);
+      
+      // Bottom edge of the current viewport
+      final currentBottomEdge =
+          _scrollController!.position.pixels + MediaQuery.of(context).size.height;
+      
+      // Trigger when the top of the widget enters the screen
+      if (currentBottomEdge > offsetToReveal.offset + 20) {
+        _hasTriggered = true;
+        _scrollController!.removeListener(_checkVisibility);
+        
+        // Micro-stagger if multiple enter at once
+        Future.delayed(Duration(milliseconds: 60 * (widget.index % 3)), () {
+          if (mounted) _controller.forward();
+        });
+      }
+    } catch (_) {
+      // Ignore layout exceptions during early frames
+    }
   }
 
   @override
   void dispose() {
+    _scrollController?.removeListener(_checkVisibility);
     _controller.dispose();
     super.dispose();
   }
