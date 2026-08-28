@@ -67,23 +67,24 @@ class _AdRewardCardState extends State<AdRewardCard> {
       di.sl<AdService>().showRewardedAd(
         context: context,
         isPremium: isPremium,
-        onUserEarnedReward: (reward) async {
+        onUserEarnedReward: (reward) {
           rewardEarned = true;
+        },
+        onDismissed: () async {
+          if (!rewardEarned) return;
           
           await RewardLimitService.incrementClaimCount('coins');
           if (mounted) await _loadLimits();
 
-          if (!mounted) return;
-          context.read<EconomyBloc>().add(
-            EconomyAddCoinsRequested(
-              _coinReward,
-              title: 'coin_history.ad_reward',
-              isEarned: true,
-            ),
-          );
-        },
-        onDismissed: () {
-          if (rewardEarned && context.mounted) {
+          if (mounted) {
+            context.read<EconomyBloc>().add(
+              EconomyAddCoinsRequested(
+                _coinReward,
+                title: 'coin_history.ad_reward',
+                isEarned: true,
+              ),
+            );
+            
             CustomSnackBar.show(
               context: context,
               message: context.tr(

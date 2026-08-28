@@ -246,10 +246,22 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     final user = context.read<AuthBloc>().state.user;
     final isPremium = user?.isPremium ?? false;
 
+    bool rewardEarned = false;
+
     adService.showRewardedAd(
       context: context,
       isPremium: isPremium,
-      onUserEarnedReward: (_) async {
+      onUserEarnedReward: (_) {
+        rewardEarned = true;
+      },
+      onDismissed: () async {
+        if (!mounted) return;
+        setState(() => _isProcessing = false);
+        
+        if (!rewardEarned) return;
+        
+        setState(() => _isProcessing = true);
+        
         final updateUserRewards = di.sl<UpdateUserRewards>();
         // BUG FIX: same discarded-result issue as _claimChest above - the
         // user watches a full rewarded ad, and previously would see
@@ -264,19 +276,24 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
             isVaultReward: true,
           ),
         );
+        
+        if (result.isRight()) {
+          await RewardLimitService.incrementClaimCount('stars');
+        }
 
         if (!mounted) return;
+        setState(() => _isProcessing = false);
 
         if (result.isLeft()) {
           _showRewardFailedDialog();
           return;
         }
 
-        await RewardLimitService.incrementClaimCount('stars');
         if (mounted) await _loadLimits();
 
         if (!mounted) return;
         context.read<AuthBloc>().add(const AuthRefreshUser());
+        
         showDialog(
           context: context,
           builder: (ctx) => Material(
@@ -309,9 +326,6 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
             ),
           ),
         );
-      },
-      onDismissed: () {
-        if (mounted) setState(() => _isProcessing = false);
       },
     );
 

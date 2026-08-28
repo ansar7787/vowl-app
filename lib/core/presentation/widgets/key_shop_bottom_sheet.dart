@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -59,6 +60,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
   int _remainingClaims = RewardLimitService.maxClaimsPerDay;
   bool _isLoadingLimits = true;
   int _outOfAdsShake = 0;
+  bool _isProcessing = false;
 
   @override
   void initState() {
@@ -197,18 +199,11 @@ class _KeyShopContentState extends State<_KeyShopContent> {
 
                     return ScaleButton(
                       onTap: () async {
+                        if (_isProcessing) return;
+                        
                         if (userCoins < cost) {
-                          Navigator.pop(context);
-                          if (!widget.parentContext.mounted) return;
-                          // BUG FIX (STALE CONTEXT): was `context: context`
-                          // (this BlocBuilder's own, sheet-scoped context)
-                          // used right after Navigator.pop deactivated the
-                          // sheet it belongs to. `parentContext` (captured
-                          // before the sheet was shown) is what every other
-                          // dialog in this file correctly uses for this
-                          // exact situation.
                           showDialog(
-                            context: widget.parentContext,
+                            context: context,
                             builder: (ctx) => ModernGameDialog(
                               title: widget.isKidsMode
                                   ? context.tr(
@@ -240,7 +235,9 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                           );
                           return;
                         }
-                        Navigator.pop(context);
+                        
+                        setState(() => _isProcessing = true);
+                        
                         final result = await di.sl<PurchaseGoldenKey>().call(
                           PurchaseGoldenKeyParams(
                             cost: cost,
@@ -248,7 +245,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                           ),
                         );
 
-                        if (!widget.parentContext.mounted) return;
+                        if (!mounted) return;
+                        setState(() => _isProcessing = false);
 
                         // BUG FIX (SILENT FAILURE): previously only the
                         // success branch (`result.isRight()`) was handled -
@@ -261,7 +259,7 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         result.fold(
                           (failure) {
                             showDialog(
-                              context: widget.parentContext,
+                              context: context,
                               builder: (ctx) => ModernGameDialog(
                                 title: context.tr(
                                   'store.purchase_failed_title',
@@ -284,8 +282,9 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                             widget.parentContext.read<AuthBloc>().add(
                               const AuthReloadUser(),
                             );
+                            di.sl<HapticService>().success();
                             showDialog(
-                              context: widget.parentContext,
+                              context: context,
                               builder: (ctx) => Material(
                                 type: MaterialType.transparency,
                                 child: Stack(
@@ -305,8 +304,12 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                         fallback: 'AWESOME',
                                       ),
                                       isSuccess: true,
-                                      onButtonPressed: () =>
-                                          Navigator.of(ctx).pop(),
+                                      onButtonPressed: () {
+                                          Navigator.of(ctx).pop();
+                                          if (mounted && context.mounted) {
+                                            Navigator.of(context).pop();
+                                          }
+                                      },
                                     ),
                                     const Positioned.fill(
                                       child: IgnorePointer(
@@ -382,6 +385,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                 // Get with Ad
                 ScaleButton(
                   onTap: () {
+                    if (_isProcessing) return;
+                    
                     if (_remainingClaims <= 0) {
                       setState(() => _outOfAdsShake++);
                       showDialog(
@@ -413,9 +418,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     // shop (e.g. via Kids Zone toll gate) should get the
                     // premium bypass, not be forced to watch an ad.
                     if (!isPremium && !adService.isRewardedAdLoaded) {
-                      Navigator.pop(context);
                       showDialog(
-                        context: widget.parentContext,
+                        context: context,
                         builder: (ctx) => ModernGameDialog(
                           title: context.tr(
                             'store.ad_not_ready_title',
@@ -438,34 +442,48 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       );
                       return;
                     }
-                    Navigator.pop(context);
+                    
+                    setState(() => _isProcessing = true);
+                    bool rewardEarned = false;
+                    
                     adService.showRewardedAd(
-                      context: widget.parentContext,
+                      context: context,
                       isPremium: isPremium,
                       // FIX: COPPA compliance — when the key shop is opened
                       // from Kids Zone (isKidsMode: true), force child-safe
                       // ad parameters.
                       childSafe: widget.isKidsMode,
-                      onUserEarnedReward: (_) async {
+                      onUserEarnedReward: (_) {
+                        rewardEarned = true;
+                      },
+                      onDismissed: () async {
+                        if (!mounted) return;
+                        setState(() => _isProcessing = false);
+                        
+                        if (!rewardEarned) return;
+                        
+                        setState(() => _isProcessing = true);
+
                         final result = await di.sl<AddGoldenKey>().call(
                           const AddGoldenKeyParams(amount: 1),
                         );
+                        
+                        // Increment limits even if the widget unmounts during the API call,
+                        // but only if the API call was successful.
+                        if (result.isRight()) {
+                          await RewardLimitService.incrementClaimCount('keys');
+                        }
 
-                        if (!widget.parentContext.mounted) return;
+                        if (!mounted) return;
+                        setState(() => _isProcessing = false);
 
-                        await RewardLimitService.incrementClaimCount('keys');
-                        if (mounted) await _loadLimits();
-
-                        // BUG FIX (SILENT FAILURE): same missing-failure-
-                        // handling issue as the coin-purchase flow above -
-                        // worse here, since the user has already watched a
-                        // full rewarded ad. Silently doing nothing on
-                        // failure would mean "watched an ad, got nothing,
-                        // no explanation why."
+                        // BUG FIX: Show dialogs inside onDismissed instead of
+                        // onUserEarnedReward to prevent the Ad overlay from 
+                        // blocking or prematurely killing the dialogs.
                         result.fold(
                           (failure) {
                             showDialog(
-                              context: widget.parentContext,
+                              context: context,
                               builder: (ctx) => ModernGameDialog(
                                 title: context.tr(
                                   'store.reward_failed_title',
@@ -488,8 +506,9 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                             widget.parentContext.read<AuthBloc>().add(
                               const AuthReloadUser(),
                             );
+                            di.sl<HapticService>().success();
                             showDialog(
-                              context: widget.parentContext,
+                              context: context,
                               builder: (ctx) => Material(
                                 type: MaterialType.transparency,
                                 child: Stack(
@@ -509,8 +528,12 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                                         fallback: 'AWESOME',
                                       ),
                                       isSuccess: true,
-                                      onButtonPressed: () =>
-                                          Navigator.of(ctx).pop(),
+                                      onButtonPressed: () {
+                                          Navigator.of(ctx).pop();
+                                          if (mounted && context.mounted) {
+                                            Navigator.of(context).pop();
+                                          }
+                                      },
                                     ),
                                     const Positioned.fill(
                                       child: IgnorePointer(
@@ -524,7 +547,6 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                           },
                         );
                       },
-                      onDismissed: () {},
                     );
                   },
                   child: ShakeableWrapper(
