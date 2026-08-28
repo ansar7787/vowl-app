@@ -32,7 +32,7 @@ class LeaderboardPodium extends StatelessWidget {
         final maxPodiumHeight = (MediaQuery.of(context).size.height * 0.40)
             .clamp(220.0, 320.0);
 
-        return Row(
+              return Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   // 2nd Place (left)
@@ -78,15 +78,7 @@ class LeaderboardPodium extends StatelessWidget {
                   else
                     const Expanded(child: SizedBox.shrink()),
                 ],
-              )
-            .animate()
-            .fadeIn(duration: 600.ms, curve: Curves.easeOutCirc)
-            .slideY(
-              begin: 0.2,
-              end: 0,
-              curve: Curves.easeOutBack,
-              duration: 800.ms,
-            );
+              );
       },
     );
   }
@@ -129,6 +121,7 @@ class _PodiumSlot extends StatelessWidget {
         : context.tr('leaderboard.xp', fallback: 'XP');
     final isMe = currentUserId != null && user.id == currentUserId;
     final glowColor = colors[0];
+    final delay = rank == 3 ? 0 : (rank == 2 ? 200 : 400);
 
     return Semantics(
       // FIX (HIGH-5): Screen readers now announce the rank, player name,
@@ -347,7 +340,21 @@ class _PodiumSlot extends StatelessWidget {
           ),
         ],
       ),
-    );
+    )
+        .animate(delay: delay.ms)
+        .fadeIn(duration: 400.ms, curve: Curves.easeOut)
+        .slideY(
+          begin: 0.4,
+          end: 0,
+          curve: Curves.easeOutBack,
+          duration: 700.ms,
+        )
+        .scaleXY(
+          begin: 0.8,
+          end: 1.0,
+          curve: Curves.easeOutBack,
+          duration: 700.ms,
+        );
   }
 
   Widget _buildRankChangeIndicator(int previousRank, int currentRank) {

@@ -311,16 +311,23 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                                   )
                                   .animate()
                                   .fadeIn(
-                                    duration: 300.ms,
+                                    duration: 400.ms,
                                     delay: (index < 12 ? index * 40 : 0).ms,
                                     curve: Curves.easeOut,
                                   )
                                   .slideX(
-                                    begin: 0.06,
+                                    begin: 0.1,
                                     end: 0,
-                                    duration: 350.ms,
+                                    duration: 500.ms,
                                     delay: (index < 12 ? index * 40 : 0).ms,
-                                    curve: Curves.easeOutCubic,
+                                    curve: Curves.easeOutBack,
+                                  )
+                                  .scaleXY(
+                                    begin: 0.9,
+                                    end: 1.0,
+                                    duration: 500.ms,
+                                    delay: (index < 12 ? index * 40 : 0).ms,
+                                    curve: Curves.easeOutBack,
                                   ),
                         ),
                       );
