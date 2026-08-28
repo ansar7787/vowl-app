@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -32,12 +33,27 @@ class CategoryShelf extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.symmetric(horizontal: 24.w),
+            addAutomaticKeepAlives: false,
             itemCount: subtypes.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.only(right: 16.w),
                 child: _GameEntryCard(subtype: subtypes[index], user: user),
-              );
+              )
+                  .animate(delay: (50 * index).ms)
+                  .fade(duration: 400.ms)
+                  .scale(
+                    begin: const Offset(0.9, 0.9),
+                    end: const Offset(1, 1),
+                    curve: Curves.easeOutBack,
+                    duration: 500.ms,
+                  )
+                  .slideX(
+                    begin: 0.1,
+                    end: 0,
+                    curve: Curves.easeOutCubic,
+                    duration: 400.ms,
+                  );
             },
           ),
         ),
@@ -76,9 +92,9 @@ class _GameEntryCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(30.r),
             padding: EdgeInsets.all(18.r),
             usePremiumStyle: true,
-            showShadow: false, // Remove unwanted glow/shadow between cards
-            glassOpacity:
-                0.15, // Slightly higher opacity to hide background 'splashes'
+            showShadow: false,
+            blur: 0, // PERF: Disable BackdropFilter in scroll lists — 10 shelves × 4 visible cards = 40+ simultaneous blurs
+            glassOpacity: 0.15,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -161,7 +177,8 @@ class _GameEntryCard extends StatelessWidget {
   }
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
-    final currentLevel = (user.completedLevels[subtype.name]?.length ?? 0) + 1;
+    final levelsCleared = user.completedLevels[subtype.name]?.length ?? 0;
+    final currentLevel = levelsCleared + 1;
     final isNew =
         currentLevel == 1 && !user.categoryStats.containsKey(subtype.name);
 
@@ -189,21 +206,51 @@ class _GameEntryCard extends StatelessWidget {
       );
     }
 
-    // Progress towards the next 10-level milestone
-    final levelsCleared = currentLevel > 1 ? currentLevel - 1 : 0;
+    // Mastery completion state — level 200 reached
+    if (levelsCleared >= 200) {
+      return Container(
+        width: 26.r,
+        height: 26.r,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFFFFD700), Color(0xFFFFA000)],
+          ),
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFFFFD700).withValues(alpha: 0.4),
+              blurRadius: 6,
+            ),
+          ],
+        ),
+        child: Icon(Icons.check_rounded, color: Colors.white, size: 16.r),
+      );
+    }
+
+    // Progress tier ring colors: Bronze 25+, Silver 50+, Gold 100+
+    Color ringColor = color;
+    if (levelsCleared >= 100) {
+      ringColor = const Color(0xFFFFD700); // Gold
+    } else if (levelsCleared >= 50) {
+      ringColor = const Color(0xFFC0C0C0); // Silver
+    } else if (levelsCleared >= 25) {
+      ringColor = const Color(0xFFCD7F32); // Bronze
+    }
+
     final progress = (levelsCleared % 10) / 10.0;
 
     return Stack(
       alignment: Alignment.center,
       children: [
         SizedBox(
-          width: 24.r,
-          height: 24.r,
+          width: 26.r,
+          height: 26.r,
           child: CircularProgressIndicator(
-            value: progress == 0 ? 0.05 : progress, // 5% minimum visibility
-            backgroundColor: color.withValues(alpha: 0.1),
-            valueColor: AlwaysStoppedAnimation<Color>(color),
+            value: progress == 0 ? 0.05 : progress,
+            backgroundColor: ringColor.withValues(alpha: 0.1),
+            valueColor: AlwaysStoppedAnimation<Color>(ringColor),
             strokeWidth: 2.5.r,
+            strokeCap: StrokeCap.round,
           ),
         ),
         Text(
@@ -212,7 +259,7 @@ class _GameEntryCard extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,
-            color: color,
+            color: ringColor,
           ),
           maxLines: 1,
         ),
