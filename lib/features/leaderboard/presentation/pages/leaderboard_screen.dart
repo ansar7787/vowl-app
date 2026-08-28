@@ -480,7 +480,9 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     // When pinned (shrinkOffset > 10), content scrolls beneath this header.
     // A solid frosted backdrop + bottom shadow prevents the "ghost card"
     // overlap where glassmorphic tiles bleed through.
-    final isPinned = shrinkOffset > 10 || overlapsContent;
+    final collapseProgress =
+        (shrinkOffset / (maxExtent - minExtent)).clamp(0.0, 1.0);
+    final isPinned = collapseProgress > 0.5 || overlapsContent;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ClipRect(
@@ -503,13 +505,16 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 24.w,
-              vertical: isPinned ? 8.h : 12.h,
+              vertical: 12.h - (4.h * collapseProgress),
             ),
-            child: Center(
+            child: OverflowBox(
+              minHeight: 0,
+              maxHeight: double.infinity,
+              alignment: Alignment.topCenter,
               child: LeaderboardRankCard(
                 allUsers: (child as LeaderboardRankCard).allUsers,
                 isKids: (child as LeaderboardRankCard).isKids,
-                isCollapsed: isPinned,
+                collapseProgress: collapseProgress,
               ),
             ),
           ),

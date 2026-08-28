@@ -12,7 +12,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class LeaderboardRankCard extends StatelessWidget {
   final List<UserEntity> allUsers;
   final bool isKids;
-  final bool isCollapsed;
+  final double collapseProgress;
   static const int _totalLevels = AppConstants.totalCurriculumLevels;
   static const int _totalKidsLevels = 25;
 
@@ -20,7 +20,7 @@ class LeaderboardRankCard extends StatelessWidget {
     super.key,
     required this.allUsers,
     this.isKids = false,
-    this.isCollapsed = false,
+    this.collapseProgress = 0.0,
   });
 
   @override
@@ -72,7 +72,8 @@ class LeaderboardRankCard extends StatelessWidget {
           ],
         ),
         child: GlassTile(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: isCollapsed ? 12.h : 12.h),
+          padding: EdgeInsets.symmetric(
+              horizontal: 16.w, vertical: 12.h - (4.h * collapseProgress)),
           borderRadius: BorderRadius.circular(24.r),
           borderColor: isDark
               ? const Color(0xFF3B82F6).withValues(alpha: 0.5)
@@ -81,10 +82,8 @@ class LeaderboardRankCard extends StatelessWidget {
               ? const Color(0xFF0F172A).withValues(alpha: 0.75)
               : Colors.white.withValues(alpha: 0.95),
           borderWidth: 1.5,
-          child: SingleChildScrollView(
-            physics: const NeverScrollableScrollPhysics(),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
@@ -184,80 +183,92 @@ class LeaderboardRankCard extends StatelessWidget {
                   ),
                 ],
               ),
-              if (!isCollapsed) ...[
-                SizedBox(height: 12.h),
-                // Progress bar with animated fill
-                Stack(
-                  children: [
-                    Container(
-                      height: 6.h,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.08)
-                            : Colors.black.withValues(alpha: 0.03),
-                        borderRadius: BorderRadius.circular(3.r),
-                      ),
-                    ),
-                    TweenAnimationBuilder<double>(
-                      tween: Tween(begin: 0.0, end: progress.clamp(0.02, 1.0)),
-                      duration: const Duration(milliseconds: 800),
-                      curve: Curves.easeOutCubic,
-                      builder: (context, value, _) {
-                        return FractionallySizedBox(
-                          widthFactor: value,
-                          child: Container(
+              if (collapseProgress < 1.0)
+                Opacity(
+                  opacity: 1.0 - collapseProgress,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(height: 12.h),
+                      // Progress bar with animated fill
+                      Stack(
+                        children: [
+                          Container(
                             height: 6.h,
+                            width: double.infinity,
                             decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
-                              ),
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.08)
+                                  : Colors.black.withValues(alpha: 0.03),
                               borderRadius: BorderRadius.circular(3.r),
                             ),
                           ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(height: 6.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        isKids
-                            ? context.tr(
-                                'leaderboard.all_kids_quests',
-                                fallback: 'Kids Quests',
-                              )
-                            : context.tr(
-                                'leaderboard.all_quests',
-                                fallback: 'All Quests',
+                          TweenAnimationBuilder<double>(
+                            tween: Tween(
+                                begin: 0.0, end: progress.clamp(0.02, 1.0)),
+                            duration: const Duration(milliseconds: 800),
+                            curve: Curves.easeOutCubic,
+                            builder: (context, value, _) {
+                              return FractionallySizedBox(
+                                widthFactor: value,
+                                child: Container(
+                                  height: 6.h,
+                                  decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                      colors: [
+                                        Color(0xFF3B82F6),
+                                        Color(0xFF60A5FA)
+                                      ],
+                                    ),
+                                    borderRadius: BorderRadius.circular(3.r),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 6.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              isKids
+                                  ? context.tr(
+                                      'leaderboard.all_kids_quests',
+                                      fallback: 'Kids Quests',
+                                    )
+                                  : context.tr(
+                                      'leaderboard.all_quests',
+                                      fallback: 'All Quests',
+                                    ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w700,
+                                color: secondaryTextColor.withValues(
+                                    alpha: 0.6),
                               ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w700,
-                          color: secondaryTextColor.withValues(alpha: 0.6),
-                        ),
-                        overflow: TextOverflow.ellipsis,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Text(
+                            '$levelsCleared / $maxLevels',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w700,
+                              color: secondaryTextColor.withValues(
+                                  alpha: 0.6),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Text(
-                      '$levelsCleared / $maxLevels',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w700,
-                        color: secondaryTextColor.withValues(alpha: 0.6),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ],
             ],
-          ),
           ),
         ),
       ),
