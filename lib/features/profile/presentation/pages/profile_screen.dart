@@ -25,6 +25,7 @@ import 'package:vowl/features/profile/presentation/widgets/profile_badges_list.d
 import 'package:vowl/features/profile/presentation/widgets/profile_stickers_progress.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
+import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -196,6 +197,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          // ── 0. Vowl Mascot / Companion ──
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 8.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: const VowlMascotCard(),
+                              ),
+                              SizedBox(height: 16.h),
+                            ],
+                          ),
+
                           // ── 1. Adventure Stats ──
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

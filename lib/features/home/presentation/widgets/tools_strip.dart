@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -45,14 +46,7 @@ class ToolsStrip extends StatelessWidget {
         route: AppRouter.translateRoute,
         requiresAd: false,
       ),
-      (
-        title: context.tr('home.tools_vowl_mascot', fallback: 'Vowl Buddy'),
-        subtitle: context.tr('home.tools_pet', fallback: 'Pet'),
-        icon: Icons.pets_rounded,
-        color: const Color(0xFF8B5CF6), // Purple color for mascot
-        route: AppRouter.vowlMascotRoute,
-        requiresAd: false,
-      ),
+
       (
         title: context.tr('home.tools_photo_vocab', fallback: 'Photo Vocab'),
         subtitle: context.tr('home.tools_camera', fallback: 'Camera'),
@@ -111,7 +105,15 @@ class ToolsStrip extends StatelessWidget {
             padding: EdgeInsets.only(right: 12.w),
             child: card,
           );
-        }).toList(),
+        })
+            .toList()
+            .animate(interval: 50.ms)
+            .fadeIn(duration: 400.ms)
+            .scale(
+              begin: const Offset(0.8, 0.8),
+              duration: 400.ms,
+              curve: Curves.easeOutBack,
+            ),
       ),
     );
   }
@@ -165,60 +167,62 @@ class _ToolCard extends StatelessWidget {
           );
         },
         child: ExcludeSemantics(
-          child: GlassTile(
-            showShadow: false,
-            borderRadius: BorderRadius.circular(24.r),
-            borderColor: color.withValues(alpha: 0.2),
-            padding: EdgeInsets.all(16.r),
-            child: SizedBox(
-              width: 110.w,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(10.r),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.12),
-                      shape: BoxShape.circle,
+          child: RepaintBoundary(
+            child: GlassTile(
+              showShadow: false,
+              borderRadius: BorderRadius.circular(24.r),
+              borderColor: color.withValues(alpha: 0.2),
+              padding: EdgeInsets.all(16.r),
+              child: SizedBox(
+                width: 110.w,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10.r),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.12),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(icon, color: color, size: 20.r),
                     ),
-                    child: Icon(icon, color: color, size: 20.r),
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    ),
-                  ),
-                  SizedBox(height: 2.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 2.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(6.r),
-                    ),
-                    child: Text(
-                      subtitle.toUpperCase(),
+                    SizedBox(height: 16.h),
+                    Text(
+                      title,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 8.sp,
-                        fontWeight: FontWeight.w800,
-                        color: color,
-                        letterSpacing: 1.0,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(height: 2.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 6.w,
+                        vertical: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(6.r),
+                      ),
+                      child: Text(
+                        subtitle.toUpperCase(),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 8.sp,
+                          fontWeight: FontWeight.w800,
+                          color: color,
+                          letterSpacing: 1.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

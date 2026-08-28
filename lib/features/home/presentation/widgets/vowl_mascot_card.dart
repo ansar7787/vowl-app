@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -90,240 +91,118 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
           child: ScaleButton(
             onTap: () => context.push(AppRouter.vowlMascotRoute),
             child: ExcludeSemantics(
-              child: Stack(
-                clipBehavior: Clip.none,
-                alignment: Alignment.centerLeft,
-                children: [
-                  Container(
-                    constraints: BoxConstraints(minHeight: 160.h),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(32.r),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color(0xFFF59E0B), // Premium Amber
-                          Color(0xFFD97706), // Deep Amber
-                          Color(0xFFFBBF24), // Bright Gold
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-                          blurRadius: 30,
-                          offset: const Offset(0, 15),
-                        ),
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(32.r),
-                      child: Stack(
-                        alignment: Alignment.centerLeft,
+              child: GlassTile(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                    borderRadius: BorderRadius.circular(20.r),
+                    borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Row(
                         children: [
-                          // Decorative background circles
-                          PositionedDirectional(
-                            end: -30.w,
-                            bottom: -30.h,
-                            child: Container(
-                              width: 180.r,
-                              height: 180.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white.withValues(alpha: 0.15),
+                          // 1. Sleek Mascot Avatar
+                          Container(
+                            width: 56.r,
+                            height: 56.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                              border: Border.all(
+                                color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                                width: 1.5,
                               ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                                  blurRadius: 15,
+                                ),
+                              ],
+                            ),
+                            alignment: Alignment.center,
+                            child: VowlMascot(
+                              state: VowlMascotState.neutral,
+                              size: 40.r,
+                              accessoryId: equippedAccessory,
+                              level: data.level,
+                              useFloatingAnimation: true,
                             ),
                           ),
-
-                          // Playful background icons
-                          PositionedDirectional(
-                            start: 20.w,
-                            top: 20.h,
-                            child: Icon(
-                              Icons.diamond_rounded,
-                              size: 24.r,
-                              color: Colors.white.withValues(alpha: 0.25),
-                            ).animate().scale(
-                              begin: const Offset(0.5, 0.5),
-                              end: const Offset(1, 1),
-                              duration: 800.ms,
-                              curve: Curves.easeOutBack,
-                            ),
-                          ),
-
-                          // Text Content (Moved to left side)
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                              24.w,
-                              16.h,
-                              130.w,
-                              16.h,
-                            ),
+                          SizedBox(width: 16.w),
+                          
+                          // 2. Compact Details
+                          Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 10.w,
-                                    vertical: 4.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withValues(alpha: 0.25),
-                                    borderRadius: BorderRadius.circular(12.r),
-                                    border: Border.all(
-                                      color: Colors.white.withValues(alpha: 0.4),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.auto_awesome_rounded,
+                                      size: 10.r,
+                                      color: const Color(0xFFF59E0B),
                                     ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        Icons.auto_awesome_rounded,
-                                        size: 10.r,
-                                        color: Colors.white,
-                                      ),
-                                      SizedBox(width: 4.w),
-                                      Flexible(
-                                        child: AutoSizeText(
-                                          sanctuaryLabel,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            color: Colors.white,
-                                            fontSize: 8.sp,
-                                            fontWeight: FontWeight.w900,
-                                            letterSpacing: 1.5,
-                                          ),
-                                          maxLines: 1,
-                                          minFontSize: 6,
-                                          overflow: TextOverflow.ellipsis,
+                                    SizedBox(width: 4.w),
+                                    Expanded(
+                                      child: AutoSizeText(
+                                        sanctuaryLabel,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: const Color(0xFFF59E0B),
+                                          fontSize: 9.sp,
+                                          fontWeight: FontWeight.w900,
+                                          letterSpacing: 1.2,
                                         ),
+                                        maxLines: 2,
+                                        minFontSize: 8,
+                                        overflow: TextOverflow.visible,
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(height: 8.h),
+                                SizedBox(height: 2.h),
                                 AutoSizeText(
                                   mascotName.toUpperCase(),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    color: Colors.white,
-                                    fontSize: 24.sp,
+                                    fontSize: 18.sp,
                                     fontWeight: FontWeight.w900,
                                     letterSpacing: -0.5,
-                                    height: 1.0,
+                                    color: Theme.of(context).brightness == Brightness.dark 
+                                        ? Colors.white 
+                                        : const Color(0xFF0F172A),
                                   ),
-                                  maxLines: 1,
-                                  minFontSize: 14,
-                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                  minFontSize: 12,
+                                  overflow: TextOverflow.visible,
                                 ),
-                                SizedBox(height: 4.h),
+                                SizedBox(height: 2.h),
                                 AutoSizeText(
                                   guidanceLabel,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    color: Colors.white.withValues(alpha: 0.95),
-                                    fontSize: 11.sp,
+                                    color: Colors.grey.shade500,
+                                    fontSize: 10.sp,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.2,
                                   ),
                                   maxLines: 2,
                                   minFontSize: 8,
-                                  overflow: TextOverflow.ellipsis,
+                                  overflow: TextOverflow.visible,
                                 ),
                               ],
                             ),
+                          ),
+                          SizedBox(width: 8.w),
+                          
+                          // 3. Ultra-modern subtle chevron
+                          Icon(
+                            Icons.chevron_right_rounded,
+                            color: Colors.grey.withValues(alpha: 0.3),
+                            size: 28.r,
                           ),
                         ],
                       ),
                     ),
                   ),
-
-                  // Mascot Area (Right Side)
-                  PositionedDirectional(
-                    end: 0,
-                    bottom: 0,
-                    top: 0,
-                    child: SizedBox(
-                      width: 140.w,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          // 1. Outer Soft Glow
-                          Container(
-                            width: 140.r,
-                            height: 140.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              gradient: RadialGradient(
-                                colors: [
-                                  Colors.white.withValues(alpha: 0.2),
-                                  Colors.transparent,
-                                ],
-                              ),
-                            ),
-                          ).animate().scale(
-                            begin: const Offset(0.5, 0.5),
-                            end: const Offset(1, 1),
-                            duration: 800.ms,
-                            curve: Curves.easeOutBack,
-                          ),
-
-                          // 2. Secondary Interactive Ring
-                          Container(
-                            width: 100.r,
-                            height: 100.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.3),
-                                width: 1.5,
-                              ),
-                            ),
-                          ).animate().rotate(
-                            begin: -0.5,
-                            end: 0,
-                            duration: 1000.ms,
-                            curve: Curves.easeOutBack,
-                          ),
-
-                          // 3. The Mascot
-                          Container(
-                            padding: EdgeInsets.all(12.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.4),
-                                width: 2.r,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.1),
-                                  blurRadius: 25,
-                                  offset: const Offset(0, 12),
-                                ),
-                              ],
-                            ),
-                            child: VowlMascot(
-                              state: VowlMascotState.neutral,
-                              size: 56.r,
-                              accessoryId: equippedAccessory,
-                              level: data.level,
-                              useFloatingAnimation: false,
-                            ),
-                          ).animate().scale(
-                            begin: const Offset(0, 0),
-                            end: const Offset(1, 1),
-                            duration: 800.ms,
-                            curve: Curves.easeOutBack,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ),
           ),
         );
