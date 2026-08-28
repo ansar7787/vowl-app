@@ -243,11 +243,13 @@ class LeaderboardRankCard extends StatelessWidget {
                                   isKids
                                       ? context.tr(
                                           'leaderboard.all_kids_quests',
-                                          fallback: 'Kids Quests',
+                                          fallback: 'Kids Quests ({0}%)',
+                                          args: [(progress * 100).toStringAsFixed(0)],
                                         )
                                       : context.tr(
                                           'leaderboard.all_quests',
-                                          fallback: 'All Quests',
+                                          fallback: 'All Quests ({0}%)',
+                                          args: [(progress * 100).toStringAsFixed(0)],
                                         ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
