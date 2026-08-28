@@ -274,8 +274,8 @@ class StreakMilestones extends StatelessWidget {
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                             )
-                                            .animate(onPlay: (c) => c.repeat())
-                                            .shimmer(duration: 2.seconds),
+                                            .animate()
+                                            .shimmer(duration: 2.seconds, delay: 400.ms),
                                   ),
                                 )
                               else if (isClaimed)
@@ -319,7 +319,7 @@ class StreakMilestones extends StatelessWidget {
                                         ),
                                       ),
                                     )
-                                    .animate(onPlay: (c) => c.repeat())
+                                    .animate()
                                     .shimmer(
                                       duration: 3.seconds,
                                       color: Colors.blue.withValues(alpha: 0.1),

@@ -143,10 +143,11 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                               Icons.diamond_rounded,
                               size: 24.r,
                               color: Colors.white.withValues(alpha: 0.25),
-                            ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.3, 1.3),
-                              duration: 3.seconds,
+                            ).animate().scale(
+                              begin: const Offset(0.5, 0.5),
+                              end: const Offset(1, 1),
+                              duration: 800.ms,
+                              curve: Curves.easeOutBack,
                             ),
                           ),
 
@@ -261,10 +262,11 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                 ],
                               ),
                             ),
-                          ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                            begin: const Offset(0.8, 0.8),
-                            end: const Offset(1.2, 1.2),
-                            duration: 4.seconds,
+                          ).animate().scale(
+                            begin: const Offset(0.5, 0.5),
+                            end: const Offset(1, 1),
+                            duration: 800.ms,
+                            curve: Curves.easeOutBack,
                           ),
 
                           // 2. Secondary Interactive Ring
@@ -278,7 +280,12 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                 width: 1.5,
                               ),
                             ),
-                          ).animate(onPlay: (c) => c.repeat()).rotate(duration: 10.seconds),
+                          ).animate().rotate(
+                            begin: -0.5,
+                            end: 0,
+                            duration: 1000.ms,
+                            curve: Curves.easeOutBack,
+                          ),
 
                           // 3. The Mascot
                           Container(
@@ -305,15 +312,11 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                               level: data.level,
                               useFloatingAnimation: false,
                             ),
-                          ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(
-                            begin: -6,
-                            end: 6,
-                            duration: 2.seconds,
-                            curve: Curves.easeInOut,
-                          ).scale(
-                            begin: const Offset(1, 1),
-                            end: const Offset(1.05, 1.05),
-                            duration: 2.seconds,
+                          ).animate().scale(
+                            begin: const Offset(0, 0),
+                            end: const Offset(1, 1),
+                            duration: 800.ms,
+                            curve: Curves.easeOutBack,
                           ),
                         ],
                       ),

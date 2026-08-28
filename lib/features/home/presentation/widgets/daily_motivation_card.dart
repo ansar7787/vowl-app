@@ -486,7 +486,7 @@ class _ShimmerLineState extends State<_ShimmerLine>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1400),
-    )..repeat();
+    )..forward();
   }
 
   @override

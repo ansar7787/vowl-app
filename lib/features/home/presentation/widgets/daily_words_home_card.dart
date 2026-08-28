@@ -118,10 +118,11 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                           Icons.menu_book_rounded,
                           size: 24.r,
                           color: Colors.white.withValues(alpha: 0.2),
-                        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.3, 1.3),
-                          duration: 3.seconds,
+                        ).animate().scale(
+                          begin: const Offset(0.5, 0.5),
+                          end: const Offset(1, 1),
+                          duration: 800.ms,
+                          curve: Curves.easeOutBack,
                         ),
                       ),
 
@@ -269,10 +270,11 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                             ],
                           ),
                         ),
-                      ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                        begin: const Offset(0.8, 0.8),
-                        end: const Offset(1.2, 1.2),
-                        duration: 4.seconds,
+                      ).animate().scale(
+                        begin: const Offset(0.5, 0.5),
+                        end: const Offset(1, 1),
+                        duration: 800.ms,
+                        curve: Curves.easeOutBack,
                       ),
 
                       // 2. Secondary Interactive Ring
@@ -286,8 +288,11 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                             width: 1.5,
                           ),
                         ),
-                      ).animate(onPlay: (c) => c.repeat()).rotate(
-                        duration: 10.seconds,
+                      ).animate().rotate(
+                        begin: -0.5,
+                        end: 0,
+                        duration: 1000.ms,
+                        curve: Curves.easeOutBack,
                       ),
 
                       // 3. Floating Sparkles/Particles
@@ -300,14 +305,15 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                             color: Colors.white.withValues(alpha: 0.3),
                             size: (8 + (index % 3) * 4).r,
                           )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .animate()
                               .fadeIn(
-                                duration: (1 + (index * 0.2)).seconds,
+                                duration: (400 + (index * 100)).ms,
                               )
                               .moveY(
-                                begin: 0,
-                                end: -20,
-                                duration: 2.seconds,
+                                begin: 20,
+                                end: 0,
+                                duration: 800.ms,
+                                curve: Curves.easeOutBack,
                               ),
                         );
                       }),
@@ -334,15 +340,11 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                           "📚",
                           style: TextStyle(fontSize: 48.sp, height: 1.0),
                         ),
-                      ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(
-                        begin: -6,
-                        end: 6,
-                        duration: 2.seconds,
-                        curve: Curves.easeInOut,
-                      ).scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.05, 1.05),
-                        duration: 2.seconds,
+                      ).animate().scale(
+                        begin: const Offset(0, 0),
+                        end: const Offset(1, 1),
+                        duration: 800.ms,
+                        curve: Curves.easeOutBack,
                       ),
                     ],
                   ),

@@ -371,11 +371,12 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                 ),
                                 child: Icon(icon, color: color, size: 24.r),
                               )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .animate()
                               .scale(
-                                begin: const Offset(1, 1),
-                                end: const Offset(1.1, 1.1),
-                                duration: 2.seconds,
+                                begin: const Offset(0.5, 0.5),
+                                end: const Offset(1, 1),
+                                duration: 800.ms,
+                                curve: Curves.easeOutBack,
                               )
                         : Container(
                             padding: EdgeInsets.all(12.r),

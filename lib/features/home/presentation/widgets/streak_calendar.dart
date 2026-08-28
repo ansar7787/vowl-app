@@ -350,11 +350,12 @@ class StreakCalendar extends StatelessWidget {
                                 color: Colors.blueAccent,
                                 size: 8.r,
                               )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .animate()
                               .scale(
-                                begin: const Offset(0.8, 0.8),
-                                end: const Offset(1.2, 1.2),
-                                duration: 1.seconds,
+                                begin: const Offset(0.5, 0.5),
+                                end: const Offset(1, 1),
+                                duration: 800.ms,
+                                curve: Curves.easeOutBack,
                               )
                         : null)),
       ),

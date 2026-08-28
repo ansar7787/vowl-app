@@ -58,14 +58,14 @@ class StreakHero extends StatelessWidget {
                             ],
                           ),
                         )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .animate()
                         .scale(
-                          begin: const Offset(0.8, 0.8),
-                          end: const Offset(1.2, 1.2),
-                          duration: 2.seconds,
-                          curve: Curves.easeInOut,
+                          begin: const Offset(0.5, 0.5),
+                          end: const Offset(1, 1),
+                          duration: 800.ms,
+                          curve: Curves.easeOutBack,
                         )
-                        .fadeIn(duration: 1.seconds),
+                        .fadeIn(duration: 800.ms),
                     Container(
                           padding: EdgeInsets.all(20.r),
                           decoration: BoxDecoration(
@@ -86,12 +86,12 @@ class StreakHero extends StatelessWidget {
                             size: 40.r,
                           ),
                         )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .animate()
                         .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.1, 1.1),
-                          duration: 1200.ms,
-                          curve: Curves.easeInOut,
+                          begin: const Offset(0.5, 0.5),
+                          end: const Offset(1, 1),
+                          duration: 800.ms,
+                          curve: Curves.easeOutBack,
                         ),
                   ],
                 ),
