@@ -128,7 +128,7 @@ class _PodiumSlot extends StatelessWidget {
         ? context.tr('leaderboard.coins', fallback: 'Coins')
         : context.tr('leaderboard.xp', fallback: 'XP');
     final isMe = currentUserId != null && user.id == currentUserId;
-    final glowColor = isMe ? const Color(0xFF6366F1) : colors[0];
+    final glowColor = colors[0];
 
     return Semantics(
       // FIX (HIGH-5): Screen readers now announce the rank, player name,
@@ -235,13 +235,13 @@ class _PodiumSlot extends StatelessWidget {
                       vertical: 2.h,
                     ),
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
+                      gradient: LinearGradient(
+                        colors: colors,
                       ),
                       borderRadius: BorderRadius.circular(8.r),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                          color: colors[0].withValues(alpha: 0.5),
                           blurRadius: 6,
                         ),
                       ],
