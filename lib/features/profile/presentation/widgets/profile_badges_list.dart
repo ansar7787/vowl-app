@@ -49,50 +49,57 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
         .toList();
 
     if (earnedBadgesList.isEmpty) {
-      return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: GlassTile(
-          width: double.infinity,
-          padding: EdgeInsets.all(32.w),
-          borderRadius: BorderRadius.circular(32.r),
-          child: Column(
-            children: [
-              VowlMascot(state: VowlMascotState.thinking, size: 60.r),
-              SizedBox(height: 16.h),
-              Text(
-                context.tr(
-                  'profile.hall_of_fame_vacant',
-                  fallback: 'Hall of Fame is Vacant',
-                ),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  fontWeight: FontWeight.w900,
-                  fontSize: 16.sp,
-                  letterSpacing: 1,
-                ),
+      return Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: GlassTile(
+              width: double.infinity,
+              padding: EdgeInsets.all(32.w),
+              borderRadius: BorderRadius.circular(32.r),
+              child: Column(
+                children: [
+                  VowlMascot(state: VowlMascotState.thinking, size: 60.r),
+                  SizedBox(height: 16.h),
+                  Text(
+                    context.tr(
+                      'profile.hall_of_fame_vacant',
+                      fallback: 'Your Legacy Awaits!',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      fontWeight: FontWeight.w900,
+                      fontSize: 16.sp,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    context.tr(
+                      'profile.hall_of_fame_vacant_subtitle',
+                      fallback: 'Embark on adventures to unlock legendary badges.',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white38 : Colors.black38,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-              SizedBox(height: 8.h),
-              Text(
-                context.tr(
-                  'profile.hall_of_fame_vacant_subtitle',
-                  fallback: 'Complete quests to earn badges.',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: isDark ? Colors.white38 : Colors.black38,
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 16.h),
-              // Progress counter even when empty
-              _buildProgressCounter(context, 0, totalBadges),
-            ],
+            ),
           ),
-        ),
+          SizedBox(height: 16.h),
+          // Progress counter below the empty state card
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: _buildProgressCounter(context, 0, totalBadges),
+          ),
+        ],
       );
     }
 
@@ -368,38 +375,108 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final progress = total > 0 ? earned / total : 0.0;
 
-    return Row(
-      children: [
-        Expanded(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(6.r),
-            child: LinearProgressIndicator(
-              value: progress,
-              minHeight: 6.h,
-              backgroundColor: isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : Colors.black.withValues(alpha: 0.06),
-              valueColor: const AlwaysStoppedAnimation<Color>(
-                Color(0xFF8B5CF6),
-              ),
+    return GlassTile(
+      borderRadius: BorderRadius.circular(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.all(12.r),
+            decoration: BoxDecoration(
+              color: const Color(0xFF8B5CF6).withValues(alpha: 0.15),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              Icons.military_tech_rounded,
+              color: const Color(0xFF8B5CF6),
+              size: 24.r,
             ),
           ),
-        ),
-        SizedBox(width: 12.w),
-        Text(
-          context.tr(
-            'profile.badges_progress',
-            fallback: '{0} of {1}',
-            args: ['$earned', '$total'],
+          SizedBox(width: 16.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      context.tr(
+                        'profile.hall_of_fame_progress',
+                        fallback: 'Collection Progress',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white70 : const Color(0xFF334155),
+                      ),
+                    ),
+                    Text(
+                      context.tr(
+                        'profile.badges_progress',
+                        fallback: '{0} of {1}',
+                        args: ['$earned', '$total'],
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: const Color(0xFF8B5CF6),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10.h),
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    return Stack(
+                      children: [
+                        Container(
+                          height: 8.h,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.08)
+                                : Colors.black.withValues(alpha: 0.05),
+                            borderRadius: BorderRadius.circular(8.r),
+                          ),
+                        ),
+                        TweenAnimationBuilder<double>(
+                          tween: Tween<double>(begin: 0.0, end: progress.clamp(0.0, 1.0)),
+                          duration: 1500.ms,
+                          curve: Curves.elasticOut,
+                          builder: (context, value, child) {
+                            return Container(
+                              height: 8.h,
+                              width: constraints.maxWidth * value,
+                              decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [Color(0xFF8B5CF6), Color(0xFFC084FC)],
+                                ),
+                                borderRadius: BorderRadius.circular(8.r),
+                                boxShadow: [
+                                  if (value > 0)
+                                    BoxShadow(
+                                      color: const Color(0xFF8B5CF6).withValues(alpha: (0.4 * value).clamp(0.0, 1.0)),
+                                      blurRadius: 8,
+                                      spreadRadius: 0,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w800,
-            color: isDark ? Colors.white38 : Colors.black38,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
