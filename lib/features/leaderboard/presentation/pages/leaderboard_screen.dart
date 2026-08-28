@@ -221,14 +221,14 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 ),
               ),
 
-              SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+              SliverToBoxAdapter(child: SizedBox(height: 12.h)),
 
               // Sticky Current User Rank (Pins to top when scrolling)
               SliverPersistentHeader(
                 pinned: true,
                 delegate: _StickyRankCardDelegate(
                   minHeight: 80.h,
-                  maxHeight: 115.h,
+                  maxHeight: 135.h,
                   child: LeaderboardRankCard(
                     allUsers: widget.state.users,
                     isKids: widget.state.isKids,
