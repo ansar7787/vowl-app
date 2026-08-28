@@ -262,32 +262,52 @@ class ProfileHeader extends StatelessWidget {
                     ),
                     SizedBox(width: 14.w),
                     // Rank badge showing actual level rank
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: isPremium
-                              ? [const Color(0xFFF59E0B), const Color(0xFFD97706)]
-                              : [const Color(0xFF6366F1), const Color(0xFF4F46E5)],
-                        ),
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                      child: AutoSizeText(
-                        _getRankTitle(context, user.level),
-                        maxLines: 1,
-                        minFontSize: 6,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          letterSpacing: 1,
-                        ),
-                      ),
+                    Builder(
+                      builder: (context) {
+                        final badgeColor = isPremium
+                            ? const Color(0xFFF59E0B)
+                            : const Color(0xFF6366F1);
+                        return Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 3.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: badgeColor.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(8.r),
+                            border: Border.all(
+                              color: badgeColor.withValues(alpha: 0.3),
+                              width: 1,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.shield_rounded,
+                                color: badgeColor,
+                                size: 10.r,
+                              ),
+                              SizedBox(width: 4.w),
+                              Flexible(
+                                child: AutoSizeText(
+                                  _getRankTitle(context, user.level),
+                                  maxLines: 1,
+                                  minFontSize: 6,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 9.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: badgeColor,
+                                    letterSpacing: 1,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
