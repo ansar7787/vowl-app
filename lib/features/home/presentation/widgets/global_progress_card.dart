@@ -8,6 +8,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/constants/app_constants.dart';
+import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 /// A compact card showing the user's total quest progress across all 8 categories
@@ -180,19 +181,39 @@ class GlobalProgressCard extends StatelessWidget {
                         )
                       else
                         Container(
-                          width: 48.w,
-                          height: 38.h,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 8.h,
+                          ),
                           decoration: BoxDecoration(
-                            color: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.1),
+                            color: const Color(0xFF6366F1).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.2),
-                              width: 1,
-                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                '—',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                                  height: 1,
+                                ),
+                                maxLines: 1,
+                              ),
+                              Text(
+                                context.tr('home.rank', fallback: 'Rank'),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 7.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                                  letterSpacing: 1.5,
+                                ),
+                                maxLines: 1,
+                              ),
+                            ],
                           ),
                         ),
                     ],
@@ -262,35 +283,35 @@ class GlobalProgressCard extends StatelessWidget {
                             children: [
                               _buildCategoryDot(
                                 context,
-                                '📖',
+                                QuestType.reading,
                                 user.getTotalCategoryLevelsCleared(
                                   QuestType.reading,
                                 ),
                               ),
                               _buildCategoryDot(
                                 context,
-                                '✍️',
+                                QuestType.writing,
                                 user.getTotalCategoryLevelsCleared(
                                   QuestType.writing,
                                 ),
                               ),
                               _buildCategoryDot(
                                 context,
-                                '🎤',
+                                QuestType.speaking,
                                 user.getTotalCategoryLevelsCleared(
                                   QuestType.speaking,
                                 ),
                               ),
                               _buildCategoryDot(
                                 context,
-                                '🎧',
+                                QuestType.listening,
                                 user.getTotalCategoryLevelsCleared(
                                   QuestType.listening,
                                 ),
                               ),
                               _buildCategoryDot(
                                 context,
-                                '🏆',
+                                QuestType.eliteMastery,
                                 user.getTotalCategoryLevelsCleared(
                                   QuestType.eliteMastery,
                                 ),
@@ -361,8 +382,10 @@ class GlobalProgressCard extends StatelessWidget {
     ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.1, end: 0);
   }
 
-  Widget _buildCategoryDot(BuildContext context, String emoji, int count) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+  Widget _buildCategoryDot(BuildContext context, QuestType type, int count) {
+    final color = GameHelper.getQuestTypeColor(type);
+    final icon = GameHelper.getIconForCategory(type);
+    
     return Padding(
       padding: EdgeInsets.only(left: 4.w),
       child: Tooltip(
@@ -374,12 +397,10 @@ class GlobalProgressCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 4.h),
           decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : Colors.black.withValues(alpha: 0.05),
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8.r),
           ),
-          child: Text(emoji, style: TextStyle(fontSize: 11.sp)),
+          child: Icon(icon, color: color, size: 12.r),
         ),
       ),
     );

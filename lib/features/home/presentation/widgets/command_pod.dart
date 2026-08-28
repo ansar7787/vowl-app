@@ -84,12 +84,12 @@ class CommandPod extends StatelessWidget {
   Widget _buildDiscoveryHero(BuildContext context) {
     // XP-to-next-level progress; guarded against a zero/undefined modulus.
     final progress = (user.totalExp % 100) / 100.0;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     final rank = _rankForLevel(user.level);
 
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32.r),
+        borderRadius: BorderRadius.circular(28.r),
         boxShadow: [
           BoxShadow(
             color: const Color(0xFF6366F1).withValues(alpha: 0.15),
@@ -99,7 +99,7 @@ class CommandPod extends StatelessWidget {
         ],
       ),
       child: GlassTile(
-        borderRadius: BorderRadius.circular(32.r),
+        borderRadius: BorderRadius.circular(28.r),
         padding: EdgeInsets.all(24.r),
         child: Column(
           children: [
@@ -124,13 +124,13 @@ class CommandPod extends StatelessWidget {
                             ),
                           ),
                         )
-                        .animate(onPlay: (controller) => controller.repeat())
+                        .animate()
                         .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.15, 1.15),
-                          duration: 2.seconds,
-                        )
-                        .fadeOut(duration: 2.seconds),
+                          begin: const Offset(1.15, 1.15),
+                          end: const Offset(1, 1),
+                          duration: 800.ms,
+                          curve: Curves.easeOutBack,
+                        ),
 
                     MasteryAvatar(user: user, progress: progress),
 
@@ -219,131 +219,13 @@ class CommandPod extends StatelessWidget {
               ],
             ),
 
-            // ── Divider ───────────────────────────────────────
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 18.h),
-              child: Container(
-                height: 1,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : Colors.black.withValues(alpha: 0.06),
-                      Colors.transparent,
-                    ],
-                  ),
-                ),
-              ),
-            ),
-
-            // ── XP Progress Bar ───────────────────────────────
-            _buildFuturisticXPBar(context, progress),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildFuturisticXPBar(BuildContext context, double progress) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.auto_awesome_rounded,
-                    size: 14.r,
-                    color: const Color(0xFF6366F1),
-                  ),
-                  SizedBox(width: 6.w),
-                  Flexible(
-                    child: Text(
-                      context.tr(
-                        'home.level',
-                        fallback: 'Level',
-                        args: [user.level.toString()],
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark
-                            ? Colors.white70
-                            : const Color(0xFF0F172A),
-                        letterSpacing: 1,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Text(
-              context.tr(
-                'home.completed_percent',
-                fallback: 'Completed',
-                args: [(progress * 100).toInt().toString()],
-              ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w800,
-                color: const Color(0xFF6366F1),
-              ),
-              maxLines: 1,
-            ),
-          ],
-        ),
-        SizedBox(height: 10.h),
-        Stack(
-          children: [
-            Container(
-              height: 12.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(6.r),
-              ),
-            ),
-            FractionallySizedBox(
-              widthFactor: progress.clamp(0.05, 1.0),
-              child: Container(
-                height: 12.h,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xFF3B82F6),
-                      Color(0xFF6366F1),
-                      Color(0xFF8B5CF6),
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.circular(6.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
-                      blurRadius: 10,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-              ).animate().shimmer(duration: 2.seconds, color: Colors.white24),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
+
 
   Widget _buildKidsLearningCard(BuildContext context) {
     return Semantics(
@@ -361,7 +243,7 @@ class CommandPod extends StatelessWidget {
                 constraints: BoxConstraints(minHeight: 160.h),
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32.r),
+                  borderRadius: BorderRadius.circular(28.r),
                   gradient: const LinearGradient(
                     colors: [
                       Color(0xFF06B6D4), // Vibrant Cyan
@@ -380,7 +262,7 @@ class CommandPod extends StatelessWidget {
                   ],
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(32.r),
+                  borderRadius: BorderRadius.circular(28.r),
                   child: Stack(
                     alignment: Alignment.centerLeft,
                     children: [
@@ -408,7 +290,7 @@ class CommandPod extends StatelessWidget {
                                   size: 24.r,
                                   color: Colors.white.withValues(alpha: 0.2),
                                 )
-                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .animate()
                                 .scale(
                                   begin: const Offset(1, 1),
                                   end: const Offset(1.3, 1.3),
@@ -537,7 +419,7 @@ class CommandPod extends StatelessWidget {
                               ),
                             ),
                           )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .animate()
                           .scale(
                             begin: const Offset(0.8, 0.8),
                             end: const Offset(1.2, 1.2),
@@ -556,7 +438,7 @@ class CommandPod extends StatelessWidget {
                               ),
                             ),
                           )
-                          .animate(onPlay: (c) => c.repeat())
+                          .animate()
                           .rotate(duration: 10.seconds),
 
                       // 3. Floating Sparkles/Particles
@@ -571,9 +453,7 @@ class CommandPod extends StatelessWidget {
                                     color: Colors.white.withValues(alpha: 0.3),
                                     size: (8 + random.nextInt(8)).r,
                                   )
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
+                                  .animate()
                                   .fadeIn(
                                     duration: (1 + random.nextDouble()).seconds,
                                   )
@@ -608,7 +488,7 @@ class CommandPod extends StatelessWidget {
                               style: TextStyle(fontSize: 56.sp, height: 1.0),
                             ),
                           )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .animate()
                           .moveY(
                             begin: -6,
                             end: 6,

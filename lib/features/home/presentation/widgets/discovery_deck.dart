@@ -160,6 +160,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                         difficulty: item.difficulty,
                         isSelected: activeFactor > 0.8,
                         isRtl: isRtl,
+                        index: index,
                         onTap: item.onTap,
                       ),
                     );
@@ -203,6 +204,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
     required this.difficulty,
     required this.isSelected,
     required this.isRtl,
+    required this.index,
     required this.onTap,
   });
 
@@ -214,6 +216,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
   final String difficulty;
   final bool isSelected;
   final bool isRtl;
+  final int index;
   final VoidCallback onTap;
 
   @override
@@ -231,7 +234,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
           child: ExcludeSemantics(
             child: GlassTile(
-              borderRadius: BorderRadius.circular(32.r),
+              borderRadius: BorderRadius.circular(28.r),
               padding: EdgeInsets.zero,
               showShadow: false,
               borderColor: isSelected
@@ -240,15 +243,29 @@ class _DiscoveryCollectionCard extends StatelessWidget {
               child: Stack(
                 children: [
                   // Decorative Background Icon
-                  PositionedDirectional(
-                    end: -20,
-                    top: -20,
-                    child: Icon(
-                      icon,
-                      size: 140.r,
-                      color: color.withValues(alpha: isSelected ? 0.08 : 0.03),
+                  if (index % 2 == 1)
+                    PositionedDirectional(
+                      end: -10,
+                      bottom: -20,
+                      child: Transform.rotate(
+                        angle: -0.2,
+                        child: Icon(
+                          icon,
+                          size: 160.r,
+                          color: color.withValues(alpha: isSelected ? 0.08 : 0.03),
+                        ),
+                      ),
+                    )
+                  else
+                    PositionedDirectional(
+                      end: -20,
+                      top: -20,
+                      child: Icon(
+                        icon,
+                        size: 140.r,
+                        color: color.withValues(alpha: isSelected ? 0.08 : 0.03),
+                      ),
                     ),
-                  ),
 
                   // Content Layer
                   Padding(
@@ -301,7 +318,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                                 ),
                                               ),
                                             )
-                                            .animate(onPlay: (c) => c.repeat())
+                                            .animate()
                                             .scale(
                                               begin: const Offset(0.5, 0.5),
                                               end: const Offset(2, 2),
@@ -342,7 +359,8 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                             subtitle,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 20.sp,
+                              fontSize: index == 2 ? 22.sp : 20.sp,
+                              fontStyle: index == 2 ? FontStyle.italic : FontStyle.normal,
                               fontWeight: FontWeight.w900,
                               color: isDark
                                   ? Colors.white
@@ -464,7 +482,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
             color: color,
           ),
         )
-        .animate(onPlay: (c) => c.repeat())
+        .animate()
         .shimmer(delay: 1.seconds, duration: 2.seconds);
   }
 }

@@ -63,11 +63,11 @@ class UnifiedStatsRow extends StatelessWidget {
         Expanded(
           child: _buildStatTile(
             context,
-            label: context.tr('home.level_label', fallback: 'Level'),
-            value: '${user.level}',
-            icon: Icons.star_rounded,
+            label: context.tr('home.rank_label', fallback: 'Rank'),
+            value: globalRank != null ? '#$globalRank' : '—',
+            icon: Icons.public_rounded,
             color: const Color(0xFF6366F1),
-            route: AppRouter.levelRoute,
+            route: AppRouter.leaderboardRoute,
             delay: 240,
           ),
         ),

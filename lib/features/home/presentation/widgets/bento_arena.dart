@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -226,7 +227,7 @@ class _BentoCategoryTile extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-              borderRadius: BorderRadius.circular(30.r),
+              borderRadius: BorderRadius.circular(28.r),
               boxShadow: [
                 BoxShadow(
                   color: color.withValues(alpha: 0.1),
@@ -236,7 +237,7 @@ class _BentoCategoryTile extends StatelessWidget {
               ],
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(30.r),
+              borderRadius: BorderRadius.circular(28.r),
               child: Container(
                 padding: EdgeInsets.all(20.r),
                 decoration: BoxDecoration(
@@ -250,7 +251,7 @@ class _BentoCategoryTile extends StatelessWidget {
                           ]
                         : [Colors.white, Colors.white.withValues(alpha: 0.8)],
                   ),
-                  borderRadius: BorderRadius.circular(30.r),
+                  borderRadius: BorderRadius.circular(28.r),
                   border: Border.all(
                     color: color.withValues(alpha: isDark ? 0.3 : 0.2),
                     width: 1.5,
@@ -525,5 +526,8 @@ class JourneyPathPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant JourneyPathPainter oldDelegate) =>
-      oldDelegate.isDark != isDark || oldDelegate.isRtl != isRtl;
+      oldDelegate.isDark != isDark ||
+      oldDelegate.isRtl != isRtl ||
+      oldDelegate.stepsCount != stepsCount ||
+      !listEquals(oldDelegate.types, types);
 }

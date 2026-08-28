@@ -241,8 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // ══════════════════════════════════════════════════
-                      // 4. JOURNEY PROGRESS (Collapsed BentoArena)
+
                       // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),

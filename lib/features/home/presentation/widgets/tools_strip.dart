@@ -87,17 +87,16 @@ class ToolsStrip extends StatelessWidget {
       ),
     ];
 
-    return SizedBox(
-      height: 120.h,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        itemCount: tools.length,
-        separatorBuilder: (context, index) => SizedBox(width: 12.w),
-        itemBuilder: (context, index) {
-          final tool = tools[index];
-          return _ToolCard(
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      physics: const BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: tools.asMap().entries.map((entry) {
+          final index = entry.key;
+          final tool = entry.value;
+          final card = _ToolCard(
             title: tool.title,
             subtitle: tool.subtitle,
             icon: tool.icon,
@@ -107,7 +106,12 @@ class ToolsStrip extends StatelessWidget {
             isDark: isDark,
             index: index,
           );
-        },
+          if (index == tools.length - 1) return card;
+          return Padding(
+            padding: EdgeInsets.only(right: 12.w),
+            child: card,
+          );
+        }).toList(),
       ),
     );
   }
@@ -179,7 +183,7 @@ class _ToolCard extends StatelessWidget {
                     ),
                     child: Icon(icon, color: color, size: 20.r),
                   ),
-                  const Spacer(),
+                  SizedBox(height: 16.h),
                   Text(
                     title,
                     maxLines: 1,
