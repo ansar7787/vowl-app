@@ -18,28 +18,50 @@ import 'package:auto_size_text/auto_size_text.dart';
 class SettingsSectionTitle extends StatelessWidget {
   final String title;
   final bool isDark;
+  final Color? tintColor;
 
   const SettingsSectionTitle({
     super.key,
     required this.title,
     required this.isDark,
+    this.tintColor,
   });
 
   @override
   Widget build(BuildContext context) {
+    final effectiveColor = tintColor ??
+        (isDark
+            ? Colors.white.withValues(alpha: 0.5)
+            : const Color(0xFF0F172A).withValues(alpha: 0.4));
     return Padding(
       padding: EdgeInsets.only(left: 8.w, bottom: 12.h),
-      child: Text(
-        title.toUpperCase(),
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 13.sp,
-          fontWeight: FontWeight.w900,
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.6)
-              : const Color(0xFF0F172A).withValues(alpha: 0.5),
-          letterSpacing: 2.0,
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            title.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w800,
+              color: effectiveColor,
+              letterSpacing: 1.5,
+            ),
+          ),
+          SizedBox(height: 8.h),
+          Container(
+            height: 0.5,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  effectiveColor.withValues(alpha: 0.3),
+                  effectiveColor.withValues(alpha: 0.0),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -56,9 +78,27 @@ class SettingsGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return GlassTile(
       borderRadius: BorderRadius.circular(28.r),
-      child: Column(children: children),
+      child: Column(
+        children: [
+          for (int i = 0; i < children.length; i++) ...[
+            children[i],
+            if (i < children.length - 1)
+              Padding(
+                padding: EdgeInsets.only(left: 62.w),
+                child: Divider(
+                  height: 0.5,
+                  thickness: 0.5,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.06)
+                      : Colors.black.withValues(alpha: 0.06),
+                ),
+              ),
+          ],
+        ],
+      ),
     );
   }
 }
@@ -358,9 +398,9 @@ class SettingsLogoutButton extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w700,
                               color: Colors.red,
-                              letterSpacing: 1.5,
+                              letterSpacing: 0.5,
                             ),
                             maxLines: 1,
                             minFontSize: 8,
@@ -423,16 +463,26 @@ class SettingsProfileSection extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.blue.withValues(alpha: 0.3),
+                          color: (currentUser.isPremium
+                                  ? const Color(0xFFF59E0B)
+                                  : const Color(0xFF64748B))
+                              .withValues(alpha: 0.3),
                           blurRadius: 12,
                           spreadRadius: 2,
                         ),
                       ],
                       gradient: LinearGradient(
-                        colors: [
-                          Colors.blue,
-                          Colors.blue.withValues(alpha: 0.2),
-                        ],
+                        colors: currentUser.isPremium
+                            ? [
+                                const Color(0xFFF59E0B),
+                                const Color(0xFFF59E0B)
+                                    .withValues(alpha: 0.2),
+                              ]
+                            : [
+                                const Color(0xFF64748B),
+                                const Color(0xFF64748B)
+                                    .withValues(alpha: 0.2),
+                              ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -450,7 +500,7 @@ class SettingsProfileSection extends StatelessWidget {
                           ? Icon(
                               Icons.person_rounded,
                               size: 36.r,
-                              color: Colors.white24,
+                              color: isDark ? Colors.white24 : Colors.grey[400],
                             )
                           : null,
                     ),
@@ -462,7 +512,15 @@ class SettingsProfileSection extends StatelessWidget {
                       padding: EdgeInsets.all(7.r),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Colors.blue, Colors.blue.shade700],
+                          colors: currentUser.isPremium
+                              ? [
+                                  const Color(0xFFF59E0B),
+                                  const Color(0xFFD97706),
+                                ]
+                              : [
+                                  const Color(0xFF64748B),
+                                  const Color(0xFF475569),
+                                ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -520,52 +578,61 @@ class SettingsProfileSection extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 12.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.blue.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: Colors.blue.withValues(alpha: 0.2),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.verified_rounded,
-                          color: Colors.blue,
-                          size: 12.r,
+                  Builder(
+                    builder: (context) {
+                      final badgeColor = currentUser.isPremium
+                          ? const Color(0xFFF59E0B)
+                          : const Color(0xFF64748B);
+                      return Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 4.h,
                         ),
-                        SizedBox(width: 6.w),
-                        Flexible(
-                          child: AutoSizeText(
-                            currentUser.isPremium
-                                ? context.tr(
-                                    'settings.premium_quester',
-                                    fallback: 'Premium Quester',
-                                  )
-                                : context.tr(
-                                    'settings.free_account',
-                                    fallback: 'Free Account',
-                                  ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.blue,
-                              letterSpacing: 1,
-                            ),
-                            maxLines: 1,
-                            minFontSize: 6,
-                            overflow: TextOverflow.ellipsis,
+                        decoration: BoxDecoration(
+                          color: badgeColor.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(
+                            color: badgeColor.withValues(alpha: 0.2),
                           ),
                         ),
-                      ],
-                    ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              currentUser.isPremium
+                                  ? Icons.workspace_premium_rounded
+                                  : Icons.person_outline_rounded,
+                              color: badgeColor,
+                              size: 12.r,
+                            ),
+                            SizedBox(width: 6.w),
+                            Flexible(
+                              child: AutoSizeText(
+                                currentUser.isPremium
+                                    ? context.tr(
+                                        'settings.premium_quester',
+                                        fallback: 'Premium Quester',
+                                      )
+                                    : context.tr(
+                                        'settings.free_account',
+                                        fallback: 'Free Account',
+                                      ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: badgeColor,
+                                  letterSpacing: 1,
+                                ),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

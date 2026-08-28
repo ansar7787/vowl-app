@@ -521,6 +521,27 @@ class SettingsDialogs {
   }
 
   // ---------------------------------------------------------------------------
+  // Age Verification Reset
+  // ---------------------------------------------------------------------------
+
+  static Future<bool?> showAgeVerificationReset(BuildContext context) {
+    return _showDisableConfirmation(
+      context: context,
+      icon: Icons.verified_user_rounded,
+      color: const Color(0xFF8B5CF6),
+      titleKey: 'settings.reset_age_title',
+      titleFallback: 'Reset Age Verification?',
+      bodyKey: 'settings.reset_age_desc',
+      bodyFallback:
+          'This will reset your age verification status. You will be asked to verify your age again.',
+      keepKey: 'common.cancel',
+      keepFallback: 'Cancel',
+      disableKey: 'common.continue',
+      disableFallback: 'Continue',
+    );
+  }
+
+  // ---------------------------------------------------------------------------
   // Coming Soon
   // ---------------------------------------------------------------------------
 

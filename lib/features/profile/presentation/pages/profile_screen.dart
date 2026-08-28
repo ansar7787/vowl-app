@@ -8,7 +8,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -16,7 +15,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
-import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
@@ -81,39 +80,109 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       surfaceTintColor: Colors.transparent,
                       elevation: 0,
                       leading: const SizedBox.shrink(),
-                      flexibleSpace: FlexibleSpaceBar(
-                        background: Center(
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: SizedBox(
-                              width: 1.sw,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(height: 20.h),
-                                  BlocBuilder<ProfileBloc, ProfileState>(
-                                    buildWhen: (prev, curr) =>
-                                        prev.photoUrl != curr.photoUrl,
-                                    builder: (context, profileState) {
-                                      return ProfileHeader(
-                                        user: user,
-                                        immediatePhotoUrl:
-                                            profileState.photoUrl,
-                                        onEditName: () => _showEditNameSheet(
-                                          context,
-                                          user.displayName ?? '',
+                      flexibleSpace: LayoutBuilder(
+                        builder: (context, constraints) {
+                          // Calculate collapse progress for smooth transition
+                          final expandedHeight = 280.h;
+                          final collapsedHeight = 80.h;
+                          final currentHeight = constraints.biggest.height;
+                          final collapseProgress = 1.0 -
+                              ((currentHeight - collapsedHeight) /
+                                      (expandedHeight - collapsedHeight))
+                                  .clamp(0.0, 1.0);
+
+                          return FlexibleSpaceBar(
+                            background: Opacity(
+                              opacity: (1.0 - collapseProgress * 1.5)
+                                  .clamp(0.0, 1.0),
+                              child: Center(
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: SizedBox(
+                                    width: 1.sw,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        SizedBox(height: 20.h),
+                                        BlocBuilder<ProfileBloc,
+                                            ProfileState>(
+                                          buildWhen: (prev, curr) =>
+                                              prev.photoUrl !=
+                                              curr.photoUrl,
+                                          builder:
+                                              (context, profileState) {
+                                            return ProfileHeader(
+                                              user: user,
+                                              immediatePhotoUrl:
+                                                  profileState.photoUrl,
+                                              onEditName: () =>
+                                                  _showEditNameSheet(
+                                                context,
+                                                user.displayName ?? '',
+                                              ),
+                                              onEditPhoto: () =>
+                                                  _showImageSourceSheet(
+                                                      context),
+                                            );
+                                          },
                                         ),
-                                        onEditPhoto: () =>
-                                            _showImageSourceSheet(context),
-                                      );
-                                    },
+                                      ],
+                                    ),
                                   ),
-                                ],
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        collapseMode: CollapseMode.pin,
+                            // Collapsed state: show mini avatar + name
+                            title: collapseProgress > 0.6
+                                ? Opacity(
+                                    opacity:
+                                        ((collapseProgress - 0.6) / 0.4)
+                                            .clamp(0.0, 1.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        CircleAvatar(
+                                          radius: 16.r,
+                                          backgroundColor: isDark
+                                              ? Colors.white
+                                                  .withValues(alpha: 0.1)
+                                              : const Color(0xFFF1F5F9),
+                                          backgroundImage: (user
+                                                      .photoUrl !=
+                                                  null)
+                                              ? NetworkImage(
+                                                  user.photoUrl!)
+                                              : null,
+                                          child: user.photoUrl == null
+                                              ? Icon(
+                                                  Icons.person_rounded,
+                                                  color: const Color(
+                                                      0xFF94A3B8),
+                                                  size: 18.r,
+                                                )
+                                              : null,
+                                        ),
+                                        SizedBox(width: 10.w),
+                                        Text(
+                                          user.displayName ?? 'Explorer',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 16.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: isDark
+                                                ? Colors.white
+                                                : const Color(
+                                                    0xFF0F172A),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                : null,
+                            collapseMode: CollapseMode.pin,
+                          );
+                        },
                       ),
                     ),
 
@@ -121,23 +190,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (!user.isPremium) ...[
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: _buildPremiumBanner(context),
-                            ),
-                          ],
-
-                          SizedBox(height: 12.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildKeyShopBanner(context, user),
-                          ),
-
-                          SizedBox(height: 24.h),
-                          _buildInteractiveAILab(context),
-
-                          SizedBox(height: 20.h),
+                          // ── 1. Adventure Stats ──
+                          SizedBox(height: 8.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: _buildSectionHeader(
@@ -175,11 +229,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                               onTap: () {
                                 di.sl<HapticService>().selection();
-                                context.push(AppRouter.progressDashboardRoute);
+                                context.push(
+                                    AppRouter.progressDashboardRoute);
                               },
                             ),
                           ),
 
+                          // ── 2. Key Shop (inline, compact) ──
+                          SizedBox(height: 16.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildKeyShopBanner(context, user),
+                          ),
+
+                          // ── 3. Hall of Fame ──
                           SizedBox(height: 40.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -194,67 +257,61 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(height: 20.h),
                           ProfileBadgesList(user: user),
 
+                          // ── 4. Kids Zone (conditional) ──
+                          if (user.kidsStickers.isNotEmpty ||
+                              user.kidsTotalLevelsCompleted > 0) ...[
+                            SizedBox(height: 40.h),
+                            Padding(
+                              padding:
+                                  EdgeInsets.symmetric(horizontal: 24.w),
+                              child: _buildSectionHeader(
+                                context,
+                                context.tr(
+                                  'profile.kids_zone',
+                                  fallback: 'Kids Zone',
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20.h),
+                            Padding(
+                              padding:
+                                  EdgeInsets.symmetric(horizontal: 24.w),
+                              child: _buildKidsRoomCard(context),
+                            ),
+                            SizedBox(height: 16.h),
+                            Padding(
+                              padding:
+                                  EdgeInsets.symmetric(horizontal: 24.w),
+                              child:
+                                  ProfileStickersProgress(user: user),
+                            ),
+                          ],
+
+                          // ── 5. Premium CTA (single, after value) ──
+                          if (!user.isPremium) ...[
+                            SizedBox(height: 40.h),
+                            Padding(
+                              padding:
+                                  EdgeInsets.symmetric(horizontal: 24.w),
+                              child: _buildPremiumBanner(context),
+                            ),
+                          ],
+
+                          // ── 6. Settings ──
                           SizedBox(height: 40.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildSectionHeader(
-                              context,
-                              context.tr(
-                                'profile.kids_zone',
-                                fallback: 'Kids Zone',
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildKidsRoomCard(context),
-                          ),
-                          SizedBox(height: 16.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: ProfileStickersProgress(user: user),
+                            child: ProfilePreferencesList(user: user),
                           ),
 
-                          SizedBox(height: 40.h),
+                          // ── 7. Sign Out ──
+                          SizedBox(height: 24.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildSectionHeader(
-                              context,
-                              context.tr(
-                                'settings.app_preferences',
-                                fallback: 'App Preferences',
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: ProfilePreferencesList(
-                              user: user,
-                              soundEnabled: false,
-                              onSoundToggle: (_) {},
-                            ),
+                            child: _buildSignOutButton(context),
                           ),
 
-                          SizedBox(height: 40.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildSectionHeader(
-                              context,
-                              context.tr(
-                                'profile.earn_rewards',
-                                fallback: 'Earn Rewards',
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: const AdRewardCard(margin: EdgeInsets.zero),
-                          ),
-
-                          SizedBox(height: 140.h),
+                          SizedBox(height: 100.h),
                         ],
                       ),
                     ),
@@ -309,8 +366,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildKidsRoomCard(BuildContext context) {
     return ProfileFeatureCard(
       iconContent: Icon(Icons.toys_rounded, color: Colors.white, size: 24.r),
-      color: Colors.red.shade400,
-      shadowColor: Colors.red.shade700,
+      color: const Color(0xFFEF4444),
+      shadowColor: const Color(0xFFDC2626),
       title: context.tr('profile.kids_room_title', fallback: 'Kids Room'),
       subtitle: context.tr(
         'profile.kids_room_subtitle',
@@ -345,8 +402,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       color: Colors.amber,
       shadowColor: Colors.amber.shade700,
-      title: 'Golden Keys',
-      subtitle: 'Get more keys to unlock gates instantly!',
+      title: context.tr(
+        'profile.golden_keys_title',
+        fallback: 'Golden Keys',
+      ),
+      subtitle: context.tr(
+        'profile.golden_keys_subtitle',
+        fallback: 'Get more keys to unlock gates instantly!',
+      ),
       onTap: () {
         di.sl<HapticService>().selection();
         KeyShopBottomSheet.show(context: context, isKidsMode: false);
@@ -354,157 +417,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildInteractiveAILab(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Row(
-            children: [
-              Icon(
-                Icons.auto_awesome_rounded,
-                color: const Color(0xFF6366F1),
-                size: 24.r,
+  Widget _buildSignOutButton(BuildContext context) {
+    return ScaleButton(
+      onTap: () {
+        di.sl<HapticService>().warning();
+        SettingsDialogs.showLogout(context);
+      },
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(24.r),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.power_settings_new_rounded,
+              color: const Color(0xFFEF4444),
+              size: 20.r,
+            ),
+            SizedBox(width: 10.w),
+            Text(
+              context.tr('settings.sign_out', fallback: 'Sign Out'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                color: const Color(0xFFEF4444),
               ),
-              SizedBox(width: 8.w),
-              _buildSectionHeader(
-                context,
-                context.tr('profile.ai_lab', fallback: 'Vowl AI Lab'),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-        SizedBox(height: 4.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Text(
-            context.tr(
-              'profile.ai_lab_desc',
-              fallback: 'Powerful AI engines running 100% offline.',
-            ),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: isDark ? Colors.white54 : Colors.black54,
-              fontSize: 13.sp,
-            ),
-          ),
-        ),
-        SizedBox(height: 16.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: ProfileFeatureCard(
-            iconContent: Icon(
-              Icons.document_scanner_rounded,
-              color: Colors.white,
-              size: 24.r,
-            ),
-            color: const Color(0xFF6366F1),
-            shadowColor: const Color(0xFF4F46E5),
-            title: context.tr(
-              'translation.scan_learn_title',
-              fallback: 'Scan & Learn',
-            ),
-            subtitle: context.tr(
-              'translation.scan_learn_desc',
-              fallback: 'Extract & translate real-world text.',
-            ),
-            onTap: () {
-              di.sl<HapticService>().selection();
-              context.push(AppRouter.scanAndLearnRoute);
-            },
-          ),
-        ),
-        SizedBox(height: 16.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: ProfileFeatureCard(
-            iconContent: Icon(
-              Icons.camera_alt_rounded,
-              color: Colors.white,
-              size: 24.r,
-            ),
-            color: const Color(0xFF14B8A6),
-            shadowColor: const Color(0xFF0D9488),
-            title: context.tr(
-              'vocabulary.photo_vocab_title',
-              fallback: 'Photo Vocab',
-            ),
-            subtitle: context.tr(
-              'vocabulary.photo_vocab_desc',
-              fallback: 'Point camera to learn object names.',
-            ),
-            onTap: () {
-              di.sl<HapticService>().selection();
-              context.push(AppRouter.photoVocabularyRoute);
-            },
-          ),
-        ),
-        SizedBox(height: 16.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: ProfileFeatureCard(
-            iconContent: Icon(
-              Icons.auto_stories_rounded,
-              color: Colors.white,
-              size: 24.r,
-            ),
-            color: const Color(0xFF3B82F6),
-            shadowColor: const Color(0xFF2563EB),
-            title: context.tr(
-              'profile.daily_words_title',
-              fallback: 'Daily Words',
-            ),
-            subtitle: context.tr(
-              'profile.daily_words_subtitle',
-              fallback: 'Expand your vocabulary every day.',
-            ),
-            onTap: () {
-              di.sl<HapticService>().selection();
-              context.push(AppRouter.dailyWordsRoute);
-            },
-          ),
-        ),
-        SizedBox(height: 16.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: ProfileFeatureCard(
-            iconContent: Icon(
-              Icons.translate_rounded,
-              color: Colors.white,
-              size: 24.r,
-            ),
-            color: const Color(0xFF10B981),
-            shadowColor: const Color(0xFF059669),
-            title: context.tr(
-              'home.translation_title',
-              fallback: 'Instant Translate',
-            ),
-            subtitle: context.tr(
-              'home.translation_subtitle',
-              fallback: 'Translate words & phrases offline for free.',
-            ),
-            onTap: () {
-              di.sl<HapticService>().selection();
-              final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-              if (isPremium) {
-                context.push(AppRouter.translateRoute);
-              } else {
-                di.sl<AdService>().showRewardedAd(
-                  context: context,
-                  isPremium: false,
-                  onUserEarnedReward: (_) {},
-                  onDismissed: () {
-                    context.push(AppRouter.translateRoute);
-                  },
-                );
-              }
-            },
-          ),
-        ),
-      ],
+      ),
     );
   }
 

@@ -1,6 +1,8 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -39,11 +41,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _soundEnabled = true;
   bool _speechConfirmEnabled = true;
   bool _isLoading = true;
+  String? _translationLanguageName;
 
   @override
   void initState() {
     super.initState();
     _loadPackageInfo();
+    _loadTranslationLanguageName();
+  }
+
+  Future<void> _loadTranslationLanguageName() async {
+    final name = await TranslationService().getConfiguredLanguageName();
+    if (!mounted) return;
+    setState(() => _translationLanguageName = name);
   }
 
   Future<void> _loadPackageInfo() async {
@@ -162,7 +172,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         CustomSnackBar.show(
           context: context,
           message: context.tr(
-            'settings.email_error',
+            'settings.link_error',
             fallback: 'Could not open link',
           ),
           type: CustomSnackBarType.error,
@@ -239,7 +249,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
               _buildAppBar(context, isDark),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 120.h),
+                  padding: EdgeInsets.fromLTRB(
+                    20.w, 10.h, 20.w,
+                    MediaQuery.of(context).padding.bottom + 32.h,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -249,9 +262,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       SizedBox(height: 32.h),
                       // FIX (HIGH-4): Sections extracted to private widgets.
-                      _SettingsAccountGroup(isDark: isDark),
+                      _SettingsAccountGroup(isDark: isDark)
+                          .animate()
+                          .fadeIn(delay: 80.ms, duration: 400.ms)
+                          .slideY(begin: 0.15, curve: Curves.easeOut),
                       SizedBox(height: 32.h),
                       _SettingsPreferencesGroup(
+                        translationLanguageName: _translationLanguageName,
                         isDark: isDark,
                         soundEnabled: _soundEnabled,
                         notificationsEnabled: _notificationsEnabled,
@@ -259,6 +276,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         isLoading: _isLoading,
                         onToggleSound: _toggleSound,
                         onToggleNotifications: _toggleNotifications,
+                        onTapTranslationLanguage: () async {
+                          await LanguageSelectionBottomSheet.show(context);
+                          if (!mounted) return;
+                          _loadTranslationLanguageName();
+                        },
                         onToggleSpeechConfirm: (value) async {
                           if (!value) {
                             if (!mounted) return;
@@ -273,7 +295,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           if (!mounted) return;
                           setState(() => _speechConfirmEnabled = value);
                         },
-                      ),
+                      )
+                          .animate()
+                          .fadeIn(delay: 160.ms, duration: 400.ms)
+                          .slideY(begin: 0.15, curve: Curves.easeOut),
                       SizedBox(height: 32.h),
                       _SettingsSupportGroup(
                         isDark: isDark,
@@ -281,11 +306,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         buildNumber: _buildNumber,
                         onSupportTap: () => _handleSupportLink(context),
                         onLegalTap: (title) => _handleLegalLink(context, title),
-                      ),
+                      )
+                          .animate()
+                          .fadeIn(delay: 240.ms, duration: 400.ms)
+                          .slideY(begin: 0.15, curve: Curves.easeOut),
                       SizedBox(height: 32.h),
                       _SettingsDangerGroup(
                         onClearCache: () => _handleClearCache(context),
-                      ),
+                      )
+                          .animate()
+                          .fadeIn(delay: 320.ms, duration: 400.ms)
+                          .slideY(begin: 0.15, curve: Curves.easeOut),
                       SizedBox(height: 40.h),
                       const SettingsLogoutButton(),
                     ],
@@ -305,6 +336,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
       elevation: 0,
       pinned: true,
       centerTitle: true,
+      flexibleSpace: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+          child: Container(
+            color: (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC))
+                .withValues(alpha: 0.7),
+          ),
+        ),
+      ),
       leading: IconButton(
         icon: Container(
           padding: EdgeInsets.all(8.r),
@@ -372,7 +412,7 @@ class _SettingsAccountGroup extends StatelessWidget {
                 fallback: 'Security & Password',
               ),
               icon: Icons.lock_person_rounded,
-              color: Colors.blue,
+              color: const Color(0xFF3B82F6),
               onTap: () => SettingsDialogs.showPasswordReset(
                 context,
                 context.read<AuthBloc>().state.user?.email ?? '',
@@ -384,151 +424,10 @@ class _SettingsAccountGroup extends StatelessWidget {
                 fallback: 'Age Verification',
               ),
               icon: Icons.verified_user_rounded,
-              color: Colors.deepPurple,
+              color: const Color(0xFF8B5CF6),
               onTap: () async {
-                final confirm = await showModalBottomSheet<bool>(
-                  context: context,
-                  backgroundColor: Colors.transparent,
-                  isScrollControlled: true,
-                  builder: (ctx) {
-                    final isDarkSheet =
-                        Theme.of(ctx).brightness == Brightness.dark;
-                    return Container(
-                      decoration: BoxDecoration(
-                        color: isDarkSheet
-                            ? const Color(0xFF1E293B)
-                            : Colors.white,
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(24.r),
-                        ),
-                      ),
-                      padding: EdgeInsets.fromLTRB(
-                        24.w,
-                        12.h,
-                        24.w,
-                        32.h + MediaQuery.of(ctx).padding.bottom,
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            width: 40.w,
-                            height: 4.h,
-                            decoration: BoxDecoration(
-                              color: isDarkSheet
-                                  ? Colors.white24
-                                  : Colors.black12,
-                              borderRadius: BorderRadius.circular(2.r),
-                            ),
-                          ),
-                          SizedBox(height: 24.h),
-                          Container(
-                            padding: EdgeInsets.all(16.r),
-                            decoration: BoxDecoration(
-                              color: Colors.deepPurple.withValues(alpha: 0.1),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.verified_user_rounded,
-                              color: Colors.deepPurple,
-                              size: 32.r,
-                            ),
-                          ),
-                          SizedBox(height: 16.h),
-                          Text(
-                            context.tr(
-                              'settings.reset_age_title',
-                              fallback: 'Reset Age Verification?',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(height: 8.h),
-                          Text(
-                            context.tr(
-                              'settings.reset_age_desc',
-                              fallback:
-                                  'This will reset your age verification status. You will be asked to verify your age again on the next screen.',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              color: isDarkSheet
-                                  ? Colors.white70
-                                  : Colors.black54,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(height: 32.h),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: TextButton(
-                                  onPressed: () => Navigator.pop(ctx, false),
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: 16.h,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16.r),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    context.tr(
-                                      'common.cancel',
-                                      fallback: 'Cancel',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: isDarkSheet
-                                          ? Colors.white70
-                                          : Colors.black54,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 12.w),
-                              Expanded(
-                                child: ElevatedButton(
-                                  onPressed: () => Navigator.pop(ctx, true),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.deepPurple,
-                                    foregroundColor: Colors.white,
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: 16.h,
-                                    ),
-                                    elevation: 0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16.r),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    context.tr(
-                                      'common.continue',
-                                      fallback: 'Continue',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
-
+                final confirm =
+                    await SettingsDialogs.showAgeVerificationReset(context);
                 if (confirm == true && context.mounted) {
                   await AgeGateService.resetAgeGate();
                   if (context.mounted) {
@@ -550,6 +449,8 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final bool notificationsEnabled;
   final bool speechConfirmEnabled;
   final bool isLoading;
+  final String? translationLanguageName;
+  final VoidCallback onTapTranslationLanguage;
   final ValueChanged<bool> onToggleSound;
   final ValueChanged<bool> onToggleNotifications;
   final ValueChanged<bool> onToggleSpeechConfirm;
@@ -560,6 +461,8 @@ class _SettingsPreferencesGroup extends StatelessWidget {
     required this.notificationsEnabled,
     required this.speechConfirmEnabled,
     required this.isLoading,
+    required this.translationLanguageName,
+    required this.onTapTranslationLanguage,
     required this.onToggleSound,
     required this.onToggleNotifications,
     required this.onToggleSpeechConfirm,
@@ -589,7 +492,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Game sounds and music',
               ),
               icon: Icons.volume_up_rounded,
-              color: Colors.pink,
+              color: const Color(0xFFEC4899),
               value: soundEnabled,
               isLoading: isLoading,
               onChanged: onToggleSound,
@@ -604,7 +507,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Speak answers aloud to confirm learning',
               ),
               icon: Icons.mic_rounded,
-              color: Colors.cyan,
+              color: const Color(0xFF06B6D4),
               value: speechConfirmEnabled,
               isLoading: isLoading,
               onChanged: onToggleSpeechConfirm,
@@ -619,7 +522,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Daily reminders and alerts',
               ),
               icon: Icons.notifications_active_rounded,
-              color: Colors.orange,
+              color: const Color(0xFFF97316),
               value: notificationsEnabled,
               isLoading: isLoading,
               onChanged: onToggleNotifications,
@@ -635,7 +538,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                   fallback: 'True black background for OLED screens',
                 ),
                 icon: Icons.nightlight_round,
-                color: Colors.indigo,
+                color: const Color(0xFF6366F1),
                 value: context.watch<ThemeCubit>().state.isMidnight,
                 isLoading: false,
                 onChanged: (val) =>
@@ -647,7 +550,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Language Selection',
               ),
               icon: Icons.language_rounded,
-              color: Colors.teal,
+              color: const Color(0xFF14B8A6),
               onTap: () => LanguagePickerSheet.show(context),
               trailing: Text(
                 '${di.sl<LocaleService>().currentLocaleFlag} '
@@ -655,7 +558,7 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
-                  color: Colors.teal,
+                  color: const Color(0xFF14B8A6),
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -670,24 +573,19 @@ class _SettingsPreferencesGroup extends StatelessWidget {
                 fallback: 'Used for hints and explanations in games',
               ),
               icon: Icons.g_translate_rounded,
-              color: Colors.amber,
-              onTap: () => LanguageSelectionBottomSheet.show(context),
-              trailing: FutureBuilder<String?>(
-                future: TranslationService().getConfiguredLanguageName(),
-                builder: (ctx, snap) {
-                  final langName = snap.data;
-                  if (langName == null) return const SizedBox.shrink();
-                  return Text(
-                    langName,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      color: Colors.amber,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  );
-                },
-              ),
+              color: const Color(0xFFF59E0B),
+              onTap: onTapTranslationLanguage,
+              trailing: translationLanguageName != null
+                  ? Text(
+                      translationLanguageName!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        color: const Color(0xFFF59E0B),
+                        fontWeight: FontWeight.w700,
+                      ),
+                    )
+                  : null,
             ),
           ],
         ),
@@ -731,7 +629,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'Help Center',
               ),
               icon: Icons.help_center_rounded,
-              color: Colors.green,
+              color: const Color(0xFF10B981),
               onTap: onSupportTap,
             ),
             SettingsTile(
@@ -740,7 +638,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'Terms of Service',
               ),
               icon: Icons.description_rounded,
-              color: Colors.blueGrey,
+              color: const Color(0xFF64748B),
               onTap: () => onLegalTap(
                 context.tr(
                   'settings.terms_of_service',
@@ -754,7 +652,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'Privacy Policy',
               ),
               icon: Icons.policy_rounded,
-              color: Colors.blueGrey,
+              color: const Color(0xFF94A3B8),
               onTap: () => onLegalTap(
                 context.tr(
                   'settings.privacy_policy',
@@ -768,7 +666,7 @@ class _SettingsSupportGroup extends StatelessWidget {
                 fallback: 'App Version',
               ),
               icon: Icons.info_outline_rounded,
-              color: Colors.grey,
+              color: const Color(0xFF9CA3AF),
               trailing: Text(
                 '$appVersion ($buildNumber)',
                 style: TextStyle(
@@ -800,6 +698,7 @@ class _SettingsDangerGroup extends StatelessWidget {
         SettingsSectionTitle(
           title: context.tr('settings.danger_zone', fallback: 'Danger Zone'),
           isDark: isDark,
+          tintColor: const Color(0xFFEF4444),
         ),
         SettingsGroup(
           children: [
@@ -809,7 +708,7 @@ class _SettingsDangerGroup extends StatelessWidget {
                 fallback: 'Clear Cache',
               ),
               icon: Icons.cleaning_services_rounded,
-              color: Colors.amber,
+              color: const Color(0xFFEAB308),
               onTap: onClearCache,
             ),
             SettingsTile(
@@ -818,7 +717,7 @@ class _SettingsDangerGroup extends StatelessWidget {
                 fallback: 'Delete Account',
               ),
               icon: Icons.delete_forever_rounded,
-              color: Colors.red,
+              color: const Color(0xFFEF4444),
               onTap: () => SettingsDialogs.showDeleteAccount(context),
               isDestructive: true,
             ),

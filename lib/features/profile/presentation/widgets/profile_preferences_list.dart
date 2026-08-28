@@ -10,35 +10,19 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class ProfilePreferencesList extends StatelessWidget {
   final UserEntity user;
-  final bool soundEnabled;
-  final Function(bool value) onSoundToggle;
 
   const ProfilePreferencesList({
     super.key,
     required this.user,
-    required this.soundEnabled,
-    required this.onSoundToggle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return GlassTile(
       borderRadius: BorderRadius.circular(28.r),
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: Column(
         children: [
-
-          Divider(
-            height: 1,
-            thickness: 1,
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : const Color(0xFFE2E8F0),
-            indent: 20.w,
-            endIndent: 20.w,
-          ),
           _buildPreferenceTile(
             context,
             context.tr('settings.title', fallback: 'Settings'),
