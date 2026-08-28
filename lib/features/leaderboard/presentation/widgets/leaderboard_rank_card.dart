@@ -81,8 +81,10 @@ class LeaderboardRankCard extends StatelessWidget {
               ? const Color(0xFF0F172A).withValues(alpha: 0.75)
               : Colors.white.withValues(alpha: 0.95),
           borderWidth: 1.5,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: SingleChildScrollView(
+            physics: const NeverScrollableScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
@@ -255,6 +257,7 @@ class LeaderboardRankCard extends StatelessWidget {
                 ),
               ],
             ],
+          ),
           ),
         ),
       ),
