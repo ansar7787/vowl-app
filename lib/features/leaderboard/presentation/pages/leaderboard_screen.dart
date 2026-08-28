@@ -477,10 +477,10 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    // When pinned (shrinkOffset > 0), content scrolls beneath this header.
+    // When pinned (shrinkOffset > 10), content scrolls beneath this header.
     // A solid frosted backdrop + bottom shadow prevents the "ghost card"
     // overlap where glassmorphic tiles bleed through.
-    final isPinned = shrinkOffset > 0 || overlapsContent;
+    final isPinned = shrinkOffset > 10 || overlapsContent;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ClipRect(
