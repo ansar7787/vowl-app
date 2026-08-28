@@ -550,7 +550,7 @@ class SettingsProfileSection extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  AutoSizeText(
                     // FIX (HIGH-2): Hardcoded 'Explorer' fallback now localised.
                     currentUser.displayName ??
                         context.tr('settings.explorer', fallback: 'Explorer'),
@@ -562,9 +562,10 @@ class SettingsProfileSection extends StatelessWidget {
                       letterSpacing: -0.5,
                     ),
                     maxLines: 1,
+                    minFontSize: 14,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  Text(
+                  AutoSizeText(
                     currentUser.email,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -575,6 +576,7 @@ class SettingsProfileSection extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                     maxLines: 1,
+                    minFontSize: 10,
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 12.h),
