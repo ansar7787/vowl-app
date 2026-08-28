@@ -184,88 +184,96 @@ class LeaderboardRankCard extends StatelessWidget {
                 ],
               ),
               if (collapseProgress < 1.0)
-                Opacity(
-                  opacity: 1.0 - collapseProgress,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(height: 12.h),
-                      // Progress bar with animated fill
-                      Stack(
+                ClipRect(
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    heightFactor: 1.0 - collapseProgress,
+                    child: Opacity(
+                      opacity: 1.0 - collapseProgress,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          Container(
-                            height: 6.h,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.08)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(3.r),
-                            ),
-                          ),
-                          TweenAnimationBuilder<double>(
-                            tween: Tween(
-                                begin: 0.0, end: progress.clamp(0.02, 1.0)),
-                            duration: const Duration(milliseconds: 800),
-                            curve: Curves.easeOutCubic,
-                            builder: (context, value, _) {
-                              return FractionallySizedBox(
-                                widthFactor: value,
-                                child: Container(
-                                  height: 6.h,
-                                  decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
-                                      colors: [
-                                        Color(0xFF3B82F6),
-                                        Color(0xFF60A5FA)
-                                      ],
-                                    ),
-                                    borderRadius: BorderRadius.circular(3.r),
-                                  ),
+                          SizedBox(height: 12.h),
+                          // Progress bar with animated fill
+                          Stack(
+                            children: [
+                              Container(
+                                height: 6.h,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.08)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(3.r),
                                 ),
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 6.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Flexible(
-                            child: Text(
-                              isKids
-                                  ? context.tr(
-                                      'leaderboard.all_kids_quests',
-                                      fallback: 'Kids Quests',
-                                    )
-                                  : context.tr(
-                                      'leaderboard.all_quests',
-                                      fallback: 'All Quests',
-                                    ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w700,
-                                color: secondaryTextColor.withValues(
-                                    alpha: 0.6),
                               ),
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                              TweenAnimationBuilder<double>(
+                                tween: Tween(
+                                    begin: 0.0,
+                                    end: progress.clamp(0.02, 1.0)),
+                                duration: const Duration(milliseconds: 800),
+                                curve: Curves.easeOutCubic,
+                                builder: (context, value, _) {
+                                  return FractionallySizedBox(
+                                    widthFactor: value,
+                                    child: Container(
+                                      height: 6.h,
+                                      decoration: BoxDecoration(
+                                        gradient: const LinearGradient(
+                                          colors: [
+                                            Color(0xFF3B82F6),
+                                            Color(0xFF60A5FA)
+                                          ],
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(3.r),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
                           ),
-                          Text(
-                            '$levelsCleared / $maxLevels',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 9.sp,
-                              fontWeight: FontWeight.w700,
-                              color: secondaryTextColor.withValues(
-                                  alpha: 0.6),
-                            ),
+                          SizedBox(height: 6.h),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  isKids
+                                      ? context.tr(
+                                          'leaderboard.all_kids_quests',
+                                          fallback: 'Kids Quests',
+                                        )
+                                      : context.tr(
+                                          'leaderboard.all_quests',
+                                          fallback: 'All Quests',
+                                        ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 9.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: secondaryTextColor.withValues(
+                                        alpha: 0.6),
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              Text(
+                                '$levelsCleared / $maxLevels',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: secondaryTextColor.withValues(
+                                      alpha: 0.6),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
             ],
