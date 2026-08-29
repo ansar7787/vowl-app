@@ -398,7 +398,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     );
   }
 
-  Widget _buildLevelNode(BuildContext context, Color lockedColor) {
+  Widget _buildLevelNode(BuildContext context, Color lockedNodeColor) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return ScaleButton(
       onTap: () {
         if (widget.isTollGate) {
@@ -695,21 +697,6 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    
-    // Exactly match the `bgColor` calculated in `kids_level_map.dart`
-    final mapBgColor = isMidnight
-        ? Colors.black
-        : (isDark
-              ? Color.alphaBlend(
-                  widget.primaryColor.withValues(alpha: 0.39), // ~100/255
-                  const Color(0xFF0F172A),
-                )
-              : Color.alphaBlend(
-                  widget.primaryColor.withValues(alpha: 0.24), // ~60/255
-                  const Color(0xFFF8FAFC),
-                ));
-                
     // In Kids UI, locked nodes should be clean, opaque bubbles (White in light, Slate in dark)
     // This perfectly blocks the path line without looking muddy.
     final Color lockedNodeColor = isDark ? const Color(0xFF1E293B) : Colors.white;
