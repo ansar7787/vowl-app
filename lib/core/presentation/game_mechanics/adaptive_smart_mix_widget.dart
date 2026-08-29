@@ -33,6 +33,7 @@ class AdaptiveSmartMixWidget extends StatefulWidget {
 class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
   late final ValueNotifier<List<GameSubtype>> _mixNotifier;
   PedagogicalBlueprint? _blueprint;
+  bool _isNavigating = false;
 
   @override
   void initState() {
@@ -196,10 +197,14 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     final contentColor = widget.isDark ? Colors.white : const Color(0xFF0F172A);
 
     return ScaleButton(
-      onTap:
-          () => context.push(
-            '${AppRouter.levelsRoute}?category=${widget.categoryId}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
-          ),
+      onTap: () async {
+        if (_isNavigating) return;
+        _isNavigating = true;
+        await context.push(
+          '${AppRouter.levelsRoute}?category=${widget.categoryId}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
+        );
+        if (mounted) _isNavigating = false;
+      },
       child: GlassTile(
         borderRadius: BorderRadius.circular(20.r),
         padding: EdgeInsets.all(16.r),
