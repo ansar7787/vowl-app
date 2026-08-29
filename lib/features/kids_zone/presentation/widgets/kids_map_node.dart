@@ -501,14 +501,14 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       : widget.isNextZone
                       ? Colors.amber.shade100.withValues(alpha: 0.5)
                       : widget.isLocked
-                      ? lockedColor
+                      ? lockedNodeColor
                       : widget.primaryColor,
                   border: Border.all(
                     color: widget.isTollGate
                         ? Colors.amber.shade700
                         : widget.isNextZone
                         ? Colors.amber.shade300.withValues(alpha: 0.5)
-                        : (widget.isLocked ? Colors.transparent : Colors.white),
+                        : (widget.isLocked ? widget.primaryColor.withValues(alpha: isDark ? 0.4 : 0.3) : Colors.white),
                     width: widget.isCurrent ? 5.r : 3.r,
                   ),
                 ),
@@ -710,8 +710,14 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                   const Color(0xFFF8FAFC),
                 ));
                 
-    // The locked color is mathematically darker than the map background, creating a dug-out socket
-    final Color lockedColor = Color.lerp(mapBgColor, Colors.black, isDark ? 0.2 : 0.12)!;
+    // In Kids UI, locked nodes should be clean, opaque bubbles (White in light, Slate in dark)
+    // This perfectly blocks the path line without looking muddy.
+    final Color lockedNodeColor = isDark ? const Color(0xFF1E293B) : Colors.white;
+    
+    // The path line can be translucent because it only sits on the background.
+    final Color lockedPathColor = isDark 
+        ? Colors.black.withValues(alpha: 0.4) 
+        : Colors.white.withValues(alpha: 0.6);
 
     if (widget.isLoading) {
       return _buildShimmerSegment(context);
@@ -756,10 +762,10 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               painter: SegmentPathPainter(
                 incomingColor: widget.isPrevCompleted
                     ? widget.primaryColor
-                    : lockedColor,
+                    : lockedPathColor,
                 outgoingColor: widget.isCompleted
                     ? widget.primaryColor
-                    : lockedColor,
+                    : lockedPathColor,
                 currentOffset: widget.currentOffset,
                 nextOffset: widget.nextOffset,
                 prevOffset: widget.prevOffset,
@@ -786,7 +792,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               top: 50.h, // Vertically center the node in the 200.h segment
                 child: Builder(
                   builder: (context) {
-                    Widget node = _buildLevelNode(context, lockedColor);
+                    Widget node = _buildLevelNode(context, lockedNodeColor);
                     
                     if (widget.isUnlockAnimating) {
                       final user = context.read<AuthBloc>().state.user;
