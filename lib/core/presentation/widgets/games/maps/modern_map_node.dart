@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'dart:ui';
 
 import 'package:vowl/core/presentation/painters/modern_segment_path_painter.dart';
@@ -133,10 +134,10 @@ class _ModernMapNodeState extends State<ModernMapNode> {
         padding: EdgeInsets.only(
           top: 14.h,
           bottom: 14.h,
-          left: isLeft ? 24.w : 14.w,
-          right: !isLeft ? 24.w : 14.w,
+          left: isLeft ? 28.w : 16.w,
+          right: !isLeft ? 28.w : 16.w,
         ),
-        child: Text(
+        child: AutoSizeText(
           _buddyMessage!,
           style: TextStyle(
             fontFamily: 'Outfit',
@@ -152,6 +153,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
             ],
           ),
           maxLines: 4,
+          minFontSize: 9,
           overflow: TextOverflow.ellipsis,
         ),
       ),
