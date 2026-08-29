@@ -23,7 +23,6 @@ class TopicVocabController extends ChangeNotifier {
   int? flickTarget;
 
   VocabularyQuest? currentQuest;
-  String? currentHint;
 
   TopicVocabController({
     required HapticService hapticService,
@@ -42,38 +41,7 @@ class TopicVocabController extends ChangeNotifier {
     userChoices.clear();
     wordsInBins.forEach((_, list) => list.clear());
     shuffledOptions = List<String>.from(quest?.options ?? [])..shuffle();
-    _computeHint();
     notifyListeners();
-  }
-
-  void _computeHint() {
-    if (currentQuest == null || currentQuest?.relatedWords == null) {
-      currentHint = null;
-      return;
-    }
-    final currentWord = currentWordIndex < shuffledOptions.length
-        ? shuffledOptions[currentWordIndex]
-        : "";
-    if (currentWord.isEmpty) {
-      currentHint = null;
-      return;
-    }
-    final cleanCurrentWord = currentWord.trim().toLowerCase();
-    for (var related in currentQuest!.relatedWords!) {
-      final separatorIndex = related.indexOf(RegExp(r'[:\-]'));
-      if (separatorIndex != -1) {
-        final prefix = related
-            .substring(0, separatorIndex)
-            .trim()
-            .toLowerCase();
-        if (prefix == cleanCurrentWord) {
-          final definitionText = related.substring(separatorIndex + 1).trim();
-          currentHint = "Definition: $definitionText";
-          return;
-        }
-      }
-    }
-    currentHint = null;
   }
 
   void activateHint() {
@@ -119,7 +87,6 @@ class TopicVocabController extends ChangeNotifier {
       final maxWords = (buckets.length * 2 + 1).clamp(3, 5);
       if (currentWordIndex < maxWords - 1) {
         currentWordIndex++;
-        _computeHint();
       } else {
         _hapticService.success();
         isFirstStagePassed = true;

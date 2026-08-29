@@ -129,7 +129,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               onContinue: () =>
                   context.read<VocabularyBloc>().add(NextQuestion()),
               useScrolling: false,
-              customHintText: _controller.currentHint,
               onHint: () {
                 _controller.activateHint();
               },
