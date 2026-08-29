@@ -291,8 +291,8 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                   Colors.amber.withValues(alpha: 0.3),
                 ]
               : [
-                  widget.isDark ? theme.primaryColor.withValues(alpha: 0.15) : theme.primaryColor.withValues(alpha: 0.1), 
-                  widget.isDark ? theme.primaryColor.withValues(alpha: 0.05) : theme.primaryColor.withValues(alpha: 0.02),
+                  widget.isDark ? widget.theme.primaryColor.withValues(alpha: 0.15) : widget.theme.primaryColor.withValues(alpha: 0.1), 
+                  widget.isDark ? widget.theme.primaryColor.withValues(alpha: 0.05) : widget.theme.primaryColor.withValues(alpha: 0.02),
                 ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
