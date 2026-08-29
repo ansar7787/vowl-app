@@ -812,7 +812,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                   isNearRightEdge: widget.currentOffset > 0.5.sw,
                 ),
               ),
-            if (widget.level == 10 || widget.level == 50 || widget.level == 100 || widget.level == 200)
+            if (widget.level == 10 || widget.level == 50 || widget.level == 100 || widget.level == 150 || widget.level == 200)
               _buildStickerGoal(widget.level, widget.isLocked),
           ],
         ),
