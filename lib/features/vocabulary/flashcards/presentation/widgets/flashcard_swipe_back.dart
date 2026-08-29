@@ -194,28 +194,45 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                               ),
                               sliver: SliverFillRemaining(
                                 hasScrollBody: false,
-                                child: Stack(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Align(
-                                      alignment: Alignment.center,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          SizedBox(height: 16.h),
-                                          Text(
-                                            widget.quest.word?.toUpperCase() ??
-                                                '',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: optimalWordSize,
-                                              color: widget.isDark
-                                                  ? Colors.white
-                                                  : Colors.black87,
-                                              fontWeight: FontWeight.w800,
-                                              letterSpacing: 2,
-                                            ),
-                                          ),
+                                    SizedBox(height: 16.h),
+                                    Text(
+                                      widget.quest.word?.toUpperCase() ?? '',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: optimalWordSize,
+                                        color: widget.isDark
+                                            ? Colors.white
+                                            : Colors.black87,
+                                        fontWeight: FontWeight.w800,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                    SizedBox(height: 8.h),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: widget.color.withValues(alpha: 0.1),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: IconButton(
+                                        onPressed: () {
+                                          if (widget.quest.word != null) {
+                                            _ttsService.speak(widget.quest.word!);
+                                          }
+                                        },
+                                        icon: Icon(
+                                          Icons.volume_up_rounded,
+                                          color: widget.color,
+                                          size: iconSize,
+                                        ),
+                                        padding: EdgeInsets.all(8.r),
+                                        constraints: const BoxConstraints(),
+                                        splashRadius: 24.r,
+                                      ),
+                                    ),
                                           SizedBox(height: compact ? 12.h : 16.h),
                                           Text(
                                             'DEFINITION',
@@ -316,31 +333,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                         ),
                                       ],
                                     ],
-                                          SizedBox(height: 8.h),
-                                        ],
-                                      ),
-                                    ),
-                                    Positioned(
-                                      top: 0,
-                                      right: 0,
-                                      child: IconButton(
-                                        onPressed: () {
-                                          if (widget.quest.word != null) {
-                                            _ttsService.speak(
-                                              widget.quest.word!,
-                                            );
-                                          }
-                                        },
-                                        icon: Icon(
-                                          Icons.volume_up_rounded,
-                                          color: widget.color.withValues(alpha: 0.8),
-                                          size: iconSize,
-                                        ),
-                                        padding: EdgeInsets.zero,
-                                        constraints: const BoxConstraints(),
-                                        splashRadius: 24.r,
-                                      ),
-                                    ),
+                                    SizedBox(height: 8.h),
                                   ],
                                 ),
                               ),
