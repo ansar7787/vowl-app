@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:confetti/confetti.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -138,13 +139,13 @@ class _KidsMapNodeState extends State<KidsMapNode> {
             clipBehavior: Clip.none,
             alignment: Alignment.center,
             children: [
-              // SPEECH BUBBLE
+              // 10/10 Bouncy Comic Cloud Bubble
               if (_buddyMessage != null)
                 Positioned(
-                  bottom: 75.h,
-                  left: isNearRightEdge ? null : -40.w,
-                  right: isNearRightEdge ? -40.w : null,
-                  child: _buildBuddySpeechBubble(_buddyMessage!),
+                  top: -30.h,
+                  right: isNearRightEdge ? 45.r : null,
+                  left: !isNearRightEdge ? 45.r : null,
+                  child: _buildBuddySpeechBubble(_buddyMessage!, isNearRightEdge),
                 ),
 
               VowlMascot(
@@ -174,50 +175,58 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     );
   }
 
-  Widget _buildBuddySpeechBubble(String text) {
-    return Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-              constraints: BoxConstraints(maxWidth: 160.w),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(18.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 8,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xFF1E293B),
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            // Bubble Tail
-            Padding(
-              padding: EdgeInsets.only(right: 15.w),
-              child: CustomPaint(
-                size: Size(15.w, 10.h),
-                painter: _BubbleTailPainter(Colors.white),
-              ),
-            ),
-          ],
-        )
-        .animate()
-        .fadeIn()
-        .moveY(begin: 10, end: 0)
-        .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack);
+  Widget _buildBuddySpeechBubble(String text, bool isNearRightEdge) {
+    return Container(
+      constraints: BoxConstraints(maxWidth: 180.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(28.r),
+          topRight: Radius.circular(28.r),
+          bottomLeft: isNearRightEdge ? Radius.circular(28.r) : Radius.circular(2.r),
+          bottomRight: isNearRightEdge ? Radius.circular(2.r) : Radius.circular(28.r),
+        ),
+        border: Border.all(
+          color: widget.primaryColor,
+          width: 4.r,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: widget.primaryColor.withValues(alpha: 0.3),
+            blurRadius: 15.r,
+            offset: Offset(0, 8.h),
+          ),
+        ],
+      ),
+      child: AutoSizeText(
+        text,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w900,
+          color: const Color(0xFF1E293B),
+        ),
+        textAlign: TextAlign.center,
+        minFontSize: 10,
+        maxLines: 4,
+        overflow: TextOverflow.ellipsis,
+      ),
+    )
+    .animate()
+    .scale(
+      alignment: isNearRightEdge ? Alignment.bottomRight : Alignment.bottomLeft,
+      curve: Curves.elasticOut,
+      duration: 700.ms,
+    )
+    .then()
+    .animate(onPlay: (c) => c.repeat(reverse: true))
+    .scale(
+      begin: const Offset(1.0, 1.0),
+      end: const Offset(1.05, 1.05),
+      duration: 1.5.seconds,
+      curve: Curves.easeInOutSine,
+    );
   }
 
   Widget _buildStickerGoal(int level, bool isLocked) {
@@ -788,9 +797,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
             if (widget.isCurrent)
               Positioned(
                 left: widget.currentOffset > 0.5.sw
-                    ? widget.currentOffset - 35.r
-                    : widget.currentOffset + 45.r,
-                top: 25.h, // Moved closer to the node center
+                    ? widget.currentOffset - 50.r // Buddy sits neatly to the left of the node
+                    : widget.currentOffset + 90.r, // Buddy sits neatly to the right of the node
+                top: 25.h,
                 child: _buildBuddy(
                   context,
                   isNearRightEdge: widget.currentOffset > 0.5.sw,
@@ -805,19 +814,3 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   }
 }
 
-class _BubbleTailPainter extends CustomPainter {
-  final Color color;
-  _BubbleTailPainter(this.color);
-  @override
-  void paint(Canvas canvas, Size size) {
-    final path = Path();
-    path.moveTo(0, 0);
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width / 2, size.height);
-    path.close();
-    canvas.drawPath(path, Paint()..color = color);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
