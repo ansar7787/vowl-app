@@ -49,8 +49,11 @@ class ModernSegmentPathPainter extends CustomPainter {
     final double centerY = size.height / 2;
     const double strokeW = 18.0;
     
-    // Instead of a flat grey, we make the locked path a "ghost" of the category color
-    final Color lockedColor = baseColor.withValues(alpha: isDark ? 0.25 : 0.20);
+    // The locked path MUST be a neutral dead grey. If we use a transparent category color,
+    // players will psychologically interpret it as an "active but dim" path.
+    final Color lockedColor = isDark 
+        ? const Color(0xFF334155) // Slate 700
+        : const Color(0xFFE2E8F0); // Slate 200
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {

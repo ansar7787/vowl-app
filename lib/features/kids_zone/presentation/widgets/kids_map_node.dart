@@ -745,13 +745,13 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                 incomingColor: widget.isPrevCompleted
                     ? widget.primaryColor
                     : (isDark
-                          ? widget.primaryColor.withValues(alpha: 0.25)
-                          : widget.primaryColor.withValues(alpha: 0.20)),
+                          ? const Color(0xFF334155)
+                          : const Color(0xFFE2E8F0)),
                 outgoingColor: widget.isCompleted
                     ? widget.primaryColor
                     : (isDark
-                          ? widget.primaryColor.withValues(alpha: 0.25)
-                          : widget.primaryColor.withValues(alpha: 0.20)),
+                          ? const Color(0xFF334155)
+                          : const Color(0xFFE2E8F0)),
                 currentOffset: widget.currentOffset,
                 nextOffset: widget.nextOffset,
                 prevOffset: widget.prevOffset,
