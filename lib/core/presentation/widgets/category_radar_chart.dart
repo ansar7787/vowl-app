@@ -1,12 +1,14 @@
 import 'dart:math' as math;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-class CategoryRadarChart extends StatelessWidget {
+class CategoryRadarChart extends StatefulWidget {
   const CategoryRadarChart({
     super.key,
     required this.user,
@@ -21,29 +23,40 @@ class CategoryRadarChart extends StatelessWidget {
   final String categoryId;
 
   @override
-  Widget build(BuildContext context) {
-    final blueprint = PedagogicalBlueprintMap.getBlueprint(categoryId);
-    if (blueprint == null) return const SizedBox.shrink();
+  State<CategoryRadarChart> createState() => _CategoryRadarChartState();
+}
 
-    // Calculate stats using the blueprint
-    // For a dynamic 4-axis chart without hardcoding 4 tiers of games, we can split the games
-    // For a 4-point chart but only 3 tiers, we can use an average of all for the 4th axis,
-    // OR since elite games might be in tier 4, wait, we mapped 3 tiers but 4 axes!
-    // Ah, wait. Let's calculate based on the axes. The blueprint has tier1, tier2, tier3.
-    // Let's divide the tier games roughly by the 4 axes, or just map them to 4 logical scores.
-    // Actually, in Accent we did:
-    // 1: T1
-    // 2: T2
-    // 3: Elite (T4)
-    // 4: Flow (T3)
+class _CategoryRadarChartState extends State<CategoryRadarChart> {
+  late List<double> _displayScores;
+  PedagogicalBlueprint? _blueprint;
 
-    // For a dynamic 4-axis chart without hardcoding 4 tiers of games, we can split the games
-    // into 4 groups, or we can just divide the total games into 4 equal chunks to power the 4 axes.
+  @override
+  void initState() {
+    super.initState();
+    _displayScores = [0.15, 0.15, 0.15, 0.15];
+    _computeScores();
+  }
+
+  @override
+  void didUpdateWidget(covariant CategoryRadarChart oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.user != widget.user ||
+        oldWidget.categoryId != widget.categoryId) {
+      _computeScores();
+    }
+  }
+
+  void _computeScores() {
+    _blueprint = PedagogicalBlueprintMap.getBlueprint(widget.categoryId);
+    if (_blueprint == null) return;
+
     final allGames = [
-      ...blueprint.tier1,
-      ...blueprint.tier2,
-      ...blueprint.tier3,
+      ..._blueprint!.tier1,
+      ..._blueprint!.tier2,
+      ..._blueprint!.tier3,
     ];
+    if (allGames.isEmpty) return;
+
     final chunkSize = (allGames.length / 4).ceil();
 
     final axisGames1 = allGames.take(chunkSize).toList();
@@ -56,23 +69,46 @@ class CategoryRadarChart extends StatelessWidget {
     final score3 = _calculateCategoryProgress(axisGames3);
     final score4 = _calculateCategoryProgress(axisGames4);
 
-    // Ensure minimum visibility for the chart
-    final displayScores = [
+    final newScores = [
       math.max(0.15, score1), // Top
       math.max(0.15, score2), // Right
       math.max(0.15, score3), // Bottom
       math.max(0.15, score4), // Left
     ];
 
+    if (!listEquals(_displayScores, newScores)) {
+      setState(() {
+        _displayScores = newScores;
+      });
+    }
+  }
+
+  double _calculateCategoryProgress(List<GameSubtype> games) {
+    if (games.isEmpty) return 0.0;
+    int totalLevels = games.length * 200;
+    int completedLevels = 0;
+    for (var game in games) {
+      completedLevels +=
+          (widget.user.completedLevels[game.name]?.length ?? 0).clamp(0, 200);
+    }
+    return totalLevels > 0
+        ? (completedLevels / totalLevels).clamp(0.0, 1.0)
+        : 0.0;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_blueprint == null) return const SizedBox.shrink();
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w),
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark
+        color: widget.isDark
             ? Colors.white.withValues(alpha: 0.08)
             : Colors.white.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(32.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+        border: Border.all(color: widget.primaryColor.withValues(alpha: 0.2)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),
@@ -86,60 +122,51 @@ class CategoryRadarChart extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              AutoSizeText(
                 context.tr('category.skill_radar', fallback: 'SKILL RADAR'),
+                maxLines: 1,
+                minFontSize: 10,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: widget.isDark ? Colors.white : const Color(0xFF0F172A),
                   letterSpacing: 2,
                 ),
               ),
-              Icon(Icons.radar_rounded, color: primaryColor, size: 20.r),
+              Icon(Icons.radar_rounded, color: widget.primaryColor, size: 20.r),
             ],
           ),
           SizedBox(height: 24.h),
           SizedBox(
             height: 200.r,
-            child: CustomPaint(
-              size: Size(double.infinity, 200.r),
-              painter: _RadarChartPainter(
-                scores: displayScores,
-                primaryColor: primaryColor,
-                isDark: isDark,
-              ),
+            child: TweenAnimationBuilder<double>(
+              tween: Tween<double>(begin: 0.0, end: 1.0),
+              duration: const Duration(milliseconds: 1200),
+              curve: Curves.elasticOut,
+              builder: (context, animValue, child) {
+                // Scale scores based on animation value for an expanding radar effect
+                final animatedScores = _displayScores.map((s) => s * animValue).toList();
+                return CustomPaint(
+                  size: Size(double.infinity, 200.r),
+                  painter: _RadarChartPainter(
+                    scores: animatedScores,
+                    primaryColor: widget.primaryColor,
+                    isDark: widget.isDark,
+                    bgAnimValue: animValue.clamp(0.0, 1.0),
+                  ),
+                );
+              },
             ),
           ),
           SizedBox(height: 16.h),
-          // Labels below
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildLegend(
-                context,
-                blueprint.radarAxes[0],
-                primaryColor,
-                score1,
-              ),
-              _buildLegend(
-                context,
-                blueprint.radarAxes[1],
-                primaryColor,
-                score2,
-              ),
-              _buildLegend(
-                context,
-                blueprint.radarAxes[2],
-                primaryColor,
-                score3,
-              ),
-              _buildLegend(
-                context,
-                blueprint.radarAxes[3],
-                primaryColor,
-                score4,
-              ),
+              Expanded(child: _buildLegend(_blueprint!.radarAxes[0], widget.primaryColor, _displayScores[0])),
+              Expanded(child: _buildLegend(_blueprint!.radarAxes[1], widget.primaryColor, _displayScores[1])),
+              Expanded(child: _buildLegend(_blueprint!.radarAxes[2], widget.primaryColor, _displayScores[2])),
+              Expanded(child: _buildLegend(_blueprint!.radarAxes[3], widget.primaryColor, _displayScores[3])),
             ],
           ),
         ],
@@ -147,27 +174,27 @@ class CategoryRadarChart extends StatelessWidget {
     );
   }
 
-  Widget _buildLegend(
-    BuildContext context,
-    String label,
-    Color color,
-    double score,
-  ) {
+  Widget _buildLegend(String label, Color color, double score) {
     return Column(
       children: [
-        Text(
+        AutoSizeText(
           label.toUpperCase(),
+          maxLines: 1,
+          minFontSize: 6,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 9.sp,
             fontWeight: FontWeight.w800,
-            color: isDark ? Colors.white70 : Colors.black54,
+            color: widget.isDark ? Colors.white70 : Colors.black54,
             letterSpacing: 1,
           ),
         ),
         SizedBox(height: 4.h),
-        Text(
+        AutoSizeText(
           '${(score * 100).toInt()}%',
+          maxLines: 1,
+          minFontSize: 8,
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,
@@ -178,38 +205,26 @@ class CategoryRadarChart extends StatelessWidget {
       ],
     );
   }
-
-  double _calculateCategoryProgress(List<GameSubtype> games) {
-    if (games.isEmpty) return 0.0;
-    int totalLevels = games.length * 200;
-    int completedLevels = 0;
-    for (var game in games) {
-      completedLevels += (user.completedLevels[game.name]?.length ?? 0).clamp(
-        0,
-        200,
-      );
-    }
-    return totalLevels > 0
-        ? (completedLevels / totalLevels).clamp(0.0, 1.0)
-        : 0.0;
-  }
 }
 
 class _RadarChartPainter extends CustomPainter {
   final List<double> scores;
   final Color primaryColor;
   final bool isDark;
+  final double bgAnimValue;
 
   _RadarChartPainter({
     required this.scores,
     required this.primaryColor,
     required this.isDark,
+    required this.bgAnimValue,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
-    final radius = math.min(size.width / 2, size.height / 2) - 20;
+    final radius = (math.min(size.width / 2, size.height / 2) - 20) * bgAnimValue;
+    if (radius <= 0) return; // Prevent drawing when completely scaled down
 
     final paintBg = Paint()
       ..color = (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05)
@@ -247,11 +262,14 @@ class _RadarChartPainter extends CustomPainter {
       canvas.drawLine(center, Offset(x, y), paintLine);
     }
 
+    // Calculate max possible radius for actual data layer
+    final maxRadius = math.min(size.width / 2, size.height / 2) - 20;
+
     // Draw data polygon
     final dataPath = Path();
     for (int j = 0; j < 4; j++) {
       final angle = (j * math.pi / 2) - (math.pi / 2);
-      final r = radius * scores[j];
+      final r = maxRadius * scores[j];
       final x = center.dx + r * math.cos(angle);
       final y = center.dy + r * math.sin(angle);
       if (j == 0) {
@@ -286,7 +304,7 @@ class _RadarChartPainter extends CustomPainter {
 
     for (int j = 0; j < 4; j++) {
       final angle = (j * math.pi / 2) - (math.pi / 2);
-      final r = radius * scores[j];
+      final r = maxRadius * scores[j];
       final x = center.dx + r * math.cos(angle);
       final y = center.dy + r * math.sin(angle);
       canvas.drawCircle(Offset(x, y), 5, pointPaint);
@@ -296,8 +314,9 @@ class _RadarChartPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _RadarChartPainter oldDelegate) {
-    return oldDelegate.scores != scores ||
-        oldDelegate.primaryColor != primaryColor ||
-        oldDelegate.isDark != isDark;
+    return bgAnimValue != oldDelegate.bgAnimValue ||
+           !listEquals(oldDelegate.scores, scores) ||
+           oldDelegate.primaryColor != primaryColor ||
+           oldDelegate.isDark != isDark;
   }
 }

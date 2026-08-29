@@ -57,6 +57,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -357,16 +358,13 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       clearedLevels += completed.clamp(0, 200);
     }
     final totalLevels = games.length * 200;
-    final progress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
-    final percentLabel = (progress * 100).toStringAsFixed(
-      progress < 0.01 && progress > 0 ? 2 : 1,
-    );
+    final targetProgress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
 
     return Semantics(
       label: context.tr(
         'category_games.mastery_summary_label',
         fallback: 'Mastery Summary',
-        args: [percentLabel, clearedLevels.toString(), totalLevels.toString()],
+        args: [(targetProgress * 100).toStringAsFixed(1), clearedLevels.toString(), totalLevels.toString()],
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -418,19 +416,29 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                           FittedBox(
                             fit: BoxFit.scaleDown,
                             alignment: AlignmentDirectional.centerStart,
-                            child: Text(
-                              context.tr(
-                                'category_games.percent_completed',
-                                fallback: 'Completed',
-                                args: [percentLabel],
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 22.sp,
-                                fontWeight: FontWeight.w900,
-                                color: contentColor,
-                              ),
-                              maxLines: 1,
+                            child: TweenAnimationBuilder<double>(
+                              tween: Tween<double>(begin: 0.0, end: targetProgress),
+                              duration: const Duration(milliseconds: 1000),
+                              curve: Curves.easeOutExpo,
+                              builder: (context, value, child) {
+                                final percentLabel = (value * 100).toStringAsFixed(
+                                  value < 0.01 && value > 0 ? 2 : 1,
+                                );
+                                return Text(
+                                  context.tr(
+                                    'category_games.percent_completed',
+                                    fallback: 'Completed',
+                                    args: [percentLabel],
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 22.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: contentColor,
+                                  ),
+                                  maxLines: 1,
+                                );
+                              },
                             ),
                           ),
                         ],
@@ -449,22 +457,29 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         ),
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
-                          child: Text(
-                            context.tr(
-                              'category_games.levels_count_short',
-                              fallback: 'Levels',
-                              args: [
-                                clearedLevels.toString(),
-                                totalLevels.toString(),
-                              ],
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              color: theme.primaryColor,
-                            ),
-                            maxLines: 1,
+                          child: TweenAnimationBuilder<double>(
+                            tween: Tween<double>(begin: 0.0, end: clearedLevels.toDouble()),
+                            duration: const Duration(milliseconds: 1000),
+                            curve: Curves.easeOutExpo,
+                            builder: (context, value, child) {
+                              return Text(
+                                context.tr(
+                                  'category_games.levels_count_short',
+                                  fallback: 'Levels',
+                                  args: [
+                                    value.toInt().toString(),
+                                    totalLevels.toString(),
+                                  ],
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: theme.primaryColor,
+                                ),
+                                maxLines: 1,
+                              );
+                            },
                           ),
                         ),
                       ),
@@ -506,7 +521,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         child: _buildStatMini(
                           Icons.stars_rounded,
                           context.tr('home.rank', fallback: 'Rank'),
-                          _getRank(progress),
+                          _getRank(targetProgress),
                           theme.primaryColor,
                           isDark,
                         ),
@@ -519,7 +534,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           ),
         ),
       ),
-    );
+    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.05, end: 0, curve: Curves.easeOutCubic);
   }
 
   String _getRank(double progress) {
@@ -740,7 +755,18 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           ),
         ),
       ),
-    ).animate().fadeIn(duration: 200.ms);
+    ).animate().fadeIn(
+      delay: (index < 5 ? index * 80 : 0).ms, 
+      duration: 400.ms,
+    ).slideY(
+      begin: 0.1, 
+      end: 0, 
+      curve: Curves.easeOutBack,
+    ).scaleXY(
+      begin: 0.95, 
+      end: 1.0, 
+      curve: Curves.easeOutBack,
+    );
   }
 
   Widget _buildLiquidProgressBar(
@@ -748,7 +774,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     int currentLevel, {
     int total = 200,
   }) {
-    final progress = ((currentLevel - 1).clamp(0, total)) / total.toDouble();
+    final targetProgress = ((currentLevel - 1).clamp(0, total)) / total.toDouble();
     return Container(
       height: 8.h,
       width: double.infinity,
@@ -756,9 +782,17 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(10.r),
       ),
-      child: FractionallySizedBox(
-        alignment: AlignmentDirectional.centerStart,
-        widthFactor: progress.clamp(0.05, 1.0),
+      child: TweenAnimationBuilder<double>(
+        tween: Tween<double>(begin: 0.0, end: targetProgress.clamp(0.05, 1.0)),
+        duration: const Duration(milliseconds: 1000),
+        curve: Curves.easeOutExpo,
+        builder: (context, value, child) {
+          return FractionallySizedBox(
+            alignment: AlignmentDirectional.centerStart,
+            widthFactor: value,
+            child: child,
+          );
+        },
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -797,7 +831,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             ),
           ),
         ),
-      ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.5.seconds);
+      );
     }
 
     return Container(
