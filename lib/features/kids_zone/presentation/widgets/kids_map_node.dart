@@ -22,6 +22,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
 
 class KidsMapNode extends StatefulWidget {
   final int level;
@@ -397,7 +398,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     );
   }
 
-  Widget _buildLevelNode(BuildContext context) {
+  Widget _buildLevelNode(BuildContext context, Color lockedColor) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ScaleButton(
@@ -502,9 +503,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       : widget.isNextZone
                       ? Colors.amber.shade100.withValues(alpha: 0.5)
                       : widget.isLocked
-                      ? (isDark 
-                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.08)! 
-                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.08)!)
+                      ? lockedColor
                       : widget.primaryColor,
                   border: Border.all(
                     color: widget.isTollGate
@@ -698,6 +697,23 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    
+    // Exactly match the `bgColor` calculated in `kids_level_map.dart`
+    final mapBgColor = isMidnight
+        ? Colors.black
+        : (isDark
+              ? Color.alphaBlend(
+                  widget.primaryColor.withValues(alpha: 0.39), // ~100/255
+                  const Color(0xFF0F172A),
+                )
+              : Color.alphaBlend(
+                  widget.primaryColor.withValues(alpha: 0.24), // ~60/255
+                  const Color(0xFFF8FAFC),
+                ));
+                
+    // The locked color is mathematically darker than the map background, creating a dug-out socket
+    final Color lockedColor = Color.lerp(mapBgColor, Colors.black, isDark ? 0.2 : 0.12)!;
 
     if (widget.isLoading) {
       return _buildShimmerSegment(context);
@@ -742,14 +758,10 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               painter: SegmentPathPainter(
                 incomingColor: widget.isPrevCompleted
                     ? widget.primaryColor
-                    : (isDark
-                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.08)!
-                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.08)!),
+                    : lockedColor,
                 outgoingColor: widget.isCompleted
                     ? widget.primaryColor
-                    : (isDark
-                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.08)!
-                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.08)!),
+                    : lockedColor,
                 currentOffset: widget.currentOffset,
                 nextOffset: widget.nextOffset,
                 prevOffset: widget.prevOffset,
@@ -776,7 +788,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
               top: 50.h, // Vertically center the node in the 200.h segment
                 child: Builder(
                   builder: (context) {
-                    Widget node = _buildLevelNode(context);
+                    Widget node = _buildLevelNode(context, lockedColor);
                     
                     if (widget.isUnlockAnimating) {
                       final user = context.read<AuthBloc>().state.user;
