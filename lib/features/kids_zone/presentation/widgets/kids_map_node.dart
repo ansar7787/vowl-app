@@ -22,7 +22,6 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/theme_cubit.dart';
 
 class KidsMapNode extends StatefulWidget {
   final int level;
