@@ -422,7 +422,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                     ),
                   ),
                 )
-              : Icon(Icons.lock_rounded, size: 32.r, color: widget.theme.primaryColor.withValues(alpha: widget.isDark ? 0.4 : 0.3)),
+              : Icon(Icons.lock_rounded, size: 32.r, color: widget.theme.primaryColor.withValues(alpha: 0.15)),
         ),
       ),
     );
