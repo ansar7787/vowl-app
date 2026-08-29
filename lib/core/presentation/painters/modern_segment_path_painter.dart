@@ -49,11 +49,11 @@ class ModernSegmentPathPainter extends CustomPainter {
     final double centerY = size.height / 2;
     const double strokeW = 18.0;
     
-    // The locked path MUST be a neutral dead grey. If we use a transparent category color,
-    // players will psychologically interpret it as an "active but dim" path.
+    // We use the exact same 8% tint as the locked node so they match perfectly,
+    // while remaining fully opaque (visible) and dark (locked).
     final Color lockedColor = isDark 
-        ? const Color(0xFF334155) // Slate 700
-        : const Color(0xFFE2E8F0); // Slate 200
+        ? Color.lerp(const Color(0xFF0F172A), baseColor, 0.08)!
+        : Color.lerp(const Color(0xFFF8FAFC), baseColor, 0.08)!;
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {

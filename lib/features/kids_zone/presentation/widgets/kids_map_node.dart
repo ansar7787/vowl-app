@@ -745,13 +745,13 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                 incomingColor: widget.isPrevCompleted
                     ? widget.primaryColor
                     : (isDark
-                          ? const Color(0xFF334155)
-                          : const Color(0xFFE2E8F0)),
+                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.08)!
+                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.08)!),
                 outgoingColor: widget.isCompleted
                     ? widget.primaryColor
                     : (isDark
-                          ? const Color(0xFF334155)
-                          : const Color(0xFFE2E8F0)),
+                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.08)!
+                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.08)!),
                 currentOffset: widget.currentOffset,
                 nextOffset: widget.nextOffset,
                 prevOffset: widget.prevOffset,
