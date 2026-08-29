@@ -20,7 +20,6 @@ import '../widgets/topic_batch_counter.dart';
 import '../widgets/topic_draggable_core.dart';
 import '../controllers/topic_vocab_controller.dart';
 
-
 class TopicVocabScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -68,12 +67,13 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
+          final isRetry =
+              !state.answerStatus.isAnswered && _controller.isAnswered;
 
           if (isNewQuestion || isRetry) {
             _lastQuest = state.currentQuest;
             _lastProcessedIndex = state.currentIndex;
-            _controller.reset(state.currentQuest.options);
+            _controller.reset(state.currentQuest);
           }
         }
         if (state is VocabularyGameComplete) {
@@ -89,9 +89,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
         }
       },
       builder: (context, state) {
-        return AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
           level: widget.level,
@@ -111,116 +108,118 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             ? state.currentQuest
             : _lastQuest;
 
-        final options = _controller.shuffledOptions.isNotEmpty
-            ? _controller.shuffledOptions
-            : (quest?.options ?? []);
-        final buckets = quest?.topicBuckets ?? ["A", "B"];
-        final currentWord = _controller.currentWordIndex < options.length
-            ? options[_controller.currentWordIndex]
-            : "";
-        final correctAnswer = quest?.correctAnswer ?? "";
+        return ListenableBuilder(
+          listenable: _controller,
+          builder: (context, child) {
+            final options = _controller.shuffledOptions.isNotEmpty
+                ? _controller.shuffledOptions
+                : (quest?.options ?? []);
+            final buckets = quest?.topicBuckets ?? ["A", "B"];
+            final currentWord = _controller.currentWordIndex < options.length
+                ? options[_controller.currentWordIndex]
+                : "";
+            final correctAnswer = quest?.correctAnswer ?? "";
 
-        String? dynamicHint;
-        if (currentWord.isNotEmpty && quest?.relatedWords != null) {
-          final cleanCurrentWord = currentWord.trim().toLowerCase();
-          for (var related in quest!.relatedWords!) {
-            final separatorIndex = related.indexOf(RegExp(r'[:\-]'));
-            if (separatorIndex != -1) {
-              final prefix = related.substring(0, separatorIndex).trim().toLowerCase();
-              if (prefix == cleanCurrentWord) {
-                final definitionText = related.substring(separatorIndex + 1).trim();
-                dynamicHint = "Definition: $definitionText";
-                break;
-              }
-            }
-          }
-        }
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _controller.isAnswered,
+              isCorrect: _controller.isCorrect,
+              showConfetti: _controller.showConfetti,
+              onContinue: () =>
+                  context.read<VocabularyBloc>().add(NextQuestion()),
+              useScrolling: false,
+              customHintText: _controller.currentHint,
+              onHint: () {
+                _controller.activateHint();
+              },
+              disablePadding: true,
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  // Use true screen constraints if available, otherwise fallback
+                  final maxHeight = constraints.maxHeight == double.infinity
+                      ? 500.h
+                      : constraints.maxHeight;
+                  final maxWidth = constraints.maxWidth == double.infinity
+                      ? MediaQuery.of(context).size.width
+                      : constraints.maxWidth;
+                  final isCompact = maxHeight < 580.h;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _controller.isAnswered,
-          isCorrect: _controller.isCorrect,
-          showConfetti: _controller.showConfetti,
-          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          useScrolling: false,
-          customHintText: dynamicHint,
-          onHint: () {
-            _controller.activateHint();
-          },
-          disablePadding: true,
-          child: CustomScrollView(
-            physics: const NeverScrollableScrollPhysics(),
-            slivers: [
-              SliverToBoxAdapter(
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = 500.h; // Set a fixed reasonable height for the sorting area
-                    final maxWidth = MediaQuery.of(context).size.width;
-              final isCompact = maxHeight < 580;
+                  // Define relative positions as percentages of the actual available height or absolute sizes
+                  final counterTop = isCompact ? 15.h : maxHeight * 0.05;
+                  final machineTop = isCompact ? 65.h : maxHeight * 0.18;
 
-              // Define relative positions as percentages of the actual available height or absolute sizes
-              final counterTop = isCompact ? 15.h : maxHeight * 0.05;
-              final machineTop = isCompact ? 65.h : maxHeight * 0.18;
+                  // Word is positioned relative to bottom to work nicely with flicking physics
+                  final wordBottom = isCompact ? 145.h : maxHeight * 0.42;
+                  final flyingWordBottom = isCompact ? 145.h : maxHeight * 0.42;
+                  final binBottom = isCompact ? 10.h : maxHeight * 0.04;
 
-              // Word is positioned relative to bottom to work nicely with flicking physics
-              final wordBottom = isCompact ? 145.h : maxHeight * 0.42;
-              final flyingWordBottom = isCompact ? 145.h : maxHeight * 0.42;
-              final binBottom = isCompact ? 10.h : maxHeight * 0.04;
-
-              return SizedBox(
-                height: maxHeight,
-                width: maxWidth,
-                child: Stack(
-                  alignment: Alignment.center,
-                  clipBehavior: Clip.none,
-                  children: [
-                    // 1. BATCH PROGRESS
-                    Positioned(
-                      top: counterTop,
-                      child: RepaintBoundary(
-                        child: TopicBatchCounter(
-                          count: _controller.userChoices.length,
-                          total: options.length,
-                          color: theme.primaryColor,
+                  return SizedBox(
+                    height: maxHeight,
+                    width: maxWidth,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      clipBehavior: Clip.none,
+                      children: [
+                        // 1. BATCH PROGRESS
+                        Positioned(
+                          top: counterTop,
+                          child: RepaintBoundary(
+                            child: TopicBatchCounter(
+                              count: _controller.userChoices.length,
+                              total: options.length,
+                              color: theme.primaryColor,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
 
-                    // 3. EMISSION MACHINE
-                    Positioned(
-                      top: machineTop,
-                      child: RepaintBoundary(
-                        child: isCompact
-                            ? SizedBox(
-                                height: 75.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: TopicMachineHead(
+                        // 3. EMISSION MACHINE
+                        Positioned(
+                          top: machineTop,
+                          child: RepaintBoundary(
+                            child: isCompact
+                                ? SizedBox(
+                                    height: 75.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: TopicMachineHead(
+                                        primaryColor: theme.primaryColor,
+                                        emoji: quest?.topicEmoji ?? "📦",
+                                      ),
+                                    ),
+                                  )
+                                : TopicMachineHead(
                                     primaryColor: theme.primaryColor,
                                     emoji: quest?.topicEmoji ?? "📦",
                                   ),
-                                ),
-                              )
-                            : TopicMachineHead(
-                                primaryColor: theme.primaryColor,
-                                emoji: quest?.topicEmoji ?? "📦",
-                              ),
-                      ),
-                    ),
+                          ),
+                        ),
 
-                    // Containment Bins
-                    Positioned(
-                      bottom: binBottom,
-                      left: 8.w, // Added premium visual margin from the edge
-                      child: RepaintBoundary(
-                        child: isCompact
-                            ? SizedBox(
-                                width: 110.w,
-                                height: 140.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: TopicContainmentBin(
+                        // Containment Bins
+                        Positioned(
+                          bottom: binBottom,
+                          left:
+                              8.w, // Added premium visual margin from the edge
+                          child: RepaintBoundary(
+                            child: isCompact
+                                ? SizedBox(
+                                    width: 110.w,
+                                    height: 140.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: TopicContainmentBin(
+                                        index: 0,
+                                        label: buckets[0],
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        correctAnswer: correctAnswer,
+                                        currentWord: currentWord,
+                                        words: _controller.wordsInBins[0] ?? [],
+                                        isHintActive: _controller.isHintActive,
+                                      ),
+                                    ),
+                                  )
+                                : TopicContainmentBin(
                                     index: 0,
                                     label: buckets[0],
                                     color: theme.primaryColor,
@@ -230,32 +229,34 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                     words: _controller.wordsInBins[0] ?? [],
                                     isHintActive: _controller.isHintActive,
                                   ),
-                                ),
-                              )
-                            : TopicContainmentBin(
-                                index: 0,
-                                label: buckets[0],
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                correctAnswer: correctAnswer,
-                                currentWord: currentWord,
-                                words: _controller.wordsInBins[0] ?? [],
-                                isHintActive: _controller.isHintActive,
-                              ),
-                      ),
-                    ),
-                    if (buckets.length > 1)
-                      Positioned(
-                        bottom: binBottom,
-                        right: 8.w,
-                        child: RepaintBoundary(
-                          child: isCompact
-                              ? SizedBox(
-                                  width: 110.w,
-                                  height: 140.h,
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    child: TopicContainmentBin(
+                          ),
+                        ),
+                        if (buckets.length > 1)
+                          Positioned(
+                            bottom: binBottom,
+                            right: 8.w,
+                            child: RepaintBoundary(
+                              child: isCompact
+                                  ? SizedBox(
+                                      width: 110.w,
+                                      height: 140.h,
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: TopicContainmentBin(
+                                          index: 1,
+                                          label: buckets[1],
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          correctAnswer: correctAnswer,
+                                          currentWord: currentWord,
+                                          words:
+                                              _controller.wordsInBins[1] ?? [],
+                                          isHintActive:
+                                              _controller.isHintActive,
+                                        ),
+                                      ),
+                                    )
+                                  : TopicContainmentBin(
                                       index: 1,
                                       label: buckets[1],
                                       color: theme.primaryColor,
@@ -265,154 +266,154 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                       words: _controller.wordsInBins[1] ?? [],
                                       isHintActive: _controller.isHintActive,
                                     ),
-                                  ),
-                                )
-                              : TopicContainmentBin(
-                                  index: 1,
-                                  label: buckets[1],
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  correctAnswer: correctAnswer,
-                                  currentWord: currentWord,
-                                  words: _controller.wordsInBins[1] ?? [],
-                                  isHintActive: _controller.isHintActive,
-                                ),
-                        ),
-                      ),
-                              if (!_controller.isAnswered && !_controller.isFirstStagePassed &&
-                                  currentWord.isNotEmpty &&
-                                  _controller.flickedWord == null)
-                                Positioned(
-                                  bottom: wordBottom,
-                                  child: isCompact
-                                      ? SizedBox(
-                                          width: 110.w,
-                                          height: 55.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: TopicDraggableWord(
-                                              word: currentWord,
-                                              primaryColor: theme.primaryColor,
-                                              isDark: isDark,
-                                              onFlick: (v) => _controller.handleFlick(
-                                                v,
-                                                currentWord,
-                                                buckets,
-                                                correctAnswer,
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      : TopicDraggableWord(
-                                              word: currentWord,
-                                              primaryColor: theme.primaryColor,
-                                              isDark: isDark,
-                                              onFlick: (v) => _controller.handleFlick(
-                                                v,
-                                                currentWord,
-                                                buckets,
-                                                correctAnswer,
-                                              ),
-                                            )
-                                            .animate(
-                                              key: ValueKey("word_${_controller.currentWordIndex}"),
-                                            )
-                                            .move(
-                                              begin: const Offset(0, -100),
-                                              end: Offset.zero,
-                                              duration: 500.ms,
-                                              curve: Curves.bounceOut,
-                                            )
-                                            .fadeIn(),
-                                ),
-                              if (!_controller.isAnswered && !_controller.isFirstStagePassed &&
-                                  currentWord.isNotEmpty &&
-                                  _controller.flickedWord == null &&
-                                  _controller.currentWordIndex == 0 &&
-                                  _controller.userChoices.isEmpty)
-                                Positioned(
-                                  bottom: wordBottom - 35.h,
-                                  child: IgnorePointer(
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Icon(
-                                              Icons.keyboard_double_arrow_left_rounded,
-                                              color: Colors.white.withValues(alpha: 0.5),
-                                              size: 24.r,
-                                            )
-                                            .animate(onPlay: (c) => c.repeat())
-                                            .fadeIn(duration: 500.ms)
-                                            .fadeOut(delay: 500.ms),
-                                        SizedBox(width: 8.w),
-                                        Icon(
-                                              Icons.touch_app_rounded,
-                                              color: Colors.white.withValues(alpha: 0.9),
-                                              size: 32.r,
-                                            )
-                                            .animate(
-                                              onPlay: (c) => c.repeat(reverse: true),
-                                            )
-                                            .moveX(
-                                              begin: -25.w,
-                                              end: 25.w,
-                                              duration: 1200.ms,
-                                              curve: Curves.easeInOutSine,
-                                            ),
-                                        SizedBox(width: 8.w),
-                                        Icon(
-                                              Icons.keyboard_double_arrow_right_rounded,
-                                              color: Colors.white.withValues(alpha: 0.5),
-                                              size: 24.r,
-                                            )
-                                            .animate(onPlay: (c) => c.repeat())
-                                            .fadeIn(duration: 500.ms)
-                                            .fadeOut(delay: 500.ms),
-                                      ],
-                                    ).animate().fadeIn(delay: 1.seconds, duration: 500.ms),
-                                  ),
-                                ),
-                              if (_controller.flickedWord != null)
-                                Positioned(
-                                  bottom: flyingWordBottom,
-                                  left: _controller.flickTarget == 0 ? 40.w : null,
-                                  right: _controller.flickTarget == 1 ? 40.w : null,
-                                  child: TopicDraggableWord(
-                                          word: _controller.flickedWord!,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onFlick: (v) {},
-                                        )
-                                        .animate()
-                                        .move(
-                                          begin: Offset.zero,
-                                          end: Offset(
-                                            _controller.flickTarget == 0
-                                                ? -(maxWidth / 2 - 70.w)
-                                                : (maxWidth / 2 - 70.w),
-                                            isCompact ? 100.h : 150.h,
-                                          ),
-                                          duration: 200.ms,
-                                          curve: Curves.easeIn,
-                                        )
-                                        .scale(
-                                          begin: const Offset(1, 1),
-                                          end: const Offset(0.3, 0.3),
-                                          duration: 250.ms,
-                                        )
-                                        .rotate(
-                                          begin: 0,
-                                          end: _controller.flickTarget == 0 ? -0.2 : 0.2,
-                                          duration: 250.ms,
-                                        ),
-                                ),
-                            ],
+                            ),
                           ),
-                        );
-                      },
+                        if (!_controller.isAnswered &&
+                            !_controller.isFirstStagePassed &&
+                            currentWord.isNotEmpty &&
+                            _controller.flickedWord == null)
+                          Positioned(
+                            bottom: wordBottom,
+                            child: isCompact
+                                ? SizedBox(
+                                    width: 110.w,
+                                    height: 55.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: TopicDraggableWord(
+                                        word: currentWord,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onFlick: (v) => _controller.handleFlick(
+                                          v,
+                                          currentWord,
+                                          buckets,
+                                          correctAnswer,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : TopicDraggableWord(
+                                        word: currentWord,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onFlick: (v) => _controller.handleFlick(
+                                          v,
+                                          currentWord,
+                                          buckets,
+                                          correctAnswer,
+                                        ),
+                                      )
+                                      .animate(
+                                        key: ValueKey(
+                                          "word_${_controller.currentWordIndex}",
+                                        ),
+                                      )
+                                      .move(
+                                        begin: const Offset(0, -100),
+                                        end: Offset.zero,
+                                        duration: 500.ms,
+                                        curve: Curves.bounceOut,
+                                      )
+                                      .fadeIn(),
+                          ),
+                        if (!_controller.isAnswered &&
+                            !_controller.isFirstStagePassed &&
+                            currentWord.isNotEmpty &&
+                            _controller.flickedWord == null &&
+                            _controller.currentWordIndex == 0 &&
+                            _controller.userChoices.isEmpty)
+                          Positioned(
+                            bottom: wordBottom - 35.h,
+                            child: IgnorePointer(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                        Icons
+                                            .keyboard_double_arrow_left_rounded,
+                                        color: Colors.white.withValues(
+                                          alpha: 0.5,
+                                        ),
+                                        size: 24.r,
+                                      )
+                                      .animate(onPlay: (c) => c.repeat())
+                                      .fadeIn(duration: 500.ms)
+                                      .fadeOut(delay: 500.ms),
+                                  SizedBox(width: 8.w),
+                                  Icon(
+                                        Icons.touch_app_rounded,
+                                        color: Colors.white.withValues(
+                                          alpha: 0.9,
+                                        ),
+                                        size: 32.r,
+                                      )
+                                      .animate(
+                                        onPlay: (c) => c.repeat(reverse: true),
+                                      )
+                                      .moveX(
+                                        begin: -25.w,
+                                        end: 25.w,
+                                        duration: 1200.ms,
+                                        curve: Curves.easeInOutSine,
+                                      ),
+                                  SizedBox(width: 8.w),
+                                  Icon(
+                                        Icons
+                                            .keyboard_double_arrow_right_rounded,
+                                        color: Colors.white.withValues(
+                                          alpha: 0.5,
+                                        ),
+                                        size: 24.r,
+                                      )
+                                      .animate(onPlay: (c) => c.repeat())
+                                      .fadeIn(duration: 500.ms)
+                                      .fadeOut(delay: 500.ms),
+                                ],
+                              ).animate().fadeIn(delay: 1.seconds, duration: 500.ms),
+                            ),
+                          ),
+                        if (_controller.flickedWord != null)
+                          Positioned(
+                            bottom: flyingWordBottom,
+                            left: _controller.flickTarget == 0 ? 40.w : null,
+                            right: _controller.flickTarget == 1 ? 40.w : null,
+                            child:
+                                TopicDraggableWord(
+                                      word: _controller.flickedWord!,
+                                      primaryColor: theme.primaryColor,
+                                      isDark: isDark,
+                                      onFlick: (v) {},
+                                    )
+                                    .animate()
+                                    .move(
+                                      begin: Offset.zero,
+                                      end: Offset(
+                                        _controller.flickTarget == 0
+                                            ? -(maxWidth / 2 - 70.w)
+                                            : (maxWidth / 2 - 70.w),
+                                        isCompact ? 100.h : 150.h,
+                                      ),
+                                      duration: 200.ms,
+                                      curve: Curves.easeIn,
+                                    )
+                                    .scale(
+                                      begin: const Offset(1, 1),
+                                      end: const Offset(0.3, 0.3),
+                                      duration: 250.ms,
+                                    )
+                                    .rotate(
+                                      begin: 0,
+                                      end: _controller.flickTarget == 0
+                                          ? -0.2
+                                          : 0.2,
+                                      duration: 250.ms,
+                                    ),
+                          ),
+                      ],
                     ),
-                  ),
-                ],
+                  );
+                },
               ),
             );
           },
@@ -421,4 +422,3 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     );
   }
 }
-
