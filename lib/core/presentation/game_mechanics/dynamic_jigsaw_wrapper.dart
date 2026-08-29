@@ -520,6 +520,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                         child: ScaleButton(
                           onTap: () {
                             if (_isSubmitting.value) return;
+                            _isSubmitting.value = true;
                             final user = context.read<AuthBloc>().state.user;
                             final isPremium = user?.isPremium ?? false;
                             if (isPremium) {
@@ -541,7 +542,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                     }
                                   }
                                 },
-                                onDismissed: () {},
+                                onDismissed: () {
+                                  if (mounted) _isSubmitting.value = false;
+                                },
                               );
                             }
                           },

@@ -460,10 +460,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                   return ScaleButton(
                                     onTap: () {
                                       if (isSubmitting) return;
+                                      
                                       if (attempts >= widget.maxAttempts) {
+                                        _isSubmitting.value = true;
                                         widget.onSkipped();
                                         return;
                                       }
+                                      
+                                      _isSubmitting.value = true;
                                       final user = context.read<AuthBloc>().state.user;
                                       final isPremium = user?.isPremium ?? false;
                                       if (isPremium) {
@@ -485,7 +489,9 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                               }
                                             }
                                           },
-                                          onDismissed: () {},
+                                          onDismissed: () {
+                                            if (mounted) _isSubmitting.value = false;
+                                          },
                                         );
                                       }
                                     },

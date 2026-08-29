@@ -544,6 +544,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                             child: ScaleButton(
                               onTap: () {
                                 if (_isSubmitting.value) return;
+                                _isSubmitting.value = true;
                                 final user = context.read<AuthBloc>().state.user;
                                 final isPremium = user?.isPremium ?? false;
                                 if (isPremium) {
@@ -565,7 +566,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                         }
                                       }
                                     },
-                                    onDismissed: () {},
+                                    onDismissed: () {
+                                      if (mounted) _isSubmitting.value = false;
+                                    },
                                   );
                                 }
                               },
