@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'dart:ui';
 
 import 'package:vowl/core/presentation/painters/modern_segment_path_painter.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -120,11 +121,55 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     return nameMap[id] ?? 'Vowl';
   }
 
+  Widget _buildModernSpeechBubble(Color primaryColor, bool isLeft) {
+    return CustomPaint(
+      painter: _PremiumBubblePainter(
+        baseColor: primaryColor,
+        isDark: widget.isDark,
+        isLeft: isLeft,
+      ),
+      child: Container(
+        constraints: BoxConstraints(maxWidth: 190.w),
+        padding: EdgeInsets.only(
+          top: 14.h,
+          bottom: 14.h,
+          left: isLeft ? 24.w : 14.w,
+          right: !isLeft ? 24.w : 14.w,
+        ),
+        child: Text(
+          _buddyMessage!,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            color: Colors.white,
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w700,
+            shadows: const [
+              Shadow(
+                color: Colors.black45,
+                offset: Offset(0, 1),
+                blurRadius: 2,
+              ),
+            ],
+          ),
+          maxLines: 4,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
+    ).animate().fadeIn(duration: 200.ms).scale(
+      alignment: isLeft ? Alignment.bottomLeft : Alignment.bottomRight,
+      curve: Curves.easeOutBack,
+    );
+  }
+
   Widget _buildMascotMarker(BuildContext context) {
     final theme = LevelThemeHelper.getTheme(widget.gameType, isDark: widget.isDark);
-
     final user = context.read<AuthBloc>().state.user;
     final mascotId = user?.vowlMascot ?? 'vowl_prime';
+
+    // 10/10 Smart Alignment: Flips the bubble to face the empty center of the screen
+    // This absolutely guarantees it will never clip off the sides, and since it expands sideways,
+    // it will never clip off the top edge of the screen either.
+    final bool isLeftHalf = widget.point.dx <= ScreenUtil().screenWidth / 2;
 
     return Semantics(
       button: true,
@@ -191,51 +236,25 @@ class _ModernMapNodeState extends State<ModernMapNode> {
           });
         },
         child: ExcludeSemantics(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
             children: [
-              if (_buddyMessage != null)
-                Padding(
-                  padding: EdgeInsets.only(bottom: 8.h),
-                  child: Container(
-                    constraints: BoxConstraints(maxWidth: 220.w),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 14.w,
-                      vertical: 8.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: theme.primaryColor,
-                      borderRadius: BorderRadius.circular(15.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 10.r,
-                          offset: Offset(0, 5.h),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      _buddyMessage!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w800,
-                      ),
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
-                ),
+              // Mascot
               VowlMascot(
                 size: 55.r,
                 useFloatingAnimation: true,
                 mascotId: mascotId,
               ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
-              CustomPaint(
-                size: Size(12.w, 8.h),
-                painter: _TrianglePainter(color: theme.primaryColor),
-              ),
+
+              // 10/10 Glassmorphism Speech Bubble
+              if (_buddyMessage != null)
+                Positioned(
+                  top: -30.h,
+                  left: isLeftHalf ? 45.r : null,
+                  right: !isLeftHalf ? 45.r : null,
+                  child: _buildModernSpeechBubble(theme.primaryColor, isLeftHalf),
+                ),
             ],
           ),
         ),
@@ -663,24 +682,103 @@ class _ModernMapNodeState extends State<ModernMapNode> {
   }
 }
 
-class _TrianglePainter extends CustomPainter {
-  final Color color;
-  const _TrianglePainter({required this.color});
+class _SpeechBubbleClipper extends CustomClipper<Path> {
+  final bool isLeft;
+  _SpeechBubbleClipper({required this.isLeft});
 
   @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..style = PaintingStyle.fill;
-    final path = Path()
-      ..moveTo(0, 0)
-      ..lineTo(size.width, 0)
-      ..lineTo(size.width / 2, size.height)
-      ..close();
-    canvas.drawPath(path, paint);
+  Path getClip(Size size) {
+    final double r = 16.r;
+    final double tailW = 14.w;
+    
+    final path = Path();
+    if (isLeft) {
+      // Box
+      path.moveTo(tailW + r, 0);
+      path.lineTo(size.width - r, 0);
+      path.arcToPoint(Offset(size.width, r), radius: Radius.circular(r));
+      path.lineTo(size.width, size.height - r);
+      path.arcToPoint(Offset(size.width - r, size.height), radius: Radius.circular(r));
+      path.lineTo(tailW + r, size.height);
+      path.arcToPoint(Offset(tailW, size.height - r), radius: Radius.circular(r));
+      
+      // Tail on left side, pointing bottom-left
+      path.lineTo(tailW, size.height - r - 10.h);
+      path.lineTo(0, size.height - r - 2.h); // tail tip
+      path.lineTo(tailW, size.height - r - 26.h);
+      
+      path.lineTo(tailW, r);
+      path.arcToPoint(Offset(tailW + r, 0), radius: Radius.circular(r));
+    } else {
+      // Box
+      path.moveTo(r, 0);
+      path.lineTo(size.width - tailW - r, 0);
+      path.arcToPoint(Offset(size.width - tailW, r), radius: Radius.circular(r));
+      
+      // Tail on right side, pointing bottom-right
+      path.lineTo(size.width - tailW, size.height - r - 26.h);
+      path.lineTo(size.width, size.height - r - 2.h); // tail tip
+      path.lineTo(size.width - tailW, size.height - r - 10.h);
+      
+      path.lineTo(size.width - tailW, size.height - r);
+      path.arcToPoint(Offset(size.width - tailW - r, size.height), radius: Radius.circular(r));
+      path.lineTo(r, size.height);
+      path.arcToPoint(Offset(0, size.height - r), radius: Radius.circular(r));
+      path.lineTo(0, r);
+      path.arcToPoint(Offset(r, 0), radius: Radius.circular(r));
+    }
+    path.close();
+    return path;
   }
 
   @override
-  bool shouldRepaint(covariant _TrianglePainter oldDelegate) =>
-      oldDelegate.color != color;
+  bool shouldReclip(covariant _SpeechBubbleClipper oldClipper) => oldClipper.isLeft != isLeft;
+}
+
+class _PremiumBubblePainter extends CustomPainter {
+  final Color baseColor;
+  final bool isDark;
+  final bool isLeft;
+
+  _PremiumBubblePainter({
+    required this.baseColor,
+    required this.isDark,
+    required this.isLeft,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final clipper = _SpeechBubbleClipper(isLeft: isLeft);
+    final path = clipper.getClip(size);
+
+    // High-performance translucent gradient instead of expensive blur
+    final gradient = LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        baseColor.withValues(alpha: isDark ? 0.85 : 0.95),
+        baseColor.withValues(alpha: isDark ? 0.45 : 0.75),
+      ],
+    );
+
+    final paint = Paint()
+      ..shader = gradient.createShader(Rect.fromLTWH(0, 0, size.width, size.height))
+      ..style = PaintingStyle.fill;
+      
+    canvas.drawPath(path, paint);
+    
+    // Crisp solid inner highlight border (cheap to render, sells the 3D look)
+    final borderPaint = Paint()
+      ..color = Colors.white.withValues(alpha: isDark ? 0.2 : 0.4)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5.r;
+    
+    canvas.drawPath(path, borderPaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _PremiumBubblePainter oldDelegate) =>
+      oldDelegate.baseColor != baseColor ||
+      oldDelegate.isDark != isDark ||
+      oldDelegate.isLeft != isLeft;
 }
