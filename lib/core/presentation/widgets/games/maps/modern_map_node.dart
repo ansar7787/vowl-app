@@ -9,7 +9,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'dart:ui';
 
 import 'package:vowl/core/presentation/painters/modern_segment_path_painter.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
