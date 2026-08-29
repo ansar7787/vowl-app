@@ -518,8 +518,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                     ),
                   ),
                 ),
-              )
-              .animate()
+              ),
+            )
+            .animate()
               .slideY(
                 begin: 1.0,
                 end: 0,
