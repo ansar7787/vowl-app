@@ -92,7 +92,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     } else if (level >= 150) {
       return const Color(0xFFFFD700); // Gold
     } else if (level >= 100) {
-      return const Color(0xFF3B82F6); // Sapphire Blue (Replaces Silver to prevent "locked node" confusion)
+      return const Color(0xFFA0B2C6); // Premium Ice-Silver (Distinct from locked nodes)
     } else if (level >= 50) {
       return const Color(0xFFCD7F32); // Bronze
     }
