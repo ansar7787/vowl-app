@@ -116,20 +116,26 @@ class ErrorJournalCollector {
     }
   }
 
-  /// Clears all error journal entries for a user.
+  /// Clears all error journal entries for a user (safely chunked to avoid 500-limit).
   static Future<void> clearAll({required String userId}) async {
     try {
-      final snapshot = await _firestore
+      final collection = _firestore
           .collection('users')
           .doc(userId)
-          .collection('errorJournal')
-          .get();
+          .collection('errorJournal');
 
-      final batch = _firestore.batch();
-      for (final doc in snapshot.docs) {
-        batch.delete(doc.reference);
+      var snapshot = await collection.limit(500).get();
+
+      while (snapshot.docs.isNotEmpty) {
+        final batch = _firestore.batch();
+        for (final doc in snapshot.docs) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+
+        // Fetch next batch
+        snapshot = await collection.limit(500).get();
       }
-      await batch.commit();
     } catch (e) {
       debugPrint('[ErrorJournal] Failed to clear all: $e');
     }
