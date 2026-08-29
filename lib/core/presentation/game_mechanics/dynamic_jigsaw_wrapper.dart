@@ -65,7 +65,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     List<String> cleanedWords = [];
     for (int i = 0; i < rawWords.length; i++) {
       String cleanedWord = rawWords[i].toLowerCase().replaceAll(
-        RegExp(r'[.,!?]$'),
+        RegExp(r'[.,!?]+$'),
         '',
       );
 
@@ -82,6 +82,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
 
   void _onAvailableTileTapped(_WordTile tile) {
     if (_isSubmitting.value) return;
+    if (!_availableTiles.value.contains(tile)) return; // Anti-double-tap guard
     if (_hasError.value) _hasError.value = false;
     HapticFeedback.lightImpact();
 

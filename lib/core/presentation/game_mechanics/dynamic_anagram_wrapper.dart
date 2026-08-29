@@ -84,6 +84,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
 
   void _onAvailableTileTapped(_Tile tile) {
     if (_isSubmitting.value) return;
+    if (!_availableTiles.value.contains(tile)) return; // Anti-double-tap guard
     if (_hasError.value) _hasError.value = false;
     HapticFeedback.lightImpact();
 
