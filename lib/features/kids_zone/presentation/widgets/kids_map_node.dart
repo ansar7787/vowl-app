@@ -503,8 +503,8 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       ? Colors.amber.shade100.withValues(alpha: 0.5)
                       : widget.isLocked
                       ? (isDark 
-                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.2)! 
-                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.15)!)
+                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.08)! 
+                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.08)!)
                       : widget.primaryColor,
                   border: Border.all(
                     color: widget.isTollGate
@@ -745,13 +745,13 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                 incomingColor: widget.isPrevCompleted
                     ? widget.primaryColor
                     : (isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.05)),
+                          ? widget.primaryColor.withValues(alpha: 0.25)
+                          : widget.primaryColor.withValues(alpha: 0.20)),
                 outgoingColor: widget.isCompleted
                     ? widget.primaryColor
                     : (isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.05)),
+                          ? widget.primaryColor.withValues(alpha: 0.25)
+                          : widget.primaryColor.withValues(alpha: 0.20)),
                 currentOffset: widget.currentOffset,
                 nextOffset: widget.nextOffset,
                 prevOffset: widget.prevOffset,

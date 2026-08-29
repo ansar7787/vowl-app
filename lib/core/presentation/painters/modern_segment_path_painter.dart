@@ -50,7 +50,7 @@ class ModernSegmentPathPainter extends CustomPainter {
     const double strokeW = 18.0;
     
     // Instead of a flat grey, we make the locked path a "ghost" of the category color
-    final Color lockedColor = baseColor.withValues(alpha: isDark ? 0.15 : 0.08);
+    final Color lockedColor = baseColor.withValues(alpha: isDark ? 0.25 : 0.20);
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {
