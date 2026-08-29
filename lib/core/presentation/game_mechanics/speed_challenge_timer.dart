@@ -178,7 +178,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
               )!;
             }
 
-            final isUrgent = remaining <= 0.166; // ~5 seconds on 30s timer
+            final isUrgent = (remaining * widget.durationSeconds) <= 5.0; // Pulse at exactly 5 seconds left
 
             return Container(
               height: 6.h,
