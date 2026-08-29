@@ -58,29 +58,35 @@ class ReadingSelfEvaluationCard extends StatefulWidget {
 class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  bool _isRevealed = false;
-  bool _isEvaluated = false;
+  
+  final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
+  final ValueNotifier<bool> _isEvaluated = ValueNotifier(false);
 
   @override
   void didUpdateWidget(ReadingSelfEvaluationCard oldWidget) {
     super.didUpdateWidget(oldWidget);
     // Reset state when question changes (new correctAnswer = new question)
     if (oldWidget.correctAnswer != widget.correctAnswer) {
-      setState(() {
-        _isRevealed = false;
-        _isEvaluated = false;
-      });
+      _isRevealed.value = false;
+      _isEvaluated.value = false;
     }
+  }
+
+  @override
+  void dispose() {
+    _isRevealed.dispose();
+    _isEvaluated.dispose();
+    super.dispose();
   }
 
   void _reveal() {
     _hapticService.selection();
-    setState(() => _isRevealed = true);
+    _isRevealed.value = true;
   }
 
   void _evaluate(bool isCorrect) {
-    if (_isEvaluated) return;
-    setState(() => _isEvaluated = true);
+    if (_isEvaluated.value) return;
+    _isEvaluated.value = true;
 
     if (isCorrect) {
       _hapticService.success();
@@ -107,23 +113,30 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
     final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
-    final content = !_isRevealed ? _buildRevealButton(context) : _buildAnswerCard(
-      context,
-      isDark: isDark,
-      textColor: textColor,
-      subtitleColor: subtitleColor,
+    return ValueListenableBuilder<bool>(
+      valueListenable: _isRevealed,
+      builder: (context, isRevealed, _) {
+        final content = !isRevealed 
+            ? _buildRevealButton(context) 
+            : _buildAnswerCard(
+                context,
+                isDark: isDark,
+                textColor: textColor,
+                subtitleColor: subtitleColor,
+              );
+
+        if (widget.isPositioned) {
+          return Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: content,
+          );
+        }
+
+        return content;
+      }
     );
-
-    if (widget.isPositioned) {
-      return Positioned(
-        bottom: 0,
-        left: 0,
-        right: 0,
-        child: content,
-      );
-    }
-
-    return content;
   }
 
   Widget _buildRevealButton(BuildContext context) {
@@ -335,35 +348,40 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
           ),
           SizedBox(height: 16.h),
 
-          // Eval buttons — using Expanded to prevent overflow
-          if (!_isEvaluated)
-            Row(
-              children: [
-                Expanded(
-                  child: _buildEvalButton(
-                    icon: Icons.close_rounded,
-                    label: context.tr(
-                      'reading.missed_it',
-                      fallback: 'MISSED IT',
+          // Eval buttons — scoped ValueListenableBuilder
+          ValueListenableBuilder<bool>(
+            valueListenable: _isEvaluated,
+            builder: (context, isEvaluated, _) {
+              if (isEvaluated) return const SizedBox.shrink();
+              return Row(
+                children: [
+                  Expanded(
+                    child: _buildEvalButton(
+                      icon: Icons.close_rounded,
+                      label: context.tr(
+                        'reading.missed_it',
+                        fallback: 'MISSED IT',
+                      ),
+                      color: Colors.redAccent,
+                      onTap: () => _evaluate(false),
                     ),
-                    color: Colors.redAccent,
-                    onTap: () => _evaluate(false),
                   ),
-                ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: _buildEvalButton(
-                    icon: Icons.check_rounded,
-                    label: context.tr(
-                      'reading.nailed_it',
-                      fallback: 'NAILED IT',
+                  SizedBox(width: 12.w),
+                  Expanded(
+                    child: _buildEvalButton(
+                      icon: Icons.check_rounded,
+                      label: context.tr(
+                        'reading.nailed_it',
+                        fallback: 'NAILED IT',
+                      ),
+                      color: Colors.greenAccent,
+                      onTap: () => _evaluate(true),
                     ),
-                    color: Colors.greenAccent,
-                    onTap: () => _evaluate(true),
                   ),
-                ),
-              ],
-            ),
+                ],
+              );
+            }
+          ),
         ],
       ),
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
