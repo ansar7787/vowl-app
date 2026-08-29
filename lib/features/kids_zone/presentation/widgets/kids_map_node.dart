@@ -532,9 +532,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       : widget.isLocked
                       ? Icon(
                           Icons.lock_rounded,
-                          color: isDark 
-                              ? widget.primaryColor.withValues(alpha: 0.4) 
-                              : widget.primaryColor.withValues(alpha: 0.3),
+                          color: isDark ? Colors.white38 : Colors.black26,
                           size: 24.r,
                         )
                       : Padding(
