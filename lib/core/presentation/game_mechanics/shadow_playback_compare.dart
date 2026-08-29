@@ -71,10 +71,12 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isRecording = false;
-  bool _hasRecorded = false;
-  bool _isPlaying = false;
-  String _playingLabel = '';
+  final ValueNotifier<bool> _isRecording = ValueNotifier(false);
+  final ValueNotifier<bool> _hasRecorded = ValueNotifier(false);
+  final ValueNotifier<bool> _isPlaying = ValueNotifier(false);
+  final ValueNotifier<String> _playingLabel = ValueNotifier('');
+  final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
+
   String? _recordingPath;
   int _playbackSessionId = 0;
   bool _isProcessingAudioAction = false;
@@ -111,6 +113,13 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
       _audioRecorder.stopRecording();
     }
     _soundService.stopTts();
+    
+    _isRecording.dispose();
+    _hasRecorded.dispose();
+    _isPlaying.dispose();
+    _playingLabel.dispose();
+    _isSubmitting.dispose();
+    
     super.dispose();
   }
 
@@ -123,12 +132,13 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
       if (_audioRecorder.isRecording) {
         _audioRecorder.stopRecording();
       }
-      setState(() {
-        _isRecording = false;
-        _hasRecorded = false;
-        _isPlaying = false;
-        _recordingPath = null;
-      });
+      
+      _isRecording.value = false;
+      _hasRecorded.value = false;
+      _isPlaying.value = false;
+      _recordingPath = null;
+      _isSubmitting.value = false;
+      
       _generateWaveforms();
     }
   }
@@ -146,7 +156,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   }
 
   Future<void> _startRecording() async {
-    if (_isPlaying || _isRecording || _isProcessingAudioAction) return;
+    if (_isPlaying.value || _isRecording.value || _isProcessingAudioAction) return;
     _isProcessingAudioAction = true;
 
     try {
@@ -155,11 +165,9 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
         _hapticService.selection();
         final started = await _audioRecorder.startRecording();
         if (started && mounted) {
-          setState(() {
-            _isRecording = true;
-            _hasRecorded = false;
-            _recordingPath = null;
-          });
+          _isRecording.value = true;
+          _hasRecorded.value = false;
+          _recordingPath = null;
         }
       }
     } finally {
@@ -168,7 +176,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   }
 
   Future<void> _stopRecording() async {
-    if (!_isRecording || _isProcessingAudioAction) return;
+    if (!_isRecording.value || _isProcessingAudioAction) return;
     _isProcessingAudioAction = true;
 
     try {
@@ -176,13 +184,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
       final path = await _audioRecorder.stopRecording();
 
       if (mounted) {
-        setState(() {
-          _isRecording = false;
-          if (path != null) {
-            _recordingPath = path;
-            _hasRecorded = true;
-          }
-        });
+        _isRecording.value = false;
+        if (path != null) {
+          _recordingPath = path;
+          _hasRecorded.value = true;
+        }
       }
     } finally {
       _isProcessingAudioAction = false;
@@ -190,14 +196,12 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   }
 
   Future<void> _playModel() async {
-    if (_isPlaying) return;
+    if (_isPlaying.value) return;
     _playbackSessionId++;
     final sessionId = _playbackSessionId;
 
-    setState(() {
-      _isPlaying = true;
-      _playingLabel = 'MODEL';
-    });
+    _playingLabel.value = 'MODEL';
+    _isPlaying.value = true;
     _waveAnimController.forward(from: 0.0);
 
     try {
@@ -210,19 +214,17 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     await Future.delayed(const Duration(milliseconds: 600));
 
     if (mounted && sessionId == _playbackSessionId) {
-      setState(() => _isPlaying = false);
+      _isPlaying.value = false;
     }
   }
 
   Future<void> _playUser() async {
-    if (_isPlaying || _recordingPath == null) return;
+    if (_isPlaying.value || _recordingPath == null) return;
     _playbackSessionId++;
     final sessionId = _playbackSessionId;
 
-    setState(() {
-      _isPlaying = true;
-      _playingLabel = 'YOU';
-    });
+    _playingLabel.value = 'YOU';
+    _isPlaying.value = true;
     _waveAnimController.forward(from: 0.0);
 
     try {
@@ -235,20 +237,18 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     await Future.delayed(const Duration(milliseconds: 600));
 
     if (mounted && sessionId == _playbackSessionId) {
-      setState(() => _isPlaying = false);
+      _isPlaying.value = false;
     }
   }
 
   Future<void> _playBothCompare() async {
-    if (_isPlaying || _recordingPath == null) return;
+    if (_isPlaying.value || _recordingPath == null) return;
     _playbackSessionId++;
     final sessionId = _playbackSessionId;
 
     // Play model first
-    setState(() {
-      _isPlaying = true;
-      _playingLabel = 'MODEL';
-    });
+    _playingLabel.value = 'MODEL';
+    _isPlaying.value = true;
     _waveAnimController.forward(from: 0.0);
 
     try {
@@ -263,7 +263,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
 
     // Then play user
     if (mounted) {
-      setState(() => _playingLabel = 'YOU');
+      _playingLabel.value = 'YOU';
       _waveAnimController.forward(from: 0.0);
 
       try {
@@ -277,21 +277,29 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     await Future.delayed(const Duration(milliseconds: 600));
 
     if (mounted && sessionId == _playbackSessionId) {
-      setState(() => _isPlaying = false);
+      _isPlaying.value = false;
     }
   }
 
   void _handleNailedIt() {
+    if (_isSubmitting.value) return;
+    _isSubmitting.value = true;
+    
     _playbackSessionId++;
-    setState(() => _isPlaying = false);
+    _isPlaying.value = false;
     _soundService.stopTts();
+    
     widget.onConfirmed();
   }
 
   void _handleNeedsWork() {
+    if (_isSubmitting.value) return;
+    _isSubmitting.value = true;
+    
     _playbackSessionId++;
-    setState(() => _isPlaying = false);
+    _isPlaying.value = false;
     _soundService.stopTts();
+    
     widget.onSkipped();
   }
 
@@ -423,194 +431,223 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
               SizedBox(height: 24.h),
 
               // Main interaction area
-              if (!_hasRecorded) ...[
-                // Recording phase
-                GestureDetector(
-                  onTap: () {
-                    if (_isRecording) {
-                      _stopRecording();
-                    } else {
-                      _startRecording();
-                    }
-                  },
-                  child: Container(
-                        width: 80.r,
-                        height: 80.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: _isRecording
-                              ? Colors.redAccent
-                              : widget.primaryColor,
-                          boxShadow: [
-                            BoxShadow(
-                              color: (_isRecording
-                                      ? Colors.redAccent
-                                      : widget.primaryColor)
-                                  .withValues(alpha: 0.4),
-                              blurRadius: 20,
-                              spreadRadius: _isRecording ? 8 : 0,
-                            ),
-                          ],
-                        ),
-                        child: Icon(
-                          _isRecording
-                              ? Icons.stop_rounded
-                              : Icons.mic_rounded,
-                          color: Colors.white,
-                          size: 40.r,
-                        ),
-                      )
-                      .animate(target: _isRecording ? 1 : 0)
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                      ),
-                ),
-                SizedBox(height: 12.h),
-                Text(
-                  _isRecording
-                      ? 'Recording... Tap to stop'
-                      : 'Tap to Record',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: _isRecording ? Colors.redAccent : subtitleColor,
-                  ),
-                ),
-              ] else ...[
-                // Comparison phase with waveforms
-                if (widget.showWaveform) ...[
-                  // Model waveform
-                  _buildWaveformRow(
-                    label: 'MODEL',
-                    waveform: _modelWaveform,
-                    color: widget.primaryColor,
-                    isActive: _isPlaying && _playingLabel == 'MODEL',
-                    onPlay: _playModel,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 12.h),
-
-                  // User waveform
-                  _buildWaveformRow(
-                    label: 'YOU',
-                    waveform: _userWaveform,
-                    color: const Color(0xFF22C55E),
-                    isActive: _isPlaying && _playingLabel == 'YOU',
-                    onPlay: _playUser,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 12.h),
-
-                  // Compare button
-                  if (!_isPlaying)
-                    GestureDetector(
-                      onTap: _playBothCompare,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20.w,
-                          vertical: 10.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color:
-                              widget.primaryColor.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(20.r),
-                          border: Border.all(
-                            color: widget.primaryColor
-                                .withValues(alpha: 0.3),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
+              ValueListenableBuilder<bool>(
+                valueListenable: _hasRecorded,
+                builder: (context, hasRecorded, _) {
+                  if (!hasRecorded) {
+                    // Recording phase
+                    return ValueListenableBuilder<bool>(
+                      valueListenable: _isRecording,
+                      builder: (context, isRecording, _) {
+                        return Column(
                           children: [
-                            Icon(
-                              Icons.play_arrow_rounded,
-                              color: widget.primaryColor,
-                              size: 20.r,
+                            GestureDetector(
+                              onTap: () {
+                                if (isRecording) {
+                                  _stopRecording();
+                                } else {
+                                  _startRecording();
+                                }
+                              },
+                              child: Container(
+                                width: 80.r,
+                                height: 80.r,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: isRecording
+                                      ? Colors.redAccent
+                                      : widget.primaryColor,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: (isRecording
+                                              ? Colors.redAccent
+                                              : widget.primaryColor)
+                                          .withValues(alpha: 0.4),
+                                      blurRadius: 20,
+                                      spreadRadius: isRecording ? 8 : 0,
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  isRecording
+                                      ? Icons.stop_rounded
+                                      : Icons.mic_rounded,
+                                  color: Colors.white,
+                                  size: 40.r,
+                                ),
+                              )
+                              .animate(target: isRecording ? 1 : 0)
+                              .scale(
+                                begin: const Offset(1, 1),
+                                end: const Offset(1.1, 1.1),
+                              ),
                             ),
-                            SizedBox(width: 6.w),
-                            AutoSizeText(
-                              'PLAY COMPARISON',
-                              maxLines: 1,
-                              minFontSize: 8,
+                            SizedBox(height: 12.h),
+                            Text(
+                              isRecording
+                                  ? 'Recording... Tap to stop'
+                                  : 'Tap to Record',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w800,
-                                color: widget.primaryColor,
-                                letterSpacing: 1,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isRecording ? Colors.redAccent : subtitleColor,
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                    ),
-                ] else ...[
-                  // Simplified without waveform (fallback)
-                  if (_isPlaying)
-                    Container(
-                          height: 70.r,
-                          width: 70.r,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: widget.primaryColor
-                                .withValues(alpha: 0.15),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.graphic_eq_rounded,
-                              color: widget.primaryColor,
-                              size: 32.sp,
+                        );
+                      }
+                    );
+                  } else {
+                    // Comparison phase
+                    return ListenableBuilder(
+                      listenable: Listenable.merge([_isPlaying, _playingLabel, _isSubmitting]),
+                      builder: (context, _) {
+                        final isPlaying = _isPlaying.value;
+                        final playingLabel = _playingLabel.value;
+                        final isSubmitting = _isSubmitting.value;
+
+                        return Column(
+                          children: [
+                            if (widget.showWaveform) ...[
+                              // Model waveform
+                              _buildWaveformRow(
+                                label: 'MODEL',
+                                waveform: _modelWaveform,
+                                color: widget.primaryColor,
+                                isActive: isPlaying && playingLabel == 'MODEL',
+                                onPlay: _playModel,
+                                isDark: isDark,
+                                isPlaying: isPlaying,
+                              ),
+                              SizedBox(height: 12.h),
+
+                              // User waveform
+                              _buildWaveformRow(
+                                label: 'YOU',
+                                waveform: _userWaveform,
+                                color: const Color(0xFF22C55E),
+                                isActive: isPlaying && playingLabel == 'YOU',
+                                onPlay: _playUser,
+                                isDark: isDark,
+                                isPlaying: isPlaying,
+                              ),
+                              SizedBox(height: 12.h),
+
+                              // Compare button
+                              if (!isPlaying)
+                                GestureDetector(
+                                  onTap: _playBothCompare,
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20.w,
+                                      vertical: 10.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color:
+                                          widget.primaryColor.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      border: Border.all(
+                                        color: widget.primaryColor
+                                            .withValues(alpha: 0.3),
+                                      ),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.play_arrow_rounded,
+                                          color: widget.primaryColor,
+                                          size: 20.r,
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        AutoSizeText(
+                                          'PLAY COMPARISON',
+                                          maxLines: 1,
+                                          minFontSize: 8,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: widget.primaryColor,
+                                            letterSpacing: 1,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                            ] else ...[
+                              // Simplified without waveform (fallback)
+                              if (isPlaying)
+                                Container(
+                                      height: 70.r,
+                                      width: 70.r,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: widget.primaryColor
+                                            .withValues(alpha: 0.15),
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.graphic_eq_rounded,
+                                          color: widget.primaryColor,
+                                          size: 32.sp,
+                                        ),
+                                      ),
+                                    )
+                                    .animate(
+                                      onPlay: (c) => c.repeat(reverse: true),
+                                    )
+                                    .scale(
+                                      begin: const Offset(0.9, 0.9),
+                                      end: const Offset(1.15, 1.15),
+                                      duration: 600.ms,
+                                    ),
+                            ],
+
+                            SizedBox(height: 20.h),
+
+                            // Self-evaluation buttons
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Expanded(
+                                  child: _buildEvalButton(
+                                    title: 'Needs Work',
+                                    icon: Icons.close_rounded,
+                                    color: Colors.redAccent,
+                                    onTap: isSubmitting ? () {} : _handleNeedsWork,
+                                  ),
+                                ),
+                                SizedBox(width: 16.w),
+                                Expanded(
+                                  child: _buildEvalButton(
+                                    title: 'Nailed It',
+                                    icon: Icons.check_rounded,
+                                    color: Colors.greenAccent,
+                                    onTap: isSubmitting ? () {} : _handleNailedIt,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        )
-                        .animate(
-                          onPlay: (c) => c.repeat(reverse: true),
-                        )
-                        .scale(
-                          begin: const Offset(0.9, 0.9),
-                          end: const Offset(1.15, 1.15),
-                          duration: 600.ms,
-                        ),
-                ],
-
-                SizedBox(height: 20.h),
-
-                // Self-evaluation buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      child: _buildEvalButton(
-                        title: 'Needs Work',
-                        icon: Icons.close_rounded,
-                        color: Colors.redAccent,
-                        onTap: _handleNeedsWork,
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
-                    Expanded(
-                      child: _buildEvalButton(
-                        title: 'Nailed It',
-                        icon: Icons.check_rounded,
-                        color: Colors.greenAccent,
-                        onTap: _handleNailedIt,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 12.h),
-                Text(
-                  'Be honest! Did you match the native speaker?',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w500,
-                    color: subtitleColor,
-                  ),
-                ),
-              ],
+                            SizedBox(height: 12.h),
+                            Text(
+                              'Be honest! Did you match the native speaker?',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w500,
+                                color: subtitleColor,
+                              ),
+                            ),
+                          ]
+                        );
+                      }
+                    );
+                  }
+                }
+              ),
             ],
           ),
         ),
@@ -644,9 +681,10 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     required bool isActive,
     required VoidCallback onPlay,
     required bool isDark,
+    required bool isPlaying,
   }) {
     return GestureDetector(
-      onTap: _isPlaying ? null : onPlay,
+      onTap: isPlaying ? null : onPlay,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
         decoration: BoxDecoration(
