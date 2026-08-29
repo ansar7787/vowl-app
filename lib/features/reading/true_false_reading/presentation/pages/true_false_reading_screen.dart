@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -17,7 +17,7 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {
   final int level;

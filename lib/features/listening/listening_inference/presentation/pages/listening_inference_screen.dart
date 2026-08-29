@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_instruction.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {

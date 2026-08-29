@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -15,7 +15,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_oscilloscope.dart';
 import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AudioSentenceOrderScreen extends StatefulWidget {

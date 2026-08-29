@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -12,7 +12,7 @@ import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
 import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -178,7 +178,7 @@ class _QuestLoadingPlaceholder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Loading question…',
+      label: 'Loading questionâ€¦',
       child: const SizedBox.expand(),
     );
   }

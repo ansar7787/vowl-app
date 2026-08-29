@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,7 @@ import 'package:vowl/features/listening/audio_true_false/presentation/widgets/au
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_polarized_filters.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AudioTrueFalseScreen extends StatefulWidget {

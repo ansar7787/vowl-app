@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -18,12 +18,12 @@ import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/a
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_input.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/blind_dictation_wrapper.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Constants
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 /// Height threshold below which the compact layout variant is used.
 const double _kCompactHeightThreshold = 580.0;
@@ -54,17 +54,17 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   final _soundService = di.sl<SoundService>();
   final _controller = TextEditingController();
 
-  // ── Local UI state (synced from BLoC listener) ────────────────────────────
+  // â”€â”€ Local UI state (synced from BLoC listener) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   double _revealProgress = 0.0;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
 
-  // ── Change-tracking helpers ───────────────────────────────────────────────
+  // â”€â”€ Change-tracking helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
-  // ─────────────────────────────────────────────────────────────────────────
+  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
   void initState() {
@@ -80,7 +80,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     super.dispose();
   }
 
-  // ── Gesture handler ───────────────────────────────────────────────────────
+  // â”€â”€ Gesture handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _onSmear(double delta) {
     if (_isAnswered) return;
@@ -90,7 +90,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     });
   }
 
-  // ── Submit answer ─────────────────────────────────────────────────────────
+  // â”€â”€ Submit answer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _submitAnswer(String? correct) {
     // Guard: already answered, empty / whitespace-only input, or no answer key.
@@ -143,7 +143,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     context.read<ListeningBloc>().add(SubmitAnswer(isCorrect));
   }
 
-  // ── TTS playback ──────────────────────────────────────────────────────────
+  // â”€â”€ TTS playback â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _playAudio(String? textToSpeak) {
     final text = textToSpeak?.trim();
@@ -152,7 +152,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     _hapticService.selection();
   }
 
-  // ── Reset local state for the next question ───────────────────────────────
+  // â”€â”€ Reset local state for the next question â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _resetForNextQuestion(int newIndex) {
     setState(() {
@@ -164,12 +164,12 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     });
   }
 
-  // ─────────────────────────────────────────────────────────────────────────
+  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // FIX: use widget.gameType.name — not the hardcoded 'listening' string.
+    // FIX: use widget.gameType.name â€” not the hardcoded 'listening' string.
     final theme = LevelThemeHelper.getTheme(
       widget.gameType.name,
       isDark: isDark,
@@ -180,7 +180,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered && !state.answerStatus.isAnswered;
-          // Detect a life-restore (lives increased, e.g. 0 → 1).
+          // Detect a life-restore (lives increased, e.g. 0 â†’ 1).
           final isLifeRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
@@ -269,7 +269,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
 // =============================================================================
 // _AudioFillBlanksContent
 //
-// Extracted layout widget — handles the adaptive gap / compact-mode logic
+// Extracted layout widget â€” handles the adaptive gap / compact-mode logic
 // and composes all sub-widgets. Keeping it private (underscore) as it is
 // tightly coupled to this feature's UX.
 // =============================================================================

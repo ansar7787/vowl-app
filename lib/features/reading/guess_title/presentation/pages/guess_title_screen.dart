@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -15,7 +15,7 @@ import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_tit
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_result.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_options.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 
 class GuessTitleScreen extends StatefulWidget {
   final int level;

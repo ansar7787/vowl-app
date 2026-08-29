@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,7 @@ import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/fin
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_result.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_interactive_passage.dart';
 import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
-import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/core/services/error_journal_collector.dart';
 
 class FindWordMeaningScreen extends StatefulWidget {
   final int level;
