@@ -317,7 +317,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
               ? Colors.amber.shade600
               : isNextZone
               ? Colors.amber.withValues(alpha: 0.4)
-              : Colors.white24,
+              : widget.theme.primaryColor.withValues(alpha: widget.isDark ? 0.3 : 0.2),
           width: 3.r,
         ),
       ),

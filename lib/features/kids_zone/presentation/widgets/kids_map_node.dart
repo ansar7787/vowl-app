@@ -502,7 +502,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       : widget.isNextZone
                       ? Colors.amber.shade100.withValues(alpha: 0.5)
                       : widget.isLocked
-                      ? (isDark ? Colors.grey[800] : Colors.grey[200])
+                      ? (isDark 
+                          ? widget.primaryColor.withValues(alpha: 0.2) 
+                          : widget.primaryColor.withValues(alpha: 0.15))
                       : widget.primaryColor,
                   border: Border.all(
                     color: widget.isTollGate
@@ -530,7 +532,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       : widget.isLocked
                       ? Icon(
                           Icons.lock_rounded,
-                          color: isDark ? Colors.white24 : Colors.black12,
+                          color: isDark 
+                              ? widget.primaryColor.withValues(alpha: 0.4) 
+                              : widget.primaryColor.withValues(alpha: 0.3),
                           size: 24.r,
                         )
                       : Padding(
