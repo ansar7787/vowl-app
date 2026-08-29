@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class FlashcardSwipeFront extends StatefulWidget {
@@ -26,6 +29,10 @@ class FlashcardSwipeFront extends StatefulWidget {
 
 class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
   late final ScrollController _scrollController;
+  final HapticService _hapticService = di.sl<HapticService>();
+  
+  bool _hasHitTop = true;
+  bool _hasHitBottom = false;
 
   @override
   void initState() {
@@ -53,23 +60,29 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
           border: Border.all(
             color: widget.isDark
                 ? Colors.white10
-                : widget.color.withValues(alpha: 0.15),
-            width: 1,
+                : widget.color.withValues(alpha: 0.2),
+            width: 1.5,
           ),
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
-              color: Colors.black26,
-              blurRadius: 25,
-              offset: Offset(0, 10),
+              color: widget.color.withValues(alpha: 0.15),
+              blurRadius: 40,
+              offset: const Offset(0, 15),
+              spreadRadius: -5,
+            ),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: widget.isDark ? 0.4 : 0.08),
+              blurRadius: 20,
+              offset: const Offset(0, 10),
             ),
           ],
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24.r),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final compactHeight = constraints.maxHeight < 260;
-              final compactWidth = constraints.maxWidth < 290;
+          child: Builder(
+            builder: (context) {
+              final compactHeight = widget.height < 260;
+              final compactWidth = widget.width < 290;
 
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
@@ -96,33 +109,66 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                     Flexible(
                       flex: 6,
                       child: Center(
-                        child: RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: widget.color.withValues(alpha: 0.4),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          crossAxisMargin: -16
-                              .w, // Push scrollbar to the very edge of the card
-                          child: SingleChildScrollView(
+                        child: AutoSizeText(
+                          widget.quest.hint ?? widget.quest.instruction,
+                          textAlign: TextAlign.center,
+                          minFontSize: 14,
+                          wrapWords: false,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: compactWidth ? 18.sp : 22.sp,
+                            fontWeight: FontWeight.w600,
+                            color: widget.isDark
+                                ? Colors.white
+                                : Colors.black87,
+                            height: 1.4,
+                          ),
+                          overflowReplacement: RawScrollbar(
                             controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            child: Text(
-                              widget.quest.hint ?? widget.quest.instruction,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: compactWidth
-                                    ? 18.sp
-                                    : 22.sp, // Standardized
-                                fontWeight:
-                                    FontWeight.w600, // Reduced from w700
-                                color: widget.isDark
-                                    ? Colors.white
-                                    : Colors.black87,
-                                height:
-                                    1.4, // Increased line height for readability
+                            thumbColor: widget.color.withValues(alpha: 0.4),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            crossAxisMargin: -16.w,
+                            child: NotificationListener<ScrollNotification>(
+                              onNotification: (notification) {
+                                if (notification is OverscrollNotification) {
+                                  if (notification.overscroll < 0) {
+                                    if (!_hasHitTop) {
+                                      _hasHitTop = true;
+                                      _hapticService.heavy();
+                                    }
+                                  } else if (notification.overscroll > 0) {
+                                    if (!_hasHitBottom) {
+                                      _hasHitBottom = true;
+                                      _hapticService.heavy();
+                                    }
+                                  }
+                                } else if (notification is ScrollUpdateNotification) {
+                                  if (!notification.metrics.outOfRange && !notification.metrics.atEdge) {
+                                    _hasHitTop = false;
+                                    _hasHitBottom = false;
+                                  }
+                                }
+                                return false;
+                              },
+                              child: SingleChildScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                              child: Text(
+                                widget.quest.hint ?? widget.quest.instruction,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: widget.isDark
+                                      ? Colors.white
+                                      : Colors.black87,
+                                  height: 1.4,
+                                ),
                               ),
                             ),
+                          ),
                           ),
                         ),
                       ),
