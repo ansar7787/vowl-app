@@ -9,11 +9,10 @@ class SynonymWordShard extends StatelessWidget {
   final Color color;
   final bool isDark;
   final Offset initialPos;
-  final Offset offset;
-  final bool isWarping;
-  final bool isActive;
-  final double safeWidth;
-  final double safeHeight;
+  final ValueNotifier<Offset> offsetNotifier;
+  final ValueNotifier<bool> isWarpingNotifier;
+  final ValueNotifier<int?> activeIndexNotifier;
+  final bool isCompact;
   final Function(DragStartDetails) onPanStart;
   final Function(DragUpdateDetails) onPanUpdate;
   final VoidCallback onPanEnd;
@@ -26,11 +25,10 @@ class SynonymWordShard extends StatelessWidget {
     required this.color,
     required this.isDark,
     required this.initialPos,
-    required this.offset,
-    required this.isWarping,
-    required this.isActive,
-    required this.safeWidth,
-    required this.safeHeight,
+    required this.offsetNotifier,
+    required this.isWarpingNotifier,
+    required this.activeIndexNotifier,
+    required this.isCompact,
     required this.onPanStart,
     required this.onPanUpdate,
     required this.onPanEnd,
@@ -39,16 +37,36 @@ class SynonymWordShard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      left: safeWidth / 2 + initialPos.dx + offset.dx - 45.w,
-      top: safeHeight / 2 + initialPos.dy + offset.dy - 35.h,
+    final width = isCompact ? 80.w : 100.w;
+    final height = isCompact ? 55.h : 70.h;
+    final fontSize = isCompact ? 10.sp : 12.sp;
+    final padding = isCompact ? 4.r : 8.r;
+
+    return ValueListenableBuilder<Offset>(
+      valueListenable: offsetNotifier,
+      builder: (context, offset, child) {
+        return Positioned(
+          left: initialPos.dx + offset.dx,
+          top: initialPos.dy + offset.dy,
+          child: FractionalTranslation(
+            translation: const Offset(-0.5, -0.5),
+            child: child,
+          ),
+        );
+      },
       child: GestureDetector(
         onPanStart: onPanStart,
         onPanUpdate: onPanUpdate,
         onPanEnd: (_) => onPanEnd(),
         onTap: onTap,
-        child:
-            TweenAnimationBuilder<double>(
+        child: ValueListenableBuilder<bool>(
+          valueListenable: isWarpingNotifier,
+          builder: (context, isWarping, _) {
+            return ValueListenableBuilder<int?>(
+              valueListenable: activeIndexNotifier,
+              builder: (context, activeIndex, _) {
+                final isActive = activeIndex == index;
+                return TweenAnimationBuilder<double>(
                   duration: 400.ms,
                   curve: Curves.easeOutBack,
                   tween: Tween(
@@ -63,8 +81,8 @@ class SynonymWordShard extends StatelessWidget {
                     ),
                   ),
                   child: Container(
-                    width: 90.w,
-                    height: 70.h,
+                    width: width,
+                    height: height,
                     decoration: BoxDecoration(
                       color: isDark ? const Color(0xFF1E293B) : Colors.white,
                       borderRadius: BorderRadius.circular(18.r),
@@ -88,13 +106,13 @@ class SynonymWordShard extends StatelessWidget {
                           opacity: 0.15,
                           child: RepaintBoundary(
                             child: CustomPaint(
-                              size: Size(90.w, 70.h),
+                              size: Size(width, height),
                               painter: TechPatternPainter(color),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(8.r),
+                          padding: EdgeInsets.all(padding),
                           child: Text(
                             text.toUpperCase(),
                             textAlign: TextAlign.center,
@@ -102,7 +120,7 @@ class SynonymWordShard extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 12.sp,
+                              fontSize: fontSize,
                               color: isDark ? Colors.white : Colors.black87,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1,
@@ -112,21 +130,25 @@ class SynonymWordShard extends StatelessWidget {
                       ],
                     ),
                   ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(
-                  begin: -8,
-                  end: 8,
-                  duration: (2 + index * 0.5).seconds,
-                  curve: Curves.easeInOut,
-                )
-                .rotate(
-                  begin: -0.02,
-                  end: 0.02,
-                  duration: (3 + index).seconds,
-                  curve: Curves.easeInOut,
-                ),
-      ),
+                );
+              },
+            );
+          },
+        ),
+      ).animate(onPlay: (c) => c.repeat(reverse: true))
+       .moveY(
+         begin: -8,
+         end: 8,
+         duration: (2 + index * 0.5).seconds,
+         curve: Curves.easeInOut,
+       )
+       .rotate(
+         begin: -0.02,
+         end: 0.02,
+         duration: (3 + index).seconds,
+         curve: Curves.easeInOut,
+       ),
     );
   }
 }
+
