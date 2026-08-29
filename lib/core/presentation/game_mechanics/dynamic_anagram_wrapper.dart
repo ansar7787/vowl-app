@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/services.dart';
+import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
@@ -65,6 +67,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
   void _onAvailableTileTapped(_Tile tile) {
     if (_isSubmitting) return;
     if (_hasError) setState(() => _hasError = false);
+    HapticFeedback.lightImpact();
 
     int emptyIndex = _placedTiles.indexWhere((t) => t == null);
     if (emptyIndex != -1) {
@@ -78,6 +81,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
         String currentWord = _placedTiles.map((t) => t!.letter).join('');
         if (currentWord == widget.expectedText.toUpperCase().trim()) {
           _onSubmit();
+        } else {
+          HapticFeedback.heavyImpact();
+          setState(() => _hasError = true);
         }
       }
     }
@@ -89,6 +95,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
 
     _Tile? tile = _placedTiles[index];
     if (tile != null && tile.id != -1) {
+      HapticFeedback.lightImpact();
       // -1 is a fixed space character
       setState(() {
         _placedTiles[index] = null;
@@ -114,12 +121,14 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
   void _onSubmit() {
     if (_isSubmitting) return;
     if (_placedTiles.contains(null)) {
+      HapticFeedback.heavyImpact();
       setState(() => _hasError = true);
       return;
     }
 
     String currentWord = _placedTiles.map((t) => t!.letter).join('');
     if (currentWord == widget.expectedText.toUpperCase().trim()) {
+      HapticFeedback.mediumImpact();
       setState(() => _isSubmitting = true);
       if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
         context.read<EconomyBloc>().add(
@@ -128,11 +137,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
       }
       widget.onConfirmed();
     } else {
+      HapticFeedback.heavyImpact();
       setState(() {
         _hasError = true;
         _isSubmitting = true;
       });
-      Future.delayed(200.ms, () {
+      Future.delayed(400.ms, () {
         if (!mounted) return;
         if (widget.onFailedWithSpelling != null) {
           widget.onFailedWithSpelling!(currentWord);
@@ -153,309 +163,332 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
 
     final content = Material(
       type: MaterialType.transparency,
-      child: Container(
-        padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
-                  decoration: BoxDecoration(
-                    color: bgColor,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(32.r),
-                    ),
-                    border: Border.all(
-                      color: _hasError
-                          ? errorColor.withValues(alpha: 0.5)
-                          : widget.primaryColor.withValues(alpha: 0.2),
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: _hasError
-                            ? errorColor.withValues(alpha: 0.15)
-                            : widget.primaryColor.withValues(alpha: 0.15),
-                        blurRadius: 30,
-                        offset: const Offset(0, -8),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // Dynamic constraint calculation to prevent Overflow on tiny screens
+          final availableWidth = constraints.maxWidth > 0 
+              ? constraints.maxWidth 
+              : MediaQuery.of(context).size.width;
+              
+          final int maxCharsPerLine = math.min(_placedTiles.length, 9);
+          final double horizontalPadding = 48.w; // 24.w on each side
+          final double tileSpacing = 6.w;
+          
+          double calcWidth = (availableWidth - horizontalPadding - (maxCharsPerLine * tileSpacing)) / maxCharsPerLine;
+          // Clamp tile sizes so they never look absurdly small or large
+          final double tileW = calcWidth.clamp(28.w, 44.w);
+          final double tileH = tileW * 1.25;
+
+          return Container(
+            padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(32.r),
+              ),
+              border: Border.all(
+                color: _hasError
+                    ? errorColor.withValues(alpha: 0.5)
+                    : widget.primaryColor.withValues(alpha: 0.2),
+                width: 1.5,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: _hasError
+                      ? errorColor.withValues(alpha: 0.15)
+                      : widget.primaryColor.withValues(alpha: 0.15),
+                  blurRadius: 30,
+                  offset: const Offset(0, -8),
+                ),
+              ],
+            ),
+            child: SafeArea(
+              top: false,
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Handle bar
+                    Container(
+                      width: 48.w,
+                      height: 4.h,
+                      decoration: BoxDecoration(
+                        color: subtitleColor.withValues(alpha: 0.3),
+                        borderRadius: BorderRadius.circular(2.r),
                       ),
-                    ],
-                  ),
-                  child: SafeArea(
-                    top: false,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                    ),
+                    SizedBox(height: 16.h),
+
+                    // Header
+                    Row(
                       children: [
-                        // Handle bar
                         Container(
-                          width: 48.w,
-                          height: 4.h,
+                          padding: EdgeInsets.all(10.r),
                           decoration: BoxDecoration(
-                            color: subtitleColor.withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(2.r),
+                            color: widget.primaryColor.withValues(
+                              alpha: 0.12,
+                            ),
+                            borderRadius: BorderRadius.circular(14.r),
+                          ),
+                          child: Icon(
+                            Icons.spellcheck_rounded,
+                            color: widget.primaryColor,
+                            size: 22.r,
                           ),
                         ),
-                        SizedBox(height: 16.h),
-
-                        // Header
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10.r),
-                              decoration: BoxDecoration(
-                                color: widget.primaryColor.withValues(
-                                  alpha: 0.12,
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              AutoSizeText(
+                                widget.title ?? 'NOW SPELL IT!',
+                                maxLines: 1,
+                                minFontSize: 4,
+                                stepGranularity: 0.5,
+                                overflow: TextOverflow.visible,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: widget.primaryColor,
+                                  letterSpacing: 2,
                                 ),
-                                borderRadius: BorderRadius.circular(14.r),
                               ),
-                              child: Icon(
-                                Icons.spellcheck_rounded,
-                                color: widget.primaryColor,
-                                size: 22.r,
+                              SizedBox(height: 2.h),
+                              AutoSizeText(
+                                widget.subtitle ??
+                                    'Tap the letters in the correct order',
+                                maxLines: 2,
+                                minFontSize: 4,
+                                stepGranularity: 0.5,
+                                overflow: TextOverflow.visible,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: subtitleColor,
+                                ),
                               ),
+                            ],
+                          ),
+                        ),
+                        if (widget.bonusCoins != null)
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 4.h,
                             ),
-                            SizedBox(width: 12.w),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  AutoSizeText(
-                                    widget.title ?? 'NOW SPELL IT!',
-                                    maxLines: 1,
-                                    minFontSize: 4,
-                                    stepGranularity: 0.5,
-                                    overflow: TextOverflow.visible,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: widget.primaryColor,
-                                      letterSpacing: 2,
-                                    ),
-                                  ),
-                                  SizedBox(height: 2.h),
-                                  AutoSizeText(
-                                    widget.subtitle ??
-                                        'Tap the letters in the correct order',
-                                    maxLines: 2,
-                                    minFontSize: 4,
-                                    stepGranularity: 0.5,
-                                    overflow: TextOverflow.visible,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w500,
-                                      color: subtitleColor,
-                                    ),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  widget.primaryColor,
+                                  widget.primaryColor.withValues(
+                                    alpha: 0.7,
                                   ),
                                 ],
                               ),
+                              borderRadius: BorderRadius.circular(20.r),
                             ),
-                            if (widget.bonusCoins != null)
-                              Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 10.w,
-                                  vertical: 4.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      widget.primaryColor,
-                                      widget.primaryColor.withValues(
-                                        alpha: 0.7,
-                                      ),
-                                    ],
-                                  ),
-                                  borderRadius: BorderRadius.circular(20.r),
-                                ),
-                                child: AutoSizeText(
-                                  '+${widget.bonusCoins} Coins',
-                                  maxLines: 1,
-                                  minFontSize: 4,
-                                  stepGranularity: 0.5,
-                                  overflow: TextOverflow.visible,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.white,
-                                    letterSpacing: 1,
-                                  ),
-                                ),
-                              ),
-                          ],
-                        ),
-                        // Clear All button (only show when tiles are placed)
-                        if (_placedTiles.any((t) => t != null && t.id != -1) && !_isSubmitting)
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.h),
-                            child: GestureDetector(
-                              onTap: _clearAll,
-                              child: Text(
-                                'CLEAR ALL',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: subtitleColor,
-                                  letterSpacing: 1.5,
-                                ),
+                            child: AutoSizeText(
+                              '+${widget.bonusCoins} Coins',
+                              maxLines: 1,
+                              minFontSize: 4,
+                              stepGranularity: 0.5,
+                              overflow: TextOverflow.visible,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                                letterSpacing: 1,
                               ),
                             ),
                           ),
-                        SizedBox(height: 24.h),
+                      ],
+                    ),
+                    // Clear All button (only show when tiles are placed)
+                    if (_placedTiles.any((t) => t != null && t.id != -1) && !_isSubmitting)
+                      Padding(
+                        padding: EdgeInsets.only(top: 8.h),
+                        child: GestureDetector(
+                          onTap: _clearAll,
+                          child: Text(
+                            'CLEAR ALL',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              color: subtitleColor,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                        ),
+                      ),
+                    SizedBox(height: 24.h),
 
-                        // Placed Tiles (Slots)
-                        Wrap(
-                              spacing: 8.w,
-                              runSpacing: 8.h,
-                              alignment: WrapAlignment.center,
-                              children: List.generate(_placedTiles.length, (
-                                index,
-                              ) {
-                                final tile = _placedTiles[index];
-                                if (tile != null && tile.id == -1) {
-                                  // Render empty space for multi-word answers
-                                  return SizedBox(width: 16.w, height: 40.h);
-                                }
-                                return GestureDetector(
-                                  onTap: () => _onPlacedTileTapped(index),
-                                  child: Container(
-                                    width: 40.w,
-                                    height: 48.h,
-                                    decoration: BoxDecoration(
-                                      color: tile != null
-                                          ? widget.primaryColor.withValues(
-                                              alpha: 0.1,
-                                            )
-                                          : (isDark
-                                                ? Colors.white10
-                                                : Colors.black.withValues(
-                                                    alpha: 0.05,
-                                                  )),
-                                      borderRadius: BorderRadius.circular(8.r),
-                                      border: Border.all(
-                                        color: tile != null
-                                            ? widget.primaryColor.withValues(
-                                                alpha: 0.5,
-                                              )
-                                            : Colors.transparent,
-                                      ),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: tile != null
-                                        ? AutoSizeText(
-                                            tile.letter,
-                                            maxLines: 1,
-                                            minFontSize: 4,
-                                            stepGranularity: 0.5,
-                                            overflow: TextOverflow.visible,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 20.sp,
-                                              fontWeight: FontWeight.bold,
-                                              color: textColor,
-                                            ),
-                                          )
-                                        : null,
-                                  ),
-                                );
-                              }),
-                            )
-                            .animate(target: _hasError ? 1 : 0)
-                            .shakeX(amount: 5, duration: 400.ms),
-
-                        SizedBox(height: 24.h),
-
-                        // Available Tiles
-                        Wrap(
-                          spacing: 8.w,
-                          runSpacing: 8.h,
+                    // Placed Tiles (Slots)
+                    Wrap(
+                          spacing: tileSpacing,
+                          runSpacing: tileSpacing,
                           alignment: WrapAlignment.center,
-                          children: _availableTiles.map((tile) {
+                          children: List.generate(_placedTiles.length, (
+                            index,
+                          ) {
+                            final tile = _placedTiles[index];
+                            if (tile != null && tile.id == -1) {
+                              // Render empty space for multi-word answers
+                              return SizedBox(key: ValueKey('space_$index'), width: tileW * 0.4, height: tileH);
+                            }
                             return GestureDetector(
-                              onTap: () => _onAvailableTileTapped(tile),
+                              key: tile != null ? ValueKey('placed_${tile.id}') : ValueKey('empty_$index'),
+                              onTap: () => _onPlacedTileTapped(index),
                               child: Container(
-                                width: 40.w,
-                                height: 48.h,
+                                width: tileW,
+                                height: tileH,
                                 decoration: BoxDecoration(
-                                  color: isDark
-                                      ? const Color(0xFF1E1E2C)
-                                      : Colors.white,
+                                  color: tile != null
+                                      ? widget.primaryColor.withValues(
+                                          alpha: 0.1,
+                                        )
+                                      : (isDark
+                                            ? Colors.white10
+                                            : Colors.black.withValues(
+                                                alpha: 0.05,
+                                              )),
                                   borderRadius: BorderRadius.circular(8.r),
                                   border: Border.all(
-                                    color: subtitleColor.withValues(alpha: 0.2),
+                                    color: tile != null
+                                        ? widget.primaryColor.withValues(
+                                            alpha: 0.5,
+                                          )
+                                        : Colors.transparent,
                                   ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withValues(
-                                        alpha: 0.05,
-                                      ),
-                                      blurRadius: 4,
-                                      offset: const Offset(0, 2),
-                                    ),
-                                  ],
                                 ),
                                 alignment: Alignment.center,
-                                child: AutoSizeText(
-                                  tile.letter,
-                                  maxLines: 1,
-                                  minFontSize: 4,
-                                  stepGranularity: 0.5,
-                                  overflow: TextOverflow.visible,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: textColor,
-                                  ),
-                                ),
+                                child: tile != null
+                                    ? AutoSizeText(
+                                        tile.letter,
+                                        maxLines: 1,
+                                        minFontSize: 4,
+                                        stepGranularity: 0.5,
+                                        overflow: TextOverflow.visible,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 20.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: textColor,
+                                        ),
+                                      ).animate(key: ValueKey('anim_placed_${tile.id}')).scaleXY(begin: 0.7, end: 1.0, curve: Curves.easeOutBack, duration: 250.ms)
+                                    : null,
                               ),
                             );
-                          }).toList(),
-                        ),
+                          }),
+                        )
+                        .animate(target: _hasError ? 1 : 0)
+                        .shakeX(amount: 5, duration: 400.ms),
 
-                        SizedBox(height: 32.h),
+                    SizedBox(height: 24.h),
 
-                        // Controls
-                        Row(
-                          children: [
-                            Expanded(
-                              child: ElevatedButton(
-                                onPressed:
-                                    (_placedTiles.contains(null) ||
-                                        _isSubmitting)
-                                    ? null
-                                    : _onSubmit,
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: _hasError
-                                      ? errorColor
-                                      : widget.primaryColor,
-                                  padding: EdgeInsets.symmetric(vertical: 16.h),
-                                  elevation: 0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16.r),
+                    // Available Tiles
+                    Wrap(
+                      spacing: tileSpacing,
+                      runSpacing: tileSpacing,
+                      alignment: WrapAlignment.center,
+                      children: _availableTiles.map((tile) {
+                        return GestureDetector(
+                          key: ValueKey('avail_${tile.id}'),
+                          onTap: () => _onAvailableTileTapped(tile),
+                          child: Container(
+                            width: tileW,
+                            height: tileH,
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? const Color(0xFF1E1E2C)
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(8.r),
+                              border: Border.all(
+                                color: subtitleColor.withValues(alpha: 0.2),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(
+                                    alpha: 0.05,
                                   ),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 2),
                                 ),
-                                child: AutoSizeText(
-                                  'Submit',
-                                  maxLines: 1,
-                                  minFontSize: 4,
-                                  stepGranularity: 0.5,
-                                  overflow: TextOverflow.visible,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                              ],
+                            ),
+                            alignment: Alignment.center,
+                            child: AutoSizeText(
+                              tile.letter,
+                              maxLines: 1,
+                              minFontSize: 4,
+                              stepGranularity: 0.5,
+                              overflow: TextOverflow.visible,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.bold,
+                                color: textColor,
                               ),
                             ),
-                          ],
+                          ),
+                        ).animate(key: ValueKey('anim_avail_${tile.id}')).scaleXY(begin: 0.9, end: 1.0, curve: Curves.easeOutBack, duration: 200.ms);
+                      }).toList(),
+                    ),
+
+                    SizedBox(height: 32.h),
+
+                    // Controls
+                    Row(
+                      children: [
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed:
+                                (_placedTiles.contains(null) ||
+                                    _isSubmitting)
+                                ? null
+                                : _onSubmit,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: _hasError
+                                  ? errorColor
+                                  : widget.primaryColor,
+                              padding: EdgeInsets.symmetric(vertical: 16.h),
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.r),
+                              ),
+                            ),
+                            child: AutoSizeText(
+                              'Submit',
+                              maxLines: 1,
+                              minFontSize: 4,
+                              stepGranularity: 0.5,
+                              overflow: TextOverflow.visible,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
-                  ),
+                  ],
                 ),
-              )
-              .animate()
-              .slideY(
+              ),
+            ),
+          );
+        },
+      ),
+    )
+    .animate()
+    .slideY(
                 begin: 1.0,
                 end: 0,
                 duration: 400.ms,
