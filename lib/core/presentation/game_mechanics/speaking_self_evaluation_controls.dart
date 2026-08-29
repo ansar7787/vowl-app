@@ -36,10 +36,11 @@ class _SpeakingSelfEvaluationControlsState
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isRecording = false;
-  bool _hasRecorded = false;
-  bool _isPlaying = false;
-  String _playingContext = "";
+  final ValueNotifier<bool> _isRecording = ValueNotifier(false);
+  final ValueNotifier<bool> _hasRecorded = ValueNotifier(false);
+  final ValueNotifier<bool> _isPlaying = ValueNotifier(false);
+  final ValueNotifier<String> _playingContext = ValueNotifier("");
+  
   bool _isProcessingAudioAction = false;
   String? _recordingPath;
   int _playbackSessionId = 0;
@@ -62,6 +63,10 @@ class _SpeakingSelfEvaluationControlsState
       _audioRecorder.stopRecording();
     }
     _soundService.stopTts();
+    _isRecording.dispose();
+    _hasRecorded.dispose();
+    _isPlaying.dispose();
+    _playingContext.dispose();
     super.dispose();
   }
 
@@ -74,17 +79,15 @@ class _SpeakingSelfEvaluationControlsState
       if (_audioRecorder.isRecording) {
         _audioRecorder.stopRecording();
       }
-      setState(() {
-        _isRecording = false;
-        _hasRecorded = false;
-        _isPlaying = false;
-        _recordingPath = null;
-      });
+      _isRecording.value = false;
+      _hasRecorded.value = false;
+      _isPlaying.value = false;
+      _recordingPath = null;
     }
   }
 
   Future<void> _startRecording() async {
-    if (_isPlaying || _isRecording || _isProcessingAudioAction) return;
+    if (_isPlaying.value || _isRecording.value || _isProcessingAudioAction) return;
     _isProcessingAudioAction = true;
 
     try {
@@ -93,11 +96,9 @@ class _SpeakingSelfEvaluationControlsState
         _hapticService.selection();
         final started = await _audioRecorder.startRecording();
         if (started && mounted) {
-          setState(() {
-            _isRecording = true;
-            _hasRecorded = false;
-            _recordingPath = null;
-          });
+          _isRecording.value = true;
+          _hasRecorded.value = false;
+          _recordingPath = null;
         }
       }
     } finally {
@@ -106,7 +107,7 @@ class _SpeakingSelfEvaluationControlsState
   }
 
   Future<void> _stopRecording() async {
-    if (!_isRecording || _isProcessingAudioAction) return;
+    if (!_isRecording.value || _isProcessingAudioAction) return;
     _isProcessingAudioAction = true;
 
     try {
@@ -114,13 +115,11 @@ class _SpeakingSelfEvaluationControlsState
       final path = await _audioRecorder.stopRecording();
 
       if (mounted) {
-        setState(() {
-          _isRecording = false;
-          if (path != null) {
-            _recordingPath = path;
-            _hasRecorded = true;
-          }
-        });
+        _isRecording.value = false;
+        if (path != null) {
+          _recordingPath = path;
+          _hasRecorded.value = true;
+        }
       }
     } finally {
       _isProcessingAudioAction = false;
@@ -128,14 +127,12 @@ class _SpeakingSelfEvaluationControlsState
   }
 
   Future<void> _playComparison() async {
-    if (_isPlaying || _recordingPath == null) return;
+    if (_isPlaying.value || _recordingPath == null) return;
     _playbackSessionId++;
     final sessionId = _playbackSessionId;
 
-    setState(() {
-      _isPlaying = true;
-      _playingContext = "Playing comparison...";
-    });
+    _isPlaying.value = true;
+    _playingContext.value = "Playing comparison...";
 
     try {
       await _soundService
@@ -163,19 +160,18 @@ class _SpeakingSelfEvaluationControlsState
     }
 
     if (mounted && sessionId == _playbackSessionId) {
-      setState(() => _isPlaying = false);
+      _isPlaying.value = false;
     }
   }
 
   Future<void> _playNative() async {
-    if (_isPlaying) return;
+    if (_isPlaying.value) return;
     _playbackSessionId++;
     final sessionId = _playbackSessionId;
 
-    setState(() {
-      _isPlaying = true;
-      _playingContext = "Playing native voice...";
-    });
+    _isPlaying.value = true;
+    _playingContext.value = "Playing native voice...";
+
     try {
       await _soundService
           .playTts(widget.expectedText)
@@ -186,20 +182,19 @@ class _SpeakingSelfEvaluationControlsState
       // Ignore playback/TTS errors so UI doesn't get stuck
     } finally {
       if (mounted && sessionId == _playbackSessionId) {
-        setState(() => _isPlaying = false);
+        _isPlaying.value = false;
       }
     }
   }
 
   Future<void> _playUser() async {
-    if (_isPlaying || _recordingPath == null) return;
+    if (_isPlaying.value || _recordingPath == null) return;
     _playbackSessionId++;
     final sessionId = _playbackSessionId;
 
-    setState(() {
-      _isPlaying = true;
-      _playingContext = "Playing your voice...";
-    });
+    _isPlaying.value = true;
+    _playingContext.value = "Playing your voice...";
+
     try {
       await _soundService
           .playFile(_recordingPath!)
@@ -210,21 +205,21 @@ class _SpeakingSelfEvaluationControlsState
       // Ignore playback/TTS errors so UI doesn't get stuck
     } finally {
       if (mounted && sessionId == _playbackSessionId) {
-        setState(() => _isPlaying = false);
+        _isPlaying.value = false;
       }
     }
   }
 
   void _handleNailedIt() {
     _playbackSessionId++;
-    setState(() => _isPlaying = false);
+    _isPlaying.value = false;
     _soundService.stopTts();
     widget.onConfirmed();
   }
 
   void _handleNeedsWork() {
     _playbackSessionId++;
-    setState(() => _isPlaying = false);
+    _isPlaying.value = false;
     _soundService.stopTts();
     widget.onSkipped();
   }
@@ -233,210 +228,223 @@ class _SpeakingSelfEvaluationControlsState
   Widget build(BuildContext context) {
     final subtitleColor = widget.isDark ? Colors.white60 : Colors.black54;
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (!_hasRecorded) ...[
-          GestureDetector(
-            onTap: () {
-              if (_isRecording) {
-                _stopRecording();
-              } else {
-                _startRecording();
-              }
-            },
-            child:
-                Container(
+    return ValueListenableBuilder<bool>(
+      valueListenable: _hasRecorded,
+      builder: (context, hasRecorded, _) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (!hasRecorded) ...[
+              ValueListenableBuilder<bool>(
+                valueListenable: _isRecording,
+                builder: (context, isRecording, _) {
+                  return GestureDetector(
+                    onTap: () {
+                      if (isRecording) {
+                        _stopRecording();
+                      } else {
+                        _startRecording();
+                      }
+                    },
+                    child: Container(
                       width: 80.r,
                       height: 80.r,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: _isRecording
-                            ? Colors.redAccent
-                            : widget.primaryColor,
+                        color: isRecording ? Colors.redAccent : widget.primaryColor,
                         boxShadow: [
                           BoxShadow(
-                            color:
-                                (_isRecording
-                                        ? Colors.redAccent
-                                        : widget.primaryColor)
-                                    .withValues(alpha: 0.4),
+                            color: (isRecording ? Colors.redAccent : widget.primaryColor).withValues(alpha: 0.4),
                             blurRadius: 20,
-                            spreadRadius: _isRecording ? 8 : 0,
+                            spreadRadius: isRecording ? 8 : 0,
                           ),
                         ],
                       ),
                       child: Icon(
-                        _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+                        isRecording ? Icons.stop_rounded : Icons.mic_rounded,
                         color: Colors.white,
                         size: 40.r,
                       ),
-                    )
-                    .animate(target: _isRecording ? 1 : 0)
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.1, 1.1),
-                    ),
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            _isRecording ? "Recording... Tap to stop" : "Tap to Record",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              color: _isRecording ? Colors.redAccent : subtitleColor,
-            ),
-          ).animate(target: _isRecording ? 1 : 0).fade(),
-          if (!_isRecording)
-            Padding(
-              padding: EdgeInsets.only(top: 24.h),
-              child: Text(
-                "Can't speak right now?\nYou can disable speaking tasks in Settings.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w500,
-                  color: subtitleColor.withValues(alpha: 0.6),
-                  height: 1.4,
-                ),
+                    ).animate(target: isRecording ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+                  );
+                }
               ),
-            ),
-        ] else ...[
-          if (_isPlaying) ...[
-            Container(
-                  height: 70.r,
-                  width: 70.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: widget.primaryColor.withValues(alpha: 0.15),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.graphic_eq_rounded,
-                      color: widget.primaryColor,
-                      size: 32.sp,
+              SizedBox(height: 12.h),
+              ValueListenableBuilder<bool>(
+                valueListenable: _isRecording,
+                builder: (context, isRecording, _) {
+                  return Text(
+                    isRecording ? "Recording... Tap to stop" : "Tap to Record",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isRecording ? Colors.redAccent : subtitleColor,
                     ),
-                  ),
-                )
-                .animate(
-                  onPlay: (controller) => controller.repeat(reverse: true),
-                )
-                .scale(
-                  begin: const Offset(0.9, 0.9),
-                  end: const Offset(1.15, 1.15),
-                  duration: 600.ms,
-                  curve: Curves.easeInOut,
-                )
-                .fade(begin: 0.6, end: 1.0),
-            SizedBox(height: 12.h),
-            Text(
-                  _playingContext,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: widget.primaryColor,
-                  ),
-                )
-                .animate(
-                  onPlay: (controller) => controller.repeat(reverse: true),
-                )
-                .fade(begin: 0.5, end: 1.0, duration: 800.ms),
-          ] else ...[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _buildIsolatedPlaybackButton(
-                  icon: Icons.record_voice_over_rounded,
-                  label: "NATIVE",
-                  onTap: _playNative,
-                  isDark: widget.isDark,
-                ),
-                SizedBox(width: 16.w),
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: _playComparison,
-                      child: Container(
-                        height: 64.r,
-                        width: 64.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: widget.primaryColor.withValues(alpha: 0.15),
-                          border: Border.all(
-                            color: widget.primaryColor.withValues(alpha: 0.3),
-                            width: 2,
-                          ),
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.play_arrow_rounded,
-                            color: widget.primaryColor,
-                            size: 36.sp,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 6.h),
-                    Text(
-                      "COMPARE",
+                  ).animate(target: isRecording ? 1 : 0).fade();
+                }
+              ),
+              ValueListenableBuilder<bool>(
+                valueListenable: _isRecording,
+                builder: (context, isRecording, _) {
+                  if (isRecording) return const SizedBox.shrink();
+                  return Padding(
+                    padding: EdgeInsets.only(top: 24.h),
+                    child: Text(
+                      "Can't speak right now?\nYou can disable speaking tasks in Settings.",
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 1.5,
-                        color: widget.primaryColor,
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w500,
+                        color: subtitleColor.withValues(alpha: 0.6),
+                        height: 1.4,
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(width: 16.w),
-                _buildIsolatedPlaybackButton(
-                  icon: Icons.headphones_rounded,
-                  label: "YOU",
-                  onTap: _playUser,
-                  isDark: widget.isDark,
-                ),
-              ],
-            ),
-          ],
-          SizedBox(height: 24.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(
-                child: _buildEvalButton(
-                  title: "Needs Work",
-                  icon: LucideIcons.x,
-                  color: Colors.redAccent,
-                  onTap: _handleNeedsWork,
-                ),
+                  );
+                }
               ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: _buildEvalButton(
-                  title: "Nailed It",
-                  icon: LucideIcons.check,
-                  color: Colors.greenAccent,
-                  onTap: _handleNailedIt,
+            ] else ...[
+              ValueListenableBuilder<bool>(
+                valueListenable: _isPlaying,
+                builder: (context, isPlaying, _) {
+                  if (isPlaying) {
+                    return Column(
+                      children: [
+                        Container(
+                          height: 70.r,
+                          width: 70.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: widget.primaryColor.withValues(alpha: 0.15),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.graphic_eq_rounded,
+                              color: widget.primaryColor,
+                              size: 32.sp,
+                            ),
+                          ),
+                        )
+                        .animate(onPlay: (controller) => controller.repeat(reverse: true))
+                        .scale(begin: const Offset(0.9, 0.9), end: const Offset(1.15, 1.15), duration: 600.ms, curve: Curves.easeInOut)
+                        .fade(begin: 0.6, end: 1.0),
+                        SizedBox(height: 12.h),
+                        ValueListenableBuilder<String>(
+                          valueListenable: _playingContext,
+                          builder: (context, playingContext, _) {
+                            return Text(
+                              playingContext,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
+                                color: widget.primaryColor,
+                              ),
+                            )
+                            .animate(onPlay: (controller) => controller.repeat(reverse: true))
+                            .fade(begin: 0.5, end: 1.0, duration: 800.ms);
+                          }
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        _buildIsolatedPlaybackButton(
+                          icon: Icons.record_voice_over_rounded,
+                          label: "NATIVE",
+                          onTap: _playNative,
+                          isDark: widget.isDark,
+                        ),
+                        SizedBox(width: 16.w),
+                        Column(
+                          children: [
+                            GestureDetector(
+                              onTap: _playComparison,
+                              child: Container(
+                                height: 64.r,
+                                width: 64.r,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: widget.primaryColor.withValues(alpha: 0.15),
+                                  border: Border.all(
+                                    color: widget.primaryColor.withValues(alpha: 0.3),
+                                    width: 2,
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Icon(
+                                    Icons.play_arrow_rounded,
+                                    color: widget.primaryColor,
+                                    size: 36.sp,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 6.h),
+                            Text(
+                              "COMPARE",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 1.5,
+                                color: widget.primaryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 16.w),
+                        _buildIsolatedPlaybackButton(
+                          icon: Icons.headphones_rounded,
+                          label: "YOU",
+                          onTap: _playUser,
+                          isDark: widget.isDark,
+                        ),
+                      ],
+                    );
+                  }
+                }
+              ),
+              SizedBox(height: 24.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: _buildEvalButton(
+                      title: "Needs Work",
+                      icon: LucideIcons.x,
+                      color: Colors.redAccent,
+                      onTap: _handleNeedsWork,
+                    ),
+                  ),
+                  SizedBox(width: 16.w),
+                  Expanded(
+                    child: _buildEvalButton(
+                      title: "Nailed It",
+                      icon: LucideIcons.check,
+                      color: Colors.greenAccent,
+                      onTap: _handleNailedIt,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16.h),
+              Text(
+                "Be honest! Did you match the native speaker?",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: subtitleColor,
                 ),
               ),
             ],
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            "Be honest! Did you match the native speaker?",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: subtitleColor,
-            ),
-          ),
-        ],
-      ],
+          ],
+        );
+      }
     );
   }
 
