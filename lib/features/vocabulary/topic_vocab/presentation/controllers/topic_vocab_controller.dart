@@ -18,6 +18,7 @@ class TopicVocabController extends ChangeNotifier {
   List<String> shuffledOptions = [];
   final List<Map<String, String>> userChoices = [];
   final Map<int, List<String>> wordsInBins = {0: [], 1: []};
+  final Map<String, String> _expectedAnswers = {};
 
   String? flickedWord;
   int? flickTarget;
@@ -40,6 +41,20 @@ class TopicVocabController extends ChangeNotifier {
     isHintActive = false;
     userChoices.clear();
     wordsInBins.forEach((_, list) => list.clear());
+    _expectedAnswers.clear();
+    
+    if (quest?.correctAnswer != null) {
+      final pairs = quest!.correctAnswer!.split(',');
+      for (var pair in pairs) {
+        final parts = pair.split(':');
+        if (parts.length == 2) {
+          final targetBucket = parts[0].trim().toLowerCase();
+          final targetWord = parts[1].trim().toLowerCase();
+          _expectedAnswers[targetWord] = targetBucket;
+        }
+      }
+    }
+
     shuffledOptions = List<String>.from(quest?.options ?? [])..shuffle();
     notifyListeners();
   }
@@ -116,18 +131,7 @@ class TopicVocabController extends ChangeNotifier {
   bool _validateChoice(String word, String bucket, String correctAnswer) {
     final cleanWord = word.trim().toLowerCase();
     final cleanLabel = bucket.trim().toLowerCase();
-
-    final pairs = correctAnswer.split(',');
-    for (var pair in pairs) {
-      final parts = pair.split(':');
-      if (parts.length == 2) {
-        final targetBucket = parts[0].trim().toLowerCase();
-        final targetWord = parts[1].trim().toLowerCase();
-        if (targetWord == cleanWord) {
-          return targetBucket == cleanLabel;
-        }
-      }
-    }
-    return false;
+    
+    return _expectedAnswers[cleanWord] == cleanLabel;
   }
 }
