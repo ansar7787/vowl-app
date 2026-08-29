@@ -66,9 +66,13 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
   bool _isExpired = false;
   int _lastTickSecond = -1;
 
+  late final ValueNotifier<int> _remainingSecondsNotifier;
+
   @override
   void initState() {
     super.initState();
+    _remainingSecondsNotifier = ValueNotifier(widget.durationSeconds);
+    
     _controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: widget.durationSeconds),
@@ -87,6 +91,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
     _controller.removeListener(_onTick);
     _controller.removeStatusListener(_onStatus);
     _controller.dispose();
+    _remainingSecondsNotifier.dispose();
     super.dispose();
   }
 
@@ -94,6 +99,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
     final remaining = ((1.0 - _controller.value) * widget.durationSeconds).ceil();
     if (remaining != _lastTickSecond) {
       _lastTickSecond = remaining;
+      _remainingSecondsNotifier.value = remaining;
       widget.onTick?.call(remaining);
 
       // Haptic pulse in last 5 seconds
@@ -133,6 +139,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
   void start() {
     _isExpired = false;
     _lastTickSecond = -1;
+    _remainingSecondsNotifier.value = widget.durationSeconds;
     _controller.forward(from: 0.0);
   }
 
@@ -145,98 +152,119 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        final progress = _controller.value; // 0.0 → 1.0 (depleting)
-        final remaining = 1.0 - progress;
-        final remainingSec = (remaining * widget.durationSeconds).ceil();
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Timer bar (Rendered at 60fps for smooth width/color interpolation)
+        AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            final progress = _controller.value; // 0.0 → 1.0 (depleting)
+            final remaining = 1.0 - progress;
 
-        // Color transitions: green → yellow → red
-        Color barColor;
-        if (remaining > 0.5) {
-          barColor = Color.lerp(
-            const Color(0xFF22C55E), // green
-            const Color(0xFFFBBF24), // yellow
-            (1.0 - remaining) * 2.0, // 0→1 over top half
-          )!;
-        } else {
-          barColor = Color.lerp(
-            const Color(0xFFFBBF24), // yellow
-            const Color(0xFFEF4444), // red
-            (0.5 - remaining) * 2.0, // 0→1 over bottom half
-          )!;
-        }
+            // Color transitions: green → yellow → red
+            Color barColor;
+            if (remaining > 0.5) {
+              barColor = Color.lerp(
+                const Color(0xFF22C55E), // green
+                const Color(0xFFFBBF24), // yellow
+                (1.0 - remaining) * 2.0, // 0→1 over top half
+              )!;
+            } else {
+              barColor = Color.lerp(
+                const Color(0xFFFBBF24), // yellow
+                const Color(0xFFEF4444), // red
+                (0.5 - remaining) * 2.0, // 0→1 over bottom half
+              )!;
+            }
 
-        final isUrgent = remaining <= 0.166; // ~5 seconds on 30s timer
+            final isUrgent = remaining <= 0.166; // ~5 seconds on 30s timer
 
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Timer bar
-            Container(
-                  height: 6.h,
-                  width: double.infinity,
+            return Container(
+              height: 6.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : Colors.black.withValues(alpha: 0.06),
+                borderRadius: BorderRadius.circular(3.r),
+              ),
+              child: FractionallySizedBox(
+                alignment: Alignment.centerLeft,
+                widthFactor: remaining.clamp(0.0, 1.0),
+                child: Container(
                   decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : Colors.black.withValues(alpha: 0.06),
-                    borderRadius: BorderRadius.circular(3.r),
-                  ),
-                  child: FractionallySizedBox(
-                    alignment: Alignment.centerLeft,
-                    widthFactor: remaining.clamp(0.0, 1.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            barColor,
-                            barColor.withValues(alpha: 0.7),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(3.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: barColor.withValues(alpha: 0.4),
-                            blurRadius: 8,
-                            spreadRadius: 0,
-                          ),
-                        ],
-                      ),
+                    gradient: LinearGradient(
+                      colors: [
+                        barColor,
+                        barColor.withValues(alpha: 0.7),
+                      ],
                     ),
+                    borderRadius: BorderRadius.circular(3.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: barColor.withValues(alpha: 0.4),
+                        blurRadius: 8,
+                        spreadRadius: 0,
+                      ),
+                    ],
                   ),
-                )
-                .animate(target: isUrgent ? 1 : 0)
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1, 1.4),
-                  duration: 500.ms,
-                  curve: Curves.easeInOut,
                 ),
+              ),
+            ).animate(target: isUrgent ? 1 : 0).scale(
+              begin: const Offset(1, 1),
+              end: const Offset(1, 1.4),
+              duration: 500.ms,
+              curve: Curves.easeInOut,
+            );
+          },
+        ),
 
-            SizedBox(height: 6.h),
+        SizedBox(height: 6.h),
 
-            // Time label + bonus indicator
-            Row(
+        // Time label + bonus indicator (Rendered at 1fps to save CPU overhead)
+        ValueListenableBuilder<int>(
+          valueListenable: _remainingSecondsNotifier,
+          builder: (context, remainingSec, _) {
+            final remainingFraction = remainingSec / widget.durationSeconds;
+            
+            Color barColor;
+            if (remainingFraction > 0.5) {
+              barColor = Color.lerp(
+                const Color(0xFF22C55E),
+                const Color(0xFFFBBF24),
+                (1.0 - remainingFraction) * 2.0,
+              )!;
+            } else {
+              barColor = Color.lerp(
+                const Color(0xFFFBBF24),
+                const Color(0xFFEF4444),
+                (0.5 - remainingFraction) * 2.0,
+              )!;
+            }
+
+            final isUrgent = remainingSec <= 5;
+
+            return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Remaining time
                 AutoSizeText(
-                      '${remainingSec}s',
-                      maxLines: 1,
-                      minFontSize: 6,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w800,
-                        color: barColor,
-                        letterSpacing: 1,
-                      ),
-                    )
-                    .animate(target: isUrgent ? 1 : 0)
-                    .fade(begin: 1.0, end: 0.4, duration: 400.ms)
-                    .then()
-                    .fade(begin: 0.4, end: 1.0, duration: 400.ms),
+                  '${remainingSec}s',
+                  maxLines: 1,
+                  minFontSize: 6,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w800,
+                    color: barColor,
+                    letterSpacing: 1,
+                  ),
+                )
+                .animate(target: isUrgent ? 1 : 0)
+                .fade(begin: 1.0, end: 0.4, duration: 400.ms)
+                .then()
+                .fade(begin: 0.4, end: 1.0, duration: 400.ms),
 
                 // Speed bonus indicator
                 if (widget.showBonusLabel && widget.bonusCoinsForSpeed > 0)
@@ -263,10 +291,10 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
                     ),
                   ),
               ],
-            ),
-          ],
-        );
-      },
+            );
+          }
+        ),
+      ],
     );
   }
 }
