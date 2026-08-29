@@ -13,6 +13,7 @@ class ModernSegmentPathPainter extends CustomPainter {
   final double? nextNextX;
 
   final Color activeColor;
+  final Color baseColor;
   final bool isCompleted;
   final bool isPrevCompleted;
   final bool isFirst;
@@ -30,6 +31,7 @@ class ModernSegmentPathPainter extends CustomPainter {
     this.prevPrevX,
     this.nextNextX,
     required this.activeColor,
+    required this.baseColor,
     required this.isCompleted,
     required this.isPrevCompleted,
     required this.isFirst,
@@ -47,11 +49,8 @@ class ModernSegmentPathPainter extends CustomPainter {
     final double centerY = size.height / 2;
     const double strokeW = 18.0;
     
-    // Instead of a barely-visible 5% opacity, we use a solid structural grey
-    // to make the locked path look like a real, physical "unpaved road".
-    final Color lockedColor = isDark 
-        ? const Color(0xFF374151) 
-        : const Color(0xFFE5E7EB);
+    // Instead of a flat grey, we make the locked path a "ghost" of the category color
+    final Color lockedColor = baseColor.withValues(alpha: isDark ? 0.15 : 0.08);
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {

@@ -291,8 +291,8 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                   Colors.amber.withValues(alpha: 0.3),
                 ]
               : [
-                  widget.isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0), 
-                  widget.isDark ? const Color(0xFF1E293B) : const Color(0xFFCBD5E1),
+                  widget.isDark ? theme.primaryColor.withValues(alpha: 0.15) : theme.primaryColor.withValues(alpha: 0.1), 
+                  widget.isDark ? theme.primaryColor.withValues(alpha: 0.05) : theme.primaryColor.withValues(alpha: 0.02),
                 ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -553,6 +553,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                   ? widget.points[widget.index + 2].dx
                   : null,
               activeColor: tierColor,
+              baseColor: widget.theme.primaryColor,
               isCompleted: isNodeCompleted,
               isPrevCompleted: isPrevNodeCompleted,
               isFirst: widget.index == 0,
