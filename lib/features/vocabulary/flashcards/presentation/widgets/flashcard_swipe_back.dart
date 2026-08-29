@@ -127,7 +127,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
 
               final maxWordFontSize = compact ? 24.sp : 28.sp;
               final iconSize = compact ? 24.r : 28.r;
-              final availableWordWidth = widget.width - 48.w;
+              final availableWordWidth = widget.width - 32.w;
 
               final optimalWordSize = _getOptimalFontSize(
                 widget.quest.word?.toUpperCase() ?? '',
@@ -189,15 +189,14 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                           slivers: [
                             SliverPadding(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 24.w,
-                                vertical: 24.h,
+                                horizontal: 16.w,
+                                vertical: 16.h,
                               ),
                               sliver: SliverFillRemaining(
                                 hasScrollBody: false,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    SizedBox(height: 16.h),
                                     Text(
                                       widget.quest.word?.toUpperCase() ?? '',
                                       textAlign: TextAlign.center,
