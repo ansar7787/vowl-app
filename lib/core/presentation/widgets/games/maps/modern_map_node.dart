@@ -87,12 +87,14 @@ class _ModernMapNodeState extends State<ModernMapNode> {
   Color _getTierColor(int level, bool isTollGate, Color baseColor) {
     if (isTollGate) {
       return Colors.amber;
-    } else if (level >= 50 && level < 100) {
-      return const Color(0xFFCD7F32); // Bronze
-    } else if (level >= 100 && level < 150) {
-      return const Color(0xFFC0C0C0); // Silver
+    } else if (level == 200) {
+      return const Color(0xFF00F0FF); // Legendary / Diamond
     } else if (level >= 150) {
       return const Color(0xFFFFD700); // Gold
+    } else if (level >= 100) {
+      return const Color(0xFFC0C0C0); // Silver
+    } else if (level >= 50) {
+      return const Color(0xFFCD7F32); // Bronze
     }
     return baseColor;
   }

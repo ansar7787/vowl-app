@@ -247,6 +247,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     } else if (level == 100) {
       borderColor = const Color(0xFF94A3B8); // Silver/Slate
       tierName = context.tr('kids_zone.tier_silver', fallback: "SILVER TIER");
+    } else if (level == 200) {
+      borderColor = const Color(0xFF00F0FF); // Cyan/Diamond (Legendary)
+      tierName = context.tr('kids_zone.tier_legendary', fallback: "LEGENDARY TIER");
     } else {
       borderColor = const Color(0xFFF59E0B); // Gold
       tierName = context.tr('kids_zone.tier_gold', fallback: "GOLD TIER");
