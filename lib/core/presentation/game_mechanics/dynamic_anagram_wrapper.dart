@@ -6,6 +6,10 @@ import 'package:flutter/services.dart';
 import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/ad_service.dart';
 
 class DynamicAnagramWrapper extends StatefulWidget {
   final String expectedText;
@@ -14,6 +18,8 @@ class DynamicAnagramWrapper extends StatefulWidget {
   final VoidCallback onFailed;
   final Function(String)? onFailedWithSpelling;
   final int? bonusCoins;
+  final VoidCallback? onBypassed;
+  final bool allowSkip;
 
   final String? title;
   final String? subtitle;
@@ -27,6 +33,8 @@ class DynamicAnagramWrapper extends StatefulWidget {
     required this.onFailed,
     this.onFailedWithSpelling,
     this.bonusCoins = 5,
+    this.onBypassed,
+    this.allowSkip = true,
     this.title,
     this.subtitle,
     this.isPositioned = true,
@@ -115,6 +123,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
           _placedTiles[i] = null;
         }
       }
+      _availableTiles.shuffle();
     });
   }
 
@@ -170,7 +179,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
               ? constraints.maxWidth 
               : MediaQuery.of(context).size.width;
               
-          final int maxCharsPerLine = math.min(_placedTiles.length, 9);
+          final int maxCharsPerLine = math.max(1, math.min(_placedTiles.length, 9));
           final double horizontalPadding = 48.w; // 24.w on each side
           final double tileSpacing = 6.w;
           
@@ -479,6 +488,58 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                         ),
                       ],
                     ),
+
+                    // Skip button
+                    if (widget.allowSkip && !_isSubmitting)
+                      Padding(
+                        padding: EdgeInsets.only(top: 16.h),
+                        child: ScaleButton(
+                          onTap: () {
+                            if (_isSubmitting) return;
+                            final user = context.read<AuthBloc>().state.user;
+                            final isPremium = user?.isPremium ?? false;
+                            if (isPremium) {
+                              if (widget.onBypassed != null) {
+                                widget.onBypassed!();
+                              } else {
+                                widget.onConfirmed();
+                              }
+                            } else {
+                              di.sl<AdService>().showRewardedAd(
+                                context: context,
+                                isPremium: false,
+                                onUserEarnedReward: (_) {
+                                  if (mounted) {
+                                    if (widget.onBypassed != null) {
+                                      widget.onBypassed!();
+                                    } else {
+                                      widget.onConfirmed();
+                                    }
+                                  }
+                                },
+                                onDismissed: () {},
+                              );
+                            }
+                          },
+                          child: Builder(
+                            builder: (context) {
+                              final isPremium =
+                                  context.watch<AuthBloc>().state.user?.isPremium ??
+                                  false;
+                              return Text(
+                                isPremium ? 'SKIP' : 'WATCH AD TO BYPASS',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: subtitleColor,
+                                  letterSpacing: 1.5,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),
