@@ -45,39 +45,37 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
   final _soundService = di.sl<SoundService>();
   final TextEditingController _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
-  bool _hasError = false;
-  int _attempts = 0;
-  bool _isSubmitting = false;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  
+  final ValueNotifier<bool> _hasError = ValueNotifier(false);
+  final ValueNotifier<int> _attempts = ValueNotifier(0);
+  final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
 
   @override
   void dispose() {
     _controller.dispose();
     _focusNode.dispose();
+    _hasError.dispose();
+    _attempts.dispose();
+    _isSubmitting.dispose();
     super.dispose();
   }
 
   void _onSubmit() {
-    if (_isSubmitting) return;
+    if (_isSubmitting.value) return;
     final input = _controller.text.trim();
     if (input.isEmpty) {
-      setState(() => _hasError = true);
+      _hasError.value = true;
       _hapticService.error();
       return;
     }
 
     if (!GibberishDetectorService.isNaturalSentence(context, input)) {
-      setState(() {
-        _hasError = true;
-        _attempts++;
-      });
+      _hasError.value = true;
+      _attempts.value++;
       _hapticService.error();
-      if (_attempts >= widget.maxAttempts) {
+      if (_attempts.value >= widget.maxAttempts) {
         _focusNode.unfocus();
+        _isSubmitting.value = true;
         Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted) widget.onSkipped();
         });
@@ -97,10 +95,12 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
         .toLowerCase();
 
     if (cleanInput == cleanCorrect) {
-      setState(() => _isSubmitting = true);
+      _isSubmitting.value = true;
+      _hasError.value = false;
       _hapticService.success();
       _soundService.playCorrect();
       _focusNode.unfocus();
+      
       // Award bonus coins
       if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
         context.read<EconomyBloc>().add(
@@ -113,12 +113,11 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _hasError = true;
-        _attempts++;
-      });
-      if (_attempts >= widget.maxAttempts) {
+      _hasError.value = true;
+      _attempts.value++;
+      if (_attempts.value >= widget.maxAttempts) {
         _focusNode.unfocus();
+        _isSubmitting.value = true;
         Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted) widget.onSkipped();
         });
@@ -136,134 +135,137 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
 
     final content = Material(
       type: MaterialType.transparency,
-      child: Container(
-        padding: EdgeInsets.fromLTRB(
-          24.w,
-          20.h,
-          24.w,
-          MediaQuery.of(context).viewInsets.bottom + 32.h,
-        ),
-        decoration: BoxDecoration(
-          color: bgColor,
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(32.r),
-          ),
-          border: Border.all(
-            color: _hasError
-                ? errorColor.withValues(alpha: 0.5)
-                : widget.primaryColor.withValues(alpha: 0.2),
-            width: 1.5,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: _hasError
-                  ? errorColor.withValues(alpha: 0.15)
-                  : widget.primaryColor.withValues(alpha: 0.15),
-              blurRadius: 30,
-              offset: const Offset(0, -8),
+      child: ValueListenableBuilder<bool>(
+        valueListenable: _hasError,
+        builder: (context, hasError, _) {
+          return Container(
+            padding: EdgeInsets.fromLTRB(
+              24.w,
+              20.h,
+              24.w,
+              MediaQuery.of(context).viewInsets.bottom + 32.h,
             ),
-          ],
-        ),
-        child: SafeArea(
-          top: false,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Handle bar
-              Container(
-                width: 48.w,
-                height: 4.h,
-                decoration: BoxDecoration(
-                  color: subtitleColor.withValues(alpha: 0.3),
-                  borderRadius: BorderRadius.circular(2.r),
-                ),
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(32.r),
               ),
-              SizedBox(height: 16.h),
-
-              // Header
-              Row(
+              border: Border.all(
+                color: hasError
+                    ? errorColor.withValues(alpha: 0.5)
+                    : widget.primaryColor.withValues(alpha: 0.2),
+                width: 1.5,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: hasError
+                      ? errorColor.withValues(alpha: 0.15)
+                      : widget.primaryColor.withValues(alpha: 0.15),
+                  blurRadius: 30,
+                  offset: const Offset(0, -8),
+                ),
+              ],
+            ),
+            child: SafeArea(
+              top: false,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
+                  // Handle bar
                   Container(
-                    padding: EdgeInsets.all(10.r),
+                    width: 48.w,
+                    height: 4.h,
                     decoration: BoxDecoration(
-                      color: widget.primaryColor.withValues(
-                        alpha: 0.12,
-                      ),
-                      borderRadius: BorderRadius.circular(14.r),
-                    ),
-                    child: Icon(
-                      Icons.hearing_rounded,
-                      color: widget.primaryColor,
-                      size: 22.r,
+                      color: subtitleColor.withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(2.r),
                     ),
                   ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'BLIND DICTATION',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: widget.primaryColor,
-                            letterSpacing: 2,
+                  SizedBox(height: 16.h),
+
+                  // Header
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(10.r),
+                        decoration: BoxDecoration(
+                          color: widget.primaryColor.withValues(
+                            alpha: 0.12,
                           ),
+                          borderRadius: BorderRadius.circular(14.r),
                         ),
-                        SizedBox(height: 2.h),
-                        Text(
-                          'Type exactly what you heard',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w500,
-                            color: subtitleColor,
-                          ),
+                        child: Icon(
+                          Icons.hearing_rounded,
+                          color: widget.primaryColor,
+                          size: 22.r,
                         ),
-                      ],
-                    ),
-                  ),
-                  if (widget.bonusCoins != null)
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 4.h,
                       ),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            widget.primaryColor,
-                            widget.primaryColor.withValues(alpha: 0.7),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'BLIND DICTATION',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w900,
+                                color: widget.primaryColor,
+                                letterSpacing: 2,
+                              ),
+                            ),
+                            SizedBox(height: 2.h),
+                            Text(
+                              'Type exactly what you heard',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                                color: subtitleColor,
+                              ),
+                            ),
                           ],
                         ),
-                        borderRadius: BorderRadius.circular(20.r),
                       ),
-                      child: Text(
-                        '+${widget.bonusCoins} Coins',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: 1,
+                      if (widget.bonusCoins != null)
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                widget.primaryColor,
+                                widget.primaryColor.withValues(alpha: 0.7),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                          ),
+                          child: Text(
+                            '+${widget.bonusCoins} Coins',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: 1,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                ],
-              ),
-              SizedBox(height: 24.h),
+                    ],
+                  ),
+                  SizedBox(height: 24.h),
 
-              // Text Input
-              Container(
+                  // Text Input
+                  Container(
                     decoration: BoxDecoration(
                       color: isDark
                           ? Colors.white.withValues(alpha: 0.05)
                           : Colors.black.withValues(alpha: 0.02),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: _hasError
+                        color: hasError
                             ? errorColor.withValues(alpha: 0.5)
                             : widget.primaryColor.withValues(
                                 alpha: 0.3,
@@ -283,8 +285,8 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                       maxLines: 3,
                       minLines: 1,
                       onChanged: (_) {
-                        if (_hasError) {
-                          setState(() => _hasError = false);
+                        if (_hasError.value) {
+                          _hasError.value = false;
                         }
                       },
                       onSubmitted: (_) => _onSubmit(),
@@ -306,85 +308,102 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                       ),
                     ),
                   )
-                  .animate(target: _hasError ? 1 : 0)
+                  .animate(target: hasError ? 1 : 0)
                   .shakeX(amount: 5, duration: 400.ms),
 
-              // Attempt counter
-              if (_attempts > 0 && _attempts < widget.maxAttempts)
-                Padding(
-                  padding: EdgeInsets.only(top: 8.h),
-                  child: Text(
-                    '${widget.maxAttempts - _attempts} attempts remaining',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w500,
-                      color: subtitleColor.withValues(alpha: 0.6),
-                    ),
+                  // Attempt counter
+                  ValueListenableBuilder<int>(
+                    valueListenable: _attempts,
+                    builder: (context, attempts, _) {
+                      if (attempts > 0 && attempts < widget.maxAttempts) {
+                        return Padding(
+                          padding: EdgeInsets.only(top: 8.h),
+                          child: Text(
+                            '${widget.maxAttempts - attempts} attempts remaining',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w500,
+                              color: subtitleColor.withValues(alpha: 0.6),
+                            ),
+                          ),
+                        );
+                      }
+                      return const SizedBox.shrink();
+                    },
                   ),
-                ),
 
-              SizedBox(height: 24.h),
+                  SizedBox(height: 24.h),
 
-              // Controls
-              Row(
-                children: [
-                  if (widget.allowSkip) ...[
-                    Expanded(
-                      flex: 1,
-                      child: TextButton(
-                        onPressed: widget.onSkipped,
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 16.h,
+                  // Controls
+                  ValueListenableBuilder<bool>(
+                    valueListenable: _isSubmitting,
+                    builder: (context, isSubmitting, _) {
+                      return Row(
+                        children: [
+                          if (widget.allowSkip) ...[
+                            Expanded(
+                              flex: 1,
+                              child: TextButton(
+                                onPressed: isSubmitting ? null : () {
+                                  _isSubmitting.value = true;
+                                  widget.onSkipped();
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 16.h,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.r),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Skip',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: subtitleColor,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 12.w),
+                          ],
+                          Expanded(
+                            flex: 2,
+                            child: ElevatedButton(
+                              onPressed: isSubmitting ? null : _onSubmit,
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: hasError
+                                    ? errorColor
+                                    : widget.primaryColor,
+                                padding: EdgeInsets.symmetric(vertical: 16.h),
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.r),
+                                ),
+                              ),
+                              child: Text(
+                                'Submit',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                           ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                          ),
-                        ),
-                        child: Text(
-                          'Skip',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            color: subtitleColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 12.w),
-                  ],
-                  Expanded(
-                    flex: 2,
-                    child: ElevatedButton(
-                      onPressed: _isSubmitting ? null : _onSubmit,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: _hasError
-                            ? errorColor
-                            : widget.primaryColor,
-                        padding: EdgeInsets.symmetric(vertical: 16.h),
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                      ),
-                      child: Text(
-                        'Submit',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                        ],
+                      );
+                    }
                   ),
                 ],
               ),
-            ],
-          ),
-        ),
+            ),
+          );
+        }
       ),
     )
     .animate()
