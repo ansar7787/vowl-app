@@ -503,8 +503,8 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       ? Colors.amber.shade100.withValues(alpha: 0.5)
                       : widget.isLocked
                       ? (isDark 
-                          ? widget.primaryColor.withValues(alpha: 0.2) 
-                          : widget.primaryColor.withValues(alpha: 0.15))
+                          ? Color.lerp(const Color(0xFF0F172A), widget.primaryColor, 0.2)! 
+                          : Color.lerp(const Color(0xFFF8FAFC), widget.primaryColor, 0.15)!)
                       : widget.primaryColor,
                   border: Border.all(
                     color: widget.isTollGate

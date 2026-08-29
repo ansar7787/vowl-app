@@ -291,8 +291,12 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                   Colors.amber.withValues(alpha: 0.3),
                 ]
               : [
-                  widget.isDark ? widget.theme.primaryColor.withValues(alpha: 0.15) : widget.theme.primaryColor.withValues(alpha: 0.1), 
-                  widget.isDark ? widget.theme.primaryColor.withValues(alpha: 0.05) : widget.theme.primaryColor.withValues(alpha: 0.02),
+                  widget.isDark 
+                      ? Color.lerp(const Color(0xFF0F172A), widget.theme.primaryColor, 0.2)! 
+                      : Color.lerp(const Color(0xFFF8FAFC), widget.theme.primaryColor, 0.15)!,
+                  widget.isDark 
+                      ? Color.lerp(const Color(0xFF0F172A), widget.theme.primaryColor, 0.1)! 
+                      : Color.lerp(const Color(0xFFF8FAFC), widget.theme.primaryColor, 0.05)!,
                 ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
