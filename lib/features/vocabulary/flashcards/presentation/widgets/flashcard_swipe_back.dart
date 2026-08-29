@@ -273,7 +273,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                           ),
                                     if (widget.quest.example != null &&
                                         widget.quest.example!.isNotEmpty) ...[
-                                      SizedBox(height: compact ? 18.h : 28.h),
+                                      SizedBox(height: compact ? 12.h : 16.h),
                                       Divider(
                                         color: widget.color.withValues(
                                           alpha: 0.1,
@@ -282,7 +282,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                         indent: dividerInset,
                                         endIndent: dividerInset,
                                       ),
-                                      SizedBox(height: compact ? 16.h : 24.h),
+                                      SizedBox(height: compact ? 12.h : 16.h),
                                     ],
                                     if (widget.quest.example != null &&
                                         widget.quest.example!.isNotEmpty) ...[
