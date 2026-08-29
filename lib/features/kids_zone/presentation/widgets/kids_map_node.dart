@@ -399,8 +399,6 @@ class _KidsMapNodeState extends State<KidsMapNode> {
   }
 
   Widget _buildLevelNode(BuildContext context, Color lockedColor) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return ScaleButton(
       onTap: () {
         if (widget.isTollGate) {
