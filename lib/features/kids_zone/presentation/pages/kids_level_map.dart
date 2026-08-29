@@ -250,11 +250,26 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
 
   double _getHorizontalOffset(int level, double screenWidth) {
-    // Seeded random to keep map consistent across rebuilds
+    // 1. Maximize horizontal swing: push nodes closer to the edges to remove the "straight" feel.
+    // Node width is ~100.r, so we leave a tiny 30.w safe padding on both left and right edges.
+    final double availableWidth = screenWidth - 60.w - 100.r;
+    final double center = 30.w + (availableWidth / 2);
+    
+    // 2. Increase frequency drastically (math.pi / 2.2). 
+    // The previous 0.6 frequency made the node travel straight down for 2-3 levels.
+    // This higher frequency forces the path to aggressively wind left and right every 2 levels.
+    final double baseWave = math.sin(level * (math.pi / 2.2)); 
+    
+    // 3. Keep amplitude consistently high so it aggressively uses all available horizontal space
+    final double amplitude = 0.95 + (math.sin(level * 0.7) * 0.05);
+    
+    // 4. Jitter for a slightly hand-drawn board game look
     final random = math.Random(level * 123);
-    // Map width minus node size (90.r) and safe edge padding (50.w * 2)
-    final double availableWidth = screenWidth - 190.r;
-    return 50.w + random.nextDouble() * availableWidth;
+    final double jitter = (random.nextDouble() - 0.5) * 0.08; 
+    
+    final double combined = (baseWave * amplitude + jitter).clamp(-1.0, 1.0);
+    
+    return center + (combined * (availableWidth / 2));
   }
 
   @override
