@@ -206,6 +206,14 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                   _isCorrect.value = null;
                   _isFirstStagePassed.value = false;
                   _selectedOption.value = null;
+                  _vaultController.reset();
+                  if (_scrollController.hasClients) {
+                    _scrollController.animateTo(
+                      0,
+                      duration: const Duration(milliseconds: 400),
+                      curve: Curves.easeOutCubic,
+                    );
+                  }
                 } else {
                   context.read<VocabularyBloc>().add(NextQuestion());
                 }
