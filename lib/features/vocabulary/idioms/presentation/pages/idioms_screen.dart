@@ -264,7 +264,6 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                 if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
                   SpeakToConfirmOverlay(
                     expectedText: quest.correctAnswer ?? '',
-                    displayText: "Speak the idiom aloud:\n${quest.correctAnswer?.toUpperCase()}",
                     primaryColor: theme.primaryColor,
                     onConfirmed: () => _submitFinalAnswer(true),
                     onSkipped: () => _submitFinalAnswer(false),

@@ -262,7 +262,6 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                 if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
                   SpeakToConfirmOverlay(
                     expectedText: (quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? ""),
-                    displayText: "Speak the completed sentence:\n${(quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? "")}",
                     primaryColor: theme.primaryColor,
                     onConfirmed: () => _submitFinalAnswer(true),
                     onSkipped: () => _submitFinalAnswer(false),
