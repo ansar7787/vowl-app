@@ -9,7 +9,8 @@ class FindWordMeaningInteractivePassage extends StatefulWidget {
   final Color primaryColor;
   final bool isDark;
   final bool isAnswered;
-  final Function(bool isCorrect, String selectedWord) onWordSelected;
+  final int? selectedIndex;
+  final Function(bool isCorrect, String selectedWord, int index) onWordSelected;
 
   const FindWordMeaningInteractivePassage({
     super.key,
@@ -18,6 +19,7 @@ class FindWordMeaningInteractivePassage extends StatefulWidget {
     required this.primaryColor,
     required this.isDark,
     required this.isAnswered,
+    required this.selectedIndex,
     required this.onWordSelected,
   });
 
@@ -30,7 +32,6 @@ class _FindWordMeaningInteractivePassageState
     extends State<FindWordMeaningInteractivePassage> {
   final _hapticService = di.sl<HapticService>();
   List<String> _words = [];
-  int? _selectedIndex;
 
   @override
   void initState() {
@@ -43,10 +44,6 @@ class _FindWordMeaningInteractivePassageState
     super.didUpdateWidget(oldWidget);
     if (oldWidget.passage != widget.passage) {
       _splitWords();
-      _selectedIndex = null;
-    }
-    if (!widget.isAnswered && oldWidget.isAnswered) {
-      _selectedIndex = null;
     }
   }
 
@@ -60,9 +57,6 @@ class _FindWordMeaningInteractivePassageState
     if (widget.isAnswered) return;
 
     _hapticService.selection();
-    setState(() {
-      _selectedIndex = index;
-    });
 
     final selected = _words[index];
     // Clean punctuation for comparison
@@ -71,7 +65,7 @@ class _FindWordMeaningInteractivePassageState
 
     final isCorrect = cleanSelected == cleanTarget;
 
-    widget.onWordSelected(isCorrect, cleanSelected);
+    widget.onWordSelected(isCorrect, cleanSelected, index);
   }
 
   @override
@@ -124,7 +118,7 @@ class _FindWordMeaningInteractivePassageState
             spacing: 6.w,
             runSpacing: 10.h,
             children: List.generate(_words.length, (index) {
-              final isSelected = _selectedIndex == index;
+              final isSelected = widget.selectedIndex == index;
               final word = _words[index];
 
               return GestureDetector(

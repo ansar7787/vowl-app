@@ -36,12 +36,9 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   final _soundService = di.sl<SoundService>();
   final _scrollController = ScrollController();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _showSentenceBuilder = false;
-  int _lastProcessedIndex = -1;
-  int? _lastLives;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showSentenceBuilder = ValueNotifier(false);
+  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
 
   @override
   void initState() {
@@ -54,25 +51,25 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _showConfetti.dispose();
+    _showSentenceBuilder.dispose();
+    _pendingSelectedIndex.dispose();
     super.dispose();
   }
 
-  void _submitFinalAnswer(bool isCorrect, [ReadingQuest? quest]) {
-    if (_isAnswered || _showSentenceBuilder) return;
+  void _submitFinalAnswer(bool isCorrect, int index, [ReadingQuest? quest]) {
+    if (_showSentenceBuilder.value || _pendingSelectedIndex.value != null) return;
+
+    _pendingSelectedIndex.value = index;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _showSentenceBuilder = true;
-      });
+      _showSentenceBuilder.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      
       if (quest != null) {
         ErrorJournalCollector.record(
           userId: 'local',
@@ -88,11 +85,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   }
 
   void _onSentenceBuilderComplete() {
-    setState(() {
-      _showSentenceBuilder = false;
-      _isAnswered = true;
-      _isCorrect = true;
-    });
+    _showSentenceBuilder.value = false;
     context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -103,34 +96,23 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
 
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
-        if (state is ReadingLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
-          final livesChanged =
-              _lastLives != null && state.livesRemaining > _lastLives!;
-
-          if (isNewQuestion || isRetry || livesChanged) {
+        if (state is ReadingLoaded && !state.answerStatus.isAnswered) {
+          // Reset local UI state for a new question or retry
+          _pendingSelectedIndex.value = null;
+          _showSentenceBuilder.value = false;
+          _showConfetti.value = false;
+          
+          if (_scrollController.hasClients) {
             _scrollController.animateTo(
               0,
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeOutBack,
             );
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _showSentenceBuilder = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
           }
-          _lastLives = state.livesRemaining;
         }
+        
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -141,92 +123,108 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         }
       },
       builder: (context, state) {
-        final ReadingQuest? quest = (state is ReadingLoaded)
-            ? state.currentQuest as ReadingQuest?
-            : null;
+        final isLoaded = state is ReadingLoaded;
+        final ReadingQuest? quest = isLoaded ? state.currentQuest as ReadingQuest? : null;
+        final bool isAnsweredBloc = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrectBloc = isLoaded ? state.answerStatus.asBoolOrNull : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () =>
-              context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<ReadingBloc>().add(const ReadingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    CustomScrollView(
-                      controller: _scrollController,
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              children: [
-                                SizedBox(height: 16.h),
-                                FindWordMeaningInstruction(
-                                  primaryColor: theme.primaryColor,
-                                  instruction: quest.instruction,
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            _showConfetti,
+            _showSentenceBuilder,
+            _pendingSelectedIndex,
+          ]),
+          builder: (context, _) {
+            // Computed state
+            final bool isAnswered = isAnsweredBloc || _showSentenceBuilder.value || _pendingSelectedIndex.value != null;
+            final bool? isCorrect = _showSentenceBuilder.value ? true : isCorrectBloc;
+
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
+              showConfetti: _showConfetti.value,
+              onContinue: () =>
+                  context.read<ReadingBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              sliver: SliverToBoxAdapter(
+                                child: Column(
+                                  children: [
+                                    SizedBox(height: 16.h),
+                                    FindWordMeaningInstruction(
+                                      primaryColor: theme.primaryColor,
+                                      instruction: quest.instruction,
+                                    ),
+                                    SizedBox(height: 24.h),
+                                    FindWordMeaningQuestionHeader(
+                                      text: quest.question ?? "",
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                    ),
+                                    SizedBox(height: 32.h),
+                                    FindWordMeaningInteractivePassage(
+                                      passage: quest.passage ?? "",
+                                      targetWord: quest.targetWord ?? "",
+                                      primaryColor: theme.primaryColor,
+                                      isDark: isDark,
+                                      isAnswered: isAnswered,
+                                      selectedIndex: _pendingSelectedIndex.value,
+                                      onWordSelected: (isCorrectTap, word, index) {
+                                        _submitFinalAnswer(isCorrectTap, index, quest);
+                                      },
+                                    ),
+                                    if (isAnsweredBloc) ...[
+                                      SizedBox(height: 30.h),
+                                      FindWordMeaningResult(
+                                        quest: quest,
+                                        isCorrect: isCorrect == true,
+                                        isDark: isDark,
+                                      ),
+                                    ],
+                                  ],
                                 ),
-                                SizedBox(height: 24.h),
-                                FindWordMeaningQuestionHeader(
-                                  text: quest.question ?? "",
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                ),
-                                SizedBox(height: 32.h),
-                                FindWordMeaningInteractivePassage(
-                                  passage: quest.passage ?? "",
-                                  targetWord: quest.targetWord ?? "",
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  isAnswered: _isAnswered,
-                                  onWordSelected: (isCorrect, word) {
-                                    _submitFinalAnswer(isCorrect, quest);
-                                  },
-                                ),
-                                if (_isAnswered) ...[
-                                  SizedBox(height: 30.h),
-                                  FindWordMeaningResult(
-                                    quest: quest,
-                                    isCorrect: _isCorrect == true,
-                                    isDark: isDark,
-                                  ),
-                                ],
-                              ],
+                              ),
                             ),
-                          ),
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(height: 50.h),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              SizedBox(height: 50.h),
-                            ],
+                        if (_showSentenceBuilder.value)
+                          ContextSentenceBuilder(
+                            targetKeyword: quest.word ?? '',
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: _onSentenceBuilderComplete,
+                            onSkipped: _onSentenceBuilderComplete,
+                            allowSkip: true,
+                            bonusCoins: 5,
+                            exampleSentence: quest.wordInContext,
                           ),
-                        ),
                       ],
                     ),
-                    if (_showSentenceBuilder && !_isAnswered)
-                      ContextSentenceBuilder(
-                        targetKeyword: quest.word ?? '',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: _onSentenceBuilderComplete,
-                        onSkipped: _onSentenceBuilderComplete,
-                        allowSkip: true,
-                        bonusCoins: 5,
-                        exampleSentence: quest.wordInContext,
-                      ),
-                  ],
-                ),
+            );
+          },
         );
       },
     );
   }
 }
+
