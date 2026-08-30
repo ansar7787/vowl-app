@@ -219,7 +219,6 @@ class GameFeedbackCard extends StatelessWidget {
             ),
           ),
         ),
-      ),
     );
   }
 

@@ -293,9 +293,8 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
             ),
           ),
         ),
-      ),
-    )
-    .animate()
+      )
+      .animate()
     .slideY(
       begin: 0.2,
       end: 0,
