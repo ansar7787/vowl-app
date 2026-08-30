@@ -36,14 +36,15 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
+
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
-
-  String? _selectedOption;
 
   @override
   void initState() {
@@ -53,24 +54,41 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     );
   }
 
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    _selectedOption.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered || _isFirstStagePassed || _selectedOption != null) return;
+    if (_isAnswered.value || _isFirstStagePassed.value || _selectedOption.value != null) return;
 
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
-    setState(() {
-      _selectedOption = selected;
-    });
+    _selectedOption.value = selected;
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() => _isFirstStagePassed = true);
-    } else {
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
+      _isFirstStagePassed.value = true;
+      
+      Future.delayed(const Duration(milliseconds: 300), () {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
       });
+    } else {
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       _hapticService.error();
       _soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
@@ -78,12 +96,10 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   }
 
   void _submitFinalAnswer(bool nailedIt) {
-    if (_isAnswered && _isCorrect != null) return;
+    if (_isAnswered.value && _isCorrect.value != null) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -104,26 +120,22 @@ class _CollocationsScreenState extends State<CollocationsScreen>
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            setState(() {
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-              _selectedOption = null;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastQuest = state.currentQuest;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+            _selectedOption.value = null;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -154,67 +166,67 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             ? state.currentQuest
             : _lastQuest;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () {
-            final currentState = context.read<VocabularyBloc>().state;
-            if (currentState is VocabularyLoaded &&
-                !currentState.isFinalFailure &&
-                _isCorrect == false) {
-              setState(() {
-                _isAnswered = false;
-                _isCorrect = null;
-                _isFirstStagePassed = false;
-                _selectedOption = null;
-              });
-            } else {
-              context.read<VocabularyBloc>().add(NextQuestion());
-            }
-          },
-          onHint: () =>
-              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          useScrolling: false,
-          disablePadding: true,
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
-                    
-                    final double estimatedContentHeight =
-                        20.h +
-                        40.h +
-                        (isCompact ? 80.h : 110.h) +
-                        (isCompact ? 100.h : 180.h) +
-                        20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedOption]),
+          builder: (context, _) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
+              onContinue: () {
+                final currentState = context.read<VocabularyBloc>().state;
+                if (currentState is VocabularyLoaded &&
+                    !currentState.isFinalFailure &&
+                    _isCorrect.value == false) {
+                  _isAnswered.value = false;
+                  _isCorrect.value = null;
+                  _isFirstStagePassed.value = false;
+                  _selectedOption.value = null;
+                } else {
+                  context.read<VocabularyBloc>().add(NextQuestion());
+                }
+              },
+              onHint: () =>
+                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+              useScrolling: false,
+              disablePadding: true,
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
+                        
+                        final double estimatedContentHeight =
+                            20.h +
+                            40.h +
+                            (isCompact ? 80.h : 110.h) +
+                            (isCompact ? 100.h : 180.h) +
+                            20.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 6
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapInstruction = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 30.0)
-                        : 10.0;
-                    final double gapAnchor = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 40.0)
-                        : 10.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(12.0, 60.0)
-                        : 12.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 6
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(6.0, 16.0)
+                            : 6.0;
+                        final double gapInstruction = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(10.0, 30.0)
+                            : 10.0;
+                        final double gapAnchor = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(10.0, 40.0)
+                            : 10.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2).clamp(12.0, 60.0)
+                            : 12.0;
 
-                    return Stack(
-                      children: [
-                        CustomScrollView(
-                      physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                      slivers: [
+                        return CustomScrollView(
+                          controller: _scrollController,
+                          physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          slivers: [
                         SliverToBoxAdapter(
                           child: ConstrainedBox(
                             constraints: BoxConstraints(minHeight: maxHeight),
@@ -246,8 +258,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                         child: DragTarget<String>(
                                           onWillAcceptWithDetails: (details) {
                                             _hapticService.selection();
-                                            return !_isAnswered &&
-                                                !_isFirstStagePassed;
+                                            return !_isAnswered.value &&
+                                                !_isFirstStagePassed.value;
                                           },
                                           onAcceptWithDetails: (details) {
                                             _submitAnswer(
@@ -348,8 +360,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                   ),
                                 ],
                                 ),
-                              if (_isFirstStagePassed &&
-                                  (!_isAnswered || _isCorrect == null))
+                               if (_isFirstStagePassed.value &&
+                                  (!_isAnswered.value || _isCorrect.value == null))
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                                   child: Column(
@@ -359,29 +371,28 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                           wrongCollocations: quest.wrongCollocations!,
                                           color: theme.primaryColor,
                                         ),
-                                      SizedBox(height: 160.h),
                                     ],
                                   ),
                                 ),
-                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                               if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
+                                 ContextSentenceBuilder(
+                                   targetKeyword: '${quest.word} ${quest.correctAnswer}',
+                                   primaryColor: theme.primaryColor,
+                                   onConfirmed: () => _submitFinalAnswer(true),
+                                   onSkipped: () => _submitFinalAnswer(false),
+                                   isPositioned: false,
+                                 ),
+                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 160.h : 60.h),
                             ],
                           ),
                           ),
                         ),
                       ],
-                    ),
-                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
-                      ContextSentenceBuilder(
-                        targetKeyword: '${quest.word} ${quest.correctAnswer}',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: true,
-                      ),
-                  ],
-                );
+                    );
                   },
                 ),
+            );
+          },
         );
       },
     );
@@ -405,22 +416,22 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           correct: quest.correctAnswer ?? "",
           color: color,
           isDark: isDark,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          selectedOption: _selectedOption,
+          isAnswered: _isAnswered.value,
+          isCorrect: _isCorrect.value,
+          selectedOption: _selectedOption.value,
           isFinalFailure: isFinalFailure,
-          isFirstStagePassed: _isFirstStagePassed,
+          isFirstStagePassed: _isFirstStagePassed.value,
           index: entry.key,
           isHintUsed: isHintUsed,
           onTap: () {
-            if (!_isAnswered) {
+            if (!_isAnswered.value) {
               _hapticService.light();
               _submitAnswer(entry.value, quest.correctAnswer ?? "");
             }
           },
         );
 
-        if (_isAnswered || _isFirstStagePassed) {
+        if (_isAnswered.value || _isFirstStagePassed.value) {
           return bubble;
         }
 
@@ -476,7 +487,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             ),
           ),
         )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .animate()
         .shimmer(duration: 2.seconds);
   }
 }
