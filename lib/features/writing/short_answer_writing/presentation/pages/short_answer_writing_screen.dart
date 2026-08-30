@@ -373,6 +373,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                     },
                     allowSkip: true,
                     isPositioned: true,
+                    exampleSentence: quest.sampleAnswer,
                   ),
               ],
             ),

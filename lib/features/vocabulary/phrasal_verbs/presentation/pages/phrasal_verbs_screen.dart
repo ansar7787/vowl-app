@@ -155,6 +155,13 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
+            if (_scrollController.hasClients) {
+              _scrollController.animateTo(
+                0,
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOutBack,
+              );
+            }
             _lastQuest = state.currentQuest;
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
