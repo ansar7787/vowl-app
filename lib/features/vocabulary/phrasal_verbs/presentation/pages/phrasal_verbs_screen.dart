@@ -39,11 +39,12 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
-  String? _selectedOption;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
@@ -60,41 +61,64 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
   @override
   void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    _selectedOption.dispose();
+    _scrollController.dispose();
     _vaultController.dispose();
     super.dispose();
   }
 
   void _submitChoice(String selected, String correct) async {
-    if (_isAnswered || _isFirstStagePassed || _selectedOption != null) return;
+    if (_isAnswered.value || _isFirstStagePassed.value || _selectedOption.value != null) return;
 
-    setState(() => _selectedOption = selected);
+    _selectedOption.value = selected;
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.selection();
       _vaultController.forward(from: 0);
-      setState(() {
-        _isFirstStagePassed = true;
+      _isFirstStagePassed.value = true;
+      
+      Future.delayed(const Duration(milliseconds: 1000), () {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
       });
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
-    if (_isAnswered) return;
+  String? _getFormattedExampleSentence(VocabularyQuest quest) {
+    if (quest.contextSentence == null || quest.contextSentence!.isEmpty) return null;
+    
+    final sentence = quest.contextSentence!;
+    final word = quest.word ?? "";
+    final answer = quest.correctAnswer ?? "";
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    // Determine which part of the phrasal verb is missing in the sentence
+    final replacementWord = sentence.contains(answer) ? word : answer;
+    
+    return sentence.replaceAll('__', replacementWord);
+  }
+
+  void _submitFinalAnswer(bool nailedIt) {
+    if (_isAnswered.value) return;
+
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -115,27 +139,23 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            setState(() {
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedOption = null;
-              _isFirstStagePassed = false;
-              _vaultController.reset();
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastQuest = state.currentQuest;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedOption.value = null;
+            _isFirstStagePassed.value = false;
+            _vaultController.reset();
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -168,58 +188,72 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
             ? state.isFinalFailure
             : false;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () =>
-              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          useScrolling: false,
-          disablePadding: true,
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedOption]),
+          builder: (context, _) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
+              onContinue: () {
+                final currentState = context.read<VocabularyBloc>().state;
+                if (currentState is VocabularyLoaded &&
+                    !currentState.isFinalFailure &&
+                    _isCorrect.value == false) {
+                  _isAnswered.value = false;
+                  _isCorrect.value = null;
+                  _isFirstStagePassed.value = false;
+                  _selectedOption.value = null;
+                } else {
+                  context.read<VocabularyBloc>().add(NextQuestion());
+                }
+              },
+              onHint: () =>
+                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+              useScrolling: false,
+              disablePadding: true,
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        (isCompact ? 30.h : 40.h) +
-                        (quest.instruction.isNotEmpty
-                            ? (isCompact ? 60.h : 80.h)
-                            : 0) +
-                        (isCompact ? 70.h : 90.h) +
-                        (isCompact ? 110.h : 160.h) +
-                        (isCompact ? 90.h : 130.h) +
-                        20.h;
-                    final remainingHeight =
-                        maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            (isCompact ? 30.h : 40.h) +
+                            (quest.instruction.isNotEmpty
+                                ? (isCompact ? 60.h : 80.h)
+                                : 0) +
+                            (isCompact ? 70.h : 90.h) +
+                            (isCompact ? 110.h : 160.h) +
+                            (isCompact ? 90.h : 130.h) +
+                            20.h;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 6
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 24.0)
-                        : 6.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 30.0)
-                        : 10.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(12.0, 40.0)
-                        : 12.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 6
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(6.0, 24.0)
+                            : 6.0;
+                        final double gapMiddle = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(10.0, 30.0)
+                            : 10.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2).clamp(12.0, 40.0)
+                            : 12.0;
 
-                    return Stack(
-                      children: [
-                        CustomScrollView(
-                      physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverToBoxAdapter(
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
-                            child: Stack(
+                        return CustomScrollView(
+                          controller: _scrollController,
+                          physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverToBoxAdapter(
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(minHeight: maxHeight),
+                                child: Stack(
                         alignment: Alignment.center,
                         children: [
                           Positioned.fill(
@@ -366,42 +400,45 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                 ),
                               ],
                             ),
-                            if (_isFirstStagePassed && !_isAnswered)
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: Column(
-                          children: [
-                            if (quest.literalVsFigurative != null && quest.literalVsFigurative!.isNotEmpty)
-                              PhrasalVerbsLiteralComparison(
-                                literalVsFigurative: quest.literalVsFigurative!,
-                                color: theme.primaryColor,
+                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                child: Column(
+                                  children: [
+                                    if (quest.literalVsFigurative != null && quest.literalVsFigurative!.isNotEmpty)
+                                      PhrasalVerbsLiteralComparison(
+                                        literalVsFigurative: quest.literalVsFigurative!,
+                                        color: theme.primaryColor,
+                                      ),
+                                    SizedBox(height: 24.h),
+                                  ],
+                                ),
                               ),
-                            SizedBox(height: 160.h),
+                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                              ContextSentenceBuilder(
+                                targetKeyword: "${quest.word} ${quest.correctAnswer}".trim(),
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: false,
+                                exampleSentence: _getFormattedExampleSentence(quest),
+                              ),
+                            SizedBox(height: 40.h),
                           ],
                         ),
-                      ),
-                    SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
-                  ],
+                      ],
+                    ),
+                  ),
                 ),
               ],
-            ),
-            ),
-          ),
-        ],
-      ),
-      if (_isFirstStagePassed && !_isAnswered)
-        ContextSentenceBuilder(
-          targetKeyword: "${quest.word} ${quest.correctAnswer}".trim(),
-          primaryColor: theme.primaryColor,
-          onConfirmed: () => _submitFinalAnswer(true),
-          onSkipped: () => _submitFinalAnswer(false),
-          isPositioned: true,
+            );
+          },
         ),
-    ],
+      );
+    },
   );
-                  },
-                ),
-        );
+},
+);
       },
     );
   }
@@ -435,8 +472,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
             ],
           ),
         )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 3.seconds);
+        .animate()
+        .shimmer(duration: 2.seconds);
   }
 
   Widget _buildInstruction(String text, Color color, bool isCompact) {
@@ -503,9 +540,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           correct: quest.correctAnswer ?? "",
           color: color,
           isDark: isDark,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          selectedOption: _selectedOption,
+          isAnswered: _isAnswered.value,
+          isCorrect: _isCorrect.value,
+          selectedOption: _selectedOption.value,
           isFinalFailure: isFinalFailure,
           index: entry.key,
           isHintUsed: hintUsed,
