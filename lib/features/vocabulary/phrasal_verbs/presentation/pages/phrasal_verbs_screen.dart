@@ -405,12 +405,13 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 child: Column(
                                   children: [
-                                    if (quest.literalVsFigurative != null && quest.literalVsFigurative!.isNotEmpty)
+                                    if (quest.literalVsFigurative != null && quest.literalVsFigurative!.isNotEmpty) ...[
                                       PhrasalVerbsLiteralComparison(
                                         literalVsFigurative: quest.literalVsFigurative!,
                                         color: theme.primaryColor,
                                       ),
-                                    SizedBox(height: 24.h),
+                                      SizedBox(height: 24.h),
+                                    ],
                                   ],
                                 ),
                               ),
