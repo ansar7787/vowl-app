@@ -21,7 +21,7 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
       // announcement — the wrapper label is the canonical screen reader entry.
       excludeSemantics: true,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         decoration: BoxDecoration(
           color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.white,
           borderRadius: BorderRadius.circular(24.r),

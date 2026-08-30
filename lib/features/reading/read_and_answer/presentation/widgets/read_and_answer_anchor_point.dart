@@ -21,7 +21,7 @@ class ReadAndAnswerAnchorPoint extends StatelessWidget {
       // announcement — the wrapper label is sufficient.
       excludeSemantics: true,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
           color: isDark
               ? Colors.white.withValues(alpha: 0.03)
