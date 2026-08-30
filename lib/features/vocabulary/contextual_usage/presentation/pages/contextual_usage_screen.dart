@@ -258,6 +258,15 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                                 theme.primaryColor,
                                                 isDarkMode,
                                                 constraints.maxWidth,
+                                                _selectedOption.value != null
+                                                    ? _selectedOption.value!
+                                                              .trim()
+                                                              .toLowerCase() ==
+                                                          (quest.correctAnswer ??
+                                                                  "")
+                                                              .trim()
+                                                              .toLowerCase()
+                                                    : null,
                                               ),
                                             ),
                                             if (_isFirstStagePassed.value)
@@ -337,6 +346,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
     Color color,
     bool isDark,
     double maxWidth,
+    bool? currentOptionCorrect,
   ) {
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -411,7 +421,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                           color: color,
                           isDark: isDark,
                           isAnswered: _isAnswered.value,
-                          isCorrect: _isCorrect.value,
+                          isCorrect: _isCorrect.value ?? currentOptionCorrect,
                           selectedOption: _selectedOption.value,
                         ),
                       ),
@@ -424,7 +434,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                       color: color,
                       isDark: isDark,
                       isAnswered: _isAnswered.value,
-                      isCorrect: _isCorrect.value,
+                      isCorrect: _isCorrect.value ?? currentOptionCorrect,
                       selectedOption: _selectedOption.value,
                     ),
                   ),
@@ -444,11 +454,18 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                 color,
                                 isDark,
                                 isCompact,
+                                currentOptionCorrect,
                               ),
                             ),
                           ),
                         )
-                      : _buildChipsWrap(quest, color, isDark, isCompact))
+                      : _buildChipsWrap(
+                          quest,
+                          color,
+                          isDark,
+                          isCompact,
+                          currentOptionCorrect,
+                        ))
                 : const SizedBox.shrink(),
             SizedBox(height: gapBottom),
           ],
@@ -462,6 +479,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
     Color color,
     bool isDark,
     bool isCompact,
+    bool? currentOptionCorrect,
   ) {
     return Wrap(
           spacing: 16.w,
@@ -473,7 +491,9 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
               color: color,
               isDark: isDark,
               isSelected: _selectedOption.value == o,
-              isCorrect: _isCorrect.value,
+              isCorrect: _selectedOption.value == o
+                  ? currentOptionCorrect
+                  : null,
               onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
             );
           }).toList(),
