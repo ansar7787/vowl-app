@@ -17,7 +17,7 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       borderRadius: BorderRadius.circular(20.r),
       color: color.withValues(alpha: isDark ? 0.1 : 0.08),
       child: Row(

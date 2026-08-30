@@ -72,7 +72,7 @@ class _FindWordMeaningInteractivePassageState
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: widget.isDark
             ? Colors.black.withValues(alpha: 0.2)
