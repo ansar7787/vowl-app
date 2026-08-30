@@ -501,6 +501,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                   onConfirmed: () => _submitVerbalEvaluation(true),
                   onSkipped: () => _submitVerbalEvaluation(false),
                   isPositioned: true,
+                  exampleSentence: quest.contextSentence,
                 ),
             ],
           );
