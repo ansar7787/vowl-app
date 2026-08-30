@@ -221,18 +221,16 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
                                 child: Column(
                             children: [
-                              AnimatedContainer(
+                              AnimatedSize(
                                 duration: const Duration(milliseconds: 600),
                                 curve: Curves.easeInOutCubic,
-                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.52 : constraints.maxHeight,
-                                child: OverflowBox(
-                                  minHeight: constraints.maxHeight,
-                                  maxHeight: constraints.maxHeight,
-                                  alignment: Alignment.topCenter,
+                                child: SizedBox(
+                                  height: _isFirstStagePassed.value ? constraints.maxHeight * 0.52 : constraints.maxHeight,
                                   child: _AcademicWordGameBody(
                                   quest: quest,
                                   isAnswered: _isAnswered.value,
                                   isCorrect: _isCorrect.value,
+                                  isFirstStagePassed: _isFirstStagePassed.value,
                                   misspelledWord: _misspelledWord.value,
                                   slotKey: _slotKey,
                                   activeShardIndex: _activeShardIndex,
@@ -242,9 +240,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                   onDragStart: _onShardDragStart,
                                   onDragUpdate: _onShardDragUpdate,
                                   onDragEnd: (i) => _onShardDragEnd(i, quest),
-                                  getInitialPosition: _getShardInitialPosition,
+                                    getInitialPosition: _getShardInitialPosition,
+                                  ),
                                 ),
-                              ),
                               ),
                               if (_isFirstStagePassed.value)
                                 Padding(
@@ -472,6 +470,7 @@ class _AcademicWordGameBody extends StatelessWidget {
   final VocabularyQuest quest;
   final bool isAnswered;
   final bool? isCorrect;
+  final bool isFirstStagePassed;
   final String? misspelledWord;
   final GlobalKey slotKey;
   final int? activeShardIndex;
@@ -487,6 +486,7 @@ class _AcademicWordGameBody extends StatelessWidget {
     required this.quest,
     required this.isAnswered,
     required this.isCorrect,
+    required this.isFirstStagePassed,
     required this.misspelledWord,
     required this.slotKey,
     required this.activeShardIndex,
@@ -528,11 +528,12 @@ class _AcademicWordGameBody extends StatelessWidget {
               isUltraCompact: isUltraCompact,
               isAnyCompact: isAnyCompact,
             ),
-            ..._buildShards(
-              constraints: constraints,
-              maxHeight: maxHeight,
-              maxWidth: maxWidth,
-            ),
+            if (!isFirstStagePassed)
+              ..._buildShards(
+                constraints: constraints,
+                maxHeight: maxHeight,
+                maxWidth: maxWidth,
+              ),
           ],
         );
       },

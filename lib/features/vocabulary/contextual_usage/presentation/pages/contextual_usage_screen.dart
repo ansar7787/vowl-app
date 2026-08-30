@@ -385,7 +385,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                           ),
                         ),
                       )
-                    : _buildChipsWrap(quest, color, isDark, isCompact),
+                    : (!_isFirstStagePassed.value) ? _buildChipsWrap(quest, color, isDark, isCompact) : const SizedBox.shrink(),
                 SizedBox(height: gapBottom),
               ],
             );

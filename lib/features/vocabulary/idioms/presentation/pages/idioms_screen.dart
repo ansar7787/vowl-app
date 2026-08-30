@@ -233,14 +233,11 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                           ),
                           Column(
                             children: [
-                              AnimatedContainer(
+                              AnimatedSize(
                                 duration: const Duration(milliseconds: 600),
                                 curve: Curves.easeInOutCubic,
-                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.65 : constraints.maxHeight,
-                                child: OverflowBox(
-                                  minHeight: constraints.maxHeight,
-                                  maxHeight: constraints.maxHeight,
-                                  alignment: Alignment.topCenter,
+                                child: SizedBox(
+                                  height: _isFirstStagePassed.value ? constraints.maxHeight * 0.65 : constraints.maxHeight,
                                   child: _buildChatInterface(quest, theme.primaryColor, isDarkMode),
                                 ),
                               ),
@@ -399,30 +396,31 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
 
                 SizedBox(height: gapMiddle),
 
-                Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20.w),
-                      child: Wrap(
-                        spacing: 12.w,
-                        runSpacing: isCompact ? 8.h : 12.h,
-                        alignment: WrapAlignment.center,
-                        children: (quest.options ?? []).map((o) {
-                          return IdiomsOptionChip(
-                            text: o,
-                            correct: quest.correctAnswer ?? "",
-                            color: color,
-                            isDark: isDark,
-                            isAnswered: _isAnswered.value,
-                            isCorrect: _isCorrect.value,
-                            selectedOption: _selectedOption.value,
-                            onTap: () =>
-                                _submitAnswer(o, quest.correctAnswer ?? ""),
-                          );
-                        }).toList(),
-                      ),
-                    )
-                    .animate()
-                    .fadeIn(delay: 800.ms)
-                    .slideY(begin: 0.3, curve: Curves.easeOutCubic),
+                if (!_isFirstStagePassed.value)
+                  Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Wrap(
+                          spacing: 12.w,
+                          runSpacing: isCompact ? 8.h : 12.h,
+                          alignment: WrapAlignment.center,
+                          children: (quest.options ?? []).map((o) {
+                            return IdiomsOptionChip(
+                              text: o,
+                              correct: quest.correctAnswer ?? "",
+                              color: color,
+                              isDark: isDark,
+                              isAnswered: _isAnswered.value,
+                              isCorrect: _isCorrect.value,
+                              selectedOption: _selectedOption.value,
+                              onTap: () =>
+                                  _submitAnswer(o, quest.correctAnswer ?? ""),
+                            );
+                          }).toList(),
+                        ),
+                      )
+                      .animate()
+                      .fadeIn(delay: 800.ms)
+                      .slideY(begin: 0.3, curve: Curves.easeOutCubic),
                 SizedBox(height: gapBottom),
               ],
             );
