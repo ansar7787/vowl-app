@@ -39,29 +39,35 @@ class ReadAndAnswerAnchorPoint extends StatelessWidget {
             ),
           ],
         ),
-        child: Column(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Decorative icon — excluded from semantics; the wrapper covers it.
             ExcludeSemantics(
               child: Container(
-                padding: EdgeInsets.all(10.r),
+                padding: EdgeInsets.all(8.r),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.quiz_rounded, color: color, size: 24.r),
+                child: Icon(Icons.help_outline_rounded, color: color, size: 20.r),
               ),
             ),
-            SizedBox(height: 16.h),
-            Text(
-              question,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
-                height: 1.4,
+            SizedBox(width: 12.w),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(top: 2.h), // aligns text visually with icon
+                child: Text(
+                  question,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    height: 1.4,
+                  ),
+                ),
               ),
             ),
           ],

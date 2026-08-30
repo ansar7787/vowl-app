@@ -18,10 +18,9 @@ class ReadAndAnswerInstruction extends StatelessWidget {
       // 'header' signals to TalkBack/VoiceOver that this is a labelled
       // section header — players hear it once on arrival, not on every focus.
       header: true,
-      label: instruction ?? 'DIVE THROUGH THE ABYSS TO ANCHOR TRUTH',
+      label: instruction ?? 'READ & ANSWER',
       excludeSemantics: true,
-      child: Center(
-        child: Container(
+      child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
           decoration: BoxDecoration(
             color: primaryColor.withValues(alpha: 0.1),
@@ -34,7 +33,7 @@ class ReadAndAnswerInstruction extends StatelessWidget {
               // Decorative icon — excluded from semantics by parent wrapper.
               ExcludeSemantics(
                 child: Icon(
-                  Icons.scuba_diving_rounded,
+                  Icons.menu_book_rounded,
                   size: 14.r,
                   color: primaryColor,
                 ),
@@ -45,8 +44,9 @@ class ReadAndAnswerInstruction extends StatelessWidget {
                 // without forcing the Row to expand to fill available space.
                 fit: FlexFit.loose,
                 child: Text(
-                  (instruction ?? 'DIVE THROUGH THE ABYSS TO ANCHOR TRUTH')
+                  (instruction ?? 'READ & ANSWER')
                       .toUpperCase(),
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,
@@ -59,7 +59,6 @@ class ReadAndAnswerInstruction extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }

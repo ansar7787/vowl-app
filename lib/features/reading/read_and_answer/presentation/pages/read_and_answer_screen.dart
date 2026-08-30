@@ -225,22 +225,43 @@ class _QuestContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String? displayTopic = quest.paragraphTopic;
+    String displayPassage = quest.passage ?? '';
+
+    // Automatically extract embedded tags like "[My Family]" from the passage text
+    final match = RegExp(r'^\[(.*?)\]\s*(.*)$', dotAll: true).firstMatch(displayPassage);
+    if (match != null) {
+      displayTopic = match.group(1);
+      displayPassage = match.group(2) ?? '';
+    }
+
     return Semantics(
       explicitChildNodes: true,
-      child: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
+      child: Scrollbar(
+        thickness: 4.w,
+        radius: Radius.circular(10.r),
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: 16.h),
-                  ReadAndAnswerInstruction(
-                    primaryColor: primaryColor,
-                    instruction: quest.instruction,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: ReadAndAnswerInstruction(
+                          primaryColor: primaryColor,
+                          instruction: displayTopic,
+                        ),
+                      ),
+                      SizedBox(width: 16.w),
+                      _buildReadTimeBadge(primaryColor, isDark, displayPassage),
+                    ],
                   ),
-                  SizedBox(height: 16.h),
-                  _buildReadTimeBadge(primaryColor, isDark),
                   SizedBox(height: 16.h),
                   ReadAndAnswerAnchorPoint(
                     question: quest.question ?? '',
@@ -250,7 +271,7 @@ class _QuestContent extends StatelessWidget {
                   SizedBox(height: 24.h),
                   // Render Passage Box
                   ReadAndAnswerFloatingPassage(
-                    text: quest.passage ?? '',
+                    text: displayPassage,
                     color: primaryColor,
                     isDark: isDark,
                   ),
@@ -292,9 +313,9 @@ class _QuestContent extends StatelessWidget {
     );
   }
 
-  Widget _buildReadTimeBadge(Color primaryColor, bool isDark) {
+  Widget _buildReadTimeBadge(Color primaryColor, bool isDark, String displayPassage) {
     // Avoid costly regex split in build method by relying on fast space split fallback
-    final wordCount = quest.passageWordCount ?? (quest.passage?.split(' ').length ?? 50);
+    final wordCount = quest.passageWordCount ?? (displayPassage.split(' ').length);
     // Assume 130 WPM reading speed
     final readTimeSec = (wordCount / 130 * 60).round();
     final timeStr = readTimeSec < 60 ? '$readTimeSec sec read' : '${(readTimeSec/60).round()} min read';
