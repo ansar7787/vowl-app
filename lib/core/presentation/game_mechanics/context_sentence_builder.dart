@@ -168,6 +168,88 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     }
   }
 
+  Widget _buildSkipButton(Color subtitleColor) {
+    return ValueListenableBuilder<int>(
+      valueListenable: _attempts,
+      builder: (context, attempts, _) {
+        return GestureDetector(
+          onTap: () {
+            if (_isSubmitting.value) return;
+            if (attempts >= widget.maxAttempts) {
+              _isSubmitting.value = true;
+              widget.onSkipped();
+              return;
+            }
+            _isSubmitting.value = true;
+            final user = context.read<AuthBloc>().state.user;
+            final isPremium = user?.isPremium ?? false;
+            if (isPremium) {
+              if (widget.onBypassed != null) {
+                widget.onBypassed!();
+              } else {
+                widget.onConfirmed();
+              }
+            } else {
+              di.sl<AdService>().showRewardedAd(
+                context: context,
+                isPremium: false,
+                onUserEarnedReward: (_) {
+                  if (mounted) {
+                    if (widget.onBypassed != null) {
+                      widget.onBypassed!();
+                    } else {
+                      widget.onConfirmed();
+                    }
+                  }
+                },
+                onDismissed: () {
+                  if (mounted) _isSubmitting.value = false;
+                },
+              );
+            }
+          },
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: subtitleColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                AutoSizeText(
+                  attempts >= widget.maxAttempts ? 'CONTINUE' : 'SKIP',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700,
+                    color: subtitleColor.withValues(alpha: 0.8),
+                  ),
+                ),
+                Builder(
+                  builder: (context) {
+                    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
+                    if (!isPremium && attempts < widget.maxAttempts) {
+                      return Padding(
+                        padding: EdgeInsets.only(left: 4.w),
+                        child: Icon(
+                          Icons.ondemand_video_rounded,
+                          size: 12.r,
+                          color: subtitleColor.withValues(alpha: 0.8),
+                        ),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -211,430 +293,381 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
             child: child,
           );
         },
-            child: RawScrollbar(
-              controller: _scrollController,
-              thumbColor: widget.primaryColor.withValues(alpha: 0.5),
-              radius: Radius.circular(8.r),
-              thickness: 4.w,
-              child: SingleChildScrollView(
-                controller: _scrollController,
-                padding: EdgeInsets.symmetric(vertical: 24.h),
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Header
-                  Row(
+        child: RawScrollbar(
+          controller: _scrollController,
+          thumbColor: widget.primaryColor.withValues(alpha: 0.5),
+          radius: Radius.circular(8.r),
+          thickness: 4.w,
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            padding: EdgeInsets.symmetric(vertical: 24.h),
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: widget.primaryColor.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(14.r),
-                        border: Border.all(
-                          color: widget.primaryColor.withValues(alpha: 0.3),
-                        ),
-                      ),
-                      child: Icon(
-                        Icons.history_edu_rounded,
-                        color: widget.primaryColor,
-                        size: 22.r,
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.05, 1.05),
-                      duration: 1.5.seconds,
-                    ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AutoSizeText(
-                        'USE IT IN A SENTENCE',
-                        maxLines: 1,
-                        minFontSize: 8,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w900,
-                          color: widget.primaryColor,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      AutoSizeText(
-                        'Prove your mastery using the target word.',
-                        maxLines: 1,
-                        minFontSize: 6,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w500,
-                          color: subtitleColor,
-                        ),
-                      ),
-                      if (widget.exampleSentence != null &&
-                          widget.exampleSentence!.isNotEmpty) ...[
-                        SizedBox(height: 6.h),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 4.h,
-                          ),
+                // Header
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                          padding: EdgeInsets.all(10.r),
                           decoration: BoxDecoration(
-                            color: widget.primaryColor.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(6.r),
+                            color: widget.primaryColor.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(14.r),
                             border: Border.all(
-                              color: widget.primaryColor.withValues(alpha: 0.2),
+                              color: widget.primaryColor.withValues(alpha: 0.3),
                             ),
                           ),
-                          child: AutoSizeText(
-                            'Example: "${widget.exampleSentence!}"',
-                            maxLines: 2,
+                          child: Icon(
+                            Icons.history_edu_rounded,
+                            color: widget.primaryColor,
+                            size: 22.r,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.05, 1.05),
+                          duration: 1.5.seconds,
+                        ),
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AutoSizeText(
+                            'USE IT IN A SENTENCE',
+                            maxLines: 1,
                             minFontSize: 8,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.w600,
-                              color: isDark ? Colors.white70 : Colors.black87,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w900,
+                              color: widget.primaryColor,
+                              letterSpacing: 1.5,
                             ),
                           ),
+                          SizedBox(height: 2.h),
+                          AutoSizeText(
+                            'Prove your mastery using the target word.',
+                            maxLines: 1,
+                            minFontSize: 6,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w500,
+                              color: subtitleColor,
+                            ),
+                          ),
+                          if (widget.exampleSentence != null &&
+                              widget.exampleSentence!.isNotEmpty) ...[
+                            SizedBox(height: 6.h),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 8.w,
+                                vertical: 4.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.1,
+                                ),
+                                borderRadius: BorderRadius.circular(6.r),
+                                border: Border.all(
+                                  color: widget.primaryColor.withValues(
+                                    alpha: 0.2,
+                                  ),
+                                ),
+                              ),
+                              child: AutoSizeText(
+                                'Example: "${widget.exampleSentence!}"',
+                                maxLines: 2,
+                                minFontSize: 8,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontStyle: FontStyle.italic,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : Colors.black87,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                    if (widget.allowSkip)
+                      Padding(
+                        padding: EdgeInsets.only(left: 8.w),
+                        child: _buildSkipButton(subtitleColor),
+                      ),
+                  ],
+                ),
+                SizedBox(height: 24.h),
+
+                // Target keyword chip
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 12.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: widget.primaryColor.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      color: widget.primaryColor.withValues(alpha: 0.4),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.key_rounded,
+                        color: widget.primaryColor,
+                        size: 16.r,
+                      ),
+                      SizedBox(width: 8.w),
+                      AutoSizeText(
+                        widget.targetKeyword.toUpperCase(),
+                        maxLines: 1,
+                        minFontSize: 10,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w900,
+                          color: widget.primaryColor,
+                          letterSpacing: 2,
                         ),
-                      ],
+                      ),
                     ],
                   ),
                 ),
-              ],
-            ),
-            SizedBox(height: 24.h),
+                SizedBox(height: 20.h),
 
-            // Target keyword chip
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: widget.primaryColor.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.4),
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.key_rounded,
-                    color: widget.primaryColor,
-                    size: 16.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  AutoSizeText(
-                    widget.targetKeyword.toUpperCase(),
-                    maxLines: 1,
-                    minFontSize: 10,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      color: widget.primaryColor,
-                      letterSpacing: 2,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20.h),
+                // Text input area
+                ValueListenableBuilder<_BuilderStatus>(
+                  valueListenable: _status,
+                  builder: (context, status, _) {
+                    if (status == _BuilderStatus.success) {
+                      return const SizedBox.shrink();
+                    }
 
-            // Text input area
-            ValueListenableBuilder<_BuilderStatus>(
-              valueListenable: _status,
-              builder: (context, status, _) {
-                if (status == _BuilderStatus.success) {
-                  return const SizedBox.shrink();
-                }
-
-                return Column(
-                  children: [
-                    Container(
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.black.withValues(alpha: 0.2)
-                                : Colors.white.withValues(alpha: 0.5),
-                            borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: status == _BuilderStatus.error
-                                  ? Colors.redAccent.withValues(alpha: 0.5)
-                                  : isDark
-                                  ? Colors.white10
-                                  : Colors.black12,
-                            ),
-                          ),
-                          child: TextField(
-                            controller: _controller,
-                            focusNode: _focusNode,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 15.sp,
-                              color: textColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            maxLines: 3,
-                            minLines: 1,
-                            onChanged: (_) {
-                              if (_status.value == _BuilderStatus.error) {
-                                _status.value = _BuilderStatus.idle;
-                              }
-                            },
-                            onSubmitted: (_) => _evaluate(),
-                            decoration: InputDecoration(
-                              hintText: 'Type your sentence here...',
-                              hintStyle: TextStyle(
-                                color: subtitleColor.withValues(alpha: 0.5),
-                                fontWeight: FontWeight.w400,
-                              ),
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 16.w,
-                                vertical: 16.h,
-                              ),
-                            ),
-                          ),
-                        )
-                        .animate(target: status == _BuilderStatus.error ? 1 : 0)
-                        .shakeX(amount: 5, duration: 400.ms),
-
-                    SizedBox(height: 12.h),
-
-                    // Word counter + feedback
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    return Column(
                       children: [
-                        ValueListenableBuilder<TextEditingValue>(
-                          valueListenable: _controller,
-                          builder: (context, value, _) {
-                            final text = value.text.trim();
-                            final wordCount = text.isEmpty
-                                ? 0
-                                : text.split(RegExp(r'\s+')).length;
-                            return AutoSizeText(
-                              '$wordCount / ${widget.minWordCount} words',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w700,
-                                color: wordCount >= widget.minWordCount
-                                    ? Colors.greenAccent
-                                    : subtitleColor.withValues(alpha: 0.7),
-                              ),
-                            );
-                          },
-                        ),
-                        ValueListenableBuilder<int>(
-                          valueListenable: _attempts,
-                          builder: (context, attempts, _) {
-                            if (attempts > 0) {
-                              return AutoSizeText(
-                                '${widget.maxAttempts - attempts} attempts left',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: subtitleColor.withValues(alpha: 0.5),
+                        Container(
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.black.withValues(alpha: 0.2)
+                                    : Colors.white.withValues(alpha: 0.5),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: status == _BuilderStatus.error
+                                      ? Colors.redAccent.withValues(alpha: 0.5)
+                                      : isDark
+                                      ? Colors.white10
+                                      : Colors.black12,
                                 ),
-                              );
-                            }
-                            return const SizedBox.shrink();
-                          },
-                        ),
-                      ],
-                    ),
-
-                    // Error message
-                    if (status == _BuilderStatus.error)
-                      ValueListenableBuilder<String>(
-                        valueListenable: _feedbackMessage,
-                        builder: (context, feedback, _) {
-                          if (feedback.isEmpty) return const SizedBox.shrink();
-                          return Padding(
-                            padding: EdgeInsets.only(top: 12.h),
-                            child: AutoSizeText(
-                              feedback,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.redAccent.withValues(alpha: 0.9),
                               ),
-                            ),
-                          );
-                        },
-                      ),
-
-                    SizedBox(height: 24.h),
-
-                    // Submit button
-                    GestureDetector(
-                      onTap: _evaluate,
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 16.h),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              widget.primaryColor,
-                              widget.primaryColor.withValues(alpha: 0.8),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: widget.primaryColor.withValues(alpha: 0.3),
-                              blurRadius: 12,
-                              offset: const Offset(0, 4),
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: AutoSizeText(
-                            'SUBMIT SENTENCE',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                              letterSpacing: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Skip button
-                    if (widget.allowSkip)
-                      ValueListenableBuilder<int>(
-                        valueListenable: _attempts,
-                        builder: (context, attempts, _) {
-                          return Padding(
-                            padding: EdgeInsets.only(top: 16.h),
-                            child: ScaleButton(
-                              onTap: () {
-                                if (_isSubmitting.value) return;
-
-                                if (attempts >= widget.maxAttempts) {
-                                  _isSubmitting.value = true;
-                                  widget.onSkipped();
-                                  return;
-                                }
-
-                                _isSubmitting.value = true;
-                                final user = context
-                                    .read<AuthBloc>()
-                                    .state
-                                    .user;
-                                final isPremium = user?.isPremium ?? false;
-                                if (isPremium) {
-                                  if (widget.onBypassed != null) {
-                                    widget.onBypassed!();
-                                  } else {
-                                    widget.onConfirmed();
-                                  }
-                                } else {
-                                  di.sl<AdService>().showRewardedAd(
-                                    context: context,
-                                    isPremium: false,
-                                    onUserEarnedReward: (_) {
-                                      if (mounted) {
-                                        if (widget.onBypassed != null) {
-                                          widget.onBypassed!();
-                                        } else {
-                                          widget.onConfirmed();
-                                        }
-                                      }
-                                    },
-                                    onDismissed: () {
-                                      if (mounted) _isSubmitting.value = false;
-                                    },
-                                  );
-                                }
-                              },
-                              child: Builder(
-                                builder: (context) {
-                                  final isPremium =
-                                      context
-                                          .watch<AuthBloc>()
-                                          .state
-                                          .user
-                                          ?.isPremium ??
-                                      false;
-                                  return AutoSizeText(
-                                    attempts >= widget.maxAttempts
-                                        ? 'CONTINUE'
-                                        : (isPremium
-                                              ? 'SKIP'
-                                              : 'WATCH AD TO BYPASS'),
+                              child: Stack(
+                                children: [
+                                  TextField(
+                                    controller: _controller,
+                                    focusNode: _focusNode,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: subtitleColor.withValues(
-                                        alpha: 0.6,
-                                      ),
-                                      letterSpacing: 1.5,
+                                      fontSize: 15.sp,
+                                      color: textColor,
+                                      fontWeight: FontWeight.w600,
                                     ),
-                                  );
-                                },
+                                    maxLines: 3,
+                                    minLines: 2,
+                                    onChanged: (_) {
+                                      if (_status.value == _BuilderStatus.error) {
+                                        _status.value = _BuilderStatus.idle;
+                                      }
+                                    },
+                                    onSubmitted: (_) => _evaluate(),
+                                    decoration: InputDecoration(
+                                      hintText: 'Type your sentence here...',
+                                      hintStyle: TextStyle(
+                                        color: subtitleColor.withValues(alpha: 0.5),
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                      border: InputBorder.none,
+                                      contentPadding: EdgeInsets.only(
+                                        left: 16.w,
+                                        right: 16.w,
+                                        top: 16.h,
+                                        bottom: 32.h,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 12.h,
+                                    right: 16.w,
+                                    child: ValueListenableBuilder<TextEditingValue>(
+                                      valueListenable: _controller,
+                                      builder: (context, value, _) {
+                                        final text = value.text.trim();
+                                        final wordCount = text.isEmpty
+                                            ? 0
+                                            : text.split(RegExp(r'\s+')).length;
+                                        return AutoSizeText(
+                                          '$wordCount / ${widget.minWordCount} words',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 10.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: wordCount >= widget.minWordCount
+                                                ? Colors.greenAccent
+                                                : subtitleColor.withValues(alpha: 0.6),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 12.h,
+                                    left: 16.w,
+                                    child: ValueListenableBuilder<int>(
+                                      valueListenable: _attempts,
+                                      builder: (context, attempts, _) {
+                                        if (attempts > 0) {
+                                          return AutoSizeText(
+                                            '${widget.maxAttempts - attempts} attempts left',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 10.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.redAccent.withValues(alpha: 0.8),
+                                            ),
+                                          );
+                                        }
+                                        return const SizedBox.shrink();
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                            .animate(
+                              target: status == _BuilderStatus.error ? 1 : 0,
+                            )
+                            .shakeX(amount: 5, duration: 400.ms),
+
+
+                        // Error message
+                        if (status == _BuilderStatus.error)
+                          ValueListenableBuilder<String>(
+                            valueListenable: _feedbackMessage,
+                            builder: (context, feedback, _) {
+                              if (feedback.isEmpty) {
+                                return const SizedBox.shrink();
+                              }
+                              return Padding(
+                                padding: EdgeInsets.only(top: 12.h),
+                                child: AutoSizeText(
+                                  feedback,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.redAccent.withValues(
+                                      alpha: 0.9,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+
+                        SizedBox(height: 24.h),
+
+                        // Submit button
+                        GestureDetector(
+                          onTap: _evaluate,
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(vertical: 16.h),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  widget.primaryColor,
+                                  widget.primaryColor.withValues(alpha: 0.8),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(20.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: widget.primaryColor.withValues(
+                                    alpha: 0.3,
+                                  ),
+                                  blurRadius: 12,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: AutoSizeText(
+                                'SUBMIT SENTENCE',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  letterSpacing: 2,
+                                ),
                               ),
                             ),
-                          );
-                        },
-                      ),
-                  ],
-                );
-              },
-            ),
+                          ),
+                        ),
 
-            // Success state
-            ValueListenableBuilder<_BuilderStatus>(
-              valueListenable: _status,
-              builder: (context, status, _) {
-                if (status != _BuilderStatus.success) {
-                  return const SizedBox.shrink();
-                }
+                      ],
+                    );
+                  },
+                ),
 
-                return Column(
-                  children: [
-                    Icon(
-                      Icons.verified_rounded,
-                      color: Colors.greenAccent,
-                      size: 56.r,
-                    ).animate().scale(
-                      begin: const Offset(0, 0),
-                      end: const Offset(1, 1),
-                      duration: 500.ms,
-                      curve: Curves.easeOutBack,
-                    ),
-                    SizedBox(height: 12.h),
-                    AutoSizeText(
-                      'MASTERY PROVEN! 🎯',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.greenAccent,
-                        letterSpacing: 2,
-                      ),
-                    ).animate().fadeIn(delay: 200.ms),
-                  ],
-                );
-              },
+                // Success state
+                ValueListenableBuilder<_BuilderStatus>(
+                  valueListenable: _status,
+                  builder: (context, status, _) {
+                    if (status != _BuilderStatus.success) {
+                      return const SizedBox.shrink();
+                    }
+
+                    return Column(
+                      children: [
+                        Icon(
+                          Icons.verified_rounded,
+                          color: Colors.greenAccent,
+                          size: 56.r,
+                        ).animate().scale(
+                          begin: const Offset(0, 0),
+                          end: const Offset(1, 1),
+                          duration: 500.ms,
+                          curve: Curves.easeOutBack,
+                        ),
+                        SizedBox(height: 12.h),
+                        AutoSizeText(
+                          'MASTERY PROVEN! 🎯',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.greenAccent,
+                            letterSpacing: 2,
+                          ),
+                        ).animate().fadeIn(delay: 200.ms),
+                      ],
+                    );
+                  },
+                ),
+              ],
             ),
-          ],
+          ),
         ),
-      ),
       ),
     );
 
