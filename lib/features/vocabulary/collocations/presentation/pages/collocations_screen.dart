@@ -385,7 +385,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                       ? quest.contextSentence!.replaceAll('__', quest.contextSentence!.contains(quest.correctAnswer ?? "") ? (quest.word ?? "") : (quest.correctAnswer ?? ""))
                                       : null,
                                  ),
-                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 160.h : 60.h),
+                              SizedBox(height: 40.h),
                             ],
                           ),
                           ),
