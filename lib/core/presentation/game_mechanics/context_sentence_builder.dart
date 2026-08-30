@@ -165,17 +165,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
     final subtitleColor = isDark ? Colors.white70 : Colors.black87;
 
-    final content = Material(
-      type: MaterialType.transparency,
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: 20.w,
-          right: 20.w,
-          bottom: widget.isPositioned ? MediaQuery.of(context).viewInsets.bottom + 24.h : 0,
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(32.r),
-          child: ValueListenableBuilder<_BuilderStatus>(
+    final innerContent = ClipRRect(
+      borderRadius: BorderRadius.circular(32.r),
+      child: ValueListenableBuilder<_BuilderStatus>(
               valueListenable: _status,
               builder: (context, status, child) {
                 final borderColor = status == _BuilderStatus.success
@@ -564,9 +556,26 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                   ),
                 ],
             ),
+    final content = Material(
+      type: MaterialType.transparency,
+      child: widget.isPositioned 
+        ? Padding(
+            padding: EdgeInsets.only(
+              left: 20.w,
+              right: 20.w,
+              bottom: MediaQuery.of(context).viewInsets.bottom + 24.h,
+              top: 24.h,
+            ),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              reverse: true,
+              child: innerContent,
+            ),
+          )
+        : Padding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w),
+            child: innerContent,
           ),
-        ),
-      ),
     ).animate().slideY(
           begin: 1.0,
           end: 0,
@@ -576,10 +585,16 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
 
     if (widget.isPositioned) {
       return Positioned(
+        top: 0,
         bottom: 0,
         left: 0,
         right: 0,
-        child: content,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Flexible(child: content),
+          ],
+        ),
       );
     }
 
