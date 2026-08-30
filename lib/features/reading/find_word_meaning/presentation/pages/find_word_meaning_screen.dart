@@ -239,7 +239,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                             allowSkip: true,
                             bonusCoins: 5,
                             exampleSentence: quest.wordInContext,
-                          ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0),
+                          ),
                       ],
                     ),
             );
