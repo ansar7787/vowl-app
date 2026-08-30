@@ -637,8 +637,8 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                       padding: EdgeInsets.only(
                         left: 20.w,
                         right: 20.w,
-                        bottom: MediaQuery.of(context).viewInsets.bottom + 24.h,
-                        top: 24.h,
+                        bottom: MediaQuery.of(context).viewInsets.bottom + 12.h,
+                        top: MediaQuery.paddingOf(context).top + 12.h,
                       ),
                       child: innerContent,
                     )

@@ -114,7 +114,10 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
           left: 20.w,
           right: 20.w,
           bottom: widget.isPositioned
-              ? MediaQuery.of(context).viewInsets.bottom + 24.h
+              ? MediaQuery.of(context).viewInsets.bottom + 12.h
+              : 0,
+          top: widget.isPositioned
+              ? MediaQuery.paddingOf(context).top + 12.h
               : 0,
         ),
         child: _buildPanel(isDark)
