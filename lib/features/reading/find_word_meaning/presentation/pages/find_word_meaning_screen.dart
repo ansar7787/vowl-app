@@ -156,8 +156,14 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                   ? const SizedBox()
                   : Stack(
                       children: [
-                        Scrollbar(
-                          thickness: 4.w,
+                        IgnorePointer(
+                          ignoring: _showSentenceBuilder.value,
+                          child: AnimatedOpacity(
+                            opacity: _showSentenceBuilder.value ? 0.0 : 1.0,
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeOut,
+                            child: Scrollbar(
+                              thickness: 4.w,
                           radius: Radius.circular(10.r),
                           child: CustomScrollView(
                             controller: _scrollController,
@@ -222,12 +228,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                           ],
                         ),
                         ),
-                        if (_showSentenceBuilder.value) ...[
-                          Positioned.fill(
-                            child: Container(
-                              color: isDark ? Colors.black87 : Colors.black.withValues(alpha: 0.6),
-                            ).animate().fadeIn(duration: 400.ms, curve: Curves.easeOut),
-                          ),
+                        if (_showSentenceBuilder.value)
                           ContextSentenceBuilder(
                             targetKeyword: quest.word ?? '',
                             primaryColor: theme.primaryColor,
@@ -236,8 +237,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                             allowSkip: true,
                             bonusCoins: 5,
                             exampleSentence: quest.wordInContext,
-                          ),
-                        ]
+                          ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0),
                       ],
                     ),
             );
