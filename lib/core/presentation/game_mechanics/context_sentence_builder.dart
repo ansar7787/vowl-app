@@ -52,6 +52,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   final _soundService = di.sl<SoundService>();
   final _controller = TextEditingController();
   final _focusNode = FocusNode();
+  final _scrollController = ScrollController();
 
   final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<_BuilderStatus> _status = ValueNotifier(
@@ -62,6 +63,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _controller.dispose();
     _focusNode.dispose();
     _attempts.dispose();
@@ -209,8 +211,14 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
             child: child,
           );
         },
-            child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(vertical: 24.h),
+            child: RawScrollbar(
+              controller: _scrollController,
+              thumbColor: widget.primaryColor.withValues(alpha: 0.5),
+              radius: Radius.circular(8.r),
+              thickness: 4.w,
+              child: SingleChildScrollView(
+                controller: _scrollController,
+                padding: EdgeInsets.symmetric(vertical: 24.h),
               physics: const BouncingScrollPhysics(),
               child: Column(
                 mainAxisSize: MainAxisSize.min,

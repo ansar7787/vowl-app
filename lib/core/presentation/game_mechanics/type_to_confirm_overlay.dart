@@ -46,6 +46,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   final _hapticService = di.sl<HapticService>();
   final _textController = TextEditingController();
   final _focusNode = FocusNode();
+  final _scrollController = ScrollController();
 
   final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<_ConfirmResult?> _result = ValueNotifier(null);
@@ -53,6 +54,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _textController.dispose();
     _focusNode.dispose();
     _attempts.dispose();
@@ -182,8 +184,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
               child: child,
             );
           },
-          child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(vertical: 28.h),
+          child: RawScrollbar(
+            controller: _scrollController,
+            thumbColor: widget.primaryColor.withValues(alpha: 0.5),
+            radius: Radius.circular(8.r),
+            thickness: 4.w,
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              padding: EdgeInsets.symmetric(vertical: 28.h),
             physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -554,6 +562,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                 }
               ),
             ],
+          ),
           ),
         ),
       ),
