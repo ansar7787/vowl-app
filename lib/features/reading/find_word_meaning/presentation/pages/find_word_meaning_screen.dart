@@ -145,6 +145,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
               isAnswered: isAnswered,
               isCorrect: isCorrect,
               showConfetti: _showConfetti.value,
+              disablePadding: true,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -153,10 +154,13 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                   ? const SizedBox()
                   : Stack(
                       children: [
-                        CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
+                        Scrollbar(
+                          thickness: 4.w,
+                          radius: Radius.circular(10.r),
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
                             SliverPadding(
                               padding: EdgeInsets.symmetric(horizontal: 24.w),
                               sliver: SliverToBoxAdapter(
@@ -207,6 +211,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                               ),
                             ),
                           ],
+                        ),
                         ),
                         if (_showSentenceBuilder.value)
                           ContextSentenceBuilder(
