@@ -209,11 +209,13 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
             child: child,
           );
         },
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Header
-            Row(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Header
+                  Row(
               children: [
                 Container(
                       padding: EdgeInsets.all(10.r),
@@ -624,6 +626,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
           ],
         ),
       ),
+      ),
     );
 
     final content =
@@ -637,10 +640,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         bottom: MediaQuery.of(context).viewInsets.bottom + 24.h,
                         top: 24.h,
                       ),
-                      child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: innerContent,
-                      ),
+                      child: innerContent,
                     )
                   : Padding(
                       padding: EdgeInsets.only(left: 20.w, right: 20.w),
