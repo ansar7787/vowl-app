@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -69,30 +68,28 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(32.r),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-            child: Container(
-              padding: EdgeInsets.fromLTRB(24.w, 28.h, 24.w, 28.h),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.black.withValues(alpha: 0.4)
-                    : Colors.white.withValues(alpha: 0.6),
-                borderRadius: BorderRadius.circular(32.r),
-                border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.3),
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: isDark
-                        ? Colors.black.withValues(alpha: 0.2)
-                        : widget.primaryColor.withValues(alpha: 0.1),
-                    blurRadius: 30,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
+          child: Container(
+            padding: EdgeInsets.fromLTRB(24.w, 28.h, 24.w, 28.h),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.85)
+                  : Colors.white.withValues(alpha: 0.95),
+              borderRadius: BorderRadius.circular(32.r),
+              border: Border.all(
+                color: widget.primaryColor.withValues(alpha: 0.3),
+                width: 1.5,
               ),
-              child: SafeArea(
+              boxShadow: [
+                BoxShadow(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.2)
+                      : widget.primaryColor.withValues(alpha: 0.1),
+                  blurRadius: 30,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: SafeArea(
                 top: false,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

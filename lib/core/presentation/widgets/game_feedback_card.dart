@@ -1,4 +1,3 @@
-import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -103,29 +102,27 @@ class GameFeedbackCard extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-      child: BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.all(28.r),
-          decoration: BoxDecoration(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.6)
-                : Colors.white.withValues(alpha: 0.8),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.1),
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                blurRadius: 40,
-                offset: const Offset(0, -10),
-              ),
-            ],
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(28.r),
+        decoration: BoxDecoration(
+          color: isDark
+              ? Colors.black.withValues(alpha: 0.85)
+              : Colors.white.withValues(alpha: 0.95),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+          border: Border.all(
+            color: Colors.white.withValues(alpha: 0.1),
+            width: 1.5,
           ),
-          child: SingleChildScrollView(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              blurRadius: 40,
+              offset: const Offset(0, -10),
+            ),
+          ],
+        ),
+        child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.min,
