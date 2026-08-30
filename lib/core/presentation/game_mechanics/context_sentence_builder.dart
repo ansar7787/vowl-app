@@ -106,6 +106,20 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
       return;
     }
 
+    if (widget.exampleSentence != null) {
+      final String formattedExample = widget.exampleSentence!.toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '').trim();
+      final String formattedInput = lowerText.replaceAll(RegExp(r'[^\w\s]'), '').trim();
+
+      if (formattedInput == formattedExample) {
+        _status.value = _BuilderStatus.error;
+        _feedbackMessage.value = 'Nice try! You must write your own original sentence, not copy the example.';
+        _attempts.value++;
+        _hapticService.error();
+        _checkAttemptLimit();
+        return;
+      }
+    }
+
     if (!GibberishDetectorService.isNaturalSentence(context, text)) {
       _status.value = _BuilderStatus.error;
       _feedbackMessage.value = 'Write a proper, meaningful sentence.';
