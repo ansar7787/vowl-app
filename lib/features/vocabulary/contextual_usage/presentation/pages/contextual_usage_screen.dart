@@ -377,23 +377,25 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
 
                 SizedBox(height: gapMiddle),
 
-                isCompact
-                    ? SizedBox(
-                        height: 100.h,
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: SizedBox(
-                            width: maxWidth,
-                            child: _buildChipsWrap(
-                              quest,
-                              color,
-                              isDark,
-                              isCompact,
+                (!_isFirstStagePassed.value)
+                    ? (isCompact
+                        ? SizedBox(
+                            height: 100.h,
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: SizedBox(
+                                width: maxWidth,
+                                child: _buildChipsWrap(
+                                  quest,
+                                  color,
+                                  isDark,
+                                  isCompact,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      )
-                    : (!_isFirstStagePassed.value) ? _buildChipsWrap(quest, color, isDark, isCompact) : const SizedBox.shrink(),
+                          )
+                        : _buildChipsWrap(quest, color, isDark, isCompact))
+                    : const SizedBox.shrink(),
                 SizedBox(height: gapBottom),
               ],
             );
