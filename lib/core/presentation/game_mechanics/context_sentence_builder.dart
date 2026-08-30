@@ -555,7 +555,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     }
                   ),
                 ],
-            ),
+              ),
+    );
+
     final content = Material(
       type: MaterialType.transparency,
       child: widget.isPositioned 
