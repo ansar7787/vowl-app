@@ -126,6 +126,13 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
           _pendingSelectedIndex.value = null;
           _showEvidenceStep.value = false;
           _showConfetti.value = false;
+          if (_scrollController.hasClients) {
+            _scrollController.animateTo(
+              0,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOutBack,
+            );
+          }
         }
         if (state is ReadingGameComplete) {
           _showConfetti.value = true;
