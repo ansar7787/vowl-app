@@ -25,16 +25,32 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
           Icon(Icons.lightbulb_outline_rounded, color: color, size: 24.r),
           SizedBox(width: 16.w),
           Expanded(
-            child: Text(
-              "LOCATE THE WORD MEANING: $text",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? color : color.withValues(alpha: 0.9),
-                letterSpacing: 0.5,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Locate meaning:\n",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? color.withValues(alpha: 0.7) : color.withValues(alpha: 0.8),
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    TextSpan(
+                      text: text,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? Colors.white : const Color(0xFF1E293B),
+                        height: 1.4,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
           ),
         ],
       ),

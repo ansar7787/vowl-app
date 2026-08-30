@@ -27,67 +27,104 @@ class FindWordMeaningResult extends StatelessWidget {
           : 'Incorrect. ${quest.explanation ?? ''}',
       excludeSemantics: true,
       child: Container(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.all(24.r),
         decoration: BoxDecoration(
-          color: displayColor.withValues(alpha: 0.05),
+          color: isDark 
+              ? displayColor.withValues(alpha: 0.1) 
+              : displayColor.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
             color: displayColor.withValues(alpha: 0.3),
-            width: 2,
+            width: 1.5,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: displayColor.withValues(alpha: 0.1),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
+            ),
+          ],
         ),
         child: Column(
           children: [
             ExcludeSemantics(
-              child: Icon(
-                isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                color: displayColor,
-                size: 36.r,
+              child: Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: displayColor.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  isCorrect ? Icons.check_rounded : Icons.close_rounded,
+                  color: displayColor,
+                  size: 32.r,
+                ),
               ),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 16.h),
             Text(
               isCorrect
                   ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
                   : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 15.sp,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
                 letterSpacing: 2,
               ),
             ),
             if (quest.explanation != null) ...[
-              SizedBox(height: 10.h),
+              SizedBox(height: 12.h),
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 14.sp, // slightly larger for readability
-                  color: isDark ? Colors.white60 : Colors.black54,
+                  fontSize: 14.sp,
+                  height: 1.5,
+                  color: isDark ? Colors.white.withValues(alpha: 0.8) : const Color(0xFF475569),
                 ),
               ),
             ],
             if (quest.wordInContext != null) ...[
-              SizedBox(height: 12.h),
+              SizedBox(height: 16.h),
               Container(
-                padding: EdgeInsets.all(12.r),
+                width: double.infinity,
+                padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: Text(
-                  'Example: "${quest.wordInContext}"',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w500,
-                    fontStyle: FontStyle.italic,
-                    color: isDark ? Colors.white70 : Colors.black87,
+                  color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.03),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
                   ),
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Example Usage',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? Colors.white54 : Colors.black45,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      '"${quest.wordInContext}"',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.italic,
+                        color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+                        height: 1.4,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

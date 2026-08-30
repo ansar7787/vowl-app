@@ -34,14 +34,14 @@ class FindWordMeaningInstruction extends StatelessWidget {
             Flexible(
               fit: FlexFit.loose,
               child: Text(
-                (instruction ?? 'FIND WORD MEANING').toUpperCase(),
+                instruction ?? 'Find word meaning',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
                   color: primaryColor,
-                  letterSpacing: 1.5,
+                  letterSpacing: 0.5,
                 ),
               ),
             ),

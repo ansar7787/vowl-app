@@ -101,22 +101,22 @@ class _FindWordMeaningInteractivePassageState
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  'TAP THE WORD THAT MATCHES THE MEANING',
+                  'Tap the matching word below:',
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
                     color: widget.primaryColor,
-                    letterSpacing: 1.5,
+                    letterSpacing: 0.5,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 16.h),
           Wrap(
-            spacing: 6.w,
-            runSpacing: 10.h,
+            spacing: 2.w,
+            runSpacing: 4.h,
             children: List.generate(_words.length, (index) {
               final isSelected = widget.selectedIndex == index;
               final word = _words[index];
@@ -125,7 +125,7 @@ class _FindWordMeaningInteractivePassageState
                 onTap: () => _onWordTap(index),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
-                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+                  padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
                   decoration: BoxDecoration(
                     color: isSelected
                         ? widget.primaryColor.withValues(alpha: 0.2)
