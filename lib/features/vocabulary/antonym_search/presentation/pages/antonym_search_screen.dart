@@ -34,17 +34,20 @@ class AntonymSearchScreen extends StatefulWidget {
 class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   bool _targetIsPositive = true;
 
-  final Map<int, Offset> _shardOffsets = {};
-  final Map<int, bool> _isFused = {};
-  int? _activeShardIndex;
+  final Map<int, ValueNotifier<Offset>> _shardOffsets = {};
+  final Map<int, ValueNotifier<bool>> _isFused = {};
+  final ValueNotifier<int?> _activeShardIndex = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
   BoxConstraints? _lastConstraints;
 
   @override
@@ -54,6 +57,48 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
+  }
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    _activeShardIndex.dispose();
+    _scrollController.dispose();
+    _disposeShardNotifiers();
+    super.dispose();
+  }
+
+  void _disposeShardNotifiers() {
+    for (var n in _shardOffsets.values) {
+      n.dispose();
+    }
+    for (var n in _isFused.values) {
+      n.dispose();
+    }
+    _shardOffsets.clear();
+    _isFused.clear();
+  }
+
+  void _resetQuestState(VocabularyQuest? quest, int index) {
+    _lastQuest = quest;
+    _lastProcessedIndex = index;
+    _isAnswered.value = false;
+    _isCorrect.value = null;
+    _isFirstStagePassed.value = false;
+    _targetIsPositive = math.Random().nextBool();
+    
+    _disposeShardNotifiers();
+    
+    int optionsCount = quest?.options?.length ?? 0;
+    for (int i = 0; i < optionsCount; i++) {
+      _shardOffsets[i] = ValueNotifier(Offset.zero);
+      _isFused[i] = ValueNotifier(false);
+    }
+    
+    _activeShardIndex.value = null;
   }
 
   @override
@@ -67,29 +112,17 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            setState(() {
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-              _targetIsPositive = math.Random().nextBool();
-              _isFused.clear();
-              _shardOffsets.clear();
-              _activeShardIndex = null;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _resetQuestState(state.currentQuest, state.currentIndex);
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -119,135 +152,170 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
             ? state.currentQuest
             : _lastQuest;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is VocabularyLoaded
-              ? state.isFinalFailure
-              : false,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () =>
-              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          useScrolling: false,
-          disablePadding: true,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              _lastConstraints = constraints;
-              final maxHeight = constraints.maxHeight;
-              final isCompact = maxHeight < 580;
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _isFirstStagePassed,
+          ]),
+          builder: (context, _) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is VocabularyLoaded
+                  ? state.isFinalFailure
+                  : false,
+              showConfetti: _showConfetti.value,
+              onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+              useScrolling: false,
+              disablePadding: true,
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  _lastConstraints = constraints;
+                  final maxHeight = constraints.maxHeight;
+                  final isCompact = maxHeight < 580;
 
-              return Stack(
-                children: [
-                  CustomScrollView(
-                    physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverToBoxAdapter(
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                          child: Column(
-                      children: [
-                        Expanded(
-                          child: Stack(
-                            clipBehavior: Clip.none,
-                            children: [
-                  // Magnetic Flux Background
-                  Positioned.fill(
-                    child: CustomPaint(painter: FluxGridPainter(isDark)),
-                  ),
+                  return Stack(
+                    children: [
+                      CustomScrollView(
+                        controller: _scrollController,
+                        physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverToBoxAdapter(
+                            child: SizedBox(
+                              height: constraints.maxHeight,
+                              child: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  Positioned.fill(
+                                    child: CustomPaint(painter: FluxGridPainter(isDark)),
+                                  ),
 
-                  AntonymPulsar(
-                    isTop: true,
-                    targetIsPositive: _targetIsPositive,
-                    onTap: () => _onPulsarTapped(true),
-                  ),
-                  AntonymPulsar(
-                    isTop: false,
-                    targetIsPositive: _targetIsPositive,
-                    onTap: () => _onPulsarTapped(false),
-                  ),
+                                  AntonymPulsar(
+                                    isTop: true,
+                                    targetIsPositive: _targetIsPositive,
+                                    onTap: () => _onPulsarTapped(true),
+                                  ),
+                                  AntonymPulsar(
+                                    isTop: false,
+                                    targetIsPositive: _targetIsPositive,
+                                    onTap: () => _onPulsarTapped(false),
+                                  ),
 
-                  // Instruction removed: It was overlapping the top Pulsar,
-                  // and AntonymNebulaCore already says "DRAG TO OPPOSITE"
-                  Center(
-                    child: isCompact
-                        ? SizedBox(
-                            width: 140.w,
-                            height: 140.w,
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: AntonymNebulaCore(
-                                word: quest?.word ?? "",
-                                color: targetColor,
-                                isDark: isDark,
-                                targetIsPositive: _targetIsPositive,
+                                  Center(
+                                    child: isCompact
+                                        ? SizedBox(
+                                            width: 140.w,
+                                            height: 140.w,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: AntonymNebulaCore(
+                                                word: quest?.word ?? "",
+                                                color: targetColor,
+                                                isDark: isDark,
+                                                targetIsPositive: _targetIsPositive,
+                                              ),
+                                            ),
+                                          )
+                                        : AntonymNebulaCore(
+                                            word: quest?.word ?? "",
+                                            color: targetColor,
+                                            isDark: isDark,
+                                            targetIsPositive: _targetIsPositive,
+                                          ),
+                                  ),
+
+                                  ...List.generate(
+                                    quest?.options?.length ?? 0,
+                                    (i) {
+                                      if (_shardOffsets[i] == null || _isFused[i] == null) return const SizedBox.shrink();
+                                      return ListenableBuilder(
+                                        listenable: Listenable.merge([
+                                          _shardOffsets[i]!,
+                                          _isFused[i]!,
+                                          _activeShardIndex,
+                                        ]),
+                                        builder: (context, _) {
+                                          return AntonymOptionShard(
+                                            index: i,
+                                            text: quest!.options![i],
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            initialPos: _getInitialPosition(i),
+                                            offset: _shardOffsets[i]!.value,
+                                            isDragging: _activeShardIndex.value == i,
+                                            isFused: _isFused[i]!.value,
+                                            onPanStart: () => _onShardStart(i),
+                                            onPanUpdate: (d) => _onShardUpdate(i, d),
+                                            onPanEnd: () => _onShardEnd(i),
+                                            onTap: () => _onShardTapped(i),
+                                          );
+                                        }
+                                      );
+                                    }
+                                  ),
+
+                                  ...List.generate(
+                                    quest?.options?.length ?? 0,
+                                    (i) {
+                                      if (_shardOffsets[i] == null) return const SizedBox.shrink();
+                                      return ValueListenableBuilder<int?>(
+                                        valueListenable: _activeShardIndex,
+                                        builder: (context, activeIndex, _) {
+                                          final isActive = activeIndex == i;
+                                          return ValueListenableBuilder<Offset>(
+                                            valueListenable: _shardOffsets[i]!,
+                                            builder: (context, offset, _) {
+                                              return AnimatedOpacity(
+                                                opacity: isActive ? 1.0 : 0.0,
+                                                duration: const Duration(milliseconds: 150),
+                                                child: _buildPlasmaThunder(i, targetColor, offset),
+                                              );
+                                            }
+                                          );
+                                        }
+                                      );
+                                    }
+                                  ),
+                                ],
                               ),
                             ),
-                          )
-                        : AntonymNebulaCore(
-                            word: quest?.word ?? "",
-                            color: targetColor,
-                            isDark: isDark,
-                            targetIsPositive: _targetIsPositive,
                           ),
-                  ),
-
-                  ...List.generate(
-                    quest?.options?.length ?? 0,
-                    (i) => AntonymOptionShard(
-                      index: i,
-                      text: quest!.options![i],
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      initialPos: _getInitialPosition(i),
-                      offset: _shardOffsets[i] ?? Offset.zero,
-                      isDragging: _activeShardIndex == i,
-                      isFused: _isFused[i] ?? false,
-                      onPanStart: () => _onShardStart(i),
-                      onPanUpdate: (d) => _onShardUpdate(i, d),
-                      onPanEnd: () => _onShardEnd(i),
-                      onTap: () => _onShardTapped(i),
-                    ),
-                  ),
-
-                  if (_activeShardIndex != null)
-                    _buildPlasmaThunder(targetColor, isCompact),
-                            ],
-                          ),
-                        ),
-                        if (_isFirstStagePassed && !_isAnswered)
-                          Column(
-                            children: [
-                              if (quest?.gradientScale != null && quest!.gradientScale!.isNotEmpty)
-                                AntonymGradientScale(
-                                  gradientScale: quest.gradientScale!,
-                                  primaryColor: theme.primaryColor,
-                                ),
-                              SizedBox(height: 160.h),
-                            ],
-                          ),
-                        SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
-                      ],
-                    ),
-                  ),
-                  ),
-                ],
+                          if (_isFirstStagePassed.value && !_isAnswered.value)
+                            SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  if (quest?.gradientScale != null && quest!.gradientScale!.isNotEmpty)
+                                    AntonymGradientScale(
+                                      gradientScale: quest.gradientScale!,
+                                      primaryColor: theme.primaryColor,
+                                    ),
+                                  SizedBox(height: 24.h),
+                                  SpeakToConfirmOverlay(
+                                    expectedText: "${quest?.word} ${quest?.correctAnswer}",
+                                    displayText: "${quest?.word?.toUpperCase()}   ↔   ${quest?.correctAnswer?.toUpperCase()}",
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () => _submitVerbalEvaluation(true),
+                                    onSkipped: () => _submitVerbalEvaluation(false),
+                                    isPositioned: false,
+                                  ),
+                                  SizedBox(height: 60.h),
+                                ],
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
+                  );
+                },
               ),
-              if (_isFirstStagePassed && !_isAnswered)
-                SpeakToConfirmOverlay(
-                  expectedText: "${quest?.word} ${quest?.correctAnswer}",
-                  displayText: "${quest?.word?.toUpperCase()}   ↔   ${quest?.correctAnswer?.toUpperCase()}",
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitVerbalEvaluation(true),
-                  onSkipped: () => _submitVerbalEvaluation(false),
-                  isPositioned: true,
-                ),
-            ],
-          );
-            },
-          ),
+            );
+          },
         );
       },
     );
@@ -257,28 +325,22 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     if (_lastConstraints == null) return Offset.zero;
     final w = _lastConstraints!.maxWidth;
     final h = _lastConstraints!.maxHeight;
-    final isCompact = h < 580;
     final isLeft = index % 2 == 0;
     final int total = _lastQuest?.options?.length ?? 4;
-    final int halfTotal = (total / 2).ceil();
-    final bool isBottomHalf = index >= halfTotal;
-
+    
     double yPos;
     if (total <= 4) {
-      // 2 at top, 2 at bottom
-      yPos = isBottomHalf
-          ? (h * (isCompact ? 0.71 : 0.75))
-          : (h * (isCompact ? 0.29 : 0.25));
+      final isBottomHalf = index >= (total / 2).ceil();
+      yPos = h * (isBottomHalf ? 0.75 : 0.25);
     } else {
-      // Standard grid for 6 or 8 cards
       if (index < 2) {
-        yPos = h * (isCompact ? 0.22 : 0.18);
+        yPos = h * 0.15;
       } else if (index < 4) {
-        yPos = h * (isCompact ? 0.35 : 0.32);
+        yPos = h * 0.32;
       } else if (index < 6) {
-        yPos = h * (isCompact ? 0.65 : 0.68);
+        yPos = h * 0.68;
       } else {
-        yPos = h * (isCompact ? 0.78 : 0.82);
+        yPos = h * 0.85;
       }
     }
 
@@ -286,63 +348,60 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onShardStart(int index) {
-    if (_isAnswered || _isFused[index] == true) return;
-    setState(() => _activeShardIndex = index);
+    if (_isAnswered.value || _isFused[index]?.value == true) return;
+    _activeShardIndex.value = index;
     _hapticService.light();
   }
 
   void _onShardUpdate(int index, DragUpdateDetails details) {
-    if (_activeShardIndex != index) return;
-    setState(
-      () => _shardOffsets[index] =
-          (_shardOffsets[index] ?? Offset.zero) + details.delta,
-    );
-    final initial = _getInitialPosition(index);
-    final currentY = initial.dy + (_shardOffsets[index]?.dy ?? 0);
-    final isCompact = (_lastConstraints?.maxHeight ?? 600) < 580;
-    final triggerTop = isCompact ? 100.h : 120.h;
-    final triggerBottom =
-        (_lastConstraints?.maxHeight ?? 600) - (isCompact ? 100.h : 120.h);
-    if (currentY < triggerTop || currentY > triggerBottom) {
-      _hapticService.selection();
+    if (_activeShardIndex.value != index) return;
+    if (_shardOffsets[index] != null) {
+      _shardOffsets[index]!.value += details.delta;
+      final initial = _getInitialPosition(index);
+      final currentY = initial.dy + _shardOffsets[index]!.value.dy;
+      final maxHeight = _lastConstraints?.maxHeight ?? 600;
+      
+      final triggerTop = maxHeight * 0.20;
+      final triggerBottom = maxHeight * 0.80;
+      
+      if (currentY < triggerTop || currentY > triggerBottom) {
+        _hapticService.selection();
+      }
     }
   }
 
   void _onShardEnd(int index) {
-    if (_activeShardIndex != index || _lastConstraints == null) return;
+    if (_activeShardIndex.value != index || _lastConstraints == null) return;
     final initial = _getInitialPosition(index);
-    final offset = _shardOffsets[index] ?? Offset.zero;
+    final offset = _shardOffsets[index]?.value ?? Offset.zero;
     final currentY = initial.dy + offset.dy;
 
-    // Use actual constraints for reliable detection
     final maxHeight = _lastConstraints!.maxHeight;
-    final isCompact = maxHeight < 580;
-    final bool nearTop = currentY < (isCompact ? 100.h : 130.h);
-    final bool nearBottom =
-        currentY > (maxHeight - (isCompact ? 100.h : 130.h));
+    final bool nearTop = currentY < maxHeight * 0.20;
+    final bool nearBottom = currentY > maxHeight * 0.80;
 
     if (nearTop || nearBottom) {
       _evaluateShard(index, nearTop);
     } else {
-      setState(() {
-        _shardOffsets[index] = Offset.zero;
-        _activeShardIndex = null;
-      });
+      if (_shardOffsets[index] != null) {
+        _shardOffsets[index]!.value = Offset.zero;
+      }
+      _activeShardIndex.value = null;
       _hapticService.light();
     }
   }
 
   void _onShardTapped(int index) {
-    if (_isAnswered || _isFused[index] == true) return;
-    setState(() => _activeShardIndex = index);
+    if (_isAnswered.value || _isFused[index]?.value == true) return;
+    _activeShardIndex.value = index;
     _hapticService.light();
   }
 
   void _onPulsarTapped(bool isTop) {
-    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null) {
+    if (_activeShardIndex.value == null || _isAnswered.value || _lastConstraints == null) {
       return;
     }
-    _evaluateShard(_activeShardIndex!, isTop);
+    _evaluateShard(_activeShardIndex.value!, isTop);
   }
 
   void _evaluateShard(int index, bool toTop) {
@@ -362,22 +421,29 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onSuccess(int index) {
-    _hapticService.selection(); // Subtle feedback for Phase 1
-    setState(() {
-      _isFused[index] = true;
-      _isFirstStagePassed = true;
-      _activeShardIndex = null;
+    _hapticService.selection();
+    if (_isFused[index] != null) {
+      _isFused[index]!.value = true;
+    }
+    _isFirstStagePassed.value = true;
+    _activeShardIndex.value = null;
+
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
+        );
+      }
     });
-    // Wait for Phase 2
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -393,27 +459,27 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   void _onFailure(int index) {
     _hapticService.error();
     _soundService.playWrong();
-    setState(() {
-      _shardOffsets[index] = Offset.zero;
-      _isAnswered = true;
-      _isCorrect = false;
-      _activeShardIndex = null;
-    });
+    
+    if (_shardOffsets[index] != null) {
+      _shardOffsets[index]!.value = Offset.zero;
+    }
+    _isAnswered.value = true;
+    _isCorrect.value = false;
+    _activeShardIndex.value = null;
+    
     context.read<VocabularyBloc>().add(SubmitAnswer(false));
   }
 
-  Widget _buildPlasmaThunder(Color color, bool isCompact) {
-    if (_activeShardIndex == null || _lastConstraints == null) {
-      return const SizedBox();
-    }
-    final initial = _getInitialPosition(_activeShardIndex!);
-    final offset = _shardOffsets[_activeShardIndex!] ?? Offset.zero;
+  Widget _buildPlasmaThunder(int activeIndex, Color targetColor, Offset offset) {
+    if (_lastConstraints == null) return const SizedBox.shrink();
+    
+    final initial = _getInitialPosition(activeIndex);
     final current = initial + offset;
     final maxHeight = _lastConstraints!.maxHeight;
     final bool toTop = current.dy < (maxHeight / 2);
-    final targetY = toTop
-        ? (isCompact ? 70.h : 90.h)
-        : (maxHeight - (isCompact ? 70.h : 90.h));
+    
+    // The pulsars are near the top/bottom edges
+    final targetY = toTop ? maxHeight * 0.12 : maxHeight * 0.88;
 
     return IgnorePointer(
       child: CustomPaint(
