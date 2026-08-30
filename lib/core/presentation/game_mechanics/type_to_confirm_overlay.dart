@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -147,9 +146,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(32.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-        child: ValueListenableBuilder<_ConfirmResult?>(
+      child: ValueListenableBuilder<_ConfirmResult?>(
           valueListenable: _result,
           builder: (context, result, child) {
             final borderColor = result == _ConfirmResult.success
@@ -162,8 +159,8 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
               padding: EdgeInsets.fromLTRB(24.w, 28.h, 24.w, 28.h),
               decoration: BoxDecoration(
                 color: isDark
-                    ? Colors.black.withValues(alpha: 0.4)
-                    : Colors.white.withValues(alpha: 0.6),
+                    ? Colors.black.withValues(alpha: 0.85)
+                    : Colors.white.withValues(alpha: 0.95),
                 borderRadius: BorderRadius.circular(32.r),
                 border: Border.all(
                   color: borderColor,
@@ -553,7 +550,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                 }
               ),
             ],
-          ),
           ),
         ),
       ),
