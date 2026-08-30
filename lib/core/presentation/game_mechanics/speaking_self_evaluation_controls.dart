@@ -274,7 +274,7 @@ class _SpeakingSelfEvaluationControlsState
                 valueListenable: _isRecording,
                 builder: (context, isRecording, _) {
                   return Text(
-                    isRecording ? "Recording... Tap to stop" : "Tap to Record",
+                    isRecording ? "Recording... Tap to stop" : "Tap to speak",
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
