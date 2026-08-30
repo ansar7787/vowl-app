@@ -246,6 +246,16 @@ class _SpeakingSelfEvaluationControlsState
                         _startRecording();
                       }
                     },
+                    onLongPress: () {
+                      if (!isRecording) {
+                        _startRecording();
+                      }
+                    },
+                    onLongPressUp: () {
+                      if (isRecording) {
+                        _stopRecording();
+                      }
+                    },
                     child: Container(
                       width: 80.r,
                       height: 80.r,
@@ -274,7 +284,7 @@ class _SpeakingSelfEvaluationControlsState
                 valueListenable: _isRecording,
                 builder: (context, isRecording, _) {
                   return Text(
-                    isRecording ? "Recording... Tap to stop" : "Tap to speak",
+                    isRecording ? "Recording... Tap to stop" : "Tap or Hold to speak",
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
