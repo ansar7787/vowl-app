@@ -284,25 +284,7 @@ class SettingsDialogs {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Disable Speech Confirmation
-  // ---------------------------------------------------------------------------
 
-  static Future<bool?> showDisableSpeechConfirmation(BuildContext context) {
-    return _showDisableConfirmation(
-      context: context,
-      icon: Icons.mic_off_rounded,
-      color: Colors.cyan,
-      titleKey: 'settings_dialogs.disable_speech_title',
-      titleFallback: 'Disable Speaking?',
-      bodyKey: 'settings_dialogs.disable_speech_body',
-      bodyFallback: 'You will miss out on crucial speaking practice.',
-      keepKey: 'settings_dialogs.keep_speaking',
-      keepFallback: 'Keep Speaking',
-      disableKey: 'settings_dialogs.disable_anyway',
-      disableFallback: 'Disable Anyway',
-    );
-  }
 
   // ---------------------------------------------------------------------------
   // Password Reset

@@ -39,7 +39,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _buildNumber = '1';
   bool _notificationsEnabled = true;
   bool _soundEnabled = true;
-  bool _speechConfirmEnabled = true;
   bool _isLoading = true;
   String? _translationLanguageName;
 
@@ -62,7 +61,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final isGranted = await Permission.notification.isGranted;
     final savedPref = prefs.getBool('notifications_enabled') ?? true;
     final soundPref = prefs.getBool('sound_enabled') ?? true;
-    final speechSkipPref = prefs.getBool('skip_speech_enabled') ?? false;
 
     if (!mounted) return;
     setState(() {
@@ -70,7 +68,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _buildNumber = info.buildNumber;
       _notificationsEnabled = savedPref && isGranted;
       _soundEnabled = soundPref;
-      _speechConfirmEnabled = !speechSkipPref;
       _isLoading = false;
     });
   }
@@ -282,7 +279,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             isDark: isDark,
                             soundEnabled: _soundEnabled,
                             notificationsEnabled: _notificationsEnabled,
-                            speechConfirmEnabled: _speechConfirmEnabled,
                             isLoading: _isLoading,
                             onToggleSound: _toggleSound,
                             onToggleNotifications: _toggleNotifications,
@@ -290,20 +286,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               await LanguageSelectionBottomSheet.show(context);
                               if (!mounted) return;
                               _loadTranslationLanguageName();
-                            },
-                            onToggleSpeechConfirm: (value) async {
-                              if (!value) {
-                                if (!mounted) return;
-                                final confirmed =
-                                    await SettingsDialogs.showDisableSpeechConfirmation(
-                                      context,
-                                    );
-                                if (confirmed != true) return;
-                              }
-                              final prefs = await SharedPreferences.getInstance();
-                              await prefs.setBool('skip_speech_enabled', !value);
-                              if (!mounted) return;
-                              setState(() => _speechConfirmEnabled = value);
                             },
                           ),
                           SizedBox(height: 32.h),
@@ -482,25 +464,21 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final bool isDark;
   final bool soundEnabled;
   final bool notificationsEnabled;
-  final bool speechConfirmEnabled;
   final bool isLoading;
   final String? translationLanguageName;
   final VoidCallback onTapTranslationLanguage;
   final ValueChanged<bool> onToggleSound;
   final ValueChanged<bool> onToggleNotifications;
-  final ValueChanged<bool> onToggleSpeechConfirm;
 
   const _SettingsPreferencesGroup({
     required this.isDark,
     required this.soundEnabled,
     required this.notificationsEnabled,
-    required this.speechConfirmEnabled,
     required this.isLoading,
     required this.translationLanguageName,
     required this.onTapTranslationLanguage,
     required this.onToggleSound,
     required this.onToggleNotifications,
-    required this.onToggleSpeechConfirm,
   });
 
   @override
@@ -531,21 +509,6 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               value: soundEnabled,
               isLoading: isLoading,
               onChanged: onToggleSound,
-            ),
-            SettingsSwitchTile(
-              title: context.tr(
-                'settings.speech_confirm',
-                fallback: 'Speech Confirmation',
-              ),
-              subtitle: context.tr(
-                'settings.speech_confirm_subtitle',
-                fallback: 'Speak answers aloud to confirm learning',
-              ),
-              icon: Icons.mic_rounded,
-              color: const Color(0xFF06B6D4),
-              value: speechConfirmEnabled,
-              isLoading: isLoading,
-              onChanged: onToggleSpeechConfirm,
             ),
             SettingsSwitchTile(
               title: context.tr(
