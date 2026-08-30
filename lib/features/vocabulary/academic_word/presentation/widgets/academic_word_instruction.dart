@@ -39,11 +39,10 @@ class AcademicWordInstruction extends StatelessWidget {
               maxLines: 2,
               textAlign: TextAlign.center,
               style: _labelStyle(color),
-            ),
+            ).animate().shimmer(duration: 2.seconds),
           ),
         )
         .animate()
-        .fadeIn(duration: 800.ms)
-        .shimmer(duration: 2.seconds);
+        .fadeIn(duration: 800.ms);
   }
 }
