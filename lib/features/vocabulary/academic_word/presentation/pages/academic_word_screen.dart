@@ -264,7 +264,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                     if (_isFirstStagePassed.value && !_isAnswered.value)
                       TypeToConfirmOverlay(
                         expectedText: quest.correctAnswer ?? '',
-                        displayText: "Type the academic word to confirm:\n${quest.correctAnswer?.toUpperCase()}",
                         primaryColor: _cachedTheme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
