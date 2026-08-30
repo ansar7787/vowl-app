@@ -34,6 +34,7 @@ class FindWordMeaningScreen extends StatefulWidget {
 class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  final _scrollController = ScrollController();
 
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -48,6 +49,12 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
     context.read<ReadingBloc>().add(
       FetchReadingQuests(gameType: widget.gameType, level: widget.level),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   void _submitFinalAnswer(bool isCorrect, [ReadingQuest? quest]) {
@@ -103,6 +110,11 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
+            _scrollController.animateTo(
+              0,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOutBack,
+            );
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -148,6 +160,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
               : Stack(
                   children: [
                     CustomScrollView(
+                      controller: _scrollController,
                       physics: const BouncingScrollPhysics(),
                       slivers: [
                         SliverPadding(

@@ -37,6 +37,7 @@ class ShortAnswerScreen extends StatefulWidget {
 class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   final _hapticService = di.sl<HapticService>();
   final _answerController = TextEditingController();
+  final _scrollController = ScrollController();
 
   bool _showConfetti = false;
   bool _showContextSentence = false;
@@ -56,6 +57,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   @override
   void dispose() {
     _answerController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -172,6 +174,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
+          _scrollController.animateTo(
+            0,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOutBack,
+          );
           setState(() {
             _answerController.clear();
             _inkLevel = 0.0;
@@ -222,6 +229,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
               : Stack(
                   children: [
                     CustomScrollView(
+                  controller: _scrollController,
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverPadding(

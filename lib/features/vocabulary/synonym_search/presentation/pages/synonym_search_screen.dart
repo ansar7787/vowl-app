@@ -37,6 +37,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  final _scrollController = ScrollController();
 
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -67,6 +68,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     for (var n in _isWarping) { n.dispose(); }
     for (var n in _shardTrails) { n.dispose(); }
     _activeShardIndex.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -253,6 +255,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           final isRetry = !state.answerStatus.isAnswered && _isAnswered;
 
           if (isNewQuestion || isRetry) {
+            _scrollController.animateTo(
+              0,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOutBack,
+            );
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
@@ -346,10 +353,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     final isCompact = safeHeight < 580;
 
                     return Stack(
-                      children: [
-                        CustomScrollView(
-                      physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                      slivers: [
+              children: [
+                CustomScrollView(
+                  controller: _scrollController,
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
                         SliverToBoxAdapter(
                           child: Column(
                             children: [
