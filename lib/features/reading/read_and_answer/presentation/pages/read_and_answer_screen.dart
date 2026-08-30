@@ -202,7 +202,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                         if (_showEvidenceStep.value && !isAnswered) ...[
                           Positioned.fill(
                             child: Container(
-                              color: isDark ? Colors.black87 : Colors.black.withOpacity(0.6),
+                              color: isDark ? Colors.black87 : Colors.black.withValues(alpha: 0.6),
                             ).animate().fadeIn(duration: 400.ms, curve: Curves.easeOut),
                           ),
                           EvidenceHighlightWrapper(
