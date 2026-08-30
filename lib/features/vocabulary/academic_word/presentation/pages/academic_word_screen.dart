@@ -169,7 +169,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
             state is! VocabularyGameComplete &&
             state is! VocabularyError)) {
       return Scaffold(
-        backgroundColor: AcademicWordColors.screenBackground,
         body: GameShimmerLoading(primaryColor: _cachedTheme.primaryColor),
       );
     }
