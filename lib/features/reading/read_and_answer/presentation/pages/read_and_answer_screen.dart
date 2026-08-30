@@ -179,6 +179,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
               isCorrect: isCorrect,
               showConfetti: _showConfetti.value,
               useScrolling: false,
+              disablePadding: true,
               onContinue: () =>
                   context.read<ReadingBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -275,67 +276,70 @@ class _QuestContent extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SizedBox(height: 16.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: ReadAndAnswerInstruction(
-                          primaryColor: primaryColor,
-                          instruction: displayTopic,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SizedBox(height: 16.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: ReadAndAnswerInstruction(
+                            primaryColor: primaryColor,
+                            instruction: displayTopic,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 16.w),
-                      _buildReadTimeBadge(primaryColor, isDark, displayPassage),
-                    ],
-                  ),
-                  SizedBox(height: 16.h),
-                  ReadAndAnswerAnchorPoint(
-                    question: quest.question ?? '',
-                    color: primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 24.h),
-                  // Render Passage Box
-                  ReadAndAnswerFloatingPassage(
-                    text: displayPassage,
-                    color: primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 24.h),
-                  if (quest.options != null)
-                    ...quest.options!.asMap().entries.map((e) {
-                      final isOptionCorrect =
-                          e.key == quest.correctAnswerIndex ||
-                          e.value.trim().toLowerCase() ==
-                              (quest.correctAnswer?.trim().toLowerCase() ?? '');
-
-                      return ReadAndAnswerBuoyOption(
-                        index: e.key,
-                        text: e.value,
-                        isCorrectOption: isOptionCorrect,
-                        color: primaryColor,
-                        isDark: isDark,
-                        isAnswered:
-                            isAnswered || (pendingSelectedIndex != null),
-                        selectedIndex: pendingSelectedIndex,
-                        onTap: () => onOptionSelected(e.key, isOptionCorrect),
-                      );
-                    }),
-                  if (isAnswered && isCorrect != null) ...[
-                    SizedBox(height: 24.h),
-                    ReadAndAnswerResult(
-                      quest: quest,
-                      isCorrect: isCorrect!,
+                        SizedBox(width: 16.w),
+                        _buildReadTimeBadge(primaryColor, isDark, displayPassage),
+                      ],
+                    ),
+                    SizedBox(height: 16.h),
+                    ReadAndAnswerAnchorPoint(
+                      question: quest.question ?? '',
+                      color: primaryColor,
                       isDark: isDark,
                     ),
+                    SizedBox(height: 24.h),
+                    // Render Passage Box
+                    ReadAndAnswerFloatingPassage(
+                      text: displayPassage,
+                      color: primaryColor,
+                      isDark: isDark,
+                    ),
+                    SizedBox(height: 24.h),
+                    if (quest.options != null)
+                      ...quest.options!.asMap().entries.map((e) {
+                        final isOptionCorrect =
+                            e.key == quest.correctAnswerIndex ||
+                            e.value.trim().toLowerCase() ==
+                                (quest.correctAnswer?.trim().toLowerCase() ?? '');
+
+                        return ReadAndAnswerBuoyOption(
+                          index: e.key,
+                          text: e.value,
+                          isCorrectOption: isOptionCorrect,
+                          color: primaryColor,
+                          isDark: isDark,
+                          isAnswered:
+                              isAnswered || (pendingSelectedIndex != null),
+                          selectedIndex: pendingSelectedIndex,
+                          onTap: () => onOptionSelected(e.key, isOptionCorrect),
+                        );
+                      }),
+                    if (isAnswered && isCorrect != null) ...[
+                      SizedBox(height: 24.h),
+                      ReadAndAnswerResult(
+                        quest: quest,
+                        isCorrect: isCorrect!,
+                        isDark: isDark,
+                      ),
+                    ],
+                    SizedBox(height: 40.h),
                   ],
-                  SizedBox(height: 40.h),
-                ],
+                ),
               ),
             ),
             SliverFillRemaining(hasScrollBody: false, child: SizedBox.shrink()),
