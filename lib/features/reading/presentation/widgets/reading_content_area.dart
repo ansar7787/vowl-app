@@ -48,11 +48,11 @@ class ReadingContentArea extends StatelessWidget {
   /// [MediaQuery.viewInsetsOf] ensures rebuilds only happen when keyboard
   /// insets change — not on orientation, text-scale, or display-feature changes.
   ///
-  /// When [disablePadding] is true, only the keyboard bottom-inset is applied
-  /// so content is never obscured by the software keyboard.
+  /// When [disablePadding] is true, zero padding is applied.
+  /// Nested overlays like ContextSentenceBuilder handle their own keyboard insets.
   EdgeInsets _contentPadding(BuildContext context) {
     final keyboardInset = MediaQuery.viewInsetsOf(context).bottom;
-    if (disablePadding) return EdgeInsets.only(bottom: keyboardInset);
+    if (disablePadding) return EdgeInsets.zero;
     return EdgeInsets.only(
       left: 24.w,
       right: 24.w,
