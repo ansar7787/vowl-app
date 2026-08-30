@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -172,8 +171,8 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final glassColor = isDark
-        ? widget.primaryColor.withValues(alpha: 0.2)
-        : Colors.white.withValues(alpha: 0.85);
+        ? Colors.black.withValues(alpha: 0.85) // Highly opaque for dark mode
+        : Colors.white.withValues(alpha: 0.95); // Nearly solid for light mode
 
     final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
     final subtitleColor = isDark ? Colors.white70 : Colors.black87;
@@ -191,26 +190,23 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               ? widget.primaryColor.withValues(alpha: 0.3)
               : Colors.white.withValues(alpha: 0.8);
 
-          return BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-            child: Container(
-              padding: EdgeInsets.all(24.r),
-              decoration: BoxDecoration(
-                color: glassColor,
-                borderRadius: BorderRadius.circular(32.r),
-                border: Border.all(color: borderColor, width: 1.5),
-                boxShadow: [
-                  BoxShadow(
-                    color: isDark
-                        ? Colors.black.withValues(alpha: 0.3)
-                        : widget.primaryColor.withValues(alpha: 0.1),
-                    blurRadius: 30,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-              ),
-              child: child,
+          return Container(
+            padding: EdgeInsets.all(24.r),
+            decoration: BoxDecoration(
+              color: glassColor,
+              borderRadius: BorderRadius.circular(32.r),
+              border: Border.all(color: borderColor, width: 1.5),
+              boxShadow: [
+                BoxShadow(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.3)
+                      : widget.primaryColor.withValues(alpha: 0.1),
+                  blurRadius: 30,
+                  offset: const Offset(0, 10),
+                ),
+              ],
             ),
+            child: child,
           );
         },
         child: Column(
