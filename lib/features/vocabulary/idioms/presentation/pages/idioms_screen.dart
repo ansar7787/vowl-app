@@ -314,10 +314,10 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                         height: 30.h,
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
-                          child: _buildHeaderBadge(color),
+                          child: _buildHeaderBadge(color, isCompact: true),
                         ),
                       )
-                    : _buildHeaderBadge(color),
+                    : _buildHeaderBadge(color, isCompact: false),
 
                 SizedBox(height: gapMiddle),
 
@@ -426,7 +426,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
     );
   }
 
-  Widget _buildHeaderBadge(Color color) {
+  Widget _buildHeaderBadge(Color color, {bool isCompact = false}) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
       margin: EdgeInsets.symmetric(horizontal: 20.w),
@@ -436,6 +436,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
         border: Border.all(color: color.withValues(alpha: 0.1)),
       ),
       child: Row(
+        mainAxisSize: isCompact ? MainAxisSize.min : MainAxisSize.max,
         children: [
           Container(
             width: 8.r,
@@ -456,7 +457,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const Spacer(),
+          isCompact ? SizedBox(width: 15.w) : const Spacer(),
           Icon(Icons.lock_outline_rounded, size: 14.r, color: color),
         ],
       ),
