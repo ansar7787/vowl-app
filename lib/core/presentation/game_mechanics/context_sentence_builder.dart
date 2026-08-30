@@ -175,9 +175,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(32.r),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-            child: ValueListenableBuilder<_BuilderStatus>(
+          child: ValueListenableBuilder<_BuilderStatus>(
               valueListenable: _status,
               builder: (context, status, child) {
                 final borderColor = status == _BuilderStatus.success
@@ -565,7 +563,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     }
                   ),
                 ],
-              ),
             ),
           ),
         ),
