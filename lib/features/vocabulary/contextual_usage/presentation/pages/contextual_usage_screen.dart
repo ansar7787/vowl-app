@@ -36,13 +36,26 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
+
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
-  String? _selectedOption;
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    _selectedOption.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -53,38 +66,45 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _selectedOption = selected;
-      _isAnswered = true;
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    
+    _selectedOption.value = selected;
+    _isAnswered.value = true;
 
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
+        
     Future.delayed(600.ms, () {
       if (!mounted) return;
       if (isCorrect) {
         _hapticService.success();
-        setState(() => _isFirstStagePassed = true);
+        _isFirstStagePassed.value = true;
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 600),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
       } else {
         _hapticService.error();
         _soundService.playWrong();
-        setState(() => _isCorrect = false);
+        _isCorrect.value = false;
         context.read<VocabularyBloc>().add(SubmitAnswer(false));
       }
     });
   }
 
   void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
-    if (_isAnswered && _isCorrect != null) return;
+    if (_isAnswered.value && _isCorrect.value != null) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-      if (wrongWord != null && wrongWord.isNotEmpty) {
-        _selectedOption = wrongWord;
-      }
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
+    if (wrongWord != null && wrongWord.isNotEmpty) {
+      _selectedOption.value = wrongWord;
+    }
 
     if (nailedIt) {
       _hapticService.success();
@@ -103,26 +123,29 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            setState(() {
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedOption = null;
-              _isFirstStagePassed = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            if (_scrollController.hasClients) {
+              _scrollController.animateTo(
+                0,
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOutBack,
+              );
+            }
+            _lastQuest = state.currentQuest;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedOption.value = null;
+            _isFirstStagePassed.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -152,26 +175,49 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
 
         final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () =>
-              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          useScrolling: false,
-          disablePadding: true,
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return Stack(
-                      children: [
-                        CustomScrollView(
-                          physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                          slivers: [
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedOption]),
+          builder: (context, _) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
+              onContinue: () {
+                final currentState = context.read<VocabularyBloc>().state;
+                if (currentState is VocabularyLoaded &&
+                    !currentState.isFinalFailure &&
+                    _isCorrect.value == false) {
+                  _isAnswered.value = false;
+                  _isCorrect.value = null;
+                  _isFirstStagePassed.value = false;
+                  _selectedOption.value = null;
+                  if (_scrollController.hasClients) {
+                    _scrollController.animateTo(
+                      0,
+                      duration: const Duration(milliseconds: 400),
+                      curve: Curves.easeOutCubic,
+                    );
+                  }
+                } else {
+                  context.read<VocabularyBloc>().add(NextQuestion());
+                }
+              },
+              onHint: () =>
+                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+              useScrolling: false,
+              disablePadding: true,
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            CustomScrollView(
+                              controller: _scrollController,
+                              physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                              slivers: [
                             SliverToBoxAdapter(
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
@@ -188,25 +234,23 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                           ),
                           Column(
                             children: [
-                              Expanded(
-                                child: _buildUnfoldContent(quest, theme.primaryColor, isDarkMode),
-                              ),
-                              if (_isFirstStagePassed &&
-                                  (!_isAnswered || _isCorrect == null))
+                              _buildUnfoldContent(quest, theme.primaryColor, isDarkMode, constraints.maxHeight, constraints.maxWidth),
+                              if (_isFirstStagePassed.value)
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                                   child: Column(
                                     children: [
-                                      if (quest.registerLevel != null)
+                                      if (quest.registerLevel != null || quest.nuanceDifference != null || quest.usageExample != null || quest.contextSentence != null || quest.example != null)
                                         ContextualUsageRegisterMeter(
-                                          registerLevel: quest.registerLevel!,
+                                          registerLevel: quest.registerLevel,
+                                          nuanceDifference: quest.nuanceDifference,
+                                          usageExample: quest.usageExample ?? quest.contextSentence ?? quest.example,
                                           color: theme.primaryColor,
                                         ),
-                                      SizedBox(height: 160.h),
                                     ],
                                   ),
                                 ),
-                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 450.h : 60.h),
                             ],
                           ),
                         ],
@@ -215,7 +259,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     ),
                   ],
                 ),
-                if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
                   SpeakToConfirmOverlay(
                     expectedText: (quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? ""),
                     displayText: "Speak the completed sentence:\n${(quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? "")}",
@@ -226,17 +270,16 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                   ),
               ],
             );
-              },
-            ),
-        );
-      },
+          },
+        ),
+      );
+    },
+  );
+},
     );
   }
 
-  Widget _buildUnfoldContent(VocabularyQuest quest, Color color, bool isDark) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final maxHeight = constraints.maxHeight;
+  Widget _buildUnfoldContent(VocabularyQuest quest, Color color, bool isDark, double maxHeight, double maxWidth) {
         final isCompact = maxHeight < 580;
 
         final double estimatedContentHeight =
@@ -301,14 +344,14 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: SizedBox(
-                            width: constraints.maxWidth - 40.w,
+                            width: maxWidth - 40.w,
                             child: ContextualUsageCard(
                               question: quest.prompt ?? "",
                               color: color,
                               isDark: isDark,
-                              isAnswered: _isAnswered,
-                              isCorrect: _isCorrect,
-                              selectedOption: _selectedOption,
+                              isAnswered: _isAnswered.value,
+                              isCorrect: _isCorrect.value,
+                              selectedOption: _selectedOption.value,
                             ),
                           ),
                         ),
@@ -319,9 +362,9 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                           question: quest.prompt ?? "",
                           color: color,
                           isDark: isDark,
-                          isAnswered: _isAnswered,
-                          isCorrect: _isCorrect,
-                          selectedOption: _selectedOption,
+                          isAnswered: _isAnswered.value,
+                          isCorrect: _isCorrect.value,
+                          selectedOption: _selectedOption.value,
                         ),
                       ),
 
@@ -333,7 +376,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: SizedBox(
-                            width: constraints.maxWidth,
+                            width: maxWidth,
                             child: _buildChipsWrap(
                               quest,
                               color,
@@ -347,8 +390,6 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                 SizedBox(height: gapBottom),
               ],
             );
-      },
-    );
   }
 
   Widget _buildChipsWrap(
@@ -366,8 +407,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
               text: o,
               color: color,
               isDark: isDark,
-              isSelected: _selectedOption == o,
-              isCorrect: _isCorrect,
+              isSelected: _selectedOption.value == o,
+              isCorrect: _isCorrect.value,
               onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
             );
           }).toList(),
