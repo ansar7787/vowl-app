@@ -233,9 +233,16 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                           ),
                           Column(
                             children: [
-                              SizedBox(
-                                height: constraints.maxHeight,
-                                child: _buildChatInterface(quest, theme.primaryColor, isDarkMode),
+                              AnimatedContainer(
+                                duration: const Duration(milliseconds: 600),
+                                curve: Curves.easeInOutCubic,
+                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.65 : constraints.maxHeight,
+                                child: OverflowBox(
+                                  minHeight: constraints.maxHeight,
+                                  maxHeight: constraints.maxHeight,
+                                  alignment: Alignment.topCenter,
+                                  child: _buildChatInterface(quest, theme.primaryColor, isDarkMode),
+                                ),
                               ),
                               if (_isFirstStagePassed.value)
                                 Padding(
@@ -252,7 +259,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                                     ],
                                   ),
                                 ),
-                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 450.h : 60.h),
+                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 280.h : 60.h),
                             ],
                           ),
                         ],

@@ -250,7 +250,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                     ],
                                   ),
                                 ),
-                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 450.h : 60.h),
+                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 280.h : 60.h),
                             ],
                           ),
                         ],

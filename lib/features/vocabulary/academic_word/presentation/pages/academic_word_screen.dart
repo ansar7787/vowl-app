@@ -221,9 +221,15 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
                                 child: Column(
                             children: [
-                              SizedBox(
-                                height: constraints.maxHeight,
-                                child: _AcademicWordGameBody(
+                              AnimatedContainer(
+                                duration: const Duration(milliseconds: 600),
+                                curve: Curves.easeInOutCubic,
+                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.52 : constraints.maxHeight,
+                                child: OverflowBox(
+                                  minHeight: constraints.maxHeight,
+                                  maxHeight: constraints.maxHeight,
+                                  alignment: Alignment.topCenter,
+                                  child: _AcademicWordGameBody(
                                   quest: quest,
                                   isAnswered: _isAnswered.value,
                                   isCorrect: _isCorrect.value,
@@ -238,6 +244,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                   onDragEnd: (i) => _onShardDragEnd(i, quest),
                                   getInitialPosition: _getShardInitialPosition,
                                 ),
+                              ),
                               ),
                               if (_isFirstStagePassed.value)
                                 Padding(
@@ -254,7 +261,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                     ],
                                   ),
                                 ),
-                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 450.h : 60.h),
+                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 280.h : 60.h),
                             ],
                           ),
                         ),
