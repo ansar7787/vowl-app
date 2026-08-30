@@ -5,7 +5,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class ReadAndAnswerBuoyOption extends StatelessWidget {
   final int index;
   final String text;
-  final String correct;
+  final bool isCorrectOption;
   final Color color;
   final bool isDark;
   final bool isAnswered;
@@ -16,7 +16,7 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
     super.key,
     required this.index,
     required this.text,
-    required this.correct,
+    required this.isCorrectOption,
     required this.color,
     required this.isDark,
     required this.isAnswered,
@@ -24,8 +24,8 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
     required this.onTap,
   });
 
-  // Alphabet labels for options — falls back to 1-based number for > 4 options.
-  static const _letters = ['A', 'B', 'C', 'D'];
+  // Alphabet labels for options — covers up to 8 options gracefully.
+  static const _letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
   String get _letter =>
       index < _letters.length ? _letters[index] : '${index + 1}';
@@ -37,11 +37,8 @@ class ReadAndAnswerBuoyOption extends StatelessWidget {
     final bool isSelected = selectedIndex == index;
 
     // Computed ONCE and shared between visual state logic and semantic label.
-    // Original computed this expression three separate times per build.
-    final bool isThisCorrect =
-        text.trim().toLowerCase() == correct.trim().toLowerCase();
-    final bool showAsCorrect = isAnswered && isThisCorrect;
-    final bool showAsWrong = isAnswered && isSelected && !isThisCorrect;
+    final bool showAsCorrect = isAnswered && isCorrectOption;
+    final bool showAsWrong = isAnswered && isSelected && !isCorrectOption;
 
     // ---------------------------------------------------------------------------
     // Visual tokens

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -11,6 +11,8 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_instruction.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
+import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_floating_passage.dart';
+import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -35,10 +37,17 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _showEvidenceStep = ValueNotifier(false);
 
-  int? _pendingSelectedIndex;
-  bool _showEvidenceStep = false;
+  @override
+  void dispose() {
+    _showConfetti.dispose();
+    _pendingSelectedIndex.dispose();
+    _showEvidenceStep.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -49,18 +58,21 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   }
 
   void _onOptionTap(int index, bool isCorrect, ReadingQuest quest) {
-    if (_showEvidenceStep || _pendingSelectedIndex != null) return;
+    if (_showEvidenceStep.value || _pendingSelectedIndex.value != null) return;
     
-    setState(() {
-      _pendingSelectedIndex = index;
-    });
+    _pendingSelectedIndex.value = index;
 
     if (isCorrect) {
       _hapticService.selection();
-      // Wait for user to tap evidence
-      setState(() {
-        _showEvidenceStep = true;
-      });
+      
+      // Prevent Soft-Lock: If there is no valid evidence string to highlight,
+      // skip the highlight step entirely and submit the correct answer.
+      final evidenceStr = (quest.evidenceLine ?? quest.correctAnswer ?? '').trim();
+      if (evidenceStr.isEmpty || (quest.passage ?? '').isEmpty) {
+        _submitFinalAnswer(true, quest);
+      } else {
+        _showEvidenceStep.value = true;
+      }
     } else {
       _submitFinalAnswer(false, quest);
     }
@@ -76,9 +88,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
       _soundService.playWrong();
       
       final String userAnswer = (quest.options != null &&
-              _pendingSelectedIndex != null &&
-              _pendingSelectedIndex! < quest.options!.length)
-          ? quest.options![_pendingSelectedIndex!]
+              _pendingSelectedIndex.value != null &&
+              _pendingSelectedIndex.value! < quest.options!.length)
+          ? quest.options![_pendingSelectedIndex.value!]
           : 'Unknown';
 
       ErrorJournalCollector.record(
@@ -108,13 +120,11 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
           (curr is ReadingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is ReadingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _pendingSelectedIndex = null;
-            _showEvidenceStep = false;
-          });
+          _pendingSelectedIndex.value = null;
+          _showEvidenceStep.value = false;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -132,40 +142,50 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
             ? state.answerStatus.asBoolOrNull
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: isAnswered,
-          isCorrect: isCorrect,
-          showConfetti: _showConfetti,
-          useScrolling: false,
-          onContinue: () =>
-              context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<ReadingBloc>().add(const ReadingHintUsed()),
-          child: quest == null
-              ? const _QuestLoadingPlaceholder()
-              : Stack(
-                  children: [
-                    _QuestContent(
-                      quest: quest,
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                      isAnswered: isAnswered,
-                      isCorrect: isCorrect,
-                      pendingSelectedIndex: _pendingSelectedIndex,
-                      onOptionSelected: (idx, isCorrect) => _onOptionTap(idx, isCorrect, quest),
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            _showConfetti,
+            _pendingSelectedIndex,
+            _showEvidenceStep,
+          ]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: isAnswered,
+              isCorrect: isCorrect,
+              showConfetti: _showConfetti.value,
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ReadingBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              child: quest == null
+                  ? const _QuestLoadingPlaceholder()
+                  : Stack(
+                      children: [
+                        _QuestContent(
+                          quest: quest,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          isAnswered: isAnswered,
+                          isCorrect: isCorrect,
+                          pendingSelectedIndex: _pendingSelectedIndex.value,
+                          onOptionSelected: (idx, isCorrect) => _onOptionTap(idx, isCorrect, quest),
+                        ),
+                        if (_showEvidenceStep.value && !isAnswered)
+                          EvidenceHighlightWrapper(
+                            passage: quest.passage ?? '',
+                            // Use evidenceLine from JSON for precise pedagogical targeting
+                            evidenceWords: (quest.evidenceLine ?? quest.correctAnswer ?? '').split(' '),
+                            primaryColor: theme.primaryColor,
+                            onCorrectHighlight: () => _submitFinalAnswer(true, quest),
+                            instruction: 'Tap the words that prove your answer',
+                          ),
+                      ],
                     ),
-                    if (_showEvidenceStep && !isAnswered)
-                      EvidenceHighlightWrapper(
-                        passage: quest.passage ?? '',
-                        evidenceWords: (quest.correctAnswer ?? '').split(' '),
-                        primaryColor: theme.primaryColor,
-                        onCorrectHighlight: () => _submitFinalAnswer(true, quest),
-                        instruction: 'Tap the words that prove your answer',
-                      ),
-                  ],
-                ),
+            );
+          },
         );
       },
     );
@@ -210,13 +230,8 @@ class _QuestContent extends StatelessWidget {
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverPadding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 0, // Padding is handled by ReadingContentArea
-              vertical: 0,
-            ),
-            sliver: SliverToBoxAdapter(
-              child: Column(
+          SliverToBoxAdapter(
+            child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: 16.h),
@@ -234,29 +249,10 @@ class _QuestContent extends StatelessWidget {
                   ),
                   SizedBox(height: 24.h),
                   // Render Passage Box
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(24.r),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.white.withValues(alpha: 0.85),
-                      borderRadius: BorderRadius.circular(24.r),
-                      border: Border.all(
-                        color: primaryColor.withValues(alpha: isDark ? 0.15 : 0.1),
-                        width: 1.5,
-                      ),
-                    ),
-                    child: Text(
-                      quest.passage ?? '',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
-                        height: 1.65,
-                      ),
-                    ),
+                  ReadAndAnswerFloatingPassage(
+                    text: quest.passage ?? '',
+                    color: primaryColor,
+                    isDark: isDark,
                   ),
                   SizedBox(height: 24.h),
                   if (quest.options != null)
@@ -267,7 +263,7 @@ class _QuestContent extends StatelessWidget {
                       return ReadAndAnswerBuoyOption(
                         index: e.key,
                         text: e.value,
-                        correct: quest.correctAnswer ?? '',
+                        isCorrectOption: isOptionCorrect,
                         color: primaryColor,
                         isDark: isDark,
                         isAnswered: isAnswered || (pendingSelectedIndex != null),
@@ -275,11 +271,18 @@ class _QuestContent extends StatelessWidget {
                         onTap: () => onOptionSelected(e.key, isOptionCorrect),
                       );
                     }),
+                  if (isAnswered && isCorrect != null) ...[
+                    SizedBox(height: 24.h),
+                    ReadAndAnswerResult(
+                      quest: quest,
+                      isCorrect: isCorrect!,
+                      isDark: isDark,
+                    ),
+                  ],
                   SizedBox(height: 40.h),
                 ],
               ),
             ),
-          ),
           SliverFillRemaining(
             hasScrollBody: false,
             child: SizedBox.shrink(),
@@ -290,7 +293,8 @@ class _QuestContent extends StatelessWidget {
   }
 
   Widget _buildReadTimeBadge(Color primaryColor, bool isDark) {
-    final wordCount = quest.passageWordCount ?? quest.passage?.split(RegExp(r'\s+')).length ?? 50;
+    // Avoid costly regex split in build method by relying on fast space split fallback
+    final wordCount = quest.passageWordCount ?? (quest.passage?.split(' ').length ?? 50);
     // Assume 130 WPM reading speed
     final readTimeSec = (wordCount / 130 * 60).round();
     final timeStr = readTimeSec < 60 ? '$readTimeSec sec read' : '${(readTimeSec/60).round()} min read';
