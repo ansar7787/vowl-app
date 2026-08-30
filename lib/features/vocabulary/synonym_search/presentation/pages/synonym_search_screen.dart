@@ -255,11 +255,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           final isRetry = !state.answerStatus.isAnswered && _isAnswered;
 
           if (isNewQuestion || isRetry) {
-            _scrollController.animateTo(
-              0,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeOutBack,
-            );
+            if (_scrollController.hasClients) {
+              _scrollController.animateTo(
+                0,
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOutBack,
+              );
+            }
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
