@@ -10,6 +10,7 @@ class FindWordMeaningInteractivePassage extends StatefulWidget {
   final bool isDark;
   final bool isAnswered;
   final int? selectedIndex;
+  final bool? isCorrectSelection;
   final Function(bool isCorrect, String selectedWord, int index) onWordSelected;
 
   const FindWordMeaningInteractivePassage({
@@ -20,6 +21,7 @@ class FindWordMeaningInteractivePassage extends StatefulWidget {
     required this.isDark,
     required this.isAnswered,
     required this.selectedIndex,
+    required this.isCorrectSelection,
     required this.onWordSelected,
   });
 
@@ -119,6 +121,14 @@ class _FindWordMeaningInteractivePassageState
             runSpacing: 4.h,
             children: List.generate(_words.length, (index) {
               final isSelected = widget.selectedIndex == index;
+              
+              Color activeColor = widget.primaryColor;
+              if (isSelected && widget.isCorrectSelection != null) {
+                activeColor = widget.isCorrectSelection!
+                    ? (widget.isDark ? const Color(0xFF34D399) : const Color(0xFF10B981))
+                    : (widget.isDark ? const Color(0xFFF87171) : const Color(0xFFEF4444));
+              }
+              
               final word = _words[index];
 
               return GestureDetector(
@@ -128,12 +138,12 @@ class _FindWordMeaningInteractivePassageState
                   padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? widget.primaryColor.withValues(alpha: 0.2)
+                        ? activeColor.withValues(alpha: 0.2)
                         : Colors.transparent,
                     borderRadius: BorderRadius.circular(6.r),
                     border: Border.all(
                       color: isSelected
-                          ? widget.primaryColor
+                          ? activeColor
                           : Colors.transparent,
                       width: 1.5,
                     ),
@@ -145,7 +155,7 @@ class _FindWordMeaningInteractivePassageState
                       fontSize: 18.sp,
                       fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                       color: isSelected
-                          ? widget.primaryColor
+                          ? activeColor
                           : (widget.isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B)),
                       height: 1.4,
                     ),

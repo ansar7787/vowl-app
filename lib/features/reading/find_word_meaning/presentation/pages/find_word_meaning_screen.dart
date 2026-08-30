@@ -185,6 +185,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                                       isDark: isDark,
                                       isAnswered: isAnswered,
                                       selectedIndex: _pendingSelectedIndex.value,
+                                      isCorrectSelection: isCorrect,
                                       onWordSelected: (isCorrectTap, word, index) {
                                         _submitFinalAnswer(isCorrectTap, index, quest);
                                       },
