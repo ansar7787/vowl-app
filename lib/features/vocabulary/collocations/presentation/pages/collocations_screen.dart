@@ -380,11 +380,26 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                   child: Column(
                                     children: [
                                       if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty) ...[
-                                        CollocationsWrongPairs(
-                                          wrongCollocations: quest.wrongCollocations!,
-                                          color: theme.primaryColor,
+                                        Builder(
+                                          builder: (context) {
+                                            final correctPair = '${quest.word} ${quest.correctAnswer}'.toLowerCase().trim();
+                                            final filteredWrongPairs = quest.wrongCollocations!
+                                                .where((w) => w.toLowerCase().trim() != correctPair)
+                                                .toList();
+
+                                            if (filteredWrongPairs.isEmpty) return const SizedBox.shrink();
+
+                                            return Column(
+                                              children: [
+                                                CollocationsWrongPairs(
+                                                  wrongCollocations: filteredWrongPairs,
+                                                  color: theme.primaryColor,
+                                                ),
+                                                SizedBox(height: 24.h),
+                                              ],
+                                            );
+                                          },
                                         ),
-                                        SizedBox(height: 24.h),
                                       ],
                                     ],
                                   ),
