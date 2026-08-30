@@ -136,7 +136,8 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
           ]),
           builder: (context, _) {
             // Computed state
-            final bool isAnswered = isAnsweredBloc || _showSentenceBuilder.value || _pendingSelectedIndex.value != null;
+            // If sentence builder is showing, the question is NOT finished yet.
+            final bool isAnswered = isAnsweredBloc || (_pendingSelectedIndex.value != null && !_showSentenceBuilder.value);
             final bool? isCorrect = _showSentenceBuilder.value ? true : isCorrectBloc;
 
             return ReadingBaseLayout(
