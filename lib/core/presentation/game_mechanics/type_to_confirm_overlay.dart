@@ -127,10 +127,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
 
     if (widget.isPositioned) {
       return Positioned(
+        top: 0,
         bottom: 0,
         left: 0,
         right: 0,
-        child: content,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [Flexible(child: content)],
+        ),
       );
     }
 
@@ -178,9 +182,11 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
               child: child,
             );
           },
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
               // Header
               Row(
                 children: [
@@ -547,6 +553,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                 }
               ),
             ],
+          ),
           ),
         ),
       ),

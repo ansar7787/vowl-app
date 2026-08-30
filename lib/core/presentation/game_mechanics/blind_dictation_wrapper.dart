@@ -168,9 +168,11 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
             ),
             child: SafeArea(
               top: false,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                   // Handle bar
                   Container(
                     width: 48.w,
@@ -399,7 +401,8 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                       );
                     }
                   ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
@@ -417,10 +420,14 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
 
     if (widget.isPositioned) {
       return Positioned(
+        top: 0,
         bottom: 0,
         left: 0,
         right: 0,
-        child: content,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [Flexible(child: content)],
+        ),
       );
     }
 
