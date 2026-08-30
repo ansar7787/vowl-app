@@ -439,8 +439,6 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   );
 },
 );
-      },
-    );
   }
 
   Widget _buildVaultStatus(Color color, bool isDark) {
