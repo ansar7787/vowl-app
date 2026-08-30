@@ -102,16 +102,29 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   }
 
   String? _getFormattedExampleSentence(VocabularyQuest quest) {
-    if (quest.contextSentence == null || quest.contextSentence!.isEmpty) return null;
-    
-    final sentence = quest.contextSentence!;
+    String? sentence = quest.contextSentence;
+
+    if (sentence == null || sentence.isEmpty) {
+      if (quest.explanation != null && quest.explanation!.isNotEmpty) {
+        final matches = RegExp(r"'([^']+)'").allMatches(quest.explanation!);
+        if (matches.isNotEmpty) {
+          sentence = matches.last.group(1);
+        }
+      }
+    }
+
+    if (sentence == null || sentence.isEmpty) return null;
+
     final word = quest.word ?? "";
     final answer = quest.correctAnswer ?? "";
 
     // Determine which part of the phrasal verb is missing in the sentence
     final replacementWord = sentence.contains(answer) ? word : answer;
     
-    return sentence.replaceAll('__', replacementWord);
+    if (sentence.contains('__')) {
+      return sentence.replaceAll('__', replacementWord);
+    }
+    return sentence;
   }
 
   void _submitFinalAnswer(bool nailedIt) {
