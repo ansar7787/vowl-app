@@ -43,10 +43,6 @@ class ContextCluesScanner extends StatelessWidget {
               ],
             ),
           ),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
-            child: Container(color: Colors.transparent),
-          ),
         ),
         // Scanner Crosshair
         CustomPaint(

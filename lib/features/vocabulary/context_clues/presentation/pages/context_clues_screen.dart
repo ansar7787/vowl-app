@@ -41,13 +41,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   final _soundService = di.sl<SoundService>();
 
   final ValueNotifier<Offset> _lensPosition = ValueNotifier(Offset.zero);
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
+  
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
-  String? _selectedOption;
 
   @override
   void initState() {
@@ -60,11 +62,17 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   @override
   void dispose() {
     _lensPosition.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    _selectedOption.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
   void _onLensMove(DragUpdateDetails details, BoxConstraints constraints) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
     final double halfWidth = constraints.maxWidth / 2;
     final double halfHeight = constraints.maxHeight / 2;
@@ -92,41 +100,43 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
-    setState(() {
-      _selectedOption = selected;
-    });
+    _selectedOption.value = selected;
 
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.selection(); // Subtle feedback for Phase 1
-      setState(() {
-        _isFirstStagePassed = true;
+      _isFirstStagePassed.value = true;
+      
+      Future.delayed(const Duration(milliseconds: 300), () {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
       });
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool nailedIt, [String? misspelledWord]) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-      if (misspelledWord != null) {
-        _selectedOption = misspelledWord;
-      }
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
+    if (misspelledWord != null) {
+      _selectedOption.value = misspelledWord;
+    }
 
     if (nailedIt) {
       _hapticService.success();
@@ -145,27 +155,23 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            setState(() {
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedOption = null;
-              _isFirstStagePassed = false;
-              _lensPosition.value = Offset.zero;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastQuest = state.currentQuest;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedOption.value = null;
+            _isFirstStagePassed.value = false;
+            _lensPosition.value = Offset.zero;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -195,74 +201,72 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
             ? state.currentQuest
             : _lastQuest;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () {
-            final currentState = context.read<VocabularyBloc>().state;
-            if (currentState is VocabularyLoaded &&
-                !currentState.isFinalFailure &&
-                _isCorrect == false) {
-              setState(() {
-                _isAnswered = false;
-                _isCorrect = null;
-                _selectedOption = null;
-              });
-            } else {
-              context.read<VocabularyBloc>().add(NextQuestion());
-            }
-          },
-          onHint: () =>
-              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          useScrolling: false,
-          disablePadding: true,
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return Stack(
-                      children: [
-                        CustomScrollView(
-                          physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedOption]),
+          builder: (context, _) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
+              onContinue: () {
+                final currentState = context.read<VocabularyBloc>().state;
+                if (currentState is VocabularyLoaded &&
+                    !currentState.isFinalFailure &&
+                    _isCorrect.value == false) {
+                  _isAnswered.value = false;
+                  _isCorrect.value = null;
+                  _selectedOption.value = null;
+                } else {
+                  context.read<VocabularyBloc>().add(NextQuestion());
+                }
+              },
+              onHint: () =>
+                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+              useScrolling: false,
+              disablePadding: true,
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return CustomScrollView(
+                          controller: _scrollController,
+                          physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                           slivers: [
                             SliverToBoxAdapter(
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                child: Column(
-                            children: [
-                          Expanded(
-                            child: _buildForensicScene(
-                              quest,
-                              theme.primaryColor,
-                              (state is VocabularyLoaded)
-                                  ? state.isFinalFailure
-                                  : false,
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: constraints.maxHeight,
+                                    child: _buildForensicScene(
+                                      quest,
+                                      theme.primaryColor,
+                                      (state is VocabularyLoaded)
+                                          ? state.isFinalFailure
+                                          : false,
+                                    ),
+                                  ),
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
+                                    EvidenceHighlightWrapper(
+                                      passage: quest.sentence?.replaceAll('[TARGET]', quest.correctAnswer ?? '') ?? "",
+                                      evidenceWords: quest.evidenceWords ?? [],
+                                      primaryColor: theme.primaryColor,
+                                      instruction: "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
+                                      onCorrectHighlight: () => _submitFinalAnswer(true),
+                                      onWrongHighlight: () => {},
+                                      isPositioned: false,
+                                    ),
+                                  SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 160.h : 60.h),
+                                ],
+                              ),
                             ),
-                          ),
-                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
-                            ],
-                          ),
-                        ),
-                        ),
-                      ],
+                          ],
+                        );
+                      },
                     ),
-                    if (_isFirstStagePassed && !_isAnswered)
-                      EvidenceHighlightWrapper(
-                        passage: quest.sentence?.replaceAll('[TARGET]', quest.correctAnswer ?? '') ?? "",
-                        evidenceWords: quest.evidenceWords ?? [],
-                        primaryColor: theme.primaryColor,
-                        instruction: "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
-                        onCorrectHighlight: () => _submitFinalAnswer(true),
-                        onWrongHighlight: () => {},
-                        isPositioned: true,
-                      ),
-                  ],
-                );
-              },
-            ),
+            );
+          },
         );
       },
     );
@@ -345,7 +349,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                       TweenAnimationBuilder<double>(
                         tween: Tween<double>(
                           begin: 5.0,
-                          end: (_isAnswered || _isFirstStagePassed) ? 0.0 : 5.0,
+                          end: (_isAnswered.value || _isFirstStagePassed.value) ? 0.0 : 5.0,
                         ),
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeOut,
@@ -360,21 +364,21 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         },
                         child: AnimatedOpacity(
                           duration: const Duration(milliseconds: 500),
-                          opacity: (_isAnswered || _isFirstStagePassed)
+                          opacity: (_isAnswered.value || _isFirstStagePassed.value)
                               ? 1.0
                               : 0.4,
                           child: ContextCluesEvidenceSentence(
                             sentence: quest.sentence ?? "",
                             color: color,
                             isCompact: isCompact,
-                            isAnswered: _isAnswered,
-                            isCorrect: _isCorrect,
-                            selectedOption: _selectedOption,
+                            isAnswered: _isAnswered.value,
+                            isCorrect: _isCorrect.value,
+                            selectedOption: _selectedOption.value,
                           ),
                         ),
                       ),
                       // LENS SYSTEM (The Flashlight)
-                      if (!_isAnswered && !_isFirstStagePassed)
+                      if (!_isAnswered.value && !_isFirstStagePassed.value)
                         ValueListenableBuilder<Offset>(
                           valueListenable: _lensPosition,
                           builder: (context, pos, _) {
@@ -399,9 +403,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                         sentence: quest.sentence ?? "",
                                         color: color,
                                         isCompact: isCompact,
-                                        isAnswered: _isAnswered,
-                                        isCorrect: _isCorrect,
-                                        selectedOption: _selectedOption,
+                                        isAnswered: _isAnswered.value,
+                                        isCorrect: _isCorrect.value,
+                                        selectedOption: _selectedOption.value,
                                       ),
                                     ),
                                   ),
@@ -441,9 +445,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               options: quest.options ?? [],
               correct: quest.correctAnswer ?? "",
               color: color,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              selectedOption: _selectedOption,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              selectedOption: _selectedOption.value,
               isFinalFailure: isFinalFailure,
               onOptionSelected: (o) =>
                   _submitAnswer(o, quest.correctAnswer ?? ""),
