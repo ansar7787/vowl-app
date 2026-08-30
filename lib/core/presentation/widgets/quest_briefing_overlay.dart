@@ -36,6 +36,7 @@ class QuestBriefingOverlay extends StatefulWidget {
 }
 
 class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
+  static const Duration _exitAnimDuration = Duration(milliseconds: 400);
   bool _isExiting = false;
 
   // Pre-build rule items once to avoid list allocation on every build().
@@ -52,8 +53,8 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   void _handleStart() {
     if (_isExiting || !mounted) return;
     setState(() => _isExiting = true);
-    // Align delay with the 400 ms exit animation duration.
-    Future<void>.delayed(const Duration(milliseconds: 420), () {
+    // Align delay with the defined exit animation duration plus a tiny buffer.
+    Future<void>.delayed(_exitAnimDuration + const Duration(milliseconds: 20), () {
       if (mounted) widget.onStart();
     });
   }
@@ -73,7 +74,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
             Positioned.fill(
               child: ColoredBox(
                 color: Colors.black.withValues(alpha: 0.85),
-              ).animate(target: _isExiting ? 1 : 0).fadeOut(duration: 400.ms),
+              ).animate(target: _isExiting ? 1 : 0).fadeOut(duration: _exitAnimDuration),
             ),
 
             // Content card
@@ -84,6 +85,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                 child:
                     Container(
                           width: 0.85.sw,
+                          constraints: const BoxConstraints(maxWidth: 450),
                           padding: EdgeInsets.all(24.r),
                           decoration: BoxDecoration(
                             color: Colors.white.withValues(alpha: 0.1),
@@ -141,10 +143,6 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                           onPlay: (c) =>
                                               c.repeat(reverse: true),
                                         )
-                                        .shimmer(
-                                          duration: 2.seconds,
-                                          color: Colors.white30,
-                                        )
                                         .scale(
                                           begin: const Offset(1, 1),
                                           end: const Offset(1.1, 1.1),
@@ -162,7 +160,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 11.sp,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w800,
                                   color: widget.primaryColor,
                                   letterSpacing: 4,
                                 ),
@@ -179,7 +177,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 22.sp,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w800,
                                   color: Colors.white,
                                 ),
                               ),
@@ -200,7 +198,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
                                     color: Colors.white.withValues(alpha: 0.9),
                                     height: 1.5,
                                   ),
@@ -308,7 +306,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                                       fontFamily: 'Outfit',
                                                       fontSize: 16.sp,
                                                       fontWeight:
-                                                          FontWeight.w900,
+                                                          FontWeight.w800,
                                                       color: Colors.white,
                                                       letterSpacing: 1.5,
                                                     ),
@@ -317,15 +315,6 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                               ),
                                             ),
                                           ),
-                                        )
-                                        .animate(
-                                          onPlay: (c) =>
-                                              c.repeat(reverse: true),
-                                        )
-                                        .shimmer(
-                                          delay: 2.seconds,
-                                          duration: 1.seconds,
-                                          color: Colors.white24,
                                         ),
                               ),
                             ],
@@ -335,7 +324,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                         .slideY(
                           begin: 0,
                           end: -0.2,
-                          duration: 400.ms,
+                          duration: _exitAnimDuration,
                           curve: Curves.easeIn,
                         )
                         .fadeOut(duration: 300.ms),
