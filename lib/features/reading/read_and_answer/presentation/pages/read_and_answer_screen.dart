@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -198,7 +199,12 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                           onOptionSelected: (idx, isCorrect) =>
                               _onOptionTap(idx, isCorrect, quest),
                         ),
-                        if (_showEvidenceStep.value && !isAnswered)
+                        if (_showEvidenceStep.value && !isAnswered) ...[
+                          Positioned.fill(
+                            child: Container(
+                              color: isDark ? Colors.black87 : Colors.black.withOpacity(0.6),
+                            ).animate().fadeIn(duration: 400.ms, curve: Curves.easeOut),
+                          ),
                           EvidenceHighlightWrapper(
                             passage: displayPassage,
                             // Use evidenceLine from JSON for precise pedagogical targeting
@@ -212,6 +218,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                                 _submitFinalAnswer(true, quest),
                             instruction: 'Tap the words that prove your answer',
                           ),
+                        ],
                       ],
                     ),
             );
