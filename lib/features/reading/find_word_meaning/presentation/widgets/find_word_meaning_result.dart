@@ -20,71 +20,83 @@ class FindWordMeaningResult extends StatelessWidget {
   Widget build(BuildContext context) {
     final displayColor = isCorrect ? Colors.greenAccent : Colors.redAccent;
 
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: displayColor.withValues(alpha: 0.3),
-          width: 2,
+    Widget card = Semantics(
+      liveRegion: true,
+      label: isCorrect 
+          ? 'Correct! ${quest.explanation ?? ''}' 
+          : 'Incorrect. ${quest.explanation ?? ''}',
+      excludeSemantics: true,
+      child: Container(
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(
+          color: displayColor.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: displayColor.withValues(alpha: 0.3),
+            width: 2,
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          Icon(
-            isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
-            color: displayColor,
-            size: 36.r,
-          ),
-          SizedBox(height: 10.h),
-          Text(
-            isCorrect
-                ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
-                : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
+        child: Column(
+          children: [
+            ExcludeSemantics(
+              child: Icon(
+                isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded,
+                color: displayColor,
+                size: 36.r,
+              ),
             ),
-          ),
-          if (quest.explanation != null) ...[
             SizedBox(height: 10.h),
             Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
+              isCorrect
+                  ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w900,
+                color: displayColor,
+                letterSpacing: 2,
               ),
             ),
-          ],
-          if (quest.wordInContext != null) ...[
-            SizedBox(height: 12.h),
-            Container(
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Text(
-                'Example: "${quest.wordInContext}"',
+            if (quest.explanation != null) ...[
+              SizedBox(height: 10.h),
+              Text(
+                quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w500,
-                  fontStyle: FontStyle.italic,
-                  color: isDark ? Colors.white70 : Colors.black87,
+                  fontSize: 14.sp, // slightly larger for readability
+                  color: isDark ? Colors.white60 : Colors.black54,
                 ),
               ),
-            ),
+            ],
+            if (quest.wordInContext != null) ...[
+              SizedBox(height: 12.h),
+              Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Text(
+                  'Example: "${quest.wordInContext}"',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.italic,
+                    color: isDark ? Colors.white70 : Colors.black87,
+                  ),
+                ),
+              ),
+            ],
           ],
-        ],
+        ),
       ),
-    ).animate().shimmer(duration: 2.seconds);
+    );
+
+    if (MediaQuery.disableAnimationsOf(context)) return card;
+    return card.animate().fadeIn(duration: 300.ms).slideY(begin: 0.1, end: 0);
   }
 }
