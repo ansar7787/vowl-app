@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -205,17 +206,28 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                             ),
                             SliverFillRemaining(
                               hasScrollBody: false,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SizedBox(height: 50.h),
-                                ],
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 40.h, bottom: 20.h),
+                                  child: Icon(
+                                    Icons.menu_book_rounded,
+                                    size: 140.r,
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.02)
+                                        : theme.primaryColor.withValues(alpha: 0.05),
+                                  ),
+                                ),
                               ),
                             ),
                           ],
                         ),
                         ),
-                        if (_showSentenceBuilder.value)
+                        if (_showSentenceBuilder.value) ...[
+                          Positioned.fill(
+                            child: Container(
+                              color: isDark ? Colors.black87 : Colors.black.withValues(alpha: 0.6),
+                            ).animate().fadeIn(duration: 400.ms, curve: Curves.easeOut),
+                          ),
                           ContextSentenceBuilder(
                             targetKeyword: quest.word ?? '',
                             primaryColor: theme.primaryColor,
@@ -225,6 +237,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                             bonusCoins: 5,
                             exampleSentence: quest.wordInContext,
                           ),
+                        ]
                       ],
                     ),
             );
