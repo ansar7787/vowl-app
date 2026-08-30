@@ -234,7 +234,12 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                           ),
                           Column(
                             children: [
-                              _buildUnfoldContent(quest, theme.primaryColor, isDarkMode, constraints.maxHeight, constraints.maxWidth),
+                              AnimatedContainer(
+                                duration: const Duration(milliseconds: 600),
+                                curve: Curves.easeInOutCubic,
+                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.52 : constraints.maxHeight,
+                                child: _buildUnfoldContent(quest, theme.primaryColor, isDarkMode, constraints.maxWidth),
+                              ),
                               if (_isFirstStagePassed.value)
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -278,7 +283,10 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
     );
   }
 
-  Widget _buildUnfoldContent(VocabularyQuest quest, Color color, bool isDark, double maxHeight, double maxWidth) {
+  Widget _buildUnfoldContent(VocabularyQuest quest, Color color, bool isDark, double maxWidth) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final maxHeight = constraints.maxHeight;
         final isCompact = maxHeight < 580;
 
         final double estimatedContentHeight =
@@ -389,6 +397,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                 SizedBox(height: gapBottom),
               ],
             );
+      },
+    );
   }
 
   Widget _buildChipsWrap(
