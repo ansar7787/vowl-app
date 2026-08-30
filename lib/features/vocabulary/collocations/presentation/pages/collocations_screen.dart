@@ -379,11 +379,13 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                                   child: Column(
                                     children: [
-                                      if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty)
+                                      if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty) ...[
                                         CollocationsWrongPairs(
                                           wrongCollocations: quest.wrongCollocations!,
                                           color: theme.primaryColor,
                                         ),
+                                        SizedBox(height: 24.h),
+                                      ],
                                     ],
                                   ),
                                 ),
