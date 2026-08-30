@@ -1117,160 +1117,172 @@ class GameInstructionService {
     ),
     // 6. Vocabulary
     GameSubtype.flashcards: GameBriefing(
-      title: "Flashcards",
+      title: "Vocabulary Flashcards",
       icon: Icons.style_rounded,
       objective:
-          "Tap to flip flashcards and swipe through to master terms. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Tap to flip", "Swipe Right = Known", "Swipe Left = Review"],
-      actionText: "Master Now",
+          "Test your memory! Try to recall the word's meaning before flipping the card, then swipe right if you knew it or left to practice again.",
+      rules: [
+        "Guess the meaning first",
+        "Tap to flip the card",
+        "Swipe Right: Mastered, Left: Review"
+      ],
+      actionText: "Start Review",
       tip:
-          "Speed isn't the goal—mastery is! Take your time to review definitions.",
+          "PRO TIP: Be honest with yourself! Swiping left ensures you'll get another chance to really lock the word into your memory.",
     ),
     GameSubtype.synonymSearch: GameBriefing(
       title: "Synonym Warp",
       icon: Icons.cyclone,
       objective:
-          "Identify the exact same meaning for the target word. Learning multiple words for the same idea gives your speaking and writing much more color and variety.",
+          "Identify the exact same meaning for the target word and drag the shard into the warp gate. Finally, speak the complete sentence aloud to confirm the nuance.",
       rules: [
-        "Find the twin word",
-        "Warp the correct match",
-        "Ignore visual tricks",
+        "Find the synonym shard",
+        "Drag it into the warp gate",
+        "Speak the full sentence",
       ],
       actionText: "Start Warp",
       tip:
-          "Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
+          "PRO TIP: Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
     ),
     GameSubtype.antonymSearch: GameBriefing(
-      title: "Polarity Master",
+      title: "Antonym Search",
       icon: Icons.electrical_services_rounded,
       objective:
-          "Identify the exact opposite meaning of the target word. Searching for opposites builds a flexible vocabulary, helping you sound much more expressive in real-world conversations.",
+          "Identify the core word's exact opposite and drag it into the opposing polarity field, then speak the pair aloud.",
       rules: [
-        "Find the opposite word",
-        "Match to opposite pole",
-        "Don't fall for synonyms",
+        "Read the core word",
+        "Drag antonym to opposite field",
+        "Speak the word pair clearly",
       ],
-      actionText: "Start Search",
+      actionText: "Begin Search",
       tip:
-          "Think magnetically: Opposite meaning goes to the opposite glowing pole!",
+          "PRO TIP: Opposite polarity! If the core word is cyan, its antonym belongs in the orange field.",
     ),
     GameSubtype.contextClues: GameBriefing(
-      title: "Detective Lens",
+      title: "Context Clues",
       icon: Icons.search_rounded,
       objective:
-          "Use surrounding words to figure out the hidden meaning. Being able to read between the lines is essential for native-level fluency.",
+          "Use the scanner to investigate the blurred text and deduce the missing word, then highlight the exact evidence that proves your answer.",
       rules: [
-        "Drag to reveal clues",
-        "Analyze the context",
-        "Select the right evidence",
+        "Drag the scanner to reveal text",
+        "Tap the missing word tag",
+        "Highlight the proof in the text",
       ],
-      actionText: "Start Scan",
+      actionText: "Investigate Case",
       tip:
-          "Clues are usually hiding right next to the highlighted or redacted word!",
+          "PRO TIP: Look for synonyms, antonyms, or cause-and-effect relationships hidden in the surrounding words!",
     ),
     GameSubtype.phrasalVerbs: GameBriefing(
       title: "Verb Vault",
       icon: Icons.vpn_key_rounded,
       objective:
-          "Master the hidden combinations of verbs and prepositions. Unlocking these pairs will make your conversational English sound incredibly natural and fluent!",
-      rules: ["Read Definition", "Select Particle", "Crack Vault"],
-      actionText: "Start Hack",
+          "Master hidden combinations by selecting the correct preposition particle to crack the verb vault. Then, speak the natural English sentence aloud.",
+      rules: [
+        "Read the LCD definition",
+        "Tap the correct particle key",
+        "Speak the sentence to confirm",
+      ],
+      actionText: "Hack Vault",
       tip:
-          "Particles change everything! 'Turn up' has a completely different meaning than 'turn down'.",
+          "PRO TIP: Particles change everything! 'Turn up' has a completely different meaning than 'turn down'.",
     ),
     GameSubtype.idioms: GameBriefing(
       title: "Emojify",
       icon: Icons.forum_rounded,
       objective:
-          "Decode emojis and phrases into correct English idioms. Mastering idioms is the ultimate secret to sounding like a true native speaker!",
+          "Decode the incoming emoji transmission by selecting the correct English idiom. Mastering idioms is the ultimate secret to sounding like a true native speaker!",
       rules: [
-        "Interpret emojis",
-        "Select matching idiom",
-        "Crack the idiom code",
+        "Interpret the emojis",
+        "Select the matching idiom",
+        "Speak it aloud to secure",
       ],
-      actionText: "Send Message",
+      actionText: "Decrypt Message",
       tip:
-          "PRO TIP: Idioms are colorful cultural keys! Don't take them literally.",
+          "PRO TIP: Idioms are colorful cultural keys! Don't translate them literally word-for-word.",
     ),
     GameSubtype.academicWord: GameBriefing(
-      title: "Thesis Thrust",
+      title: "Academic Vocabulary",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Read the context carefully and select the advanced vocabulary word that fits perfectly. Expanding your academic vocabulary elevates your professional and intellectual communication.",
+          "Read the thesis excerpt and drag the correct academic word into the blank, then spell it to verify your mastery.",
       rules: [
-        "Read the passage",
-        "Analyze the context",
-        "Drag the correct word",
+        "Read the context carefully",
+        "Drag word into the slot",
+        "Spell accurately to win",
       ],
-      actionText: "Initiate Thrust",
+      actionText: "Start Analysis",
       tip:
-          "PRO TIP: Look for tone! Academic words often have a formal, precise feeling compared to everyday speech.",
+          "PRO TIP: Pay attention to the collocations or surrounding words—they often give a strong hint about which academic term fits best.",
     ),
     GameSubtype.topicVocab: GameBriefing(
-      title: "Word Sorter",
+      title: "Topic Sorter",
       icon: Icons.category_rounded,
       objective:
-          "Sort words into the correct topic. Grouping words together makes them much easier to remember for real-world conversations.",
+          "Flick the vocabulary word into the correct containment bin based on its topic. Grouping words helps you recall them faster during real-world conversations.",
       rules: [
-        "Look at the new word",
-        "Swipe it to the right topic",
-        "Sort them all to win",
+        "Analyze the floating word",
+        "Flick it to the correct bin",
+        "Sort the entire batch",
       ],
       actionText: "Start Sorting",
       tip:
-          "PRO TIP: Try to picture the word in your mind before swiping it into the category!",
+          "PRO TIP: Try to picture the word in your mind before flicking it into the category!",
     ),
     GameSubtype.wordFormation: GameBriefing(
-      title: "Word Builder",
+      title: "Word Morph",
       icon: Icons.science_rounded,
       objective:
-          "Read the meaning closely and build the exact word it describes by adding the right ending to the root word. Mastering word construction unlocks a massive new vocabulary for you!",
+          "Native speakers constantly bend words to fit different grammatical situations. Slide the correct injection rail into the reaction core, then type the final result.",
       rules: [
-        "Read the meaning",
-        "Choose the right ending",
-        "Build the new word",
+        "Check the target meaning",
+        "Slide the correct ending rail",
+        "Type the final word to lock it",
       ],
-      actionText: "Start Building",
+      actionText: "Start Morphing",
       tip:
-          "Think about what kind of word you need—like a person, a feeling, or an action—before choosing the ending!",
+          "PRO TIP: Ask yourself what kind of word you need. Are you turning a noun into an adjective, or a verb into a person?",
     ),
     GameSubtype.prefixSuffix: GameBriefing(
-      title: "Word Builder",
+      title: "Affix Synthesizer",
       icon: Icons.spa_rounded,
       objective:
-          "Carefully analyze the root word and attach the correct prefix or suffix. Understanding how word parts connect is a powerful way to instantly grow your vocabulary!",
-      rules: ["Read the meaning", "Find the matching affix", "Drag to connect"],
-      actionText: "Start Building",
+          "A few tiny letters can completely change a word's meaning. Tap the correct prefix or suffix chip to snap it onto the root word, then type the final result to lock it in.",
+      rules: [
+        "Read the target meaning",
+        "Tap to snap the affix chip",
+        "Type the final word to confirm",
+      ],
+      actionText: "Start Synthesizing",
       tip:
-          "PRO TIP: Look closely at the meaning first! A small prefix like 're-' completely changes the word.",
+          "PRO TIP: If the target meaning says 'again', look for 're-'. If it says 'without', look for '-less'.",
     ),
     GameSubtype.collocations: GameBriefing(
-      title: "Magnetic Fusion",
+      title: "Collocation Match",
       icon: Icons.join_inner_rounded,
       objective:
-          "Discover words that naturally magnetize to each other. Mastering these common pairings will make your speech sound incredibly fluent and native-like.",
+          "Drag the correct word bubble to the anchor to form a natural English collocation, then build a sentence using it.",
       rules: [
-        "Examine the main word",
-        "Find its natural partner",
-        "Fuse them together",
+        "Read the anchor word",
+        "Drag the bubble that pairs best",
+        "Build a sentence with the pair",
       ],
-      actionText: "Start Fusion",
+      actionText: "Match Pair",
       tip:
-          "PRO TIP: Sometimes multiple words make sense, but only one is the natural, native-sounding pair!",
+          "PRO TIP: Native speakers use these pairs naturally. Don't translate word-for-word, think about what sounds right!",
     ),
     GameSubtype.contextualUsage: GameBriefing(
-      title: "Usage Unfold",
+      title: "Contextual Usage",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Identify the word that fits perfectly in the context of the sentence. Mastering contextual usage eliminates embarrassing mix-ups and makes your writing flawless.",
+          "Select the word that best fits the sentence's context, then speak the complete sentence aloud to confirm.",
       rules: [
-        "Evaluate context",
-        "Unfold the correct fit",
-        "Ensure logical flow",
+        "Read the sentence carefully",
+        "Select the best fitting word",
+        "Speak the full sentence aloud",
       ],
-      actionText: "Unfold Truth",
+      actionText: "Analyze Context",
       tip:
-          "PRO TIP: Nuance is key! Read the sentence quietly to yourself to 'feel' which word logically belongs.",
+          "PRO TIP: Pay close attention to the register meter. Sometimes two words mean the same thing, but one is much more formal than the other!",
     ),
 
     // 7. Accent
