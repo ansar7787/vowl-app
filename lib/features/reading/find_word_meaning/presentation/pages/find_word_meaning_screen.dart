@@ -228,6 +228,8 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                           ],
                         ),
                         ),
+                        ),
+                        ),
                         if (_showSentenceBuilder.value)
                           ContextSentenceBuilder(
                             targetKeyword: quest.word ?? '',
