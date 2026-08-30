@@ -159,7 +159,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                     : widget.primaryColor.withValues(alpha: 0.3);
             
             return Container(
-              padding: EdgeInsets.fromLTRB(24.w, 28.h, 24.w, 28.h),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.black.withValues(alpha: 0.85)
@@ -183,6 +183,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
             );
           },
           child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(vertical: 28.h),
             physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.min,

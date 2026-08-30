@@ -191,7 +191,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               : Colors.white.withValues(alpha: 0.8);
 
           return Container(
-            padding: EdgeInsets.all(24.r),
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
             decoration: BoxDecoration(
               color: glassColor,
               borderRadius: BorderRadius.circular(32.r),
@@ -210,6 +210,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
           );
         },
             child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(vertical: 24.h),
               physics: const BouncingScrollPhysics(),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
