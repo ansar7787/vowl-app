@@ -59,15 +59,16 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
 
   void _onOptionTap(int index, bool isCorrect, ReadingQuest quest) {
     if (_showEvidenceStep.value || _pendingSelectedIndex.value != null) return;
-    
+
     _pendingSelectedIndex.value = index;
 
     if (isCorrect) {
       _hapticService.selection();
-      
+
       // Prevent Soft-Lock: If there is no valid evidence string to highlight,
       // skip the highlight step entirely and submit the correct answer.
-      final evidenceStr = (quest.evidenceLine ?? quest.correctAnswer ?? '').trim();
+      final evidenceStr = (quest.evidenceLine ?? quest.correctAnswer ?? '')
+          .trim();
       if (evidenceStr.isEmpty || (quest.passage ?? '').isEmpty) {
         _submitFinalAnswer(true, quest);
       } else {
@@ -86,8 +87,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
-      final String userAnswer = (quest.options != null &&
+
+      final String userAnswer =
+          (quest.options != null &&
               _pendingSelectedIndex.value != null &&
               _pendingSelectedIndex.value! < quest.options!.length)
           ? quest.options![_pendingSelectedIndex.value!]
@@ -122,6 +124,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         if (state is ReadingLoaded && !state.answerStatus.isAnswered) {
           _pendingSelectedIndex.value = null;
           _showEvidenceStep.value = false;
+          _showConfetti.value = false;
         }
         if (state is ReadingGameComplete) {
           _showConfetti.value = true;
@@ -129,7 +132,10 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('reading_games.zen_reader', fallback: 'ZEN READER!'),
+            title: context.tr(
+              'reading_games.zen_reader',
+              fallback: 'ZEN READER!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -141,6 +147,22 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         final bool? isCorrect = isLoaded
             ? state.answerStatus.asBoolOrNull
             : null;
+
+        String? displayTopic = quest?.paragraphTopic;
+        String displayPassage = quest?.passage ?? '';
+
+        // Automatically extract embedded tags like "[My Family]" from the passage text
+        // This MUST happen at the top level so BOTH the main content and evidence wrapper sync perfectly
+        if (quest != null && quest.passage != null) {
+          final match = RegExp(
+            r'^\[(.*?)\]\s*(.*)$',
+            dotAll: true,
+          ).firstMatch(quest.passage!);
+          if (match != null) {
+            displayTopic = match.group(1);
+            displayPassage = match.group(2) ?? '';
+          }
+        }
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -166,20 +188,28 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                       children: [
                         _QuestContent(
                           quest: quest,
+                          displayTopic: displayTopic,
+                          displayPassage: displayPassage,
                           primaryColor: theme.primaryColor,
                           isDark: isDark,
                           isAnswered: isAnswered,
                           isCorrect: isCorrect,
                           pendingSelectedIndex: _pendingSelectedIndex.value,
-                          onOptionSelected: (idx, isCorrect) => _onOptionTap(idx, isCorrect, quest),
+                          onOptionSelected: (idx, isCorrect) =>
+                              _onOptionTap(idx, isCorrect, quest),
                         ),
                         if (_showEvidenceStep.value && !isAnswered)
                           EvidenceHighlightWrapper(
-                            passage: quest.passage ?? '',
+                            passage: displayPassage,
                             // Use evidenceLine from JSON for precise pedagogical targeting
-                            evidenceWords: (quest.evidenceLine ?? quest.correctAnswer ?? '').split(' '),
+                            evidenceWords:
+                                (quest.evidenceLine ??
+                                        quest.correctAnswer ??
+                                        '')
+                                    .split(' '),
                             primaryColor: theme.primaryColor,
-                            onCorrectHighlight: () => _submitFinalAnswer(true, quest),
+                            onCorrectHighlight: () =>
+                                _submitFinalAnswer(true, quest),
                             instruction: 'Tap the words that prove your answer',
                           ),
                       ],
@@ -206,6 +236,8 @@ class _QuestLoadingPlaceholder extends StatelessWidget {
 
 class _QuestContent extends StatelessWidget {
   final ReadingQuest quest;
+  final String? displayTopic;
+  final String displayPassage;
   final Color primaryColor;
   final bool isDark;
   final bool isAnswered;
@@ -215,6 +247,8 @@ class _QuestContent extends StatelessWidget {
 
   const _QuestContent({
     required this.quest,
+    required this.displayTopic,
+    required this.displayPassage,
     required this.primaryColor,
     required this.isDark,
     required this.isAnswered,
@@ -225,16 +259,6 @@ class _QuestContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? displayTopic = quest.paragraphTopic;
-    String displayPassage = quest.passage ?? '';
-
-    // Automatically extract embedded tags like "[My Family]" from the passage text
-    final match = RegExp(r'^\[(.*?)\]\s*(.*)$', dotAll: true).firstMatch(displayPassage);
-    if (match != null) {
-      displayTopic = match.group(1);
-      displayPassage = match.group(2) ?? '';
-    }
-
     return Semantics(
       explicitChildNodes: true,
       child: Scrollbar(
@@ -244,7 +268,7 @@ class _QuestContent extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
-            child: Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: 16.h),
@@ -278,16 +302,19 @@ class _QuestContent extends StatelessWidget {
                   SizedBox(height: 24.h),
                   if (quest.options != null)
                     ...quest.options!.asMap().entries.map((e) {
-                      final isOptionCorrect = e.key == quest.correctAnswerIndex ||
-                          e.value.trim().toLowerCase() == (quest.correctAnswer?.trim().toLowerCase() ?? '');
-                      
+                      final isOptionCorrect =
+                          e.key == quest.correctAnswerIndex ||
+                          e.value.trim().toLowerCase() ==
+                              (quest.correctAnswer?.trim().toLowerCase() ?? '');
+
                       return ReadAndAnswerBuoyOption(
                         index: e.key,
                         text: e.value,
                         isCorrectOption: isOptionCorrect,
                         color: primaryColor,
                         isDark: isDark,
-                        isAnswered: isAnswered || (pendingSelectedIndex != null),
+                        isAnswered:
+                            isAnswered || (pendingSelectedIndex != null),
                         selectedIndex: pendingSelectedIndex,
                         onTap: () => onOptionSelected(e.key, isOptionCorrect),
                       );
@@ -304,22 +331,27 @@ class _QuestContent extends StatelessWidget {
                 ],
               ),
             ),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: SizedBox.shrink(),
-          ),
-        ],
+            SliverFillRemaining(hasScrollBody: false, child: SizedBox.shrink()),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildReadTimeBadge(Color primaryColor, bool isDark, String displayPassage) {
+  Widget _buildReadTimeBadge(
+    Color primaryColor,
+    bool isDark,
+    String displayPassage,
+  ) {
     // Avoid costly regex split in build method by relying on fast space split fallback
-    final wordCount = quest.passageWordCount ?? (displayPassage.split(' ').length);
+    final wordCount =
+        quest.passageWordCount ?? (displayPassage.split(' ').length);
     // Assume 130 WPM reading speed
     final readTimeSec = (wordCount / 130 * 60).round();
-    final timeStr = readTimeSec < 60 ? '$readTimeSec sec read' : '${(readTimeSec/60).round()} min read';
-    
+    final timeStr = readTimeSec < 60
+        ? '$readTimeSec sec read'
+        : '${(readTimeSec / 60).round()} min read';
+
     return Row(
       children: [
         Icon(Icons.timer_outlined, size: 14.sp, color: primaryColor),
