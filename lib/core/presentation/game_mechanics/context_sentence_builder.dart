@@ -26,6 +26,7 @@ class ContextSentenceBuilder extends StatefulWidget {
   final int maxAttempts;
   final int? bonusCoins;
   final bool allowSkip;
+  final String? exampleSentence;
 
   const ContextSentenceBuilder({
     super.key,
@@ -40,6 +41,7 @@ class ContextSentenceBuilder extends StatefulWidget {
     this.maxAttempts = 3,
     this.bonusCoins = 5,
     this.allowSkip = true,
+    this.exampleSentence,
   });
 
   @override
@@ -235,6 +237,29 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                 color: subtitleColor,
                               ),
                             ),
+                            if (widget.exampleSentence != null && widget.exampleSentence!.isNotEmpty) ...[
+                              SizedBox(height: 6.h),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                                decoration: BoxDecoration(
+                                  color: widget.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(6.r),
+                                  border: Border.all(color: widget.primaryColor.withValues(alpha: 0.2)),
+                                ),
+                                child: AutoSizeText(
+                                  'Example: "${widget.exampleSentence!}"',
+                                  maxLines: 2,
+                                  minFontSize: 8,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontStyle: FontStyle.italic,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark ? Colors.white70 : Colors.black87,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ],
                         ),
                       ),

@@ -381,6 +381,9 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                    onConfirmed: () => _submitFinalAnswer(true),
                                    onSkipped: () => _submitFinalAnswer(false),
                                    isPositioned: false,
+                                   exampleSentence: quest.contextSentence != null 
+                                      ? quest.contextSentence!.replaceAll('__', quest.contextSentence!.contains(quest.correctAnswer ?? "") ? (quest.word ?? "") : (quest.correctAnswer ?? ""))
+                                      : null,
                                  ),
                               SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 160.h : 60.h),
                             ],
