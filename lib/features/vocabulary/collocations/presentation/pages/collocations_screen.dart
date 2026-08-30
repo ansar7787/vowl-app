@@ -95,6 +95,19 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     }
   }
 
+  String? _getFormattedExampleSentence(VocabularyQuest quest) {
+    if (quest.contextSentence == null || quest.contextSentence!.isEmpty) return null;
+    
+    final sentence = quest.contextSentence!;
+    final word = quest.word ?? "";
+    final answer = quest.correctAnswer ?? "";
+
+    // Determine which part of the collocation is missing in the sentence
+    final replacementWord = sentence.contains(answer) ? word : answer;
+    
+    return sentence.replaceAll('__', replacementWord);
+  }
+
   void _submitFinalAnswer(bool nailedIt) {
     if (_isAnswered.value && _isCorrect.value != null) return;
 
@@ -381,9 +394,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                    onConfirmed: () => _submitFinalAnswer(true),
                                    onSkipped: () => _submitFinalAnswer(false),
                                    isPositioned: false,
-                                   exampleSentence: quest.contextSentence != null 
-                                      ? quest.contextSentence!.replaceAll('__', quest.contextSentence!.contains(quest.correctAnswer ?? "") ? (quest.word ?? "") : (quest.correctAnswer ?? ""))
-                                      : null,
+                                   exampleSentence: _getFormattedExampleSentence(quest),
                                  ),
                               SizedBox(height: 40.h),
                             ],
