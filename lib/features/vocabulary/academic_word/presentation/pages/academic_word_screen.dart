@@ -221,12 +221,11 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
                                 child: Column(
                             children: [
-                              AnimatedSize(
+                              AnimatedContainer(
                                 duration: const Duration(milliseconds: 600),
                                 curve: Curves.easeInOutCubic,
-                                child: SizedBox(
-                                  height: _isFirstStagePassed.value ? constraints.maxHeight * 0.52 : constraints.maxHeight,
-                                  child: _AcademicWordGameBody(
+                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.52 : constraints.maxHeight,
+                                child: _AcademicWordGameBody(
                                   quest: quest,
                                   isAnswered: _isAnswered.value,
                                   isCorrect: _isCorrect.value,
@@ -243,7 +242,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                     getInitialPosition: _getShardInitialPosition,
                                   ),
                                 ),
-                              ),
                               if (_isFirstStagePassed.value)
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),

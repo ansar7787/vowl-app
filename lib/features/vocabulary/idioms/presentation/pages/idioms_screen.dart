@@ -233,13 +233,11 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                           ),
                           Column(
                             children: [
-                              AnimatedSize(
+                              AnimatedContainer(
                                 duration: const Duration(milliseconds: 600),
                                 curve: Curves.easeInOutCubic,
-                                child: SizedBox(
-                                  height: _isFirstStagePassed.value ? constraints.maxHeight * 0.65 : constraints.maxHeight,
-                                  child: _buildChatInterface(quest, theme.primaryColor, isDarkMode),
-                                ),
+                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.65 : constraints.maxHeight,
+                                child: _buildChatInterface(quest, theme.primaryColor, isDarkMode),
                               ),
                               if (_isFirstStagePassed.value)
                                 Padding(
