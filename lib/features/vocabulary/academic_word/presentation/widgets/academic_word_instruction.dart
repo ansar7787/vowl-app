@@ -42,7 +42,8 @@ class AcademicWordInstruction extends StatelessWidget {
             ),
           ),
         )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 2.seconds, color: color.withValues(alpha: 0.3));
+        .animate()
+        .fadeIn(duration: 800.ms)
+        .shimmer(duration: 2.seconds);
   }
 }
