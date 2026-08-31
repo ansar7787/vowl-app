@@ -33,11 +33,21 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  String? _dockedOption;
-  String? _pendingDockedOption;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<String?> _dockedOption = ValueNotifier(null);
+  final ValueNotifier<String?> _pendingDockedOption = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _dockedOption.dispose();
+    _pendingDockedOption.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -50,28 +60,26 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
   }
 
   void _onDock(String option, String correct) {
-    if (_isAnswered || _pendingDockedOption != null) return;
+    if (_isAnswered.value || _pendingDockedOption.value != null) return;
     _hapticService.selection();
-    setState(() => _pendingDockedOption = option);
+    _pendingDockedOption.value = option;
   }
 
   void _submitFinalAnswer(bool nailedTyping, String correct) {
-    if (_pendingDockedOption == null) return;
+    if (_pendingDockedOption.value == null) return;
 
     if (!nailedTyping) {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _dockedOption = _pendingDockedOption;
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _dockedOption.value = _pendingDockedOption.value;
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
       return;
     }
 
-    final selected = _pendingDockedOption!;
-    setState(() => _dockedOption = _pendingDockedOption);
+    final selected = _pendingDockedOption.value!;
+    _dockedOption.value = _pendingDockedOption.value;
     _submitAnswer(selected, correct);
   }
 
@@ -82,18 +90,14 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -107,28 +111,24 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _dockedOption = null;
-              _pendingDockedOption = null;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _dockedOption.value = null;
+            _pendingDockedOption.value = null;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -143,12 +143,15 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _dockedOption, _pendingDockedOption]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () =>
               context.read<ReadingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -182,9 +185,9 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                   dockedOption:
-                                      _dockedOption ?? _pendingDockedOption,
+                                      _dockedOption.value ?? _pendingDockedOption.value,
                                   wordCategory: quest.wordCategory,
-                                  isAnswered: _isAnswered,
+                                  isAnswered: _isAnswered.value,
                                   onDock: (opt) =>
                                       _onDock(opt, quest.correctAnswer ?? ""),
                                 ),
@@ -192,8 +195,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
@@ -205,7 +207,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                   dockedOption:
-                                      _dockedOption ?? _pendingDockedOption,
+                                      _dockedOption.value ?? _pendingDockedOption.value,
                                 ),
                                 SizedBox(height: 180.h),
                               ],
@@ -214,7 +216,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                         ),
                       ],
                     ),
-                    if (_pendingDockedOption != null && !_isAnswered)
+                    if (_pendingDockedOption.value != null && !_isAnswered.value)
                       DynamicAnagramWrapper(
                         expectedText: quest.targetWord ?? quest.correctAnswer ?? "",
                         primaryColor: theme.primaryColor,
@@ -223,6 +225,8 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                       ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
