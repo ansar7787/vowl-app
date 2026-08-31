@@ -32,19 +32,30 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _sliderValue = 0.5; // Default to Present
-  bool _isAnswered = false;
-  bool? _isCorrect;
+  final ValueNotifier<double> _sliderValue = ValueNotifier(0.5); // Default to Present
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final bool _isFinalFailure = false;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isDragging = false;
-  bool _pendingSubmit = false;
+  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _sliderValue.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isDragging.dispose();
+    _pendingSubmit.dispose();
+    super.dispose();
+  }
 
   String get _currentTense {
-    if (_sliderValue < 0.25) return "Past";
-    if (_sliderValue > 0.75) return "Future";
+    if (_sliderValue.value < 0.25) return "Past";
+    if (_sliderValue.value > 0.75) return "Future";
     return "Present";
   }
 
@@ -57,24 +68,18 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
   }
 
   void _onFreezeTimeline() {
-    if (_isAnswered) return;
-    setState(() {
-      _pendingSubmit = true;
-    });
+    if (_isAnswered.value) return;
+    _pendingSubmit.value = true;
   }
 
   void _submitFinalAnswer(GameQuest quest, bool nailedTyping) {
-    setState(() {
-      _pendingSubmit = false;
-    });
+    _pendingSubmit.value = false;
 
     if (!nailedTyping) {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
       return;
     }
@@ -88,18 +93,14 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
       context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -113,27 +114,23 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _pendingSubmit = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _pendingSubmit.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -146,13 +143,16 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: _isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _sliderValue, _isDragging, _pendingSubmit]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: _isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
@@ -240,23 +240,23 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
 
                             // Timeline Slider
                             TenseMasteryTimelineSlider(
-                              sliderValue: _sliderValue,
+                              sliderValue: _sliderValue.value,
                               currentTense: _currentTense,
-                              isAnswered: _isAnswered,
-                              isDragging: _isDragging,
+                              isAnswered: _isAnswered.value,
+                              isDragging: _isDragging.value,
                               isDark: isDark,
                               primaryColor: theme.primaryColor,
                               onHapticFeedback: _hapticService.selection,
                               onHeavyHapticFeedback: _hapticService.heavy,
                               onSliderChanged: (value) =>
-                                  setState(() => _sliderValue = value),
+                                  _sliderValue.value = value,
                               onDraggingChanged: (value) =>
-                                  setState(() => _isDragging = value),
+                                  _isDragging.value = value,
                             ),
 
                             const Spacer(),
 
-                            if (!_isAnswered)
+                            if (!_isAnswered.value)
                               ScaleButton(
                                     onTap: _onFreezeTimeline,
                                     child: Container(
@@ -315,24 +315,30 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                       },
                     ),
                   ),
-                  if (_pendingSubmit && !_isAnswered)
-                            TypeToConfirmOverlay(
-                              expectedText: quest.correctAnswer ?? quest.sentence ?? _currentTense,
-                              displayText: "Type the complete sentence to lock in the timeline",
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitFinalAnswer(quest, true),
-                              onSkipped: () => _submitFinalAnswer(quest, false),
-                              isPositioned: false,
-                              allowSkip: true,
-                            ),
-                          SizedBox(height: (_isAnswered || _pendingSubmit) ? 160.h : 60.h),
-                        ],
+                ],
+              ),
+            ),
+                    if (_pendingSubmit.value && !_isAnswered.value)
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: quest.correctAnswer ?? quest.sentence ?? _currentTense,
+                          displayText: "Type the complete sentence to lock in the timeline",
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(quest, true),
+                          onSkipped: () => _submitFinalAnswer(quest, false),
+                          isPositioned: false,
+                          allowSkip: true,
+                        ),
                       ),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: (_isAnswered.value || _pendingSubmit.value) ? 160.h : 60.h),
                     ),
                   ],
                 );
                   },
                 ),
+            );
+          },
         );
       },
     );
