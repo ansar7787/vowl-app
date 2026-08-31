@@ -21,34 +21,41 @@ class TopicDraggableWord extends StatefulWidget {
 }
 
 class _TopicDraggableWordState extends State<TopicDraggableWord> {
-  double _dragOffset = 0;
-  bool _isDragging = false;
+  final ValueNotifier<double> _dragOffset = ValueNotifier(0);
+  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _dragOffset.dispose();
+    _isDragging.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onHorizontalDragStart: (_) => setState(() => _isDragging = true),
+      onHorizontalDragStart: (_) => _isDragging.value = true,
       onHorizontalDragUpdate: (details) {
-        setState(() => _dragOffset += details.delta.dx);
+        _dragOffset.value += details.delta.dx;
       },
       onHorizontalDragEnd: (details) {
         final velocity = details.primaryVelocity ?? 0;
-        if (velocity.abs() > 500 || _dragOffset.abs() > 60) {
+        if (velocity.abs() > 500 || _dragOffset.value.abs() > 60) {
           // Lower threshold for extra small card
           widget.onFlick(
-            velocity != 0 ? velocity : (_dragOffset > 0 ? 1000 : -1000),
+            velocity != 0 ? velocity : (_dragOffset.value > 0 ? 1000 : -1000),
           );
         }
-        setState(() {
-          _dragOffset = 0;
-          _isDragging = false;
-        });
+        _dragOffset.value = 0;
+        _isDragging.value = false;
       },
-      child:
-          Transform.translate(
-                offset: Offset(_dragOffset, 0),
+      child: ListenableBuilder(
+        listenable: Listenable.merge([_dragOffset, _isDragging]),
+        builder: (context, _) {
+          return Transform.translate(
+                offset: Offset(_dragOffset.value, 0),
                 child: Transform.rotate(
-                  angle: _dragOffset / 500,
+                  angle: _dragOffset.value / 500,
                   child: Container(
                     width: 140.w, // Extra Small
                     height: 70.h, // Extra Small
@@ -64,10 +71,10 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
                       boxShadow: [
                         BoxShadow(
                           color: widget.primaryColor.withValues(
-                            alpha: _isDragging ? 0.4 : 0.2,
+                            alpha: _isDragging.value ? 0.4 : 0.2,
                           ),
-                          blurRadius: _isDragging ? 20 : 10,
-                          spreadRadius: _isDragging ? 2 : 0,
+                          blurRadius: _isDragging.value ? 20 : 10,
+                          spreadRadius: _isDragging.value ? 2 : 0,
                         ),
                       ],
                     ),
@@ -87,8 +94,10 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
                   ),
                 ),
               )
-              .animate(target: _isDragging ? 1 : 0)
-              .scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05)),
+              .animate(target: _isDragging.value ? 1 : 0)
+              .scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05));
+        },
+      ),
     );
   }
 }

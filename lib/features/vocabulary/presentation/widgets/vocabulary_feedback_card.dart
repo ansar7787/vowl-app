@@ -287,12 +287,21 @@ class _ExplanationBox extends StatefulWidget {
 }
 
 class _ExplanationBoxState extends State<_ExplanationBox> {
-  String? _translatedText;
+  final ValueNotifier<String?> _translatedText = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _translatedText.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.explanation;
-    return Container(
+    return ValueListenableBuilder<String?>(
+      valueListenable: _translatedText,
+      builder: (context, translated, _) {
+        final displayText = translated ?? widget.explanation;
+        return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
       decoration: BoxDecoration(
@@ -329,18 +338,20 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
               ),
             ),
           ),
-          if (_translatedText == null) ...[
+          if (translated == null) ...[
             SizedBox(width: 8.w),
             TranslateButtonWidget(
               originalText: widget.explanation,
-              onTranslationComplete: (translated) {
-                if (mounted) setState(() => _translatedText = translated);
+              onTranslationComplete: (result) {
+                _translatedText.value = result;
               },
             ),
           ],
         ],
       ),
     ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.1, end: 0);
+      },
+    );
   }
 }
 

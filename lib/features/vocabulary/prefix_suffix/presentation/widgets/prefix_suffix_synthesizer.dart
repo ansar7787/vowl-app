@@ -291,7 +291,13 @@ class _MagneticDropZone extends StatefulWidget {
 }
 
 class _MagneticDropZoneState extends State<_MagneticDropZone> {
-  bool _isHovering = false;
+  final ValueNotifier<bool> _isHovering = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isHovering.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -313,14 +319,14 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) {
         HapticFeedback.lightImpact();
-        setState(() => _isHovering = true);
+        _isHovering.value = true;
         return true;
       },
       onLeave: (data) {
-        setState(() => _isHovering = false);
+        _isHovering.value = false;
       },
       onAcceptWithDetails: (details) {
-        setState(() => _isHovering = false);
+        _isHovering.value = false;
         widget.onAffixSelected(details.data, widget.isPrefixSlot);
       },
       builder: (context, candidateData, rejectedData) {
@@ -337,26 +343,29 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
             height: 85.h,
             child: Align(
               alignment: widget.isPrefixSlot ? Alignment.centerRight : Alignment.centerLeft,
-              child: AnimatedContainer(
-                duration: 200.ms,
-                width: _isHovering ? 130.w : 110.w,
-                height: _isHovering ? 75.h : 65.h,
-                decoration: BoxDecoration(
-                  color: _isHovering 
-                      ? widget.primaryColor.withValues(alpha: 0.2)
-                      : (widget.isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03)),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: _isHovering ? widget.primaryColor : (widget.isDark ? Colors.white38 : Colors.black26),
-                    width: _isHovering ? 3 : 2,
-                    style: BorderStyle.solid,
-                  ),
-                  boxShadow: _isHovering 
-                      ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.4), blurRadius: 16, spreadRadius: 4)]
-                      : null,
-                ),
-                alignment: Alignment.center,
-                child: _isHovering
+              child: ValueListenableBuilder<bool>(
+                valueListenable: _isHovering,
+                builder: (context, isHover, child) {
+                  return AnimatedContainer(
+                    duration: 200.ms,
+                    width: isHover ? 130.w : 110.w,
+                    height: isHover ? 75.h : 65.h,
+                    decoration: BoxDecoration(
+                      color: isHover 
+                          ? widget.primaryColor.withValues(alpha: 0.2)
+                          : (widget.isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03)),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: isHover ? widget.primaryColor : (widget.isDark ? Colors.white38 : Colors.black26),
+                        width: isHover ? 3 : 2,
+                        style: BorderStyle.solid,
+                      ),
+                      boxShadow: isHover 
+                          ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.4), blurRadius: 16, spreadRadius: 4)]
+                          : null,
+                    ),
+                    alignment: Alignment.center,
+                    child: isHover
                     ? Icon(Icons.bolt_rounded, color: widget.primaryColor, size: 36.r)
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -375,6 +384,8 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
                           ),
                         ],
                       ),
+                  );
+                },
               ),
             ),
           ),
