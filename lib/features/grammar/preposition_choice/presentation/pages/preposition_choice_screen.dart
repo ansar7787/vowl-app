@@ -34,14 +34,25 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  List<Offset> _points = [];
-  int _targetNode = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<List<Offset>> _points = ValueNotifier([]);
+  final ValueNotifier<int> _targetNode = ValueNotifier(-1);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingJigsaw = false;
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _points.dispose();
+    _targetNode.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingJigsaw.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -52,35 +63,29 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
   }
 
   void _onPathEnd(int nodeIndex, int correctIndex) {
-    if (_isAnswered || _pendingJigsaw) return;
+    if (_isAnswered.value || _pendingJigsaw.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _targetNode = nodeIndex;
-        _pendingJigsaw = true;
-      });
+      _targetNode.value = nodeIndex;
+      _pendingJigsaw.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _targetNode = nodeIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _targetNode.value = nodeIndex;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
+    _pendingJigsaw.value = false;
+    _isAnswered.value = true;
+    _isCorrect.value = correct;
 
     if (correct) {
       _hapticService.success();
@@ -155,28 +160,24 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _targetNode = -1;
-              _pendingJigsaw = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _targetNode.value = -1;
+            _pendingJigsaw.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -196,10 +197,10 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
         if (quest != null) {
           final sentence = quest.sentenceWithBlank ?? quest.question ?? "";
           String fullSentence = sentence;
-          if (sentence.contains("___") && _targetNode != -1) {
+          if (sentence.contains("___") && _targetNode.value != -1) {
             fullSentence = sentence.replaceFirst(
               RegExp(r'_{3,}'),
-              options[_targetNode],
+              options[_targetNode.value],
             );
           }
           cleanTargetSentence = fullSentence
@@ -207,13 +208,16 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
               .trim();
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _targetNode, _pendingJigsaw, _points]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false, // Stack needs finite space to anchor to bottom
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
@@ -351,9 +355,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                           quest.sentenceWithBlank ??
                                               quest.question ??
                                               "____ sentence.",
-                                          (_isAnswered || _pendingJigsaw) &&
-                                                  _targetNode != -1
-                                              ? options[_targetNode]
+                                          (_isAnswered.value || _pendingJigsaw.value) &&
+                                                  _targetNode.value != -1
+                                              ? options[_targetNode.value]
                                               : null,
                                           theme.primaryColor,
                                           isDark,
@@ -368,7 +372,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                 .slideY(begin: 0.2, end: 0),
 
                             // Result Feedback
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: isCompact ? 8.h : 24.h),
                               _buildResult(
                                 quest,
@@ -394,26 +398,32 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                         );
                       },
                     ),
-                    ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
+                  ),
+                ],
+              ),
+            ),
+                    if (_pendingJigsaw.value &&
+                        !_isAnswered.value &&
                         cleanTargetSentence.isNotEmpty)
-                      TypeToConfirmOverlay(
-                        expectedText: cleanTargetSentence,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: false,
-                        displayText: "Type the full sentence to lock it in",
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: cleanTargetSentence,
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onSkipped: () => _submitFinalAnswer(false),
+                          isPositioned: false,
+                          displayText: "Type the full sentence to lock it in",
+                        ),
                       ),
-                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
+                    ),
                   ],
-                ),
-                ),
-              ],
-            );
+                );
                   },
                 ),
+            );
+          },
         );
       },
     );
@@ -462,10 +472,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
 
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered || _pendingJigsaw) return;
-            setState(() {
-              _points.add(details.localPosition);
-            });
+            if (_isAnswered.value || _pendingJigsaw.value) return;
+            _points.value = List.from(_points.value)..add(details.localPosition);
             for (int i = 0; i < nodePoints.length; i++) {
               if ((details.localPosition - nodePoints[i]).distance <
                   (isCompact ? 30.r : 50.r)) {
@@ -473,18 +481,18 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
               }
             }
           },
-          onPanEnd: (_) => setState(() => _points = []),
+          onPanEnd: (_) => _points.value = [],
           child: CustomPaint(
             size: Size.infinite,
             painter: PrepositionPathPainter(
-              points: _points,
+              points: _points.value,
               startPoint: startPoint,
               nodes: nodePoints,
               options: options,
               primaryColor: primaryColor,
-              isAnswered: _isAnswered || _pendingJigsaw,
-              isCorrect: _isCorrect ?? false,
-              targetNode: _targetNode,
+              isAnswered: _isAnswered.value || _pendingJigsaw.value,
+              isCorrect: _isCorrect.value ?? false,
+              targetNode: _targetNode.value,
               isDark: isDark,
             ),
           ),
@@ -499,7 +507,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect == true;
+    final bool correct = _isCorrect.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
