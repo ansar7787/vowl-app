@@ -33,14 +33,25 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  Offset? _hookPoint;
-  int _targetFish = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<Offset?> _hookPoint = ValueNotifier(null);
+  final ValueNotifier<int> _targetFish = ValueNotifier(-1);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingJigsaw = false;
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _hookPoint.dispose();
+    _targetFish.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingJigsaw.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -51,35 +62,29 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
   }
 
   void _onCatch(int fishIndex, int correctIndex) {
-    if (_isAnswered || _pendingJigsaw) return;
+    if (_isAnswered.value || _pendingJigsaw.value) return;
 
     bool isCorrect = fishIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
-      setState(() {
-        _targetFish = fishIndex;
-        _pendingJigsaw = true;
-      });
+      _targetFish.value = fishIndex;
+      _pendingJigsaw.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _targetFish = fishIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _targetFish.value = fishIndex;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
+    _pendingJigsaw.value = false;
+    _isAnswered.value = true;
+    _isCorrect.value = correct;
 
     if (correct) {
       _hapticService.heavy();
@@ -101,28 +106,24 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _targetFish = -1;
-              _pendingJigsaw = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _targetFish.value = -1;
+            _pendingJigsaw.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -143,10 +144,10 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
         if (quest != null) {
           final sentence = quest.question ?? "";
           String fullSentence = sentence;
-          if (sentence.contains("___") && _targetFish != -1) {
+          if (sentence.contains("___") && _targetFish.value != -1) {
             fullSentence = sentence.replaceFirst(
               RegExp(r'_{3,}'),
-              fishOptions[_targetFish],
+              fishOptions[_targetFish.value],
             );
           }
           cleanTargetSentence = fullSentence
@@ -154,13 +155,16 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
               .trim();
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _targetFish, _pendingJigsaw, _hookPoint]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false, // Stack needs finite space to anchor to bottom
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
@@ -278,9 +282,9 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                                     child: Text(
                                       quest.question?.replaceAll(
                                             '___',
-                                            (_isAnswered || _pendingJigsaw) &&
-                                                    _targetFish != -1
-                                                ? fishOptions[_targetFish]
+                                            (_isAnswered.value || _pendingJigsaw.value) &&
+                                                    _targetFish.value != -1
+                                                ? fishOptions[_targetFish.value]
                                                 : '_____',
                                           ) ??
                                           "The data ____",
@@ -302,7 +306,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                                 .slideY(begin: 0.2, end: 0),
 
                             // Result
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: isCompact ? 8.h : 20.h),
                               _buildResult(
                                 quest,
@@ -328,26 +332,32 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                         );
                       },
                     ),
-                    ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
+                  ),
+                ],
+              ),
+            ),
+                    if (_pendingJigsaw.value &&
+                        !_isAnswered.value &&
                         cleanTargetSentence.isNotEmpty)
-                      TypeToConfirmOverlay(
-                        expectedText: cleanTargetSentence,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: false,
-                        displayText: "Type the complete sentence to lock it in",
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: cleanTargetSentence,
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onSkipped: () => _submitFinalAnswer(false),
+                          isPositioned: false,
+                          displayText: "Type the complete sentence to lock it in",
+                        ),
                       ),
-                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
+                    ),
                   ],
-                ),
-                ),
-              ],
-            );
+                );
                   },
                 ),
+            );
+          },
         );
       },
     );
@@ -377,13 +387,11 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
 
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered || _pendingJigsaw) return;
-            setState(() {
-              _hookPoint = details.localPosition;
-              if (details.localPosition.dy.toInt() % 10 == 0) {
-                _hapticService.selection();
-              }
-            });
+            if (_isAnswered.value || _pendingJigsaw.value) return;
+            _hookPoint.value = details.localPosition;
+            if (details.localPosition.dy.toInt() % 10 == 0) {
+              _hapticService.selection();
+            }
             for (int i = 0; i < nodePoints.length; i++) {
               if ((details.localPosition - nodePoints[i]).distance <
                   hitRadius) {
@@ -391,18 +399,18 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
               }
             }
           },
-          onPanEnd: (_) => setState(() => _hookPoint = null),
+          onPanEnd: (_) => _hookPoint.value = null,
           child: CustomPaint(
             size: Size.infinite,
             painter: RelativeClausesQuantumPainter(
-              hookPoint: _hookPoint,
+              hookPoint: _hookPoint.value,
               startPoint: startPoint,
               nodePoints: nodePoints,
               nodeLabels: nodes,
               primaryColor: primaryColor,
-              isAnswered: _isAnswered || _pendingJigsaw,
-              isCorrect: _isCorrect,
-              targetNode: _targetFish,
+              isAnswered: _isAnswered.value || _pendingJigsaw.value,
+              isCorrect: _isCorrect.value,
+              targetNode: _targetFish.value,
               isDark: isDark,
               isCompact: isCompact,
             ),
@@ -418,7 +426,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect == true;
+    final bool correct = _isCorrect.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(

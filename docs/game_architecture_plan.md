@@ -217,7 +217,13 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Feedback Card Logic
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
-14. Relative Clauses
+14. **Relative Clauses**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 15. Sentence Correction
 16. Subject-Verb Agreement
 17. Tense Mastery
