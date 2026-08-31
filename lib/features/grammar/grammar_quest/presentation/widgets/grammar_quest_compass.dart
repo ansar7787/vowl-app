@@ -39,8 +39,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
   final _hapticService = di.sl<HapticService>();
   late AnimationController _bgRotationController;
 
-  double _needleRotation = 0.0;
-  bool _isDragging = false;
+  final ValueNotifier<double> _needleRotation = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
   int _lastHapticQuadrant = -1;
 
   @override
@@ -54,6 +54,8 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
 
   @override
   void dispose() {
+    _needleRotation.dispose();
+    _isDragging.dispose();
     _bgRotationController.dispose();
     super.dispose();
   }
@@ -63,11 +65,9 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
     super.didUpdateWidget(oldWidget);
     // Reset compass needles on new questions or retries
     if (widget.isAnswered == false && oldWidget.isAnswered == true) {
-      setState(() {
-        _needleRotation = 0.0;
-        _isDragging = false;
-        _lastHapticQuadrant = -1;
-      });
+      _needleRotation.value = 0.0;
+      _isDragging.value = false;
+      _lastHapticQuadrant = -1;
     }
   }
 
@@ -78,14 +78,12 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
     final dx = localPosition.dx - center.dx;
     final dy = localPosition.dy - center.dy;
 
-    setState(() {
-      _needleRotation = math.atan2(dy, dx) + (math.pi / 2);
-      _isDragging = true;
-    });
+    _needleRotation.value = math.atan2(dy, dx) + (math.pi / 2);
+    _isDragging.value = true;
 
     // Subtle tick when passing near quadrants
     final normalizedAngle =
-        (_needleRotation % (2 * math.pi) + (2 * math.pi)) % (2 * math.pi);
+        (_needleRotation.value % (2 * math.pi) + (2 * math.pi)) % (2 * math.pi);
     final nearestQuadrant = (normalizedAngle / (math.pi / 2)).round() % 4;
     final quadrantAngle = nearestQuadrant * (math.pi / 2);
     if ((normalizedAngle - quadrantAngle).abs() < 0.1 &&
@@ -98,17 +96,15 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
   void _handleDragEnd() {
     if (widget.isAnswered) return;
 
-    setState(() => _isDragging = false);
+    _isDragging.value = false;
 
     // Normalize rotation and find nearest quadrant
     final normalizedAngle =
-        (_needleRotation % (2 * math.pi) + (2 * math.pi)) % (2 * math.pi);
+        (_needleRotation.value % (2 * math.pi) + (2 * math.pi)) % (2 * math.pi);
     final index = (normalizedAngle / (math.pi / 2)).round() % 4;
 
     // Snap needle to quadrant center
-    setState(() {
-      _needleRotation = (index * (math.pi * 2) / 4);
-    });
+    _needleRotation.value = (index * (math.pi * 2) / 4);
 
     widget.onQuadrantSelect(index);
   }
@@ -186,7 +182,7 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
               final isSelected =
                   widget.isAnswered &&
                   (index ==
-                      ((_needleRotation % (2 * math.pi) + 2 * math.pi) %
+                      ((_needleRotation.value % (2 * math.pi) + 2 * math.pi) %
                                   (2 * math.pi) /
                                   (math.pi / 2))
                               .round() %
@@ -297,9 +293,9 @@ class _GrammarQuestCompassState extends State<GrammarQuestCompass>
             }),
             // The Tapered Photon Needle
             TweenAnimationBuilder<double>(
-              duration: Duration(milliseconds: _isDragging ? 50 : 600),
-              curve: _isDragging ? Curves.linear : Curves.elasticOut,
-              tween: Tween<double>(begin: 0, end: _needleRotation),
+              duration: Duration(milliseconds: _isDragging.value ? 50 : 600),
+              curve: _isDragging.value ? Curves.linear : Curves.elasticOut,
+              tween: Tween<double>(begin: 0, end: _needleRotation.value),
               builder: (context, value, child) {
                 return Transform.rotate(angle: value, child: child);
               },
