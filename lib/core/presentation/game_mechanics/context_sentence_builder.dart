@@ -148,9 +148,11 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     _focusNode.unfocus();
 
     if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
-      context.read<EconomyBloc>().add(
-        EconomyAddCoinsRequested(widget.bonusCoins!),
-      );
+      if (_attempts.value < widget.maxAttempts) {
+        context.read<EconomyBloc>().add(
+          EconomyAddCoinsRequested(widget.bonusCoins!),
+        );
+      }
     }
 
     Future.delayed(const Duration(milliseconds: 800), () {
@@ -165,17 +167,11 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   }
 
   Widget _buildSkipButton(Color subtitleColor) {
-    return ValueListenableBuilder<int>(
-      valueListenable: _attempts,
-      builder: (context, attempts, _) {
+    return Builder(
+      builder: (context) {
         return GestureDetector(
           onTap: () {
             if (_isSubmitting.value) return;
-            if (attempts >= widget.maxAttempts) {
-              _isSubmitting.value = true;
-              widget.onSkipped();
-              return;
-            }
             _isSubmitting.value = true;
             final user = context.read<AuthBloc>().state.user;
             final isPremium = user?.isPremium ?? false;
@@ -205,7 +201,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
             }
           },
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: subtitleColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12.r),
@@ -214,11 +210,11 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 AutoSizeText(
-                  attempts >= widget.maxAttempts ? 'CONTINUE' : 'SKIP',
+                  'SKIP',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w800,
                     color: subtitleColor.withValues(alpha: 0.8),
                   ),
                 ),
@@ -227,7 +223,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     final isPremium =
                         context.watch<AuthBloc>().state.user?.isPremium ??
                         false;
-                    if (!isPremium && attempts < widget.maxAttempts) {
+                    if (!isPremium) {
                       return Padding(
                         padding: EdgeInsets.only(left: 4.w),
                         child: Icon(
@@ -539,16 +535,28 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                         if (attempts > 0) {
                                           final remaining =
                                               widget.maxAttempts - attempts;
-                                          return AutoSizeText(
-                                            '${remaining > 0 ? remaining : 0} attempts left',
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.w600,
-                                              color: Colors.redAccent
-                                                  .withValues(alpha: 0.8),
-                                            ),
-                                          );
+                                          if (remaining > 0) {
+                                            return AutoSizeText(
+                                              '$remaining attempts left',
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.redAccent
+                                                    .withValues(alpha: 0.8),
+                                              ),
+                                            );
+                                          } else {
+                                            return AutoSizeText(
+                                              'Practice Mode',
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: subtitleColor.withValues(alpha: 0.6),
+                                              ),
+                                            );
+                                          }
                                         }
                                         return const SizedBox.shrink();
                                       },
@@ -601,43 +609,88 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                             final hasEnoughWords =
                                 wordCount >= widget.minWordCount;
 
-                            return GestureDetector(
-                              onTap: () {
-                                if (!hasEnoughWords) return;
-                                _evaluate();
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.symmetric(vertical: 16.h),
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: !hasEnoughWords
-                                        ? [
-                                            Colors.grey.withValues(alpha: 0.8),
-                                            Colors.grey.withValues(alpha: 0.6),
-                                          ]
-                                        : [
-                                            widget.primaryColor,
-                                            widget.primaryColor.withValues(
-                                              alpha: 0.8,
+                            return ValueListenableBuilder<int>(
+                              valueListenable: _attempts,
+                              builder: (context, attempts, _) {
+                                final canEarnCoins = widget.bonusCoins != null &&
+                                    widget.bonusCoins! > 0 &&
+                                    attempts < widget.maxAttempts;
+
+                                return GestureDetector(
+                                  onTap: () {
+                                    if (!hasEnoughWords) return;
+                                    _evaluate();
+                                  },
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        colors: !hasEnoughWords
+                                            ? [
+                                                Colors.grey.withValues(alpha: 0.8),
+                                                Colors.grey.withValues(alpha: 0.6),
+                                              ]
+                                            : [
+                                                widget.primaryColor,
+                                                widget.primaryColor.withValues(
+                                                  alpha: 0.8,
+                                                ),
+                                              ],
+                                      ),
+                                      borderRadius: BorderRadius.circular(20.r),
+                                    ),
+                                    child: Center(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          AutoSizeText(
+                                            'SUBMIT SENTENCE',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.white,
+                                              letterSpacing: 2,
+                                            ),
+                                          ),
+                                          if (canEarnCoins) ...[
+                                            SizedBox(width: 8.w),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                                              decoration: BoxDecoration(
+                                                color: Colors.amberAccent.withValues(alpha: 0.2),
+                                                borderRadius: BorderRadius.circular(8.r),
+                                                border: Border.all(color: Colors.amberAccent.withValues(alpha: 0.5)),
+                                              ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  AutoSizeText(
+                                                    '+${widget.bonusCoins}',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 12.sp,
+                                                      fontWeight: FontWeight.w900,
+                                                      color: Colors.amberAccent,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 4.w),
+                                                  Icon(
+                                                    Icons.monetization_on_rounded,
+                                                    size: 14.r,
+                                                    color: Colors.amberAccent,
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ],
-                                  ),
-                                  borderRadius: BorderRadius.circular(20.r),
-                                ),
-                                child: Center(
-                                  child: AutoSizeText(
-                                    'SUBMIT SENTENCE',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.white,
-                                      letterSpacing: 2,
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
+                                );
+                              },
                             );
                           },
                         ),
