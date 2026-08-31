@@ -12,7 +12,6 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
-
 class ContextSentenceBuilder extends StatefulWidget {
   final String targetKeyword;
   final Color primaryColor;
@@ -225,7 +224,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                 ),
                 Builder(
                   builder: (context) {
-                    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
+                    final isPremium =
+                        context.watch<AuthBloc>().state.user?.isPremium ??
+                        false;
                     if (!isPremium && attempts < widget.maxAttempts) {
                       return Padding(
                         padding: EdgeInsets.only(left: 4.w),
@@ -237,7 +238,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                       );
                     }
                     return const SizedBox.shrink();
-                  }
+                  },
                 ),
               ],
             ),
@@ -272,7 +273,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               : Colors.white.withValues(alpha: 0.8);
 
           return Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
             decoration: BoxDecoration(
               color: glassColor,
               borderRadius: BorderRadius.circular(32.r),
@@ -297,7 +297,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
           thickness: 4.w,
           child: SingleChildScrollView(
             controller: _scrollController,
-            padding: EdgeInsets.symmetric(vertical: 24.h),
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
             physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -401,17 +401,17 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                       ),
                   ],
                 ),
-                SizedBox(height: 24.h),
+                SizedBox(height: 12.h),
 
                 // Target keyword chip
                 Container(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: 12.h,
+                    horizontal: 16.w,
+                    vertical: 8.h,
                   ),
                   decoration: BoxDecoration(
                     color: widget.primaryColor.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(16.r),
                     border: Border.all(
                       color: widget.primaryColor.withValues(alpha: 0.4),
                     ),
@@ -420,27 +420,27 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        Icons.key_rounded,
+                        Icons.auto_awesome_rounded,
                         color: widget.primaryColor,
-                        size: 16.r,
+                        size: 14.r,
                       ),
-                      SizedBox(width: 8.w),
+                      SizedBox(width: 6.w),
                       AutoSizeText(
                         widget.targetKeyword.toUpperCase(),
                         maxLines: 1,
                         minFontSize: 10,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w900,
                           color: widget.primaryColor,
-                          letterSpacing: 2,
+                          letterSpacing: 1.5,
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 12.h),
 
                 // Text input area
                 ValueListenableBuilder<_BuilderStatus>(
@@ -478,9 +478,10 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                     maxLines: 3,
-                                    minLines: 2,
+                                    minLines: 1,
                                     onChanged: (_) {
-                                      if (_status.value == _BuilderStatus.error) {
+                                      if (_status.value ==
+                                          _BuilderStatus.error) {
                                         _status.value = _BuilderStatus.idle;
                                       }
                                     },
@@ -488,15 +489,17 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                     decoration: InputDecoration(
                                       hintText: 'Type your sentence here...',
                                       hintStyle: TextStyle(
-                                        color: subtitleColor.withValues(alpha: 0.5),
+                                        color: subtitleColor.withValues(
+                                          alpha: 0.5,
+                                        ),
                                         fontWeight: FontWeight.w400,
                                       ),
                                       border: InputBorder.none,
                                       contentPadding: EdgeInsets.only(
                                         left: 16.w,
                                         right: 16.w,
-                                        top: 16.h,
-                                        bottom: 32.h,
+                                        top: 12.h,
+                                        bottom: 44.h,
                                       ),
                                     ),
                                   ),
@@ -516,9 +519,12 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                             fontFamily: 'Outfit',
                                             fontSize: 10.sp,
                                             fontWeight: FontWeight.w700,
-                                            color: wordCount >= widget.minWordCount
+                                            color:
+                                                wordCount >= widget.minWordCount
                                                 ? Colors.greenAccent
-                                                : subtitleColor.withValues(alpha: 0.6),
+                                                : subtitleColor.withValues(
+                                                    alpha: 0.6,
+                                                  ),
                                           ),
                                         );
                                       },
@@ -531,13 +537,16 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                       valueListenable: _attempts,
                                       builder: (context, attempts, _) {
                                         if (attempts > 0) {
+                                          final remaining =
+                                              widget.maxAttempts - attempts;
                                           return AutoSizeText(
-                                            '${widget.maxAttempts - attempts} attempts left',
+                                            '${remaining > 0 ? remaining : 0} attempts left',
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 10.sp,
                                               fontWeight: FontWeight.w600,
-                                              color: Colors.redAccent.withValues(alpha: 0.8),
+                                              color: Colors.redAccent
+                                                  .withValues(alpha: 0.8),
                                             ),
                                           );
                                         }
@@ -552,7 +561,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                               target: status == _BuilderStatus.error ? 1 : 0,
                             )
                             .shakeX(amount: 5, duration: 400.ms),
-
 
                         // Error message
                         if (status == _BuilderStatus.error)
@@ -583,51 +591,43 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         SizedBox(height: 24.h),
 
                         // Submit / Continue button
-                        ValueListenableBuilder<int>(
-                          valueListenable: _attempts,
-                          builder: (context, attempts, _) {
-                            final outOfAttempts = attempts >= widget.maxAttempts;
+                        ValueListenableBuilder<TextEditingValue>(
+                          valueListenable: _controller,
+                          builder: (context, textValue, _) {
+                            final text = textValue.text.trim();
+                            final wordCount = text.isEmpty
+                                ? 0
+                                : text.split(RegExp(r'\s+')).length;
+                            final hasEnoughWords =
+                                wordCount >= widget.minWordCount;
+
                             return GestureDetector(
                               onTap: () {
-                                if (outOfAttempts) {
-                                  if (_isSubmitting.value) return;
-                                  _isSubmitting.value = true;
-                                  widget.onSkipped();
-                                } else {
-                                  _evaluate();
-                                }
+                                if (!hasEnoughWords) return;
+                                _evaluate();
                               },
                               child: Container(
                                 width: double.infinity,
                                 padding: EdgeInsets.symmetric(vertical: 16.h),
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
-                                    colors: outOfAttempts 
-                                      ? [
-                                          Colors.grey.withValues(alpha: 0.8),
-                                          Colors.grey.withValues(alpha: 0.6),
-                                        ]
-                                      : [
-                                          widget.primaryColor,
-                                          widget.primaryColor.withValues(alpha: 0.8),
-                                        ],
+                                    colors: !hasEnoughWords
+                                        ? [
+                                            Colors.grey.withValues(alpha: 0.8),
+                                            Colors.grey.withValues(alpha: 0.6),
+                                          ]
+                                        : [
+                                            widget.primaryColor,
+                                            widget.primaryColor.withValues(
+                                              alpha: 0.8,
+                                            ),
+                                          ],
                                   ),
                                   borderRadius: BorderRadius.circular(20.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: outOfAttempts
-                                          ? Colors.black26
-                                          : widget.primaryColor.withValues(
-                                              alpha: 0.3,
-                                            ),
-                                      blurRadius: 12,
-                                      offset: const Offset(0, 4),
-                                    ),
-                                  ],
                                 ),
                                 child: Center(
                                   child: AutoSizeText(
-                                    outOfAttempts ? 'CONTINUE' : 'SUBMIT SENTENCE',
+                                    'SUBMIT SENTENCE',
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 14.sp,
@@ -641,7 +641,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                             );
                           },
                         ),
-
                       ],
                     );
                   },
