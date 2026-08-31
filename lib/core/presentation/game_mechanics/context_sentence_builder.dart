@@ -162,9 +162,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   void _checkAttemptLimit() {
     if (_attempts.value >= widget.maxAttempts) {
       _focusNode.unfocus();
-      Future.delayed(const Duration(milliseconds: 500), () {
-        if (mounted) widget.onSkipped();
-      });
     }
   }
 
@@ -585,43 +582,64 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
 
                         SizedBox(height: 24.h),
 
-                        // Submit button
-                        GestureDetector(
-                          onTap: _evaluate,
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(vertical: 16.h),
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  widget.primaryColor,
-                                  widget.primaryColor.withValues(alpha: 0.8),
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(20.r),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: widget.primaryColor.withValues(
-                                    alpha: 0.3,
+                        // Submit / Continue button
+                        ValueListenableBuilder<int>(
+                          valueListenable: _attempts,
+                          builder: (context, attempts, _) {
+                            final outOfAttempts = attempts >= widget.maxAttempts;
+                            return GestureDetector(
+                              onTap: () {
+                                if (outOfAttempts) {
+                                  if (_isSubmitting.value) return;
+                                  _isSubmitting.value = true;
+                                  widget.onSkipped();
+                                } else {
+                                  _evaluate();
+                                }
+                              },
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.symmetric(vertical: 16.h),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: outOfAttempts 
+                                      ? [
+                                          Colors.grey.withValues(alpha: 0.8),
+                                          Colors.grey.withValues(alpha: 0.6),
+                                        ]
+                                      : [
+                                          widget.primaryColor,
+                                          widget.primaryColor.withValues(alpha: 0.8),
+                                        ],
                                   ),
-                                  blurRadius: 12,
-                                  offset: const Offset(0, 4),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: outOfAttempts
+                                          ? Colors.black26
+                                          : widget.primaryColor.withValues(
+                                              alpha: 0.3,
+                                            ),
+                                      blurRadius: 12,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            child: Center(
-                              child: AutoSizeText(
-                                'SUBMIT SENTENCE',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 2,
+                                child: Center(
+                                  child: AutoSizeText(
+                                    outOfAttempts ? 'CONTINUE' : 'SUBMIT SENTENCE',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      letterSpacing: 2,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
+                            );
+                          },
                         ),
 
                       ],

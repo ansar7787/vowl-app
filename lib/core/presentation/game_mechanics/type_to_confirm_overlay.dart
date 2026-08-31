@@ -65,7 +65,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
 
   Future<void> _evaluate() async {
     if (_isSubmitting.value) return;
-    
+
     final text = _textController.text.trim();
     if (text.isEmpty) {
       _result.value = _ConfirmResult.empty;
@@ -97,12 +97,93 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
     } else {
       _hapticService.error();
       if (_attempts.value >= widget.maxAttempts) {
-        _isSubmitting.value = true;
         _focusNode.unfocus();
-        await Future.delayed(const Duration(milliseconds: 500));
-        if (mounted) widget.onSkipped();
       }
     }
+  }
+
+  Widget _buildSkipButton(Color subtitleColor) {
+    return ValueListenableBuilder<int>(
+      valueListenable: _attempts,
+      builder: (context, attempts, _) {
+        return GestureDetector(
+          onTap: () {
+            if (_isSubmitting.value) return;
+            if (attempts >= widget.maxAttempts) {
+              _isSubmitting.value = true;
+              widget.onSkipped();
+              return;
+            }
+            _isSubmitting.value = true;
+            final user = context.read<AuthBloc>().state.user;
+            final isPremium = user?.isPremium ?? false;
+            if (isPremium) {
+              if (widget.onBypassed != null) {
+                widget.onBypassed!();
+              } else {
+                widget.onConfirmed();
+              }
+            } else {
+              di.sl<AdService>().showRewardedAd(
+                context: context,
+                isPremium: false,
+                onUserEarnedReward: (_) {
+                  if (mounted) {
+                    if (widget.onBypassed != null) {
+                      widget.onBypassed!();
+                    } else {
+                      widget.onConfirmed();
+                    }
+                  }
+                },
+                onDismissed: () {
+                  if (mounted) _isSubmitting.value = false;
+                },
+              );
+            }
+          },
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: subtitleColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  attempts >= widget.maxAttempts ? 'CONTINUE' : 'SKIP',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700,
+                    color: subtitleColor.withValues(alpha: 0.8),
+                  ),
+                ),
+                Builder(
+                  builder: (context) {
+                    final isPremium =
+                        context.watch<AuthBloc>().state.user?.isPremium ??
+                        false;
+                    if (!isPremium && attempts < widget.maxAttempts) {
+                      return Padding(
+                        padding: EdgeInsets.only(left: 4.w),
+                        child: Icon(
+                          Icons.ondemand_video_rounded,
+                          size: 12.r,
+                          color: subtitleColor.withValues(alpha: 0.8),
+                        ),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -152,417 +233,405 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(32.r),
       child: ValueListenableBuilder<_ConfirmResult?>(
-          valueListenable: _result,
-          builder: (context, result, child) {
-            final borderColor = result == _ConfirmResult.success
-                ? Colors.greenAccent.withValues(alpha: 0.5)
-                : result == _ConfirmResult.mismatch
-                    ? Colors.redAccent.withValues(alpha: 0.5)
-                    : widget.primaryColor.withValues(alpha: 0.3);
-            
-            return Container(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.black.withValues(alpha: 0.85)
-                    : Colors.white.withValues(alpha: 0.95),
-                borderRadius: BorderRadius.circular(32.r),
-                border: Border.all(
-                  color: borderColor,
-                  width: 1.5,
+        valueListenable: _result,
+        builder: (context, result, child) {
+          final borderColor = result == _ConfirmResult.success
+              ? Colors.greenAccent.withValues(alpha: 0.5)
+              : result == _ConfirmResult.mismatch
+              ? Colors.redAccent.withValues(alpha: 0.5)
+              : widget.primaryColor.withValues(alpha: 0.3);
+
+          return Container(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.85)
+                  : Colors.white.withValues(alpha: 0.95),
+              borderRadius: BorderRadius.circular(32.r),
+              border: Border.all(color: borderColor, width: 1.5),
+              boxShadow: [
+                BoxShadow(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.2)
+                      : widget.primaryColor.withValues(alpha: 0.1),
+                  blurRadius: 30,
+                  offset: const Offset(0, 10),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: isDark
-                        ? Colors.black.withValues(alpha: 0.2)
-                        : widget.primaryColor.withValues(alpha: 0.1),
-                    blurRadius: 30,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-              ),
-              child: child,
-            );
-          },
-          child: RawScrollbar(
+              ],
+            ),
+            child: child,
+          );
+        },
+        child: RawScrollbar(
+          controller: _scrollController,
+          thumbColor: widget.primaryColor.withValues(alpha: 0.5),
+          radius: Radius.circular(8.r),
+          thickness: 4.w,
+          child: SingleChildScrollView(
             controller: _scrollController,
-            thumbColor: widget.primaryColor.withValues(alpha: 0.5),
-            radius: Radius.circular(8.r),
-            thickness: 4.w,
-            child: SingleChildScrollView(
-              controller: _scrollController,
-              padding: EdgeInsets.symmetric(vertical: 28.h),
+            padding: EdgeInsets.symmetric(vertical: 28.h),
             physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-              // Header
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(10.r),
-                    decoration: BoxDecoration(
-                      color: widget.primaryColor.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(14.r),
-                      border: Border.all(
-                        color: widget.primaryColor.withValues(alpha: 0.3),
+                // Header
+                Row(
+                  children: [
+                    Container(
+                          padding: EdgeInsets.all(10.r),
+                          decoration: BoxDecoration(
+                            color: widget.primaryColor.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(14.r),
+                            border: Border.all(
+                              color: widget.primaryColor.withValues(alpha: 0.3),
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.keyboard_rounded,
+                            color: widget.primaryColor,
+                            size: 22.r,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.05, 1.05),
+                          duration: 1.5.seconds,
+                        ),
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'NOW TYPE IT',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: widget.primaryColor,
+                              letterSpacing: 2,
+                            ),
+                          ),
+                          SizedBox(height: 2.h),
+                          Text(
+                            'Type the answer to confirm',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w500,
+                              color: subtitleColor,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    child: Icon(
-                      Icons.keyboard_rounded,
-                      color: widget.primaryColor,
-                      size: 22.r,
-                    ),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.05, 1.05),
-                    duration: 1.5.seconds,
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'NOW TYPE IT',
+                    if (widget.bonusCoins != null)
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              widget.primaryColor,
+                              widget.primaryColor.withValues(alpha: 0.7),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(20.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: widget.primaryColor.withValues(alpha: 0.3),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: Text(
+                          '+${widget.bonusCoins} COIN',
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: widget.primaryColor,
-                            letterSpacing: 2,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            letterSpacing: 1,
                           ),
                         ),
-                        SizedBox(height: 2.h),
-                        Text(
-                          'Type the answer to confirm',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w500,
-                            color: subtitleColor,
+                      ),
+                    if (widget.allowSkip)
+                      Padding(
+                        padding: EdgeInsets.only(left: 8.w),
+                        child: _buildSkipButton(subtitleColor),
+                      ),
+                  ],
+                ),
+                SizedBox(height: 24.h),
+
+                // Expected text display
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 16.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.02),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: widget.primaryColor.withValues(alpha: 0.15),
+                    ),
+                  ),
+                  child: Text(
+                    widget.displayText ?? widget.expectedText,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w800,
+                      color: textColor,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+
+                // Input and Action Area
+                ValueListenableBuilder<_ConfirmResult?>(
+                  valueListenable: _result,
+                  builder: (context, result, _) {
+                    if (result == _ConfirmResult.success) {
+                      return Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(16.r),
+                              decoration: BoxDecoration(
+                                color: Colors.greenAccent.withValues(
+                                  alpha: 0.15,
+                                ),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.verified_rounded,
+                                color: Colors.greenAccent,
+                                size: 48.r,
+                              ),
+                            ).animate().scale(
+                              begin: const Offset(0, 0),
+                              end: const Offset(1, 1),
+                              duration: 400.ms,
+                              curve: Curves.easeOutBack,
+                            ),
+                            SizedBox(height: 12.h),
+                            Text(
+                              'PERFECT! 🎯',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.greenAccent,
+                                letterSpacing: 2,
+                              ),
+                            ).animate().fadeIn(delay: 200.ms),
+                          ],
+                        ),
+                      );
+                    }
+
+                    return Column(
+                      children: [
+                        // Input field
+                        Container(
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.black.withValues(alpha: 0.2)
+                                    : Colors.white.withValues(alpha: 0.5),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: result == _ConfirmResult.mismatch
+                                      ? Colors.redAccent.withValues(alpha: 0.5)
+                                      : widget.primaryColor.withValues(
+                                          alpha: 0.2,
+                                        ),
+                                ),
+                              ),
+                              child: Stack(
+                                children: [
+                                  TextField(
+                                    controller: _textController,
+                                    focusNode: _focusNode,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      color: textColor,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    decoration: InputDecoration(
+                                      hintText: 'Type exactly...',
+                                      hintStyle: TextStyle(
+                                        color: subtitleColor.withValues(
+                                          alpha: 0.5,
+                                        ),
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                      border: InputBorder.none,
+                                      contentPadding: EdgeInsets.only(
+                                        left: 16.w,
+                                        right: 16.w,
+                                        top: 16.h,
+                                        bottom: 32.h,
+                                      ),
+                                    ),
+                                    onSubmitted: (_) => _evaluate(),
+                                    onChanged: (_) {
+                                      if (_result.value ==
+                                              _ConfirmResult.mismatch ||
+                                          _result.value ==
+                                              _ConfirmResult.empty) {
+                                        _result.value = null;
+                                      }
+                                    },
+                                  ),
+                                  Positioned(
+                                    bottom: 12.h,
+                                    left: 16.w,
+                                    child: ValueListenableBuilder<int>(
+                                      valueListenable: _attempts,
+                                      builder: (context, attempts, _) {
+                                        if (attempts > 0) {
+                                          return Text(
+                                            '${widget.maxAttempts - attempts} attempts left',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 10.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.redAccent
+                                                  .withValues(alpha: 0.8),
+                                            ),
+                                          );
+                                        }
+                                        return const SizedBox.shrink();
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                            .animate(
+                              target: result == _ConfirmResult.mismatch ? 1 : 0,
+                            )
+                            .shakeX(amount: 5, duration: 400.ms),
+
+                        // Status message
+                        if (result == _ConfirmResult.mismatch ||
+                            result == _ConfirmResult.empty)
+                          Padding(
+                            padding: EdgeInsets.only(top: 12.h),
+                            child: Text(
+                              result == _ConfirmResult.mismatch
+                                  ? "Hmm, that didn't match. Try checking your spelling!"
+                                  : 'Please type your answer.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: result == _ConfirmResult.mismatch
+                                    ? Colors.redAccent
+                                    : Colors.orangeAccent,
+                              ),
+                            ),
+                          ),
+
+                        // Submit / Continue button
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: ValueListenableBuilder<int>(
+                            valueListenable: _attempts,
+                            builder: (context, attempts, _) {
+                              final outOfAttempts =
+                                  attempts >= widget.maxAttempts;
+                              return ValueListenableBuilder<bool>(
+                                valueListenable: _isSubmitting,
+                                builder: (context, isSubmitting, _) {
+                                  return ScaleButton(
+                                    onTap: isSubmitting
+                                        ? null
+                                        : () {
+                                            if (outOfAttempts) {
+                                              _isSubmitting.value = true;
+                                              widget.onSkipped();
+                                            } else {
+                                              _evaluate();
+                                            }
+                                          },
+                                    child: Container(
+                                      width: double.infinity,
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 16.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: outOfAttempts
+                                              ? [
+                                                  Colors.grey.withValues(
+                                                    alpha: 0.8,
+                                                  ),
+                                                  Colors.grey.withValues(
+                                                    alpha: 0.6,
+                                                  ),
+                                                ]
+                                              : [
+                                                  widget.primaryColor,
+                                                  widget.primaryColor
+                                                      .withValues(alpha: 0.8),
+                                                ],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          16.r,
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: outOfAttempts
+                                                ? Colors.black26
+                                                : widget.primaryColor
+                                                      .withValues(alpha: 0.4),
+                                            blurRadius: 12,
+                                            offset: const Offset(0, 4),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          outOfAttempts ? 'CONTINUE' : 'SUBMIT',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.white,
+                                            letterSpacing: 2,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                  if (widget.bonusCoins != null)
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            widget.primaryColor,
-                            widget.primaryColor.withValues(alpha: 0.7),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(20.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: widget.primaryColor.withValues(alpha: 0.3),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: Text(
-                        '+${widget.bonusCoins} COIN',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: 1,
-                        ),
-                      ),
-                    ),
-                ],
-              ),
-              SizedBox(height: 24.h),
-
-              // Expected text display
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.05)
-                      : Colors.black.withValues(alpha: 0.02),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: widget.primaryColor.withValues(alpha: 0.15),
-                  ),
-                ),
-                child: Text(
-                  widget.displayText ?? widget.expectedText,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w800,
-                    color: textColor,
-                    letterSpacing: 0.5,
-                  ),
-                ),
-              ),
-              SizedBox(height: 20.h),
-
-              // Input and Action Area
-              ValueListenableBuilder<_ConfirmResult?>(
-                valueListenable: _result,
-                builder: (context, result, _) {
-                  if (result == _ConfirmResult.success) {
-                    return Padding(
-                      padding: EdgeInsets.only(top: 20.h),
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(16.r),
-                            decoration: BoxDecoration(
-                              color: Colors.greenAccent.withValues(alpha: 0.15),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.verified_rounded,
-                              color: Colors.greenAccent,
-                              size: 48.r,
-                            ),
-                          ).animate().scale(
-                            begin: const Offset(0, 0),
-                            end: const Offset(1, 1),
-                            duration: 400.ms,
-                            curve: Curves.easeOutBack,
-                          ),
-                          SizedBox(height: 12.h),
-                          Text(
-                            'PERFECT! 🎯',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.greenAccent,
-                              letterSpacing: 2,
-                            ),
-                          ).animate().fadeIn(delay: 200.ms),
-                        ],
-                      ),
                     );
-                  }
-
-                  return Column(
-                    children: [
-                      // Input field
-                      Container(
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.black.withValues(alpha: 0.2)
-                              : Colors.white.withValues(alpha: 0.5),
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: result == _ConfirmResult.mismatch
-                                ? Colors.redAccent.withValues(alpha: 0.5)
-                                : widget.primaryColor.withValues(alpha: 0.2),
-                          ),
-                        ),
-                        child: TextField(
-                          controller: _textController,
-                          focusNode: _focusNode,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            color: textColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          decoration: InputDecoration(
-                            hintText: 'Type exactly...',
-                            hintStyle: TextStyle(
-                              color: subtitleColor.withValues(alpha: 0.5),
-                              fontWeight: FontWeight.w400,
-                            ),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 16.h,
-                            ),
-                          ),
-                          onSubmitted: (_) => _evaluate(),
-                          onChanged: (_) {
-                            if (_result.value == _ConfirmResult.mismatch || _result.value == _ConfirmResult.empty) {
-                              _result.value = null;
-                            }
-                          },
-                        ),
-                      ).animate(target: result == _ConfirmResult.mismatch ? 1 : 0).shakeX(amount: 5, duration: 400.ms),
-
-                      // Status message
-                      if (result == _ConfirmResult.mismatch || result == _ConfirmResult.empty)
-                        Padding(
-                          padding: EdgeInsets.only(top: 12.h),
-                          child: Text(
-                            result == _ConfirmResult.mismatch 
-                                ? "Hmm, that didn't match. Try checking your spelling!"
-                                : 'Please type your answer.',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: result == _ConfirmResult.mismatch ? Colors.redAccent : Colors.orangeAccent,
-                            ),
-                          ),
-                        ),
-
-                      // Submit button
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: ValueListenableBuilder<bool>(
-                          valueListenable: _isSubmitting,
-                          builder: (context, isSubmitting, _) {
-                            return ScaleButton(
-                              onTap: isSubmitting ? null : _evaluate,
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.symmetric(vertical: 16.h),
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      widget.primaryColor,
-                                      widget.primaryColor.withValues(alpha: 0.8),
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                  ),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: widget.primaryColor.withValues(alpha: 0.4),
-                                      blurRadius: 12,
-                                      offset: const Offset(0, 4),
-                                    ),
-                                  ],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'SUBMIT',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.white,
-                                      letterSpacing: 2,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                        ),
-                      ),
-
-                      // Skip button
-                      if (widget.allowSkip)
-                        Padding(
-                          padding: EdgeInsets.only(top: 16.h),
-                          child: ValueListenableBuilder<bool>(
-                            valueListenable: _isSubmitting,
-                            builder: (context, isSubmitting, _) {
-                              return ValueListenableBuilder<int>(
-                                valueListenable: _attempts,
-                                builder: (context, attempts, _) {
-                                  return ScaleButton(
-                                    onTap: () {
-                                      if (isSubmitting) return;
-                                      
-                                      if (attempts >= widget.maxAttempts) {
-                                        _isSubmitting.value = true;
-                                        widget.onSkipped();
-                                        return;
-                                      }
-                                      
-                                      _isSubmitting.value = true;
-                                      final user = context.read<AuthBloc>().state.user;
-                                      final isPremium = user?.isPremium ?? false;
-                                      if (isPremium) {
-                                        if (widget.onBypassed != null) {
-                                          widget.onBypassed!();
-                                        } else {
-                                          widget.onConfirmed();
-                                        }
-                                      } else {
-                                        di.sl<AdService>().showRewardedAd(
-                                          context: context,
-                                          isPremium: false,
-                                          onUserEarnedReward: (_) {
-                                            if (mounted) {
-                                              if (widget.onBypassed != null) {
-                                                widget.onBypassed!();
-                                              } else {
-                                                widget.onConfirmed();
-                                              }
-                                            }
-                                          },
-                                          onDismissed: () {
-                                            if (mounted) _isSubmitting.value = false;
-                                          },
-                                        );
-                                      }
-                                    },
-                                    child: Builder(
-                                      builder: (context) {
-                                        final isPremium =
-                                            context.watch<AuthBloc>().state.user?.isPremium ??
-                                            false;
-                                        return Text(
-                                          attempts >= widget.maxAttempts
-                                              ? 'CONTINUE'
-                                              : (isPremium ? 'SKIP' : 'WATCH AD TO BYPASS'),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 11.sp,
-                                            fontWeight: FontWeight.w700,
-                                            color: subtitleColor,
-                                            letterSpacing: 1.5,
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  );
-                                }
-                              );
-                            }
-                          ),
-                        ),
-
-                      // Attempt counter
-                      ValueListenableBuilder<int>(
-                        valueListenable: _attempts,
-                        builder: (context, attempts, _) {
-                          if (attempts > 0) {
-                            return Padding(
-                              padding: EdgeInsets.only(top: 12.h),
-                              child: Text(
-                                '${widget.maxAttempts - attempts} attempts remaining',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: subtitleColor.withValues(alpha: 0.6),
-                                ),
-                              ),
-                            );
-                          }
-                          return const SizedBox.shrink();
-                        }
-                      ),
-                    ],
-                  );
-                }
-              ),
-            ],
-          ),
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
