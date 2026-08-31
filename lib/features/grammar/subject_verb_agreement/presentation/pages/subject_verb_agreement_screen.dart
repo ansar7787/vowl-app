@@ -31,13 +31,23 @@ class _SubjectVerbAgreementScreenState
     extends State<SubjectVerbAgreementScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  Offset _ringOffset = Offset.zero;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<Offset> _ringOffset = ValueNotifier(Offset.zero);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingTypeSubmit = false;
+  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _ringOffset.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingTypeSubmit.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -48,35 +58,29 @@ class _SubjectVerbAgreementScreenState
   }
 
   void _onConnect(int targetIndex, int correctIndex) {
-    if (_isAnswered || _pendingTypeSubmit) return;
+    if (_isAnswered.value || _pendingTypeSubmit.value) return;
 
     bool isCorrect = targetIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _ringOffset = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
-        _pendingTypeSubmit = true;
-      });
+      _ringOffset.value = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
+      _pendingTypeSubmit.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _ringOffset = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _ringOffset.value = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingTypeSubmit = false);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
+    _pendingTypeSubmit.value = false;
+    _isAnswered.value = true;
+    _isCorrect.value = correct;
 
     if (correct) {
       _hapticService.success();
@@ -98,28 +102,24 @@ class _SubjectVerbAgreementScreenState
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _pendingTypeSubmit = false;
-              _ringOffset = Offset.zero;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _pendingTypeSubmit.value = false;
+            _ringOffset.value = Offset.zero;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -141,13 +141,16 @@ class _SubjectVerbAgreementScreenState
               .replaceAll(']', '');
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _ringOffset, _pendingTypeSubmit]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false, // Stack needs finite space to anchor to bottom
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
@@ -363,11 +366,11 @@ class _SubjectVerbAgreementScreenState
 
                                     // The Quantum Core (Harmony Slider)
                                     GestureDetector(
-                                      onPanUpdate: _isAnswered || _pendingTypeSubmit
+                                      onPanUpdate: _isAnswered.value || _pendingTypeSubmit.value
                                           ? null
                                           : (details) {
                                               final double newDx =
-                                                  (_ringOffset.dx +
+                                                  (_ringOffset.value.dx +
                                                           details.delta.dx)
                                                       .clamp(
                                                         isCompact
@@ -377,25 +380,21 @@ class _SubjectVerbAgreementScreenState
                                                             ? 100.w
                                                             : 130.w,
                                                       );
-                                              setState(() {
-                                                _ringOffset = Offset(
+                                              _ringOffset.value = Offset(
                                                   newDx,
                                                   0.0,
                                                 );
-                                              });
                                               _checkHarmony(
                                                 quest.correctAnswerIndex ?? 0,
                                               );
                                             },
-                                      onPanEnd: _isAnswered || _pendingTypeSubmit
+                                      onPanEnd: _isAnswered.value || _pendingTypeSubmit.value
                                           ? null
                                           : (details) {
-                                              setState(
-                                                () => _ringOffset = Offset.zero,
-                                              );
+                                              _ringOffset.value = Offset.zero;
                                             },
                                       child: Transform.translate(
-                                        offset: _ringOffset,
+                                        offset: _ringOffset.value,
                                         child: _buildQuantumCore(
                                           theme.primaryColor,
                                           isCompact,
@@ -414,24 +413,30 @@ class _SubjectVerbAgreementScreenState
                         );
                       },
                     ),
-                    ),
-                    if (_pendingTypeSubmit && !_isAnswered && cleanTargetSentence.isNotEmpty)
-                      TypeToConfirmOverlay(
-                        expectedText: cleanTargetSentence,
-                        displayText: "Type the complete sentence to lock in the rule",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        allowSkip: true,
-                      ),
-                    SizedBox(height: (_isAnswered || _pendingTypeSubmit) ? 160.h : 60.h),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              ],
-            );
+            ),
+                    if (_pendingTypeSubmit.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: cleanTargetSentence,
+                          displayText: "Type the complete sentence to lock in the rule",
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onSkipped: () => _submitFinalAnswer(false),
+                          allowSkip: true,
+                        ),
+                      ),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: (_isAnswered.value || _pendingTypeSubmit.value) ? 160.h : 60.h),
+                    ),
+                  ],
+                );
                   },
                 ),
+            );
+          },
         );
       },
     );
@@ -439,9 +444,9 @@ class _SubjectVerbAgreementScreenState
 
   void _checkHarmony(int correctIndex) {
     final double threshold = 110.w;
-    if (_ringOffset.dx < -threshold) {
+    if (_ringOffset.value.dx < -threshold) {
       _onConnect(0, correctIndex);
-    } else if (_ringOffset.dx > threshold) {
+    } else if (_ringOffset.value.dx > threshold) {
       _onConnect(1, correctIndex);
     }
   }
@@ -455,10 +460,10 @@ class _SubjectVerbAgreementScreenState
     bool isCompact,
   ) {
     final isCorrect =
-        (_isAnswered || _pendingTypeSubmit) &&
-        _isCorrect != false &&
+        (_isAnswered.value || _pendingTypeSubmit.value) &&
+        _isCorrect.value != false &&
         index == correctIndex;
-    final isWrong = _isAnswered && _isCorrect == false && index != correctIndex;
+    final isWrong = _isAnswered.value && _isCorrect.value == false && index != correctIndex;
     final terminalSize = isCompact ? 80.r : 110.r;
 
     return Align(
@@ -504,8 +509,8 @@ class _SubjectVerbAgreementScreenState
   }
 
   Widget _buildQuantumCore(Color primaryColor, bool isCompact) {
-    final Color coreColor = (_isAnswered || _pendingTypeSubmit)
-        ? (_isCorrect != false ? Colors.greenAccent : Colors.redAccent)
+    final Color coreColor = (_isAnswered.value || _pendingTypeSubmit.value)
+        ? (_isCorrect.value != false ? Colors.greenAccent : Colors.redAccent)
         : primaryColor;
     final coreSize = isCompact ? 50.r : 70.r;
     final innerSize = isCompact ? 14.r : 20.r;
