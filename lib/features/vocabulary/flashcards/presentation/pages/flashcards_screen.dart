@@ -103,8 +103,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
             ? state.currentQuestOrNull
             : _lastQuest;
 
-        return AnimatedBuilder(
-          animation: _controller,
+        return ListenableBuilder(
+          listenable: _controller,
           builder: (context, child) {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
