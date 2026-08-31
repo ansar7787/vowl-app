@@ -133,6 +133,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           isAnswered: _controller.isAnswered,
           isCorrect: _controller.isCorrect,
           showConfetti: _controller.showConfetti,
+          hasStage2: true,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           disablePadding: true,
           onHint: () {
@@ -195,17 +196,17 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         ? (gapUnit * 2).clamp(12.0, 30.0)
                         : 12.0;
 
-                    return Stack(
-                      children: [
-                        CustomScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
                         SliverToBoxAdapter(
                           child: ConstrainedBox(
                             constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                            child: Column(
-                              key: ValueKey(quest.id),
-                              mainAxisAlignment: MainAxisAlignment.start,
+                            child: IgnorePointer(
+                              ignoring: _controller.isFirstStagePassed,
+                              child: Column(
+                                key: ValueKey(quest.id),
+                                mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 SizedBox(height: gapTop + 32.h),
                                 Padding(
@@ -277,27 +278,24 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                 ),
                                 SizedBox(height: gapBottom),
                               ],
+                              ),
                             ),
                           ),
                         ),
                         if (_controller.isFirstStagePassed && !_controller.isAnswered)
                           SliverToBoxAdapter(
-                            child: SizedBox(height: 160.h),
+                            child: TypeToConfirmOverlay(
+                              expectedText: quest.correctAnswer ?? '',
+                              displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _controller.submitFinalAnswer(true),
+                              onSkipped: () => _controller.submitFinalAnswer(false),
+                              onBypassed: () => _controller.submitFinalAnswer(true),
+                              isPositioned: false,
+                            ),
                           ),
                       ],
-                    ),
-                    if (_controller.isFirstStagePassed && !_controller.isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText: quest.correctAnswer ?? '',
-                        displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _controller.submitFinalAnswer(true),
-                        onSkipped: () => _controller.submitFinalAnswer(false),
-                        onBypassed: () => _controller.submitFinalAnswer(true),
-                        isPositioned: true,
-                      ),
-                  ],
-                );
+                    );
                   },
                 ),
         );
