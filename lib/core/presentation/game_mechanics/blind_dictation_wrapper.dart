@@ -8,12 +8,15 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class BlindDictationWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
+  final VoidCallback? onBypassed;
   final int? bonusCoins;
   final bool allowSkip;
 
@@ -30,6 +33,7 @@ class BlindDictationWrapper extends StatefulWidget {
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
+    this.onBypassed,
     this.bonusCoins = 5,
     this.allowSkip = true,
     this.isPositioned = true,
@@ -75,10 +79,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       _hapticService.error();
       if (_attempts.value >= widget.maxAttempts) {
         _focusNode.unfocus();
-        _isSubmitting.value = true;
-        Future.delayed(const Duration(milliseconds: 500), () {
-          if (mounted) widget.onSkipped();
-        });
       }
       return;
     }
@@ -117,12 +117,90 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       _attempts.value++;
       if (_attempts.value >= widget.maxAttempts) {
         _focusNode.unfocus();
-        _isSubmitting.value = true;
-        Future.delayed(const Duration(milliseconds: 500), () {
-          if (mounted) widget.onSkipped();
-        });
       }
     }
+  }
+
+  Widget _buildSkipButton(Color subtitleColor) {
+    return ValueListenableBuilder<int>(
+      valueListenable: _attempts,
+      builder: (context, attempts, _) {
+        return GestureDetector(
+          onTap: () {
+            if (_isSubmitting.value) return;
+            if (attempts >= widget.maxAttempts) {
+              _isSubmitting.value = true;
+              widget.onSkipped();
+              return;
+            }
+            _isSubmitting.value = true;
+            final user = context.read<AuthBloc>().state.user;
+            final isPremium = user?.isPremium ?? false;
+            if (isPremium) {
+              if (widget.onBypassed != null) {
+                widget.onBypassed!();
+              } else {
+                widget.onConfirmed();
+              }
+            } else {
+              di.sl<AdService>().showRewardedAd(
+                context: context,
+                isPremium: false,
+                onUserEarnedReward: (_) {
+                  if (mounted) {
+                    if (widget.onBypassed != null) {
+                      widget.onBypassed!();
+                    } else {
+                      widget.onConfirmed();
+                    }
+                  }
+                },
+                onDismissed: () {
+                  if (mounted) _isSubmitting.value = false;
+                },
+              );
+            }
+          },
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: subtitleColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  attempts >= widget.maxAttempts ? 'CONTINUE' : 'SKIP',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w700,
+                    color: subtitleColor.withValues(alpha: 0.8),
+                  ),
+                ),
+                Builder(
+                  builder: (context) {
+                    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
+                    if (!isPremium && attempts < widget.maxAttempts) {
+                      return Padding(
+                        padding: EdgeInsets.only(left: 4.w),
+                        child: Icon(
+                          Icons.ondemand_video_rounded,
+                          size: 12.r,
+                          color: subtitleColor.withValues(alpha: 0.8),
+                        ),
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -255,6 +333,11 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                             ),
                           ),
                         ),
+                      if (widget.allowSkip)
+                        Padding(
+                          padding: EdgeInsets.only(left: 8.w),
+                          child: _buildSkipButton(subtitleColor),
+                        ),
                     ],
                   ),
                   SizedBox(height: 24.h),
@@ -275,65 +358,70 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                         width: 1.5,
                       ),
                     ),
-                    child: TextField(
-                      controller: _controller,
-                      focusNode: _focusNode,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                        color: textColor,
-                      ),
-                      maxLines: 3,
-                      minLines: 1,
-                      onChanged: (_) {
-                        if (_hasError.value) {
-                          _hasError.value = false;
-                        }
-                      },
-                      onSubmitted: (_) => _onSubmit(),
-                      decoration: InputDecoration(
-                        hintText: 'Type here...',
-                        hintStyle: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                          color: subtitleColor.withValues(alpha: 0.5),
+                    child: Stack(
+                      children: [
+                        TextField(
+                          controller: _controller,
+                          focusNode: _focusNode,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                            color: textColor,
+                          ),
+                          maxLines: 3,
+                          minLines: 1,
+                          onChanged: (_) {
+                            if (_hasError.value) {
+                              _hasError.value = false;
+                            }
+                          },
+                          onSubmitted: (_) => _onSubmit(),
+                          decoration: InputDecoration(
+                            hintText: 'Type here...',
+                            hintStyle: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                              color: subtitleColor.withValues(alpha: 0.5),
+                            ),
+                            contentPadding: EdgeInsets.only(
+                              left: 16.w,
+                              right: 16.w,
+                              top: 16.h,
+                              bottom: 32.h,
+                            ),
+                            border: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                          ),
                         ),
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
+                        Positioned(
+                          bottom: 12.h,
+                          left: 16.w,
+                          child: ValueListenableBuilder<int>(
+                            valueListenable: _attempts,
+                            builder: (context, attempts, _) {
+                              if (attempts > 0) {
+                                return Text(
+                                  '${widget.maxAttempts - attempts} attempts left',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.redAccent.withValues(alpha: 0.8),
+                                  ),
+                                );
+                              }
+                              return const SizedBox.shrink();
+                            },
+                          ),
                         ),
-                        border: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                      ),
+                      ],
                     ),
                   )
                   .animate(target: hasError ? 1 : 0)
                   .shakeX(amount: 5, duration: 400.ms),
-
-                  // Attempt counter
-                  ValueListenableBuilder<int>(
-                    valueListenable: _attempts,
-                    builder: (context, attempts, _) {
-                      if (attempts > 0 && attempts < widget.maxAttempts) {
-                        return Padding(
-                          padding: EdgeInsets.only(top: 8.h),
-                          child: Text(
-                            '${widget.maxAttempts - attempts} attempts remaining',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w500,
-                              color: subtitleColor.withValues(alpha: 0.6),
-                            ),
-                          ),
-                        );
-                      }
-                      return const SizedBox.shrink();
-                    },
-                  ),
 
                   SizedBox(height: 24.h),
 
@@ -341,63 +429,46 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                   ValueListenableBuilder<bool>(
                     valueListenable: _isSubmitting,
                     builder: (context, isSubmitting, _) {
-                      return Row(
-                        children: [
-                          if (widget.allowSkip) ...[
-                            Expanded(
-                              flex: 1,
-                              child: TextButton(
-                                onPressed: isSubmitting ? null : () {
+                      return ValueListenableBuilder<int>(
+                        valueListenable: _attempts,
+                        builder: (context, attempts, _) {
+                          final outOfAttempts = attempts >= widget.maxAttempts;
+                          return SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: isSubmitting ? null : () {
+                                if (outOfAttempts) {
                                   _isSubmitting.value = true;
                                   widget.onSkipped();
-                                },
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 16.h,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16.r),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Skip',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: subtitleColor,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 12.w),
-                          ],
-                          Expanded(
-                            flex: 2,
-                            child: ElevatedButton(
-                              onPressed: isSubmitting ? null : _onSubmit,
+                                } else {
+                                  _onSubmit();
+                                }
+                              },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: hasError
-                                    ? errorColor
-                                    : widget.primaryColor,
+                                backgroundColor: outOfAttempts 
+                                    ? Colors.grey.withValues(alpha: 0.8)
+                                    : hasError
+                                        ? errorColor
+                                        : widget.primaryColor,
                                 padding: EdgeInsets.symmetric(vertical: 16.h),
-                                elevation: 0,
+                                elevation: outOfAttempts ? 0 : 2,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16.r),
                                 ),
                               ),
                               child: Text(
-                                'Submit',
+                                outOfAttempts ? 'CONTINUE' : 'SUBMIT',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
+                                  letterSpacing: outOfAttempts ? 2 : 1,
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          );
+                        }
                       );
                     }
                   ),

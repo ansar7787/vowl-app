@@ -66,6 +66,15 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _showSentenceBuilder.value = true;
+      Future.delayed(const Duration(milliseconds: 600), () {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -153,21 +162,13 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                   context.read<ReadingBloc>().add(const ReadingHintUsed()),
               child: quest == null
                   ? const SizedBox()
-                  : Stack(
-                      children: [
-                        IgnorePointer(
-                          ignoring: _showSentenceBuilder.value,
-                          child: AnimatedOpacity(
-                            opacity: _showSentenceBuilder.value ? 0.0 : 1.0,
-                            duration: const Duration(milliseconds: 400),
-                            curve: Curves.easeOut,
-                            child: Scrollbar(
-                              thickness: 4.w,
-                          radius: Radius.circular(10.r),
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
+                  : Scrollbar(
+                      thickness: 4.w,
+                      radius: Radius.circular(10.r),
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
                             SliverPadding(
                               padding: EdgeInsets.symmetric(horizontal: 24.w),
                               sliver: SliverToBoxAdapter(
@@ -209,37 +210,43 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                                 ),
                               ),
                             ),
-                            SliverFillRemaining(
-                              hasScrollBody: false,
-                              child: Center(
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 40.h, bottom: 20.h),
-                                  child: Icon(
-                                    Icons.menu_book_rounded,
-                                    size: 140.r,
-                                    color: isDark
-                                        ? Colors.white.withValues(alpha: 0.02)
-                                        : theme.primaryColor.withValues(alpha: 0.05),
+                            if (!_showSentenceBuilder.value)
+                              SliverFillRemaining(
+                                hasScrollBody: false,
+                                child: Center(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(top: 40.h, bottom: 20.h),
+                                    child: Icon(
+                                      Icons.menu_book_rounded,
+                                      size: 140.r,
+                                      color: isDark
+                                          ? Colors.white.withValues(alpha: 0.02)
+                                          : theme.primaryColor.withValues(alpha: 0.05),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
+                            if (_showSentenceBuilder.value)
+                              SliverPadding(
+                                padding: EdgeInsets.only(
+                                  top: 32.h,
+                                  bottom: MediaQuery.viewInsetsOf(context).bottom + 120.h,
+                                ),
+                                sliver: SliverToBoxAdapter(
+                                  child: ContextSentenceBuilder(
+                                    targetKeyword: quest.word ?? '',
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: _onSentenceBuilderComplete,
+                                    onSkipped: _onSentenceBuilderComplete,
+                                    allowSkip: true,
+                                    bonusCoins: 5,
+                                    isPositioned: false,
+                                    exampleSentence: quest.wordInContext,
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
-                        ),
-                        ),
-                        ),
-                        if (_showSentenceBuilder.value)
-                          ContextSentenceBuilder(
-                            targetKeyword: quest.word ?? '',
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: _onSentenceBuilderComplete,
-                            onSkipped: _onSentenceBuilderComplete,
-                            allowSkip: true,
-                            bonusCoins: 5,
-                            exampleSentence: quest.wordInContext,
-                          ),
-                      ],
                     ),
             );
           },
