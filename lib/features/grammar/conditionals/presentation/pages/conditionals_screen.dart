@@ -33,12 +33,23 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  List<Offset> _chainPoints = [];
-  int _targetIndex = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<List<Offset>> _chainPoints = ValueNotifier([]);
+  final ValueNotifier<int> _targetIndex = ValueNotifier(-1);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _chainPoints.dispose();
+    _targetIndex.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -51,35 +62,29 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
   }
 
   void _onConnect(int nodeIndex, int correctIndex) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-        _targetIndex = nodeIndex;
-      });
+      _isFirstStagePassed.value = true;
+      _targetIndex.value = nodeIndex;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _targetIndex = nodeIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _targetIndex.value = nodeIndex;
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    if (_isAnswered.value) return;
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
@@ -100,28 +105,24 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -142,18 +143,21 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
           final sentence = quest.correctAnswer ?? quest.sentence ?? "";
           if (sentence.isNotEmpty) {
             cleanTargetSentence = sentence.replaceAll('[', '').replaceAll(']', '');
-          } else if (_targetIndex != -1) {
-            cleanTargetSentence = "${quest.question} ${options[_targetIndex]}".replaceAll(RegExp(r'\s+'), ' ').trim();
+          } else if (_targetIndex.value != -1) {
+            cleanTargetSentence = "${quest.question} ${options[_targetIndex.value]}".replaceAll(RegExp(r'\s+'), ' ').trim();
           }
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _targetIndex]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
@@ -177,7 +181,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                                 final double estimatedContentHeight =
                                     (isCompact ? 30.h : 40.h) +
                                     (isCompact ? 70.h : 100.h) +
-                                    (_isAnswered
+                                    (_isAnswered.value
                                         ? (isCompact ? 50.h : 90.h)
                                         : 0) +
                                     40.h;
@@ -320,7 +324,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                                         .slideY(begin: 0.2, end: 0),
 
                                     // Result
-                                    if (_isAnswered) ...[
+                                    if (_isAnswered.value) ...[
                                       SizedBox(height: gapMiddle),
                                       _buildResult(
                                         quest,
@@ -347,27 +351,33 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                               },
                             ),
                           ),
-                          if (_isFirstStagePassed && !_isAnswered && cleanTargetSentence.isNotEmpty)
-                            TypeToConfirmOverlay(
-                              expectedText: cleanTargetSentence,
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
-                              isPositioned: false,
-                              displayText: "Type the full sentence to lock it in",
-                            ),
-                          SizedBox(
-                            height: (_isAnswered || _isFirstStagePassed)
-                                ? 160.h
-                                : 60.h,
-                          ),
                         ],
+                      ),
+                    ),
+                    if (_isFirstStagePassed.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: cleanTargetSentence,
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitVerbalEvaluation(true),
+                          onSkipped: () => _submitVerbalEvaluation(false),
+                          isPositioned: false,
+                          displayText: "Type the full sentence to lock it in",
+                        ),
+                      ),
+                    SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: (_isAnswered.value || _isFirstStagePassed.value)
+                            ? 160.h
+                            : 60.h,
                       ),
                     ),
                   ],
                 );
-                  },
-                ),
+                      },
+                    ),
+            );
+          },
         );
       },
     );
@@ -401,11 +411,12 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
 
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered || _isFirstStagePassed) return;
-            setState(() {
-              _chainPoints.add(details.localPosition);
-              _hapticService.selection();
-            });
+            if (_isAnswered.value || _isFirstStagePassed.value) return;
+            
+            final newList = List<Offset>.from(_chainPoints.value)..add(details.localPosition);
+            _chainPoints.value = newList;
+            _hapticService.selection();
+
             for (int i = 0; i < nodePoints.length; i++) {
               if ((details.localPosition - nodePoints[i]).distance <
                   (isCompact ? 40.r : 60.r)) {
@@ -413,20 +424,25 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
               }
             }
           },
-          onPanEnd: (_) => setState(() => _chainPoints = []),
-          child: CustomPaint(
-            size: Size.infinite,
-            painter: ConditionalsChainPainter(
-              points: _chainPoints,
-              startPoint: startPoint,
-              nodes: nodePoints,
-              options: options,
-              primaryColor: primaryColor,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              targetNode: _targetIndex,
-              isDark: isDark,
-            ),
+          onPanEnd: (_) => _chainPoints.value = [],
+          child: ValueListenableBuilder<List<Offset>>(
+            valueListenable: _chainPoints,
+            builder: (context, points, _) {
+              return CustomPaint(
+                size: Size.infinite,
+                painter: ConditionalsChainPainter(
+                  points: points,
+                  startPoint: startPoint,
+                  nodes: nodePoints,
+                  options: options,
+                  primaryColor: primaryColor,
+                  isAnswered: _isAnswered.value,
+                  isCorrect: _isCorrect.value,
+                  targetNode: _targetIndex.value,
+                  isDark: isDark,
+                ),
+              );
+            },
           ),
         );
       },
@@ -439,7 +455,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect == true;
+    final bool correct = _isCorrect.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(

@@ -1,52 +1,49 @@
 import 'dart:io';
 
 void main() {
-  final file = File('lib/features/grammar/clause_connector/presentation/pages/clause_connector_screen.dart');
+  final file = File('lib/features/grammar/conditionals/presentation/pages/conditionals_screen.dart');
   String content = file.readAsStringSync();
   
   content = content.replaceAll('\r\n', '\n');
 
-  content = content.replaceAll('String? _draggingConnector;', 'final ValueNotifier<String?> _draggingConnector = ValueNotifier(null);');
+  content = content.replaceAll('List<Offset> _chainPoints = [];', 'final ValueNotifier<List<Offset>> _chainPoints = ValueNotifier([]);');
+  content = content.replaceAll('int _targetIndex = -1;', 'final ValueNotifier<int> _targetIndex = ValueNotifier(-1);');
   content = content.replaceAll('bool _isAnswered = false;', 'final ValueNotifier<bool> _isAnswered = ValueNotifier(false);');
   content = content.replaceAll('bool? _isCorrect;', 'final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);');
   content = content.replaceAll('bool _showConfetti = false;', 'final ValueNotifier<bool> _showConfetti = ValueNotifier(false);');
-  content = content.replaceAll('bool _pendingTypeSubmit = false;', 'final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);\n\n  @override\n  void dispose() {\n    _draggingConnector.dispose();\n    _isAnswered.dispose();\n    _isCorrect.dispose();\n    _showConfetti.dispose();\n    _pendingTypeSubmit.dispose();\n    super.dispose();\n  }');
+  content = content.replaceAll('bool _isFirstStagePassed = false;', 'final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);\n\n  @override\n  void dispose() {\n    _chainPoints.dispose();\n    _targetIndex.dispose();\n    _isAnswered.dispose();\n    _isCorrect.dispose();\n    _showConfetti.dispose();\n    _isFirstStagePassed.dispose();\n    super.dispose();\n  }');
 
-  content = content.replaceAll('if (_isAnswered || _pendingTypeSubmit) return;', 'if (_isAnswered.value || _pendingTypeSubmit.value) return;');
-
+  content = content.replaceAll('if (_isAnswered || _isFirstStagePassed) return;', 'if (_isAnswered.value || _isFirstStagePassed.value) return;');
+  
   content = content.replaceAll('''      setState(() {
-        _draggingConnector = connector;
-        _pendingTypeSubmit = true;
-      });''', '''      _draggingConnector.value = connector;
-      _pendingTypeSubmit.value = true;''');
+        _isFirstStagePassed = true;
+        _targetIndex = nodeIndex;
+      });''', '''      _isFirstStagePassed.value = true;
+      _targetIndex.value = nodeIndex;''');
 
   content = content.replaceAll('''      setState(() {
         _isAnswered = true;
         _isCorrect = false;
-        _draggingConnector = connector;
+        _targetIndex = nodeIndex;
       });''', '''      _isAnswered.value = true;
       _isCorrect.value = false;
-      _draggingConnector.value = connector;''');
-
-  content = content.replaceAll('setState(() => _pendingTypeSubmit = false);', '_pendingTypeSubmit.value = false;');
+      _targetIndex.value = nodeIndex;''');
 
   content = content.replaceAll('''    setState(() {
       _isAnswered = true;
-      _isCorrect = correct;
+      _isCorrect = nailedIt;
     });''', '''    _isAnswered.value = true;
-    _isCorrect.value = correct;''');
+    _isCorrect.value = nailedIt;''');
 
   content = content.replaceAll('''            setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _pendingTypeSubmit = false;
-              _draggingConnector = null;
+              _isFirstStagePassed = false;
             });''', '''            _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
-            _pendingTypeSubmit.value = false;
-            _draggingConnector.value = null;''');
+            _isFirstStagePassed.value = false;''');
 
   content = content.replaceAll('if (state.answerStatus.isAnswered && !_isAnswered)', 'if (state.answerStatus.isAnswered && !_isAnswered.value)');
 

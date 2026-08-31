@@ -140,7 +140,13 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Feedback Card Logic
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
-3. Conditionals
+3. **Conditionals**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 4. Conjunctions
 5. Direct/Indirect Speech
 6. Grammar Quest
