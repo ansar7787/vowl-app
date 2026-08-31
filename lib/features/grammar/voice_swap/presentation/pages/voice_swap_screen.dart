@@ -34,11 +34,21 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isPassive = false;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isPassive = ValueNotifier(false);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isPassive.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -51,9 +61,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
   }
 
   void _submitAnswer(GameQuest? quest) {
-    if (_isAnswered || _isFirstStagePassed || quest == null) return;
+    if (_isAnswered.value || _isFirstStagePassed.value || quest == null) return;
 
-    final selectedVoice = _isPassive ? "Passive" : "Active";
+    final selectedVoice = _isPassive.value ? "Passive" : "Active";
     bool isCorrect =
         selectedVoice.toLowerCase() ==
         (quest.correctAnswerCategory?.toLowerCase() ??
@@ -62,28 +72,22 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -105,28 +109,24 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -142,7 +142,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
         String targetVoiceStr = "";
         String expectedConversion = "";
         if (quest != null) {
-          if (_isPassive) {
+          if (_isPassive.value) {
             targetVoiceStr = "Active";
             expectedConversion = quest.activeVoice ?? "";
           } else {
@@ -154,13 +154,16 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
           }
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isPassive, _isFirstStagePassed]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
@@ -246,18 +249,18 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
 
                             // Voice Toggle
                             VoiceSwapToggle(
-                              isPassive: _isPassive,
-                              isAnswered: _isAnswered,
+                              isPassive: _isPassive.value,
+                              isAnswered: _isAnswered.value,
                               primaryColor: theme.primaryColor,
                               isDark: isDark,
                               onToggle: (val) =>
-                                  setState(() => _isPassive = val),
+                                  _isPassive.value = val,
                             ),
 
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: isCompact ? 12.h : 32.h),
                               VoiceSwapResult(
-                                isCorrect: _isCorrect == true,
+                                isCorrect: _isCorrect.value == true,
                                 quest: quest,
                                 isDark: isDark,
                               ),
@@ -265,7 +268,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
 
                             const Spacer(),
 
-                            if (!_isAnswered)
+                            if (!_isAnswered.value)
                               ScaleButton(
                                     onTap: () => _submitAnswer(quest),
                                     child: Container(
@@ -324,24 +327,30 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                         );
                       },
                     ),
-                    ),
-                    if (_isFirstStagePassed && !_isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText: expectedConversion,
-                        displayText: "Type the $targetVoiceStr conversion to lock it in",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
-                        isPositioned: false,
+                  ),
+                ],
+              ),
+            ),
+                    if (_isFirstStagePassed.value && !_isAnswered.value)
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: expectedConversion,
+                          displayText: "Type the $targetVoiceStr conversion to lock it in",
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitVerbalEvaluation(true),
+                          onSkipped: () => _submitVerbalEvaluation(false),
+                          isPositioned: false,
+                        ),
                       ),
-                    SizedBox(height: _isAnswered ? 160.h : 60.h),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: _isAnswered.value ? 160.h : 60.h),
+                    ),
                   ],
-                ),
-                ),
-              ],
-            );
+                );
                   },
                 ),
+            );
+          },
         );
       },
     );
