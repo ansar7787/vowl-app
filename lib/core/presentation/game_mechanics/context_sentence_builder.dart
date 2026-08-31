@@ -76,64 +76,21 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     if (_isSubmitting.value) return;
     final text = _controller.text.trim();
 
-    if (text.isEmpty) {
-      _status.value = _BuilderStatus.error;
-      _feedbackMessage.value = 'Please write a sentence.';
-      _hapticService.error();
-      return;
-    }
-
-    final wordCount = text.split(RegExp(r'\s+')).length;
-    if (wordCount < widget.minWordCount) {
-      _status.value = _BuilderStatus.error;
-      _feedbackMessage.value =
-          'Too short! Write at least ${widget.minWordCount} words.';
-      _attempts.value++;
-      _hapticService.error();
-      _checkAttemptLimit();
-      return;
-    }
-
-    final lowerText = text.toLowerCase();
     final acceptedForms =
         widget.acceptedKeywordForms ?? [widget.targetKeyword.toLowerCase()];
-    final keywordFound = acceptedForms.any(
-      (form) => lowerText.contains(form.toLowerCase()),
+
+    final result = ContextSentenceValidator.validate(
+      context: context,
+      text: text,
+      minWordCount: widget.minWordCount,
+      targetKeyword: widget.targetKeyword,
+      acceptedKeywordForms: acceptedForms,
+      exampleSentence: widget.exampleSentence,
     );
 
-    if (!keywordFound) {
+    if (!result.isValid) {
       _status.value = _BuilderStatus.error;
-      _feedbackMessage.value =
-          'Your sentence must include "${widget.targetKeyword}".';
-      _attempts.value++;
-      _hapticService.error();
-      _checkAttemptLimit();
-      return;
-    }
-
-    if (widget.exampleSentence != null) {
-      final String formattedExample = widget.exampleSentence!
-          .toLowerCase()
-          .replaceAll(RegExp(r'[^\w\s]'), '')
-          .trim();
-      final String formattedInput = lowerText
-          .replaceAll(RegExp(r'[^\w\s]'), '')
-          .trim();
-
-      if (formattedInput == formattedExample) {
-        _status.value = _BuilderStatus.error;
-        _feedbackMessage.value =
-            'Nice try! You must write your own original sentence, not copy the example.';
-        _attempts.value++;
-        _hapticService.error();
-        _checkAttemptLimit();
-        return;
-      }
-    }
-
-    if (!GibberishDetectorService.isNaturalSentence(context, text)) {
-      _status.value = _BuilderStatus.error;
-      _feedbackMessage.value = 'Write a proper, meaningful sentence.';
+      _feedbackMessage.value = result.errorMessage ?? 'Error';
       _attempts.value++;
       _hapticService.error();
       _checkAttemptLimit();
@@ -141,7 +98,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     }
 
     _status.value = _BuilderStatus.success;
-    _feedbackMessage.value = 'Great sentence! 🎯';
+    _feedbackMessage.value = ContextSentenceStrings.successMessage;
     _isSubmitting.value = true;
     _hapticService.success();
     _soundService.playCorrect();
@@ -210,7 +167,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 AutoSizeText(
-                  'SKIP',
+                  ContextSentenceStrings.skipButton,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,
@@ -329,7 +286,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           AutoSizeText(
-                            'USE IT IN A SENTENCE',
+                            ContextSentenceStrings.headerTitle,
                             maxLines: 1,
                             minFontSize: 8,
                             style: TextStyle(
@@ -342,7 +299,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                           ),
                           SizedBox(height: 2.h),
                           AutoSizeText(
-                            'Prove your mastery using the target word.',
+                            ContextSentenceStrings.headerSubtitle,
                             maxLines: 1,
                             minFontSize: 6,
                             style: TextStyle(
@@ -372,7 +329,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                 ),
                               ),
                               child: AutoSizeText(
-                                'Example: "${widget.exampleSentence!}"',
+                                '${ContextSentenceStrings.examplePrefix}"${widget.exampleSentence!}"',
                                 maxLines: 2,
                                 minFontSize: 8,
                                 style: TextStyle(
@@ -483,7 +440,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                     },
                                     onSubmitted: (_) => _evaluate(),
                                     decoration: InputDecoration(
-                                      hintText: 'Type your sentence here...',
+                                      hintText: ContextSentenceStrings.hintText,
                                       hintStyle: TextStyle(
                                         color: subtitleColor.withValues(
                                           alpha: 0.5,
@@ -510,7 +467,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                             ? 0
                                             : text.split(RegExp(r'\s+')).length;
                                         return AutoSizeText(
-                                          '$wordCount / ${widget.minWordCount} words',
+                                          '$wordCount / ${widget.minWordCount} ${ContextSentenceStrings.wordsSuffix}',
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 10.sp,
@@ -537,7 +494,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                               widget.maxAttempts - attempts;
                                           if (remaining > 0) {
                                             return AutoSizeText(
-                                              '$remaining attempts left',
+                                              '$remaining ${ContextSentenceStrings.attemptsLeftSuffix}',
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: 10.sp,
@@ -548,7 +505,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                             );
                                           } else {
                                             return AutoSizeText(
-                                              'Practice Mode',
+                                              ContextSentenceStrings.practiceMode,
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: 10.sp,
@@ -645,7 +602,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           AutoSizeText(
-                                            'SUBMIT SENTENCE',
+                                            ContextSentenceStrings.submitButton,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 14.sp,
@@ -721,7 +678,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         ),
                         SizedBox(height: 12.h),
                         AutoSizeText(
-                          'MASTERY PROVEN! 🎯',
+                          ContextSentenceStrings.masteryProven,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
@@ -781,3 +738,86 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
 }
 
 enum _BuilderStatus { idle, error, success }
+
+class ValidationResult {
+  final bool isValid;
+  final String? errorMessage;
+  const ValidationResult(this.isValid, [this.errorMessage]);
+}
+
+class ContextSentenceValidator {
+  static ValidationResult validate({
+    required BuildContext context,
+    required String text,
+    required int minWordCount,
+    required String targetKeyword,
+    required List<String> acceptedKeywordForms,
+    required String? exampleSentence,
+  }) {
+    if (text.isEmpty) {
+      return const ValidationResult(false, ContextSentenceStrings.errorEmpty);
+    }
+
+    final wordCount = text.split(RegExp(r'\s+')).length;
+    if (wordCount < minWordCount) {
+      return ValidationResult(
+        false, 
+        ContextSentenceStrings.errorTooShort.replaceAll('{count}', minWordCount.toString()),
+      );
+    }
+
+    final lowerText = text.toLowerCase();
+    final keywordFound = acceptedKeywordForms.any(
+      (form) => lowerText.contains(form.toLowerCase()),
+    );
+
+    if (!keywordFound) {
+      return ValidationResult(
+        false, 
+        ContextSentenceStrings.errorMissingKeyword.replaceAll('{keyword}', targetKeyword),
+      );
+    }
+
+    if (exampleSentence != null) {
+      final String formattedExample = exampleSentence
+          .toLowerCase()
+          .replaceAll(RegExp(r'[^\w\s]'), '')
+          .trim();
+      final String formattedInput = lowerText
+          .replaceAll(RegExp(r'[^\w\s]'), '')
+          .trim();
+
+      if (formattedInput == formattedExample) {
+        return const ValidationResult(false, ContextSentenceStrings.errorCopiedExample);
+      }
+    }
+
+    if (!GibberishDetectorService.isNaturalSentence(context, text)) {
+      return const ValidationResult(false, ContextSentenceStrings.errorGibberish);
+    }
+
+    return const ValidationResult(true);
+  }
+}
+
+class ContextSentenceStrings {
+  static const String errorEmpty = 'Please write a sentence.';
+  static const String errorTooShort = 'Too short! Write at least {count} words.';
+  static const String errorMissingKeyword = 'Your sentence must include "{keyword}".';
+  static const String errorCopiedExample = 'Nice try! You must write your own original sentence, not copy the example.';
+  static const String errorGibberish = 'Write a proper, meaningful sentence.';
+  static const String successMessage = 'Great sentence! 🎯';
+  
+  static const String skipButton = 'SKIP';
+  static const String headerTitle = 'USE IT IN A SENTENCE';
+  static const String headerSubtitle = 'Prove your mastery using the target word.';
+  static const String examplePrefix = 'Example: ';
+  static const String hintText = 'Type your sentence here...';
+  
+  static const String wordsSuffix = 'words';
+  static const String attemptsLeftSuffix = 'attempts left';
+  static const String practiceMode = 'Practice Mode';
+  
+  static const String submitButton = 'SUBMIT SENTENCE';
+  static const String masteryProven = 'MASTERY PROVEN! 🎯';
+}
