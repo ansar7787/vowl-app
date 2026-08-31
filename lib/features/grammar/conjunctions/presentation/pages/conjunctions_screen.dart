@@ -34,13 +34,23 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  String? _placedBrick;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<String?> _placedBrick = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingJigsaw = false;
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _placedBrick.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingJigsaw.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -51,35 +61,29 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   }
 
   void _onBridge(String conj, int correctIndex, List<String> options) {
-    if (_isAnswered || _pendingJigsaw) return;
+    if (_isAnswered.value || _pendingJigsaw.value) return;
 
     bool isCorrect = conj == options[correctIndex];
 
     if (isCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
-      setState(() {
-        _placedBrick = conj;
-        _pendingJigsaw = true;
-      });
+      _placedBrick.value = conj;
+      _pendingJigsaw.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _placedBrick = conj;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _placedBrick.value = conj;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
+    _pendingJigsaw.value = false;
+    _isAnswered.value = true;
+    _isCorrect.value = correct;
 
     if (correct) {
       _hapticService.heavy();
@@ -101,28 +105,24 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _placedBrick = null;
-              _pendingJigsaw = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _placedBrick.value = null;
+            _pendingJigsaw.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -143,17 +143,17 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
             : question.split("___");
 
         String cleanTargetSentence = "";
-        if (quest != null && _placedBrick != null) {
+        if (quest != null && _placedBrick.value != null) {
           String fullSentence = question;
           if (question.contains("...")) {
             fullSentence = question.replaceFirst(
               RegExp(r'\.{3,}'),
-              " $_placedBrick ",
+              " ${_placedBrick.value} ",
             );
           } else if (question.contains("___")) {
             fullSentence = question.replaceFirst(
               RegExp(r'_{3,}'),
-              " $_placedBrick ",
+              " ${_placedBrick.value} ",
             );
           }
           cleanTargetSentence = fullSentence
@@ -161,13 +161,16 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
               .trim();
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _placedBrick, _pendingJigsaw]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false, // Stack needs finite space to anchor to bottom
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
@@ -300,7 +303,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                         theme.primaryColor,
                                         isCompact,
                                       ).animate().fadeIn(delay: 400.ms),
-                                    if (_isAnswered) ...[
+                                    if (_isAnswered.value) ...[
                                       SizedBox(height: isCompact ? 10.h : 20.h),
                                       _buildCorrectResult(
                                         quest,
@@ -317,7 +320,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
 
                             ConjunctionsBrickSheet(
                               options: options,
-                              placedBrick: _placedBrick,
+                              placedBrick: _placedBrick.value,
                               primaryColor: theme.primaryColor,
                               isDark: isDark,
                               isCompact: isCompact,
@@ -327,26 +330,33 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                         );
                       },
                     ),
+                  ),
+                ],
+              ),
+            ),
+            if (_pendingJigsaw.value &&
+                !_isAnswered.value &&
+                cleanTargetSentence.isNotEmpty)
+              SliverToBoxAdapter(
+                child: TypeToConfirmOverlay(
+                  expectedText: cleanTargetSentence,
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: () => _submitFinalAnswer(true),
+                  onSkipped: () => _submitFinalAnswer(false),
+                  isPositioned: false,
+                  displayText: "Type the full sentence to lock it in",
+                ),
+              ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                  height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
+            ),
+          ],
+        );
+                      },
                     ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
-                        cleanTargetSentence.isNotEmpty)
-                      TypeToConfirmOverlay(
-                        expectedText: cleanTargetSentence,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: false,
-                        displayText: "Type the full sentence to lock it in",
-                      ),
-                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
-                  ],
-                ),
-                ),
-              ],
             );
-                  },
-                ),
+          },
         );
       },
     );
@@ -364,8 +374,8 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
           _onBridge(details.data, correctIndex, options),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final nodeColor = _placedBrick != null
-            ? ((_isAnswered || _pendingJigsaw) && _isCorrect != false
+        final nodeColor = _placedBrick.value != null
+            ? ((_isAnswered.value || _pendingJigsaw.value) && _isCorrect.value != false
                   ? Colors.greenAccent
                   : Colors.redAccent)
             : (isHighlight
@@ -381,12 +391,12 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
             border: Border.all(
               color: nodeColor.withValues(alpha: 0.4),
               width: 2,
-              style: _placedBrick != null
+              style: _placedBrick.value != null
                   ? BorderStyle.none
                   : BorderStyle.solid,
             ),
             boxShadow: [
-              if (isHighlight || _placedBrick != null)
+              if (isHighlight || _placedBrick.value != null)
                 BoxShadow(
                   color: nodeColor.withValues(alpha: 0.2),
                   blurRadius: 20,
@@ -395,9 +405,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
             ],
           ),
           child: Center(
-            child: _placedBrick != null
+            child: _placedBrick.value != null
                 ? Text(
-                    _placedBrick!.toUpperCase(),
+                    _placedBrick.value!.toUpperCase(),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: isCompact ? 14.sp : 20.sp,
@@ -465,7 +475,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect == true;
+    final bool correct = _isCorrect.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Container(
