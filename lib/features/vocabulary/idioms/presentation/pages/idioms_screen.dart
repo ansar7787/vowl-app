@@ -183,6 +183,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
               isAnswered: _isAnswered.value && (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
+              hasStage2: true,
               onContinue: () {
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
@@ -218,10 +219,12 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                           physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                           slivers: [
                             SliverToBoxAdapter(
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                child: Stack(
-                            children: [
+                              child: IgnorePointer(
+                                ignoring: _isFirstStagePassed.value,
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                  child: Stack(
+                                    children: [
                               Positioned.fill(
                             child: CustomPaint(
                               painter: GridPainter(
@@ -258,21 +261,29 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                             ],
                           ),
                         ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
+                            SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SpeakToConfirmOverlay(
+                                    expectedText: quest.correctAnswer ?? '',
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () => _submitFinalAnswer(true),
+                                    onSkipped: () => _submitFinalAnswer(false),
+                                    isPositioned: false,
+                                  ),
+                                  SizedBox(height: 60.h),
+                                ],
+                              ),
+                            ),
+                        ],
                       ),
-                      ),
-                    ),
-                  ],
-                ),
-                if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
-                  SpeakToConfirmOverlay(
-                    expectedText: quest.correctAnswer ?? '',
-                    primaryColor: theme.primaryColor,
-                    onConfirmed: () => _submitFinalAnswer(true),
-                    onSkipped: () => _submitFinalAnswer(false),
-                    isPositioned: true,
-                  ),
-              ],
-            );
+                    ],
+                  );
           },
         ),
       );
@@ -394,9 +405,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
 
                 SizedBox(height: gapMiddle),
 
-                if (!_isFirstStagePassed.value)
-                  Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: Wrap(
                           spacing: 12.w,
                           runSpacing: isCompact ? 8.h : 12.h,
