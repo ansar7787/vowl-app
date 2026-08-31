@@ -35,14 +35,25 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  int _targetIndex = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<int> _targetIndex = ValueNotifier(-1);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingJigsaw = false;
-  String? _assembledSentence;
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ValueNotifier<String?> _assembledSentence = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _targetIndex.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingJigsaw.dispose();
+    _assembledSentence.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -53,7 +64,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
   }
 
   void _submitAnswer(GrammarQuest quest) {
-    if (_isAnswered || _targetIndex == -1 || _pendingJigsaw) return;
+    if (_isAnswered.value || _targetIndex.value == -1 || _pendingJigsaw.value) return;
 
     final allWords = quest.shuffledWords ?? [];
     if (allWords.isEmpty) return;
@@ -62,7 +73,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     final words = allWords.skip(1).toList();
 
     final resultingWords = List<String>.from(words);
-    resultingWords.insert(_targetIndex, modifier);
+    resultingWords.insert(_targetIndex.value, modifier);
 
     final result = resultingWords
         .join(' ')
@@ -74,28 +85,22 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _assembledSentence = result;
-        _pendingJigsaw = true;
-      });
+      _assembledSentence.value = result;
+      _pendingJigsaw.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _assembledSentence = result;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _assembledSentence.value = result;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
+    _pendingJigsaw.value = false;
+    _isAnswered.value = true;
+    _isCorrect.value = correct;
 
     if (correct) {
       _hapticService.success();
@@ -117,29 +122,25 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _targetIndex = -1;
-              _pendingJigsaw = false;
-              _assembledSentence = null;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _targetIndex.value = -1;
+            _pendingJigsaw.value = false;
+            _assembledSentence.value = null;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -164,18 +165,21 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             cleanTargetSentence = sentence
                 .replaceAll('[', '')
                 .replaceAll(']', '');
-          } else if (_assembledSentence != null) {
-            cleanTargetSentence = _assembledSentence!;
+          } else if (_assembledSentence.value != null) {
+            cleanTargetSentence = _assembledSentence.value!;
           }
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _targetIndex, _pendingJigsaw, _assembledSentence]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false, // Stack needs finite space to anchor to bottom
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
@@ -306,7 +310,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                 .slideY(begin: 0.2, end: 0),
 
                             // Result Feedback
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: isCompact ? 8.h : 24.h),
                               _buildResult(
                                 quest,
@@ -322,23 +326,23 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                 child: ModifierMagneticArena(
                                   words: words,
                                   modifier: modifier,
-                                  targetIndex: _targetIndex,
-                                  isAnswered: _isAnswered || _pendingJigsaw,
+                                  targetIndex: _targetIndex.value,
+                                  isAnswered: _isAnswered.value || _pendingJigsaw.value,
                                   isDark: isDark,
                                   primaryColor: theme.primaryColor,
                                   onSlotAccepted: (idx) =>
-                                      setState(() => _targetIndex = idx),
+                                      _targetIndex.value = idx,
                                   onSlotReset: () =>
-                                      setState(() => _targetIndex = -1),
+                                      _targetIndex.value = -1,
                                   isCompact: isCompact,
                                 ),
                               ),
                             ),
 
                             // Draggable Magnet
-                            if (!_isAnswered &&
-                                !_pendingJigsaw &&
-                                _targetIndex == -1)
+                            if (!_isAnswered.value &&
+                                !_pendingJigsaw.value &&
+                                _targetIndex.value == -1)
                               Draggable<String>(
                                 data: modifier,
                                 feedback: _buildTactileMagnet(
@@ -366,9 +370,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                               ),
 
                             // Submit Button
-                            if (!_isAnswered &&
-                                !_pendingJigsaw &&
-                                _targetIndex != -1) ...[
+                            if (!_isAnswered.value &&
+                                !_pendingJigsaw.value &&
+                                _targetIndex.value != -1) ...[
                               SizedBox(height: isCompact ? 8.h : 16.h),
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -421,26 +425,32 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                         );
                       },
                     ),
-                    ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
+                  ),
+                ],
+              ),
+            ),
+                    if (_pendingJigsaw.value &&
+                        !_isAnswered.value &&
                         cleanTargetSentence.isNotEmpty)
-                      TypeToConfirmOverlay(
-                        expectedText: cleanTargetSentence,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: false,
-                        displayText: "Type the complete sentence to lock it in",
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: cleanTargetSentence,
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onSkipped: () => _submitFinalAnswer(false),
+                          isPositioned: false,
+                          displayText: "Type the complete sentence to lock it in",
+                        ),
                       ),
-                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
+                    ),
                   ],
-                ),
-                ),
-              ],
-            );
+                );
                   },
                 ),
+            );
+          },
         );
       },
     );
@@ -489,7 +499,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect == true;
+    final bool correct = _isCorrect.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
