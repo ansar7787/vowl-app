@@ -10,6 +10,8 @@ To achieve butter-smooth 60fps performance and completely eliminate `setState` l
 *   **Macro-Level (Top of Screen):** Use `ListenableBuilder` combined with `Listenable.merge([notifier1, notifier2, ...])` to listen to 5-6 global game states at once without nesting.
 *   **Micro-Level (Inside Widgets):** Use `ValueListenableBuilder<T>` deep inside child widgets (e.g., draggable shards) so that high-frequency animations (like 60hz drag updates) only rebuild a tiny 10-pixel box instead of the whole screen.
 
+> **CRITICAL REMINDER FOR ALL MODULES**: Never limit the `setState` audit to just the main `*_screen.dart` files. You **must** also thoroughly audit all custom widgets inside `presentation/widgets/` (such as `ReactionCore`, `TopicDraggable`, etc.) for hidden `setState` logic.
+
 ## 3. The 6-Pillar Checklist
 Every single one of the 100 games must pass these 6 checks:
 1. **[Dual-Stage Scroll UX]**: Does it use the continuous scroll reveal? (Mark as `[N/A]` if the game doesn't need a second stage).
@@ -124,7 +126,13 @@ Every single one of the 100 games must pass these 6 checks:
 
 ### 🔵 Grammar (19 Games)
 *(Will fill checkboxes individually as we process them)*
-1. Article Insertion
+1. **Article Insertion**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 2. Clause Connector
 3. Conditionals
 4. Conjunctions
