@@ -51,9 +51,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         }
       },
     );
-    _controller.addListener(() {
-      if (mounted) setState(() {});
-    });
+
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -118,16 +116,19 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         final options = quest?.options ?? [];
         final root = quest?.rootWord ?? quest?.word ?? "";
 
-        // Use hovering suffix if dragging, otherwise use active selection
-        final displaySuffixIndex = _controller.hoveringSuffixIndex ?? _controller.activeSuffixIndex;
-        final activeSuffix =
-            (displaySuffixIndex != null &&
-                options.isNotEmpty &&
-                displaySuffixIndex < options.length)
-            ? options[displaySuffixIndex]
-            : null;
+        return ListenableBuilder(
+          listenable: _controller,
+          builder: (context, _) {
+            // Use hovering suffix if dragging, otherwise use active selection
+            final displaySuffixIndex = _controller.hoveringSuffixIndex ?? _controller.activeSuffixIndex;
+            final activeSuffix =
+                (displaySuffixIndex != null &&
+                    options.isNotEmpty &&
+                    displaySuffixIndex < options.length)
+                ? options[displaySuffixIndex]
+                : null;
 
-        return VocabularyBaseLayout(
+            return VocabularyBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: _controller.isAnswered,
@@ -298,6 +299,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                     );
                   },
                 ),
+            );
+          },
         );
       },
     );

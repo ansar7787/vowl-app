@@ -39,10 +39,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   final _soundService = di.sl<SoundService>();
   final _scrollController = ScrollController();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
@@ -69,6 +69,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     for (var n in _shardTrails) { n.dispose(); }
     _activeShardIndex.dispose();
     _scrollController.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
     super.dispose();
   }
 
@@ -84,14 +88,14 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onShardDragStart(int index, DragStartDetails details) {
-    if (_isAnswered || _isWarping[index].value) return;
+    if (_isAnswered.value || _isWarping[index].value) return;
     _activeShardIndex.value = index;
     _shardTrails[index].value = [];
     _hapticService.light();
   }
 
   void _onShardDragUpdate(int index, DragUpdateDetails details) {
-    if (_isAnswered || _activeShardIndex.value != index) return;
+    if (_isAnswered.value || _activeShardIndex.value != index) return;
     
     final currentOffset = _shardOffsets[index].value + details.delta;
     _shardOffsets[index].value = currentOffset;
@@ -122,7 +126,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onShardDragEnd(int index, VocabularyQuest quest) {
-    if (_isAnswered || _activeShardIndex.value != index) return;
+    if (_isAnswered.value || _activeShardIndex.value != index) return;
     if (_lastConstraints == null) return;
 
     final isCompact = _lastConstraints!.maxHeight < 580;
@@ -150,13 +154,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onShardTapped(int index) {
-    if (_isAnswered || _isWarping[index].value) return;
+    if (_isAnswered.value || _isWarping[index].value) return;
     _activeShardIndex.value = index;
     _hapticService.light();
   }
 
   void _onWarpGateTapped(VocabularyQuest quest) {
-    if (_activeShardIndex.value == null || _isAnswered || _lastConstraints == null) {
+    if (_activeShardIndex.value == null || _isAnswered.value || _lastConstraints == null) {
       return;
     }
     final index = _activeShardIndex.value!;
@@ -175,28 +179,22 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
     if (isCorrect) {
       _hapticService.selection(); // Subtle feedback for Phase 1
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -252,7 +250,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = !state.answerStatus.isAnswered && _isAnswered;
+          final isRetry = !state.answerStatus.isAnswered && _isAnswered.value;
 
           if (isNewQuestion || isRetry) {
             if (_scrollController.hasClients) {
@@ -262,23 +260,19 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                 curve: Curves.easeOutBack,
               );
             }
-            setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
+              _isAnswered.value = false;
+              _isCorrect.value = null;
+              _isFirstStagePassed.value = false;
               _initShards(state.currentQuest.options?.length ?? 0);
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+              _isAnswered.value = true;
+              _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -308,15 +302,18 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             ? state.currentQuest
             : _lastQuest;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: (state is VocabularyLoaded)
-              ? state.isFinalFailure
-              : false,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed]),
+          builder: (context, _) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: (state is VocabularyLoaded)
+                  ? state.isFinalFailure
+                  : false,
+              showConfetti: _showConfetti.value,
           hasStage2: true,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           useScrolling: false,
@@ -333,7 +330,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                 ) * -0.2;
                 
                 Future.delayed(1.seconds, () {
-                  if (mounted && !_isAnswered) {
+                  if (mounted && !_isAnswered.value) {
                     _shardOffsets[i].value = Offset.zero;
                   }
                 });
@@ -366,7 +363,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             children: [
 
                               IgnorePointer(
-                                ignoring: _isFirstStagePassed,
+                                ignoring: _isFirstStagePassed.value,
                                 child: SizedBox(
                                   width: safeWidth,
                                   height: safeHeight,
@@ -476,7 +473,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                           ),
                                         ),
                                       ),
-                                      if (_isFirstStagePassed)
+                                      if (_isFirstStagePassed.value)
                                         Column(
                                           children: [
                                             SizedBox(height: 20.h),
@@ -487,7 +484,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                 nuanceDifference: quest.nuanceDifference!,
                                                 primaryColor: theme.primaryColor,
                                               ),
-                                            if (!_isAnswered)
+                                            if (!_isAnswered.value)
                                               ContextSentenceBuilder(
                                                 targetKeyword: quest.correctAnswer ?? "",
                                                 primaryColor: theme.primaryColor,
@@ -506,9 +503,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               ],
                             ),
                           ],
-          );
-            },
-          ),
+                        );
+                  },
+                ),
+            );
+          },
         );
       },
     );
