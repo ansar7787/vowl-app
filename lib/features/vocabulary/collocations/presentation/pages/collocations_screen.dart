@@ -39,7 +39,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
@@ -59,14 +59,14 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
+    _isDragPassed.dispose();
     _selectedOption.dispose();
     _scrollController.dispose();
     super.dispose();
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value || _selectedOption.value != null) return;
+    if (_isAnswered.value || _isDragPassed.value || _selectedOption.value != null) return;
 
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
@@ -75,7 +75,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
 
     if (isCorrect) {
       _hapticService.selection();
-      _isFirstStagePassed.value = true;
+      _isDragPassed.value = true;
       
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted && _scrollController.hasClients) {
@@ -147,7 +147,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
-            _isFirstStagePassed.value = false;
+            _isDragPassed.value = false;
             _selectedOption.value = null;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             _isAnswered.value = true;
@@ -187,7 +187,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             : _lastQuest;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedOption]),
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isDragPassed, _selectedOption]),
           builder: (context, _) {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
@@ -195,6 +195,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
+              hasStage2: true,
               onContinue: () {
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
@@ -202,7 +203,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                     _isCorrect.value == false) {
                   _isAnswered.value = false;
                   _isCorrect.value = null;
-                  _isFirstStagePassed.value = false;
+                  _isDragPassed.value = false;
                   _selectedOption.value = null;
                   if (_scrollController.hasClients) {
                     _scrollController.animateTo(
@@ -212,11 +213,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                     );
                   }
                 } else {
-                  context.read<VocabularyBloc>().add(NextQuestion());
+                  context.read<VocabularyBloc>().add(const NextQuestion());
                 }
               },
               onHint: () =>
-                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+                  context.read<VocabularyBloc>().add(const VocabularyHintUsed()),
               useScrolling: false,
               disablePadding: true,
               child: quest == null
@@ -252,14 +253,16 @@ class _CollocationsScreenState extends State<CollocationsScreen>
 
                         return CustomScrollView(
                           controller: _scrollController,
-                          physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                           slivers: [
                         SliverToBoxAdapter(
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
-                            child: Column(
-                              children: [
-                                  Column(
+                          child: IgnorePointer(
+                            ignoring: _isDragPassed.value,
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(minHeight: maxHeight),
+                              child: Column(
+                                children: [
+                                    Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
@@ -286,7 +289,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                           onWillAcceptWithDetails: (details) {
                                             _hapticService.selection();
                                             return !_isAnswered.value &&
-                                                !_isFirstStagePassed.value;
+                                                !_isDragPassed.value;
                                           },
                                           onAcceptWithDetails: (details) {
                                             _submitAnswer(
@@ -385,53 +388,54 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                       SizedBox(height: gapBottom),
                                     ],
                                   ),
-                                ],
+                                  ],
                                 ),
-                               if (_isFirstStagePassed.value &&
-                                  (!_isAnswered.value || _isCorrect.value == null))
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: Column(
-                                    children: [
-                                      if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty) ...[
-                                        Builder(
-                                          builder: (context) {
-                                            final correctPair = '${quest.word} ${quest.correctAnswer}'.toLowerCase().trim();
-                                            final filteredWrongPairs = quest.wrongCollocations!
-                                                .where((w) => w.toLowerCase().trim() != correctPair)
-                                                .toList();
-
-                                            if (filteredWrongPairs.isEmpty) return const SizedBox.shrink();
-
-                                            return Column(
-                                              children: [
-                                                CollocationsWrongPairs(
-                                                  wrongCollocations: filteredWrongPairs,
-                                                  color: theme.primaryColor,
-                                                ),
-                                                SizedBox(height: 24.h),
-                                              ],
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                    ],
-                                  ),
-                                ),
-                               if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
-                                 ContextSentenceBuilder(
-                                   targetKeyword: '${quest.word} ${quest.correctAnswer}',
-                                   primaryColor: theme.primaryColor,
-                                   onConfirmed: () => _submitFinalAnswer(true),
-                                   onSkipped: () => _submitFinalAnswer(false),
-                                   isPositioned: false,
-                                   exampleSentence: _getFormattedExampleSentence(quest),
-                                 ),
-                              SizedBox(height: 40.h),
-                            ],
-                          ),
+                              ],
+                            ),
+                            ),
                           ),
                         ),
+                        if (_isDragPassed.value && (!_isAnswered.value || _isCorrect.value == null))
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
+                              child: Column(
+                                children: [
+                                  if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty) ...[
+                                    Builder(
+                                      builder: (context) {
+                                        final correctPair = '${quest.word} ${quest.correctAnswer}'.toLowerCase().trim();
+                                        final filteredWrongPairs = quest.wrongCollocations!
+                                            .where((w) => w.toLowerCase().trim() != correctPair)
+                                            .toList();
+
+                                        if (filteredWrongPairs.isEmpty) return const SizedBox.shrink();
+
+                                        return Column(
+                                          children: [
+                                            CollocationsWrongPairs(
+                                              wrongCollocations: filteredWrongPairs,
+                                              color: theme.primaryColor,
+                                            ),
+                                            SizedBox(height: 24.h),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                  ContextSentenceBuilder(
+                                    targetKeyword: '${quest.word} ${quest.correctAnswer}',
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () => _submitFinalAnswer(true),
+                                    onSkipped: () => _submitFinalAnswer(false),
+                                    isPositioned: false,
+                                    exampleSentence: _getFormattedExampleSentence(quest),
+                                  ),
+                                  SizedBox(height: 40.h),
+                                ],
+                              ),
+                            ),
+                          ),
                       ],
                     );
                   },
@@ -465,7 +469,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           isCorrect: _isCorrect.value,
           selectedOption: _selectedOption.value,
           isFinalFailure: isFinalFailure,
-          isFirstStagePassed: _isFirstStagePassed.value,
+          isFirstStagePassed: _isDragPassed.value,
           index: entry.key,
           isHintUsed: isHintUsed,
           onTap: () {
@@ -476,7 +480,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           },
         );
 
-        if (_isAnswered.value || _isFirstStagePassed.value) {
+        if (_isAnswered.value || _isDragPassed.value) {
           return bubble;
         }
 

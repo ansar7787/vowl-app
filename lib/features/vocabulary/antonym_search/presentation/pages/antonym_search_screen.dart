@@ -38,7 +38,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
@@ -64,7 +64,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
-    _isFirstStagePassed.dispose();
+    _isDragPassed.dispose();
     _activeShardIndex.dispose();
     _scrollController.dispose();
     _disposeShardNotifiers();
@@ -87,7 +87,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     _lastProcessedIndex = index;
     _isAnswered.value = false;
     _isCorrect.value = null;
-    _isFirstStagePassed.value = false;
+    _isDragPassed.value = false;
     _targetIsPositive = math.Random().nextBool();
     
     _disposeShardNotifiers();
@@ -157,7 +157,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
             _isAnswered,
             _isCorrect,
             _showConfetti,
-            _isFirstStagePassed,
+            _isDragPassed,
           ]),
           builder: (context, _) {
             return VocabularyBaseLayout(
@@ -169,29 +169,34 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                   ? state.isFinalFailure
                   : false,
               showConfetti: _showConfetti.value,
-              onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+              hasStage2: true,
+              onContinue: () => context.read<VocabularyBloc>().add(const NextQuestion()),
               onHint: () =>
-                  context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+                  context.read<VocabularyBloc>().add(const VocabularyHintUsed()),
               useScrolling: false,
               disablePadding: true,
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  _lastConstraints = constraints;
-                  final maxHeight = constraints.maxHeight;
-                  final isCompact = maxHeight < 580;
+              child: quest == null
+                  ? const SizedBox.shrink()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        _lastConstraints = constraints;
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                  return Stack(
-                    children: [
-                      CustomScrollView(
-                        controller: _scrollController,
-                        physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height: constraints.maxHeight,
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                children: [
+                        return Stack(
+                          children: [
+                            CustomScrollView(
+                              controller: _scrollController,
+                              physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverToBoxAdapter(
+                                  child: SizedBox(
+                                    height: constraints.maxHeight,
+                                    child: IgnorePointer(
+                                      ignoring: _isDragPassed.value,
+                                      child: Stack(
+                                        clipBehavior: Clip.none,
+                                        children: [
                                   Positioned.fill(
                                     child: CustomPaint(painter: FluxGridPainter(isDark)),
                                   ),
@@ -286,19 +291,19 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                               ),
                             ),
                           ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
+                          if (_isDragPassed.value && !_isAnswered.value)
                             SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  if (quest?.gradientScale != null && quest!.gradientScale!.isNotEmpty)
+                                  if (quest.gradientScale != null && quest.gradientScale!.isNotEmpty)
                                     AntonymGradientScale(
                                       gradientScale: quest.gradientScale!,
                                       primaryColor: theme.primaryColor,
                                     ),
                                   SizedBox(height: 24.h),
                                   SpeakToConfirmOverlay(
-                                    expectedText: "${quest?.word} ${quest?.correctAnswer}",
-                                    displayText: "${quest?.word?.toUpperCase()}   ↔   ${quest?.correctAnswer?.toUpperCase()}",
+                                    expectedText: "${quest.word} ${quest.correctAnswer}",
+                                    displayText: "${quest.word?.toUpperCase()}   ↔   ${quest.correctAnswer?.toUpperCase()}",
                                     primaryColor: theme.primaryColor,
                                     onConfirmed: () => _submitVerbalEvaluation(true),
                                     onSkipped: () => _submitVerbalEvaluation(false),
@@ -425,7 +430,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     if (_isFused[index] != null) {
       _isFused[index]!.value = true;
     }
-    _isFirstStagePassed.value = true;
+    _isDragPassed.value = true;
     _activeShardIndex.value = null;
 
     Future.delayed(const Duration(milliseconds: 300), () {

@@ -26,6 +26,7 @@ class VocabularyBaseLayout extends StatelessWidget {
   final bool useScrolling;
   final bool disablePadding;
   final String? customHintText;
+  final bool hasStage2;
 
   const VocabularyBaseLayout({
     super.key,
@@ -41,6 +42,7 @@ class VocabularyBaseLayout extends StatelessWidget {
     this.useScrolling = false,
     this.disablePadding = false,
     this.customHintText,
+    this.hasStage2 = false,
   });
 
   @override
@@ -157,6 +159,12 @@ class VocabularyBaseLayout extends StatelessWidget {
             ruleContent = quest.meaningBreakdown;
             finalExplanation = quest.explanation;
           }
+        }
+
+        if (hasStage2) {
+          ruleContent = null;
+          customContent = null;
+          finalExplanation = quest.explanation ?? quest.definition;
         }
 
         return GameFeedbackCard(

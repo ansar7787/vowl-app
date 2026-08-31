@@ -1,0 +1,237 @@
+# VOWL 100 Main Games - Diamond Standard Architecture Plan
+
+## 1. Core Architecture (Continuous Scroll Reveal)
+Instead of a jarring screen swap, we are using the **Continuous Scroll Reveal** pattern for games that require a second stage (pedagogical confirmation).
+*   **Stage 1 (Game Mechanism):** User interacts with the puzzle. Upon success, the UI locks (touch disabled) so the answer cannot be changed.
+*   **Stage 2 (Pedagogical Reveal):** The screen smoothly auto-scrolls down to reveal the deep pedagogical data and the final confirmation overlay. The user can manually scroll back up to review their locked answer.
+
+## 2. The 6-Pillar Checklist
+Every single one of the 100 games must pass these 6 checks:
+1. **[Dual-Stage Scroll UX]**: Does it use the continuous scroll reveal? (Mark as `[N/A]` if the game doesn't need a second stage).
+2. **[Sliver Performance Layout]**: Does it use `CustomScrollView` and `Slivers` to prevent render overflow and ensure 60fps?
+3. **[Zero setState (ValueNotifier)]**: Are all `setState` calls completely eliminated in favor of `ValueNotifier` and `ListenableBuilder`?
+4. **[Feedback Card Logic]**: Does it correctly hide pedagogical fields if Stage 2 is used, showing only the explanation?
+5. **[10/10 UX Confirmation (No Patchwork)]**: Checked deeply to ensure it's a real-world, premium, flawless UX.
+6. **[Git Commit & Push]**: Committed and pushed to GitHub for safety.
+
+---
+
+## Master Task Tracker (100 Games)
+
+### 🟢 Vocabulary (12 Games)
+**1. Academic Word**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
+
+**2. Antonym Search**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
+
+**3. Collocations**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
+
+**4. Context Clues**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**5. Contextual Usage**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**6. Flashcards**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**7. Idioms**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**8. Phrasal Verbs**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**9. Prefix/Suffix**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**10. Synonym Search**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**11. Topic Vocab**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+**12. Word Formation**
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
+
+---
+
+### 🔵 Grammar (19 Games)
+*(Will fill checkboxes individually as we process them)*
+1. Article Insertion
+2. Clause Connector
+3. Conditionals
+4. Conjunctions
+5. Direct/Indirect Speech
+6. Grammar Quest
+7. Modals Selection
+8. Modifier Placement
+9. Parts of Speech
+10. Preposition Choice
+11. Pronoun Resolution
+12. Punctuation Mastery
+13. Question Formatter
+14. Relative Clauses
+15. Sentence Correction
+16. Subject-Verb Agreement
+17. Tense Mastery
+18. Voice Swap
+19. Word Reorder
+
+---
+
+### 🟣 Reading (12 Games)
+1. Cloze Test
+2. Find Word Meaning
+3. Guess Title
+4. Paragraph Summary
+5. Read and Answer
+6. Read and Match
+7. Reading Conclusion
+8. Reading Inference
+9. Reading Speed Check
+10. Sentence Order Reading
+11. Skimming/Scanning
+12. True/False Reading
+
+---
+
+### 🟠 Listening (10 Games)
+1. Ambient ID
+2. Audio Fill Blanks
+3. Audio Multiple Choice
+4. Audio Sentence Order
+5. Audio True/False
+6. Detail Spotlight
+7. Emotion Recognition
+8. Fast Speech Decoder
+9. Listening Inference
+10. Sound Image Match
+
+---
+
+### 🟡 Speaking (10 Games)
+1. Daily Expression
+2. Dialogue Roleplay
+3. Pronunciation Focus
+4. Repeat Sentence
+5. Scene Description
+6. Situation Speaking
+7. Speak Missing Word
+8. Speak Opposite
+9. Speak Synonym
+10. Yes/No Speaking
+
+---
+
+### 🟤 Writing (11 Games)
+1. Complete Sentence
+2. Correction Writing
+3. Daily Journal
+4. Describe Situation
+5. Essay Drafting
+6. Fix The Sentence
+7. Opinion Writing
+8. Sentence Builder
+9. Short Answer
+10. Summarize Story
+11. Writing Email
+
+---
+
+### 🔴 Accent (12 Games)
+1. Connected Speech
+2. Consonant Clarity
+3. Dialect Drill
+4. Intonation Mimic
+5. Minimal Pairs
+6. Pitch Modulation
+7. Pitch Pattern Match
+8. Shadowing Challenge
+9. Speed Variance
+10. Syllable Stress
+11. Vowel Distinction
+12. Word Linking
+
+---
+
+### 🎭 Roleplay (10 Games)
+1. Branching Dialogue
+2. Conflict Resolver
+3. Elevator Pitch
+4. Emergency Hub
+5. Gourmet Order
+6. Job Interview
+7. Medical Consult
+8. Situational Response
+9. Social Spark
+10. Travel Desk
+
+---
+
+### 👑 Elite Mastery (4 Games)
+1. Accent Shadowing
+2. Idiom Match
+3. Speed Spelling
+4. Story Builder

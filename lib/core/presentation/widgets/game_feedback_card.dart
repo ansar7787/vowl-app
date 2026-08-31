@@ -329,12 +329,27 @@ class _ExplanationCard extends StatefulWidget {
 }
 
 class _ExplanationCardState extends State<_ExplanationCard> {
-  String? _translatedText;
+  late final ValueNotifier<String?> _translatedTextNotifier;
+
+  @override
+  void initState() {
+    super.initState();
+    _translatedTextNotifier = ValueNotifier<String?>(null);
+  }
+
+  @override
+  void dispose() {
+    _translatedTextNotifier.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.originalExplanation;
-    return Container(
+    return ValueListenableBuilder<String?>(
+      valueListenable: _translatedTextNotifier,
+      builder: (context, translatedText, child) {
+        final displayText = translatedText ?? widget.originalExplanation;
+        return Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
           decoration: BoxDecoration(
@@ -370,12 +385,12 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     ),
                   ),
                   const Spacer(),
-                  if (_translatedText == null)
+                  if (translatedText == null)
                     TranslateButtonWidget(
                       originalText: widget.originalExplanation,
                       onTranslationComplete: (translated) {
                         if (mounted) {
-                          setState(() => _translatedText = translated);
+                          _translatedTextNotifier.value = translated;
                         }
                       },
                     ),
@@ -403,5 +418,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
           duration: 300.ms,
           curve: Curves.easeOutBack,
         );
+      },
+    );
   }
 }
