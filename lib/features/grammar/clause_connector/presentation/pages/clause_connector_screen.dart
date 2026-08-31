@@ -30,13 +30,23 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  String? _draggingConnector;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<String?> _draggingConnector = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingTypeSubmit = false;
+  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _draggingConnector.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingTypeSubmit.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -47,35 +57,29 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   }
 
   void _onSnap(String connector, int correctIndex, List<String> options) {
-    if (_isAnswered || _pendingTypeSubmit) return;
+    if (_isAnswered.value || _pendingTypeSubmit.value) return;
 
     bool isCorrect = connector == options[correctIndex];
 
     if (isCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
-      setState(() {
-        _draggingConnector = connector;
-        _pendingTypeSubmit = true;
-      });
+      _draggingConnector.value = connector;
+      _pendingTypeSubmit.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _draggingConnector = connector;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _draggingConnector.value = connector;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingTypeSubmit = false);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
+    _pendingTypeSubmit.value = false;
+    _isAnswered.value = true;
+    _isCorrect.value = correct;
 
     if (correct) {
       _hapticService.success();
@@ -97,28 +101,24 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _pendingTypeSubmit = false;
-              _draggingConnector = null;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _pendingTypeSubmit.value = false;
+            _draggingConnector.value = null;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -154,31 +154,34 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           }
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
-          useScrolling: false, // Stack layout
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LayoutBuilder(
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _pendingTypeSubmit, _draggingConnector]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
+              useScrolling: false, // Stack layout
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return CustomScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: LayoutBuilder(
                               builder: (context, constraints) {
                                 final maxHeight = constraints.maxHeight;
                         final isCompact = maxHeight < 580;
@@ -278,7 +281,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                             ),
                             SizedBox(height: gapMiddle),
 
-                            if (!_isAnswered && !_pendingTypeSubmit)
+                            if (!_isAnswered.value && !_pendingTypeSubmit.value)
                               _buildConnectorPalette(
                                 options,
                                 theme.primaryColor,
@@ -291,24 +294,30 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                         );
                       },
                     ),
-                    ),
-                    if (_pendingTypeSubmit && !_isAnswered && cleanTargetSentence.isNotEmpty)
-                      TypeToConfirmOverlay(
-                        expectedText: cleanTargetSentence,
-                        displayText: "Type the complete sentence to lock in the clause structure",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        allowSkip: true,
-                      ),
-                    SizedBox(height: (_isAnswered || _pendingTypeSubmit) ? 160.h : 60.h),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              ],
+            ),
+                            if (_pendingTypeSubmit.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                              SliverToBoxAdapter(
+                                child: TypeToConfirmOverlay(
+                                  expectedText: cleanTargetSentence,
+                                  displayText: "Type the complete sentence to lock in the clause structure",
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () => _submitFinalAnswer(true),
+                                  onSkipped: () => _submitFinalAnswer(false),
+                                  allowSkip: true,
+                                ),
+                              ),
+                            SliverToBoxAdapter(
+                              child: SizedBox(height: (_isAnswered.value || _pendingTypeSubmit.value) ? 160.h : 60.h),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
             );
-                  },
-                ),
+          },
         );
       },
     );
@@ -322,13 +331,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     bool isCompact,
   ) {
     return DragTarget<String>(
-      onWillAcceptWithDetails: (details) => !_isAnswered && !_pendingTypeSubmit,
+      onWillAcceptWithDetails: (details) => !_isAnswered.value && !_pendingTypeSubmit.value,
       onAcceptWithDetails: (details) =>
           _onSnap(details.data, quest?.correctAnswerIndex ?? 0, options),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final portColor = (_isAnswered || _pendingTypeSubmit)
-            ? (_isCorrect != false ? Colors.greenAccent : Colors.redAccent)
+        final portColor = (_isAnswered.value || _pendingTypeSubmit.value)
+            ? (_isCorrect.value != false ? Colors.greenAccent : Colors.redAccent)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.3));
@@ -342,12 +351,12 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             border: Border.all(
               color: portColor.withValues(alpha: 0.4),
               width: 2,
-              style: (_isAnswered || _pendingTypeSubmit)
+              style: (_isAnswered.value || _pendingTypeSubmit.value)
                   ? BorderStyle.none
                   : BorderStyle.solid,
             ),
             boxShadow: [
-              if (isHighlight || _isAnswered || _pendingTypeSubmit)
+              if (isHighlight || _isAnswered.value || _pendingTypeSubmit.value)
                 BoxShadow(
                   color: portColor.withValues(alpha: 0.2),
                   blurRadius: 20,
@@ -356,13 +365,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             ],
           ),
           child: Center(
-            child: (_isAnswered || _pendingTypeSubmit)
+            child: (_isAnswered.value || _pendingTypeSubmit.value)
                 ? _buildConnector(
-                    _draggingConnector ?? "---",
+                    _draggingConnector.value ?? "---",
                     primaryColor,
                     isDark,
                     isCompact,
-                    isCorrect: _isCorrect != false,
+                    isCorrect: _isCorrect.value != false,
                   ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
                 : Text(
                     isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT",
