@@ -217,6 +217,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
+              hasStage2: true,
               onContinue: () {
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
@@ -295,9 +296,11 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                           ),
                           Column(
                             children: [
-                                Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              IgnorePointer(
+                                ignoring: _isFirstStagePassed.value,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -428,7 +431,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                 ),
                               ],
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                          ),
+                          if (_isFirstStagePassed.value && !_isAnswered.value)
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 child: Column(
