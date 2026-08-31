@@ -35,13 +35,24 @@ class SentenceCorrectionScreen extends StatefulWidget {
 class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  int? _selectedWordIndex;
-  String? _selectedOption;
+  final ValueNotifier<int?> _selectedWordIndex = ValueNotifier(null);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   List<String>? _shuffledOptions;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _selectedWordIndex.dispose();
+    _selectedOption.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -123,12 +134,10 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
   }
 
   void _onWordTap(int index) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _hapticService.selection();
-    setState(() {
-      _selectedWordIndex = index;
-      _selectedOption = null;
-    });
+    _selectedWordIndex.value = index;
+    _selectedOption.value = null;
   }
 
   void _confirmRepair(
@@ -136,12 +145,12 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
     GrammarQuest quest,
     List<String> words,
   ) {
-    if (_selectedWordIndex == null || _selectedOption == null) return;
+    if (_selectedWordIndex.value == null || _selectedOption.value == null) return;
 
-    bool isWordCorrect = correctIndices.contains(_selectedWordIndex);
-    int chosenIndex = quest.options?.indexOf(_selectedOption!) ?? -1;
+    bool isWordCorrect = correctIndices.contains(_selectedWordIndex.value);
+    int chosenIndex = quest.options?.indexOf(_selectedOption.value!) ?? -1;
     bool isOptionCorrect =
-        (_selectedOption == quest.correctAnswer) ||
+        (_selectedOption.value == quest.correctAnswer) ||
         (chosenIndex == quest.correctAnswerIndex);
     bool overallCorrect = isWordCorrect && isOptionCorrect;
 
@@ -150,7 +159,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
       print("Sentence: ${quest.sentence}");
       print("Words split list: $words");
       print(
-        "Tapped Word Index: $_selectedWordIndex (Word: ${words[_selectedWordIndex!]})",
+        "Tapped Word Index: ${_selectedWordIndex.value} (Word: ${words[_selectedWordIndex.value!]})",
       );
       print("Target Error Indices calculated: $correctIndices");
       print("Is Word Target Correct? $isWordCorrect");
@@ -166,28 +175,22 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
     if (overallCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -209,28 +212,24 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -261,13 +260,16 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
             ? []
             : _getCorrectIndices(words, quest);
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedWordIndex, _selectedOption, _isFirstStagePassed]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           useScrolling: false,
@@ -340,15 +342,15 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                                     return SentenceCorrectionDiagnosticWord(
                                       text: words[i],
                                       index: i,
-                                      isSuspected: _selectedWordIndex == i,
+                                      isSuspected: _selectedWordIndex.value == i,
                                       isCorrectZap:
-                                          _isAnswered &&
-                                          _isCorrect == true &&
+                                          _isAnswered.value &&
+                                          _isCorrect.value == true &&
                                           correctIndices.contains(i),
                                       isWrongZap:
-                                          _isAnswered &&
-                                          _isCorrect == false &&
-                                          _selectedWordIndex == i,
+                                          _isAnswered.value &&
+                                          _isCorrect.value == false &&
+                                          _selectedWordIndex.value == i,
                                       isErrorHighlight: isHighlighted,
                                       isDark: isDark,
                                       primaryColor: theme.primaryColor,
@@ -398,17 +400,17 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                         ),
 
                         // Options Panel
-                        if (_selectedWordIndex != null) ...[
+                        if (_selectedWordIndex.value != null) ...[
                           SizedBox(height: 24.h),
                           SentenceCorrectionOptionsPanel(
                             options: _shuffledOptions ?? [],
-                            selectedOption: _selectedOption,
-                            isAnswered: _isAnswered,
+                            selectedOption: _selectedOption.value,
+                            isAnswered: _isAnswered.value,
                             isDark: isDark,
                             primaryColor: theme.primaryColor,
                             onOptionSelect: (option) {
                               _hapticService.selection();
-                              setState(() => _selectedOption = option);
+                              _selectedOption.value = option;
                             },
                             onConfirm: () =>
                                 _confirmRepair(correctIndices, quest, words),
@@ -416,7 +418,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                         ],
 
                         // Correction Feedback
-                        if (_isAnswered && _isCorrect == false) ...[
+                        if (_isAnswered.value && _isCorrect.value == false) ...[
                           SizedBox(height: 24.h),
                           SentenceCorrectionFeedback(
                             correction: quest.correctedPart ?? "",
@@ -428,25 +430,23 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                       ],
                     ),
                   ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          if (_isFirstStagePassed && !_isAnswered)
-                            TypeToConfirmOverlay(
-                              expectedText: quest.correctAnswer ?? _selectedOption ?? '',
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
-                              isPositioned: false,
-                            ),
-                          SizedBox(height: _isAnswered ? 160.h : 60.h),
-                        ],
+                    if (_isFirstStagePassed.value && !_isAnswered.value)
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: quest.correctAnswer ?? _selectedOption.value ?? '',
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitVerbalEvaluation(true),
+                          onSkipped: () => _submitVerbalEvaluation(false),
+                          isPositioned: false,
+                        ),
                       ),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: _isAnswered.value ? 160.h : 60.h),
                     ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
