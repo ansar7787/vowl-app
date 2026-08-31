@@ -115,6 +115,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                   ? state.isFinalFailure
                   : false,
               showConfetti: _controller.showConfetti,
+              hasStage2: true,
               onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
               useScrolling: false,
               onHint: () {
@@ -135,17 +136,29 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                   instruction: quest.hint ?? quest.instruction,
                                 ),
                                 SizedBox(height: 20.h),
-                                PrefixSuffixSynthesizer(
-                                  rootWord: quest.rootWord ?? "???",
-                                  options: quest.options ?? [],
-                                  correctAnswer: quest.correctAnswer ?? "",
-                                  selectedAffix: _controller.selectedAffix,
-                                  hintedAffix: _controller.hintedAffix,
-                                  isFirstStagePassed: _controller.isFirstStagePassed,
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  onAffixSelected: (affix, isPrefix) => _controller.onAffixSelected(affix, quest, isPrefix),
+                                IgnorePointer(
+                                  ignoring: _controller.isFirstStagePassed,
+                                  child: PrefixSuffixSynthesizer(
+                                    rootWord: quest.rootWord ?? "???",
+                                    options: quest.options ?? [],
+                                    correctAnswer: quest.correctAnswer ?? "",
+                                    selectedAffix: _controller.selectedAffix,
+                                    hintedAffix: _controller.hintedAffix,
+                                    isFirstStagePassed: _controller.isFirstStagePassed,
+                                    primaryColor: theme.primaryColor,
+                                    isDark: isDark,
+                                    onAffixSelected: (affix, isPrefix) => _controller.onAffixSelected(affix, quest, isPrefix),
+                                  ),
                                 ),
+                                if (_controller.isFirstStagePassed && !_controller.isAnswered)
+                                  TypeToConfirmOverlay(
+                                    isPositioned: false,
+                                    expectedText: quest.correctAnswer ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () => _controller.submitFinalAnswer(true, quest),
+                                    onBypassed: () => _controller.submitFinalAnswer(true, quest),
+                                    onSkipped: () => _controller.submitFinalAnswer(false, quest),
+                                  ),
                                 SizedBox(height: 60.h),
                               ],
                             ),
@@ -154,29 +167,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                       ],
               ),
             );
-            
-            return Stack(
-              children: [
-                baseLayout,
-                if (_controller.isFirstStagePassed && !_controller.isAnswered && quest != null)
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: Material(
-                      type: MaterialType.transparency,
-                      child: TypeToConfirmOverlay(
-                        isPositioned: false,
-                        expectedText: quest.correctAnswer ?? "",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _controller.submitFinalAnswer(true, quest),
-                        onBypassed: () => _controller.submitFinalAnswer(true, quest),
-                        onSkipped: () => _controller.submitFinalAnswer(false, quest),
-                      ),
-                    ),
-                  ),
-              ],
-            );
+            return baseLayout;
           },
         );
       },
