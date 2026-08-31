@@ -5,7 +5,12 @@ Instead of a jarring screen swap, we are using the **Continuous Scroll Reveal** 
 *   **Stage 1 (Game Mechanism):** User interacts with the puzzle. Upon success, the UI locks (touch disabled) so the answer cannot be changed.
 *   **Stage 2 (Pedagogical Reveal):** The screen smoothly auto-scrolls down to reveal the deep pedagogical data and the final confirmation overlay. The user can manually scroll back up to review their locked answer.
 
-## 2. The 6-Pillar Checklist
+## 2. State Management (Zero setState)
+To achieve butter-smooth 60fps performance and completely eliminate `setState` lag, we strictly use a hybrid Listenable approach:
+*   **Macro-Level (Top of Screen):** Use `ListenableBuilder` combined with `Listenable.merge([notifier1, notifier2, ...])` to listen to 5-6 global game states at once without nesting.
+*   **Micro-Level (Inside Widgets):** Use `ValueListenableBuilder<T>` deep inside child widgets (e.g., draggable shards) so that high-frequency animations (like 60hz drag updates) only rebuild a tiny 10-pixel box instead of the whole screen.
+
+## 3. The 6-Pillar Checklist
 Every single one of the 100 games must pass these 6 checks:
 1. **[Dual-Stage Scroll UX]**: Does it use the continuous scroll reveal? (Mark as `[N/A]` if the game doesn't need a second stage).
 2. **[Sliver Performance Layout]**: Does it use `CustomScrollView` and `Slivers` to prevent render overflow and ensure 60fps?
