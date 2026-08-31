@@ -27,13 +27,19 @@ class GuessTitleOptions extends StatefulWidget {
 
 class _GuessTitleOptionsState extends State<GuessTitleOptions> {
   final _hapticService = di.sl<HapticService>();
-  int? _selectedIndex;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _selectedIndex.dispose();
+    super.dispose();
+  }
 
   @override
   void didUpdateWidget(GuessTitleOptions oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (!widget.isAnswered && oldWidget.isAnswered) {
-      _selectedIndex = null;
+      _selectedIndex.value = null;
     }
   }
 
@@ -41,9 +47,7 @@ class _GuessTitleOptionsState extends State<GuessTitleOptions> {
     if (widget.isAnswered) return;
 
     _hapticService.selection();
-    setState(() {
-      _selectedIndex = index;
-    });
+    _selectedIndex.value = index;
 
     final selected = widget.options[index];
     final isCorrect = selected.trim().toLowerCase() == widget.correctAnswer.trim().toLowerCase();
@@ -53,10 +57,13 @@ class _GuessTitleOptionsState extends State<GuessTitleOptions> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: List.generate(widget.options.length, (index) {
-        final isSelected = _selectedIndex == index;
+    return ValueListenableBuilder<int?>(
+      valueListenable: _selectedIndex,
+      builder: (context, selectedIndex, child) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: List.generate(widget.options.length, (index) {
+            final isSelected = selectedIndex == index;
         final option = widget.options[index];
 
         return Padding(
@@ -132,7 +139,9 @@ class _GuessTitleOptionsState extends State<GuessTitleOptions> {
             ),
           ),
         );
-      }),
+          }),
+        );
+      },
     );
   }
 }

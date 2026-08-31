@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -34,10 +34,19 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _showTypeToConfirm = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _showTypeToConfirm.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -50,19 +59,15 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
   }
 
   void _submitFinalAnswer(bool isCorrect, [ReadingQuest? quest, String? selectedOption]) {
-    if (_isAnswered || _showTypeToConfirm) return;
+    if (_isAnswered.value || _showTypeToConfirm.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = isCorrect;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _showTypeToConfirm = true;
-      });
+      _showTypeToConfirm.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -81,9 +86,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
   }
 
   void _onTypeConfirmed() {
-    setState(() {
-      _showTypeToConfirm = false;
-    });
+    _showTypeToConfirm.value = false;
     context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -96,27 +99,23 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _showTypeToConfirm = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _showTypeToConfirm.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -131,12 +130,15 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _showTypeToConfirm]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () =>
               context.read<ReadingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -176,24 +178,24 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                   ),
                                   child: _buildPassageContent(quest, theme.primaryColor, isDark),
                                 ),
-                                if (!_isAnswered || _isCorrect == null) ...[
+                                if (!_isAnswered.value || _isCorrect.value == null) ...[
                                   SizedBox(height: 24.h),
                                   GuessTitleOptions(
                                     options: quest.options ?? [],
                                     correctAnswer: quest.correctAnswer ?? "",
                                     primaryColor: theme.primaryColor,
                                     isDark: isDark,
-                                    isAnswered: _isAnswered,
+                                    isAnswered: _isAnswered.value,
                                     onOptionSelected: (isCorrect, selectedOption) {
                                       _submitFinalAnswer(isCorrect, quest, selectedOption);
                                     },
                                   ),
                                 ],
-                                if (_isAnswered) ...[
+                                if (_isAnswered.value) ...[
                                   SizedBox(height: 30.h),
                                   GuessTitleResult(
                                     quest: quest,
-                                    isCorrect: _isCorrect == true,
+                                    isCorrect: _isCorrect.value == true,
                                     isDark: isDark,
                                   ),
                                 ],
@@ -201,27 +203,26 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              SizedBox(height: 50.h),
-                            ],
+                        if (_showTypeToConfirm.value && _isAnswered.value)
+                          SliverToBoxAdapter(
+                            child: TypeToConfirmOverlay(
+                              expectedText: quest.correctAnswer ?? '',
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: _onTypeConfirmed,
+                              onSkipped: _onTypeConfirmed,
+                              allowSkip: true,
+                              isPositioned: false,
+                            ),
                           ),
+                        SliverToBoxAdapter(
+                          child: SizedBox(height: 50.h),
                         ),
                       ],
                     ),
-                    if (_showTypeToConfirm && _isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: _onTypeConfirmed,
-                        onSkipped: _onTypeConfirmed,
-                        allowSkip: true,
-                      ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
@@ -231,7 +232,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     final passage = quest.passage ?? "";
     final evidence = quest.evidenceLine ?? "";
     
-    if (!_isAnswered || evidence.isEmpty || !passage.contains(evidence)) {
+    if (!_isAnswered.value || evidence.isEmpty || !passage.contains(evidence)) {
       return Text(
         passage,
         style: TextStyle(
