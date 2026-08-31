@@ -153,13 +153,18 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                   final flyingWordBottom = isCompact ? 145.h : maxHeight * 0.42;
                   final binBottom = isCompact ? 10.h : maxHeight * 0.04;
 
-                  return SizedBox(
-                    height: maxHeight,
-                    width: maxWidth,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      clipBehavior: Clip.none,
-                      children: [
+                  return CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: SizedBox(
+                          height: maxHeight,
+                          width: maxWidth,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            clipBehavior: Clip.none,
+                            children: [
                         // 1. BATCH PROGRESS
                         Positioned(
                           top: counterTop,
@@ -409,8 +414,11 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                       duration: 250.ms,
                                     ),
                           ),
-                      ],
-                    ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   );
                 },
               ),
