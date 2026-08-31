@@ -288,7 +288,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                           ],
                         );
                       },
-                    );
+                    )
         );
       },
     );

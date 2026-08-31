@@ -191,6 +191,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                   (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
+              hasStage2: true,
               onContinue: () {
                 final currentState = context.read<VocabularyBloc>().state;
                 if (currentState is VocabularyLoaded &&
@@ -228,12 +229,14 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                   : const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
-                                  child: ConstrainedBox(
-                                    constraints: BoxConstraints(
-                                      minHeight: constraints.maxHeight,
-                                    ),
-                                    child: Stack(
-                                      children: [
+                                  child: IgnorePointer(
+                                    ignoring: _isFirstStagePassed.value,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
+                                      ),
+                                      child: Stack(
+                                        children: [
                                         Positioned.fill(
                                           child: CustomPaint(
                                             painter: GridPainter(
@@ -309,29 +312,33 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                                   ? 420.h
                                                   : 60.h,
                                             ),
-                                          ],
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
+                                if (_isFirstStagePassed.value &&
+                                    (!_isAnswered.value ||
+                                        _isCorrect.value == null))
+                                  SliverToBoxAdapter(
+                                    child: Column(
+                                      children: [
+                                        SpeakToConfirmOverlay(
+                                          expectedText: (quest.prompt ?? "").replaceAll(
+                                            RegExp(r'_+'),
+                                            quest.correctAnswer ?? "",
+                                          ),
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () => _submitFinalAnswer(true),
+                                          onSkipped: () => _submitFinalAnswer(false),
+                                          isPositioned: false,
+                                        ),
+                                        SizedBox(height: 60.h),
+                                      ],
+                                    ),
+                                  ),
                               ],
                             ),
-                            if (_isFirstStagePassed.value &&
-                                (!_isAnswered.value ||
-                                    _isCorrect.value == null))
-                              SpeakToConfirmOverlay(
-                                expectedText: (quest.prompt ?? "").replaceAll(
-                                  RegExp(r'_+'),
-                                  quest.correctAnswer ?? "",
-                                ),
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: true,
-                              ),
-                          ],
-                        );
                       },
                     ),
             );
@@ -441,32 +448,30 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
 
             SizedBox(height: gapMiddle),
 
-            (!_isFirstStagePassed.value)
-                ? (isCompact
-                      ? SizedBox(
-                          height: 100.h,
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: SizedBox(
-                              width: maxWidth,
-                              child: _buildChipsWrap(
-                                quest,
-                                color,
-                                isDark,
-                                isCompact,
-                                currentOptionCorrect,
-                              ),
-                            ),
+            (isCompact
+                  ? SizedBox(
+                      height: 100.h,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: SizedBox(
+                          width: maxWidth,
+                          child: _buildChipsWrap(
+                            quest,
+                            color,
+                            isDark,
+                            isCompact,
+                            currentOptionCorrect,
                           ),
-                        )
-                      : _buildChipsWrap(
-                          quest,
-                          color,
-                          isDark,
-                          isCompact,
-                          currentOptionCorrect,
-                        ))
-                : const SizedBox.shrink(),
+                        ),
+                      ),
+                    )
+                  : _buildChipsWrap(
+                      quest,
+                      color,
+                      isDark,
+                      isCompact,
+                      currentOptionCorrect,
+                    )),
             SizedBox(height: gapBottom),
           ],
         );

@@ -248,7 +248,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                         builder: (context, _) {
                                           return AntonymOptionShard(
                                             index: i,
-                                            text: quest!.options![i],
+                                            text: quest.options![i],
                                             color: theme.primaryColor,
                                             isDark: isDark,
                                             initialPos: _getInitialPosition(i),
@@ -291,7 +291,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                               ),
                             ),
                           ),
-                          if (_isDragPassed.value && !_isAnswered.value)
+                        ),
+                        if (_isDragPassed.value && !_isAnswered.value)
                             SliverToBoxAdapter(
                               child: Column(
                                 children: [

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/game_scaffold.dart';
 
 /// Defines the current stage of the game.
 enum GameStage {
