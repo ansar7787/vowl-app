@@ -35,14 +35,25 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _rotation = 0.0;
-  int _targetIndex = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _rotation = ValueNotifier(0.0);
+  final ValueNotifier<int> _targetIndex = ValueNotifier(-1);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingJigsaw = false;
+  final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _rotation.dispose();
+    _targetIndex.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingJigsaw.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -53,35 +64,29 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
   }
 
   void _onFire(int nodeIndex, int correctIndex) {
-    if (_isAnswered || _pendingJigsaw) return;
+    if (_isAnswered.value || _pendingJigsaw.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
-      setState(() {
-        _targetIndex = nodeIndex;
-        _pendingJigsaw = true;
-      });
+      _targetIndex.value = nodeIndex;
+      _pendingJigsaw.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _targetIndex = nodeIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _targetIndex.value = nodeIndex;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
+    _pendingJigsaw.value = false;
+    _isAnswered.value = true;
+    _isCorrect.value = correct;
 
     if (correct) {
       _hapticService.heavy();
@@ -103,28 +108,24 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesRestored) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _targetIndex = -1;
-              _pendingJigsaw = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _targetIndex.value = -1;
+            _pendingJigsaw.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -147,18 +148,21 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
             cleanTargetSentence = sentence
                 .replaceAll('[', '')
                 .replaceAll(']', '');
-          } else if (_targetIndex != -1) {
-            cleanTargetSentence = options[_targetIndex];
+          } else if (_targetIndex.value != -1) {
+            cleanTargetSentence = options[_targetIndex.value];
           }
         }
 
-        return GrammarBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _targetIndex, _pendingJigsaw, _rotation]),
+          builder: (context, _) {
+            return GrammarBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+              showConfetti: _showConfetti.value,
           useScrolling: false, // Stack needs finite space to anchor to bottom
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
@@ -301,7 +305,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                                 .slideY(begin: 0.2, end: 0),
 
                             // Result
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: isCompact ? 8.h : 20.h),
                               _buildResult(
                                 quest,
@@ -328,26 +332,32 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                         );
                       },
                     ),
-                    ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
+                  ),
+                ],
+              ),
+            ),
+                    if (_pendingJigsaw.value &&
+                        !_isAnswered.value &&
                         cleanTargetSentence.isNotEmpty)
-                      TypeToConfirmOverlay(
-                        expectedText: cleanTargetSentence,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: false,
-                        displayText: "Type the resolved sentence to lock it in",
+                      SliverToBoxAdapter(
+                        child: TypeToConfirmOverlay(
+                          expectedText: cleanTargetSentence,
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onSkipped: () => _submitFinalAnswer(false),
+                          isPositioned: false,
+                          displayText: "Type the resolved sentence to lock it in",
+                        ),
                       ),
-                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
+                    SliverToBoxAdapter(
+                      child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
+                    ),
                   ],
-                ),
-                ),
-              ],
-            );
+                );
                   },
                 ),
+            );
+          },
         );
       },
     );
@@ -380,20 +390,18 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
 
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered || _pendingJigsaw) return;
+            if (_isAnswered.value || _pendingJigsaw.value) return;
             final localPos = details.localPosition;
-            setState(() {
-              _rotation = atan2(
-                localPos.dy - centerPoint.dy,
-                localPos.dx - centerPoint.dx,
-              );
-            });
+            _rotation.value = atan2(
+              localPos.dy - centerPoint.dy,
+              localPos.dx - centerPoint.dx,
+            );
             for (int i = 0; i < nodePoints.length; i++) {
               final nodeAngle = atan2(
                 nodePoints[i].dy - centerPoint.dy,
                 nodePoints[i].dx - centerPoint.dx,
               );
-              if ((_rotation - nodeAngle).abs() < 0.15) {
+              if ((_rotation.value - nodeAngle).abs() < 0.15) {
                 _onFire(i, correctIndex);
               }
             }
@@ -401,14 +409,14 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
           child: CustomPaint(
             size: Size.infinite,
             painter: PronounResolutionGravityPainter(
-              rotation: _rotation,
+              rotation: _rotation.value,
               centerPoint: centerPoint,
               nodes: nodePoints,
               options: options,
               primaryColor: primaryColor,
-              isAnswered: _isAnswered || _pendingJigsaw,
-              isCorrect: _isCorrect ?? false,
-              targetNode: _targetIndex,
+              isAnswered: _isAnswered.value || _pendingJigsaw.value,
+              isCorrect: _isCorrect.value ?? false,
+              targetNode: _targetIndex.value,
               pronoun: pronoun,
               isDark: isDark,
               isCompact: isCompact,
@@ -425,7 +433,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final bool correct = _isCorrect == true;
+    final bool correct = _isCorrect.value == true;
     final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
 
     return Padding(
