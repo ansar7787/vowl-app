@@ -314,10 +314,12 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                             ),
                                         ],
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ),
-                                if (_isFirstStagePassed.value &&
+                              ),
+                            ),
+                            if (_isFirstStagePassed.value &&
                                     (!_isAnswered.value ||
                                         _isCorrect.value == null))
                                   SliverToBoxAdapter(
@@ -339,6 +341,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                   ),
                               ],
                             ),
+                          ],
+                        );
                       },
                     ),
             );

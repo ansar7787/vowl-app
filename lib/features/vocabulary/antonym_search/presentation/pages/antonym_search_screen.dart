@@ -220,7 +220,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
                                               child: AntonymNebulaCore(
-                                                word: quest?.word ?? "",
+                                                word: quest.word ?? "",
                                                 color: targetColor,
                                                 isDark: isDark,
                                                 targetIsPositive: _targetIsPositive,
@@ -228,7 +228,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                             ),
                                           )
                                         : AntonymNebulaCore(
-                                            word: quest?.word ?? "",
+                                            word: quest.word ?? "",
                                             color: targetColor,
                                             isDark: isDark,
                                             targetIsPositive: _targetIsPositive,
@@ -236,7 +236,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                   ),
 
                                   ...List.generate(
-                                    quest?.options?.length ?? 0,
+                                    quest.options?.length ?? 0,
                                     (i) {
                                       if (_shardOffsets[i] == null || _isFused[i] == null) return const SizedBox.shrink();
                                       return ListenableBuilder(
@@ -266,7 +266,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                   ),
 
                                   ...List.generate(
-                                    quest?.options?.length ?? 0,
+                                    quest.options?.length ?? 0,
                                     (i) {
                                       if (_shardOffsets[i] == null) return const SizedBox.shrink();
                                       return ValueListenableBuilder<int?>(
