@@ -29,19 +29,24 @@ class ModalsRotaryDial extends StatefulWidget {
 
 class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
   final _hapticService = di.sl<HapticService>();
-  double _rotation = 0.0;
+  final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   double _panStartAngle = 0.0;
-  int _selectedIndex = 0;
+  final ValueNotifier<int> _selectedIndex = ValueNotifier(0);
+
+  @override
+  void dispose() {
+    _rotation.dispose();
+    _selectedIndex.dispose();
+    super.dispose();
+  }
 
   @override
   void didUpdateWidget(covariant ModalsRotaryDial oldWidget) {
     super.didUpdateWidget(oldWidget);
     // Reset on new question (detected by isAnswered going from true to false)
     if (!widget.isAnswered && oldWidget.isAnswered) {
-      setState(() {
-        _rotation = 0.0;
-        _selectedIndex = 0;
-      });
+      _rotation.value = 0.0;
+      _selectedIndex.value = 0;
     }
   }
 
@@ -52,9 +57,12 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
     final dialOffset = widget.isCompact ? 80.r : 125.r;
     final gestureCenter = Offset(physicalDialSize / 2, physicalDialSize / 2);
 
-    return Stack(
-      alignment: Alignment.center,
-      children: [
+    return ListenableBuilder(
+      listenable: Listenable.merge([_rotation, _selectedIndex]),
+      builder: (context, _) {
+        return Stack(
+          alignment: Alignment.center,
+          children: [
         // Outer Halo
         Container(
           width: outerSize,
@@ -70,7 +78,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
         // Dial Words (Holographic Ring)
         ...List.generate(widget.options.length, (i) {
           final angle = (i * (2 * pi / widget.options.length)) - (pi / 2);
-          final isSelected = _selectedIndex == i;
+          final isSelected = _selectedIndex.value == i;
           return Transform.translate(
             offset: Offset(cos(angle) * dialOffset, sin(angle) * dialOffset),
             child: AnimatedScale(
@@ -99,7 +107,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
             final pos = details.localPosition;
             _panStartAngle =
                 atan2(pos.dy - gestureCenter.dy, pos.dx - gestureCenter.dx) -
-                _rotation;
+                _rotation.value;
           },
           onPanUpdate: (details) {
             if (widget.isAnswered) return;
@@ -116,18 +124,16 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                 (count - (normalizedRot / (2 * pi) * count).round()) % count;
             final selected = rawIndex.clamp(0, count - 1);
 
-            if (selected != _selectedIndex) {
+            if (selected != _selectedIndex.value) {
               _hapticService.selection();
               widget.onSelectionChanged(selected);
             }
 
-            setState(() {
-              _rotation = newRotation;
-              _selectedIndex = selected;
-            });
+            _rotation.value = newRotation;
+            _selectedIndex.value = selected;
           },
           child: Transform.rotate(
-            angle: _rotation,
+            angle: _rotation.value,
             child: Container(
               width: physicalDialSize,
               height: physicalDialSize,
@@ -212,6 +218,8 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
           ),
         ),
       ],
+    );
+      },
     );
   }
 }
