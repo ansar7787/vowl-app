@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ContextSentenceBuilder extends StatefulWidget {
   final String targetKeyword;
@@ -98,7 +99,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     }
 
     _status.value = _BuilderStatus.success;
-    _feedbackMessage.value = ContextSentenceStrings.successMessage;
+    _feedbackMessage.value = ContextSentenceStrings.successMessage(context);
     _isSubmitting.value = true;
     _hapticService.success();
     _soundService.playCorrect();
@@ -167,7 +168,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 AutoSizeText(
-                  ContextSentenceStrings.skipButton,
+                  ContextSentenceStrings.skipButton(context),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,
@@ -286,7 +287,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           AutoSizeText(
-                            ContextSentenceStrings.headerTitle,
+                            ContextSentenceStrings.headerTitle(context),
                             maxLines: 1,
                             minFontSize: 8,
                             style: TextStyle(
@@ -299,7 +300,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                           ),
                           SizedBox(height: 2.h),
                           AutoSizeText(
-                            ContextSentenceStrings.headerSubtitle,
+                            ContextSentenceStrings.headerSubtitle(context),
                             maxLines: 1,
                             minFontSize: 6,
                             style: TextStyle(
@@ -329,7 +330,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                 ),
                               ),
                               child: AutoSizeText(
-                                '${ContextSentenceStrings.examplePrefix}"${widget.exampleSentence!}"',
+                                '${ContextSentenceStrings.examplePrefix(context)}"${widget.exampleSentence!}"',
                                 maxLines: 2,
                                 minFontSize: 8,
                                 style: TextStyle(
@@ -440,7 +441,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                     },
                                     onSubmitted: (_) => _evaluate(),
                                     decoration: InputDecoration(
-                                      hintText: ContextSentenceStrings.hintText,
+                                      hintText: ContextSentenceStrings.hintText(context),
                                       hintStyle: TextStyle(
                                         color: subtitleColor.withValues(
                                           alpha: 0.5,
@@ -467,7 +468,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                             ? 0
                                             : text.split(RegExp(r'\s+')).length;
                                         return AutoSizeText(
-                                          '$wordCount / ${widget.minWordCount} ${ContextSentenceStrings.wordsSuffix}',
+                                          '$wordCount / ${widget.minWordCount} ${ContextSentenceStrings.wordsSuffix(context)}',
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
                                             fontSize: 10.sp,
@@ -494,7 +495,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                               widget.maxAttempts - attempts;
                                           if (remaining > 0) {
                                             return AutoSizeText(
-                                              '$remaining ${ContextSentenceStrings.attemptsLeftSuffix}',
+                                              '$remaining ${ContextSentenceStrings.attemptsLeftSuffix(context)}',
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: 10.sp,
@@ -505,7 +506,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                             );
                                           } else {
                                             return AutoSizeText(
-                                              ContextSentenceStrings.practiceMode,
+                                              ContextSentenceStrings.practiceMode(context),
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: 10.sp,
@@ -602,7 +603,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           AutoSizeText(
-                                            ContextSentenceStrings.submitButton,
+                                            ContextSentenceStrings.submitButton(context),
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 14.sp,
@@ -678,7 +679,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         ),
                         SizedBox(height: 12.h),
                         AutoSizeText(
-                          ContextSentenceStrings.masteryProven,
+                          ContextSentenceStrings.masteryProven(context),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
@@ -755,14 +756,14 @@ class ContextSentenceValidator {
     required String? exampleSentence,
   }) {
     if (text.isEmpty) {
-      return const ValidationResult(false, ContextSentenceStrings.errorEmpty);
+      return ValidationResult(false, ContextSentenceStrings.errorEmpty(context));
     }
 
     final wordCount = text.split(RegExp(r'\s+')).length;
     if (wordCount < minWordCount) {
       return ValidationResult(
         false, 
-        ContextSentenceStrings.errorTooShort.replaceAll('{count}', minWordCount.toString()),
+        ContextSentenceStrings.errorTooShort(context, minWordCount),
       );
     }
 
@@ -774,7 +775,7 @@ class ContextSentenceValidator {
     if (!keywordFound) {
       return ValidationResult(
         false, 
-        ContextSentenceStrings.errorMissingKeyword.replaceAll('{keyword}', targetKeyword),
+        ContextSentenceStrings.errorMissingKeyword(context, targetKeyword),
       );
     }
 
@@ -788,12 +789,12 @@ class ContextSentenceValidator {
           .trim();
 
       if (formattedInput == formattedExample) {
-        return const ValidationResult(false, ContextSentenceStrings.errorCopiedExample);
+        return ValidationResult(false, ContextSentenceStrings.errorCopiedExample(context));
       }
     }
 
     if (!GibberishDetectorService.isNaturalSentence(context, text)) {
-      return const ValidationResult(false, ContextSentenceStrings.errorGibberish);
+      return ValidationResult(false, ContextSentenceStrings.errorGibberish(context));
     }
 
     return const ValidationResult(true);
@@ -801,23 +802,23 @@ class ContextSentenceValidator {
 }
 
 class ContextSentenceStrings {
-  static const String errorEmpty = 'Please write a sentence.';
-  static const String errorTooShort = 'Too short! Write at least {count} words.';
-  static const String errorMissingKeyword = 'Your sentence must include "{keyword}".';
-  static const String errorCopiedExample = 'Nice try! You must write your own original sentence, not copy the example.';
-  static const String errorGibberish = 'Write a proper, meaningful sentence.';
-  static const String successMessage = 'Great sentence! 🎯';
+  static String errorEmpty(BuildContext context) => context.tr('game.sentence_builder.error_empty', fallback: 'Please write a sentence.');
+  static String errorTooShort(BuildContext context, int count) => context.tr('game.sentence_builder.error_too_short', fallback: 'Too short! Write at least {count} words.').replaceAll('{count}', count.toString());
+  static String errorMissingKeyword(BuildContext context, String keyword) => context.tr('game.sentence_builder.error_missing_keyword', fallback: 'Your sentence must include "{keyword}".').replaceAll('{keyword}', keyword);
+  static String errorCopiedExample(BuildContext context) => context.tr('game.sentence_builder.error_copied_example', fallback: 'Nice try! You must write your own original sentence, not copy the example.');
+  static String errorGibberish(BuildContext context) => context.tr('game.sentence_builder.error_gibberish', fallback: 'Write a proper, meaningful sentence.');
+  static String successMessage(BuildContext context) => context.tr('game.sentence_builder.success_message', fallback: 'Great sentence! 🎯');
   
-  static const String skipButton = 'SKIP';
-  static const String headerTitle = 'USE IT IN A SENTENCE';
-  static const String headerSubtitle = 'Prove your mastery using the target word.';
-  static const String examplePrefix = 'Example: ';
-  static const String hintText = 'Type your sentence here...';
+  static String skipButton(BuildContext context) => context.tr('game.sentence_builder.skip_button', fallback: 'SKIP');
+  static String headerTitle(BuildContext context) => context.tr('game.sentence_builder.header_title', fallback: 'USE IT IN A SENTENCE');
+  static String headerSubtitle(BuildContext context) => context.tr('game.sentence_builder.header_subtitle', fallback: 'Prove your mastery using the target word.');
+  static String examplePrefix(BuildContext context) => context.tr('game.sentence_builder.example_prefix', fallback: 'Example: ');
+  static String hintText(BuildContext context) => context.tr('game.sentence_builder.hint_text', fallback: 'Type your sentence here...');
   
-  static const String wordsSuffix = 'words';
-  static const String attemptsLeftSuffix = 'attempts left';
-  static const String practiceMode = 'Practice Mode';
+  static String wordsSuffix(BuildContext context) => context.tr('game.sentence_builder.words_suffix', fallback: 'words');
+  static String attemptsLeftSuffix(BuildContext context) => context.tr('game.sentence_builder.attempts_left_suffix', fallback: 'attempts left');
+  static String practiceMode(BuildContext context) => context.tr('game.sentence_builder.practice_mode', fallback: 'Practice Mode');
   
-  static const String submitButton = 'SUBMIT SENTENCE';
-  static const String masteryProven = 'MASTERY PROVEN! 🎯';
+  static String submitButton(BuildContext context) => context.tr('game.sentence_builder.submit_button', fallback: 'SUBMIT SENTENCE');
+  static String masteryProven(BuildContext context) => context.tr('game.sentence_builder.mastery_proven', fallback: 'MASTERY PROVEN! 🎯');
 }
