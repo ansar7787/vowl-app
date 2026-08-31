@@ -97,12 +97,12 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Git Commit & Push
 
 **10. Synonym Search**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 **11. Topic Vocab**
 - [ ] Dual-Stage Scroll UX

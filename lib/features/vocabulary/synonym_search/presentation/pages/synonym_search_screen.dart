@@ -317,6 +317,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               ? state.isFinalFailure
               : false,
           showConfetti: _showConfetti,
+          hasStage2: true,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           useScrolling: false,
           disablePadding: true,
@@ -364,16 +365,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                           child: Column(
                             children: [
 
-                                AnimatedSwitcher(
-                                  duration: 600.ms,
-                                  switchInCurve: Curves.easeOut,
-                                  switchOutCurve: Curves.easeIn,
-                                  child: !_isFirstStagePassed
-                                      ? SizedBox(
-                                          key: const ValueKey('phase1'),
-                                          width: safeWidth,
-                                          height: safeHeight,
-                                          child: Stack(
+                              IgnorePointer(
+                                ignoring: _isFirstStagePassed,
+                                child: SizedBox(
+                                  width: safeWidth,
+                                  height: safeHeight,
+                                  child: Stack(
                                             alignment: Alignment.center,
                                             clipBehavior: Clip.none,
                                             children: [
@@ -477,43 +474,38 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                               ),
                                             ],
                                           ),
-                                        )
-                                      : SizedBox(
-                                          key: const ValueKey('phase2'),
-                                          width: safeWidth,
-                                          height: safeHeight,
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            children: [
-                                              SizedBox(height: 20.h),
-                                              if (quest.nuanceDifference != null && quest.nuanceDifference!.isNotEmpty)
-                                                SynonymNuanceScale(
-                                                  targetWord: quest.word ?? "",
-                                                  synonymWord: quest.correctAnswer ?? "",
-                                                  nuanceDifference: quest.nuanceDifference!,
-                                                  primaryColor: theme.primaryColor,
-                                                ),
-                                            ],
-                                          ),
                                         ),
+                                      ),
+                                      if (_isFirstStagePassed)
+                                        Column(
+                                          children: [
+                                            SizedBox(height: 20.h),
+                                            if (quest.nuanceDifference != null && quest.nuanceDifference!.isNotEmpty)
+                                              SynonymNuanceScale(
+                                                targetWord: quest.word ?? "",
+                                                synonymWord: quest.correctAnswer ?? "",
+                                                nuanceDifference: quest.nuanceDifference!,
+                                                primaryColor: theme.primaryColor,
+                                              ),
+                                            if (!_isAnswered)
+                                              ContextSentenceBuilder(
+                                                targetKeyword: quest.correctAnswer ?? "",
+                                                primaryColor: theme.primaryColor,
+                                                acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
+                                                onConfirmed: () => _submitVerbalEvaluation(true),
+                                                onSkipped: () => _submitVerbalEvaluation(false),
+                                                isPositioned: false,
+                                                exampleSentence: quest.contextSentence,
+                                              ),
+                                          ],
+                                        ),
+                                      SizedBox(height: 60.h),
+                                    ],
+                                  ),
                                 ),
-                        SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              if (_isFirstStagePassed && !_isAnswered)
-                ContextSentenceBuilder(
-                  targetKeyword: quest.correctAnswer ?? "",
-                  primaryColor: theme.primaryColor,
-                  acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
-                  onConfirmed: () => _submitVerbalEvaluation(true),
-                  onSkipped: () => _submitVerbalEvaluation(false),
-                  isPositioned: true,
-                  exampleSentence: quest.contextSentence,
-                ),
-            ],
+                              ],
+                            ),
+                          ],
           );
             },
           ),
