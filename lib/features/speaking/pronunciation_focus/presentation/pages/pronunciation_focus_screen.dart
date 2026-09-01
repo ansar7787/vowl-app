@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,17 +40,17 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _heatLevel = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _heatLevel = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
   late AnimationController _tickerController;
-  double _timeVal = 0.0;
+  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
 
-  bool _showGuide = false;
+  final ValueNotifier<bool> _showGuide = ValueNotifier(false);
 
   @override
   void initState() {
@@ -62,9 +62,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     _tickerController =
         AnimationController(vsync: this, duration: const Duration(seconds: 10))
           ..addListener(() {
-            setState(() {
-              _timeVal = _tickerController.value;
-            });
+            _timeVal.value = _tickerController.value;
           });
     _tickerController.repeat();
   }
@@ -72,6 +70,12 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   @override
   void dispose() {
     _tickerController.dispose();
+    _heatLevel.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _timeVal.dispose();
+    _showGuide.dispose();
     super.dispose();
   }
 
@@ -82,13 +86,11 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-      _heatLevel = nailedIt ? 1.0 : 0.0;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
+    _heatLevel.value = nailedIt ? 1.0 : 0.0;
 
     if (nailedIt) {
       _hapticService.success();
@@ -116,11 +118,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-      _heatLevel = 1.0;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
+    _heatLevel.value = 1.0;
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -136,31 +136,27 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _heatLevel = 0.0;
-              _showGuide = false;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _heatLevel.value = 0.0;
+            _showGuide.value = false;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -177,13 +173,16 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _heatLevel, _timeVal, _showGuide]),
+            builder: (context, _) {
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -211,18 +210,18 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                 quest: quest,
                                 primaryColor: theme.primaryColor,
                                 isDark: isDark,
-                                heatLevel: _heatLevel,
-                                showGuide: _showGuide,
+                                heatLevel: _heatLevel.value,
+                                showGuide: _showGuide.value,
                                 onToggleGuide: () {
                                   _hapticService.selection();
-                                  setState(() => _showGuide = !_showGuide);
+                                  _showGuide.value = !_showGuide.value;
                                 },
                               ),
                               SizedBox(height: 32.h),
                               PronunciationFocusThermalGrid(
-                                heatLevel: _heatLevel,
+                                heatLevel: _heatLevel.value,
                                 isListening: false,
-                                timeVal: _timeVal,
+                                timeVal: _timeVal.value,
                                 isDark: isDark,
                               ),
                               SizedBox(height: 32.h),
@@ -235,8 +234,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -245,7 +243,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered)
+                              if (!_isAnswered.value)
                                 ShadowPlaybackCompare(
                                   expectedText: quest.textToSpeak ?? "",
                                   primaryColor: theme.primaryColor,
@@ -260,6 +258,8 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                       ),
                     ],
                   ),
+              );
+            },
           ),
         );
       },
