@@ -31,7 +31,13 @@ class _ReadingHighlightablePassageState
     extends State<ReadingHighlightablePassage> {
   final _hapticService = di.sl<HapticService>();
   List<String> _sentences = [];
-  int? _selectedIndex;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _selectedIndex.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -44,10 +50,10 @@ class _ReadingHighlightablePassageState
     super.didUpdateWidget(oldWidget);
     if (oldWidget.passage != widget.passage) {
       _splitSentences();
-      _selectedIndex = null;
+      _selectedIndex.value = null;
     }
     if (!widget.isAnswered && oldWidget.isAnswered) {
-      _selectedIndex = null;
+      _selectedIndex.value = null;
     }
   }
 
@@ -61,9 +67,7 @@ class _ReadingHighlightablePassageState
     if (widget.isAnswered) return;
 
     _hapticService.selection();
-    setState(() {
-      _selectedIndex = index;
-    });
+    _selectedIndex.value = index;
 
     final selected = _sentences[index];
     // Check if the selected sentence contains the correct answer or matches it
@@ -76,7 +80,10 @@ class _ReadingHighlightablePassageState
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ValueListenableBuilder<int?>(
+      valueListenable: _selectedIndex,
+      builder: (context, selectedIndexValue, _) {
+        return Container(
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
@@ -124,7 +131,7 @@ class _ReadingHighlightablePassageState
             spacing: 4.w,
             runSpacing: 4.h,
             children: List.generate(_sentences.length, (index) {
-              final isSelected = _selectedIndex == index;
+              final isSelected = selectedIndexValue == index;
               final sentence = _sentences[index];
 
               return GestureDetector(
@@ -163,6 +170,8 @@ class _ReadingHighlightablePassageState
           ),
         ],
       ),
+    );
+      },
     );
   }
 }

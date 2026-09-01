@@ -301,10 +301,19 @@ class _ExplanationBox extends StatefulWidget {
 }
 
 class _ExplanationBoxState extends State<_ExplanationBox> {
-  String? _translatedText;
-  List<EntityAnnotation>? _entities;
-  bool _isExtracting = false;
-  bool _entitiesRevealed = false;
+  final ValueNotifier<String?> _translatedText = ValueNotifier(null);
+  final ValueNotifier<List<EntityAnnotation>?> _entities = ValueNotifier(null);
+  final ValueNotifier<bool> _isExtracting = ValueNotifier(false);
+  final ValueNotifier<bool> _entitiesRevealed = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _translatedText.dispose();
+    _entities.dispose();
+    _isExtracting.dispose();
+    _entitiesRevealed.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -325,18 +334,16 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
 
   Future<void> _extractEntities() async {
     if (widget.passage == null || widget.passage!.isEmpty) return;
-    setState(() => _isExtracting = true);
+    _isExtracting.value = true;
 
     final service = di.sl<EntityExtractionService>();
     await service.downloadModel();
     final entities = await service.extractEntities(widget.passage!);
 
     if (mounted) {
-      setState(() {
-        _entities = entities;
-        _isExtracting = false;
-        _entitiesRevealed = true;
-      });
+      _entities.value = entities;
+      _isExtracting.value = false;
+      _entitiesRevealed.value = true;
     }
   }
 
@@ -362,9 +369,12 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
 
   @override
   Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.explanation;
-
-    Widget card = Column(
+    return ListenableBuilder(
+      listenable: Listenable.merge([_translatedText, _entities, _isExtracting, _entitiesRevealed]),
+      builder: (context, _) {
+        final displayText = _translatedText.value ?? widget.explanation;
+        
+        Widget card = Column(
       children: [
         if (widget.passage != null && widget.passage!.isNotEmpty) ...[
           Container(
@@ -404,7 +414,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                         letterSpacing: 1,
                       ),
                     ),
-                    if (!_entitiesRevealed && !_isExtracting)
+                    if (!_entitiesRevealed.value && !_isExtracting.value)
                       ScaleButton(
                         onTap: _onRevealEntitiesTap,
                         child: Container(
@@ -444,7 +454,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                   ],
                 ),
                 SizedBox(height: 12.h),
-                if (_isExtracting)
+                if (_isExtracting.value)
                   Text(
                         widget.passage!,
                         style: TextStyle(
@@ -462,10 +472,10 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                         duration: 1500.ms,
                         color: widget.shadowColor.withValues(alpha: 0.3),
                       )
-                else if (_entitiesRevealed && _entities != null)
+                else if (_entitiesRevealed.value && _entities.value != null)
                   EntityHighlightedText(
                     text: widget.passage!,
-                    annotations: _entities!,
+                    annotations: _entities.value!,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
@@ -486,9 +496,9 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                       height: 1.5,
                     ),
                   ),
-                if (_entitiesRevealed &&
-                    _entities != null &&
-                    _entities!.isNotEmpty) ...[
+                if (_entitiesRevealed.value &&
+                    _entities.value != null &&
+                    _entities.value!.isNotEmpty) ...[
                   SizedBox(height: 12.h),
                   Container(
                     padding: EdgeInsets.all(8.r),
@@ -567,12 +577,12 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                       ),
                     ),
                   ),
-                  if (_translatedText == null)
+                  if (_translatedText.value == null)
                     TranslateButtonWidget(
                       originalText: widget.explanation,
                       onTranslationComplete: (translated) {
                         if (mounted) {
-                          setState(() => _translatedText = translated);
+                          _translatedText.value = translated;
                         }
                       },
                     ),
@@ -602,5 +612,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
     }
 
     return card;
+      },
+    );
   }
 }

@@ -211,8 +211,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                               ),
                             ),
                             if (!_showSentenceBuilder.value)
-                              SliverFillRemaining(
-                                hasScrollBody: false,
+                              SliverToBoxAdapter(
                                 child: Center(
                                   child: Padding(
                                     padding: EdgeInsets.only(top: 40.h, bottom: 20.h),
