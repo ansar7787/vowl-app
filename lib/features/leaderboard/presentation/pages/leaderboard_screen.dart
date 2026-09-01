@@ -29,12 +29,18 @@ class LeaderboardScreen extends StatefulWidget {
 }
 
 class _LeaderboardScreenState extends State<LeaderboardScreen> {
-  late bool _isKidsMode;
+  late final ValueNotifier<bool> _isKidsMode;
 
   @override
   void initState() {
     super.initState();
-    _isKidsMode = widget.isKids;
+    _isKidsMode = ValueNotifier(widget.isKids);
+  }
+
+  @override
+  void dispose() {
+    _isKidsMode.dispose();
+    super.dispose();
   }
 
   @override
@@ -51,7 +57,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
     return BlocProvider(
       create: (_) =>
-          di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: _isKidsMode)),
+          di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: _isKidsMode.value)),
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -69,21 +75,26 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                   children: [
                     SizedBox(height: MediaQuery.of(context).padding.top + 8.h),
 
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 24.w,
-                        vertical: 4.h,
-                      ),
-                      child: _LeaderboardToggle(
-                        isKidsMode: _isKidsMode,
-                        onToggle: (bool isKids) {
-                          if (_isKidsMode == isKids) return;
-                          setState(() => _isKidsMode = isKids);
-                          context.read<LeaderboardBloc>().add(
-                            LoadLeaderboard(isKids: isKids),
-                          );
-                        },
-                      ),
+                    ValueListenableBuilder<bool>(
+                      valueListenable: _isKidsMode,
+                      builder: (context, isKidsMode, _) {
+                        return Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 24.w,
+                            vertical: 4.h,
+                          ),
+                          child: _LeaderboardToggle(
+                            isKidsMode: isKidsMode,
+                            onToggle: (bool isKids) {
+                              if (isKidsMode == isKids) return;
+                              _isKidsMode.value = isKids;
+                              context.read<LeaderboardBloc>().add(
+                                LoadLeaderboard(isKids: isKids),
+                              );
+                            },
+                          ),
+                        );
+                      }
                     ),
 
                     Expanded(
@@ -102,7 +113,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                               message: state.message,
                               onRetry: () => context
                                   .read<LeaderboardBloc>()
-                                  .add(LoadLeaderboard(isKids: _isKidsMode)),
+                                  .add(LoadLeaderboard(isKids: _isKidsMode.value)),
                             );
                           }
                           return const SizedBox.shrink();
