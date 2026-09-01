@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,18 +41,18 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
   late AnimationController _synapticController;
-  double _timeVal = 0.0;
+  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
 
   List<String> _acceptedSynonyms = [];
-  List<String> _smartReplies = [];
-  String _chosenReply = "";
+  final ValueNotifier<List<String>> _smartReplies = ValueNotifier([]);
+  final ValueNotifier<String> _chosenReply = ValueNotifier("");
 
   @override
   void initState() {
@@ -64,9 +64,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     _synapticController =
         AnimationController(vsync: this, duration: const Duration(seconds: 3))
           ..addListener(() {
-            setState(() {
-              _timeVal = _synapticController.value;
-            });
+            _timeVal.value = _synapticController.value;
           });
     _synapticController.repeat();
   }
@@ -74,6 +72,12 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   @override
   void dispose() {
     _synapticController.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _timeVal.dispose();
+    _smartReplies.dispose();
+    _chosenReply.dispose();
     super.dispose();
   }
 
@@ -88,44 +92,41 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
 
       final suggestions = await smartReplyService.getSuggestions();
       if (mounted) {
-        setState(() {
-          _smartReplies = suggestions
-              .where(
-                (s) => s.trim().length > 1 && RegExp(r'[a-zA-Z]').hasMatch(s),
-              )
-              .toList();
-          final fallbackOptions = quest.smartReplies ?? quest.acceptedSynonyms;
-          if (fallbackOptions != null) {
-            final List<String> availableSynonyms = List.from(fallbackOptions)
-              ..shuffle();
+        final List<String> newReplies = suggestions
+            .where(
+              (s) => s.trim().length > 1 && RegExp(r'[a-zA-Z]').hasMatch(s),
+            )
+            .toList();
+        final fallbackOptions = quest.smartReplies ?? quest.acceptedSynonyms;
+        if (fallbackOptions != null) {
+          final List<String> availableSynonyms = List.from(fallbackOptions)
+            ..shuffle();
 
-            for (var synonym in availableSynonyms) {
-              if (_smartReplies.length >= 3) break;
-              if (!_smartReplies.contains(synonym)) {
-                _smartReplies.add(synonym);
-              }
+          for (var synonym in availableSynonyms) {
+            if (newReplies.length >= 3) break;
+            if (!newReplies.contains(synonym)) {
+              newReplies.add(synonym);
             }
           }
-        });
+        }
+        _smartReplies.value = newReplies;
       }
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
 
       // Add a default or chosen message to history if correct
-      final responseText = _chosenReply.isNotEmpty
-          ? _chosenReply
+      final responseText = _chosenReply.value.isNotEmpty
+          ? _chosenReply.value
           : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "Yes");
       di.sl<SmartReplyService>().addMessage(responseText, isLocalUser: true);
 
@@ -139,9 +140,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: _chosenReply.isNotEmpty ? _chosenReply : 'Roleplay',
+          question: _chosenReply.value.isNotEmpty ? _chosenReply.value : 'Roleplay',
           userAnswer: '[Failed Dialogue]',
-          correctAnswer: _chosenReply.isNotEmpty ? _chosenReply : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : ''),
+          correctAnswer: _chosenReply.value.isNotEmpty ? _chosenReply.value : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : ''),
           level: widget.level,
         );
       }
@@ -152,10 +153,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -171,14 +170,12 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _smartReplies = [];
-              _chosenReply = "";
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _smartReplies.value = [];
+            _chosenReply.value = "";
             if (state.currentIndex == 0) {
               di.sl<SmartReplyService>().clearConversation();
             }
@@ -186,19 +183,17 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -215,21 +210,24 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
           _acceptedSynonyms = quest.acceptedSynonyms ?? [];
         }
 
-        final expectedText = _chosenReply.isNotEmpty
-            ? _chosenReply
-            : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "");
-
         return MediaQuery(
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _timeVal, _smartReplies, _chosenReply]),
+            builder: (context, _) {
+              final expectedText = _chosenReply.value.isNotEmpty
+                  ? _chosenReply.value
+                  : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "");
+
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -257,19 +255,19 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                 quest: quest,
                                 primaryColor: theme.primaryColor,
                                 isDark: isDark,
-                                timeVal: _timeVal,
-                                isAnswered: _isAnswered,
-                                isCorrect: _isCorrect ?? false,
+                                timeVal: _timeVal.value,
+                                isAnswered: _isAnswered.value,
+                                isCorrect: _isCorrect.value ?? false,
                               ),
-                              if (_smartReplies.isNotEmpty && !_isAnswered) ...[
+                              if (_smartReplies.value.isNotEmpty && !_isAnswered.value) ...[
                                 SizedBox(height: 16.h),
                                 SizedBox(
                                   height: 44.h,
                                   child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
-                                    itemCount: _smartReplies.length,
+                                    itemCount: _smartReplies.value.length,
                                     itemBuilder: (context, index) {
-                                      final reply = _smartReplies[index];
+                                      final reply = _smartReplies.value[index];
                                       final isPremium =
                                           context
                                               .read<AuthBloc>()
@@ -300,9 +298,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                                   'Watch Ad (1 Suggestion)',
                                             ),
                                             onSuccess: () {
-                                              setState(() {
-                                                _chosenReply = reply;
-                                              });
+                                              _chosenReply.value = reply;
                                             },
                                           );
                                         },
@@ -315,8 +311,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -325,7 +320,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered)
+                              if (!_isAnswered.value)
                                 SpeakingSelfEvaluationControls(
                                   expectedText: expectedText,
                                   primaryColor: theme.primaryColor,
@@ -341,6 +336,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                       ),
                     ],
                   ),
+              );
+            },
           ),
         );
       },
