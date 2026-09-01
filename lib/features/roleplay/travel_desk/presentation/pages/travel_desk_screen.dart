@@ -40,14 +40,14 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   late AnimationController _pulseController;
 
   int _lastProcessedIndex = -1;
-  int? _selectedIndex;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   // Custom drag feedback coordinates
-  int? _hoveredIndex;
+  final ValueNotifier<int?> _hoveredIndex = ValueNotifier(null);
 
   @override
   void initState() {
@@ -70,6 +70,12 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   void dispose() {
     _rippleController.dispose();
     _pulseController.dispose();
+    _selectedIndex.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    _hoveredIndex.dispose();
     super.dispose();
   }
 
@@ -83,40 +89,32 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   }
 
   void _submitStamp(int index, int correctIndex) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     final isCorrect = index == correctIndex;
 
-    setState(() {
-      _selectedIndex = index;
-    });
+    _selectedIndex.value = index;
 
     _rippleController.forward(from: 0.0);
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -138,21 +136,19 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _hoveredIndex = null;
-              _isFirstStagePassed = false;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _hoveredIndex.value = null;
+            _isFirstStagePassed.value = false;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -166,12 +162,15 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _hoveredIndex, _isFirstStagePassed]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -185,18 +184,16 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               TravelDeskInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -216,25 +213,25 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                 correctIndex: quest.correctAnswerIndex ?? 0,
                                 isDark: isDark,
                                 travelDocument: quest.travelDocuments,
-                                selectedIndex: _selectedIndex,
-                                hoveredIndex: _hoveredIndex,
-                                isAnswered: _isAnswered || _isFirstStagePassed,
-                                isCorrect: _isCorrect,
+                                selectedIndex: _selectedIndex.value,
+                                hoveredIndex: _hoveredIndex.value,
+                                isAnswered: _isAnswered.value || _isFirstStagePassed.value,
+                                isCorrect: _isCorrect.value,
                                 rippleAnimation: _rippleController,
                                 onSubmitStamp: _submitStamp,
                                 onHoverChanged: (index) {
                                   _hapticService.selection();
-                                  setState(() => _hoveredIndex = index);
+                                  _hoveredIndex.value = index;
                                 },
                                 onHoverEnded: () {
-                                  setState(() => _hoveredIndex = null);
+                                  _hoveredIndex.value = null;
                                 },
                                 onDragStarted: () {},
                               ),
                               SizedBox(height: isCompact ? 20.h : 32.h),
 
                               // Stamp slammed terminal console
-                              if (!_isAnswered && !_isFirstStagePassed)
+                              if (!_isAnswered.value && !_isFirstStagePassed.value)
                                 TravelDeskStampStation(
                                   color: theme.primaryColor,
                                   isDark: isDark,
@@ -243,7 +240,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                     _soundService.playHint();
                                   },
                                   onDragEnded: () {
-                                    setState(() => _hoveredIndex = null);
+                                    _hoveredIndex.value = null;
                                   },
                                 ),
 
@@ -251,10 +248,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
+                                  if (_isFirstStagePassed.value && !_isAnswered.value && _selectedIndex.value != null)
                                     SpeakToConfirmOverlay(
-                                      expectedText: options[_selectedIndex!],
+                                      expectedText: options[_selectedIndex.value!],
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {
@@ -265,7 +261,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -273,7 +269,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }
