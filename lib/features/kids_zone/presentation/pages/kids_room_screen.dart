@@ -43,21 +43,21 @@ class KidsRoomScreen extends StatefulWidget {
 }
 
 class _KidsRoomScreenState extends State<KidsRoomScreen> {
-  String _currentTheme = 'nature';
-  String _currentFood = '';
+  final ValueNotifier<String> _currentTheme = ValueNotifier('nature');
+  final ValueNotifier<String> _currentFood = ValueNotifier('');
 
-  bool _isInitializing = true;
+  final ValueNotifier<bool> _isInitializing = ValueNotifier(true);
 
   // ---------------------------------------------------------------------------
   // State: Animations & Flow
-  bool _isFeeding = false;
-  bool _isTalking = false;
-  bool _isSleeping = false;
-  String _buddyMessage = "";
+  final ValueNotifier<bool> _isFeeding = ValueNotifier(false);
+  final ValueNotifier<bool> _isTalking = ValueNotifier(false);
+  final ValueNotifier<bool> _isSleeping = ValueNotifier(false);
+  final ValueNotifier<String> _buddyMessage = ValueNotifier("");
 
-  bool _hasCleanedToday = false;
-  bool _dailyCareClaimed = false;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _hasCleanedToday = ValueNotifier(false);
+  final ValueNotifier<bool> _dailyCareClaimed = ValueNotifier(false);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
   Timer? _speechTimer;
 
@@ -132,7 +132,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       if (mounted) {
         _loadLocalState();
         _applyLifecycleDecay();
-        setState(() => _isInitializing = false);
+        _isInitializing.value = false;
       }
     });
   }
@@ -147,7 +147,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       if (date.year == now.year &&
           date.month == now.month &&
           date.day == now.day) {
-        setState(() => _hasCleanedToday = true);
+        _hasCleanedToday.value = true;
       }
     }
   }
@@ -155,6 +155,16 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   @override
   void dispose() {
     _speechTimer?.cancel();
+    _currentTheme.dispose();
+    _currentFood.dispose();
+    _isInitializing.dispose();
+    _isFeeding.dispose();
+    _isTalking.dispose();
+    _isSleeping.dispose();
+    _buddyMessage.dispose();
+    _hasCleanedToday.dispose();
+    _dailyCareClaimed.dispose();
+    _showConfetti.dispose();
     super.dispose();
   }
 
@@ -174,9 +184,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
     final theme = user.kidsRoomTheme;
 
-    setState(() {
-      _currentTheme = theme;
-    });
+    _currentTheme.value = theme;
 
     if (newEnergy != user.kidsBuddyEnergy ||
         newHunger != user.kidsBuddyHunger ||
@@ -191,32 +199,30 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     }
 
     // Set initial greeting
-    if (_buddyMessage.isEmpty) {
-      _buddyMessage = _lifecycleService.getGreeting(user);
-      _isTalking = true;
+    if (_buddyMessage.value.isEmpty) {
+      _buddyMessage.value = _lifecycleService.getGreeting(user);
+      _isTalking.value = true;
       _speechTimer?.cancel();
       _speechTimer = Timer(const Duration(seconds: 4), () {
-        if (mounted) setState(() => _isTalking = false);
+        if (mounted) _isTalking.value = false;
       });
     }
   }
 
   void _speak(String text) {
     di.sl<TtsService>().speak(text);
-    setState(() {
-      _buddyMessage = text;
-      _isTalking = true;
-    });
+        _buddyMessage.value = text;
+    _isTalking.value = true;
     _speechTimer?.cancel();
     _speechTimer = Timer(const Duration(seconds: 3), () {
-      if (mounted) setState(() => _isTalking = false);
+      if (mounted) _isTalking.value = false;
     });
   }
 
   void _triggerConfetti() {
-    setState(() => _showConfetti = true);
+    _showConfetti.value = true;
     Future.delayed(const Duration(seconds: 3), () {
-      if (mounted) setState(() => _showConfetti = false);
+      if (mounted) _showConfetti.value = false;
     });
   }
 
@@ -224,11 +230,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     KidsRoomThemeSheet.show(
       context,
       user: user,
-      currentTheme: _currentTheme,
+      currentTheme: _currentTheme.value,
       onThemeSelected: (theme) {
-        setState(() {
-          _currentTheme = theme;
-        });
+                _currentTheme.value = theme;
         context.read<ProfileBloc>().add(
           ProfileUpdateBuddyRoomRequested(theme: theme),
         );
@@ -327,12 +331,18 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               final hasPlayedToday =
                   isGameToday && user.kidsGamesPlayedToday > 0;
 
-              return Scaffold(
-                backgroundColor: bgColor,
-                body: Stack(
+              return ListenableBuilder(
+                listenable: Listenable.merge([
+                  _currentTheme, _currentFood, _isInitializing, _isFeeding, _isTalking,
+                  _isSleeping, _buddyMessage, _hasCleanedToday, _dailyCareClaimed, _showConfetti
+                ]),
+                builder: (context, _) {
+                  return Scaffold(
+                    backgroundColor: bgColor,
+                    body: Stack(
                   children: [
                     KidsRoomLayout(
-                      theme: _currentTheme,
+                      theme: _currentTheme.value,
                       equippedFurniture: user.kidsEquippedFurniture,
                       furnitureStore: _furnitureStore,
                       mascotWidget: _buildMascotSection(user),
@@ -344,15 +354,15 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             user: user,
                             onBack: () => _showBackConfirmation(context, user),
                           ),
-                          if (!_dailyCareClaimed && !_hasClaimedToday(user))
+                          if (!_dailyCareClaimed.value && !_hasClaimedToday(user))
                             Padding(
                               padding: EdgeInsets.only(left: 16.w, top: 4.h),
                               child: KidsRoomDailyCareCard(
                                 user: user,
                                 hasPlayed: hasPlayedToday,
-                                hasCleaned: _hasCleanedToday,
+                                hasCleaned: _hasCleanedToday.value,
                                 onClaim: () {
-                                  setState(() => _dailyCareClaimed = true);
+                                  _dailyCareClaimed.value = true;
                                   final newStreak = _lifecycleService
                                       .computeUpdatedStreak(user);
                                   context.read<ProfileBloc>().add(
@@ -375,11 +385,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         ],
                       ),
                       actionPanelWidget: KidsRoomActionPanel(
-                        isSleeping: _isSleeping,
+                        isSleeping: _isSleeping.value,
                         onDecor: () => _showDecorStore(context, user),
                         onFeed: () => _showFoodMenu(context, user),
                         onPlay: () {
-                          if (_isSleeping) return;
+                          if (_isSleeping.value) return;
 
                           final playedCount = isGameToday
                               ? user.kidsGamesPlayedToday
@@ -438,7 +448,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           );
                         },
                         onClean: () {
-                          if (_isSleeping) return;
+                          if (_isSleeping.value) return;
                           showDialog(
                             context: context,
                             barrierDismissible: false,
@@ -446,9 +456,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                               onComplete: () {
                                 Navigator.pop(context);
                                 final isFirstClean =
-                                    !_hasCleanedToday &&
+                                    !_hasCleanedToday.value &&
                                     !_hasClaimedToday(user);
-                                setState(() => _hasCleanedToday = true);
+                                _hasCleanedToday.value = true;
                                 SharedPreferences.getInstance().then((prefs) {
                                   prefs.setString(
                                     'kids_last_clean_date',
@@ -471,9 +481,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           );
                         },
                         onSleepToggle: () {
-                          setState(() => _isSleeping = !_isSleeping);
+                          _isSleeping.value = !_isSleeping.value;
                           _speak(
-                            _isSleeping
+                            _isSleeping.value
                                 ? "Goodnight! Shhh..."
                                 : "I'm awake! Let's play!",
                           );
@@ -486,13 +496,13 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         },
                         onThemeTap: () => _showThemeMenu(context, user),
                       ),
-                      overlayWidget: (_isSleeping || _showConfetti)
+                      overlayWidget: (_isSleeping.value || _showConfetti.value)
                           ? Stack(
                               children: [
-                                if (_isSleeping)
+                                if (_isSleeping.value)
                                   GestureDetector(
                                     onTap: () {
-                                      setState(() => _isSleeping = false);
+                                      _isSleeping.value = false;
                                       _speak("I'm awake! Let's play!");
                                     },
                                     child: Container(
@@ -607,7 +617,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                     ),
                                   ).animate().fadeIn(duration: 600.ms),
 
-                                if (_showConfetti)
+                                if (_showConfetti.value)
                                   const Positioned.fill(
                                     child: IgnorePointer(child: GameConfetti()),
                                   ),
@@ -617,9 +627,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     ),
                     // Premium Shimmer Overlay
                     IgnorePointer(
-                      ignoring: !_isInitializing,
+                      ignoring: !_isInitializing.value,
                       child: AnimatedOpacity(
-                        opacity: _isInitializing ? 1.0 : 0.0,
+                        opacity: _isInitializing.value ? 1.0 : 0.0,
                         duration: const Duration(milliseconds: 400),
                         curve: Curves.easeInOut,
                         child: _buildShimmerScreen(bgColor),
@@ -627,6 +637,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     ),
                   ],
                 ),
+              );
+                },
               );
             },
           ),
@@ -660,7 +672,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (_isTalking)
+        if (_isTalking.value)
           Padding(
             padding: EdgeInsets.only(bottom: 20.h),
             child:
@@ -696,7 +708,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             ],
                           ),
                           child: Text(
-                            _buddyMessage,
+                            _buddyMessage.value,
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 15.sp,
@@ -804,14 +816,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
                             VowlMascot(
                               size: 85.r,
-                              state: _isSleeping
+                              state: _isSleeping.value
                                   ? VowlMascotState.neutral
-                                  : (_isFeeding
+                                  : (_isFeeding.value
                                         ? VowlMascotState.happy
                                         : _getMascotStateForMood(
                                             user.kidsBuddyMood,
                                           )),
-                              useFloatingAnimation: !_isSleeping,
+                              useFloatingAnimation: !_isSleeping.value,
                               isKidsMode: true,
                             ),
                           ],
@@ -824,9 +836,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         duration: 2.seconds,
                         curve: Curves.easeInOutSine,
                       )
-                      .animate(target: _isTalking ? 1 : 0)
+                      .animate(target: _isTalking.value ? 1 : 0)
                       .shake(hz: 4, curve: Curves.easeInOut)
-                      .animate(target: _isFeeding ? 1 : 0)
+                      .animate(target: _isFeeding.value ? 1 : 0)
                       .scale(
                         begin: const Offset(1, 1),
                         end: const Offset(1.1, 1.1),
@@ -834,7 +846,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       ),
             ),
 
-            if (_isSleeping)
+            if (_isSleeping.value)
               Positioned(
                 top: -30.h,
                 child:
@@ -852,11 +864,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         .fadeOut(),
               ),
 
-            if (_isFeeding)
+            if (_isFeeding.value)
               Positioned(
                 top: -100.h,
-                child: Text(_currentFood, style: TextStyle(fontSize: 45.sp))
-                    .animate(key: ValueKey(_currentFood))
+                child: Text(_currentFood.value, style: TextStyle(fontSize: 45.sp))
+                    .animate(key: ValueKey(_currentFood.value))
                     .moveY(
                       begin: -50,
                       end: 120,
@@ -1058,10 +1070,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             EconomyAddKidsCoinsRequested(-(f['price'] as int)),
           );
           Navigator.pop(context);
-          setState(() {
-            _currentFood = f['icon'] as String;
-            _isFeeding = true;
-          });
+                    _currentFood.value = f['icon'] as String;
+          _isFeeding.value = true;
           di.sl<SoundService>().playCorrect();
           final newHunger = (user.kidsBuddyHunger - 20).clamp(0, 100);
           final newEnergy = (user.kidsBuddyEnergy + 10).clamp(0, 100);
@@ -1081,7 +1091,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             ),
           );
           Future.delayed(const Duration(seconds: 2), () {
-            if (mounted) setState(() => _isFeeding = false);
+            if (mounted) _isFeeding.value = false;
           });
         } else {
           di.sl<SoundService>().playWrong();

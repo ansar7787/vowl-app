@@ -35,7 +35,7 @@ class KidsZoneScreen extends StatefulWidget {
 
 class _KidsZoneScreenState extends State<KidsZoneScreen> {
   final math.Random _random = math.Random();
-  final List<Map<String, dynamic>> _activeCoins = [];
+  final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier([]);
   late ConfettiController _confettiController;
   final ValueNotifier<int?> _globalRank = ValueNotifier(null);
 
@@ -80,6 +80,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   void dispose() {
     _confettiController.dispose();
     _globalRank.dispose();
+    _activeCoins.dispose();
     super.dispose();
   }
 
@@ -87,21 +88,22 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     _confettiController.play();
     for (int i = 0; i < 15; i++) {
       final id = DateTime.now().millisecondsSinceEpoch + i;
-      setState(() {
-        _activeCoins.add({
-          'id': id,
-          'x': 0.3 + _random.nextDouble() * 0.4,
-          'y': 0.8,
-          'targetX': 0.8 + _random.nextDouble() * 0.1,
-          'targetY': 0.05,
-          'delay': i * 100,
-        });
+      final currentList = List<Map<String, dynamic>>.from(_activeCoins.value);
+      currentList.add({
+        'id': id,
+        'x': 0.3 + _random.nextDouble() * 0.4,
+        'y': 0.8,
+        'targetX': 0.8 + _random.nextDouble() * 0.1,
+        'targetY': 0.05,
+        'delay': i * 100,
       });
+      _activeCoins.value = currentList;
+      
       Future.delayed(Duration(milliseconds: 1000 + (i * 100)), () {
         if (mounted) {
-          setState(() {
-            _activeCoins.removeWhere((c) => c['id'] == id);
-          });
+          final updatedList = List<Map<String, dynamic>>.from(_activeCoins.value);
+          updatedList.removeWhere((c) => c['id'] == id);
+          _activeCoins.value = updatedList;
         }
       });
     }
@@ -127,15 +129,22 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
           const MeshGradientBackground(showLetters: false),
 
           // Floating Coins Layer
-          ..._activeCoins.map((coin) {
-            return _FloatingCoin(
-              x: coin['x'],
-              y: coin['y'],
-              targetX: coin['targetX'],
-              targetY: coin['targetY'],
-              delay: coin['delay'],
-            );
-          }),
+          ValueListenableBuilder<List<Map<String, dynamic>>>(
+            valueListenable: _activeCoins,
+            builder: (context, coins, _) {
+              return Stack(
+                children: coins.map((coin) {
+                  return _FloatingCoin(
+                    x: coin['x'],
+                    y: coin['y'],
+                    targetX: coin['targetX'],
+                    targetY: coin['targetY'],
+                    delay: coin['delay'],
+                  );
+                }).toList(),
+              );
+            },
+          ),
 
           BlocListener<AuthBloc, AuthState>(
             listener: (context, state) {

@@ -37,11 +37,6 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       duration: const Duration(seconds: 2),
     );
     _tabController = TabController(length: 5, vsync: this);
-    _tabController.addListener(() {
-      if (!_tabController.indexIsChanging) {
-        setState(() {}); // Rebuild to update filtered grid
-      }
-    });
   }
 
   @override
@@ -72,21 +67,26 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 : Colors.blue.shade100,
             gameType: 'shop',
           ),
-          CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              _buildAppBar(context, isDark),
-              _buildBuddyPassportPreview(context, isDark),
-              _buildCurrencyHeader(context, isDark),
-              _buildCategoryTabs(isDark),
-              _buildShopGrid(context, isDark),
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 40.h),
-                  child: _buildWatchAndEarn(context, isDark),
-                ),
-              ),
-            ],
+          ListenableBuilder(
+            listenable: _tabController,
+            builder: (context, _) {
+              return CustomScrollView(
+                physics: const BouncingScrollPhysics(),
+                slivers: [
+                  _buildAppBar(context, isDark),
+                  _buildBuddyPassportPreview(context, isDark),
+                  _buildCurrencyHeader(context, isDark),
+                  _buildCategoryTabs(isDark),
+                  _buildShopGrid(context, isDark),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 40.h),
+                      child: _buildWatchAndEarn(context, isDark),
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
           Align(
             alignment: Alignment.center,

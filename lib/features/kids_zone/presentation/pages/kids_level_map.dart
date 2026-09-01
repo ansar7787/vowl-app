@@ -38,7 +38,7 @@ class KidsLevelMap extends StatefulWidget {
 
 class _KidsLevelMapState extends State<KidsLevelMap>
     with TickerProviderStateMixin {
-  StoryBeat? _activeStoryBeat;
+  final ValueNotifier<StoryBeat?> _activeStoryBeat = ValueNotifier(null);
   late ScrollController _scrollController;
 
 
@@ -47,8 +47,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   late AnimationController _unlockPathController;
   late AnimationController _glowController;
   int? _previousActiveNode;
-  bool _isUnlockAnimating = false;
-  int? _celebratingLevel;
+  final ValueNotifier<bool> _isUnlockAnimating = ValueNotifier(false);
+  final ValueNotifier<int?> _celebratingLevel = ValueNotifier(null);
   late ConfettiController _confettiController;
 
   @override
@@ -105,6 +105,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     _unlockPathController.dispose();
     _glowController.dispose();
     _confettiController.dispose();
+    _activeStoryBeat.dispose();
+    _isUnlockAnimating.dispose();
+    _celebratingLevel.dispose();
     super.dispose();
   }
 
@@ -151,7 +154,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   /// The path line draws with a slow, smooth "flowing water" feel and confetti
   /// locks the screen from scrolling until all particles have settled.
   Future<void> _playUnlockSequence(BuildContext context, int currLevel) async {
-    setState(() => _isUnlockAnimating = true);
+    _isUnlockAnimating.value = true;
 
     // 1. Wait perfectly for the final settled frame to render (GPU Sync)
     await WidgetsBinding.instance.endOfFrame;
@@ -170,9 +173,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     if (!mounted) return;
 
     // 5. Complete the node unlock pop
-    setState(() {
-      _celebratingLevel = currLevel;
-    });
+    _celebratingLevel.value = currLevel;
 
     // 6. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
     await WidgetsBinding.instance.endOfFrame;
@@ -183,10 +184,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     //    particles need ~1.5s more to physically fall off screen.
     await Future.delayed(const Duration(milliseconds: 3500));
     if (mounted) {
-      setState(() {
-        _celebratingLevel = null;
-        _isUnlockAnimating = false;
-      });
+      _celebratingLevel.value = null;
+      _isUnlockAnimating.value = false;
     }
   }
 
@@ -241,9 +240,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         // Delay slightly for smooth entry
         Future.delayed(const Duration(milliseconds: 300), () {
           if (mounted) {
-            setState(() {
-              _activeStoryBeat = beat;
-            });
+              _activeStoryBeat.value = beat;
           }
         });
       }
@@ -301,7 +298,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           // If multiple levels were skipped at once, skip the slow animation
           if (currLevel - prevLevel > 1) {
             // FIX: Clear any residual single-unlock animation state.
-            _celebratingLevel = null;
+            _celebratingLevel.value = null;
             _unlockPathController.value = 1.0;
             _executeWhenRouteSettled(() {
               if (mounted) _scrollToUnlockedLevel(delayMs: 0, animate: true);
@@ -309,9 +306,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             return;
           }
 
-          setState(() {
-            _isUnlockAnimating = true;
-          });
+          _isUnlockAnimating.value = true;
           _unlockPathController.reset();
 
           // Orchestrate the full unlock animation sequence via a pristine async state machine
@@ -361,17 +356,20 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                         const Color(0xFFF8FAFC),
                       ));
 
-          return AbsorbPointer(
-            absorbing: _isUnlockAnimating,
+          return ListenableBuilder(
+            listenable: Listenable.merge([_isUnlockAnimating, _celebratingLevel, _activeStoryBeat]),
+            builder: (context, _) {
+              return AbsorbPointer(
+                absorbing: _isUnlockAnimating.value,
             child: Scaffold(
               backgroundColor: bgColor,
               body: Stack(
                 children: [
                 _buildBackground(context),
-                CustomScrollView(
-                  controller: _scrollController,
-                  physics: _isUnlockAnimating
-                      ? const NeverScrollableScrollPhysics()
+                  CustomScrollView(
+                    controller: _scrollController,
+                    physics: _isUnlockAnimating.value
+                        ? const NeverScrollableScrollPhysics()
                       : const BouncingScrollPhysics(),
                   slivers: [
                     SliverAppBar(
@@ -500,25 +498,23 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                             entryController: _entryController,
                             glowController: _glowController,
                             confettiController: _confettiController,
-                            isUnlockAnimating: _isUnlockAnimating,
-                            celebratingLevel: _celebratingLevel,
+                            isUnlockAnimating: _isUnlockAnimating.value,
+                            celebratingLevel: _celebratingLevel.value,
                           );
                         }, childCount: 200),
                       ),
                     ),
                   ],
                 ),
-                if (_activeStoryBeat != null)
+                if (_activeStoryBeat.value != null)
                   Positioned.fill(
                     child: Container(
                       color: Colors.black54,
                       child: StoryDialogueBox(
-                        beat: _activeStoryBeat!,
+                        beat: _activeStoryBeat.value!,
                         isKidsMode: true,
                         onDismiss: () {
-                          setState(() {
-                            _activeStoryBeat = null;
-                          });
+                          _activeStoryBeat.value = null;
                         },
                       ),
                     ).animate().fadeIn(),
@@ -539,6 +535,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
               ],
             ),
           ),
+              );
+            }
           );
         },
       ),

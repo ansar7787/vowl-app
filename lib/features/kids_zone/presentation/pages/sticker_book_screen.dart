@@ -34,9 +34,6 @@ class _StickerBookScreenState extends State<StickerBookScreen>
       duration: const Duration(seconds: 3),
     );
     _tabController = TabController(length: _categories.length, vsync: this);
-    _tabController.addListener(() {
-      if (mounted) setState(() {});
-    });
   }
 
   @override
