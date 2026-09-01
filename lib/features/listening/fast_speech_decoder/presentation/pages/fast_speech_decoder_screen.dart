@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -40,13 +40,24 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   final ValueNotifier<double> _dialRotation = ValueNotifier(
     0.33,
   ); // 0.0 to 1.0 mapping to 0.5x - 2.0x
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  int? _selectedIndex;
-  int? _pendingSelectedIndex;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _pendingSelectedIndex.dispose();
+    _dialRotation.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -56,14 +67,10 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     );
   }
 
-  @override
-  void dispose() {
-    _dialRotation.dispose();
-    super.dispose();
-  }
+
 
   void _onRotate(double delta) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     double oldVal = _dialRotation.value;
     _dialRotation.value = (_dialRotation.value + delta / 300).clamp(0.0, 1.0);
 
@@ -74,7 +81,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   }
 
   void _submitFinalAnswer(bool nailedSpeaking, int correct) {
-    if (_isAnswered || _pendingSelectedIndex == null) return;
+    if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
     
     if (!nailedSpeaking) {
       _hapticService.error();
@@ -92,25 +99,21 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
       return;
     }
 
-    bool isCorrect = _pendingSelectedIndex == correct;
+    bool isCorrect = _pendingSelectedIndex.value == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
@@ -123,17 +126,15 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: 'Fast Speech Decoder',
-          userAnswer: _pendingSelectedIndex.toString(),
+          userAnswer: _pendingSelectedIndex.value.toString(),
           correctAnswer: correct.toString(),
           level: widget.level,
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -146,29 +147,25 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _pendingSelectedIndex = null;
-              _dialRotation.value = 0.33;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _pendingSelectedIndex.value = null;
+            _dialRotation.value = 0.33;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ListeningGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -181,12 +178,16 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
-        return ListeningBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _pendingSelectedIndex, _dialRotation]),
+          builder: (context, _) {
+            double rotation = _dialRotation.value;
+            return ListeningBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
@@ -212,43 +213,39 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                 instruction: quest.instruction,
                               ),
                               SizedBox(height: 24.h),
-                              ValueListenableBuilder<double>(
-                                valueListenable: _dialRotation,
-                                builder: (context, rotation, _) {
-                                  double speed = 0.3 + (rotation * 0.6);
-                                  return Column(
-                                    children: [
-                                      FastSpeechDecoderGauges(
-                                        speed: speed * 2,
-                                        color: theme.primaryColor,
-                                      ),
-                                      SizedBox(height: 20.h),
-                                      FastSpeechDecoderCore(
-                                        textToSpeak: quest.textToSpeak ?? "",
-                                        speed: speed,
-                                        color: theme.primaryColor,
-                                        rotation: rotation,
-                                        onRotate: _onRotate,
-                                        onTapTts: () {
-                                          _soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                            speed: speed,
-                                          );
-                                          _hapticService.selection();
-                                        },
-                                        emoji: quest.emoji,
-                                        isCorrectState: _isCorrect,
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ),
+                              (() {
+                                double speed = 0.3 + (rotation * 0.6);
+                                return Column(
+                                  children: [
+                                    FastSpeechDecoderGauges(
+                                      speed: speed * 2,
+                                      color: theme.primaryColor,
+                                    ),
+                                    SizedBox(height: 20.h),
+                                    FastSpeechDecoderCore(
+                                      textToSpeak: quest.textToSpeak ?? "",
+                                      speed: speed,
+                                      color: theme.primaryColor,
+                                      rotation: rotation,
+                                      onRotate: _onRotate,
+                                      onTapTts: () {
+                                        _soundService.playTts(
+                                          quest.textToSpeak ?? "",
+                                          speed: speed,
+                                        );
+                                        _hapticService.selection();
+                                      },
+                                      emoji: quest.emoji,
+                                      isCorrectState: _isCorrect.value,
+                                    ),
+                                  ],
+                                );
+                              })(),
                             ],
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -262,14 +259,12 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                 correctAnswerIndex:
                                     quest.correctAnswerIndex ?? 0,
                                 color: theme.primaryColor,
-                                isAnswered: _isAnswered,
-                                isCorrectState: _isCorrect,
-                                selectedIndex: _selectedIndex,
+                                isAnswered: _isAnswered.value,
+                                isCorrectState: _isCorrect.value,
+                                selectedIndex: _selectedIndex.value,
                                 onSubmitAnswer: (index) {
-                                  if (_isAnswered || _pendingSelectedIndex != null) return;
-                                  setState(() {
-                                    _pendingSelectedIndex = index;
-                                  });
+                                  if (_isAnswered.value || _pendingSelectedIndex.value != null) return;
+                                  _pendingSelectedIndex.value = index;
                                 },
                               ),
                               SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
@@ -279,9 +274,9 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                       ),
                     ],
                   ),
-                  if (_pendingSelectedIndex != null && !_isAnswered)
+                  if (_pendingSelectedIndex.value != null && !_isAnswered.value)
                     SpeakToConfirmOverlay(
-                      expectedText: quest.options![_pendingSelectedIndex!],
+                      expectedText: quest.options![_pendingSelectedIndex.value!],
                       primaryColor: theme.primaryColor,
                       onConfirmed: () => _submitFinalAnswer(
                         true,
@@ -295,6 +290,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                     ),
                 ],
               ),
+            );
+          },
         );
       },
     );
