@@ -40,15 +40,15 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
 
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  double _dialRotation = 0.0;
-  bool _isDragging = false;
-  int? _selectedIndex;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
-  bool _isNaturalSpeed = true;
+  final ValueNotifier<bool> _isNaturalSpeed = ValueNotifier(true);
   final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
   @override
@@ -62,6 +62,14 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _dialRotation.dispose();
+    _isDragging.dispose();
+    _selectedIndex.dispose();
+    _isFirstStagePassed.dispose();
+    _isNaturalSpeed.dispose();
     super.dispose();
   }
 
@@ -83,7 +91,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     final double dx = details.delta.dx;
     final double dy = details.delta.dy;
@@ -97,79 +105,65 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     final double vRot = isLeftHalf ? -dy : dy;
     final double totalRot = (hRot + vRot) / 30.0;
 
-    setState(() {
-      _isDragging = true;
-      _dialRotation = (_dialRotation + totalRot).clamp(-1.0, 1.0);
-    });
+    _isDragging.value = true;
+    _dialRotation.value = (_dialRotation.value + totalRot).clamp(-1.0, 1.0);
     _hapticService.selection();
 
     // Auto-lock when reaching ends
-    if (_dialRotation < -0.8) {
+    if (_dialRotation.value < -0.8) {
       _submitChoice(0, correct);
-    } else if (_dialRotation > 0.8) {
+    } else if (_dialRotation.value > 0.8) {
       _submitChoice(1, correct);
     }
   }
 
   void _onDialRelease() {
-    if (_isAnswered || _isFirstStagePassed || !_isDragging) return;
-    setState(() {
-      _isDragging = false;
-      if (!_isAnswered) {
-        _dialRotation = 0.0;
-      }
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value || !_isDragging.value) return;
+    _isDragging.value = false;
+    if (!_isAnswered.value) {
+      _dialRotation.value = 0.0;
+    }
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _selectedIndex = index;
-      _dialRotation = index == 0 ? -0.8 : 0.8;
-      _isDragging = false;
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _selectedIndex.value = index;
+    _dialRotation.value = index == 0 ? -0.8 : 0.8;
+    _isDragging.value = false;
 
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-      _isAnswered = true;
-      _isCorrect = false;
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       _timerKey.currentState?.stop();
-    });
     _scrollToBottom();
     context.read<AccentBloc>().add(const SubmitAnswer(false));
   }
 }
 
 void _handleTimeExpired() {
-  if (_isAnswered || _isFirstStagePassed) return;
-  setState(() {
-    _isAnswered = true;
-    _isCorrect = false;
-  });
+  if (_isAnswered.value || _isFirstStagePassed.value) return;
+  _isAnswered.value = true;
+  _isCorrect.value = false;
   _soundService.playWrong();
   _scrollToBottom();
   context.read<AccentBloc>().add(const SubmitAnswer(false));
 }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -198,18 +192,16 @@ void _handleTimeExpired() {
               _lastLives != null && currentLives > _lastLives!;
           if (state.currentIndex != _lastProcessedIndex ||
               livesRestored ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _dialRotation = 0.0;
-              _selectedIndex = null;
-              _isDragging = false;
-              _isFirstStagePassed = false;
-              _isNaturalSpeed = true;
-              if (!_isAnswered) _timerKey.currentState?.start();
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _dialRotation.value = 0.0;
+            _selectedIndex.value = null;
+            _isDragging.value = false;
+            _isFirstStagePassed.value = false;
+            _isNaturalSpeed.value = true;
+            if (!_isAnswered.value) _timerKey.currentState?.start();
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
             if (quest != null && quest.textToSpeak != null) {
@@ -223,7 +215,7 @@ void _handleTimeExpired() {
           _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -248,15 +240,18 @@ void _handleTimeExpired() {
           child: AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+            isAnswered: _isAnswered.value,
+            isCorrect: _isCorrect.value,
+            showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<AccentBloc>().add(const NextQuestion()),
             onHint: () =>
                 context.read<AccentBloc>().add(const AccentHintUsed()),
             useScrolling: false,
-            child: LayoutBuilder(
+            child: ListenableBuilder(
+              listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _dialRotation, _isDragging, _selectedIndex, _isFirstStagePassed, _isNaturalSpeed]),
+              builder: (context, _) {
+                return LayoutBuilder(
               builder: (context, constraints) {
                 final maxHeight = constraints.maxHeight;
                 final double estimatedContentHeight =
@@ -287,8 +282,7 @@ void _handleTimeExpired() {
                   controller: _scrollController,
                   physics: const BouncingScrollPhysics(),
                   slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Column(
                         children: [
                           Expanded(
@@ -301,7 +295,7 @@ void _handleTimeExpired() {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: gapTop),
-                                      if (!_isFirstStagePassed && !_isAnswered)
+                                      if (!_isFirstStagePassed.value && !_isAnswered.value)
                                         Padding(
                                           padding: EdgeInsets.only(bottom: 16.h),
                                           child: SpeedChallengeTimer(
@@ -313,7 +307,7 @@ void _handleTimeExpired() {
                                         ),
                                       SpeedVarianceInstruction(
                                         color: theme.primaryColor,
-                                        instruction: _isFirstStagePassed
+                                        instruction: _isFirstStagePassed.value
                                             ? "Great job! Now record yourself saying the word."
                                             : context.tr(
                                                 'games.speed_variance_instruction',
@@ -327,13 +321,13 @@ void _handleTimeExpired() {
                                         isDark: isDark,
                                       ),
                                         SizedBox(height: gapPrompt),
-                                        if (_isFirstStagePassed && !_isAnswered)
+                                        if (_isFirstStagePassed.value && !_isAnswered.value)
                                           Padding(
                                             padding: EdgeInsets.only(bottom: 16.h),
                                             child: SpeedVarianceSpeedToggle(
-                                              isNatural: _isNaturalSpeed,
+                                              isNatural: _isNaturalSpeed.value,
                                               onChanged: (val) {
-                                                setState(() => _isNaturalSpeed = val);
+                                                _isNaturalSpeed.value = val;
                                                 _playTts(
                                                   quest.textToSpeak ?? "",
                                                   speed: val ? (quest.naturalSpeed ?? 1.0) : (quest.clearSpeed ?? 0.75),
@@ -348,8 +342,8 @@ void _handleTimeExpired() {
                                           color: theme.primaryColor,
                                           onPlayTts: (text) => _playTts(
                                             text,
-                                            speed: _isFirstStagePassed
-                                                ? (_isNaturalSpeed ? (quest.naturalSpeed ?? 1.0) : (quest.clearSpeed ?? 0.75))
+                                            speed: _isFirstStagePassed.value
+                                                ? (_isNaturalSpeed.value ? (quest.naturalSpeed ?? 1.0) : (quest.clearSpeed ?? 0.75))
                                                 : quest.targetSpeed,
                                           ),
                                         ),
@@ -365,10 +359,10 @@ void _handleTimeExpired() {
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                         isAnswered:
-                                            _isAnswered || _isFirstStagePassed,
-                                        isDragging: _isDragging,
-                                        dialRotation: _dialRotation,
-                                        selectedIndex: _selectedIndex,
+                                            _isAnswered.value || _isFirstStagePassed.value,
+                                        isDragging: _isDragging.value,
+                                        dialRotation: _dialRotation.value,
+                                        selectedIndex: _selectedIndex.value,
                                         onDialRotate: _onDialRotate,
                                         onDialRelease: _onDialRelease,
                                         onSubmitChoice: _submitChoice,
@@ -380,7 +374,7 @@ void _handleTimeExpired() {
                               ),
                             ),
                           ),
-                          if (_isFirstStagePassed && !_isAnswered)
+                          if (_isFirstStagePassed.value && !_isAnswered.value)
                             SpeakToConfirmOverlay(
                               expectedText: quest.textToSpeak ?? quest.word ?? "",
                               primaryColor: theme.primaryColor,
@@ -388,14 +382,16 @@ void _handleTimeExpired() {
                               onConfirmed: () => _submitVerbalEvaluation(true),
                               onSkipped: () => _submitVerbalEvaluation(false),
                             ),
-                          SizedBox(height: _isAnswered || _isFirstStagePassed ? 140.h : 0),
+                          SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 140.h : 0),
                         ],
                       ),
                     ),
                   ],
                 );
               },
-            ),
+              );
+            },
+          ),
           ),
         );
       },
