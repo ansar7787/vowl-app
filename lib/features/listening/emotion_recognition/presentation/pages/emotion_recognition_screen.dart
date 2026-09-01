@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -37,13 +37,24 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   final _soundService = di.sl<SoundService>();
 
   final ValueNotifier<Offset> _coreOffset = ValueNotifier(Offset.zero);
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  int? _selectedIndex;
-  int? _pendingSelectedIndex;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _pendingSelectedIndex.dispose();
+    _coreOffset.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -53,14 +64,10 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
     );
   }
 
-  @override
-  void dispose() {
-    _coreOffset.dispose();
-    super.dispose();
-  }
+
 
   void _onCoreMove(Offset delta, BoxConstraints constraints) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     double nextX = (_coreOffset.value.dx + delta.dx).clamp(
       -constraints.maxWidth / 2 + 40.r,
       constraints.maxWidth / 2 - 40.r,
@@ -73,7 +80,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   }
 
   void _submitFinalAnswer(bool nailedSpeaking, int correct) {
-    if (_isAnswered || _pendingSelectedIndex == null) return;
+    if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
     
     if (!nailedSpeaking) {
       _hapticService.error();
@@ -91,25 +98,21 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
       return;
     }
 
-    bool isCorrect = _pendingSelectedIndex == correct;
+    bool isCorrect = _pendingSelectedIndex.value == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
@@ -122,17 +125,15 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: 'Emotion Recognition',
-          userAnswer: _pendingSelectedIndex.toString(),
+          userAnswer: _pendingSelectedIndex.value.toString(),
           correctAnswer: correct.toString(),
           level: widget.level,
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -145,29 +146,25 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _pendingSelectedIndex = null;
-              _coreOffset.value = Offset.zero;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _pendingSelectedIndex.value = null;
+            _coreOffset.value = Offset.zero;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ListeningGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -180,12 +177,15 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
-        return ListeningBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _pendingSelectedIndex]),
+          builder: (context, _) {
+            return ListeningBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
@@ -207,7 +207,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                             children: [
                               SizedBox(height: 6.h),
                               EmotionRecognitionInstruction(
-                                isAnswered: _isAnswered,
+                                isAnswered: _isAnswered.value,
                                 color: theme.primaryColor,
                                 instruction: quest.instruction,
                               ),
@@ -221,15 +221,14 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                 },
                                 color: theme.primaryColor,
                                 emoji: quest.emoji,
-                                isCorrectState: _isCorrect,
+                                isCorrectState: _isCorrect.value,
                               ),
                               SizedBox(height: 32.h),
                             ],
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -245,16 +244,14 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                   correctAnswerIndex:
                                       quest.correctAnswerIndex ?? 0,
                                   color: theme.primaryColor,
-                                  isAnswered: _isAnswered,
-                                  isCorrectState: _isCorrect,
-                                  selectedIndex: _selectedIndex,
+                                  isAnswered: _isAnswered.value,
+                                  isCorrectState: _isCorrect.value,
+                                  selectedIndex: _selectedIndex.value,
                                   coreOffset: _coreOffset,
                                   onCoreMove: _onCoreMove,
                                   onSubmitAnswer: (index) {
-                                    if (_isAnswered || _pendingSelectedIndex != null) return;
-                                    setState(() {
-                                      _pendingSelectedIndex = index;
-                                    });
+                                    if (_isAnswered.value || _pendingSelectedIndex.value != null) return;
+                                    _pendingSelectedIndex.value = index;
                                   },
                                 ),
                               ),
@@ -265,9 +262,9 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                       ),
                     ],
                   ),
-                  if (_pendingSelectedIndex != null && !_isAnswered)
+                  if (_pendingSelectedIndex.value != null && !_isAnswered.value)
                     SpeakToConfirmOverlay(
-                      expectedText: quest.options![_pendingSelectedIndex!],
+                      expectedText: quest.options![_pendingSelectedIndex.value!],
                       primaryColor: theme.primaryColor,
                       onConfirmed: () => _submitFinalAnswer(
                         true,
@@ -281,6 +278,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                     ),
                 ],
               ),
+            );
+          },
         );
       },
     );
