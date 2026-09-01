@@ -26,7 +26,13 @@ class KidsExplanationCard extends StatefulWidget {
 }
 
 class _KidsExplanationCardState extends State<KidsExplanationCard> {
-  String? _translatedText;
+  final ValueNotifier<String?> _translatedText = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _translatedText.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -76,51 +82,61 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(
-                  color: Colors.redAccent.withValues(alpha: 0.15),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.sentiment_dissatisfied_rounded,
-                  color: Colors.redAccent,
-                  size: 28.r,
-                ),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: Text(
-                  context.tr('games.try_again', fallback: 'Try Again'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.redAccent,
+          ValueListenableBuilder<String?>(
+            valueListenable: _translatedText,
+            builder: (context, translatedText, _) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent.withValues(alpha: 0.15),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.sentiment_dissatisfied_rounded,
+                          color: Colors.redAccent,
+                          size: 28.r,
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: Text(
+                          context.tr('games.try_again', fallback: 'Try Again'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.redAccent,
+                          ),
+                        ),
+                      ),
+                      if (translatedText == null)
+                        TranslateButtonWidget(
+                          originalText: explanation,
+                          onTranslationComplete: (translated) {
+                            _translatedText.value = translated;
+                          },
+                        ),
+                    ],
                   ),
-                ),
-              ),
-              if (_translatedText == null)
-                TranslateButtonWidget(
-                  originalText: explanation,
-                  onTranslationComplete: (translated) {
-                    if (mounted) setState(() => _translatedText = translated);
-                  },
-                ),
-            ],
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            _translatedText ?? explanation,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              color: isDark ? Colors.white70 : Colors.black87,
-              height: 1.4,
-              fontWeight: FontWeight.w500,
-            ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    translatedText ?? explanation,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      color: isDark ? Colors.white70 : Colors.black87,
+                      height: 1.4,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
           SizedBox(height: 24.h),
           ScaleButton(
