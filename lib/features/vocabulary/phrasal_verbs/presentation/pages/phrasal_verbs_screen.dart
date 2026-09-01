@@ -247,7 +247,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
+                        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+                        final maxHeight = constraints.maxHeight + keyboardHeight;
                         final isCompact = maxHeight < 580;
 
                         final double estimatedContentHeight =
@@ -275,12 +276,14 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        return RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
                             controller: _scrollController,
                             physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                             slivers: [
@@ -453,25 +456,27 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                   ],
                                 ),
                               ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
-                              ContextSentenceBuilder(
-                                targetKeyword: "${quest.word} ${quest.correctAnswer}".trim(),
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: false,
-                                exampleSentence: _getFormattedExampleSentence(quest),
-                              ),
-                            SizedBox(height: 10.h),
-                          ],
-                        ),
-                      ],
+                              SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 350.h : 60.h),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ), // CustomScrollView
-          ); // RawScrollbar
+                ],
+              ), // CustomScrollView
+            ), // RawScrollbar
+            if (_isFirstStagePassed.value && !_isAnswered.value)
+              ContextSentenceBuilder(
+                targetKeyword: "${quest.word} ${quest.correctAnswer}".trim(),
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitFinalAnswer(true),
+                onSkipped: () => _submitFinalAnswer(false),
+                isPositioned: true,
+                exampleSentence: _getFormattedExampleSentence(quest),
+              ),
+          ],
+        );
         }, // LayoutBuilder builder
       ), // LayoutBuilder
     ); // VocabularyBaseLayout

@@ -220,6 +220,9 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
+                        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+                        final trueMaxHeight = constraints.maxHeight + keyboardHeight;
+
                         return Stack(
                           children: [
                             RawScrollbar(
@@ -238,7 +241,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                     ignoring: _isFirstStagePassed.value,
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
-                                        minHeight: constraints.maxHeight,
+                                        minHeight: trueMaxHeight,
                                       ),
                                       child: Stack(
                                         children: [
@@ -254,7 +257,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                         Column(
                                           children: [
                                             SizedBox(
-                                              height: constraints.maxHeight,
+                                              height: trueMaxHeight,
                                               child: _buildUnfoldContent(
                                                 quest,
                                                 theme.primaryColor,

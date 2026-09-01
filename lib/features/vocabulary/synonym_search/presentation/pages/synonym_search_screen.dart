@@ -343,13 +343,14 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               : LayoutBuilder(
                   builder: (context, constraints) {
                     _lastConstraints = constraints;
+                    final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
                     final screenSize = MediaQuery.of(context).size;
                     final double safeWidth = constraints.maxWidth.isFinite
                         ? constraints.maxWidth
                         : screenSize.width;
-                    final double safeHeight = constraints.maxHeight.isFinite
+                    final double safeHeight = (constraints.maxHeight.isFinite
                         ? constraints.maxHeight
-                        : (screenSize.height * 0.6);
+                        : (screenSize.height * 0.6)) + keyboardHeight;
                     final isCompact = safeHeight < 580;
 
                     return Stack(
@@ -476,7 +477,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                               ),
                                             ],
                                           ),
-                                        ),
                                       ),
                                       if (_isFirstStagePassed.value)
                                         Column(
@@ -489,26 +489,25 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                 nuanceDifference: quest.nuanceDifference!,
                                                 primaryColor: theme.primaryColor,
                                               ),
-                                              SizedBox(height: 10.h),
-                                            if (!_isAnswered.value)
-                                              ContextSentenceBuilder(
-                                                targetKeyword: quest.correctAnswer ?? "",
-                                                primaryColor: theme.primaryColor,
-                                                acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
-                                                onConfirmed: () => _submitVerbalEvaluation(true),
-                                                onSkipped: () => _submitVerbalEvaluation(false),
-                                                isPositioned: false,
-                                                exampleSentence: quest.contextSentence,
-                                              ),
                                           ],
                                         ),
-                                      SizedBox(height: 60.h),
+                                      SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 350.h : 60.h),
                                     ],
                                   ),
                                 ),
                               ],
                             ),
                           ),
+                          if (_isFirstStagePassed.value && !_isAnswered.value)
+                            ContextSentenceBuilder(
+                              targetKeyword: quest.correctAnswer ?? "",
+                              primaryColor: theme.primaryColor,
+                              acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
+                              onConfirmed: () => _submitVerbalEvaluation(true),
+                              onSkipped: () => _submitVerbalEvaluation(false),
+                              isPositioned: true,
+                              exampleSentence: quest.contextSentence,
+                            ),
                           ],
                         );
                   },

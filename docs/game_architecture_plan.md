@@ -12,14 +12,16 @@ To achieve butter-smooth 60fps performance and completely eliminate `setState` l
 
 > **CRITICAL REMINDER FOR ALL MODULES**: Never limit the `setState` audit to just the main `*_screen.dart` files. You **must** also thoroughly audit all custom widgets inside `presentation/widgets/` (such as `ReactionCore`, `TopicDraggable`, etc.) for hidden `setState` logic.
 
-## 3. The 6-Pillar Checklist
-Every single one of the 100 games must pass these 6 checks:
+## 3. The 8-Pillar Checklist
+Every single one of the 100 games must pass these 8 checks:
 1. **[Dual-Stage Scroll UX]**: Does it use the continuous scroll reveal? (Mark as `[N/A]` if the game doesn't need a second stage).
 2. **[Sliver Performance Layout]**: Does it use `CustomScrollView` and `Slivers` to prevent render overflow and ensure 60fps?
 3. **[Zero setState (ValueNotifier)]**: Are all `setState` calls completely eliminated in favor of `ValueNotifier` and `ListenableBuilder`?
 4. **[Feedback Card Logic]**: Does it correctly hide pedagogical fields if Stage 2 is used, showing only the explanation?
-5. **[10/10 UX Confirmation (No Patchwork)]**: Checked deeply to ensure it's a real-world, premium, flawless UX.
-6. **[Git Commit & Push]**: Committed and pushed to GitHub for safety.
+5. **[Edge-to-Edge Scrollbar]**: Does it wrap CustomScrollView in RawScrollbar so the user knows they can scroll?
+6. **[Keyboard Scroll Stability]**: Does it use `Scrollable.ensureVisible` for text input components to prevent keyboard layout overlap?
+7. **[10/10 UX Confirmation (No Patchwork)]**: Checked deeply to ensure it's a real-world, premium, flawless UX.
+8. **[Git Commit & Push]**: Committed and pushed to GitHub for safety.
 
 ---
 
@@ -43,6 +45,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [x] Pedagogical Component: `AcademicField & Collocations Widget`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -52,6 +56,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [ ] Pedagogical Component: `GradientScale Widget`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -61,6 +67,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [x] Pedagogical Component: `wrongCollocations` & `ContextSentenceBuilder`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -70,6 +78,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [ ] Pedagogical Component: `ClueType & EvidenceWords Widget`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -79,6 +89,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [x] Pedagogical Component: `Formality Meter (registerLevel)`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -88,6 +100,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [N/A] Feedback Card Logic
 - [N/A] Pedagogical Component: (Single stage interaction)
+- [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
+- [N/A] Keyboard Scroll Stability (FocusNode visibility)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -97,6 +111,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [ ] Pedagogical Component: `Origin / Etymology Widget`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -106,6 +122,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [x] Pedagogical Component: `LiteralVsFigurative Widget` & `ContextSentenceBuilder`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -115,6 +133,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [ ] Pedagogical Component: `MeaningBreakdown Widget`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -124,6 +144,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [x] Pedagogical Component: `NuanceScale Widget` & `ContextSentenceBuilder`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -133,6 +155,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [N/A] Feedback Card Logic
 - [N/A] Pedagogical Component: (Drag & drop bucket interaction)
+- [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
+- [N/A] Keyboard Scroll Stability (FocusNode visibility)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -142,6 +166,8 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
 - [ ] Pedagogical Component: `FamilyTree Widget`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 

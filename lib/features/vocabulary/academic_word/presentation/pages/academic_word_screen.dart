@@ -219,19 +219,27 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
               ? const SizedBox.shrink()
               : LayoutBuilder(
                   builder: (context, constraints) {
+                    final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+                    final trueMaxHeight = constraints.maxHeight + keyboardHeight;
+
                     return Stack(
                       children: [
-                        CustomScrollView(
+                        RawScrollbar(
                           controller: _scrollController,
-                          physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                          slivers: [
+                          thumbColor: _cachedTheme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                            slivers: [
                             SliverToBoxAdapter(
                               child: ConstrainedBox(
-                                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                constraints: BoxConstraints(minHeight: trueMaxHeight),
                                 child: Column(
                                       children: [
                                         SizedBox(
-                                          height: constraints.maxHeight,
+                                          height: trueMaxHeight,
                                           child: IgnorePointer(
                                             ignoring: _isDragPassed.value,
                                             child: _AcademicWordGameBody(
@@ -269,23 +277,23 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                               ],
                                             ),
                                           ),
+                                        SizedBox(height: (_isAnswered.value || _isDragPassed.value) ? 350.h : 60.h),
                                       ],
                                     ),
                                 ),
                               ),
-                              if (_isDragPassed.value && !_isAnswered.value)
-                                SliverToBoxAdapter(
-                                  child: TypeToConfirmOverlay(
-                                    expectedText: quest.correctAnswer ?? '',
-                                    primaryColor: _cachedTheme.primaryColor,
-                                    onConfirmed: () => _submitFinalAnswer(true),
-                                    onSkipped: () => _submitFinalAnswer(false),
-                                    onBypassed: () => _submitFinalAnswer(true),
-                                    isPositioned: false,
-                                  ),
-                                ),
                             ], // closes slivers
                           ), // closes CustomScrollView
+                        ), // closes RawScrollbar
+                        if (_isDragPassed.value && !_isAnswered.value)
+                            TypeToConfirmOverlay(
+                              expectedText: quest.correctAnswer ?? '',
+                              primaryColor: _cachedTheme.primaryColor,
+                              onConfirmed: () => _submitFinalAnswer(true),
+                              onSkipped: () => _submitFinalAnswer(false),
+                              onBypassed: () => _submitFinalAnswer(true),
+                              isPositioned: true,
+                            ),
                         ], // closes Stack children
                       ); // closes Stack
                     },
