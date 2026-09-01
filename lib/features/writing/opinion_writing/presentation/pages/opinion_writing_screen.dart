@@ -34,14 +34,25 @@ class OpinionWritingScreen extends StatefulWidget {
 class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  final List<String> _leftPanArgs = [];
-  final List<String> _rightPanArgs = [];
+  final ValueNotifier<List<String>> _leftPanArgs = ValueNotifier([]);
+  final ValueNotifier<List<String>> _rightPanArgs = ValueNotifier([]);
 
-  double _scaleRotation = 0.0;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _scaleRotation = ValueNotifier(0.0);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   WritingQuest? _lastQuest;
-  List<String> _shuffledOptions = [];
-  bool _pendingScaleSubmit = false;
+  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
+  final ValueNotifier<bool> _pendingScaleSubmit = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _leftPanArgs.dispose();
+    _rightPanArgs.dispose();
+    _scaleRotation.dispose();
+    _showConfetti.dispose();
+    _shuffledOptions.dispose();
+    _pendingScaleSubmit.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -55,47 +66,48 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     if (isAnswered) return;
 
     _hapticService.success();
-    setState(() {
-      _leftPanArgs.remove(arg);
-      _rightPanArgs.remove(arg);
+    final newLeft = List<String>.from(_leftPanArgs.value)..remove(arg);
+    final newRight = List<String>.from(_rightPanArgs.value)..remove(arg);
 
-      if (isLeft) {
-        _leftPanArgs.add(arg);
-      } else {
-        _rightPanArgs.add(arg);
-      }
+    if (isLeft) {
+      newLeft.add(arg);
+    } else {
+      newRight.add(arg);
+    }
 
-      double diff = (_leftPanArgs.length - _rightPanArgs.length).toDouble();
-      _scaleRotation = (diff * 0.06).clamp(-0.15, 0.15);
-    });
+    _leftPanArgs.value = newLeft;
+    _rightPanArgs.value = newRight;
+
+    double diff = (newLeft.length - newRight.length).toDouble();
+    _scaleRotation.value = (diff * 0.06).clamp(-0.15, 0.15);
   }
 
   void _removeArg(String arg, bool isLeft, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.selection();
-    setState(() {
-      if (isLeft) {
-        _leftPanArgs.remove(arg);
-      } else {
-        _rightPanArgs.remove(arg);
-      }
+    final newLeft = List<String>.from(_leftPanArgs.value);
+    final newRight = List<String>.from(_rightPanArgs.value);
 
-      double diff = (_leftPanArgs.length - _rightPanArgs.length).toDouble();
-      _scaleRotation = (diff * 0.06).clamp(-0.15, 0.15);
-    });
+    if (isLeft) {
+      newLeft.remove(arg);
+    } else {
+      newRight.remove(arg);
+    }
+    
+    _leftPanArgs.value = newLeft;
+    _rightPanArgs.value = newRight;
+
+    double diff = (newLeft.length - newRight.length).toDouble();
+    _scaleRotation.value = (diff * 0.06).clamp(-0.15, 0.15);
   }
 
   void _submitAnswer(bool isAnswered) {
     if (isAnswered) return;
-    setState(() {
-      _pendingScaleSubmit = true;
-    });
+    _pendingScaleSubmit.value = true;
   }
 
   void _submitFinalAnswer(bool nailedTyping) {
-    setState(() {
-      _pendingScaleSubmit = false;
-    });
+    _pendingScaleSubmit.value = false;
 
     final state = context.read<WritingBloc>().state;
     if (state is! WritingLoaded) return;
@@ -116,11 +128,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         .toSet();
 
     bool isLeftCorrect =
-        _leftPanArgs.length == 2 &&
-        _leftPanArgs.every((arg) => correctPros.contains(arg));
+        _leftPanArgs.value.length == 2 &&
+        _leftPanArgs.value.every((arg) => correctPros.contains(arg));
     bool isRightCorrect =
-        _rightPanArgs.length == 2 &&
-        _rightPanArgs.every((arg) => correctCons.contains(arg));
+        _rightPanArgs.value.length == 2 &&
+        _rightPanArgs.value.every((arg) => correctCons.contains(arg));
 
     context.read<WritingBloc>().add(
       SubmitAnswer(isLeftCorrect && isRightCorrect),
@@ -139,19 +151,14 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _leftPanArgs.clear();
-            _rightPanArgs.clear();
-            _scaleRotation = 0.0;
-            _pendingScaleSubmit = false;
-
-            // Randomize options for pedagogical integrity
-            _shuffledOptions = List.from(state.currentQuest.options ?? []);
-            _shuffledOptions.shuffle();
-          });
+          _leftPanArgs.value = [];
+          _rightPanArgs.value = [];
+          _scaleRotation.value = 0.0;
+          _pendingScaleSubmit.value = false;
+          _shuffledOptions.value = List.from(state.currentQuest.options ?? [])..shuffle();
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -168,10 +175,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
-        final options = _shuffledOptions.isNotEmpty
-            ? _shuffledOptions
-            : (quest?.options ?? []);
-        final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
+
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
         final bool? isCorrect = isLoaded
             ? state.answerStatus.asBoolOrNull
@@ -186,15 +190,23 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<WritingBloc>().add(const WritingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _leftPanArgs, _rightPanArgs, _scaleRotation, _shuffledOptions, _pendingScaleSubmit]),
+            builder: (context, _) {
+              final options = _shuffledOptions.value.isNotEmpty
+                  ? _shuffledOptions.value
+                  : (quest?.options ?? []);
+              final totalPlaced = _leftPanArgs.value.length + _rightPanArgs.value.length;
+
+              return quest == null
+                  ? const SizedBox()
+                  : Stack(
                   children: [
                     CustomScrollView(
                       physics: const BouncingScrollPhysics(),
@@ -243,9 +255,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                                 SizedBox(height: 8.h),
 
                                 OpinionWritingScaleInterface(
-                                  scaleRotation: _scaleRotation,
-                                  leftPanArgs: _leftPanArgs,
-                                  rightPanArgs: _rightPanArgs,
+                                  scaleRotation: _scaleRotation.value,
+                                  leftPanArgs: _leftPanArgs.value,
+                                  rightPanArgs: _rightPanArgs.value,
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                   onDropArg: (arg, isLeft) =>
@@ -257,8 +269,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
 
                                 OpinionWritingArgumentStones(
                                   options: options,
-                                  leftPanArgs: _leftPanArgs,
-                                  rightPanArgs: _rightPanArgs,
+                                  leftPanArgs: _leftPanArgs.value,
+                                  rightPanArgs: _rightPanArgs.value,
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                 ),
@@ -267,8 +279,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
@@ -320,7 +331,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                         ),
                       ],
                     ),
-                    if (_pendingScaleSubmit && !isAnswered)
+                    if (_pendingScaleSubmit.value && !isAnswered)
                       SpeakToConfirmOverlay(
                         expectedText: quest.prompt ?? "I have balanced the arguments",
                         primaryColor: theme.primaryColor,
@@ -328,7 +339,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                         onSkipped: () => _submitFinalAnswer(false),
                       ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
