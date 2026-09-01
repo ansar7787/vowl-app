@@ -186,7 +186,7 @@ class _Header extends StatelessWidget {
   }
 }
 
-class _ExplanationCard extends StatefulWidget {
+class _ExplanationCard extends StatelessWidget {
   final String explanation;
   final Color color;
   final bool isDark;
@@ -198,27 +198,25 @@ class _ExplanationCard extends StatefulWidget {
   });
 
   @override
-  State<_ExplanationCard> createState() => _ExplanationCardState();
-}
-
-class _ExplanationCardState extends State<_ExplanationCard> {
-  String? _translatedText;
-
-  @override
   Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.explanation;
-    return Semantics(
+    final translatedTextNotifier = ValueNotifier<String?>(null);
+
+    return ValueListenableBuilder<String?>(
+      valueListenable: translatedTextNotifier,
+      builder: (context, translatedText, child) {
+        final displayText = translatedText ?? explanation;
+        return Semantics(
           label: 'Explanation: $displayText',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: widget.color.withValues(
-                alpha: widget.isDark ? 0.08 : 0.05,
+              color: color.withValues(
+                alpha: isDark ? 0.08 : 0.05,
               ),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: widget.color.withValues(alpha: 0.2),
+                color: color.withValues(alpha: 0.2),
                 width: 1,
               ),
             ),
@@ -230,7 +228,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     ExcludeSemantics(
                       child: Icon(
                         Icons.info_outline_rounded,
-                        color: widget.color,
+                        color: color,
                         size: 14.r,
                       ),
                     ),
@@ -245,18 +243,16 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                           fontFamily: 'Outfit',
                           fontSize: 11.sp,
                           fontWeight: FontWeight.w900,
-                          color: widget.color,
+                          color: color,
                           letterSpacing: 1.2,
                         ),
                       ),
                     ),
-                    if (_translatedText == null)
+                    if (translatedText == null)
                       TranslateButtonWidget(
-                        originalText: widget.explanation,
+                        originalText: explanation,
                         onTranslationComplete: (translated) {
-                          if (mounted) {
-                            setState(() => _translatedText = translated);
-                          }
+                          translatedTextNotifier.value = translated;
                         },
                       ),
                   ],
@@ -268,7 +264,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
-                    color: widget.isDark
+                    color: isDark
                         ? Colors.white.withValues(alpha: 0.8)
                         : const Color(0xFF475569),
                     height: 1.4,
@@ -286,6 +282,8 @@ class _ExplanationCardState extends State<_ExplanationCard> {
           duration: 400.ms,
           curve: Curves.easeOutBack,
         );
+      },
+    );
   }
 }
 
