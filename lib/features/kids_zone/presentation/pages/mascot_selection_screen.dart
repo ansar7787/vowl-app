@@ -209,7 +209,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
         
         return Container(
           width: double.infinity,
-          padding: EdgeInsets.all(16.r),
+          padding: EdgeInsets.all(14.r),
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF1E293B) : Colors.white,
             borderRadius: BorderRadius.circular(32.r),
@@ -235,8 +235,8 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
               ScaleButton(
                 onTap: _handleTryMe,
                 child: Container(
-                  height: 110.h,
-                  width: 110.w,
+                  height: 100.h,
+                  width: 100.w,
                   decoration: BoxDecoration(
                     color: widget.color.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
@@ -245,7 +245,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                     alignment: Alignment.center,
                     children: [
                       VowlMascot(
-                        size: 75.r,
+                        size: 80.r,
                         mascotId: widget.id,
                         isKidsMode: true,
                         state: _isTrying ? VowlMascotState.happy : VowlMascotState.neutral,
@@ -256,7 +256,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                           padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                           decoration: BoxDecoration(
                             color: widget.color,
-                            borderRadius: BorderRadius.circular(12.r),
+                            borderRadius: BorderRadius.circular(10.r),
                           ),
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
@@ -279,7 +279,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                   ),
                 ),
               ),
-              SizedBox(height: 12.h),
+              SizedBox(height: 8.h),
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
@@ -287,7 +287,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                   maxLines: 1,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 22.sp,
+                    fontSize: 19.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
                   ),
@@ -302,12 +302,12 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     color: widget.color,
                   ),
                 ),
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 12.h),
               ScaleButton(
                 onTap: () {
                   context.read<ProfileBloc>().add(ProfileUpdateMascotRequested(widget.id));
@@ -319,10 +319,10 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                 },
                 child: Container(
                   width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 10.h),
+                  padding: EdgeInsets.symmetric(vertical: 8.h),
                   decoration: BoxDecoration(
                     color: isSelected ? widget.color : (isDark ? Colors.white10 : Colors.grey.shade200),
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(16.r),
                   ),
                   child: Center(
                     child: isSelected
@@ -331,14 +331,14 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Icon(Icons.check_circle_rounded, color: Colors.white, size: 16.sp),
+                                Icon(Icons.check_circle_rounded, color: Colors.white, size: 14.sp),
                                 SizedBox(width: 4.w),
                                 Text(
                                   "SELECTED",
                                   maxLines: 1,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
+                                    fontSize: 13.sp,
                                     fontWeight: FontWeight.w900,
                                     color: Colors.white,
                                     letterSpacing: 1.2,
@@ -354,7 +354,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                               maxLines: 1,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 14.sp,
+                                fontSize: 13.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white54 : Colors.black45,
                                 letterSpacing: 1.2,
