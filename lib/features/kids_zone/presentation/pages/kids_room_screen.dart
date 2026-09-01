@@ -217,7 +217,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
   void _speak(String text) {
     di.sl<TtsService>().speak(text);
-        _buddyMessage.value = text;
+    _buddyMessage.value = text;
     _isTalking.value = true;
     _speechTimer?.cancel();
     _speechTimer = Timer(const Duration(seconds: 3), () {
@@ -238,7 +238,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       user: user,
       currentTheme: _currentTheme.value,
       onThemeSelected: (theme) {
-                _currentTheme.value = theme;
+        _currentTheme.value = theme;
         context.read<ProfileBloc>().add(
           ProfileUpdateBuddyRoomRequested(theme: theme),
         );
@@ -339,319 +339,368 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
               return ListenableBuilder(
                 listenable: Listenable.merge([
-                  _currentTheme, _currentFood, _isInitializing, _isFeeding, _isTalking,
-                  _isSleeping, _buddyMessage, _hasCleanedToday, _dailyCareClaimed, _showConfetti
+                  _currentTheme,
+                  _currentFood,
+                  _isInitializing,
+                  _isFeeding,
+                  _isTalking,
+                  _isSleeping,
+                  _buddyMessage,
+                  _hasCleanedToday,
+                  _dailyCareClaimed,
+                  _showConfetti,
                 ]),
                 builder: (context, _) {
                   return Scaffold(
                     backgroundColor: bgColor,
                     body: Stack(
-                  children: [
-                    KidsRoomLayout(
-                      theme: _currentTheme.value,
-                      equippedFurniture: user.kidsEquippedFurniture,
-                      furnitureStore: _furnitureStore,
-                      mascotWidget: _buildMascotSection(user),
-                      topBarWidget: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          KidsRoomTopBar(
-                            user: user,
-                            onBack: () => _showBackConfirmation(context, user),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 16.w, top: 4.h),
-                            child: KidsRoomDailyCareCard(
-                              user: user,
-                              hasPlayed: hasPlayedToday,
-                              hasCleaned: _hasCleanedToday.value,
-                              isClaimed: _dailyCareClaimed.value || _hasClaimedToday(user),
-                              onClaim: () {
-                                  _dailyCareClaimed.value = true;
-                                  final newStreak = _lifecycleService
-                                      .computeUpdatedStreak(user);
-                                  context.read<ProfileBloc>().add(
-                                    ProfileUpdateBuddyRoomRequested(
-                                      careStreak: newStreak,
-                                      lastCareDate: DateTime.now(),
-                                    ),
-                                  );
-                                  context.read<EconomyBloc>().add(
-                                    const EconomyAddKidsCoinsRequested(25),
-                                  );
-                                  _speak(
-                                    "Great job! You earned 25 Kids Coins! 🪙",
-                                  );
-                                  _triggerConfetti();
-                                  di.sl<SoundService>().playCorrect();
-                                },
+                      children: [
+                        KidsRoomLayout(
+                          theme: _currentTheme.value,
+                          equippedFurniture: user.kidsEquippedFurniture,
+                          furnitureStore: _furnitureStore,
+                          mascotWidget: _buildMascotSection(user),
+                          topBarWidget: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              KidsRoomTopBar(
+                                user: user,
+                                onBack: () =>
+                                    _showBackConfirmation(context, user),
                               ),
-                            ),
-                        ],
-                      ),
-                      actionPanelWidget: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          _buildHeroNameplate(user),
-                          SizedBox(height: 4.h),
-                          KidsRoomActionPanel(
-                            isSleeping: _isSleeping.value,
-                            gamesPlayedToday: isGameToday ? user.kidsGamesPlayedToday : 0,
-                        onDecor: () => _showDecorStore(context, user),
-                        onFeed: () => _showFoodMenu(context, user),
-                        onPlay: () {
-                          if (_isSleeping.value) return;
-
-                          final playedCount = isGameToday
-                              ? user.kidsGamesPlayedToday
-                              : 0;
-
-                          if (playedCount >= 3) {
-                            _speak(
-                              "I'm tired of playing today. Come back tomorrow! 😴",
-                            );
-                            di.sl<SoundService>().playClick();
-                            return;
-                          }
-
-                          showDialog(
-                            context: context,
-                            barrierDismissible: false,
-                            builder: (_) => KidsRoomPlayGame(
-                              onComplete: (score) {
-                                Navigator.pop(context);
-
-                                // Update energy/happiness logic & daily game limit
-                                final newEnergy = (user.kidsBuddyEnergy - 10)
-                                    .clamp(0, 100);
-                                final newHunger = (user.kidsBuddyHunger + 5)
-                                    .clamp(0, 100);
-
-                                final tempUser = user.copyWith(
-                                  kidsBuddyEnergy: newEnergy,
-                                  kidsBuddyHunger: newHunger,
-                                );
-                                final newMood = _lifecycleService.computeMood(
-                                  tempUser,
-                                );
-
-                                context.read<ProfileBloc>().add(
-                                  ProfileUpdateBuddyRoomRequested(
-                                    energy: newEnergy,
-                                    hunger: newHunger,
-                                    mood: newMood,
-                                    gamesPlayedToday: playedCount + 1,
-                                    lastGameDate: DateTime.now(),
-                                  ),
-                                );
-
-                                if (score > 0) {
-                                  context.read<EconomyBloc>().add(
-                                    EconomyAddKidsCoinsRequested(score),
-                                  );
-                                  _speak("Yay! You got $score Kids Coins! 🪙");
-                                  _triggerConfetti();
-                                } else {
-                                  _speak("That was fun! Let's try again! 🎮");
-                                }
-                              },
-                            ),
-                          );
-                        },
-                        onClean: () {
-                          if (_isSleeping.value) return;
-                          showDialog(
-                            context: context,
-                            barrierDismissible: false,
-                            builder: (_) => KidsRoomCleanActivity(
-                              onComplete: () {
-                                Navigator.pop(context);
-                                final isFirstClean =
-                                    !_hasCleanedToday.value &&
-                                    !_hasClaimedToday(user);
-                                _hasCleanedToday.value = true;
-                                SharedPreferences.getInstance().then((prefs) {
-                                  prefs.setString(
-                                    'kids_last_clean_date',
-                                    DateTime.now().toIso8601String(),
-                                  );
-                                });
-                                if (isFirstClean) {
-                                  context.read<EconomyBloc>().add(
-                                    const EconomyAddKidsCoinsRequested(10),
-                                  );
-                                  _speak(
-                                    "Wow! The room is so clean! 10 Kids Coins! 🪙",
-                                  );
-                                  _triggerConfetti();
-                                } else {
-                                  _speak("Sparkling clean! ✨");
-                                }
-                              },
-                            ),
-                          );
-                        },
-                        onSleepToggle: () {
-                          _isSleeping.value = !_isSleeping.value;
-                          _speak(
-                            _isSleeping.value
-                                ? "Goodnight! Shhh..."
-                                : "I'm awake! Let's play!",
-                          );
-                        },
-                        onTalk: () {
-                          final messages = _lifecycleService.getMoodMessages(
-                            user.kidsBuddyMood,
-                          );
-                          _speak(messages[Random().nextInt(messages.length)]);
-                        },
-                        onThemeTap: () => _showThemeMenu(context, user),
-                      ),
-                    ],
-                  ),
-                      overlayWidget: (_isSleeping.value || _showConfetti.value)
-                          ? Stack(
-                              children: [
-                                if (_isSleeping.value)
-                                  GestureDetector(
-                                    onTap: () {
-                                      _isSleeping.value = false;
-                                      _speak("I'm awake! Let's play!");
-                                    },
-                                    child: Container(
-                                      color: const Color(
-                                        0xFF0F172A,
-                                      ).withValues(alpha: 0.6),
-                                      child: Stack(
-                                        children: [
-                                          ...List.generate(
-                                            25,
-                                            (i) => Positioned(
-                                              top: _sleepStarPositions[i].dy * 1.sh,
-                                              left:
-                                                  _sleepStarPositions[i].dx * 1.sw,
-                                              child:
-                                                  const Text(
-                                                        "⭐",
-                                                        style: TextStyle(
-                                                          fontSize: 10,
-                                                          color: Colors.white30,
-                                                        ),
-                                                      )
-                                                      .animate(
-                                                        onPlay: (c) => c.repeat(
-                                                          reverse: true,
-                                                        ),
-                                                      )
-                                                      .fadeOut(
-                                                        duration:
-                                                            (1 +
-                                                                    Random().nextDouble() *
-                                                                        2)
-                                                                .seconds,
-                                                      ),
-                                            ),
-                                          ),
-                                          Center(
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                SizedBox(height: 200.h),
-                                                Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
-                                                            vertical: 12.h,
-                                                          ),
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white
-                                                            .withValues(
-                                                              alpha: 0.1,
-                                                            ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              30.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: Colors.white24,
-                                                        ),
-                                                      ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          Icon(
-                                                            Icons
-                                                                .touch_app_rounded,
-                                                            color: Colors.white,
-                                                            size: 20.sp,
-                                                          ),
-                                                          SizedBox(width: 10.w),
-                                                          Text(
-                                                            context.tr(
-                                                              'games.kids_tap_wake',
-                                                              fallback:
-                                                                  'Tap to wake',
-                                                            ),
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 12.sp,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w900,
-                                                              color:
-                                                                  Colors.white,
-                                                              letterSpacing: 1,
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    )
-                                                    .animate(
-                                                      onPlay: (c) => c.repeat(
-                                                        reverse: true,
-                                                      ),
-                                                    )
-                                                    .scale(
-                                                      begin: const Offset(1, 1),
-                                                      end: const Offset(
-                                                        1.05,
-                                                        1.05,
-                                                      ),
-                                                      duration: 1.seconds,
-                                                    ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
+                              Padding(
+                                padding: EdgeInsets.only(left: 16.w, top: 4.h),
+                                child: KidsRoomDailyCareCard(
+                                  user: user,
+                                  hasPlayed: hasPlayedToday,
+                                  hasCleaned: _hasCleanedToday.value,
+                                  isClaimed:
+                                      _dailyCareClaimed.value ||
+                                      _hasClaimedToday(user),
+                                  onClaim: () {
+                                    _dailyCareClaimed.value = true;
+                                    final newStreak = _lifecycleService
+                                        .computeUpdatedStreak(user);
+                                    context.read<ProfileBloc>().add(
+                                      ProfileUpdateBuddyRoomRequested(
+                                        careStreak: newStreak,
+                                        lastCareDate: DateTime.now(),
                                       ),
-                                    ),
-                                  ).animate().fadeIn(duration: 600.ms),
+                                    );
+                                    context.read<EconomyBloc>().add(
+                                      const EconomyAddKidsCoinsRequested(25),
+                                    );
+                                    _speak(
+                                      "Great job! You earned 25 Kids Coins! 🪙",
+                                    );
+                                    _triggerConfetti();
+                                    di.sl<SoundService>().playCorrect();
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          actionPanelWidget: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              _buildHeroNameplate(user),
+                              SizedBox(height: 7.h),
+                              KidsRoomActionPanel(
+                                isSleeping: _isSleeping.value,
+                                gamesPlayedToday: isGameToday
+                                    ? user.kidsGamesPlayedToday
+                                    : 0,
+                                onDecor: () => _showDecorStore(context, user),
+                                onFeed: () => _showFoodMenu(context, user),
+                                onPlay: () {
+                                  if (_isSleeping.value) return;
 
-                                if (_showConfetti.value)
-                                  const Positioned.fill(
-                                    child: IgnorePointer(child: GameConfetti()),
-                                  ),
-                              ],
-                            )
-                          : null,
+                                  final playedCount = isGameToday
+                                      ? user.kidsGamesPlayedToday
+                                      : 0;
+
+                                  if (playedCount >= 3) {
+                                    _speak(
+                                      "I'm tired of playing today. Come back tomorrow! 😴",
+                                    );
+                                    di.sl<SoundService>().playClick();
+                                    return;
+                                  }
+
+                                  showDialog(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (_) => KidsRoomPlayGame(
+                                      onComplete: (score) {
+                                        Navigator.pop(context);
+
+                                        // Update energy/happiness logic & daily game limit
+                                        final newEnergy =
+                                            (user.kidsBuddyEnergy - 10).clamp(
+                                              0,
+                                              100,
+                                            );
+                                        final newHunger =
+                                            (user.kidsBuddyHunger + 5).clamp(
+                                              0,
+                                              100,
+                                            );
+
+                                        final tempUser = user.copyWith(
+                                          kidsBuddyEnergy: newEnergy,
+                                          kidsBuddyHunger: newHunger,
+                                        );
+                                        final newMood = _lifecycleService
+                                            .computeMood(tempUser);
+
+                                        context.read<ProfileBloc>().add(
+                                          ProfileUpdateBuddyRoomRequested(
+                                            energy: newEnergy,
+                                            hunger: newHunger,
+                                            mood: newMood,
+                                            gamesPlayedToday: playedCount + 1,
+                                            lastGameDate: DateTime.now(),
+                                          ),
+                                        );
+
+                                        if (score > 0) {
+                                          context.read<EconomyBloc>().add(
+                                            EconomyAddKidsCoinsRequested(score),
+                                          );
+                                          _speak(
+                                            "Yay! You got $score Kids Coins! 🪙",
+                                          );
+                                          _triggerConfetti();
+                                        } else {
+                                          _speak(
+                                            "That was fun! Let's try again! 🎮",
+                                          );
+                                        }
+                                      },
+                                    ),
+                                  );
+                                },
+                                onClean: () {
+                                  if (_isSleeping.value) return;
+                                  showDialog(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (_) => KidsRoomCleanActivity(
+                                      onComplete: () {
+                                        Navigator.pop(context);
+                                        final isFirstClean =
+                                            !_hasCleanedToday.value &&
+                                            !_hasClaimedToday(user);
+                                        _hasCleanedToday.value = true;
+                                        SharedPreferences.getInstance().then((
+                                          prefs,
+                                        ) {
+                                          prefs.setString(
+                                            'kids_last_clean_date',
+                                            DateTime.now().toIso8601String(),
+                                          );
+                                        });
+                                        if (isFirstClean) {
+                                          context.read<EconomyBloc>().add(
+                                            const EconomyAddKidsCoinsRequested(
+                                              10,
+                                            ),
+                                          );
+                                          _speak(
+                                            "Wow! The room is so clean! 10 Kids Coins! 🪙",
+                                          );
+                                          _triggerConfetti();
+                                        } else {
+                                          _speak("Sparkling clean! ✨");
+                                        }
+                                      },
+                                    ),
+                                  );
+                                },
+                                onSleepToggle: () {
+                                  _isSleeping.value = !_isSleeping.value;
+                                  _speak(
+                                    _isSleeping.value
+                                        ? "Goodnight! Shhh..."
+                                        : "I'm awake! Let's play!",
+                                  );
+                                },
+                                onTalk: () {
+                                  final messages = _lifecycleService
+                                      .getMoodMessages(user.kidsBuddyMood);
+                                  _speak(
+                                    messages[Random().nextInt(messages.length)],
+                                  );
+                                },
+                                onThemeTap: () => _showThemeMenu(context, user),
+                              ),
+                            ],
+                          ),
+                          overlayWidget:
+                              (_isSleeping.value || _showConfetti.value)
+                              ? Stack(
+                                  children: [
+                                    if (_isSleeping.value)
+                                      GestureDetector(
+                                        onTap: () {
+                                          _isSleeping.value = false;
+                                          _speak("I'm awake! Let's play!");
+                                        },
+                                        child: Container(
+                                          color: const Color(
+                                            0xFF0F172A,
+                                          ).withValues(alpha: 0.6),
+                                          child: Stack(
+                                            children: [
+                                              ...List.generate(
+                                                25,
+                                                (i) => Positioned(
+                                                  top:
+                                                      _sleepStarPositions[i]
+                                                          .dy *
+                                                      1.sh,
+                                                  left:
+                                                      _sleepStarPositions[i]
+                                                          .dx *
+                                                      1.sw,
+                                                  child:
+                                                      const Text(
+                                                            "⭐",
+                                                            style: TextStyle(
+                                                              fontSize: 10,
+                                                              color: Colors
+                                                                  .white30,
+                                                            ),
+                                                          )
+                                                          .animate(
+                                                            onPlay: (c) =>
+                                                                c.repeat(
+                                                                  reverse: true,
+                                                                ),
+                                                          )
+                                                          .fadeOut(
+                                                            duration:
+                                                                (1 +
+                                                                        Random().nextDouble() *
+                                                                            2)
+                                                                    .seconds,
+                                                          ),
+                                                ),
+                                              ),
+                                              Center(
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    SizedBox(height: 200.h),
+                                                    Container(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    24.w,
+                                                                vertical: 12.h,
+                                                              ),
+                                                          decoration: BoxDecoration(
+                                                            color: Colors.white
+                                                                .withValues(
+                                                                  alpha: 0.1,
+                                                                ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  30.r,
+                                                                ),
+                                                            border: Border.all(
+                                                              color: Colors
+                                                                  .white24,
+                                                            ),
+                                                          ),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              Icon(
+                                                                Icons
+                                                                    .touch_app_rounded,
+                                                                color: Colors
+                                                                    .white,
+                                                                size: 20.sp,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 10.w,
+                                                              ),
+                                                              Text(
+                                                                context.tr(
+                                                                  'games.kids_tap_wake',
+                                                                  fallback:
+                                                                      'Tap to wake',
+                                                                ),
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      12.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w900,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      1,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        )
+                                                        .animate(
+                                                          onPlay: (c) =>
+                                                              c.repeat(
+                                                                reverse: true,
+                                                              ),
+                                                        )
+                                                        .scale(
+                                                          begin: const Offset(
+                                                            1,
+                                                            1,
+                                                          ),
+                                                          end: const Offset(
+                                                            1.05,
+                                                            1.05,
+                                                          ),
+                                                          duration: 1.seconds,
+                                                        ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ).animate().fadeIn(duration: 600.ms),
+
+                                    if (_showConfetti.value)
+                                      const Positioned.fill(
+                                        child: IgnorePointer(
+                                          child: GameConfetti(),
+                                        ),
+                                      ),
+                                  ],
+                                )
+                              : null,
+                        ),
+                        // Premium Shimmer Overlay
+                        IgnorePointer(
+                          ignoring: !_isInitializing.value,
+                          child: AnimatedOpacity(
+                            opacity: _isInitializing.value ? 1.0 : 0.0,
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeInOut,
+                            child: _buildShimmerScreen(bgColor),
+                          ),
+                        ),
+                      ],
                     ),
-                    // Premium Shimmer Overlay
-                    IgnorePointer(
-                      ignoring: !_isInitializing.value,
-                      child: AnimatedOpacity(
-                        opacity: _isInitializing.value ? 1.0 : 0.0,
-                        duration: const Duration(milliseconds: 400),
-                        curve: Curves.easeInOut,
-                        child: _buildShimmerScreen(bgColor),
-                      ),
-                    ),
-                  ],
-                ),
-              );
+                  );
                 },
               );
             },
@@ -849,76 +898,86 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             if (_isSleeping.value)
               Positioned(
                 top: -60.h,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.9),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.r),
-                      topRight: Radius.circular(20.r),
-                      bottomRight: Radius.circular(20.r),
-                      bottomLeft: Radius.circular(4.r),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text("☁️", style: TextStyle(fontSize: 18.sp)),
-                      SizedBox(width: 8.w),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Dreaming about...",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black45,
-                            ),
+                child:
+                    Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 12.h,
                           ),
-                          Text(
-                            "Tomorrow's Adventure! 🚀",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFF6366F1),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.9),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20.r),
+                              topRight: Radius.circular(20.r),
+                              bottomRight: Radius.circular(20.r),
+                              bottomLeft: Radius.circular(4.r),
                             ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.1),
+                                blurRadius: 10,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(begin: 0, end: -10, duration: 3.seconds, curve: Curves.easeInOutSine),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text("☁️", style: TextStyle(fontSize: 18.sp)),
+                              SizedBox(width: 8.w),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Dreaming about...",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black45,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Tomorrow's Adventure! 🚀",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: const Color(0xFF6366F1),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .moveY(
+                          begin: 0,
+                          end: -10,
+                          duration: 3.seconds,
+                          curve: Curves.easeInOutSine,
+                        ),
               ),
 
             if (_isFeeding.value)
               Positioned(
                 top: -100.h,
-                child: Text(_currentFood.value, style: TextStyle(fontSize: 45.sp))
-                    .animate(key: ValueKey(_currentFood.value))
-                    .moveY(
-                      begin: -50,
-                      end: 120,
-                      duration: 800.ms,
-                      curve: Curves.bounceOut,
-                    )
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(0.5, 0.5),
-                      duration: 800.ms,
-                    )
-                    .fadeOut(delay: 600.ms),
+                child:
+                    Text(_currentFood.value, style: TextStyle(fontSize: 45.sp))
+                        .animate(key: ValueKey(_currentFood.value))
+                        .moveY(
+                          begin: -50,
+                          end: 120,
+                          duration: 800.ms,
+                          curve: Curves.bounceOut,
+                        )
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(0.5, 0.5),
+                          duration: 800.ms,
+                        )
+                        .fadeOut(delay: 600.ms),
               ),
           ],
         ),
@@ -928,14 +987,21 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
   Widget _buildHeroNameplate(UserEntity user) {
     final stickerId = user.kidsEquippedSticker;
-    final buddyName = user.kidsMascot == 'foxie' ? 'FOXIE' : user.kidsMascot == 'dino' ? 'DINO' : 'OWLY';
-    
+    final buddyName = user.kidsMascot == 'foxie'
+        ? 'FOXIE'
+        : user.kidsMascot == 'dino'
+        ? 'DINO'
+        : 'OWLY';
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.6), width: 2.w),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.6),
+          width: 2.w,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),
@@ -947,44 +1013,53 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            buddyName,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              letterSpacing: 2,
+          Flexible(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                buddyName,
+                maxLines: 1,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: 2,
+                ),
+              ),
             ),
           ),
           if (stickerId != null) ...[
             SizedBox(width: 8.w),
             Container(
-              width: 26.r,
-              height: 26.r,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 4, offset: const Offset(0, 2)),
-                ],
-              ),
-              child: Center(
-                child: AnimatedKidsAsset(
-                  emoji: KidsAssets.getStickerEmoji(stickerId),
-                  size: 16.r,
-                  animation: KidsAssetAnimation.none,
-                ),
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .moveY(begin: -1, end: 1, duration: 1.5.seconds),
+                  width: 26.r,
+                  height: 26.r,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: AnimatedKidsAsset(
+                      emoji: KidsAssets.getStickerEmoji(stickerId),
+                      size: 16.r,
+                      animation: KidsAssetAnimation.none,
+                    ),
+                  ),
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .moveY(begin: -1, end: 1, duration: 1.5.seconds),
           ],
         ],
       ),
     );
   }
-
 
   Widget _buildThemeNest(String theme) {
     switch (theme) {
@@ -1128,7 +1203,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       Navigator.pop(context);
     } else {
       di.sl<SoundService>().playWrong();
-      _showModernNotification(context, context.tr('kids_zone.not_enough_coins_hint', fallback: 'Keep playing to earn more coins! 🎮'), isError: true);
+      _showModernNotification(
+        context,
+        context.tr(
+          'kids_zone.not_enough_coins_hint',
+          fallback: 'Keep playing to earn more coins! 🎮',
+        ),
+        isError: true,
+      );
     }
   }
 
@@ -1142,7 +1224,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             EconomyAddKidsCoinsRequested(-(f['price'] as int)),
           );
           Navigator.pop(context);
-                    _currentFood.value = f['icon'] as String;
+          _currentFood.value = f['icon'] as String;
           _isFeeding.value = true;
           di.sl<SoundService>().playCorrect();
           final newHunger = (user.kidsBuddyHunger - 20).clamp(0, 100);
@@ -1170,7 +1252,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           Navigator.pop(context);
           _showModernNotification(
             context,
-            context.tr('kids_zone.not_enough_coins_hint', fallback: 'Keep playing to earn more coins! 🎮'),
+            context.tr(
+              'kids_zone.not_enough_coins_hint',
+              fallback: 'Keep playing to earn more coins! 🎮',
+            ),
             isError: true,
           );
         }
