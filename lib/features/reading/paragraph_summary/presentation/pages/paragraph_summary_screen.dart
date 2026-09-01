@@ -31,11 +31,21 @@ class ParagraphSummaryScreen extends StatefulWidget {
 class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  double _pinchWidth = 1.0;
-  bool _isDistilled = false;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _pinchWidth = ValueNotifier(1.0);
+  final ValueNotifier<bool> _isDistilled = ValueNotifier(false);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _pinchWidth.dispose();
+    _isDistilled.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -48,33 +58,27 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
   }
 
   void _onPinchUpdate(double scale) {
-    if (_isAnswered || _isDistilled) return;
-    setState(() {
-      _pinchWidth = scale.clamp(0.4, 1.0);
-      if (_pinchWidth < 0.6) {
-        _hapticService.selection();
-      }
-    });
+    if (_isAnswered.value || _isDistilled.value) return;
+    _pinchWidth.value = scale.clamp(0.4, 1.0);
+    if (_pinchWidth.value < 0.6) {
+      _hapticService.selection();
+    }
   }
 
   void _onPinchEnd() {
-    if (_isAnswered || _isDistilled) return;
-    if (_pinchWidth < 0.55) {
+    if (_isAnswered.value || _isDistilled.value) return;
+    if (_pinchWidth.value < 0.55) {
       _hapticService.heavy();
-      setState(() {
-        _isDistilled = true;
-        _pinchWidth = 0.45;
-      });
+      _isDistilled.value = true;
+      _pinchWidth.value = 0.45;
     } else {
-      setState(() => _pinchWidth = 1.0);
+      _pinchWidth.value = 1.0;
     }
   }
 
   void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = isCorrect;
 
     if (isCorrect) {
       _hapticService.success();
@@ -94,28 +98,24 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isDistilled = false;
-              _pinchWidth = 1.0;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isDistilled.value = false;
+            _pinchWidth.value = 1.0;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -130,12 +130,15 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isDistilled, _pinchWidth]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
@@ -163,19 +166,19 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                                 keywords: quest.keywords ?? [],
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                pinchWidth: _pinchWidth,
-                                isDistilled: _isDistilled,
+                                pinchWidth: _pinchWidth.value,
+                                isDistilled: _isDistilled.value,
                               ),
                             ),
                             SizedBox(height: 16.h),
                             Text(
-                              _isDistilled
+                              _isDistilled.value
                                   ? "DISTILLATION COMPLETE! THINK OF THE CORE SUMMARY AND REVEAL:"
                                   : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                color: _isDistilled
+                                color: _isDistilled.value
                                     ? Colors.greenAccent
                                     : theme.primaryColor.withValues(alpha: 0.6),
                                 fontSize: 11.sp,
@@ -186,14 +189,13 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_isDistilled && !_isAnswered) ...[
+                            if (_isDistilled.value && !_isAnswered.value) ...[
                               SizedBox(height: 24.h),
                               TypeToConfirmOverlay(
                                 expectedText: quest.correctAnswer ?? "",
@@ -201,13 +203,14 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                                 onConfirmed: () => _submitFinalAnswer(true, quest),
                                 onSkipped: () => _submitFinalAnswer(false, quest),
                                 allowSkip: true,
+                                isPositioned: false,
                               ),
                             ],
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: 30.h),
                               ParagraphSummaryResult(
                                 quest: quest,
-                                isCorrect: _isCorrect == true,
+                                isCorrect: _isCorrect.value == true,
                                 isDark: isDark,
                               ),
                             ],
@@ -218,6 +221,8 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                     ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
