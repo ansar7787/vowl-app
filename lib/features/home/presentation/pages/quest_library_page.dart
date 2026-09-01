@@ -29,8 +29,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   final TextEditingController _searchController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
 
-  String _searchQuery = '';
-  String _selectedCategory = 'all';
+  final ValueNotifier<String> _searchQuery = ValueNotifier('');
+  final ValueNotifier<String> _selectedCategory = ValueNotifier('all');
 
   // Cache list of categories and clean subtypes to avoid rebuilding lists on every frame
   late final List<String> _categories;
@@ -66,10 +66,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
   void _onSearchChanged() {
     final trimmed = _searchController.text.trim().toLowerCase();
-    if (trimmed == _searchQuery) return;
-    setState(() {
-      _searchQuery = trimmed;
-    });
+    if (trimmed == _searchQuery.value) return;
+    _searchQuery.value = trimmed;
   }
 
   @override
@@ -77,15 +75,17 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     _searchController.removeListener(_onSearchChanged);
     _searchController.dispose();
     _scrollController.dispose();
+    _searchQuery.dispose();
+    _selectedCategory.dispose();
     super.dispose();
   }
 
   List<GameSubtype> _getFilteredSubtypes() {
     return _allSubtypes.where((subtype) {
       // 1. Filter by category
-      if (_selectedCategory != 'all') {
+      if (_selectedCategory.value != 'all') {
         final catName = subtype.category.name.toLowerCase();
-        final selectedLower = _selectedCategory.toLowerCase();
+        final selectedLower = _selectedCategory.value.toLowerCase();
         if (selectedLower == 'elite') {
           if (catName != 'elitemastery') return false;
         } else {
@@ -94,11 +94,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
       }
 
       // 2. Filter by search query
-      if (_searchQuery.isNotEmpty) {
+      if (_searchQuery.value.isNotEmpty) {
         final theme = LevelThemeHelper.getTheme(subtype.name);
         final title = theme.title.toLowerCase();
         final name = subtype.name.toLowerCase();
-        if (!title.contains(_searchQuery) && !name.contains(_searchQuery)) {
+        if (!title.contains(_searchQuery.value) && !name.contains(_searchQuery.value)) {
           return false;
         }
       }
@@ -126,7 +126,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
       );
     }
 
-    final filteredList = _getFilteredSubtypes();
+
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -139,7 +139,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           RepaintBoundary(
             child: LayoutBuilder(
                   builder: (context, constraints) {
-                    return CustomScrollView(
+                    return ListenableBuilder(
+                      listenable: Listenable.merge([_searchQuery, _selectedCategory]),
+                      builder: (context, _) {
+                        final filteredList = _getFilteredSubtypes();
+                        return CustomScrollView(
               controller: _scrollController,
               physics: const BouncingScrollPhysics(),
               slivers: [
@@ -211,6 +215,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       ),
               ],
             );
+                      }
+                    );
                   },
                 ),
           ),
@@ -685,14 +691,19 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               color: const Color(0xFF3B82F6),
               size: 24.r,
             ),
-            suffixIcon: _searchQuery.isNotEmpty
-                ? IconButton(
-                    icon: Icon(Icons.close_rounded, size: 20.r),
-                    color: contentColor.withValues(alpha: 0.6),
-                    tooltip: context.tr('common.clear', fallback: 'Clear'),
-                    onPressed: () => _searchController.clear(),
-                  ).animate().scale(duration: 200.ms)
-                : null,
+            suffixIcon: ValueListenableBuilder<String>(
+              valueListenable: _searchQuery,
+              builder: (context, searchQuery, _) {
+                return searchQuery.isNotEmpty
+                  ? IconButton(
+                      icon: Icon(Icons.close_rounded, size: 20.r),
+                      color: contentColor.withValues(alpha: 0.6),
+                      tooltip: context.tr('common.clear', fallback: 'Clear'),
+                      onPressed: () => _searchController.clear(),
+                    ).animate().scale(duration: 200.ms)
+                  : const SizedBox.shrink();
+              }
+            ),
             filled: true,
             fillColor: isDark
                 ? const Color(0xFF1E293B) // slate-800
@@ -737,7 +748,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         itemCount: _categories.length,
         itemBuilder: (context, index) {
           final cat = _categories[index];
-          final isSelected = _selectedCategory == cat;
+          final isSelected = _selectedCategory.value == cat;
 
           Color activeColor = const Color(0xFF3B82F6);
           if (cat == 'elite') activeColor = const Color(0xFFFFD700);
@@ -753,9 +764,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               label: label,
               child: ScaleButton(
                 onTap: () {
-                  setState(() {
-                    _selectedCategory = cat;
-                  });
+                  _selectedCategory.value = cat;
                 },
                 child: ExcludeSemantics(
                   child: AnimatedContainer(
