@@ -160,13 +160,13 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
     return Scaffold(
       backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-      body: ValueListenableBuilder<int>(
-        valueListenable: _stateHash,
-        builder: (context, _, child) {
-          return Stack(
-            children: [
-              const MeshGradientBackground(showLetters: false),
-              SafeArea(
+      body: Stack(
+        children: [
+          const MeshGradientBackground(showLetters: false),
+          ValueListenableBuilder<int>(
+            valueListenable: _stateHash,
+            builder: (context, _, child) {
+              return SafeArea(
                 bottom: false,
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 24.w),
@@ -194,10 +194,10 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                     ],
                   ),
                 ),
-              ),
-            ],
-          );
-        },
+              );
+            },
+          ),
+        ],
       ),
     );
   }

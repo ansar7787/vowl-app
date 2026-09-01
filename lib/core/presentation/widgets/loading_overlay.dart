@@ -92,127 +92,125 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
       children: [
         widget.child,
         if (widget.isLoading)
-          ValueListenableBuilder<int>(
-            valueListenable: _stateHash,
-            builder: (context, _, child) {
-              return Semantics(
-                // Inform screen readers that content is loading.
-                liveRegion: true,
-                label: context.tr(
-                  'loading.synchronizing_title',
-                  fallback: 'Synchronizing...',
-                ),
-                child: AbsorbPointer(
-                  child: Animate(
-                    effects: const [
-                      FadeEffect(duration: Duration(milliseconds: 300)),
-                    ],
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-                      child: Material(
-                        type: MaterialType.transparency,
-                        child: ColoredBox(
-                          color:
-                              (isDark
-                                      ? const Color(0xFF020617)
-                                      : const Color(0xFFF8FAFC))
-                                  .withValues(alpha: 0.85),
-                          child: SizedBox.expand(
-                            child: Center(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  // Spinner + pulsing logo
-                                  RepaintBoundary(
-                                    child: Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        SizedBox(
-                                              width: 120.r,
-                                              height: 120.r,
-                                              child: CircularProgressIndicator(
-                                                strokeWidth: 2,
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                      Color
-                                                    >(
-                                                      const Color(
-                                                        0xFF6366F1,
-                                                      ).withValues(alpha: 0.5),
-                                                    ),
-                                              ),
-                                            )
-                                            .animate(onPlay: (c) => c.repeat())
-                                            .rotate(duration: 2000.ms),
-                                        Container(
-                                              width: 80.r,
-                                              height: 80.r,
-                                              padding: EdgeInsets.all(12.r),
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                color: Colors.white.withValues(
-                                                  alpha: 0.05,
+          Semantics(
+            // Inform screen readers that content is loading.
+            liveRegion: true,
+            label: context.tr(
+              'loading.synchronizing_title',
+              fallback: 'Synchronizing...',
+            ),
+            child: AbsorbPointer(
+              child: Animate(
+                effects: const [
+                  FadeEffect(duration: Duration(milliseconds: 300)),
+                ],
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+                  child: Material(
+                    type: MaterialType.transparency,
+                    child: ColoredBox(
+                      color:
+                          (isDark
+                                  ? const Color(0xFF020617)
+                                  : const Color(0xFFF8FAFC))
+                              .withValues(alpha: 0.85),
+                      child: SizedBox.expand(
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // Spinner + pulsing logo
+                              RepaintBoundary(
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    SizedBox(
+                                          width: 120.r,
+                                          height: 120.r,
+                                          child: CircularProgressIndicator(
+                                            strokeWidth: 2,
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                                  const Color(
+                                                    0xFF6366F1,
+                                                  ).withValues(alpha: 0.5),
                                                 ),
-                                              ),
-                                              child: Image.asset(
-                                                'assets/images/vowl_logo.webp',
-                                                fit: BoxFit.contain,
-                                              ),
-                                            )
-                                            .animate(
-                                              onPlay: (c) =>
-                                                  c.repeat(reverse: true),
-                                            )
-                                            .scale(
-                                              duration: 1000.ms,
-                                              begin: const Offset(1.0, 1.0),
-                                              end: const Offset(1.1, 1.1),
-                                              curve: Curves.easeInOut,
+                                          ),
+                                        )
+                                        .animate(onPlay: (c) => c.repeat())
+                                        .rotate(duration: 2000.ms),
+                                    Container(
+                                          width: 80.r,
+                                          height: 80.r,
+                                          padding: EdgeInsets.all(12.r),
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.white.withValues(
+                                              alpha: 0.05,
                                             ),
-                                      ],
-                                    ),
-                                  ),
+                                          ),
+                                          child: Image.asset(
+                                            'assets/images/vowl_logo.webp',
+                                            fit: BoxFit.contain,
+                                          ),
+                                        )
+                                        .animate(
+                                          onPlay: (c) =>
+                                              c.repeat(reverse: true),
+                                        )
+                                        .scale(
+                                          duration: 1000.ms,
+                                          begin: const Offset(1.0, 1.0),
+                                          end: const Offset(1.1, 1.1),
+                                          curve: Curves.easeInOut,
+                                        ),
+                                  ],
+                                ),
+                              ),
 
-                                  SizedBox(height: 48.h),
+                              SizedBox(height: 48.h),
 
-                                  // Main loading label
-                                  RepaintBoundary(
-                                    child:
-                                        Text(
-                                              (widget.message ??
-                                                      context.tr(
-                                                        'loading.synchronizing_title',
-                                                        fallback:
-                                                            'Synchronizing...',
-                                                      ))
-                                                  .toUpperCase(),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 16.sp,
-                                                fontWeight: FontWeight.w900,
-                                                color: isDark
-                                                    ? Colors.white
-                                                    : const Color(0xFF1E293B),
-                                                letterSpacing: 4.0,
-                                              ),
-                                            )
-                                            .animate(
-                                              onPlay: (c) =>
-                                                  c.repeat(reverse: true),
-                                            )
-                                            .fadeIn(duration: 1000.ms)
-                                            .shimmer(
-                                              color: const Color(
-                                                0xFF6366F1,
-                                              ).withValues(alpha: 0.3),
-                                            ),
-                                  ),
+                              // Main loading label
+                              RepaintBoundary(
+                                child:
+                                    Text(
+                                          (widget.message ??
+                                                  context.tr(
+                                                    'loading.synchronizing_title',
+                                                    fallback:
+                                                        'Synchronizing...',
+                                                  ))
+                                              .toUpperCase(),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 16.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: isDark
+                                                ? Colors.white
+                                                : const Color(0xFF1E293B),
+                                            letterSpacing: 4.0,
+                                          ),
+                                        )
+                                        .animate(
+                                          onPlay: (c) =>
+                                              c.repeat(reverse: true),
+                                        )
+                                        .fadeIn(duration: 1000.ms)
+                                        .shimmer(
+                                          color: const Color(
+                                            0xFF6366F1,
+                                          ).withValues(alpha: 0.3),
+                                        ),
+                              ),
 
-                                  SizedBox(height: 12.h),
+                              SizedBox(height: 12.h),
 
-                                  // Dynamic status sub-text
-                                  RepaintBoundary(
-                                    child: AnimatedSwitcher(
+                              // Dynamic status sub-text
+                              RepaintBoundary(
+                                child: ValueListenableBuilder<int>(
+                                  valueListenable: _stateHash,
+                                  builder: (context, _, child) {
+                                    return AnimatedSwitcher(
                                       duration: const Duration(
                                         milliseconds: 500,
                                       ),
@@ -231,19 +229,19 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                           letterSpacing: 1.5,
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                ],
+                                    );
+                                  },
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              );
-            },
+              ),
+            ),
           ),
       ],
     );
