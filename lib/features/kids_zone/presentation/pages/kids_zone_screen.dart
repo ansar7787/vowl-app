@@ -186,7 +186,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                     sliver: SliverToBoxAdapter(
                       child: Column(
                         children: [
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 8.h),
                           ValueListenableBuilder<int?>(
                             valueListenable: _globalRank,
                             builder: (context, rank, child) {
