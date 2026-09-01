@@ -36,9 +36,9 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
 
   late ScrollController _scrollController;
   final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -54,7 +54,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
 
   void _startAutoScroll() {
     Future.delayed(const Duration(milliseconds: 1500), () {
-      if (!mounted || _isAnswered) return;
+      if (!mounted || _isAnswered.value) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -66,25 +66,21 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   }
 
   void _submitCorrectAnswer() {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     _hapticService.success();
     _soundService.playCorrect();
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
     _timerKey.currentState?.stop();
     context.read<ReadingBloc>().add(SubmitAnswer(true));
   }
 
   void _submitIncorrectAnswer() {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     _hapticService.error();
     _soundService.playWrong();
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = false;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = false;
     _timerKey.currentState?.stop();
     context.read<ReadingBloc>().add(SubmitAnswer(false));
   }
@@ -92,6 +88,9 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
     super.dispose();
   }
 
@@ -104,31 +103,27 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
             if (_scrollController.hasClients) {
               _scrollController.jumpTo(0);
             }
             _timerKey.currentState?.start();
             _startAutoScroll();
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -143,12 +138,15 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
@@ -168,7 +166,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                             ),
                             SizedBox(height: 16.h),
                             
-                            if (!_isAnswered)
+                            if (!_isAnswered.value)
                               SpeedChallengeTimer(
                                 key: _timerKey,
                                 durationSeconds: 30,
@@ -188,7 +186,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                                 correct: quest.correctAnswer ?? "",
                                 color: theme.primaryColor,
                                 scrollController: _scrollController,
-                                isAnswered: _isAnswered,
+                                isAnswered: _isAnswered.value,
                                 onTapWord: (clean) {
                                   if (clean.toLowerCase() ==
                                       (quest.correctAnswer ?? "").toLowerCase()) {
@@ -201,13 +199,13 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                             ),
                             SizedBox(height: 20.h),
                             Text(
-                              _isAnswered
+                              _isAnswered.value
                                   ? "TARGET ACQUIRED!"
                                   : (quest.instruction.toUpperCase()),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                color: _isAnswered
+                                color: _isAnswered.value
                                     ? Colors.greenAccent
                                     : theme.primaryColor,
                                 fontSize: 12.sp,
@@ -218,18 +216,17 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: 24.h),
                               SkimmingScanningResult(
                                 quest: quest,
-                                isCorrect: _isCorrect == true,
+                                isCorrect: _isCorrect.value == true,
                                 isDark: isDark,
                               ),
                             ],
@@ -240,6 +237,8 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                     ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
