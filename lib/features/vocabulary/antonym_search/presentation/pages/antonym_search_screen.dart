@@ -185,10 +185,15 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
                         return Stack(
                           children: [
-                            CustomScrollView(
+                            RawScrollbar(
                               controller: _scrollController,
-                              physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                              slivers: [
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                                slivers: [
                                 SliverToBoxAdapter(
                                   child: SizedBox(
                                     height: constraints.maxHeight,
@@ -316,8 +321,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                             ),
                         ],
                       ),
-                    ],
-                  );
+                            ),
+                          ],
+                        );
                 },
               ),
             );
