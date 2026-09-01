@@ -316,8 +316,16 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         }
         final nextRequirement = _chestTiers[nextTierIndex];
 
-        return GestureDetector(
-          behavior: HitTestBehavior.opaque,
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            _isProcessing,
+            _remainingClaims,
+            _isLoadingLimits,
+            _outOfAdsShake,
+          ]),
+          builder: (context, _) {
+            return GestureDetector(
+              behavior: HitTestBehavior.opaque,
           onTap: () => Navigator.pop(context),
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
@@ -868,6 +876,8 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
               ],
             ),
           ),
+        );
+          }
         );
       },
     );
