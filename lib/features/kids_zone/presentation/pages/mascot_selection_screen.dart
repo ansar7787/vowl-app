@@ -109,33 +109,51 @@ class MascotSelectionScreen extends StatelessWidget {
                       ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
                       SizedBox(height: 30.h),
                       SizedBox(height: 30.h),
-                      Wrap(
-                        spacing: 20.w,
-                        runSpacing: 30.h,
-                        alignment: WrapAlignment.center,
-                        children: [
-                          KidsMascotCard(
-                            id: "owly",
-                            name: "Owly",
-                            trait: "Wise and Helpful",
-                            color: Colors.indigo,
-                            index: 0,
-                          ),
-                          KidsMascotCard(
-                            id: "foxie",
-                            name: "Foxie",
-                            trait: "Playful and Fast",
-                            color: Colors.orange,
-                            index: 1,
-                          ),
-                          KidsMascotCard(
-                            id: "dino",
-                            name: "Dino",
-                            trait: "Strong and Brave",
-                            color: Colors.green,
-                            index: 2,
-                          ),
-                        ],
+                      LayoutBuilder(
+                        builder: (context, constraints) {
+                          final cardWidth = (constraints.maxWidth - 20.w) / 2;
+                          return Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: cardWidth,
+                                    child: KidsMascotCard(
+                                      id: "owly",
+                                      name: "Owly",
+                                      trait: "Wise and Helpful",
+                                      color: Colors.indigo,
+                                      index: 0,
+                                    ),
+                                  ),
+                                  SizedBox(width: 20.w),
+                                  SizedBox(
+                                    width: cardWidth,
+                                    child: KidsMascotCard(
+                                      id: "foxie",
+                                      name: "Foxie",
+                                      trait: "Playful and Fast",
+                                      color: Colors.orange,
+                                      index: 1,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 30.h),
+                              SizedBox(
+                                width: cardWidth,
+                                child: KidsMascotCard(
+                                  id: "dino",
+                                  name: "Dino",
+                                  trait: "Strong and Brave",
+                                  color: Colors.green,
+                                  index: 2,
+                                ),
+                              ),
+                            ],
+                          );
+                        }
                       ),
                       SizedBox(height: 40.h),
                     ],
@@ -190,7 +208,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
         final isSelected = state.user?.kidsMascot == widget.id;
         
         return Container(
-          width: 165.w,
+          width: double.infinity,
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF1E293B) : Colors.white,
@@ -217,8 +235,8 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
               ScaleButton(
                 onTap: _handleTryMe,
                 child: Container(
-                  height: 120.h,
-                  width: 120.w,
+                  height: 110.h,
+                  width: 110.w,
                   decoration: BoxDecoration(
                     color: widget.color.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
@@ -227,7 +245,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                     alignment: Alignment.center,
                     children: [
                       VowlMascot(
-                        size: 90.r,
+                        size: 75.r,
                         mascotId: widget.id,
                         isKidsMode: true,
                         state: _isTrying ? VowlMascotState.happy : VowlMascotState.neutral,
@@ -240,13 +258,17 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                             color: widget.color,
                             borderRadius: BorderRadius.circular(12.r),
                           ),
-                          child: Text(
-                            "Try me!",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              "Try me!",
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -258,23 +280,31 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                 ),
               ),
               SizedBox(height: 12.h),
-              Text(
-                widget.name,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  widget.name,
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  ),
                 ),
               ),
-              Text(
-                widget.trait,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w800,
-                  color: widget.color,
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  widget.trait,
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w800,
+                    color: widget.color,
+                  ),
                 ),
               ),
               SizedBox(height: 16.h),
@@ -296,31 +326,39 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                   ),
                   child: Center(
                     child: isSelected
-                        ? Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(Icons.check_circle_rounded, color: Colors.white, size: 16.sp),
-                              SizedBox(width: 4.w),
-                              Text(
-                                "SELECTED",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 1.2,
+                        ? FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.check_circle_rounded, color: Colors.white, size: 16.sp),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  "SELECTED",
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    letterSpacing: 1.2,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           )
-                        : Text(
-                            "SELECT",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white54 : Colors.black45,
-                              letterSpacing: 1.2,
+                        : FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              "SELECT",
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isDark ? Colors.white54 : Colors.black45,
+                                letterSpacing: 1.2,
+                              ),
                             ),
                           ),
                   ),
