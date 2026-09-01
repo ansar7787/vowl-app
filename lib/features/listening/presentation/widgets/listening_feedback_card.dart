@@ -252,77 +252,88 @@ class _ExplanationCard extends StatefulWidget {
 }
 
 class _ExplanationCardState extends State<_ExplanationCard> {
-  String? _translatedText;
+  final ValueNotifier<String?> _translatedText = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _translatedText.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.explanation;
+    return ValueListenableBuilder<String?>(
+      valueListenable: _translatedText,
+      builder: (context, translatedTextValue, _) {
+        final displayText = translatedTextValue ?? widget.explanation;
 
-    return Semantics(
-      label: 'Explanation: $displayText',
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-        decoration: BoxDecoration(
-          color: widget.shadowColor.withValues(alpha: 0.08),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: widget.shadowColor.withValues(alpha: 0.2),
-            width: 1.5,
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ExcludeSemantics(
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.info_outline_rounded,
-                    color: widget.shadowColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      context.tr(
-                        'games.explanation_caps',
-                        fallback: 'EXPLANATION',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
+        return Semantics(
+          label: 'Explanation: $displayText',
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+            decoration: BoxDecoration(
+              color: widget.shadowColor.withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
+                color: widget.shadowColor.withValues(alpha: 0.2),
+                width: 1.5,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ExcludeSemantics(
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.info_outline_rounded,
                         color: widget.shadowColor,
-                        letterSpacing: 1,
+                        size: 14.r,
                       ),
-                    ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        child: Text(
+                          context.tr(
+                            'games.explanation_caps',
+                            fallback: 'EXPLANATION',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w800,
+                            color: widget.shadowColor,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                      ),
+                      if (translatedTextValue == null)
+                        TranslateButtonWidget(
+                          originalText: widget.explanation,
+                          onTranslationComplete: (translated) {
+                            if (mounted) {
+                              _translatedText.value = translated;
+                            }
+                          },
+                        ),
+                    ],
                   ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.explanation,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
+                ),
+                SizedBox(height: 4.h),
+                Text(
+                  displayText,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                    color: widget.isDark ? Colors.white : Colors.black87,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 4.h),
-            Text(
-              displayText,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w600,
-                color: widget.isDark ? Colors.white : Colors.black87,
-              ),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
