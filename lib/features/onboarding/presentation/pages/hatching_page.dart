@@ -25,7 +25,7 @@ class HatchingPage extends StatefulWidget {
 
 class _HatchingPageState extends State<HatchingPage> {
   /// 0: Egg shown | 1: Cracking | 2: Hatched | 3: Introduction
-  int _stage = 0;
+  final ValueNotifier<int> _stage = ValueNotifier(0);
   final FlutterTts _tts = FlutterTts();
   Timer? _hatchTimer;
 
@@ -43,6 +43,7 @@ class _HatchingPageState extends State<HatchingPage> {
     // meaning a pending speak() call after _isTtsSpeaking was set false
     // could still deliver audio after the widget was unmounted.
     _tts.stop();
+    _stage.dispose();
     super.dispose();
   }
 
@@ -61,19 +62,19 @@ class _HatchingPageState extends State<HatchingPage> {
   }
 
   void _onTapEgg() {
-    if (_stage == 0) {
+    if (_stage.value == 0) {
       sl<HapticService>().selection();
-      setState(() => _stage = 1);
+      _stage.value = 1;
 
       _hatchTimer = Timer(const Duration(milliseconds: 1500), () {
         if (mounted) {
           sl<HapticService>().success();
-          setState(() => _stage = 2);
+          _stage.value = 2;
           _speakIntroduction();
         }
       });
-    } else if (_stage == 2) {
-      setState(() => _stage = 3);
+    } else if (_stage.value == 2) {
+      _stage.value = 3;
     }
   }
 
@@ -100,7 +101,10 @@ class _HatchingPageState extends State<HatchingPage> {
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
       child: Scaffold(
-        body: Stack(
+        body: ValueListenableBuilder<int>(
+          valueListenable: _stage,
+          builder: (context, currentStage, child) {
+            return Stack(
           children: [
             const MeshGradientBackground(),
             SafeArea(
@@ -126,9 +130,9 @@ class _HatchingPageState extends State<HatchingPage> {
                             Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                _buildMascotStage(context),
+                                _buildMascotStage(context, currentStage),
                                 SizedBox(height: 48.h),
-                                _buildStatusText(context),
+                                _buildStatusText(context, currentStage),
                               ],
                             ),
                             // Bottom CTA — pre-allocated height prevents CLS
@@ -137,7 +141,7 @@ class _HatchingPageState extends State<HatchingPage> {
                               child: AnimatedSize(
                                 duration: const Duration(milliseconds: 300),
                                 curve: Curves.easeInOut,
-                                child: _stage >= 2
+                                child: currentStage >= 2
                                     ? _buildGetStartedButton(context)
                                     : SizedBox(height: 60.h),
                               ),
@@ -151,17 +155,19 @@ class _HatchingPageState extends State<HatchingPage> {
               ),
             ),
           ],
+        );
+          },
         ),
       ),
     );
   }
 
-  Widget _buildMascotStage(BuildContext context) {
+  Widget _buildMascotStage(BuildContext context, int currentStage) {
     return GestureDetector(
       onTap: _onTapEgg,
       child: Semantics(
         // FIX (HIGH-2): Semantics label now goes through the l10n system.
-        label: _stage < 2
+        label: currentStage < 2
             ? context.tr(
                 'hatching.egg_semantics',
                 fallback: 'A mysterious glowing egg',
@@ -170,12 +176,12 @@ class _HatchingPageState extends State<HatchingPage> {
                 'hatching.mascot_semantics',
                 fallback: 'Your new learning companion',
               ),
-        button: _stage < 2,
+        button: currentStage < 2,
         child: Stack(
           alignment: Alignment.center,
           children: [
-            if (_stage < 2)
-              _buildEgg()
+            if (currentStage < 2)
+              _buildEgg(currentStage)
             else
               const VowlMascot(
                 state: VowlMascotState.happy,
@@ -187,7 +193,7 @@ class _HatchingPageState extends State<HatchingPage> {
     );
   }
 
-  Widget _buildEgg() {
+  Widget _buildEgg(int currentStage) {
     // FIX (RESPONSIVENESS): Use LayoutBuilder-aware sizing instead of pure
     // .r values. On a 320px-wide phone, 180.r is fine, but capping at
     // 200px wide and 270px tall prevents overflow on unusual aspect ratios.
@@ -240,22 +246,22 @@ class _HatchingPageState extends State<HatchingPage> {
                   size: 44.r,
                 ),
               ),
-              if (_stage == 1)
+              if (currentStage == 1)
                 Positioned.fill(child: CustomPaint(painter: EggCrackPainter())),
             ],
           ),
         )
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
-        .shake(hz: _stage == 1 ? 10 : 0, duration: 1500.ms);
+        .shake(hz: currentStage == 1 ? 10 : 0, duration: 1500.ms);
   }
 
-  Widget _buildStatusText(BuildContext context) {
-    if (_stage >= 2) {
+  Widget _buildStatusText(BuildContext context, int currentStage) {
+    if (currentStage >= 2) {
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: TweenAnimationBuilder<int>(
-          key: ValueKey('hatching_status_$_stage'),
+          key: ValueKey('hatching_status_$currentStage'),
           tween: IntTween(begin: 0, end: _introMessage.length),
           duration: Duration(milliseconds: _introMessage.length * 40),
           builder: (context, value, child) {
@@ -309,7 +315,7 @@ class _HatchingPageState extends State<HatchingPage> {
       );
     }
 
-    final String text = _stage == 0
+    final String text = currentStage == 0
         ? context.tr('hatching.tap_to_begin', fallback: 'Tap to begin')
         : context.tr(
             'hatching.something_happening',
@@ -328,7 +334,7 @@ class _HatchingPageState extends State<HatchingPage> {
           color: Colors.blueGrey,
         ),
       ),
-    ).animate(key: ValueKey('hatching_status_$_stage')).fadeIn();
+    ).animate(key: ValueKey('hatching_status_$currentStage')).fadeIn();
   }
 
   Widget _buildGetStartedButton(BuildContext context) {
