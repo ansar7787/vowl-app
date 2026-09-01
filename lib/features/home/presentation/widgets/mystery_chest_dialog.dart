@@ -19,11 +19,9 @@ class MysteryChestDialog extends StatefulWidget {
 class _MysteryChestDialogState extends State<MysteryChestDialog> {
   late ConfettiController _confettiController;
   Timer? _autoCloseTimer;
-  final ValueNotifier<bool> _opened = ValueNotifier(false);
-  final ValueNotifier<bool> _animating = ValueNotifier(false);
-  bool _chestOpened = false;
+  final ValueNotifier<bool> _chestOpened = ValueNotifier(false);
+  final ValueNotifier<int> _rewardAmount = ValueNotifier(0);
   bool _confettiPlayed = false;
-  int _rewardAmount = 0;
 
   @override
   void initState() {
@@ -37,11 +35,13 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
   void dispose() {
     _autoCloseTimer?.cancel();
     _confettiController.dispose();
+    _chestOpened.dispose();
+    _rewardAmount.dispose();
     super.dispose();
   }
 
   Future<void> _openChest() async {
-    if (_chestOpened || !mounted) return;
+    if (_chestOpened.value || !mounted) return;
 
     // Fire haptics for the "shake" phase
     try {
@@ -77,10 +77,8 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
 
     // Set reward FIRST, then trigger open — so the overlay can show the
     // amount as soon as the reward card animates in.
-    setState(() {
-      _rewardAmount = totalCoins;
-      _chestOpened = true;
-    });
+    _rewardAmount.value = totalCoins;
+    _chestOpened.value = true;
 
     // Second haptic burst at the "flash" moment (~350ms into the animation)
     Future.delayed(const Duration(milliseconds: 350), () {
@@ -113,14 +111,14 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     return ListenableBuilder(
-      listenable: Listenable.merge([_opened, _animating]),
+      listenable: Listenable.merge([_chestOpened, _rewardAmount]),
       builder: (context, _) {
         return Material(
           color: Colors.transparent,
           child: MysteryChestOverlay(
-            isOpened: _chestOpened,
+            isOpened: _chestOpened.value,
             isPremium: isPremium,
-            rewardAmount: _rewardAmount,
+            rewardAmount: _rewardAmount.value,
             onOpen: _openChest,
             onClose: () {
               _autoCloseTimer?.cancel();
