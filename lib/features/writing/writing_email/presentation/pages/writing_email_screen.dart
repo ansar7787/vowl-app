@@ -37,17 +37,26 @@ class WritingEmailScreen extends StatefulWidget {
 class _WritingEmailScreenState extends State<WritingEmailScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  final Map<String, String?> _slots = {
+  final ValueNotifier<Map<String, String?>> _slots = ValueNotifier({
     'SUBJECT': null,
     'SALUTATION': null,
     'BODY': null,
     'SIGN-OFF': null,
-  };
+  });
 
-  List<String> _shuffledOptions = [];
-  bool _showConfetti = false;
-  bool _showSpeakToConfirm = false;
+  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   WritingQuest? _lastQuest;
+
+  @override
+  void dispose() {
+    _slots.dispose();
+    _shuffledOptions.dispose();
+    _showConfetti.dispose();
+    _showSpeakToConfirm.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -61,14 +70,14 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     if (isAnswered) return;
 
     _hapticService.success();
-    setState(() {
-      _slots.forEach((key, val) {
-        if (val == data) {
-          _slots[key] = null;
-        }
-      });
-      _slots[slotKey] = data;
+    final newSlots = Map<String, String?>.from(_slots.value);
+    newSlots.forEach((key, val) {
+      if (val == data) {
+        newSlots[key] = null;
+      }
     });
+    newSlots[slotKey] = data;
+    _slots.value = newSlots;
   }
 
   void _onTapOption(String data, bool isAnswered) {
@@ -76,7 +85,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
 
     String? targetSlot;
     for (final key in ['SUBJECT', 'SALUTATION', 'BODY', 'SIGN-OFF']) {
-      if (_slots[key] == null) {
+      if (_slots.value[key] == null) {
         targetSlot = key;
         break;
       }
@@ -84,25 +93,25 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
 
     if (targetSlot != null) {
       _hapticService.success();
-      setState(() {
-        _slots.forEach((key, val) {
-          if (val == data) {
-            _slots[key] = null;
-          }
-        });
-        _slots[targetSlot!] = data;
+      final newSlots = Map<String, String?>.from(_slots.value);
+      newSlots.forEach((key, val) {
+        if (val == data) {
+          newSlots[key] = null;
+        }
       });
+      newSlots[targetSlot] = data;
+      _slots.value = newSlots;
     } else {
       _hapticService.error();
     }
   }
 
   void _clearSlot(String slotKey, bool isAnswered) {
-    if (isAnswered || _slots[slotKey] == null) return;
+    if (isAnswered || _slots.value[slotKey] == null) return;
     _hapticService.selection();
-    setState(() {
-      _slots[slotKey] = null;
-    });
+    final newSlots = Map<String, String?>.from(_slots.value);
+    newSlots[slotKey] = null;
+    _slots.value = newSlots;
   }
 
   void _submitAnswer(bool isAnswered) {
@@ -116,12 +125,12 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     final correctOrderIndices = quest.correctOrder ?? [0, 1, 2, 3];
 
     bool isSubjectCorrect =
-        _slots['SUBJECT'] == options[correctOrderIndices[0]];
+        _slots.value['SUBJECT'] == options[correctOrderIndices[0]];
     bool isSalutationCorrect =
-        _slots['SALUTATION'] == options[correctOrderIndices[1]];
-    bool isBodyCorrect = _slots['BODY'] == options[correctOrderIndices[2]];
+        _slots.value['SALUTATION'] == options[correctOrderIndices[1]];
+    bool isBodyCorrect = _slots.value['BODY'] == options[correctOrderIndices[2]];
     bool isSignOffCorrect =
-        _slots['SIGN-OFF'] == options[correctOrderIndices[3]];
+        _slots.value['SIGN-OFF'] == options[correctOrderIndices[3]];
 
     final isCorrect =
         isSubjectCorrect &&
@@ -131,7 +140,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
 
     if (isCorrect) {
       _hapticService.success();
-      setState(() => _showSpeakToConfirm = true);
+      _showSpeakToConfirm.value = true;
     } else {
       _hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
@@ -139,7 +148,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
   }
 
   void _onSpeakConfirmed() {
-    setState(() => _showSpeakToConfirm = false);
+    _showSpeakToConfirm.value = false;
     context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -155,16 +164,15 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _slots.updateAll((k, v) => null);
-            _showSpeakToConfirm = false;
-            final quest = state.currentQuest;
-            _shuffledOptions = List<String>.from(quest.options ?? [])
-              ..shuffle();
-          });
+          final newSlots = Map<String, String?>.from(_slots.value);
+          newSlots.updateAll((k, v) => null);
+          _slots.value = newSlots;
+          _showSpeakToConfirm.value = false;
+          final quest = state.currentQuest;
+          _shuffledOptions.value = List<String>.from(quest.options ?? [])..shuffle();
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -182,7 +190,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
         final options = quest?.options ?? [];
-        final slotsFilled = _slots.values.every((v) => v != null);
+
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
         final bool? isCorrect = isLoaded
             ? state.answerStatus.asBoolOrNull
@@ -199,7 +207,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -207,7 +215,12 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : quest == null
               ? const SizedBox.shrink()
-              : CustomScrollView(
+              : ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _slots, _shuffledOptions, _showSpeakToConfirm]),
+            builder: (context, _) {
+              final slotsFilled = _slots.value.values.every((v) => v != null);
+
+              return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverPadding(
@@ -256,10 +269,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                             ),
                             SizedBox(height: 24.h),
 
-                            ..._slots.keys.map(
+                            ..._slots.value.keys.map(
                               (k) => WritingEmailHexSlot(
                                 slotKey: k,
-                                slotValue: _slots[k],
+                                slotValue: _slots.value[k],
                                 color: theme.primaryColor,
                                 isDark: isDark,
                                 onSlot: (key, data) => _onSlot(key, data, isAnswered),
@@ -284,7 +297,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                                       child: WritingEmailDataStream(
                                         items:
                                             options, // Show full list for reference
-                                        slots: _slots,
+                                        slots: _slots.value,
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                         onTapItem: (_) {}, // Disabled
@@ -295,7 +308,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                                 SizedBox(height: 16.h),
                                 WritingEmailKeyboardInput(
                                   validOptions: options
-                                      .where((opt) => !_slots.values.contains(opt))
+                                      .where((opt) => !_slots.value.values.contains(opt))
                                       .toList(),
                                   color: theme.primaryColor,
                                   isDark: isDark,
@@ -304,10 +317,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                                 ),
                               ] else
                                 WritingEmailDataStream(
-                                  items: _shuffledOptions.isNotEmpty
-                                      ? _shuffledOptions
+                                  items: _shuffledOptions.value.isNotEmpty
+                                      ? _shuffledOptions.value
                                       : options,
-                                  slots: _slots,
+                                  slots: _slots.value,
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                   onTapItem: (data) => _onTapOption(data, isAnswered),
@@ -320,20 +333,19 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_showSpeakToConfirm && !isAnswered)
+                            if (_showSpeakToConfirm.value && !isAnswered)
                               SpeakToConfirmOverlay(
-                                expectedText: "${_slots['SUBJECT'] ?? ''} ${_slots['SALUTATION'] ?? ''} ${_slots['BODY'] ?? ''} ${_slots['SIGN-OFF'] ?? ''}".trim(),
+                                expectedText: "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}".trim(),
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: _onSpeakConfirmed,
                                 onSkipped: () {
-                                  setState(() => _showSpeakToConfirm = false);
+                                  _showSpeakToConfirm.value = false;
                                   context.read<WritingBloc>().add(const SubmitAnswer(false));
                                 },
                               )
@@ -380,7 +392,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                       ),
                     ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
