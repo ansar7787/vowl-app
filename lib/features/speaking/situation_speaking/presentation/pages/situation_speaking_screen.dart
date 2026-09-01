@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,15 +40,15 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _scrubProgress = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _scrubProgress = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
   late AnimationController _shimmerController;
-  double _timeVal = 0.0;
+  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   
   final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
@@ -62,9 +62,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     _shimmerController =
         AnimationController(vsync: this, duration: const Duration(seconds: 4))
           ..addListener(() {
-            setState(() {
-              _timeVal = _shimmerController.value;
-            });
+            _timeVal.value = _shimmerController.value;
           });
     _shimmerController.repeat();
   }
@@ -72,6 +70,11 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   @override
   void dispose() {
     _shimmerController.dispose();
+    _scrubProgress.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _timeVal.dispose();
     super.dispose();
   }
 
@@ -82,12 +85,10 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   }
 
   void _submitVerbalEvaluation(bool nailedIt, String textToSpeak) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -114,29 +115,25 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   }
   
   void _onTimeUp(String textToSpeak) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     _submitVerbalEvaluation(false, textToSpeak);
   }
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   void _onScrubUpdate(double delta) {
-    if (_isAnswered || _scrubProgress >= 1.0) return;
-    setState(() {
-      _scrubProgress = (_scrubProgress + delta).clamp(0.0, 1.0);
-      if (_scrubProgress > 0) _hapticService.selection();
-      if (_scrubProgress >= 1.0) {
-        _hapticService.success();
-        _soundService.playCorrect();
-      }
-    });
+    if (_isAnswered.value || _scrubProgress.value >= 1.0) return;
+    _scrubProgress.value = (_scrubProgress.value + delta).clamp(0.0, 1.0);
+    if (_scrubProgress.value > 0) _hapticService.selection();
+    if (_scrubProgress.value >= 1.0) {
+      _hapticService.success();
+      _soundService.playCorrect();
+    }
   }
 
   @override
@@ -151,31 +148,27 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _scrubProgress = 0.0;
-              _timerKey.currentState?.start();
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _scrubProgress.value = 0.0;
+            _timerKey.currentState?.start();
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -192,13 +185,16 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _scrubProgress, _timeVal]),
+            builder: (context, _) {
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -226,8 +222,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                 quest: quest,
                                 primaryColor: theme.primaryColor,
                                 isDark: isDark,
-                                scrubProgress: _scrubProgress,
-                                timeVal: _timeVal,
+                                scrubProgress: _scrubProgress.value,
+                                timeVal: _timeVal.value,
                                 onScrubUpdate: _onScrubUpdate,
                                 onPlayTts: () => _soundService.playTts(
                                   quest.situationText ?? "",
@@ -237,8 +233,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -247,7 +242,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered)
+                              if (!_isAnswered.value)
                                 Padding(
                                   padding: EdgeInsets.only(bottom: 24.h),
                                   child: SpeedChallengeTimer(
@@ -258,7 +253,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                     autoStart: true,
                                   ),
                                 ),
-                              if (!_isAnswered && _scrubProgress >= 1.0)
+                              if (!_isAnswered.value && _scrubProgress.value >= 1.0)
                                 SpeakingSelfEvaluationControls(
                                   expectedText: quest.textToSpeak ?? "",
                                   primaryColor: theme.primaryColor,
@@ -278,6 +273,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                       ),
                     ],
                   ),
+              );
+            },
           ),
         );
       },
