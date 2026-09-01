@@ -33,12 +33,12 @@ class StoryBuilderScreen extends StatefulWidget {
 class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
-  List<int> _currentOrder = [];
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<List<int>> _currentOrder = ValueNotifier([]);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
   VisualConfig? _visualConfig;
   String? _lastQuestId;
   int _lastLives = 3;
@@ -56,15 +56,25 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
       FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
     );
   }
+  
+  @override
+  void dispose() {
+    _showConfetti.dispose();
+    _currentOrder.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _isFirstStagePassed.dispose();
+    super.dispose();
+  }
 
   void _onReorder(int oldIndex, int newIndex) {
-    if (_isAnswered) return;
-    setState(() {
-      _isCorrect = null; // Clear feedback borders on move
-      if (newIndex > oldIndex) newIndex -= 1;
-      final item = _currentOrder.removeAt(oldIndex);
-      _currentOrder.insert(newIndex, item);
-    });
+    if (_isAnswered.value) return;
+    _isCorrect.value = null; // Clear feedback borders on move
+    if (newIndex > oldIndex) newIndex -= 1;
+    final newOrder = List<int>.from(_currentOrder.value);
+    final item = newOrder.removeAt(oldIndex);
+    newOrder.insert(newIndex, item);
+    _currentOrder.value = newOrder;
     _hapticService.selection();
   }
 
@@ -75,7 +85,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     // Clearing instead makes this fail safely (an empty list) rather than
     // fail confusingly with stale content.
     if (sentences.isEmpty) {
-      setState(() => _currentOrder = []);
+      _currentOrder.value = [];
       return;
     }
 
@@ -87,9 +97,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
       safetyCounter++;
     } while (_isCorrectSequence(shuffled, correctOrder) && safetyCounter < 10);
 
-    setState(() {
-      _currentOrder = shuffled;
-    });
+    _currentOrder.value = shuffled;
   }
 
   bool _isCorrectSequence(List<int> current, List<int>? correctIndices) {
@@ -103,34 +111,28 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   void _submitOrder(List<int>? correctOrder) {
-    if (correctOrder == null || _isAnswered || _isFirstStagePassed) return;
+    if (correctOrder == null || _isAnswered.value || _isFirstStagePassed.value) return;
 
-    bool isCorrect = _isCorrectSequence(_currentOrder, correctOrder);
+    bool isCorrect = _isCorrectSequence(_currentOrder.value, correctOrder);
 
     if (isCorrect) {
       _hapticService.success();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
     } else {
       _hapticService.error();
       _soundService.playWrong();
 
-      setState(() {
-        _isCorrect = false;
-        _isAnswered = true;
-      });
+      _isCorrect.value = false;
+      _isAnswered.value = true;
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -157,7 +159,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     return BlocConsumer<EliteMasteryBloc, EliteMasteryState>(
       listener: (context, state) {
         if (state is EliteMasteryGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -177,19 +179,15 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           // own internal setState (called right after) to flush the
           // rebuild. Wrapping explicitly removes that implicit dependency.
           if (_lastQuestId != quest.id || livesChanged) {
-            setState(() {
-              _lastQuestId = quest.id;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-              _visualConfig = quest.visualConfig;
-            });
+            _lastQuestId = quest.id;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+            _visualConfig = quest.visualConfig;
             _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
           } else if (!state.answerStatus.isAnswered) {
-            setState(() {
-              _isAnswered = false;
-              _isCorrect = null;
-            });
+            _isAnswered.value = false;
+            _isCorrect.value = null;
             _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
           }
           _lastLives = state.livesRemaining;
@@ -197,33 +195,31 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             _hapticService.selection();
           }
           if (state.answerStatus == AnswerStatus.correct) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = true;
-            });
+            _isAnswered.value = true;
+            _isCorrect.value = true;
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              // If it's a final failure (either 2 strikes or out of lives), lock screen
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            }
           }
         }
       },
       builder: (context, state) {
-        return EliteBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _currentOrder, _isFirstStagePassed]),
+            builder: (context, _) {
+              return EliteBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
+          isAnswered: _isAnswered.value,
           state: state,
-          isCorrect: _isCorrect,
+          isCorrect: _isCorrect.value,
           isFinalFailure: (state is EliteMasteryLoaded)
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
-          showConfetti: _showConfetti,
-          title: _isAnswered
+          showConfetti: _showConfetti.value,
+          title: _isAnswered.value
               ? ""
               : (state is EliteMasteryLoaded &&
                     state.currentQuest.instruction.isNotEmpty)
@@ -237,22 +233,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           disablePadding: true,
           visualConfig: _visualConfig,
           onContinue: () {
-            setState(() {
-              // FIX: this was `_isAnswered = true` — inverted relative to
-              // every other game's onContinue (and to this game's own
-              // listener logic). For the instant between tapping Continue
-              // and the bloc actually emitting the next quest, the builder
-              // still renders the *old* EliteMasteryLoaded with
-              // `_isAnswered` now forced true: EliteBaseLayout's
-              // AnimatedOpacity dims the list to 0.6 and the just-dismissed
-              // EliteFeedbackCard re-renders for a frame before the
-              // corrected state arrives and reverses it — a visible flicker
-              // on every single question transition across all 200 levels.
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-              _currentOrder = [];
-            });
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+            _currentOrder.value = [];
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },
           onHint: () {
@@ -276,6 +260,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           },
           child: _buildBody(context, state, isDark, theme),
         );
+            },
+          );
       },
     );
   }
@@ -397,7 +383,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   ],
                   Expanded(
                     child: ReorderableListView(
-                      physics: _isFirstStagePassed && !_isAnswered
+                      physics: _isFirstStagePassed.value && !_isAnswered.value
                           ? const NeverScrollableScrollPhysics()
                           : const BouncingScrollPhysics(),
                       onReorder: _onReorder,
@@ -411,26 +397,26 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                         ),
                       ),
                       children: [
-                        for (int i = 0; i < _currentOrder.length; i++)
+                        for (int i = 0; i < _currentOrder.value.length; i++)
                           Padding(
-                            key: ValueKey('${quest.id}_${_currentOrder[i]}'),
+                            key: ValueKey('${quest.id}_${_currentOrder.value[i]}'),
                             padding: EdgeInsets.only(bottom: 8.h),
                             child: StoryBuilderNarrativeTile(
                               index: i,
-                              sentence: quest.sentences![_currentOrder[i]],
+                              sentence: quest.sentences![_currentOrder.value[i]],
                               quest: quest,
                               isHintVisible: state.isHintVisible,
                               isDark: isDark,
                               theme: theme,
-                              isAnswered: _isAnswered,
-                              isCorrect: _isCorrect,
+                              isAnswered: _isAnswered.value,
+                              isCorrect: _isCorrect.value,
                             ),
                           ),
                       ],
                     ),
                   ),
                   SizedBox(height: isCompact ? 16.h : 30.h),
-                  if (!_isAnswered)
+                  if (!_isAnswered.value)
                     Semantics(
                       button: true,
                       label: context.tr(
@@ -485,15 +471,15 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                       ),
                     ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
 
-                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 160.h : 20.h),
+                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 160.h : 20.h),
                 ],
               );
             },
           ),
-    if (_isFirstStagePassed && !_isAnswered)
+    if (_isFirstStagePassed.value && !_isAnswered.value)
       SpeakToConfirmOverlay(
         expectedText: quest.sentences != null && quest.sentences!.isNotEmpty 
-            ? quest.sentences![_currentOrder.last] 
+            ? quest.sentences![_currentOrder.value.last] 
             : "Narrate the ending",
         displayText: "Narrate the final sentence to finish the story",
         primaryColor: theme.primaryColor,
