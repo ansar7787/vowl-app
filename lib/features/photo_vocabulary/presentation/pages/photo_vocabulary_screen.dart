@@ -43,12 +43,12 @@ class PhotoVocabularyScreen extends StatefulWidget {
 class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     with SingleTickerProviderStateMixin {
   final ImagePicker _picker = ImagePicker();
-  String? _imagePath;
-  List<ImageLabel>? _labels;
-  bool _isProcessing = false;
+  String? _imagePathVal;
+  List<ImageLabel>? _labelsVal;
+  bool _isProcessingVal = false;
 
-  final Map<int, String> _translations = {};
-  final Map<int, bool> _isTranslating = {};
+  Map<int, String> _translationsVal = {};
+  Map<int, bool> _isTranslatingVal = {};
 
   List<String> _bountyOptions = [
     'Laptop',
@@ -64,9 +64,15 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     'Book',
     'Plant',
   ];
-  late String _currentBounty;
-  bool _bountyFound = false;
-  bool _bountiesLoaded = false;
+  String _currentBountyVal = '';
+  bool _bountyFoundVal = false;
+  bool _bountiesLoadedVal = false;
+
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+  
+  void _updateState() {
+    _stateHash.value++;
+  }
 
   late final AnimationController _scannerController;
   late ConfettiController _confettiController;
@@ -74,7 +80,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   @override
   void initState() {
     super.initState();
-    _currentBounty = _bountyOptions[Random().nextInt(_bountyOptions.length)];
+    _currentBountyVal = _bountyOptions[Random().nextInt(_bountyOptions.length)];
     _scannerController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -100,11 +106,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       // Keep fallback
     }
     if (mounted) {
-      setState(() {
-        _currentBounty =
-            _bountyOptions[Random().nextInt(_bountyOptions.length)];
-        _bountiesLoaded = true;
-      });
+      _currentBountyVal =
+          _bountyOptions[Random().nextInt(_bountyOptions.length)];
+      _bountiesLoadedVal = true;
+      _updateState();
     }
   }
 
@@ -112,6 +117,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   void dispose() {
     _scannerController.dispose();
     _confettiController.dispose();
+    _stateHash.dispose();
     super.dispose();
   }
 
@@ -142,14 +148,13 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   }
 
   Future<void> _processImage(String path) async {
-    setState(() {
-      _imagePath = path;
-      _isProcessing = true;
-      _labels = null;
-      _bountyFound = false;
-      _translations.clear();
-      _isTranslating.clear();
-    });
+    _imagePathVal = path;
+    _isProcessingVal = true;
+    _labelsVal = null;
+    _bountyFoundVal = false;
+    _translationsVal = {};
+    _isTranslatingVal = {};
+    _updateState();
 
     final allLabels = await di.sl<ImageLabelingService>().labelImage(path);
     // Filter out low-confidence "junk" guesses to prevent user frustration
@@ -159,7 +164,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
 
     bool found = false;
     for (var l in confidentLabels) {
-      if (l.label.toLowerCase() == _currentBounty.toLowerCase()) {
+      if (l.label.toLowerCase() == _currentBountyVal.toLowerCase()) {
         found = true;
         break;
       }
@@ -168,7 +173,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     bool limitReached = false;
 
     if (found) {
-      _bountyFound = true;
+      _bountyFoundVal = true;
       _confettiController.play();
       di.sl<HapticService>().heavy();
       di.sl<SoundService>().playCorrect();
@@ -205,10 +210,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     }
 
     if (mounted) {
-      setState(() {
-        _isProcessing = false;
-        _labels = confidentLabels;
-      });
+      _isProcessingVal = false;
+      _labelsVal = confidentLabels;
+      _updateState();
 
       if (found) {
         CustomSnackBar.show(
@@ -265,9 +269,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
         fallback: 'Watch Ad to Translate',
       ),
       onSuccess: () async {
-        setState(() {
-          _isTranslating[index] = true;
-        });
+        _isTranslatingVal[index] = true;
+        _updateState();
 
         try {
           final isDownloaded = await di
@@ -283,9 +286,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 .isTargetModelDownloaded();
             if (!isDownloadedNow) {
               if (mounted) {
-                setState(() {
-                  _isTranslating[index] = false;
-                });
+                _isTranslatingVal[index] = false;
+                _updateState();
               }
               return;
             }
@@ -297,16 +299,14 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
             textToTranslate,
           );
           if (mounted) {
-            setState(() {
-              _translations[index] = translated;
-              _isTranslating[index] = false;
-            });
+            _translationsVal[index] = translated;
+            _isTranslatingVal[index] = false;
+            _updateState();
           }
         } catch (e) {
           if (mounted) {
-            setState(() {
-              _isTranslating[index] = false;
-            });
+            _isTranslatingVal[index] = false;
+            _updateState();
             CustomSnackBar.show(
               context: context,
               message: e.toString().replaceAll('Exception: ', ''),
@@ -324,18 +324,21 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
 
   @override
   Widget build(BuildContext context) {
-    if (!_bountiesLoaded) {
-      return const Scaffold(
-        body: SafeArea(
-          child: GameShimmerLoading(primaryColor: Color(0xFF14B8A6)),
-        ),
-      );
-    }
+    return ValueListenableBuilder<int>(
+      valueListenable: _stateHash,
+      builder: (context, value, child) {
+        if (!_bountiesLoadedVal) {
+          return const Scaffold(
+            body: SafeArea(
+              child: GameShimmerLoading(primaryColor: Color(0xFF14B8A6)),
+            ),
+          );
+        }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PopScope(
-      canPop: _imagePath == null,
+      canPop: _imagePathVal == null,
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
         GameDialogHelper.showExitConfirmation(
@@ -358,13 +361,13 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           fit: StackFit.expand,
           children: [
             // 1. Background Layer (Image or Gradient)
-            if (_imagePath != null)
-              Image.file(File(_imagePath!), fit: BoxFit.cover)
+            if (_imagePathVal != null)
+              Image.file(File(_imagePathVal!), fit: BoxFit.cover)
             else
               const MeshGradientBackground(showLetters: false),
 
             // 2. Dark Overlay for better contrast when image is present
-            if (_imagePath != null)
+            if (_imagePathVal != null)
               Container(color: Colors.black.withValues(alpha: 0.5))
             else
               Container(
@@ -374,7 +377,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
               ),
 
             // 3. Cinematic Laser Scanner (only when processing)
-            if (_isProcessing) _buildLaserScanner(),
+            if (_isProcessingVal) _buildLaserScanner(),
 
             // 4. UI Layer
             CustomScrollView(
@@ -385,11 +388,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 _buildSliverAppBar(context, isDark),
                 SliverToBoxAdapter(
                   child: PhotoBountyTarget(
-                    currentBounty: _currentBounty,
-                    bountyFound: _bountyFound,
+                    currentBounty: _currentBountyVal,
+                    bountyFound: _bountyFoundVal,
                   ),
                 ),
-                if (_imagePath == null)
+                if (_imagePathVal == null)
                   SliverFillRemaining(
                     hasScrollBody: false,
                     child: PhotoEmptyState(onPickImage: _pickAndLabelImage),
@@ -420,7 +423,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
               ),
             ),
 
-            if (_imagePath != null && !_isProcessing)
+            if (_imagePathVal != null && !_isProcessingVal)
               Positioned(
                 bottom: 0,
                 left: 0,
@@ -430,6 +433,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           ],
         ),
       ),
+    );
+      },
     );
   }
 
@@ -441,7 +446,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       elevation: 0,
       expandedHeight: kToolbarHeight + 10.h,
       iconTheme: IconThemeData(
-        color: _imagePath != null || isDark ? Colors.white : Colors.black87,
+        color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
       ),
       flexibleSpace: ClipRRect(
         child: BackdropFilter(
@@ -465,10 +470,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios_new_rounded,
-          color: _imagePath != null || isDark ? Colors.white : Colors.black87,
+          color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
         ),
         onPressed: () {
-          if (_imagePath == null) {
+          if (_imagePathVal == null) {
             context.pop();
             return;
           }
@@ -496,7 +501,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w900,
-          color: _imagePath != null || isDark ? Colors.white : Colors.black87,
+          color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
         ),
       ),
       centerTitle: true,
@@ -504,11 +509,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   }
 
   Widget _buildSliverResults(bool isDark) {
-    if (_isProcessing || _labels == null) {
+    if (_isProcessingVal || _labelsVal == null) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
 
-    if (_labels!.isEmpty) {
+    if (_labelsVal!.isEmpty) {
       return SliverToBoxAdapter(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
@@ -549,15 +554,15 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           return Padding(
             padding: EdgeInsets.only(bottom: 16.h),
             child: PhotoResultChip(
-              label: _labels![index],
+              label: _labelsVal![index],
               index: index,
-              translatedText: _translations[index],
-              isTranslating: _isTranslating[index] ?? false,
+              translatedText: _translationsVal[index],
+              isTranslating: _isTranslatingVal[index] ?? false,
               onTranslate: _translateLabel,
               onPlayPronunciation: _playPronunciation,
             ),
           );
-        }, childCount: _labels!.length),
+        }, childCount: _labelsVal!.length),
       ),
     );
   }
@@ -567,13 +572,12 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       padding: EdgeInsets.all(24.w),
       child: ScaleButton(
         onTap: () {
-          setState(() {
-            _imagePath = null;
-            _labels = null;
-            _currentBounty =
-                _bountyOptions[Random().nextInt(_bountyOptions.length)];
-            _bountyFound = false;
-          });
+          _imagePathVal = null;
+          _labelsVal = null;
+          _currentBountyVal =
+              _bountyOptions[Random().nextInt(_bountyOptions.length)];
+          _bountyFoundVal = false;
+          _updateState();
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100.r),

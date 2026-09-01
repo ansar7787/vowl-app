@@ -164,38 +164,38 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         valueListenable: _stateHash,
         builder: (context, _, child) {
           return Stack(
-        children: [
-          const MeshGradientBackground(showLetters: false),
-          SafeArea(
-            bottom: false,
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 24.w),
-              child: Column(
-                children: [
-                  _Header(
-                    isDark: isDark,
-                    sequenceTitle: _sequenceTitle,
-                    currentIndex: _currentIndex,
-                    totalQuests: widget.quests.length,
-                    progress: _progress,
+            children: [
+              const MeshGradientBackground(showLetters: false),
+              SafeArea(
+                bottom: false,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 24.w),
+                  child: Column(
+                    children: [
+                      _Header(
+                        isDark: isDark,
+                        sequenceTitle: _sequenceTitle,
+                        currentIndex: _currentIndex,
+                        totalQuests: widget.quests.length,
+                        progress: _progress,
+                      ),
+                      SizedBox(height: 32.h),
+                      _ProgressBar(isDark: isDark, progress: _progress),
+                      const Spacer(),
+                      _QuestCard(
+                        isDark: isDark,
+                        isFinished: _isFinished,
+                        isLaunching: _isLaunching,
+                        currentIndex: _currentIndex,
+                        quests: widget.quests,
+                        onAction: _isLaunching ? null : _startNextGame,
+                      ),
+                      const Spacer(flex: 2),
+                    ],
                   ),
-                  SizedBox(height: 32.h),
-                  _ProgressBar(isDark: isDark, progress: _progress),
-                  const Spacer(),
-                  _QuestCard(
-                    isDark: isDark,
-                    isFinished: _isFinished,
-                    isLaunching: _isLaunching,
-                    currentIndex: _currentIndex,
-                    quests: widget.quests,
-                    onAction: _isLaunching ? null : _startNextGame,
-                  ),
-                  const Spacer(flex: 2),
-                ],
+                ),
               ),
-            ),
-          ),
-        ],
+            ],
           );
         },
       ),

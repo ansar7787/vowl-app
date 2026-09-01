@@ -177,25 +177,25 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
                 valueListenable: _stateHash,
                 builder: (context, _, child) {
                   return GameScaffold<S>(
-                state: state,
-                baseState: baseState,
-                config: widget.config,
-                headerBuilder: widget.headerBuilder,
-                feedbackBuilder: widget.feedbackBuilder,
-                mascotBuilder: widget.mascotBuilder,
-                backgroundOverlay: widget.backgroundOverlay,
-                showBriefing: _showBriefing,
-                onBriefingDismiss: () {
-                  _showBriefing = false;
-                  _updateState();
-                },
-                onBriefingShow: () {
-                  _showBriefing = true;
-                  _updateState();
-                },
-                onExitPressed: () => _onExitPressed(context),
-                onRetry: widget.onRetry,
-              );
+                    state: state,
+                    baseState: baseState,
+                    config: widget.config,
+                    headerBuilder: widget.headerBuilder,
+                    feedbackBuilder: widget.feedbackBuilder,
+                    mascotBuilder: widget.mascotBuilder,
+                    backgroundOverlay: widget.backgroundOverlay,
+                    showBriefing: _showBriefing,
+                    onBriefingDismiss: () {
+                      _showBriefing = false;
+                      _updateState();
+                    },
+                    onBriefingShow: () {
+                      _showBriefing = true;
+                      _updateState();
+                    },
+                    onExitPressed: () => _onExitPressed(context),
+                    onRetry: widget.onRetry,
+                  );
                 },
               ),
             ),
