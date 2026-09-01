@@ -390,9 +390,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             ),
                         ],
                       ),
-                      actionPanelWidget: KidsRoomActionPanel(
-                        isSleeping: _isSleeping.value,
-                        gamesPlayedToday: isGameToday ? user.kidsGamesPlayedToday : 0,
+                      actionPanelWidget: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _buildHeroNameplate(user),
+                          SizedBox(height: 12.h),
+                          KidsRoomActionPanel(
+                            isSleeping: _isSleeping.value,
+                            gamesPlayedToday: isGameToday ? user.kidsGamesPlayedToday : 0,
                         onDecor: () => _showDecorStore(context, user),
                         onFeed: () => _showFoodMenu(context, user),
                         onPlay: () {
@@ -503,6 +508,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         },
                         onThemeTap: () => _showThemeMenu(context, user),
                       ),
+                    ],
+                  ),
                       overlayWidget: (_isSleeping.value || _showConfetti.value)
                           ? Stack(
                               children: [
@@ -915,8 +922,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               ),
           ],
         ),
-        SizedBox(height: 24.h),
-        _buildHeroNameplate(user),
       ],
     );
   }
@@ -954,40 +959,32 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           ),
           if (stickerId != null) ...[
             SizedBox(width: 8.w),
-            _buildGlossySticker(KidsAssets.getStickerEmoji(stickerId), 22.r)
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(begin: -1, end: 1, duration: 1.5.seconds),
+            Container(
+              width: 26.r,
+              height: 26.r,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 4, offset: const Offset(0, 2)),
+                ],
+              ),
+              child: Center(
+                child: AnimatedKidsAsset(
+                  emoji: KidsAssets.getStickerEmoji(stickerId),
+                  size: 16.r,
+                  animation: KidsAssetAnimation.none,
+                ),
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .moveY(begin: -1, end: 1, duration: 1.5.seconds),
           ],
         ],
       ),
     );
   }
 
-  Widget _buildGlossySticker(String emoji, double size) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        shape: BoxShape.circle,
-        border: Border.all(color: Colors.white, width: 4),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 12,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Center(
-        child: AnimatedKidsAsset(
-          emoji: emoji,
-          size: size * 0.7,
-          animation: KidsAssetAnimation.none,
-        ),
-      ),
-    );
-  }
 
   Widget _buildThemeNest(String theme) {
     switch (theme) {
