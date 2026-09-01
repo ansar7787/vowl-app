@@ -196,16 +196,14 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                               );
                             },
                           ),
+                          SizedBox(height: 16.h),
                         ],
                       ),
                     ),
                   ),
 
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 24.w,
-                      vertical: 4.h,
-                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
                     sliver: SliverToBoxAdapter(
                       child: KidsMagicChest(
                         onClaimed: _spawnCoins,
@@ -214,7 +212,11 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                     ),
                   ),
 
+                  SliverToBoxAdapter(child: SizedBox(height: 16.h)),
+
                   SliverToBoxAdapter(child: KidsSmartMixWidget(isDark: isDark)),
+
+                  SliverToBoxAdapter(child: SizedBox(height: 16.h)),
 
                   KidsCategoryGrid(isDark: isDark),
 
