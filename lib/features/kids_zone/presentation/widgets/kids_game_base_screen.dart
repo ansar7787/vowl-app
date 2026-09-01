@@ -58,8 +58,8 @@ class KidsGameBaseScreen extends StatefulWidget {
 }
 
 class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
-  bool _showBriefing = true;
-  String? _hintText;
+  final ValueNotifier<bool> _showBriefing = ValueNotifier(true);
+  final ValueNotifier<String?> _hintText = ValueNotifier(null);
   bool _completionDialogShown = false;
   KidsLoaded? _lastLoadedState;
   bool _hasSpokenNudge = false;
@@ -70,10 +70,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        setState(() {
-          _completionDialogShown = false;
-          _showBriefing = widget.level == 1;
-        });
+        _completionDialogShown = false;
+        _showBriefing.value = widget.level == 1;
+
         context.read<KidsBloc>().add(
           FetchKidsQuests(widget.gameType, widget.level),
         );
@@ -83,6 +82,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
   @override
   void dispose() {
+    _showBriefing.dispose();
+    _hintText.dispose();
     di.sl<KidsAudioService>().stopBgm();
     di.sl<KidsTTSService>().stop();
     super.dispose();
@@ -104,10 +105,10 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           ? "Pro Tip: Look closely at the pictures and tap!"
           : hint;
 
-      setState(() => _hintText = displayHint);
+      _hintText.value = displayHint;
       await di.sl<KidsTTSService>().speak(displayHint);
       Future.delayed(const Duration(seconds: 5), () {
-        if (mounted) setState(() => _hintText = null);
+        if (mounted) _hintText.value = null;
       });
     } catch (e) {
       di.sl<AppLogger>().warning("KIDS_HINT_TTS_ERROR: \$e", tag: 'KidsZone');
@@ -150,7 +151,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           }
           if (state.answerStatus == AnswerStatus.unanswered &&
               state.hintUsed &&
-              _hintText == null) {
+              _hintText.value == null) {
             speakHint(state.currentQuest.hint);
           }
 
@@ -206,7 +207,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                         level: widget.level,
                         primaryColor: widget.primaryColor,
                         state: state,
-                        onInfoTap: () => setState(() => _showBriefing = true),
+                        onInfoTap: () => _showBriefing.value = true,
                       ),
                       Expanded(
                         child: Stack(
@@ -224,28 +225,30 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                     ],
                   ),
                 ),
-                if (_showBriefing)
-                  Builder(
-                    builder: (context) {
-                      // Get briefing using the gameType (category) as the fallback title
-                      final briefing = GameInstructionService.getBriefing(
-                        context,
-                        null,
-                        widget.gameType,
-                        level: widget.level,
-                      );
-                      return QuestBriefingOverlay(
-                        title: briefing.title,
-                        objective: briefing.objective,
-                        rules: briefing.rules,
-                        actionText: briefing.actionText,
-                        tip: briefing.tip,
-                        icon: briefing.icon,
-                        primaryColor: widget.primaryColor,
-                        onStart: () => setState(() => _showBriefing = false),
-                      );
-                    },
-                  ),
+                ValueListenableBuilder<bool>(
+                  valueListenable: _showBriefing,
+                  builder: (context, showBriefing, _) {
+                    if (!showBriefing) return const SizedBox.shrink();
+                    
+                    // Get briefing using the gameType (category) as the fallback title
+                    final briefing = GameInstructionService.getBriefing(
+                      context,
+                      null,
+                      widget.gameType,
+                      level: widget.level,
+                    );
+                    return QuestBriefingOverlay(
+                      title: briefing.title,
+                      objective: briefing.objective,
+                      rules: briefing.rules,
+                      actionText: briefing.actionText,
+                      tip: briefing.tip,
+                      icon: briefing.icon,
+                      primaryColor: widget.primaryColor,
+                      onStart: () => _showBriefing.value = false,
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -427,42 +430,44 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, authState) {
-        String displayMessage = "";
-        if (_hintText != null) {
-          displayMessage = _hintText!;
-        } else if (state.answerStatus == AnswerStatus.unanswered) {
-          displayMessage = state.currentQuest.instruction;
+        return ValueListenableBuilder<String?>(
+          valueListenable: _hintText,
+          builder: (context, hintTextValue, _) {
+            String displayMessage = "";
+            if (hintTextValue != null) {
+              displayMessage = hintTextValue;
+            } else if (state.answerStatus == AnswerStatus.unanswered) {
+              displayMessage = state.currentQuest.instruction;
+            } else if (state.answerStatus == AnswerStatus.correct) {
+              displayMessage =
+                  state.currentQuest.funFact ??
+                  state.currentQuest.explanation ??
+                  "Great job!";
+            } else {
+              displayMessage = "";
+            }
 
-          // The data layer now safely ensures the target letter is never printed
-          // directly in the instruction, eliminating the need for regex dash replacement.
-        } else if (state.answerStatus == AnswerStatus.correct) {
-          displayMessage =
-              state.currentQuest.funFact ??
-              state.currentQuest.explanation ??
-              "Great job!";
-        } else {
-          displayMessage = "";
-        }
-
-        return Positioned(
-          left: 16.w,
-          top: 10.h,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              VowlMascot(
-                isKidsMode: true,
-                size: 60.r,
-                state: mascotState,
-                useFloatingAnimation: true,
+            return Positioned(
+              left: 16.w,
+              top: 10.h,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  VowlMascot(
+                    isKidsMode: true,
+                    size: 60.r,
+                    state: mascotState,
+                    useFloatingAnimation: true,
+                  ),
+                  if (displayMessage.isNotEmpty)
+                    Padding(
+                      padding: EdgeInsets.only(left: 12.w, top: 10.h),
+                      child: _buildSpeechBubble(context, displayMessage),
+                    ),
+                ],
               ),
-              if (displayMessage.isNotEmpty)
-                Padding(
-                  padding: EdgeInsets.only(left: 12.w, top: 10.h),
-                  child: _buildSpeechBubble(context, displayMessage),
-                ),
-            ],
-          ),
+            );
+          },
         );
       },
     );
