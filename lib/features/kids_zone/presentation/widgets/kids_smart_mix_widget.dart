@@ -66,7 +66,7 @@ class KidsSmartMixWidget extends StatelessWidget {
     final dailyAdventures = allKidsCategories.take(3).toList();
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      margin: EdgeInsets.only(left: 24.w, right: 24.w, top: 4.h, bottom: 16.h),
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,

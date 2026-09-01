@@ -34,7 +34,9 @@ class KidsZoneScreen extends StatefulWidget {
 
 class _KidsZoneScreenState extends State<KidsZoneScreen> {
   final math.Random _random = math.Random();
-  final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier([]);
+  final ValueNotifier<List<Map<String, dynamic>>> _activeCoins = ValueNotifier(
+    [],
+  );
   late ConfettiController _confettiController;
   final ValueNotifier<int?> _globalRank = ValueNotifier(null);
 
@@ -97,10 +99,12 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
         'delay': i * 100,
       });
       _activeCoins.value = currentList;
-      
+
       Future.delayed(Duration(milliseconds: 1000 + (i * 100)), () {
         if (mounted) {
-          final updatedList = List<Map<String, dynamic>>.from(_activeCoins.value);
+          final updatedList = List<Map<String, dynamic>>.from(
+            _activeCoins.value,
+          );
           updatedList.removeWhere((c) => c['id'] == id);
           _activeCoins.value = updatedList;
         }
@@ -200,7 +204,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                   SliverPadding(
                     padding: EdgeInsets.symmetric(
                       horizontal: 24.w,
-                      vertical: 8.h,
+                      vertical: 4.h,
                     ),
                     sliver: SliverToBoxAdapter(
                       child: KidsMagicChest(
@@ -245,10 +249,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                 ],
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 14.h,
-                  horizontal: 12.w,
-                ),
+                padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 12.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -277,10 +278,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                     _buildNavIcon(
                       context,
                       Icons.face_retouching_natural_rounded,
-                      context.tr(
-                        'kids_zone.nav_buddies',
-                        fallback: "Buddies",
-                      ),
+                      context.tr('kids_zone.nav_buddies', fallback: "Buddies"),
                       Colors.blueAccent,
                       () => context.push('/kids-mascot'),
                     ),
