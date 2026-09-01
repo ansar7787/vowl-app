@@ -54,14 +54,14 @@ class _GenericRoleplayScenarioScreenState
   final _chatScrollController = ScrollController();
 
   // â”€â”€ Local UI state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  bool _showConfetti = false;
-  int? _selectedIndex;
-  bool _isAnswered = false;
-  bool _isProcessing = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   /// Number of wrong taps for the current quest (resets per quest).
-  int _attempts = 0;
+  final ValueNotifier<int> _attempts = ValueNotifier(0);
 
   /// Tracks the last rendered quest index to detect advancement.
   int _lastProcessedIndex = -1;
@@ -73,7 +73,7 @@ class _GenericRoleplayScenarioScreenState
   /// Prevents completion / game-over dialogs from showing twice.
   bool _dialogShown = false;
 
-  final List<ChatMessage> _chatMessages = [];
+  final ValueNotifier<List<ChatMessage>> _chatMessages = ValueNotifier([]);
 
   // â”€â”€ Lifecycle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -89,6 +89,13 @@ class _GenericRoleplayScenarioScreenState
   void dispose() {
     _chatScrollController.dispose();
     _ttsService.stop();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _isAnswered.dispose();
+    _isProcessing.dispose();
+    _isFirstStagePassed.dispose();
+    _attempts.dispose();
+    _chatMessages.dispose();
     super.dispose();
   }
 
@@ -113,16 +120,13 @@ class _GenericRoleplayScenarioScreenState
   }
 
   void _resetForNewQuest(RoleplayLoaded state) {
-    setState(() {
-      _lastProcessedIndex = state.currentIndex;
-      _isAnswered = false;
-      _selectedIndex = null;
-      _isFirstStagePassed = false;
-      _attempts = 0;
-      _chatMessages
-        ..clear()
-        ..add(ChatMessage.system(state.currentQuest.instruction));
-    });
+    _lastProcessedIndex = state.currentIndex;
+    _isAnswered.value = false;
+    _selectedIndex.value = null;
+    _isFirstStagePassed.value = false;
+    _attempts.value = 0;
+    _chatMessages.value = [ChatMessage.system(state.currentQuest.instruction)];
+    
     _playAudio(state.currentQuest.instruction);
     _scrollToBottom();
   }
@@ -133,15 +137,15 @@ class _GenericRoleplayScenarioScreenState
   // [RoleplayBloc._onSubmitAnswer]. Only a light tap haptic fires here.
 
   void _onOptionSelected(int index, int correctIndex, String text) async {
-    if (_isAnswered || _selectedIndex != null || _isProcessing) return;
+    if (_isAnswered.value || _selectedIndex.value != null || _isProcessing.value) return;
 
     _hapticService.light(); // immediate tap affordance only
 
-    setState(() {
-      _isProcessing = true;
-      _selectedIndex = index;
-      _chatMessages.add(ChatMessage.user(text));
-    });
+    _isProcessing.value = true;
+    _selectedIndex.value = index;
+    final currentChats = List<ChatMessage>.from(_chatMessages.value);
+    currentChats.add(ChatMessage.user(text));
+    _chatMessages.value = currentChats;
     _scrollToBottom();
 
     final isCorrect = index == correctIndex;
@@ -149,38 +153,30 @@ class _GenericRoleplayScenarioScreenState
     if (isCorrect) {
       await Future.delayed(kRoleplayCorrectAnswerDelay);
       if (!mounted) return;
-      setState(() {
-        _isFirstStagePassed = true;
-        _isProcessing = false;
-      });
+      _isFirstStagePassed.value = true;
+      _isProcessing.value = false;
       // Waif for SpeakToConfirmOverlay Phase 2
     } else {
-      _attempts++;
+      _attempts.value++;
       await Future.delayed(kRoleplayWrongAnswerDelay);
       if (!mounted) return;
 
-      if (_attempts >= kRoleplayMaxWrongAttempts) {
-        setState(() {
-          _isAnswered = true;
-          _isProcessing = false;
-        });
+      if (_attempts.value >= kRoleplayMaxWrongAttempts) {
+        _isAnswered.value = true;
+        _isProcessing.value = false;
       } else {
-        setState(() {
-          _selectedIndex = null;
-          _isProcessing = false;
-        });
+        _selectedIndex.value = null;
+        _isProcessing.value = false;
       }
       context.read<RoleplayBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isFirstStagePassed = false;
-    });
+    _isAnswered.value = true;
+    _isFirstStagePassed.value = false;
 
     if (nailedIt) {
       _hapticService.success();
@@ -213,7 +209,7 @@ class _GenericRoleplayScenarioScreenState
           final shouldReset =
               state.currentIndex != _lastProcessedIndex ||
               livesRestored ||
-              (!state.answerStatus.isAnswered && _isAnswered);
+              (!state.answerStatus.isAnswered && _isAnswered.value);
 
           if (shouldReset) {
             _dialogShown = false;
@@ -223,7 +219,7 @@ class _GenericRoleplayScenarioScreenState
           _lastLives = state.livesRemaining;
         } else if (state is RoleplayGameComplete && !_dialogShown) {
           _dialogShown = true;
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -251,14 +247,17 @@ class _GenericRoleplayScenarioScreenState
         final options = quest.options ?? const [];
         final correctIndex = quest.correctAnswerIndex ?? 0;
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _selectedIndex, _isProcessing, _isFirstStagePassed, _attempts, _chatMessages, _showConfetti]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               mascotId: mascotId,
-              isAnswered: _isAnswered,
-              isCorrect: _selectedIndex == correctIndex,
-              isFinalFailure: _attempts >= kRoleplayMaxWrongAttempts,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _selectedIndex.value == correctIndex,
+              isFinalFailure: _attempts.value >= kRoleplayMaxWrongAttempts,
+              showConfetti: _showConfetti.value,
               title: widget.title,
               subtitle: quest.scene ?? 'Choose the best response',
               onContinue: () =>
@@ -270,8 +269,7 @@ class _GenericRoleplayScenarioScreenState
                 controller: _chatScrollController,
                 physics: const BouncingScrollPhysics(),
                 slivers: [
-                  SliverFillRemaining(
-                    hasScrollBody: false,
+                  SliverToBoxAdapter(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -282,14 +280,14 @@ class _GenericRoleplayScenarioScreenState
                   ),
                   SizedBox(height: 32.h),
                   RoleplayChatMessagesList(
-                    messages: _chatMessages,
-                    isProcessing: _isProcessing,
+                    messages: _chatMessages.value,
+                    isProcessing: _isProcessing.value,
                     hint: state.hintUsed ? quest.hint : null,
                     primaryColor: theme.primaryColor,
                     isDark: isDark,
                     scrollController: _chatScrollController,
                   ),
-                  if (!_isAnswered && !_isFirstStagePassed) ...[
+                  if (!_isAnswered.value && !_isFirstStagePassed.value) ...[
                     SizedBox(height: 32.h),
                     RoleplayOptionsSection(
                       options: options,
@@ -299,9 +297,9 @@ class _GenericRoleplayScenarioScreenState
                       onOptionSelected: _onOptionSelected,
                     ),
                   ],
-                  if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
+                  if (_isFirstStagePassed.value && !_isAnswered.value && _selectedIndex.value != null)
                     SpeakToConfirmOverlay(
-                      expectedText: options[_selectedIndex!],
+                      expectedText: options[_selectedIndex.value!],
                       primaryColor: theme.primaryColor,
                       isPositioned: false,
                       onConfirmed: () {
@@ -312,13 +310,15 @@ class _GenericRoleplayScenarioScreenState
                       },
                       onSkipped: () => _submitVerbalEvaluation(false),
                     ),
-                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                 ],
               ),
             ),
           ],
         ),
       );
+            },
+          );
       },
     );
   }
