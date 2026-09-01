@@ -41,12 +41,12 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   int _lastProcessedIndex = -1;
   int? _lastLives;
   AccentQuest? _lastQuest;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  double _sliderValue = 0.5;
-  int? _selectedIndex;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   // Pitch ride animation parameters
   final ValueNotifier<double> _cartPosition = ValueNotifier(0.0);
@@ -66,6 +66,12 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     _rideTimer?.cancel();
     _cartPosition.dispose();
     _isRiding.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _isFirstStagePassed.dispose();
+    _sliderValue.dispose();
     super.dispose();
   }
 
@@ -105,8 +111,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     int topIndex,
     int bottomIndex,
   ) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() => _sliderValue = value);
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _sliderValue.value = value;
 
     // Auto-lock when reaching ends
     if (value < 0.1) {
@@ -117,39 +123,31 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   }
 
   void _submitChoice(int index, int correct, int topIndex, int bottomIndex) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _selectedIndex = index;
-      _sliderValue = index == topIndex ? 1.0 : 0.0;
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _selectedIndex.value = index;
+    _sliderValue.value = index == topIndex ? 1.0 : 0.0;
 
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -177,15 +175,13 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _sliderValue = 0.5;
-              _selectedIndex = null;
-              _isFirstStagePassed = false;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _sliderValue.value = 0.5;
+            _selectedIndex.value = null;
+            _isFirstStagePassed.value = false;
             _cartPosition.value = 0.0;
             _isRiding.value = false;
             // Proactively auto-play sound and trigger ride effect on load
@@ -202,7 +198,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
           _lastLives = currentLives;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -242,12 +238,15 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _isFirstStagePassed, _sliderValue]),
+            builder: (context, _) {
+              return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+            isAnswered: _isAnswered.value,
+            isCorrect: _isCorrect.value,
+            showConfetti: _showConfetti.value,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
             useScrolling: false,
@@ -286,8 +285,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                       return CustomScrollView(
                         physics: const BouncingScrollPhysics(),
                         slivers: [
-                          SliverFillRemaining(
-                            hasScrollBody: false,
+                          SliverToBoxAdapter(
                             child: Column(
                               children: [
                                 Expanded(
@@ -302,7 +300,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                             SizedBox(height: gapTop),
                                             IntonationMimicInstruction(
                                               color: theme.primaryColor,
-                                              instruction: _isFirstStagePassed
+                                              instruction: _isFirstStagePassed.value
                                                   ? "Great job! Now record yourself saying the word."
                                                   : context.tr(
                                                       'games.intonation_mimic_instruction',
@@ -337,8 +335,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                   ),
                                             SizedBox(height: gapPrompt),
 
-                                            if (_isAnswered ||
-                                                _isFirstStagePassed) ...[
+                                            if (_isAnswered.value ||
+                                                _isFirstStagePassed.value) ...[
                                               ValueListenableBuilder<bool>(
                                                 valueListenable: _isRiding,
                                                 builder: (context, isRiding, _) {
@@ -377,9 +375,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                               isAnswered:
-                                                  _isAnswered || _isFirstStagePassed,
-                                              selectedIndex: _selectedIndex,
-                                              sliderValue: _sliderValue,
+                                                  _isAnswered.value || _isFirstStagePassed.value,
+                                              selectedIndex: _selectedIndex.value,
+                                              sliderValue: _sliderValue.value,
                                               topIndex: topIndex,
                                               bottomIndex: bottomIndex,
                                               onSubmitChoice: (idx, correct) =>
@@ -405,7 +403,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed && !_isAnswered)
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
                                   SpeakToConfirmOverlay(
                                     expectedText: quest.word ?? "",
                                     displayText: "Speak the sentence with the correct intonation:\n${quest.word ?? ""}",
@@ -414,7 +412,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     onSkipped: () => _submitVerbalEvaluation(false),
                                     isPositioned: false,
                                   ),
-                                SizedBox(height: _isAnswered ? 180.h : 0),
+                                SizedBox(height: _isAnswered.value ? 180.h : 0),
                               ],
                             ),
                           ),
@@ -422,6 +420,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                       );
                     },
                   ),
+              );
+            },
           ),
         );
       },
