@@ -41,12 +41,12 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
 
   int _lastProcessedIndex = -1;
   int _lastLives = AccentGameConstants.maxLives;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  double _sliderValue = 0.5;
-  int? _selectedIndex;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<double> _sliderValue = ValueNotifier(0.5);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
   AccentQuest? _lastQuest;
 
   final ValueNotifier<double> _previewProgress = ValueNotifier(0.0);
@@ -67,6 +67,12 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     _scrollController.dispose();
     _previewProgress.dispose();
     _isPreviewing.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _sliderValue.dispose();
+    _selectedIndex.dispose();
+    _isFirstStagePassed.dispose();
     super.dispose();
   }
 
@@ -113,8 +119,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   }
 
   void _onSliderUpdate(double value, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() => _sliderValue = value);
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _sliderValue.value = value;
 
     // Auto-lock when reaching ends:
     // With quarterTurns: 3, 1.0 is top and 0.0 is bottom.
@@ -126,40 +132,32 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _selectedIndex = index;
-      _sliderValue = index == 0 ? 1.0 : 0.0;
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _selectedIndex.value = index;
+    _sliderValue.value = index == 0 ? 1.0 : 0.0;
 
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -184,15 +182,13 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _sliderValue = 0.5;
-              _selectedIndex = null;
-              _isFirstStagePassed = false;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _sliderValue.value = 0.5;
+            _selectedIndex.value = null;
+            _isFirstStagePassed.value = false;
             _previewProgress.value = 0.0;
             _isPreviewing.value = false;
             // Proactively auto-play sound on question load
@@ -212,7 +208,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
           _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -234,12 +230,15 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _sliderValue, _selectedIndex, _isFirstStagePassed]),
+            builder: (context, _) {
+              return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+            isAnswered: _isAnswered.value,
+            isCorrect: _isCorrect.value,
+            showConfetti: _showConfetti.value,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
             useScrolling: false,
@@ -276,8 +275,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
-                          SliverFillRemaining(
-                            hasScrollBody: false,
+                          SliverToBoxAdapter(
                             child: Column(
                               children: [
                                 Expanded(
@@ -291,7 +289,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                           children: [
                                             PitchPatternMatchInstruction(
                                               color: theme.primaryColor,
-                                              instruction: _isFirstStagePassed
+                                              instruction: _isFirstStagePassed.value
                                                   ? "Great job! Now record yourself saying the word."
                                                   : context.tr(
                                                       'games.pitch_pattern_match_instruction',
@@ -309,8 +307,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                             ),
                                             SizedBox(height: gapPrompt),
 
-                                            if (_isAnswered ||
-                                                _isFirstStagePassed) ...[
+                                            if (_isAnswered.value ||
+                                                _isFirstStagePassed.value) ...[
                                               ValueListenableBuilder<bool>(
                                                 valueListenable: _isPreviewing,
                                                 builder: (context, isPreviewing, _) {
@@ -322,7 +320,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                                         color: theme.primaryColor,
                                                         isDark: isDark,
                                                         isPreviewing: isPreviewing,
-                                                        isAnswered: _isAnswered || _isFirstStagePassed,
+                                                        isAnswered: _isAnswered.value || _isFirstStagePassed.value,
                                                         previewProgress: previewProgress,
                                                       );
                                                     },
@@ -350,9 +348,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                               isAnswered:
-                                                  _isAnswered || _isFirstStagePassed,
-                                              selectedIndex: _selectedIndex,
-                                              sliderValue: _sliderValue,
+                                                  _isAnswered.value || _isFirstStagePassed.value,
+                                              selectedIndex: _selectedIndex.value,
+                                              sliderValue: _sliderValue.value,
                                               onSubmitChoice: _submitChoice,
                                               onSliderUpdate: _onSliderUpdate,
                                             ),
@@ -363,7 +361,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed && !_isAnswered)
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
                                   SpeakToConfirmOverlay(
                                     expectedText: quest.textToSpeak ?? quest.word ?? "",
                                     primaryColor: theme.primaryColor,
@@ -375,7 +373,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                       _submitVerbalEvaluation(false);
                                     },
                                   ),
-                                SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 140.h : 0),
+                                SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 140.h : 0),
                               ],
                             ),
                           ),
@@ -383,6 +381,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                       );
                     },
                   ),
+              );
+            },
           ),
         );
       },
