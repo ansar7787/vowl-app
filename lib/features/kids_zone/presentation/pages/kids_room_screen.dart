@@ -675,7 +675,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   }
 
   Widget _buildMascotSection(UserEntity user) {
-    final stickerId = user.kidsEquippedSticker;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -734,19 +733,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           alignment: Alignment.center,
           clipBehavior: Clip.none,
           children: [
-            if (stickerId != null)
-              Positioned(
-                top: -80.h,
-                left: -60.w,
-                child:
-                    _buildGlossySticker(
-                          KidsAssets.getStickerEmoji(stickerId),
-                          70.r,
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .moveY(begin: -5, end: 5, duration: 2.seconds),
-              ),
-
             GestureDetector(
               onTap: () {
                 final messages = _lifecycleService.getMoodMessages(
@@ -929,6 +915,52 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               ),
           ],
         ),
+        SizedBox(height: 24.h),
+        _buildHeroNameplate(user),
+      ],
+    );
+  }
+
+  Widget _buildHeroNameplate(UserEntity user) {
+    final stickerId = user.kidsEquippedSticker;
+    final buddyName = user.kidsMascot == 'foxie' ? 'FOXIE' : user.kidsMascot == 'dino' ? 'DINO' : 'OWLY';
+    
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.2),
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.6), width: 2.w),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, 5),
+              ),
+            ],
+          ),
+          child: Text(
+            buddyName,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+              letterSpacing: 4,
+            ),
+          ),
+        ),
+        if (stickerId != null)
+          Positioned(
+            right: -15.w,
+            top: -15.h,
+            child: _buildGlossySticker(KidsAssets.getStickerEmoji(stickerId), 42.r)
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .moveY(begin: -2, end: 2, duration: 1.5.seconds),
+          ),
       ],
     );
   }
