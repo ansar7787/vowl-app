@@ -394,7 +394,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           _buildHeroNameplate(user),
-                          SizedBox(height: 12.h),
+                          SizedBox(height: 4.h),
                           KidsRoomActionPanel(
                             isSleeping: _isSleeping.value,
                             gamesPlayedToday: isGameToday ? user.kidsGamesPlayedToday : 0,
