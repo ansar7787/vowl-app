@@ -38,22 +38,29 @@ class DialectDrillHologramConsole extends StatefulWidget {
 class _DialectDrillHologramConsoleState
     extends State<DialectDrillHologramConsole> {
   final _hapticService = di.sl<HapticService>();
-  int? _hoveredTowerIndex;
+  final ValueNotifier<int?> _hoveredTowerIndex = ValueNotifier(null);
 
   @override
   void didUpdateWidget(covariant DialectDrillHologramConsole oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.quest != widget.quest ||
         (!widget.isAnswered && oldWidget.isAnswered)) {
-      setState(() {
-        _hoveredTowerIndex = null;
-      });
+      _hoveredTowerIndex.value = null;
     }
+  }
+  
+  @override
+  void dispose() {
+    _hoveredTowerIndex.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ValueListenableBuilder<int?>(
+      valueListenable: _hoveredTowerIndex,
+      builder: (context, hoveredTowerIndex, child) {
+        return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         ScaleButton(
@@ -112,7 +119,7 @@ class _DialectDrillHologramConsoleState
                     color: widget.color,
                     isAnswered: widget.isAnswered,
                     isCorrect: widget.isCorrect,
-                    hasTargetGlow: _hoveredTowerIndex != null,
+                    hasTargetGlow: hoveredTowerIndex != null,
                   ),
                 ),
                 childWhenDragging: Opacity(
@@ -128,7 +135,7 @@ class _DialectDrillHologramConsoleState
                   color: widget.color,
                   isAnswered: widget.isAnswered,
                   isCorrect: widget.isCorrect,
-                  hasTargetGlow: _hoveredTowerIndex != null,
+                  hasTargetGlow: hoveredTowerIndex != null,
                 ),
               ),
               SizedBox(height: 12.h),
@@ -146,7 +153,9 @@ class _DialectDrillHologramConsoleState
           ),
         ],
       ],
-    ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.95, 0.95));
+        ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.95, 0.95));
+      },
+    );
   }
 
   Widget _buildDragTarget(int index) {
@@ -160,23 +169,23 @@ class _DialectDrillHologramConsoleState
             correctIndex,
             MediaQuery.of(context).size.width,
           );
-          setState(() => _hoveredTowerIndex = index);
+          _hoveredTowerIndex.value = index;
         }
       },
       child: DragTarget<int>(
         onWillAcceptWithDetails: (details) {
           if (!widget.isAnswered) {
-            if (_hoveredTowerIndex != index) {
+            if (_hoveredTowerIndex.value != index) {
               _hapticService.selection();
-              setState(() => _hoveredTowerIndex = index);
+              _hoveredTowerIndex.value = index;
             }
             return true;
           }
           return false;
         },
         onLeave: (data) {
-          if (_hoveredTowerIndex == index) {
-            setState(() => _hoveredTowerIndex = null);
+          if (_hoveredTowerIndex.value == index) {
+            _hoveredTowerIndex.value = null;
           }
         },
         onAcceptWithDetails: (details) {
@@ -186,7 +195,7 @@ class _DialectDrillHologramConsoleState
             correctIndex,
             MediaQuery.of(context).size.width,
           );
-          setState(() => _hoveredTowerIndex = index); // Lock selection visually
+          _hoveredTowerIndex.value = index; // Lock selection visually
         },
         builder: (context, candidateData, rejectedData) {
           String label =
@@ -206,10 +215,10 @@ class _DialectDrillHologramConsoleState
             maxWidth: MediaQuery.of(context).size.width,
             color: widget.color,
             isDark: widget.isDark,
-            isHovered: _hoveredTowerIndex == index || candidateData.isNotEmpty,
+            isHovered: _hoveredTowerIndex.value == index || candidateData.isNotEmpty,
             isAnswered: widget.isAnswered,
             isCorrect: widget.isCorrect,
-            hoveredTowerIndex: _hoveredTowerIndex,
+            hoveredTowerIndex: _hoveredTowerIndex.value,
           );
         },
       ),

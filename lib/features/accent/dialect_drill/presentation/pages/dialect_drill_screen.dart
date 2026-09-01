@@ -37,13 +37,22 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   AccentQuest? _lastQuest;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   List<String>? _shuffledOptions;
   int? _shuffledCorrectIndex;
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -75,34 +84,28 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   }
 
   void _submitAnswer(int index, int correct, double maxWidth) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -128,14 +131,12 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
               _lastLives != null && (state.livesRemaining > _lastLives!);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-              _shuffleOptions(state.currentQuest as AccentQuest?);
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+            _shuffleOptions(state.currentQuest as AccentQuest?);
             Future.delayed(const Duration(milliseconds: 350), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
@@ -144,7 +145,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
           _lastQuest = state.currentQuest;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -159,7 +160,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
 
-        if (originalQuest != null && _shuffledOptions == null) {
+        if (originalQuest != null && _shuffledOptions == null && !_isAnswered.value) {
           _shuffleOptions(originalQuest);
         }
 
@@ -200,12 +201,15 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed]),
+            builder: (context, _) {
+              return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+            isAnswered: _isAnswered.value,
+            isCorrect: _isCorrect.value,
+            showConfetti: _showConfetti.value,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
             useScrolling: false,
@@ -217,8 +221,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                       return CustomScrollView(
                         physics: const BouncingScrollPhysics(),
                         slivers: [
-                          SliverFillRemaining(
-                            hasScrollBody: false,
+                          SliverToBoxAdapter(
                             child: Column(
                               children: [
                                 Expanded(
@@ -234,7 +237,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             DialectDrillInstruction(
-                                              instruction: _isFirstStagePassed
+                                              instruction: _isFirstStagePassed.value
                                                   ? "Great job! Now record yourself saying the word."
                                                   : instructionText,
                                               accentColor: theme.primaryColor,
@@ -253,10 +256,10 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                               isAnswered:
-                                                  _isAnswered || _isFirstStagePassed,
-                                              isCorrect: _isFirstStagePassed
+                                                  _isAnswered.value || _isFirstStagePassed.value,
+                                              isCorrect: _isFirstStagePassed.value
                                                   ? true
-                                                  : _isCorrect,
+                                                  : _isCorrect.value,
                                               onPlayTargetAudio: () =>
                                                   _triggerAutoPlay(quest),
                                               onSubmitAnswer: _submitAnswer,
@@ -270,7 +273,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                 AnimatedSize(
                                   duration: const Duration(milliseconds: 400),
                                   curve: Curves.easeOut,
-                                  child: (_isAnswered || _isFirstStagePassed)
+                                  child: (_isAnswered.value || _isFirstStagePassed.value)
                                       ? Padding(
                                           padding: EdgeInsets.symmetric(horizontal: 16.w).copyWith(bottom: 24.h),
                                           child: Column(
@@ -279,8 +282,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                               Builder(
                                                 builder: (context) {
                                                   final bool isSuccess =
-                                                      _isCorrect == true ||
-                                                      _isFirstStagePassed;
+                                                      _isCorrect.value == true ||
+                                                      _isFirstStagePassed.value;
                                                   final bool isFinalFailure =
                                                       state is AccentGameOver;
                                                   final bool showExplanation =
@@ -288,8 +291,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                       isFinalFailure;
                                                   return DialectFeedbackPanel(
                                                     isCorrect:
-                                                        _isCorrect ??
-                                                        _isFirstStagePassed,
+                                                        _isCorrect.value ??
+                                                        _isFirstStagePassed.value,
                                                     word: quest.word ?? "",
                                                     britishPronunciation:
                                                         brPr.isEmpty
@@ -320,7 +323,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                   );
                                                 },
                                               ),
-                                              if (_isFirstStagePassed && !_isAnswered) ...[
+                                              if (_isFirstStagePassed.value && !_isAnswered.value) ...[
                                                 SizedBox(height: 16.h),
                                                 ShadowPlaybackCompare(
                                                   expectedText: quest.word ?? "",
@@ -348,6 +351,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                       );
                     },
                   ),
+              );
+            },
           ),
         );
       },
