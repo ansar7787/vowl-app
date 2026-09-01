@@ -32,11 +32,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _showConfetti = false;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  int _attempts = 0;
-  Set<int> _matchedIndices = {};
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<int> _attempts = ValueNotifier(0);
+  final ValueNotifier<Set<int>> _matchedIndices = ValueNotifier({});
   String? _lastQuestId;
 
   static const double _kCompactHeightBreakpoint = 580;
@@ -48,19 +48,27 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
       FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
     );
   }
+  
+  @override
+  void dispose() {
+    _showConfetti.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _attempts.dispose();
+    _matchedIndices.dispose();
+    super.dispose();
+  }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-      if (nailedIt) {
-        _matchedIndices = Set.from(
-          Iterable.generate(100),
-        ); // Highlight all on success
-      }
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
+    if (nailedIt) {
+      _matchedIndices.value = Set.from(
+        Iterable.generate(100),
+      ); // Highlight all on success
+    }
 
     if (nailedIt) {
       _hapticService.success();
@@ -76,11 +84,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-      _matchedIndices = Set.from(Iterable.generate(100)); // Highlight all
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
+    _matchedIndices.value = Set.from(Iterable.generate(100)); // Highlight all
     context.read<EliteMasteryBloc>().add(EliteTutorPass());
   }
 
@@ -98,7 +104,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     return BlocConsumer<EliteMasteryBloc, EliteMasteryState>(
       listener: (context, state) {
         if (state is EliteMasteryGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -112,39 +118,38 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         } else if (state is EliteMasteryLoaded) {
           final quest = state.currentQuest;
           if (_lastQuestId != quest.id ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastQuestId = quest.id;
-              _isAnswered = false;
-              _isCorrect = null;
-              _attempts = 0;
-              _matchedIndices = {};
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastQuestId = quest.id;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _attempts.value = 0;
+            _matchedIndices.value = {};
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            }
           }
         }
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
 
-        return EliteBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _attempts, _matchedIndices]),
+            builder: (context, _) {
+              return EliteBaseLayout(
           onTutorPass: _tutorPass,
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
+          isAnswered: _isAnswered.value,
           state: state,
-          isCorrect: _isCorrect,
+          isCorrect: _isCorrect.value,
           isFinalFailure:
               (state is EliteMasteryLoaded && state.isFinalFailure) ||
               (state is EliteMasteryLoaded ? state.livesRemaining <= 0 : false),
-          showConfetti: _showConfetti,
-          title: _isAnswered
+          showConfetti: _showConfetti.value,
+          title: _isAnswered.value
               ? ""
               : quest?.instruction.isNotEmpty == true
               ? quest!.instruction
@@ -156,12 +161,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           titleIcon: Icons.record_voice_over_rounded,
           useScrolling: false,
           onContinue: () {
-            setState(() {
-              _isAnswered = false;
-              _isCorrect = null;
-              _attempts = 0;
-              _matchedIndices = {};
-            });
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _attempts.value = 0;
+            _matchedIndices.value = {};
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },
           onHint: () {
@@ -184,6 +187,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           },
           child: _buildBody(context, state, isDark, theme),
         );
+            },
+          );
       },
     );
   }
@@ -229,8 +234,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        SliverFillRemaining(
-          hasScrollBody: false,
+        SliverToBoxAdapter(
           child: LayoutBuilder(
             builder: (context, constraints) {
               final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
@@ -246,12 +250,12 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                   ),
               shadowingFocus: quest.shadowingFocus,
               targetAccent: quest.targetAccent,
-              matchedIndices: _matchedIndices,
+              matchedIndices: _matchedIndices.value,
               isDark: isDark,
               primaryColor: theme.primaryColor,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              attempts: _attempts,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              attempts: _attempts.value,
               onListenTap: () => _soundService.playTts(targetText ?? ""),
             ),
 
@@ -266,7 +270,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             ],
             SizedBox(height: isCompact ? 16.h : 30.h),
 
-            if (!_isAnswered)
+            if (!_isAnswered.value)
               AccentSelfEvaluationPanel(
                 textToSpeak:
                     "", // Removed duplicate text, it's already shown in the target panel

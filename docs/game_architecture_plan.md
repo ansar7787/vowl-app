@@ -741,7 +741,13 @@ Every single one of the 100 games must pass these 6 checks:
 ---
 
 ### 👑 Elite Mastery (4 Games)
-1. Accent Shadowing
+1. **Accent Shadowing**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 2. Idiom Match
 3. Speed Spelling
 4. Story Builder
