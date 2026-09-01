@@ -26,9 +26,9 @@ class KidsMagicChest extends StatefulWidget {
 class _KidsMagicChestState extends State<KidsMagicChest> {
   final math.Random _random = math.Random();
   Timer? _timer;
-  String _timeRemaining = "00:00:00";
-  bool _isClaiming = false;
-  DateTime? _lastClaimedLocally;
+  final ValueNotifier<String> _timeRemaining = ValueNotifier("00:00:00");
+  final ValueNotifier<bool> _isClaiming = ValueNotifier(false);
+  final ValueNotifier<DateTime?> _lastClaimedLocally = ValueNotifier(null);
 
   @override
   void initState() {
@@ -41,6 +41,9 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
   @override
   void dispose() {
     _timer?.cancel();
+    _timeRemaining.dispose();
+    _isClaiming.dispose();
+    _lastClaimedLocally.dispose();
     super.dispose();
   }
 
@@ -58,10 +61,10 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
     if (user != null) {
       final serverLastClaim = user.lastKidsDailyRewardDate;
       final lastClaim =
-          (_lastClaimedLocally != null &&
+          (_lastClaimedLocally.value != null &&
               (serverLastClaim == null ||
-                  _lastClaimedLocally!.isAfter(serverLastClaim)))
-          ? _lastClaimedLocally
+                  _lastClaimedLocally.value!.isAfter(serverLastClaim)))
+          ? _lastClaimedLocally.value
           : serverLastClaim;
 
       if (lastClaim != null) {
@@ -69,14 +72,10 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
         final nextClaim = lastClaim.add(const Duration(hours: 24));
         if (now.isBefore(nextClaim)) {
           final diff = nextClaim.difference(now);
-          setState(() {
-            _timeRemaining =
-                "${diff.inHours.toString().padLeft(2, '0')}:${(diff.inMinutes % 60).toString().padLeft(2, '0')}:${(diff.inSeconds % 60).toString().padLeft(2, '0')}";
-          });
+          _timeRemaining.value =
+              "${diff.inHours.toString().padLeft(2, '0')}:${(diff.inMinutes % 60).toString().padLeft(2, '0')}:${(diff.inSeconds % 60).toString().padLeft(2, '0')}";
         } else {
-          setState(() {
-            _timeRemaining = "00:00:00";
-          });
+          _timeRemaining.value = "00:00:00";
         }
       }
     }
@@ -89,19 +88,22 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
         final user = state.user;
         if (user == null) return const SizedBox.shrink();
 
-        final serverLastClaim = user.lastKidsDailyRewardDate;
-        final lastClaim =
-            (_lastClaimedLocally != null &&
-                (serverLastClaim == null ||
-                    _lastClaimedLocally!.isAfter(serverLastClaim)))
-            ? _lastClaimedLocally
-            : serverLastClaim;
+        return ListenableBuilder(
+          listenable: Listenable.merge([_timeRemaining, _isClaiming, _lastClaimedLocally]),
+          builder: (context, _) {
+            final serverLastClaim = user.lastKidsDailyRewardDate;
+            final lastClaim =
+                (_lastClaimedLocally.value != null &&
+                    (serverLastClaim == null ||
+                        _lastClaimedLocally.value!.isAfter(serverLastClaim)))
+                ? _lastClaimedLocally.value
+                : serverLastClaim;
 
-        final now = DateTime.now();
-        final canClaim =
-            !_isClaiming &&
-            (lastClaim == null ||
-                now.isAfter(lastClaim.add(const Duration(hours: 24))));
+            final now = DateTime.now();
+            final canClaim =
+                !_isClaiming.value &&
+                (lastClaim == null ||
+                    now.isAfter(lastClaim.add(const Duration(hours: 24))));
 
         final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -109,10 +111,8 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
           onTap: canClaim
               ? () async {
                   final claimTime = DateTime.now();
-                  setState(() {
-                    _isClaiming = true;
-                    _lastClaimedLocally = claimTime;
-                  });
+                  _isClaiming.value = true;
+                  _lastClaimedLocally.value = claimTime;
 
                   widget.onClaimed(); // Trigger confetti/animations in parent
 
@@ -131,7 +131,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                   }
 
                   await Future.delayed(const Duration(seconds: 2));
-                  if (mounted) setState(() => _isClaiming = false);
+                  if (mounted) _isClaiming.value = false;
                 }
               : null,
           child: Container(
@@ -215,7 +215,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                       Text(
                         canClaim
                             ? "Open for daily Kids Coins!"
-                            : "Next claim in $_timeRemaining",
+                            : "Next claim in ${_timeRemaining.value}",
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -255,6 +255,8 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
               ],
             ),
           ),
+        );
+          },
         );
       },
     );

@@ -79,13 +79,15 @@ class KidsMapNode extends StatefulWidget {
 }
 
 class _KidsMapNodeState extends State<KidsMapNode> {
-  String? _buddyMessage;
+  final ValueNotifier<String?> _buddyMessage = ValueNotifier(null);
   Timer? _buddyMessageTimer;
-  VowlMascotState _buddyState = VowlMascotState.neutral;
+  final ValueNotifier<VowlMascotState> _buddyState = ValueNotifier(VowlMascotState.neutral);
 
   @override
   void dispose() {
     _buddyMessageTimer?.cancel();
+    _buddyMessage.dispose();
+    _buddyState.dispose();
     super.dispose();
   }
 
@@ -93,9 +95,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     _buddyMessageTimer?.cancel();
 
     // Trigger state change animation
-    setState(() {
-      _buddyState = VowlMascotState.happy;
-    });
+    _buddyState.value = VowlMascotState.happy;
 
     final messages = [
       'kids_zone.cheer_great',
@@ -113,18 +113,14 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     final index = math.Random().nextInt(messages.length);
     final msg = context.tr(messages[index], fallback: fallbacks[index]);
 
-    setState(() {
-      _buddyMessage = msg;
-    });
+    _buddyMessage.value = msg;
 
     di.sl<TtsService>().speak(msg.replaceAll(RegExp(r'[^\w\s\!]'), ''));
 
     _buddyMessageTimer = Timer(const Duration(seconds: 3), () {
       if (mounted) {
-        setState(() {
-          _buddyMessage = null;
-          _buddyState = VowlMascotState.neutral;
-        });
+        _buddyMessage.value = null;
+        _buddyState.value = VowlMascotState.neutral;
       }
     });
   }
@@ -135,26 +131,29 @@ class _KidsMapNodeState extends State<KidsMapNode> {
         return GestureDetector(
           onTap: _handleBuddyTap,
           behavior: HitTestBehavior.opaque,
-          child: Stack(
-            clipBehavior: Clip.none,
-            alignment: Alignment.center,
-            children: [
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_buddyMessage, _buddyState]),
+            builder: (context, _) {
+              return Stack(
+                clipBehavior: Clip.none,
+                alignment: Alignment.center,
+                children: [
               // 10/10 Bouncy Comic Cloud Bubble
-              if (_buddyMessage != null)
+              if (_buddyMessage.value != null)
                 Positioned(
                   top: -30.h,
                   right: isNearRightEdge ? 45.r : null,
                   left: !isNearRightEdge ? 45.r : null,
-                  child: _buildBuddySpeechBubble(_buddyMessage!, isNearRightEdge),
+                  child: _buildBuddySpeechBubble(_buddyMessage.value!, isNearRightEdge),
                 ),
 
               VowlMascot(
                     size: 55.r,
-                    state: _buddyState,
+                    state: _buddyState.value,
                     useFloatingAnimation: true,
                     isKidsMode: true,
                   )
-                  .animate(target: _buddyMessage != null ? 1 : 0)
+                  .animate(target: _buddyMessage.value != null ? 1 : 0)
                   .shake(hz: 10, curve: Curves.easeInOut)
                   .scale(
                     begin: const Offset(1, 1),
@@ -168,7 +167,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                     end: const Offset(1, 1),
                     duration: 200.ms,
                   ),
-            ],
+                ],
+              );
+            },
           ),
         ).animate().scale(curve: Curves.easeOutBack).fadeIn();
       },

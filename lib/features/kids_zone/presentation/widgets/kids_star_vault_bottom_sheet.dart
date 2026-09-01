@@ -54,10 +54,19 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     if (index < 10) return 15 + (index * 15);
     return 150 + ((index - 9) * 30);
   });
-  bool _isProcessing = false;
-  int _remainingClaims = RewardLimitService.maxClaimsPerDay;
-  bool _isLoadingLimits = true;
-  int _outOfAdsShake = 0;
+  final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
+  final ValueNotifier<int> _remainingClaims = ValueNotifier(RewardLimitService.maxClaimsPerDay);
+  final ValueNotifier<bool> _isLoadingLimits = ValueNotifier(true);
+  final ValueNotifier<int> _outOfAdsShake = ValueNotifier(0);
+
+  @override
+  void dispose() {
+    _isProcessing.dispose();
+    _remainingClaims.dispose();
+    _isLoadingLimits.dispose();
+    _outOfAdsShake.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -68,10 +77,8 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
   Future<void> _loadLimits() async {
     final remaining = await RewardLimitService.getRemainingClaims('stars');
     if (mounted) {
-      setState(() {
-        _remainingClaims = remaining;
-        _isLoadingLimits = false;
-      });
+      _remainingClaims.value = remaining;
+      _isLoadingLimits.value = false;
     }
   }
 
@@ -88,11 +95,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
   }
 
   Future<void> _claimChest(int tierIndex, int currentStars) async {
-    if (_isProcessing) return;
+    if (_isProcessing.value) return;
     final requirement = _chestTiers[tierIndex];
     if (currentStars < requirement) return;
 
-    setState(() => _isProcessing = true);
+    _isProcessing.value = true;
 
     final updateUserRewards = di.sl<UpdateUserRewards>();
 
@@ -117,7 +124,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     if (!mounted) return;
 
     if (result.isLeft()) {
-      setState(() => _isProcessing = false);
+      _isProcessing.value = false;
       showDialog(
         context: context,
         builder: (ctx) => ModernGameDialog(
@@ -133,9 +140,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
 
     context.read<AuthBloc>().add(const AuthRefreshUser());
 
-    setState(() {
-      _isProcessing = false;
-    });
+    _isProcessing.value = false;
 
     showDialog(
       context: context,
@@ -166,9 +171,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
   }
 
   Future<void> _watchAdForMagicStars() async {
-    if (_isProcessing) return;
-    if (_remainingClaims <= 0) {
-      setState(() => _outOfAdsShake++);
+    if (_isProcessing.value) return;
+    if (_remainingClaims.value <= 0) {
+      _outOfAdsShake.value++;
       showDialog(
         context: context,
         builder: (ctx) => ModernGameDialog(
@@ -186,7 +191,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
       );
       return;
     }
-    setState(() => _isProcessing = true);
+    _isProcessing.value = true;
 
     final adService = di.sl<AdService>();
     if (!adService.isRewardedAdLoaded) {
@@ -195,7 +200,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         message: context.tr('store.ad_not_ready', fallback: "Ad not ready yet. Please wait a moment."),
         type: CustomSnackBarType.warning,
       );
-      setState(() => _isProcessing = false);
+      _isProcessing.value = false;
       return;
     }
 
@@ -213,11 +218,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
       },
       onDismissed: () async {
         if (!mounted) return;
-        setState(() => _isProcessing = false);
+        _isProcessing.value = false;
         
         if (!rewardEarned) return;
         
-        setState(() => _isProcessing = true);
+        _isProcessing.value = true;
         
         final updateUserRewards = di.sl<UpdateUserRewards>();
         final result = await updateUserRewards(
@@ -236,7 +241,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         }
 
         if (!mounted) return;
-        setState(() => _isProcessing = false);
+        _isProcessing.value = false;
         
         if (result.isLeft()) {
           showDialog(
@@ -287,7 +292,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     );
 
     Future.delayed(const Duration(seconds: 3), () {
-      if (mounted && _isProcessing) setState(() => _isProcessing = false);
+      if (mounted && _isProcessing.value) _isProcessing.value = false;
     });
   }
 
@@ -737,7 +742,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                   child: ScaleButton(
                                     onTap: _watchAdForMagicStars,
                                     child: ShakeableWrapper(
-                                      shakeCount: _outOfAdsShake,
+                                      shakeCount: _outOfAdsShake.value,
                                       child: Container(
                                       width: double.infinity,
                                       padding: EdgeInsets.symmetric(
@@ -759,7 +764,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                           ),
                                         ],
                                       ),
-                                      child: _isProcessing || _isLoadingLimits
+                                      child: _isProcessing.value || _isLoadingLimits.value
                                           ? Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -784,7 +789,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                 ),
                                               ],
                                             )
-                                          : _remainingClaims <= 0
+                                          : _remainingClaims.value <= 0
                                               ? Row(
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.center,
@@ -836,7 +841,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                 ),
                                 SizedBox(height: 12.h),
                                 Text(
-                                    _remainingClaims <= 0
+                                    _remainingClaims.value <= 0
                                         ? context.tr('store.come_back_tomorrow', fallback: "Come back tomorrow for more free stars!")
                                         : context.tr('store.magic_stars_hint', fallback: "Magic Stars permanently count towards your total! ($_remainingClaims left today)"),
                                     style: TextStyle(
