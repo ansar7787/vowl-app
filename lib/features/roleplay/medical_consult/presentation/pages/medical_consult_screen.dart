@@ -43,17 +43,17 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   late AnimationController _pulseController;
 
   int _lastProcessedIndex = -1;
-  final List<String> _diagnosedSymptoms = [];
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<List<String>> _diagnosedSymptoms = ValueNotifier([]);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   // Drag coordinate for physical scanning lens
-  Offset _scanOffset = Offset.zero;
+  final ValueNotifier<Offset> _scanOffset = ValueNotifier(Offset.zero);
 
   // Set of unlocked nodes that are locked/resolved by the scanner lens
-  final List<String> _scannedGlitches = [];
+  final ValueNotifier<List<String>> _scannedGlitches = ValueNotifier([]);
 
   @override
   void initState() {
@@ -77,6 +77,13 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   void dispose() {
     _sweepController.dispose();
     _pulseController.dispose();
+    _diagnosedSymptoms.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
+    _scanOffset.dispose();
+    _scannedGlitches.dispose();
     super.dispose();
   }
 
@@ -124,61 +131,57 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     DragUpdateDetails details,
     List<String> availableSymptoms,
   ) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
-    setState(() {
-      _scanOffset += details.delta;
-    });
+    _scanOffset.value += details.delta;
 
     // Check proximity against all symptoms mentioned in the complaint list
     for (String s in availableSymptoms) {
       final Offset target = _getAnatomicalOffset(s);
-      final double distance = (target - _scanOffset).distance;
+      final double distance = (target - _scanOffset.value).distance;
 
       // 36r relative proximity locking boundary
       if (distance < 36.r) {
-        if (!_scannedGlitches.contains(s)) {
+        if (!_scannedGlitches.value.contains(s)) {
           _hapticService.selection();
           _soundService.playHint(); // Play biometric heartbeat scan pulse
-          setState(() {
-            _scannedGlitches.add(s);
-          });
+          final glitches = List<String>.from(_scannedGlitches.value);
+          glitches.add(s);
+          _scannedGlitches.value = glitches;
         }
       }
     }
   }
 
   void _onSymptomTapped(String symptom) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     // Check if item is scanned before selection
-    if (!_scannedGlitches.contains(symptom)) {
+    if (!_scannedGlitches.value.contains(symptom)) {
       _hapticService.error();
       return;
     }
 
     _hapticService.selection();
-    setState(() {
-      if (_diagnosedSymptoms.contains(symptom)) {
-        _diagnosedSymptoms.remove(symptom);
-      } else {
-        _diagnosedSymptoms.add(symptom);
-      }
-    });
+    final current = List<String>.from(_diagnosedSymptoms.value);
+    if (current.contains(symptom)) {
+      current.remove(symptom);
+    } else {
+      current.add(symptom);
+    }
+    _diagnosedSymptoms.value = current;
   }
 
   void _clearDiagnosis() {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _hapticService.selection();
-    setState(() {
-      _diagnosedSymptoms.clear();
-      _scannedGlitches.clear();
-      _scanOffset = Offset.zero;
-    });
+    _diagnosedSymptoms.value = [];
+    _scannedGlitches.value = [];
+    _scanOffset.value = Offset.zero;
   }
 
   void _submitDiagnosis(String correctAnswer) {
-    if (_isAnswered || _isFirstStagePassed || _diagnosedSymptoms.isEmpty) {
+    if (_isAnswered.value || _isFirstStagePassed.value || _diagnosedSymptoms.value.isEmpty) {
       return;
     }
 
@@ -186,7 +189,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
         .split(',')
         .map((e) => e.trim().toLowerCase())
         .toList();
-    final current = _diagnosedSymptoms
+    final current = _diagnosedSymptoms.value
         .map((e) => e.trim().toLowerCase())
         .toList();
 
@@ -196,28 +199,22 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -239,22 +236,20 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _diagnosedSymptoms.clear();
-              _scannedGlitches.clear();
-              _scanOffset = Offset.zero;
-              _isFirstStagePassed = false;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _diagnosedSymptoms.value = [];
+            _scannedGlitches.value = [];
+            _scanOffset.value = Offset.zero;
+            _isFirstStagePassed.value = false;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -268,12 +263,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final symptoms = quest?.symptoms ?? [];
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _diagnosedSymptoms, _scannedGlitches, _scanOffset, _isFirstStagePassed]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -287,18 +285,16 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               MedicalConsultInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -316,8 +312,8 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                 symptoms: symptoms,
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                scanOffset: _scanOffset,
-                                scannedGlitches: _scannedGlitches,
+                                scanOffset: _scanOffset.value,
+                                scannedGlitches: _scannedGlitches.value,
                                 sweepAnimation: _sweepController,
                                 onScanUpdate: _onScanUpdate,
                               ),
@@ -328,16 +324,16 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                 symptoms: symptoms,
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                scannedGlitches: _scannedGlitches,
-                                diagnosedSymptoms: _diagnosedSymptoms,
-                                isAnswered: _isAnswered,
-                                isCorrect: _isCorrect,
+                                scannedGlitches: _scannedGlitches.value,
+                                diagnosedSymptoms: _diagnosedSymptoms.value,
+                                isAnswered: _isAnswered.value,
+                                isCorrect: _isCorrect.value,
                                 onSymptomTapped: _onSymptomTapped,
                               ),
                               SizedBox(height: isCompact ? 20.h : 28.h),
 
                               // Submit controls
-                              if (!_isAnswered && _diagnosedSymptoms.isNotEmpty)
+                              if (!_isAnswered.value && _diagnosedSymptoms.value.isNotEmpty)
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -441,7 +437,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                 ).animate().fadeIn(duration: 300.ms),
 
                                           // Explanations cards post-selection
-                                          if (_isAnswered) ...[
+                                          if (_isAnswered.value) ...[
                                             SizedBox(height: isCompact ? 12.h : 20.h),
                                             MedicalConsultBodyDiagram(
                                               quest: quest,
@@ -453,10 +449,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed && !_isAnswered)
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
                                     SpeakToConfirmOverlay(
-                                      expectedText: quest.correctAnswer ?? _diagnosedSymptoms.join(', '),
+                                      expectedText: quest.correctAnswer ?? _diagnosedSymptoms.value.join(', '),
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {
@@ -467,7 +462,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -475,7 +470,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }
