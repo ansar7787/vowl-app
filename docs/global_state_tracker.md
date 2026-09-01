@@ -18,8 +18,9 @@ This tracker outlines the migration of the remaining Flutter modules from legacy
 - [x] Leaderboard (`leaderboard_screen.dart`)
 
 ## Phase 4: Kids Zone
-- [ ] Kids Zone Pages (`kids_level_map.dart`, `buddy_boutique_screen.dart`, `sticker_book_screen.dart`, `kids_zone_screen.dart`, `kids_room_screen.dart`)
-- [ ] Kids Zone Widgets (`kids_category_grid.dart`, `kids_explanation_card.dart`, `kids_game_base_screen.dart`, `kids_magic_chest.dart`, `kids_map_node.dart`, `kids_picker_template.dart`, `kids_room_clean_activity.dart`, `kids_room_play_game.dart`, `kids_star_vault_bottom_sheet.dart`)
+- [x] Kids Zone Pages (`kids_level_map.dart`, `buddy_boutique_screen.dart`, `sticker_book_screen.dart`, `kids_zone_screen.dart`, `kids_room_screen.dart`)
+- [x] Kids Zone Widgets (Completed: `kids_magic_chest.dart`, `kids_map_node.dart`, `kids_star_vault_bottom_sheet.dart`)
+- [ ] Kids Zone Widgets (Pending: `kids_category_grid.dart`, `kids_explanation_card.dart`, `kids_game_base_screen.dart`, `kids_picker_template.dart`, `kids_room_clean_activity.dart`, `kids_room_play_game.dart`)
 - [ ] Kids Zone Layouts (`kids_alphabet_layout.dart`, `kids_handwriting_layout.dart`)
 
 ## Phase 5: Authentication & Onboarding
