@@ -46,6 +46,12 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   List<CoinPack> _activePacks = [];
   bool _isLoadingPacks = true;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   static const List<CoinPack> _fallbackPacks = [
     CoinPack(
       id: 'starter_pack',
@@ -98,20 +104,18 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     try {
       final packs = await di.sl<CoinPacksService>().fetchPacks();
       if (mounted) {
-        setState(() {
-          _activePacks = packs.isNotEmpty ? packs : _fallbackPacks;
-          _isLoadingPacks = false;
-        });
+        _activePacks = packs.isNotEmpty ? packs : _fallbackPacks;
+        _isLoadingPacks = false;
+        _updateState();
       }
     } catch (e) {
       di.sl<AppLogger>().warning(
         'Failed to load dynamic coin packs, falling back to local defaults.',
       );
       if (mounted) {
-        setState(() {
-          _activePacks = _fallbackPacks;
-          _isLoadingPacks = false;
-        });
+        _activePacks = _fallbackPacks;
+        _isLoadingPacks = false;
+        _updateState();
       }
     }
   }
@@ -121,6 +125,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     // PaymentService manages its own cleanup when dispose is called
     // We shouldn't dispose it here if it's a singleton, but PaymentService
     // init/dispose in stateful widgets is the current pattern.
+    _stateHash.dispose();
     _paymentService.dispose();
     super.dispose();
   }
@@ -147,7 +152,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       // Successfully granted by backend! Refresh the user profile to show updated balances
       if (mounted) {
         context.read<AuthBloc>().add(const AuthReloadUser());
-        setState(() => _isProcessing = false);
+        _isProcessing = false;
+        _updateState();
         CustomSnackBar.show(
           context: context,
           message: context.tr(
@@ -159,7 +165,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       }
     } catch (e) {
       if (mounted) {
-        setState(() => _isProcessing = false);
+        _isProcessing = false;
+        _updateState();
         CustomSnackBar.show(
           context: context,
           message: context.tr(
@@ -179,7 +186,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     di.sl<HapticService>().error();
     _pendingPack = null;
     if (mounted) {
-      setState(() => _isProcessing = false);
+      _isProcessing = false;
+      _updateState();
       if (response.code == Razorpay.PAYMENT_CANCELLED) {
         CustomSnackBar.show(
           context: context,
@@ -207,7 +215,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   void _handleExternalWallet(ExternalWalletResponse response) {
     _pendingPack = null;
     if (mounted) {
-      setState(() => _isProcessing = false);
+      _isProcessing = false;
+      _updateState();
     }
   }
 
@@ -221,7 +230,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
     di.sl<HapticService>().selection();
 
-    setState(() => _isProcessing = true);
+    _isProcessing = true;
+    _updateState();
     _pendingPack = pack;
 
     final packTitle = context.tr(pack.titleKey, fallback: pack.titleFallback);
@@ -234,7 +244,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     );
 
     if (!success) {
-      setState(() => _isProcessing = false);
+      _isProcessing = false;
+      _updateState();
       _pendingPack = null;
       CustomSnackBar.show(
         context: context,
@@ -278,7 +289,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return BackdropFilter(
+    return ValueListenableBuilder<int>(
+      valueListenable: _stateHash,
+      builder: (context, _, child) {
+        return BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
             height: MediaQuery.of(context).size.height * 0.85,
@@ -465,6 +479,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         .animate()
         .fadeIn(duration: 300.ms)
         .moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
+      },
+    );
   }
 
   Widget _buildPremiumUpsell(BuildContext context, bool isDark) {

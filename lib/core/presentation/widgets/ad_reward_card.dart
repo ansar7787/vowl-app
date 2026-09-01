@@ -34,6 +34,12 @@ class _AdRewardCardState extends State<AdRewardCard> {
   int _remainingClaims = RewardLimitService.maxClaimsPerDay;
   bool _isLoadingLimits = true;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -43,16 +49,16 @@ class _AdRewardCardState extends State<AdRewardCard> {
   Future<void> _loadLimits() async {
     final remaining = await RewardLimitService.getRemainingClaims('coins');
     if (mounted) {
-      setState(() {
-        _remainingClaims = remaining;
-        _isLoadingLimits = false;
-      });
+      _remainingClaims = remaining;
+      _isLoadingLimits = false;
+      _updateState();
     }
   }
 
   @override
   void dispose() {
     _isLoading.dispose();
+    _stateHash.dispose();
     super.dispose();
   }
 
@@ -112,7 +118,10 @@ class _AdRewardCardState extends State<AdRewardCard> {
       margin:
           widget.margin ??
           EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-      child: GlassTile(
+      child: ValueListenableBuilder<int>(
+        valueListenable: _stateHash,
+        builder: (context, _, child) {
+          return GlassTile(
         borderRadius: BorderRadius.circular(24.r),
         padding: EdgeInsets.all(20.r),
         child: Column(
@@ -297,6 +306,8 @@ class _AdRewardCardState extends State<AdRewardCard> {
             ),
           ],
         ),
+          );
+        },
       ),
     );
   }

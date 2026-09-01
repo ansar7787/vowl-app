@@ -62,6 +62,12 @@ class _KeyShopContentState extends State<_KeyShopContent> {
   int _outOfAdsShake = 0;
   bool _isProcessing = false;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -71,11 +77,16 @@ class _KeyShopContentState extends State<_KeyShopContent> {
   Future<void> _loadLimits() async {
     final remaining = await RewardLimitService.getRemainingClaims('keys');
     if (mounted) {
-      setState(() {
-        _remainingClaims = remaining;
-        _isLoadingLimits = false;
-      });
+      _remainingClaims = remaining;
+      _isLoadingLimits = false;
+      _updateState();
     }
+  }
+
+  @override
+  void dispose() {
+    _stateHash.dispose();
+    super.dispose();
   }
 
   @override
@@ -85,7 +96,10 @@ class _KeyShopContentState extends State<_KeyShopContent> {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => Navigator.pop(context),
-      child: GestureDetector(
+      child: ValueListenableBuilder<int>(
+        valueListenable: _stateHash,
+        builder: (context, _, child) {
+          return GestureDetector(
         onTap: () {}, // Prevent taps on the sheet content from closing it
         child: Container(
           padding: EdgeInsets.all(24.r),
@@ -236,7 +250,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                           return;
                         }
                         
-                        setState(() => _isProcessing = true);
+                        _isProcessing = true;
+                        _updateState();
                         
                         final result = await di.sl<PurchaseGoldenKey>().call(
                           PurchaseGoldenKeyParams(
@@ -246,7 +261,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         );
 
                         if (!mounted) return;
-                        setState(() => _isProcessing = false);
+                        _isProcessing = false;
+                        _updateState();
 
                         // BUG FIX (SILENT FAILURE): previously only the
                         // success branch (`result.isRight()`) was handled -
@@ -388,7 +404,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     if (_isProcessing) return;
                     
                     if (_remainingClaims <= 0) {
-                      setState(() => _outOfAdsShake++);
+                      _outOfAdsShake++;
+                      _updateState();
                       showDialog(
                         context: context,
                         builder: (ctx) => ModernGameDialog(
@@ -443,7 +460,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       return;
                     }
                     
-                    setState(() => _isProcessing = true);
+                    _isProcessing = true;
+                    _updateState();
                     bool rewardEarned = false;
                     
                     adService.showRewardedAd(
@@ -458,11 +476,13 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                       },
                       onDismissed: () async {
                         if (!mounted) return;
-                        setState(() => _isProcessing = false);
+                        _isProcessing = false;
+                        _updateState();
                         
                         if (!rewardEarned) return;
                         
-                        setState(() => _isProcessing = true);
+                        _isProcessing = true;
+                        _updateState();
 
                         final result = await di.sl<AddGoldenKey>().call(
                           const AddGoldenKeyParams(amount: 1),
@@ -475,7 +495,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         }
 
                         if (!mounted) return;
-                        setState(() => _isProcessing = false);
+                        _isProcessing = false;
+                        _updateState();
 
                         // BUG FIX: Show dialogs inside onDismissed instead of
                         // onUserEarnedReward to prevent the Ad overlay from 
@@ -773,6 +794,8 @@ class _KeyShopContentState extends State<_KeyShopContent> {
             ),
           ),
         ),
+          );
+        },
       ),
     );
   }

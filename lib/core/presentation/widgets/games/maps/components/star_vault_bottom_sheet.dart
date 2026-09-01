@@ -58,6 +58,12 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   bool _isLoadingLimits = true;
   int _outOfAdsShake = 0;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -67,10 +73,9 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   Future<void> _loadLimits() async {
     final remaining = await RewardLimitService.getRemainingClaims('stars');
     if (mounted) {
-      setState(() {
-        _remainingClaims = remaining;
-        _isLoadingLimits = false;
-      });
+      _remainingClaims = remaining;
+      _isLoadingLimits = false;
+      _updateState();
     }
   }
 
@@ -115,7 +120,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     final requirement = _chestTiers[tierIndex];
     if (currentStars < requirement) return;
 
-    setState(() => _isProcessing = true);
+    _isProcessing = true;
+    _updateState();
 
     final updateUserRewards = di.sl<UpdateUserRewards>();
 
@@ -148,7 +154,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     if (!mounted) return;
 
     if (result.isLeft()) {
-      setState(() => _isProcessing = false);
+      _isProcessing = false;
+      _updateState();
       _showRewardFailedDialog();
       return;
     }
@@ -162,9 +169,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
     context.read<AuthBloc>().add(const AuthRefreshUser());
 
-    setState(() {
-      _isProcessing = false;
-    });
+    _isProcessing = false;
+    _updateState();
 
     showDialog(
       context: context,
@@ -203,7 +209,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   Future<void> _watchAdForMagicStars() async {
     if (_isProcessing) return;
     if (_remainingClaims <= 0) {
-      setState(() => _outOfAdsShake++);
+      _outOfAdsShake++;
+      _updateState();
       showDialog(
         context: context,
         builder: (ctx) => ModernGameDialog(
@@ -227,7 +234,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
       );
       return;
     }
-    setState(() => _isProcessing = true);
+    _isProcessing = true;
+    _updateState();
 
     final adService = di.sl<AdService>();
     if (!adService.isRewardedAdLoaded) {
@@ -239,7 +247,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         ),
         type: CustomSnackBarType.warning,
       );
-      setState(() => _isProcessing = false);
+      _isProcessing = false;
+      _updateState();
       return;
     }
 
@@ -256,11 +265,13 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
       },
       onDismissed: () async {
         if (!mounted) return;
-        setState(() => _isProcessing = false);
+        _isProcessing = false;
+        _updateState();
         
         if (!rewardEarned) return;
         
-        setState(() => _isProcessing = true);
+        _isProcessing = true;
+        _updateState();
         
         final updateUserRewards = di.sl<UpdateUserRewards>();
         // BUG FIX: same discarded-result issue as _claimChest above - the
@@ -282,7 +293,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         }
 
         if (!mounted) return;
-        setState(() => _isProcessing = false);
+        _isProcessing = false;
+        _updateState();
 
         if (result.isLeft()) {
           _showRewardFailedDialog();
@@ -331,8 +343,17 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
 
     // Safety timeout in case ad fails to load without dismissing
     Future.delayed(const Duration(seconds: 3), () {
-      if (mounted && _isProcessing) setState(() => _isProcessing = false);
+      if (mounted && _isProcessing) {
+        _isProcessing = false;
+        _updateState();
+      }
     });
+  }
+
+  @override
+  void dispose() {
+    _stateHash.dispose();
+    super.dispose();
   }
 
   @override
@@ -359,7 +380,10 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         return GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () => Navigator.pop(context),
-          child: GestureDetector(
+          child: ValueListenableBuilder<int>(
+            valueListenable: _stateHash,
+            builder: (context, _, child) {
+              return GestureDetector(
             onTap: () {}, // Prevent taps on the sheet content from closing it
             child: Stack(
               alignment: Alignment.center,
@@ -1017,6 +1041,8 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                 ),
               ],
             ),
+              );
+            },
           ),
         );
       },
