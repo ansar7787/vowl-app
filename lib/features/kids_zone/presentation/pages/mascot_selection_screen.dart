@@ -189,14 +189,20 @@ class KidsMascotCard extends StatefulWidget {
 }
 
 class _KidsMascotCardState extends State<KidsMascotCard> {
-  bool _isTrying = false;
+  final ValueNotifier<bool> _isTryingNotifier = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isTryingNotifier.dispose();
+    super.dispose();
+  }
 
   void _handleTryMe() {
-    if (_isTrying) return;
+    if (_isTryingNotifier.value) return;
     di.sl<SoundService>().playMascotInteraction();
-    setState(() => _isTrying = true);
+    _isTryingNotifier.value = true;
     Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) setState(() => _isTrying = false);
+      if (mounted) _isTryingNotifier.value = false;
     });
   }
 
@@ -232,52 +238,57 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ScaleButton(
-                onTap: _handleTryMe,
-                child: Container(
-                  height: 100.h,
-                  width: 100.w,
-                  decoration: BoxDecoration(
-                    color: widget.color.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      VowlMascot(
-                        size: 80.r,
-                        mascotId: widget.id,
-                        isKidsMode: true,
-                        state: _isTrying ? VowlMascotState.happy : VowlMascotState.neutral,
+              ValueListenableBuilder<bool>(
+                valueListenable: _isTryingNotifier,
+                builder: (context, isTrying, child) {
+                  return ScaleButton(
+                    onTap: _handleTryMe,
+                    child: Container(
+                      height: 100.h,
+                      width: 100.w,
+                      decoration: BoxDecoration(
+                        color: widget.color.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
                       ),
-                      Positioned(
-                        bottom: 0,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-                          decoration: BoxDecoration(
-                            color: widget.color,
-                            borderRadius: BorderRadius.circular(10.r),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          VowlMascot(
+                            size: 80.r,
+                            mascotId: widget.id,
+                            isKidsMode: true,
+                            state: isTrying ? VowlMascotState.happy : VowlMascotState.neutral,
                           ),
-                          child: FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              "Try me!",
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                          Positioned(
+                            bottom: 0,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                              decoration: BoxDecoration(
+                                color: widget.color,
+                                borderRadius: BorderRadius.circular(10.r),
+                              ),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  "Try me!",
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .moveY(begin: 0, end: -4, duration: 1.seconds),
-                    ],
-                  ),
-                ),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .moveY(begin: 0, end: -4, duration: 1.seconds),
+                        ],
+                      ),
+                    ),
+                  );
+                },
               ),
               SizedBox(height: 8.h),
               FittedBox(

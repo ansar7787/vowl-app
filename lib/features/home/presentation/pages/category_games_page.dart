@@ -47,9 +47,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   void didUpdateWidget(CategoryGamesPage oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.categoryId != widget.categoryId) {
-      setState(() {
-        _games = _getGamesForCategory(widget.categoryId);
-      });
+      _games = _getGamesForCategory(widget.categoryId);
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted) return;
         CurriculumService.prewarmCache(_games.map((g) => g.name).toList());
