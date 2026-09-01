@@ -40,12 +40,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   final _soundService = di.sl<SoundService>();
   final _controller = TextEditingController();
 
-  bool _showConfetti = false;
-  bool _showSpeakToConfirm = false;
-  int _wordCount = 0;
-  double _journalProgress = 0.0;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
+  final ValueNotifier<int> _wordCount = ValueNotifier(0);
+  final ValueNotifier<double> _journalProgress = ValueNotifier(0.0);
   WritingQuest? _lastQuest;
-  bool _isSubmitting = false;
+  final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
 
   @override
   void initState() {
@@ -59,25 +59,28 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   @override
   void dispose() {
     _controller.dispose();
+    _showConfetti.dispose();
+    _showSpeakToConfirm.dispose();
+    _wordCount.dispose();
+    _journalProgress.dispose();
+    _isSubmitting.dispose();
     super.dispose();
   }
 
   void _onTextChanged() {
     final text = _controller.text.trim();
     final words = text.isEmpty ? 0 : text.split(RegExp(r'\s+')).length;
-    setState(() {
-      _wordCount = words;
-      _journalProgress = (text.length / 80).clamp(0.0, 1.0);
-    });
+    _wordCount.value = words;
+    _journalProgress.value = (text.length / 80).clamp(0.0, 1.0);
   }
 
   Future<void> _submitAnswer(
     List<String> targetKeywords,
     bool isAnswered,
   ) async {
-    if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting) return;
+    if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting.value) return;
 
-    setState(() => _isSubmitting = true);
+    _isSubmitting.value = true;
 
     final rawText = _controller.text.trim();
     if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
@@ -87,7 +90,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -100,7 +103,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -113,7 +116,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
       }
     }
 
-    if (_wordCount < 10) {
+    if (_wordCount.value < 10) {
       CustomSnackBar.show(
         context: context,
         message:
@@ -121,7 +124,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         type: CustomSnackBarType.info,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -132,12 +135,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
     if (!GibberishDetectorService.isNaturalSentence(context, rawText)) {
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -155,7 +158,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -164,14 +167,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
 
     _soundService.playCorrect();
 
-    setState(() {
-      _showSpeakToConfirm = true;
-      _isSubmitting = false;
-    });
+    _showSpeakToConfirm.value = true;
+    _isSubmitting.value = false;
   }
 
   void _onSpeakConfirmed() {
-    setState(() => _showSpeakToConfirm = false);
+    _showSpeakToConfirm.value = false;
     context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -187,15 +188,13 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _controller.clear();
-            _wordCount = 0;
-            _journalProgress = 0.0;
-            _showSpeakToConfirm = false;
-          });
+          _controller.clear();
+          _wordCount.value = 0;
+          _journalProgress.value = 0.0;
+          _showSpeakToConfirm.value = false;
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -231,13 +230,16 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: activeQuest == null
-              ? const SizedBox()
-              : CustomScrollView(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _showSpeakToConfirm, _wordCount, _journalProgress, _isSubmitting]),
+            builder: (context, _) {
+              return activeQuest == null
+                  ? const SizedBox()
+                  : CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverPadding(
@@ -313,8 +315,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                             DailyJournalScratchArea(
                               controller: _controller,
                               isAnswered: isAnswered,
-                              wordCount: _wordCount,
-                              journalProgress: _journalProgress,
+                              wordCount: _wordCount.value,
+                              journalProgress: _journalProgress.value,
                               color: theme.primaryColor,
                               isDark: isDark,
                             ),
@@ -323,20 +325,19 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_showSpeakToConfirm && !isAnswered)
+                            if (_showSpeakToConfirm.value && !isAnswered)
                               SpeakToConfirmOverlay(
                                 expectedText: _controller.text.trim(),
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: _onSpeakConfirmed,
                                 onSkipped: () {
-                                  setState(() => _showSpeakToConfirm = false);
+                                  _showSpeakToConfirm.value = false;
                                   context.read<WritingBloc>().add(const SubmitAnswer(false));
                                 },
                               )
@@ -349,11 +350,11 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                                   height: 60.h,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20.r),
-                                    color: _wordCount >= 10
+                                    color: _wordCount.value >= 10
                                         ? theme.primaryColor
                                         : Colors.grey,
                                     boxShadow: [
-                                      if (_wordCount >= 10)
+                                      if (_wordCount.value >= 10)
                                         BoxShadow(
                                           color: theme.primaryColor.withValues(
                                             alpha: 0.3,
@@ -382,7 +383,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                       ),
                     ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
