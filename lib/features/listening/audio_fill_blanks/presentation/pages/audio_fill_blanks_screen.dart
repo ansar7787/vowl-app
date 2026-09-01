@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -55,10 +55,20 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   final _controller = TextEditingController();
 
   // â”€â”€ Local UI state (synced from BLoC listener) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  double _revealProgress = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _revealProgress = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _revealProgress.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    super.dispose();
+  }
 
   // â”€â”€ Change-tracking helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   int _lastProcessedIndex = -1;
@@ -74,20 +84,14 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     );
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+
 
   // â”€â”€ Gesture handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _onSmear(double delta) {
-    if (_isAnswered) return;
-    setState(() {
-      _revealProgress = (_revealProgress + delta).clamp(0.0, 1.0);
-      if (_revealProgress > 0.05) _hapticService.selection();
-    });
+    if (_isAnswered.value) return;
+    _revealProgress.value = (_revealProgress.value + delta).clamp(0.0, 1.0);
+    if (_revealProgress.value > 0.05) _hapticService.selection();
   }
 
   // â”€â”€ Submit answer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -95,7 +99,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   void _submitAnswer(String? correct) {
     // Guard: already answered, empty / whitespace-only input, or no answer key.
     final input = _controller.text.trim();
-    if (_isAnswered || input.isEmpty || correct == null || correct.isEmpty) {
+    if (_isAnswered.value || input.isEmpty || correct == null || correct.isEmpty) {
       return;
     }
 
@@ -134,10 +138,8 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
       }
     }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = isCorrect;
 
     // Bloc dispatches analytics internally via ListeningAnalytics.
     context.read<ListeningBloc>().add(SubmitAnswer(isCorrect));
@@ -155,13 +157,11 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   // â”€â”€ Reset local state for the next question â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _resetForNextQuestion(int newIndex) {
-    setState(() {
-      _lastProcessedIndex = newIndex;
-      _isAnswered = false;
-      _isCorrect = null;
-      _revealProgress = 0.0;
-      _controller.clear();
-    });
+    _lastProcessedIndex = newIndex;
+    _isAnswered.value = false;
+    _isCorrect.value = null;
+    _revealProgress.value = 0.0;
+    _controller.clear();
   }
 
   // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -179,26 +179,24 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           // Detect a life-restore (lives increased, e.g. 0 â†’ 1).
           final isLifeRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || isLifeRestored) {
             _resetForNextQuestion(state.currentIndex);
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             // Bloc already knows the result; sync local state.
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
 
           _lastLives = state.livesRemaining;
         }
 
         if (state is ListeningGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -211,12 +209,15 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
       builder: (context, state) {
         final quest = state is ListeningLoaded ? state.currentQuest : null;
 
-        return ListeningBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _revealProgress]),
+          builder: (context, _) {
+            return ListeningBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<ListeningBloc>().add(const NextQuestion()),
@@ -227,9 +228,9 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
               ? const SizedBox.shrink()
               : _AudioFillBlanksContent(
                   quest: quest,
-                  isAnswered: _isAnswered,
-                  isCorrect: _isCorrect,
-                  revealProgress: _revealProgress,
+                  isAnswered: _isAnswered.value,
+                  isCorrect: _isCorrect.value,
+                  revealProgress: _revealProgress.value,
                   controller: _controller,
                   theme: theme,
                   isDark: isDark,
@@ -253,13 +254,13 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                         );
                       }
                     }
-                    setState(() {
-                      _isAnswered = true;
-                      _isCorrect = correct;
-                    });
+                    _isAnswered.value = true;
+                    _isCorrect.value = correct;
                     context.read<ListeningBloc>().add(SubmitAnswer(correct));
                   },
                 ),
+            );
+          },
         );
       },
     );
@@ -346,8 +347,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
             ),
           ),
         ),
-        SliverFillRemaining(
-          hasScrollBody: false,
+        SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             child: Column(
