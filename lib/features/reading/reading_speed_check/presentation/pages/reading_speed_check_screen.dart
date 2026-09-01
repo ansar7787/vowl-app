@@ -36,16 +36,29 @@ class ReadingSpeedCheckScreen extends StatefulWidget {
 class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  double _pulseScale = 1.0;
-  double _clarityRadius = 0.0;
-  int _timerValue = 12;
-  int _timeLimit = 12;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _pulseScale = ValueNotifier(1.0);
+  final ValueNotifier<double> _clarityRadius = ValueNotifier(0.0);
+  final ValueNotifier<int> _timerValue = ValueNotifier(12);
+  final ValueNotifier<int> _timeLimit = ValueNotifier(12);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isRevealed = false;
+  final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _pulseScale.dispose();
+    _clarityRadius.dispose();
+    _timerValue.dispose();
+    _timeLimit.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isRevealed.dispose();
+    super.dispose();
+  }
   
   final _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
@@ -58,47 +71,39 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
   }
 
   void _onPulseTap() {
-    if (_isAnswered || _isRevealed) return;
-    setState(() {
-      _pulseScale = 1.4;
-      _clarityRadius = 1.0;
-      _hapticService.selection();
-    });
+    if (_isAnswered.value || _isRevealed.value) return;
+    _pulseScale.value = 1.4;
+    _clarityRadius.value = 1.0;
+    _hapticService.selection();
 
     Future.delayed(150.milliseconds, () {
       if (mounted) {
-        setState(() => _pulseScale = 1.0);
+        _pulseScale.value = 1.0;
       }
     });
     Future.delayed(2.seconds, () {
-      if (mounted && !_isAnswered && !_isRevealed) {
-        setState(() => _clarityRadius = 0.0);
+      if (mounted && !_isAnswered.value && !_isRevealed.value) {
+        _clarityRadius.value = 0.0;
       }
     });
   }
 
   void _onTimeUp() {
     if (!mounted) return;
-    setState(() {
-      _isRevealed = true;
-      _clarityRadius = 0.0;
-    });
+    _isRevealed.value = true;
+    _clarityRadius.value = 0.0;
   }
 
   void _onTimerTick(int remaining) {
     if (!mounted) return;
-    setState(() {
-      _timerValue = remaining;
-    });
+    _timerValue.value = remaining;
   }
 
   void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
-    if (_isAnswered || !_isRevealed) return;
+    if (_isAnswered.value || !_isRevealed.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = isCorrect;
 
     if (isCorrect) {
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
@@ -118,33 +123,29 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isRevealed = false;
-              _clarityRadius = 0.0;
-              _timeLimit = state.currentQuest.timeLimit ?? 12;
-              _timerValue = _timeLimit;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isRevealed.value = false;
+            _clarityRadius.value = 0.0;
+            _timeLimit.value = state.currentQuest.timeLimit ?? 12;
+            _timerValue.value = _timeLimit.value;
             WidgetsBinding.instance.addPostFrameCallback((_) {
               _timerKey.currentState?.start();
             });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -159,12 +160,15 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isRevealed, _pulseScale, _clarityRadius, _timerValue, _timeLimit]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
@@ -180,23 +184,23 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                             SizedBox(height: 16.h),
                             ReadingSpeedInstruction(
                               primaryColor: theme.primaryColor,
-                              isRevealed: _isRevealed,
+                              isRevealed: _isRevealed.value,
                               instruction: quest.instruction,
                             ),
                             SizedBox(height: 32.h),
-                            if (!_isRevealed)
+                            if (!_isRevealed.value)
                               Padding(
                                 padding: EdgeInsets.only(bottom: 24.h),
                                 child: SpeedChallengeTimer(
                                   key: _timerKey,
-                                  durationSeconds: _timeLimit,
+                                  durationSeconds: _timeLimit.value,
                                   primaryColor: theme.primaryColor,
                                   onTimeUp: _onTimeUp,
                                   onTick: _onTimerTick,
                                   autoStart: true,
                                 ),
                               ),
-                            if (_isRevealed)
+                            if (_isRevealed.value)
                               ReadingSpeedQuestionArea(
                                 question: quest.question ?? "",
                                 color: theme.primaryColor,
@@ -206,22 +210,21 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!_isRevealed)
+                            if (!_isRevealed.value)
                               ReadingSpeedPulseZone(
                                 passage: quest.passage ?? "",
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                clarityRadius: _clarityRadius,
-                                pulseScale: _pulseScale,
-                                timerValue: _timerValue,
-                                timeLimit: _timeLimit,
+                                clarityRadius: _clarityRadius.value,
+                                pulseScale: _pulseScale.value,
+                                timerValue: _timerValue.value,
+                                timeLimit: _timeLimit.value,
                                 wordCount: quest.passageWordCount ?? quest.passage?.split(RegExp(r'\s+')).length ?? 0,
                                 wpmTarget: quest.wpmTarget ?? 0,
                                 onTapPulse: _onPulseTap,
@@ -235,11 +238,11 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                                 onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
                               ),
                             ],
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: 30.h),
                               ReadingSpeedResult(
                                 quest: quest,
-                                isCorrect: _isCorrect == true,
+                                isCorrect: _isCorrect.value == true,
                                 isDark: isDark,
                               ),
                             ],
@@ -250,6 +253,8 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                     ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
