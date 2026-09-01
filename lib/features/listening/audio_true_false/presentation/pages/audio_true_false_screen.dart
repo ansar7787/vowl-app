@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -36,13 +36,23 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _tuningValue = 0.5;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _tuningValue = ValueNotifier(0.5);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool? _selectedVerdict;
+  final ValueNotifier<bool?> _selectedVerdict = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _tuningValue.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedVerdict.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -53,7 +63,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   }
 
   void _submitFinalAnswer(bool nailedSpeaking, String correct) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
     if (!nailedSpeaking) {
       _hapticService.error();
@@ -71,25 +81,21 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
       return;
     }
 
     bool isCorrect =
-        _selectedVerdict.toString().toLowerCase() ==
+        _selectedVerdict.value.toString().toLowerCase() ==
         correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
       context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
@@ -102,16 +108,14 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: 'Audio True/False',
-          userAnswer: _selectedVerdict.toString(),
+          userAnswer: _selectedVerdict.value.toString(),
           correctAnswer: correct,
           level: widget.level,
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -124,28 +128,24 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _tuningValue = 0.5;
-              _selectedVerdict = null;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _tuningValue.value = 0.5;
+            _selectedVerdict.value = null;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ListeningGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -158,12 +158,15 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
-        return ListeningBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _tuningValue, _selectedVerdict]),
+          builder: (context, _) {
+            return ListeningBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
@@ -198,7 +201,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                   },
                                   color: theme.primaryColor,
                                   emoji: quest.emoji,
-                                  isCorrectState: _isCorrect,
+                                  isCorrectState: _isCorrect.value,
                                 ),
                                 SizedBox(height: 32.h),
                                 SizedBox(
@@ -206,15 +209,14 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                   child: AudioTrueFalseScreenDisplay(
                                     statement: quest.statement ?? "",
                                     color: theme.primaryColor,
-                                    tuningValue: _tuningValue,
+                                    tuningValue: _tuningValue.value,
                                   ),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                               horizontal: 16.w,
@@ -224,28 +226,24 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 AudioTrueFalsePolarizedFilters(
-                                  tuningValue: _tuningValue,
-                                  isAnswered: _isAnswered,
-                                  isCorrectState: _isCorrect,
+                                  tuningValue: _tuningValue.value,
+                                  isAnswered: _isAnswered.value,
+                                  isCorrectState: _isCorrect.value,
                                   color: theme.primaryColor,
                                   onChanged: (v) {
-                                    setState(() => _tuningValue = v);
+                                    _tuningValue.value = v;
                                     _hapticService.selection();
                                   },
                                   onChangeEnd: (v) {
-                                    if (_isAnswered ||
-                                        _selectedVerdict != null) {
+                                    if (_isAnswered.value ||
+                                        _selectedVerdict.value != null) {
                                       return;
                                     }
                                     if (v > 0.9) {
-                                      setState(
-                                        () => _selectedVerdict = true,
-                                      );
+                                      _selectedVerdict.value = true;
                                     }
                                     if (v < 0.1) {
-                                      setState(
-                                        () => _selectedVerdict = false,
-                                      );
+                                      _selectedVerdict.value = false;
                                     }
                                   },
                                 ),
@@ -256,7 +254,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                         ),
                       ],
                     ),
-                    if (_selectedVerdict != null && !_isAnswered)
+                    if (_selectedVerdict.value != null && !_isAnswered.value)
                       TypeToConfirmOverlay(
                         expectedText: quest.evidenceQuote ?? quest.statement ?? "",
                         primaryColor: theme.primaryColor,
@@ -270,6 +268,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                       ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
