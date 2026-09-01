@@ -41,14 +41,14 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
   final _soundService = di.sl<SoundService>();
   final _textController = TextEditingController();
 
-  final List<String> _usedKeywords = [];
-  int? _expandedEmojiIndex;
+  final ValueNotifier<List<String>> _usedKeywords = ValueNotifier([]);
+  final ValueNotifier<int?> _expandedEmojiIndex = ValueNotifier(null);
 
-  bool _showConfetti = false;
-  bool _showSpeakToConfirm = false;
-  int _wordCount = 0;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
+  final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
-  bool _isSubmitting = false;
+  final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
 
   @override
   void initState() {
@@ -62,23 +62,25 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
   @override
   void dispose() {
     _textController.dispose();
+    _usedKeywords.dispose();
+    _expandedEmojiIndex.dispose();
+    _showConfetti.dispose();
+    _showSpeakToConfirm.dispose();
+    _wordCount.dispose();
+    _isSubmitting.dispose();
     super.dispose();
   }
 
   void _onTextChanged() {
     final text = _textController.text.trim();
     final words = text.isEmpty ? 0 : text.split(RegExp(r'\s+')).length;
-    setState(() {
-      _wordCount = words;
-    });
+    _wordCount.value = words;
   }
 
   void _onEmojiTap(int index, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.selection();
-    setState(
-      () => _expandedEmojiIndex = (_expandedEmojiIndex == index ? null : index),
-    );
+    _expandedEmojiIndex.value = (_expandedEmojiIndex.value == index ? null : index);
   }
 
   void _injectKeyword(String keyword, bool isAnswered) {
@@ -119,12 +121,10 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       offset: newCursorPosition,
     );
 
-    setState(() {
-      if (!_usedKeywords.contains(keyword)) {
-        _usedKeywords.add(keyword);
-      }
-      _expandedEmojiIndex = null;
-    });
+    if (!_usedKeywords.value.contains(keyword)) {
+      _usedKeywords.value = List.from(_usedKeywords.value)..add(keyword);
+    }
+    _expandedEmojiIndex.value = null;
   }
 
   Future<void> _submitAnswer(
@@ -132,11 +132,11 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     List<String> availableKeywords,
     bool isAnswered,
   ) async {
-    if (isAnswered || _textController.text.trim().isEmpty || _isSubmitting) {
+    if (isAnswered || _textController.text.trim().isEmpty || _isSubmitting.value) {
       return;
     }
 
-    setState(() => _isSubmitting = true);
+    _isSubmitting.value = true;
 
     final rawText = _textController.text.trim();
     if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
@@ -146,7 +146,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -159,7 +159,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -172,14 +172,14 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       }
     }
 
-    if (_wordCount < minWords) {
+    if (_wordCount.value < minWords) {
       CustomSnackBar.show(
         context: context,
         message: "Keep writing! You need at least $minWords words.",
         type: CustomSnackBarType.info,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -190,7 +190,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -203,7 +203,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -225,12 +225,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
     if (!GibberishDetectorService.isNaturalSentence(context, rawText)) {
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -248,7 +248,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();
-      setState(() => _isSubmitting = false);
+      _isSubmitting.value = false;
       return;
     }
 
@@ -257,14 +257,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
 
     _soundService.playCorrect();
 
-    setState(() {
-      _showSpeakToConfirm = true;
-      _isSubmitting = false;
-    });
+    _showSpeakToConfirm.value = true;
+    _isSubmitting.value = false;
   }
 
   void _onSpeakConfirmed() {
-    setState(() => _showSpeakToConfirm = false);
+    _showSpeakToConfirm.value = false;
     context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -280,15 +278,13 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _usedKeywords.clear();
-            _textController.clear();
-            _expandedEmojiIndex = null;
-            _showSpeakToConfirm = false;
-          });
+          _usedKeywords.value = [];
+          _textController.clear();
+          _expandedEmojiIndex.value = null;
+          _showSpeakToConfirm.value = false;
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -336,13 +332,16 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: activeQuest == null
-              ? const SizedBox()
-              : CustomScrollView(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _showSpeakToConfirm, _wordCount, _isSubmitting, _expandedEmojiIndex, _usedKeywords]),
+            builder: (context, _) {
+              return activeQuest == null
+                  ? const SizedBox()
+                  : CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverPadding(
@@ -367,8 +366,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                             DescribeSituationWritingArea(
                               textController: _textController,
                               minWords: minWords,
-                              wordCount: _wordCount,
-                              usedKeywords: _usedKeywords,
+                              wordCount: _wordCount.value,
+                              usedKeywords: _usedKeywords.value,
                               color: theme.primaryColor,
                               isDark: isDark,
                             ),
@@ -379,7 +378,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                               keywords: rawKeywords,
                               color: theme.primaryColor,
                               isDark: isDark,
-                              expandedEmojiIndex: _expandedEmojiIndex,
+                              expandedEmojiIndex: _expandedEmojiIndex.value,
                               onEmojiTap: (idx) => _onEmojiTap(idx, isAnswered),
                               onInjectKeyword: (kw) =>
                                   _injectKeyword(kw, isAnswered),
@@ -425,20 +424,19 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_showSpeakToConfirm && !isAnswered)
+                            if (_showSpeakToConfirm.value && !isAnswered)
                               SpeakToConfirmOverlay(
                                 expectedText: _textController.text.trim(),
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: _onSpeakConfirmed,
                                 onSkipped: () {
-                                  setState(() => _showSpeakToConfirm = false);
+                                  _showSpeakToConfirm.value = false;
                                   context.read<WritingBloc>().add(const SubmitAnswer(false));
                                 },
                               )
@@ -454,11 +452,11 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                                   height: 60.h,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20.r),
-                                    color: _wordCount >= minWords
+                                    color: _wordCount.value >= minWords
                                         ? theme.primaryColor
                                         : Colors.grey,
                                     boxShadow: [
-                                      if (_wordCount >= minWords)
+                                      if (_wordCount.value >= minWords)
                                         BoxShadow(
                                           color: theme.primaryColor.withValues(
                                             alpha: 0.3,
@@ -487,7 +485,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                       ),
                     ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
