@@ -39,10 +39,10 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   final _answerController = TextEditingController();
   final _scrollController = ScrollController();
 
-  bool _showConfetti = false;
-  bool _showContextSentence = false;
-  double _inkLevel = 0.0;
-  int _wordCount = 0;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showContextSentence = ValueNotifier(false);
+  final ValueNotifier<double> _inkLevel = ValueNotifier(0.0);
+  final ValueNotifier<int> _wordCount = ValueNotifier(0);
   WritingQuest? _lastQuest;
 
   @override
@@ -58,16 +58,18 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   void dispose() {
     _answerController.dispose();
     _scrollController.dispose();
+    _showConfetti.dispose();
+    _showContextSentence.dispose();
+    _inkLevel.dispose();
+    _wordCount.dispose();
     super.dispose();
   }
 
   void _onTextChanged() {
     final text = _answerController.text.trim();
     final words = text.isEmpty ? 0 : text.split(RegExp(r'\s+')).length;
-    setState(() {
-      _wordCount = words;
-      _inkLevel = (text.length / 75).clamp(0.0, 1.0);
-    });
+    _wordCount.value = words;
+    _inkLevel.value = (text.length / 75).clamp(0.0, 1.0);
   }
 
   Future<void> _submitAnswer(
@@ -109,7 +111,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       }
     }
 
-    if (_wordCount < 10) {
+    if (_wordCount.value < 10) {
       CustomSnackBar.show(
         context: context,
         message: "Keep writing! A valid answer requires at least 10 words.",
@@ -153,13 +155,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     }
 
     _hapticService.success();
-    setState(() {
-      _showContextSentence = true;
-    });
+    _showContextSentence.value = true;
   }
 
   void _onContextSentenceConfirmed() {
-    setState(() => _showContextSentence = false);
+    _showContextSentence.value = false;
     context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -181,15 +181,13 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
               curve: Curves.easeOutBack,
             );
           }
-          setState(() {
-            _answerController.clear();
-            _inkLevel = 0.0;
-            _wordCount = 0;
-            _showContextSentence = false;
-          });
+          _answerController.clear();
+          _inkLevel.value = 0.0;
+          _wordCount.value = 0;
+          _showContextSentence.value = false;
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -221,14 +219,17 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _showContextSentence, _inkLevel, _wordCount]),
+            builder: (context, _) {
+              return quest == null
+                  ? const SizedBox()
+                  : Stack(
                   children: [
                     CustomScrollView(
                   controller: _scrollController,
@@ -264,8 +265,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                             ShortAnswerInkwell(
                               controller: _answerController,
                               isAnswered: isAnswered,
-                              wordCount: _wordCount,
-                              inkLevel: _inkLevel,
+                              wordCount: _wordCount.value,
+                              inkLevel: _inkLevel.value,
                               color: theme.primaryColor,
                               isDark: isDark,
                             ),
@@ -319,7 +320,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                                   ],
                                 ),
                               ),
-                            if (!_showContextSentence && !isAnswered && livesRemaining > 0) ...[
+                            if (!_showContextSentence.value && !isAnswered && livesRemaining > 0) ...[
                               SizedBox(height: 24.h),
                               ScaleButton(
                                 onTap: () =>
@@ -329,11 +330,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                                   height: 60.h,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20.r),
-                                    color: _wordCount >= 10
+                                    color: _wordCount.value >= 10
                                         ? theme.primaryColor
                                         : Colors.grey,
                                     boxShadow: [
-                                      if (_wordCount >= 10)
+                                      if (_wordCount.value >= 10)
                                         BoxShadow(
                                           color: theme.primaryColor.withValues(
                                             alpha: 0.3,
@@ -364,13 +365,13 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                     ),
                   ],
                 ),
-                if (_showContextSentence && !isAnswered)
+                if (_showContextSentence.value && !isAnswered)
                   ContextSentenceBuilder(
                     targetKeyword: targetKeywords.first,
                     primaryColor: theme.primaryColor,
                     onConfirmed: _onContextSentenceConfirmed,
                     onSkipped: () {
-                      setState(() => _showContextSentence = false);
+                      _showContextSentence.value = false;
                       context.read<WritingBloc>().add(const SubmitAnswer(false));
                     },
                     allowSkip: true,
@@ -378,9 +379,11 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                     exampleSentence: quest.sampleAnswer,
                   ),
               ],
-            ),
-        );
-      },
-    );
-  }
+            );
+          },
+        ),
+      );
+    },
+  );
+}
 }
