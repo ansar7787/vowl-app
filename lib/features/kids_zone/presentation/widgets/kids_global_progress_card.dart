@@ -237,10 +237,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                           ),
                           SizedBox(width: 4.w),
                           Text(
-                            context.tr(
-                              'kids_zone.levels_label',
-                              fallback: 'Levels',
-                            ),
+                            '/ $totalLevels ${context.tr('kids_zone.levels_label', fallback: 'Levels')}',
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -260,8 +257,8 @@ class KidsGlobalProgressCard extends StatelessWidget {
                           Expanded(
                             child: Text(
                               categoriesMastered > 0
-                                  ? "${context.tr('kids_zone.categories_mastered', fallback: '$categoriesMastered categories mastered!', args: ['$categoriesMastered'])} • $completed / $totalLevels"
-                                  : "${context.tr('kids_zone.categories_exploring', fallback: 'Exploring $categoriesStarted of $_totalCategories categories', args: ['$categoriesStarted', '$_totalCategories'])} • $completed / $totalLevels",
+                                  ? context.tr('kids_zone.categories_mastered', fallback: '$categoriesMastered categories mastered!', args: ['$categoriesMastered'])
+                                  : context.tr('kids_zone.categories_exploring', fallback: 'Exploring $categoriesStarted of $_totalCategories categories', args: ['$categoriesStarted', '$_totalCategories']),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 11.sp,
