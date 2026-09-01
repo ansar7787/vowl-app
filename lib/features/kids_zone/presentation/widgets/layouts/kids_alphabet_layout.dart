@@ -38,7 +38,13 @@ class KidsAlphabetLayout extends StatelessWidget {
             // The Chalkboard for the Question
             Expanded(
               flex: 5,
-              child: Center(child: _buildChalkboard(context, state, quest)),
+              child: Center(
+                child: _KidsChalkboard(
+                  key: ValueKey(quest), // CRITICAL: Reset state when the question changes
+                  state: state,
+                  quest: quest,
+                ),
+              ),
             ),
 
             KidsFittedText(
@@ -88,89 +94,6 @@ class KidsAlphabetLayout extends StatelessWidget {
       },
     );
   }
-
-  Widget _buildChalkboard(
-    BuildContext context,
-    KidsLoaded state,
-    dynamic quest,
-  ) {
-    bool isRevealed = false; // Local state for progressive disclosure
-
-    return StatefulBuilder(
-      key: ValueKey(quest), // CRITICAL: Reset state when the question changes
-      builder: (context, setState) {
-        return DragTarget<String>(
-          onAcceptWithDetails: (details) {
-            if (state.answerStatus.isAnswered) return;
-            final text = details.data;
-            final isCorrect = (text == quest.correctAnswer);
-            context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-          },
-          builder: (context, candidateData, rejectedData) {
-            final isHovering = candidateData.isNotEmpty;
-            return AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              width: 320.w,
-              height: 220.h,
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFF2D6A4F)
-                    : const Color(0xFF1B4332), // Highlight green when hovering
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: isHovering
-                      ? const Color(0xFFB07D45)
-                      : const Color(0xFF8B5A2B),
-                  width: 12.r,
-                ), // Wooden frame
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.2),
-                    blurRadius: 15,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-              ),
-              child: InkWell(
-                onTap: state.answerStatus.isAnswered
-                    ? null
-                    : () {
-                        // Play the instruction sound
-                        if (quest.instruction != null) {
-                          di.sl<KidsTTSService>().speak(quest.instruction!);
-                        } else if (quest.wordExample != null) {
-                          di.sl<KidsTTSService>().speak(quest.wordExample!);
-                        } else if (quest.question != null) {
-                          di.sl<KidsTTSService>().speak(quest.question!);
-                        }
-                        // Reveal the visual clues if not already revealed
-                        if (!isRevealed) {
-                          setState(() => isRevealed = true);
-                        }
-                      },
-                child: Center(
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 500),
-                    transitionBuilder: (child, animation) {
-                      return FadeTransition(
-                        opacity: animation,
-                        child: ScaleTransition(scale: animation, child: child),
-                      );
-                    },
-                    child: !isRevealed
-                        ? _buildUnrevealedState(context, quest)
-                        : _buildRevealedState(context, quest),
-                  ),
-                ),
-              ),
-            );
-          },
-        );
-      },
-    );
-  }
-
   Widget _buildWoodenBlock(
     BuildContext context,
     KidsLoaded state,
@@ -226,6 +149,106 @@ class KidsAlphabetLayout extends StatelessWidget {
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: blockWidget),
       child: blockWidget,
+    );
+  }
+
+}
+
+class _KidsChalkboard extends StatefulWidget {
+  final KidsLoaded state;
+  final dynamic quest;
+
+  const _KidsChalkboard({
+    required super.key,
+    required this.state,
+    required this.quest,
+  });
+
+  @override
+  State<_KidsChalkboard> createState() => _KidsChalkboardState();
+}
+
+class _KidsChalkboardState extends State<_KidsChalkboard> {
+  final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isRevealed.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        if (widget.state.answerStatus.isAnswered) return;
+        final text = details.data;
+        final isCorrect = (text == widget.quest.correctAnswer);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return ValueListenableBuilder<bool>(
+          valueListenable: _isRevealed,
+          builder: (context, isRevealed, child) {
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 320.w,
+              height: 220.h,
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: isHovering
+                    ? const Color(0xFF2D6A4F)
+                    : const Color(0xFF1B4332),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isHovering
+                      ? const Color(0xFFB07D45)
+                      : const Color(0xFF8B5A2B),
+                  width: 12.r,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    blurRadius: 15,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: InkWell(
+                onTap: widget.state.answerStatus.isAnswered
+                    ? null
+                    : () {
+                        if (widget.quest.instruction != null) {
+                          di.sl<KidsTTSService>().speak(widget.quest.instruction!);
+                        } else if (widget.quest.wordExample != null) {
+                          di.sl<KidsTTSService>().speak(widget.quest.wordExample!);
+                        } else if (widget.quest.question != null) {
+                          di.sl<KidsTTSService>().speak(widget.quest.question!);
+                        }
+                        if (!isRevealed) {
+                          _isRevealed.value = true;
+                        }
+                      },
+                child: Center(
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 500),
+                    transitionBuilder: (child, animation) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: ScaleTransition(scale: animation, child: child),
+                      );
+                    },
+                    child: !isRevealed
+                        ? _buildUnrevealedState(context, widget.quest)
+                        : _buildRevealedState(context, widget.quest),
+                  ),
+                ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 

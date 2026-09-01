@@ -34,12 +34,18 @@ class KidsHandwritingLayout extends StatefulWidget {
 
 class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   Ink? _currentInk;
-  bool _isChecking = false;
+  final ValueNotifier<bool> _isChecking = ValueNotifier(false);
   bool? _isCorrect;
   int _attemptsCount = 0;
   String? _lastQuestId;
   final GlobalKey<HandwritingCanvasState> _canvasKey =
       GlobalKey<HandwritingCanvasState>();
+
+  @override
+  void dispose() {
+    _isChecking.dispose();
+    super.dispose();
+  }
 
   Future<void> _checkHandwriting(BuildContext context, KidsLoaded state) async {
     if (_currentInk == null || _currentInk!.strokes.isEmpty) return;
@@ -74,7 +80,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   }
 
   Future<void> _performCheck(BuildContext context, KidsLoaded state) async {
-    setState(() => _isChecking = true);
+    _isChecking.value = true;
     _attemptsCount++;
 
     final targetWord = state.currentQuest.question?.toUpperCase() ?? '';
@@ -92,10 +98,8 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
       }
     }
 
-    setState(() {
-      _isChecking = false;
-      _isCorrect = correct;
-    });
+    _isChecking.value = false;
+    _isCorrect = correct;
 
     if (!mounted || !context.mounted) return;
 
@@ -116,12 +120,10 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
         if (_lastQuestId != state.currentQuest.id) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
-              setState(() {
-                _currentInk = null;
-                _isCorrect = null;
-                _isChecking = false;
-                _lastQuestId = state.currentQuest.id;
-              });
+              _currentInk = null;
+              _isCorrect = null;
+              if (_isChecking.value) _isChecking.value = false;
+              _lastQuestId = state.currentQuest.id;
             }
           });
         }
@@ -130,10 +132,8 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
             _isCorrect != null) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
-              setState(() {
-                _isCorrect = null;
-                _isChecking = false;
-              });
+              _isCorrect = null;
+              if (_isChecking.value) _isChecking.value = false;
               _canvasKey.currentState?.clearCanvas();
             }
           });
@@ -230,7 +230,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     }
                     _currentInk = ink;
                     if (_isCorrect != null) {
-                      setState(() => _isCorrect = null);
+                      _isCorrect = null;
                     }
                   },
                   onClear: () {
@@ -238,9 +238,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                       return;
                     }
                     _currentInk = null;
-                    setState(() {
-                      _isCorrect = null;
-                    });
+                    _isCorrect = null;
                   },
                 ),
               ),
@@ -252,42 +250,47 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
             if (state.answerStatus == AnswerStatus.unanswered)
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: ScaleButton(
-                  onTap: _isChecking
-                      ? null
-                      : () => _checkHandwriting(context, state),
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 20.h),
-                    decoration: BoxDecoration(
-                      color: _isChecking ? Colors.grey : widget.primaryColor,
-                      borderRadius: BorderRadius.circular(32.r),
-                      boxShadow: [
-                        if (!_isChecking)
-                          BoxShadow(
-                            color: widget.primaryColor.withValues(alpha: 0.5),
-                            offset: Offset(0, 8.h),
-                            blurRadius: 12,
-                          ),
-                      ],
-                    ),
-                    child: Center(
-                      child: _isChecking
-                          ? VowlButtonSpinner(color: Colors.white, size: 24.h)
-                          : Text(
-                              context.tr(
-                                'common.check',
-                                fallback: 'Check My Answer!',
+                child: ValueListenableBuilder<bool>(
+                  valueListenable: _isChecking,
+                  builder: (context, isChecking, child) {
+                    return ScaleButton(
+                      onTap: isChecking
+                          ? null
+                          : () => _checkHandwriting(context, state),
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 20.h),
+                        decoration: BoxDecoration(
+                          color: isChecking ? Colors.grey : widget.primaryColor,
+                          borderRadius: BorderRadius.circular(32.r),
+                          boxShadow: [
+                            if (!isChecking)
+                              BoxShadow(
+                                color: widget.primaryColor.withValues(alpha: 0.5),
+                                offset: Offset(0, 8.h),
+                                blurRadius: 12,
                               ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 26.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                    ),
-                  ),
+                          ],
+                        ),
+                        child: Center(
+                          child: isChecking
+                              ? VowlButtonSpinner(color: Colors.white, size: 24.h)
+                              : Text(
+                                  context.tr(
+                                    'common.check',
+                                    fallback: 'Check My Answer!',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 26.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                        ),
+                      ),
+                    );
+                  }
                 ),
               ),
 
