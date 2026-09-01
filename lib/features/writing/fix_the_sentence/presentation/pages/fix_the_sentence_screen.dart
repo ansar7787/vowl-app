@@ -36,15 +36,27 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final List<Offset> _erasePoints = [];
-  bool _isWiped = false;
-  String? _selectedOption;
-  String? _pendingSelectedOption;
-  bool _showConfetti = false;
-  int _erasedAmount = 0;
+  final ValueNotifier<List<Offset>> _erasePoints = ValueNotifier([]);
+  final ValueNotifier<bool> _isWiped = ValueNotifier(false);
+  final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
+  final ValueNotifier<String?> _pendingSelectedOption = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<int> _erasedAmount = ValueNotifier(0);
   WritingQuest? _lastQuest;
-  List<String>? _shuffledOptions;
+  final ValueNotifier<List<String>?> _shuffledOptions = ValueNotifier(null);
   final _ttsService = di.sl<TtsService>();
+
+  @override
+  void dispose() {
+    _erasePoints.dispose();
+    _isWiped.dispose();
+    _selectedOption.dispose();
+    _pendingSelectedOption.dispose();
+    _showConfetti.dispose();
+    _erasedAmount.dispose();
+    _shuffledOptions.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -55,40 +67,34 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   }
 
   void _onErase(Offset localPosition, bool isAnswered) {
-    if (isAnswered || _isWiped) return;
-    setState(() {
-      _erasePoints.add(localPosition);
-      _erasedAmount++;
-      if (_erasedAmount % 6 == 0) _hapticService.selection();
-    });
+    if (isAnswered || _isWiped.value) return;
+    _erasePoints.value = List.from(_erasePoints.value)..add(localPosition);
+    _erasedAmount.value++;
+    if (_erasedAmount.value % 6 == 0) _hapticService.selection();
 
-    if (_erasedAmount > 35) {
+    if (_erasedAmount.value > 35) {
       _hapticService.success();
       _soundService.playHint();
-      setState(() => _isWiped = true);
+      _isWiped.value = true;
     }
   }
 
   void _submitFinalAnswer(bool nailedTyping, WritingQuest quest) {
-    if (_pendingSelectedOption == null) return;
+    if (_pendingSelectedOption.value == null) return;
 
     if (!nailedTyping) {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _selectedOption = _pendingSelectedOption;
-      });
+      _selectedOption.value = _pendingSelectedOption.value;
       context.read<WritingBloc>().add(const SubmitAnswer(false));
       return;
     }
 
-    final selected = _pendingSelectedOption!;
+    final selected = _pendingSelectedOption.value!;
     final correct = quest.correctAnswer ?? "";
     final bool isAnsCorrect = selected == correct;
 
-    setState(() {
-      _selectedOption = _pendingSelectedOption;
-    });
+    _selectedOption.value = _pendingSelectedOption.value;
 
     context.read<WritingBloc>().add(SubmitAnswer(isAnsCorrect));
     if (isAnsCorrect) {
@@ -111,16 +117,14 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _isWiped = false;
-            _selectedOption = null;
-            _pendingSelectedOption = null;
-            _erasePoints.clear();
-            _erasedAmount = 0;
-          });
+          _isWiped.value = false;
+          _selectedOption.value = null;
+          _pendingSelectedOption.value = null;
+          _erasePoints.value = [];
+          _erasedAmount.value = 0;
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -142,7 +146,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
         final isLoaded = state is WritingLoaded;
         if (isLoaded && state.currentQuest != _lastQuest) {
           _lastQuest = state.currentQuest;
-          _shuffledOptions = List.from(_lastQuest!.options ?? [])..shuffle();
+          _shuffledOptions.value = List.from(_lastQuest!.options ?? [])..shuffle();
         }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
@@ -156,15 +160,18 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<WritingBloc>().add(const WritingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _isWiped, _selectedOption, _pendingSelectedOption, _erasePoints, _erasedAmount, _shuffledOptions]),
+            builder: (context, _) {
+              return quest == null
+                  ? const SizedBox()
+                  : Stack(
                   children: [
                     CustomScrollView(
                       physics: const BouncingScrollPhysics(),
@@ -176,7 +183,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                               children: [
                                 SizedBox(height: 16.h),
                                 FixTheSentenceInstruction(
-                                  isWiped: _isWiped,
+                                  isWiped: _isWiped.value,
                                   primaryColor: theme.primaryColor,
                                   instruction: quest.instruction,
                                 ),
@@ -213,44 +220,41 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                                   fullText: quest.passage ?? "",
                                   targetWord: quest.missingWord ?? "",
                                   selectedReplacement:
-                                      _selectedOption ?? _pendingSelectedOption,
-                                  isWiped: _isWiped,
-                                  erasePoints: _erasePoints,
+                                      _selectedOption.value ?? _pendingSelectedOption.value,
+                                  isWiped: _isWiped.value,
+                                  erasePoints: _erasePoints.value,
                                   onErase: (pos) => _onErase(pos, isAnswered),
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                 ),
                                 SizedBox(height: 32.h),
 
-                                if (_isWiped && !isAnswered)
+                                if (_isWiped.value && !isAnswered)
                                   FixTheSentenceWipedAlert(
                                     primaryColor: theme.primaryColor,
                                   ),
-                                if (_isWiped && !isAnswered) SizedBox(height: 16.h),
+                                if (_isWiped.value && !isAnswered) SizedBox(height: 16.h),
 
-                                if (_isWiped)
+                                if (_isWiped.value)
                                   FixTheSentenceCorrectionOptions(
                                     options:
-                                        _shuffledOptions ?? quest.options ?? [],
+                                        _shuffledOptions.value ?? quest.options ?? [],
                                     correct: quest.correctAnswer ?? "",
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                     onSelect: (selected, correct) {
                                       if (isAnswered ||
-                                          _pendingSelectedOption != null) {
+                                          _pendingSelectedOption.value != null) {
                                         return;
                                       }
-                                      setState(
-                                        () => _pendingSelectedOption = selected,
-                                      );
+                                      _pendingSelectedOption.value = selected;
                                     },
                                   ),
                               ],
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -260,16 +264,18 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                         ),
                       ],
                     ),
-                    if (_pendingSelectedOption != null && !isAnswered)
+                    if (_pendingSelectedOption.value != null && !isAnswered)
                       TypeToConfirmOverlay(
-                        expectedText: _pendingSelectedOption!,
+                        expectedText: _pendingSelectedOption.value!,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true, quest),
                         onSkipped: () => _submitFinalAnswer(false, quest),
                         allowSkip: true,
                       ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );

@@ -1,211 +1,196 @@
 import 'dart:io';
 
 void main() {
-  final file = File('lib/features/reading/sentence_order_reading/presentation/pages/sentence_order_reading_screen.dart');
+  final file = File('lib/features/writing/fix_the_sentence/presentation/pages/fix_the_sentence_screen.dart');
   String content = file.readAsStringSync();
   content = content.replaceAll('\r\n', '\n');
 
   // Variables
-  content = content.replaceAll('List<String> _currentOrder = [];', 'final ValueNotifier<List<String>> _currentOrder = ValueNotifier([]);');
-  content = content.replaceAll('bool _isAnswered = false;', 'final ValueNotifier<bool> _isAnswered = ValueNotifier(false);');
-  content = content.replaceAll('bool? _isCorrect;', 'final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);');
-  content = content.replaceAll('bool _showConfetti = false;', 'final ValueNotifier<bool> _showConfetti = ValueNotifier(false);\n\n  @override\n  void dispose() {\n    _currentOrder.dispose();\n    _isAnswered.dispose();\n    _isCorrect.dispose();\n    _showConfetti.dispose();\n    super.dispose();\n  }');
+  content = content.replaceAll('final List<Offset> _erasePoints = [];', 'final ValueNotifier<List<Offset>> _erasePoints = ValueNotifier([]);');
+  content = content.replaceAll('bool _isWiped = false;', 'final ValueNotifier<bool> _isWiped = ValueNotifier(false);');
+  content = content.replaceAll('String? _selectedOption;', 'final ValueNotifier<String?> _selectedOption = ValueNotifier(null);');
+  content = content.replaceAll('String? _pendingSelectedOption;', 'final ValueNotifier<String?> _pendingSelectedOption = ValueNotifier(null);');
+  content = content.replaceAll('bool _showConfetti = false;', 'final ValueNotifier<bool> _showConfetti = ValueNotifier(false);');
+  content = content.replaceAll('int _erasedAmount = 0;', 'final ValueNotifier<int> _erasedAmount = ValueNotifier(0);');
+  content = content.replaceAll('List<String>? _shuffledOptions;', 'final ValueNotifier<List<String>?> _shuffledOptions = ValueNotifier(null);');
+
+  // Dispose
+  content = content.replaceAll('''  @override
+  void initState() {''', '''  @override
+  void dispose() {
+    _erasePoints.dispose();
+    _isWiped.dispose();
+    _selectedOption.dispose();
+    _pendingSelectedOption.dispose();
+    _showConfetti.dispose();
+    _erasedAmount.dispose();
+    _shuffledOptions.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {''');
 
   // Logic
-  content = content.replaceAll('if (_isAnswered) return;', 'if (_isAnswered.value) return;');
+  content = content.replaceAll('''    if (isAnswered || _isWiped) return;''', '''    if (isAnswered || _isWiped.value) return;''');
 
   content = content.replaceAll('''    setState(() {
-      if (newIndex > oldIndex) newIndex -= 1;
-      final item = _currentOrder.removeAt(oldIndex);
-      _currentOrder.insert(newIndex, item);
-      _hapticService.selection();
-    });''', '''    final List<String> current = List.from(_currentOrder.value);
-    if (newIndex > oldIndex) newIndex -= 1;
-    final item = current.removeAt(oldIndex);
-    current.insert(newIndex, item);
-    _currentOrder.value = current;
-    _hapticService.selection();''');
+      _erasePoints.add(localPosition);
+      _erasedAmount++;
+      if (_erasedAmount % 6 == 0) _hapticService.selection();
+    });''', '''    _erasePoints.value = List.from(_erasePoints.value)..add(localPosition);
+    _erasedAmount.value++;
+    if (_erasedAmount.value % 6 == 0) _hapticService.selection();''');
 
-  content = content.replaceAll('''    for (int i = 0; i < _currentOrder.length; i++) {
-      if (_currentOrder[i] != original[correctOrder[i]]) {''', '''    for (int i = 0; i < _currentOrder.value.length; i++) {
-      if (_currentOrder.value[i] != original[correctOrder[i]]) {''');
+  content = content.replaceAll('''    if (_erasedAmount > 35) {
+      _hapticService.success();
+      _soundService.playHint();
+      setState(() => _isWiped = true);
+    }''', '''    if (_erasedAmount.value > 35) {
+      _hapticService.success();
+      _soundService.playHint();
+      _isWiped.value = true;
+    }''');
 
-  content = content.replaceAll('''      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });''', '''      _isAnswered.value = true;
-      _isCorrect.value = true;''');
+  content = content.replaceAll('''    if (_pendingSelectedOption == null) return;''', '''    if (_pendingSelectedOption.value == null) return;''');
 
   content = content.replaceAll('''      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });''', '''      _isAnswered.value = true;
-      _isCorrect.value = false;''');
+        _selectedOption = _pendingSelectedOption;
+      });''', '''      _selectedOption.value = _pendingSelectedOption.value;''');
 
-  content = content.replaceAll('''            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _currentOrder = List<String>.from(
-                state.currentQuest.shuffledSentences ?? [],
-              );
-            });''', '''            _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _currentOrder.value = List<String>.from(
-              state.currentQuest.shuffledSentences ?? [],
-            );''');
+  content = content.replaceAll('''    final selected = _pendingSelectedOption!;''', '''    final selected = _pendingSelectedOption.value!;''');
 
-  content = content.replaceAll('final isRetry = _isAnswered && !state.answerStatus.isAnswered;', 'final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;');
-  content = content.replaceAll('if (state.answerStatus.isAnswered && !_isAnswered)', 'if (state.answerStatus.isAnswered && !_isAnswered.value)');
+  content = content.replaceAll('''    setState(() {
+      _selectedOption = _pendingSelectedOption;
+    });''', '''    _selectedOption.value = _pendingSelectedOption.value;''');
 
-  content = content.replaceAll('''            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });''', '''            _isAnswered.value = true;
-            _isCorrect.value = state.answerStatus.asBoolOrNull;''');
+  content = content.replaceAll('''          setState(() {
+            _isWiped = false;
+            _selectedOption = null;
+            _pendingSelectedOption = null;
+            _erasePoints.clear();
+            _erasedAmount = 0;
+          });''', '''          _isWiped.value = false;
+          _selectedOption.value = null;
+          _pendingSelectedOption.value = null;
+          _erasePoints.value = [];
+          _erasedAmount.value = 0;''');
 
   content = content.replaceAll('setState(() => _showConfetti = true);', '_showConfetti.value = true;');
 
-  // ListenableBuilder Wrap
-  content = content.replaceAll('''        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,''', '''        return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _currentOrder]),
-          builder: (context, _) {
-            return ReadingBaseLayout(
-              gameType: widget.gameType,
-              level: widget.level,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              showConfetti: _showConfetti.value,''');
+  content = content.replaceAll('''        if (isLoaded && state.currentQuest != _lastQuest) {
+          _lastQuest = state.currentQuest;
+          _shuffledOptions = List.from(_lastQuest!.options ?? [])..shuffle();
+        }''', '''        if (isLoaded && state.currentQuest != _lastQuest) {
+          _lastQuest = state.currentQuest;
+          _shuffledOptions.value = List.from(_lastQuest!.options ?? [])..shuffle();
+        }''');
+
+  // Builder Wrap
+  content = content.replaceAll('''          showConfetti: _showConfetti,''', '''          showConfetti: _showConfetti.value,''');
+
+  content = content.replaceAll('''          child: quest == null
+              ? const SizedBox()
+              : Stack(''', '''          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _isWiped, _selectedOption, _pendingSelectedOption, _erasePoints, _erasedAmount, _shuffledOptions]),
+            builder: (context, _) {
+              return quest == null
+                  ? const SizedBox()
+                  : Stack(''');
+
+  // Widget properties
+  content = content.replaceAll('''                                FixTheSentenceInstruction(
+                                  isWiped: _isWiped,''', '''                                FixTheSentenceInstruction(
+                                  isWiped: _isWiped.value,''');
+
+  content = content.replaceAll('''                                FixTheSentenceDigitalBlackboard(
+                                  fullText: quest.passage ?? "",
+                                  targetWord: quest.missingWord ?? "",
+                                  selectedReplacement:
+                                      _selectedOption ?? _pendingSelectedOption,
+                                  isWiped: _isWiped,
+                                  erasePoints: _erasePoints,''', '''                                FixTheSentenceDigitalBlackboard(
+                                  fullText: quest.passage ?? "",
+                                  targetWord: quest.missingWord ?? "",
+                                  selectedReplacement:
+                                      _selectedOption.value ?? _pendingSelectedOption.value,
+                                  isWiped: _isWiped.value,
+                                  erasePoints: _erasePoints.value,''');
+
+  content = content.replaceAll('''                                if (_isWiped && !isAnswered)
+                                  FixTheSentenceWipedAlert(
+                                    primaryColor: theme.primaryColor,
+                                  ),
+                                if (_isWiped && !isAnswered) SizedBox(height: 16.h),
+                                if (_isWiped)
+                                  FixTheSentenceCorrectionOptions(
+                                    options:
+                                        _shuffledOptions ?? quest.options ?? [],''', '''                                if (_isWiped.value && !isAnswered)
+                                  FixTheSentenceWipedAlert(
+                                    primaryColor: theme.primaryColor,
+                                  ),
+                                if (_isWiped.value && !isAnswered) SizedBox(height: 16.h),
+                                if (_isWiped.value)
+                                  FixTheSentenceCorrectionOptions(
+                                    options:
+                                        _shuffledOptions.value ?? quest.options ?? [],''');
+
+  content = content.replaceAll('''                                    onSelect: (selected, correct) {
+                                      if (isAnswered ||
+                                          _pendingSelectedOption != null) {
+                                        return;
+                                      }
+                                      setState(
+                                        () => _pendingSelectedOption = selected,
+                                      );
+                                    },''', '''                                    onSelect: (selected, correct) {
+                                      if (isAnswered ||
+                                          _pendingSelectedOption.value != null) {
+                                        return;
+                                      }
+                                      _pendingSelectedOption.value = selected;
+                                    },''');
+
+  content = content.replaceAll('''                    if (_pendingSelectedOption != null && !isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: _pendingSelectedOption!,''', '''                    if (_pendingSelectedOption.value != null && !isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: _pendingSelectedOption.value!,''');
+
+  // Fix brackets at bottom of builder
+  content = content.replaceAll('''                  ],
+                ),
+        );
+      },
+    );
+  }
+}''', '''                  ],
+                );
+            },
+          ),
+        );
+      },
+    );
+  }
+}''');
 
   // Fix Sliver Layout
-  content = content.replaceAll('''                            ReorderableListView(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              proxyDecorator: (child, index, animation) =>
-                                  _buildProxy(child, animation, theme.primaryColor),
-                              onReorder: _onReorder,
-                              children: List.generate(
-                                _currentOrder.length,
-                                (index) => SentenceOrderReadingStoneSlab(
-                                  key: ValueKey(_currentOrder[index]),
-                                  text: _currentOrder[index],
-                                  index: index,
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  transitionWords: quest.transitionWords,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (!_isAnswered) ...[
-                              SizedBox(height: 24.h),
-                              SentenceOrderReadingCapstone(
-                                color: theme.primaryColor,
-                                onTap: () {
-                                  _hapticService.heavy();
-                                  _submitAnswer(
-                                    quest.correctOrder ?? [],
-                                    quest.shuffledSentences ?? [],
-                                  );
-                                },
-                              ),
+  content = content.replaceAll('''                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(height: 160.h), // Bottom padding for feedback card
                             ],
-                            if (_isAnswered) ...[
-                              SizedBox(height: 30.h),
-                              SentenceOrderReadingResult(
-                                quest: quest,
-                                isCorrect: _isCorrect == true,
-                                isDark: isDark,
-                              ),
+                          ),
+                        ),''', '''                        SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(height: 160.h), // Bottom padding for feedback card
                             ],
-                            SizedBox(height: 50.h),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-        );
-      },
-    );
-  }''', '''                            ReorderableListView(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              proxyDecorator: (child, index, animation) =>
-                                  _buildProxy(child, animation, theme.primaryColor),
-                              onReorder: _onReorder,
-                              children: List.generate(
-                                _currentOrder.value.length,
-                                (index) => SentenceOrderReadingStoneSlab(
-                                  key: ValueKey(_currentOrder.value[index]),
-                                  text: _currentOrder.value[index],
-                                  index: index,
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  transitionWords: quest.transitionWords,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (!_isAnswered.value) ...[
-                              SizedBox(height: 24.h),
-                              SentenceOrderReadingCapstone(
-                                color: theme.primaryColor,
-                                onTap: () {
-                                  _hapticService.heavy();
-                                  _submitAnswer(
-                                    quest.correctOrder ?? [],
-                                    quest.shuffledSentences ?? [],
-                                  );
-                                },
-                              ),
-                            ],
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: 30.h),
-                              SentenceOrderReadingResult(
-                                quest: quest,
-                                isCorrect: _isCorrect.value == true,
-                                isDark: isDark,
-                              ),
-                            ],
-                            SizedBox(height: 50.h),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-            );
-          },
-        );
-      },
-    );
-  }''');
+                          ),
+                        ),''');
 
   content = content.replaceAll('\n', '\r\n');
   file.writeAsStringSync(content);
