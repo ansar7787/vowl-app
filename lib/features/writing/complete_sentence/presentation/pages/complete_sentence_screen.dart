@@ -55,9 +55,9 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   // rebuilds on each pointer-move event (~60fps), not the entire widget tree.
   final _dragNotifier = ValueNotifier<_DragState?>(null);
 
-  String? _selectedProjectile;
-  bool _showConfetti = false;
-  bool _showAnagram = false;
+  final ValueNotifier<String?> _selectedProjectile = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showAnagram = ValueNotifier(false);
 
   GameQuest? _lastQuest;
 
@@ -81,6 +81,9 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   @override
   void dispose() {
     _dragNotifier.dispose();
+    _selectedProjectile.dispose();
+    _showConfetti.dispose();
+    _showAnagram.dispose();
     super.dispose();
   }
 
@@ -120,9 +123,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   void _onFire(String selected, String correct, bool isAnswered) {
     if (isAnswered) return;
 
-    setState(() {
-      _selectedProjectile = selected;
-    });
+    _selectedProjectile.value = selected;
 
     final isCorrect =
         selected.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '') ==
@@ -134,9 +135,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     // We let the BLoC handle all state now! No local timers hiding the continue button!
     if (isCorrect) {
       _hapticService.success();
-      setState(() {
-        _showAnagram = true;
-      });
+      _showAnagram.value = true;
     } else {
       _hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
@@ -144,16 +143,12 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   }
 
   void _onAnagramSuccess() {
-    setState(() {
-      _showAnagram = false;
-    });
+    _showAnagram.value = false;
     context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
   void _onAnagramFailed() {
-    setState(() {
-      _showAnagram = false;
-    });
+    _showAnagram.value = false;
     context.read<WritingBloc>().add(const SubmitAnswer(false));
   }
 
@@ -173,14 +168,12 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           // New question loaded or retry triggered â€” clear the selected option.
-          setState(() {
-            _selectedProjectile = null;
-            _dragNotifier.value = null;
-            _showAnagram = false;
-          });
+          _selectedProjectile.value = null;
+          _dragNotifier.value = null;
+          _showAnagram.value = false;
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -228,18 +221,21 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
           // Passing it here caused a double dispatch — now a no-op.
           onHint: () {},
-          child: quest == null
-              ? (_lastQuest == null
-                    ? GameShimmerLoading(primaryColor: _theme.primaryColor)
-                    : const SizedBox.shrink())
-              : Stack(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _selectedProjectile, _showAnagram]),
+            builder: (context, _) {
+              return quest == null
+                  ? (_lastQuest == null
+                        ? GameShimmerLoading(primaryColor: _theme.primaryColor)
+                        : const SizedBox.shrink())
+                  : Stack(
                   key: _stackKey,
                   children: [
                     // Scrollable body content — extracted to reduce build() size.
@@ -247,7 +243,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                       quest: quest,
                       options: options,
                       level: widget.level,
-                      selectedProjectile: _selectedProjectile,
+                      selectedProjectile: _selectedProjectile.value,
                       isAnswered: isAnswered,
                       isCorrect: isCorrect,
                       theme: _theme,
@@ -282,7 +278,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                         );
                       },
                     ),
-                    if (_showAnagram && !isAnswered)
+                    if (_showAnagram.value && !isAnswered)
                       DynamicAnagramWrapper(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: _theme.primaryColor,
@@ -290,7 +286,9 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                         onFailed: _onAnagramFailed,
                       ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
@@ -423,8 +421,7 @@ class _CompleteSentenceBody extends StatelessWidget {
             ),
           ),
         ),
-        SliverFillRemaining(
-          hasScrollBody: false,
+        SliverToBoxAdapter(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
