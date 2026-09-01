@@ -35,12 +35,18 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  String _appVersion = '1.0.0';
-  String _buildNumber = '1';
-  bool _notificationsEnabled = true;
-  bool _soundEnabled = true;
-  bool _isLoading = true;
-  String? _translationLanguageName;
+  String _appVersionVal = '1.0.0';
+  String _buildNumberVal = '1';
+  bool _notificationsEnabledVal = true;
+  bool _soundEnabledVal = true;
+  bool _isLoadingVal = true;
+  String? _translationLanguageNameVal;
+
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+  
+  void _updateState() {
+    _stateHash.value++;
+  }
 
   @override
   void initState() {
@@ -52,7 +58,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _loadTranslationLanguageName() async {
     final name = await TranslationService().getConfiguredLanguageName();
     if (!mounted) return;
-    setState(() => _translationLanguageName = name);
+    _translationLanguageNameVal = name;
+    _updateState();
   }
 
   Future<void> _loadPackageInfo() async {
@@ -63,13 +70,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final soundPref = prefs.getBool('sound_enabled') ?? true;
 
     if (!mounted) return;
-    setState(() {
-      _appVersion = info.version;
-      _buildNumber = info.buildNumber;
-      _notificationsEnabled = savedPref && isGranted;
-      _soundEnabled = soundPref;
-      _isLoading = false;
-    });
+    _appVersionVal = info.version;
+    _buildNumberVal = info.buildNumber;
+    _notificationsEnabledVal = savedPref && isGranted;
+    _soundEnabledVal = soundPref;
+    _isLoadingVal = false;
+    _updateState();
   }
 
   Future<void> _toggleNotifications(bool value) async {
@@ -95,7 +101,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('notifications_enabled', value);
     if (!mounted) return;
-    setState(() => _notificationsEnabled = value);
+    _notificationsEnabledVal = value;
+    _updateState();
     di.sl<NotificationService>().onNotificationPreferenceChanged(value);
   }
 
@@ -108,7 +115,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (confirmed != true) return;
     }
 
-    setState(() => _soundEnabled = value);
+    _soundEnabledVal = value;
+    _updateState();
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('sound_enabled', value);
     di.sl<SoundService>().setMuted(!value);
@@ -126,7 +134,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       query: _encodeQueryParameters({
         'subject': 'Support Request: Vowl',
         'body':
-            'Describe your issue here...\n\nApp Version: $_appVersion\nBuild: $_buildNumber',
+            'Describe your issue here...\n\nApp Version: $_appVersionVal\nBuild: $_buildNumberVal',
       }),
     );
     if (await canLaunchUrl(emailUri)) {
@@ -235,7 +243,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
-    return Scaffold(
+    return ValueListenableBuilder<int>(
+      valueListenable: _stateHash,
+      builder: (context, _, child) {
+        return Scaffold(
       backgroundColor: bgColor,
       body: Stack(
         children: [
@@ -275,11 +286,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _SettingsPreferencesGroup(
-                            translationLanguageName: _translationLanguageName,
+                            translationLanguageName: _translationLanguageNameVal,
                             isDark: isDark,
-                            soundEnabled: _soundEnabled,
-                            notificationsEnabled: _notificationsEnabled,
-                            isLoading: _isLoading,
+                            soundEnabled: _soundEnabledVal,
+                            notificationsEnabled: _notificationsEnabledVal,
+                            isLoading: _isLoadingVal,
                             onToggleSound: _toggleSound,
                             onToggleNotifications: _toggleNotifications,
                             onTapTranslationLanguage: () async {
@@ -296,8 +307,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         children: [
                           _SettingsSupportGroup(
                             isDark: isDark,
-                            appVersion: _appVersion,
-                            buildNumber: _buildNumber,
+                            appVersion: _appVersionVal,
+                            buildNumber: _buildNumberVal,
                             onSupportTap: () => _handleSupportLink(context),
                             onLegalTap: (title) => _handleLegalLink(context, title),
                           ),
@@ -344,6 +355,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ],
       ),
+    );
+      },
     );
   }
 

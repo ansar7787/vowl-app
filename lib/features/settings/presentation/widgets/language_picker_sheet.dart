@@ -26,14 +26,9 @@ class LanguagePickerSheet extends StatefulWidget {
 
 class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
   final TextEditingController _searchController = TextEditingController();
-  String _query = '';
-
   @override
   void initState() {
     super.initState();
-    _searchController.addListener(() {
-      setState(() => _query = _searchController.text.trim().toLowerCase());
-    });
   }
 
   @override
@@ -42,13 +37,6 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
     super.dispose();
   }
 
-  List<LocaleInfo> get _filteredLocales {
-    if (_query.isEmpty) return LocaleService.supportedLocales;
-    return LocaleService.supportedLocales.where((l) {
-      return l.name.toLowerCase().contains(_query) ||
-          l.nativeName.toLowerCase().contains(_query);
-    }).toList();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,27 +44,41 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
     final localeService = di.sl<LocaleService>();
     final currentCode = localeService.currentLocale.languageCode;
 
-    return Padding(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-      ),
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.85,
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF0F172A) : Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-          border: Border(
-            top: BorderSide(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.05),
-              width: 1,
-            ),
+    return ValueListenableBuilder<TextEditingValue>(
+      valueListenable: _searchController,
+      builder: (context, searchVal, child) {
+        final query = searchVal.text.trim().toLowerCase();
+        List<LocaleInfo> filteredLocales;
+        if (query.isEmpty) {
+          filteredLocales = LocaleService.supportedLocales;
+        } else {
+          filteredLocales = LocaleService.supportedLocales.where((l) {
+            return l.name.toLowerCase().contains(query) ||
+                l.nativeName.toLowerCase().contains(query);
+          }).toList();
+        }
+
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.85,
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF0F172A) : Colors.white,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+              border: Border(
+                top: BorderSide(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05),
+                  width: 1,
+                ),
+              ),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
             // Handle bar
             Center(
               child: Container(
@@ -162,7 +164,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                     color: isDark ? Colors.white54 : Colors.black54,
                     size: 22.r,
                   ),
-                  suffixIcon: _query.isNotEmpty
+                  suffixIcon: query.isNotEmpty
                       ? IconButton(
                           icon: Icon(Icons.close_rounded, size: 20.r),
                           color: isDark ? Colors.white54 : Colors.black54,
@@ -198,7 +200,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
 
             // Language list
             Expanded(
-              child: _filteredLocales.isEmpty
+              child: filteredLocales.isEmpty
                   ? Padding(
                       padding: EdgeInsets.only(top: 32.h, bottom: 64.h),
                       child: Column(
@@ -225,9 +227,9 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                     )
                   : ListView.builder(
                       padding: EdgeInsets.fromLTRB(24.w, 8.h, 24.w, 32.h),
-                      itemCount: _filteredLocales.length,
+                      itemCount: filteredLocales.length,
                       itemBuilder: (context, index) {
-                        final localeInfo = _filteredLocales[index];
+                        final localeInfo = filteredLocales[index];
                         final isActive =
                             localeInfo.locale.languageCode == currentCode;
 
@@ -257,6 +259,8 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
           ],
         ),
       ),
+    );
+      },
     );
   }
 }
