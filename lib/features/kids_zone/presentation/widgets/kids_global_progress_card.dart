@@ -226,7 +226,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         textBaseline: TextBaseline.alphabetic,
                         children: [
                           Text(
-                            '$completed',
+                            '$completed / $totalLevels',
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 28.sp,
@@ -344,9 +344,10 @@ class KidsGlobalProgressCard extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(
-                            "🔥",
-                            style: TextStyle(fontSize: 14.sp),
+                          Icon(
+                            Icons.local_fire_department_rounded,
+                            color: Colors.orange.shade600,
+                            size: 18.sp,
                           ),
                           SizedBox(width: 6.w),
                           Text(
@@ -369,11 +370,24 @@ class KidsGlobalProgressCard extends StatelessWidget {
                             width: 16.w,
                             height: 16.w,
                             decoration: BoxDecoration(
-                              color: isActive ? Colors.orange.shade400 : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                              gradient: isActive
+                                  ? LinearGradient(
+                                      colors: [Colors.orange.shade400, Colors.deepOrange.shade500],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    )
+                                  : null,
+                              color: isActive ? null : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
                               shape: BoxShape.circle,
                               boxShadow: isActive ? [BoxShadow(color: Colors.orange.withValues(alpha: 0.4), blurRadius: 4)] : null,
                             ),
-                            child: isActive ? Center(child: Text("🔥", style: TextStyle(fontSize: 8.sp))) : null,
+                            child: isActive ? Center(
+                              child: Icon(
+                                Icons.local_fire_department_rounded,
+                                color: Colors.white,
+                                size: 10.sp,
+                              )
+                            ) : null,
                           );
                         }),
                       ),
