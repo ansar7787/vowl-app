@@ -34,12 +34,21 @@ class EssayDraftingScreen extends StatefulWidget {
 class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  final Map<String, String?> _blueprintSlots = {};
+  final ValueNotifier<Map<String, String?>> _blueprintSlots = ValueNotifier({});
   WritingQuest? _lastQuest;
-  List<String> _shuffledOptions = [];
+  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
 
-  bool _showConfetti = false;
-  bool _pendingSubmit = false;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _blueprintSlots.dispose();
+    _shuffledOptions.dispose();
+    _showConfetti.dispose();
+    _pendingSubmit.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -53,35 +62,31 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     if (isAnswered) return;
 
     _hapticService.success();
-    setState(() {
-      _blueprintSlots.forEach((key, val) {
-        if (val == data) {
-          _blueprintSlots[key] = null;
-        }
-      });
-      _blueprintSlots[slotKey] = data;
+    final newSlots = Map<String, String?>.from(_blueprintSlots.value);
+    newSlots.forEach((key, val) {
+      if (val == data) {
+        newSlots[key] = null;
+      }
     });
+    newSlots[slotKey] = data;
+    _blueprintSlots.value = newSlots;
   }
 
   void _clearSlot(String slotKey, bool isAnswered) {
-    if (isAnswered || _blueprintSlots[slotKey] == null) return;
+    if (isAnswered || _blueprintSlots.value[slotKey] == null) return;
     _hapticService.selection();
-    setState(() {
-      _blueprintSlots[slotKey] = null;
-    });
+    final newSlots = Map<String, String?>.from(_blueprintSlots.value);
+    newSlots[slotKey] = null;
+    _blueprintSlots.value = newSlots;
   }
 
   void _submitAnswer(bool isAnswered) {
     if (isAnswered) return;
-    setState(() {
-      _pendingSubmit = true;
-    });
+    _pendingSubmit.value = true;
   }
 
   void _submitFinalAnswer(bool nailedTyping) {
-    setState(() {
-      _pendingSubmit = false;
-    });
+    _pendingSubmit.value = false;
 
     final state = context.read<WritingBloc>().state;
     if (state is! WritingLoaded) return;
@@ -104,13 +109,13 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     }
 
     bool isSlot0Correct =
-        _blueprintSlots[points[0]] == options[correctOrderIndices[0]];
+        _blueprintSlots.value[points[0]] == options[correctOrderIndices[0]];
     bool isSlot1Correct =
-        _blueprintSlots[points[1]] == options[correctOrderIndices[1]];
+        _blueprintSlots.value[points[1]] == options[correctOrderIndices[1]];
     bool isSlot2Correct =
-        _blueprintSlots[points[2]] == options[correctOrderIndices[2]];
+        _blueprintSlots.value[points[2]] == options[correctOrderIndices[2]];
     bool isSlot3Correct =
-        _blueprintSlots[points[3]] == options[correctOrderIndices[3]];
+        _blueprintSlots.value[points[3]] == options[correctOrderIndices[3]];
 
     final isCorrect =
         isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
@@ -129,19 +134,17 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _blueprintSlots.clear();
-            _pendingSubmit = false;
-            final quest = state.currentQuest;
-            for (var point in (quest.requiredPoints ?? [])) {
-              _blueprintSlots[point] = null;
-            }
-            _shuffledOptions = List<String>.from(quest.options ?? [])
-              ..shuffle();
-          });
+          final newSlots = <String, String?>{};
+          final quest = state.currentQuest;
+          for (var point in (quest.requiredPoints ?? [])) {
+            newSlots[point] = null;
+          }
+          _blueprintSlots.value = newSlots;
+          _pendingSubmit.value = false;
+          _shuffledOptions.value = List<String>.from(quest.options ?? [])..shuffle();
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -164,9 +167,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
         final activeQuest = quest ?? _lastQuest;
 
         final options = activeQuest?.options ?? [];
-        final slotsFilled =
-            _blueprintSlots.values.every((v) => v != null) &&
-            _blueprintSlots.isNotEmpty;
+
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
         final bool? isCorrect = isLoaded
             ? state.answerStatus.asBoolOrNull
@@ -179,15 +180,22 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<WritingBloc>().add(const WritingHintUsed()),
-          child: activeQuest == null
-              ? const SizedBox()
-              : Stack(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _blueprintSlots, _shuffledOptions, _pendingSubmit]),
+            builder: (context, _) {
+              final slotsFilled =
+                  _blueprintSlots.value.values.every((v) => v != null) &&
+                  _blueprintSlots.value.isNotEmpty;
+
+              return activeQuest == null
+                  ? const SizedBox()
+                  : Stack(
                   children: [
                     CustomScrollView(
                       physics: const BouncingScrollPhysics(),
@@ -254,10 +262,10 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                                   ),
                                 SizedBox(height: 8.h),
 
-                                ..._blueprintSlots.keys.map(
+                                ..._blueprintSlots.value.keys.map(
                                   (k) => EssayDraftingHexSlot(
                                     slotKey: k,
-                                    slotValue: _blueprintSlots[k],
+                                    slotValue: _blueprintSlots.value[k],
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                     onSlot: (key, data) =>
@@ -269,10 +277,10 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                                 SizedBox(height: 24.h),
 
                                 EssayDraftingDataStream(
-                                  items: _shuffledOptions.isNotEmpty
-                                      ? _shuffledOptions
+                                  items: _shuffledOptions.value.isNotEmpty
+                                      ? _shuffledOptions.value
                                       : options,
-                                  slots: _blueprintSlots,
+                                  slots: _blueprintSlots.value,
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                 ),
@@ -281,8 +289,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
@@ -332,12 +339,12 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         ),
                       ],
                     ),
-                    if (_pendingSubmit && !isAnswered)
+                    if (_pendingSubmit.value && !isAnswered)
                       TypeToConfirmOverlay(
                         expectedText:
-                            _blueprintSlots.isNotEmpty &&
-                                _blueprintSlots.values.first != null
-                            ? _blueprintSlots.values.first!
+                            _blueprintSlots.value.isNotEmpty &&
+                                _blueprintSlots.value.values.first != null
+                            ? _blueprintSlots.value.values.first!
                             : "",
                         displayText:
                             "Type the first point to finalize the outline",
@@ -347,7 +354,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         allowSkip: true,
                       ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
