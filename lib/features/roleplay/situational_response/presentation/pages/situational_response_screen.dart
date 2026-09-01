@@ -43,15 +43,15 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   late AnimationController _pulseController;
 
   int _lastProcessedIndex = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  int? _selectedOrbIndex;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedOrbIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   // Shuffled state
-  List<String> _shuffledOptions = [];
-  int _shuffledCorrectIndex = -1;
+  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
+  final ValueNotifier<int> _shuffledCorrectIndex = ValueNotifier(-1);
 
   // Real-time ticking sound throttling
   int _lastTickSecond = -1;
@@ -70,7 +70,6 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     )..repeat(reverse: true);
 
     _timerController.addListener(() {
-      setState(() {});
       _checkTickWarnings();
     });
 
@@ -89,6 +88,13 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   void dispose() {
     _timerController.dispose();
     _pulseController.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedOrbIndex.dispose();
+    _isFirstStagePassed.dispose();
+    _shuffledOptions.dispose();
+    _shuffledCorrectIndex.dispose();
     super.dispose();
   }
 
@@ -97,7 +103,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _checkTickWarnings() {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     // Warn when time is running out (less than 4 seconds remaining)
     final double elapsedRatio = _timerController.value;
@@ -122,53 +128,43 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _triggerTimeoutFailure() {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _stopTimer();
     _hapticService.error();
     _soundService.playWrong();
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = false;
-      _selectedOrbIndex = null;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = false;
+    _selectedOrbIndex.value = null;
 
     context.read<RoleplayBloc>().add(SubmitAnswer(false));
   }
 
   void _onOrbTap(int index, int correctIndex) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _stopTimer();
 
     final isCorrect = index == correctIndex;
-    setState(() {
-      _selectedOrbIndex = index;
-    });
+    _selectedOrbIndex.value = index;
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -190,22 +186,20 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedOrbIndex = null;
-              _isFirstStagePassed = false;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedOrbIndex.value = null;
+            _isFirstStagePassed.value = false;
 
-              if (state.currentQuest.options != null) {
-                final options = List<String>.from(state.currentQuest.options!);
-                final correctOption =
-                    options[state.currentQuest.correctAnswerIndex ?? 0];
-                options.shuffle();
-                _shuffledOptions = options;
-                _shuffledCorrectIndex = options.indexOf(correctOption);
-              }
-            });
+            if (state.currentQuest.options != null) {
+              final options = List<String>.from(state.currentQuest.options!);
+              final correctOption =
+                  options[state.currentQuest.correctAnswerIndex ?? 0];
+              options.shuffle();
+              _shuffledOptions.value = options;
+              _shuffledCorrectIndex.value = options.indexOf(correctOption);
+            }
             _startTimer();
             // Auto play dialogue context
             Future.delayed(const Duration(milliseconds: 300), () {
@@ -215,7 +209,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
         }
         if (state is RoleplayGameComplete) {
           _stopTimer();
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -234,12 +228,15 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedOrbIndex, _isFirstStagePassed, _shuffledOptions, _shuffledCorrectIndex]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -253,18 +250,16 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               SituationalResponseInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -278,17 +273,22 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                 onListen: () => _triggerAutoPlay(quest),
                               ),
                               SizedBox(height: isCompact ? 16.h : 24.h),
-                              SituationalResponseReactionZone(
-                                options: _shuffledOptions,
-                                correctIndex: _shuffledCorrectIndex,
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                timerValue: _timerController.value,
-                                pulseValue: _pulseController.value,
-                                isAnswered: _isAnswered || _isFirstStagePassed,
-                                isCorrect: _isCorrect,
-                                selectedOrbIndex: _selectedOrbIndex,
-                                onOrbTap: _onOrbTap,
+                              AnimatedBuilder(
+                                animation: Listenable.merge([_timerController, _pulseController]),
+                                builder: (context, _) {
+                                  return SituationalResponseReactionZone(
+                                    options: _shuffledOptions.value,
+                                    correctIndex: _shuffledCorrectIndex.value,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    timerValue: _timerController.value,
+                                    pulseValue: _pulseController.value,
+                                    isAnswered: _isAnswered.value || _isFirstStagePassed.value,
+                                    isCorrect: _isCorrect.value,
+                                    selectedOrbIndex: _selectedOrbIndex.value,
+                                    onOrbTap: _onOrbTap,
+                                  );
+                                },
                               ),
                               SizedBox(height: isCompact ? 12.h : 20.h),
 
@@ -299,14 +299,14 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                     SituationalResponseExplanationPanel(
                                       quest: quest,
                                       isDark: isDark,
-                                      isCorrect: _isCorrect,
+                                      isCorrect: _isCorrect.value,
                                     ),
-                                crossFadeState: _isAnswered
+                                crossFadeState: _isAnswered.value
                                     ? CrossFadeState.showSecond
                                     : CrossFadeState.showFirst,
                                 duration: const Duration(milliseconds: 450),
                               ),
-                              if (_isAnswered) ...[
+                              if (_isAnswered.value) ...[
                                 SizedBox(height: isCompact ? 12.h : 20.h),
                                 SituationalResponseFormalityGauge(
                                   quest: quest,
@@ -320,10 +320,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed && !_isAnswered && _selectedOrbIndex != null)
+                                  if (_isFirstStagePassed.value && !_isAnswered.value && _selectedOrbIndex.value != null)
                                     SpeakToConfirmOverlay(
-                                      expectedText: _shuffledOptions[_selectedOrbIndex!],
+                                      expectedText: _shuffledOptions.value[_selectedOrbIndex.value!],
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {
@@ -334,7 +333,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -342,7 +341,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }
