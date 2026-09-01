@@ -39,15 +39,15 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   int _lastProcessedIndex = -1;
   int _lastLives = 3;
   AccentQuest? _lastQuest;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
   List<String> _shuffledOptions = [];
   int _shuffledCorrectIndex = 0;
 
-  int? _selectedIndex;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
   Timer? _resetTimer;
 
   @override
@@ -60,6 +60,11 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
 
   @override
   void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _isFirstStagePassed.dispose();
     _resetTimer?.cancel();
     super.dispose();
   }
@@ -70,37 +75,29 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _selectedIndex.value = index;
 
     final bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -125,7 +122,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
             _resetTimer?.cancel();
 
             final quest = state.currentQuest;
@@ -143,14 +140,12 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
             );
             if (_shuffledCorrectIndex == -1) _shuffledCorrectIndex = 0;
 
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
 
-              _selectedIndex = null;
-              _isFirstStagePassed = false;
-            });
+            _selectedIndex.value = null;
+            _isFirstStagePassed.value = false;
             // Proactively auto-play sound on question load
             if (quest.textToSpeak != null) {
               Future.delayed(500.milliseconds, () {
@@ -163,7 +158,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
           _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -186,12 +181,15 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _isFirstStagePassed]),
+            builder: (context, _) {
+              return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+            isAnswered: _isAnswered.value,
+            isCorrect: _isCorrect.value,
+            showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
@@ -235,8 +233,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                           return CustomScrollView(
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-                              SliverFillRemaining(
-                                hasScrollBody: false,
+                              SliverToBoxAdapter(
                                 child: Column(
                                   children: [
                                     Expanded(
@@ -253,7 +250,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                                 SizedBox(height: gapTop),
                                                 ConnectedSpeechInstruction(
                                                   primaryColor: theme.primaryColor,
-                                                  instruction: _isFirstStagePassed
+                                                  instruction: _isFirstStagePassed.value
                                                       ? "Great job! Now confirm by speaking the phrase."
                                                       : context.tr(
                                                           'games.connected_speech_instruction',
@@ -268,7 +265,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                                   word: quest.word ?? "",
                                                   spokenForm: quest.spokenForm,
                                                   phenomenonType: quest.phenomenonType,
-                                                  isAnswered: _isFirstStagePassed || _isAnswered,
+                                                  isAnswered: _isFirstStagePassed.value || _isAnswered.value,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   isCompact: isCompact,
@@ -297,9 +294,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   isAnswered:
-                                                      _isAnswered ||
-                                                      _isFirstStagePassed,
-                                                  selectedIndex: _selectedIndex,
+                                                      _isAnswered.value ||
+                                                      _isFirstStagePassed.value,
+                                                  selectedIndex: _selectedIndex.value,
                                                   onSubmitChoice: _submitChoice,
                                                   isCompact: isCompact,
                                                 ),
@@ -310,7 +307,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                         ),
                                       ),
                                     ),
-                                    if (_isFirstStagePassed && !_isAnswered)
+                                    if (_isFirstStagePassed.value && !_isAnswered.value)
                                       ShadowPlaybackCompare(
                                         expectedText: quest.textToSpeak ?? quest.word ?? "",
                                         primaryColor: theme.primaryColor,
@@ -326,7 +323,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                         ),
                                       ),
                                     SizedBox(
-                                      height: (_isAnswered || _isFirstStagePassed) ? 120.h : 20.h,
+                                      height: (_isAnswered.value || _isFirstStagePassed.value) ? 120.h : 20.h,
                                     ),
                                   ],
                                 ),
@@ -335,6 +332,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                           );
                         },
                       ),
+              );
+            },
           ),
         );
       },
