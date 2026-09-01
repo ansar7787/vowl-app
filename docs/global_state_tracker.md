@@ -14,7 +14,7 @@ This tracker outlines the migration of the remaining Flutter modules from legacy
 
 ## Phase 3: Home & Leaderboard
 - [x] Home Widgets (`discovery_deck.dart`, `streak_boosters_shop.dart`, `bento_arena.dart`, `daily_motivation_card.dart`, `inline_notification_card.dart`, `mystery_chest_dialog.dart`, `vowlbot_auth_companion.dart`)
-- [ ] Home Pages (`vowl_mascot_screen.dart`, `quest_library_page.dart`, `category_games_page.dart`)
+- [x] Home Pages (`vowl_mascot_screen.dart`, `quest_library_page.dart`, `category_games_page.dart`)
 - [ ] Leaderboard (`leaderboard_screen.dart`)
 
 ## Phase 4: Kids Zone

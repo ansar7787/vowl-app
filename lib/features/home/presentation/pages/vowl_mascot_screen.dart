@@ -28,9 +28,9 @@ class VowlMascotScreen extends StatefulWidget {
 }
 
 class _VowlMascotScreenState extends State<VowlMascotScreen> {
-  int _activeTabIndex = 0;
+  final ValueNotifier<int> _activeTabIndex = ValueNotifier(0);
   late final HapticService _hapticService;
-  bool _isProcessing = false;
+  final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
 
   @override
   void initState() {
@@ -55,6 +55,13 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
       message: message,
       type: isSuccess ? CustomSnackBarType.success : CustomSnackBarType.error,
     );
+  }
+
+  @override
+  void dispose() {
+    _activeTabIndex.dispose();
+    _isProcessing.dispose();
+    super.dispose();
   }
 
   @override
@@ -132,49 +139,55 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         ],
                 ),
 
-                CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    _buildSliverAppBar(
-                      context,
-                      user,
-                      textColor,
-                      isDark,
-                      primaryColor,
-                    ),
+                ValueListenableBuilder<int>(
+                  valueListenable: _activeTabIndex,
+                  builder: (context, activeTabIndex, _) {
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        _buildSliverAppBar(
+                          context,
+                          user,
+                          textColor,
+                          isDark,
+                          primaryColor,
+                        ),
 
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 20.h),
-                        child: RepaintBoundary(
-                          child: _buildTabSwitcher(
-                            isDark,
-                            primaryColor,
-                            textColor,
+                        SliverToBoxAdapter(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20.h),
+                            child: RepaintBoundary(
+                              child: _buildTabSwitcher(
+                                isDark,
+                                primaryColor,
+                                textColor,
+                                activeTabIndex,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
 
-                    SliverPadding(
-                      padding: EdgeInsets.only(bottom: 100.h),
-                      sliver: _activeTabIndex == 0
-                          ? _buildSelectionSliver(
-                              context,
-                              user,
-                              isDark,
-                              primaryColor,
-                              textColor,
-                            )
-                          : _buildBoutiqueSliver(
-                              context,
-                              user,
-                              isDark,
-                              primaryColor,
-                              textColor,
-                            ),
-                    ),
-                  ],
+                        SliverPadding(
+                          padding: EdgeInsets.only(bottom: 100.h),
+                          sliver: activeTabIndex == 0
+                              ? _buildSelectionSliver(
+                                  context,
+                                  user,
+                                  isDark,
+                                  primaryColor,
+                                  textColor,
+                                )
+                              : _buildBoutiqueSliver(
+                                  context,
+                                  user,
+                                  isDark,
+                                  primaryColor,
+                                  textColor,
+                                ),
+                        ),
+                      ],
+                    );
+                  }
                 ),
 
                 _buildEliteStatusOverlay(context, primaryColor, isDark),
@@ -396,7 +409,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     );
   }
 
-  Widget _buildTabSwitcher(bool isDark, Color primaryColor, Color textColor) {
+  Widget _buildTabSwitcher(bool isDark, Color primaryColor, Color textColor, int activeTabIndex) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: GlassTile(
@@ -408,11 +421,13 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               0,
               context.tr('vowl_mascot.tab_companion', fallback: 'Companion'),
               primaryColor,
+              activeTabIndex,
             ),
             _buildTabItem(
               1,
               context.tr('vowl_mascot.tab_boutique', fallback: 'Boutique'),
               primaryColor,
+              activeTabIndex,
             ),
           ],
         ),
@@ -420,8 +435,8 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     );
   }
 
-  Widget _buildTabItem(int index, String label, Color primaryColor) {
-    final isSelected = _activeTabIndex == index;
+  Widget _buildTabItem(int index, String label, Color primaryColor, int activeTabIndex) {
+    final isSelected = activeTabIndex == index;
     return Expanded(
       child: Semantics(
         button: true,
@@ -433,9 +448,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
             // A TabController used to mirror this index but never drove any
             // TabBarView/TabBar — it was dead weight. The local index alone
             // is the single source of truth for which sliver renders below.
-            setState(() {
-              _activeTabIndex = index;
-            });
+            _activeTabIndex.value = index;
           },
           behavior: HitTestBehavior.opaque,
           child: ExcludeSemantics(
@@ -657,10 +670,11 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
       selected: isSelected,
       label: '${name.toUpperCase()}, $statusLabel',
       child: ScaleButton(
-        onTap: _isProcessing || isSelected
+        onTap: isSelected
             ? null
             : () async {
-                setState(() => _isProcessing = true);
+                if (_isProcessing.value) return;
+                _isProcessing.value = true;
                 if (isOwned) {
                   _hapticService.light();
                   context.read<ProfileBloc>().add(
@@ -678,7 +692,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                   }
                 }
                 await Future.delayed(const Duration(milliseconds: 1000));
-                if (mounted) setState(() => _isProcessing = false);
+                if (mounted) _isProcessing.value = false;
               },
         child: ExcludeSemantics(
           child: GlassTile(
@@ -1040,10 +1054,9 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                             ? Colors.redAccent.withValues(alpha: 0.2)
                             : primaryColor.withValues(alpha: 0.15),
                         textColor: isEquipped ? Colors.redAccent : primaryColor,
-                        onTap: _isProcessing
-                            ? null
-                            : () async {
-                                setState(() => _isProcessing = true);
+                        onTap: () async {
+                                if (_isProcessing.value) return;
+                                _isProcessing.value = true;
                                 _hapticService.selection();
                                 context.read<ProfileBloc>().add(
                                   ProfileEquipVowlAccessoryRequested(
@@ -1053,9 +1066,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                 await Future.delayed(
                                   const Duration(milliseconds: 1000),
                                 );
-                                if (mounted) {
-                                  setState(() => _isProcessing = false);
-                                }
+                                  _isProcessing.value = false;
                               },
                         primaryColor: primaryColor,
                       )
@@ -1065,11 +1076,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                             ? primaryColor.withValues(alpha: 0.1)
                             : Colors.grey.withValues(alpha: 0.1),
                         textColor: canAfford ? primaryColor : Colors.grey,
-                        onTap: _isProcessing
-                            ? null
-                            : () async {
+                        onTap: () async {
+                                if (_isProcessing.value) return;
                                 if (canAfford) {
-                                  setState(() => _isProcessing = true);
+                                  _isProcessing.value = true;
                                   _hapticService.selection();
                                   context.read<ProfileBloc>().add(
                                     ProfileBuyVowlAccessoryRequested(id, price),
@@ -1077,9 +1087,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                   await Future.delayed(
                                     const Duration(milliseconds: 1500),
                                   );
-                                  if (mounted) {
-                                    setState(() => _isProcessing = false);
-                                  }
+                                    _isProcessing.value = false;
                                 } else {
                                   _hapticService.error();
                                   _showModernSnackbar(
