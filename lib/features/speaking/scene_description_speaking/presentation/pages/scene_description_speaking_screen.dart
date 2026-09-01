@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,11 +40,11 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final Set<int> _inspectedHotspots = {};
-  int _activeHotspot = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<Set<int>> _inspectedHotspots = ValueNotifier({});
+  final ValueNotifier<int> _activeHotspot = ValueNotifier(-1);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -71,6 +71,11 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   @override
   void dispose() {
     _radarController.dispose();
+    _inspectedHotspots.dispose();
+    _activeHotspot.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
     super.dispose();
   }
 
@@ -82,30 +87,24 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   }
 
   void _onHotspotTap(int index) {
-    if (_isAnswered || _inspectedHotspots.contains(index)) return;
+    if (_isAnswered.value || _inspectedHotspots.value.contains(index)) return;
     _hapticService.selection();
     _soundService.playTts(_hotspotLabels[index]);
-    setState(() {
-      _activeHotspot = index;
-    });
+    _activeHotspot.value = index;
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered || _activeHotspot == -1) return;
+    if (_isAnswered.value || _activeHotspot.value == -1) return;
 
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _inspectedHotspots.add(_activeHotspot);
-        _activeHotspot = -1;
-      });
+      _inspectedHotspots.value = Set.from(_inspectedHotspots.value)..add(_activeHotspot.value);
+      _activeHotspot.value = -1;
 
-      if (_inspectedHotspots.length >= 3) {
-        setState(() {
-          _isAnswered = true;
-          _isCorrect = true;
-        });
+      if (_inspectedHotspots.value.length >= 3) {
+        _isAnswered.value = true;
+        _isCorrect.value = true;
         context.read<SpeakingBloc>().add(const SubmitAnswer(true));
       }
     } else {
@@ -117,28 +116,24 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: _hotspotPrompts[_activeHotspot],
+          question: _hotspotPrompts[_activeHotspot.value],
           userAnswer: '[Failed Self-Evaluation]',
-          correctAnswer: _hotspotPrompts[_activeHotspot],
+          correctAnswer: _hotspotPrompts[_activeHotspot.value],
           level: widget.level,
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-      _inspectedHotspots.addAll([0, 1, 2]);
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
+    _inspectedHotspots.value = Set.from(_inspectedHotspots.value)..addAll([0, 1, 2]);
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -179,31 +174,27 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _inspectedHotspots.clear();
-              _activeHotspot = -1;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _inspectedHotspots.value = {};
+            _activeHotspot.value = -1;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -224,13 +215,16 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _activeHotspot, _inspectedHotspots]),
+            builder: (context, _) {
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -256,8 +250,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                               SizedBox(height: 24.h),
                               SceneDescriptionScenicRadarMap(
                                 sceneTitle: _sceneTitle,
-                                inspectedHotspots: _inspectedHotspots,
-                                activeHotspot: _activeHotspot,
+                                inspectedHotspots: _inspectedHotspots.value,
+                                activeHotspot: _activeHotspot.value,
                                 hotspotLabels: _hotspotLabels,
                                 radarController: _radarController,
                                 primaryColor: theme.primaryColor,
@@ -267,11 +261,11 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                               SizedBox(height: 32.h),
                               AnimatedSwitcher(
                                 duration: const Duration(milliseconds: 300),
-                                child: _activeHotspot != -1
+                                child: _activeHotspot.value != -1
                                     ? SceneDescriptionActivePromptCard(
-                                        activeHotspot: _activeHotspot,
+                                        activeHotspot: _activeHotspot.value,
                                         activePrompt:
-                                            _hotspotPrompts[_activeHotspot],
+                                            _hotspotPrompts[_activeHotspot.value],
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
                                       )
@@ -323,8 +317,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -333,9 +326,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered && _activeHotspot != -1)
+                              if (!_isAnswered.value && _activeHotspot.value != -1)
                                 SpeakingSelfEvaluationControls(
-                                  expectedText: _hotspotPrompts[_activeHotspot],
+                                  expectedText: _hotspotPrompts[_activeHotspot.value],
                                   primaryColor: theme.primaryColor,
                                   isDark: isDark,
                                   onConfirmed: () =>
@@ -349,6 +342,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                       ),
                     ],
                   ),
+              );
+            },
           ),
         );
       },
