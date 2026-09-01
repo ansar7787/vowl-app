@@ -42,11 +42,11 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   late AnimationController _pulseController;
 
   int _lastProcessedIndex = -1;
-  final List<String> _selectedItems = [];
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<List<String>> _selectedItems = ValueNotifier([]);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   @override
   void initState() {
@@ -69,6 +69,11 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   void dispose() {
     _steamController.dispose();
     _pulseController.dispose();
+    _selectedItems.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
     super.dispose();
   }
 
@@ -82,34 +87,32 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _onItemTapped(String item) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _hapticService.selection();
     _soundService.playHint(); // Play synth note
-    setState(() {
-      if (_selectedItems.contains(item)) {
-        _selectedItems.remove(item);
-      } else {
-        _selectedItems.add(item);
-      }
-    });
+    final current = List<String>.from(_selectedItems.value);
+    if (current.contains(item)) {
+      current.remove(item);
+    } else {
+      current.add(item);
+    }
+    _selectedItems.value = current;
   }
 
   void _clearItems() {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _hapticService.selection();
-    setState(() {
-      _selectedItems.clear();
-    });
+    _selectedItems.value = [];
   }
 
   void _submitAnswer(String correctAnswer) {
-    if (_isAnswered || _isFirstStagePassed || _selectedItems.isEmpty) return;
+    if (_isAnswered.value || _isFirstStagePassed.value || _selectedItems.value.isEmpty) return;
 
     final targets = correctAnswer
         .split(',')
         .map((e) => e.trim().toLowerCase())
         .toList();
-    final current = _selectedItems.map((e) => e.trim().toLowerCase()).toList();
+    final current = _selectedItems.value.map((e) => e.trim().toLowerCase()).toList();
 
     bool isCorrect =
         targets.length == current.length &&
@@ -117,28 +120,22 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -160,20 +157,18 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedItems.clear();
-              _isFirstStagePassed = false;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedItems.value = [];
+            _isFirstStagePassed.value = false;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -188,12 +183,15 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
         final options = quest?.options ?? [];
         final prices = quest?.menuPrices ?? [];
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedItems, _isFirstStagePassed]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -207,18 +205,16 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               GourmetOrderInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -235,9 +231,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                               GourmetOrderTableSetting(
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                isAnswered: _isAnswered,
-                                isCorrect: _isCorrect,
-                                selectedItems: _selectedItems,
+                                isAnswered: _isAnswered.value,
+                                isCorrect: _isCorrect.value,
+                                selectedItems: _selectedItems.value,
                                 steamAnimation: _steamController,
                                 onItemTapped: _onItemTapped,
                                 onHapticFeedback: _hapticService.selection,
@@ -250,9 +246,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                 prices: prices,
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                isAnswered: _isAnswered,
-                                isCorrect: _isCorrect,
-                                selectedItems: _selectedItems,
+                                isAnswered: _isAnswered.value,
+                                isCorrect: _isCorrect.value,
+                                selectedItems: _selectedItems.value,
                                 onItemTapped: _onItemTapped,
                                 onDragStarted: () {
                                   _hapticService.selection();
@@ -262,7 +258,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                               SizedBox(height: isCompact ? 20.h : 28.h),
 
                               // Trigger Action Buttons
-                              if (!_isAnswered && _selectedItems.isNotEmpty)
+                              if (!_isAnswered.value && _selectedItems.value.isNotEmpty)
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -370,10 +366,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed && !_isAnswered)
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
                                     SpeakToConfirmOverlay(
-                                      expectedText: quest.correctAnswer ?? _selectedItems.join(', '),
+                                      expectedText: quest.correctAnswer ?? _selectedItems.value.join(', '),
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {
@@ -384,7 +379,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -392,7 +387,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }

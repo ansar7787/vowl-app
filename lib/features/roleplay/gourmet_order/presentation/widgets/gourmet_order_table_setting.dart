@@ -31,7 +31,13 @@ class GourmetOrderTableSetting extends StatefulWidget {
 }
 
 class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
-  bool _isHoveringPlatter = false;
+  final ValueNotifier<bool> _isHoveringPlatter = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isHoveringPlatter.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,22 +52,24 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
       onWillAcceptWithDetails: (data) => !widget.isAnswered,
       onAcceptWithDetails: (details) {
         widget.onItemTapped(details.data);
-        setState(() => _isHoveringPlatter = false);
+        _isHoveringPlatter.value = false;
       },
       onMove: (details) {
-        if (!_isHoveringPlatter) {
+        if (!_isHoveringPlatter.value) {
           widget.onHapticFeedback();
-          setState(() => _isHoveringPlatter = true);
+          _isHoveringPlatter.value = true;
         }
       },
       onLeave: (data) {
-        setState(() => _isHoveringPlatter = false);
+        _isHoveringPlatter.value = false;
       },
       builder: (context, candidateData, rejectedData) {
-        final bool isActiveGlow =
-            _isHoveringPlatter || widget.selectedItems.isNotEmpty;
+        return ValueListenableBuilder<bool>(
+          valueListenable: _isHoveringPlatter,
+          builder: (context, isHovering, _) {
+            final bool isActiveGlow = isHovering || widget.selectedItems.isNotEmpty;
 
-        return AnimatedContainer(
+            return AnimatedContainer(
               duration: const Duration(milliseconds: 250),
               width: 210.r,
               height: 210.r,
@@ -170,6 +178,8 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
               duration: 2.2.seconds,
               curve: Curves.easeInOut,
             );
+          },
+        );
       },
     );
   }
