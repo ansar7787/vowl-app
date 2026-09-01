@@ -39,12 +39,12 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   int _lastProcessedIndex = -1;
   int _lastLives = AccentGameConstants.maxLives;
   AccentQuest? _lastQuest;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  int? _selectedDroneIndex;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedDroneIndex = ValueNotifier(null);
 
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   String? _shuffledQuestId;
   List<Map<String, String>> _currentOptions = [];
@@ -87,16 +87,19 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
 
   @override
   void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedDroneIndex.dispose();
+    _isFirstStagePassed.dispose();
     super.dispose();
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -115,27 +118,21 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   }
 
   void _onShoot(int index, int correctIndex) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     final bool correct = index == correctIndex;
-    setState(() {
-      _selectedDroneIndex = index;
-    });
+    _selectedDroneIndex.value = index;
 
     if (correct) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Do NOT submit yet! Wait for Phase 2.
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -152,14 +149,12 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedDroneIndex = null;
-              _isFirstStagePassed = false;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedDroneIndex.value = null;
+            _isFirstStagePassed.value = false;
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
             if (quest != null && quest.textToSpeak != null) {
@@ -173,7 +168,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -188,18 +183,21 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
 
-        if (quest != null && !_isAnswered) {
+        if (quest != null && !_isAnswered.value) {
           _ensureOptionsShuffled(quest);
         }
 
 
 
-        return AccentBaseLayout(
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedDroneIndex, _isFirstStagePassed]),
+          builder: (context, _) {
+            return AccentBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+          isAnswered: _isAnswered.value,
+          isCorrect: _isCorrect.value,
+          showConfetti: _showConfetti.value,
           onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
           onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
           useScrolling: false,
@@ -210,8 +208,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                     return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: LayoutBuilder(
                         builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
@@ -260,7 +257,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                           SizedBox(height: gapTop),
                                           MinimalPairsInstruction(
                                             color: theme.primaryColor,
-                                            instruction: _isFirstStagePassed
+                                            instruction: _isFirstStagePassed.value
                                                 ? "Great job! Now confirm by speaking the word."
                                                 : context.tr(
                                                     'games.minimal_pairs_instruction',
@@ -315,10 +312,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                                 .primaryColor,
                                                             isDark: isDark,
                                                             isAnswered:
-                                                                _isAnswered ||
-                                                                _isFirstStagePassed,
+                                                                _isAnswered.value ||
+                                                                _isFirstStagePassed.value,
                                                             selectedDroneIndex:
-                                                                _selectedDroneIndex,
+                                                                _selectedDroneIndex.value,
                                                             onShoot: _onShoot,
                                                           ),
                                                           MinimalPairsDroneOption(
@@ -345,10 +342,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                                 .primaryColor,
                                                             isDark: isDark,
                                                             isAnswered:
-                                                                _isAnswered ||
-                                                                _isFirstStagePassed,
+                                                                _isAnswered.value ||
+                                                                _isFirstStagePassed.value,
                                                             selectedDroneIndex:
-                                                                _selectedDroneIndex,
+                                                                _selectedDroneIndex.value,
                                                             onShoot: _onShoot,
                                                           ),
                                                         ],
@@ -382,10 +379,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered ||
-                                                          _isFirstStagePassed,
+                                                          _isAnswered.value ||
+                                                          _isFirstStagePassed.value,
                                                       selectedDroneIndex:
-                                                          _selectedDroneIndex,
+                                                          _selectedDroneIndex.value,
                                                       onShoot: _onShoot,
                                                     ),
                                                     MinimalPairsDroneOption(
@@ -409,10 +406,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered ||
-                                                          _isFirstStagePassed,
+                                                          _isAnswered.value ||
+                                                          _isFirstStagePassed.value,
                                                       selectedDroneIndex:
-                                                          _selectedDroneIndex,
+                                                          _selectedDroneIndex.value,
                                                       onShoot: _onShoot,
                                                     ),
                                                   ],
@@ -424,7 +421,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                             SizedBox(height: gapBottom),
                                           ],
                                         ),
-                                        if (_isFirstStagePassed && quest.mouthPosition != null) ...[
+                                        if (_isFirstStagePassed.value && quest.mouthPosition != null) ...[
                                           MinimalPairsMouthDiagram(
                                             mouthPosition: quest.mouthPosition,
                                             color: theme.primaryColor,
@@ -436,7 +433,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                   ),
                                 ),
                               ),
-                                if (_isFirstStagePassed && !_isAnswered)
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
                                   ShadowPlaybackCompare(
                                     expectedText: _currentOptions.isNotEmpty
                                         ? _currentOptions[_currentCorrectIndex]['word']!
@@ -456,7 +453,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                       false,
                                     ),
                                   ),
-                                SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 380.h : 20.h),
+                                SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 380.h : 20.h),
                             ],
                           );
                         },
@@ -466,6 +463,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                 );
                   },
                 ),
+            );
+          },
         );
       },
     );
