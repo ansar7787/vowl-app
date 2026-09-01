@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,15 +38,15 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _bloomProgress = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _bloomProgress = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
   late AnimationController _swingController;
-  double _timeVal = 0.0;
+  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
 
   List<String> _acceptedSyns = [];
 
@@ -60,9 +60,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     _swingController =
         AnimationController(vsync: this, duration: const Duration(seconds: 8))
           ..addListener(() {
-            setState(() {
-              _timeVal = _swingController.value;
-            });
+            _timeVal.value = _swingController.value;
           });
     _swingController.repeat();
   }
@@ -70,6 +68,11 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   @override
   void dispose() {
     _swingController.dispose();
+    _bloomProgress.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _timeVal.dispose();
     super.dispose();
   }
 
@@ -81,13 +84,11 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-      _bloomProgress = nailedIt ? 1.0 : 0.0;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
+    _bloomProgress.value = nailedIt ? 1.0 : 0.0;
 
     if (nailedIt) {
       _hapticService.success();
@@ -115,11 +116,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-      _bloomProgress = 1.0;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
+    _bloomProgress.value = 1.0;
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -139,30 +138,26 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _bloomProgress = 0.0;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _bloomProgress.value = 0.0;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -190,13 +185,16 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _bloomProgress, _timeVal]),
+            builder: (context, _) {
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -230,18 +228,17 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                               ),
                               SizedBox(height: 32.h),
                               SpeakSynonymGardenPanel(
-                                bloomProgress: _bloomProgress,
+                                bloomProgress: _bloomProgress.value,
                                 primaryColor: theme.primaryColor,
                                 isListening: false,
-                                timeVal: _timeVal,
+                                timeVal: _timeVal.value,
                                 isDark: isDark,
                               ),
                             ],
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -250,7 +247,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered)
+                              if (!_isAnswered.value)
                                 ShadowPlaybackCompare(
                                   expectedText: expectedText,
                                   primaryColor: theme.primaryColor,
@@ -265,6 +262,8 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                       ),
                     ],
                   ),
+              );
+            },
           ),
         );
       },
