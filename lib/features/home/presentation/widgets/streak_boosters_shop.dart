@@ -25,7 +25,13 @@ class StreakBoostersShop extends StatefulWidget {
 }
 
 class _StreakBoostersShopState extends State<StreakBoostersShop> {
-  bool _isProcessing = false;
+  final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isProcessing.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -237,7 +243,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     required int currentCoins,
     required VoidCallback action,
   }) async {
-    if (_isProcessing) return;
+    if (_isProcessing.value) return;
 
     if (currentCoins < cost) {
       try {
@@ -259,7 +265,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
       return;
     }
 
-    setState(() => _isProcessing = true);
+    _isProcessing.value = true;
     try {
       Haptics.vibrate(HapticsType.heavy);
     } catch (e) {
@@ -280,7 +286,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     }
 
     await Future.delayed(const Duration(milliseconds: 1500));
-    if (mounted) setState(() => _isProcessing = false);
+    if (mounted) _isProcessing.value = false;
   }
 
   Widget _buildShopItem(

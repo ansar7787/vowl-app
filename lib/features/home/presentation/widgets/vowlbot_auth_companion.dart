@@ -30,64 +30,15 @@ class VowlBotAuthCompanion extends StatefulWidget {
 }
 
 class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
-  String _currentAsset = VowlAssets.vowlbotNeutral;
-
   @override
   void initState() {
     super.initState();
-    widget.nameFocus?.addListener(_onFocusChange);
-    widget.emailFocus?.addListener(_onFocusChange);
-    widget.passwordFocus?.addListener(_onFocusChange);
-
-    // Pre-cache all mascot emotions to prevent flickers on first use
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       precacheImage(const AssetImage(VowlAssets.vowlbotHappy), context);
       precacheImage(const AssetImage(VowlAssets.vowlbotNeutral), context);
       precacheImage(const AssetImage(VowlAssets.vowlbotThinking), context);
       precacheImage(const AssetImage(VowlAssets.vowlbotWorried), context);
-    });
-  }
-
-  @override
-  void dispose() {
-    widget.nameFocus?.removeListener(_onFocusChange);
-    widget.emailFocus?.removeListener(_onFocusChange);
-    widget.passwordFocus?.removeListener(_onFocusChange);
-    super.dispose();
-  }
-
-  @override
-  void didUpdateWidget(VowlBotAuthCompanion oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.nameFocus != widget.nameFocus) {
-      oldWidget.nameFocus?.removeListener(_onFocusChange);
-      widget.nameFocus?.addListener(_onFocusChange);
-    }
-    if (oldWidget.emailFocus != widget.emailFocus) {
-      oldWidget.emailFocus?.removeListener(_onFocusChange);
-      widget.emailFocus?.addListener(_onFocusChange);
-    }
-    if (oldWidget.passwordFocus != widget.passwordFocus) {
-      oldWidget.passwordFocus?.removeListener(_onFocusChange);
-      widget.passwordFocus?.addListener(_onFocusChange);
-    }
-    if (oldWidget.nameValue != widget.nameValue) {
-      setState(() {});
-    }
-  }
-
-  void _onFocusChange() {
-    setState(() {
-      if (widget.passwordFocus?.hasFocus ?? false) {
-        _currentAsset = VowlAssets.vowlbotWorried;
-      } else if (widget.emailFocus?.hasFocus ?? false) {
-        _currentAsset = VowlAssets.vowlbotThinking;
-      } else if (widget.nameFocus?.hasFocus ?? false) {
-        _currentAsset = VowlAssets.vowlbotHappy;
-      } else {
-        _currentAsset = VowlAssets.vowlbotNeutral;
-      }
     });
   }
 
@@ -141,6 +92,30 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
 
   @override
   Widget build(BuildContext context) {
+    final listenables = [
+      if (widget.nameFocus != null) widget.nameFocus!,
+      if (widget.emailFocus != null) widget.emailFocus!,
+      if (widget.passwordFocus != null) widget.passwordFocus!,
+    ];
+
+    return listenables.isEmpty 
+        ? _buildContent(context) 
+        : ListenableBuilder(
+            listenable: Listenable.merge(listenables),
+            builder: (context, _) => _buildContent(context),
+          );
+  }
+
+  Widget _buildContent(BuildContext context) {
+    String currentAsset = VowlAssets.vowlbotNeutral;
+    if (widget.passwordFocus?.hasFocus ?? false) {
+      currentAsset = VowlAssets.vowlbotWorried;
+    } else if (widget.emailFocus?.hasFocus ?? false) {
+      currentAsset = VowlAssets.vowlbotThinking;
+    } else if (widget.nameFocus?.hasFocus ?? false) {
+      currentAsset = VowlAssets.vowlbotHappy;
+    }
+
     final isFocused =
         (widget.nameFocus?.hasFocus ?? false) ||
         (widget.emailFocus?.hasFocus ?? false) ||
@@ -179,7 +154,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
               fallback: 'Vowl companion',
             ),
             image: true,
-            child: Image.asset(_currentAsset, height: widget.size.r),
+            child: Image.asset(currentAsset, height: widget.size.r),
           ),
 
           // 2. Adaptive Speech Bubble (Floating & Expanding)

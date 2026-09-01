@@ -19,6 +19,8 @@ class MysteryChestDialog extends StatefulWidget {
 class _MysteryChestDialogState extends State<MysteryChestDialog> {
   late ConfettiController _confettiController;
   Timer? _autoCloseTimer;
+  final ValueNotifier<bool> _opened = ValueNotifier(false);
+  final ValueNotifier<bool> _animating = ValueNotifier(false);
   bool _chestOpened = false;
   bool _confettiPlayed = false;
   int _rewardAmount = 0;
@@ -110,19 +112,24 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
   Widget build(BuildContext context) {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
-    return Material(
-      color: Colors.transparent,
-      child: MysteryChestOverlay(
-        isOpened: _chestOpened,
-        isPremium: isPremium,
-        rewardAmount: _rewardAmount,
-        onOpen: _openChest,
-        onClose: () {
-          _autoCloseTimer?.cancel();
-          Navigator.of(context).pop();
-        },
-        confettiController: _confettiController,
-      ),
+    return ListenableBuilder(
+      listenable: Listenable.merge([_opened, _animating]),
+      builder: (context, _) {
+        return Material(
+          color: Colors.transparent,
+          child: MysteryChestOverlay(
+            isOpened: _chestOpened,
+            isPremium: isPremium,
+            rewardAmount: _rewardAmount,
+            onOpen: _openChest,
+            onClose: () {
+              _autoCloseTimer?.cancel();
+              Navigator.of(context).pop();
+            },
+            confettiController: _confettiController,
+          ),
+        );
+      }
     );
   }
 }

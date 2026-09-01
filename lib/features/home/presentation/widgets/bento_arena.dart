@@ -32,12 +32,12 @@ class BentoArena extends StatefulWidget {
 }
 
 class _BentoArenaState extends State<BentoArena> {
-  late bool _isExpanded;
+  late final ValueNotifier<bool> _isExpanded;
 
   @override
   void initState() {
     super.initState();
-    _isExpanded = !widget.collapsed;
+    _isExpanded = ValueNotifier(!widget.collapsed);
   }
 
   /// Returns the indices of the 3 categories to show in collapsed mode:
@@ -60,6 +60,12 @@ class _BentoArenaState extends State<BentoArena> {
   }
 
   @override
+  void dispose() {
+    _isExpanded.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
@@ -67,7 +73,7 @@ class _BentoArenaState extends State<BentoArena> {
 
     // Determine which steps to render
     final collapsedIndices = _getCollapsedIndices();
-    final visibleSteps = _isExpanded
+    final visibleSteps = _isExpanded.value
         ? List.generate(allSteps.length, (i) => i)
         : collapsedIndices;
 
@@ -128,7 +134,7 @@ class _BentoArenaState extends State<BentoArena> {
           SizedBox(height: 16.h),
           Center(
             child: ScaleButton(
-              onTap: () => setState(() => _isExpanded = !_isExpanded),
+              onTap: () => _isExpanded.value = !_isExpanded.value,
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeInOut,
@@ -144,7 +150,7 @@ class _BentoArenaState extends State<BentoArena> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      _isExpanded
+                      _isExpanded.value
                           ? context.tr(
                               'home.show_less',
                               fallback: 'Show Less',
@@ -163,7 +169,7 @@ class _BentoArenaState extends State<BentoArena> {
                     ),
                     SizedBox(width: 8.w),
                     AnimatedRotation(
-                      turns: _isExpanded ? 0.5 : 0,
+                      turns: _isExpanded.value ? 0.5 : 0,
                       duration: const Duration(milliseconds: 300),
                       child: Icon(
                         Icons.keyboard_arrow_down_rounded,

@@ -18,7 +18,7 @@ class InlineNotificationCard extends StatefulWidget {
 
 class _InlineNotificationCardState extends State<InlineNotificationCard>
     with SingleTickerProviderStateMixin {
-  bool _isVisible = false;
+  final ValueNotifier<bool> _isVisible = ValueNotifier(false);
   late AnimationController _animationController;
   late Animation<double> _scaleAnimation;
 
@@ -50,7 +50,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
           prefs.getBool('notifications_enabled') ?? true;
 
       if (isGranted || isDeniedForever || !appSettingsEnabled) {
-        setState(() => _isVisible = false);
+        _isVisible.value = false;
         return;
       }
 
@@ -66,12 +66,12 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
             .difference(lastDismissedDate)
             .inDays;
         if (daysDifference < 7) {
-          setState(() => _isVisible = false);
+          _isVisible.value = false;
           return;
         }
       }
 
-      setState(() => _isVisible = true);
+      _isVisible.value = true;
       _animationController.forward();
     } catch (e) {
       // Permission/preferences lookup failures should never crash the home
@@ -79,7 +79,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       if (kDebugMode) {
         debugPrint('InlineNotificationCard: permission check failed: $e');
       }
-      if (mounted) setState(() => _isVisible = false);
+      if (mounted) _isVisible.value = false;
     }
   }
 
@@ -91,7 +91,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
     if (status.isGranted) {
       di.sl<HapticService>().success();
       await _animationController.reverse();
-      if (mounted) setState(() => _isVisible = false);
+      if (mounted) _isVisible.value = false;
     } else {
       _dismissCard();
     }
@@ -113,7 +113,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
     if (mounted) {
       await _animationController.reverse();
-      if (mounted) setState(() => _isVisible = false);
+      if (mounted) _isVisible.value = false;
     }
   }
 
@@ -195,7 +195,10 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
   @override
   Widget build(BuildContext context) {
-    if (!_isVisible) return const SizedBox.shrink();
+    return ValueListenableBuilder<bool>(
+      valueListenable: _isVisible,
+      builder: (context, isVisible, _) {
+        if (!isVisible) return const SizedBox.shrink();
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final title = _getDynamicTitle();
@@ -433,6 +436,8 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
           ),
         ),
       ),
+    );
+      }
     );
   }
 }

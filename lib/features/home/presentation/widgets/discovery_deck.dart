@@ -23,7 +23,7 @@ class DiscoveryDeck extends StatefulWidget {
 
 class _DiscoveryDeckState extends State<DiscoveryDeck> {
   late PageController _pageController;
-  int _currentPage = 0;
+  final ValueNotifier<int> _currentPage = ValueNotifier(0);
 
   @override
   void initState() {
@@ -34,6 +34,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
   @override
   void dispose() {
     _pageController.dispose();
+    _currentPage.dispose();
     super.dispose();
   }
 
@@ -124,9 +125,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
               controller: _pageController,
               physics: const BouncingScrollPhysics(),
               onPageChanged: (int page) {
-                setState(() {
-                  _currentPage = page;
-                });
+                _currentPage.value = page;
               },
               itemCount: discoveryItems.length,
               itemBuilder: (context, index) {
@@ -137,9 +136,9 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                   builder: (context, child) {
                     double page;
                     try {
-                      page = _pageController.page ?? _currentPage.toDouble();
+                      page = _pageController.page ?? _currentPage.value.toDouble();
                     } catch (_) {
-                      page = _currentPage.toDouble();
+                      page = _currentPage.value.toDouble();
                     }
 
                     // Calculate how centered the card is (1.0 = center, 0.0 = far away)
@@ -170,23 +169,28 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
             ),
           ),
           SizedBox(height: 16.h),
-          Semantics(
-            label: context.tr(
-              'home.discovery_page_indicator',
-              fallback: 'Page',
-              args: [
-                (_currentPage + 1).toString(),
-                discoveryItems.length.toString(),
-              ],
-            ),
-            child: AnimatedPageIndicator(
-              itemCount: discoveryItems.length,
-              currentIndex: _currentPage,
-              itemColors: discoveryItems.map((e) => e.color).toList(),
-              activeWidth: 28.w,
-              inactiveWidth: 8.r,
-              height: 6.r,
-            ),
+          ValueListenableBuilder<int>(
+            valueListenable: _currentPage,
+            builder: (context, currentPage, _) {
+              return Semantics(
+                label: context.tr(
+                  'home.discovery_page_indicator',
+                  fallback: 'Page',
+                  args: [
+                    (currentPage + 1).toString(),
+                    discoveryItems.length.toString(),
+                  ],
+                ),
+                child: AnimatedPageIndicator(
+                  itemCount: discoveryItems.length,
+                  currentIndex: currentPage,
+                  itemColors: discoveryItems.map((e) => e.color).toList(),
+                  activeWidth: 28.w,
+                  inactiveWidth: 8.r,
+                  height: 6.r,
+                ),
+              );
+            }
           ),
         ],
       ),

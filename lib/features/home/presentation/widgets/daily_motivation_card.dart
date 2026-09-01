@@ -60,15 +60,15 @@ class DailyMotivationCard extends StatefulWidget {
 
 class _DailyMotivationCardState extends State<DailyMotivationCard>
     with SingleTickerProviderStateMixin {
-  String? _hootTitle;
-  String? _hootText;
-  _HootStatus _status = _HootStatus.loading;
+  final ValueNotifier<String?> _hootTitle = ValueNotifier(null);
+  final ValueNotifier<String?> _hootText = ValueNotifier(null);
+  final ValueNotifier<_HootStatus> _status = ValueNotifier(_HootStatus.loading);
 
   late final AnimationController _entranceController;
   late final Animation<double> _fadeIn;
   late final Animation<Offset> _slideIn;
 
-  bool _pressed = false;
+  final ValueNotifier<bool> _pressed = ValueNotifier(false);
 
   static const String _fallbackQuote =
       "Small steps today make fluent conversations tomorrow.";
@@ -95,6 +95,10 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
   @override
   void dispose() {
     _entranceController.dispose();
+    _hootTitle.dispose();
+    _hootText.dispose();
+    _status.dispose();
+    _pressed.dispose();
     super.dispose();
   }
 
@@ -156,11 +160,9 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
 
       if (!mounted) return;
       final bool foundNothing = title == null && text == null;
-      setState(() {
-        _hootTitle = title ?? _fallbackTitle;
-        _hootText = (text == null || text.isEmpty) ? _fallbackQuote : text;
-        _status = foundNothing ? _HootStatus.fallback : _HootStatus.ready;
-      });
+      _hootTitle.value = title ?? _fallbackTitle;
+      _hootText.value = (text == null || text.isEmpty) ? _fallbackQuote : text;
+      _status.value = foundNothing ? _HootStatus.fallback : _HootStatus.ready;
       _entranceController.forward();
     } catch (e, stack) {
       // Surfaced for debugging rather than swallowed silently — a
@@ -170,18 +172,16 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
         'DailyMotivationCard: failed to load hoot content: $e\n$stack',
       );
       if (!mounted) return;
-      setState(() {
-        _hootTitle = _fallbackTitle;
-        _hootText = _fallbackQuote;
-        _status = _HootStatus.fallback;
-      });
+      _hootTitle.value = _fallbackTitle;
+      _hootText.value = _fallbackQuote;
+      _status.value = _HootStatus.fallback;
       _entranceController.forward();
     }
   }
 
   void _handleNavigation() {
     HapticFeedback.lightImpact();
-    final title = _hootTitle?.toLowerCase() ?? '';
+    final title = _hootTitle.value?.toLowerCase() ?? '';
     String route = AppRouter.libraryRoute;
 
     if (title.contains('vocabulary') || title.contains('word')) {
@@ -207,7 +207,10 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    return ListenableBuilder(
+      listenable: Listenable.merge([_hootTitle, _hootText, _status, _pressed]),
+      builder: (context, _) {
+        final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final locale = Localizations.localeOf(context).toString();
     final now = DateTime.now();
@@ -302,7 +305,7 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            (_hootTitle ??
+                            (_hootTitle.value ??
                                     context.tr(
                                       'home.daily_wisdom',
                                       fallback: 'DAILY WISDOM',
@@ -344,7 +347,7 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                   ],
                 ),
                 SizedBox(height: 28.h),
-                _status == _HootStatus.loading
+                _status.value == _HootStatus.loading
                     ? _buildShimmerQuote(isDark)
                     : FadeTransition(
                         opacity: _fadeIn,
@@ -353,7 +356,7 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                           child: SizedBox(
                             width: double.infinity,
                             child: Text(
-                              "$_hootText",
+                              "${_hootText.value}",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 16.sp,
@@ -371,11 +374,11 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
                 SizedBox(height: 32.h),
                 GestureDetector(
                   onTap: _handleNavigation,
-                  onTapDown: (_) => setState(() => _pressed = true),
-                  onTapUp: (_) => setState(() => _pressed = false),
-                  onTapCancel: () => setState(() => _pressed = false),
+                  onTapDown: (_) => _pressed.value = true,
+                  onTapUp: (_) => _pressed.value = false,
+                  onTapCancel: () => _pressed.value = false,
                   child: AnimatedScale(
-                    scale: _pressed ? 0.96 : 1.0,
+                    scale: _pressed.value ? 0.96 : 1.0,
                     duration: const Duration(milliseconds: 120),
                     curve: Curves.easeOut,
                     child: Container(
@@ -444,8 +447,10 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       excludeSemantics: true,
       onTap: _handleNavigation,
       label:
-          '${_hootTitle ?? 'Daily Wisdom'}. ${_hootText ?? 'Loading...'}. ${widget.streakCount} day streak. Double tap to start next task.',
+          '${_hootTitle.value ?? 'Daily Wisdom'}. ${_hootText.value ?? 'Loading...'}. ${widget.streakCount} day streak. Double tap to start next task.',
       child: card,
+    );
+      }
     );
   }
 
