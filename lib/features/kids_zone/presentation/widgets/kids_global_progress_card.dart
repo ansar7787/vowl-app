@@ -221,29 +221,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              categoriesMastered > 0
-                                  ? context.tr('kids_zone.categories_mastered', fallback: '$categoriesMastered categories mastered!', args: ['$categoriesMastered'])
-                                  : context.tr('kids_zone.categories_exploring', fallback: 'Exploring $categoriesStarted of $_totalCategories categories', args: ['$categoriesStarted', '$_totalCategories']),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark
-                                    ? Colors.white54
-                                    : const Color(0xFF64748B),
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 4.h),
+
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.baseline,
                         textBaseline: TextBaseline.alphabetic,
