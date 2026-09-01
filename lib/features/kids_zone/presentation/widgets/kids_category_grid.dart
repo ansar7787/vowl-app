@@ -22,8 +22,8 @@ class KidsCategoryGrid extends StatefulWidget {
 }
 
 class _KidsCategoryGridState extends State<KidsCategoryGrid> {
-  bool _isCheckingModel = true;
-  bool _isModelDownloaded = false;
+  final ValueNotifier<bool> _isCheckingModel = ValueNotifier(true);
+  final ValueNotifier<bool> _isModelDownloaded = ValueNotifier(false);
 
   @override
   void initState() {
@@ -31,14 +31,19 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
     _checkModelStatus();
   }
 
+  @override
+  void dispose() {
+    _isCheckingModel.dispose();
+    _isModelDownloaded.dispose();
+    super.dispose();
+  }
+
   Future<void> _checkModelStatus() async {
     final service = di.sl<DigitalInkService>();
     final isDownloaded = await service.isModelDownloaded();
     if (mounted) {
-      setState(() {
-        _isModelDownloaded = isDownloaded;
-        _isCheckingModel = false;
-      });
+      _isModelDownloaded.value = isDownloaded;
+      _isCheckingModel.value = false;
     }
   }
 
@@ -56,10 +61,13 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
         delegate: SliverChildListDelegate(
           KidsGameHelper.allGames.map((game) {
             if (game.gameType == 'handwriting') {
-              return _buildCategoryCard(
-                context,
-                () async {
-                  if (!_isModelDownloaded) {
+              return ListenableBuilder(
+                listenable: Listenable.merge([_isCheckingModel, _isModelDownloaded]),
+                builder: (context, _) {
+                  return _buildCategoryCard(
+                    context,
+                    () async {
+                      if (!_isModelDownloaded.value) {
                     final networkInfo = di.sl<NetworkInfo>();
                     final isConnected = await networkInfo.isConnected;
                     if (!isConnected && context.mounted) {
@@ -95,9 +103,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                       return;
                     }
 
-                    setState(() {
-                      _isModelDownloaded = true;
-                    });
+                    _isModelDownloaded.value = true;
                   }
 
                   if (context.mounted) {
@@ -111,18 +117,18 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                   }
                 },
                 game.gridTitle,
-                _isCheckingModel
+                _isCheckingModel.value
                     ? context.tr('kids_zone.checking', fallback: 'Checking...')
-                    : (!_isModelDownloaded
+                    : (!_isModelDownloaded.value
                           ? context.tr('kids_zone.download_required', fallback: 'Download Required')
                           : game.subtitle),
                 game.color,
                 game.icon,
-                trailing: _isCheckingModel
+                trailing: _isCheckingModel.value
                     ? Icon(Icons.sync_rounded, color: game.color, size: 24.sp)
                           .animate(onPlay: (c) => c.repeat())
                           .rotate(duration: 1.5.seconds)
-                    : (!_isModelDownloaded
+                    : (!_isModelDownloaded.value
                           ? Icon(
                                   Icons.cloud_download_rounded,
                                   color: game.color,
@@ -135,6 +141,8 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                                   duration: 1.seconds,
                                 )
                           : null),
+                  );
+                },
               );
             }
 
@@ -247,7 +255,7 @@ class _DownloadModelDialog extends StatefulWidget {
 }
 
 class _DownloadModelDialogState extends State<_DownloadModelDialog> {
-  double _progress = 0.0;
+  final ValueNotifier<double> _progress = ValueNotifier(0.0);
   Timer? _timer;
 
   @override
@@ -263,13 +271,11 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
         timer.cancel();
         return;
       }
-      setState(() {
-        if (_progress < 0.85) {
-          _progress += 0.02; // Fast up to 85%
-        } else if (_progress < 0.95) {
-          _progress += 0.005; // Slow crawl to 95%
-        }
-      });
+      if (_progress.value < 0.85) {
+        _progress.value += 0.02; // Fast up to 85%
+      } else if (_progress.value < 0.95) {
+        _progress.value += 0.005; // Slow crawl to 95%
+      }
     });
   }
 
@@ -288,6 +294,7 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
   @override
   void dispose() {
     _timer?.cancel();
+    _progress.dispose();
     super.dispose();
   }
 
@@ -329,37 +336,46 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
               ),
             ),
             SizedBox(height: 32.h),
-            Container(
-              width: double.infinity,
-              height: 20.h,
-              decoration: BoxDecoration(
-                color: widget.primaryColor.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(10.r),
+              ValueListenableBuilder<double>(
+                valueListenable: _progress,
+                builder: (context, progressValue, _) {
+                  return Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 20.h,
+                        decoration: BoxDecoration(
+                          color: widget.primaryColor.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Stack(
+                          children: [
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 100),
+                              width: 250.w * progressValue,
+                              height: 20.h,
+                              decoration: BoxDecoration(
+                                color: widget.primaryColor,
+                                borderRadius: BorderRadius.circular(10.r),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 12.h),
+                      Text(
+                        "${(progressValue * 100).toInt()}%",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: widget.primaryColor,
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
-              child: Stack(
-                children: [
-                  AnimatedContainer(
-                    duration: const Duration(milliseconds: 100),
-                    width: 250.w * _progress,
-                    height: 20.h,
-                    decoration: BoxDecoration(
-                      color: widget.primaryColor,
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 12.h),
-            Text(
-              "${(_progress * 100).toInt()}%",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
-                color: widget.primaryColor,
-              ),
-            ),
           ],
         ),
       ),
