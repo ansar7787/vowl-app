@@ -704,7 +704,6 @@ class _SpeechBubbleClipper extends CustomClipper<Path> {
     
     final path = Path();
     if (isLeft) {
-      // Box
       path.moveTo(tailW + r, 0);
       path.lineTo(size.width - r, 0);
       path.arcToPoint(Offset(size.width, r), radius: Radius.circular(r));
@@ -712,25 +711,18 @@ class _SpeechBubbleClipper extends CustomClipper<Path> {
       path.arcToPoint(Offset(size.width - r, size.height), radius: Radius.circular(r));
       path.lineTo(tailW + r, size.height);
       path.arcToPoint(Offset(tailW, size.height - r), radius: Radius.circular(r));
-      
-      // Tail on left side, pointing bottom-left
       path.lineTo(tailW, size.height - r - 10.h);
-      path.lineTo(0, size.height - r - 2.h); // tail tip
+      path.lineTo(0, size.height - r - 2.h);
       path.lineTo(tailW, size.height - r - 26.h);
-      
       path.lineTo(tailW, r);
       path.arcToPoint(Offset(tailW + r, 0), radius: Radius.circular(r));
     } else {
-      // Box
       path.moveTo(r, 0);
       path.lineTo(size.width - tailW - r, 0);
       path.arcToPoint(Offset(size.width - tailW, r), radius: Radius.circular(r));
-      
-      // Tail on right side, pointing bottom-right
       path.lineTo(size.width - tailW, size.height - r - 26.h);
-      path.lineTo(size.width, size.height - r - 2.h); // tail tip
+      path.lineTo(size.width, size.height - r - 2.h);
       path.lineTo(size.width - tailW, size.height - r - 10.h);
-      
       path.lineTo(size.width - tailW, size.height - r);
       path.arcToPoint(Offset(size.width - tailW - r, size.height), radius: Radius.circular(r));
       path.lineTo(r, size.height);

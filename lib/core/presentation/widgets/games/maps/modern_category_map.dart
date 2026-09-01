@@ -63,6 +63,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   late AnimationController _glowController;
   int? _previousActiveNode;
 
+  // PERF: Cache the static ambient background icons so they aren't recreated
+  // on every build. The positions are deterministic (seeded Random), so the
+  // list is stable for the widget's entire lifetime.
+  List<Widget>? _cachedBackgroundIcons;
+  GameCategory? _cachedBackgroundIconsCategory;
+  bool? _cachedBackgroundIconsDark;
+
   // PERF: point geometry only actually depends on `_totalLevels` and the
   // (constant for this widget's lifetime) category — not on every build
   // trigger. `context.watch<AuthBloc>()` used to force a full recompute of
@@ -412,6 +419,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
           // If multiple levels were unlocked at once (e.g., Tollgate Magic Lock),
           // skip the slow path-draw animation since the bottom sheet already celebrated it.
           if (currLevel - prevLevel > 1) {
+            // FIX: Clear any residual single-unlock animation state so the map
+            // doesn't render a stale justUnlockedLevel from a previous cycle.
+            _justUnlockedLevel = null;
+            _celebratingLevel = null;
             _unlockPathController.value = 1.0;
             _executeWhenRouteSettled(() {
               if (mounted) _scrollToCurrentLevel(animate: true);
@@ -711,14 +722,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   Widget _buildStarVaultButton(ThemeResult theme) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        final categoryStars = state.user?.starRatings[widget.gameType] ?? {};
+    // PERF: BlocSelector to only rebuild when starRatings for this game change,
+    // not on every AuthState emission (coins, XP, etc.).
+    return BlocSelector<AuthBloc, AuthState, Map<String, dynamic>>(
+      selector: (state) => state.user?.starRatings[widget.gameType] ?? {},
+      builder: (context, categoryStars) {
         int gameplayStars = 0;
-        final magicStars = categoryStars['magic_stars'] ?? 0;
+        final magicStars = (categoryStars['magic_stars'] as num?)?.toInt() ?? 0;
         categoryStars.forEach((key, value) {
           if (key != 'magic_stars' && key != 'claimed_chests') {
-            gameplayStars += value;
+            gameplayStars += (value as num?)?.toInt() ?? 0;
           }
         });
         final totalStars = gameplayStars + magicStars;
@@ -783,10 +796,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   Widget _buildGoldenKeysButton(ThemeResult theme) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        final keys = state.user?.keys ?? 0;
-
+    // PERF: BlocSelector to only rebuild when key count changes.
+    return BlocSelector<AuthBloc, AuthState, int>(
+      selector: (state) => state.user?.keys ?? 0,
+      builder: (context, keys) {
         return Semantics(
           button: true,
           label: context.tr(
@@ -836,6 +849,60 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
   }
 
+  /// PERF: Cached builder for background icons. Only regenerates when
+  /// category or dark mode actually changes.
+  List<Widget> _buildBackgroundIconsCached(ThemeResult theme, bool isDark) {
+    if (_cachedBackgroundIcons != null &&
+        _cachedBackgroundIconsCategory == theme.category &&
+        _cachedBackgroundIconsDark == isDark) {
+      return _cachedBackgroundIcons!;
+    }
+
+    final icons = List<Widget>.generate(5, (index) {
+      final random = math.Random(index + 700);
+      IconData icon;
+      switch (theme.category) {
+        case GameCategory.reading:
+          icon = [Icons.menu_book_rounded, Icons.auto_stories_rounded, Icons.chrome_reader_mode_rounded, Icons.library_books_rounded, Icons.book_rounded][index];
+          break;
+        case GameCategory.writing:
+          icon = [Icons.edit_note_rounded, Icons.history_edu_rounded, Icons.draw_rounded, Icons.create_rounded, Icons.article_rounded][index];
+          break;
+        case GameCategory.speaking:
+          icon = [Icons.mic_external_on_rounded, Icons.record_voice_over_rounded, Icons.mic_rounded, Icons.campaign_rounded, Icons.interpreter_mode_rounded][index];
+          break;
+        case GameCategory.listening:
+          icon = [Icons.headset_rounded, Icons.graphic_eq_rounded, Icons.hearing_rounded, Icons.music_note_rounded, Icons.volume_up_rounded][index];
+          break;
+        case GameCategory.grammar:
+          icon = [Icons.architecture_rounded, Icons.account_tree_rounded, Icons.hub_rounded, Icons.schema_rounded, Icons.lan_rounded][index];
+          break;
+        case GameCategory.vocabulary:
+          icon = [Icons.bubble_chart_rounded, Icons.category_rounded, Icons.extension_rounded, Icons.widgets_rounded, Icons.apps_rounded][index];
+          break;
+        case GameCategory.eliteMastery:
+          icon = [Icons.workspace_premium_rounded, Icons.military_tech_rounded, Icons.diamond_rounded, Icons.emoji_events_rounded, Icons.star_rounded][index];
+          break;
+        default:
+          icon = Icons.star_rounded;
+      }
+      return Positioned(
+        left: (0.1 + random.nextDouble() * 0.8) * 1.sw,
+        top: (0.05 + index * 0.2) * 1.sh,
+        child: Icon(
+          icon,
+          size: (14 + random.nextInt(12)).r,
+          color: theme.primaryColor.withValues(alpha: isDark ? 0.12 : 0.08),
+        ),
+      );
+    });
+
+    _cachedBackgroundIcons = icons;
+    _cachedBackgroundIconsCategory = theme.category;
+    _cachedBackgroundIconsDark = isDark;
+    return icons;
+  }
+
   Widget _buildBackground(ThemeResult theme, bool isDark) {
     return RepaintBoundary(
       child: Stack(
@@ -854,90 +921,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
           // 2. Ambient Mesh Gradient
           const MeshGradientBackground(),
 
-          // 3. Static ambient category icons — no animation controllers
-          ...List.generate(5, (index) {
-            final random = math.Random(index + 700);
-            IconData icon;
-            switch (theme.category) {
-              case GameCategory.reading:
-                icon = [
-                  Icons.menu_book_rounded,
-                  Icons.auto_stories_rounded,
-                  Icons.chrome_reader_mode_rounded,
-                  Icons.library_books_rounded,
-                  Icons.book_rounded,
-                ][index];
-                break;
-              case GameCategory.writing:
-                icon = [
-                  Icons.edit_note_rounded,
-                  Icons.history_edu_rounded,
-                  Icons.draw_rounded,
-                  Icons.create_rounded,
-                  Icons.article_rounded,
-                ][index];
-                break;
-              case GameCategory.speaking:
-                icon = [
-                  Icons.mic_external_on_rounded,
-                  Icons.record_voice_over_rounded,
-                  Icons.mic_rounded,
-                  Icons.campaign_rounded,
-                  Icons.interpreter_mode_rounded,
-                ][index];
-                break;
-              case GameCategory.listening:
-                icon = [
-                  Icons.headset_rounded,
-                  Icons.graphic_eq_rounded,
-                  Icons.hearing_rounded,
-                  Icons.music_note_rounded,
-                  Icons.volume_up_rounded,
-                ][index];
-                break;
-              case GameCategory.grammar:
-                icon = [
-                  Icons.architecture_rounded,
-                  Icons.account_tree_rounded,
-                  Icons.hub_rounded,
-                  Icons.schema_rounded,
-                  Icons.lan_rounded,
-                ][index];
-                break;
-              case GameCategory.vocabulary:
-                icon = [
-                  Icons.bubble_chart_rounded,
-                  Icons.category_rounded,
-                  Icons.extension_rounded,
-                  Icons.widgets_rounded,
-                  Icons.apps_rounded,
-                ][index];
-                break;
-              case GameCategory.eliteMastery:
-                icon = [
-                  Icons.workspace_premium_rounded,
-                  Icons.military_tech_rounded,
-                  Icons.diamond_rounded,
-                  Icons.emoji_events_rounded,
-                  Icons.star_rounded,
-                ][index];
-                break;
-              default:
-                icon = Icons.star_rounded;
-            }
-
-            return Positioned(
-              left: (0.1 + random.nextDouble() * 0.8) * 1.sw,
-              top: (0.05 + index * 0.2) * 1.sh,
-              child: Icon(
-                icon,
-                size: (14 + random.nextInt(12)).r,
-                color: theme.primaryColor.withValues(
-                  alpha: isDark ? 0.12 : 0.08,
-                ),
-              ),
-            );
-          }),
+          // 3. Static ambient category icons — cached to avoid per-build allocation
+          ..._buildBackgroundIconsCached(theme, isDark),
         ],
       ),
     );

@@ -49,7 +49,7 @@ class StarVaultBottomSheet extends StatefulWidget {
 
 class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   // Extended chest tiers up to 3000+ stars to account for Ad watches!
-  final List<int> _chestTiers = List.generate(100, (index) {
+  static final List<int> _chestTiers = List.generate(100, (index) {
     if (index < 10) return 15 + (index * 15);
     return 150 + ((index - 9) * 30);
   });

@@ -297,6 +297,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         if (prevLevel != null && currLevel > prevLevel) {
           // If multiple levels were skipped at once, skip the slow animation
           if (currLevel - prevLevel > 1) {
+            // FIX: Clear any residual single-unlock animation state.
+            _celebratingLevel = null;
             _unlockPathController.value = 1.0;
             _executeWhenRouteSettled(() {
               if (mounted) _scrollToUnlockedLevel(delayMs: 0, animate: true);
@@ -320,19 +322,30 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           });
         }
       },
-      child: BlocBuilder<AuthBloc, AuthState>(
-        builder: (context, state) {
+      child: Builder(
+        builder: (context) {
+          // PERF: context.select instead of BlocBuilder — only rebuild when
+          // the user entity reference itself changes, not on every AuthState.
+          final user = context.select<AuthBloc, dynamic>(
+            (bloc) => bloc.state.user,
+          );
+          final authStatus = context.select<AuthBloc, AuthStatus>(
+            (bloc) => bloc.state.status,
+          );
           int unlockedLevel = 1;
           List<int> completedLevels = [];
           bool isPremium = false;
-          if (state.status == AuthStatus.authenticated && state.user != null) {
-            unlockedLevel = state.user!.unlockedLevels[widget.gameType] ?? 1;
-            completedLevels =
-                state.user!.completedLevels[widget.gameType] ?? [];
-            isPremium = state.user!.isPremium;
+          if (authStatus == AuthStatus.authenticated && user != null) {
+            unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+            completedLevels = user.completedLevels[widget.gameType] ?? [];
+            isPremium = user.isPremium;
           }
 
-          final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+          // PERF: context.select instead of context.watch — only rebuild
+          // when `isMidnight` actually changes, not on every ThemeCubit emission.
+          final isMidnight = context.select<ThemeCubit, bool>(
+            (cubit) => cubit.state.isMidnight,
+          );
           final bgColor = isMidnight
               ? Colors.black
               : (isDark
@@ -368,7 +381,13 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       title: Align(
                         alignment: Alignment.centerLeft,
                         child: ScaleButton(
-                          onTap: () => context.pop(),
+                          onTap: () {
+                            if (context.canPop()) {
+                              context.pop();
+                            } else {
+                              context.go('/home');
+                            }
+                          },
                           child: Container(
                             width: 36.r,
                             height: 36.r,
@@ -404,7 +423,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
                     // 2. The World Portal Header (Part of the Map Journey)
                     SliverToBoxAdapter(
-                      child: _buildChunkyMapHeader(state.user, isDark),
+                      child: _buildChunkyMapHeader(user, isDark),
                     ),
 
                     // ── Map Segments ──
@@ -442,6 +461,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                           final isCurrent = isPlayable || isTollGate;
                           final isLast = index == 199;
 
+                          // FIX: Check auth loading status from our selector
+                          final isLoading = authStatus == AuthStatus.unknown;
+
                           final currentOffset = _getHorizontalOffset(
                             level,
                             screenWidth,
@@ -461,7 +483,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                             currentOffset: currentOffset,
                             nextOffset: nextOffset,
                             prevOffset: prevOffset,
-                            isLoading: state.status == AuthStatus.unknown,
+                            isLoading: isLoading,
                             isTollGate: isTollGate,
                             isCompleted: isCompleted,
                             isPlayable: isPlayable,
