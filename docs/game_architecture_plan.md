@@ -23,6 +23,17 @@ Every single one of the 100 games must pass these 6 checks:
 
 ---
 
+## Stage 2 & Pedagogical Hardening Tracker
+- [x] Standardize `ContextSentenceBuilder` as dual-mode (overlay vs embedded).
+- [x] Implement conditional `isPositioned` logic to prevent nested scrolling in 2-stage games.
+- [x] Update `GameFeedbackCard` with `isTwoStageGame` to conditionally hide redundant pedagogical rules.
+- [x] Integrate `hasStage2` propagation from `VocabularyBaseLayout` & `ReadingBaseLayout` down to the feedback card.
+- [x] Wrap `CustomScrollView` in 2-stage screens (`ContextualUsageScreen`, `SynonymSearchScreen`, `PhrasalVerbsScreen`) with `RawScrollbar` pinned to edge.
+- [x] Optimize vertical layout spacing (replaced 420.h with 40.h).
+- [x] Integrate `Scrollable.ensureVisible` in `ContextSentenceBuilder` to ensure keyboard stability.
+
+---
+
 ## Master Task Tracker (100 Games)
 
 ### 🟢 Vocabulary (12 Games)
@@ -31,6 +42,7 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component: `AcademicField & Collocations Widget`
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -39,14 +51,16 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Pedagogical Component: `GradientScale Widget`
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **3. Collocations**
 - [x] Dual-Stage Scroll UX
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component: `wrongCollocations` & `ContextSentenceBuilder`
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -55,14 +69,16 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Pedagogical Component: `ClueType & EvidenceWords Widget`
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **5. Contextual Usage**
 - [x] Dual-Stage Scroll UX
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component: `Formality Meter (registerLevel)`
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -71,6 +87,7 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [N/A] Feedback Card Logic
+- [N/A] Pedagogical Component: (Single stage interaction)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -79,14 +96,16 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Pedagogical Component: `Origin / Etymology Widget`
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **8. Phrasal Verbs**
 - [x] Dual-Stage Scroll UX
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component: `LiteralVsFigurative Widget` & `ContextSentenceBuilder`
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -95,14 +114,16 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Pedagogical Component: `MeaningBreakdown Widget`
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **10. Synonym Search**
 - [x] Dual-Stage Scroll UX
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component: `NuanceScale Widget` & `ContextSentenceBuilder`
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -111,6 +132,7 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [N/A] Feedback Card Logic
+- [N/A] Pedagogical Component: (Drag & drop bucket interaction)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -119,8 +141,9 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Pedagogical Component: `FamilyTree Widget`
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 ---
 

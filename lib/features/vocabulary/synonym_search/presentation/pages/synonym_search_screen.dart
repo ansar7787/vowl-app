@@ -354,10 +354,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
                     return Stack(
               children: [
-                CustomScrollView(
+                RawScrollbar(
                   controller: _scrollController,
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
+                  thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                  radius: Radius.circular(8.r),
+                  thickness: 4.w,
+                  child: CustomScrollView(
+                    controller: _scrollController,
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
                         SliverToBoxAdapter(
                           child: Column(
                             children: [
@@ -476,7 +481,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                       if (_isFirstStagePassed.value)
                                         Column(
                                           children: [
-                                            SizedBox(height: 20.h),
+                                            SizedBox(height: 10.h),
                                             if (quest.nuanceDifference != null && quest.nuanceDifference!.isNotEmpty)
                                               SynonymNuanceScale(
                                                 targetWord: quest.word ?? "",
@@ -484,6 +489,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                 nuanceDifference: quest.nuanceDifference!,
                                                 primaryColor: theme.primaryColor,
                                               ),
+                                              SizedBox(height: 10.h),
                                             if (!_isAnswered.value)
                                               ContextSentenceBuilder(
                                                 targetKeyword: quest.correctAnswer ?? "",
@@ -502,6 +508,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                 ),
                               ],
                             ),
+                          ),
                           ],
                         );
                   },

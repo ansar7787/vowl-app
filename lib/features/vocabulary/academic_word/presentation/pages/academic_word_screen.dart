@@ -230,10 +230,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
                                 child: Column(
                                       children: [
-                                        AnimatedContainer(
-                                          duration: const Duration(milliseconds: 600),
-                                          curve: Curves.easeInOutCubic,
-                                          height: _isDragPassed.value ? constraints.maxHeight * 0.52 : constraints.maxHeight,
+                                        SizedBox(
+                                          height: constraints.maxHeight,
                                           child: IgnorePointer(
                                             ignoring: _isDragPassed.value,
                                             child: _AcademicWordGameBody(
@@ -259,6 +257,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                             padding: EdgeInsets.symmetric(horizontal: 20.w),
                                             child: Column(
                                               children: [
+                                                SizedBox(height: 10.h),
                                                 if (quest.academicField != null || (quest.collocations != null && quest.collocations!.isNotEmpty) || quest.contextSentence != null || quest.example != null)
                                                   AcademicWordFieldCollocations(
                                                     academicField: quest.academicField,
@@ -266,29 +265,31 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                                     contextSentence: quest.contextSentence ?? quest.example,
                                                     color: _cachedTheme.primaryColor,
                                                   ),
+                                                SizedBox(height: 10.h),
                                               ],
                                             ),
                                           ),
-                                        SizedBox(height: (_isAnswered.value || _isDragPassed.value) ? 400.h : 60.h),
                                       ],
                                     ),
+                                ),
+                              ),
+                              if (_isDragPassed.value && !_isAnswered.value)
+                                SliverToBoxAdapter(
+                                  child: TypeToConfirmOverlay(
+                                    expectedText: quest.correctAnswer ?? '',
+                                    primaryColor: _cachedTheme.primaryColor,
+                                    onConfirmed: () => _submitFinalAnswer(true),
+                                    onSkipped: () => _submitFinalAnswer(false),
+                                    onBypassed: () => _submitFinalAnswer(true),
+                                    isPositioned: false,
                                   ),
                                 ),
-                              ],
-                            ),
-                            if (_isDragPassed.value && !_isAnswered.value)
-                              TypeToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? '',
-                                primaryColor: _cachedTheme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                onBypassed: () => _submitFinalAnswer(true),
-                                isPositioned: true,
-                              ),
-                          ],
-                        );
-                      },
-                    )
+                            ], // closes slivers
+                          ), // closes CustomScrollView
+                        ], // closes Stack children
+                      ); // closes Stack
+                    },
+                  ),
         );
       },
     );

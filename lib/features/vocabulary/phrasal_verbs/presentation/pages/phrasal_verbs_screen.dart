@@ -275,10 +275,15 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        return CustomScrollView(
+                        return RawScrollbar(
                           controller: _scrollController,
-                          physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                          slivers: [
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                            slivers: [
                             SliverToBoxAdapter(
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(minHeight: maxHeight),
@@ -437,12 +442,13 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                                 child: Column(
                                   children: [
+                                    SizedBox(height: 10.h),
                                     if (quest.literalVsFigurative != null && quest.literalVsFigurative!.isNotEmpty) ...[
                                       PhrasalVerbsLiteralComparison(
                                         literalVsFigurative: quest.literalVsFigurative!,
                                         color: theme.primaryColor,
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 10.h),
                                     ],
                                   ],
                                 ),
@@ -456,7 +462,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                 isPositioned: false,
                                 exampleSentence: _getFormattedExampleSentence(quest),
                               ),
-                            SizedBox(height: 40.h),
+                            SizedBox(height: 10.h),
                           ],
                         ),
                       ],
@@ -464,15 +470,16 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                   ),
                 ),
               ],
-            );
-          },
-        ),
-      );
-    },
-  );
-},
-);
-  }
+            ), // CustomScrollView
+          ); // RawScrollbar
+        }, // LayoutBuilder builder
+      ), // LayoutBuilder
+    ); // VocabularyBaseLayout
+  }, // ListenableBuilder builder
+); // ListenableBuilder
+      }, // BlocConsumer builder
+    ); // BlocConsumer
+  } // build method
 
   Widget _buildVaultStatus(Color color, bool isDark) {
     return Container(

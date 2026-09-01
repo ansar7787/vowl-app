@@ -222,12 +222,17 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                       builder: (context, constraints) {
                         return Stack(
                           children: [
-                            CustomScrollView(
+                            RawScrollbar(
                               controller: _scrollController,
-                              physics: (!_isFirstStagePassed.value)
-                                  ? const NeverScrollableScrollPhysics()
-                                  : const BouncingScrollPhysics(),
-                              slivers: [
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: (!_isFirstStagePassed.value)
+                                    ? const NeverScrollableScrollPhysics()
+                                    : const BouncingScrollPhysics(),
+                                slivers: [
                                 SliverToBoxAdapter(
                                   child: IgnorePointer(
                                     ignoring: _isFirstStagePassed.value,
@@ -248,14 +253,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                         ),
                                         Column(
                                           children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                milliseconds: 600,
-                                              ),
-                                              curve: Curves.easeInOutCubic,
-                                              height: _isFirstStagePassed.value
-                                                  ? constraints.maxHeight * 0.52
-                                                  : constraints.maxHeight,
+                                            SizedBox(
+                                              height: constraints.maxHeight,
                                               child: _buildUnfoldContent(
                                                 quest,
                                                 theme.primaryColor,
@@ -279,6 +278,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                                 ),
                                                 child: Column(
                                                   children: [
+                                                    SizedBox(height: 10.h),
                                                     if (quest.registerLevel !=
                                                             null ||
                                                         quest.nuanceDifference !=
@@ -309,7 +309,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                               height:
                                                   (_isAnswered.value ||
                                                       _isFirstStagePassed.value)
-                                                  ? 420.h
+                                                  ? 10.h
                                                   : 60.h,
                                             ),
                                         ],
@@ -341,6 +341,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                   ),
                               ],
                             ),
+                          ),
                           ],
                         );
                       },
