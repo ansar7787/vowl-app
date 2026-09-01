@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -39,15 +39,15 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _scratchProgress = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _scratchProgress = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
   late AnimationController _glowController;
-  double _timeVal = 0.0;
+  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   String _targetExpression = "";
 
   @override
@@ -60,9 +60,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     _glowController =
         AnimationController(vsync: this, duration: const Duration(seconds: 5))
           ..addListener(() {
-            setState(() {
-              _timeVal = _glowController.value;
-            });
+            _timeVal.value = _glowController.value;
           });
     _glowController.repeat();
   }
@@ -70,28 +68,29 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   @override
   void dispose() {
     _glowController.dispose();
+    _scratchProgress.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _timeVal.dispose();
     super.dispose();
   }
 
   void _handleScratchUpdate(double delta) {
-    if (_scratchProgress >= 1.0) return;
-    setState(() {
-      _scratchProgress += delta;
-      if (_scratchProgress >= 0.85) {
-        _scratchProgress = 1.0;
-        _hapticService.selection();
-        _soundService.playTts(_targetExpression);
-      }
-    });
+    if (_scratchProgress.value >= 1.0) return;
+    _scratchProgress.value += delta;
+    if (_scratchProgress.value >= 0.85) {
+      _scratchProgress.value = 1.0;
+      _hapticService.selection();
+      _soundService.playTts(_targetExpression);
+    }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered || _scratchProgress < 1.0) return;
+    if (_isAnswered.value || _scratchProgress.value < 1.0) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -119,11 +118,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-      _scratchProgress = 1.0;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
+    _scratchProgress.value = 1.0;
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -139,24 +136,20 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _scratchProgress = 0.0;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _scratchProgress.value = 0.0;
             // Removed Future.delayed auto-play to preserve scratch card mystery
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              _isAnswered = true;
-            });
+            _isCorrect.value = false;
+            _isAnswered.value = true;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -178,13 +171,16 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _scratchProgress, _timeVal]),
+            builder: (context, _) {
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -264,16 +260,16 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                 quest: quest,
                                 primaryColor: theme.primaryColor,
                                 isDark: isDark,
-                                scratchProgress: _scratchProgress,
+                                scratchProgress: _scratchProgress.value,
                                 isListening: false,
-                                timeVal: _timeVal,
+                                timeVal: _timeVal.value,
                                 onPlayTts: () => _soundService.playTts(
                                   quest.expression ?? "",
                                 ),
                                 onScratchUpdate: _handleScratchUpdate,
                               ),
                               SizedBox(height: 32.h),
-                              if (_scratchProgress > 0.3)
+                              if (_scratchProgress.value > 0.3)
                                 DailyExpressionUsagePanel(
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
@@ -287,8 +283,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -297,7 +292,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered && _scratchProgress >= 1.0)
+                              if (!_isAnswered.value && _scratchProgress.value >= 1.0)
                                 SpeakToConfirmOverlay(
                                   expectedText: _targetExpression,
                                   primaryColor: theme.primaryColor,
@@ -315,6 +310,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                   );
                   },
                 ),
+              );
+            },
           ),
         );
       },
