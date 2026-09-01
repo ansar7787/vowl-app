@@ -978,7 +978,6 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
   void initState() {
     super.initState();
     _confirmController = TextEditingController();
-    _confirmController.addListener(() => setState(() {}));
   }
 
   @override
@@ -991,9 +990,13 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     const deleteWord = 'DELETE';
-    final isConfirmed = _confirmController.text.trim() == deleteWord;
 
-    return GlassTile(
+    return ValueListenableBuilder<TextEditingValue>(
+      valueListenable: _confirmController,
+      builder: (context, value, child) {
+        final isConfirmed = value.text.trim() == deleteWord;
+
+        return GlassTile(
       width: widget.dialogWidth,
       padding: EdgeInsets.all(32.r),
       borderRadius: BorderRadius.circular(40.r),
@@ -1075,6 +1078,8 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
           ),
         ],
       ),
+    );
+      },
     );
   }
 }
