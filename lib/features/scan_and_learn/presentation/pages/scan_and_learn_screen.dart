@@ -42,12 +42,12 @@ class ScanAndLearnScreen extends StatefulWidget {
 class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     with SingleTickerProviderStateMixin {
   final ImagePicker _picker = ImagePicker();
-  String? _imagePath;
-  RecognizedText? _recognizedText;
-  bool _isProcessing = false;
+  String? _imagePathVal;
+  RecognizedText? _recognizedTextVal;
+  bool _isProcessingVal = false;
 
-  final Map<int, String> _translations = {};
-  final Map<int, bool> _isTranslating = {};
+  Map<int, String> _translationsVal = {};
+  Map<int, bool> _isTranslatingVal = {};
 
   List<String> _bountyOptions = [
     "Restaurant",
@@ -63,9 +63,15 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     "Bus",
     "Ticket",
   ];
-  late String _currentBounty;
-  bool _bountyFound = false;
-  bool _bountiesLoaded = false;
+  String _currentBountyVal = '';
+  bool _bountyFoundVal = false;
+  bool _bountiesLoadedVal = false;
+
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+  
+  void _updateState() {
+    _stateHash.value++;
+  }
 
   late final AnimationController _scannerController;
   late ConfettiController _confettiController;
@@ -73,7 +79,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   @override
   void initState() {
     super.initState();
-    _currentBounty = _bountyOptions[Random().nextInt(_bountyOptions.length)];
+    _currentBountyVal = _bountyOptions[Random().nextInt(_bountyOptions.length)];
     _scannerController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -99,11 +105,10 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       // Keep fallback
     }
     if (mounted) {
-      setState(() {
-        _currentBounty =
-            _bountyOptions[Random().nextInt(_bountyOptions.length)];
-        _bountiesLoaded = true;
-      });
+      _currentBountyVal =
+          _bountyOptions[Random().nextInt(_bountyOptions.length)];
+      _bountiesLoadedVal = true;
+      _updateState();
     }
   }
 
@@ -111,6 +116,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   void dispose() {
     _scannerController.dispose();
     _confettiController.dispose();
+    _stateHash.dispose();
     super.dispose();
   }
 
@@ -141,14 +147,13 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   }
 
   Future<void> _processImage(String path) async {
-    setState(() {
-      _imagePath = path;
-      _isProcessing = true;
-      _recognizedText = null;
-      _bountyFound = false;
-      _translations.clear();
-      _isTranslating.clear();
-    });
+    _imagePathVal = path;
+    _isProcessingVal = true;
+    _recognizedTextVal = null;
+    _bountyFoundVal = false;
+    _translationsVal = {};
+    _isTranslatingVal = {};
+    _updateState();
 
     final recognized = await di.sl<TextRecognitionService>().recognizeFromFile(
       path,
@@ -157,14 +162,14 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     bool found = false;
     if (recognized != null) {
       found = recognized.text.toLowerCase().contains(
-        _currentBounty.toLowerCase(),
+        _currentBountyVal.toLowerCase(),
       );
     }
 
     bool limitReached = false;
 
     if (found) {
-      _bountyFound = true;
+      _bountyFoundVal = true;
       _confettiController.play();
       di.sl<HapticService>().heavy();
       di.sl<SoundService>().playCorrect();
@@ -201,10 +206,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     }
 
     if (mounted) {
-      setState(() {
-        _isProcessing = false;
-        _recognizedText = recognized;
-      });
+      _isProcessingVal = false;
+      _recognizedTextVal = recognized;
+      _updateState();
 
       if (found) {
         CustomSnackBar.show(
@@ -261,9 +265,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
         fallback: 'Watch Ad to Translate',
       ),
       onSuccess: () async {
-        setState(() {
-          _isTranslating[index] = true;
-        });
+        _isTranslatingVal[index] = true;
+        _updateState();
 
         try {
           final isDownloaded = await di
@@ -279,9 +282,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 .isTargetModelDownloaded();
             if (!isDownloadedNow) {
               if (mounted) {
-                setState(() {
-                  _isTranslating[index] = false;
-                });
+                _isTranslatingVal[index] = false;
+                _updateState();
               }
               return;
             }
@@ -294,16 +296,14 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
             textToTranslate,
           );
           if (mounted) {
-            setState(() {
-              _translations[index] = translated;
-              _isTranslating[index] = false;
-            });
+            _translationsVal[index] = translated;
+            _isTranslatingVal[index] = false;
+            _updateState();
           }
         } catch (e) {
           if (mounted) {
-            setState(() {
-              _isTranslating[index] = false;
-            });
+            _isTranslatingVal[index] = false;
+            _updateState();
             CustomSnackBar.show(
               context: context,
               message: e.toString().replaceAll('Exception: ', ''),
@@ -317,18 +317,21 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
 
   @override
   Widget build(BuildContext context) {
-    if (!_bountiesLoaded) {
-      return const Scaffold(
-        body: SafeArea(
-          child: GameShimmerLoading(primaryColor: Color(0xFF6366F1)),
-        ),
-      );
-    }
+    return ValueListenableBuilder<int>(
+      valueListenable: _stateHash,
+      builder: (context, value, child) {
+        if (!_bountiesLoadedVal) {
+          return const Scaffold(
+            body: SafeArea(
+              child: GameShimmerLoading(primaryColor: Color(0xFF6366F1)),
+            ),
+          );
+        }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PopScope(
-      canPop: _imagePath == null,
+      canPop: _imagePathVal == null,
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
         GameDialogHelper.showExitConfirmation(
@@ -351,13 +354,13 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           fit: StackFit.expand,
           children: [
             // 1. Background Layer (Image or Gradient)
-            if (_imagePath != null)
-              Image.file(File(_imagePath!), fit: BoxFit.cover)
+            if (_imagePathVal != null)
+              Image.file(File(_imagePathVal!), fit: BoxFit.cover)
             else
               const MeshGradientBackground(showLetters: false),
 
             // 2. Dark Overlay for better contrast when image is present
-            if (_imagePath != null)
+            if (_imagePathVal != null)
               Container(color: Colors.black.withValues(alpha: 0.5))
             else
               Container(
@@ -367,7 +370,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
               ),
 
             // 3. Cinematic Laser Scanner (only when processing)
-            if (_isProcessing) _buildLaserScanner(),
+            if (_isProcessingVal) _buildLaserScanner(),
 
             // 4. UI Layer
             CustomScrollView(
@@ -378,11 +381,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 _buildSliverAppBar(context, isDark),
                 SliverToBoxAdapter(
                   child: ScanBountyTarget(
-                    currentBounty: _currentBounty,
-                    bountyFound: _bountyFound,
+                    currentBounty: _currentBountyVal,
+                    bountyFound: _bountyFoundVal,
                   ),
                 ),
-                if (_imagePath == null)
+                if (_imagePathVal == null)
                   SliverFillRemaining(
                     hasScrollBody: false,
                     child: ScanEmptyState(onPickImage: _pickAndScanImage),
@@ -412,7 +415,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
               ),
             ),
 
-            if (_imagePath != null && !_isProcessing)
+            if (_imagePathVal != null && !_isProcessingVal)
               Positioned(
                 bottom: 0,
                 left: 0,
@@ -422,6 +425,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           ],
         ),
       ),
+    );
+      },
     );
   }
 
@@ -433,7 +438,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       elevation: 0,
       expandedHeight: kToolbarHeight + 10.h,
       iconTheme: IconThemeData(
-        color: _imagePath != null || isDark ? Colors.white : Colors.black87,
+        color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
       ),
       flexibleSpace: ClipRRect(
         child: BackdropFilter(
@@ -457,10 +462,10 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios_new_rounded,
-          color: _imagePath != null || isDark ? Colors.white : Colors.black87,
+          color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
         ),
         onPressed: () {
-          if (_imagePath == null) {
+          if (_imagePathVal == null) {
             context.pop();
             return;
           }
@@ -485,7 +490,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w900,
-          color: _imagePath != null || isDark ? Colors.white : Colors.black87,
+          color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
         ),
       ),
       centerTitle: true,
@@ -493,11 +498,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   }
 
   Widget _buildSliverResults(bool isDark) {
-    if (_isProcessing || _recognizedText == null) {
+    if (_isProcessingVal || _recognizedTextVal == null) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
 
-    if (_recognizedText!.blocks.isEmpty) {
+    if (_recognizedTextVal!.blocks.isEmpty) {
       return SliverToBoxAdapter(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
@@ -538,14 +543,14 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           return Padding(
             padding: EdgeInsets.only(bottom: 16.h),
             child: ScanResultBlock(
-              block: _recognizedText!.blocks[index],
+              block: _recognizedTextVal!.blocks[index],
               index: index,
-              translatedText: _translations[index],
-              isTranslating: _isTranslating[index] ?? false,
+              translatedText: _translationsVal[index],
+              isTranslating: _isTranslatingVal[index] ?? false,
               onTranslate: _translateBlock,
             ),
           );
-        }, childCount: _recognizedText!.blocks.length),
+        }, childCount: _recognizedTextVal!.blocks.length),
       ),
     );
   }
@@ -555,13 +560,12 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       padding: EdgeInsets.all(24.w),
       child: ScaleButton(
         onTap: () {
-          setState(() {
-            _imagePath = null;
-            _recognizedText = null;
-            _currentBounty =
-                _bountyOptions[Random().nextInt(_bountyOptions.length)];
-            _bountyFound = false;
-          });
+          _imagePathVal = null;
+          _recognizedTextVal = null;
+          _currentBountyVal =
+              _bountyOptions[Random().nextInt(_bountyOptions.length)];
+          _bountyFoundVal = false;
+          _updateState();
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100.r),

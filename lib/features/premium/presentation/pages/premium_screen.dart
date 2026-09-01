@@ -29,12 +29,12 @@ class PremiumScreen extends StatefulWidget {
 
 class _PremiumScreenState extends State<PremiumScreen> {
   final _paymentService = di.sl<PaymentService>();
-  int _selectedPlanIndex = 1;
-  bool _isProcessing = false;
-  bool _paymentCompleted = false;
-  bool? _paymentSuccess;
-  String? _errorMessage;
-  String? _transactionId;
+  int _selectedPlanIndexVal = 1;
+  bool _isProcessingVal = false;
+  bool _paymentCompletedVal = false;
+  bool? _paymentSuccessVal;
+  String? _errorMessageVal;
+  String? _transactionIdVal;
   Timer? _paymentTimeout;
   late ConfettiController _confettiController;
 
@@ -71,7 +71,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
     ),
   ];
 
-  List<SubscriptionPlan> _activePlans = _fallbackPlans;
+  List<SubscriptionPlan> _activePlansVal = _fallbackPlans;
+
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+  
+  void _updateState() {
+    _stateHash.value++;
+  }
 
   @override
   void initState() {
@@ -91,7 +97,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
     try {
       final plans = await di.sl<SubscriptionPlansService>().fetchPlans();
       if (mounted && plans.isNotEmpty) {
-        setState(() => _activePlans = plans);
+        _activePlansVal = plans;
+        _updateState();
       }
     } catch (e) {
       di.sl<AppLogger>().warning(
@@ -103,7 +110,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   void _startPaymentTimeout() {
     // Timeout after 2 minutes if no response
     _paymentTimeout = Timer(const Duration(minutes: 2), () {
-      if (mounted && _isProcessing) {
+      if (mounted && _isProcessingVal) {
         _handlePaymentTimeout();
       }
     });
@@ -117,15 +124,14 @@ class _PremiumScreenState extends State<PremiumScreen> {
   void _handlePaymentTimeout() {
     di.sl<HapticService>().error();
     if (mounted) {
-      setState(() {
-        _isProcessing = false;
-        _paymentCompleted = true;
-        _paymentSuccess = false;
-        _errorMessage = context.tr(
+      _isProcessingVal = false;
+        _paymentCompletedVal = true;
+        _paymentSuccessVal = false;
+        _errorMessageVal = context.tr(
           'premium.error_timeout',
           fallback: 'Request timed out',
         );
-      });
+        _updateState();
     }
   }
 
@@ -136,7 +142,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     try {
       final user = context.read<AuthBloc>().state.user;
       if (user != null) {
-        final selectedPlan = _activePlans[_selectedPlanIndex];
+        final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
         await _paymentService.upgradeToPremium(
           orderId: response.orderId ?? '',
           paymentId: response.paymentId ?? '',
@@ -151,13 +157,12 @@ class _PremiumScreenState extends State<PremiumScreen> {
           di.sl<HapticService>().success();
           _confettiController.play();
 
-          setState(() {
-            _isProcessing = false;
-            _paymentCompleted = true;
-            _paymentSuccess = true;
-            _transactionId = response.paymentId;
-            _errorMessage = null;
-          });
+          _isProcessingVal = false;
+            _paymentCompletedVal = true;
+            _paymentSuccessVal = true;
+            _transactionIdVal = response.paymentId;
+            _errorMessageVal = null;
+            _updateState();
         }
       }
     } catch (e, stackTrace) {
@@ -174,15 +179,14 @@ class _PremiumScreenState extends State<PremiumScreen> {
       );
       if (mounted) {
         di.sl<HapticService>().error();
-        setState(() {
-          _isProcessing = false;
-          _paymentCompleted = true;
-          _paymentSuccess = false;
-          _errorMessage = context.tr(
+        _isProcessingVal = false;
+          _paymentCompletedVal = true;
+          _paymentSuccessVal = false;
+          _errorMessageVal = context.tr(
             'premium.error_upgrade_failed',
             fallback: 'Upgrade Failed',
           );
-        });
+          _updateState();
       }
     }
   }
@@ -191,24 +195,24 @@ class _PremiumScreenState extends State<PremiumScreen> {
     _cancelPaymentTimeout();
     di.sl<HapticService>().error();
     if (mounted) {
-      setState(() {
-        _isProcessing = false;
-        _paymentCompleted = true;
-        _paymentSuccess = false;
+      _isProcessingVal = false;
+        _paymentCompletedVal = true;
+        _paymentSuccessVal = false;
         // Razorpay's `response.message` is already a user-safe,
         // gateway-provided description (not a raw exception), so it is
         // fine to surface directly, with a localized fallback.
-        _errorMessage =
+        _errorMessageVal =
             response.message ??
             context.tr('premium.error_generic', fallback: 'An error occurred');
-      });
+        _updateState();
     }
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
     _cancelPaymentTimeout();
     if (mounted) {
-      setState(() => _isProcessing = false);
+      _isProcessingVal = false;
+      _updateState();
     }
   }
 
@@ -217,6 +221,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
     _confettiController.dispose();
     _cancelPaymentTimeout();
     _paymentService.dispose();
+    _stateHash.dispose();
     super.dispose();
   }
 
@@ -354,8 +359,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
               );
                   },
                 ),
-              if (_isProcessing) _buildProcessingOverlay(),
-              if (_paymentCompleted) _buildCompletedOverlay(),
+              if (_isProcessingVal) _buildProcessingOverlay(),
+              if (_paymentCompletedVal) _buildCompletedOverlay(),
               Align(
                 alignment: Alignment.topCenter,
                 child: ConfettiWidget(
@@ -488,20 +493,19 @@ class _PremiumScreenState extends State<PremiumScreen> {
         child: Container(
           color: Colors.black.withValues(alpha: 0.6),
           child: Center(
-            child: _paymentSuccess == true
+            child: _paymentSuccessVal == true
                 ? PremiumSuccessOverlay(
-                    transactionId: _transactionId,
+                    transactionId: _transactionIdVal,
                     onBeginAdventure: () => context.pop(),
                   )
                 : PremiumFailureOverlay(
-                    errorMessage: _errorMessage,
+                    errorMessage: _errorMessageVal,
                     onRetry: () {
-                      setState(() {
-                        _paymentCompleted = false;
-                        _paymentSuccess = null;
-                        _errorMessage = null;
-                        _transactionId = null;
-                      });
+                      _paymentCompletedVal = false;
+                        _paymentSuccessVal = null;
+                        _errorMessageVal = null;
+                        _transactionIdVal = null;
+                        _updateState();
                     },
                     onClose: () => context.pop(),
                   ),
@@ -513,13 +517,14 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildPlanList() {
     return Column(
-      children: List.generate(_activePlans.length, (index) {
+      children: List.generate(_activePlansVal.length, (index) {
         return PremiumPlanCard(
-          plan: _activePlans[index],
-          isSelected: _selectedPlanIndex == index,
+          plan: _activePlansVal[index],
+          isSelected: _selectedPlanIndexVal == index,
           onTap: () {
             di.sl<HapticService>().selection();
-            setState(() => _selectedPlanIndex = index);
+            _selectedPlanIndexVal = index;
+            _updateState();
           },
         );
       }),
@@ -527,16 +532,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   Widget _buildCTAButton() {
-    final ctaLabel = _isProcessing
+    final ctaLabel = _isProcessingVal
         ? context.tr('premium.cta_processing', fallback: 'Processing...')
         : context.tr('premium.cta_activate', fallback: 'Activate Premium');
 
     return Semantics(
       button: true,
-      enabled: !_isProcessing,
+      enabled: !_isProcessingVal,
       label: ctaLabel,
       child: ScaleButton(
-        onTap: _isProcessing ? null : _onActivatePressed,
+        onTap: _isProcessingVal ? null : _onActivatePressed,
         child:
             Container(
                   width: double.infinity,
@@ -580,7 +585,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                             ),
                           ),
                         ),
-                        if (!_isProcessing) ...[
+                        if (!_isProcessingVal) ...[
                           SizedBox(width: 10.w),
                           const Icon(
                             Icons.arrow_forward_ios_rounded,
@@ -608,10 +613,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
 
-    setState(() => _isProcessing = true);
+    _isProcessingVal = true;
+    _updateState();
     _startPaymentTimeout();
 
-    final plan = _activePlans[_selectedPlanIndex];
+    final plan = _activePlansVal[_selectedPlanIndexVal];
     _paymentService.purchaseSubscription(
       contact: '', // Empty is safe - Razorpay will use email if needed
       email: user.email,
@@ -639,3 +645,5 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 }
+
+
