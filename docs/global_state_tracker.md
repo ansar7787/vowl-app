@@ -3,9 +3,9 @@
 This tracker outlines the migration of the remaining Flutter modules from legacy `setState` patterns to the high-performance "Diamond Standard" (`ValueNotifier` / `ListenableBuilder` / constraint-aware layout) architecture.
 
 ## Phase 1: Core & Utilities
-- [ ] Core Game Mechanics (`speed_challenge_timer.dart`)
-- [ ] Core Presentation Widgets (`connectivity_wrapper.dart`, `category_radar_chart.dart`)
-- [ ] Core Util Widgets (`handwriting_canvas.dart`, `translate_button_widget.dart`, `language_selection_bottom_sheet.dart`, `translation_download_dialog.dart`, `translation_download_sheet.dart`)
+- [x] Core Game Mechanics (`speed_challenge_timer.dart`)
+- [x] Core Presentation Widgets (`connectivity_wrapper.dart`, `category_radar_chart.dart`)
+- [x] Core Util Widgets (`handwriting_canvas.dart`, `translate_button_widget.dart`, `language_selection_bottom_sheet.dart`, `translation_download_dialog.dart`, `translation_download_sheet.dart`)
 
 ## Phase 2: Daily Challenges & Daily Words
 - [ ] Word Snap (`word_snap_screen.dart`)

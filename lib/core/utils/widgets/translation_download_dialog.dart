@@ -22,9 +22,9 @@ class TranslationDownloadDialog extends StatefulWidget {
 }
 
 class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
-  int _progress = 0;
+  final ValueNotifier<int> _progress = ValueNotifier(0);
   Timer? _timer;
-  String? _languageName;
+  final ValueNotifier<String?> _languageName = ValueNotifier(null);
 
   @override
   void initState() {
@@ -37,9 +37,7 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
         .sl<TranslationService>()
         .getConfiguredLanguageName();
     if (mounted) {
-      setState(() {
-        _languageName = langName ?? 'Language';
-      });
+      _languageName.value = langName ?? 'Language';
     }
 
     _startFakeProgress();
@@ -49,7 +47,7 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
       await di.sl<TranslationService>().ensureModelDownloaded();
       _timer?.cancel();
       if (mounted) {
-        setState(() => _progress = 100);
+        _progress.value = 100;
         await Future.delayed(const Duration(milliseconds: 400));
         if (mounted && Navigator.canPop(context)) {
           Navigator.pop(context);
@@ -77,23 +75,23 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
   void _startFakeProgress() {
     _timer = Timer.periodic(const Duration(milliseconds: 150), (timer) {
       if (!mounted) return;
-      setState(() {
-        if (_progress < 95) {
-          if (_progress < 60) {
-            _progress += 2;
-          } else if (_progress < 85) {
-            _progress += 1;
-          } else {
-            if (timer.tick % 4 == 0) _progress += 1;
-          }
+      if (_progress.value < 95) {
+        if (_progress.value < 60) {
+          _progress.value += 2;
+        } else if (_progress.value < 85) {
+          _progress.value += 1;
+        } else {
+          if (timer.tick % 4 == 0) _progress.value += 1;
         }
-      });
+      }
     });
   }
 
   @override
   void dispose() {
     _timer?.cancel();
+    _progress.dispose();
+    _languageName.dispose();
     super.dispose();
   }
 
@@ -101,7 +99,10 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Dialog(
+    return ListenableBuilder(
+      listenable: Listenable.merge([_progress, _languageName]),
+      builder: (context, _) {
+        return Dialog(
       backgroundColor: isDark ? const Color(0xFF1E1E2A) : Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
       child: Padding(
@@ -116,7 +117,7 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
                   width: 80.r,
                   height: 80.r,
                   child: CircularProgressIndicator(
-                    value: _progress == 0 ? null : _progress / 100,
+                    value: _progress.value == 0 ? null : _progress.value / 100,
                     strokeWidth: 6,
                     backgroundColor: isDark ? Colors.white10 : Colors.black12,
                     valueColor: const AlwaysStoppedAnimation<Color>(
@@ -125,7 +126,7 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
                   ),
                 ),
                 Text(
-                  '$_progress%',
+                  '${_progress.value}%',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
@@ -157,7 +158,7 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
                     fallback:
                         'Downloading offline AI model for {lang}. This only happens once.',
                   )
-                  .replaceAll('{lang}', _languageName ?? ''),
+                  .replaceAll('{lang}', _languageName.value ?? ''),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
@@ -168,6 +169,8 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
           ],
         ),
       ),
+    );
+      }
     );
   }
 }

@@ -30,7 +30,8 @@ class ConnectivityWrapper extends StatefulWidget {
 }
 
 class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
-  String _currentLocation = '';
+  final ValueNotifier<String> _currentLocation = ValueNotifier('');
+  final ValueNotifier<int> _refreshTrigger = ValueNotifier(0);
   bool _wasOffline = false;
 
   /// Routes where the soft offline banner should be suppressed.
@@ -76,6 +77,8 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
   @override
   void dispose() {
     AppRouter.router.routerDelegate.removeListener(_onRouteChange);
+    _currentLocation.dispose();
+    _refreshTrigger.dispose();
     super.dispose();
   }
 
@@ -84,10 +87,10 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
         AppRouter.router.routerDelegate.currentConfiguration.matches;
     if (matches.isNotEmpty) {
       final location = matches.last.matchedLocation;
-      if (location != _currentLocation) {
+      if (location != _currentLocation.value) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (mounted) {
-            setState(() => _currentLocation = location);
+            _currentLocation.value = location;
           }
         });
       }
@@ -116,14 +119,14 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
       force: true, // Bypass frequency/cooldown gates on reconnect
       onDismissed: () {
         gate.resetQuotaAfterAd();
-        if (mounted) setState(() {});
+        if (mounted) _refreshTrigger.value++;
       },
     );
   }
 
   /// Called when user watches a rewarded ad while offline for +3 levels.
   void _handleAdWatchedOffline() {
-    if (mounted) setState(() {});
+    if (mounted) _refreshTrigger.value++;
   }
 
   @override
@@ -147,66 +150,71 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
         }
         _wasOffline = isOffline;
 
-        // ── Determine overlay strategy ──────────────────────────────────
 
-        // 1. Check if offline quota is exhausted
-        final bool isQuotaExhausted = gate.isOfflineQuotaExhausted;
 
-        // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
-        final bool shouldShowQuotaBlock =
-            isOffline &&
-            isQuotaExhausted &&
-            !_nonGameplayRoutes.contains(_currentLocation);
+        return ValueListenableBuilder(
+          valueListenable: _refreshTrigger,
+          builder: (context, _, child) {
+            return ValueListenableBuilder<String>(
+              valueListenable: _currentLocation,
+              builder: (context, currentLocation, child) {
+                // 1. Check if offline quota is exhausted
+                final bool isQuotaExhausted = gate.isOfflineQuotaExhausted;
 
-        // 3. Soft banner: offline but within grace period, not on silent route
-        final bool shouldShowBanner =
-            isOffline &&
-            !shouldShowQuotaBlock &&
-            !_offlineSilentRoutes.contains(_currentLocation);
+                // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
+                final bool shouldShowQuotaBlock =
+                    isOffline &&
+                    isQuotaExhausted &&
+                    !_nonGameplayRoutes.contains(currentLocation);
 
-        return Stack(
-          textDirection: TextDirection.ltr,
-          children: [
-            // Always keep the Navigator alive to preserve state
-            widget.child,
+                // 3. Soft banner: offline but within grace period, not on silent route
+                final bool shouldShowBanner =
+                    isOffline &&
+                    !shouldShowQuotaBlock &&
+                    !_offlineSilentRoutes.contains(currentLocation);
 
-            // Overlay layer: OfflineQuotaExhaustedPage
-            Positioned.fill(
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 400),
-                switchInCurve: Curves.easeInOut,
-                switchOutCurve: Curves.easeInOut,
-                transitionBuilder: (Widget child, Animation<double> animation) {
-                  return FadeTransition(opacity: animation, child: child);
-                },
-                child: shouldShowQuotaBlock
-                    ? OfflineQuotaExhaustedPage(
-                        key: const ValueKey('connectivity_quota_block'),
-                        onRetry: _handleRetry,
-                        onAdWatched: _handleAdWatchedOffline,
-                        onClose: () {
-                          if (AppRouter.router.canPop()) {
-                            AppRouter.router.pop();
-                          } else {
-                            AppRouter.router.go(AppRouter.homeRoute);
-                          }
+                return Stack(
+                  textDirection: TextDirection.ltr,
+                  children: [
+                    widget.child,
+                    Positioned.fill(
+                      child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 400),
+                        switchInCurve: Curves.easeInOut,
+                        switchOutCurve: Curves.easeInOut,
+                        transitionBuilder: (Widget child, Animation<double> animation) {
+                          return FadeTransition(opacity: animation, child: child);
                         },
-                      )
-                    : const SizedBox.shrink(
-                        key: ValueKey('connectivity_clear'),
+                        child: shouldShowQuotaBlock
+                            ? OfflineQuotaExhaustedPage(
+                                key: const ValueKey('connectivity_quota_block'),
+                                onRetry: _handleRetry,
+                                onAdWatched: _handleAdWatchedOffline,
+                                onClose: () {
+                                  if (AppRouter.router.canPop()) {
+                                    AppRouter.router.pop();
+                                  } else {
+                                    AppRouter.router.go(AppRouter.homeRoute);
+                                  }
+                                },
+                              )
+                            : const SizedBox.shrink(
+                                key: ValueKey('connectivity_clear'),
+                              ),
                       ),
-              ),
-            ),
-
-            // Soft banner: non-blocking notification within grace period
-            if (shouldShowBanner)
-              const Positioned(
-                top: 0,
-                left: 0,
-                right: 0,
-                child: OfflineBanner(key: ValueKey('connectivity_soft_banner')),
-              ),
-          ],
+                    ),
+                    if (shouldShowBanner)
+                      const Positioned(
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        child: OfflineBanner(key: ValueKey('connectivity_soft_banner')),
+                      ),
+                  ],
+                );
+              }
+            );
+          }
         );
       },
     );

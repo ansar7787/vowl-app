@@ -32,37 +32,39 @@ class LanguageSelectionBottomSheet extends StatefulWidget {
 
 class _LanguageSelectionBottomSheetState
     extends State<LanguageSelectionBottomSheet> {
-  String? _selectedLanguage;
-  bool _isLoading = false;
-  int _downloadProgress = 0;
+  final ValueNotifier<String?> _selectedLanguage = ValueNotifier(null);
+  final ValueNotifier<bool> _isLoading = ValueNotifier(false);
+  final ValueNotifier<int> _downloadProgress = ValueNotifier(0);
   Timer? _progressTimer;
   final TextEditingController _searchController = TextEditingController();
-  String _searchQuery = '';
+  final ValueNotifier<String> _searchQuery = ValueNotifier('');
 
   @override
   void dispose() {
     _progressTimer?.cancel();
     _searchController.dispose();
+    _selectedLanguage.dispose();
+    _isLoading.dispose();
+    _downloadProgress.dispose();
+    _searchQuery.dispose();
     super.dispose();
   }
 
   void _startFakeProgress() {
-    setState(() => _downloadProgress = 0);
+    _downloadProgress.value = 0;
     _progressTimer?.cancel();
     _progressTimer = Timer.periodic(const Duration(milliseconds: 150), (timer) {
       if (!mounted) {
         timer.cancel();
         return;
       }
-      setState(() {
-        if (_downloadProgress < 85) {
-          _downloadProgress += 2;
-        } else if (_downloadProgress < 95) {
-          if (timer.tick % 3 == 0) _downloadProgress += 1;
-        } else if (_downloadProgress < 99) {
-          if (timer.tick % 10 == 0) _downloadProgress += 1;
-        }
-      });
+      if (_downloadProgress.value < 85) {
+        _downloadProgress.value += 2;
+      } else if (_downloadProgress.value < 95) {
+        if (timer.tick % 3 == 0) _downloadProgress.value += 1;
+      } else if (_downloadProgress.value < 99) {
+        if (timer.tick % 10 == 0) _downloadProgress.value += 1;
+      }
     });
   }
 
@@ -71,7 +73,10 @@ class _LanguageSelectionBottomSheetState
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryIndigo = const Color(0xFF6366F1);
 
-    return ClipRRect(
+    return ListenableBuilder(
+      listenable: Listenable.merge([_selectedLanguage, _isLoading, _downloadProgress, _searchQuery]),
+      builder: (context, _) {
+        return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
@@ -254,7 +259,7 @@ class _LanguageSelectionBottomSheetState
                 ),
                 child: TextField(
                   controller: _searchController,
-                  onChanged: (val) => setState(() => _searchQuery = val),
+                  onChanged: (val) => _searchQuery.value = val,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 15.sp,
@@ -275,11 +280,11 @@ class _LanguageSelectionBottomSheetState
                       size: 18.r,
                       color: isDark ? Colors.white38 : Colors.black26,
                     ),
-                    suffixIcon: _searchQuery.isNotEmpty
+                    suffixIcon: _searchQuery.value.isNotEmpty
                         ? GestureDetector(
                             onTap: () {
                               _searchController.clear();
-                              setState(() => _searchQuery = '');
+                              _searchQuery.value = '';
                             },
                             child: Icon(
                               Icons.close_rounded,
@@ -321,7 +326,7 @@ class _LanguageSelectionBottomSheetState
                             .entries
                             .where(
                               (e) => e.key.toLowerCase().contains(
-                                _searchQuery.toLowerCase(),
+                                _searchQuery.value.toLowerCase(),
                               ),
                             )
                             .toList();
@@ -354,14 +359,12 @@ class _LanguageSelectionBottomSheetState
                               SizedBox(height: 8.h),
                           itemBuilder: (context, index) {
                             final entry = filteredEntries[index];
-                            final isSelected = _selectedLanguage == entry.key;
+                            final isSelected = _selectedLanguage.value == entry.key;
 
                             return Material(
                               color: Colors.transparent,
                               child: InkWell(
-                                onTap: () => setState(
-                                  () => _selectedLanguage = entry.key,
-                                ),
+                                onTap: () => _selectedLanguage.value = entry.key,
                                 borderRadius: BorderRadius.circular(16.r),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
@@ -428,13 +431,13 @@ class _LanguageSelectionBottomSheetState
                     fallback: 'Continue',
                   ),
                   child: ScaleButton(
-                    onTap: (_selectedLanguage == null || _isLoading)
+                    onTap: (_selectedLanguage.value == null || _isLoading.value)
                         ? () {}
                         : () async {
-                            setState(() => _isLoading = true);
+                            _isLoading.value = true;
                             _startFakeProgress();
                             final target = TranslationService
-                                .supportedLanguages[_selectedLanguage]!;
+                                .supportedLanguages[_selectedLanguage.value]!;
 
                             try {
                               await di
@@ -442,7 +445,7 @@ class _LanguageSelectionBottomSheetState
                                   .setTargetLanguage(target);
                               _progressTimer?.cancel();
                               if (mounted) {
-                                setState(() => _downloadProgress = 100);
+                                _downloadProgress.value = 100;
                               }
                               // Add a tiny delay so user can see 100%
                               await Future.delayed(
@@ -450,7 +453,7 @@ class _LanguageSelectionBottomSheetState
                               );
                               if (context.mounted) Navigator.pop(context);
                             } catch (e) {
-                              if (mounted) setState(() => _isLoading = false);
+                              if (mounted) _isLoading.value = false;
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -470,11 +473,11 @@ class _LanguageSelectionBottomSheetState
                       duration: const Duration(milliseconds: 300),
                       padding: EdgeInsets.symmetric(vertical: 16.h),
                       decoration: BoxDecoration(
-                        color: _selectedLanguage == null
+                        color: _selectedLanguage.value == null
                             ? Colors.grey.withValues(alpha: 0.3)
                             : primaryIndigo,
                         borderRadius: BorderRadius.circular(20.r),
-                        boxShadow: _selectedLanguage != null
+                        boxShadow: _selectedLanguage.value != null
                             ? [
                                 BoxShadow(
                                   color: primaryIndigo.withValues(alpha: 0.4),
@@ -485,7 +488,7 @@ class _LanguageSelectionBottomSheetState
                             : [],
                       ),
                       child: Center(
-                        child: _isLoading
+                        child: _isLoading.value
                             ? Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.min,
@@ -497,16 +500,16 @@ class _LanguageSelectionBottomSheetState
                                           alignment: Alignment.center,
                                           children: [
                                             CircularProgressIndicator(
-                                              value: _downloadProgress == 0
+                                              value: _downloadProgress.value == 0
                                                   ? null
-                                                  : _downloadProgress / 100,
+                                                  : _downloadProgress.value / 100,
                                               color: Colors.white,
                                               backgroundColor: Colors.white
                                                   .withValues(alpha: 0.2),
                                               strokeWidth: 2.5,
                                             ),
                                             Text(
-                                              '$_downloadProgress%',
+                                              '${_downloadProgress.value}%',
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: 8.sp,
@@ -553,7 +556,7 @@ class _LanguageSelectionBottomSheetState
                                   fontFamily: 'Outfit',
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: _selectedLanguage == null
+                                  color: _selectedLanguage.value == null
                                       ? Colors.grey.withValues(alpha: 0.8)
                                       : Colors.white,
                                   letterSpacing: 1,
@@ -568,6 +571,8 @@ class _LanguageSelectionBottomSheetState
           ),
         ),
       ),
+    );
+      },
     );
   }
 
@@ -698,9 +703,7 @@ class _LanguageSelectionBottomSheetState
 
                       if (!mounted) return;
                       if (matchedLanguageName != null) {
-                        setState(() {
-                          _selectedLanguage = matchedLanguageName;
-                        });
+                        _selectedLanguage.value = matchedLanguageName;
                         if (context.mounted) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(

@@ -27,9 +27,9 @@ class TranslationDownloadSheet extends StatefulWidget {
 }
 
 class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
-  double _progress = 0.0;
+  final ValueNotifier<double> _progress = ValueNotifier(0.0);
   Timer? _timer;
-  bool _isFinished = false;
+  final ValueNotifier<bool> _isFinished = ValueNotifier(false);
 
   @override
   void initState() {
@@ -42,18 +42,16 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
     // We want the progress to shoot up quickly to ~85% for dopamine,
     // then crawl slowly to 99% while we wait for the real task.
     _timer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
-      if (!mounted || _isFinished) return;
+      if (!mounted || _isFinished.value) return;
 
-      setState(() {
-        if (_progress < 0.6) {
-          _progress += 0.02; // Fast phase
-        } else if (_progress < 0.85) {
-          _progress += 0.01; // Medium phase
-        } else if (_progress < 0.98) {
-          _progress +=
-              0.001; // Crawl phase (stuck at 98-99% until real task finishes)
-        }
-      });
+      if (_progress.value < 0.6) {
+        _progress.value += 0.02; // Fast phase
+      } else if (_progress.value < 0.85) {
+        _progress.value += 0.01; // Medium phase
+      } else if (_progress.value < 0.98) {
+        _progress.value +=
+            0.001; // Crawl phase (stuck at 98-99% until real task finishes)
+      }
     });
   }
 
@@ -64,10 +62,8 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
       // Handle error if necessary
     } finally {
       if (mounted) {
-        setState(() {
-          _progress = 1.0;
-          _isFinished = true;
-        });
+        _progress.value = 1.0;
+        _isFinished.value = true;
         _timer?.cancel();
 
         // Wait a tiny bit to let user see 100% and success state
@@ -83,6 +79,8 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
   @override
   void dispose() {
     _timer?.cancel();
+    _progress.dispose();
+    _isFinished.dispose();
     super.dispose();
   }
 
@@ -90,7 +88,10 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
+    return ListenableBuilder(
+      listenable: Listenable.merge([_progress, _isFinished]),
+      builder: (context, _) {
+        return Container(
       width: double.infinity,
       padding: EdgeInsets.all(32.r),
       decoration: BoxDecoration(
@@ -113,7 +114,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
               color: Colors.blueAccent.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
-            child: _isFinished
+            child: _isFinished.value
                 ? Icon(
                     LucideIcons.checkCircle2,
                     color: Colors.greenAccent,
@@ -132,7 +133,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           ),
           SizedBox(height: 24.h),
           Text(
-            _isFinished
+            _isFinished.value
                 ? context.tr(
                     'translation.model_optimized',
                     fallback: 'Model Optimized!',
@@ -147,10 +148,10 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
               fontWeight: FontWeight.bold,
               color: isDark ? Colors.white : Colors.black87,
             ),
-          ).animate(target: _isFinished ? 1 : 0).fade().slideY(),
+          ).animate(target: _isFinished.value ? 1 : 0).fade().slideY(),
           SizedBox(height: 12.h),
           Text(
-            _isFinished
+            _isFinished.value
                 ? context.tr(
                     'translation.ready_forever',
                     fallback: 'On-device translation ready forever.',
@@ -188,7 +189,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                     return AnimatedContainer(
                       duration: const Duration(milliseconds: 150),
                       height: 12.h,
-                      width: constraints.maxWidth * _progress,
+                      width: constraints.maxWidth * _progress.value,
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           colors: [Colors.cyanAccent, Colors.blueAccent],
@@ -209,7 +210,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           ),
           SizedBox(height: 16.h),
           Text(
-                '${(_progress * 100).toInt()}%',
+                '${(_progress.value * 100).toInt()}%',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 32.sp,
@@ -220,7 +221,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
                     ).createShader(const Rect.fromLTWH(0, 0, 100, 40)),
                 ),
               )
-              .animate(key: ValueKey(_progress))
+              .animate(key: ValueKey(_progress.value))
               .scale(
                 duration: 100.ms,
                 begin: const Offset(1.05, 1.05),
@@ -234,6 +235,8 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
       end: 0,
       curve: Curves.easeOutCubic,
       duration: 500.ms,
+    );
+      }
     );
   }
 }

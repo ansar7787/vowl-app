@@ -26,32 +26,38 @@ class HandwritingCanvas extends StatefulWidget {
 
 class HandwritingCanvasState extends State<HandwritingCanvas> {
   final Ink _ink = Ink();
-  final List<Stroke> _strokes = [];
+  final ValueNotifier<List<Stroke>> _strokes = ValueNotifier([]);
   Stroke? _currentStroke;
 
   @override
   void initState() {
     super.initState();
   }
+  
+  @override
+  void dispose() {
+    _strokes.dispose();
+    super.dispose();
+  }
 
   void clearCanvas() {
-    setState(() {
-      _strokes.clear();
-      _ink.strokes.clear();
-    });
+    _strokes.value = [];
+    _ink.strokes.clear();
     widget.onClear();
   }
 
   void _undoStroke() {
-    if (_strokes.isNotEmpty) {
-      setState(() {
-        _strokes.removeLast();
-        // Rebuild Ink object without the last stroke
-        _ink.strokes.clear();
-        for (var stroke in _strokes) {
-          _ink.strokes.add(stroke);
-        }
-      });
+    if (_strokes.value.isNotEmpty) {
+      final newStrokes = List<Stroke>.from(_strokes.value);
+      newStrokes.removeLast();
+      _strokes.value = newStrokes;
+      
+      // Rebuild Ink object without the last stroke
+      _ink.strokes.clear();
+      for (var stroke in newStrokes) {
+        _ink.strokes.add(stroke);
+      }
+      
       widget.onInkUpdated(_ink);
     }
   }
@@ -95,9 +101,9 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
                       t: DateTime.now().millisecondsSinceEpoch,
                     ),
                   );
-                  setState(() {
-                    _strokes.add(_currentStroke!);
-                  });
+                  final newStrokes = List<Stroke>.from(_strokes.value);
+                  newStrokes.add(_currentStroke!);
+                  _strokes.value = newStrokes;
                 },
                 onPanUpdate: (details) {
                   _currentStroke?.points.add(
@@ -107,7 +113,8 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
                       t: DateTime.now().millisecondsSinceEpoch,
                     ),
                   );
-                  setState(() {});
+                  // Force a redraw
+                  _strokes.value = List<Stroke>.from(_strokes.value);
                 },
                 onPanEnd: (details) {
                   if (_currentStroke != null) {
@@ -116,9 +123,14 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
                     _currentStroke = null;
                   }
                 },
-                child: CustomPaint(
-                  painter: _SignaturePainter(_strokes, widget.strokeColor),
-                  size: Size.infinite,
+                child: ValueListenableBuilder<List<Stroke>>(
+                  valueListenable: _strokes,
+                  builder: (context, strokes, _) {
+                    return CustomPaint(
+                      painter: _SignaturePainter(strokes, widget.strokeColor),
+                      size: Size.infinite,
+                    );
+                  }
                 ),
               ),
             ),

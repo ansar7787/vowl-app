@@ -27,13 +27,13 @@ class CategoryRadarChart extends StatefulWidget {
 }
 
 class _CategoryRadarChartState extends State<CategoryRadarChart> {
-  late List<double> _displayScores;
+  final ValueNotifier<List<double>> _displayScores = ValueNotifier([0.15, 0.15, 0.15, 0.15]);
   PedagogicalBlueprint? _blueprint;
 
   @override
   void initState() {
     super.initState();
-    _displayScores = [0.15, 0.15, 0.15, 0.15];
+    
     _computeScores();
   }
 
@@ -76,10 +76,8 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
       math.max(0.15, score4), // Left
     ];
 
-    if (!listEquals(_displayScores, newScores)) {
-      setState(() {
-        _displayScores = newScores;
-      });
+    if (!listEquals(_displayScores.value, newScores)) {
+      _displayScores.value = newScores;
     }
   }
 
@@ -145,8 +143,10 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
               duration: const Duration(milliseconds: 1200),
               curve: Curves.elasticOut,
               builder: (context, animValue, child) {
-                // Scale scores based on animation value for an expanding radar effect
-                final animatedScores = _displayScores.map((s) => s * animValue).toList();
+                return ValueListenableBuilder<List<double>>(
+                  valueListenable: _displayScores,
+                  builder: (context, scores, _) {
+                    final animatedScores = scores.map((s) => s * animValue).toList();
                 return CustomPaint(
                   size: Size(double.infinity, 200.r),
                   painter: _RadarChartPainter(
@@ -156,6 +156,8 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                     bgAnimValue: animValue.clamp(0.0, 1.0),
                   ),
                 );
+                  }
+                );
               },
             ),
           ),
@@ -163,10 +165,22 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(child: _buildLegend(_blueprint!.radarAxes[0], widget.primaryColor, _displayScores[0])),
-              Expanded(child: _buildLegend(_blueprint!.radarAxes[1], widget.primaryColor, _displayScores[1])),
-              Expanded(child: _buildLegend(_blueprint!.radarAxes[2], widget.primaryColor, _displayScores[2])),
-              Expanded(child: _buildLegend(_blueprint!.radarAxes[3], widget.primaryColor, _displayScores[3])),
+              ValueListenableBuilder<List<double>>(
+                valueListenable: _displayScores,
+                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[0], widget.primaryColor, scores[0]))
+              ),
+              ValueListenableBuilder<List<double>>(
+                valueListenable: _displayScores,
+                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[1], widget.primaryColor, scores[1]))
+              ),
+              ValueListenableBuilder<List<double>>(
+                valueListenable: _displayScores,
+                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[2], widget.primaryColor, scores[2]))
+              ),
+              ValueListenableBuilder<List<double>>(
+                valueListenable: _displayScores,
+                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[3], widget.primaryColor, scores[3]))
+              ),
             ],
           ),
         ],

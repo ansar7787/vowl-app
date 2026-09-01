@@ -18,7 +18,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 ///   durationSeconds: 30,
 ///   primaryColor: theme.primaryColor,
 ///   onTimeUp: () => _handleTimeExpired(),
-///   onTick: (remaining) => setState(() => _remaining = remaining),
+///   onTick: (remaining) => _remainingNotifier.value = remaining,
 /// )
 /// ```
 class SpeedChallengeTimer extends StatefulWidget {

@@ -31,10 +31,10 @@ class TranslateButtonWidget extends StatefulWidget {
 }
 
 class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
-  bool _isTranslating = false;
+  final ValueNotifier<bool> _isTranslating = ValueNotifier(false);
 
   Future<void> _handleTranslatePress() async {
-    setState(() => _isTranslating = true);
+    _isTranslating.value = true;
 
     try {
       // 1. Check if they selected a language yet
@@ -46,7 +46,7 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
         // If they still didn't configure it (dismissed the sheet), abort.
         final recheck = await TranslationService().isLanguageConfigured();
         if (!recheck) {
-          setState(() => _isTranslating = false);
+          _isTranslating.value = false;
           return;
         }
       }
@@ -86,14 +86,23 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
       }
     } finally {
       if (mounted) {
-        setState(() => _isTranslating = false);
+        _isTranslating.value = false;
       }
     }
   }
 
   @override
+  void dispose() {
+    _isTranslating.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (_isTranslating) {
+    return ValueListenableBuilder<bool>(
+      valueListenable: _isTranslating,
+      builder: (context, isTranslating, _) {
+        if (isTranslating) {
       return Container(
         width: 32.r,
         height: 32.r,
@@ -127,6 +136,8 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
       tooltip: 'Translate',
       constraints: const BoxConstraints(),
       padding: EdgeInsets.zero,
+    );
+      }
     );
   }
 }
