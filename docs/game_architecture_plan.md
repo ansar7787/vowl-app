@@ -73,8 +73,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **4. Context Clues**
 - [x] Dual-Stage Scroll UX
@@ -97,8 +97,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [N/A] Docked Input Padding (Keyboard Games Only)
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **6. Flashcards**
 - [N/A] Dual-Stage Scroll UX
@@ -109,8 +109,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
 - [N/A] Docked Input Padding (Keyboard Games Only)
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **7. Idioms**
 - [x] Dual-Stage Scroll UX
@@ -133,8 +133,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **9. Prefix/Suffix**
 - [x] Dual-Stage Scroll UX
@@ -157,8 +157,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **11. Topic Vocab**
 - [N/A] Dual-Stage Scroll UX
@@ -169,8 +169,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
 - [N/A] Docked Input Padding (Keyboard Games Only)
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 
 **12. Word Formation**
 - [x] Dual-Stage Scroll UX
