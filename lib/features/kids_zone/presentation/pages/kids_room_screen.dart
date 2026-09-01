@@ -925,43 +925,41 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     final stickerId = user.kidsEquippedSticker;
     final buddyName = user.kidsMascot == 'foxie' ? 'FOXIE' : user.kidsMascot == 'dino' ? 'DINO' : 'OWLY';
     
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.2),
-            borderRadius: BorderRadius.circular(24.r),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.6), width: 2.w),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
-                blurRadius: 10,
-                offset: const Offset(0, 5),
-              ),
-            ],
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.6), width: 2.w),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
           ),
-          child: Text(
+        ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
             buddyName,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 20.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w900,
               color: Colors.white,
-              letterSpacing: 4,
+              letterSpacing: 2,
             ),
           ),
-        ),
-        if (stickerId != null)
-          Positioned(
-            right: -15.w,
-            top: -15.h,
-            child: _buildGlossySticker(KidsAssets.getStickerEmoji(stickerId), 42.r)
+          if (stickerId != null) ...[
+            SizedBox(width: 8.w),
+            _buildGlossySticker(KidsAssets.getStickerEmoji(stickerId), 22.r)
                 .animate(onPlay: (c) => c.repeat(reverse: true))
-                .moveY(begin: -2, end: 2, duration: 1.5.seconds),
-          ),
-      ],
+                .moveY(begin: -1, end: 1, duration: 1.5.seconds),
+          ],
+        ],
+      ),
     );
   }
 
