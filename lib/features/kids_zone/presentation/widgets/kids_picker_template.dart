@@ -41,7 +41,13 @@ class KidsPickerTemplate extends StatefulWidget {
 }
 
 class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
-  bool _isOverTarget = false;
+  final ValueNotifier<bool> _isOverTarget = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isOverTarget.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,25 +95,30 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
   ) {
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) {
-        setState(() => _isOverTarget = true);
+        _isOverTarget.value = true;
         return state.answerStatus == AnswerStatus.unanswered;
       },
-      onLeave: (data) => setState(() => _isOverTarget = false),
+      onLeave: (data) => _isOverTarget.value = false,
       onAcceptWithDetails: (details) {
-        setState(() => _isOverTarget = false);
+        _isOverTarget.value = false;
         final option = details.data;
         final isCorrect = quest.correctAnswer == option;
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
       },
       builder: (context, candidateData, rejectedData) {
-        return AnimatedContainer(
-          duration: 300.ms,
-          transform: Matrix4.diagonal3Values(
-            _isOverTarget ? 1.05 : 1.0,
-            _isOverTarget ? 1.05 : 1.0,
-            1.0,
-          ),
-          child: _buildCentralVisual(quest, isHighlighted: _isOverTarget),
+        return ValueListenableBuilder<bool>(
+          valueListenable: _isOverTarget,
+          builder: (context, isOverTarget, _) {
+            return AnimatedContainer(
+              duration: 300.ms,
+              transform: Matrix4.diagonal3Values(
+                isOverTarget ? 1.05 : 1.0,
+                isOverTarget ? 1.05 : 1.0,
+                1.0,
+              ),
+              child: _buildCentralVisual(quest, isHighlighted: isOverTarget),
+            );
+          },
         );
       },
     );
