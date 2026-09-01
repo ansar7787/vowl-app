@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,9 +37,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
 
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   Timer? _autoplayTimer;
 
   @override
@@ -53,6 +53,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   @override
   void dispose() {
     _autoplayTimer?.cancel();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
     super.dispose();
   }
 
@@ -63,11 +66,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   }
 
   void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
-    if (_isAnswered) return;
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    if (_isAnswered.value) return;
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
@@ -94,10 +95,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -112,30 +111,26 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
             _autoplayTimer?.cancel();
             _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -153,13 +148,16 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti]),
+            builder: (context, _) {
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -195,8 +193,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -205,7 +202,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered)
+                              if (!_isAnswered.value)
                                 ShadowPlaybackCompare(
                                   expectedText: quest.textToSpeak ?? "",
                                   primaryColor: theme.primaryColor,
@@ -220,6 +217,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                       ),
                     ],
                   ),
+              );
+            },
           ),
         );
       },
