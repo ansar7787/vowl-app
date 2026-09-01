@@ -728,8 +728,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
           final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
           final currActive = math.min(200, highest + 1);
           
-          // easeOutSine starts instantly (no starting delay) and flows smoothly, slowing down gracefully at the end
-          final double rawValue = Curves.easeOutSine.transform(widget.unlockPathController.value);
+          // easeInOutCubic creates a smooth water-flow feel: starts gently,
+          // accelerates smoothly in the middle, and decelerates peacefully at the end
+          final double rawValue = Curves.easeInOutCubic.transform(widget.unlockPathController.value);
           
           if (widget.level == currActive) {
             // Draws the second half of the path (from the midpoint to the new node)
@@ -786,7 +787,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
                       final currActive = math.min(200, highest + 1);
                       if (widget.level == currActive) {
-                        final double rawValue = Curves.easeOutSine.transform(widget.unlockPathController.value);
+                        final double rawValue = Curves.easeInOutCubic.transform(widget.unlockPathController.value);
                         // The path mathematically touches the node's edge at rawValue = 0.74
                         final double popProgress = ((rawValue - 0.74) * (1.0 / 0.26)).clamp(0.0, 1.0);
                         final double pulseScale = math.sin(popProgress * math.pi); // 0.0 -> 1.0 -> 0.0

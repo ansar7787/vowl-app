@@ -123,10 +123,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       duration: const Duration(milliseconds: 800),
     );
 
-    // 2. Path-draw animation when a level unlocks (Peaceful and organic)
+    // 2. Path-draw animation when a level unlocks (Slow, peaceful water-flow)
     _unlockPathController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 2800),
     );
 
     // 3. Current-node subtle glow pulse (like Kids map)
@@ -323,6 +323,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   /// True AAA Standard: A completely linear, async/await timeline orchestrated top-to-bottom.
+  /// The path line draws with a slow, smooth "flowing water" feel and confetti
+  /// locks the screen from scrolling until all particles have settled.
   Future<void> _playUnlockSequence(BuildContext context) async {
     setState(() => _isSequenceAnimating = true);
 
@@ -333,13 +335,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     // 2. Trigger the smooth scroll to the new node
     _scrollToCurrentLevel(animate: true);
 
-    // 3. Wait exactly three frames for scroll physics momentum to engage
-    for (int i = 0; i < 3; i++) {
-      await WidgetsBinding.instance.endOfFrame;
-    }
+    // 3. Wait for the scroll animation to fully complete before starting
+    //    the path draw, so the user sees the water-flow in a settled viewport.
+    await Future.delayed(const Duration(milliseconds: 900));
     if (!mounted) return;
 
-    // 4. Play the smooth, organic path draw animation
+    // 4. Play the slow, organic water-flow path draw animation (2800ms)
     await _unlockPathController.forward();
     if (!mounted) return;
 
@@ -353,8 +354,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     await WidgetsBinding.instance.endOfFrame;
     if (mounted) _confettiController.play();
 
-    // 7. Wait 3 seconds, then cleanup celebration memory
-    await Future.delayed(const Duration(seconds: 3));
+    // 7. Wait for ALL confetti particles to fully fall and settle before
+    //    re-enabling touch/scroll. The confetti controller runs for 2s,
+    //    particles need ~1.5s more to physically fall off screen.
+    await Future.delayed(const Duration(milliseconds: 3500));
     if (mounted) {
       setState(() {
         _celebratingLevel = null;
@@ -469,7 +472,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
               // 2. Scrollable Map Core
               CustomScrollView(
                 controller: _scrollController,
-                physics: const BouncingScrollPhysics(),
+                physics: _isSequenceAnimating
+                    ? const NeverScrollableScrollPhysics()
+                    : const BouncingScrollPhysics(),
                 slivers: [
                   // SliverAppBar Back Pill
                   SliverAppBar(

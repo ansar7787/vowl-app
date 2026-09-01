@@ -516,7 +516,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     double outgoingProgress = 1.0;
     
     if (widget.justUnlockedLevel != null) {
-      final double rawValue = Curves.easeOutSine.transform(widget.unlockPathController.value);
+      final double rawValue = Curves.easeInOutCubic.transform(widget.unlockPathController.value);
       if (isJustUnlocked) {
         incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
       } else if (isPrevToJustUnlocked) {
@@ -531,7 +531,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
           Widget nodeWidget = child!;
           
           if (isJustUnlocked) {
-            final double rawValue = Curves.easeOutSine.transform(widget.unlockPathController.value);
+            final double rawValue = Curves.easeInOutCubic.transform(widget.unlockPathController.value);
             final double popProgress = ((rawValue - 0.74) * (1.0 / 0.26)).clamp(0.0, 1.0);
             final double pulseScale = math.sin(popProgress * math.pi);
             
