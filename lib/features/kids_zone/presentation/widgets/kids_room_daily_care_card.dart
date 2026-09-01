@@ -9,13 +9,15 @@ class KidsRoomDailyCareCard extends StatelessWidget {
   final UserEntity user;
   final bool hasPlayed;
   final bool hasCleaned;
+  final bool isClaimed;
   final VoidCallback onClaim;
 
-  const KidsRoomDailyCareCard({
+  const KidsRoomDailyCareCard({ 
     super.key,
     required this.user,
     required this.hasPlayed,
     required this.hasCleaned,
+    required this.isClaimed,
     required this.onClaim,
   });
 
@@ -85,51 +87,74 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 12.h),
-              _buildTaskItem("Feed Buddy", hasFed, isDark),
-              SizedBox(height: 8.h),
-              _buildTaskItem("Play Game", hasPlayed, isDark),
-              SizedBox(height: 8.h),
-              _buildTaskItem("Clean Room", hasCleaned, isDark),
-
-              if (allDone) ...[
-                SizedBox(height: 16.h),
+              if (isClaimed) ...[
+                SizedBox(height: 12.h),
                 Center(
-                  child:
-                      ScaleButton(
-                            onTap: onClaim,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 20.w,
-                                vertical: 8.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.green.shade500,
-                                borderRadius: BorderRadius.circular(20.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.green.shade700,
-                                    offset: Offset(0, 4.h),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    decoration: BoxDecoration(
+                      color: Colors.green.shade500.withValues(alpha: 0.2),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(color: Colors.green.shade500),
+                    ),
+                    child: Text(
+                      "Claimed ✅ Come back tomorrow!",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.green.shade600,
+                      ),
+                    ),
+                  ),
+                ),
+              ] else ...[
+                _buildTaskItem("Feed Buddy", hasFed, isDark),
+                SizedBox(height: 8.h),
+                _buildTaskItem("Play Game", hasPlayed, isDark),
+                SizedBox(height: 8.h),
+                _buildTaskItem("Clean Room", hasCleaned, isDark),
+
+                if (allDone) ...[
+                  SizedBox(height: 16.h),
+                  Center(
+                    child:
+                        ScaleButton(
+                              onTap: onClaim,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.w,
+                                  vertical: 8.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.green.shade500,
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.green.shade700,
+                                      offset: Offset(0, 4.h),
+                                    ),
+                                  ],
+                                ),
+                                child: Text(
+                                  "CLAIM 25 ⭐",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
                                   ),
-                                ],
-                              ),
-                              child: Text(
-                                "CLAIM 25 ⭐",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
                                 ),
                               ),
+                            )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .scale(
+                              begin: const Offset(0.95, 0.95),
+                              end: const Offset(1.05, 1.05),
+                              duration: 1.seconds,
                             ),
-                          )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .scale(
-                            begin: const Offset(0.95, 0.95),
-                            end: const Offset(1.05, 1.05),
-                            duration: 1.seconds,
-                          ),
-                ),
+                  ),
+                ],
               ],
             ],
           ),

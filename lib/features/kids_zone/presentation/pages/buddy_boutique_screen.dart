@@ -8,7 +8,6 @@ import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -17,6 +16,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class BuddyBoutiqueScreen extends StatefulWidget {
   const BuddyBoutiqueScreen({super.key});
@@ -662,19 +662,177 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
     if (user.kidsCoins < (item['price'] as int)) {
       di.sl<SoundService>().playWrong();
-      _showModernNotification(context, "NOT ENOUGH COINS! ⭐", isError: true);
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr('kids_zone.not_enough_coins_hint', fallback: 'Keep playing to earn more coins! \uD83C\uDFAE'),
+        type: CustomSnackBarType.warning,
+      );
       return;
     }
 
+    // Show purchase confirmation dialog to prevent accidental purchases
+    _showPurchaseConfirmation(context, item, isMascot);
+  }
+
+  void _showPurchaseConfirmation(
+    BuildContext context,
+    Map<String, dynamic> item,
+    bool isMascot,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final itemColor = item['color'] as Color;
+    final price = item['price'] as int;
+
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (sheetContext) {
+        return Container(
+          padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            border: Border.all(color: itemColor, width: 3.w),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Drag handle
+              Container(
+                width: 40.w,
+                height: 5.h,
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.white24 : Colors.black12,
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+              ),
+              SizedBox(height: 24.h),
+              // Item preview
+              Text(
+                item['icon'] as String,
+                style: TextStyle(fontSize: 64.sp),
+              ),
+              SizedBox(height: 16.h),
+              Text(
+                item['name'] as String,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                ),
+              ),
+              SizedBox(height: 8.h),
+              // Price display
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.monetization_on_rounded, color: Colors.amber, size: 20.sp),
+                  SizedBox(width: 6.w),
+                  Text(
+                    context.tr('kids_zone.buy_for_coins', fallback: 'Buy for $price coins?', args: ['$price']),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 24.h),
+              // Action buttons
+              Row(
+                children: [
+                  Expanded(
+                    child: ScaleButton(
+                      onTap: () => Navigator.pop(sheetContext),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 14.h),
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
+                          borderRadius: BorderRadius.circular(20.r),
+                          border: Border.all(
+                            color: isDark ? Colors.white24 : Colors.grey.shade300,
+                            width: 2.w,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: isDark ? Colors.black26 : Colors.grey.shade200,
+                              offset: Offset(0, 4.h),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            context.tr('kids_zone.not_now', fallback: 'Not Now'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark ? Colors.white70 : Colors.black54,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 16.w),
+                  Expanded(
+                    child: ScaleButton(
+                      onTap: () {
+                        Navigator.pop(sheetContext);
+                        _executePurchase(context, item, isMascot);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 14.h),
+                        decoration: BoxDecoration(
+                          color: itemColor,
+                          borderRadius: BorderRadius.circular(20.r),
+                          border: Border.all(color: itemColor, width: 2.w),
+                          boxShadow: [
+                            BoxShadow(
+                              color: itemColor.withValues(alpha: 0.6),
+                              offset: Offset(0, 4.h),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            context.tr('kids_zone.buy_now', fallback: 'Buy Now!'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _executePurchase(
+    BuildContext context,
+    Map<String, dynamic> item,
+    bool isMascot,
+  ) {
     _confettiController.play();
     di.sl<SoundService>().playCorrect();
 
-    // The Bloc automatically handles deducting coins and adding to owned items
     context.read<ProfileBloc>().add(
       ProfileBuyAccessoryRequested(item['id'] as String, item['price'] as int),
     );
 
-    // Auto-equip the item they just purchased
     if (isMascot) {
       context.read<ProfileBloc>().add(
         ProfileUpdateMascotRequested(item['id'] as String),
@@ -685,7 +843,11 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       );
     }
 
-    _showModernNotification(context, "PURCHASE SUCCESSFUL! ✨");
+    CustomSnackBar.show(
+      context: context,
+      message: context.tr('kids_zone.purchase_success', fallback: 'Awesome! New item unlocked! \u2728'),
+      type: CustomSnackBarType.success,
+    );
   }
 
   Widget _buildWatchAndEarn(BuildContext context, bool isDark) {
@@ -809,65 +971,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     String message, {
     bool isError = false,
   }) {
-    final overlay = Overlay.of(context);
-    final entry = OverlayEntry(
-      builder: (context) => Positioned(
-        top: 60.h,
-        left: 20.w,
-        right: 20.w,
-        child: Material(
-          color: Colors.transparent,
-          child:
-              GlassTile(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 15.h,
-                    ),
-                    borderRadius: BorderRadius.circular(25.r),
-                    borderColor: isError
-                        ? Colors.redAccent.withValues(alpha: 0.3)
-                        : Colors.greenAccent.withValues(alpha: 0.3),
-                    child: Row(
-                      children: [
-                        Icon(
-                          isError
-                              ? Icons.warning_amber_rounded
-                              : Icons.check_circle_outline_rounded,
-                          color: isError
-                              ? Colors.redAccent
-                              : Colors.greenAccent,
-                          size: 24.sp,
-                        ),
-                        SizedBox(width: 12.w),
-                        Expanded(
-                          child: Text(
-                            message,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w800,
-                              color: isError
-                                  ? Colors.redAccent
-                                  : (Theme.of(context).brightness ==
-                                            Brightness.dark
-                                        ? Colors.white
-                                        : const Color(0xFF0F172A)),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                  .animate()
-                  .slideY(begin: -1, end: 0, curve: Curves.easeOutBack)
-                  .fadeIn()
-                  .then(delay: 2000.ms)
-                  .fadeOut()
-                  .slideY(begin: 0, end: -1),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: message,
+      type: isError ? CustomSnackBarType.error : CustomSnackBarType.success,
     );
-    overlay.insert(entry);
-    Future.delayed(const Duration(seconds: 3), () => entry.remove());
   }
 }

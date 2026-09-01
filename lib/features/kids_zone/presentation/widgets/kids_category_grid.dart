@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -11,6 +13,36 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/kids_game_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+
+/// Themed section groupings for the category grid.
+/// This transforms the flat wall of 25 cards into a scannable, grouped menu.
+class _SectionDef {
+  final String title;
+  final String emoji;
+  final Color color;
+  final List<String> gameTypes;
+
+  const _SectionDef(this.title, this.emoji, this.color, this.gameTypes);
+}
+
+const _kSections = [
+  _SectionDef('Language', '📚', Color(0xFFF43F5E), [
+    'handwriting', 'alphabet', 'phonics', 'verbs', 'opposites', 'prepositions',
+  ]),
+  _SectionDef('World', '🌍', Color(0xFF10B981), [
+    'animals', 'nature', 'weather', 'day_night', 'transport',
+  ]),
+  _SectionDef('Life', '🏠', Color(0xFF8B5CF6), [
+    'family', 'school', 'routine', 'emotions', 'food', 'home',
+  ]),
+  _SectionDef('Math & Logic', '🔢', Color(0xFF0EA5E9), [
+    'numbers', 'colors', 'shapes', 'time',
+  ]),
+  _SectionDef('Skills', '⭐', Color(0xFFF59E0B), [
+    'fruits', 'body_parts', 'clothing', 'professions',
+  ]),
+];
 
 class KidsCategoryGrid extends StatefulWidget {
   final bool isDark;
@@ -49,116 +81,190 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
 
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      sliver: SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 20.h,
-          crossAxisSpacing: 20.w,
-          childAspectRatio: 0.85,
-        ),
-        delegate: SliverChildListDelegate(
-          KidsGameHelper.allGames.map((game) {
-            if (game.gameType == 'handwriting') {
-              return ListenableBuilder(
-                listenable: Listenable.merge([_isCheckingModel, _isModelDownloaded]),
-                builder: (context, _) {
-                  return _buildCategoryCard(
-                    context,
-                    () async {
-                      if (!_isModelDownloaded.value) {
-                    final networkInfo = di.sl<NetworkInfo>();
-                    final isConnected = await networkInfo.isConnected;
-                    if (!isConnected && context.mounted) {
-                      CustomSnackBar.show(
-                        context: context,
-                        message:
-                            context.tr('kids_zone.internet_required_smart_pen', fallback: 'Internet connection required to download smart pen model.'),
-                        type: CustomSnackBarType.warning,
+    // Use context.select to only rebuild when completedLevels changes
+    final completedLevels = context.select<AuthBloc, Map<String, List<int>>>(
+      (bloc) => bloc.state.user?.completedLevels ?? {},
+    );
+
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, sectionIndex) {
+          final section = _kSections[sectionIndex];
+          final games = section.gameTypes
+              .map((type) => KidsGameHelper.getMetadata(type))
+              .where((g) => g.gameType != 'unknown')
+              .toList();
+
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Section Header
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: sectionIndex == 0 ? 0 : 12.h,
+                    bottom: 16.h,
+                  ),
+                  child: Row(
+                    children: [
+                      Text(section.emoji, style: TextStyle(fontSize: 20.sp)),
+                      SizedBox(width: 10.w),
+                      Text(
+                        context.tr(
+                          'kids_zone.section_${section.title.toLowerCase().replaceAll(' & ', '_').replaceAll(' ', '_')}',
+                          fallback: section.title,
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w900,
+                          color: widget.isDark
+                              ? Colors.white70
+                              : const Color(0xFF475569),
+                          letterSpacing: 1,
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: Container(
+                          height: 2.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                section.color.withValues(alpha: 0.5),
+                                section.color.withValues(alpha: 0.0),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(1.r),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ).animate().fadeIn(delay: (sectionIndex * 80).ms),
+
+                // Grid of cards for this section
+                GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 20.h,
+                    crossAxisSpacing: 20.w,
+                    childAspectRatio: 0.85,
+                  ),
+                  itemCount: games.length,
+                  itemBuilder: (context, index) {
+                    final game = games[index];
+                    final completed = completedLevels[game.gameType]?.length ?? 0;
+
+                    if (game.gameType == 'handwriting') {
+                      return ListenableBuilder(
+                        listenable: Listenable.merge([_isCheckingModel, _isModelDownloaded]),
+                        builder: (context, _) {
+                          return _buildCategoryCard(
+                            context,
+                            () async {
+                              if (!_isModelDownloaded.value) {
+                                final networkInfo = di.sl<NetworkInfo>();
+                                final isConnected = await networkInfo.isConnected;
+                                if (!isConnected && context.mounted) {
+                                  CustomSnackBar.show(
+                                    context: context,
+                                    message: context.tr('kids_zone.internet_required_smart_pen', fallback: 'Internet connection required to download smart pen model.'),
+                                    type: CustomSnackBarType.warning,
+                                  );
+                                  return;
+                                }
+                              }
+
+                              final service = di.sl<DigitalInkService>();
+                              bool isDownloaded = await service.isModelDownloaded();
+
+                              if (!isDownloaded && context.mounted) {
+                                final success = await showDialog<bool>(
+                                  context: context,
+                                  barrierDismissible: false,
+                                  builder: (context) =>
+                                      _DownloadModelDialog(primaryColor: game.color),
+                                );
+
+                                if (success != true) {
+                                  if (context.mounted) {
+                                    CustomSnackBar.show(
+                                      context: context,
+                                      message: context.tr('kids_zone.failed_download_smart_pen', fallback: 'Failed to download handwriting model.'),
+                                      type: CustomSnackBarType.error,
+                                    );
+                                  }
+                                  return;
+                                }
+
+                                _isModelDownloaded.value = true;
+                              }
+
+                              if (context.mounted) {
+                                context.push(
+                                  '/kids/map/handwriting',
+                                  extra: {
+                                    'title': game.fullTitle,
+                                    'primaryColor': game.color,
+                                  },
+                                );
+                              }
+                            },
+                            game.gridTitle,
+                            _isCheckingModel.value
+                                ? context.tr('kids_zone.checking', fallback: 'Checking...')
+                                : (!_isModelDownloaded.value
+                                      ? context.tr('kids_zone.download_required', fallback: 'Download Required')
+                                      : game.subtitle),
+                            game.color,
+                            game.icon,
+                            completedCount: completed,
+                            trailing: _isCheckingModel.value
+                                ? Icon(Icons.sync_rounded, color: game.color, size: 24.sp)
+                                      .animate(onPlay: (c) => c.repeat())
+                                      .rotate(duration: 1.5.seconds)
+                                : (!_isModelDownloaded.value
+                                      ? Icon(
+                                              Icons.cloud_download_rounded,
+                                              color: game.color,
+                                              size: 28.sp,
+                                            )
+                                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                                            .scaleXY(
+                                              begin: 1.0,
+                                              end: 1.15,
+                                              duration: 1.seconds,
+                                            )
+                                      : null),
+                          );
+                        },
                       );
-                      return;
-                    }
-                  }
-
-                  final service = di.sl<DigitalInkService>();
-                  bool isDownloaded = await service.isModelDownloaded();
-
-                  if (!isDownloaded && context.mounted) {
-                    final success = await showDialog<bool>(
-                      context: context,
-                      barrierDismissible: false,
-                      builder: (context) =>
-                          _DownloadModelDialog(primaryColor: game.color),
-                    );
-
-                    if (success != true) {
-                      if (context.mounted) {
-                        CustomSnackBar.show(
-                          context: context,
-                          message: context.tr('kids_zone.failed_download_smart_pen', fallback: 'Failed to download handwriting model.'),
-                          type: CustomSnackBarType.error,
-                        );
-                      }
-                      return;
                     }
 
-                    _isModelDownloaded.value = true;
-                  }
-
-                  if (context.mounted) {
-                    context.push(
-                      '/kids/map/handwriting',
-                      extra: {
-                        'title': game.fullTitle,
-                        'primaryColor': game.color,
-                      },
+                    return _buildCategoryCard(
+                      context,
+                      () => context.push(
+                        '/kids/map/${game.gameType}',
+                        extra: {'title': game.fullTitle, 'primaryColor': game.color},
+                      ),
+                      game.gridTitle,
+                      game.subtitle,
+                      game.color,
+                      game.icon,
+                      completedCount: completed,
                     );
-                  }
-                },
-                game.gridTitle,
-                _isCheckingModel.value
-                    ? context.tr('kids_zone.checking', fallback: 'Checking...')
-                    : (!_isModelDownloaded.value
-                          ? context.tr('kids_zone.download_required', fallback: 'Download Required')
-                          : game.subtitle),
-                game.color,
-                game.icon,
-                trailing: _isCheckingModel.value
-                    ? Icon(Icons.sync_rounded, color: game.color, size: 24.sp)
-                          .animate(onPlay: (c) => c.repeat())
-                          .rotate(duration: 1.5.seconds)
-                    : (!_isModelDownloaded.value
-                          ? Icon(
-                                  Icons.cloud_download_rounded,
-                                  color: game.color,
-                                  size: 28.sp,
-                                )
-                                .animate(onPlay: (c) => c.repeat(reverse: true))
-                                .scaleXY(
-                                  begin: 1.0,
-                                  end: 1.15,
-                                  duration: 1.seconds,
-                                )
-                          : null),
-                  );
-                },
-              );
-            }
-
-            return _buildCategoryCard(
-              context,
-              () => context.push(
-                '/kids/map/${game.gameType}',
-                extra: {'title': game.fullTitle, 'primaryColor': game.color},
-              ),
-              game.gridTitle,
-              game.subtitle,
-              game.color,
-              game.icon,
-            );
-          }).toList(),
-        ),
+                  },
+                ),
+                SizedBox(height: 8.h),
+              ],
+            ),
+          );
+        },
+        childCount: _kSections.length,
       ),
     );
   }
@@ -171,7 +277,9 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
     Color color,
     IconData icon, {
     Widget? trailing,
+    int completedCount = 0,
   }) {
+    final progress = (completedCount / 200).clamp(0.0, 1.0);
     return ScaleButton(
       onTap: onTap,
       child: Container(
@@ -191,13 +299,51 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              child: Icon(icon, color: color, size: 32.sp),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(20.r),
+                  ),
+                  child: Icon(icon, color: color, size: 32.sp),
+                ),
+                // Per-category progress ring
+                if (completedCount > 0)
+                  SizedBox(
+                    width: 36.r,
+                    height: 36.r,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        SizedBox(
+                          width: 36.r,
+                          height: 36.r,
+                          child: CustomPaint(
+                            painter: _ProgressRingPainter(
+                              progress: progress,
+                              color: color,
+                              trackColor: color.withValues(alpha: 0.15),
+                              strokeWidth: 3.5.r,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '$completedCount',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w900,
+                            color: color,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -244,6 +390,56 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
       ),
     );
   }
+}
+
+/// Lightweight progress ring painter for per-category completion indicators.
+class _ProgressRingPainter extends CustomPainter {
+  final double progress;
+  final Color color;
+  final Color trackColor;
+  final double strokeWidth;
+
+  _ProgressRingPainter({
+    required this.progress,
+    required this.color,
+    required this.trackColor,
+    required this.strokeWidth,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = (size.width - strokeWidth) / 2;
+
+    // Track
+    canvas.drawCircle(
+      center,
+      radius,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = strokeWidth
+        ..color = trackColor,
+    );
+
+    // Progress arc
+    if (progress > 0) {
+      canvas.drawArc(
+        Rect.fromCircle(center: center, radius: radius),
+        -math.pi / 2,
+        2 * math.pi * progress,
+        false,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = strokeWidth
+          ..strokeCap = StrokeCap.round
+          ..color = color,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_ProgressRingPainter oldDelegate) =>
+      oldDelegate.progress != progress || oldDelegate.color != color;
 }
 
 class _DownloadModelDialog extends StatefulWidget {

@@ -10,7 +10,6 @@ import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -26,6 +25,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_top_bar.dart';
@@ -62,6 +62,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   Timer? _speechTimer;
 
   final BuddyLifecycleService _lifecycleService = const BuddyLifecycleService();
+
+  // Pre-computed star positions for sleeping overlay (seeded to avoid teleporting on rebuild)
+  late final List<Offset> _sleepStarPositions = List.generate(25, (i) {
+    final r = Random(i * 42 + 7);
+    return Offset(r.nextDouble(), r.nextDouble());
+  });
 
   final Map<String, List<Map<String, dynamic>>> _furnitureStore = {
     'bed': [
@@ -354,14 +360,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             user: user,
                             onBack: () => _showBackConfirmation(context, user),
                           ),
-                          if (!_dailyCareClaimed.value && !_hasClaimedToday(user))
-                            Padding(
-                              padding: EdgeInsets.only(left: 16.w, top: 4.h),
-                              child: KidsRoomDailyCareCard(
-                                user: user,
-                                hasPlayed: hasPlayedToday,
-                                hasCleaned: _hasCleanedToday.value,
-                                onClaim: () {
+                          Padding(
+                            padding: EdgeInsets.only(left: 16.w, top: 4.h),
+                            child: KidsRoomDailyCareCard(
+                              user: user,
+                              hasPlayed: hasPlayedToday,
+                              hasCleaned: _hasCleanedToday.value,
+                              isClaimed: _dailyCareClaimed.value || _hasClaimedToday(user),
+                              onClaim: () {
                                   _dailyCareClaimed.value = true;
                                   final newStreak = _lifecycleService
                                       .computeUpdatedStreak(user);
@@ -386,6 +392,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       ),
                       actionPanelWidget: KidsRoomActionPanel(
                         isSleeping: _isSleeping.value,
+                        gamesPlayedToday: isGameToday ? user.kidsGamesPlayedToday : 0,
                         onDecor: () => _showDecorStore(context, user),
                         onFeed: () => _showFoodMenu(context, user),
                         onPlay: () {
@@ -514,9 +521,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                           ...List.generate(
                                             25,
                                             (i) => Positioned(
-                                              top: Random().nextDouble() * 1.sh,
+                                              top: _sleepStarPositions[i].dy * 1.sh,
                                               left:
-                                                  Random().nextDouble() * 1.sw,
+                                                  _sleepStarPositions[i].dx * 1.sw,
                                               child:
                                                   const Text(
                                                         "⭐",
@@ -848,20 +855,58 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
             if (_isSleeping.value)
               Positioned(
-                top: -30.h,
-                child:
-                    Text(
-                          context.tr('games.kids_zzz', fallback: 'Zzz...'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: Colors.white70,
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.bold,
+                top: -60.h,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.9),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20.r),
+                      topRight: Radius.circular(20.r),
+                      bottomRight: Radius.circular(20.r),
+                      bottomLeft: Radius.circular(4.r),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text("☁️", style: TextStyle(fontSize: 18.sp)),
+                      SizedBox(width: 8.w),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Dreaming about...",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black45,
+                            ),
                           ),
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .moveY(begin: 0, end: -30, duration: 2.seconds)
-                        .fadeOut(),
+                          Text(
+                            "Tomorrow's Adventure! 🚀",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFF6366F1),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .moveY(begin: 0, end: -10, duration: 3.seconds, curve: Curves.easeInOutSine),
               ),
 
             if (_isFeeding.value)
@@ -1056,7 +1101,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       Navigator.pop(context);
     } else {
       di.sl<SoundService>().playWrong();
-      _showModernNotification(context, "NOT ENOUGH COINS! ⭐", isError: true);
+      _showModernNotification(context, context.tr('kids_zone.not_enough_coins_hint', fallback: 'Keep playing to earn more coins! 🎮'), isError: true);
     }
   }
 
@@ -1098,7 +1143,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           Navigator.pop(context);
           _showModernNotification(
             context,
-            "NOT ENOUGH COINS! ⭐",
+            context.tr('kids_zone.not_enough_coins_hint', fallback: 'Keep playing to earn more coins! 🎮'),
             isError: true,
           );
         }
@@ -1122,62 +1167,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     String message, {
     bool isError = false,
   }) {
-    final overlay = Overlay.of(context);
-    final entry = OverlayEntry(
-      builder: (context) => Positioned(
-        top: 60.h,
-        left: 20.w,
-        right: 20.w,
-        child: Material(
-          color: Colors.transparent,
-          child:
-              GlassTile(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 15.h,
-                    ),
-                    borderRadius: BorderRadius.circular(25.r),
-                    borderColor: isError
-                        ? Colors.redAccent.withValues(alpha: 0.3)
-                        : Colors.greenAccent.withValues(alpha: 0.3),
-                    child: Row(
-                      children: [
-                        Icon(
-                          isError
-                              ? Icons.warning_amber_rounded
-                              : Icons.check_circle_outline_rounded,
-                          color: isError
-                              ? Colors.redAccent
-                              : Colors.greenAccent,
-                          size: 24.sp,
-                        ),
-                        SizedBox(width: 12.w),
-                        Expanded(
-                          child: Text(
-                            message,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.black87,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                  .animate()
-                  .slideY(begin: -1, end: 0, curve: Curves.easeOutBack)
-                  .fadeIn()
-                  .then(delay: 2.seconds)
-                  .fadeOut()
-                  .slideY(begin: 0, end: -1),
-        ),
-      ),
+    CustomSnackBar.show(
+      context: context,
+      message: message,
+      type: isError ? CustomSnackBarType.error : CustomSnackBarType.success,
     );
-
-    overlay.insert(entry);
-    Future.delayed(const Duration(seconds: 3), () => entry.remove());
   }
 
   VowlMascotState _getMascotStateForMood(String mood) {

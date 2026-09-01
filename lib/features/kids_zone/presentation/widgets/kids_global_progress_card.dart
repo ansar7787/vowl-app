@@ -20,16 +20,24 @@ class KidsGlobalProgressCard extends StatelessWidget {
     this.globalRank,
   });
 
-  static const int totalLevels = 5000;
+  // 25 categories × 200 levels = 5000 total, but we show it as categories mastered
+  static const int _levelsPerCategory = 200;
+  static const int _totalCategories = 25;
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final completed = user.kidsTotalLevelsCompleted;
+    final categoriesStarted = user.completedLevels.keys
+        .where((k) => (user.completedLevels[k]?.isNotEmpty ?? false))
+        .length;
+    final categoriesMastered = user.completedLevels.keys
+        .where((k) => (user.completedLevels[k]?.length ?? 0) >= _levelsPerCategory)
+        .length;
+    final totalLevels = _totalCategories * _levelsPerCategory;
     final progress = totalLevels > 0
         ? (completed / totalLevels).clamp(0.0, 1.0)
         : 0.0;
-    final percentage = (progress * 100).toStringAsFixed(1);
     final rankGradient = globalRank != null
         ? _getRankGradient(globalRank!)
         : null;
@@ -39,7 +47,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
       label: context.tr(
         'kids_zone.learning_progress_progress_label',
         fallback: 'Journey Progress',
-        args: [completed.toString(), totalLevels.toString(), percentage],
+        args: [completed.toString(), '$categoriesStarted', '$categoriesMastered'],
       ),
       child: ScaleButton(
         onTap: () => context.push(AppRouter.kidsLeaderboardRoute),
@@ -227,11 +235,11 @@ class KidsGlobalProgressCard extends StatelessWidget {
                               height: 1,
                             ),
                           ),
+                          SizedBox(width: 4.w),
                           Text(
                             context.tr(
                               'home.levels_suffix',
                               fallback: 'Levels',
-                              args: [totalLevels.toString()],
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -250,11 +258,17 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            context.tr(
-                              'home.percent_complete',
-                              fallback: 'Complete',
-                              args: [percentage.toString()],
-                            ),
+                            categoriesMastered > 0
+                                ? context.tr(
+                                    'kids_zone.categories_mastered',
+                                    fallback: '$categoriesMastered categories mastered!',
+                                    args: ['$categoriesMastered'],
+                                  )
+                                : context.tr(
+                                    'kids_zone.categories_exploring',
+                                    fallback: 'Exploring $categoriesStarted of $_totalCategories categories',
+                                    args: ['$categoriesStarted', '$_totalCategories'],
+                                  ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,
@@ -320,6 +334,50 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+
+                  SizedBox(height: 20.h),
+                  
+                  // 7-day streak thermometer
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "🔥",
+                            style: TextStyle(fontSize: 14.sp),
+                          ),
+                          SizedBox(width: 6.w),
+                          Text(
+                            context.tr('kids_zone.streak_count', fallback: '${user.currentStreak} Day Streak!', args: ['${user.currentStreak}']),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.orange.shade700,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: List.generate(7, (index) {
+                          final activeCount = user.currentStreak == 0 ? 0 : ((user.currentStreak - 1) % 7) + 1;
+                          final isActive = index < activeCount;
+                          return Container(
+                            margin: EdgeInsets.only(left: 4.w),
+                            width: 16.w,
+                            height: 16.w,
+                            decoration: BoxDecoration(
+                              color: isActive ? Colors.orange.shade400 : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                              shape: BoxShape.circle,
+                              boxShadow: isActive ? [BoxShadow(color: Colors.orange.withValues(alpha: 0.4), blurRadius: 4)] : null,
+                            ),
+                            child: isActive ? Center(child: Text("🔥", style: TextStyle(fontSize: 8.sp))) : null,
+                          );
+                        }),
+                      ),
+                    ],
                   ),
                 ],
               ),

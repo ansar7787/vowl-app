@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class KidsRoomActionPanel extends StatelessWidget {
   final bool isSleeping;
+  final int gamesPlayedToday;
   final VoidCallback onDecor;
   final VoidCallback onFeed;
   final VoidCallback onPlay;
@@ -13,9 +14,10 @@ class KidsRoomActionPanel extends StatelessWidget {
   final VoidCallback onTalk;
   final VoidCallback onThemeTap;
 
-  const KidsRoomActionPanel({
+  const KidsRoomActionPanel({ 
     super.key,
     required this.isSleeping,
+    required this.gamesPlayedToday,
     required this.onDecor,
     required this.onFeed,
     required this.onPlay,
@@ -88,6 +90,10 @@ class KidsRoomActionPanel extends StatelessWidget {
                   color: Colors.orangeAccent.shade700,
                   onTap: onPlay,
                   isDark: isDark,
+                  badge: gamesPlayedToday < 3 
+                      ? '${3 - gamesPlayedToday} left' 
+                      : 'Done',
+                  badgeColor: gamesPlayedToday < 3 ? Colors.green : Colors.red,
                 ),
                 _buildModernActionButton(
                   context: context,
@@ -136,6 +142,8 @@ class KidsRoomActionPanel extends StatelessWidget {
     required Color color,
     required VoidCallback onTap,
     required bool isDark,
+    String? badge,
+    Color? badgeColor,
   }) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -144,42 +152,69 @@ class KidsRoomActionPanel extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [color.withValues(alpha: 0.8), color],
-                ),
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.4),
-                    blurRadius: 10,
-                    offset: Offset(0, 5.h),
-                  ),
-                  BoxShadow(
-                    color: Colors.white.withValues(alpha: 0.4),
-                    blurRadius: 0,
-                    spreadRadius: 1.5,
-                    offset: const Offset(0, 1),
-                  ),
-                ],
-              ),
-              child: Text(
-                emoji,
-                style: TextStyle(
-                  fontSize: 22.sp,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black.withValues(alpha: 0.2),
-                      blurRadius: 4,
-                      offset: const Offset(1, 2),
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [color.withValues(alpha: 0.8), color],
                     ),
-                  ],
+                    borderRadius: BorderRadius.circular(20.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.4),
+                        blurRadius: 10,
+                        offset: Offset(0, 5.h),
+                      ),
+                      BoxShadow(
+                        color: Colors.white.withValues(alpha: 0.4),
+                        blurRadius: 0,
+                        spreadRadius: 1.5,
+                        offset: const Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    emoji,
+                    style: TextStyle(
+                      fontSize: 22.sp,
+                      shadows: [
+                        Shadow(
+                          color: Colors.black.withValues(alpha: 0.2),
+                          blurRadius: 4,
+                          offset: const Offset(1, 2),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
+                if (badge != null)
+                  Positioned(
+                    top: -6.h,
+                    right: -10.w,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                      decoration: BoxDecoration(
+                        color: badgeColor ?? Colors.red,
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(color: Colors.white, width: 1.5.w),
+                      ),
+                      child: Text(
+                        badge,
+                        style: TextStyle(
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          height: 1.1,
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
             ),
             SizedBox(height: 10.h),
             Text(

@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
@@ -48,54 +50,57 @@ class MascotSelectionScreen extends StatelessWidget {
             child: Column(
               children: [
                 _buildHeader(context),
-                SizedBox(height: 20.h),
+                SizedBox(height: 10.h),
                 Text(
-                  "Choose Your Buddy!",
+                  context.tr('kids_zone.choose_buddy', fallback: 'Choose Your Buddy!'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
                   ),
-                ),
+                ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0),
                 Text(
-                  "Which friend will join your quest?",
+                  context.tr('kids_zone.which_friend', fallback: 'Which friend will join your quest?'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white70 : Colors.black45,
                   ),
-                ),
+                ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
                 Expanded(
                   child: Center(
                     child: SingleChildScrollView(
-                      padding: EdgeInsets.symmetric(vertical: 30.h),
+                      padding: EdgeInsets.symmetric(vertical: 20.h),
                       child: Wrap(
                         spacing: 20.w,
                         runSpacing: 30.h,
                         alignment: WrapAlignment.center,
                         children: [
-                          _buildMascotCard(
-                            context,
-                            "owly",
-                            "Owly",
-                            "Wise and Helpful",
-                            Colors.indigo,
+                          KidsMascotCard(
+                            id: "owly",
+                            name: "Owly",
+                            trait: "Wise and Helpful",
+                            funFact: "Owly knows every word in the dictionary!",
+                            color: Colors.indigo,
+                            index: 0,
                           ),
-                          _buildMascotCard(
-                            context,
-                            "foxie",
-                            "Foxie",
-                            "Playful and Fast",
-                            Colors.orange,
+                          KidsMascotCard(
+                            id: "foxie",
+                            name: "Foxie",
+                            trait: "Playful and Fast",
+                            funFact: "Foxie loves racing through the forest!",
+                            color: Colors.orange,
+                            index: 1,
                           ),
-                          _buildMascotCard(
-                            context,
-                            "dino",
-                            "Dino",
-                            "Strong and Brave",
-                            Colors.green,
+                          KidsMascotCard(
+                            id: "dino",
+                            name: "Dino",
+                            trait: "Strong and Brave",
+                            funFact: "Dino's roar can scare away any bad dreams!",
+                            color: Colors.green,
+                            index: 2,
                           ),
                         ],
                       ),
@@ -145,160 +150,188 @@ class MascotSelectionScreen extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildMascotCard(
-    BuildContext context,
-    String id,
-    String name,
-    String trait,
-    Color color,
-  ) {
+class KidsMascotCard extends StatefulWidget {
+  final String id;
+  final String name;
+  final String trait;
+  final String funFact;
+  final Color color;
+  final int index;
+
+  const KidsMascotCard({
+    super.key,
+    required this.id,
+    required this.name,
+    required this.trait,
+    required this.funFact,
+    required this.color,
+    required this.index,
+  });
+
+  @override
+  State<KidsMascotCard> createState() => _KidsMascotCardState();
+}
+
+class _KidsMascotCardState extends State<KidsMascotCard> {
+  bool _isTrying = false;
+
+  void _handleTryMe() {
+    if (_isTrying) return;
+    setState(() => _isTrying = true);
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) setState(() => _isTrying = false);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
-        final isSelected = state.user?.kidsMascot == id;
-        final isDark = Theme.of(context).brightness == Brightness.dark;
-        return ScaleButton(
-          onTap: () {
-            context.read<ProfileBloc>().add(ProfileUpdateMascotRequested(id));
-            _showSuccessOverlay(context, name);
-          },
-          child: Container(
-            width: 160.w,
-            padding: EdgeInsets.all(16.r),
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
-              borderRadius: BorderRadius.circular(32.r),
-              border: Border.all(
-                color: isSelected
-                    ? color
-                    : (isDark ? Colors.blue.shade900 : Colors.blue.shade100),
-                width: 3.w,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: isSelected
-                      ? color.withValues(alpha: 0.6)
-                      : (isDark ? Colors.blue.shade900 : Colors.blue.shade100),
-                  offset: Offset(0, 6.h),
-                ),
-              ],
+        final isSelected = state.user?.kidsMascot == widget.id;
+        
+        return Container(
+          width: 170.w,
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.circular(32.r),
+            border: Border.all(
+              color: isSelected
+                  ? widget.color
+                  : (isDark ? Colors.blue.shade900 : Colors.blue.shade100),
+              width: isSelected ? 4.w : 3.w,
             ),
-            child: Column(
-              children: [
-                Container(
+            boxShadow: [
+              BoxShadow(
+                color: isSelected
+                    ? widget.color.withValues(alpha: 0.6)
+                    : (isDark ? Colors.blue.shade900 : Colors.blue.shade100),
+                offset: Offset(0, 6.h),
+                blurRadius: isSelected ? 15 : 0,
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ScaleButton(
+                onTap: _handleTryMe,
+                child: Container(
                   height: 120.h,
                   width: 120.w,
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.05),
+                    color: widget.color.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
-                  child: Center(
-                    child: VowlMascot(
-                      size: 90.r,
-                      mascotId: id,
-                      isKidsMode: true,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 12.h),
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF1E293B),
-                  ),
-                ),
-                Text(
-                  trait,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white54 : Colors.black38,
-                  ),
-                ),
-                if (isSelected) ...[
-                  SizedBox(height: 8.h),
-                  Icon(Icons.check_circle_rounded, color: color, size: 24.r),
-                ],
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  void _showSuccessOverlay(BuildContext context, String name) {
-    _showModernNotification(context, "$name IS NOW YOUR BUDDY! ✨");
-  }
-
-  void _showModernNotification(BuildContext context, String message) {
-    final overlay = Overlay.of(context);
-    final entry = OverlayEntry(
-      builder: (context) => Positioned(
-        top: 60.h,
-        left: 20.w,
-        right: 20.w,
-        child: Material(
-          color: Colors.transparent,
-          child:
-              Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 15.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.9),
-                      borderRadius: BorderRadius.circular(25.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.1),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
-                      border: Border.all(
-                        color: Colors.greenAccent.withValues(alpha: 0.5),
-                        width: 2,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      VowlMascot(
+                        size: 90.r,
+                        mascotId: widget.id,
+                        isKidsMode: true,
+                        state: _isTrying ? VowlMascotState.happy : VowlMascotState.neutral,
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.check_circle_outline_rounded,
-                          color: Colors.greenAccent,
-                          size: 24,
-                        ),
-                        SizedBox(width: 12.w),
-                        Expanded(
+                      Positioned(
+                        bottom: 0,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                          decoration: BoxDecoration(
+                            color: widget.color,
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
                           child: Text(
-                            message,
+                            "Try me!",
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF1E293B),
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
                           ),
                         ),
-                      ],
+                      ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: 0, end: -4),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                widget.name,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                ),
+              ),
+              Text(
+                widget.trait,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w800,
+                  color: widget.color,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Container(
+                padding: EdgeInsets.all(8.r),
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.black26 : Colors.grey.shade50,
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Text(
+                  widget.funFact,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                    height: 1.2,
+                  ),
+                ),
+              ),
+              SizedBox(height: 12.h),
+              ScaleButton(
+                onTap: () {
+                  context.read<ProfileBloc>().add(ProfileUpdateMascotRequested(widget.id));
+                  CustomSnackBar.show(
+                    context: context,
+                    message: context.tr('kids_zone.buddy_selected', fallback: '${widget.name} is now your buddy! \u2728', args: [widget.name]),
+                    type: CustomSnackBarType.success,
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 10.h),
+                  decoration: BoxDecoration(
+                    color: isSelected ? widget.color : (isDark ? Colors.white10 : Colors.grey.shade200),
+                    borderRadius: BorderRadius.circular(20.r),
+                  ),
+                  child: Center(
+                    child: Text(
+                      isSelected ? "SELECTED" : "SELECT",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isSelected ? Colors.white : (isDark ? Colors.white54 : Colors.black45),
+                        letterSpacing: 1.2,
+                      ),
                     ),
-                  )
-                  .animate()
-                  .slideY(begin: -1, end: 0, curve: Curves.easeOutBack)
-                  .fadeIn()
-                  .then(delay: 2000.ms)
-                  .fadeOut()
-                  .slideY(begin: 0, end: -1),
-        ),
-      ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ).animate().fadeIn(delay: (200 + widget.index * 100).ms).scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack);
+      },
     );
-
-    overlay.insert(entry);
-    Future.delayed(const Duration(seconds: 3), () => entry.remove());
   }
 }

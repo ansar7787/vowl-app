@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
@@ -174,6 +173,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
 
                   KidsZoneHomeHeader(
                     mascot: user.kidsMascot ?? 'owly',
+                    childName: user.displayName,
                     isDark: isDark,
                   ),
 
@@ -227,71 +227,64 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
             right: 20.w,
             child: Container(
               decoration: BoxDecoration(
-                color: (isDark ? Colors.black54 : Colors.white).withValues(
-                  alpha: isDark ? 0.8 : 0.9,
-                ),
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
                 borderRadius: BorderRadius.circular(40.r),
                 border: Border.all(
-                  color: (isDark
-                      ? Colors.white24
-                      : Colors.indigo.withValues(alpha: 0.2)),
-                  width: 1.5.r,
+                  color: isDark
+                      ? Colors.indigo.shade700
+                      : Colors.indigo.shade200,
+                  width: 3.r,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.15),
-                    blurRadius: 30,
-                    offset: const Offset(0, 10),
+                    color: isDark
+                        ? Colors.indigo.shade900
+                        : Colors.indigo.shade100,
+                    offset: Offset(0, 6.h),
                   ),
                 ],
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(40.r),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 14.h,
-                      horizontal: 12.w,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 14.h,
+                  horizontal: 12.w,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildNavIcon(
+                      context,
+                      Icons.auto_stories_rounded,
+                      context.tr('kids_zone.nav_album', fallback: "Album"),
+                      Colors.pinkAccent,
+                      () => context.push('/kids-stickers'),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        _buildNavIcon(
-                          context,
-                          Icons.auto_stories_rounded,
-                          context.tr('kids_zone.nav_album', fallback: "Album"),
-                          Colors.pinkAccent,
-                          () => context.push('/kids-stickers'),
-                        ),
-                        _buildNavIcon(
-                          context,
-                          Icons.bedroom_child_rounded,
-                          context.tr('kids_zone.nav_room', fallback: "Room"),
-                          Colors.purpleAccent,
-                          () => context.push('/kids-room'),
-                          badgeEmoji: _getMoodEmoji(user.kidsBuddyMood),
-                        ),
-                        _buildNavIcon(
-                          context,
-                          Icons.shopping_bag_rounded,
-                          context.tr('kids_zone.nav_shop', fallback: "Shop"),
-                          Colors.orangeAccent,
-                          () => context.pushNamed('kids-boutique'),
-                        ),
-                        _buildNavIcon(
-                          context,
-                          Icons.face_retouching_natural_rounded,
-                          context.tr(
-                            'kids_zone.nav_buddies',
-                            fallback: "Buddies",
-                          ),
-                          Colors.blueAccent,
-                          () => context.push('/kids-mascot'),
-                        ),
-                      ],
+                    _buildNavIcon(
+                      context,
+                      Icons.bedroom_child_rounded,
+                      context.tr('kids_zone.nav_room', fallback: "Room"),
+                      Colors.purpleAccent,
+                      () => context.push('/kids-room'),
+                      badgeEmoji: _getMoodEmoji(user.kidsBuddyMood),
                     ),
-                  ),
+                    _buildNavIcon(
+                      context,
+                      Icons.shopping_bag_rounded,
+                      context.tr('kids_zone.nav_shop', fallback: "Shop"),
+                      Colors.orangeAccent,
+                      () => context.pushNamed('kids-boutique'),
+                    ),
+                    _buildNavIcon(
+                      context,
+                      Icons.face_retouching_natural_rounded,
+                      context.tr(
+                        'kids_zone.nav_buddies',
+                        fallback: "Buddies",
+                      ),
+                      Colors.blueAccent,
+                      () => context.push('/kids-mascot'),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -498,10 +491,11 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   }
 
   Widget _buildCoinBadge(BuildContext context, int coins, Color contrastColor) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: Colors.amber, width: 3.w),
         boxShadow: [

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +7,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsMagicChest extends StatefulWidget {
   final VoidCallback onClaimed;
@@ -24,7 +24,6 @@ class KidsMagicChest extends StatefulWidget {
 }
 
 class _KidsMagicChestState extends State<KidsMagicChest> {
-  final math.Random _random = math.Random();
   Timer? _timer;
   final ValueNotifier<String> _timeRemaining = ValueNotifier("00:00:00");
   final ValueNotifier<bool> _isClaiming = ValueNotifier(false);
@@ -116,16 +115,16 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
 
                   widget.onClaimed(); // Trigger confetti/animations in parent
 
-                  // 1 to 30 coin shuffle
-                  final amount = 1 + _random.nextInt(30);
+                  // Fixed daily reward — no gambling mechanics for children
+                  const amount = 15;
 
                   if (context.mounted) {
                     context.read<EconomyBloc>().add(
-                      EconomyClaimKidsDailyRewardRequested(amount),
+                      const EconomyClaimKidsDailyRewardRequested(amount),
                     );
                     widget.showNotification(
                       context,
-                      "🎁 HOORAY! YOU FOUND $amount 🪙!",
+                      "🎁 Hooray! You earned $amount coins! 🪙",
                     );
                     di.sl<SoundService>().playCorrect();
                   }
@@ -197,7 +196,9 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        canClaim ? "MAGIC CHEST" : "CHEST CLAIMED",
+                        canClaim
+                            ? context.tr('kids_zone.magic_chest', fallback: 'Magic Chest')
+                            : context.tr('kids_zone.chest_claimed', fallback: 'Chest Claimed'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
@@ -214,8 +215,8 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                       ),
                       Text(
                         canClaim
-                            ? "Open for daily Kids Coins!"
-                            : "Next claim in ${_timeRemaining.value}",
+                            ? context.tr('kids_zone.open_for_daily_coins', fallback: 'Open for 15 daily Kids Coins!')
+                            : context.tr('kids_zone.next_claim_in', fallback: 'Come back in ${_timeRemaining.value}', args: [_timeRemaining.value]),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
