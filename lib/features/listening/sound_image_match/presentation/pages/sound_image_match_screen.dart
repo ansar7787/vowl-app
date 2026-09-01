@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -36,14 +36,25 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  Offset _lensPosition = const Offset(150, 150);
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<Offset> _lensPosition = ValueNotifier(const Offset(150, 150));
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  int? _selectedIndex;
-  int? _pendingSelectedIndex;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _pendingSelectedIndex.dispose();
+    _lensPosition.dispose();
+    super.dispose();
+  }
   final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
   @override
@@ -55,15 +66,13 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   }
 
   void _onScan(Offset position) {
-    if (_isAnswered) return;
-    setState(() {
-      _lensPosition = position;
-      _hapticService.selection();
-    });
+    if (_isAnswered.value) return;
+    _lensPosition.value = position;
+    _hapticService.selection();
   }
 
   void _submitFinalAnswer(bool nailedSpeaking, int correct) {
-    if (_isAnswered || _pendingSelectedIndex == null) return;
+    if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
     _timerKey.currentState?.stop();
 
     if (!nailedSpeaking) {
@@ -82,25 +91,21 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
       return;
     }
 
-    bool isCorrect = _pendingSelectedIndex == correct;
+    bool isCorrect = _pendingSelectedIndex.value == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
@@ -113,17 +118,15 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: 'Sound Image Match',
-          userAnswer: _pendingSelectedIndex.toString(),
+          userAnswer: _pendingSelectedIndex.value.toString(),
           correctAnswer: correct.toString(),
           level: widget.level,
         );
       }
       
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = _pendingSelectedIndex;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -136,22 +139,22 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _pendingSelectedIndex.value = null;
+            _lensPosition.value = const Offset(150, 150);
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ListeningGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -164,12 +167,15 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
-        return ListeningBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _pendingSelectedIndex, _lensPosition]),
+          builder: (context, _) {
+            return ListeningBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
@@ -190,7 +196,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   SizedBox(height: 6.h),
-                                  if (!_isAnswered)
+                                  if (!_isAnswered.value)
                                     Padding(
                                       padding: EdgeInsets.only(bottom: 16.h),
                                       child: SpeedChallengeTimer(
@@ -209,12 +215,10 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                               level: widget.level,
                                             );
                                           }
-                                          setState(() {
-                                            _isAnswered = true;
-                                            _isCorrect = false;
-                                            _pendingSelectedIndex = -1;
-                                            _selectedIndex = -1;
-                                          });
+                                          _isAnswered.value = true;
+                                          _isCorrect.value = false;
+                                          _pendingSelectedIndex.value = -1;
+                                          _selectedIndex.value = -1;
                                           context.read<ListeningBloc>().add(SubmitAnswer(false));
                                         },
                                       ),
@@ -233,15 +237,14 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                     },
                                     color: theme.primaryColor,
                                     emoji: quest.emoji,
-                                    isCorrectState: _isCorrect,
+                                    isCorrectState: _isCorrect.value,
                                   ),
                                   SizedBox(height: 32.h),
                                 ],
                               ),
                             ),
                           ),
-                          SliverFillRemaining(
-                            hasScrollBody: false,
+                          SliverToBoxAdapter(
                             child: Padding(
                               padding: EdgeInsets.symmetric(
                                 horizontal: 16.w,
@@ -257,20 +260,18 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                       correctAnswerIndex:
                                           quest.correctAnswerIndex ?? 0,
                                       color: theme.primaryColor,
-                                      isAnswered: _isAnswered,
-                                      isCorrectState: _isCorrect,
-                                      selectedIndex: _selectedIndex,
-                                      lensPosition: _lensPosition,
+                                      isAnswered: _isAnswered.value,
+                                      isCorrectState: _isCorrect.value,
+                                      selectedIndex: _selectedIndex.value,
+                                      lensPosition: _lensPosition.value,
                                       onScan: _onScan,
                                       onSelect: (index) {
-                                        if (_isAnswered ||
-                                            _pendingSelectedIndex != null) {
+                                        if (_isAnswered.value ||
+                                            _pendingSelectedIndex.value != null) {
                                           return;
                                         }
                                         _timerKey.currentState?.pause();
-                                        setState(() {
-                                          _pendingSelectedIndex = index;
-                                        });
+                                        _pendingSelectedIndex.value = index;
                                       },
                                     ),
                                   ),
@@ -281,10 +282,10 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                           ),
                         ],
                       ),
-                      if (_pendingSelectedIndex != null && !_isAnswered)
+                      if (_pendingSelectedIndex.value != null && !_isAnswered.value)
                         SpeakToConfirmOverlay(
                           expectedText:
-                              quest.options![_pendingSelectedIndex!],
+                              quest.options![_pendingSelectedIndex.value!],
                           primaryColor: theme.primaryColor,
                           onConfirmed: () => _submitFinalAnswer(
                             true,
@@ -301,6 +302,8 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                         ),
                     ],
                   ),
+            );
+          },
         );
       },
     );
