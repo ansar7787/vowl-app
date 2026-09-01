@@ -30,11 +30,20 @@ class PedagogicalRuleBox extends StatefulWidget {
 }
 
 class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
-  String? _translatedText;
+  final ValueNotifier<String?> _translatedText = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _translatedText.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.rule;
+    return ValueListenableBuilder<String?>(
+      valueListenable: _translatedText,
+      builder: (context, translatedTextValue, _) {
+        final displayText = translatedTextValue ?? widget.rule;
 
     return Container(
       width: 342.w,
@@ -70,12 +79,12 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
                   ),
                 ),
               ),
-              if (_translatedText == null)
+              if (translatedTextValue == null)
                 TranslateButtonWidget(
                   originalText: widget.rule,
                   onTranslationComplete: (translated) {
                     if (mounted) {
-                      setState(() => _translatedText = translated);
+                      _translatedText.value = translated;
                     }
                   },
                 ),
@@ -106,6 +115,8 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
           ),
         ],
       ),
+    );
+      },
     );
   }
 }

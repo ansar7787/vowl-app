@@ -37,7 +37,7 @@ class QuestBriefingOverlay extends StatefulWidget {
 
 class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   static const Duration _exitAnimDuration = Duration(milliseconds: 400);
-  bool _isExiting = false;
+  final ValueNotifier<bool> _isExitingNotifier = ValueNotifier(false);
 
   // Pre-build rule items once to avoid list allocation on every build().
   late final List<Widget> _ruleWidgets;
@@ -50,9 +50,15 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
         .toList(growable: false);
   }
 
+  @override
+  void dispose() {
+    _isExitingNotifier.dispose();
+    super.dispose();
+  }
+
   void _handleStart() {
-    if (_isExiting || !mounted) return;
-    setState(() => _isExiting = true);
+    if (_isExitingNotifier.value || !mounted) return;
+    _isExitingNotifier.value = true;
     // Align delay with the defined exit animation duration plus a tiny buffer.
     Future<void>.delayed(_exitAnimDuration + const Duration(milliseconds: 20), () {
       if (mounted) widget.onStart();
@@ -68,13 +74,16 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
       ),
       child: Material(
         color: Colors.transparent,
-        child: Stack(
+        child: ValueListenableBuilder<bool>(
+          valueListenable: _isExitingNotifier,
+          builder: (context, isExiting, _) {
+            return Stack(
           children: [
             // Background dim overlay
             Positioned.fill(
               child: ColoredBox(
                 color: Colors.black.withValues(alpha: 0.85),
-              ).animate(target: _isExiting ? 1 : 0).fadeOut(duration: _exitAnimDuration),
+              ).animate(target: isExiting ? 1 : 0).fadeOut(duration: _exitAnimDuration),
             ),
 
             // Content card
@@ -320,7 +329,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                             ],
                           ),
                         )
-                        .animate(target: _isExiting ? 1 : 0)
+                        .animate(target: isExiting ? 1 : 0)
                         .slideY(
                           begin: 0,
                           end: -0.2,
@@ -331,6 +340,8 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
               ),
             ),
           ],
+        );
+          },
         ),
       ).animate().fadeIn(duration: 400.ms),
     );
