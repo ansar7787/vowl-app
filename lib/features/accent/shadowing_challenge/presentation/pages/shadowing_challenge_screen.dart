@@ -44,13 +44,13 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   int _lastProcessedIndex = -1;
   int _lastLives = AccentGameConstants.maxLives;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
-  int? _selectedIndex;
-  bool _isFirstStagePassed = false;
-  double _currentSpeed = 1.0;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<double> _currentSpeed = ValueNotifier(1.0);
 
   @override
   void initState() {
@@ -63,6 +63,12 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _isFirstStagePassed.dispose();
+    _currentSpeed.dispose();
     super.dispose();
   }
 
@@ -81,43 +87,35 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   void _playTts(String text) {
     _hapticService.selection();
     // Assuming base speed is around 0.4. We'll adjust it by _currentSpeed.
-    _soundService.playTts(text, speed: 0.4 * _currentSpeed);
+    _soundService.playTts(text, speed: 0.4 * _currentSpeed.value);
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _selectedIndex.value = index;
 
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -142,19 +140,16 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-
-              _selectedIndex = null;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+            _selectedIndex.value = null;
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
             if (quest != null) {
-              _currentSpeed = quest.speedLevel ?? 1.0;
+              _currentSpeed.value = quest.speedLevel ?? 1.0;
               if (quest.textToSpeak != null) {
                 Future.delayed(500.milliseconds, () {
                   if (mounted) {
@@ -167,7 +162,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
           _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -194,12 +189,15 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _isFirstStagePassed, _currentSpeed]),
+            builder: (context, _) {
+              return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+            isAnswered: _isAnswered.value,
+            isCorrect: _isCorrect.value,
+            showConfetti: _showConfetti.value,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
             useScrolling: false,
@@ -212,8 +210,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
-                          SliverFillRemaining(
-                            hasScrollBody: false,
+                          SliverToBoxAdapter(
                             child: Column(
                               children: [
                                 Expanded(
@@ -227,7 +224,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                       children: [
                                         ShadowingChallengeInstruction(
                                           color: theme.primaryColor,
-                                          instruction: _isFirstStagePassed
+                                          instruction: _isFirstStagePassed.value
                                               ? "Great job! Now record yourself saying the phrase."
                                               : context.tr(
                                                   'games.shadowing_challenge_instruction',
@@ -249,11 +246,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                         ),
                                         SizedBox(height: 16.h),
                                         ShadowingChallengeSpeedSlider(
-                                          speed: _currentSpeed,
+                                          speed: _currentSpeed.value,
                                           onChanged: (val) {
-                                            setState(() {
-                                              _currentSpeed = val;
-                                            });
+                                            _currentSpeed.value = val;
                                           },
                                           color: theme.primaryColor,
                                           isDark: isDark,
@@ -265,8 +260,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                           color: theme.primaryColor,
                                           isDark: isDark,
                                           isAnswered:
-                                              _isAnswered || _isFirstStagePassed,
-                                          selectedIndex: _selectedIndex,
+                                              _isAnswered.value || _isFirstStagePassed.value,
+                                          selectedIndex: _selectedIndex.value,
                                           onSubmitChoice: _submitChoice,
                                         ),
                                         SizedBox(height: 24.h),
@@ -274,17 +269,17 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed && !_isAnswered)
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
                                   ShadowPlaybackCompare(
                                     expectedText: quest.textToSpeak ?? "",
                                     displayText: quest.textToSpeak ?? "",
                                     primaryColor: theme.primaryColor,
                                     isPositioned: false,
-                                    speedMultiplier: _currentSpeed,
+                                    speedMultiplier: _currentSpeed.value,
                                     onConfirmed: () => _submitVerbalEvaluation(true),
                                     onSkipped: () => _submitVerbalEvaluation(false),
                                   ),
-                                SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 380.h : 24.h),
+                                SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 380.h : 24.h),
                               ],
                             ),
                           ),
@@ -292,6 +287,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                       );
                     },
                   ),
+              );
+            },
           ),
         );
       },
