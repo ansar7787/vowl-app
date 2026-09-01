@@ -39,6 +39,6 @@ This tracker outlines the migration of the remaining Flutter modules from legacy
 
 ## Phase 7: Global Core Components
 - [x] Maps (`modern_category_map.dart`, `modern_map_node.dart`)
-- [ ] Monetization & Rewards (`key_shop_bottom_sheet.dart`, `star_vault_bottom_sheet.dart`, `premium_store_bottom_sheet.dart`, `ad_reward_card.dart`)
+- [x] Monetization & Rewards (`key_shop_bottom_sheet.dart`, `star_vault_bottom_sheet.dart`, `premium_store_bottom_sheet.dart`, `ad_reward_card.dart`)
 - [ ] Core Interactivity (`pedagogical_rule_box.dart`, `quest_briefing_overlay.dart`, `stage_transition_manager.dart`)
 - [ ] Core Status Pages & Overlays (`no_internet_page.dart`, `offline_quota_exhausted_page.dart`, `quest_sequence_page.dart`, `loading_overlay.dart`, `global_error_boundary.dart`, `game_base_layout.dart`)
