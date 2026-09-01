@@ -38,11 +38,19 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  String? _selectedCorrection;
+  final ValueNotifier<String?> _selectedCorrection = ValueNotifier(null);
   WritingQuest? _lastQuest;
 
-  bool _showConfetti = false;
-  bool _showEvidence = false;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _selectedCorrection.dispose();
+    _showConfetti.dispose();
+    _showEvidence.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -55,9 +63,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
   void _onSelectCorrection(String choice, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.selection();
-    setState(() {
-      _selectedCorrection = choice;
-    });
+    _selectedCorrection.value = choice;
   }
 
   static String _normalizeAnswer(String s) => s
@@ -75,7 +81,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
 
     if (quest == null ||
         isAnswered ||
-        (!isHardMode && _selectedCorrection == null) ||
+        (!isHardMode && _selectedCorrection.value == null) ||
         (isHardMode && typedText == null)) {
       return;
     }
@@ -112,14 +118,14 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
       correct =
           _normalizeAnswer(typedText) == _normalizeAnswer(expectedSentence);
     } else {
-      correct = _selectedCorrection == quest.correctAnswer;
+      correct = _selectedCorrection.value == quest.correctAnswer;
     }
 
     if (correct) {
       _hapticService.success();
       _soundService.playCorrect();
-      if ((quest.options?.isNotEmpty ?? false) && _selectedCorrection != null) {
-        setState(() => _showEvidence = true);
+      if ((quest.options?.isNotEmpty ?? false) && _selectedCorrection.value != null) {
+        _showEvidence.value = true;
       } else {
         context.read<WritingBloc>().add(SubmitAnswer(correct));
       }
@@ -142,13 +148,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _selectedCorrection = null;
-            _showEvidence = false;
-          });
+          _selectedCorrection.value = null;
+          _showEvidence.value = false;
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -189,13 +193,16 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: activeQuest == null
-              ? const SizedBox()
-              : CustomScrollView(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _selectedCorrection, _showEvidence]),
+            builder: (context, _) {
+              return activeQuest == null
+                  ? const SizedBox()
+                  : CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverPadding(
@@ -242,7 +249,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                               passage: activeQuest.passage ?? "",
                               selectedCorrection: widget.level >= 6
                                   ? null
-                                  : _selectedCorrection,
+                                  : _selectedCorrection.value,
                               color: theme.primaryColor,
                               isDark: isDark,
                             ),
@@ -280,7 +287,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                             ] else
                               CorrectionWritingVault(
                                 options: options,
-                                selectedCorrection: _selectedCorrection,
+                                selectedCorrection: _selectedCorrection.value,
                                 color: theme.primaryColor,
                                 isDark: isDark,
                                 onSelectCorrection: (choice) =>
@@ -291,8 +298,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
@@ -300,7 +306,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                           children: [
                             if (!isAnswered && widget.level < 6)
                               ScaleButton(
-                                onTap: _selectedCorrection != null
+                                onTap: _selectedCorrection.value != null
                                     ? () => _submitAnswer(isAnswered)
                                     : null,
                                 child: Container(
@@ -308,11 +314,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                                   height: 60.h,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20.r),
-                                    color: _selectedCorrection != null
+                                    color: _selectedCorrection.value != null
                                         ? theme.primaryColor
                                         : Colors.grey,
                                     boxShadow: [
-                                      if (_selectedCorrection != null)
+                                      if (_selectedCorrection.value != null)
                                         BoxShadow(
                                           color: theme.primaryColor.withValues(
                                             alpha: 0.3,
@@ -340,18 +346,20 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                         ),
                       ),
                     ),
-                    if (_showEvidence && !isAnswered)
+                    if (_showEvidence.value && !isAnswered)
                       EvidenceHighlightWrapper(
-                        passage: (activeQuest.passage ?? "").replaceAll(RegExp(r'\[(.*?)\]'), _selectedCorrection ?? ""),
-                        evidenceWords: [_selectedCorrection ?? ""],
+                        passage: (activeQuest.passage ?? "").replaceAll(RegExp(r'\[(.*?)\]'), _selectedCorrection.value ?? ""),
+                        evidenceWords: [_selectedCorrection.value ?? ""],
                         primaryColor: theme.primaryColor,
                         onCorrectHighlight: () {
-                          setState(() => _showEvidence = false);
+                          _showEvidence.value = false;
                           context.read<WritingBloc>().add(const SubmitAnswer(true));
                         },
                       ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
