@@ -105,10 +105,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: ValueListenableBuilder<int>(
-        valueListenable: _stateHash,
-        builder: (context, _, child) {
-          return BackdropFilter(
+      body: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
         child: Container(
           color: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(
@@ -245,7 +242,10 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
                             // ── Watch Ad Button (Primary CTA) ───────────
                             if (hasAdReady)
-                              _ActionButton(
+                              ValueListenableBuilder<int>(
+                                valueListenable: _stateHash,
+                                builder: (context, _, child) {
+                                  return _ActionButton(
                                     isDark: isDark,
                                     isLoading: _isLoadingAd,
                                     onTap: _handleWatchAd,
@@ -259,7 +259,9 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                       Color(0xFF059669),
                                     ],
                                     glowColor: const Color(0xFF10B981),
-                                  )
+                                  );
+                                },
+                              )
                                   .animate()
                                   .fadeIn(delay: 500.ms, duration: 600.ms)
                                   .moveY(begin: 20, end: 0),
@@ -267,7 +269,10 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                             if (hasAdReady) SizedBox(height: 16.h),
 
                             // ── Reconnect Button ────────────────────────
-                            _ActionButton(
+                            ValueListenableBuilder<int>(
+                              valueListenable: _stateHash,
+                              builder: (context, _, child) {
+                                return _ActionButton(
                                   isDark: isDark,
                                   isLoading: _isChecking,
                                   onTap: _handleRetry,
@@ -281,7 +286,9 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                     Color(0xFF1D4ED8),
                                   ],
                                   glowColor: Colors.blue,
-                                )
+                                );
+                              },
+                            )
                                 .animate()
                                 .fadeIn(delay: 600.ms, duration: 600.ms)
                                 .moveY(begin: 20, end: 0),
@@ -354,8 +361,6 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
             ],
           ),
         ),
-          );
-        },
       ),
     );
   }

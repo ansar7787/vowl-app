@@ -58,10 +58,7 @@ class _NoInternetPageState extends State<NoInternetPage> {
 
     return Scaffold(
       backgroundColor: Colors.transparent, // Let underlying app show through
-      body: ValueListenableBuilder<int>(
-        valueListenable: _stateHash,
-        builder: (context, _, child) {
-          return BackdropFilter(
+      body: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
         child: Container(
           color: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(
@@ -173,7 +170,10 @@ class _NoInternetPageState extends State<NoInternetPage> {
 
                             SizedBox(height: 60.h),
 
-                            _RetryButton(
+                            ValueListenableBuilder<int>(
+                              valueListenable: _stateHash,
+                              builder: (context, _, child) {
+                                return _RetryButton(
                                   isDark: isDark,
                                   isChecking: _isChecking,
                                   buttonScale: _buttonScale,
@@ -186,7 +186,9 @@ class _NoInternetPageState extends State<NoInternetPage> {
                                     _updateState();
                                   },
                                   onTap: _handleRetry,
-                                )
+                                );
+                              },
+                            )
                                 .animate()
                                 .fadeIn(delay: 600.ms, duration: 600.ms)
                                 .moveY(begin: 20, end: 0),
@@ -259,8 +261,6 @@ class _NoInternetPageState extends State<NoInternetPage> {
             ],
           ),
         ),
-          );
-        },
       ),
     );
   }
