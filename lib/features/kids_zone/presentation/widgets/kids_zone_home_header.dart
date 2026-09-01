@@ -41,7 +41,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
 
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 16.h),
+        padding: EdgeInsets.fromLTRB(24.w, 12.h, 24.w, 16.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -75,7 +75,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                                 color: isDark
                                     ? Colors.white
                                     : const Color(0xFF1E293B),
-                                height: 1.2,
+                                height: 1.0,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
