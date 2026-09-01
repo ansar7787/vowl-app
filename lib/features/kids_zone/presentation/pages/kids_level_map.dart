@@ -77,10 +77,10 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       duration: const Duration(milliseconds: 800),
     );
 
-    // 2. Path-draw animation when a level unlocks (Slow, peaceful water-flow)
+    // 2. Path-draw animation when a level unlocks (Peaceful flowing water)
     _unlockPathController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2800),
+      duration: const Duration(milliseconds: 2500),
     );
 
     // 3. Current-node glow pulse (loops forever)
@@ -160,15 +160,13 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     await WidgetsBinding.instance.endOfFrame;
     if (!mounted) return;
 
-    // 2. Trigger the smooth scroll to the new node
+    // 2. Trigger the smooth scroll to the new node and start drawing the path
+    // AT THE EXACT SAME TIME. This completely eliminates the "starting delay".
+    // As the screen scrolls, the path line will flow out of the old node
+    // and chase the camera down to the new node.
     _scrollToUnlockedLevel(delayMs: 0, animate: true);
 
-    // 3. Wait for the scroll animation to fully complete before starting
-    //    the path draw, so the user sees the water-flow in a settled viewport.
-    await Future.delayed(const Duration(milliseconds: 900));
-    if (!mounted) return;
-
-    // 4. Play the slow, organic water-flow path draw animation (2800ms)
+    // 3. Play the organic water-flow path draw animation (2500ms)
     await _unlockPathController.forward();
     if (!mounted) return;
 

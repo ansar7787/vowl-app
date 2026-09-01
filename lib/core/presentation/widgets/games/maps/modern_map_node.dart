@@ -516,17 +516,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
       nodeAnimation = const AlwaysStoppedAnimation(0);
     }
 
-    double incomingProgress = 1.0;
-    double outgoingProgress = 1.0;
-    
-    if (widget.justUnlockedLevel != null) {
-      final double rawValue = Curves.easeInOutCubic.transform(widget.unlockPathController.value);
-      if (isJustUnlocked) {
-        incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
-      } else if (isPrevToJustUnlocked) {
-        outgoingProgress = (rawValue * 2).clamp(0.0, 1.0);
-      }
-    }
+    // Path progress will be calculated inside the AnimatedBuilder
 
     return RepaintBoundary(
       child: AnimatedBuilder(
@@ -534,8 +524,20 @@ class _ModernMapNodeState extends State<ModernMapNode> {
         builder: (context, child) {
           Widget nodeWidget = child!;
           
+          double incomingProgress = 1.0;
+          double outgoingProgress = 1.0;
+          
+          if (widget.justUnlockedLevel != null) {
+            final double rawValue = Curves.easeInOutSine.transform(widget.unlockPathController.value);
+            if (isJustUnlocked) {
+              incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
+            } else if (isPrevToJustUnlocked) {
+              outgoingProgress = (rawValue * 2).clamp(0.0, 1.0);
+            }
+          }
+          
           if (isJustUnlocked) {
-            final double rawValue = Curves.easeInOutCubic.transform(widget.unlockPathController.value);
+            final double rawValue = Curves.easeInOutSine.transform(widget.unlockPathController.value);
             final double popProgress = ((rawValue - 0.74) * (1.0 / 0.26)).clamp(0.0, 1.0);
             final double pulseScale = math.sin(popProgress * math.pi);
             
