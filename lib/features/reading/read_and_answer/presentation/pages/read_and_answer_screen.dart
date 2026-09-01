@@ -342,7 +342,7 @@ class _QuestContent extends StatelessWidget {
                 ),
               ),
             ),
-            SliverFillRemaining(hasScrollBody: false, child: SizedBox.shrink()),
+            SliverToBoxAdapter(child: SizedBox.shrink()),
           ],
         ),
       ),
