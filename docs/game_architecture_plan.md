@@ -48,7 +48,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Pedagogical Component: `AcademicField & Collocations Widget`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
-- [x] Docked Input Under-Scroll Padding
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -60,7 +60,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [ ] Pedagogical Component: `GradientScale Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Under-Scroll Padding
+- [ ] Docked Input Padding (Keyboard Games Only)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -72,7 +72,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Pedagogical Component: `wrongCollocations` & `ContextSentenceBuilder`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
-- [x] Docked Input Under-Scroll Padding
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -84,7 +84,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [ ] Pedagogical Component: `ClueType & EvidenceWords Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Under-Scroll Padding
+- [ ] Docked Input Padding (Keyboard Games Only)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -96,7 +96,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Pedagogical Component: `Formality Meter (registerLevel)`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
-- [N/A] Docked Input Under-Scroll Padding
+- [N/A] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -108,7 +108,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [N/A] Pedagogical Component: (Single stage interaction)
 - [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
-- [N/A] Docked Input Under-Scroll Padding
+- [N/A] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -120,7 +120,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [ ] Pedagogical Component: `Origin / Etymology Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Under-Scroll Padding
+- [ ] Docked Input Padding (Keyboard Games Only)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -132,7 +132,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Pedagogical Component: `LiteralVsFigurative Widget` & `ContextSentenceBuilder`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
-- [x] Docked Input Under-Scroll Padding
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -144,7 +144,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [ ] Pedagogical Component: `MeaningBreakdown Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Under-Scroll Padding
+- [ ] Docked Input Padding (Keyboard Games Only)
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -156,7 +156,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Pedagogical Component: `NuanceScale Widget` & `ContextSentenceBuilder`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
-- [x] Docked Input Under-Scroll Padding
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -168,7 +168,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [N/A] Pedagogical Component: (Drag & drop bucket interaction)
 - [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
-- [N/A] Docked Input Under-Scroll Padding
+- [N/A] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
