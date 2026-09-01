@@ -67,10 +67,10 @@ class KidsSmartMixWidget extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w),
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(32.r),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: const Color(0xFF6366F1).withValues(alpha: 0.3),
           width: 3.w,
@@ -91,14 +91,14 @@ class KidsSmartMixWidget extends StatelessWidget {
               Icon(
                 Icons.auto_awesome,
                 color: const Color(0xFFF59E0B),
-                size: 28.sp,
+                size: 20.sp,
               ),
-              SizedBox(width: 12.w),
+              SizedBox(width: 8.w),
               Text(
                 'DAILY ADVENTURE',
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
                   letterSpacing: 2,
@@ -111,17 +111,17 @@ class KidsSmartMixWidget extends StatelessWidget {
             'Play these 3 games to earn a special badge!',
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 12.sp,
+              fontSize: 11.sp,
               fontWeight: FontWeight.w600,
               color: isDark ? Colors.white70 : Colors.black54,
             ),
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 12.h),
           ...dailyAdventures.asMap().entries.map((entry) {
             final cat = entry.value;
             final index = entry.key + 1;
             return Padding(
-              padding: EdgeInsets.only(bottom: 12.h),
+              padding: EdgeInsets.only(bottom: 8.h),
               child: _buildAdventureCard(
                 context,
                 index,
@@ -149,17 +149,17 @@ class KidsSmartMixWidget extends StatelessWidget {
       onTap: () =>
           context.push(route, extra: {'title': title, 'primaryColor': color}),
       child: Container(
-        padding: EdgeInsets.all(16.r),
+        padding: EdgeInsets.all(12.r),
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(24.r),
+          borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: color.withValues(alpha: 0.3), width: 2.w),
         ),
         child: Row(
           children: [
             Container(
-              width: 40.r,
-              height: 40.r,
+              width: 32.r,
+              height: 32.r,
               decoration: BoxDecoration(
                 color: color,
                 shape: BoxShape.circle,
@@ -175,7 +175,7 @@ class KidsSmartMixWidget extends StatelessWidget {
                   "$step",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
                   ),
@@ -188,7 +188,7 @@ class KidsSmartMixWidget extends StatelessWidget {
                 title.toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
                 ),
@@ -206,7 +206,7 @@ class KidsSmartMixWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Icon(icon, color: color, size: 24.sp),
+              child: Icon(icon, color: color, size: 20.sp),
             ),
           ],
         ),

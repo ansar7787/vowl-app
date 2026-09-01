@@ -90,17 +90,6 @@ class KidsZoneHomeHeader extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 8.h),
-            Text(
-              context.tr('kids_zone.learning_adventures', fallback: 'LEARNING ADVENTURES'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF6366F1),
-                letterSpacing: 2,
-              ),
-            ),
           ],
         ),
       ),
