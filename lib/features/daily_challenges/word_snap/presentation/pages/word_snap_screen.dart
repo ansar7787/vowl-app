@@ -30,9 +30,9 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  Map<String, dynamic>? _currentPuzzle;
-  bool _isAnswered = false;
-  bool _pendingSnap = false;
+  final ValueNotifier<Map<String, dynamic>?> _currentPuzzle = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool> _pendingSnap = ValueNotifier(false);
 
   @override
   void initState() {
@@ -40,25 +40,29 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     _loadDailyPuzzle();
   }
 
+  @override
+  void dispose() {
+    _currentPuzzle.dispose();
+    _isAnswered.dispose();
+    _pendingSnap.dispose();
+    super.dispose();
+  }
+
   Future<void> _loadDailyPuzzle() async {
     final puzzle = await DailyChallengeService.getTodayWordSnap();
     if (mounted) {
-      setState(() {
-        _currentPuzzle = puzzle;
-      });
+      _currentPuzzle.value = puzzle;
     }
   }
 
   void _onSubmit(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
     if (nailedIt) {
       _soundService.playCorrect();
       _hapticService.success();
-      setState(() {
-        _isAnswered = true;
-        _pendingSnap = false;
-      });
+      _isAnswered.value = true;
+      _pendingSnap.value = false;
 
       final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -87,10 +91,8 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     } else {
       _soundService.playWrong();
       _hapticService.error();
-      setState(() {
-        _isAnswered = true;
-        _pendingSnap = false;
-      });
+      _isAnswered.value = true;
+      _pendingSnap.value = false;
       GameDialogHelper.showGameOver(context);
     }
   }
@@ -119,10 +121,13 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     final primaryColor = const Color(0xFFF59E0B);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-      body: SafeArea(
-        child: _currentPuzzle == null
+    return ListenableBuilder(
+      listenable: Listenable.merge([_currentPuzzle, _isAnswered, _pendingSnap]),
+      builder: (context, _) {
+        return Scaffold(
+          backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+          body: SafeArea(
+            child: _currentPuzzle.value == null
             ? GameShimmerLoading(primaryColor: primaryColor)
             : Stack(
                 children: [
@@ -138,14 +143,14 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                               _buildHeaderCard(primaryColor, isDark),
                               SizedBox(height: 40.h),
                               _buildQuestContent(primaryColor, isDark),
-                              SizedBox(height: (_isAnswered || _pendingSnap) ? 160.h : 60.h),
+                              SizedBox(height: (_isAnswered.value || _pendingSnap.value) ? 160.h : 60.h),
                             ],
                           ),
                         ),
                       ),
                     ],
                   ),
-                  if (!_isAnswered && !_pendingSnap)
+                  if (!_isAnswered.value && !_pendingSnap.value)
                     Positioned(
                       bottom: 40.h,
                       left: 24.w,
@@ -153,7 +158,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       child: ElevatedButton(
                         onPressed: () {
                           _hapticService.selection();
-                          setState(() => _pendingSnap = true);
+                          _pendingSnap.value = true;
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: primaryColor,
@@ -173,21 +178,23 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                         ),
                       ),
                     ),
-                  if (_pendingSnap && !_isAnswered)
+                  if (_pendingSnap.value && !_isAnswered.value)
                     DynamicJigsawWrapper(
-                      expectedText: _currentPuzzle!['word']!,
+                      expectedText: _currentPuzzle.value!['word']!,
                       primaryColor: primaryColor,
                       onConfirmed: () => _onSubmit(true),
                       onSkipped: () => _onSubmit(false),
                     ),
                 ],
               ),
-      ),
+          ),
+        );
+      }
     );
   }
 
   Widget _buildHeaderCard(Color primaryColor, bool isDark) {
-    final instruction = _currentPuzzle!['instruction'] as String? ?? 'Assemble the pieces into meaning.';
+    final instruction = _currentPuzzle.value!['instruction'] as String? ?? 'Assemble the pieces into meaning.';
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
@@ -245,7 +252,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       child: Column(
         children: [
           Text(
-            (_currentPuzzle!['word'] as String).toUpperCase(),
+            (_currentPuzzle.value!['word'] as String).toUpperCase(),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -255,10 +262,10 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
               letterSpacing: 2,
             ),
           ),
-          if (_currentPuzzle!['question'] != null && (_currentPuzzle!['question'] as String).isNotEmpty) ...[
+          if (_currentPuzzle.value!['question'] != null && (_currentPuzzle.value!['question'] as String).isNotEmpty) ...[
             SizedBox(height: 16.h),
             Text(
-              _currentPuzzle!['question'] as String,
+              _currentPuzzle.value!['question'] as String,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

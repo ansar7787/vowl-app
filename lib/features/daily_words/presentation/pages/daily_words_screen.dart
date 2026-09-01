@@ -44,18 +44,18 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   final TtsService _tts = di.sl<TtsService>();
   final TranslationService _translationService = di.sl<TranslationService>();
 
-  bool _isFlipped = false;
-  bool _isAnimating = false;
+  final ValueNotifier<bool> _isFlipped = ValueNotifier(false);
+  final ValueNotifier<bool> _isAnimating = ValueNotifier(false);
   
   // Session Access State
-  bool _hasUnlockedFullSession = false;
+  final ValueNotifier<bool> _hasUnlockedFullSession = ValueNotifier(false);
 
   // Translation Session State
-  bool _translationUnlocked = false;
-  bool _isTranslating = false;
-  String? _translatedWord;
-  String? _translatedDefinition;
-  String? _translatedExample;
+  final ValueNotifier<bool> _translationUnlocked = ValueNotifier(false);
+  final ValueNotifier<bool> _isTranslating = ValueNotifier(false);
+  final ValueNotifier<String?> _translatedWord = ValueNotifier(null);
+  final ValueNotifier<String?> _translatedDefinition = ValueNotifier(null);
+  final ValueNotifier<String?> _translatedExample = ValueNotifier(null);
 
   @override
   void initState() {
@@ -80,8 +80,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     );
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-    _translationUnlocked = isPremium;
-    _hasUnlockedFullSession = isPremium;
+    _translationUnlocked.value = isPremium;
+    _hasUnlockedFullSession.value = isPremium;
 
     context.read<DailyWordsBloc>().add(
           DailyWordsLoadRequested(isPremium: isPremium),
@@ -92,14 +92,22 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   void dispose() {
     _flipController.dispose();
     _slideController.dispose();
+    _isFlipped.dispose();
+    _isAnimating.dispose();
+    _hasUnlockedFullSession.dispose();
+    _translationUnlocked.dispose();
+    _isTranslating.dispose();
+    _translatedWord.dispose();
+    _translatedDefinition.dispose();
+    _translatedExample.dispose();
     super.dispose();
   }
 
   void _toggleFlip() {
-    if (_isAnimating) return;
+    if (_isAnimating.value) return;
     _haptics.light();
-    setState(() => _isFlipped = !_isFlipped);
-    if (_isFlipped) {
+    _isFlipped.value = !_isFlipped.value;
+    if (_isFlipped.value) {
       _flipController.forward();
     } else {
       _flipController.reverse();
@@ -313,19 +321,19 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   }
 
   Future<void> _markLearnedAndNext(DailyWord word) async {
-    if (_isAnimating) return;
+    if (_isAnimating.value) return;
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     // GATING LOGIC: If they are on the 5th word (index 4) and haven't unlocked the rest
-    if (!isPremium && state.currentIndex == 4 && !_hasUnlockedFullSession) {
+    if (!isPremium && state.currentIndex == 4 && !_hasUnlockedFullSession.value) {
       final unlocked = await _showHalfwayMonetizationGate();
       if (!unlocked) return; // User chose not to watch ad, stay on word 5
       
-      setState(() => _hasUnlockedFullSession = true);
+      _hasUnlockedFullSession.value = true;
     }
 
-    _isAnimating = true;
+    _isAnimating.value = true;
     _haptics.success();
     _sound.playCorrect();
 
@@ -337,15 +345,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     _slideController.reset();
     _flipController.reset();
-    setState(() {
-      _isFlipped = false;
-      _isAnimating = false;
-      _translationUnlocked = isPremium;
-      // Reset translations for the new card
-      _translatedWord = null;
-      _translatedDefinition = null;
-      _translatedExample = null;
-    });
+    _isFlipped.value = false;
+    _isAnimating.value = false;
+    _translationUnlocked.value = isPremium;
+    // Reset translations for the new card
+    _translatedWord.value = null;
+    _translatedDefinition.value = null;
+    _translatedExample.value = null;
 
     context.read<DailyWordsBloc>().add(const DailyWordNextRequested());
   }
@@ -356,16 +362,16 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   }
 
   Future<void> _handleTranslate(DailyWord word) async {
-    if (_isTranslating) return;
+    if (_isTranslating.value) return;
 
-    if (_translationUnlocked) {
-      setState(() => _isTranslating = true);
+    if (_translationUnlocked.value) {
+      _isTranslating.value = true;
       await _performTranslation(word);
-      if (mounted) setState(() => _isTranslating = false);
+      if (mounted) _isTranslating.value = false;
       return;
     }
     
-    setState(() => _isTranslating = true);
+    _isTranslating.value = true;
 
     try {
       // 1. Check if language is configured
@@ -377,7 +383,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
         // Check again if they configured it
         final recheck = await _translationService.isLanguageConfigured();
         if (!recheck) {
-          setState(() => _isTranslating = false);
+          _isTranslating.value = false;
           return;
         }
       }
@@ -410,7 +416,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       }
     } finally {
       if (mounted) {
-        setState(() => _isTranslating = false);
+        _isTranslating.value = false;
       }
     }
   }
@@ -422,12 +428,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       final tEx = await _translationService.translate(word.example);
       
       if (mounted) {
-        setState(() {
-          _translatedWord = tWord;
-          _translatedDefinition = tDef;
-          _translatedExample = tEx;
-          _translationUnlocked = true;
-        });
+        _translatedWord.value = tWord;
+        _translatedDefinition.value = tDef;
+        _translatedExample.value = tEx;
+        _translationUnlocked.value = true;
         _haptics.success();
       }
     } catch (e) {
@@ -536,7 +540,16 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     DailyWord word,
     bool isDark,
   ) {
-    return SafeArea(
+    return ListenableBuilder(
+      listenable: Listenable.merge([
+        _isFlipped,
+        _isTranslating,
+        _translatedWord,
+        _translatedDefinition,
+        _translatedExample,
+      ]),
+      builder: (context, _) {
+        return SafeArea(
       child: Column(
         children: [
           Padding(
@@ -665,9 +678,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                   isDark: isDark,
                                   onSpeak: () => _speakWord(word.word),
                                   onTranslate: () => _handleTranslate(word),
-                                  isTranslating: _isTranslating,
-                                  translatedDefinition: _translatedDefinition,
-                                  translatedExample: _translatedExample,
+                                  isTranslating: _isTranslating.value,
+                                  translatedDefinition: _translatedDefinition.value,
+                                  translatedExample: _translatedExample.value,
                                 ),
                               )
                             : WordCardFront(
@@ -675,8 +688,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                 isDark: isDark,
                                 onSpeak: () => _speakWord(word.word),
                                 onTranslate: () => _handleTranslate(word),
-                                isTranslating: _isTranslating,
-                                translatedWord: _translatedWord,
+                                isTranslating: _isTranslating.value,
+                                translatedWord: _translatedWord.value,
                               ),
                       );
                     },
@@ -700,7 +713,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   ),
                 );
               },
-              child: !_isFlipped
+              child: !_isFlipped.value
                   ? ActionButton(
                       key: const ValueKey('flip_btn'),
                       label: context.tr(
@@ -745,7 +758,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
             ),
           ),
         ],
-      ),
+          ),
+        );
+      }
     );
   }
 }

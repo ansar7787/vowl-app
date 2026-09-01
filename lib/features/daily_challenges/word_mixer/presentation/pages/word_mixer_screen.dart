@@ -25,8 +25,8 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  Map<String, dynamic>? _currentPuzzle;
-  bool _isAnswered = false;
+  final ValueNotifier<Map<String, dynamic>?> _currentPuzzle = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
 
   @override
   void initState() {
@@ -34,21 +34,24 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     _loadDailyPuzzle();
   }
 
+  @override
+  void dispose() {
+    _currentPuzzle.dispose();
+    _isAnswered.dispose();
+    super.dispose();
+  }
+
   Future<void> _loadDailyPuzzle() async {
     final puzzle = await DailyChallengeService.getTodayWordMixer();
     if (mounted) {
-      setState(() {
-        _currentPuzzle = puzzle;
-      });
+      _currentPuzzle.value = puzzle;
     }
   }
 
   void _onSuccess() {
     _hapticService.success();
     _soundService.playCorrect();
-    setState(() {
-      _isAnswered = true;
-    });
+    _isAnswered.value = true;
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
@@ -109,10 +112,13 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     final primaryColor = const Color(0xFFA855F7);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-      body: SafeArea(
-        child: _currentPuzzle == null
+    return ListenableBuilder(
+      listenable: Listenable.merge([_currentPuzzle, _isAnswered]),
+      builder: (context, _) {
+        return Scaffold(
+          backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+          body: SafeArea(
+            child: _currentPuzzle.value == null
             ? GameShimmerLoading(primaryColor: primaryColor)
             : Stack(
                 children: [
@@ -135,9 +141,9 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
                       ),
                     ],
                   ),
-                  if (!_isAnswered)
+                  if (!_isAnswered.value)
                     DynamicAnagramWrapper(
-                      expectedText: _currentPuzzle!['word']!,
+                      expectedText: _currentPuzzle.value!['word']!,
                       primaryColor: primaryColor,
                       onConfirmed: _onSuccess,
                       onFailed: _onFail,
@@ -151,7 +157,9 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
                     ),
                 ],
               ),
-      ),
+          ),
+        );
+      }
     );
   }
 
@@ -234,7 +242,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
           ),
           SizedBox(height: 12.h),
           Text(
-            _currentPuzzle!['hint'] ?? '',
+            _currentPuzzle.value!['hint'] ?? '',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',

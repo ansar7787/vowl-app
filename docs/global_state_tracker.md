@@ -8,9 +8,9 @@ This tracker outlines the migration of the remaining Flutter modules from legacy
 - [x] Core Util Widgets (`handwriting_canvas.dart`, `translate_button_widget.dart`, `language_selection_bottom_sheet.dart`, `translation_download_dialog.dart`, `translation_download_sheet.dart`)
 
 ## Phase 2: Daily Challenges & Daily Words
-- [ ] Word Snap (`word_snap_screen.dart`)
-- [ ] Word Mixer (`word_mixer_screen.dart`)
-- [ ] Daily Words (`daily_words_screen.dart`)
+- [x] Word Snap (`word_snap_screen.dart`)
+- [x] Word Mixer (`word_mixer_screen.dart`)
+- [x] Daily Words (`daily_words_screen.dart`)
 
 ## Phase 3: Home & Leaderboard
 - [ ] Home Widgets (`discovery_deck.dart`, `streak_boosters_shop.dart`, `bento_arena.dart`, `daily_motivation_card.dart`, `inline_notification_card.dart`, `mystery_chest_dialog.dart`, `vowlbot_auth_companion.dart`)
