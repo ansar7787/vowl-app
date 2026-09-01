@@ -70,6 +70,12 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   int _lastLives = 3; // Start with 3 lives assumption
   bool _showBriefing = false;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -81,6 +87,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
 
   @override
   void dispose() {
+    _stateHash.dispose();
     _ttsService.stop();
     _soundService.stopAudio();
     super.dispose();
@@ -166,7 +173,10 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
                   context,
                 ).textScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.1),
               ),
-              child: GameScaffold<S>(
+              child: ValueListenableBuilder<int>(
+                valueListenable: _stateHash,
+                builder: (context, _, child) {
+                  return GameScaffold<S>(
                 state: state,
                 baseState: baseState,
                 config: widget.config,
@@ -175,10 +185,18 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
                 mascotBuilder: widget.mascotBuilder,
                 backgroundOverlay: widget.backgroundOverlay,
                 showBriefing: _showBriefing,
-                onBriefingDismiss: () => setState(() => _showBriefing = false),
-                onBriefingShow: () => setState(() => _showBriefing = true),
+                onBriefingDismiss: () {
+                  _showBriefing = false;
+                  _updateState();
+                },
+                onBriefingShow: () {
+                  _showBriefing = true;
+                  _updateState();
+                },
                 onExitPressed: () => _onExitPressed(context),
                 onRetry: widget.onRetry,
+              );
+                },
               ),
             ),
           );

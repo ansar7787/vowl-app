@@ -30,6 +30,12 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
   int _statusIndex = 0;
   Timer? _timer;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   // Translation keys — resolved in build() via context.tr() for full i18n.
   static const List<String> _statusKeys = [
     'loading.status_encrypting',
@@ -60,9 +66,8 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(milliseconds: 1500), (_) {
       if (mounted) {
-        setState(() {
-          _statusIndex = (_statusIndex + 1) % _statusKeys.length;
-        });
+        _statusIndex = (_statusIndex + 1) % _statusKeys.length;
+        _updateState();
       }
     });
   }
@@ -74,6 +79,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
 
   @override
   void dispose() {
+    _stateHash.dispose();
     _stopRotation();
     super.dispose();
   }
@@ -86,7 +92,10 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
       children: [
         widget.child,
         if (widget.isLoading)
-          Semantics(
+          ValueListenableBuilder<int>(
+            valueListenable: _stateHash,
+            builder: (context, _, child) {
+              return Semantics(
             // Inform screen readers that content is loading.
             liveRegion: true,
             label: context.tr(
@@ -229,6 +238,8 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                 ),
               ),
             ),
+              );
+            },
           ),
       ],
     );

@@ -25,14 +25,30 @@ class _NoInternetPageState extends State<NoInternetPage> {
   bool _isChecking = false;
   double _buttonScale = 1.0;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
+  @override
+  void dispose() {
+    _stateHash.dispose();
+    super.dispose();
+  }
+
   Future<void> _handleRetry() async {
     if (_isChecking) return;
     await Haptics.vibrate(HapticsType.selection);
-    setState(() => _isChecking = true);
+    _isChecking = true;
+    _updateState();
     try {
       await widget.onRetry();
     } finally {
-      if (mounted) setState(() => _isChecking = false);
+      if (mounted) {
+        _isChecking = false;
+        _updateState();
+      }
     }
   }
 
@@ -42,7 +58,10 @@ class _NoInternetPageState extends State<NoInternetPage> {
 
     return Scaffold(
       backgroundColor: Colors.transparent, // Let underlying app show through
-      body: BackdropFilter(
+      body: ValueListenableBuilder<int>(
+        valueListenable: _stateHash,
+        builder: (context, _, child) {
+          return BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
         child: Container(
           color: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(
@@ -158,10 +177,14 @@ class _NoInternetPageState extends State<NoInternetPage> {
                                   isDark: isDark,
                                   isChecking: _isChecking,
                                   buttonScale: _buttonScale,
-                                  onPointerDown: () =>
-                                      setState(() => _buttonScale = 0.96),
-                                  onPointerUp: () =>
-                                      setState(() => _buttonScale = 1.0),
+                                  onPointerDown: () {
+                                    _buttonScale = 0.96;
+                                    _updateState();
+                                  },
+                                  onPointerUp: () {
+                                    _buttonScale = 1.0;
+                                    _updateState();
+                                  },
                                   onTap: _handleRetry,
                                 )
                                 .animate()
@@ -236,6 +259,8 @@ class _NoInternetPageState extends State<NoInternetPage> {
             ],
           ),
         ),
+          );
+        },
       ),
     );
   }

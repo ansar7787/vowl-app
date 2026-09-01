@@ -41,14 +41,30 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
   bool _isChecking = false;
   bool _isLoadingAd = false;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
+  @override
+  void dispose() {
+    _stateHash.dispose();
+    super.dispose();
+  }
+
   Future<void> _handleRetry() async {
     if (_isChecking) return;
     await Haptics.vibrate(HapticsType.selection);
-    setState(() => _isChecking = true);
+    _isChecking = true;
+    _updateState();
     try {
       await widget.onRetry();
     } finally {
-      if (mounted) setState(() => _isChecking = false);
+      if (mounted) {
+        _isChecking = false;
+        _updateState();
+      }
     }
   }
 
@@ -63,7 +79,8 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
       return;
     }
 
-    setState(() => _isLoadingAd = true);
+    _isLoadingAd = true;
+    _updateState();
     adService.showRewardedAd(
       isPremium: false,
       onUserEarnedReward: (_) {
@@ -71,7 +88,10 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
         widget.onAdWatched();
       },
       onDismissed: () {
-        if (mounted) setState(() => _isLoadingAd = false);
+        if (mounted) {
+          _isLoadingAd = false;
+          _updateState();
+        }
       },
     );
   }
@@ -85,7 +105,10 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: BackdropFilter(
+      body: ValueListenableBuilder<int>(
+        valueListenable: _stateHash,
+        builder: (context, _, child) {
+          return BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
         child: Container(
           color: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(
@@ -331,6 +354,8 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
             ],
           ),
         ),
+          );
+        },
       ),
     );
   }
@@ -451,13 +476,36 @@ class _ActionButton extends StatefulWidget {
 
 class _ActionButtonState extends State<_ActionButton> {
   double _scale = 1.0;
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
+  @override
+  void dispose() {
+    _stateHash.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Listener(
-      onPointerDown: (_) => setState(() => _scale = 0.96),
-      onPointerUp: (_) => setState(() => _scale = 1.0),
-      onPointerCancel: (_) => setState(() => _scale = 1.0),
+    return ValueListenableBuilder<int>(
+      valueListenable: _stateHash,
+      builder: (context, _, child) {
+        return Listener(
+      onPointerDown: (_) {
+        _scale = 0.96;
+        _updateState();
+      },
+      onPointerUp: (_) {
+        _scale = 1.0;
+        _updateState();
+      },
+      onPointerCancel: (_) {
+        _scale = 1.0;
+        _updateState();
+      },
       child: GestureDetector(
         onTap: widget.isLoading ? null : widget.onTap,
         child: AnimatedScale(
@@ -542,6 +590,8 @@ class _ActionButtonState extends State<_ActionButton> {
           ),
         ),
       ),
+        );
+      },
     );
   }
 }

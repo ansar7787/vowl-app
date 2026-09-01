@@ -31,6 +31,18 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   int _currentIndex = 0;
   bool _isLaunching = false;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
+  @override
+  void dispose() {
+    _stateHash.dispose();
+    super.dispose();
+  }
+
   // ── Computed properties ───────────────────────────────────────────────────
 
   String get _sequenceTitle {
@@ -73,7 +85,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     }
 
     if (!mounted) return;
-    setState(() => _isLaunching = true);
+    _isLaunching = true;
+    _updateState();
 
     final quest = widget.quests[_currentIndex];
     final subtype = quest.subtype?.name ?? '';
@@ -91,10 +104,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     }
 
     if (!mounted) return;
-    setState(() => _isLaunching = false);
+    _isLaunching = false;
+    _updateState();
 
     if (result == true) {
-      setState(() => _currentIndex++);
+      _currentIndex++;
+      _updateState();
       if (_currentIndex < widget.quests.length) {
         // CRITICAL FIX: Schedule the next navigation after the current frame
         // completes to avoid calling setState + push inside the same frame,
@@ -145,7 +160,10 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 
     return Scaffold(
       backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-      body: Stack(
+      body: ValueListenableBuilder<int>(
+        valueListenable: _stateHash,
+        builder: (context, _, child) {
+          return Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
           SafeArea(
@@ -178,6 +196,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
             ),
           ),
         ],
+          );
+        },
       ),
     );
   }

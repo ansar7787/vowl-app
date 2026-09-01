@@ -27,6 +27,12 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
   String _errorMessage = '';
   late ErrorWidgetBuilder _originalErrorBuilder;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -37,10 +43,9 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
       // Flutter framework callback since addPostFrameCallback is thread-safe.
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted && !_hasError) {
-          setState(() {
-            _hasError = true;
-            _errorMessage = details.exceptionAsString();
-          });
+          _hasError = true;
+          _errorMessage = details.exceptionAsString();
+          _updateState();
         }
       });
       // Return a minimal, context-free placeholder that does NOT rely on
@@ -52,6 +57,7 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
 
   @override
   void dispose() {
+    _stateHash.dispose();
     // Restore the original global builder to prevent leaking our override.
     ErrorWidget.builder = _originalErrorBuilder;
     super.dispose();
@@ -59,20 +65,24 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
 
   @override
   Widget build(BuildContext context) {
-    if (_hasError) {
-      return _FullErrorScreen(
-        errorMessage: _errorMessage,
-        onRetry: () {
-          if (mounted) {
-            setState(() {
-              _hasError = false;
-              _errorMessage = '';
-            });
-          }
-        },
-      );
-    }
-    return widget.child;
+    return ValueListenableBuilder<int>(
+      valueListenable: _stateHash,
+      builder: (context, _, child) {
+        if (_hasError) {
+          return _FullErrorScreen(
+            errorMessage: _errorMessage,
+            onRetry: () {
+              if (mounted) {
+                _hasError = false;
+                _errorMessage = '';
+                _updateState();
+              }
+            },
+          );
+        }
+        return widget.child;
+      },
+    );
   }
 }
 
