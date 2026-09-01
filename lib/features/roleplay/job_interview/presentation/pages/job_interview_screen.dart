@@ -40,18 +40,18 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   late AnimationController _reactorController;
 
   int _lastProcessedIndex = -1;
-  int? _selectedIndex;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
   // Shuffled state
-  List<String> _shuffledOptions = [];
-  int _shuffledCorrectIndex = -1;
+  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
+  final ValueNotifier<int> _shuffledCorrectIndex = ValueNotifier(-1);
 
   // Track professionalism thermometer score (default start at 0.5)
-  double _mercuryLevel = 0.5;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<double> _mercuryLevel = ValueNotifier(0.5);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   @override
   void initState() {
@@ -69,6 +69,14 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   @override
   void dispose() {
     _reactorController.dispose();
+    _selectedIndex.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _shuffledOptions.dispose();
+    _shuffledCorrectIndex.dispose();
+    _mercuryLevel.dispose();
+    _isFirstStagePassed.dispose();
     super.dispose();
   }
 
@@ -82,44 +90,36 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   }
 
   void _onOptionSelected(int index, int correctIndex) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     final bool isCorrect = index == correctIndex;
 
-    setState(() {
-      _selectedIndex = index;
-    });
+    _selectedIndex.value = index;
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _mercuryLevel = (_mercuryLevel - 0.2).clamp(0.0, 1.0);
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _mercuryLevel.value = (_mercuryLevel.value - 0.2).clamp(0.0, 1.0);
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-      if (nailedIt) {
-        _mercuryLevel = (_mercuryLevel + 0.25).clamp(0.0, 1.0);
-      } else {
-        _mercuryLevel = (_mercuryLevel - 0.2).clamp(0.0, 1.0);
-      }
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
+    if (nailedIt) {
+      _mercuryLevel.value = (_mercuryLevel.value + 0.25).clamp(0.0, 1.0);
+    } else {
+      _mercuryLevel.value = (_mercuryLevel.value - 0.2).clamp(0.0, 1.0);
+    }
 
     if (nailedIt) {
       _hapticService.success();
@@ -141,29 +141,27 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _isFirstStagePassed = false;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _isFirstStagePassed.value = false;
 
-              if (state.currentQuest.options != null) {
-                final options = List<String>.from(state.currentQuest.options!);
-                final correctOption =
-                    options[state.currentQuest.correctAnswerIndex ?? 0];
-                options.shuffle();
-                _shuffledOptions = options;
-                _shuffledCorrectIndex = options.indexOf(correctOption);
-              }
-            });
+            if (state.currentQuest.options != null) {
+              final options = List<String>.from(state.currentQuest.options!);
+              final correctOption =
+                  options[state.currentQuest.correctAnswerIndex ?? 0];
+              options.shuffle();
+              _shuffledOptions.value = options;
+              _shuffledCorrectIndex.value = options.indexOf(correctOption);
+            }
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -176,12 +174,15 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _shuffledOptions, _shuffledCorrectIndex, _mercuryLevel, _isFirstStagePassed]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -195,18 +196,16 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               JobInterviewInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -218,7 +217,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                               JobInterviewTelemetryDashboard(
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                mercuryLevel: _mercuryLevel,
+                                mercuryLevel: _mercuryLevel.value,
                                 reactorAnimation: _reactorController,
                               ),
                               SizedBox(height: isCompact ? 16.h : 24.h),
@@ -228,21 +227,21 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                 text: quest.interviewerQuestion ?? "",
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                reaction: _isAnswered && _selectedIndex != null && quest.interviewerReaction != null && quest.options != null
-                                    ? quest.interviewerReaction![quest.options!.indexOf(_shuffledOptions[_selectedIndex!])]
+                                reaction: _isAnswered.value && _selectedIndex.value != null && quest.interviewerReaction != null && quest.options != null
+                                    ? quest.interviewerReaction![quest.options!.indexOf(_shuffledOptions.value[_selectedIndex.value!])]
                                     : null,
                               ),
                               SizedBox(height: isCompact ? 16.h : 24.h),
 
                               // Option response cards
                               JobInterviewResponseConsole(
-                                options: _shuffledOptions,
-                                correctIndex: _shuffledCorrectIndex,
+                                options: _shuffledOptions.value,
+                                correctIndex: _shuffledCorrectIndex.value,
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                selectedIndex: _selectedIndex,
-                                isAnswered: _isAnswered || _isFirstStagePassed,
-                                isCorrect: _isCorrect,
+                                selectedIndex: _selectedIndex.value,
+                                isAnswered: _isAnswered.value || _isFirstStagePassed.value,
+                                isCorrect: _isCorrect.value,
                                 onOptionSelected: _onOptionSelected,
                               ),
                               SizedBox(height: isCompact ? 12.h : 20.h),
@@ -253,10 +252,10 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                 secondChild: JobInterviewExplanationPanel(
                                   quest: quest,
                                   isDark: isDark,
-                                  isCorrect: _isCorrect,
+                                  isCorrect: _isCorrect.value,
                                   primaryColor: theme.primaryColor,
                                 ),
-                                crossFadeState: _isAnswered
+                                crossFadeState: _isAnswered.value
                                     ? CrossFadeState.showSecond
                                     : CrossFadeState.showFirst,
                                 duration: const Duration(milliseconds: 450),
@@ -265,10 +264,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
+                                  if (_isFirstStagePassed.value && !_isAnswered.value && _selectedIndex.value != null)
                                     SpeakToConfirmOverlay(
-                                      expectedText: _shuffledOptions[_selectedIndex!],
+                                      expectedText: _shuffledOptions.value[_selectedIndex.value!],
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () {
@@ -279,7 +277,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -287,7 +285,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }
