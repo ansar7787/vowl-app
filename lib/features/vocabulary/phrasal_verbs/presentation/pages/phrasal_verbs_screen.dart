@@ -456,7 +456,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                   ],
                                 ),
                               ),
-                              SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 350.h : 60.h),
+                              SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 220.h : 60.h),
                             ],
                           ),
                         ],

@@ -12,16 +12,17 @@ To achieve butter-smooth 60fps performance and completely eliminate `setState` l
 
 > **CRITICAL REMINDER FOR ALL MODULES**: Never limit the `setState` audit to just the main `*_screen.dart` files. You **must** also thoroughly audit all custom widgets inside `presentation/widgets/` (such as `ReactionCore`, `TopicDraggable`, etc.) for hidden `setState` logic.
 
-## 3. The 8-Pillar Checklist
-Every single one of the 100 games must pass these 8 checks:
+## 3. The 9-Pillar Checklist
+Every single one of the 100 games must pass these 9 checks:
 1. **[Dual-Stage Scroll UX]**: Does it use the continuous scroll reveal? (Mark as `[N/A]` if the game doesn't need a second stage).
 2. **[Sliver Performance Layout]**: Does it use `CustomScrollView` and `Slivers` to prevent render overflow and ensure 60fps?
 3. **[Zero setState (ValueNotifier)]**: Are all `setState` calls completely eliminated in favor of `ValueNotifier` and `ListenableBuilder`?
 4. **[Feedback Card Logic]**: Does it correctly hide pedagogical fields if Stage 2 is used, showing only the explanation?
 5. **[Edge-to-Edge Scrollbar]**: Does it wrap CustomScrollView in RawScrollbar so the user knows they can scroll?
 6. **[Keyboard Scroll Stability]**: Does it use `Scrollable.ensureVisible` for text input components to prevent keyboard layout overlap?
-7. **[10/10 UX Confirmation (No Patchwork)]**: Checked deeply to ensure it's a real-world, premium, flawless UX.
-8. **[Git Commit & Push]**: Committed and pushed to GitHub for safety.
+7. **[Docked Input Padding]**: For text-based Stage 2 mechanics, is there bottom scroll padding matching the docked overlay height?
+8. **[10/10 UX Confirmation (No Patchwork)]**: Checked deeply to ensure it's a real-world, premium, flawless UX.
+9. **[Git Commit & Push]**: Committed and pushed to GitHub for safety.
 
 ---
 
@@ -47,6 +48,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [x] Pedagogical Component: `AcademicField & Collocations Widget`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Under-Scroll Padding
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -58,6 +60,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [ ] Pedagogical Component: `GradientScale Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Under-Scroll Padding
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -69,6 +72,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [x] Pedagogical Component: `wrongCollocations` & `ContextSentenceBuilder`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Under-Scroll Padding
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -80,6 +84,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [ ] Pedagogical Component: `ClueType & EvidenceWords Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Under-Scroll Padding
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -91,6 +96,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [x] Pedagogical Component: `Formality Meter (registerLevel)`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
+- [N/A] Docked Input Under-Scroll Padding
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -102,6 +108,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [N/A] Pedagogical Component: (Single stage interaction)
 - [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
+- [N/A] Docked Input Under-Scroll Padding
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -113,6 +120,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [ ] Pedagogical Component: `Origin / Etymology Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Under-Scroll Padding
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -124,6 +132,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [x] Pedagogical Component: `LiteralVsFigurative Widget` & `ContextSentenceBuilder`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Under-Scroll Padding
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -135,6 +144,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [ ] Pedagogical Component: `MeaningBreakdown Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Under-Scroll Padding
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 
@@ -146,6 +156,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [x] Pedagogical Component: `NuanceScale Widget` & `ContextSentenceBuilder`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Under-Scroll Padding
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -157,6 +168,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [N/A] Pedagogical Component: (Drag & drop bucket interaction)
 - [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
+- [N/A] Docked Input Under-Scroll Padding
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
@@ -168,6 +180,7 @@ Every single one of the 100 games must pass these 8 checks:
 - [ ] Pedagogical Component: `FamilyTree Widget`
 - [ ] Edge-to-Edge Scrollbar (RawScrollbar)
 - [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Under-Scroll Padding
 - [ ] 10/10 UX Confirmation (No Patchwork)
 - [ ] Git Commit & Push
 

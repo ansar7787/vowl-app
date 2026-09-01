@@ -277,7 +277,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                               ],
                                             ),
                                           ),
-                                        SizedBox(height: (_isAnswered.value || _isDragPassed.value) ? 350.h : 60.h),
+                                        SizedBox(height: (_isAnswered.value || _isDragPassed.value) ? 220.h : 60.h),
                                       ],
                                     ),
                                 ),

@@ -478,6 +478,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                             ],
                                           ),
                                       ),
+                                    ),
                                       if (_isFirstStagePassed.value)
                                         Column(
                                           children: [
@@ -491,7 +492,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                               ),
                                           ],
                                         ),
-                                      SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 350.h : 60.h),
+                                      SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 220.h : 60.h),
                                     ],
                                   ),
                                 ),
