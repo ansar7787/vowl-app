@@ -43,9 +43,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   dynamic _lastQuest;
 
   final _textController = TextEditingController();
-  final List<String> _assembledPieces = [];
-  bool _showConfetti = false;
-  bool _showTypeToConfirm = false;
+  final ValueNotifier<List<String>> _assembledPieces = ValueNotifier([]);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
 
   // FIX: full whitespace normalization to prevent false mismatches.
   // ".toLowerCase()" alone fails when correctAnswer has double-spaces or
@@ -76,25 +76,28 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   @override
   void dispose() {
     _textController.dispose();
+    _assembledPieces.dispose();
+    _showConfetti.dispose();
+    _showTypeToConfirm.dispose();
     super.dispose();
   }
 
   void _onSnap(String piece, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.success();
-    setState(() => _assembledPieces.add(piece));
+    _assembledPieces.value = List.from(_assembledPieces.value)..add(piece);
   }
 
   void _onRemovePiece(int index, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.selection();
-    setState(() => _assembledPieces.removeAt(index));
+    _assembledPieces.value = List.from(_assembledPieces.value)..removeAt(index);
   }
 
   void _submitAnswer(String correct, bool isAnswered) {
     final isHardMode = widget.level >= 6;
     if (isAnswered ||
-        (!isHardMode && _assembledPieces.isEmpty) ||
+        (!isHardMode && _assembledPieces.value.isEmpty) ||
         (isHardMode && _textController.text.trim().isEmpty)) {
       return;
     }
@@ -126,16 +129,14 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 
     // FIX: normalize both sides before comparison.
     final built = _normalizeAnswer(
-      isHardMode ? _textController.text : _assembledPieces.join(' '),
+      isHardMode ? _textController.text : _assembledPieces.value.join(' '),
     );
     final expected = _normalizeAnswer(correct);
     final isCorrect = built == expected;
 
     if (isCorrect) {
       _hapticService.success();
-      setState(() {
-        _showTypeToConfirm = true;
-      });
+      _showTypeToConfirm.value = true;
     } else {
       _hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
@@ -143,9 +144,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   }
 
   void _onTypeConfirmed() {
-    setState(() {
-      _showTypeToConfirm = false;
-    });
+    _showTypeToConfirm.value = false;
     context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -164,11 +163,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           // New question loaded or retry triggered â€” clear the selected option.
-          setState(() {
-            _assembledPieces.clear();
-            _textController.clear();
-            _showTypeToConfirm = false;
-          });
+          _assembledPieces.value = [];
+          _textController.clear();
+          _showTypeToConfirm.value = false;
         }
 
         if (state is WritingLoaded &&
@@ -177,7 +174,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         }
 
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -222,7 +219,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
@@ -230,16 +227,19 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           // Passing it here too caused a double dispatch. onHint() is reserved
           // for any screen-specific side effects (currently none needed).
           onHint: () {},
-          child: quest == null
-              ? const SizedBox.shrink()
-              : Stack(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _showTypeToConfirm, _assembledPieces]),
+            builder: (context, _) {
+              return quest == null
+                  ? const SizedBox.shrink()
+                  : Stack(
                   children: [
                     _SentenceBuilderBody(
                       quest: quest,
                       pool: pool,
                       level: widget.level,
                       textController: _textController,
-                      assembledPieces: _assembledPieces,
+                      assembledPieces: _assembledPieces.value,
                       isAnswered: isAnswered,
                       isCorrect: isCorrect,
                       theme: _theme,
@@ -249,18 +249,20 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
                       onSubmit: () =>
                           _submitAnswer(quest.correctAnswer ?? '', isAnswered),
                     ),
-                    if (_showTypeToConfirm && !isAnswered)
+                    if (_showTypeToConfirm.value && !isAnswered)
                       TypeToConfirmOverlay(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: _theme.primaryColor,
                         onConfirmed: _onTypeConfirmed,
                         onSkipped: () {
-                          setState(() => _showTypeToConfirm = false);
+                          _showTypeToConfirm.value = false;
                           context.read<WritingBloc>().add(const SubmitAnswer(false));
                         },
                       ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
@@ -389,8 +391,7 @@ class _SentenceBuilderBody extends StatelessWidget {
             ),
           ),
         ),
-        SliverFillRemaining(
-          hasScrollBody: false,
+        SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
