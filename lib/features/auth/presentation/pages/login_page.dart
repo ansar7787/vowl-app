@@ -43,13 +43,15 @@ class _LoginViewState extends State<LoginView> {
   final _emailFocus = FocusNode();
   final _passwordFocus = FocusNode();
 
-  int _emailShake = 0;
-  int _passwordShake = 0;
+  final ValueNotifier<int> _emailShake = ValueNotifier(0);
+  final ValueNotifier<int> _passwordShake = ValueNotifier(0);
 
   @override
   void dispose() {
     _emailFocus.dispose();
     _passwordFocus.dispose();
+    _emailShake.dispose();
+    _passwordShake.dispose();
     super.dispose();
   }
 
@@ -241,16 +243,28 @@ class _LoginViewState extends State<LoginView> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.stretch,
                                             children: [
-                                              ShakeableWrapper(
-                                                shakeCount: _emailShake,
+                                              ValueListenableBuilder<int>(
+                                                valueListenable: _emailShake,
+                                                builder: (context, shakeCount, child) {
+                                                  return ShakeableWrapper(
+                                                    shakeCount: shakeCount,
+                                                    child: child!,
+                                                  );
+                                                },
                                                 child: LoginEmailInput(
                                                   fieldKey: _emailKey,
                                                   focusNode: _emailFocus,
                                                 ),
                                               ),
                                               SizedBox(height: 16.h),
-                                              ShakeableWrapper(
-                                                shakeCount: _passwordShake,
+                                              ValueListenableBuilder<int>(
+                                                valueListenable: _passwordShake,
+                                                builder: (context, shakeCount, child) {
+                                                  return ShakeableWrapper(
+                                                    shakeCount: shakeCount,
+                                                    child: child!,
+                                                  );
+                                                },
                                                 child: LoginPasswordInput(
                                                   fieldKey: _passwordKey,
                                                   formKey: _formKey,
@@ -308,17 +322,13 @@ class _LoginViewState extends State<LoginView> {
                                                   if (!(_emailKey.currentState
                                                           ?.validate() ??
                                                       true)) {
-                                                    setState(
-                                                      () => _emailShake++,
-                                                    );
+                                                    _emailShake.value++;
                                                   }
                                                   if (!(_passwordKey
                                                           .currentState
                                                           ?.validate() ??
                                                       true)) {
-                                                    setState(
-                                                      () => _passwordShake++,
-                                                    );
+                                                    _passwordShake.value++;
                                                   }
                                                 },
                                               ),

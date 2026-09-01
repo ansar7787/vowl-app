@@ -25,8 +25,9 @@ This tracker outlines the migration of the remaining Flutter modules from legacy
 - [x] PHASE 4 COMPLETE!
 
 ## Phase 5: Authentication & Onboarding
-- [ ] Auth Pages (`login_page.dart`, `signup_page.dart`, `verify_email_page.dart`, `forgot_password_page.dart`)
-- [ ] Onboarding (`hatching_page.dart`)
+- [x] Auth Pages (`login_page.dart`, `signup_page.dart`, `verify_email_page.dart`, `forgot_password_page.dart`)
+- [x] Onboarding (`hatching_page.dart` already Diamond Standard)
+- [x] PHASE 5 COMPLETE!
 
 ## Phase 6: Features & Settings
 - [ ] Photo Vocabulary (`photo_vocabulary_screen.dart`)

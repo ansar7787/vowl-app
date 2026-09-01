@@ -34,9 +34,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   Timer? _verificationTimer;
   Timer? _resendCooldownTimer;
 
-  bool _canResendEmail = false;
-  int _secondsRemaining = 30;
-  bool _isLoggingOut = false;
+  final ValueNotifier<bool> _canResendEmail = ValueNotifier(false);
+  final ValueNotifier<int> _secondsRemaining = ValueNotifier(30);
+  final ValueNotifier<bool> _isLoggingOut = ValueNotifier(false);
 
   @override
   void initState() {
@@ -49,6 +49,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   void dispose() {
     _verificationTimer?.cancel();
     _resendCooldownTimer?.cancel();
+    _canResendEmail.dispose();
+    _secondsRemaining.dispose();
+    _isLoggingOut.dispose();
     super.dispose();
   }
 
@@ -64,7 +67,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   }
 
   void _triggerVerificationCheck() {
-    if (_isLoggingOut || !mounted) return;
+    if (_isLoggingOut.value || !mounted) return;
     final status = context.read<AuthBloc>().state.status;
     if (status != AuthStatus.authenticated) return;
     context.read<AuthBloc>().add(const AuthReloadUser());
@@ -79,24 +82,22 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   }
 
   void _startResendCooldown() {
-    setState(() {
-      _canResendEmail = false;
-      _secondsRemaining = 30;
-    });
+    _canResendEmail.value = false;
+    _secondsRemaining.value = 30;
+    
     _resendCooldownTimer?.cancel();
     _resendCooldownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!mounted) {
         timer.cancel();
         return;
       }
-      setState(() {
-        if (_secondsRemaining > 0) {
-          _secondsRemaining--;
-        } else {
-          _canResendEmail = true;
-          timer.cancel();
-        }
-      });
+      
+      if (_secondsRemaining.value > 0) {
+        _secondsRemaining.value--;
+      } else {
+        _canResendEmail.value = true;
+        timer.cancel();
+      }
     });
   }
 
@@ -168,17 +169,20 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       child: BlocBuilder<AuthBloc, AuthState>(
         buildWhen: (previous, current) => previous.status != current.status,
         builder: (context, state) {
-          final bgColor = _bgColor(context);
+          return ListenableBuilder(
+            listenable: Listenable.merge([_isLoggingOut, _canResendEmail, _secondsRemaining]),
+            builder: (context, _) {
+              final bgColor = _bgColor(context);
 
-          // Show loading while signing out
-          if (_isLoggingOut ||
-              state.status == AuthStatus.loggingOut ||
-              state.status == AuthStatus.unauthenticated) {
-            return Scaffold(
-              backgroundColor: bgColor,
-              body: const SafeArea(child: HomeShimmerLoading()),
-            );
-          }
+              // Show loading while signing out
+              if (_isLoggingOut.value ||
+                  state.status == AuthStatus.loggingOut ||
+                  state.status == AuthStatus.unauthenticated) {
+                return Scaffold(
+                  backgroundColor: bgColor,
+                  body: const SafeArea(child: HomeShimmerLoading()),
+                );
+              }
 
           return Scaffold(
             backgroundColor: bgColor,
@@ -200,8 +204,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                             const VerifyEmailStatusText(),
                             SizedBox(height: 40.h),
                             ResendEmailButton(
-                              canResendEmail: _canResendEmail,
-                              secondsRemaining: _secondsRemaining,
+                              canResendEmail: _canResendEmail.value,
+                              secondsRemaining: _secondsRemaining.value,
                               onPressed: _requestVerificationEmail,
                             ),
                             SizedBox(height: 16.h),
@@ -211,7 +215,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                             SizedBox(height: 16.h),
                             VerifyLogoutButton(
                               onPressed: () {
-                                setState(() => _isLoggingOut = true);
+                                _isLoggingOut.value = true;
                                 _verificationTimer?.cancel();
                                 _resendCooldownTimer?.cancel();
                                 context.read<AuthBloc>().add(
@@ -227,6 +231,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                 ),
               ],
             ),
+          );
+            },
           );
         },
       ),

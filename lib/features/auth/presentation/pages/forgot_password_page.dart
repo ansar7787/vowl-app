@@ -45,11 +45,12 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   final _emailKey = GlobalKey<FormFieldState>();
   final _emailFocus = FocusNode();
 
-  int _emailShake = 0;
+  final ValueNotifier<int> _emailShake = ValueNotifier(0);
 
   @override
   void dispose() {
     _emailFocus.dispose();
+    _emailShake.dispose();
     super.dispose();
   }
 
@@ -168,8 +169,14 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                 textAlign: TextAlign.center,
                                               ),
                                               SizedBox(height: 32.h),
-                                              ShakeableWrapper(
-                                                shakeCount: _emailShake,
+                                              ValueListenableBuilder<int>(
+                                                valueListenable: _emailShake,
+                                                builder: (context, shakeCount, child) {
+                                                  return ShakeableWrapper(
+                                                    shakeCount: shakeCount,
+                                                    child: child!,
+                                                  );
+                                                },
                                                 child: ForgotPasswordEmailInput(
                                                   fieldKey: _emailKey,
                                                   focusNode: _emailFocus,
@@ -193,9 +200,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                     if (!(_emailKey.currentState
                                                             ?.validate() ??
                                                         true)) {
-                                                      setState(
-                                                        () => _emailShake++,
-                                                      );
+                                                      _emailShake.value++;
                                                     }
                                                     try {
                                                       Haptics.vibrate(

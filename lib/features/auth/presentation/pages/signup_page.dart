@@ -45,15 +45,18 @@ class _SignUpViewState extends State<SignUpView> {
   final _emailFocus = FocusNode();
   final _passwordFocus = FocusNode();
 
-  int _nameShake = 0;
-  int _emailShake = 0;
-  int _passwordShake = 0;
+  final ValueNotifier<int> _nameShake = ValueNotifier(0);
+  final ValueNotifier<int> _emailShake = ValueNotifier(0);
+  final ValueNotifier<int> _passwordShake = ValueNotifier(0);
 
   @override
   void dispose() {
     _nameFocus.dispose();
     _emailFocus.dispose();
     _passwordFocus.dispose();
+    _nameShake.dispose();
+    _emailShake.dispose();
+    _passwordShake.dispose();
     super.dispose();
   }
 
@@ -228,24 +231,42 @@ class _SignUpViewState extends State<SignUpView> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.stretch,
                                             children: [
-                                              ShakeableWrapper(
-                                                shakeCount: _nameShake,
+                                              ValueListenableBuilder<int>(
+                                                valueListenable: _nameShake,
+                                                builder: (context, shakeCount, child) {
+                                                  return ShakeableWrapper(
+                                                    shakeCount: shakeCount,
+                                                    child: child!,
+                                                  );
+                                                },
                                                 child: SignUpNameInput(
                                                   fieldKey: _nameKey,
                                                   focusNode: _nameFocus,
                                                 ),
                                               ),
                                               SizedBox(height: 16.h),
-                                              ShakeableWrapper(
-                                                shakeCount: _emailShake,
+                                              ValueListenableBuilder<int>(
+                                                valueListenable: _emailShake,
+                                                builder: (context, shakeCount, child) {
+                                                  return ShakeableWrapper(
+                                                    shakeCount: shakeCount,
+                                                    child: child!,
+                                                  );
+                                                },
                                                 child: SignUpEmailInput(
                                                   fieldKey: _emailKey,
                                                   focusNode: _emailFocus,
                                                 ),
                                               ),
                                               SizedBox(height: 16.h),
-                                              ShakeableWrapper(
-                                                shakeCount: _passwordShake,
+                                              ValueListenableBuilder<int>(
+                                                valueListenable: _passwordShake,
+                                                builder: (context, shakeCount, child) {
+                                                  return ShakeableWrapper(
+                                                    shakeCount: shakeCount,
+                                                    child: child!,
+                                                  );
+                                                },
                                                 child: SignUpPasswordInput(
                                                   fieldKey: _passwordKey,
                                                   focusNode: _passwordFocus,
@@ -263,24 +284,18 @@ class _SignUpViewState extends State<SignUpView> {
                                                   if (!(_nameKey.currentState
                                                           ?.validate() ??
                                                       true)) {
-                                                    setState(
-                                                      () => _nameShake++,
-                                                    );
+                                                    _nameShake.value++;
                                                   }
                                                   if (!(_emailKey.currentState
                                                           ?.validate() ??
                                                       true)) {
-                                                    setState(
-                                                      () => _emailShake++,
-                                                    );
+                                                    _emailShake.value++;
                                                   }
                                                   if (!(_passwordKey
                                                           .currentState
                                                           ?.validate() ??
                                                       true)) {
-                                                    setState(
-                                                      () => _passwordShake++,
-                                                    );
+                                                    _passwordShake.value++;
                                                   }
                                                 },
                                               ),
