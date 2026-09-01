@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,12 +41,12 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
-  double _tiltValue = 0.0;
-  bool _isSnapped = false;
+  final ValueNotifier<double> _tiltValue = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isSnapped = ValueNotifier(false);
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   Timer? _autoplayTimer;
 
   @override
@@ -60,6 +60,11 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   @override
   void dispose() {
     _autoplayTimer?.cancel();
+    _tiltValue.dispose();
+    _isSnapped.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
     super.dispose();
   }
 
@@ -70,39 +75,35 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   }
 
   void _onTiltDragged(DragUpdateDetails details, double trackWidth) {
-    if (_isAnswered || _isSnapped) return;
+    if (_isAnswered.value || _isSnapped.value) return;
 
     final double deltaNormalized = details.delta.dx / (trackWidth / 2);
     _hapticService.selection();
 
-    setState(() {
-      _tiltValue = (_tiltValue + deltaNormalized).clamp(-1.0, 1.0);
+    _tiltValue.value = (_tiltValue.value + deltaNormalized).clamp(-1.0, 1.0);
 
-      if (_tiltValue <= -0.85) {
-        _tiltValue = -1.0;
-        _isSnapped = true;
-        _soundService.playClick();
-        _hapticService.selection();
-      } else if (_tiltValue >= 0.85) {
-        _tiltValue = 1.0;
-        _isSnapped = true;
-        _soundService.playClick();
-        _hapticService.selection();
-      }
-    });
+    if (_tiltValue.value <= -0.85) {
+      _tiltValue.value = -1.0;
+      _isSnapped.value = true;
+      _soundService.playClick();
+      _hapticService.selection();
+    } else if (_tiltValue.value >= 0.85) {
+      _tiltValue.value = 1.0;
+      _isSnapped.value = true;
+      _soundService.playClick();
+      _hapticService.selection();
+    }
   }
 
   void _submitVerbalEvaluation(bool nailedIt, bool expectedMatch) {
-    if (_isAnswered || !_isSnapped) return;
+    if (_isAnswered.value || !_isSnapped.value) return;
 
-    final bool chosenMatch = _tiltValue > 0;
+    final bool chosenMatch = _tiltValue.value > 0;
     final bool binaryIsCorrect = chosenMatch == expectedMatch;
     final bool isOverallCorrect = binaryIsCorrect && nailedIt;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isOverallCorrect;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = isOverallCorrect;
 
     if (isOverallCorrect) {
       _hapticService.success();
@@ -130,10 +131,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -149,32 +148,28 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isSnapped = false;
-              _tiltValue = 0.0;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isSnapped.value = false;
+            _tiltValue.value = 0.0;
             _autoplayTimer?.cancel();
             _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
           _lastLives = state.livesRemaining;
         }
         if (state is SpeakingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -196,13 +191,16 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: SpeakingBaseLayout(
-            onTutorPass: _tutorPass,
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isSnapped, _tiltValue]),
+            builder: (context, _) {
+              return SpeakingBaseLayout(
+                onTutorPass: _tutorPass,
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
             onContinue: () =>
                 context.read<SpeakingBloc>().add(const NextQuestion()),
             onHint: () =>
@@ -223,7 +221,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                             children: [
                               YesNoSpeakingHeaderInstruction(
                                 primaryColor: theme.primaryColor,
-                                isSnapped: _isSnapped,
+                                isSnapped: _isSnapped.value,
                                 instruction: quest.instruction,
                               ),
                               SizedBox(height: 24.h),
@@ -237,14 +235,14 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                               ),
                               SizedBox(height: 32.h),
                               YesNoSpeakingTiltArena(
-                                tiltValue: _tiltValue,
-                                isSnapped: _isSnapped,
+                                tiltValue: _tiltValue.value,
+                                isSnapped: _isSnapped.value,
                                 primaryColor: theme.primaryColor,
                                 isDark: isDark,
                                 onTiltDragged: _onTiltDragged,
                                 onTiltDragEnd: () {
-                                  if (!_isSnapped) {
-                                    setState(() => _tiltValue = 0.0);
+                                  if (!_isSnapped.value) {
+                                    _tiltValue.value = 0.0;
                                   }
                                 },
                               ),
@@ -252,8 +250,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                           ),
                         ),
                       ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
+                      SliverToBoxAdapter(
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 16.w,
@@ -262,7 +259,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (_isSnapped && !_isAnswered)
+                              if (_isSnapped.value && !_isAnswered.value)
                                 TypeToConfirmOverlay(
                                   expectedText: quest.sampleAnswer ?? "",
                                   primaryColor: theme.primaryColor,
@@ -284,6 +281,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                       ),
                     ],
                   ),
+              );
+            },
           ),
         );
       },
