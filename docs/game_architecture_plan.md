@@ -667,7 +667,13 @@ Every single one of the 100 games must pass these 6 checks:
 ---
 
 ### 🎭 Roleplay (10 Games)
-1. Branching Dialogue
+1. **Branching Dialogue**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 2. Conflict Resolver
 3. Elevator Pitch
 4. Emergency Hub
