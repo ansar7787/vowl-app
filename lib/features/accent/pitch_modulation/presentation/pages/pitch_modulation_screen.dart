@@ -38,19 +38,27 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
 
   int _lastProcessedIndex = -1;
   int _lastLives = 3;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  double _dialRotation = 0.0;
-  bool _isDragging = false;
-  int? _selectedIndex;
-  bool _isFirstStagePassed = false;
-  int _spokenMeaningsCount = 0;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<int> _spokenMeaningsCount = ValueNotifier(0);
   AccentQuest? _lastQuest;
 
   @override
   void dispose() {
     _scrollController.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _dialRotation.dispose();
+    _isDragging.dispose();
+    _selectedIndex.dispose();
+    _isFirstStagePassed.dispose();
+    _spokenMeaningsCount.dispose();
     super.dispose();
   }
 
@@ -80,70 +88,54 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _isDragging = true;
-      // UP drag = negative delta.dy. We want UP to increase rotation to +1.0.
-      _dialRotation = (_dialRotation - details.delta.dy / 150.0).clamp(
-        -1.0,
-        1.0,
-      );
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _isDragging.value = true;
+    _dialRotation.value = (_dialRotation.value - details.delta.dy / 150.0).clamp(-1.0, 1.0);
 
     // Auto-lock when reaching ends
-    if (_dialRotation < -0.8) {
+    if (_dialRotation.value < -0.8) {
       _submitChoice(0, correct);
-    } else if (_dialRotation > 0.8) {
+    } else if (_dialRotation.value > 0.8) {
       _submitChoice(1, correct);
     }
   }
 
   void _onDialRelease() {
-    if (_isAnswered || _isFirstStagePassed || !_isDragging) return;
-    setState(() {
-      _isDragging = false;
-      if (!_isAnswered) {
-        _dialRotation = 0.0;
-      }
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value || !_isDragging.value) return;
+    _isDragging.value = false;
+    if (!_isAnswered.value) {
+      _dialRotation.value = 0.0;
+    }
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-    setState(() {
-      _selectedIndex = index;
-      _dialRotation = index == 0 ? -0.8 : 0.8;
-      _isDragging = false;
-    });
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
+    _selectedIndex.value = index;
+    _dialRotation.value = index == 0 ? -0.8 : 0.8;
+    _isDragging.value = false;
 
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -168,17 +160,15 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _dialRotation = 0.0;
-              _selectedIndex = null;
-              _isDragging = false;
-              _isFirstStagePassed = false;
-              _spokenMeaningsCount = 0;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _dialRotation.value = 0.0;
+            _selectedIndex.value = null;
+            _isDragging.value = false;
+            _isFirstStagePassed.value = false;
+            _spokenMeaningsCount.value = 0;
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
             if (quest != null) {
@@ -195,7 +185,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
           _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -216,12 +206,15 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _dialRotation, _isDragging, _selectedIndex, _isFirstStagePassed, _spokenMeaningsCount]),
+            builder: (context, _) {
+              return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
+            isAnswered: _isAnswered.value,
+            isCorrect: _isCorrect.value,
+            showConfetti: _showConfetti.value,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
             useScrolling: false,
@@ -260,8 +253,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         slivers: [
-                          SliverFillRemaining(
-                            hasScrollBody: false,
+                          SliverToBoxAdapter(
                             child: Column(
                               children: [
                                 Expanded(
@@ -276,7 +268,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                             SizedBox(height: gapTop),
                                             PitchModulationInstruction(
                                               color: theme.primaryColor,
-                                              instruction: _isFirstStagePassed
+                                              instruction: _isFirstStagePassed.value
                                                   ? "Great job! Now record yourself saying the word."
                                                   : context.tr(
                                                       'games.pitch_modulation_instruction',
@@ -311,10 +303,10 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                               isAnswered:
-                                                  _isAnswered || _isFirstStagePassed,
-                                              isDragging: _isDragging,
-                                              dialRotation: _dialRotation,
-                                              selectedIndex: _selectedIndex,
+                                                  _isAnswered.value || _isFirstStagePassed.value,
+                                              isDragging: _isDragging.value,
+                                              dialRotation: _dialRotation.value,
+                                              selectedIndex: _selectedIndex.value,
                                               onDialRotate: _onDialRotate,
                                               onDialRelease: _onDialRelease,
                                               onSubmitChoice: _submitChoice,
@@ -327,15 +319,15 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed && !_isAnswered)
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
                                   SpeakToConfirmOverlay(
                                     expectedText: quest.textToSpeak ?? "",
-                                    displayText: '${quest.textToSpeak ?? ""}\n\n(Meaning: ${options[_spokenMeaningsCount]})',
+                                    displayText: '${quest.textToSpeak ?? ""}\n\n(Meaning: ${options[_spokenMeaningsCount.value]})',
                                     primaryColor: theme.primaryColor,
                                     isPositioned: false,
                                     onConfirmed: () {
-                                      if (_spokenMeaningsCount == 0) {
-                                        setState(() => _spokenMeaningsCount = 1);
+                                      if (_spokenMeaningsCount.value == 0) {
+                                        _spokenMeaningsCount.value = 1;
                                         _soundService.playCorrect();
                                       } else {
                                         context.read<AccentBloc>().add(
@@ -346,7 +338,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                     },
                                     onSkipped: () => _submitVerbalEvaluation(false),
                                   ),
-                                SizedBox(height: _isAnswered ? 180.h : 20.h),
+                                SizedBox(height: _isAnswered.value ? 180.h : 20.h),
                               ],
                             ),
                           ),
@@ -354,6 +346,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                       );
                     },
                   ),
+              );
+            },
           ),
         );
       },
