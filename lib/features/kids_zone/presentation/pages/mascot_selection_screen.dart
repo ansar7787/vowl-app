@@ -11,6 +11,8 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class MascotSelectionScreen extends StatelessWidget {
   const MascotSelectionScreen({super.key});
@@ -171,6 +173,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
 
   void _handleTryMe() {
     if (_isTrying) return;
+    di.sl<SoundService>().playMascotInteraction();
     setState(() => _isTrying = true);
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) setState(() => _isTrying = false);
@@ -244,7 +247,10 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                             ),
                           ),
                         ),
-                      ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: 0, end: -4),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .moveY(begin: 0, end: -4, duration: 1.seconds)
+                      .shimmer(duration: 2.seconds, color: Colors.white.withValues(alpha: 0.6)),
                     ],
                   ),
                 ),
@@ -293,16 +299,34 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                           borderRadius: BorderRadius.circular(20.r),
                         ),
                         child: Center(
-                          child: Text(
-                            isSelected ? "SELECTED" : "SELECT",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isSelected ? Colors.white : (isDark ? Colors.white54 : Colors.black45),
-                              letterSpacing: 1.2,
-                            ),
-                          ),
+                          child: isSelected
+                              ? Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.check_circle_rounded, color: Colors.white, size: 16.sp),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      "SELECTED",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : Text(
+                                  "SELECT",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark ? Colors.white54 : Colors.black45,
+                                    letterSpacing: 1.2,
+                                  ),
+                                ),
                         ),
                       ),
                     ),
