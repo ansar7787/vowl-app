@@ -42,11 +42,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   late TextEditingController _codeController;
 
   int _lastProcessedIndex = -1;
-  double _rotation = 0.0; // Valve rotation progress (0.0 to 1.0)
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<double> _rotation = ValueNotifier(0.0); // Valve rotation progress (0.0 to 1.0)
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   @override
   void initState() {
@@ -67,6 +67,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   void dispose() {
     _pulseController.dispose();
     _codeController.dispose();
+    _rotation.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
     super.dispose();
   }
 
@@ -81,7 +86,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
   // Trigonometry-based circular dial update
   void _onValveDragged(DragUpdateDetails details, Offset localCenter) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     final Offset touchPos = details.localPosition;
     final double dx = touchPos.dx - localCenter.dx;
@@ -95,13 +100,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     if (progress > 1.0) progress -= 1.0;
 
     _hapticService.selection();
-    setState(() {
-      _rotation = progress.clamp(0.0, 1.0);
-    });
+    _rotation.value = progress.clamp(0.0, 1.0);
   }
 
   void _submitCode(String input, String correctAnswer) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     final String cleanInput = input.trim().replaceAll(' ', '').toLowerCase();
     final String cleanCorrect = correctAnswer
@@ -111,34 +114,28 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
     // Check if code matches AND safety valve is rotated past 85% to pressurize the lock
     final bool codeMatches = cleanInput == cleanCorrect;
-    final bool valveAligned = _rotation >= 0.85;
+    final bool valveAligned = _rotation.value >= 0.85;
 
     final bool isCorrect = codeMatches && valveAligned;
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -159,21 +156,19 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _rotation = 0.0;
-              _codeController.clear();
-              _isFirstStagePassed = false;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _rotation.value = 0.0;
+            _codeController.clear();
+            _isFirstStagePassed.value = false;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -186,12 +181,15 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _rotation, _isFirstStagePassed, _codeController]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -205,18 +203,16 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               EmergencyHubInstruction(
                                 instruction: quest.instruction,
                               ),
@@ -237,7 +233,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                 controller: _codeController,
                                 correctAnswer: quest.correctAnswer ?? "",
                                 isDark: isDark,
-                                onChanged: () => setState(() {}),
+                                onChanged: () {},
                               ),
                               SizedBox(height: isCompact ? 12.h : 20.h),
 
@@ -246,14 +242,14 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                 correctAnswer: quest.correctAnswer ?? "",
                                 inputText: _codeController.text,
                                 isDark: isDark,
-                                rotation: _rotation,
+                                rotation: _rotation.value,
                                 pulseAnimation: _pulseController,
                                 onValveDragged: _onValveDragged,
                               ),
                               SizedBox(height: isCompact ? 16.h : 24.h),
 
                               // Dispatch lock confirm trigger button
-                              if (!_isAnswered &&
+                              if (!_isAnswered.value &&
                                   _codeController.text.isNotEmpty)
                                 ScaleButton(
                                   onTap: () => _submitCode(
@@ -311,8 +307,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed && !_isAnswered)
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
                                     SpeakToConfirmOverlay(
                                       expectedText: quest.correctAnswer ?? _codeController.text,
                                       primaryColor: Colors.redAccent,
@@ -325,7 +320,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -333,7 +328,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }
