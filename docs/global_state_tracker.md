@@ -1,0 +1,34 @@
+# Global State Management Tracker (Diamond Standard)
+
+This tracker outlines the migration of the remaining Flutter modules from legacy `setState` patterns to the high-performance "Diamond Standard" (`ValueNotifier` / `ListenableBuilder` / constraint-aware layout) architecture.
+
+## Phase 1: Core & Utilities
+- [ ] Core Game Mechanics (`speed_challenge_timer.dart`)
+- [ ] Core Presentation Widgets (`connectivity_wrapper.dart`, `category_radar_chart.dart`)
+- [ ] Core Util Widgets (`handwriting_canvas.dart`, `translate_button_widget.dart`, `language_selection_bottom_sheet.dart`, `translation_download_dialog.dart`, `translation_download_sheet.dart`)
+
+## Phase 2: Daily Challenges & Daily Words
+- [ ] Word Snap (`word_snap_screen.dart`)
+- [ ] Word Mixer (`word_mixer_screen.dart`)
+- [ ] Daily Words (`daily_words_screen.dart`)
+
+## Phase 3: Home & Leaderboard
+- [ ] Home Widgets (`discovery_deck.dart`, `streak_boosters_shop.dart`, `bento_arena.dart`, `daily_motivation_card.dart`, `inline_notification_card.dart`, `mystery_chest_dialog.dart`, `vowlbot_auth_companion.dart`)
+- [ ] Home Pages (`vowl_mascot_screen.dart`, `quest_library_page.dart`, `category_games_page.dart`)
+- [ ] Leaderboard (`leaderboard_screen.dart`)
+
+## Phase 4: Kids Zone
+- [ ] Kids Zone Pages (`kids_level_map.dart`, `buddy_boutique_screen.dart`, `sticker_book_screen.dart`, `kids_zone_screen.dart`, `kids_room_screen.dart`)
+- [ ] Kids Zone Widgets (`kids_category_grid.dart`, `kids_explanation_card.dart`, `kids_game_base_screen.dart`, `kids_magic_chest.dart`, `kids_map_node.dart`, `kids_picker_template.dart`, `kids_room_clean_activity.dart`, `kids_room_play_game.dart`, `kids_star_vault_bottom_sheet.dart`)
+- [ ] Kids Zone Layouts (`kids_alphabet_layout.dart`, `kids_handwriting_layout.dart`)
+
+## Phase 5: Authentication & Onboarding
+- [ ] Auth Pages (`login_page.dart`, `signup_page.dart`, `verify_email_page.dart`, `forgot_password_page.dart`)
+- [ ] Onboarding (`hatching_page.dart`)
+
+## Phase 6: Features & Settings
+- [ ] Photo Vocabulary (`photo_vocabulary_screen.dart`)
+- [ ] Scan and Learn (`scan_and_learn_screen.dart`)
+- [ ] Premium (`premium_screen.dart`)
+- [ ] Settings Pages (`settings_screen.dart`)
+- [ ] Settings Widgets (`settings_dialogs.dart`, `language_picker_sheet.dart`)
