@@ -30,8 +30,15 @@ This tracker outlines the migration of the remaining Flutter modules from legacy
 - [x] PHASE 5 COMPLETE!
 
 ## Phase 6: Features & Settings
-- [ ] Photo Vocabulary (`photo_vocabulary_screen.dart`)
-- [ ] Scan and Learn (`scan_and_learn_screen.dart`)
-- [ ] Premium (`premium_screen.dart`)
-- [ ] Settings Pages (`settings_screen.dart`)
-- [ ] Settings Widgets (`settings_dialogs.dart`, `language_picker_sheet.dart`)
+- [x] Photo Vocabulary (`photo_vocabulary_screen.dart`)
+- [x] Scan and Learn (`scan_and_learn_screen.dart`)
+- [x] Premium (`premium_screen.dart`)
+- [x] Settings Pages (`settings_screen.dart`)
+- [x] Settings Widgets (`settings_dialogs.dart`, `language_picker_sheet.dart`)
+- [x] PHASE 6 COMPLETE!
+
+## Phase 7: Global Core Components
+- [ ] Maps (`modern_category_map.dart`, `modern_map_node.dart`)
+- [ ] Monetization & Rewards (`key_shop_bottom_sheet.dart`, `star_vault_bottom_sheet.dart`, `premium_store_bottom_sheet.dart`, `ad_reward_card.dart`)
+- [ ] Core Interactivity (`pedagogical_rule_box.dart`, `quest_briefing_overlay.dart`, `stage_transition_manager.dart`)
+- [ ] Core Status Pages & Overlays (`no_internet_page.dart`, `offline_quota_exhausted_page.dart`, `quest_sequence_page.dart`, `loading_overlay.dart`, `global_error_boundary.dart`, `game_base_layout.dart`)

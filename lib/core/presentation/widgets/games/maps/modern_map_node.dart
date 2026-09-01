@@ -75,12 +75,13 @@ class ModernMapNode extends StatefulWidget {
 }
 
 class _ModernMapNodeState extends State<ModernMapNode> {
-  String? _buddyMessage;
+  final ValueNotifier<String?> _buddyMessageNotifier = ValueNotifier(null);
   Timer? _buddyMessageTimer;
 
   @override
   void dispose() {
     _buddyMessageTimer?.cancel();
+    _buddyMessageNotifier.dispose();
     super.dispose();
   }
 
@@ -139,7 +140,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
           right: !isLeft ? 28.w : 16.w,
         ),
         child: AutoSizeText(
-          _buddyMessage!,
+          _buddyMessageNotifier.value!,
           style: TextStyle(
             fontFamily: 'Outfit',
             color: Colors.white,
@@ -218,9 +219,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                 .replaceAll('{1}', mascotName),
           );
 
-          setState(() {
-            _buddyMessage = message;
-          });
+          _buddyMessageNotifier.value = message;
 
           final cleanMessage = message
               .replaceAll(
@@ -235,7 +234,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
 
           HapticFeedback.lightImpact();
           _buddyMessageTimer = Timer(const Duration(seconds: 4), () {
-            if (mounted) setState(() => _buddyMessage = null);
+            if (mounted) _buddyMessageNotifier.value = null;
           });
         },
         child: ExcludeSemantics(
@@ -251,13 +250,18 @@ class _ModernMapNodeState extends State<ModernMapNode> {
               ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
 
               // 10/10 Glassmorphism Speech Bubble
-              if (_buddyMessage != null)
-                Positioned(
-                  top: -30.h,
-                  left: isLeftHalf ? 45.r : null,
-                  right: !isLeftHalf ? 45.r : null,
-                  child: _buildModernSpeechBubble(theme.primaryColor, isLeftHalf),
-                ),
+              ValueListenableBuilder<String?>(
+                valueListenable: _buddyMessageNotifier,
+                builder: (context, message, child) {
+                  if (message == null) return const SizedBox.shrink();
+                  return Positioned(
+                    top: -30.h,
+                    left: isLeftHalf ? 45.r : null,
+                    right: !isLeftHalf ? 45.r : null,
+                    child: _buildModernSpeechBubble(theme.primaryColor, isLeftHalf),
+                  );
+                },
+              ),
             ],
           ),
         ),

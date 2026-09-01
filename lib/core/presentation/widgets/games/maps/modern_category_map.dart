@@ -63,6 +63,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   late AnimationController _glowController;
   int? _previousActiveNode;
 
+  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
+
+  void _updateState() {
+    if (mounted) _stateHash.value++;
+  }
+
   // PERF: Cache the static ambient background icons so they aren't recreated
   // on every build. The positions are deterministic (seeded Random), so the
   // list is stable for the widget's entire lifetime.
@@ -163,10 +169,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
     if (mounted) {
       if (_totalLevels != levels || _isLoading) {
-        setState(() {
-          _totalLevels = levels;
-          _isLoading = false;
-        });
+        _totalLevels = levels;
+        _isLoading = false;
+        _updateState();
       }
 
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -210,9 +215,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         // on a mathematically settled frame.
         _executeWhenRouteSettled(() {
           if (mounted) {
-            setState(() {
-              _activeStoryBeat = beat;
-            });
+            _activeStoryBeat = beat;
+            _updateState();
           }
         });
       } else if (unlockedLevel == 1) {
@@ -222,15 +226,17 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             final mascotName = _formatMascotName(
               user.vowlMascot ?? 'vowl_prime',
             );
-            setState(() {
-              _buddyMessage = context.tr(
+            _buddyMessage = context.tr(
                 'category_map.first_level_greeting',
                 args: [mascotName],
                 fallback: "Hey! $mascotName here. Let's start Level 1! 🚀",
               );
-            });
+            _updateState();
             _buddyMessageTimer = Timer(const Duration(seconds: 5), () {
-              if (mounted) setState(() => _buddyMessage = null);
+              if (mounted) {
+                _buddyMessage = null;
+                _updateState();
+              }
             });
           }
         });
@@ -280,6 +286,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     _unlockPathController.dispose();
     _glowController.dispose();
     _confettiController.dispose();
+    _stateHash.dispose();
     super.dispose();
   }
 
@@ -326,7 +333,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   /// The path line draws with a slow, smooth "flowing water" feel and confetti
   /// locks the screen from scrolling until all particles have settled.
   Future<void> _playUnlockSequence(BuildContext context) async {
-    setState(() => _isSequenceAnimating = true);
+    _isSequenceAnimating = true;
+    _updateState();
 
     // 1. Wait perfectly for the final settled frame to render (GPU Sync)
     await WidgetsBinding.instance.endOfFrame;
@@ -345,10 +353,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     if (!mounted) return;
 
     // 5. Complete the node unlock pop
-    setState(() {
-      _celebratingLevel = _justUnlockedLevel;
-      _justUnlockedLevel = null;
-    });
+    _celebratingLevel = _justUnlockedLevel;
+    _justUnlockedLevel = null;
+    _updateState();
 
     // 6. Wait exactly one frame for Flutter to finish drawing the new bounce state, then fire confetti
     await WidgetsBinding.instance.endOfFrame;
@@ -359,10 +366,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     //    particles need ~1.5s more to physically fall off screen.
     await Future.delayed(const Duration(milliseconds: 3500));
     if (mounted) {
-      setState(() {
-        _celebratingLevel = null;
-        _isSequenceAnimating = false;
-      });
+      _celebratingLevel = null;
+      _isSequenceAnimating = false;
+      _updateState();
     }
   }
 
@@ -433,9 +439,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             return;
           }
 
-          setState(() {
-            _justUnlockedLevel = currLevel;
-          });
+          _justUnlockedLevel = currLevel;
+          _updateState();
           _unlockPathController.reset();
 
           // Orchestrate the full unlock animation sequence via a pristine async state machine
@@ -459,7 +464,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             context.go('/home');
           }
         },
-        child: AbsorbPointer(
+        child: ValueListenableBuilder<int>(
+          valueListenable: _stateHash,
+          builder: (context, _, child) {
+            return AbsorbPointer(
           absorbing: _isSequenceAnimating,
           child: Scaffold(
             backgroundColor: theme.backgroundColors[1],
@@ -623,9 +631,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                     child: StoryDialogueBox(
                       beat: _activeStoryBeat!,
                       onDismiss: () {
-                        setState(() {
-                          _activeStoryBeat = null;
-                        });
+                        _activeStoryBeat = null;
+                        _updateState();
                       },
                     ),
                   ).animate().fadeIn(),
@@ -647,6 +654,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             ],
           ),
         ),
+        );
+          },
         ),
       ),
     );
