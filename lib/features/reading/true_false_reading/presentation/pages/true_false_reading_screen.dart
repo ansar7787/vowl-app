@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -36,16 +36,28 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _coinX = 0.0;
-  double _coinY = 0.0;
-  double _coinRotation = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<double> _coinX = ValueNotifier(0.0);
+  final ValueNotifier<double> _coinY = ValueNotifier(0.0);
+  final ValueNotifier<double> _coinRotation = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
-  bool? _pendingAnswer;
+  final ValueNotifier<bool?> _pendingAnswer = ValueNotifier(null);
+
+  @override
+  void dispose() {
+    _coinX.dispose();
+    _coinY.dispose();
+    _coinRotation.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingAnswer.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -56,50 +68,42 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   }
 
   void _onFlick(Offset delta) {
-    if (_isAnswered || _pendingAnswer != null) return;
-    setState(() {
-      _coinX += delta.dx;
-      _coinY += delta.dy;
-      _coinRotation += (delta.dx + delta.dy) / 100;
-      _hapticService.selection();
-    });
+    if (_isAnswered.value || _pendingAnswer.value != null) return;
+    _coinX.value += delta.dx;
+    _coinY.value += delta.dy;
+    _coinRotation.value += (delta.dx + delta.dy) / 100;
+    _hapticService.selection();
 
-    if (_coinX.abs() > 100.w) {
-      final bool pending = _coinX > 0;
+    if (_coinX.value.abs() > 100.w) {
+      final bool pending = _coinX.value > 0;
       
       final String correct = (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest.correctAnswer ?? "";
       final bool isCorrect = (pending ? "true" : "false") == correct.trim().toLowerCase();
 
       if (!isCorrect) {
-        setState(() {
-          _pendingAnswer = pending;
-        });
+        _pendingAnswer.value = pending;
         _submitFinalAnswer(false, (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest, true);
       } else {
-        setState(() {
-          _pendingAnswer = pending;
-        });
+        _pendingAnswer.value = pending;
       }
     }
   }
 
   void _submitFinalAnswer(bool nailedEvidence, ReadingQuest quest, [bool failedCoin = false]) {
-    if (_pendingAnswer == null) return;
+    if (_pendingAnswer.value == null) return;
 
     if (!nailedEvidence || failedCoin) {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _coinX = _pendingAnswer! ? 120.w : -120.w;
-        _coinY = 0.0;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _coinX.value = _pendingAnswer.value! ? 120.w : -120.w;
+      _coinY.value = 0.0;
       ErrorJournalCollector.record(
         userId: 'local',
         gameType: widget.gameType.name,
         question: quest.question ?? quest.instruction,
-        userAnswer: failedCoin ? (_pendingAnswer! ? "True" : "False") : 'Failed to find evidence',
+        userAnswer: failedCoin ? (_pendingAnswer.value! ? "True" : "False") : 'Failed to find evidence',
         correctAnswer: failedCoin ? (quest.correctAnswer ?? '') : (quest.evidenceLine ?? ''),
         level: widget.level,
       );
@@ -107,12 +111,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
       return;
     }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-      _coinX = _pendingAnswer! ? 120.w : -120.w;
-      _coinY = 0.0;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
+    _coinX.value = _pendingAnswer.value! ? 120.w : -120.w;
+    _coinY.value = 0.0;
 
     _hapticService.success();
     _soundService.playCorrect();
@@ -130,30 +132,26 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _pendingAnswer = null;
-              _coinX = 0.0;
-              _coinY = 0.0;
-              _coinRotation = 0.0;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _pendingAnswer.value = null;
+            _coinX.value = 0.0;
+            _coinY.value = 0.0;
+            _coinRotation.value = 0.0;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -168,12 +166,15 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _pendingAnswer, _coinX, _coinY, _coinRotation]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () =>
               context.read<ReadingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -211,8 +212,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
@@ -220,18 +220,18 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                               children: [
                                 SizedBox(height: 40.h),
                                 TrueFalseReadingCoinZone(
-                                  coinX: _coinX,
-                                  coinY: _coinY,
-                                  coinRotation: _coinRotation,
+                                  coinX: _coinX.value,
+                                  coinY: _coinY.value,
+                                  coinRotation: _coinRotation.value,
                                   onFlick: _onFlick,
                                   isDark: isDark,
                                   themeColor: theme.primaryColor,
                                 ),
-                                if (_isAnswered) ...[
+                                if (_isAnswered.value) ...[
                                   SizedBox(height: 30.h),
                                   TrueFalseReadingResult(
                                     quest: quest,
-                                    isCorrect: _isCorrect == true,
+                                    isCorrect: _isCorrect.value == true,
                                     isDark: isDark,
                                   ),
                                 ],
@@ -242,7 +242,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                         ),
                       ],
                     ),
-                    if (_pendingAnswer != null && !_isAnswered)
+                    if (_pendingAnswer.value != null && !_isAnswered.value)
                       EvidenceHighlightWrapper(
                         passage: quest.passage ?? "",
                         evidenceWords: (quest.evidenceLine ?? quest.passage ?? "").split(RegExp(r'\s+')),
@@ -252,6 +252,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                       ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
