@@ -561,7 +561,13 @@ Every single one of the 100 games must pass these 6 checks:
 - [x] Feedback Card Logic
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
-10. Summarize Story
+10. **Summarize Story**
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 11. Writing Email
 
 ---

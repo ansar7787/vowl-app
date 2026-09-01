@@ -40,11 +40,19 @@ class _SummarizeStoryWritingScreenState
     extends State<SummarizeStoryWritingScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  List<DescribeFrameSlot> _slots = [];
+  final ValueNotifier<List<DescribeFrameSlot>> _slots = ValueNotifier([]);
 
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   WritingQuest? _lastQuest;
-  bool _pendingSubmit = false;
+  final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _slots.dispose();
+    _showConfetti.dispose();
+    _pendingSubmit.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -57,42 +65,38 @@ class _SummarizeStoryWritingScreenState
   void _onDropFrame(int slotIdx, String sentence, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.success();
-    setState(() {
-      _slots[slotIdx].sentence = sentence;
-    });
+    final newSlots = List<DescribeFrameSlot>.from(_slots.value);
+    newSlots[slotIdx].sentence = sentence;
+    _slots.value = newSlots;
   }
 
   void _onTapOption(String sentence, bool isAnswered) {
     if (isAnswered) return;
 
-    final firstEmptyIdx = _slots.indexWhere((s) => s.sentence == null);
+    final firstEmptyIdx = _slots.value.indexWhere((s) => s.sentence == null);
     if (firstEmptyIdx != -1) {
       _hapticService.success();
-      setState(() {
-        _slots[firstEmptyIdx].sentence = sentence;
-      });
+      final newSlots = List<DescribeFrameSlot>.from(_slots.value);
+      newSlots[firstEmptyIdx].sentence = sentence;
+      _slots.value = newSlots;
     }
   }
 
   void _removeFrame(int slotIdx, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.selection();
-    setState(() {
-      _slots[slotIdx].sentence = null;
-    });
+    final newSlots = List<DescribeFrameSlot>.from(_slots.value);
+    newSlots[slotIdx].sentence = null;
+    _slots.value = newSlots;
   }
 
   void _submitAnswer(bool isAnswered) {
     if (isAnswered) return;
-    setState(() {
-      _pendingSubmit = true;
-    });
+    _pendingSubmit.value = true;
   }
 
   void _submitFinalAnswer(bool nailedTyping) {
-    setState(() {
-      _pendingSubmit = false;
-    });
+    _pendingSubmit.value = false;
 
     final state = context.read<WritingBloc>().state;
     if (state is! WritingLoaded) return;
@@ -110,8 +114,8 @@ class _SummarizeStoryWritingScreenState
     final correctIndices = quest.correctOrder ?? [0, 1, 2];
 
     bool isAllCorrect = true;
-    for (int i = 0; i < _slots.length; i++) {
-      final slotSentence = _slots[i].sentence;
+    for (int i = 0; i < _slots.value.length; i++) {
+      final slotSentence = _slots.value[i].sentence;
       final targetIdx = correctIndices[i];
       final targetSentence = options[targetIdx];
 
@@ -125,7 +129,7 @@ class _SummarizeStoryWritingScreenState
   }
 
   void _onTimerExpired() {
-    if (_pendingSubmit) return;
+    if (_pendingSubmit.value) return;
     _hapticService.error();
     context.read<WritingBloc>().add(const SubmitAnswer(false));
   }
@@ -142,15 +146,15 @@ class _SummarizeStoryWritingScreenState
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _pendingSubmit = false;
-            for (var slot in _slots) {
-              slot.sentence = null;
-            }
-          });
+          _pendingSubmit.value = false;
+          final newSlots = List<DescribeFrameSlot>.from(_slots.value);
+          for (var slot in newSlots) {
+            slot.sentence = null;
+          }
+          _slots.value = newSlots;
         }
         if (state is WritingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -176,7 +180,7 @@ class _SummarizeStoryWritingScreenState
             _lastQuest = newQuest;
             if (newQuest != null) {
               final correctCount = newQuest.correctOrder?.length ?? 3;
-              _slots = List.generate(
+              _slots.value = List.generate(
                 correctCount,
                 (i) => DescribeFrameSlot(index: i),
               );
@@ -187,7 +191,7 @@ class _SummarizeStoryWritingScreenState
         final WritingQuest? quest = _lastQuest;
 
         final options = quest?.options ?? [];
-        final isSlotsFilled = _slots.every((s) => s.sentence != null);
+
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
         final bool? isCorrect = isLoaded
             ? state.answerStatus.asBoolOrNull
@@ -198,15 +202,20 @@ class _SummarizeStoryWritingScreenState
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<WritingBloc>().add(const WritingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
+          child: ListenableBuilder(
+            listenable: Listenable.merge([_showConfetti, _slots, _pendingSubmit]),
+            builder: (context, _) {
+              final isSlotsFilled = _slots.value.isNotEmpty && _slots.value.every((s) => s.sentence != null);
+
+              return quest == null
+                  ? const SizedBox()
+                  : Stack(
                   children: [
                     LayoutBuilder(
                   builder: (context, constraints) {
@@ -290,7 +299,7 @@ class _SummarizeStoryWritingScreenState
                                   ),
 
                                 SummarizeStoryFilmStrip(
-                                  slots: _slots,
+                                  slots: _slots.value,
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                   onDropFrame: (idx, sentence) =>
@@ -302,7 +311,7 @@ class _SummarizeStoryWritingScreenState
 
                                 SummarizeStoryFrameVault(
                                   options: options,
-                                  slots: _slots,
+                                  slots: _slots.value,
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                   onTapOption: (text) =>
@@ -320,8 +329,7 @@ class _SummarizeStoryWritingScreenState
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
@@ -372,10 +380,10 @@ class _SummarizeStoryWritingScreenState
                     );
                   },
                 ),
-                    if (_pendingSubmit && !isAnswered)
+                    if (_pendingSubmit.value && !isAnswered)
                       TypeToConfirmOverlay(
-                        expectedText: _slots.isNotEmpty
-                            ? (_slots[0].sentence ?? "")
+                        expectedText: _slots.value.isNotEmpty
+                            ? (_slots.value[0].sentence ?? "")
                             : "",
                         displayText:
                             "Type the first sentence to finalize your summary",
@@ -385,7 +393,9 @@ class _SummarizeStoryWritingScreenState
                         allowSkip: true,
                       ),
                   ],
-                ),
+                );
+            },
+          ),
         );
       },
     );
