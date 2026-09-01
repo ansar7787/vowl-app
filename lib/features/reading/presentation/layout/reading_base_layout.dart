@@ -30,6 +30,7 @@ class ReadingBaseLayout extends StatelessWidget {
   final String? passage;
   final bool useScrolling;
   final bool disablePadding;
+  final bool hasStage2;
 
   const ReadingBaseLayout({
     super.key,
@@ -45,6 +46,7 @@ class ReadingBaseLayout extends StatelessWidget {
     this.passage,
     this.useScrolling = false,
     this.disablePadding = false,
+    this.hasStage2 = false,
   });
 
   @override
@@ -187,6 +189,7 @@ class ReadingBaseLayout extends StatelessWidget {
               explanation: finalExplanation,
               ruleTitle: context.tr('common.reading_context', fallback: 'READING CONTEXT'),
               ruleContent: ruleContent,
+              isTwoStageGame: hasStage2,
             );
           },
         );

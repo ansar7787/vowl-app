@@ -62,6 +62,25 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
 
   @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(() {
+      if (_focusNode.hasFocus && !widget.isPositioned) {
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted && _focusNode.context != null) {
+            Scrollable.ensureVisible(
+              _focusNode.context!,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOutCubic,
+              alignment: 0.5,
+            );
+          }
+        });
+      }
+    });
+  }
+
+  @override
   void dispose() {
     _scrollController.dispose();
     _controller.dispose();
@@ -244,458 +263,20 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
             child: child,
           );
         },
-        child: RawScrollbar(
-          controller: _scrollController,
-          thumbColor: widget.primaryColor.withValues(alpha: 0.5),
-          radius: Radius.circular(8.r),
-          thickness: 4.w,
-          child: SingleChildScrollView(
-            controller: _scrollController,
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Header
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                          padding: EdgeInsets.all(10.r),
-                          decoration: BoxDecoration(
-                            color: widget.primaryColor.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(14.r),
-                            border: Border.all(
-                              color: widget.primaryColor.withValues(alpha: 0.3),
-                            ),
-                          ),
-                          child: Icon(
-                            Icons.history_edu_rounded,
-                            color: widget.primaryColor,
-                            size: 22.r,
-                          ),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.05, 1.05),
-                          duration: 1.5.seconds,
-                        ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AutoSizeText(
-                            ContextSentenceStrings.headerTitle(context),
-                            maxLines: 1,
-                            minFontSize: 8,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w900,
-                              color: widget.primaryColor,
-                              letterSpacing: 1.5,
-                            ),
-                          ),
-                          SizedBox(height: 2.h),
-                          AutoSizeText(
-                            ContextSentenceStrings.headerSubtitle(context),
-                            maxLines: 1,
-                            minFontSize: 6,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w500,
-                              color: subtitleColor,
-                            ),
-                          ),
-                          if (widget.exampleSentence != null &&
-                              widget.exampleSentence!.isNotEmpty) ...[
-                            SizedBox(height: 6.h),
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 8.w,
-                                vertical: 4.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: widget.primaryColor.withValues(
-                                  alpha: 0.1,
-                                ),
-                                borderRadius: BorderRadius.circular(6.r),
-                                border: Border.all(
-                                  color: widget.primaryColor.withValues(
-                                    alpha: 0.2,
-                                  ),
-                                ),
-                              ),
-                              child: AutoSizeText(
-                                '${ContextSentenceStrings.examplePrefix(context)}"${widget.exampleSentence!}"',
-                                maxLines: 2,
-                                minFontSize: 8,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark
-                                      ? Colors.white70
-                                      : Colors.black87,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                    if (widget.allowSkip)
-                      Padding(
-                        padding: EdgeInsets.only(left: 8.w),
-                        child: _buildSkipButton(subtitleColor),
-                      ),
-                  ],
+        child: widget.isPositioned
+            ? RawScrollbar(
+                controller: _scrollController,
+                thumbColor: widget.primaryColor.withValues(alpha: 0.5),
+                radius: Radius.circular(8.r),
+                thickness: 4.w,
+                child: SingleChildScrollView(
+                  child: _buildFormContent(isDark, subtitleColor, textColor),
                 ),
-                SizedBox(height: 12.h),
-
-                // Target keyword chip
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 8.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: widget.primaryColor.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(
-                      color: widget.primaryColor.withValues(alpha: 0.4),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.auto_awesome_rounded,
-                        color: widget.primaryColor,
-                        size: 14.r,
-                      ),
-                      SizedBox(width: 6.w),
-                      AutoSizeText(
-                        widget.targetKeyword.toUpperCase(),
-                        maxLines: 1,
-                        minFontSize: 10,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w900,
-                          color: widget.primaryColor,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 12.h),
-
-                // Text input area
-                ValueListenableBuilder<_BuilderStatus>(
-                  valueListenable: _status,
-                  builder: (context, status, _) {
-                    if (status == _BuilderStatus.success) {
-                      return const SizedBox.shrink();
-                    }
-
-                    return Column(
-                      children: [
-                        Container(
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.black.withValues(alpha: 0.2)
-                                    : Colors.white.withValues(alpha: 0.5),
-                                borderRadius: BorderRadius.circular(16.r),
-                                border: Border.all(
-                                  color: status == _BuilderStatus.error
-                                      ? Colors.redAccent.withValues(alpha: 0.5)
-                                      : isDark
-                                      ? Colors.white10
-                                      : Colors.black12,
-                                ),
-                              ),
-                              child: Stack(
-                                children: [
-                                  TextField(
-                                    controller: _controller,
-                                    focusNode: _focusNode,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 15.sp,
-                                      color: textColor,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    maxLines: 3,
-                                    minLines: 1,
-                                    onChanged: (_) {
-                                      if (_status.value ==
-                                          _BuilderStatus.error) {
-                                        _status.value = _BuilderStatus.idle;
-                                      }
-                                    },
-                                    onSubmitted: (_) => _evaluate(),
-                                    decoration: InputDecoration(
-                                      hintText: ContextSentenceStrings.hintText(context),
-                                      hintStyle: TextStyle(
-                                        color: subtitleColor.withValues(
-                                          alpha: 0.5,
-                                        ),
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                      border: InputBorder.none,
-                                      contentPadding: EdgeInsets.only(
-                                        left: 16.w,
-                                        right: 16.w,
-                                        top: 12.h,
-                                        bottom: 44.h,
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    bottom: 12.h,
-                                    right: 16.w,
-                                    child: ValueListenableBuilder<TextEditingValue>(
-                                      valueListenable: _controller,
-                                      builder: (context, value, _) {
-                                        final text = value.text.trim();
-                                        final wordCount = text.isEmpty
-                                            ? 0
-                                            : text.split(RegExp(r'\s+')).length;
-                                        return AutoSizeText(
-                                          '$wordCount / ${widget.minWordCount} ${ContextSentenceStrings.wordsSuffix(context)}',
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 10.sp,
-                                            fontWeight: FontWeight.w700,
-                                            color:
-                                                wordCount >= widget.minWordCount
-                                                ? Colors.greenAccent
-                                                : subtitleColor.withValues(
-                                                    alpha: 0.6,
-                                                  ),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                  Positioned(
-                                    bottom: 12.h,
-                                    left: 16.w,
-                                    child: ValueListenableBuilder<int>(
-                                      valueListenable: _attempts,
-                                      builder: (context, attempts, _) {
-                                        if (attempts > 0) {
-                                          final remaining =
-                                              widget.maxAttempts - attempts;
-                                          if (remaining > 0) {
-                                            return AutoSizeText(
-                                              '$remaining ${ContextSentenceStrings.attemptsLeftSuffix(context)}',
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 10.sp,
-                                                fontWeight: FontWeight.w600,
-                                                color: Colors.redAccent
-                                                    .withValues(alpha: 0.8),
-                                              ),
-                                            );
-                                          } else {
-                                            return AutoSizeText(
-                                              ContextSentenceStrings.practiceMode(context),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 10.sp,
-                                                fontWeight: FontWeight.w600,
-                                                color: subtitleColor.withValues(alpha: 0.6),
-                                              ),
-                                            );
-                                          }
-                                        }
-                                        return const SizedBox.shrink();
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                            .animate(
-                              target: status == _BuilderStatus.error ? 1 : 0,
-                            )
-                            .shakeX(amount: 5, duration: 400.ms),
-
-                        // Error message
-                        if (status == _BuilderStatus.error)
-                          ValueListenableBuilder<String>(
-                            valueListenable: _feedbackMessage,
-                            builder: (context, feedback, _) {
-                              if (feedback.isEmpty) {
-                                return const SizedBox.shrink();
-                              }
-                              return Padding(
-                                padding: EdgeInsets.only(top: 12.h),
-                                child: AutoSizeText(
-                                  feedback,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.redAccent.withValues(
-                                      alpha: 0.9,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-
-                        SizedBox(height: 24.h),
-
-                        // Submit / Continue button
-                        ValueListenableBuilder<TextEditingValue>(
-                          valueListenable: _controller,
-                          builder: (context, textValue, _) {
-                            final text = textValue.text.trim();
-                            final wordCount = text.isEmpty
-                                ? 0
-                                : text.split(RegExp(r'\s+')).length;
-                            final hasEnoughWords =
-                                wordCount >= widget.minWordCount;
-
-                            return ValueListenableBuilder<int>(
-                              valueListenable: _attempts,
-                              builder: (context, attempts, _) {
-                                final canEarnCoins = widget.bonusCoins != null &&
-                                    widget.bonusCoins! > 0 &&
-                                    attempts < widget.maxAttempts;
-
-                                return GestureDetector(
-                                  onTap: () {
-                                    if (!hasEnoughWords) return;
-                                    _evaluate();
-                                  },
-                                  child: Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.symmetric(vertical: 16.h),
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: !hasEnoughWords
-                                            ? [
-                                                Colors.grey.withValues(alpha: 0.8),
-                                                Colors.grey.withValues(alpha: 0.6),
-                                              ]
-                                            : [
-                                                widget.primaryColor,
-                                                widget.primaryColor.withValues(
-                                                  alpha: 0.8,
-                                                ),
-                                              ],
-                                      ),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                    ),
-                                    child: Center(
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          AutoSizeText(
-                                            ContextSentenceStrings.submitButton(context),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 14.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.white,
-                                              letterSpacing: 2,
-                                            ),
-                                          ),
-                                          if (canEarnCoins) ...[
-                                            SizedBox(width: 8.w),
-                                            Container(
-                                              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-                                              decoration: BoxDecoration(
-                                                color: Colors.amberAccent.withValues(alpha: 0.2),
-                                                borderRadius: BorderRadius.circular(8.r),
-                                                border: Border.all(color: Colors.amberAccent.withValues(alpha: 0.5)),
-                                              ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  AutoSizeText(
-                                                    '+${widget.bonusCoins}',
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 12.sp,
-                                                      fontWeight: FontWeight.w900,
-                                                      color: Colors.amberAccent,
-                                                    ),
-                                                  ),
-                                                  SizedBox(width: 4.w),
-                                                  Icon(
-                                                    Icons.monetization_on_rounded,
-                                                    size: 14.r,
-                                                    color: Colors.amberAccent,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        ),
-                      ],
-                    );
-                  },
-                ),
-
-                // Success state
-                ValueListenableBuilder<_BuilderStatus>(
-                  valueListenable: _status,
-                  builder: (context, status, _) {
-                    if (status != _BuilderStatus.success) {
-                      return const SizedBox.shrink();
-                    }
-
-                    return Column(
-                      children: [
-                        Icon(
-                          Icons.verified_rounded,
-                          color: Colors.greenAccent,
-                          size: 56.r,
-                        ).animate().scale(
-                          begin: const Offset(0, 0),
-                          end: const Offset(1, 1),
-                          duration: 500.ms,
-                          curve: Curves.easeOutBack,
-                        ),
-                        SizedBox(height: 12.h),
-                        AutoSizeText(
-                          ContextSentenceStrings.masteryProven(context),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.greenAccent,
-                            letterSpacing: 2,
-                          ),
-                        ).animate().fadeIn(delay: 200.ms),
-                      ],
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
-        ),
+              )
+            : Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                child: _buildFormContent(isDark, subtitleColor, textColor),
+              ),
       ),
     );
 
@@ -735,6 +316,450 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     }
 
     return content;
+  }
+
+  Widget _buildFormContent(bool isDark, Color subtitleColor, Color textColor) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Header
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: widget.primaryColor.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(14.r),
+                    border: Border.all(
+                      color: widget.primaryColor.withValues(alpha: 0.3),
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.history_edu_rounded,
+                    color: widget.primaryColor,
+                    size: 22.r,
+                  ),
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.05, 1.05),
+                  duration: 1.5.seconds,
+                ),
+            SizedBox(width: 12.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AutoSizeText(
+                    ContextSentenceStrings.headerTitle(context),
+                    maxLines: 1,
+                    minFontSize: 8,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w900,
+                      color: widget.primaryColor,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  AutoSizeText(
+                    ContextSentenceStrings.headerSubtitle(context),
+                    maxLines: 1,
+                    minFontSize: 6,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                      color: subtitleColor,
+                    ),
+                  ),
+                  if (widget.exampleSentence != null &&
+                      widget.exampleSentence!.isNotEmpty) ...[
+                    SizedBox(height: 6.h),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 4.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: widget.primaryColor.withValues(
+                          alpha: 0.1,
+                        ),
+                        borderRadius: BorderRadius.circular(6.r),
+                        border: Border.all(
+                          color: widget.primaryColor.withValues(
+                            alpha: 0.2,
+                          ),
+                        ),
+                      ),
+                      child: AutoSizeText(
+                        '${ContextSentenceStrings.examplePrefix(context)}"${widget.exampleSentence!}"',
+                        maxLines: 2,
+                        minFontSize: 8,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.w600,
+                          color: isDark
+                              ? Colors.white70
+                              : Colors.black87,
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            if (widget.allowSkip)
+              Padding(
+                padding: EdgeInsets.only(left: 8.w),
+                child: _buildSkipButton(subtitleColor),
+              ),
+          ],
+        ),
+        SizedBox(height: 12.h),
+
+        // Target keyword chip
+        Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 8.h,
+          ),
+          decoration: BoxDecoration(
+            color: widget.primaryColor.withValues(alpha: 0.15),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: widget.primaryColor.withValues(alpha: 0.4),
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.auto_awesome_rounded,
+                color: widget.primaryColor,
+                size: 14.r,
+              ),
+              SizedBox(width: 6.w),
+              AutoSizeText(
+                widget.targetKeyword.toUpperCase(),
+                maxLines: 1,
+                minFontSize: 10,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: widget.primaryColor,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 12.h),
+
+        // Text input area
+        ValueListenableBuilder<_BuilderStatus>(
+          valueListenable: _status,
+          builder: (context, status, _) {
+            if (status == _BuilderStatus.success) {
+              return const SizedBox.shrink();
+            }
+
+            return Column(
+              children: [
+                Container(
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.black.withValues(alpha: 0.2)
+                            : Colors.white.withValues(alpha: 0.5),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: status == _BuilderStatus.error
+                              ? Colors.redAccent.withValues(alpha: 0.5)
+                              : isDark
+                              ? Colors.white10
+                              : Colors.black12,
+                        ),
+                      ),
+                      child: Stack(
+                        children: [
+                          TextField(
+                            controller: _controller,
+                            focusNode: _focusNode,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 15.sp,
+                              color: textColor,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            maxLines: 3,
+                            minLines: 1,
+                            onChanged: (_) {
+                              if (_status.value ==
+                                  _BuilderStatus.error) {
+                                _status.value = _BuilderStatus.idle;
+                              }
+                            },
+                            onSubmitted: (_) => _evaluate(),
+                            decoration: InputDecoration(
+                              hintText: ContextSentenceStrings.hintText(context),
+                              hintStyle: TextStyle(
+                                color: subtitleColor.withValues(
+                                  alpha: 0.5,
+                                ),
+                                fontWeight: FontWeight.w400,
+                              ),
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.only(
+                                left: 16.w,
+                                right: 16.w,
+                                top: 12.h,
+                                bottom: 44.h,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 12.h,
+                            right: 16.w,
+                            child: ValueListenableBuilder<TextEditingValue>(
+                              valueListenable: _controller,
+                              builder: (context, value, _) {
+                                final text = value.text.trim();
+                                final wordCount = text.isEmpty
+                                    ? 0
+                                    : text.split(RegExp(r'\s+')).length;
+                                return AutoSizeText(
+                                  '$wordCount / ${widget.minWordCount} ${ContextSentenceStrings.wordsSuffix(context)}',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color:
+                                        wordCount >= widget.minWordCount
+                                        ? Colors.greenAccent
+                                        : subtitleColor.withValues(
+                                            alpha: 0.6,
+                                          ),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 12.h,
+                            left: 16.w,
+                            child: ValueListenableBuilder<int>(
+                              valueListenable: _attempts,
+                              builder: (context, attempts, _) {
+                                if (attempts > 0) {
+                                  final remaining =
+                                      widget.maxAttempts - attempts;
+                                  if (remaining > 0) {
+                                    return AutoSizeText(
+                                      '$remaining ${ContextSentenceStrings.attemptsLeftSuffix(context)}',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.redAccent
+                                            .withValues(alpha: 0.8),
+                                      ),
+                                    );
+                                  } else {
+                                    return AutoSizeText(
+                                      ContextSentenceStrings.practiceMode(context),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: subtitleColor.withValues(alpha: 0.6),
+                                      ),
+                                    );
+                                  }
+                                }
+                                return const SizedBox.shrink();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                    .animate(
+                      target: status == _BuilderStatus.error ? 1 : 0,
+                    )
+                    .shakeX(amount: 5, duration: 400.ms),
+
+                // Error message
+                if (status == _BuilderStatus.error)
+                  ValueListenableBuilder<String>(
+                    valueListenable: _feedbackMessage,
+                    builder: (context, feedback, _) {
+                      if (feedback.isEmpty) {
+                        return const SizedBox.shrink();
+                      }
+                      return Padding(
+                        padding: EdgeInsets.only(top: 12.h),
+                        child: AutoSizeText(
+                          feedback,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.redAccent.withValues(
+                              alpha: 0.9,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+
+                SizedBox(height: 24.h),
+
+                // Submit / Continue button
+                ValueListenableBuilder<TextEditingValue>(
+                  valueListenable: _controller,
+                  builder: (context, textValue, _) {
+                    final text = textValue.text.trim();
+                    final wordCount = text.isEmpty
+                        ? 0
+                        : text.split(RegExp(r'\s+')).length;
+                    final hasEnoughWords =
+                        wordCount >= widget.minWordCount;
+
+                    return ValueListenableBuilder<int>(
+                      valueListenable: _attempts,
+                      builder: (context, attempts, _) {
+                        final canEarnCoins = widget.bonusCoins != null &&
+                            widget.bonusCoins! > 0 &&
+                            attempts < widget.maxAttempts;
+
+                        return GestureDetector(
+                          onTap: () {
+                            if (!hasEnoughWords) return;
+                            _evaluate();
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(vertical: 16.h),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: !hasEnoughWords
+                                    ? [
+                                        Colors.grey.withValues(alpha: 0.8),
+                                        Colors.grey.withValues(alpha: 0.6),
+                                      ]
+                                    : [
+                                        widget.primaryColor,
+                                        widget.primaryColor.withValues(
+                                          alpha: 0.8,
+                                        ),
+                                      ],
+                              ),
+                              borderRadius: BorderRadius.circular(20.r),
+                            ),
+                            child: Center(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  AutoSizeText(
+                                    ContextSentenceStrings.submitButton(context),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                      letterSpacing: 2,
+                                    ),
+                                  ),
+                                  if (canEarnCoins) ...[
+                                    SizedBox(width: 8.w),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                                      decoration: BoxDecoration(
+                                        color: Colors.amberAccent.withValues(alpha: 0.2),
+                                        borderRadius: BorderRadius.circular(8.r),
+                                        border: Border.all(color: Colors.amberAccent.withValues(alpha: 0.5)),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          AutoSizeText(
+                                            '+${widget.bonusCoins}',
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.amberAccent,
+                                            ),
+                                          ),
+                                          SizedBox(width: 4.w),
+                                          Icon(
+                                            Icons.monetization_on_rounded,
+                                            size: 14.r,
+                                            color: Colors.amberAccent,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              ],
+            );
+          },
+        ),
+
+        // Success state
+        ValueListenableBuilder<_BuilderStatus>(
+          valueListenable: _status,
+          builder: (context, status, _) {
+            if (status != _BuilderStatus.success) {
+              return const SizedBox.shrink();
+            }
+
+            return Column(
+              children: [
+                Icon(
+                  Icons.verified_rounded,
+                  color: Colors.greenAccent,
+                  size: 56.r,
+                ).animate().scale(
+                  begin: const Offset(0, 0),
+                  end: const Offset(1, 1),
+                  duration: 500.ms,
+                  curve: Curves.easeOutBack,
+                ),
+                SizedBox(height: 12.h),
+                AutoSizeText(
+                  ContextSentenceStrings.masteryProven(context),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.greenAccent,
+                    letterSpacing: 2,
+                  ),
+                ).animate().fadeIn(delay: 200.ms),
+              ],
+            );
+          },
+        ),
+      ],
+    );
   }
 }
 

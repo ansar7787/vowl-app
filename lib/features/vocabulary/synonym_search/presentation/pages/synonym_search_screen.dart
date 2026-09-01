@@ -492,7 +492,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                               ),
                                           ],
                                         ),
-                                      SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 220.h : 60.h),
+                                      SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 450.h : 60.h),
                                     ],
                                   ),
                                 ),

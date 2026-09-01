@@ -178,6 +178,7 @@ class VocabularyBaseLayout extends StatelessWidget {
           ruleTitle: ruleTitle,
           ruleContent: ruleContent,
           customContent: customContent,
+          isTwoStageGame: hasStage2,
         );
       },
     );

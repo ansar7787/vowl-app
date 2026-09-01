@@ -49,6 +49,9 @@ class GameFeedbackCard extends StatelessWidget {
   /// Optional: a completely custom widget to render inside the feedback card.
   final Widget? customContent;
 
+  /// Whether this is a 2-stage game. If true, pedagogical fields are hidden to avoid redundancy.
+  final bool isTwoStageGame;
+
   const GameFeedbackCard({
     super.key,
     required this.isCorrect,
@@ -64,6 +67,7 @@ class GameFeedbackCard extends StatelessWidget {
     this.sampleAnswer,
     this.requiredPoints,
     this.customContent,
+    this.isTwoStageGame = false,
   });
 
   static const _successGradient = [Color(0xFF2DD4BF), Color(0xFF10B981)];
@@ -99,6 +103,7 @@ class GameFeedbackCard extends StatelessWidget {
                           .toUpperCase()));
 
     final bool showEducationalInfo = success || isFinalFailure;
+    final bool showPedagogicalFields = showEducationalInfo && !isTwoStageGame;
 
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
@@ -129,12 +134,12 @@ class GameFeedbackCard extends StatelessWidget {
               children: [
                 _buildResultRow(icon, title, gradient),
 
-                if (showEducationalInfo && customContent != null) ...[
+                if (showPedagogicalFields && customContent != null) ...[
                   SizedBox(height: 16.h),
                   customContent!,
                 ],
 
-                if (showEducationalInfo &&
+                if (showPedagogicalFields &&
                     ruleContent != null &&
                     ruleContent!.isNotEmpty) ...[
                   SizedBox(height: 16.h),
@@ -161,7 +166,7 @@ class GameFeedbackCard extends StatelessWidget {
                   ),
                 ],
 
-                if (showEducationalInfo &&
+                if (showPedagogicalFields &&
                     sampleAnswer != null &&
                     sampleAnswer!.isNotEmpty) ...[
                   SizedBox(height: 16.h),
@@ -177,7 +182,7 @@ class GameFeedbackCard extends StatelessWidget {
                   ),
                 ],
 
-                if (showEducationalInfo &&
+                if (showPedagogicalFields &&
                     requiredPoints != null &&
                     requiredPoints!.isNotEmpty) ...[
                   SizedBox(height: 16.h),
