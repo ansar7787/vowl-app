@@ -104,17 +104,28 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                 effects: const [
                   FadeEffect(duration: Duration(milliseconds: 300)),
                 ],
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-                  child: Material(
-                    type: MaterialType.transparency,
-                    child: ColoredBox(
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    // 1. Isolated blur layer
+                    BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+                      child: const SizedBox.expand(),
+                    ),
+
+                    // 2. Solid color tint layer
+                    ColoredBox(
                       color:
                           (isDark
                                   ? const Color(0xFF020617)
                                   : const Color(0xFFF8FAFC))
                               .withValues(alpha: 0.85),
-                      child: SizedBox.expand(
+                    ),
+
+                    // 3. Animated content layer
+                    RepaintBoundary(
+                      child: Material(
+                        type: MaterialType.transparency,
                         child: Center(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -238,7 +249,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
