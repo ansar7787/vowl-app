@@ -35,9 +35,17 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -57,12 +65,10 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -77,10 +83,8 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
 
   void _tutorPass() {
     GameDialogHelper.showHonestyNudge(context);
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = true;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = true;
     context.read<RoleplayBloc>().add(const RoleplayTutorPass());
   }
 
@@ -93,28 +97,24 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              } else {
-                _isAnswered = false;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            } else {
+              _isAnswered.value = false;
+            }
           }
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -127,13 +127,16 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               onTutorPass: _tutorPass,
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -147,18 +150,16 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               ElevatorPitchInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -174,8 +175,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (!_isAnswered)
+                                  if (!_isAnswered.value)
                                     SpeakToConfirmOverlay(
                                       expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
                                       primaryColor: theme.primaryColor,
@@ -188,7 +188,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -196,7 +196,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }
