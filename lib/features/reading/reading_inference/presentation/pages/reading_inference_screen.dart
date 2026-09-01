@@ -32,13 +32,25 @@ class ReadingInferenceScreen extends StatefulWidget {
 class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  final List<Offset> _rubPoints = [];
-  double _clarity = 0.0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _showEvidence = false;
-  bool _evidenceFound = false;
+  final ValueNotifier<List<Offset>> _rubPoints = ValueNotifier([]);
+  final ValueNotifier<double> _clarity = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
+  final ValueNotifier<bool> _evidenceFound = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _rubPoints.dispose();
+    _clarity.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _showEvidence.dispose();
+    _evidenceFound.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -51,27 +63,21 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   }
 
   void _onRub(Offset point) {
-    if (_isAnswered) return;
-    setState(() {
-      _rubPoints.add(point);
-      _clarity = (_rubPoints.length / 100).clamp(0.0, 1.0);
-      if (_rubPoints.length % 5 == 0) {
-        _hapticService.selection();
-      }
-    });
+    if (_isAnswered.value) return;
+    _rubPoints.value = List.from(_rubPoints.value)..add(point);
+    _clarity.value = (_rubPoints.value.length / 100).clamp(0.0, 1.0);
+    if (_rubPoints.value.length % 5 == 0) {
+      _hapticService.selection();
+    }
   }
 
   void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = isCorrect;
 
     if (isCorrect) {
       if (quest.clueWords != null && quest.clueWords!.isNotEmpty) {
-        setState(() {
-          _showEvidence = true;
-        });
+        _showEvidence.value = true;
       } else {
         context.read<ReadingBloc>().add(const SubmitAnswer(true));
       }
@@ -82,10 +88,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
 
   void _onEvidenceFound() {
     _hapticService.success();
-    setState(() {
-      _showEvidence = false;
-      _evidenceFound = true;
-    });
+    _showEvidence.value = false;
+    _evidenceFound.value = true;
     context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -98,30 +102,26 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _rubPoints.clear();
-              _clarity = 0.0;
-              _showEvidence = false;
-              _evidenceFound = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _rubPoints.value = [];
+            _clarity.value = 0.0;
+            _showEvidence.value = false;
+            _evidenceFound.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -136,12 +136,15 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _rubPoints, _clarity, _showEvidence, _evidenceFound]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () =>
               context.read<ReadingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -163,7 +166,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                             ),
                             SizedBox(height: 32.h),
 
-                            if (_showEvidence)
+                            if (_showEvidence.value)
                               EvidenceHighlightWrapper(
                                 passage: quest.passage ?? "",
                                 evidenceWords: quest.clueWords ?? [],
@@ -176,9 +179,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                                 passage: quest.passage ?? "",
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                isAnswered: _isAnswered || _showEvidence,
-                                rubPoints: _rubPoints,
-                                clarity: _clarity,
+                                isAnswered: _isAnswered.value || _showEvidence.value,
+                                rubPoints: _rubPoints.value,
+                                clarity: _clarity.value,
                                 onRub: _onRub,
                               ),
                             SizedBox(height: 32.h),
@@ -199,20 +202,19 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             SizedBox(height: 24.h),
-                            if (!_showEvidence && !_evidenceFound)
+                            if (!_showEvidence.value && !_evidenceFound.value)
                               AnimatedOpacity(
                                 duration: const Duration(milliseconds: 300),
-                                opacity: _clarity >= 0.3 ? 1.0 : 0.3,
+                                opacity: _clarity.value >= 0.3 ? 1.0 : 0.3,
                                 child: AbsorbPointer(
-                                  absorbing: _clarity < 0.3 || _isAnswered,
+                                  absorbing: _clarity.value < 0.3 || _isAnswered.value,
                                   child: ReadingSelfEvaluationCard(
                                     correctAnswer: quest.correctAnswer ?? "",
                                     explanation: quest.explanation,
@@ -222,11 +224,11 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                                 ),
                               ),
 
-                            if (_isAnswered && (!_showEvidence || _evidenceFound)) ...[
+                            if (_isAnswered.value && (!_showEvidence.value || _evidenceFound.value)) ...[
                               SizedBox(height: 30.h),
                               ReadingInferenceResult(
                                 quest: quest,
-                                isCorrect: _isCorrect == true,
+                                isCorrect: _isCorrect.value == true,
                                 isDark: isDark,
                               ),
                             ],
@@ -237,6 +239,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                     ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
