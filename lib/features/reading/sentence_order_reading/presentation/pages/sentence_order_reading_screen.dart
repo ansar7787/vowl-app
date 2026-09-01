@@ -36,10 +36,19 @@ class _SentenceOrderReadingScreenState
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  List<String> _currentOrder = [];
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<List<String>> _currentOrder = ValueNotifier([]);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _currentOrder.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -52,21 +61,21 @@ class _SentenceOrderReadingScreenState
   }
 
   void _onReorder(int oldIndex, int newIndex) {
-    if (_isAnswered) return;
-    setState(() {
-      if (newIndex > oldIndex) newIndex -= 1;
-      final item = _currentOrder.removeAt(oldIndex);
-      _currentOrder.insert(newIndex, item);
-      _hapticService.selection();
-    });
+    if (_isAnswered.value) return;
+    final List<String> current = List.from(_currentOrder.value);
+    if (newIndex > oldIndex) newIndex -= 1;
+    final item = current.removeAt(oldIndex);
+    current.insert(newIndex, item);
+    _currentOrder.value = current;
+    _hapticService.selection();
   }
 
   void _submitAnswer(List<int> correctOrder, List<String> original) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
     bool isCorrect = true;
-    for (int i = 0; i < _currentOrder.length; i++) {
-      if (_currentOrder[i] != original[correctOrder[i]]) {
+    for (int i = 0; i < _currentOrder.value.length; i++) {
+      if (_currentOrder.value[i] != original[correctOrder[i]]) {
         isCorrect = false;
         break;
       }
@@ -75,18 +84,14 @@ class _SentenceOrderReadingScreenState
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
       context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ReadingBloc>().add(SubmitAnswer(false));
     }
   }
@@ -100,29 +105,25 @@ class _SentenceOrderReadingScreenState
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _currentOrder = List<String>.from(
-                state.currentQuest.shuffledSentences ?? [],
-              );
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _currentOrder.value = List<String>.from(
+              state.currentQuest.shuffledSentences ?? [],
+            );
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -137,12 +138,15 @@ class _SentenceOrderReadingScreenState
             ? state.currentQuest as ReadingQuest?
             : null;
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _currentOrder]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
@@ -168,10 +172,10 @@ class _SentenceOrderReadingScreenState
                                   _buildProxy(child, animation, theme.primaryColor),
                               onReorder: _onReorder,
                               children: List.generate(
-                                _currentOrder.length,
+                                _currentOrder.value.length,
                                 (index) => SentenceOrderReadingStoneSlab(
-                                  key: ValueKey(_currentOrder[index]),
-                                  text: _currentOrder[index],
+                                  key: ValueKey(_currentOrder.value[index]),
+                                  text: _currentOrder.value[index],
                                   index: index,
                                   color: theme.primaryColor,
                                   isDark: isDark,
@@ -183,14 +187,13 @@ class _SentenceOrderReadingScreenState
                         ),
                       ),
                     ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
+                    SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!_isAnswered) ...[
+                            if (!_isAnswered.value) ...[
                               SizedBox(height: 24.h),
                               SentenceOrderReadingCapstone(
                                 color: theme.primaryColor,
@@ -203,11 +206,11 @@ class _SentenceOrderReadingScreenState
                                 },
                               ),
                             ],
-                            if (_isAnswered) ...[
+                            if (_isAnswered.value) ...[
                               SizedBox(height: 30.h),
                               SentenceOrderReadingResult(
                                 quest: quest,
-                                isCorrect: _isCorrect == true,
+                                isCorrect: _isCorrect.value == true,
                                 isDark: isDark,
                               ),
                             ],
@@ -218,6 +221,8 @@ class _SentenceOrderReadingScreenState
                     ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
