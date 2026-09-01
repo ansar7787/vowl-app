@@ -243,25 +243,25 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                             // ── Watch Ad Button (Primary CTA) ───────────
                             if (hasAdReady)
                               ValueListenableBuilder<int>(
-                                valueListenable: _stateHash,
-                                builder: (context, _, child) {
-                                  return _ActionButton(
-                                    isDark: isDark,
-                                    isLoading: _isLoadingAd,
-                                    onTap: _handleWatchAd,
-                                    icon: LucideIcons.play,
-                                    label: context.tr(
-                                      'connectivity.watch_ad_continue',
-                                      fallback: 'WATCH AD FOR +3 LEVELS',
-                                    ),
-                                    gradient: const [
-                                      Color(0xFF10B981),
-                                      Color(0xFF059669),
-                                    ],
-                                    glowColor: const Color(0xFF10B981),
-                                  );
-                                },
-                              )
+                                    valueListenable: _stateHash,
+                                    builder: (context, _, child) {
+                                      return _ActionButton(
+                                        isDark: isDark,
+                                        isLoading: _isLoadingAd,
+                                        onTap: _handleWatchAd,
+                                        icon: LucideIcons.play,
+                                        label: context.tr(
+                                          'connectivity.watch_ad_continue',
+                                          fallback: 'WATCH AD FOR +3 LEVELS',
+                                        ),
+                                        gradient: const [
+                                          Color(0xFF10B981),
+                                          Color(0xFF059669),
+                                        ],
+                                        glowColor: const Color(0xFF10B981),
+                                      );
+                                    },
+                                  )
                                   .animate()
                                   .fadeIn(delay: 500.ms, duration: 600.ms)
                                   .moveY(begin: 20, end: 0),
@@ -270,25 +270,25 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
                             // ── Reconnect Button ────────────────────────
                             ValueListenableBuilder<int>(
-                              valueListenable: _stateHash,
-                              builder: (context, _, child) {
-                                return _ActionButton(
-                                  isDark: isDark,
-                                  isLoading: _isChecking,
-                                  onTap: _handleRetry,
-                                  icon: LucideIcons.wifi,
-                                  label: context.tr(
-                                    'connectivity.retry_button',
-                                    fallback: 'RECONNECT',
-                                  ),
-                                  gradient: const [
-                                    Color(0xFF6366F1),
-                                    Color(0xFF1D4ED8),
-                                  ],
-                                  glowColor: Colors.blue,
-                                );
-                              },
-                            )
+                                  valueListenable: _stateHash,
+                                  builder: (context, _, child) {
+                                    return _ActionButton(
+                                      isDark: isDark,
+                                      isLoading: _isChecking,
+                                      onTap: _handleRetry,
+                                      icon: LucideIcons.wifi,
+                                      label: context.tr(
+                                        'connectivity.retry_button',
+                                        fallback: 'RECONNECT',
+                                      ),
+                                      gradient: const [
+                                        Color(0xFF6366F1),
+                                        Color(0xFF1D4ED8),
+                                      ],
+                                      glowColor: Colors.blue,
+                                    );
+                                  },
+                                )
                                 .animate()
                                 .fadeIn(delay: 600.ms, duration: 600.ms)
                                 .moveY(begin: 20, end: 0),
@@ -499,102 +499,104 @@ class _ActionButtonState extends State<_ActionButton> {
       valueListenable: _stateHash,
       builder: (context, _, child) {
         return Listener(
-      onPointerDown: (_) {
-        _scale = 0.96;
-        _updateState();
-      },
-      onPointerUp: (_) {
-        _scale = 1.0;
-        _updateState();
-      },
-      onPointerCancel: (_) {
-        _scale = 1.0;
-        _updateState();
-      },
-      child: GestureDetector(
-        onTap: widget.isLoading ? null : widget.onTap,
-        child: AnimatedScale(
-          scale: _scale,
-          duration: const Duration(milliseconds: 100),
-          curve: Curves.easeOut,
-          child: Container(
-            height: 58.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18.r),
-              gradient: LinearGradient(
-                colors: widget.isLoading
-                    ? widget.gradient
-                          .map((c) => c.withValues(alpha: 0.5))
-                          .toList()
-                    : widget.gradient,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: widget.glowColor.withValues(alpha: 0.3),
-                  blurRadius: 16,
-                  offset: const Offset(0, 6),
+          onPointerDown: (_) {
+            _scale = 0.96;
+            _updateState();
+          },
+          onPointerUp: (_) {
+            _scale = 1.0;
+            _updateState();
+          },
+          onPointerCancel: (_) {
+            _scale = 1.0;
+            _updateState();
+          },
+          child: GestureDetector(
+            onTap: widget.isLoading ? null : widget.onTap,
+            child: AnimatedScale(
+              scale: _scale,
+              duration: const Duration(milliseconds: 100),
+              curve: Curves.easeOut,
+              child: Container(
+                height: 58.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18.r),
+                  gradient: LinearGradient(
+                    colors: widget.isLoading
+                        ? widget.gradient
+                              .map((c) => c.withValues(alpha: 0.5))
+                              .toList()
+                        : widget.gradient,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: widget.glowColor.withValues(alpha: 0.3),
+                      blurRadius: 16,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(18.r),
-              child: Stack(
-                children: [
-                  if (!widget.isLoading)
-                    Positioned.fill(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              Colors.white.withValues(alpha: 0.1),
-                              Colors.transparent,
-                            ],
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(18.r),
+                  child: Stack(
+                    children: [
+                      if (!widget.isLoading)
+                        Positioned.fill(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Colors.white.withValues(alpha: 0.1),
+                                  Colors.transparent,
+                                ],
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  Center(
-                    child: widget.isLoading
-                        ? SizedBox(
-                            width: 22.r,
-                            height: 22.r,
-                            child: const VowlButtonSpinner(color: Colors.white),
-                          )
-                        : Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                widget.icon,
-                                color: Colors.white,
-                                size: 20.r,
-                              ),
-                              SizedBox(width: 10.w),
-                              Flexible(
-                                child: Text(
-                                  widget.label,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    color: Colors.white,
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w800,
-                                    letterSpacing: 1,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
+                      Center(
+                        child: widget.isLoading
+                            ? SizedBox(
+                                width: 22.r,
+                                height: 22.r,
+                                child: const VowlButtonSpinner(
+                                  color: Colors.white,
                                 ),
+                              )
+                            : Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    widget.icon,
+                                    color: Colors.white,
+                                    size: 20.r,
+                                  ),
+                                  SizedBox(width: 10.w),
+                                  Flexible(
+                                    child: Text(
+                                      widget.label,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: Colors.white,
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w800,
+                                        letterSpacing: 1,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
         );
       },
     );

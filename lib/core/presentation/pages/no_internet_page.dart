@@ -171,24 +171,24 @@ class _NoInternetPageState extends State<NoInternetPage> {
                             SizedBox(height: 60.h),
 
                             ValueListenableBuilder<int>(
-                              valueListenable: _stateHash,
-                              builder: (context, _, child) {
-                                return _RetryButton(
-                                  isDark: isDark,
-                                  isChecking: _isChecking,
-                                  buttonScale: _buttonScale,
-                                  onPointerDown: () {
-                                    _buttonScale = 0.96;
-                                    _updateState();
+                                  valueListenable: _stateHash,
+                                  builder: (context, _, child) {
+                                    return _RetryButton(
+                                      isDark: isDark,
+                                      isChecking: _isChecking,
+                                      buttonScale: _buttonScale,
+                                      onPointerDown: () {
+                                        _buttonScale = 0.96;
+                                        _updateState();
+                                      },
+                                      onPointerUp: () {
+                                        _buttonScale = 1.0;
+                                        _updateState();
+                                      },
+                                      onTap: _handleRetry,
+                                    );
                                   },
-                                  onPointerUp: () {
-                                    _buttonScale = 1.0;
-                                    _updateState();
-                                  },
-                                  onTap: _handleRetry,
-                                );
-                              },
-                            )
+                                )
                                 .animate()
                                 .fadeIn(delay: 600.ms, duration: 600.ms)
                                 .moveY(begin: 20, end: 0),
