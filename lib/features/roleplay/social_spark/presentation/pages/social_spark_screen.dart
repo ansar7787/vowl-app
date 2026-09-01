@@ -42,12 +42,12 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   int _lastProcessedIndex = -1;
 
   // Track selected words by their original shuffled index to support duplicate words flawlessly
-  final List<int> _selectedIndices = [];
+  final ValueNotifier<List<int>> _selectedIndices = ValueNotifier([]);
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
   @override
   void initState() {
@@ -65,6 +65,11 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   @override
   void dispose() {
     _pulseController.dispose();
+    _selectedIndices.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _isFirstStagePassed.dispose();
     super.dispose();
   }
 
@@ -73,32 +78,30 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _onStarTap(int index) {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _hapticService.selection();
     _soundService.playHint(); // Play little synth tap note
 
-    setState(() {
-      if (_selectedIndices.contains(index)) {
-        _selectedIndices.remove(index);
-      } else {
-        _selectedIndices.add(index);
-      }
-    });
+    final current = List<int>.from(_selectedIndices.value);
+    if (current.contains(index)) {
+      current.remove(index);
+    } else {
+      current.add(index);
+    }
+    _selectedIndices.value = current;
   }
 
   void _clearSelection() {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered.value || _isFirstStagePassed.value) return;
     _hapticService.selection();
-    setState(() {
-      _selectedIndices.clear();
-    });
+    _selectedIndices.value = [];
   }
 
   void _submitAnswer(List<String> shuffledWords, String correctAnswer) {
-    if (_isAnswered || _isFirstStagePassed || _selectedIndices.isEmpty) return;
+    if (_isAnswered.value || _isFirstStagePassed.value || _selectedIndices.value.isEmpty) return;
 
     // Assemble sentence in correct tapped order
-    final String result = _selectedIndices
+    final String result = _selectedIndices.value
         .map((idx) => shuffledWords[idx])
         .join(' ');
 
@@ -113,28 +116,22 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
+      _isFirstStagePassed.value = true;
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<RoleplayBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -156,20 +153,18 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndices.clear();
-              _isFirstStagePassed = false;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndices.value = [];
+            _isFirstStagePassed.value = false;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -184,16 +179,19 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
         final words = quest?.shuffledWords ?? [];
 
         // Build active joined text representation
-        final String currentText = _selectedIndices
+        final String currentText = _selectedIndices.value
             .map((idx) => words[idx])
             .join(' ');
 
-        return RoleplayBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndices, _isFirstStagePassed]),
+            builder: (context, _) {
+              return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered,
-              isCorrect: _isCorrect,
-              showConfetti: _showConfetti,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
@@ -207,18 +205,16 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                         return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
                           slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
+                            SliverToBoxAdapter(
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                        vertical: isCompact ? 5.h : 10.h,
-                                      ),
-                                      child: Column(
-                                        children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: isCompact ? 5.h : 10.h,
+                                    ),
+                                    child: Column(
+                                      children: [
                               SocialSparkInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -230,8 +226,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                 socialContext: quest.socialContext,
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                isAnswered: _isAnswered,
-                                isCorrect: _isCorrect,
+                                isAnswered: _isAnswered.value,
+                                isCorrect: _isCorrect.value,
                               ),
                               SizedBox(height: isCompact ? 12.h : 20.h),
 
@@ -239,16 +235,16 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                 words: words,
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                selectedIndices: _selectedIndices,
-                                isAnswered: _isAnswered,
-                                isCorrect: _isCorrect,
+                                selectedIndices: _selectedIndices.value,
+                                isAnswered: _isAnswered.value,
+                                isCorrect: _isCorrect.value,
                                 pulseValue: _pulseController.value,
                                 onStarTap: _onStarTap,
                               ),
                               SizedBox(height: isCompact ? 12.h : 20.h),
 
                               // Trigger Action Buttons
-                              if (!_isAnswered && _selectedIndices.isNotEmpty)
+                              if (!_isAnswered.value && _selectedIndices.value.isNotEmpty)
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -357,8 +353,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed && !_isAnswered)
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
                                     SpeakToConfirmOverlay(
                                       expectedText: quest.correctAnswer ?? currentText,
                                       primaryColor: theme.primaryColor,
@@ -371,7 +366,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                       },
                                       onSkipped: () => _submitVerbalEvaluation(false),
                                     ),
-                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
@@ -379,7 +374,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                         );
                       },
                     ),
-            );
+                );
+            },
+          );
       },
     );
   }
