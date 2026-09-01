@@ -108,7 +108,11 @@ class MascotSelectionScreen extends StatelessWidget {
                         ),
                       ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
                       SizedBox(height: 30.h),
-                      Column(
+                      SizedBox(height: 30.h),
+                      Wrap(
+                        spacing: 20.w,
+                        runSpacing: 30.h,
+                        alignment: WrapAlignment.center,
                         children: [
                           KidsMascotCard(
                             id: "owly",
@@ -117,7 +121,6 @@ class MascotSelectionScreen extends StatelessWidget {
                             color: Colors.indigo,
                             index: 0,
                           ),
-                          SizedBox(height: 20.h),
                           KidsMascotCard(
                             id: "foxie",
                             name: "Foxie",
@@ -125,7 +128,6 @@ class MascotSelectionScreen extends StatelessWidget {
                             color: Colors.orange,
                             index: 1,
                           ),
-                          SizedBox(height: 20.h),
                           KidsMascotCard(
                             id: "dino",
                             name: "Dino",
@@ -188,7 +190,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
         final isSelected = state.user?.kidsMascot == widget.id;
         
         return Container(
-          width: double.infinity,
+          width: 165.w,
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF1E293B) : Colors.white,
@@ -209,13 +211,14 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
               ),
             ],
           ),
-          child: Row(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               ScaleButton(
                 onTap: _handleTryMe,
                 child: Container(
-                  height: 110.h,
-                  width: 110.w,
+                  height: 120.h,
+                  width: 120.w,
                   decoration: BoxDecoration(
                     color: widget.color.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
@@ -224,7 +227,7 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                     alignment: Alignment.center,
                     children: [
                       VowlMascot(
-                        size: 80.r,
+                        size: 90.r,
                         mascotId: widget.id,
                         isKidsMode: true,
                         state: _isTrying ? VowlMascotState.happy : VowlMascotState.neutral,
@@ -249,88 +252,78 @@ class _KidsMascotCardState extends State<KidsMascotCard> {
                         ),
                       )
                       .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .moveY(begin: 0, end: -4, duration: 1.seconds)
-                      .shimmer(duration: 2.seconds, color: Colors.white.withValues(alpha: 0.6)),
+                      .moveY(begin: 0, end: -4, duration: 1.seconds),
                     ],
                   ),
                 ),
               ),
-              SizedBox(width: 20.w),
-              Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.name,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF1E293B),
-                        height: 1.1,
-                      ),
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      widget.trait,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.color,
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-                    ScaleButton(
-                      onTap: () {
-                        context.read<ProfileBloc>().add(ProfileUpdateMascotRequested(widget.id));
-                        CustomSnackBar.show(
-                          context: context,
-                          message: context.tr('kids_zone.buddy_selected', fallback: '${widget.name} is now your buddy! \u2728', args: [widget.name]),
-                          type: CustomSnackBarType.success,
-                        );
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 12.h),
-                        decoration: BoxDecoration(
-                          color: isSelected ? widget.color : (isDark ? Colors.white10 : Colors.grey.shade200),
-                          borderRadius: BorderRadius.circular(20.r),
-                        ),
-                        child: Center(
-                          child: isSelected
-                              ? Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.check_circle_rounded, color: Colors.white, size: 16.sp),
-                                    SizedBox(width: 4.w),
-                                    Text(
-                                      "SELECTED",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
-                                        letterSpacing: 1.2,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              : Text(
-                                  "SELECT",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: isDark ? Colors.white54 : Colors.black45,
-                                    letterSpacing: 1.2,
-                                  ),
+              SizedBox(height: 12.h),
+              Text(
+                widget.name,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                ),
+              ),
+              Text(
+                widget.trait,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w800,
+                  color: widget.color,
+                ),
+              ),
+              SizedBox(height: 16.h),
+              ScaleButton(
+                onTap: () {
+                  context.read<ProfileBloc>().add(ProfileUpdateMascotRequested(widget.id));
+                  CustomSnackBar.show(
+                    context: context,
+                    message: context.tr('kids_zone.buddy_selected', fallback: '${widget.name} is now your buddy! \u2728', args: [widget.name]),
+                    type: CustomSnackBarType.success,
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 10.h),
+                  decoration: BoxDecoration(
+                    color: isSelected ? widget.color : (isDark ? Colors.white10 : Colors.grey.shade200),
+                    borderRadius: BorderRadius.circular(20.r),
+                  ),
+                  child: Center(
+                    child: isSelected
+                        ? Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.check_circle_rounded, color: Colors.white, size: 16.sp),
+                              SizedBox(width: 4.w),
+                              Text(
+                                "SELECTED",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  letterSpacing: 1.2,
                                 ),
-                        ),
-                      ),
-                    ),
-                  ],
+                              ),
+                            ],
+                          )
+                        : Text(
+                            "SELECT",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark ? Colors.white54 : Colors.black45,
+                              letterSpacing: 1.2,
+                            ),
+                          ),
+                  ),
                 ),
               ),
             ],
