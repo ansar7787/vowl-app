@@ -33,14 +33,14 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  List<String> _shuffledOptions = [];
-  List<int> _originalIndices = [];
-  bool _showConfetti = false;
-  int? _selectedIndex;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _isFirstStagePassed = false;
-  List<int> _wrongIndices = [];
+  final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
+  final ValueNotifier<List<int>> _originalIndices = ValueNotifier([]);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ValueNotifier<List<int>> _wrongIndices = ValueNotifier([]);
   String? _lastQuestId;
   int _lastLives = 3;
 
@@ -53,22 +53,27 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
       FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
     );
   }
+  
+  @override
+  void dispose() {
+    _shuffledOptions.dispose();
+    _originalIndices.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _isFirstStagePassed.dispose();
+    _wrongIndices.dispose();
+    super.dispose();
+  }
 
-  void _initializeOptions(GameQuest quest, {bool shouldSetState = true}) {
+  void _initializeOptions(GameQuest quest) {
     if (quest.options == null || quest.options!.isEmpty) {
-      void reset() {
-        _shuffledOptions = [];
-        _originalIndices = [];
-        _selectedIndex = null;
-        _wrongIndices = [];
-        _isFirstStagePassed = false;
-      }
-
-      if (shouldSetState) {
-        setState(reset);
-      } else {
-        reset();
-      }
+      _shuffledOptions.value = [];
+      _originalIndices.value = [];
+      _selectedIndex.value = null;
+      _wrongIndices.value = [];
+      _isFirstStagePassed.value = false;
       return;
     }
 
@@ -79,64 +84,50 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
     mapped.shuffle();
 
-    if (shouldSetState) {
-      setState(() {
-        _shuffledOptions = mapped.map((e) => e.value).toList();
-        _originalIndices = mapped.map((e) => e.key).toList();
-        _selectedIndex = null;
-        _wrongIndices = [];
-        _isFirstStagePassed = false;
-      });
-    } else {
-      _shuffledOptions = mapped.map((e) => e.value).toList();
-      _originalIndices = mapped.map((e) => e.key).toList();
-      _selectedIndex = null;
-      _wrongIndices = [];
-      _isFirstStagePassed = false;
-    }
+    _shuffledOptions.value = mapped.map((e) => e.value).toList();
+    _originalIndices.value = mapped.map((e) => e.key).toList();
+    _selectedIndex.value = null;
+    _wrongIndices.value = [];
+    _isFirstStagePassed.value = false;
   }
 
   void _onOptionSelected(int shuffledIndex, int? correctOriginalIndex) {
-    if (_isAnswered ||
-        _isFirstStagePassed ||
-        _wrongIndices.contains(shuffledIndex)) {
+    if (_isAnswered.value ||
+        _isFirstStagePassed.value ||
+        _wrongIndices.value.contains(shuffledIndex)) {
       return;
     }
 
-    final actualOriginalIndex = _originalIndices[shuffledIndex];
+    final actualOriginalIndex = _originalIndices.value[shuffledIndex];
     final isCorrect = actualOriginalIndex == correctOriginalIndex;
 
     if (isCorrect) {
       _hapticService.selection();
-      setState(() {
-        _isFirstStagePassed = true;
-        _selectedIndex = shuffledIndex;
-      });
+      _isFirstStagePassed.value = true;
+      _selectedIndex.value = shuffledIndex;
       // Do NOT submit yet! Wait for Phase 2.
     } else {
       _hapticService.error();
       _soundService.playWrong();
 
-      setState(() {
-        if (!_wrongIndices.contains(shuffledIndex)) {
-          _wrongIndices.add(shuffledIndex);
-        }
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = shuffledIndex;
-      });
+      if (!_wrongIndices.value.contains(shuffledIndex)) {
+        final newWrong = List<int>.from(_wrongIndices.value);
+        newWrong.add(shuffledIndex);
+        _wrongIndices.value = newWrong;
+      }
+      _isAnswered.value = true;
+      _isCorrect.value = false;
+      _selectedIndex.value = shuffledIndex;
 
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
+    _isAnswered.value = true;
+    _isCorrect.value = nailedIt;
 
     if (nailedIt) {
       _hapticService.success();
@@ -164,7 +155,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     return BlocConsumer<EliteMasteryBloc, EliteMasteryState>(
       listener: (context, state) {
         if (state is EliteMasteryGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -180,75 +171,72 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
           if (_lastQuestId != state.currentQuest.id ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered)) {
-            setState(() {
-              _lastQuestId = state.currentQuest.id;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-            });
+              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            _lastQuestId = state.currentQuest.id;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+            
             _initializeOptions(state.currentQuest);
           } else if (!state.answerStatus.isAnswered) {
-            setState(() {
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _isFirstStagePassed = false;
-            });
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _isFirstStagePassed.value = false;
           }
           if (state.answerStatus == AnswerStatus.incorrect) {
-            setState(() {
-              _isCorrect = false;
-              if (state.isFinalFailure || state.livesRemaining <= 0) {
-                _isAnswered = true;
-              }
-            });
+            _isCorrect.value = false;
+            if (state.isFinalFailure || state.livesRemaining <= 0) {
+              _isAnswered.value = true;
+            }
           }
           _lastLives = state.livesRemaining;
 
           if (state.removedIndices.isNotEmpty) {
-            setState(() {
-              for (final originalIdx in state.removedIndices) {
-                final shuffledIdx = _originalIndices.indexOf(originalIdx);
-                if (shuffledIdx != -1 && !_wrongIndices.contains(shuffledIdx)) {
-                  _wrongIndices.add(shuffledIdx);
-                }
+            final currentWrong = List<int>.from(_wrongIndices.value);
+            for (final originalIdx in state.removedIndices) {
+              final shuffledIdx = _originalIndices.value.indexOf(originalIdx);
+              if (shuffledIdx != -1 && !currentWrong.contains(shuffledIdx)) {
+                currentWrong.add(shuffledIdx);
               }
-            });
+            }
+            _wrongIndices.value = currentWrong;
           }
         }
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
 
-        final expectedText = quest != null && _selectedIndex != null
-            ? _shuffledOptions[_selectedIndex!]
-            : "";
 
-        String contextSentence = expectedText;
-        if (quest?.explanation != null && quest!.explanation!.contains("Example: '")) {
-          final parts = quest.explanation!.split("Example: '");
-          if (parts.length > 1) {
-            contextSentence = parts[1].split("'").first;
-          }
-        }
-        
-        // We pass the contextSentence string to a debugging method to silence
-        // the unused variable warning properly instead of using `_`.
-        debugPrint(contextSentence);
-
-        return EliteBaseLayout(
+        return ListenableBuilder(
+            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _shuffledOptions, _originalIndices, _wrongIndices, _isFirstStagePassed]),
+            builder: (context, _) {
+              final expectedText = quest != null && _selectedIndex.value != null
+                  ? _shuffledOptions.value[_selectedIndex.value!]
+                  : "";
+      
+              String contextSentence = expectedText;
+              if (quest?.explanation != null && quest!.explanation!.contains("Example: '")) {
+                final parts = quest.explanation!.split("Example: '");
+                if (parts.length > 1) {
+                  contextSentence = parts[1].split("'").first;
+                }
+              }
+              
+              debugPrint(contextSentence);
+              
+              return EliteBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
+          isAnswered: _isAnswered.value,
           state: state,
-          isCorrect: _isCorrect,
+          isCorrect: _isCorrect.value,
           isFinalFailure: (state is EliteMasteryLoaded)
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti.value,
           useScrolling: false,
-          title: _isFirstStagePassed || _isAnswered
+          title: _isFirstStagePassed.value || _isAnswered.value
               ? ""
               : quest?.instruction.isNotEmpty == true
               ? quest!.instruction
@@ -259,13 +247,11 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           titleIcon: Icons.extension_rounded,
           visualConfig: quest?.visualConfig,
           onContinue: () {
-            setState(() {
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _wrongIndices = [];
-              _isFirstStagePassed = false;
-            });
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _wrongIndices.value = [];
+            _isFirstStagePassed.value = false;
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },
           onHint: () {
@@ -289,6 +275,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           },
           child: _buildBody(context, state, isDark, theme, expectedText),
         );
+            },
+          );
       },
     );
   }
@@ -338,8 +326,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        SliverFillRemaining(
-          hasScrollBody: false,
+        SliverToBoxAdapter(
           child: LayoutBuilder(
             builder: (context, constraints) {
               final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
@@ -420,19 +407,19 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             ],
             SizedBox(height: isCompact ? 16.h : 24.h),
             IdiomMatchOptionsPanel(
-              shuffledOptions: _shuffledOptions,
-              originalIndices: _originalIndices,
-              selectedIndex: _selectedIndex,
-              wrongIndices: _wrongIndices,
-              isAnswered: _isAnswered || _isFirstStagePassed,
-              showCorrectAnswer: _isCorrect == true || _isFirstStagePassed,
+              shuffledOptions: _shuffledOptions.value,
+              originalIndices: _originalIndices.value,
+              selectedIndex: _selectedIndex.value,
+              wrongIndices: _wrongIndices.value,
+              isAnswered: _isAnswered.value || _isFirstStagePassed.value,
+              showCorrectAnswer: _isCorrect.value == true || _isFirstStagePassed.value,
               correctAnswerIndex: quest.correctAnswerIndex ?? 0,
               isDark: isDark,
               primaryColor: theme.primaryColor,
               onOptionSelected: (index) =>
                   _onOptionSelected(index, quest.correctAnswerIndex),
             ),
-            if ((_isFirstStagePassed || _isAnswered) && quest.idiomOrigin != null) ...[
+            if ((_isFirstStagePassed.value || _isAnswered.value) && quest.idiomOrigin != null) ...[
               SizedBox(height: 24.h),
               Container(
                 width: double.infinity,
@@ -509,7 +496,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           ],
         ),
       ),
-      if (_isFirstStagePassed && !_isAnswered)
+      if (_isFirstStagePassed.value && !_isAnswered.value)
                     SpeakToConfirmOverlay(
                       expectedText: expectedText,
                       displayText: "Speak the idiom in context:\n\n\"$expectedText\"",
@@ -518,7 +505,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                       onConfirmed: () => _submitVerbalEvaluation(true),
                       onSkipped: () => _submitVerbalEvaluation(false),
                     ),
-                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                 ],
               );
             },
