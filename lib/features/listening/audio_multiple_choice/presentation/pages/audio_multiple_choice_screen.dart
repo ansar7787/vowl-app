@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -36,13 +36,23 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  int? _selectedIndex;
-  double _rotation = 0.0;
+  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ValueNotifier<double> _rotation = ValueNotifier(0.0);
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _selectedIndex.dispose();
+    _rotation.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -53,26 +63,22 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   }
 
   void _submitFinalAnswer(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     
-    setState(() => _selectedIndex = index);
+    _selectedIndex.value = index;
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -86,28 +92,24 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _rotation = 0.0;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _selectedIndex.value = null;
+            _rotation.value = 0.0;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ListeningGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -120,12 +122,15 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
-        return ListeningBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _rotation]),
+          builder: (context, _) {
+            return ListeningBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
@@ -159,8 +164,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                               horizontal: 16.w,
@@ -169,7 +173,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                if (_isAnswered && quest.audioTranscript != null)
+                                if (_isAnswered.value && quest.audioTranscript != null)
                                   SizedBox(
                                     height: 350.h,
                                     child: EvidenceHighlightWrapper(
@@ -202,15 +206,13 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                       color: theme.primaryColor,
                                       tts: quest.textToSpeak ?? "",
                                       emoji: quest.emoji,
-                                      rotation: _rotation,
-                                      selectedIndex: _selectedIndex,
-                                      isAnswered: _isAnswered,
-                                      isCorrectState: _isCorrect,
+                                      rotation: _rotation.value,
+                                      selectedIndex: _selectedIndex.value,
+                                      isAnswered: _isAnswered.value,
+                                      isCorrectState: _isCorrect.value,
                                       onSpin: (delta) {
-                                        if (!_isAnswered) {
-                                          setState(() {
-                                            _rotation += delta * 0.01;
-                                          });
+                                        if (!_isAnswered.value) {
+                                          _rotation.value += delta * 0.01;
                                         }
                                       },
                                       onSelectSatellite: (index) {
@@ -235,6 +237,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                     ),
                   ],
                 ),
+            );
+          },
         );
       },
     );
