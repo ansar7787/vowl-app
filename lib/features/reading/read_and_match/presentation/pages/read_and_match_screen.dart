@@ -37,14 +37,25 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   final GlobalKey _canvasKey = GlobalKey();
   final Map<String, GlobalKey> _terminalKeys = {};
 
-  String? _activeKey;
-  final Map<String, String> _matches = {};
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<String?> _activeKey = ValueNotifier(null);
+  final ValueNotifier<Map<String, String>> _matches = ValueNotifier({});
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingSubmission = false;
+  final ValueNotifier<bool> _pendingSubmission = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _activeKey.dispose();
+    _matches.dispose();
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    _pendingSubmission.dispose();
+    super.dispose();
+  }
   
   final List<Color> _matchColors = [
     Colors.purpleAccent,
@@ -83,32 +94,28 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   }
 
   void _onKeyTap(String key) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
     _hapticService.selection();
-    setState(() {
-      if (_matches.containsKey(key)) {
-        _matches.remove(key);
-      }
-      _activeKey = key;
-    });
+    final Map<String, String> currentMatches = Map.from(_matches.value);
+    if (currentMatches.containsKey(key)) {
+      currentMatches.remove(key);
+    }
+    _matches.value = currentMatches;
+    _activeKey.value = key;
   }
 
   void _onValueTap(String value, List<Map<String, String>> pairs) {
-    if (_isAnswered || _activeKey == null) return;
+    if (_isAnswered.value || _activeKey.value == null) return;
 
     _hapticService.success();
-    setState(() {
-      // Remove any existing match containing this value
-      _matches.removeWhere((k, v) => v == value);
+    final Map<String, String> currentMatches = Map.from(_matches.value);
+    currentMatches.removeWhere((k, v) => v == value);
+    currentMatches[_activeKey.value!] = value;
+    _matches.value = currentMatches;
+    _activeKey.value = null;
 
-      _matches[_activeKey!] = value;
-      _activeKey = null;
-    });
-
-    if (_matches.length == pairs.length) {
-      setState(() {
-        _pendingSubmission = true;
-      });
+    if (_matches.value.length == pairs.length) {
+      _pendingSubmission.value = true;
     }
   }
 
@@ -116,25 +123,19 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     bool nailedSpeaking,
     List<Map<String, String>> pairs,
   ) {
-    setState(() {
-      _pendingSubmission = false;
-    });
+    _pendingSubmission.value = false;
 
     if (!nailedSpeaking) {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
       Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
-          setState(() {
-            _matches.clear();
-            _isAnswered = false;
-            _isCorrect = null;
-          });
+          _matches.value = {};
+          _isAnswered.value = false;
+          _isCorrect.value = null;
         }
       });
       return;
@@ -146,7 +147,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   void _submitAnswer(List<Map<String, String>> pairs) {
     bool isCorrect = true;
     for (var pair in pairs) {
-      if (_matches[pair['key']] != pair['value']) {
+      if (_matches.value[pair['key']] != pair['value']) {
         isCorrect = false;
         break;
       }
@@ -155,27 +156,21 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = true;
       context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
+      _isAnswered.value = true;
+      _isCorrect.value = false;
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
       Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
-          setState(() {
-            _matches.clear();
-            _isAnswered = false;
-            _isCorrect = null;
-          });
+          _matches.value = {};
+          _isAnswered.value = false;
+          _isCorrect.value = null;
         }
       });
     }
@@ -190,29 +185,25 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _matches.clear();
-              _activeKey = null;
-              _pendingSubmission = false;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _matches.value = {};
+            _activeKey.value = null;
+            _pendingSubmission.value = false;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ReadingGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -243,19 +234,22 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
 
         Color getColorForValue(String v) {
           // If matched, use the key's color. Otherwise primary
-          if (_matches.containsValue(v)) {
-            final key = _matches.entries.firstWhere((e) => e.value == v).key;
+          if (_matches.value.containsValue(v)) {
+            final key = _matches.value.entries.firstWhere((e) => e.value == v).key;
             return colorMap[key] ?? theme.primaryColor;
           }
           return theme.primaryColor;
         }
 
-        return ReadingBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _matches, _activeKey, _pendingSubmission]),
+          builder: (context, _) {
+            return ReadingBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           onContinue: () =>
               context.read<ReadingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -301,9 +295,9 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                       isSource: true,
                                                       color: getColorForKey(k),
                                                       isDark: isDark,
-                                                      isMatched: _matches
+                                                      isMatched: _matches.value
                                                           .containsKey(k),
-                                                      isActive: _activeKey == k,
+                                                      isActive: _activeKey.value == k,
                                                       onTap: () => _onKeyTap(k),
                                                     ),
                                                   )
@@ -323,7 +317,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                       isSource: false,
                                                       color: getColorForValue(v),
                                                       isDark: isDark,
-                                                      isMatched: _matches
+                                                      isMatched: _matches.value
                                                           .containsValue(v),
                                                       isActive: false,
                                                       onTap: () =>
@@ -340,8 +334,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                       IgnorePointer(
                                         child: CustomPaint(
                                           painter: LaserBridgePainter(
-                                            matches: _matches,
-                                            activeKey: _activeKey,
+                                            matches: _matches.value,
+                                            activeKey: _activeKey.value,
                                             getCenter: _getCenterOf,
                                             getKey: _getKeyFor,
                                             color: theme.primaryColor,
@@ -357,43 +351,36 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                             ),
                           ),
                         ),
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                if (_isAnswered) ...[
-                                  SizedBox(height: 30.h),
-                                  ReadAndMatchResult(
-                                    quest: quest,
-                                    isCorrect: _isCorrect == true,
-                                    isDark: isDark,
-                                  ),
-                                ],
-                                SizedBox(height: 50.h),
-                              ],
-                            ),
-                          ),
-                        ),
                       ],
                     );
                   },
                 ),
-                    if (_pendingSubmission && !_isAnswered)
-                      SpeakToConfirmOverlay(
-                        expectedText:
-                            quest.textToSpeak ??
-                            quest.correctAnswer ??
-                            "Confirm",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true, pairs),
-                        onSkipped: () => _submitFinalAnswer(false, pairs),
-                        allowSkip: true,
-                      ),
-                  ],
-                ),
+                if (_pendingSubmission.value && !_isAnswered.value)
+                  SpeakToConfirmOverlay(
+                    expectedText:
+                        quest.textToSpeak ??
+                        quest.correctAnswer ??
+                        "Confirm",
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true, pairs),
+                    onSkipped: () => _submitFinalAnswer(false, pairs),
+                    allowSkip: true,
+                  ),
+                if (_isAnswered.value)
+                  Positioned(
+                    bottom: 50.h,
+                    left: 20.w,
+                    right: 20.w,
+                    child: ReadAndMatchResult(
+                      quest: quest,
+                      isCorrect: _isCorrect.value == true,
+                      isDark: isDark,
+                    ),
+                  ),
+              ],
+            ),
+          );
+          },
         );
       },
     );
