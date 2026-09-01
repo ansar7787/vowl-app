@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -11,7 +11,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
+
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_oscilloscope.dart';
 import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
@@ -36,11 +36,17 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  List<String> _slots = [];
-  List<String> _segments = [];
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
+  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+
+  @override
+  void dispose() {
+    _isAnswered.dispose();
+    _isCorrect.dispose();
+    _showConfetti.dispose();
+    super.dispose();
+  }
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -53,61 +59,13 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
   }
 
   void _submitAnswer(String correctFull) {
-    if (_isAnswered) return;
+    if (_isAnswered.value) return;
 
-    if (_segments.isNotEmpty) {
-      CustomSnackBar.show(
-        context: context,
-        message: "Please place all segments in the timeline!",
-        type: CustomSnackBarType.warning,
-      );
-      _hapticService.selection();
-      return;
-    }
-
-    String current = _slots
-        .join(" ")
-        .replaceAll(RegExp(r'[^\w\s]'), '')
-        .replaceAll(RegExp(r'\s+'), ' ')
-        .trim()
-        .toLowerCase();
-    String target = correctFull
-        .replaceAll(RegExp(r'[^\w\s]'), '')
-        .replaceAll(RegExp(r'\s+'), ' ')
-        .trim()
-        .toLowerCase();
-    bool isCorrect = current == target;
-
-    if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<ListeningBloc>().add(SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: 'Sentence Order',
-          userAnswer: current,
-          correctAnswer: target,
-          level: widget.level,
-        );
-      }
-      
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
-    }
+    _hapticService.success();
+    _soundService.playCorrect();
+    _isAnswered.value = true;
+    _isCorrect.value = true;
+    context.read<ListeningBloc>().add(SubmitAnswer(true));
   }
 
   @override
@@ -118,28 +76,22 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
+          final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || livesChanged) {
-            setState(() {
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _segments = List.from(state.currentQuest.shuffledSentences ?? []);
-              _slots = List.generate(_segments.length, (_) => "");
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+          } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ListeningGameComplete) {
-          setState(() => _showConfetti = true);
+          _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -152,12 +104,15 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
-        return ListeningBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+        return ListenableBuilder(
+          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti]),
+          builder: (context, _) {
+            return ListeningBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              isCorrect: _isCorrect.value,
+              showConfetti: _showConfetti.value,
           useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
@@ -190,10 +145,10 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                 },
                                 color: theme.primaryColor,
                                 emoji: quest.emoji,
-                                isCorrectState: _isCorrect,
+                                isCorrectState: _isCorrect.value,
                               ),
                               SizedBox(height: 32.h),
-                              if (!_isAnswered)
+                              if (!_isAnswered.value)
                                 DynamicJigsawWrapper(
                                   expectedText: quest.textToSpeak ?? "",
                                   primaryColor: theme.primaryColor,
@@ -211,10 +166,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                         level: widget.level,
                                       );
                                     }
-                                    setState(() {
-                                      _isAnswered = true;
-                                      _isCorrect = false;
-                                    });
+                                    _isAnswered.value = true;
+                                    _isCorrect.value = false;
                                     context.read<ListeningBloc>().add(SubmitAnswer(false));
                                   },
                                 ),
@@ -224,6 +177,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                       ),
                     ],
                   ),
+            );
+          },
         );
       },
     );
