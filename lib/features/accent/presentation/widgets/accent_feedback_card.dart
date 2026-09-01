@@ -369,97 +369,108 @@ class _TutorPassButton extends StatelessWidget {
 }
 
 class _ExplanationBoxState extends State<_ExplanationBox> {
-  String? _translatedText;
+  final ValueNotifier<String?> _translatedText = ValueNotifier<String?>(null);
+
+  @override
+  void dispose() {
+    _translatedText.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.explanation;
+    return ValueListenableBuilder<String?>(
+      valueListenable: _translatedText,
+      builder: (context, translatedTextValue, _) {
+        final displayText = translatedTextValue ?? widget.explanation;
 
-    return Container(
-          width: 342.w,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.shadowColor.withValues(
-              alpha: widget.isDark ? 0.12 : 0.08,
-            ),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.shadowColor.withValues(alpha: 0.3),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  ExcludeSemantics(
-                    child: Icon(
-                      Icons.lightbulb_outline_rounded,
-                      color: widget.shadowColor,
-                      size: 16.r,
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      context.tr(
-                        'games.explanation_caps',
-                        fallback: 'EXPLANATION',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w900,
-                        color: widget.shadowColor,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.explanation,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 6.h),
-              ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 120.h),
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Semantics(
-                    label:
-                        '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
-                    child: Text(
-                      displayText,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        color: widget.isDark
-                            ? Colors.white.withValues(alpha: 0.9)
-                            : const Color(0xFF334155),
-                        height: 1.4,
-                      ),
-                    ),
-                  ),
+        return Container(
+              width: 342.w,
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+              decoration: BoxDecoration(
+                color: widget.shadowColor.withValues(
+                  alpha: widget.isDark ? 0.12 : 0.08,
+                ),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: widget.shadowColor.withValues(alpha: 0.3),
+                  width: 1.5,
                 ),
               ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 100.ms)
-        .slideY(
-          begin: 0.2,
-          end: 0,
-          duration: 300.ms,
-          curve: Curves.easeOutBack,
-        );
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      ExcludeSemantics(
+                        child: Icon(
+                          Icons.lightbulb_outline_rounded,
+                          color: widget.shadowColor,
+                          size: 16.r,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        child: Text(
+                          context.tr(
+                            'games.explanation_caps',
+                            fallback: 'EXPLANATION',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w900,
+                            color: widget.shadowColor,
+                            letterSpacing: 1.2,
+                          ),
+                        ),
+                      ),
+                      if (translatedTextValue == null)
+                        TranslateButtonWidget(
+                          originalText: widget.explanation,
+                          onTranslationComplete: (translated) {
+                            if (mounted) {
+                              _translatedText.value = translated;
+                            }
+                          },
+                        ),
+                    ],
+                  ),
+                  SizedBox(height: 6.h),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxHeight: 120.h),
+                    child: SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Semantics(
+                        label:
+                            '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
+                        child: Text(
+                          displayText,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: widget.isDark
+                                ? Colors.white.withValues(alpha: 0.9)
+                                : const Color(0xFF334155),
+                            height: 1.4,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 100.ms)
+            .slideY(
+              begin: 0.2,
+              end: 0,
+              duration: 300.ms,
+              curve: Curves.easeOutBack,
+            );
+      },
+    );
   }
 }
