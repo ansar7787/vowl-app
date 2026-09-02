@@ -46,8 +46,11 @@ class _SummarizeStoryWritingScreenState
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
 
+  late final ScrollController _scrollController;
+
   @override
   void dispose() {
+    _scrollController.dispose();
     _slots.dispose();
     _showConfetti.dispose();
     _pendingSubmit.dispose();
@@ -57,6 +60,7 @@ class _SummarizeStoryWritingScreenState
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -219,9 +223,15 @@ class _SummarizeStoryWritingScreenState
                   children: [
                     LayoutBuilder(
                   builder: (context, constraints) {
-                    return CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
+                    return RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
                         SliverPadding(
                           padding: EdgeInsets.symmetric(horizontal: 24.w),
                           sliver: SliverToBoxAdapter(
@@ -371,12 +381,13 @@ class _SummarizeStoryWritingScreenState
                                       ),
                                     ),
                                   ),
-                                SizedBox(height: isAnswered ? 160.h : 60.h),
+                                SizedBox(height: !isAnswered ? 380.h : 160.h),
                               ],
                             ),
                           ),
                         ),
                       ],
+                    ),
                     );
                   },
                 ),
