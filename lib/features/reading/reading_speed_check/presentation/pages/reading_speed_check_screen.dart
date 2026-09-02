@@ -46,6 +46,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -57,6 +58,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isRevealed.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   
@@ -173,85 +175,92 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            ReadingSpeedInstruction(
-                              primaryColor: theme.primaryColor,
-                              isRevealed: _isRevealed.value,
-                              instruction: quest.instruction,
-                            ),
-                            SizedBox(height: 32.h),
-                            if (!_isRevealed.value)
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 24.h),
-                                child: SpeedChallengeTimer(
-                                  key: _timerKey,
-                                  durationSeconds: _timeLimit.value,
-                                  primaryColor: theme.primaryColor,
-                                  onTimeUp: _onTimeUp,
-                                  onTick: _onTimerTick,
-                                  autoStart: true,
-                                ),
-                              ),
-                            if (_isRevealed.value)
-                              ReadingSpeedQuestionArea(
-                                question: quest.question ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                              ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
+              : RawScrollbar(
+                  controller: _scrollController,
+                  thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                  radius: Radius.circular(8.r),
+                  thickness: 4.w,
+                  child: CustomScrollView(
+                    controller: _scrollController,
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (!_isRevealed.value)
-                              ReadingSpeedPulseZone(
-                                passage: quest.passage ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                clarityRadius: _clarityRadius.value,
-                                pulseScale: _pulseScale.value,
-                                timerValue: _timerValue.value,
-                                timeLimit: _timeLimit.value,
-                                wordCount: quest.passageWordCount ?? quest.passage?.split(RegExp(r'\s+')).length ?? 0,
-                                wpmTarget: quest.wpmTarget ?? 0,
-                                onTapPulse: _onPulseTap,
-                              )
-                            else ...[
-                              SizedBox(height: 32.h),
-                              ReadingSelfEvaluationCard(
-                                correctAnswer: quest.correctAnswer ?? "",
-                                explanation: quest.explanation,
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 16.h),
+                              ReadingSpeedInstruction(
                                 primaryColor: theme.primaryColor,
-                                onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                                isRevealed: _isRevealed.value,
+                                instruction: quest.instruction,
                               ),
+                              SizedBox(height: 32.h),
+                              if (!_isRevealed.value)
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 24.h),
+                                  child: SpeedChallengeTimer(
+                                    key: _timerKey,
+                                    durationSeconds: _timeLimit.value,
+                                    primaryColor: theme.primaryColor,
+                                    onTimeUp: _onTimeUp,
+                                    onTick: _onTimerTick,
+                                    autoStart: true,
+                                  ),
+                                ),
+                              if (_isRevealed.value)
+                                ReadingSpeedQuestionArea(
+                                  question: quest.question ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
                             ],
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: 30.h),
-                              ReadingSpeedResult(
-                                quest: quest,
-                                isCorrect: _isCorrect.value == true,
-                                isDark: isDark,
-                              ),
-                            ],
-                            SizedBox(height: 60.h),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (!_isRevealed.value)
+                                ReadingSpeedPulseZone(
+                                  passage: quest.passage ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  clarityRadius: _clarityRadius.value,
+                                  pulseScale: _pulseScale.value,
+                                  timerValue: _timerValue.value,
+                                  timeLimit: _timeLimit.value,
+                                  wordCount: quest.passageWordCount ?? quest.passage?.split(RegExp(r'\s+')).length ?? 0,
+                                  wpmTarget: quest.wpmTarget ?? 0,
+                                  onTapPulse: _onPulseTap,
+                                )
+                              else ...[
+                                SizedBox(height: 32.h),
+                                ReadingSelfEvaluationCard(
+                                  correctAnswer: quest.correctAnswer ?? "",
+                                  explanation: quest.explanation,
+                                  primaryColor: theme.primaryColor,
+                                  onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                                ),
+                              ],
+                              if (_isAnswered.value) ...[
+                                SizedBox(height: 30.h),
+                                ReadingSpeedResult(
+                                  quest: quest,
+                                  isCorrect: _isCorrect.value == true,
+                                  isDark: isDark,
+                                ),
+                              ],
+                              SizedBox(height: 60.h),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
             );
           },
