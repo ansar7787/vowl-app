@@ -401,89 +401,137 @@ Every single one of the 100 games must pass these 9 checks:
 
 ### 🟣 Reading (12 Games)
 1. **Cloze Test**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `ClozeTestPneumaticPort` & `ClozeTestFuelCells`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 2. **Find Word Meaning**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `FindWordMeaningInteractivePassage` & `MagnifierField`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 3. **Guess Title**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `GuessTitleCargoCrate` & `GuessTitleLabelRack`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 4. **Paragraph Summary**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `ParagraphSummaryTube` & `OptionRack`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 5. **Read and Answer**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `ReadAndAnswerFloatingPassage` & `BuoyOption`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 6. **Read and Match**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `ReadAndMatchTerminal` & `LaserBridgePainter`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 7. **Reading Conclusion**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `ReadingConclusionBridgePainter` & `Terminals`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 8. **Reading Inference**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `ReadingInferenceFoggyMirror`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 9. **Reading Speed Check**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `ReadingSpeedPulseZone`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 10. **Sentence Order Reading**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `SentenceOrderReadingStoneSlab`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 11. **Skimming/Scanning**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `SkimmingScanningTerminal` & `TargetBadge`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 12. **True/False Reading**
-- [x] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
-- [x] Feedback Card Logic
-- [x] 10/10 UX Confirmation (No Patchwork)
-- [x] Git Commit & Push
+- [ ] Dual-Stage Scroll UX
+- [ ] Sliver Performance Layout
+- [ ] Zero setState (ValueNotifier)
+- [ ] Feedback Card Logic
+- [ ] Pedagogical Component: `TrueFalseReadingCoinZone`
+- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
+- [ ] Keyboard Scroll Stability (FocusNode visibility)
+- [ ] Docked Input Padding (Keyboard Games Only)
+- [ ] 10/10 UX Confirmation (No Patchwork)
+- [ ] Git Commit & Push
 ---
 
 ### 🟠 Listening (10 Games)
