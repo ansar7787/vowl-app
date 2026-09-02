@@ -136,7 +136,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
           contrastColor: contrastColor,
           hint: context.tr(
             'auth.email_hint_full',
-            fallback: 'e.g., explorer@vowl.com',
+            fallback: 'Enter your email address',
           ),
           prefixIcon: Icons.email_outlined,
         ),

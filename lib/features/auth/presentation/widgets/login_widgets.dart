@@ -61,7 +61,7 @@ class LoginEmailInput extends StatelessWidget {
               contrastColor: contrastColor,
               hint: context.tr(
                 'auth.email_hint_short',
-                fallback: 'name@example.com',
+                fallback: 'Enter your email address',
               ),
               prefixIcon: Icons.email_outlined,
             ),
