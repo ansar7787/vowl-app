@@ -59,6 +59,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -67,6 +68,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -224,41 +226,42 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
           // FIX: Layout now dispatches ListeningHintUsed internally.
           // This callback is for screen-level side-effects only.
           onHint: () => _hapticService.selection(),
-          child: quest == null
-              ? const SizedBox.shrink()
-              : _AudioFillBlanksContent(
-                  quest: quest,
-                  isAnswered: _isAnswered.value,
-                  isCorrect: _isCorrect.value,
-                  revealProgress: _revealProgress.value,
-                  controller: _controller,
-                  theme: theme,
-                  isDark: isDark,
-                  maxInputLength: _kMaxInputLength,
-                  compactThreshold: _kCompactHeightThreshold,
-                  level: widget.level,
-                  onSmear: _onSmear,
-                  onPlayAudio: () => _playAudio(quest.textToSpeak),
-                  onSubmit: () => _submitAnswer(quest.correctAnswer),
-                  onBlindSubmit: (bool correct) {
-                    if (!correct) {
-                      final authState = context.read<AuthBloc>().state;
-                      if (authState.status == AuthStatus.authenticated && authState.user != null) {
-                        ErrorJournalCollector.record(
-                          userId: authState.user!.id,
-                          gameType: widget.gameType.name,
-                          question: 'Blind Dictation',
-                          userAnswer: '[Failed Dictation]',
-                          correctAnswer: quest.correctAnswer ?? quest.textToSpeak ?? '',
-                          level: widget.level,
-                        );
-                      }
-                    }
-                    _isAnswered.value = true;
-                    _isCorrect.value = correct;
-                    context.read<ListeningBloc>().add(SubmitAnswer(correct));
-                  },
-                ),
+              child: quest == null
+                  ? const SizedBox.shrink()
+                  : _AudioFillBlanksContent(
+                      quest: quest,
+                      isAnswered: _isAnswered.value,
+                      isCorrect: _isCorrect.value,
+                      revealProgress: _revealProgress.value,
+                      controller: _controller,
+                      scrollController: _scrollController,
+                      theme: theme,
+                      isDark: isDark,
+                      maxInputLength: _kMaxInputLength,
+                      compactThreshold: _kCompactHeightThreshold,
+                      level: widget.level,
+                      onSmear: _onSmear,
+                      onPlayAudio: () => _playAudio(quest.textToSpeak),
+                      onSubmit: () => _submitAnswer(quest.correctAnswer),
+                      onBlindSubmit: (bool correct) {
+                        if (!correct) {
+                          final authState = context.read<AuthBloc>().state;
+                          if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                            ErrorJournalCollector.record(
+                              userId: authState.user!.id,
+                              gameType: widget.gameType.name,
+                              question: 'Blind Dictation',
+                              userAnswer: '[Failed Dictation]',
+                              correctAnswer: quest.correctAnswer ?? quest.textToSpeak ?? '',
+                              level: widget.level,
+                            );
+                          }
+                        }
+                        _isAnswered.value = true;
+                        _isCorrect.value = correct;
+                        context.read<ListeningBloc>().add(SubmitAnswer(correct));
+                      },
+                    ),
             );
           },
         );
@@ -281,6 +284,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
   final bool? isCorrect;
   final double revealProgress;
   final TextEditingController controller;
+  final ScrollController scrollController;
   final dynamic theme;
   final bool isDark;
   final int maxInputLength;
@@ -297,6 +301,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
     required this.isCorrect,
     required this.revealProgress,
     required this.controller,
+    required this.scrollController,
     required this.theme,
     required this.isDark,
     required this.maxInputLength,
@@ -310,77 +315,91 @@ class _AudioFillBlanksContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          sliver: SliverToBoxAdapter(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(height: 6.h),
-                AudioFillBlanksInstruction(
-                  instruction: quest.instruction ??
-                      'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
-                  color: theme.primaryColor,
-                ),
-                SizedBox(height: 24.h),
-                AudioFillBlanksJar(
-                  color: theme.primaryColor,
-                  onTap: onPlayAudio,
-                ),
-                SizedBox(height: 32.h),
-                SizedBox(
-                  height: 220.h,
-                  child: AudioFillBlanksCanvas(
-                    text: quest.textWithBlanks ?? '',
-                    revealProgress: revealProgress,
-                    onSmear: onSmear,
-                    primaryColor: theme.primaryColor,
-                    isDark: isDark,
-                    imageUrl: quest.imageUrl,
-                    isCorrectState: isCorrect,
+    final showBlindDictation = level >= 8 && !isAnswered;
+
+    return Stack(
+      children: [
+        RawScrollbar(
+          controller: scrollController,
+          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+          radius: Radius.circular(8.r),
+          thickness: 4.w,
+          child: CustomScrollView(
+            controller: scrollController,
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                sliver: SliverToBoxAdapter(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(height: 6.h),
+                      AudioFillBlanksInstruction(
+                        instruction: quest.instruction ??
+                            'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
+                        color: theme.primaryColor,
+                      ),
+                      SizedBox(height: 24.h),
+                      AudioFillBlanksJar(
+                        color: theme.primaryColor,
+                        onTap: onPlayAudio,
+                      ),
+                      SizedBox(height: 32.h),
+                      SizedBox(
+                        height: 220.h,
+                        child: AudioFillBlanksCanvas(
+                          text: quest.textWithBlanks ?? '',
+                          revealProgress: revealProgress,
+                          onSmear: onSmear,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          imageUrl: quest.imageUrl,
+                          isCorrectState: isCorrect,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                if (level >= 8 && !isAnswered)
-                  BlindDictationWrapper(
-                    expectedText: quest.correctAnswer ?? quest.textToSpeak ?? '',
-                    primaryColor: theme.primaryColor,
-                    isPositioned: false,
-                    onConfirmed: () => onBlindSubmit(true),
-                    onSkipped: () => onBlindSubmit(false),
-                  )
-                else ...[
-                  AudioFillBlanksInput(
-                    controller: controller,
-                    isAnswered: isAnswered,
-                    primaryColor: theme.primaryColor,
-                    maxLength: maxInputLength,
-                    onSubmitted: (_) => onSubmit(),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      if (!showBlindDictation) ...[
+                        AudioFillBlanksInput(
+                          controller: controller,
+                          isAnswered: isAnswered,
+                          primaryColor: theme.primaryColor,
+                          maxLength: maxInputLength,
+                          onSubmitted: (_) => onSubmit(),
+                        ),
+                        SizedBox(height: 16.h),
+                        if (!isAnswered)
+                          _SubmitButton(
+                            isCompact: false,
+                            primaryColor: theme.primaryColor,
+                            onTap: onSubmit,
+                          ),
+                      ],
+                      SizedBox(height: showBlindDictation ? 380.h : 60.h),
+                    ],
                   ),
-                  SizedBox(height: 16.h),
-                  if (!isAnswered)
-                    _SubmitButton(
-                      isCompact: false,
-                      primaryColor: theme.primaryColor,
-                      onTap: onSubmit,
-                    ),
-                ],
-              ],
-            ),
+                ),
+              ),
+            ],
           ),
         ),
+        if (showBlindDictation)
+          BlindDictationWrapper(
+            expectedText: quest.correctAnswer ?? quest.textToSpeak ?? '',
+            primaryColor: theme.primaryColor,
+            isPositioned: true,
+            onConfirmed: () => onBlindSubmit(true),
+            onSkipped: () => onBlindSubmit(false),
+          ),
       ],
     );
   }
