@@ -191,7 +191,9 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
             useScrolling: false,
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
+                : Stack(
+                    children: [
+                      LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final maxWidth = constraints.maxWidth;
@@ -221,14 +223,19 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                           ? (gapUnit * 1.5).clamp(12.0, 48.0)
                           : 12.0;
 
-                      return CustomScrollView(
+                      return RawScrollbar(
                         controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverToBoxAdapter(
-                            child: Column(
-                              children: [
-                                Expanded(
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                children: [
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(horizontal: 24.w),
                                     child: Column(
@@ -315,23 +322,26 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed.value && !_isAnswered.value)
-                                  ShadowPlaybackCompare(
-                                    expectedText: quest.textToSpeak ?? "",
-                                    displayText: quest.textToSpeak ?? "",
-                                    primaryColor: theme.primaryColor,
-                                    isPositioned: false,
-                                    onConfirmed: () => _submitVerbalEvaluation(true),
-                                    onSkipped: () => _submitVerbalEvaluation(false),
-                                  ),
-                                SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 380.h : 20.h),
+                                SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 160.h),
                               ],
                             ),
                           ),
                         ],
+                      ),
                       );
                     },
                   ),
+                      if (_isFirstStagePassed.value && !_isAnswered.value)
+                        ShadowPlaybackCompare(
+                          expectedText: quest.textToSpeak ?? "",
+                          displayText: quest.textToSpeak ?? "",
+                          primaryColor: theme.primaryColor,
+                          isPositioned: true,
+                          onConfirmed: () => _submitVerbalEvaluation(true),
+                          onSkipped: () => _submitVerbalEvaluation(false),
+                        ),
+                    ],
+                  );
               );
             },
           ),
