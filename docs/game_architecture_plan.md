@@ -536,16 +536,16 @@ Every single one of the 100 games must pass these 9 checks:
 
 ### 🟠 Listening (10 Games)
 1. **Ambient ID**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `SpeakToConfirmOverlay` & `AmbientIdSonarField`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 2. **Audio Fill Blanks**
 - [ ] Dual-Stage Scroll UX
 - [ ] Sliver Performance Layout
