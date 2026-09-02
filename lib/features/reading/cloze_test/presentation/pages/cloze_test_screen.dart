@@ -38,6 +38,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -46,6 +47,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -160,61 +162,68 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              children: [
-                                SizedBox(height: 16.h),
-                                ClozeTestInstruction(
-                                  primaryColor: theme.primaryColor,
-                                  instruction: context.tr(
-                                    'games.clozeTest_instruction',
-                                    fallback:
-                                        'Complete the sentence by docking the correct word.',
-                                  ),
-                                ),
-                                SizedBox(height: 32.h),
-
-                                ClozeTestPneumaticPort(
-                                  text: quest.passage ?? "",
-                                  correct: quest.correctAnswer ?? "",
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  dockedOption:
-                                      _dockedOption.value ?? _pendingDockedOption.value,
-                                  wordCategory: quest.wordCategory,
-                                  isAnswered: _isAnswered.value,
-                                  onDock: (opt) =>
-                                      _onDock(opt, quest.correctAnswer ?? ""),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SliverToBoxAdapter(
-                          child: Padding(
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                SizedBox(height: 40.h),
-                                ClozeTestFuelCells(
-                                  options: quest.options ?? [],
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  dockedOption:
-                                      _dockedOption.value ?? _pendingDockedOption.value,
-                                ),
-                                SizedBox(height: 180.h),
-                              ],
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ClozeTestInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction: context.tr(
+                                      'games.clozeTest_instruction',
+                                      fallback:
+                                          'Complete the sentence by docking the correct word.',
+                                    ),
+                                  ),
+                                  SizedBox(height: 32.h),
+
+                                  ClozeTestPneumaticPort(
+                                    text: quest.passage ?? "",
+                                    correct: quest.correctAnswer ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    dockedOption:
+                                        _dockedOption.value ?? _pendingDockedOption.value,
+                                    wordCategory: quest.wordCategory,
+                                    isAnswered: _isAnswered.value,
+                                    onDock: (opt) =>
+                                        _onDock(opt, quest.correctAnswer ?? ""),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(height: 40.h),
+                                  ClozeTestFuelCells(
+                                    options: quest.options ?? [],
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    dockedOption:
+                                        _dockedOption.value ?? _pendingDockedOption.value,
+                                  ),
+                                  SizedBox(height: (_pendingDockedOption.value != null && !_isAnswered.value) ? 380.h : 60.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     if (_pendingDockedOption.value != null && !_isAnswered.value)
                       DynamicAnagramWrapper(
