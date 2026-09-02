@@ -51,6 +51,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   
   final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -75,6 +76,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _timeVal.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -201,8 +203,16 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
+                : Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -273,6 +283,9 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                       ),
                     ],
                   ),
+                  ),
+                  ],
+                ),
               );
             },
           ),
