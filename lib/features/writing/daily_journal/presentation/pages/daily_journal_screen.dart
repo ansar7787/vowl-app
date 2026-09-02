@@ -47,9 +47,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
 
+  late final ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -58,6 +61,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _controller.dispose();
     _showConfetti.dispose();
     _showSpeakToConfirm.dispose();
@@ -239,9 +243,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             builder: (context, _) {
               return activeQuest == null
                   ? const SizedBox()
-                  : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
                     SliverPadding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       sliver: SliverToBoxAdapter(
@@ -331,17 +343,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_showSpeakToConfirm.value && !isAnswered)
-                              SpeakToConfirmOverlay(
-                                expectedText: _controller.text.trim(),
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: _onSpeakConfirmed,
-                                onSkipped: () {
-                                  _showSpeakToConfirm.value = false;
-                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
-                                },
-                              )
-                            else if (!isAnswered)
+                            if (!_showSpeakToConfirm.value && !isAnswered)
                               ScaleButton(
                                 onTap: () =>
                                     _submitAnswer(targetKeywords, isAnswered),
@@ -377,13 +379,26 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                                   ),
                                 ),
                               ),
-                            SizedBox(height: isAnswered ? 160.h : 60.h),
+                            SizedBox(height: !isAnswered ? 380.h : 160.h),
                           ],
                         ),
                       ),
                     ),
                   ],
-                );
+                ),
+              ),
+              if (_showSpeakToConfirm.value && !isAnswered)
+                SpeakToConfirmOverlay(
+                  expectedText: _controller.text.trim(),
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: _onSpeakConfirmed,
+                  onSkipped: () {
+                    _showSpeakToConfirm.value = false;
+                    context.read<WritingBloc>().add(const SubmitAnswer(false));
+                  },
+                ),
+            ],
+          );
             },
           ),
         );
