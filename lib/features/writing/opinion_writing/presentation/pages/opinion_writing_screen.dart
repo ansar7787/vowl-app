@@ -43,8 +43,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
   final ValueNotifier<bool> _pendingScaleSubmit = ValueNotifier(false);
 
+  late final ScrollController _scrollController;
+
   @override
   void dispose() {
+    _scrollController.dispose();
     _leftPanArgs.dispose();
     _rightPanArgs.dispose();
     _scaleRotation.dispose();
@@ -57,6 +60,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -208,9 +212,15 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                   ? const SizedBox()
                   : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
                         SliverPadding(
                           padding: EdgeInsets.symmetric(horizontal: 24.w),
                           sliver: SliverToBoxAdapter(
@@ -324,14 +334,15 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                                       ),
                                     ),
                                   ),
-                                SizedBox(height: isAnswered ? 160.h : 60.h),
+                                SizedBox(height: !isAnswered ? 380.h : 160.h),
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                    if (_pendingScaleSubmit.value && !isAnswered)
+                  ),
+                  if (_pendingScaleSubmit.value && !isAnswered)
                       SpeakToConfirmOverlay(
                         expectedText: quest.prompt ?? "I have balanced the arguments",
                         primaryColor: theme.primaryColor,
