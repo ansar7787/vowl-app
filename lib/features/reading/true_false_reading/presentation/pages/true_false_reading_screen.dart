@@ -46,6 +46,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   int? _lastLives;
 
   final ValueNotifier<bool?> _pendingAnswer = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -56,6 +57,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _pendingAnswer.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -183,64 +185,71 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              children: [
-                                SizedBox(height: 16.h),
-                                TrueFalseReadingInstruction(
-                                  primaryColor: theme.primaryColor,
-                                  instruction: quest.instruction,
-                                ),
-                                SizedBox(height: 24.h),
-                                TrueFalseReadingPassage(
-                                  passage: quest.passage ?? "",
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                ),
-                                SizedBox(height: 32.h),
-                                TrueFalseReadingStatement(
-                                  statement: quest.question ?? "",
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SliverToBoxAdapter(
-                          child: Padding(
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                SizedBox(height: 40.h),
-                                TrueFalseReadingCoinZone(
-                                  coinX: _coinX.value,
-                                  coinY: _coinY.value,
-                                  coinRotation: _coinRotation.value,
-                                  onFlick: _onFlick,
-                                  isDark: isDark,
-                                  themeColor: theme.primaryColor,
-                                ),
-                                if (_isAnswered.value) ...[
-                                  SizedBox(height: 30.h),
-                                  TrueFalseReadingResult(
-                                    quest: quest,
-                                    isCorrect: _isCorrect.value == true,
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  TrueFalseReadingInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction: quest.instruction,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  TrueFalseReadingPassage(
+                                    passage: quest.passage ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 32.h),
+                                  TrueFalseReadingStatement(
+                                    statement: quest.question ?? "",
+                                    color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
                                 ],
-                                SizedBox(height: 60.h),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(height: 40.h),
+                                  TrueFalseReadingCoinZone(
+                                    coinX: _coinX.value,
+                                    coinY: _coinY.value,
+                                    coinRotation: _coinRotation.value,
+                                    onFlick: _onFlick,
+                                    isDark: isDark,
+                                    themeColor: theme.primaryColor,
+                                  ),
+                                  if (_isAnswered.value) ...[
+                                    SizedBox(height: 30.h),
+                                    TrueFalseReadingResult(
+                                      quest: quest,
+                                      isCorrect: _isCorrect.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(height: (_pendingAnswer.value != null && !_isAnswered.value) ? 380.h : 60.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     if (_pendingAnswer.value != null && !_isAnswered.value)
                       EvidenceHighlightWrapper(
@@ -249,6 +258,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                         primaryColor: theme.primaryColor,
                         onCorrectHighlight: () => _submitFinalAnswer(true, quest),
                         instruction: 'Tap the words that prove your answer',
+                        isPositioned: true,
                       ),
                   ],
                 ),
