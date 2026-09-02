@@ -251,41 +251,48 @@ void _handleTimeExpired() {
             child: ListenableBuilder(
               listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _dialRotation, _isDragging, _selectedIndex, _isFirstStagePassed, _isNaturalSpeed]),
               builder: (context, _) {
-                return LayoutBuilder(
-              builder: (context, constraints) {
-                final maxHeight = constraints.maxHeight;
-                final double estimatedContentHeight =
-                    24.h + 90.h + 80.h + 140.h;
-                final remainingHeight = maxHeight - estimatedContentHeight;
+                return Stack(
+                  children: [
+                    LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final double estimatedContentHeight =
+                        24.h + 90.h + 80.h + 140.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
 
-                final double gapUnit = remainingHeight > 0
-                    ? remainingHeight / 8
-                    : 0;
-                final double gapTop = remainingHeight > 0
-                    ? (gapUnit * 1).clamp(8.0, 24.0)
-                    : 8.0;
-                final double gapInstruction = remainingHeight > 0
-                    ? (gapUnit * 1).clamp(8.0, 24.0)
-                    : 8.0;
-                final double gapPrompt = remainingHeight > 0
-                    ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                    : 12.0;
-                final double gapSpeaker = remainingHeight > 0
-                    ? (gapUnit * 2).clamp(16.0, 48.0)
-                    : 16.0;
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 8
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(8.0, 24.0)
+                        : 8.0;
+                    final double gapInstruction = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(8.0, 24.0)
+                        : 8.0;
+                    final double gapPrompt = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                        : 12.0;
+                    final double gapSpeaker = remainingHeight > 0
+                        ? (gapUnit * 2).clamp(16.0, 48.0)
+                        : 16.0;
 
-                final double gapBottom = remainingHeight > 0
-                    ? (gapUnit * 1).clamp(12.0, 40.0)
-                    : 12.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(12.0, 40.0)
+                        : 12.0;
 
-                return CustomScrollView(
-                  controller: _scrollController,
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverToBoxAdapter(
-                      child: Column(
-                        children: [
-                          Expanded(
+                    return RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Column(
+                              children: [
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 24.w),
                               child: Column(
@@ -369,27 +376,27 @@ void _handleTimeExpired() {
                                       ),
                                       SizedBox(height: gapBottom),
                                     ],
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
+                              SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 160.h),
+                            ],
                           ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
-                            SpeakToConfirmOverlay(
-                              expectedText: quest.textToSpeak ?? quest.word ?? "",
-                              primaryColor: theme.primaryColor,
-                              isPositioned: false,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
-                            ),
-                          SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 140.h : 0),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
+                    );
+                  },
+                  ),
+                    if (_isFirstStagePassed.value && !_isAnswered.value)
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.textToSpeak ?? quest.word ?? "",
+                        primaryColor: theme.primaryColor,
+                        isPositioned: true,
+                        onConfirmed: () => _submitVerbalEvaluation(true),
+                        onSkipped: () => _submitVerbalEvaluation(false),
+                      ),
                   ],
                 );
-              },
-              );
             },
           ),
           ),
