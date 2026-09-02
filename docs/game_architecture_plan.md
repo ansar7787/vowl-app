@@ -95,10 +95,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Feedback Card Logic
 - [x] Pedagogical Component: `Formality Meter (registerLevel)`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
-- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [N/A] Keyboard Scroll Stability (FocusNode visibility)
 - [N/A] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 **6. Flashcards**
 - [N/A] Dual-Stage Scroll UX
