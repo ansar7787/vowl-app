@@ -46,6 +46,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   final ValueNotifier<List<String>> _assembledPieces = ValueNotifier([]);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _showTypeToConfirm = ValueNotifier(false);
+  late final ScrollController _scrollController;
 
   // FIX: full whitespace normalization to prevent false mismatches.
   // ".toLowerCase()" alone fails when correctAnswer has double-spaces or
@@ -59,6 +60,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     _theme = LevelThemeHelper.getTheme('writing', level: widget.level);
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
@@ -75,6 +77,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _textController.dispose();
     _assembledPieces.dispose();
     _showConfetti.dispose();
@@ -234,20 +237,27 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
                   ? const SizedBox.shrink()
                   : Stack(
                   children: [
-                    _SentenceBuilderBody(
-                      quest: quest,
-                      pool: pool,
-                      level: widget.level,
-                      textController: _textController,
-                      assembledPieces: _assembledPieces.value,
-                      isAnswered: isAnswered,
-                      isCorrect: isCorrect,
-                      theme: _theme,
-                      isDark: isDark,
-                      onSnap: (piece) => _onSnap(piece, isAnswered),
-                      onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
-                      onSubmit: () =>
-                          _submitAnswer(quest.correctAnswer ?? '', isAnswered),
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: _theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: _SentenceBuilderBody(
+                        quest: quest,
+                        pool: pool,
+                        level: widget.level,
+                        textController: _textController,
+                        assembledPieces: _assembledPieces.value,
+                        isAnswered: isAnswered,
+                        isCorrect: isCorrect,
+                        theme: _theme,
+                        isDark: isDark,
+                        scrollController: _scrollController,
+                        onSnap: (piece) => _onSnap(piece, isAnswered),
+                        onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
+                        onSubmit: () =>
+                            _submitAnswer(quest.correctAnswer ?? '', isAnswered),
+                      ),
                     ),
                     if (_showTypeToConfirm.value && !isAnswered)
                       TypeToConfirmOverlay(
@@ -285,6 +295,7 @@ class _SentenceBuilderBody extends StatelessWidget {
   final bool? isCorrect;
   final dynamic theme;
   final bool isDark;
+  final ScrollController scrollController;
   final ValueChanged<String> onSnap;
   final ValueChanged<int> onRemovePiece;
   final VoidCallback onSubmit;
@@ -299,6 +310,7 @@ class _SentenceBuilderBody extends StatelessWidget {
     required this.isCorrect,
     required this.theme,
     required this.isDark,
+    required this.scrollController,
     required this.onSnap,
     required this.onRemovePiece,
     required this.onSubmit,
@@ -307,6 +319,7 @@ class _SentenceBuilderBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      controller: scrollController,
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverPadding(
@@ -399,7 +412,7 @@ class _SentenceBuilderBody extends StatelessWidget {
               children: [
                 SizedBox(height: 40.h),
                 if (!isAnswered) _SubmitButton(theme: theme, onTap: onSubmit),
-                SizedBox(height: isAnswered ? 160.h : 60.h),
+                SizedBox(height: !isAnswered ? 380.h : 160.h),
               ],
             ),
           ),
