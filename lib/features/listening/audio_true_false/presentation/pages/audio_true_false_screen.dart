@@ -43,6 +43,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<bool?> _selectedVerdict = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -51,6 +52,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _selectedVerdict.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -174,85 +176,92 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: 6.h),
-                                AudioTrueFalseInstruction(
-                                  color: theme.primaryColor,
-                                  instruction: quest.instruction,
-                                ),
-                                SizedBox(height: 24.h),
-                                AudioTrueFalseTuner(
-                                  onTap: () {
-                                    _soundService.playTts(
-                                      quest.textToSpeak ?? "",
-                                    );
-                                    _hapticService.selection();
-                                  },
-                                  color: theme.primaryColor,
-                                  emoji: quest.emoji,
-                                  isCorrectState: _isCorrect.value,
-                                ),
-                                SizedBox(height: 32.h),
-                                SizedBox(
-                                  height: 180.h,
-                                  child: AudioTrueFalseScreenDisplay(
-                                    statement: quest.statement ?? "",
-                                    color: theme.primaryColor,
-                                    tuningValue: _tuningValue.value,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SliverToBoxAdapter(
-                          child: Padding(
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
                             padding: EdgeInsets.symmetric(
                               horizontal: 16.w,
                               vertical: 16.h,
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                AudioTrueFalsePolarizedFilters(
-                                  tuningValue: _tuningValue.value,
-                                  isAnswered: _isAnswered.value,
-                                  isCorrectState: _isCorrect.value,
-                                  color: theme.primaryColor,
-                                  onChanged: (v) {
-                                    _tuningValue.value = v;
-                                    _hapticService.selection();
-                                  },
-                                  onChangeEnd: (v) {
-                                    if (_isAnswered.value ||
-                                        _selectedVerdict.value != null) {
-                                      return;
-                                    }
-                                    if (v > 0.9) {
-                                      _selectedVerdict.value = true;
-                                    }
-                                    if (v < 0.1) {
-                                      _selectedVerdict.value = false;
-                                    }
-                                  },
-                                ),
-                                SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
-                              ],
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(height: 6.h),
+                                  AudioTrueFalseInstruction(
+                                    color: theme.primaryColor,
+                                    instruction: quest.instruction,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  AudioTrueFalseTuner(
+                                    onTap: () {
+                                      _soundService.playTts(
+                                        quest.textToSpeak ?? "",
+                                      );
+                                      _hapticService.selection();
+                                    },
+                                    color: theme.primaryColor,
+                                    emoji: quest.emoji,
+                                    isCorrectState: _isCorrect.value,
+                                  ),
+                                  SizedBox(height: 32.h),
+                                  SizedBox(
+                                    height: 180.h,
+                                    child: AudioTrueFalseScreenDisplay(
+                                      statement: quest.statement ?? "",
+                                      color: theme.primaryColor,
+                                      tuningValue: _tuningValue.value,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 16.h,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  AudioTrueFalsePolarizedFilters(
+                                    tuningValue: _tuningValue.value,
+                                    isAnswered: _isAnswered.value,
+                                    isCorrectState: _isCorrect.value,
+                                    color: theme.primaryColor,
+                                    onChanged: (v) {
+                                      _tuningValue.value = v;
+                                      _hapticService.selection();
+                                    },
+                                    onChangeEnd: (v) {
+                                      if (_isAnswered.value ||
+                                          _selectedVerdict.value != null) {
+                                        return;
+                                      }
+                                      if (v > 0.9) {
+                                        _selectedVerdict.value = true;
+                                      }
+                                      if (v < 0.1) {
+                                        _selectedVerdict.value = false;
+                                      }
+                                    },
+                                  ),
+                                  SizedBox(height: (_selectedVerdict.value != null && !_isAnswered.value) ? 380.h : 60.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     if (_selectedVerdict.value != null && !_isAnswered.value)
                       TypeToConfirmOverlay(
@@ -265,6 +274,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                           quest.correctAnswer ?? "",
                         ),
                         allowSkip: true,
+                        isPositioned: true,
                       ),
                   ],
                 ),
