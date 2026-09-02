@@ -43,6 +43,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -51,6 +52,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     _showConfetti.dispose();
     _selectedIndex.dispose();
     _pulseController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -155,8 +157,14 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
                       slivers: [
                         SliverPadding(
                           padding: EdgeInsets.symmetric(
@@ -236,6 +244,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                         ),
                       ],
                     ),
+                  ),
                   ],
                 ),
             );
