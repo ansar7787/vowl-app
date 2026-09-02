@@ -39,6 +39,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
   final ValueNotifier<bool> _evidenceFound = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -49,6 +50,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     _showConfetti.dispose();
     _showEvidence.dispose();
     _evidenceFound.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -151,92 +153,103 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
               context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            ReadingInferenceInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
-                            ),
-                            SizedBox(height: 32.h),
-
-                            if (_showEvidence.value)
-                              EvidenceHighlightWrapper(
-                                passage: quest.passage ?? "",
-                                evidenceWords: quest.clueWords ?? [],
-                                primaryColor: theme.primaryColor,
-                                onCorrectHighlight: _onEvidenceFound,
-                                instruction: 'Highlight the clue words that gave you the answer!',
-                              )
-                            else
-                              ReadingInferenceFoggyMirror(
-                                passage: quest.passage ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                isAnswered: _isAnswered.value || _showEvidence.value,
-                                rubPoints: _rubPoints.value,
-                                clarity: _clarity.value,
-                                onRub: _onRub,
-                              ),
-                            SizedBox(height: 32.h),
-
-                            Text(
-                              quest.question?.toUpperCase() ??
-                                  "INFER THE HIDDEN TRUTH",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w900,
-                                color: theme.primaryColor,
-                                letterSpacing: 1.5,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            SizedBox(height: 24.h),
-                            if (!_showEvidence.value && !_evidenceFound.value)
-                              AnimatedOpacity(
-                                duration: const Duration(milliseconds: 300),
-                                opacity: _clarity.value >= 0.3 ? 1.0 : 0.3,
-                                child: AbsorbPointer(
-                                  absorbing: _clarity.value < 0.3 || _isAnswered.value,
-                                  child: ReadingSelfEvaluationCard(
-                                    correctAnswer: quest.correctAnswer ?? "",
-                                    explanation: quest.explanation,
+              : Stack(
+                  children: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ReadingInferenceInstruction(
                                     primaryColor: theme.primaryColor,
-                                    onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                                    instruction: quest.instruction,
                                   ),
-                                ),
-                              ),
+                                  SizedBox(height: 32.h),
 
-                            if (_isAnswered.value && (!_showEvidence.value || _evidenceFound.value)) ...[
-                              SizedBox(height: 30.h),
-                              ReadingInferenceResult(
-                                quest: quest,
-                                isCorrect: _isCorrect.value == true,
-                                isDark: isDark,
+                                  ReadingInferenceFoggyMirror(
+                                    passage: quest.passage ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    isAnswered: _isAnswered.value || _showEvidence.value,
+                                    rubPoints: _rubPoints.value,
+                                    clarity: _clarity.value,
+                                    onRub: _onRub,
+                                  ),
+                                  SizedBox(height: 32.h),
+
+                                  Text(
+                                    quest.question?.toUpperCase() ??
+                                        "INFER THE HIDDEN TRUTH",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: theme.primaryColor,
+                                      letterSpacing: 1.5,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                            SizedBox(height: 60.h),
-                          ],
-                        ),
+                            ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(height: 24.h),
+                                  if (!_showEvidence.value && !_evidenceFound.value)
+                                    AnimatedOpacity(
+                                      duration: const Duration(milliseconds: 300),
+                                      opacity: _clarity.value >= 0.3 ? 1.0 : 0.3,
+                                      child: AbsorbPointer(
+                                        absorbing: _clarity.value < 0.3 || _isAnswered.value,
+                                        child: ReadingSelfEvaluationCard(
+                                          correctAnswer: quest.correctAnswer ?? "",
+                                          explanation: quest.explanation,
+                                          primaryColor: theme.primaryColor,
+                                          onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                                        ),
+                                      ),
+                                    ),
+
+                                  if (_isAnswered.value && (!_showEvidence.value || _evidenceFound.value)) ...[
+                                    SizedBox(height: 30.h),
+                                    ReadingInferenceResult(
+                                      quest: quest,
+                                      isCorrect: _isCorrect.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(height: (_showEvidence.value) ? 380.h : 60.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+                    if (_showEvidence.value)
+                      EvidenceHighlightWrapper(
+                        passage: quest.passage ?? "",
+                        evidenceWords: quest.clueWords ?? [],
+                        primaryColor: theme.primaryColor,
+                        onCorrectHighlight: _onEvidenceFound,
+                        instruction: 'Highlight the clue words that gave you the answer!',
+                        isPositioned: true,
+                      ),
                   ],
                 ),
             );
