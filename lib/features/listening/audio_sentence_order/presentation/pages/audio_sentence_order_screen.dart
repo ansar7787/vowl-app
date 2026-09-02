@@ -39,12 +39,14 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -118,7 +120,13 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : RawScrollbar(
+                  controller: _scrollController,
+                  thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                  radius: Radius.circular(8.r),
+                  thickness: 4.w,
+                  child: CustomScrollView(
+                    controller: _scrollController,
                     physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
@@ -177,6 +185,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                       ),
                     ],
                   ),
+                ),
             );
           },
         );
