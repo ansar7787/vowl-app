@@ -47,6 +47,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   int? _lastLives;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -56,6 +57,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     _selectedIndex.dispose();
     _pendingSelectedIndex.dispose();
     _dialRotation.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -195,8 +197,14 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
                       slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -267,12 +275,13 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                   _pendingSelectedIndex.value = index;
                                 },
                               ),
-                              SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
+                              SizedBox(height: (_pendingSelectedIndex.value != null && !_isAnswered.value) ? 380.h : 60.h),
                             ],
                           ),
                         ),
                       ),
                     ],
+                  ),
                   ),
                   if (_pendingSelectedIndex.value != null && !_isAnswered.value)
                     SpeakToConfirmOverlay(
@@ -287,6 +296,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                         quest.correctAnswerIndex ?? 0,
                       ),
                       allowSkip: true,
+                      isPositioned: true,
                     ),
                 ],
               ),
