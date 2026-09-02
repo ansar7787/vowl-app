@@ -231,10 +231,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return CustomScrollView(
+                        return RawScrollbar(
                           controller: _scrollController,
-                          physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                          slivers: [
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                            slivers: [
                             SliverToBoxAdapter(
                               child: Column(
                                 children: [
@@ -262,7 +267,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                 ],
                               ),
                             ),
-                          ],
+                            ],
+                          ),
                         );
                       },
                     ),
