@@ -102,15 +102,15 @@ Every single one of the 100 games must pass these 9 checks:
 
 **6. Flashcards**
 - [N/A] Dual-Stage Scroll UX
-- [x] Sliver Performance Layout
-- [x] Zero setState (ValueNotifier)
+- [N/A] Sliver Performance Layout (Stack-based)
+- [x] Zero setState (ValueNotifier & Controller)
 - [N/A] Feedback Card Logic
 - [N/A] Pedagogical Component: (Single stage interaction)
 - [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
 - [N/A] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 **7. Idioms**
 - [x] Dual-Stage Scroll UX
