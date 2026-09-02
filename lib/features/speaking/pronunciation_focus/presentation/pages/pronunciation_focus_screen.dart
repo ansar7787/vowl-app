@@ -51,6 +51,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
 
   final ValueNotifier<bool> _showGuide = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -76,6 +77,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     _showConfetti.dispose();
     _timeVal.dispose();
     _showGuide.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -189,8 +191,16 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
+                : Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -258,6 +268,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                       ),
                     ],
                   ),
+                  ),
+                  ],
+                ),
               );
             },
           ),
