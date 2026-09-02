@@ -31,6 +31,7 @@ class PrefixSuffixScreen extends StatefulWidget {
 
 class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
   late final PrefixSuffixController _controller;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -52,6 +53,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _controller.dispose();
     super.dispose();
   }
@@ -126,10 +128,12 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                   : Stack(
                       children: [
                         RawScrollbar(
+                          controller: _scrollController,
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
+                            controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(
