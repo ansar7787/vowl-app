@@ -11,7 +11,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_instruction_header.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
@@ -301,16 +300,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           'vocabulary',
           level: widget.level,
         );
-
-        if (state is VocabularyLoading ||
-            (state is! VocabularyGameComplete &&
-                _lastQuest == null &&
-                state is! VocabularyLoaded &&
-                state is! VocabularyError)) {
-          return Scaffold(
-            body: GameShimmerLoading(primaryColor: theme.primaryColor),
-          );
-        }
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest

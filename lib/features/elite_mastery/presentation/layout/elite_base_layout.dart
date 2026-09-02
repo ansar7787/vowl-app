@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
 import 'package:vowl/core/presentation/painters/visual_config_background.dart';
@@ -28,9 +28,6 @@ class EliteBaseLayout extends StatelessWidget {
   final VoidCallback onContinue;
   final VoidCallback onHint;
   final bool showConfetti;
-  final String title;
-  final String? subtitle;
-  final IconData? titleIcon;
   final bool isFinalFailure;
   final VisualConfig? visualConfig;
   final EliteMasteryState state;
@@ -51,9 +48,6 @@ class EliteBaseLayout extends StatelessWidget {
     required this.onContinue,
     required this.onHint,
     this.showConfetti = false,
-    required this.title,
-    this.subtitle,
-    this.titleIcon,
     this.visualConfig,
     this.onTutorPass,
     this.useScrolling = true,
@@ -87,68 +81,7 @@ class EliteBaseLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 60.h),
-                if (title.isNotEmpty)
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: 12.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: theme.primaryColor.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: theme.primaryColor.withValues(alpha: 0.2),
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          if (titleIcon != null) ...[
-                            Icon(
-                              titleIcon,
-                              color: theme.primaryColor,
-                              size: 24.r,
-                            ),
-                            SizedBox(width: 12.w),
-                          ],
-                          Expanded(
-                            child: Semantics(
-                              header: true,
-                              child: Text(
-                                title,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark
-                                      ? Colors.white70
-                                      : Colors.black87,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ).animate().fadeIn(),
-                if (subtitle != null && subtitle!.isNotEmpty) ...[
-                  SizedBox(height: 8.h),
-                  Semantics(
-                    liveRegion: true,
-                    child: Text(
-                      subtitle!,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
-                    ),
-                  ).animate().fadeIn().slideY(begin: 0.1),
-                ],
+                  // Titles removed to standardize global layout cleanliness
                 SizedBox(height: 20.h),
                 child,
               ],

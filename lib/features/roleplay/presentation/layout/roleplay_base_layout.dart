@@ -32,8 +32,6 @@ class RoleplayBaseLayout extends StatelessWidget {
   final VoidCallback onHint;
   final VoidCallback? onTutorPass;
   final bool showConfetti;
-  final String title;
-  final String subtitle;
   final ScrollController? scrollController;
   final bool useScrolling;
   final bool disablePadding;
@@ -52,8 +50,6 @@ class RoleplayBaseLayout extends StatelessWidget {
     required this.onHint,
     this.onTutorPass,
     this.showConfetti = false,
-    this.title = 'SOCIAL SCENARIO',
-    this.subtitle = 'Master the Scene',
     this.scrollController,
     this.useScrolling = false,
     this.disablePadding = false,
@@ -61,47 +57,18 @@ class RoleplayBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final wrappedChild = Builder(
-      builder: (context) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('roleplay', level: level);
-
-        return Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: kRoleplayMaxContentWidth,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 4,
-                    color: theme.primaryColor,
-                  ),
-                ).animate().fadeIn(),
-                SizedBox(height: 8.h),
-                Text(
-                  subtitle,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  ),
-                ).animate().fadeIn().slideY(begin: 0.1),
-                SizedBox(height: 32.h),
-                child,
-              ],
-            ),
-          ),
-        );
-      },
+    final wrappedChild = Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxWidth: kRoleplayMaxContentWidth,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            child,
+          ],
+        ),
+      ),
     );
 
     final config = GameScaffoldConfig(

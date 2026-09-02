@@ -135,7 +135,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -159,16 +158,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                       ? state.livesRemaining <= 0
                       : false),
               showConfetti: _showConfetti.value,
-              title: _isAnswered.value
-                  ? ""
-                  : quest?.instruction.isNotEmpty == true
-                  ? quest!.instruction
-                  : context.tr(
-                      'games.accent_shadowing_instruction',
-                      fallback:
-                          'Listen to the example, then speak and match the exact accent and rhythm.',
-                    ),
-              titleIcon: Icons.record_voice_over_rounded,
               useScrolling: false,
               onContinue: () {
                 _isAnswered.value = false;

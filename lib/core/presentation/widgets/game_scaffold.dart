@@ -106,38 +106,7 @@ class GameScaffold<S> extends StatelessWidget {
             )
           else if (baseState is GameLoadingState ||
               baseState is GameInitialState)
-            SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
-                child: Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    // Header shimmer
-                    ShimmerLoading.rounded(
-                      width: double.infinity,
-                      height: 60.h,
-                      borderRadius: 16,
-                    ),
-                    SizedBox(height: 32.h),
-                    // Content block shimmer
-                    Expanded(
-                      child: ShimmerLoading.rounded(
-                        width: double.infinity,
-                        height: double.infinity,
-                        borderRadius: 24,
-                      ),
-                    ),
-                    SizedBox(height: 32.h),
-                    // Bottom button/feedback shimmer
-                    ShimmerLoading.rounded(
-                      width: double.infinity,
-                      height: 72.h,
-                      borderRadius: 16,
-                    ),
-                  ],
-                ),
-              ),
-            )
+            GameShimmerLoading(primaryColor: theme.primaryColor)
           else
             SafeArea(
               child: Column(

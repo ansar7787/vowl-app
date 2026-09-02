@@ -31,8 +31,6 @@ class AccentBaseLayout extends StatelessWidget {
   final VoidCallback onHint;
   final VoidCallback? onTutorPass;
   final bool showConfetti;
-  final String title;
-  final String subtitle;
   final bool useScrolling;
   final bool disablePadding;
 
@@ -47,8 +45,6 @@ class AccentBaseLayout extends StatelessWidget {
     required this.onHint,
     this.onTutorPass,
     this.showConfetti = false,
-    this.title = 'ACCENT TRAINING',
-    this.subtitle = 'Master the Sound',
     this.useScrolling = false,
     this.disablePadding = false,
   });
@@ -67,8 +63,6 @@ class AccentBaseLayout extends StatelessWidget {
       useScrolling: useScrolling,
       disablePadding: disablePadding,
       isAnswered: isAnswered,
-      title: title,
-      subtitle: subtitle,
       primaryColor: theme.primaryColor,
       isDark: isDark,
       child: child,

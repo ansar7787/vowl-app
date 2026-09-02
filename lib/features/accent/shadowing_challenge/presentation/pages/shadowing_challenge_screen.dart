@@ -73,12 +73,12 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   }
 
   void _scrollToBottom() {
-    Future.delayed(const Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 300), () {
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 400),
-          curve: Curves.easeOut,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.easeOutCubic,
         );
       }
     });
@@ -224,11 +224,18 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                 thickness: 4.w,
                                 child: CustomScrollView(
                                   controller: _scrollController,
-                                  physics: const BouncingScrollPhysics(),
+                                  physics: (!_isFirstStagePassed.value)
+                                      ? const NeverScrollableScrollPhysics()
+                                      : const BouncingScrollPhysics(),
                                   slivers: [
-                                    SliverFillRemaining(
-                                      hasScrollBody: false,
-                                      child: Column(
+                                    SliverToBoxAdapter(
+                                      child: IgnorePointer(
+                                        ignoring: _isFirstStagePassed.value,
+                                        child: ConstrainedBox(
+                                          constraints: BoxConstraints(
+                                            minHeight: constraints.maxHeight,
+                                          ),
+                                          child: Column(
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
@@ -290,31 +297,42 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                             ),
                                           ),
 
-                                          SizedBox(
-                                            height:
-                                                (_isFirstStagePassed.value &&
-                                                    !_isAnswered.value)
-                                                ? 380.h
-                                                : 160.h,
-                                          ),
-                                        ],
+                                            SizedBox(
+                                              height:
+                                                  (_isAnswered.value ||
+                                                      _isFirstStagePassed.value)
+                                                  ? 10.h
+                                                  : 60.h,
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
+                                    ),
+                                    if (_isFirstStagePassed.value &&
+                                        (!_isAnswered.value ||
+                                            _isCorrect.value == null))
+                                      SliverToBoxAdapter(
+                                        child: Column(
+                                          children: [
+                                            ShadowPlaybackCompare(
+                                              expectedText: quest.textToSpeak ?? "",
+                                              displayText: quest.textToSpeak ?? "",
+                                              primaryColor: theme.primaryColor,
+                                              isPositioned: false,
+                                              speedMultiplier: _currentSpeed.value,
+                                              onConfirmed: () => _submitVerbalEvaluation(true),
+                                              onSkipped: () => _submitVerbalEvaluation(false),
+                                            ),
+                                            SizedBox(height: 60.h),
+                                          ],
+                                        ),
+                                      ),
                                   ],
                                 ),
                               );
                             },
                           ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
-                            ShadowPlaybackCompare(
-                              expectedText: quest.textToSpeak ?? "",
-                              displayText: quest.textToSpeak ?? "",
-                              primaryColor: theme.primaryColor,
-                              isPositioned: true,
-                              speedMultiplier: _currentSpeed.value,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
-                            ),
                         ],
                       ),
               );

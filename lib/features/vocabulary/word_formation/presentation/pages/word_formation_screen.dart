@@ -12,7 +12,6 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/morph_injection_rail.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/reaction_core.dart';
@@ -101,16 +100,6 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           'vocabulary',
           level: widget.level,
         );
-
-        if (state is VocabularyLoading ||
-            (state is! VocabularyGameComplete &&
-                _controller.lastQuest == null &&
-                state is! VocabularyLoaded &&
-                state is! VocabularyError)) {
-          return Scaffold(
-            body: GameShimmerLoading(primaryColor: theme.primaryColor),
-          );
-        }
 
         final isDark = Theme.of(context).brightness == Brightness.dark;
 

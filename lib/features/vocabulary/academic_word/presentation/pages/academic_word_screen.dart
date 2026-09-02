@@ -9,7 +9,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.dart';
@@ -164,15 +163,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
 
   Widget _buildScreen(BuildContext context, VocabularyState state) {
     final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
-
-    if (state is VocabularyLoading ||
-        (quest == null &&
-            state is! VocabularyGameComplete &&
-            state is! VocabularyError)) {
-      return Scaffold(
-        body: GameShimmerLoading(primaryColor: _cachedTheme.primaryColor),
-      );
-    }
 
     return ListenableBuilder(
       listenable: Listenable.merge([

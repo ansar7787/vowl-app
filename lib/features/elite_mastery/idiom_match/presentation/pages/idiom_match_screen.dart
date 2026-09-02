@@ -247,15 +247,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                   : false,
               showConfetti: _showConfetti.value,
               useScrolling: false,
-              title: _isFirstStagePassed.value || _isAnswered.value
-                  ? ""
-                  : quest?.instruction.isNotEmpty == true
-                  ? quest!.instruction
-                  : context.tr(
-                      'games.idiomMatch_instruction',
-                      fallback: 'Select the matching idiom.',
-                    ),
-              titleIcon: Icons.extension_rounded,
               visualConfig: quest?.visualConfig,
               onContinue: () {
                 _isAnswered.value = false;

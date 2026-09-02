@@ -270,8 +270,6 @@ class _GenericRoleplayScenarioScreenState
               isCorrect: _selectedIndex.value == correctIndex,
               isFinalFailure: _attempts.value >= kRoleplayMaxWrongAttempts,
               showConfetti: _showConfetti.value,
-              title: widget.title,
-              subtitle: quest.scene ?? 'Choose the best response',
               onContinue: () =>
                   context.read<RoleplayBloc>().add(const NextQuestion()),
               onHint: () =>

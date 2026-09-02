@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -75,15 +74,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
       listener: _onBlocState,
       builder: (context, state) {
         // Loading / unknown transient state
-        if (state is VocabularyLoading ||
-            (state is! VocabularyGameComplete &&
-                _lastQuest == null &&
-                state is! VocabularyLoaded &&
-                state is! VocabularyError)) {
-          return Scaffold(
-            body: GameShimmerLoading(primaryColor: _theme.primaryColor),
-          );
-        }
 
         // Error state — surfaces the message instead of hiding it in shimmer
         if (state is VocabularyError) {
@@ -117,7 +107,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               useScrolling: false,
               onHint: _controller.requestHint,
               child: quest == null
-                  ? GameShimmerLoading(primaryColor: _theme.primaryColor)
+                  ? const SizedBox()
                   : FlashcardGameBody(
                       quest: quest,
                       primaryColor: _theme.primaryColor,

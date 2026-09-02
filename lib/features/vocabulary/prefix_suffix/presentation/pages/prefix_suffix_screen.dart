@@ -11,7 +11,6 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/prefix_suffix_controller.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_mission_control.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_synthesizer.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
@@ -92,16 +91,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           'vocabulary',
           level: widget.level,
         );
-
-        if (state is VocabularyLoading ||
-            (state is! VocabularyGameComplete &&
-                _controller.lastQuest == null &&
-                state is! VocabularyLoaded &&
-                state is! VocabularyError)) {
-          return Scaffold(
-            body: GameShimmerLoading(primaryColor: theme.primaryColor),
-          );
-        }
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest

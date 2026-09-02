@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
 
 /// Renders the scrollable (or fixed) content area with title, subtitle, and
 /// the question-specific [child] widget.
@@ -13,8 +13,6 @@ class AccentContentBody extends StatelessWidget {
   final bool useScrolling;
   final bool disablePadding;
   final bool isAnswered;
-  final String title;
-  final String subtitle;
 
   /// The game's accent colour — used for the category label above the subtitle.
   final Color primaryColor;
@@ -26,8 +24,6 @@ class AccentContentBody extends StatelessWidget {
     required this.useScrolling,
     required this.disablePadding,
     required this.isAnswered,
-    required this.title,
-    required this.subtitle,
     required this.primaryColor,
     required this.isDark,
     required this.child,
@@ -54,40 +50,7 @@ class AccentContentBody extends StatelessWidget {
 
   // ── Title + Subtitle ─────────────────────────────────────────────────────
 
-  Widget _titleSection() => Padding(
-    padding: EdgeInsets.symmetric(horizontal: 24.w),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 4,
-            color: primaryColor,
-          ),
-        ).animate().fadeIn(),
-        SizedBox(height: 8.h),
-        Text(
-          subtitle,
-          textAlign: TextAlign.center,
-          // Prevents overflow on small phones with accessibility text scaling
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white : const Color(0xFF0F172A),
-          ),
-        ).animate().fadeIn().slideY(begin: 0.1),
-        SizedBox(height: 32.h),
-      ],
-    ),
-  );
+  Widget _titleSection() => const SizedBox.shrink();
 
   // ── Build ─────────────────────────────────────────────────────────────────
   //

@@ -233,16 +233,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                   state.livesRemaining <= 0 ||
                   (state is EliteMasteryLoaded && state.isFinalFailure),
               showConfetti: _showConfetti.value,
-              title: _isAnswered.value
-                  ? ""
-                  : (state is EliteMasteryLoaded &&
-                        state.currentQuest.instruction.isNotEmpty)
-                  ? state.currentQuest.instruction
-                  : context.tr(
-                      'games.speedSpelling_instruction',
-                      fallback: 'Spell the word using the provided letters.',
-                    ),
-              titleIcon: Icons.keyboard_alt_rounded,
               useScrolling: false,
               onContinue: () {
                 _isAnswered.value = false;
