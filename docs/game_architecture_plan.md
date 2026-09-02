@@ -51,7 +51,6 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
-
 **2. Antonym Search**
 - [x] Dual-Stage Scroll UX
 - [x] Sliver Performance Layout
@@ -193,7 +192,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `ArticleFloatingOrb` & `ArticleOptionGrid`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -204,7 +203,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `ClausePuzzleView` & `ConnectorOptionGrid`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -215,7 +214,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `ConditionalsChainPainter`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -226,7 +225,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `ConjunctionsBrickSheet`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -237,7 +236,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `DirectIndirectSpeechMirror`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -248,7 +247,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `GrammarQuestCompass` & `DynamicJigsawWrapper`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -259,7 +258,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `ModalsRotaryDial`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -270,7 +269,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `ModifierMagneticArena`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -281,7 +280,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `SpeechVortex` & `SpeechDraggableWord`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -292,7 +291,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `PrepositionPathPainter`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -303,7 +302,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `PronounResolutionGravityPainter`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -314,7 +313,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `PunctuationStickerSheet`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -325,7 +324,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `QuestionFormatterCrank`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -336,7 +335,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `RelativeClausesQuantumPainter`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -347,7 +346,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `SentenceCorrectionDiagnosticWord`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -358,7 +357,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `SubjectVerbAgreementScale`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -369,7 +368,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `TenseMasteryTimelineSlider`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -380,7 +379,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `VoiceSwapToggle` & `VoiceSwapResult`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
@@ -391,7 +390,7 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [x] Pedagogical Component Hardening
+- [x] Pedagogical Component: `WordReorderFloatingTile` & `AssemblyCard`
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
