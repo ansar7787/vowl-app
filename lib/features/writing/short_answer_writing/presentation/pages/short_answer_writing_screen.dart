@@ -231,10 +231,15 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                   ? const SizedBox()
                   : Stack(
                   children: [
-                    CustomScrollView(
-                  controller: _scrollController,
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
                     SliverPadding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       sliver: SliverToBoxAdapter(
@@ -358,14 +363,15 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                                 ),
                               ),
                             ],
-                            SizedBox(height: isAnswered ? 160.h : 60.h),
+                            SizedBox(height: !isAnswered ? 380.h : 160.h),
                           ],
                         ),
                       ),
                     ),
                   ],
                 ),
-                if (_showContextSentence.value && !isAnswered)
+              ),
+              if (_showContextSentence.value && !isAnswered)
                   ContextSentenceBuilder(
                     targetKeyword: targetKeywords.first,
                     primaryColor: theme.primaryColor,
