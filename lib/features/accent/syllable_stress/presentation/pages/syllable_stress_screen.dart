@@ -235,11 +235,18 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                 thickness: 4.w,
                                 child: CustomScrollView(
                                   controller: _scrollController,
-                                  physics: const BouncingScrollPhysics(),
+                                  physics: (!_isFirstStagePassed.value)
+                                        ? const NeverScrollableScrollPhysics()
+                                        : const BouncingScrollPhysics(),
                                   slivers: [
-                                    SliverFillRemaining(
-                                      hasScrollBody: false,
-                                      child: Column(
+                                    SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          minHeight: constraints.maxHeight,
+                                        ),
+                                        child: Column(
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
@@ -416,14 +423,23 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                 : 160.h,
                                           ),
                                         ],
+
                                       ),
+
                                     ),
-                                  ],
+
+                                  ),
+
                                 ),
-                              );
-                            },
-                          ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                  SliverToBoxAdapter(
+
+                                    child: Column(
+
+                                      children: [
+if (_isFirstStagePassed.value && !_isAnswered.value)
                             SpeakToConfirmOverlay(
                               expectedText: quest.word ?? "",
                               displayText:
@@ -431,9 +447,25 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                               primaryColor: theme.primaryColor,
                               onConfirmed: () => _submitVerbalEvaluation(true),
                               onSkipped: () => _submitVerbalEvaluation(false),
-                              isPositioned: true,
+                              isPositioned: false,
                             ),
-                        ],
+  
+
+                                        SizedBox(height: 60.h),
+
+                                      ],
+
+                                    ),
+
+                                  ),
+
+                                ],
+
+                              ),
+                              );
+                            },
+                          ),
+                                                ],
                       ),
               );
             },

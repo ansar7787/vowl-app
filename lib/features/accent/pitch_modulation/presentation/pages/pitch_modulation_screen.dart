@@ -273,11 +273,18 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                 thickness: 4.w,
                                 child: CustomScrollView(
                                   controller: _scrollController,
-                                  physics: const BouncingScrollPhysics(),
+                                  physics: (!_isFirstStagePassed.value)
+                                        ? const NeverScrollableScrollPhysics()
+                                        : const BouncingScrollPhysics(),
                                   slivers: [
-                                    SliverFillRemaining(
-                                      hasScrollBody: false,
-                                      child: Column(
+                                    SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          minHeight: constraints.maxHeight,
+                                        ),
+                                        child: Column(
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
@@ -372,20 +379,29 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                                 : 160.h,
                                           ),
                                         ],
+
                                       ),
+
                                     ),
-                                  ],
+
+                                  ),
+
                                 ),
-                              );
-                            },
-                          ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                  SliverToBoxAdapter(
+
+                                    child: Column(
+
+                                      children: [
+if (_isFirstStagePassed.value && !_isAnswered.value)
                             SpeakToConfirmOverlay(
                               expectedText: quest.textToSpeak ?? "",
                               displayText:
                                   '${quest.textToSpeak ?? ""}\n\n(Meaning: ${options[_spokenMeaningsCount.value]})',
                               primaryColor: theme.primaryColor,
-                              isPositioned: true,
+                              isPositioned: false,
                               onConfirmed: () {
                                 if (_spokenMeaningsCount.value == 0) {
                                   _spokenMeaningsCount.value = 1;
@@ -399,7 +415,23 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                               },
                               onSkipped: () => _submitVerbalEvaluation(false),
                             ),
-                        ],
+  
+
+                                        SizedBox(height: 60.h),
+
+                                      ],
+
+                                    ),
+
+                                  ),
+
+                                ],
+
+                              ),
+                              );
+                            },
+                          ),
+                                                ],
                       ),
               );
             },

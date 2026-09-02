@@ -261,11 +261,18 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                 thickness: 4.w,
                                 child: CustomScrollView(
                                   controller: _scrollController,
-                                  physics: const BouncingScrollPhysics(),
+                                  physics: (!_isFirstStagePassed.value)
+                                        ? const NeverScrollableScrollPhysics()
+                                        : const BouncingScrollPhysics(),
                                   slivers: [
-                                    SliverFillRemaining(
-                                      hasScrollBody: false,
-                                      child: Column(
+                                    SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          minHeight: constraints.maxHeight,
+                                        ),
+                                        child: Column(
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
@@ -470,19 +477,28 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                 : 160.h,
                                           ),
                                         ],
+
                                       ),
+
                                     ),
-                                  ],
+
+                                  ),
+
                                 ),
-                              );
-                            },
-                          ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                  SliverToBoxAdapter(
+
+                                    child: Column(
+
+                                      children: [
+if (_isFirstStagePassed.value && !_isAnswered.value)
                             SpeakToConfirmOverlay(
                               expectedText:
                                   quest.textToSpeak ?? quest.word ?? "",
                               primaryColor: theme.primaryColor,
-                              isPositioned: true,
+                              isPositioned: false,
                               onConfirmed: () {
                                 context.read<AccentBloc>().add(
                                   const AccentSpeakConfirmed(5),
@@ -491,7 +507,23 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                               },
                               onSkipped: () => _submitVerbalEvaluation(false),
                             ),
-                        ],
+  
+
+                                        SizedBox(height: 60.h),
+
+                                      ],
+
+                                    ),
+
+                                  ),
+
+                                ],
+
+                              ),
+                              );
+                            },
+                          ),
+                                                ],
                       ),
               );
             },

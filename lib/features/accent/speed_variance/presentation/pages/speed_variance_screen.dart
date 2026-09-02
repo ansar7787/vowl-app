@@ -300,12 +300,19 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                           thickness: 4.w,
                           child: CustomScrollView(
                             controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
+                            physics: (!_isFirstStagePassed.value)
+                                ? const NeverScrollableScrollPhysics()
+                                : const BouncingScrollPhysics(),
                             slivers: [
-                              SliverFillRemaining(
-                                hasScrollBody: false,
-                                child: Column(
-                                  children: [
+                              SliverToBoxAdapter(
+                                child: IgnorePointer(
+                                  ignoring: _isFirstStagePassed.value,
+                                  child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minHeight: constraints.maxHeight,
+                                    ),
+                                    child: Column(
+                                      children: [
                                     Padding(
                                       padding: EdgeInsets.symmetric(
                                         horizontal: 24.w,
@@ -423,29 +430,31 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                         ],
                                       ),
                                     ),
-                                    SizedBox(
-                                      height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
-                                          ? 380.h
-                                          : 160.h,
-                                    ),
                                   ],
                                 ),
                               ),
+                            ),
+                          ),
+                          if (_isFirstStagePassed.value && !_isAnswered.value)
+                                SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SpeakToConfirmOverlay(
+                                        expectedText: quest.textToSpeak ?? quest.word ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        onConfirmed: () => _submitVerbalEvaluation(true),
+                                        onSkipped: () => _submitVerbalEvaluation(false),
+                                      ),
+                                      SizedBox(height: 60.h),
+                                    ],
+                                  ),
+                                ),
                             ],
                           ),
                         );
                       },
                     ),
-                    if (_isFirstStagePassed.value && !_isAnswered.value)
-                      SpeakToConfirmOverlay(
-                        expectedText: quest.textToSpeak ?? quest.word ?? "",
-                        primaryColor: theme.primaryColor,
-                        isPositioned: true,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
-                      ),
                   ],
                 );
               },

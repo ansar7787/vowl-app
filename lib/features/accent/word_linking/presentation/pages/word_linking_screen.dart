@@ -239,11 +239,18 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                 thickness: 4.w,
                                 child: CustomScrollView(
                                   controller: _scrollController,
-                                  physics: const BouncingScrollPhysics(),
+                                  physics: (!_isFirstStagePassed.value)
+                                        ? const NeverScrollableScrollPhysics()
+                                        : const BouncingScrollPhysics(),
                                   slivers: [
-                                    SliverFillRemaining(
-                                      hasScrollBody: false,
-                                      child: Column(
+                                    SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          minHeight: constraints.maxHeight,
+                                        ),
+                                        child: Column(
                                         children: [
                                           Padding(
                                             padding: EdgeInsets.symmetric(
@@ -371,23 +378,48 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 : 160.h,
                                           ),
                                         ],
+
                                       ),
+
                                     ),
-                                  ],
+
+                                  ),
+
                                 ),
-                              );
-                            },
-                          ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                if (_isFirstStagePassed.value && !_isAnswered.value)
+
+                                  SliverToBoxAdapter(
+
+                                    child: Column(
+
+                                      children: [
+if (_isFirstStagePassed.value && !_isAnswered.value)
                             ShadowPlaybackCompare(
                               expectedText: quest.textToSpeak ?? "",
                               displayText: quest.textToSpeak ?? "",
                               primaryColor: theme.primaryColor,
-                              isPositioned: true,
+                              isPositioned: false,
                               onConfirmed: () => _submitVerbalEvaluation(true),
                               onSkipped: () => _submitVerbalEvaluation(false),
                             ),
-                        ],
+  
+
+                                        SizedBox(height: 60.h),
+
+                                      ],
+
+                                    ),
+
+                                  ),
+
+                                ],
+
+                              ),
+                              );
+                            },
+                          ),
+                                                ],
                       ),
               );
             },

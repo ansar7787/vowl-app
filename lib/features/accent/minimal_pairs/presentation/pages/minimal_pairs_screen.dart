@@ -254,12 +254,19 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
+                                physics: (!_isFirstStagePassed.value)
+                                    ? const NeverScrollableScrollPhysics()
+                                    : const BouncingScrollPhysics(),
                                 slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: false,
-                                    child: Column(
-                                      children: [
+                                  SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          minHeight: constraints.maxHeight,
+                                        ),
+                                        child: Column(
+                                          children: [
                                         Padding(
                                           padding: EdgeInsets.symmetric(
                                             horizontal: 24.w,
@@ -485,40 +492,44 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                           ),
                                         ),
                                         SizedBox(
-                                          height:
-                                              (_isFirstStagePassed.value &&
-                                                  !_isAnswered.value)
-                                              ? 380.h
-                                              : 160.h,
                                         ),
                                       ],
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
-                            );
-                          },
-                        ),
-                        if (_isFirstStagePassed.value && !_isAnswered.value)
-                          ShadowPlaybackCompare(
-                            expectedText: _currentOptions.isNotEmpty
-                                ? _currentOptions[_currentCorrectIndex]['word']!
-                                : (quest.correctAnswer ?? quest.word1 ?? ""),
-                            displayText: _currentOptions.isNotEmpty
-                                ? _currentOptions[_currentCorrectIndex]['word']!
-                                : (quest.correctAnswer ?? quest.word1 ?? ""),
-                            primaryColor: theme.primaryColor,
-                            isPositioned: true,
-                            onConfirmed: () {
-                              context.read<AccentBloc>().add(
-                                const AccentSpeakConfirmed(5),
-                              );
-                              _submitVerbalEvaluation(true);
-                            },
-                            onSkipped: () => _submitVerbalEvaluation(false),
+                              if (_isFirstStagePassed.value && !_isAnswered.value)
+                                SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      ShadowPlaybackCompare(
+                                        expectedText: _currentOptions.isNotEmpty
+                                            ? _currentOptions[_currentCorrectIndex]['word']!
+                                            : (quest.correctAnswer ?? quest.word1 ?? ""),
+                                        displayText: _currentOptions.isNotEmpty
+                                            ? _currentOptions[_currentCorrectIndex]['word']!
+                                            : (quest.correctAnswer ?? quest.word1 ?? ""),
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        onConfirmed: () {
+                                          context.read<AccentBloc>().add(
+                                            const AccentSpeakConfirmed(5),
+                                          );
+                                          _submitVerbalEvaluation(true);
+                                        },
+                                        onSkipped: () => _submitVerbalEvaluation(false),
+                                      ),
+                                      SizedBox(height: 60.h),
+                                    ],
+                                  ),
+                                ),
+                            ],
                           ),
-                      ],
+                        );
+                      },
                     ),
+                  ],
+                ),
             );
           },
         );
