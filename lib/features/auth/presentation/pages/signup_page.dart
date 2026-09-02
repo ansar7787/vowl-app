@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/signup_cubit.dart';
+import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/signup_widgets.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
@@ -25,8 +26,11 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => sl<SignUpCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => sl<SignUpCubit>()),
+        BlocProvider(create: (_) => sl<LoginCubit>()),
+      ],
       child: const SignUpView(),
     );
   }
@@ -591,6 +595,8 @@ class _SignUpViewState extends State<SignUpView> {
                                               },
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(48, 48),
+                                                splashFactory: NoSplash.splashFactory,
+                                                overlayColor: Colors.transparent,
                                               ),
                                               child: Text(
                                                 context.tr(

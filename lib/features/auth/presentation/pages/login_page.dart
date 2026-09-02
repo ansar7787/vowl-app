@@ -310,6 +310,8 @@ class _LoginViewState extends State<LoginView> {
                                                       48,
                                                       48,
                                                     ),
+                                                    splashFactory: NoSplash.splashFactory,
+                                                    overlayColor: Colors.transparent,
                                                   ),
                                                   child: Text(
                                                     context.tr(
@@ -385,6 +387,8 @@ class _LoginViewState extends State<LoginView> {
                                               ),
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(48, 48),
+                                                splashFactory: NoSplash.splashFactory,
+                                                overlayColor: Colors.transparent,
                                               ),
                                               child: Text(
                                                 context.tr(
