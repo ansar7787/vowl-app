@@ -61,7 +61,7 @@ class LoginEmailInput extends StatelessWidget {
               contrastColor: contrastColor,
               hint: context.tr(
                 'auth.email_hint_short',
-                fallback: 'you@email.com',
+                fallback: 'name@example.com',
               ),
               prefixIcon: Icons.email_outlined,
             ),
@@ -133,7 +133,7 @@ class LoginPasswordInput extends StatelessWidget {
               contrastColor: contrastColor,
               hint: context.tr(
                 'auth.password_hint_text',
-                fallback: 'Your secret key',
+                fallback: 'Enter your password',
               ),
               prefixIcon: Icons.lock_outlined,
               suffixIcon: Semantics(
