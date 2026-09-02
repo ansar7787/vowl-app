@@ -59,11 +59,14 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _showAnagram = ValueNotifier(false);
 
+  late final ScrollController _scrollController;
+
   GameQuest? _lastQuest;
 
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     _theme = LevelThemeHelper.getTheme('writing', level: widget.level);
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
@@ -80,6 +83,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _dragNotifier.dispose();
     _selectedProjectile.dispose();
     _showConfetti.dispose();
@@ -239,22 +243,29 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                   key: _stackKey,
                   children: [
                     // Scrollable body content — extracted to reduce build() size.
-                    _CompleteSentenceBody(
-                      quest: quest,
-                      options: options,
-                      level: widget.level,
-                      selectedProjectile: _selectedProjectile.value,
-                      isAnswered: isAnswered,
-                      isCorrect: isCorrect,
-                      theme: _theme,
-                      isDark: isDark,
-                      onBridgeStart: (pos) => _onBridgeStart(pos, isAnswered),
-                      onBridgeUpdate: (pos) => _onBridgeUpdate(pos, isAnswered),
-                      // FIX: screen owns correctAnswer — widgets only report selected.
-                      onFire: (selected) => _onFire(
-                        selected,
-                        quest.correctAnswer ?? '',
-                        isAnswered,
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: _theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: _CompleteSentenceBody(
+                        quest: quest,
+                        options: options,
+                        level: widget.level,
+                        selectedProjectile: _selectedProjectile.value,
+                        isAnswered: isAnswered,
+                        isCorrect: isCorrect,
+                        theme: _theme,
+                        isDark: isDark,
+                        scrollController: _scrollController,
+                        onBridgeStart: (pos) => _onBridgeStart(pos, isAnswered),
+                        onBridgeUpdate: (pos) => _onBridgeUpdate(pos, isAnswered),
+                        // FIX: screen owns correctAnswer — widgets only report selected.
+                        onFire: (selected) => _onFire(
+                          selected,
+                          quest.correctAnswer ?? '',
+                          isAnswered,
+                        ),
                       ),
                     ),
                     // PERF FIX: ValueListenableBuilder isolates repaints to this
@@ -309,6 +320,7 @@ class _CompleteSentenceBody extends StatelessWidget {
   final bool? isCorrect;
   final dynamic theme;
   final bool isDark;
+  final ScrollController scrollController;
   final ValueChanged<Offset> onBridgeStart;
   final ValueChanged<Offset> onBridgeUpdate;
   final ValueChanged<String> onFire;
@@ -322,6 +334,7 @@ class _CompleteSentenceBody extends StatelessWidget {
     required this.isCorrect,
     required this.theme,
     required this.isDark,
+    required this.scrollController,
     required this.onBridgeStart,
     required this.onBridgeUpdate,
     required this.onFire,
@@ -330,6 +343,7 @@ class _CompleteSentenceBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      controller: scrollController,
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverPadding(
@@ -425,7 +439,7 @@ class _CompleteSentenceBody extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              SizedBox(height: 160.h), // Bottom padding for feedback card
+              SizedBox(height: !isAnswered ? 380.h : 60.h), // Bottom docking padding
             ],
           ),
         ),
