@@ -41,6 +41,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   Timer? _autoplayTimer;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -56,6 +57,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -164,8 +166,16 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
+                : Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -217,6 +227,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                       ),
                     ],
                   ),
+                  ),
+                  ],
+                ),
               );
             },
           ),
