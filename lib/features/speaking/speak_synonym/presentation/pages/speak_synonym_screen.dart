@@ -249,32 +249,25 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                         ),
                       ),
                       SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              if (!_isAnswered.value)
-                                ShadowPlaybackCompare(
-                                  expectedText: expectedText,
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
-                                ),
-                            ],
-                          ),
+                        child: SizedBox(
+                          height: !_isAnswered.value ? 380.h : 60.h,
                         ),
                       ),
                     ],
                   ),
+                      ),
+                      if (!_isAnswered.value)
+                        ShadowPlaybackCompare(
+                          expectedText: expectedText,
+                          primaryColor: theme.primaryColor,
+                          isPositioned: true,
+                          onConfirmed: () =>
+                              _submitVerbalEvaluation(true),
+                          onSkipped: () =>
+                              _submitVerbalEvaluation(false),
+                        ),
+                    ],
                   ),
-                  ],
-                ),
               );
             },
           ),
