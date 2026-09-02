@@ -214,10 +214,15 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                   builder: (context, constraints) {
                     return Stack(
                       children: [
-                        CustomScrollView(
+                        RawScrollbar(
                           controller: _scrollController,
-                          physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                          slivers: [
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                            slivers: [
                             SliverToBoxAdapter(
                               child: IgnorePointer(
                                 ignoring: _isFirstStagePassed.value,
@@ -281,8 +286,9 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                               ),
                             ),
                         ],
-                      ),
-                    ],
+                          ),
+                        ),
+                      ],
                   );
           },
         ),

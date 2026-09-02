@@ -117,12 +117,12 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
-- [ ] Pedagogical Component: `Origin / Etymology Widget`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Pedagogical Component: `Origin / Etymology Widget`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [N/A] Keyboard Scroll Stability (FocusNode visibility)
+- [N/A] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 **8. Phrasal Verbs**
 - [x] Dual-Stage Scroll UX
