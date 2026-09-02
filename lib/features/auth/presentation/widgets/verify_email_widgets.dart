@@ -94,15 +94,19 @@ class VerifyEmailStatusText extends StatelessWidget {
                 ),
                 SizedBox(width: 8.w),
                 Flexible(
-                  child: Text(
-                    email!,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w700,
-                      color: const Color(0xFF6366F1),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      email!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xFF6366F1),
+                      ),
+                      maxLines: 1,
                     ),
-                    maxLines: 1,
                   ),
                 ),
               ],
@@ -188,17 +192,17 @@ class ResendEmailButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.r),
           ),
         ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 16.sp,
-            fontWeight: FontWeight.bold,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+            ),
+            maxLines: 1,
           ),
-          // maxLines + overflow, not Flexible — this Text is the button's
-          // direct child (no Row ancestor), and Flexible requires an
-          // immediate Flex ancestor or it throws at runtime.
-          maxLines: 1,
         ),
       ),
     );
@@ -231,18 +235,21 @@ class VerifyConfirmationButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.r),
           ),
         ),
-        child: Text(
-          context.tr(
-            'auth.verified_confirmation',
-            fallback: "I've Verified My Email",
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            context.tr(
+              'auth.verified_confirmation',
+              fallback: "I've Verified My Email",
+            ),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+              color: const Color(0xFF6366F1),
+            ),
+            maxLines: 1,
           ),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 16.sp,
-            fontWeight: FontWeight.bold,
-            color: const Color(0xFF6366F1),
-          ),
-          maxLines: 1,
         ),
       ),
     );
@@ -271,15 +278,18 @@ class VerifyLogoutButton extends StatelessWidget {
         style: TextButton.styleFrom(
           minimumSize: const Size(double.infinity, 48),
         ),
-        child: Text(
-          context.tr('auth.cancel_and_logout', fallback: 'Cancel'),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 16.sp,
-            color: const Color(0xFF6B7280),
-            fontWeight: FontWeight.w600,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            context.tr('auth.cancel_and_logout', fallback: 'Cancel'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              color: const Color(0xFF6B7280),
+              fontWeight: FontWeight.w600,
+            ),
+            maxLines: 1,
           ),
-          maxLines: 1,
         ),
       ),
     );

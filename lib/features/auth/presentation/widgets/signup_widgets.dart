@@ -271,9 +271,12 @@ class SignUpButton extends StatelessWidget {
                 ? const VowlButtonSpinner(size: 24, color: Colors.white)
                 // maxLines + overflow, not Flexible — see LoginButton's
                 // identical comment for why.
-                : Text(
-                    context.tr('auth.signup', fallback: 'Sign Up'),
-                    maxLines: 1,
+                : FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      context.tr('auth.signup', fallback: 'Sign Up'),
+                      maxLines: 1,
+                    ),
                   ),
           ),
         );

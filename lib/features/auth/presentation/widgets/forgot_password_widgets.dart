@@ -178,9 +178,12 @@ class SendResetLinkButton extends StatelessWidget {
             // wrapping to two lines and looking visually broken inside this
             // full-width, fixed-height button at high accessibility text
             // scale.
-            : Text(
-                context.tr('auth.send_reset_link', fallback: 'Send Reset Link'),
-                maxLines: 1,
+            : FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  context.tr('auth.send_reset_link', fallback: 'Send Reset Link'),
+                  maxLines: 1,
+                ),
               ),
       ),
     );
@@ -205,15 +208,19 @@ class RememberPasswordFooter extends StatelessWidget {
         // narrow (320px) device could otherwise push this Row into a
         // RenderFlex overflow next to the "Login" button.
         Flexible(
-          child: Text(
-            context.tr(
-              'auth.remember_password_prompt',
-              fallback: 'Remember your password?',
-            ),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: secondaryColor,
-              fontWeight: FontWeight.w600,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              context.tr(
+                'auth.remember_password_prompt',
+                fallback: 'Remember your password?',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                color: secondaryColor,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),

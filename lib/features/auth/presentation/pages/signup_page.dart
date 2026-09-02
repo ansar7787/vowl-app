@@ -569,16 +569,20 @@ class _SignUpViewState extends State<SignUpView> {
                                             // overflow-safety reasoning as
                                             // LoginPage's equivalent Row.
                                             Flexible(
-                                              child: Text(
-                                                context.tr(
-                                                  'auth.have_account_prompt',
-                                                  fallback:
-                                                      'Already have an account?',
-                                                ),
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  color: secondaryColor,
-                                                  fontWeight: FontWeight.w600,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                alignment: Alignment.centerLeft,
+                                                child: Text(
+                                                  context.tr(
+                                                    'auth.have_account_prompt',
+                                                    fallback:
+                                                        'Already have an account?',
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    color: secondaryColor,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
                                             ),

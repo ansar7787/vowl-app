@@ -209,9 +209,12 @@ class LoginButton extends StatelessWidget {
                 // requires an immediate Flex ancestor or it throws at
                 // runtime. This still guards against a longer translation
                 // wrapping to two lines at high text scale.
-                : Text(
-                    context.tr('auth.login', fallback: 'Log In'),
-                    maxLines: 1,
+                : FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      context.tr('auth.login', fallback: 'Log In'),
+                      maxLines: 1,
+                    ),
                   ),
           ),
         );
@@ -269,14 +272,18 @@ class GoogleLoginButton extends StatelessWidget {
                       // right above it, which provides the Flex context
                       // Flexible needs.
                       Flexible(
-                        child: Text(
-                          context.tr(
-                            'auth.sign_in_with_google',
-                            fallback: 'Sign in with Google',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            context.tr(
+                              'auth.sign_in_with_google',
+                              fallback: 'Sign in with Google',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                            ),
                           ),
                         ),
                       ),

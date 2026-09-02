@@ -367,16 +367,20 @@ class _LoginViewState extends State<LoginView> {
                                             // RenderFlex overflow next to the
                                             // "Sign Up" button.
                                             Flexible(
-                                              child: Text(
-                                                context.tr(
-                                                  'auth.no_account_prompt',
-                                                  fallback:
-                                                      'Don\'t have an account?',
-                                                ),
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  color: secondaryColor,
-                                                  fontWeight: FontWeight.w600,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                alignment: Alignment.centerLeft,
+                                                child: Text(
+                                                  context.tr(
+                                                    'auth.no_account_prompt',
+                                                    fallback:
+                                                        'Don\'t have an account?',
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    color: secondaryColor,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
                                             ),
