@@ -35,6 +35,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   final _soundService = di.sl<SoundService>();
 
   late ScrollController _scrollController;
+  late ScrollController _mainScrollController;
   final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
@@ -46,6 +47,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    _mainScrollController = ScrollController();
     context.read<ReadingBloc>().add(
       FetchReadingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -88,6 +90,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _mainScrollController.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
@@ -151,91 +154,98 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            SkimmingScanningTargetBadge(
-                              item: quest.targetInfo ?? quest.targetItem ?? "",
-                              color: theme.primaryColor,
-                            ),
-                            SizedBox(height: 16.h),
-                            
-                            if (!_isAnswered.value)
-                              SpeedChallengeTimer(
-                                key: _timerKey,
-                                durationSeconds: 30,
-                                primaryColor: theme.primaryColor,
-                                onTimeUp: _submitIncorrectAnswer,
-                                showBonusLabel: false,
-                              ),
-                              
-                            SizedBox(height: 16.h),
-
-                            // Scanning Terminal Box
-                            SizedBox(
-                              height: 260.h,
-                              width: double.infinity,
-                              child: SkimmingScanningTerminal(
-                                text: quest.passage ?? "",
-                                correct: quest.correctAnswer ?? "",
-                                color: theme.primaryColor,
-                                scrollController: _scrollController,
-                                isAnswered: _isAnswered.value,
-                                onTapWord: (clean) {
-                                  if (clean.toLowerCase() ==
-                                      (quest.correctAnswer ?? "").toLowerCase()) {
-                                    _submitCorrectAnswer();
-                                  } else {
-                                    _submitIncorrectAnswer();
-                                  }
-                                },
-                              ),
-                            ),
-                            SizedBox(height: 20.h),
-                            Text(
-                              _isAnswered.value
-                                  ? "TARGET ACQUIRED!"
-                                  : (quest.instruction.toUpperCase()),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                color: _isAnswered.value
-                                    ? Colors.greenAccent
-                                    : theme.primaryColor,
-                                fontSize: 12.sp,
-                                letterSpacing: 2,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
+              : RawScrollbar(
+                  controller: _mainScrollController,
+                  thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                  radius: Radius.circular(8.r),
+                  thickness: 4.w,
+                  child: CustomScrollView(
+                    controller: _mainScrollController,
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: 24.h),
-                              SkimmingScanningResult(
-                                quest: quest,
-                                isCorrect: _isCorrect.value == true,
-                                isDark: isDark,
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 16.h),
+                              SkimmingScanningTargetBadge(
+                                item: quest.targetInfo ?? quest.targetItem ?? "",
+                                color: theme.primaryColor,
+                              ),
+                              SizedBox(height: 16.h),
+                              
+                              if (!_isAnswered.value)
+                                SpeedChallengeTimer(
+                                  key: _timerKey,
+                                  durationSeconds: 30,
+                                  primaryColor: theme.primaryColor,
+                                  onTimeUp: _submitIncorrectAnswer,
+                                  showBonusLabel: false,
+                                ),
+                                
+                              SizedBox(height: 16.h),
+
+                              // Scanning Terminal Box
+                              SizedBox(
+                                height: 260.h,
+                                width: double.infinity,
+                                child: SkimmingScanningTerminal(
+                                  text: quest.passage ?? "",
+                                  correct: quest.correctAnswer ?? "",
+                                  color: theme.primaryColor,
+                                  scrollController: _scrollController,
+                                  isAnswered: _isAnswered.value,
+                                  onTapWord: (clean) {
+                                    if (clean.toLowerCase() ==
+                                        (quest.correctAnswer ?? "").toLowerCase()) {
+                                      _submitCorrectAnswer();
+                                    } else {
+                                      _submitIncorrectAnswer();
+                                    }
+                                  },
+                                ),
+                              ),
+                              SizedBox(height: 20.h),
+                              Text(
+                                _isAnswered.value
+                                    ? "TARGET ACQUIRED!"
+                                    : (quest.instruction.toUpperCase()),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  color: _isAnswered.value
+                                      ? Colors.greenAccent
+                                      : theme.primaryColor,
+                                  fontSize: 12.sp,
+                                  letterSpacing: 2,
+                                ),
                               ),
                             ],
-                            SizedBox(height: 50.h),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (_isAnswered.value) ...[
+                                SizedBox(height: 24.h),
+                                SkimmingScanningResult(
+                                  quest: quest,
+                                  isCorrect: _isCorrect.value == true,
+                                  isDark: isDark,
+                                ),
+                              ],
+                              SizedBox(height: 50.h),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
             );
           },
