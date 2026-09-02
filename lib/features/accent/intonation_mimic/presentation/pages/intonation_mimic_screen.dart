@@ -48,14 +48,16 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
 
-  // Pitch ride animation parameters
   final ValueNotifier<double> _cartPosition = ValueNotifier(0.0);
   final ValueNotifier<bool> _isRiding = ValueNotifier(false);
   Timer? _rideTimer;
 
+  late final ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<AccentBloc>().add(
       FetchAccentQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -63,6 +65,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _rideTimer?.cancel();
     _cartPosition.dispose();
     _isRiding.dispose();
@@ -252,7 +255,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
             useScrolling: false,
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
+                : Stack(
+                    children: [
+                      LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
                       final maxWidth = constraints.maxWidth;
@@ -282,13 +287,19 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
 
-                      return CustomScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverToBoxAdapter(
-                            child: Column(
-                              children: [
-                                Expanded(
+                      return RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                children: [
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(horizontal: 24.w),
                                     child: Column(
@@ -403,23 +414,26 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed.value && !_isAnswered.value)
-                                  SpeakToConfirmOverlay(
-                                    expectedText: quest.word ?? "",
-                                    displayText: "Speak the sentence with the correct intonation:\n${quest.word ?? ""}",
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _submitVerbalEvaluation(true),
-                                    onSkipped: () => _submitVerbalEvaluation(false),
-                                    isPositioned: false,
-                                  ),
-                                SizedBox(height: _isAnswered.value ? 180.h : 0),
+                                SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 160.h),
                               ],
                             ),
                           ),
                         ],
+                      ),
                       );
                     },
                   ),
+                      if (_isFirstStagePassed.value && !_isAnswered.value)
+                        SpeakToConfirmOverlay(
+                          expectedText: quest.word ?? "",
+                          displayText: "Speak the sentence with the correct intonation:\n${quest.word ?? ""}",
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitVerbalEvaluation(true),
+                          onSkipped: () => _submitVerbalEvaluation(false),
+                          isPositioned: true,
+                        ),
+                    ],
+                  );
               );
             },
           ),
