@@ -50,9 +50,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
   WritingQuest? _lastQuest;
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
 
+  late final ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -61,6 +64,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _textController.dispose();
     _usedKeywords.dispose();
     _expandedEmojiIndex.dispose();
@@ -341,9 +345,17 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             builder: (context, _) {
               return activeQuest == null
                   ? const SizedBox()
-                  : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
                     SliverPadding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       sliver: SliverToBoxAdapter(
@@ -430,17 +442,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_showSpeakToConfirm.value && !isAnswered)
-                              SpeakToConfirmOverlay(
-                                expectedText: _textController.text.trim(),
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: _onSpeakConfirmed,
-                                onSkipped: () {
-                                  _showSpeakToConfirm.value = false;
-                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
-                                },
-                              )
-                            else if (!isAnswered)
+                            if (!_showSpeakToConfirm.value && !isAnswered)
                               ScaleButton(
                                 onTap: () => _submitAnswer(
                                   minWords,
@@ -479,13 +481,26 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                                   ),
                                 ),
                               ),
-                            SizedBox(height: isAnswered ? 160.h : 60.h),
+                            SizedBox(height: !isAnswered ? 380.h : 160.h),
                           ],
                         ),
                       ),
                     ),
                   ],
-                );
+                ),
+              ),
+              if (_showSpeakToConfirm.value && !isAnswered)
+                SpeakToConfirmOverlay(
+                  expectedText: _textController.text.trim(),
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: _onSpeakConfirmed,
+                  onSkipped: () {
+                    _showSpeakToConfirm.value = false;
+                    context.read<WritingBloc>().add(const SubmitAnswer(false));
+                  },
+                ),
+            ],
+          );
             },
           ),
         );
