@@ -127,7 +127,7 @@ class VerifyEmailStatusText extends StatelessWidget {
               child: Text(
                 context.tr(
                   'auth.check_spam_hint',
-                  fallback: "Didn't get it? Take a quick peek in your spam folder.",
+                  fallback: "Didn't receive it? Please check your spam folder.",
                 ),
                 style: TextStyle(
                   fontFamily: 'Outfit',
