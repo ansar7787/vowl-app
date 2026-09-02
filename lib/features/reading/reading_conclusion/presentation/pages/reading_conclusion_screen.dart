@@ -34,12 +34,14 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -120,75 +122,83 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
               context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            ReadingConclusionInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
-                            ),
-                            SizedBox(height: 32.h),
+              : Stack(
+                  children: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ReadingConclusionInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction: quest.instruction,
+                                  ),
+                                  SizedBox(height: 32.h),
 
-                            ReadingConclusionPassage(
-                              passage: quest.passage ?? "",
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 32.h),
+                                  ReadingConclusionPassage(
+                                    passage: quest.passage ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 32.h),
 
-                            Text(
-                              quest.question?.toUpperCase() ??
-                                  "WHAT IS THE LOGICAL CONCLUSION?",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w900,
-                                color: theme.primaryColor,
-                                letterSpacing: 1.5,
+                                  Text(
+                                    quest.question?.toUpperCase() ??
+                                        "WHAT IS THE LOGICAL CONCLUSION?",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: theme.primaryColor,
+                                      letterSpacing: 1.5,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (_isAnswered.value) ...[
+                                    SizedBox(height: 30.h),
+                                    ReadingConclusionResult(
+                                      quest: quest,
+                                      isCorrect: _isCorrect.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(height: (!_isAnswered.value) ? 380.h : 60.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            SizedBox(height: 24.h),
-
-                            if (!_isAnswered.value)
-                              TypeToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? "",
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true, quest),
-                                onSkipped: () => _submitFinalAnswer(false, quest),
-                                allowSkip: true,
-                                isPositioned: false,
-                              ),
-
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: 30.h),
-                              ReadingConclusionResult(
-                                quest: quest,
-                                isCorrect: _isCorrect.value == true,
-                                isDark: isDark,
-                              ),
-                            ],
-                            SizedBox(height: 60.h),
-                          ],
-                        ),
+                    if (!_isAnswered.value)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest),
+                        onSkipped: () => _submitFinalAnswer(false, quest),
+                        allowSkip: true,
+                        isPositioned: true,
                       ),
-                    ),
                   ],
                 ),
             );
