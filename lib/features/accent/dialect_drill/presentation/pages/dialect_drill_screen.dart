@@ -57,6 +57,20 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
     super.dispose();
   }
 
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+
   @override
   void initState() {
     super.initState();
@@ -95,6 +109,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();

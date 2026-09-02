@@ -99,6 +99,20 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
     super.dispose();
   }
 
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered.value) return;
 
@@ -131,6 +145,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
       // Do NOT submit yet! Wait for Phase 2.
     } else {
       _hapticService.error();

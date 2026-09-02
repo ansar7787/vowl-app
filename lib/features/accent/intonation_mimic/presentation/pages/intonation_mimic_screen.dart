@@ -78,6 +78,20 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     super.dispose();
   }
 
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+
   void _playTts(String text) {
     _hapticService.selection();
     _soundService.playTts(text);
@@ -136,6 +150,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       _hapticService.success();
       _soundService.playCorrect();
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();

@@ -77,8 +77,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.easeOutCubic,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
         );
       }
     });

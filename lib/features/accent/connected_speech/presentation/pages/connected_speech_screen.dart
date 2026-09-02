@@ -73,6 +73,20 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     super.dispose();
   }
 
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+
   void _playTts(String text) {
     _hapticService.selection();
     _soundService.playTts(text);
@@ -87,6 +101,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     if (isCorrect) {
       _hapticService.selection();
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
