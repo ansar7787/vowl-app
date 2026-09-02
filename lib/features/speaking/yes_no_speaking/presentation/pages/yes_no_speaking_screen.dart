@@ -48,6 +48,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   Timer? _autoplayTimer;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -65,6 +66,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -207,8 +209,16 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
+                : Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -251,34 +261,29 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                         ),
                       ),
                       SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              if (_isSnapped.value && !_isAnswered.value)
-                                TypeToConfirmOverlay(
-                                  expectedText: quest.sampleAnswer ?? "",
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(
-                                        true,
-                                        doTheyMatch,
-                                      ),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(
-                                        false,
-                                        doTheyMatch,
-                                      ),
-                                ),
-                            ],
-                          ),
+                        child: SizedBox(
+                          height: (!_isAnswered.value && _isSnapped.value) ? 380.h : 60.h,
                         ),
                       ),
+                    ],
+                  ),
+                      ),
+                      if (_isSnapped.value && !_isAnswered.value)
+                        TypeToConfirmOverlay(
+                          expectedText: quest.sampleAnswer ?? "",
+                          primaryColor: theme.primaryColor,
+                          isPositioned: true,
+                          onConfirmed: () =>
+                              _submitVerbalEvaluation(
+                                true,
+                                doTheyMatch,
+                              ),
+                          onSkipped: () =>
+                              _submitVerbalEvaluation(
+                                false,
+                                doTheyMatch,
+                              ),
+                        ),
                     ],
                   ),
               );
