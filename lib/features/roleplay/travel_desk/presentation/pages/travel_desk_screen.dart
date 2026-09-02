@@ -77,7 +77,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
     _hoveredIndex.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -165,9 +165,16 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
         final options = quest?.options ?? [];
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _hoveredIndex, _isFirstStagePassed]),
-            builder: (context, _) {
-              return RoleplayBaseLayout(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedIndex,
+            _hoveredIndex,
+            _isFirstStagePassed,
+          ]),
+          builder: (context, _) {
+            return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -186,7 +193,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -199,65 +208,108 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
                                               return Padding(
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
-                                                  vertical: isCompact ? 5.h : 10.h,
+                                                  vertical: isCompact
+                                                      ? 5.h
+                                                      : 10.h,
                                                 ),
                                                 child: Column(
                                                   children: [
                                                     TravelDeskInstruction(
-                                                      primaryColor: theme.primaryColor,
-                                                      instruction: quest.instruction,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
                                                     ),
-                                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 10.h
+                                                          : 16.h,
+                                                    ),
                                                     TravelDeskCustomsTerminal(
-                                                      prompt: quest.prompt ?? "",
+                                                      prompt:
+                                                          quest.prompt ?? "",
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                     ),
-                                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 16.h
+                                                          : 24.h,
+                                                    ),
 
                                                     // Biometric Passport Book
                                                     TravelDeskPassportBook(
                                                       options: options,
                                                       color: theme.primaryColor,
-                                                      correctIndex: quest.correctAnswerIndex ?? 0,
+                                                      correctIndex:
+                                                          quest
+                                                              .correctAnswerIndex ??
+                                                          0,
                                                       isDark: isDark,
-                                                      travelDocument: quest.travelDocuments,
-                                                      selectedIndex: _selectedIndex.value,
-                                                      hoveredIndex: _hoveredIndex.value,
-                                                      isAnswered: _isAnswered.value || _isFirstStagePassed.value,
-                                                      isCorrect: _isCorrect.value,
-                                                      rippleAnimation: _rippleController,
-                                                      onSubmitStamp: _submitStamp,
+                                                      travelDocument:
+                                                          quest.travelDocuments,
+                                                      selectedIndex:
+                                                          _selectedIndex.value,
+                                                      hoveredIndex:
+                                                          _hoveredIndex.value,
+                                                      isAnswered:
+                                                          _isAnswered.value ||
+                                                          _isFirstStagePassed
+                                                              .value,
+                                                      isCorrect:
+                                                          _isCorrect.value,
+                                                      rippleAnimation:
+                                                          _rippleController,
+                                                      onSubmitStamp:
+                                                          _submitStamp,
                                                       onHoverChanged: (index) {
-                                                        _hapticService.selection();
-                                                        _hoveredIndex.value = index;
+                                                        _hapticService
+                                                            .selection();
+                                                        _hoveredIndex.value =
+                                                            index;
                                                       },
                                                       onHoverEnded: () {
-                                                        _hoveredIndex.value = null;
+                                                        _hoveredIndex.value =
+                                                            null;
                                                       },
                                                       onDragStarted: () {},
                                                     ),
-                                                    SizedBox(height: isCompact ? 20.h : 32.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 32.h,
+                                                    ),
 
                                                     // Stamp slammed terminal console
-                                                    if (!_isAnswered.value && !_isFirstStagePassed.value)
+                                                    if (!_isAnswered.value &&
+                                                        !_isFirstStagePassed
+                                                            .value)
                                                       TravelDeskStampStation(
-                                                        color: theme.primaryColor,
+                                                        color:
+                                                            theme.primaryColor,
                                                         isDark: isDark,
                                                         onDragStarted: () {
-                                                          _hapticService.selection();
-                                                          _soundService.playHint();
+                                                          _hapticService
+                                                              .selection();
+                                                          _soundService
+                                                              .playHint();
                                                         },
                                                         onDragEnded: () {
-                                                          _hoveredIndex.value = null;
+                                                          _hoveredIndex.value =
+                                                              null;
                                                         },
                                                       ),
 
-                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 40.h,
+                                                    ),
                                                   ],
                                                 ),
                                               );
@@ -269,13 +321,19 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value && _selectedIndex.value != null)
+                            if (_isFirstStagePassed.value &&
+                                !_isAnswered.value &&
+                                _selectedIndex.value != null)
                               SpeakToConfirmOverlay(
                                 expectedText: options[_selectedIndex.value!],
                                 primaryColor: theme.primaryColor,
@@ -292,9 +350,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                         );
                       },
                     ),
-                );
-            },
-          );
+            );
+          },
+        );
       },
     );
   }

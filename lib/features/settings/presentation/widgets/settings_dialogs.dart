@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 
 /// All settings-related dialogs in one place.
 ///
@@ -283,8 +284,6 @@ class SettingsDialogs {
       disableFallback: 'Mute Anyway',
     );
   }
-
-
 
   // ---------------------------------------------------------------------------
   // Password Reset
@@ -973,6 +972,7 @@ class _FinalDeleteDialogContent extends StatefulWidget {
 
 class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
   late final TextEditingController _confirmController;
+  final ValueNotifier<bool> _isDeleting = ValueNotifier(false);
 
   @override
   void initState() {
@@ -982,104 +982,142 @@ class _FinalDeleteDialogContentState extends State<_FinalDeleteDialogContent> {
 
   @override
   void dispose() {
-    _confirmController.dispose(); // ← Now properly disposed on dialog close.
+    _confirmController.dispose();
+    _isDeleting.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    const deleteWord = 'DELETE';
-
-    return ValueListenableBuilder<TextEditingValue>(
-      valueListenable: _confirmController,
-      builder: (context, value, child) {
-        final isConfirmed = value.text.trim() == deleteWord;
-
-        return GlassTile(
-      width: widget.dialogWidth,
-      padding: EdgeInsets.all(32.r),
-      borderRadius: BorderRadius.circular(40.r),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            context.tr(
-              'settings_dialogs.final_warning',
-              fallback: 'Final Warning',
-            ),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.red,
-            ),
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            context.tr(
-              'settings_dialogs.type_delete',
-              fallback: 'Type DELETE to confirm',
-            ),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              color: isDark ? Colors.white60 : Colors.black54,
-            ),
-          ),
-          SizedBox(height: 24.h),
-          TextField(
-            controller: _confirmController,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
-              fontWeight: FontWeight.bold,
-            ),
-            decoration: InputDecoration(
-              hintText: 'DELETE',
-              hintStyle: TextStyle(
-                fontFamily: 'Outfit',
-                color: isDark ? Colors.white10 : Colors.black12,
-              ),
-              filled: true,
-              fillColor: isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.black.withValues(alpha: 0.05),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide.none,
-              ),
-            ),
-          ),
-          SizedBox(height: 32.h),
-          _PrimaryButton(
-            label: context.tr(
-              'settings_dialogs.delete_forever',
-              fallback: 'Delete Forever',
-            ),
-            color: Colors.red,
-            onPressed: isConfirmed
-                ? () {
-                    Navigator.pop(context);
-                    widget.authBloc.add(const AuthDeleteAccountRequested());
-                  }
-                : null,
-          ),
-          SizedBox(height: 12.h),
-          _SecondaryTextButton(
-            label: context.tr(
-              'settings_dialogs.nevermind',
-              fallback: 'Nevermind',
-            ),
-            isDark: isDark,
-            onPressed: () => Navigator.pop(context),
-          ),
-        ],
-      ),
+    final deleteWord = context.tr(
+      'settings_dialogs.delete_keyword',
+      fallback: 'DELETE',
     );
+
+    return BlocListener<AuthBloc, AuthState>(
+      bloc: widget.authBloc,
+      listenWhen: (prev, curr) => prev.message != curr.message,
+      listener: (context, state) {
+        if (_isDeleting.value && state.message != null) {
+          final isSuccess = state.message!.contains('success');
+          // Show the snackbar using the root navigator context so it survives the route replacement
+          final rootContext = Navigator.of(
+            context,
+            rootNavigator: true,
+          ).context;
+          CustomSnackBar.show(
+            context: rootContext,
+            message: context.tr(state.message!),
+            type: isSuccess
+                ? CustomSnackBarType.success
+                : CustomSnackBarType.error,
+          );
+          if (!isSuccess && mounted) {
+            _isDeleting.value = false;
+          }
+        }
       },
+      child: ListenableBuilder(
+        listenable: Listenable.merge([_confirmController, _isDeleting]),
+        builder: (context, child) {
+          final isConfirmed = _confirmController.text.trim() == deleteWord;
+          final isDeleting = _isDeleting.value;
+
+          return LoadingOverlay(
+            isLoading: isDeleting,
+            message: context.tr(
+              'settings_dialogs.deleting_account',
+              fallback: 'Deleting account...',
+            ),
+            child: GlassTile(
+              width: widget.dialogWidth,
+              padding: EdgeInsets.all(32.r),
+              borderRadius: BorderRadius.circular(40.r),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    context.tr(
+                      'settings_dialogs.final_warning',
+                      fallback: 'Final Warning',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.red,
+                    ),
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    context.tr(
+                      'settings_dialogs.type_delete',
+                      fallback: 'Type DELETE to confirm',
+                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white60 : Colors.black54,
+                    ),
+                  ),
+                  SizedBox(height: 24.h),
+                  TextField(
+                    controller: _confirmController,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      fontWeight: FontWeight.bold,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: deleteWord,
+                      hintStyle: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white10 : Colors.black12,
+                      ),
+                      filled: true,
+                      fillColor: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.05),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16.r),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 32.h),
+                  _PrimaryButton(
+                    label: context.tr(
+                      'settings_dialogs.delete_forever',
+                      fallback: 'Delete Forever',
+                    ),
+                    color: Colors.red,
+                    onPressed: isConfirmed && !isDeleting
+                        ? () {
+                            _isDeleting.value = true;
+                            widget.authBloc.add(
+                              const AuthDeleteAccountRequested(),
+                            );
+                          }
+                        : null,
+                  ),
+                  SizedBox(height: 12.h),
+                  _SecondaryTextButton(
+                    label: context.tr(
+                      'settings_dialogs.nevermind',
+                      fallback: 'Nevermind',
+                    ),
+                    isDark: isDark,
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

@@ -50,13 +50,19 @@ class ReadAndAnswerAnchorPoint extends StatelessWidget {
                   color: color.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.help_outline_rounded, color: color, size: 20.r),
+                child: Icon(
+                  Icons.help_outline_rounded,
+                  color: color,
+                  size: 20.r,
+                ),
               ),
             ),
             SizedBox(width: 12.w),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.only(top: 2.h), // aligns text visually with icon
+                padding: EdgeInsets.only(
+                  top: 2.h,
+                ), // aligns text visually with icon
                 child: Text(
                   question,
                   textAlign: TextAlign.left,

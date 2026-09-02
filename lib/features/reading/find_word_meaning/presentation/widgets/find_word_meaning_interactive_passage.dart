@@ -52,7 +52,10 @@ class _FindWordMeaningInteractivePassageState
   void _splitWords() {
     // Split by space, keeping punctuation with the words, or we can just split by space
     // Using RegExp to split by whitespace
-    _words = widget.passage.split(RegExp(r'\s+')).where((s) => s.isNotEmpty).toList();
+    _words = widget.passage
+        .split(RegExp(r'\s+'))
+        .where((s) => s.isNotEmpty)
+        .toList();
   }
 
   void _onWordTap(int index) {
@@ -62,8 +65,14 @@ class _FindWordMeaningInteractivePassageState
 
     final selected = _words[index];
     // Clean punctuation for comparison
-    final cleanSelected = selected.replaceAll(RegExp(r'[^\w\s]'), '').trim().toLowerCase();
-    final cleanTarget = widget.targetWord.replaceAll(RegExp(r'[^\w\s]'), '').trim().toLowerCase();
+    final cleanSelected = selected
+        .replaceAll(RegExp(r'[^\w\s]'), '')
+        .trim()
+        .toLowerCase();
+    final cleanTarget = widget.targetWord
+        .replaceAll(RegExp(r'[^\w\s]'), '')
+        .trim()
+        .toLowerCase();
 
     final isCorrect = cleanSelected == cleanTarget;
 
@@ -99,7 +108,11 @@ class _FindWordMeaningInteractivePassageState
         children: [
           Row(
             children: [
-              Icon(Icons.touch_app_rounded, color: widget.primaryColor, size: 24.sp),
+              Icon(
+                Icons.touch_app_rounded,
+                color: widget.primaryColor,
+                size: 24.sp,
+              ),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
@@ -121,14 +134,18 @@ class _FindWordMeaningInteractivePassageState
             runSpacing: 4.h,
             children: List.generate(_words.length, (index) {
               final isSelected = widget.selectedIndex == index;
-              
+
               Color activeColor = widget.primaryColor;
               if (isSelected && widget.isCorrectSelection != null) {
                 activeColor = widget.isCorrectSelection!
-                    ? (widget.isDark ? const Color(0xFF34D399) : const Color(0xFF10B981))
-                    : (widget.isDark ? const Color(0xFFF87171) : const Color(0xFFEF4444));
+                    ? (widget.isDark
+                          ? const Color(0xFF34D399)
+                          : const Color(0xFF10B981))
+                    : (widget.isDark
+                          ? const Color(0xFFF87171)
+                          : const Color(0xFFEF4444));
               }
-              
+
               final word = _words[index];
 
               return GestureDetector(
@@ -142,9 +159,7 @@ class _FindWordMeaningInteractivePassageState
                         : Colors.transparent,
                     borderRadius: BorderRadius.circular(6.r),
                     border: Border.all(
-                      color: isSelected
-                          ? activeColor
-                          : Colors.transparent,
+                      color: isSelected ? activeColor : Colors.transparent,
                       width: 1.5,
                     ),
                   ),
@@ -153,10 +168,14 @@ class _FindWordMeaningInteractivePassageState
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
-                      fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                      fontWeight: isSelected
+                          ? FontWeight.w600
+                          : FontWeight.w400,
                       color: isSelected
                           ? activeColor
-                          : (widget.isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B)),
+                          : (widget.isDark
+                                ? Colors.white.withValues(alpha: 0.9)
+                                : const Color(0xFF1E293B)),
                       height: 1.4,
                     ),
                   ),

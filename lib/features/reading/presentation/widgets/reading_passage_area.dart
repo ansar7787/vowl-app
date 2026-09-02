@@ -64,7 +64,9 @@ class ReadingPassageArea extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 17.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.9)
+                    : const Color(0xFF1E293B),
                 height: 1.65,
                 letterSpacing: 0.2,
               ),

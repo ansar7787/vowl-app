@@ -32,53 +32,53 @@ class LeaderboardPodium extends StatelessWidget {
         final maxPodiumHeight = (MediaQuery.of(context).size.height * 0.40)
             .clamp(220.0, 320.0);
 
-              return Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  // 2nd Place (left)
-                  if (top3.length > 1)
-                    Expanded(
-                      child: _PodiumSlot(
-                        user: top3[1],
-                        rank: 2,
-                        maxHeight: maxPodiumHeight,
-                        isKids: isKids,
-                        currentUserId: currentUserId,
-                      ),
-                    )
-                  else
-                    const Expanded(child: SizedBox.shrink()),
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            // 2nd Place (left)
+            if (top3.length > 1)
+              Expanded(
+                child: _PodiumSlot(
+                  user: top3[1],
+                  rank: 2,
+                  maxHeight: maxPodiumHeight,
+                  isKids: isKids,
+                  currentUserId: currentUserId,
+                ),
+              )
+            else
+              const Expanded(child: SizedBox.shrink()),
 
-                  SizedBox(width: 8.w),
+            SizedBox(width: 8.w),
 
-                  // 1st Place (centre)
-                  Expanded(
-                    child: _PodiumSlot(
-                      user: top3[0],
-                      rank: 1,
-                      maxHeight: maxPodiumHeight,
-                      isKids: isKids,
-                      currentUserId: currentUserId,
-                    ),
-                  ),
+            // 1st Place (centre)
+            Expanded(
+              child: _PodiumSlot(
+                user: top3[0],
+                rank: 1,
+                maxHeight: maxPodiumHeight,
+                isKids: isKids,
+                currentUserId: currentUserId,
+              ),
+            ),
 
-                  SizedBox(width: 8.w),
+            SizedBox(width: 8.w),
 
-                  // 3rd Place (right)
-                  if (top3.length > 2)
-                    Expanded(
-                      child: _PodiumSlot(
-                        user: top3[2],
-                        rank: 3,
-                        maxHeight: maxPodiumHeight,
-                        isKids: isKids,
-                        currentUserId: currentUserId,
-                      ),
-                    )
-                  else
-                    const Expanded(child: SizedBox.shrink()),
-                ],
-              );
+            // 3rd Place (right)
+            if (top3.length > 2)
+              Expanded(
+                child: _PodiumSlot(
+                  user: top3[2],
+                  rank: 3,
+                  maxHeight: maxPodiumHeight,
+                  isKids: isKids,
+                  currentUserId: currentUserId,
+                ),
+              )
+            else
+              const Expanded(child: SizedBox.shrink()),
+          ],
+        );
       },
     );
   }
@@ -124,232 +124,229 @@ class _PodiumSlot extends StatelessWidget {
     final delay = rank == 3 ? 0 : (rank == 2 ? 200 : 400);
 
     return Semantics(
-      // FIX (HIGH-5): Screen readers now announce the rank, player name,
-      // levels cleared, and XP for each podium position.
-      // FIX (HIGH-2): "Player" fallback localised via context.tr().
-      label:
-          'Rank $rank: ${user.displayName ?? context.tr("leaderboard.player", fallback: 'Player')}. '
-          '$levelsCleared levels cleared. $score $scoreLabel.',
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          // Crown for 1st place — extracted to avoid unnecessary rebuilds
-          if (isFirst) ...[const _AnimatedCrown(), SizedBox(height: 2.h)],
-
-          // Avatar with glow ring + rank badge
-          Stack(
-            alignment: Alignment.center,
+          // FIX (HIGH-5): Screen readers now announce the rank, player name,
+          // levels cleared, and XP for each podium position.
+          // FIX (HIGH-2): "Player" fallback localised via context.tr().
+          label:
+              'Rank $rank: ${user.displayName ?? context.tr("leaderboard.player", fallback: 'Player')}. '
+              '$levelsCleared levels cleared. $score $scoreLabel.',
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              // Glow ring
-              Container(
-                    width: avatarSize + 12,
-                    height: avatarSize + 12,
+              // Crown for 1st place — extracted to avoid unnecessary rebuilds
+              if (isFirst) ...[const _AnimatedCrown(), SizedBox(height: 2.h)],
+
+              // Avatar with glow ring + rank badge
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Glow ring
+                  Container(
+                        width: avatarSize + 12,
+                        height: avatarSize + 12,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: glowColor.withValues(
+                              alpha: isMe ? 0.7 : 0.4,
+                            ),
+                            width: isMe ? 3.0 : 2.5,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: glowColor.withValues(
+                                alpha: isMe ? 0.4 : 0.25,
+                              ),
+                              blurRadius: isMe ? 22 : 16,
+                              spreadRadius: isMe ? 4 : 2,
+                            ),
+                          ],
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scaleXY(
+                        begin: 1.0,
+                        end: isFirst ? 1.08 : 1.0,
+                        duration: 1500.ms,
+                      )
+                      .fade(begin: 0.8, end: 1.0),
+                  // Photo
+                  Container(
+                    width: avatarSize,
+                    height: avatarSize,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: glowColor.withValues(alpha: isMe ? 0.7 : 0.4),
-                        width: isMe ? 3.0 : 2.5,
+                        color: colors[0].withValues(alpha: 0.7),
+                        width: isFirst ? 3 : 2,
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: glowColor.withValues(alpha: isMe ? 0.4 : 0.25),
-                          blurRadius: isMe ? 22 : 16,
-                          spreadRadius: isMe ? 4 : 2,
-                        ),
-                      ],
                     ),
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scaleXY(
-                    begin: 1.0,
-                    end: isFirst ? 1.08 : 1.0,
-                    duration: 1500.ms,
-                  )
-                  .fade(begin: 0.8, end: 1.0),
-              // Photo
+                    child: Padding(
+                      padding: EdgeInsets.all(3.r),
+                      child: ClipOval(
+                        child: ShimmerImage(
+                          imageUrl: user.photoUrl ?? '',
+                          width: avatarSize - 8,
+                          height: avatarSize - 8,
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Rank badge
+                  Positioned(
+                    bottom: 0,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 3.h,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: colors),
+                        borderRadius: BorderRadius.circular(10.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: colors[0].withValues(alpha: 0.4),
+                            blurRadius: 6,
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        '#$rank',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  // "YOU" badge — only visible when current user is on podium
+                  if (isMe)
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 6.w,
+                          vertical: 2.h,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: colors),
+                          borderRadius: BorderRadius.circular(8.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: colors[0].withValues(alpha: 0.5),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                        child: Text(
+                          context.tr('leaderboard.you', fallback: 'You'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 7.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+
+              SizedBox(height: 6.h),
+
+              // Podium column
               Container(
-                width: avatarSize,
-                height: avatarSize,
+                width: double.infinity,
+                height: podiumHeight,
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      colors[0].withValues(alpha: 0.25),
+                      colors[1].withValues(alpha: 0.08),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(20.r),
+                  ),
                   border: Border.all(
-                    color: colors[0].withValues(alpha: 0.7),
-                    width: isFirst ? 3 : 2,
+                    color: colors[0].withValues(alpha: 0.2),
+                    width: 1,
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(3.r),
-                  child: ClipOval(
-                    child: ShimmerImage(
-                      imageUrl: user.photoUrl ?? '',
-                      width: avatarSize - 8,
-                      height: avatarSize - 8,
-                    ),
-                  ),
-                ),
-              ),
-              // Rank badge
-              Positioned(
-                bottom: 0,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 3.h,
-                  ),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: colors),
-                    borderRadius: BorderRadius.circular(10.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: colors[0].withValues(alpha: 0.4),
-                        blurRadius: 6,
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            child: AutoSizeText(
+                              (user.displayName ?? 'Player').split(' ').first,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: isFirst ? 11.sp : 9.sp,
+                                fontWeight: FontWeight.w900,
+                                color: MeshGradientBackground.getContrastColor(
+                                  context,
+                                ),
+                                height: 1.1,
+                              ),
+                              maxLines: 1,
+                              minFontSize: 6,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          if (user.isPremium)
+                            Padding(
+                              padding: EdgeInsets.only(left: 4.w),
+                              child: Icon(
+                                Icons.verified_rounded,
+                                color: const Color(0xFFF59E0B),
+                                size: isFirst ? 12.r : 10.r,
+                              ),
+                            ),
+                        ],
                       ),
+                      SizedBox(height: 2.h),
+                      // Primary score — single metric, no clutter
+                      AutoSizeText(
+                        '$score $scoreLabel',
+                        maxLines: 1,
+                        minFontSize: 5,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isFirst ? 9.sp : 7.sp,
+                          fontWeight: FontWeight.w800,
+                          color: colors[0].withValues(alpha: 0.9),
+                          height: 1.1,
+                        ),
+                      ),
+                      if (user.previousRank != null) ...[
+                        SizedBox(height: 2.h),
+                        _buildRankChangeIndicator(user.previousRank!, rank),
+                      ],
                     ],
                   ),
-                  child: Text(
-                    '#$rank',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
               ),
-              // "YOU" badge — only visible when current user is on podium
-              if (isMe)
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.w,
-                      vertical: 2.h,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: colors,
-                      ),
-                      borderRadius: BorderRadius.circular(8.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: colors[0].withValues(alpha: 0.5),
-                          blurRadius: 6,
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      context.tr('leaderboard.you', fallback: 'You'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 7.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 0.5,
-                      ),
-                    ),
-                  ),
-                ),
             ],
           ),
-
-          SizedBox(height: 6.h),
-
-          // Podium column
-          Container(
-            width: double.infinity,
-            height: podiumHeight,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  colors[0].withValues(alpha: 0.25),
-                  colors[1].withValues(alpha: 0.08),
-                ],
-              ),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
-              border: Border.all(
-                color: colors[0].withValues(alpha: 0.2),
-                width: 1,
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: AutoSizeText(
-                          (user.displayName ?? 'Player')
-                              .split(' ')
-                              .first,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: isFirst ? 11.sp : 9.sp,
-                            fontWeight: FontWeight.w900,
-                            color: MeshGradientBackground.getContrastColor(
-                              context,
-                            ),
-                            height: 1.1,
-                          ),
-                          maxLines: 1,
-                          minFontSize: 6,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      if (user.isPremium)
-                        Padding(
-                          padding: EdgeInsets.only(left: 4.w),
-                          child: Icon(
-                            Icons.verified_rounded,
-                            color: const Color(0xFFF59E0B),
-                            size: isFirst ? 12.r : 10.r,
-                          ),
-                        ),
-                    ],
-                  ),
-                  SizedBox(height: 2.h),
-                  // Primary score — single metric, no clutter
-                  AutoSizeText(
-                    '$score $scoreLabel',
-                    maxLines: 1,
-                    minFontSize: 5,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isFirst ? 9.sp : 7.sp,
-                      fontWeight: FontWeight.w800,
-                      color: colors[0].withValues(alpha: 0.9),
-                      height: 1.1,
-                    ),
-                  ),
-                  if (user.previousRank != null) ...[
-                    SizedBox(height: 2.h),
-                    _buildRankChangeIndicator(user.previousRank!, rank),
-                  ],
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    )
+        )
         .animate(delay: delay.ms)
         .fadeIn(duration: 400.ms, curve: Curves.easeOut)
         .blurXY(begin: 8, end: 0, duration: 400.ms, curve: Curves.easeOut)
-        .slideY(
-          begin: 0.4,
-          end: 0,
-          curve: Curves.easeOutBack,
-          duration: 700.ms,
-        )
+        .slideY(begin: 0.4, end: 0, curve: Curves.easeOutBack, duration: 700.ms)
         .scaleXY(
           begin: 0.8,
           end: 1.0,
@@ -369,7 +366,11 @@ class _PodiumSlot extends StatelessWidget {
       return Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.arrow_upward_rounded, color: const Color(0xFF10B981), size: 8.r),
+          Icon(
+            Icons.arrow_upward_rounded,
+            color: const Color(0xFF10B981),
+            size: 8.r,
+          ),
           Text(
             '$diff',
             style: TextStyle(
@@ -385,7 +386,11 @@ class _PodiumSlot extends StatelessWidget {
       return Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.arrow_downward_rounded, color: const Color(0xFFEF4444), size: 8.r),
+          Icon(
+            Icons.arrow_downward_rounded,
+            color: const Color(0xFFEF4444),
+            size: 8.r,
+          ),
           Text(
             '${diff.abs()}',
             style: TextStyle(

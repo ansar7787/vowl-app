@@ -42,7 +42,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   late AnimationController _pulseController;
 
   int _lastProcessedIndex = -1;
-  final ValueNotifier<double> _rotation = ValueNotifier(0.0); // Slider score level (0.0 to 1.0)
+  final ValueNotifier<double> _rotation = ValueNotifier(
+    0.0,
+  ); // Slider score level (0.0 to 1.0)
   final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
@@ -75,7 +77,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -184,9 +186,15 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
         final double empathyTarget = quest?.empathyScore ?? 0.75;
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _rotation, _isFirstStagePassed]),
-            builder: (context, _) {
-              return RoleplayBaseLayout(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _rotation,
+            _isFirstStagePassed,
+          ]),
+          builder: (context, _) {
+            return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -205,7 +213,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -218,93 +228,159 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
                                               return Padding(
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
-                                                  vertical: isCompact ? 5.h : 10.h,
+                                                  vertical: isCompact
+                                                      ? 5.h
+                                                      : 10.h,
                                                 ),
                                                 child: Column(
                                                   children: [
                                                     ConflictResolverInstruction(
-                                                      primaryColor: theme.primaryColor,
-                                                      instruction: quest.instruction,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
                                                     ),
-                                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 10.h
+                                                          : 16.h,
+                                                    ),
                                                     ConflictResolverConflictCard(
                                                       scene: quest.scene ?? "",
-                                                      escalationLevel: quest.escalationLevel ?? 5,
+                                                      escalationLevel:
+                                                          quest
+                                                              .escalationLevel ??
+                                                          5,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       rotation: _rotation.value,
                                                     ),
-                                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 16.h
+                                                          : 24.h,
+                                                    ),
 
                                                     // Circular audio dials
                                                     ConflictResolverDialConsole(
-                                                      targetValue: empathyTarget,
+                                                      targetValue:
+                                                          empathyTarget,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       rotation: _rotation.value,
-                                                      waveAnimation: _waveController,
-                                                      onDialDragged: _onDialDragged,
+                                                      waveAnimation:
+                                                          _waveController,
+                                                      onDialDragged:
+                                                          _onDialDragged,
                                                     ),
-                                                    SizedBox(height: isCompact ? 20.h : 28.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 28.h,
+                                                    ),
 
                                                     // Submit control button
                                                     if (!_isAnswered.value)
                                                       ScaleButton(
-                                                        onTap: () => _submitAnswer(empathyTarget),
+                                                        onTap: () =>
+                                                            _submitAnswer(
+                                                              empathyTarget,
+                                                            ),
                                                         child: Container(
-                                                          padding: EdgeInsets.symmetric(
-                                                            horizontal: 48.w,
-                                                            vertical: isCompact ? 10.h : 14.h,
-                                                          ),
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    48.w,
+                                                                vertical:
+                                                                    isCompact
+                                                                    ? 10.h
+                                                                    : 14.h,
+                                                              ),
                                                           decoration: BoxDecoration(
-                                                            borderRadius: BorderRadius.circular(30.r),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  30.r,
+                                                                ),
                                                             gradient: LinearGradient(
                                                               colors: [
-                                                                theme.primaryColor,
-                                                                theme.primaryColor.withValues(
-                                                                  alpha: 0.8,
-                                                                ),
+                                                                theme
+                                                                    .primaryColor,
+                                                                theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.8,
+                                                                    ),
                                                               ],
                                                             ),
                                                             boxShadow: [
                                                               BoxShadow(
-                                                                color: theme.primaryColor.withValues(
-                                                                  alpha: 0.35,
-                                                                ),
-                                                                blurRadius: isCompact ? 10 : 15,
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.35,
+                                                                    ),
+                                                                blurRadius:
+                                                                    isCompact
+                                                                    ? 10
+                                                                    : 15,
                                                               ),
                                                             ],
                                                           ),
                                                           child: Row(
-                                                            mainAxisSize: MainAxisSize.min,
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: [
                                                               Icon(
-                                                                Icons.security_rounded,
-                                                                color: Colors.white,
-                                                                size: isCompact ? 16.r : 18.r,
+                                                                Icons
+                                                                    .security_rounded,
+                                                                color: Colors
+                                                                    .white,
+                                                                size: isCompact
+                                                                    ? 16.r
+                                                                    : 18.r,
                                                               ),
-                                                              SizedBox(width: 8.w),
+                                                              SizedBox(
+                                                                width: 8.w,
+                                                              ),
                                                               Text(
                                                                 "LOCK HARMONIC FREQUENCY",
                                                                 style: TextStyle(
-                                                                  fontFamily: 'Outfit',
-                                                                  fontSize: isCompact ? 10.sp : 12.sp,
-                                                                  fontWeight: FontWeight.bold,
-                                                                  color: Colors.white,
-                                                                  letterSpacing: 1.5,
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      isCompact
+                                                                      ? 10.sp
+                                                                      : 12.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      1.5,
                                                                 ),
                                                               ),
                                                             ],
                                                           ),
                                                         ),
-                                                      ).animate().fadeIn(duration: 300.ms),
+                                                      ).animate().fadeIn(
+                                                        duration: 300.ms,
+                                                      ),
 
                                                     // Post-answer review cards
-                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 40.h,
+                                                    ),
                                                   ],
                                                 ),
                                               );
@@ -316,7 +392,11 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
@@ -324,7 +404,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                             ),
                             if (_isFirstStagePassed.value && !_isAnswered.value)
                               SpeakToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? "De-escalating conflict",
+                                expectedText:
+                                    quest.correctAnswer ??
+                                    "De-escalating conflict",
                                 primaryColor: theme.primaryColor,
                                 isPositioned: true,
                                 onConfirmed: () {
@@ -339,9 +421,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                         );
                       },
                     ),
-                );
-            },
-          );
+            );
+          },
+        );
       },
     );
   }

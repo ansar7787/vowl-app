@@ -11,7 +11,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
   final String mascot;
   final String? childName;
   final bool isDark;
-  
+
   const KidsZoneHomeHeader({
     super.key,
     required this.mascot,
@@ -37,7 +37,10 @@ class KidsZoneHomeHeader extends StatelessWidget {
 
     final displayName = childName != null && childName!.isNotEmpty
         ? childName!
-        : context.tr('kids_zone.little_explorer', fallback: 'Little Explorer 🌟');
+        : context.tr(
+            'kids_zone.little_explorer',
+            fallback: 'Little Explorer 🌟',
+          );
 
     return SliverToBoxAdapter(
       child: Padding(
@@ -104,49 +107,59 @@ class KidsZoneHomeHeader extends StatelessWidget {
       children: [
         ScaleButton(
           onTap: () => context.push(AppRouter.kidsMascotSelectionRoute),
-          child: VowlMascot(
-            size: 55.r,
-            mascotId: mascot,
-            isKidsMode: true,
-            state: VowlMascotState.happy,
-          ).animate().slideX(begin: 1, end: 0, duration: 800.ms, curve: Curves.easeOutBack),
+          child:
+              VowlMascot(
+                size: 55.r,
+                mascotId: mascot,
+                isKidsMode: true,
+                state: VowlMascotState.happy,
+              ).animate().slideX(
+                begin: 1,
+                end: 0,
+                duration: 800.ms,
+                curve: Curves.easeOutBack,
+              ),
         ),
         Positioned(
           left: -40.w,
           top: -5.h,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12.r),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  blurRadius: 5,
-                  offset: const Offset(0, 2),
-                ),
-              ],
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  "Hi $shortName!",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
-                  ),
-                ),
-              ],
-            ),
-          )
-          .animate(delay: 600.ms)
-          .fadeIn(duration: 400.ms)
-          .scale(curve: Curves.easeOutBack)
-          .then(delay: 3.seconds)
-          .fadeOut(duration: 400.ms),
+          child:
+              Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 4.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.1),
+                          blurRadius: 5,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Hi $shortName!",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate(delay: 600.ms)
+                  .fadeIn(duration: 400.ms)
+                  .scale(curve: Curves.easeOutBack)
+                  .then(delay: 3.seconds)
+                  .fadeOut(duration: 400.ms),
         ),
       ],
     );

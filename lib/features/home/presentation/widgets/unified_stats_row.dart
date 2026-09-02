@@ -93,62 +93,64 @@ class UnifiedStatsRow extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Semantics(
-      button: true,
-      label: '$label: $value',
-      child: ScaleButton(
-        onTap: () => context.push(route),
-        child: GlassTile(
-          borderRadius: BorderRadius.circular(20.r),
-          padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
-          child: ExcludeSemantics(
-            child: SizedBox(
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(7.r),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(icon, color: color, size: 16.r),
+          button: true,
+          label: '$label: $value',
+          child: ScaleButton(
+            onTap: () => context.push(route),
+            child: GlassTile(
+              borderRadius: BorderRadius.circular(20.r),
+              padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
+              child: ExcludeSemantics(
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(7.r),
+                        decoration: BoxDecoration(
+                          color: color.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(icon, color: color, size: 16.r),
+                      ),
+                      SizedBox(height: 6.h),
+                      AutoSizeText(
+                        value,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                          height: 1.1,
+                        ),
+                        maxLines: 1,
+                        minFontSize: 10,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(height: 2.h),
+                      AutoSizeText(
+                        label,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 8.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark ? Colors.white38 : Colors.black45,
+                          letterSpacing: 0.8,
+                        ),
+                        maxLines: 1,
+                        minFontSize: 5,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 6.h),
-                  AutoSizeText(
-                    value,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      height: 1.1,
-                    ),
-                    maxLines: 1,
-                    minFontSize: 10,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(height: 2.h),
-                  AutoSizeText(
-                    label,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 8.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isDark ? Colors.white38 : Colors.black45,
-                      letterSpacing: 0.8,
-                    ),
-                    maxLines: 1,
-                    minFontSize: 5,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
-    )
+        )
         .animate()
         .fadeIn(delay: delay.ms, duration: 400.ms)
         .slideY(begin: 0.12, end: 0);

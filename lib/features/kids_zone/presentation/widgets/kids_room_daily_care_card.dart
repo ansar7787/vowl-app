@@ -12,7 +12,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
   final bool isClaimed;
   final VoidCallback onClaim;
 
-  const KidsRoomDailyCareCard({ 
+  const KidsRoomDailyCareCard({
     super.key,
     required this.user,
     required this.hasPlayed,
@@ -91,7 +91,10 @@ class KidsRoomDailyCareCard extends StatelessWidget {
                 SizedBox(height: 12.h),
                 Center(
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 8.h,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.green.shade500.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(16.r),

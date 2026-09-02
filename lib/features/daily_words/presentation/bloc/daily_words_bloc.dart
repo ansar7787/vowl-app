@@ -208,7 +208,9 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       int startingIndex = 0;
       for (int i = 0; i < wordSet.words.length; i++) {
         final id = wordSet.words[i].id;
-        final alreadyLearned = _service.wordBankEntries.any((wp) => wp.wordId == id);
+        final alreadyLearned = _service.wordBankEntries.any(
+          (wp) => wp.wordId == id,
+        );
         if (alreadyLearned) {
           startingIndex = i + 1;
         } else {

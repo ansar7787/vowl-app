@@ -41,6 +41,17 @@ class AuthErrorHandler {
       'auth.error.account_exists_with_different_credential';
   static const String _kGeneric = 'auth.error.generic';
 
+  // Client-side validation keys (not Firebase errors — used by cubits)
+  static const String _kEmailEmpty = 'auth.error.email_empty';
+  static const String _kEmailInvalid = 'auth.error.email_invalid';
+  static const String _kPasswordEmpty = 'auth.error.password_empty';
+  static const String _kPasswordTooShort = 'auth.error.password_too_short';
+  static const String _kNameEmpty = 'auth.error.name_empty';
+  static const String _kNameTooShort = 'auth.error.name_too_short';
+  static const String _kNetworkUnreachable = 'auth.error.network_unreachable';
+  static const String _kRateLimited = 'auth.error.rate_limited';
+  static const String _kTooManyAttempts = 'auth.error.too_many_attempts';
+
   // ── Public API ────────────────────────────────────────────────────────────
 
   /// Returns a localisation key for the given authentication error.
@@ -140,6 +151,18 @@ class AuthErrorHandler {
         clean.contains('account_exists_with_different_credential')) {
       return _kAccountExistsWithDifferentCredential;
     }
+
+    // ── Client-side validation codes (emitted by cubits, not Firebase) ──
+
+    if (clean.contains('email-empty')) return _kEmailEmpty;
+    if (clean.contains('email-invalid')) return _kEmailInvalid;
+    if (clean.contains('password-empty')) return _kPasswordEmpty;
+    if (clean.contains('password-too-short')) return _kPasswordTooShort;
+    if (clean.contains('name-empty')) return _kNameEmpty;
+    if (clean.contains('name-too-short')) return _kNameTooShort;
+    if (clean.contains('network-unreachable')) return _kNetworkUnreachable;
+    if (clean.contains('rate-limited')) return _kRateLimited;
+    if (clean.contains('too-many-attempts')) return _kTooManyAttempts;
 
     return _kGeneric;
   }

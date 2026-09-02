@@ -109,26 +109,36 @@ class ConflictResolverConflictCard extends StatelessWidget {
                       child: Row(
                         children: List.generate(10, (index) {
                           final isActive = index < escalationLevel;
-                          final levelColor = Color.lerp(
-                            Colors.greenAccent, 
-                            Colors.redAccent, 
-                            index / 9
-                          ) ?? color;
+                          final levelColor =
+                              Color.lerp(
+                                Colors.greenAccent,
+                                Colors.redAccent,
+                                index / 9,
+                              ) ??
+                              color;
 
                           return Expanded(
                             child: Container(
                               height: 6.h,
                               margin: EdgeInsets.symmetric(horizontal: 2.w),
                               decoration: BoxDecoration(
-                                color: isActive ? levelColor : (isDark ? Colors.white10 : Colors.black12),
+                                color: isActive
+                                    ? levelColor
+                                    : (isDark
+                                          ? Colors.white10
+                                          : Colors.black12),
                                 borderRadius: BorderRadius.circular(4.r),
-                                boxShadow: isActive ? [
-                                  BoxShadow(
-                                    color: levelColor.withValues(alpha: 0.4),
-                                    blurRadius: 4,
-                                    spreadRadius: 0,
-                                  )
-                                ] : null,
+                                boxShadow: isActive
+                                    ? [
+                                        BoxShadow(
+                                          color: levelColor.withValues(
+                                            alpha: 0.4,
+                                          ),
+                                          blurRadius: 4,
+                                          spreadRadius: 0,
+                                        ),
+                                      ]
+                                    : null,
                               ),
                             ),
                           );

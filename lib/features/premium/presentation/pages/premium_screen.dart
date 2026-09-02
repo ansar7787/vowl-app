@@ -74,7 +74,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   List<SubscriptionPlan> _activePlansVal = _fallbackPlans;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
-  
+
   void _updateState() {
     _stateHash.value++;
   }
@@ -125,13 +125,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
     di.sl<HapticService>().error();
     if (mounted) {
       _isProcessingVal = false;
-        _paymentCompletedVal = true;
-        _paymentSuccessVal = false;
-        _errorMessageVal = context.tr(
-          'premium.error_timeout',
-          fallback: 'Request timed out',
-        );
-        _updateState();
+      _paymentCompletedVal = true;
+      _paymentSuccessVal = false;
+      _errorMessageVal = context.tr(
+        'premium.error_timeout',
+        fallback: 'Request timed out',
+      );
+      _updateState();
     }
   }
 
@@ -158,11 +158,11 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _confettiController.play();
 
           _isProcessingVal = false;
-            _paymentCompletedVal = true;
-            _paymentSuccessVal = true;
-            _transactionIdVal = response.paymentId;
-            _errorMessageVal = null;
-            _updateState();
+          _paymentCompletedVal = true;
+          _paymentSuccessVal = true;
+          _transactionIdVal = response.paymentId;
+          _errorMessageVal = null;
+          _updateState();
         }
       }
     } catch (e, stackTrace) {
@@ -180,13 +180,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
       if (mounted) {
         di.sl<HapticService>().error();
         _isProcessingVal = false;
-          _paymentCompletedVal = true;
-          _paymentSuccessVal = false;
-          _errorMessageVal = context.tr(
-            'premium.error_upgrade_failed',
-            fallback: 'Upgrade Failed',
-          );
-          _updateState();
+        _paymentCompletedVal = true;
+        _paymentSuccessVal = false;
+        _errorMessageVal = context.tr(
+          'premium.error_upgrade_failed',
+          fallback: 'Upgrade Failed',
+        );
+        _updateState();
       }
     }
   }
@@ -196,15 +196,15 @@ class _PremiumScreenState extends State<PremiumScreen> {
     di.sl<HapticService>().error();
     if (mounted) {
       _isProcessingVal = false;
-        _paymentCompletedVal = true;
-        _paymentSuccessVal = false;
-        // Razorpay's `response.message` is already a user-safe,
-        // gateway-provided description (not a raw exception), so it is
-        // fine to surface directly, with a localized fallback.
-        _errorMessageVal =
-            response.message ??
-            context.tr('premium.error_generic', fallback: 'An error occurred');
-        _updateState();
+      _paymentCompletedVal = true;
+      _paymentSuccessVal = false;
+      // Razorpay's `response.message` is already a user-safe,
+      // gateway-provided description (not a raw exception), so it is
+      // fine to surface directly, with a localized fallback.
+      _errorMessageVal =
+          response.message ??
+          context.tr('premium.error_generic', fallback: 'An error occurred');
+      _updateState();
     }
   }
 
@@ -281,84 +281,90 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 ),
               ),
               LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                slivers: [
-                  SliverAppBar(
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                    pinned: true,
-                    centerTitle: false,
-                    leading: IconButton(
-                      icon: Icon(
-                        Icons.arrow_back_ios_new_rounded,
-                        color: isDark ? Colors.white : Colors.black,
-                      ),
-                      onPressed: () {
-                        if (context.canPop()) {
-                          context.pop();
-                        } else {
-                          context.go('/home');
-                        }
-                      },
-                    ),
-                    actions: [
-                      Padding(
-                        padding: EdgeInsets.only(right: 16.w),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12.w,
-                            vertical: 6.h,
+                builder: (context, constraints) {
+                  return CustomScrollView(
+                    slivers: [
+                      SliverAppBar(
+                        backgroundColor: Colors.transparent,
+                        elevation: 0,
+                        pinned: true,
+                        centerTitle: false,
+                        leading: IconButton(
+                          icon: Icon(
+                            Icons.arrow_back_ios_new_rounded,
+                            color: isDark ? Colors.white : Colors.black,
                           ),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                const Color(0xFF6366F1).withValues(alpha: 0.2),
-                                const Color(0xFF8B5CF6).withValues(alpha: 0.1),
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(20.r),
-                            border: Border.all(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.3),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.workspace_premium_rounded,
-                                color: const Color(0xFF6366F1),
-                                size: 14.r,
-                              ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                context.tr(
-                                  'premium.verified_pro_badge',
-                                  fallback: 'Verified Pro',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  color: isDark ? Colors.white : Colors.black,
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
+                          onPressed: () {
+                            if (context.canPop()) {
+                              context.pop();
+                            } else {
+                              context.go('/home');
+                            }
+                          },
                         ),
+                        actions: [
+                          Padding(
+                            padding: EdgeInsets.only(right: 16.w),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12.w,
+                                vertical: 6.h,
+                              ),
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    const Color(
+                                      0xFF6366F1,
+                                    ).withValues(alpha: 0.2),
+                                    const Color(
+                                      0xFF8B5CF6,
+                                    ).withValues(alpha: 0.1),
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(20.r),
+                                border: Border.all(
+                                  color: const Color(
+                                    0xFF6366F1,
+                                  ).withValues(alpha: 0.3),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.workspace_premium_rounded,
+                                    color: const Color(0xFF6366F1),
+                                    size: 14.r,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    context.tr(
+                                      'premium.verified_pro_badge',
+                                      fallback: 'Verified Pro',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: isDark
+                                          ? Colors.white
+                                          : Colors.black,
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: _buildScrollableBody(),
                       ),
                     ],
-                  ),
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: _buildScrollableBody(),
-                  ),
-                ],
-              );
-                  },
-                ),
+                  );
+                },
+              ),
               if (_isProcessingVal) _buildProcessingOverlay(),
               if (_paymentCompletedVal) _buildCompletedOverlay(),
               Align(
@@ -502,10 +508,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     errorMessage: _errorMessageVal,
                     onRetry: () {
                       _paymentCompletedVal = false;
-                        _paymentSuccessVal = null;
-                        _errorMessageVal = null;
-                        _transactionIdVal = null;
-                        _updateState();
+                      _paymentSuccessVal = null;
+                      _errorMessageVal = null;
+                      _transactionIdVal = null;
+                      _updateState();
                     },
                     onClose: () => context.pop(),
                   ),
@@ -645,5 +651,3 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 }
-
-

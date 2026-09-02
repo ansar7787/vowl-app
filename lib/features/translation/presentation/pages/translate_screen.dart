@@ -51,8 +51,8 @@ class _TranslateScreenState extends State<TranslateScreen> {
       if (!mounted) return;
       final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
       context.read<TranslationBloc>().add(
-            TranslationTextChanged(text, isPremium: isPremium),
-          );
+        TranslationTextChanged(text, isPremium: isPremium),
+      );
     });
   }
 
@@ -110,39 +110,41 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       physics: const BouncingScrollPhysics(),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        SizedBox(height: 16.h),
-                        _buildLanguageSelector(context, isDark, isPremium),
-                        SizedBox(height: 16.h),
-                        _buildInputArea(context, isDark, isPremium),
-                        SizedBox(height: 16.h),
-                        BlocBuilder<TranslationBloc, TranslationState>(
-                          builder: (context, state) {
-                            if (!isPremium && state.isLimitReached) {
-                              return PremiumLockCard(
-                                onPremiumTap: () => context.push('/premium'),
-                                onTap: () {
-                                  di.sl<AdService>().showRewardedAd(
-                                    context: context,
-                                    isPremium: false,
-                                    onUserEarnedReward: (_) {
-                                      context.read<TranslationBloc>().add(TranslationAdWatched());
-                                    },
-                                    onDismissed: () {},
-                                  );
-                                },
-                              );
-                            }
-                            return _buildOutputArea(context, isDark);
-                          },
-                        ),
-                        SizedBox(height: 80.h),
-                      ],
+                        children: [
+                          SizedBox(height: 16.h),
+                          _buildLanguageSelector(context, isDark, isPremium),
+                          SizedBox(height: 16.h),
+                          _buildInputArea(context, isDark, isPremium),
+                          SizedBox(height: 16.h),
+                          BlocBuilder<TranslationBloc, TranslationState>(
+                            builder: (context, state) {
+                              if (!isPremium && state.isLimitReached) {
+                                return PremiumLockCard(
+                                  onPremiumTap: () => context.push('/premium'),
+                                  onTap: () {
+                                    di.sl<AdService>().showRewardedAd(
+                                      context: context,
+                                      isPremium: false,
+                                      onUserEarnedReward: (_) {
+                                        context.read<TranslationBloc>().add(
+                                          TranslationAdWatched(),
+                                        );
+                                      },
+                                      onDismissed: () {},
+                                    );
+                                  },
+                                );
+                              }
+                              return _buildOutputArea(context, isDark);
+                            },
+                          ),
+                          SizedBox(height: 80.h),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
             ),
           ),
         ],
@@ -187,10 +189,19 @@ class _TranslateScreenState extends State<TranslateScreen> {
     );
   }
 
-  Widget _buildLanguageSelector(BuildContext context, bool isDark, bool isPremium) {
+  Widget _buildLanguageSelector(
+    BuildContext context,
+    bool isDark,
+    bool isPremium,
+  ) {
     return BlocBuilder<TranslationBloc, TranslationState>(
       builder: (context, state) {
-        final lang = state.currentTargetLanguage ?? context.tr('translation.select_target_language', fallback: 'Select Language');
+        final lang =
+            state.currentTargetLanguage ??
+            context.tr(
+              'translation.select_target_language',
+              fallback: 'Select Language',
+            );
         return GestureDetector(
           onTap: () => _showLanguagePicker(context, isDark),
           child: GlassTile(
@@ -215,7 +226,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        context.tr('translation.english_arrow', fallback: 'English →'),
+                        context.tr(
+                          'translation.english_arrow',
+                          fallback: 'English →',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -260,102 +274,120 @@ class _TranslateScreenState extends State<TranslateScreen> {
       child: GlassTile(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    context.tr('translation.english_caps', fallback: 'ENGLISH'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      color: const Color(0xFF6366F1),
-                      letterSpacing: 1.5,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      context.tr(
+                        'translation.english_caps',
+                        fallback: 'ENGLISH',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w800,
+                        color: const Color(0xFF6366F1),
+                        letterSpacing: 1.5,
+                      ),
                     ),
-                  ),
-                  if (!isPremium) ...[
-                    SizedBox(width: 12.w),
-                    BlocBuilder<TranslationBloc, TranslationState>(
-                      builder: (context, state) {
-                        return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(12.r),
-                          ),
-                          child: Row(
-                            children: [
-                              Icon(Icons.bolt_rounded, color: const Color(0xFFF59E0B), size: 12.r),
-                              SizedBox(width: 4.w),
-                              Text(
-                                '${state.freeTranslationsRemaining} LEFT',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w900,
+                    if (!isPremium) ...[
+                      SizedBox(width: 12.w),
+                      BlocBuilder<TranslationBloc, TranslationState>(
+                        builder: (context, state) {
+                          return Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFFF59E0B,
+                              ).withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(12.r),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.bolt_rounded,
                                   color: const Color(0xFFF59E0B),
+                                  size: 12.r,
                                 ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  '${state.freeTranslationsRemaining} LEFT',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: const Color(0xFFF59E0B),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ],
                   ],
-                ],
-              ),
-              if (_inputController.text.isNotEmpty)
-                GestureDetector(
-                  onTap: () {
-                    _inputController.clear();
-                    context.read<TranslationBloc>().add(
-                      TranslationTextChanged('', isPremium: isPremium),
-                    );
-                    _haptics.light();
-                  },
-                  child: Icon(
-                    Icons.close_rounded,
-                    color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
-                    size: 18.r,
-                  ),
                 ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          TextField(
-            controller: _inputController,
-            focusNode: _focusNode,
-            onChanged: _onInputChanged,
-            maxLines: null, // Allows infinite expansion
-            minLines: 3,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w500,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
-              height: 1.4,
+                if (_inputController.text.isNotEmpty)
+                  GestureDetector(
+                    onTap: () {
+                      _inputController.clear();
+                      context.read<TranslationBloc>().add(
+                        TranslationTextChanged('', isPremium: isPremium),
+                      );
+                      _haptics.light();
+                    },
+                    child: Icon(
+                      Icons.close_rounded,
+                      color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                      size: 18.r,
+                    ),
+                  ),
+              ],
             ),
-            decoration: InputDecoration(
-              hintText: context.tr('translation.type_to_translate', fallback: 'Type something to translate...'),
-              hintStyle: TextStyle(
+            SizedBox(height: 12.h),
+            TextField(
+              controller: _inputController,
+              focusNode: _focusNode,
+              onChanged: _onInputChanged,
+              maxLines: null, // Allows infinite expansion
+              minLines: 3,
+              style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                height: 1.4,
               ),
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
+              decoration: InputDecoration(
+                hintText: context.tr(
+                  'translation.type_to_translate',
+                  fallback: 'Type something to translate...',
+                ),
+                hintStyle: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                ),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 12.h,
+                  horizontal: 8.w,
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Widget _buildOutputArea(BuildContext context, bool isDark) {
     return BlocBuilder<TranslationBloc, TranslationState>(
@@ -371,7 +403,11 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    state.currentTargetLanguage?.toUpperCase() ?? context.tr('translation.translation_caps', fallback: 'TRANSLATION'),
+                    state.currentTargetLanguage?.toUpperCase() ??
+                        context.tr(
+                          'translation.translation_caps',
+                          fallback: 'TRANSLATION',
+                        ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -394,7 +430,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
               SizedBox(height: 12.h),
               if (state.errorMessage != null && state.errorMessage!.isNotEmpty)
                 Text(
-                  context.tr(state.errorMessage!, fallback: state.errorMessage!),
+                  context.tr(
+                    state.errorMessage!,
+                    fallback: state.errorMessage!,
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
@@ -406,7 +445,11 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      context.tr('translation.downloading_pack', fallback: 'Downloading offline language pack (~30MB)...'),
+                      context.tr(
+                        'translation.downloading_pack',
+                        fallback:
+                            'Downloading offline language pack (~30MB)...',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -432,7 +475,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 8.w),
                   child: SelectableText(
                     state.translatedText.isEmpty
-                        ? context.tr('translation.translation_placeholder', fallback: 'Translation will appear here.')
+                        ? context.tr(
+                            'translation.translation_placeholder',
+                            fallback: 'Translation will appear here.',
+                          )
                         : state.translatedText,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -483,7 +529,10 @@ class _LanguagePickerSheet extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           Text(
-            context.tr('translation.select_target_language', fallback: 'Select Target Language'),
+            context.tr(
+              'translation.select_target_language',
+              fallback: 'Select Target Language',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 20.sp,

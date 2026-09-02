@@ -133,7 +133,9 @@ class ListeningQuestModel extends ListeningQuest {
                 .toList()
           : null,
       evidenceQuote: map['evidenceQuote'] as String?,
-      imageDescriptions: parseStringList(map['imageDescriptions'] ?? map['descriptions']),
+      imageDescriptions: parseStringList(
+        map['imageDescriptions'] ?? map['descriptions'],
+      ),
       slowVersion: map['slowVersion'] as String?,
       emotionScale: (map['emotionScale'] as num?)?.toInt(),
       detailCategory: map['detailCategory'] as String?,

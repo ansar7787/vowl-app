@@ -112,25 +112,21 @@ class CommandPod extends StatelessWidget {
                   children: [
                     // Outer pulsing ring
                     Container(
-                          width: 75.r,
-                          height: 75.r,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.2),
-                              width: 2,
-                            ),
-                          ),
-                        )
-                        .animate()
-                        .scale(
-                          begin: const Offset(1.15, 1.15),
-                          end: const Offset(1, 1),
-                          duration: 800.ms,
-                          curve: Curves.easeOutBack,
+                      width: 75.r,
+                      height: 75.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+                          width: 2,
                         ),
+                      ),
+                    ).animate().scale(
+                      begin: const Offset(1.15, 1.15),
+                      end: const Offset(1, 1),
+                      duration: 800.ms,
+                      curve: Curves.easeOutBack,
+                    ),
 
                     MasteryAvatar(user: user, progress: progress),
 
@@ -218,14 +214,11 @@ class CommandPod extends StatelessWidget {
                 ),
               ],
             ),
-
           ],
         ),
       ),
     );
   }
-
-
 
   Widget _buildKidsLearningCard(BuildContext context) {
     return Semantics(
@@ -286,16 +279,14 @@ class CommandPod extends StatelessWidget {
                         top: 20.h,
                         child:
                             Icon(
-                                  Icons.auto_awesome_rounded,
-                                  size: 24.r,
-                                  color: Colors.white.withValues(alpha: 0.2),
-                                )
-                                .animate()
-                                .scale(
-                                  begin: const Offset(1, 1),
-                                  end: const Offset(1.3, 1.3),
-                                  duration: 3.seconds,
-                                ),
+                              Icons.auto_awesome_rounded,
+                              size: 24.r,
+                              color: Colors.white.withValues(alpha: 0.2),
+                            ).animate().scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.3, 1.3),
+                              duration: 3.seconds,
+                            ),
                       ),
 
                       // Text Content (Moved to left side)
@@ -333,10 +324,12 @@ class CommandPod extends StatelessWidget {
                                   SizedBox(width: 4.w),
                                   Flexible(
                                     child: AutoSizeText(
-                                      context.tr(
-                                        'home.early_learners',
-                                        fallback: 'EARLY EXPLORERS',
-                                      ).toUpperCase(),
+                                      context
+                                          .tr(
+                                            'home.early_learners',
+                                            fallback: 'EARLY EXPLORERS',
+                                          )
+                                          .toUpperCase(),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         color: Colors.white,
@@ -354,10 +347,12 @@ class CommandPod extends StatelessWidget {
                             ),
                             SizedBox(height: 8.h),
                             AutoSizeText(
-                              context.tr(
-                                'home.junior_adventure',
-                                fallback: 'KIDS ZONE',
-                              ).toUpperCase(),
+                              context
+                                  .tr(
+                                    'home.junior_adventure',
+                                    fallback: 'KIDS ZONE',
+                                  )
+                                  .toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.white,
@@ -372,10 +367,12 @@ class CommandPod extends StatelessWidget {
                             ),
                             SizedBox(height: 4.h),
                             AutoSizeText(
-                              context.tr(
-                                'home.junior_adventure_subtitle',
-                                fallback: 'PLAYFUL MISSIONS',
-                              ).toUpperCase(),
+                              context
+                                  .tr(
+                                    'home.junior_adventure_subtitle',
+                                    fallback: 'PLAYFUL MISSIONS',
+                                  )
+                                  .toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.white.withValues(alpha: 0.95),
@@ -407,39 +404,35 @@ class CommandPod extends StatelessWidget {
                     children: [
                       // 1. Outer Soft Glow
                       Container(
-                            width: 140.r,
-                            height: 140.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              gradient: RadialGradient(
-                                colors: [
-                                  Colors.white.withValues(alpha: 0.1),
-                                  Colors.transparent,
-                                ],
-                              ),
-                            ),
-                          )
-                          .animate()
-                          .scale(
-                            begin: const Offset(0.8, 0.8),
-                            end: const Offset(1.2, 1.2),
-                            duration: 4.seconds,
+                        width: 140.r,
+                        height: 140.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: RadialGradient(
+                            colors: [
+                              Colors.white.withValues(alpha: 0.1),
+                              Colors.transparent,
+                            ],
                           ),
+                        ),
+                      ).animate().scale(
+                        begin: const Offset(0.8, 0.8),
+                        end: const Offset(1.2, 1.2),
+                        duration: 4.seconds,
+                      ),
 
                       // 2. Secondary Interactive Ring
                       Container(
-                            width: 100.r,
-                            height: 100.r,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.15),
-                                width: 1.5,
-                              ),
-                            ),
-                          )
-                          .animate()
-                          .rotate(duration: 10.seconds),
+                        width: 100.r,
+                        height: 100.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.15),
+                            width: 1.5,
+                          ),
+                        ),
+                      ).animate().rotate(duration: 10.seconds),
 
                       // 3. Floating Sparkles/Particles
                       ...List.generate(5, (index) {

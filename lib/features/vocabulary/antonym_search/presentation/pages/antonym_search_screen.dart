@@ -34,12 +34,12 @@ class AntonymSearchScreen extends StatefulWidget {
 class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
-  
+
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   bool _targetIsPositive = true;
@@ -89,15 +89,15 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     _isCorrect.value = null;
     _isDragPassed.value = false;
     _targetIsPositive = math.Random().nextBool();
-    
+
     _disposeShardNotifiers();
-    
+
     int optionsCount = quest?.options?.length ?? 0;
     for (int i = 0; i < optionsCount; i++) {
       _shardOffsets[i] = ValueNotifier(Offset.zero);
       _isFused[i] = ValueNotifier(false);
     }
-    
+
     _activeShardIndex.value = null;
   }
 
@@ -170,9 +170,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                   : false,
               showConfetti: _showConfetti.value,
               hasStage2: true,
-              onContinue: () => context.read<VocabularyBloc>().add(const NextQuestion()),
-              onHint: () =>
-                  context.read<VocabularyBloc>().add(const VocabularyHintUsed()),
+              onContinue: () =>
+                  context.read<VocabularyBloc>().add(const NextQuestion()),
+              onHint: () => context.read<VocabularyBloc>().add(
+                const VocabularyHintUsed(),
+              ),
               useScrolling: false,
               disablePadding: true,
               child: quest == null
@@ -187,145 +189,199 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
-                                physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                                physics: (!_isDragPassed.value)
+                                    ? const NeverScrollableScrollPhysics()
+                                    : const BouncingScrollPhysics(),
                                 slivers: [
-                                SliverToBoxAdapter(
-                                  child: SizedBox(
-                                    height: constraints.maxHeight,
-                                    child: IgnorePointer(
-                                      ignoring: _isDragPassed.value,
-                                      child: Stack(
-                                        clipBehavior: Clip.none,
-                                        children: [
-                                  Positioned.fill(
-                                    child: CustomPaint(painter: FluxGridPainter(isDark)),
-                                  ),
-
-                                  AntonymPulsar(
-                                    isTop: true,
-                                    targetIsPositive: _targetIsPositive,
-                                    onTap: () => _onPulsarTapped(true),
-                                  ),
-                                  AntonymPulsar(
-                                    isTop: false,
-                                    targetIsPositive: _targetIsPositive,
-                                    onTap: () => _onPulsarTapped(false),
-                                  ),
-
-                                  Center(
-                                    child: isCompact
-                                        ? SizedBox(
-                                            width: 140.w,
-                                            height: 140.w,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: AntonymNebulaCore(
-                                                word: quest.word ?? "",
-                                                color: targetColor,
-                                                isDark: isDark,
-                                                targetIsPositive: _targetIsPositive,
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: constraints.maxHeight,
+                                      child: IgnorePointer(
+                                        ignoring: _isDragPassed.value,
+                                        child: Stack(
+                                          clipBehavior: Clip.none,
+                                          children: [
+                                            Positioned.fill(
+                                              child: CustomPaint(
+                                                painter: FluxGridPainter(
+                                                  isDark,
+                                                ),
                                               ),
                                             ),
-                                          )
-                                        : AntonymNebulaCore(
-                                            word: quest.word ?? "",
-                                            color: targetColor,
-                                            isDark: isDark,
-                                            targetIsPositive: _targetIsPositive,
-                                          ),
-                                  ),
 
-                                  ...List.generate(
-                                    quest.options?.length ?? 0,
-                                    (i) {
-                                      if (_shardOffsets[i] == null || _isFused[i] == null) return const SizedBox.shrink();
-                                      return ListenableBuilder(
-                                        listenable: Listenable.merge([
-                                          _shardOffsets[i]!,
-                                          _isFused[i]!,
-                                          _activeShardIndex,
-                                        ]),
-                                        builder: (context, _) {
-                                          return AntonymOptionShard(
-                                            index: i,
-                                            text: quest.options![i],
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            initialPos: _getInitialPosition(i),
-                                            offset: _shardOffsets[i]!.value,
-                                            isDragging: _activeShardIndex.value == i,
-                                            isFused: _isFused[i]!.value,
-                                            onPanStart: () => _onShardStart(i),
-                                            onPanUpdate: (d) => _onShardUpdate(i, d),
-                                            onPanEnd: () => _onShardEnd(i),
-                                            onTap: () => _onShardTapped(i),
-                                          );
-                                        }
-                                      );
-                                    }
-                                  ),
+                                            AntonymPulsar(
+                                              isTop: true,
+                                              targetIsPositive:
+                                                  _targetIsPositive,
+                                              onTap: () =>
+                                                  _onPulsarTapped(true),
+                                            ),
+                                            AntonymPulsar(
+                                              isTop: false,
+                                              targetIsPositive:
+                                                  _targetIsPositive,
+                                              onTap: () =>
+                                                  _onPulsarTapped(false),
+                                            ),
 
-                                  ...List.generate(
-                                    quest.options?.length ?? 0,
-                                    (i) {
-                                      if (_shardOffsets[i] == null) return const SizedBox.shrink();
-                                      return ValueListenableBuilder<int?>(
-                                        valueListenable: _activeShardIndex,
-                                        builder: (context, activeIndex, _) {
-                                          final isActive = activeIndex == i;
-                                          return ValueListenableBuilder<Offset>(
-                                            valueListenable: _shardOffsets[i]!,
-                                            builder: (context, offset, _) {
-                                              return AnimatedOpacity(
-                                                opacity: isActive ? 1.0 : 0.0,
-                                                duration: const Duration(milliseconds: 150),
-                                                child: _buildPlasmaThunder(i, targetColor, offset),
-                                              );
-                                            }
-                                          );
-                                        }
-                                      );
-                                    }
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        if (_isDragPassed.value && !_isAnswered.value)
-                            SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  if (quest.gradientScale != null && quest.gradientScale!.isNotEmpty)
-                                    AntonymGradientScale(
-                                      gradientScale: quest.gradientScale!,
-                                      primaryColor: theme.primaryColor,
+                                            Center(
+                                              child: isCompact
+                                                  ? SizedBox(
+                                                      width: 140.w,
+                                                      height: 140.w,
+                                                      child: FittedBox(
+                                                        fit: BoxFit.scaleDown,
+                                                        child: AntonymNebulaCore(
+                                                          word:
+                                                              quest.word ?? "",
+                                                          color: targetColor,
+                                                          isDark: isDark,
+                                                          targetIsPositive:
+                                                              _targetIsPositive,
+                                                        ),
+                                                      ),
+                                                    )
+                                                  : AntonymNebulaCore(
+                                                      word: quest.word ?? "",
+                                                      color: targetColor,
+                                                      isDark: isDark,
+                                                      targetIsPositive:
+                                                          _targetIsPositive,
+                                                    ),
+                                            ),
+
+                                            ...List.generate(
+                                              quest.options?.length ?? 0,
+                                              (i) {
+                                                if (_shardOffsets[i] == null ||
+                                                    _isFused[i] == null)
+                                                  return const SizedBox.shrink();
+                                                return ListenableBuilder(
+                                                  listenable: Listenable.merge([
+                                                    _shardOffsets[i]!,
+                                                    _isFused[i]!,
+                                                    _activeShardIndex,
+                                                  ]),
+                                                  builder: (context, _) {
+                                                    return AntonymOptionShard(
+                                                      index: i,
+                                                      text: quest.options![i],
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      initialPos:
+                                                          _getInitialPosition(
+                                                            i,
+                                                          ),
+                                                      offset: _shardOffsets[i]!
+                                                          .value,
+                                                      isDragging:
+                                                          _activeShardIndex
+                                                              .value ==
+                                                          i,
+                                                      isFused:
+                                                          _isFused[i]!.value,
+                                                      onPanStart: () =>
+                                                          _onShardStart(i),
+                                                      onPanUpdate: (d) =>
+                                                          _onShardUpdate(i, d),
+                                                      onPanEnd: () =>
+                                                          _onShardEnd(i),
+                                                      onTap: () =>
+                                                          _onShardTapped(i),
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            ),
+
+                                            ...List.generate(
+                                              quest.options?.length ?? 0,
+                                              (i) {
+                                                if (_shardOffsets[i] == null)
+                                                  return const SizedBox.shrink();
+                                                return ValueListenableBuilder<
+                                                  int?
+                                                >(
+                                                  valueListenable:
+                                                      _activeShardIndex,
+                                                  builder: (context, activeIndex, _) {
+                                                    final isActive =
+                                                        activeIndex == i;
+                                                    return ValueListenableBuilder<
+                                                      Offset
+                                                    >(
+                                                      valueListenable:
+                                                          _shardOffsets[i]!,
+                                                      builder: (context, offset, _) {
+                                                        return AnimatedOpacity(
+                                                          opacity: isActive
+                                                              ? 1.0
+                                                              : 0.0,
+                                                          duration:
+                                                              const Duration(
+                                                                milliseconds:
+                                                                    150,
+                                                              ),
+                                                          child:
+                                                              _buildPlasmaThunder(
+                                                                i,
+                                                                targetColor,
+                                                                offset,
+                                                              ),
+                                                        );
+                                                      },
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     ),
-                                  SizedBox(height: 24.h),
-                                  SpeakToConfirmOverlay(
-                                    expectedText: "${quest.word} ${quest.correctAnswer}",
-                                    displayText: "${quest.word?.toUpperCase()}   ↔   ${quest.correctAnswer?.toUpperCase()}",
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _submitVerbalEvaluation(true),
-                                    onSkipped: () => _submitVerbalEvaluation(false),
-                                    isPositioned: false,
                                   ),
-                                  SizedBox(height: 60.h),
+                                  if (_isDragPassed.value && !_isAnswered.value)
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          if (quest.gradientScale != null &&
+                                              quest.gradientScale!.isNotEmpty)
+                                            AntonymGradientScale(
+                                              gradientScale:
+                                                  quest.gradientScale!,
+                                              primaryColor: theme.primaryColor,
+                                            ),
+                                          SizedBox(height: 24.h),
+                                          SpeakToConfirmOverlay(
+                                            expectedText:
+                                                "${quest.word} ${quest.correctAnswer}",
+                                            displayText:
+                                                "${quest.word?.toUpperCase()}   ↔   ${quest.correctAnswer?.toUpperCase()}",
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                            isPositioned: false,
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
+                                    ),
                                 ],
                               ),
-                            ),
-                        ],
-                      ),
                             ),
                           ],
                         );
-                },
-              ),
+                      },
+                    ),
             );
           },
         );
@@ -339,7 +395,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final h = _lastConstraints!.maxHeight;
     final isLeft = index % 2 == 0;
     final int total = _lastQuest?.options?.length ?? 4;
-    
+
     double yPos;
     if (total <= 4) {
       final isBottomHalf = index >= (total / 2).ceil();
@@ -372,10 +428,10 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
       final initial = _getInitialPosition(index);
       final currentY = initial.dy + _shardOffsets[index]!.value.dy;
       final maxHeight = _lastConstraints?.maxHeight ?? 600;
-      
+
       final triggerTop = maxHeight * 0.20;
       final triggerBottom = maxHeight * 0.80;
-      
+
       if (currentY < triggerTop || currentY > triggerBottom) {
         _hapticService.selection();
       }
@@ -410,7 +466,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onPulsarTapped(bool isTop) {
-    if (_activeShardIndex.value == null || _isAnswered.value || _lastConstraints == null) {
+    if (_activeShardIndex.value == null ||
+        _isAnswered.value ||
+        _lastConstraints == null) {
       return;
     }
     _evaluateShard(_activeShardIndex.value!, isTop);
@@ -471,25 +529,29 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   void _onFailure(int index) {
     _hapticService.error();
     _soundService.playWrong();
-    
+
     if (_shardOffsets[index] != null) {
       _shardOffsets[index]!.value = Offset.zero;
     }
     _isAnswered.value = true;
     _isCorrect.value = false;
     _activeShardIndex.value = null;
-    
+
     context.read<VocabularyBloc>().add(SubmitAnswer(false));
   }
 
-  Widget _buildPlasmaThunder(int activeIndex, Color targetColor, Offset offset) {
+  Widget _buildPlasmaThunder(
+    int activeIndex,
+    Color targetColor,
+    Offset offset,
+  ) {
     if (_lastConstraints == null) return const SizedBox.shrink();
-    
+
     final initial = _getInitialPosition(activeIndex);
     final current = initial + offset;
     final maxHeight = _lastConstraints!.maxHeight;
     final bool toTop = current.dy < (maxHeight / 2);
-    
+
     // The pulsars are near the top/bottom edges
     final targetY = toTop ? maxHeight * 0.12 : maxHeight * 0.88;
 

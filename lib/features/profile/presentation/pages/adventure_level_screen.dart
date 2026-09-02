@@ -60,7 +60,8 @@ class AdventureLevelScreen extends StatelessWidget {
                     description: context.tr(
                       'adventure.milestone_reward_desc',
                       args: [rewardAmount],
-                      fallback: 'You claimed $rewardAmount Coins for your epic journey!',
+                      fallback:
+                          'You claimed $rewardAmount Coins for your epic journey!',
                     ),
                     buttonText: context.tr(
                       'common.awesome',
@@ -108,142 +109,144 @@ class AdventureLevelScreen extends StatelessWidget {
             final progress = xpInCurrentLevel / 100;
 
             return Stack(
-            children: [
-              const MeshGradientBackground(),
-              SafeArea(
-                child: CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    // ── SliverAppBar ──
-                    SliverAppBar(
-                      pinned: true,
-                      floating: true,
-                      snap: true,
-                      automaticallyImplyLeading: false,
-                      backgroundColor: Colors.transparent,
-                      surfaceTintColor: Colors.transparent,
-                      elevation: 0,
-                      expandedHeight: 80.h,
-                      collapsedHeight: 64.h,
-                      toolbarHeight: 64.h,
-                      flexibleSpace: FlexibleSpaceBar(
-                        titlePadding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 8.h,
-                        ),
-                        title: GlassTile(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 6.h,
+              children: [
+                const MeshGradientBackground(),
+                SafeArea(
+                  child: CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      // ── SliverAppBar ──
+                      SliverAppBar(
+                        pinned: true,
+                        floating: true,
+                        snap: true,
+                        automaticallyImplyLeading: false,
+                        backgroundColor: Colors.transparent,
+                        surfaceTintColor: Colors.transparent,
+                        elevation: 0,
+                        expandedHeight: 80.h,
+                        collapsedHeight: 64.h,
+                        toolbarHeight: 64.h,
+                        flexibleSpace: FlexibleSpaceBar(
+                          titlePadding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 8.h,
                           ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(
-                                width: 32.r,
-                                height: 32.r,
-                                child: IconButton(
-                                  padding: EdgeInsets.zero,
-                                  iconSize: 18.r,
-                                  onPressed: () => context.pop(),
-                                  icon: const Icon(
-                                    Icons.arrow_back_ios_new_rounded,
+                          title: GlassTile(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 6.h,
+                            ),
+                            borderRadius: BorderRadius.circular(20.r),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(
+                                  width: 32.r,
+                                  height: 32.r,
+                                  child: IconButton(
+                                    padding: EdgeInsets.zero,
+                                    iconSize: 18.r,
+                                    onPressed: () => context.pop(),
+                                    icon: const Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(width: 6.w),
-                              Text(
-                                'Adventure Level',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDark
-                                      ? Colors.white
-                                      : const Color(0xFF0F172A),
+                                SizedBox(width: 6.w),
+                                Text(
+                                  'Adventure Level',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: isDark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A),
+                                  ),
                                 ),
-                              ),
-                              const Spacer(),
-                              Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 10.w,
-                                  vertical: 4.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: const Color(
-                                    0xFF10B981,
-                                  ).withValues(alpha: 0.15),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      Icons.monetization_on_rounded,
-                                      color: const Color(0xFF10B981),
-                                      size: 14.r,
-                                    ),
-                                    SizedBox(width: 4.w),
-                                    Text(
-                                      '${user.coins}',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w800,
+                                const Spacer(),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 10.w,
+                                    vertical: 4.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: const Color(
+                                      0xFF10B981,
+                                    ).withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(12.r),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        Icons.monetization_on_rounded,
                                         color: const Color(0xFF10B981),
+                                        size: 14.r,
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(width: 4.w),
+                                      Text(
+                                        '${user.coins}',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: const Color(0xFF10B981),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
 
-                    // ── Body Content ──
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(24.r, 24.r, 24.r, 0),
-                        child: _buildMainLevelCard(
-                          context,
-                          currentLevel,
-                          progress,
+                      // ── Body Content ──
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(24.r, 24.r, 24.r, 0),
+                          child: _buildMainLevelCard(
+                            context,
+                            currentLevel,
+                            progress,
+                          ),
                         ),
                       ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24.r,
-                          vertical: 24.h,
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 24.r,
+                            vertical: 24.h,
+                          ),
+                          child: _buildXPProgressDetails(context, user),
                         ),
-                        child: _buildXPProgressDetails(context, user),
                       ),
-                    ),
-                    SliverToBoxAdapter(child: _buildLevelPerks(context, user)),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(24.r, 32.h, 24.r, 0),
-                        child: _buildMilestones(context, user),
+                      SliverToBoxAdapter(
+                        child: _buildLevelPerks(context, user),
                       ),
-                    ),
-                    SliverToBoxAdapter(child: _buildHintStore(context, user)),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(24.r, 24.h, 24.r, 48.h),
-                        child: const AdRewardCard(margin: EdgeInsets.zero),
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(24.r, 32.h, 24.r, 0),
+                          child: _buildMilestones(context, user),
+                        ),
                       ),
-                    ),
-                  ],
+                      SliverToBoxAdapter(child: _buildHintStore(context, user)),
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(24.r, 24.h, 24.r, 48.h),
+                          child: const AdRewardCard(margin: EdgeInsets.zero),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          );
-        },
-      ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
@@ -758,34 +761,31 @@ class AdventureLevelScreen extends StatelessWidget {
               )
             else if (isReached)
               Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 6.h,
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF6366F1), Color(0xFF1D4ED8)],
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blue.withValues(alpha: 0.3),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
                     ),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF6366F1), Color(0xFF1D4ED8)],
-                      ),
-                      borderRadius: BorderRadius.circular(12.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.blue.withValues(alpha: 0.3),
-                          blurRadius: 10,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      'CLAIM',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  )
+                  ],
+                ),
+                child: Text(
+                  'CLAIM',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    letterSpacing: 1,
+                  ),
+                ),
+              )
             else
               Icon(
                 Icons.lock_outline_rounded,

@@ -109,16 +109,26 @@ class EmergencyHubTelexCard extends StatelessWidget {
                         height: 6.h,
                         margin: EdgeInsets.symmetric(horizontal: 2.w),
                         decoration: BoxDecoration(
-                          color: isActive 
-                            ? (urgencyLevel >= 4 ? Colors.redAccent : (urgencyLevel >= 3 ? Colors.orangeAccent : Colors.yellowAccent))
-                            : (isDark ? Colors.white10 : Colors.black12),
+                          color: isActive
+                              ? (urgencyLevel >= 4
+                                    ? Colors.redAccent
+                                    : (urgencyLevel >= 3
+                                          ? Colors.orangeAccent
+                                          : Colors.yellowAccent))
+                              : (isDark ? Colors.white10 : Colors.black12),
                           borderRadius: BorderRadius.circular(4.r),
-                          boxShadow: isActive ? [
-                            BoxShadow(
-                              color: (urgencyLevel >= 4 ? Colors.redAccent : Colors.orangeAccent).withValues(alpha: 0.4),
-                              blurRadius: 4,
-                            )
-                          ] : null,
+                          boxShadow: isActive
+                              ? [
+                                  BoxShadow(
+                                    color:
+                                        (urgencyLevel >= 4
+                                                ? Colors.redAccent
+                                                : Colors.orangeAccent)
+                                            .withValues(alpha: 0.4),
+                                    blurRadius: 4,
+                                  ),
+                                ]
+                              : null,
                         ),
                       ),
                     );

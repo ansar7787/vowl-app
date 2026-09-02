@@ -115,8 +115,9 @@ class ProfileHeader extends StatelessWidget {
                               backgroundColor: isDark
                                   ? Colors.white.withValues(alpha: 0.08)
                                   : Colors.black.withValues(alpha: 0.06),
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(glowColor),
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                glowColor,
+                              ),
                             );
                           },
                         ),
@@ -141,17 +142,22 @@ class ProfileHeader extends StatelessWidget {
                           ),
                           child: ClipOval(
                             child: (immediatePhotoUrl ?? user.photoUrl) != null
-                                ? ((immediatePhotoUrl ?? user.photoUrl)!.startsWith('http')
-                                    ? ShimmerImage(
-                                        imageUrl:
-                                            (immediatePhotoUrl ?? user.photoUrl)!,
-                                      )
-                                    : Image.file(
-                                        File((immediatePhotoUrl ?? user.photoUrl)!),
-                                        fit: BoxFit.cover,
-                                        width: 118.r,
-                                        height: 118.r,
-                                      ))
+                                ? ((immediatePhotoUrl ?? user.photoUrl)!
+                                          .startsWith('http')
+                                      ? ShimmerImage(
+                                          imageUrl:
+                                              (immediatePhotoUrl ??
+                                              user.photoUrl)!,
+                                        )
+                                      : Image.file(
+                                          File(
+                                            (immediatePhotoUrl ??
+                                                user.photoUrl)!,
+                                          ),
+                                          fit: BoxFit.cover,
+                                          width: 118.r,
+                                          height: 118.r,
+                                        ))
                                 : Icon(
                                     Icons.person_rounded,
                                     color: const Color(0xFF94A3B8),

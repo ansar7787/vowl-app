@@ -36,7 +36,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<Offset> _lensPosition = ValueNotifier(const Offset(150, 150));
+  final ValueNotifier<Offset> _lensPosition = ValueNotifier(
+    const Offset(150, 150),
+  );
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -57,7 +59,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     _scrollController.dispose();
     super.dispose();
   }
-  final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
+
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   @override
   void initState() {
@@ -80,9 +84,10 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     if (!nailedSpeaking) {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -92,7 +97,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       _selectedIndex.value = _pendingSelectedIndex.value;
@@ -113,9 +118,10 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -125,7 +131,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       _selectedIndex.value = _pendingSelectedIndex.value;
@@ -170,7 +176,14 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _pendingSelectedIndex, _lensPosition]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedIndex,
+            _pendingSelectedIndex,
+            _lensPosition,
+          ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
@@ -178,13 +191,15 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ListeningBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
                         RawScrollbar(
                           controller: _scrollController,
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
@@ -193,125 +208,147 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                           child: CustomScrollView(
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 16.h,
-                            ),
-                            sliver: SliverToBoxAdapter(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  SizedBox(height: 6.h),
-                                  if (!_isAnswered.value)
-                                    Padding(
-                                      padding: EdgeInsets.only(bottom: 16.h),
-                                      child: SpeedChallengeTimer(
-                                        key: _timerKey,
-                                        durationSeconds: 30,
-                                        primaryColor: theme.primaryColor,
-                                        onTimeUp: () {
-                                          final authState = context.read<AuthBloc>().state;
-                                          if (authState.status == AuthStatus.authenticated && authState.user != null) {
-                                            ErrorJournalCollector.record(
-                                              userId: authState.user!.id,
-                                              gameType: widget.gameType.name,
-                                              question: 'Sound Image Match',
-                                              userAnswer: '[Time Up]',
-                                              correctAnswer: quest.correctAnswerIndex?.toString() ?? '',
-                                              level: widget.level,
-                                            );
-                                          }
-                                          _isAnswered.value = true;
-                                          _isCorrect.value = false;
-                                          _pendingSelectedIndex.value = -1;
-                                          _selectedIndex.value = -1;
-                                          context.read<ListeningBloc>().add(SubmitAnswer(false));
-                                        },
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 16.h,
+                                ),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: 6.h),
+                                      if (!_isAnswered.value)
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            bottom: 16.h,
+                                          ),
+                                          child: SpeedChallengeTimer(
+                                            key: _timerKey,
+                                            durationSeconds: 30,
+                                            primaryColor: theme.primaryColor,
+                                            onTimeUp: () {
+                                              final authState = context
+                                                  .read<AuthBloc>()
+                                                  .state;
+                                              if (authState.status ==
+                                                      AuthStatus
+                                                          .authenticated &&
+                                                  authState.user != null) {
+                                                ErrorJournalCollector.record(
+                                                  userId: authState.user!.id,
+                                                  gameType:
+                                                      widget.gameType.name,
+                                                  question: 'Sound Image Match',
+                                                  userAnswer: '[Time Up]',
+                                                  correctAnswer:
+                                                      quest.correctAnswerIndex
+                                                          ?.toString() ??
+                                                      '',
+                                                  level: widget.level,
+                                                );
+                                              }
+                                              _isAnswered.value = true;
+                                              _isCorrect.value = false;
+                                              _pendingSelectedIndex.value = -1;
+                                              _selectedIndex.value = -1;
+                                              context.read<ListeningBloc>().add(
+                                                SubmitAnswer(false),
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      SoundImageMatchInstruction(
+                                        color: theme.primaryColor,
+                                        instruction: quest.instruction,
                                       ),
-                                    ),
-                                  SoundImageMatchInstruction(
-                                    color: theme.primaryColor,
-                                    instruction: quest.instruction,
+                                      SizedBox(height: 24.h),
+                                      SoundImageMatchEmitter(
+                                        onTap: () {
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                          _hapticService.selection();
+                                        },
+                                        color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect.value,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                    ],
                                   ),
-                                  SizedBox(height: 24.h),
-                                  SoundImageMatchEmitter(
-                                    onTap: () {
-                                      _soundService.playTts(
-                                        quest.textToSpeak ?? "",
-                                      );
-                                      _hapticService.selection();
-                                    },
-                                    color: theme.primaryColor,
-                                    emoji: quest.emoji,
-                                    isCorrectState: _isCorrect.value,
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
                                   ),
-                                  SizedBox(height: 32.h),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 16.w,
-                                vertical: 16.h,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SizedBox(
-                                    height: 350.h,
-                                    child: SoundImageMatchScannerField(
-                                      options: quest.options ?? [],
-                                      correctAnswerIndex:
-                                          quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      isAnswered: _isAnswered.value,
-                                      isCorrectState: _isCorrect.value,
-                                      selectedIndex: _selectedIndex.value,
-                                      lensPosition: _lensPosition.value,
-                                      onScan: _onScan,
-                                      onSelect: (index) {
-                                        if (_isAnswered.value ||
-                                            _pendingSelectedIndex.value != null) {
-                                          return;
-                                        }
-                                        _timerKey.currentState?.pause();
-                                        _pendingSelectedIndex.value = index;
-                                      },
-                                    ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      SizedBox(
+                                        height: 350.h,
+                                        child: SoundImageMatchScannerField(
+                                          options: quest.options ?? [],
+                                          correctAnswerIndex:
+                                              quest.correctAnswerIndex ?? 0,
+                                          color: theme.primaryColor,
+                                          isAnswered: _isAnswered.value,
+                                          isCorrectState: _isCorrect.value,
+                                          selectedIndex: _selectedIndex.value,
+                                          lensPosition: _lensPosition.value,
+                                          onScan: _onScan,
+                                          onSelect: (index) {
+                                            if (_isAnswered.value ||
+                                                _pendingSelectedIndex.value !=
+                                                    null) {
+                                              return;
+                                            }
+                                            _timerKey.currentState?.pause();
+                                            _pendingSelectedIndex.value = index;
+                                          },
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height:
+                                            (_pendingSelectedIndex.value !=
+                                                    null &&
+                                                !_isAnswered.value)
+                                            ? 380.h
+                                            : 60.h,
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: (_pendingSelectedIndex.value != null && !_isAnswered.value) ? 380.h : 60.h),
-                                ],
+                                ),
                               ),
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
-                      ),
-                      if (_pendingSelectedIndex.value != null && !_isAnswered.value)
-                        SpeakToConfirmOverlay(
-                          expectedText:
-                              quest.options![_pendingSelectedIndex.value!],
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(
-                            true,
-                            quest.correctAnswerIndex ?? 0,
-                          ),
-                          onSkipped: () {
-                            _timerKey.currentState?.resume();
-                            _submitFinalAnswer(
-                              false,
-                              quest.correctAnswerIndex ?? 0,
-                            );
-                          },
-                          allowSkip: true,
-                          isPositioned: true,
                         ),
-                    ],
-                  ),
+                        if (_pendingSelectedIndex.value != null &&
+                            !_isAnswered.value)
+                          SpeakToConfirmOverlay(
+                            expectedText:
+                                quest.options![_pendingSelectedIndex.value!],
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(
+                              true,
+                              quest.correctAnswerIndex ?? 0,
+                            ),
+                            onSkipped: () {
+                              _timerKey.currentState?.resume();
+                              _submitFinalAnswer(
+                                false,
+                                quest.correctAnswerIndex ?? 0,
+                              );
+                            },
+                            allowSkip: true,
+                            isPositioned: true,
+                          ),
+                      ],
+                    ),
             );
           },
         );

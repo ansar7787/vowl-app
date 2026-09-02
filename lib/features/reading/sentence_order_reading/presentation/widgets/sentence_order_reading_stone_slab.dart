@@ -22,41 +22,43 @@ class SentenceOrderReadingStoneSlab extends StatelessWidget {
     if (transitionWords == null || transitionWords!.isEmpty) {
       return [TextSpan(text: text)];
     }
-    
+
     // Sort by length descending to match longer phrases first (e.g., "As a result" before "As")
     final sortedWords = List<String>.from(transitionWords!)
       ..sort((a, b) => b.length.compareTo(a.length));
-      
+
     final pattern = sortedWords.map((e) => RegExp.escape(e)).join('|');
     final regex = RegExp('($pattern)', caseSensitive: false);
-    
+
     final matches = regex.allMatches(text);
     if (matches.isEmpty) {
       return [TextSpan(text: text)];
     }
-    
+
     int lastEnd = 0;
     final spans = <TextSpan>[];
-    
+
     for (final match in matches) {
       if (match.start > lastEnd) {
         spans.add(TextSpan(text: text.substring(lastEnd, match.start)));
       }
-      spans.add(TextSpan(
-        text: match.group(0),
-        style: TextStyle(
-          color: color,
-          fontWeight: FontWeight.w800,
-          backgroundColor: color.withValues(alpha: 0.2),
+      spans.add(
+        TextSpan(
+          text: match.group(0),
+          style: TextStyle(
+            color: color,
+            fontWeight: FontWeight.w800,
+            backgroundColor: color.withValues(alpha: 0.2),
+          ),
         ),
-      ));
+      );
       lastEnd = match.end;
     }
-    
+
     if (lastEnd < text.length) {
       spans.add(TextSpan(text: text.substring(lastEnd)));
     }
-    
+
     return spans;
   }
 

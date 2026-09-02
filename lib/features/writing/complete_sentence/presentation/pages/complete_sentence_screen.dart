@@ -233,71 +233,79 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           // Passing it here caused a double dispatch — now a no-op.
           onHint: () {},
           child: ListenableBuilder(
-            listenable: Listenable.merge([_showConfetti, _selectedProjectile, _showAnagram]),
+            listenable: Listenable.merge([
+              _showConfetti,
+              _selectedProjectile,
+              _showAnagram,
+            ]),
             builder: (context, _) {
               return quest == null
                   ? (_lastQuest == null
                         ? GameShimmerLoading(primaryColor: _theme.primaryColor)
                         : const SizedBox.shrink())
                   : Stack(
-                  key: _stackKey,
-                  children: [
-                    // Scrollable body content — extracted to reduce build() size.
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: _theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: _CompleteSentenceBody(
-                        quest: quest,
-                        options: options,
-                        level: widget.level,
-                        selectedProjectile: _selectedProjectile.value,
-                        isAnswered: isAnswered,
-                        isCorrect: isCorrect,
-                        theme: _theme,
-                        isDark: isDark,
-                        scrollController: _scrollController,
-                        onBridgeStart: (pos) => _onBridgeStart(pos, isAnswered),
-                        onBridgeUpdate: (pos) => _onBridgeUpdate(pos, isAnswered),
-                        // FIX: screen owns correctAnswer — widgets only report selected.
-                        onFire: (selected) => _onFire(
-                          selected,
-                          quest.correctAnswer ?? '',
-                          isAnswered,
-                        ),
-                      ),
-                    ),
-                    // PERF FIX: ValueListenableBuilder isolates repaints to this
-                    // subtree only. The RepaintBoundary prevents the parent layer
-                    // from being invalidated on each drag-move frame.
-                    ValueListenableBuilder<_DragState?>(
-                      valueListenable: _dragNotifier,
-                      builder: (_, drag, _) {
-                        if (drag == null) return const SizedBox.shrink();
-                        return IgnorePointer(
-                          child: RepaintBoundary(
-                            child: CustomPaint(
-                              painter: CompleteSentenceTrajectoryPainter(
-                                start: drag.start,
-                                end: drag.current,
-                                color: _theme.primaryColor,
-                              ),
-                              size: Size.infinite,
+                      key: _stackKey,
+                      children: [
+                        // Scrollable body content — extracted to reduce build() size.
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: _theme.primaryColor.withValues(
+                            alpha: 0.5,
+                          ),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: _CompleteSentenceBody(
+                            quest: quest,
+                            options: options,
+                            level: widget.level,
+                            selectedProjectile: _selectedProjectile.value,
+                            isAnswered: isAnswered,
+                            isCorrect: isCorrect,
+                            theme: _theme,
+                            isDark: isDark,
+                            scrollController: _scrollController,
+                            onBridgeStart: (pos) =>
+                                _onBridgeStart(pos, isAnswered),
+                            onBridgeUpdate: (pos) =>
+                                _onBridgeUpdate(pos, isAnswered),
+                            // FIX: screen owns correctAnswer — widgets only report selected.
+                            onFire: (selected) => _onFire(
+                              selected,
+                              quest.correctAnswer ?? '',
+                              isAnswered,
                             ),
                           ),
-                        );
-                      },
-                    ),
-                    if (_showAnagram.value && !isAnswered)
-                      DynamicAnagramWrapper(
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: _theme.primaryColor,
-                        onConfirmed: _onAnagramSuccess,
-                        onFailed: _onAnagramFailed,
-                      ),
-                  ],
-                );
+                        ),
+                        // PERF FIX: ValueListenableBuilder isolates repaints to this
+                        // subtree only. The RepaintBoundary prevents the parent layer
+                        // from being invalidated on each drag-move frame.
+                        ValueListenableBuilder<_DragState?>(
+                          valueListenable: _dragNotifier,
+                          builder: (_, drag, _) {
+                            if (drag == null) return const SizedBox.shrink();
+                            return IgnorePointer(
+                              child: RepaintBoundary(
+                                child: CustomPaint(
+                                  painter: CompleteSentenceTrajectoryPainter(
+                                    start: drag.start,
+                                    end: drag.current,
+                                    color: _theme.primaryColor,
+                                  ),
+                                  size: Size.infinite,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                        if (_showAnagram.value && !isAnswered)
+                          DynamicAnagramWrapper(
+                            expectedText: quest.correctAnswer ?? '',
+                            primaryColor: _theme.primaryColor,
+                            onConfirmed: _onAnagramSuccess,
+                            onFailed: _onAnagramFailed,
+                          ),
+                      ],
+                    );
             },
           ),
         );
@@ -356,16 +364,25 @@ class _CompleteSentenceBody extends StatelessWidget {
                 if (quest.grammarFocus != null) ...[
                   SizedBox(height: 12.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 8.h,
+                    ),
                     decoration: BoxDecoration(
                       color: theme.primaryColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                      border: Border.all(
+                        color: theme.primaryColor.withValues(alpha: 0.3),
+                      ),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.rule, color: theme.primaryColor, size: 16.sp),
+                        Icon(
+                          Icons.rule,
+                          color: theme.primaryColor,
+                          size: 16.sp,
+                        ),
                         SizedBox(width: 8.w),
                         Text(
                           quest.grammarFocus!,
@@ -439,7 +456,9 @@ class _CompleteSentenceBody extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              SizedBox(height: !isAnswered ? 380.h : 60.h), // Bottom docking padding
+              SizedBox(
+                height: !isAnswered ? 380.h : 60.h,
+              ), // Bottom docking padding
             ],
           ),
         ),

@@ -98,7 +98,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         final theme = LevelThemeHelper.getTheme(subtype.name);
         final title = theme.title.toLowerCase();
         final name = subtype.name.toLowerCase();
-        if (!title.contains(_searchQuery.value) && !name.contains(_searchQuery.value)) {
+        if (!title.contains(_searchQuery.value) &&
+            !name.contains(_searchQuery.value)) {
           return false;
         }
       }
@@ -126,8 +127,6 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
       );
     }
 
-
-
     return Scaffold(
       backgroundColor: bgColor,
       body: Stack(
@@ -138,87 +137,97 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           // 2. Dynamic Scroll Content
           RepaintBoundary(
             child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    return ListenableBuilder(
-                      listenable: Listenable.merge([_searchQuery, _selectedCategory]),
-                      builder: (context, _) {
-                        final filteredList = _getFilteredSubtypes();
-                        return CustomScrollView(
-              controller: _scrollController,
-              physics: const BouncingScrollPhysics(),
-              slivers: [
-                // Safe area spacing for floating app bar
-                SliverToBoxAdapter(
-                  child: SizedBox(
-                    height: MediaQuery.of(context).padding.top + 95.h,
-                  ),
-                ),
-
-                // 3. Stats Dashboard Panel
-                SliverToBoxAdapter(
-                  child: _buildLibraryStatsDashboard(user, isDark),
-                ),
-
-                // 4. Horizontal Categories Track & Search Capsule (Sticky-like placement)
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 24.h),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        _buildSearchField(isDark, contentColor),
-                        SizedBox(height: 16.h),
-                        _buildCategoriesTrack(isDark),
-                      ],
-                    ),
-                  ),
-                ),
-
-                // 5. Dynamic Quest Cards Grid/List
-                filteredList.isEmpty
-                    ? SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: Center(
-                          child: Text(
-                            context.tr(
-                              'quest_archive.no_results',
-                              fallback: 'No quests found.',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
-                              color: contentColor.withValues(alpha: 0.5),
-                            ),
-                            textAlign: TextAlign.center,
+              builder: (context, constraints) {
+                return ListenableBuilder(
+                  listenable: Listenable.merge([
+                    _searchQuery,
+                    _selectedCategory,
+                  ]),
+                  builder: (context, _) {
+                    final filteredList = _getFilteredSubtypes();
+                    return CustomScrollView(
+                      controller: _scrollController,
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        // Safe area spacing for floating app bar
+                        SliverToBoxAdapter(
+                          child: SizedBox(
+                            height: MediaQuery.of(context).padding.top + 95.h,
                           ),
                         ),
-                      )
-                    : SliverPadding(
-                        padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 100.h),
-                        sliver: SliverList(
-                          delegate: SliverChildBuilderDelegate((
-                            context,
-                            index,
-                          ) {
-                            return Padding(
-                              padding: EdgeInsets.only(bottom: 16.h),
-                              child: _buildLibraryQuestCard(
-                                context,
-                                user,
-                                filteredList[index],
-                                isDark,
-                              ),
-                            );
-                          }, childCount: filteredList.length),
+
+                        // 3. Stats Dashboard Panel
+                        SliverToBoxAdapter(
+                          child: _buildLibraryStatsDashboard(user, isDark),
                         ),
-                      ),
-              ],
-            );
-                      }
+
+                        // 4. Horizontal Categories Track & Search Capsule (Sticky-like placement)
+                        SliverToBoxAdapter(
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 24.h),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                _buildSearchField(isDark, contentColor),
+                                SizedBox(height: 16.h),
+                                _buildCategoriesTrack(isDark),
+                              ],
+                            ),
+                          ),
+                        ),
+
+                        // 5. Dynamic Quest Cards Grid/List
+                        filteredList.isEmpty
+                            ? SliverFillRemaining(
+                                hasScrollBody: false,
+                                child: Center(
+                                  child: Text(
+                                    context.tr(
+                                      'quest_archive.no_results',
+                                      fallback: 'No quests found.',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: contentColor.withValues(
+                                        alpha: 0.5,
+                                      ),
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              )
+                            : SliverPadding(
+                                padding: EdgeInsets.fromLTRB(
+                                  24.w,
+                                  24.h,
+                                  24.w,
+                                  100.h,
+                                ),
+                                sliver: SliverList(
+                                  delegate: SliverChildBuilderDelegate((
+                                    context,
+                                    index,
+                                  ) {
+                                    return Padding(
+                                      padding: EdgeInsets.only(bottom: 16.h),
+                                      child: _buildLibraryQuestCard(
+                                        context,
+                                        user,
+                                        filteredList[index],
+                                        isDark,
+                                      ),
+                                    );
+                                  }, childCount: filteredList.length),
+                                ),
+                              ),
+                      ],
                     );
                   },
-                ),
+                );
+              },
+            ),
           ),
 
           // 6. Floating Glass Island AppBar
@@ -695,14 +704,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               valueListenable: _searchQuery,
               builder: (context, searchQuery, _) {
                 return searchQuery.isNotEmpty
-                  ? IconButton(
-                      icon: Icon(Icons.close_rounded, size: 20.r),
-                      color: contentColor.withValues(alpha: 0.6),
-                      tooltip: context.tr('common.clear', fallback: 'Clear'),
-                      onPressed: () => _searchController.clear(),
-                    ).animate().scale(duration: 200.ms)
-                  : const SizedBox.shrink();
-              }
+                    ? IconButton(
+                        icon: Icon(Icons.close_rounded, size: 20.r),
+                        color: contentColor.withValues(alpha: 0.6),
+                        tooltip: context.tr('common.clear', fallback: 'Clear'),
+                        onPressed: () => _searchController.clear(),
+                      ).animate().scale(duration: 200.ms)
+                    : const SizedBox.shrink();
+              },
             ),
             filled: true,
             fillColor: isDark

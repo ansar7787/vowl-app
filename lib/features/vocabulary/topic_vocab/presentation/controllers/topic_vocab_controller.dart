@@ -42,7 +42,7 @@ class TopicVocabController extends ChangeNotifier {
     userChoices.clear();
     wordsInBins.forEach((_, list) => list.clear());
     _expectedAnswers.clear();
-    
+
     if (quest?.correctAnswer != null) {
       final pairs = quest!.correctAnswer!.split(',');
       for (var pair in pairs) {
@@ -131,7 +131,7 @@ class TopicVocabController extends ChangeNotifier {
   bool _validateChoice(String word, String bucket, String correctAnswer) {
     final cleanWord = word.trim().toLowerCase();
     final cleanLabel = bucket.trim().toLowerCase();
-    
+
     return _expectedAnswers[cleanWord] == cleanLabel;
   }
 }

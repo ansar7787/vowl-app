@@ -232,11 +232,14 @@ class KidsGameDialogs {
                                             )
                                           : context.tr(
                                               'kids_zone.watch_ad_3x',
-                                              fallback: 'WATCH AD FOR 3X REWARDS',
+                                              fallback:
+                                                  'WATCH AD FOR 3X REWARDS',
                                             ),
                                       color: primaryColor,
                                       isGolden: true,
-                                      icon: isPremium ? Icons.auto_awesome_rounded : Icons.play_circle_fill_rounded,
+                                      icon: isPremium
+                                          ? Icons.auto_awesome_rounded
+                                          : Icons.play_circle_fill_rounded,
                                       onTap: () {
                                         adService.showRewardedAd(
                                           context: context,

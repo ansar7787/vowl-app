@@ -12,7 +12,7 @@ class ReadingQuest extends GameQuest {
   final List<String>? keywords;
   final int? timeLimit;
   final String? targetItem;
-  
+
   // D3 Fields
   final int? passageWordCount;
   final String? wordInContext;

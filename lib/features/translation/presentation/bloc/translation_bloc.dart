@@ -88,7 +88,8 @@ class TranslationState extends Equatable {
       downloadedLanguages: downloadedLanguages ?? this.downloadedLanguages,
       isModelDownloading: isModelDownloading ?? this.isModelDownloading,
       errorMessage: errorMessage,
-      freeTranslationsRemaining: freeTranslationsRemaining ?? this.freeTranslationsRemaining,
+      freeTranslationsRemaining:
+          freeTranslationsRemaining ?? this.freeTranslationsRemaining,
       isLimitReached: isLimitReached ?? this.isLimitReached,
     );
   }
@@ -135,26 +136,32 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final downloaded = await _service.getDownloadedLanguageNames();
 
       final prefs = await SharedPreferences.getInstance();
-      
+
       final lastResetStr = prefs.getString('translation_last_reset_date');
       final now = DateTime.now();
       bool shouldReset = false;
-      
+
       if (lastResetStr != null) {
         final lastReset = DateTime.tryParse(lastResetStr);
-        if (lastReset == null || lastReset.year != now.year || lastReset.month != now.month || lastReset.day != now.day) {
+        if (lastReset == null ||
+            lastReset.year != now.year ||
+            lastReset.month != now.month ||
+            lastReset.day != now.day) {
           shouldReset = true;
         }
       } else {
         shouldReset = true;
       }
-      
+
       int freeRemaining = prefs.getInt('translation_free_remaining') ?? 3;
-      
+
       if (shouldReset) {
         freeRemaining = 3;
         await prefs.setInt('translation_free_remaining', 3);
-        await prefs.setString('translation_last_reset_date', now.toIso8601String());
+        await prefs.setString(
+          'translation_last_reset_date',
+          now.toIso8601String(),
+        );
       }
 
       emit(
@@ -180,13 +187,14 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     Emitter<TranslationState> emit,
   ) async {
     final text = event.text.trim();
-    
+
     final now = DateTime.now();
     bool isFreshTranslation = false;
-    
+
     if (text.isNotEmpty) {
-      if (_lastTokenDeductionTime == null || 
-          now.difference(_lastTokenDeductionTime!) > const Duration(seconds: 20)) {
+      if (_lastTokenDeductionTime == null ||
+          now.difference(_lastTokenDeductionTime!) >
+              const Duration(seconds: 20)) {
         isFreshTranslation = true;
       }
     }
@@ -195,19 +203,19 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
 
     if (text.isEmpty) {
       emit(state.copyWith(translatedText: '', isLimitReached: false));
-      _lastTokenDeductionTime = null; 
+      _lastTokenDeductionTime = null;
       return;
     }
 
-    if (!event.isPremium && state.freeTranslationsRemaining <= 0 && isFreshTranslation) {
+    if (!event.isPremium &&
+        state.freeTranslationsRemaining <= 0 &&
+        isFreshTranslation) {
       emit(state.copyWith(isLimitReached: true));
       return;
     }
 
     if (state.currentTargetLanguage == null) {
-      emit(
-        state.copyWith(errorMessage: 'translation.error_select_target'),
-      );
+      emit(state.copyWith(errorMessage: 'translation.error_select_target'));
       return;
     }
 
@@ -222,9 +230,11 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final result = await _service.translate(text);
       final newDownloaded = await _service.getDownloadedLanguageNames();
 
-      final int newRemaining = event.isPremium 
-          ? 3 
-          : (isFreshTranslation ? state.freeTranslationsRemaining - 1 : state.freeTranslationsRemaining);
+      final int newRemaining = event.isPremium
+          ? 3
+          : (isFreshTranslation
+                ? state.freeTranslationsRemaining - 1
+                : state.freeTranslationsRemaining);
 
       final int finalRemaining = newRemaining > 0 ? newRemaining : 0;
 

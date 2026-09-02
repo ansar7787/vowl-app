@@ -101,9 +101,10 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -113,7 +114,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
           level: widget.level,
         );
       }
-      
+
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -163,7 +164,10 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('speaking_games.critical_mass_fusion', fallback: 'CRITICAL MASS FUSION!'),
+            title: context.tr(
+              'speaking_games.critical_mass_fusion',
+              fallback: 'CRITICAL MASS FUSION!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -176,7 +180,14 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _heatLevel, _timeVal, _showGuide]),
+            listenable: Listenable.merge([
+              _isAnswered,
+              _isCorrect,
+              _showConfetti,
+              _heatLevel,
+              _timeVal,
+              _showGuide,
+            ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 onTutorPass: _tutorPass,
@@ -185,86 +196,88 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
-            onContinue: () =>
-                context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () =>
-                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : Stack(
-                    children: [
-                      RawScrollbar(
-                        controller: _scrollController,
-                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                        radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        child: CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
-                        ),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              PronunciationFocusHeader(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              PronunciationFocusPhonemeCrucible(
-                                quest: quest,
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                                heatLevel: _heatLevel.value,
-                                showGuide: _showGuide.value,
-                                onToggleGuide: () {
-                                  _hapticService.selection();
-                                  _showGuide.value = !_showGuide.value;
-                                },
-                              ),
-                              SizedBox(height: 32.h),
-                              PronunciationFocusThermalGrid(
-                                heatLevel: _heatLevel.value,
-                                isListening: false,
-                                timeVal: _timeVal.value,
-                                isDark: isDark,
-                              ),
-                              SizedBox(height: 32.h),
-                              PronunciationFocusHighlightedSentence(
-                                quest: quest,
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                              ),
-                            ],
+                onContinue: () =>
+                    context.read<SpeakingBloc>().add(const NextQuestion()),
+                onHint: () =>
+                    context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+                child: quest == null
+                    ? const SizedBox()
+                    : Stack(
+                        children: [
+                          RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverPadding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  sliver: SliverToBoxAdapter(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        PronunciationFocusHeader(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                        PronunciationFocusPhonemeCrucible(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          heatLevel: _heatLevel.value,
+                                          showGuide: _showGuide.value,
+                                          onToggleGuide: () {
+                                            _hapticService.selection();
+                                            _showGuide.value =
+                                                !_showGuide.value;
+                                          },
+                                        ),
+                                        SizedBox(height: 32.h),
+                                        PronunciationFocusThermalGrid(
+                                          heatLevel: _heatLevel.value,
+                                          isListening: false,
+                                          timeVal: _timeVal.value,
+                                          isDark: isDark,
+                                        ),
+                                        SizedBox(height: 32.h),
+                                        PronunciationFocusHighlightedSentence(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                SliverToBoxAdapter(
+                                  child: SizedBox(
+                                    height: !_isAnswered.value ? 380.h : 60.h,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
+                          if (!_isAnswered.value)
+                            ShadowPlaybackCompare(
+                              expectedText: quest.targetWord ?? "",
+                              displayText:
+                                  '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
+                              primaryColor: theme.primaryColor,
+                              isPositioned: true,
+                              onConfirmed: () => _submitVerbalEvaluation(true),
+                              onSkipped: () => _submitVerbalEvaluation(false),
+                            ),
+                        ],
                       ),
-                      SliverToBoxAdapter(
-                        child: SizedBox(
-                          height: !_isAnswered.value ? 380.h : 60.h,
-                        ),
-                      ),
-                    ],
-                  ),
-                      ),
-                      if (!_isAnswered.value)
-                        ShadowPlaybackCompare(
-                          expectedText: quest.targetWord ?? "",
-                          displayText: '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
-                          primaryColor: theme.primaryColor,
-                          isPositioned: true,
-                          onConfirmed: () =>
-                              _submitVerbalEvaluation(true),
-                          onSkipped: () =>
-                              _submitVerbalEvaluation(false),
-                        ),
-                    ],
-                  ),
               );
             },
           ),

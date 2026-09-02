@@ -87,25 +87,28 @@ class ToolsStrip extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: tools.asMap().entries.map((entry) {
-          final index = entry.key;
-          final tool = entry.value;
-          final card = _ToolCard(
-            title: tool.title,
-            subtitle: tool.subtitle,
-            icon: tool.icon,
-            color: tool.color,
-            route: tool.route,
-            requiresAd: tool.requiresAd,
-            isDark: isDark,
-            index: index,
-          );
-          if (index == tools.length - 1) return card;
-          return Padding(
-            padding: EdgeInsets.only(right: 12.w),
-            child: card,
-          );
-        })
+        children: tools
+            .asMap()
+            .entries
+            .map((entry) {
+              final index = entry.key;
+              final tool = entry.value;
+              final card = _ToolCard(
+                title: tool.title,
+                subtitle: tool.subtitle,
+                icon: tool.icon,
+                color: tool.color,
+                route: tool.route,
+                requiresAd: tool.requiresAd,
+                isDark: isDark,
+                index: index,
+              );
+              if (index == tools.length - 1) return card;
+              return Padding(
+                padding: EdgeInsets.only(right: 12.w),
+                child: card,
+              );
+            })
             .toList()
             .animate(interval: 50.ms)
             .fadeIn(duration: 400.ms)

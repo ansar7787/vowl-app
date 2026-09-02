@@ -664,7 +664,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       di.sl<SoundService>().playWrong();
       CustomSnackBar.show(
         context: context,
-        message: context.tr('kids_zone.not_enough_coins_hint', fallback: 'Keep playing to earn more coins! \uD83C\uDFAE'),
+        message: context.tr(
+          'kids_zone.not_enough_coins_hint',
+          fallback: 'Keep playing to earn more coins! \uD83C\uDFAE',
+        ),
         type: CustomSnackBarType.warning,
       );
       return;
@@ -709,10 +712,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               ),
               SizedBox(height: 24.h),
               // Item preview
-              Text(
-                item['icon'] as String,
-                style: TextStyle(fontSize: 64.sp),
-              ),
+              Text(item['icon'] as String, style: TextStyle(fontSize: 64.sp)),
               SizedBox(height: 16.h),
               Text(
                 item['name'] as String,
@@ -728,10 +728,18 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.monetization_on_rounded, color: Colors.amber, size: 20.sp),
+                  Icon(
+                    Icons.monetization_on_rounded,
+                    color: Colors.amber,
+                    size: 20.sp,
+                  ),
                   SizedBox(width: 6.w),
                   Text(
-                    context.tr('kids_zone.buy_for_coins', fallback: 'Buy for $price coins?', args: ['$price']),
+                    context.tr(
+                      'kids_zone.buy_for_coins',
+                      fallback: 'Buy for $price coins?',
+                      args: ['$price'],
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
@@ -751,22 +759,31 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 14.h),
                         decoration: BoxDecoration(
-                          color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
+                          color: isDark
+                              ? Colors.white10
+                              : const Color(0xFFF1F5F9),
                           borderRadius: BorderRadius.circular(20.r),
                           border: Border.all(
-                            color: isDark ? Colors.white24 : Colors.grey.shade300,
+                            color: isDark
+                                ? Colors.white24
+                                : Colors.grey.shade300,
                             width: 2.w,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: isDark ? Colors.black26 : Colors.grey.shade200,
+                              color: isDark
+                                  ? Colors.black26
+                                  : Colors.grey.shade200,
                               offset: Offset(0, 4.h),
                             ),
                           ],
                         ),
                         child: Center(
                           child: Text(
-                            context.tr('kids_zone.not_now', fallback: 'Not Now'),
+                            context.tr(
+                              'kids_zone.not_now',
+                              fallback: 'Not Now',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -800,7 +817,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                         ),
                         child: Center(
                           child: Text(
-                            context.tr('kids_zone.buy_now', fallback: 'Buy Now!'),
+                            context.tr(
+                              'kids_zone.buy_now',
+                              fallback: 'Buy Now!',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -845,7 +865,10 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
     CustomSnackBar.show(
       context: context,
-      message: context.tr('kids_zone.purchase_success', fallback: 'Awesome! New item unlocked! \u2728'),
+      message: context.tr(
+        'kids_zone.purchase_success',
+        fallback: 'Awesome! New item unlocked! \u2728',
+      ),
       type: CustomSnackBarType.success,
     );
   }

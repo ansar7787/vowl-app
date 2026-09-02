@@ -139,7 +139,9 @@ class VocabularyBaseLayout extends StatelessWidget {
           if (quest.relatedWords != null && quest.relatedWords!.isNotEmpty) {
             customContent = TopicVocabMindMap(
               relatedWords: quest.relatedWords!,
-              color: isCorrect == true ? const Color(0xFF10B981) : theme.primaryColor,
+              color: isCorrect == true
+                  ? const Color(0xFF10B981)
+                  : theme.primaryColor,
             );
           }
           ruleTitle = '';
@@ -150,7 +152,9 @@ class VocabularyBaseLayout extends StatelessWidget {
           if (quest.familyTree != null && quest.familyTree!.isNotEmpty) {
             customContent = WordFormationFamilyTree(
               familyTree: quest.familyTree!,
-              color: isCorrect == true ? const Color(0xFF10B981) : theme.primaryColor,
+              color: isCorrect == true
+                  ? const Color(0xFF10B981)
+                  : theme.primaryColor,
             );
           }
         } else if (gameType == GameSubtype.prefixSuffix) {

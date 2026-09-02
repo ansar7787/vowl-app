@@ -68,7 +68,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   bool _bountiesLoadedVal = false;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
-  
+
   void _updateState() {
     _stateHash.value++;
   }
@@ -328,104 +328,104 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           );
         }
 
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+        final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return PopScope(
-      canPop: _imagePathVal == null,
-      onPopInvokedWithResult: (didPop, result) {
-        if (didPop) return;
-        GameDialogHelper.showExitConfirmation(
-          context,
-          title: context.tr(
-            'translation.quit_scan_title',
-            fallback: 'QUIT SCANNING?',
-          ),
-          description: context.tr(
-            'translation.quit_scan_desc',
-            fallback:
-                'Your scanned text will be lost. Are you sure you want to quit?',
-          ),
-          onQuit: () => context.pop(),
-        );
-      },
-      child: Scaffold(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        body: Stack(
-          fit: StackFit.expand,
-          children: [
-            // 1. Background Layer (Image or Gradient)
-            if (_imagePathVal != null)
-              Image.file(File(_imagePathVal!), fit: BoxFit.cover)
-            else
-              const MeshGradientBackground(showLetters: false),
-
-            // 2. Dark Overlay for better contrast when image is present
-            if (_imagePathVal != null)
-              Container(color: Colors.black.withValues(alpha: 0.5))
-            else
-              Container(
-                color: isDark
-                    ? Colors.black.withValues(alpha: 0.5)
-                    : Colors.white.withValues(alpha: 0.3),
+        return PopScope(
+          canPop: _imagePathVal == null,
+          onPopInvokedWithResult: (didPop, result) {
+            if (didPop) return;
+            GameDialogHelper.showExitConfirmation(
+              context,
+              title: context.tr(
+                'translation.quit_scan_title',
+                fallback: 'QUIT SCANNING?',
               ),
-
-            // 3. Cinematic Laser Scanner (only when processing)
-            if (_isProcessingVal) _buildLaserScanner(),
-
-            // 4. UI Layer
-            CustomScrollView(
-              physics: const BouncingScrollPhysics(
-                parent: AlwaysScrollableScrollPhysics(),
+              description: context.tr(
+                'translation.quit_scan_desc',
+                fallback:
+                    'Your scanned text will be lost. Are you sure you want to quit?',
               ),
-              slivers: [
-                _buildSliverAppBar(context, isDark),
-                SliverToBoxAdapter(
-                  child: ScanBountyTarget(
-                    currentBounty: _currentBountyVal,
-                    bountyFound: _bountyFoundVal,
+              onQuit: () => context.pop(),
+            );
+          },
+          child: Scaffold(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            body: Stack(
+              fit: StackFit.expand,
+              children: [
+                // 1. Background Layer (Image or Gradient)
+                if (_imagePathVal != null)
+                  Image.file(File(_imagePathVal!), fit: BoxFit.cover)
+                else
+                  const MeshGradientBackground(showLetters: false),
+
+                // 2. Dark Overlay for better contrast when image is present
+                if (_imagePathVal != null)
+                  Container(color: Colors.black.withValues(alpha: 0.5))
+                else
+                  Container(
+                    color: isDark
+                        ? Colors.black.withValues(alpha: 0.5)
+                        : Colors.white.withValues(alpha: 0.3),
+                  ),
+
+                // 3. Cinematic Laser Scanner (only when processing)
+                if (_isProcessingVal) _buildLaserScanner(),
+
+                // 4. UI Layer
+                CustomScrollView(
+                  physics: const BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics(),
+                  ),
+                  slivers: [
+                    _buildSliverAppBar(context, isDark),
+                    SliverToBoxAdapter(
+                      child: ScanBountyTarget(
+                        currentBounty: _currentBountyVal,
+                        bountyFound: _bountyFoundVal,
+                      ),
+                    ),
+                    if (_imagePathVal == null)
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: ScanEmptyState(onPickImage: _pickAndScanImage),
+                      )
+                    else
+                      _buildSliverResults(isDark),
+
+                    SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                  ],
+                ),
+
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: ConfettiWidget(
+                    confettiController: _confettiController,
+                    blastDirectionality: BlastDirectionality.explosive,
+                    shouldLoop: false,
+                    colors: const [
+                      Colors.green,
+                      Colors.blue,
+                      Colors.pink,
+                      Colors.orange,
+                      Colors.purple,
+                    ],
+                    numberOfParticles: 50,
+                    gravity: 0.1,
                   ),
                 ),
-                if (_imagePathVal == null)
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: ScanEmptyState(onPickImage: _pickAndScanImage),
-                  )
-                else
-                  _buildSliverResults(isDark),
 
-                SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                if (_imagePathVal != null && !_isProcessingVal)
+                  Positioned(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    child: _buildRetakeBar(),
+                  ),
               ],
             ),
-
-            Align(
-              alignment: Alignment.topCenter,
-              child: ConfettiWidget(
-                confettiController: _confettiController,
-                blastDirectionality: BlastDirectionality.explosive,
-                shouldLoop: false,
-                colors: const [
-                  Colors.green,
-                  Colors.blue,
-                  Colors.pink,
-                  Colors.orange,
-                  Colors.purple,
-                ],
-                numberOfParticles: 50,
-                gravity: 0.1,
-              ),
-            ),
-
-            if (_imagePathVal != null && !_isProcessingVal)
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: _buildRetakeBar(),
-              ),
-          ],
-        ),
-      ),
-    );
+          ),
+        );
       },
     );
   }
@@ -462,7 +462,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios_new_rounded,
-          color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
+          color: _imagePathVal != null || isDark
+              ? Colors.white
+              : Colors.black87,
         ),
         onPressed: () {
           if (_imagePathVal == null) {
@@ -490,7 +492,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w900,
-          color: _imagePathVal != null || isDark ? Colors.white : Colors.black87,
+          color: _imagePathVal != null || isDark
+              ? Colors.white
+              : Colors.black87,
         ),
       ),
       centerTitle: true,
@@ -736,7 +740,12 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                                   ),
                               SizedBox(height: 16.h),
                               Text(
-                                    context.tr('translation.extracting', fallback: 'EXTRACTING...').toUpperCase(),
+                                    context
+                                        .tr(
+                                          'translation.extracting',
+                                          fallback: 'EXTRACTING...',
+                                        )
+                                        .toUpperCase(),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontWeight: FontWeight.w900,

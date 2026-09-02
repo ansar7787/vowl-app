@@ -23,9 +23,9 @@ class LaserBridgePainter extends CustomPainter {
     matches.forEach((k, v) {
       final keyCenter = getCenter(getKey(k));
       final valCenter = getCenter(getKey(v));
-      
+
       final matchColor = colorMap?[k] ?? color;
-      
+
       final matchPaint = Paint()
         ..color = matchColor
         ..strokeWidth = 3

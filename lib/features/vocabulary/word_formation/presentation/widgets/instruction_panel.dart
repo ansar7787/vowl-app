@@ -18,12 +18,11 @@ class InstructionPanel extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+        color: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-          width: 1.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
         boxShadow: [
           BoxShadow(
             color: color.withValues(alpha: 0.05),
@@ -71,7 +70,9 @@ class InstructionPanel extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white.withValues(alpha: 0.95) : const Color(0xFF0F172A),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.95)
+                      : const Color(0xFF0F172A),
                   letterSpacing: 0.3,
                   height: 1.4,
                 ),

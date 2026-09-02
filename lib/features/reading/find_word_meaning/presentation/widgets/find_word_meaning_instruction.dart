@@ -28,7 +28,11 @@ class FindWordMeaningInstruction extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             ExcludeSemantics(
-              child: Icon(Icons.zoom_in_rounded, size: 14.r, color: primaryColor),
+              child: Icon(
+                Icons.zoom_in_rounded,
+                size: 14.r,
+                color: primaryColor,
+              ),
             ),
             SizedBox(width: 12.w),
             Flexible(

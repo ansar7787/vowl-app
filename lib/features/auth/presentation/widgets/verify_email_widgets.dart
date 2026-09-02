@@ -38,10 +38,13 @@ class VerifyEmailIconHeader extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 class VerifyEmailStatusText extends StatelessWidget {
-  const VerifyEmailStatusText({super.key});
+  final String? email;
+
+  const VerifyEmailStatusText({super.key, this.email});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -65,12 +68,75 @@ class VerifyEmailStatusText extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 15.sp,
-            color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.white70
-                : const Color(0xFF4B5563),
+            color: isDark ? Colors.white70 : const Color(0xFF4B5563),
             height: 1.5,
           ),
           textAlign: TextAlign.center,
+        ),
+        if (email != null) ...[
+          SizedBox(height: 12.h),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: const Color(0xFF6366F1).withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(
+                color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+              ),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.email_rounded,
+                  size: 16.r,
+                  color: const Color(0xFF6366F1),
+                ),
+                SizedBox(width: 8.w),
+                Flexible(
+                  child: Text(
+                    email!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF6366F1),
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+        SizedBox(height: 12.h),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.info_outline_rounded,
+              size: 14.r,
+              color: isDark ? Colors.white38 : Colors.grey,
+            ),
+            SizedBox(width: 6.w),
+            Flexible(
+              child: Text(
+                context.tr(
+                  'auth.check_spam_hint',
+                  fallback: "Can't find it? Check your spam folder.",
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  color: isDark ? Colors.white38 : Colors.grey,
+                  fontStyle: FontStyle.italic,
+                ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
         ),
       ],
     );
@@ -95,23 +161,13 @@ class ResendEmailButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // NOTE — not fully localizable yet: 'Resend in $secondsRemaining s'
-    // interpolates a number directly into English text. None of the eight
-    // files in this review contain a single example of a *parameterized*
-    // context.tr() call (every existing call site is a bare string key with
-    // no arguments), so there's no confirmed evidence of what signature
-    // locale_service.dart's tr() extension actually supports for
-    // placeholders/pluralization. Guessing at an unverified method
-    // signature risks a compile error, and concatenating translated
-    // fragments around the number (e.g. '${context.tr('auth.resend_in', fallback: 'Resend in')}
-    // $secondsRemaining ${context.tr('auth.seconds_unit', fallback: 's')}') is a worse
-    // localization anti-pattern than what's here now — word order and
-    // pluralization both vary by language, and fragment concatenation
-    // can't express either correctly. Left as English pending confirmation
-    // of the real parameterization API; see the review notes.
     final label = canResendEmail
         ? context.tr('auth.resend_email', fallback: 'Resend Email')
-        : 'Resend in $secondsRemaining s';
+        : context.tr(
+            'auth.resend_in',
+            fallback: 'Resend in {0} s',
+            args: ['$secondsRemaining'],
+          );
     return Semantics(
       button: true,
       label: canResendEmail
@@ -119,7 +175,11 @@ class ResendEmailButton extends StatelessWidget {
               'auth.resend_verification_email_semantic',
               fallback: 'Resend verification email',
             )
-          : 'Resend available in $secondsRemaining seconds',
+          : context.tr(
+              'auth.resend_cooldown_semantic',
+              fallback: 'Resend available in {0} seconds',
+              args: ['$secondsRemaining'],
+            ),
       child: ElevatedButton(
         onPressed: canResendEmail ? onPressed : null,
         style: ElevatedButton.styleFrom(
@@ -163,7 +223,7 @@ class VerifyConfirmationButton extends StatelessWidget {
       button: true,
       label: context.tr(
         'auth.verified_confirmation_semantic',
-        fallback: 'Email verified, you can now continue',
+        fallback: 'Check if email has been verified',
       ),
       child: OutlinedButton(
         onPressed: onPressed,
@@ -175,7 +235,10 @@ class VerifyConfirmationButton extends StatelessWidget {
           ),
         ),
         child: Text(
-          context.tr('auth.verified_confirmation', fallback: 'Email Verified!'),
+          context.tr(
+            'auth.verified_confirmation',
+            fallback: "I've Verified My Email",
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 16.sp,

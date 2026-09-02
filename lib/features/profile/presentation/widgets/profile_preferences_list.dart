@@ -11,10 +11,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class ProfilePreferencesList extends StatelessWidget {
   final UserEntity user;
 
-  const ProfilePreferencesList({
-    super.key,
-    required this.user,
-  });
+  const ProfilePreferencesList({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {

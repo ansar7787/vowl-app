@@ -144,7 +144,11 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.graphic_eq_rounded, color: Colors.greenAccent, size: 16.r),
+                      Icon(
+                        Icons.graphic_eq_rounded,
+                        color: Colors.greenAccent,
+                        size: 16.r,
+                      ),
                       SizedBox(width: 8.w),
                       Text(
                         "98% MATCH",
@@ -164,7 +168,9 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                     children: List.generate(15, (index) {
                       return Container(
                         width: 4.w,
-                        height: (index % 2 == 0 ? 16.h : 24.h) * (isAnswered ? 1.0 : 0.2),
+                        height:
+                            (index % 2 == 0 ? 16.h : 24.h) *
+                            (isAnswered ? 1.0 : 0.2),
                         decoration: BoxDecoration(
                           color: Colors.greenAccent,
                           borderRadius: BorderRadius.circular(2.r),

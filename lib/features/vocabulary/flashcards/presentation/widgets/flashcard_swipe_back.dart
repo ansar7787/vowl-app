@@ -213,13 +213,17 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                     SizedBox(height: 8.h),
                                     Container(
                                       decoration: BoxDecoration(
-                                        color: widget.color.withValues(alpha: 0.1),
+                                        color: widget.color.withValues(
+                                          alpha: 0.1,
+                                        ),
                                         shape: BoxShape.circle,
                                       ),
                                       child: IconButton(
                                         onPressed: () {
                                           if (widget.quest.word != null) {
-                                            _ttsService.speak(widget.quest.word!);
+                                            _ttsService.speak(
+                                              widget.quest.word!,
+                                            );
                                           }
                                         },
                                         icon: Icon(
@@ -232,45 +236,45 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                         splashRadius: 24.r,
                                       ),
                                     ),
-                                          SizedBox(height: compact ? 12.h : 16.h),
-                                          Text(
-                                            'DEFINITION',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 10.sp,
-                                              color: widget.color,
-                                              fontWeight: FontWeight.w900,
-                                              letterSpacing: 2,
-                                            ),
-                                          ),
-                                          SizedBox(height: compact ? 8.h : 12.h),
-                                          Text(
-                                            widget.quest.definition ?? '',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: compact ? 17.sp : 19.sp,
-                                              color: widget.isHintActive
-                                                  ? widget.color
-                                                  : (widget.isDark
-                                                        ? Colors.white
-                                                        : Colors.black87),
-                                              height: 1.4,
-                                              fontWeight: widget.isHintActive
-                                                  ? FontWeight.w900
-                                                  : FontWeight.w500,
-                                              shadows: widget.isHintActive
-                                                  ? [
-                                                      Shadow(
-                                                        color: widget.color
-                                                            .withValues(alpha: 0.5),
-                                                        blurRadius: 10,
-                                                      ),
-                                                    ]
-                                                  : null,
-                                            ),
-                                          ),
+                                    SizedBox(height: compact ? 12.h : 16.h),
+                                    Text(
+                                      'DEFINITION',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        color: widget.color,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                    SizedBox(height: compact ? 8.h : 12.h),
+                                    Text(
+                                      widget.quest.definition ?? '',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: compact ? 17.sp : 19.sp,
+                                        color: widget.isHintActive
+                                            ? widget.color
+                                            : (widget.isDark
+                                                  ? Colors.white
+                                                  : Colors.black87),
+                                        height: 1.4,
+                                        fontWeight: widget.isHintActive
+                                            ? FontWeight.w900
+                                            : FontWeight.w500,
+                                        shadows: widget.isHintActive
+                                            ? [
+                                                Shadow(
+                                                  color: widget.color
+                                                      .withValues(alpha: 0.5),
+                                                  blurRadius: 10,
+                                                ),
+                                              ]
+                                            : null,
+                                      ),
+                                    ),
                                     if (widget.quest.example != null &&
                                         widget.quest.example!.isNotEmpty) ...[
                                       SizedBox(height: compact ? 12.h : 16.h),

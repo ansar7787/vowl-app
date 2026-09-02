@@ -239,43 +239,42 @@ class StreakMilestones extends StatelessWidget {
                                     ),
                                     child:
                                         ElevatedButton(
-                                              onPressed: () => context
-                                                  .read<ProgressionBloc>()
-                                                  .add(
-                                                    ProgressionClaimStreakMilestoneRequested(
-                                                      days,
-                                                      reward,
-                                                    ),
-                                                  ),
-                                              style: ElevatedButton.styleFrom(
-                                                backgroundColor: Colors.amber,
-                                                foregroundColor: Colors.black,
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 12.w,
-                                                  vertical: 8.h,
+                                          onPressed: () => context
+                                              .read<ProgressionBloc>()
+                                              .add(
+                                                ProgressionClaimStreakMilestoneRequested(
+                                                  days,
+                                                  reward,
                                                 ),
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                        12.r,
-                                                      ),
-                                                ),
-                                                elevation: 0,
                                               ),
-                                              child: AutoSizeText(
-                                                statusLabel,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                ),
-                                                maxLines: 1,
-                                                minFontSize: 6,
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
-                                            )
-                                            .animate()
-                                            .shimmer(duration: 2.seconds, delay: 400.ms),
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.amber,
+                                            foregroundColor: Colors.black,
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 12.w,
+                                              vertical: 8.h,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.r),
+                                            ),
+                                            elevation: 0,
+                                          ),
+                                          child: AutoSizeText(
+                                            statusLabel,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 10.sp,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                            maxLines: 1,
+                                            minFontSize: 6,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ).animate().shimmer(
+                                          duration: 2.seconds,
+                                          delay: 400.ms,
+                                        ),
                                   ),
                                 )
                               else if (isClaimed)
@@ -313,17 +312,13 @@ class StreakMilestones extends StatelessWidget {
                           child: IgnorePointer(
                             child:
                                 Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                          24.r,
-                                        ),
-                                      ),
-                                    )
-                                    .animate()
-                                    .shimmer(
-                                      duration: 3.seconds,
-                                      color: Colors.blue.withValues(alpha: 0.1),
-                                    ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24.r),
+                                  ),
+                                ).animate().shimmer(
+                                  duration: 3.seconds,
+                                  color: Colors.blue.withValues(alpha: 0.1),
+                                ),
                           ),
                         ),
                     ],

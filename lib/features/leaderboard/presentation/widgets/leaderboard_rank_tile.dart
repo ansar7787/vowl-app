@@ -33,10 +33,10 @@ class LeaderboardRankTile extends StatelessWidget {
     final tierColor = rank <= 5
         ? const Color(0xFF6366F1)
         : rank <= 10
-            ? const Color(0xFF3B82F6)
-            : rank <= 25
-                ? const Color(0xFF06B6D4)
-                : const Color(0xFF94A3B8);
+        ? const Color(0xFF3B82F6)
+        : rank <= 25
+        ? const Color(0xFF06B6D4)
+        : const Color(0xFF94A3B8);
     final displayName =
         user.displayName ??
         context.tr('leaderboard.player', fallback: 'Player');
@@ -231,7 +231,11 @@ class LeaderboardRankTile extends StatelessWidget {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.arrow_upward_rounded, color: const Color(0xFF10B981), size: 10.r),
+          Icon(
+            Icons.arrow_upward_rounded,
+            color: const Color(0xFF10B981),
+            size: 10.r,
+          ),
           Text(
             '$diff',
             style: TextStyle(
@@ -248,7 +252,11 @@ class LeaderboardRankTile extends StatelessWidget {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.arrow_downward_rounded, color: const Color(0xFFEF4444), size: 10.r),
+          Icon(
+            Icons.arrow_downward_rounded,
+            color: const Color(0xFFEF4444),
+            size: 10.r,
+          ),
           Text(
             '${diff.abs()}',
             style: TextStyle(

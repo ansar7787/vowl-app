@@ -67,7 +67,9 @@ class ReadAndMatchResult extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.03),
                 borderRadius: BorderRadius.circular(12.r),
               ),
               child: Column(

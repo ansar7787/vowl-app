@@ -185,9 +185,10 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -197,7 +198,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
           level: widget.level,
         );
       }
-      
+
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -238,9 +239,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             _pullForce.value = 0.0;
             _selectedWord.value = null;
             _isWordPlaced.value = false;
-            _generateDynamicOptions(
-              state.currentQuest.missingWord ?? "drone",
-            );
+            _generateDynamicOptions(state.currentQuest.missingWord ?? "drone");
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
@@ -268,7 +267,10 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('speaking_games.verbal_vortex', fallback: 'VERBAL VORTEX DRIVER!'),
+            title: context.tr(
+              'speaking_games.verbal_vortex',
+              fallback: 'VERBAL VORTEX DRIVER!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -291,7 +293,16 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _dynamicOptions, _selectedWord, _pullForce, _isWordPlaced, _isListening]),
+            listenable: Listenable.merge([
+              _isAnswered,
+              _isCorrect,
+              _showConfetti,
+              _dynamicOptions,
+              _selectedWord,
+              _pullForce,
+              _isWordPlaced,
+              _isListening,
+            ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 onTutorPass: _tutorPass,
@@ -300,98 +311,102 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
-            onContinue: () =>
-                context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () =>
-                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : Stack(
-                    children: [
-                      RawScrollbar(
-                        controller: _scrollController,
-                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                        radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        child: CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
-                        ),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SpeakMissingWordInstruction(
-                                primaryColor: theme.primaryColor,
-                                isWordPlaced: _isWordPlaced.value,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              SpeakMissingWordVortexSentence(
-                                text: _isWordPlaced.value
-                                    ? completedSentence
-                                    : initialBlankSentence,
-                                insertedWord: _isWordPlaced.value
-                                    ? (_selectedWord.value ?? "")
-                                    : "",
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                              ),
-                              SizedBox(height: 32.h),
-                              if (!_isWordPlaced.value)
-                                SpeakMissingWordMagnetArena(
-                                  dynamicOptions: _dynamicOptions.value,
-                                  selectedWord: _selectedWord.value,
-                                  pullForce: _pullForce.value,
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  vortexController: _vortexController,
-                                  onPullStart: _onPullStart,
-                                  onPullEnd: _onPullEnd,
+                onContinue: () =>
+                    context.read<SpeakingBloc>().add(const NextQuestion()),
+                onHint: () =>
+                    context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+                child: quest == null
+                    ? const SizedBox()
+                    : Stack(
+                        children: [
+                          RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverPadding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  sliver: SliverToBoxAdapter(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        SpeakMissingWordInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          isWordPlaced: _isWordPlaced.value,
+                                          instruction: quest.instruction,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                        SpeakMissingWordVortexSentence(
+                                          text: _isWordPlaced.value
+                                              ? completedSentence
+                                              : initialBlankSentence,
+                                          insertedWord: _isWordPlaced.value
+                                              ? (_selectedWord.value ?? "")
+                                              : "",
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
+                                        SizedBox(height: 32.h),
+                                        if (!_isWordPlaced.value)
+                                          SpeakMissingWordMagnetArena(
+                                            dynamicOptions:
+                                                _dynamicOptions.value,
+                                            selectedWord: _selectedWord.value,
+                                            pullForce: _pullForce.value,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            vortexController: _vortexController,
+                                            onPullStart: _onPullStart,
+                                            onPullEnd: _onPullEnd,
+                                          ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              if (_isWordPlaced.value && !_isAnswered.value)
-                                SpeakingSelfEvaluationControls(
-                                  expectedText: completedSentence,
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(
-                                        true,
-                                        missingWord,
-                                      ),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(
-                                        false,
-                                        missingWord,
-                                      ),
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 16.h,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        if (_isWordPlaced.value &&
+                                            !_isAnswered.value)
+                                          SpeakingSelfEvaluationControls(
+                                            expectedText: completedSentence,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(
+                                                  true,
+                                                  missingWord,
+                                                ),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(
+                                                  false,
+                                                  missingWord,
+                                                ),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                  ),
-                  ],
-                ),
               );
             },
           ),

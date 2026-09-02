@@ -17,10 +17,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 class WordSnapScreen extends StatefulWidget {
   final int level;
 
-  const WordSnapScreen({
-    super.key,
-    this.level = 1,
-  });
+  const WordSnapScreen({super.key, this.level = 1});
 
   @override
   State<WordSnapScreen> createState() => _WordSnapScreenState();
@@ -30,7 +27,9 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<Map<String, dynamic>?> _currentPuzzle = ValueNotifier(null);
+  final ValueNotifier<Map<String, dynamic>?> _currentPuzzle = ValueNotifier(
+    null,
+  );
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool> _pendingSnap = ValueNotifier(false);
 
@@ -111,7 +110,10 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       context,
       xp: 50,
       coins: 10,
-      title: context.tr('vocabulary.word_snap_master', fallback: 'WORD SNAP MASTER!'),
+      title: context.tr(
+        'vocabulary.word_snap_master',
+        fallback: 'WORD SNAP MASTER!',
+      ),
       enableDoubleUp: true,
     );
   }
@@ -128,80 +130,94 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
           backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
           body: SafeArea(
             child: _currentPuzzle.value == null
-            ? GameShimmerLoading(primaryColor: primaryColor)
-            : Stack(
-                children: [
-                  CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.all(24.r),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 16.h),
-                              _buildHeaderCard(primaryColor, isDark),
-                              SizedBox(height: 40.h),
-                              _buildQuestContent(primaryColor, isDark),
-                              SizedBox(height: (_isAnswered.value || _pendingSnap.value) ? 160.h : 60.h),
-                            ],
+                ? GameShimmerLoading(primaryColor: primaryColor)
+                : Stack(
+                    children: [
+                      CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.all(24.r),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  _buildHeaderCard(primaryColor, isDark),
+                                  SizedBox(height: 40.h),
+                                  _buildQuestContent(primaryColor, isDark),
+                                  SizedBox(
+                                    height:
+                                        (_isAnswered.value ||
+                                            _pendingSnap.value)
+                                        ? 160.h
+                                        : 60.h,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (!_isAnswered.value && !_pendingSnap.value)
+                        Positioned(
+                          bottom: 40.h,
+                          left: 24.w,
+                          right: 24.w,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              _hapticService.selection();
+                              _pendingSnap.value = true;
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: primaryColor,
+                              padding: EdgeInsets.symmetric(vertical: 16.h),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.r),
+                              ),
+                            ),
+                            child: Text(
+                              context.tr(
+                                'games.start_assembling',
+                                fallback: 'Start Assembling',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      if (_pendingSnap.value && !_isAnswered.value)
+                        DynamicJigsawWrapper(
+                          expectedText: _currentPuzzle.value!['word']!,
+                          primaryColor: primaryColor,
+                          onConfirmed: () => _onSubmit(true),
+                          onSkipped: () => _onSubmit(false),
+                        ),
                     ],
                   ),
-                  if (!_isAnswered.value && !_pendingSnap.value)
-                    Positioned(
-                      bottom: 40.h,
-                      left: 24.w,
-                      right: 24.w,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _hapticService.selection();
-                          _pendingSnap.value = true;
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: primaryColor,
-                          padding: EdgeInsets.symmetric(vertical: 16.h),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                          ),
-                        ),
-                        child: Text(
-                          context.tr('games.start_assembling', fallback: 'Start Assembling'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  if (_pendingSnap.value && !_isAnswered.value)
-                    DynamicJigsawWrapper(
-                      expectedText: _currentPuzzle.value!['word']!,
-                      primaryColor: primaryColor,
-                      onConfirmed: () => _onSubmit(true),
-                      onSkipped: () => _onSubmit(false),
-                    ),
-                ],
-              ),
           ),
         );
-      }
+      },
     );
   }
 
   Widget _buildHeaderCard(Color primaryColor, bool isDark) {
-    final instruction = _currentPuzzle.value!['instruction'] as String? ?? 'Assemble the pieces into meaning.';
+    final instruction =
+        _currentPuzzle.value!['instruction'] as String? ??
+        'Assemble the pieces into meaning.';
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
         color: primaryColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 1.5),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.2),
+          width: 1.5,
+        ),
       ),
       child: Column(
         children: [
@@ -218,7 +234,9 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
           ),
           SizedBox(height: 12.h),
           Text(
-            instruction.isEmpty ? 'Assemble the pieces into meaning.' : instruction,
+            instruction.isEmpty
+                ? 'Assemble the pieces into meaning.'
+                : instruction,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -240,7 +258,10 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
       decoration: BoxDecoration(
         color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.3),
+          width: 2,
+        ),
         boxShadow: [
           BoxShadow(
             color: primaryColor.withValues(alpha: 0.1),
@@ -262,7 +283,8 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
               letterSpacing: 2,
             ),
           ),
-          if (_currentPuzzle.value!['question'] != null && (_currentPuzzle.value!['question'] as String).isNotEmpty) ...[
+          if (_currentPuzzle.value!['question'] != null &&
+              (_currentPuzzle.value!['question'] as String).isNotEmpty) ...[
             SizedBox(height: 16.h),
             Text(
               _currentPuzzle.value!['question'] as String,

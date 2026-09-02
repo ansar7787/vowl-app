@@ -211,246 +211,246 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       listenable: Listenable.merge([_hootTitle, _hootText, _status, _pressed]),
       builder: (context, _) {
         final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-    final locale = Localizations.localeOf(context).toString();
-    final now = DateTime.now();
-    final dateString = DateFormat('EEEE, d MMM', locale).format(now);
+        final isDark = theme.brightness == Brightness.dark;
+        final locale = Localizations.localeOf(context).toString();
+        final now = DateTime.now();
+        final dateString = DateFormat('EEEE, d MMM', locale).format(now);
 
-    final card = Container(
-      width: double.infinity,
-      constraints: const BoxConstraints(maxWidth: 600),
-      clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32.r),
-        color: isDark ? _VowlCardPalette.darkCard : Colors.white,
-        boxShadow: isDark
-            ? null
-            : [
-                BoxShadow(
-                  color: _VowlCardPalette.indigo.withValues(alpha: 0.12),
-                  blurRadius: 40,
-                  offset: const Offset(0, 16),
-                ),
-              ],
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
-              : _VowlCardPalette.indigo.withValues(alpha: 0.15),
-          width: 1,
-        ),
-      ),
-      child: Stack(
-        children: [
-          Positioned(
-            right: -30.w,
-            top: -20.h,
-            child: Icon(
-              Icons.format_quote_rounded,
-              size: 180.r,
+        final card = Container(
+          width: double.infinity,
+          constraints: const BoxConstraints(maxWidth: 600),
+          clipBehavior: Clip.hardEdge,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(32.r),
+            color: isDark ? _VowlCardPalette.darkCard : Colors.white,
+            boxShadow: isDark
+                ? null
+                : [
+                    BoxShadow(
+                      color: _VowlCardPalette.indigo.withValues(alpha: 0.12),
+                      blurRadius: 40,
+                      offset: const Offset(0, 16),
+                    ),
+                  ],
+            border: Border.all(
               color: isDark
-                  ? Colors.white.withValues(alpha: 0.04)
-                  : _VowlCardPalette.indigo.withValues(alpha: 0.04),
+                  ? Colors.white.withValues(alpha: 0.08)
+                  : _VowlCardPalette.indigo.withValues(alpha: 0.15),
+              width: 1,
             ),
           ),
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Colors.transparent,
-                    _VowlCardPalette.indigo.withValues(
-                      alpha: isDark ? 0.05 : 0.02,
+          child: Stack(
+            children: [
+              Positioned(
+                right: -30.w,
+                top: -20.h,
+                child: Icon(
+                  Icons.format_quote_rounded,
+                  size: 180.r,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : _VowlCardPalette.indigo.withValues(alpha: 0.04),
+                ),
+              ),
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Colors.transparent,
+                        _VowlCardPalette.indigo.withValues(
+                          alpha: isDark ? 0.05 : 0.02,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(24.r),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 52.r,
+                          height: 52.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.05)
+                                : _VowlCardPalette.lightSurfaceAlt,
+                            border: Border.all(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.1)
+                                  : Colors.black.withValues(alpha: 0.05),
+                              width: 1,
+                            ),
+                          ),
+                          child: Center(
+                            child: VowlMascot(
+                              size: 38.r,
+                              useFloatingAnimation: false,
+                              state: VowlMascotState.happy,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 16.w),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                (_hootTitle.value ??
+                                        context.tr(
+                                          'home.daily_wisdom',
+                                          fallback: 'DAILY WISDOM',
+                                        ))
+                                    .toUpperCase(),
+                                style: TextStyle(
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w900,
+                                  fontFamily: 'Outfit',
+                                  letterSpacing: 1.8,
+                                  // textSafeIndigo, not the raw brand indigo:
+                                  // this label sits right at AA's small-text
+                                  // threshold and this shade clears it cleanly.
+                                  color: _VowlCardPalette.textSafeIndigo,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(height: 2.h),
+                              Text(
+                                dateString,
+                                style: TextStyle(
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'Outfit',
+                                  color: isDark
+                                      ? _VowlCardPalette.darkSecondaryText
+                                      : _VowlCardPalette.lightSecondaryText,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 8.w),
+                        _StreakBadge(
+                          streakCount: widget.streakCount,
+                          isDark: isDark,
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 28.h),
+                    _status.value == _HootStatus.loading
+                        ? _buildShimmerQuote(isDark)
+                        : FadeTransition(
+                            opacity: _fadeIn,
+                            child: SlideTransition(
+                              position: _slideIn,
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: Text(
+                                  "${_hootText.value}",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Outfit',
+                                    height: 1.5,
+                                    color: isDark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                    SizedBox(height: 32.h),
+                    GestureDetector(
+                      onTap: _handleNavigation,
+                      onTapDown: (_) => _pressed.value = true,
+                      onTapUp: (_) => _pressed.value = false,
+                      onTapCancel: () => _pressed.value = false,
+                      child: AnimatedScale(
+                        scale: _pressed.value ? 0.96 : 1.0,
+                        duration: const Duration(milliseconds: 120),
+                        curve: Curves.easeOut,
+                        child: Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.symmetric(vertical: 14.h),
+                          decoration: BoxDecoration(
+                            color: _VowlCardPalette.indigo,
+                            borderRadius: BorderRadius.circular(16.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: _VowlCardPalette.indigo.withValues(
+                                  alpha: 0.3,
+                                ),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                context.tr(
+                                  'home.start_next_task',
+                                  fallback: 'Start Next Task',
+                                ),
+                                style: TextStyle(
+                                  // Pure white on the indigo fill keeps the same
+                                  // ~4.47:1 ratio as the eyebrow label did on
+                                  // white. Bumping weight/size alone won't fix
+                                  // contrast, so if this button ever needs to
+                                  // clear strict AA independently, darken the
+                                  // fill toward textSafeIndigo rather than the
+                                  // text color.
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: 'Outfit',
+                                  fontSize: 15.sp,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              Icon(
+                                Icons.play_arrow_rounded,
+                                color: Colors.white,
+                                size: 24.r,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
-            ),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.all(24.r),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 52.r,
-                      height: 52.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : _VowlCardPalette.lightSurfaceAlt,
-                        border: Border.all(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.1)
-                              : Colors.black.withValues(alpha: 0.05),
-                          width: 1,
-                        ),
-                      ),
-                      child: Center(
-                        child: VowlMascot(
-                          size: 38.r,
-                          useFloatingAnimation: false,
-                          state: VowlMascotState.happy,
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            (_hootTitle.value ??
-                                    context.tr(
-                                      'home.daily_wisdom',
-                                      fallback: 'DAILY WISDOM',
-                                    ))
-                                .toUpperCase(),
-                            style: TextStyle(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              fontFamily: 'Outfit',
-                              letterSpacing: 1.8,
-                              // textSafeIndigo, not the raw brand indigo:
-                              // this label sits right at AA's small-text
-                              // threshold and this shade clears it cleanly.
-                              color: _VowlCardPalette.textSafeIndigo,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            dateString,
-                            style: TextStyle(
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'Outfit',
-                              color: isDark
-                                  ? _VowlCardPalette.darkSecondaryText
-                                  : _VowlCardPalette.lightSecondaryText,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-                    _StreakBadge(
-                      streakCount: widget.streakCount,
-                      isDark: isDark,
-                    ),
-                  ],
-                ),
-                SizedBox(height: 28.h),
-                _status.value == _HootStatus.loading
-                    ? _buildShimmerQuote(isDark)
-                    : FadeTransition(
-                        opacity: _fadeIn,
-                        child: SlideTransition(
-                          position: _slideIn,
-                          child: SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              "${_hootText.value}",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Outfit',
-                                height: 1.5,
-                                color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                SizedBox(height: 32.h),
-                GestureDetector(
-                  onTap: _handleNavigation,
-                  onTapDown: (_) => _pressed.value = true,
-                  onTapUp: (_) => _pressed.value = false,
-                  onTapCancel: () => _pressed.value = false,
-                  child: AnimatedScale(
-                    scale: _pressed.value ? 0.96 : 1.0,
-                    duration: const Duration(milliseconds: 120),
-                    curve: Curves.easeOut,
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 14.h),
-                      decoration: BoxDecoration(
-                        color: _VowlCardPalette.indigo,
-                        borderRadius: BorderRadius.circular(16.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: _VowlCardPalette.indigo.withValues(
-                              alpha: 0.3,
-                            ),
-                            blurRadius: 12,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            context.tr(
-                              'home.start_next_task',
-                              fallback: 'Start Next Task',
-                            ),
-                            style: TextStyle(
-                              // Pure white on the indigo fill keeps the same
-                              // ~4.47:1 ratio as the eyebrow label did on
-                              // white. Bumping weight/size alone won't fix
-                              // contrast, so if this button ever needs to
-                              // clear strict AA independently, darken the
-                              // fill toward textSafeIndigo rather than the
-                              // text color.
-                              color: Colors.white,
-                              fontWeight: FontWeight.w800,
-                              fontFamily: 'Outfit',
-                              fontSize: 15.sp,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                          SizedBox(width: 8.w),
-                          Icon(
-                            Icons.play_arrow_rounded,
-                            color: Colors.white,
-                            size: 24.r,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+        );
 
-    return Semantics(
-      button: true,
-      // excludeSemantics collapses the whole card into this one
-      // announcement. Without it, a screen reader can still land on
-      // the title, date, quote, and streak count as separate stops,
-      // repeating everything this label already says.
-      excludeSemantics: true,
-      onTap: _handleNavigation,
-      label:
-          '${_hootTitle.value ?? 'Daily Wisdom'}. ${_hootText.value ?? 'Loading...'}. ${widget.streakCount} day streak. Double tap to start next task.',
-      child: card,
-    );
-      }
+        return Semantics(
+          button: true,
+          // excludeSemantics collapses the whole card into this one
+          // announcement. Without it, a screen reader can still land on
+          // the title, date, quote, and streak count as separate stops,
+          // repeating everything this label already says.
+          excludeSemantics: true,
+          onTap: _handleNavigation,
+          label:
+              '${_hootTitle.value ?? 'Daily Wisdom'}. ${_hootText.value ?? 'Loading...'}. ${widget.streakCount} day streak. Double tap to start next task.',
+          child: card,
+        );
+      },
     );
   }
 

@@ -151,10 +151,7 @@ class _BentoArenaState extends State<BentoArena> {
                   children: [
                     Text(
                       _isExpanded.value
-                          ? context.tr(
-                              'home.show_less',
-                              fallback: 'Show Less',
-                            )
+                          ? context.tr('home.show_less', fallback: 'Show Less')
                           : context.tr(
                               'home.see_all_categories',
                               fallback: 'See All 9 Categories',

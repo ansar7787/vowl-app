@@ -32,7 +32,10 @@ class LanguageManagerSheet extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           Text(
-            context.tr('translation.downloaded_packs', fallback: 'Downloaded Language Packs'),
+            context.tr(
+              'translation.downloaded_packs',
+              fallback: 'Downloaded Language Packs',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 20.sp,
@@ -44,7 +47,11 @@ class LanguageManagerSheet extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Text(
-              context.tr('translation.manage_packs_desc', fallback: 'Manage your offline translation models. Each pack uses ~30MB of storage.'),
+              context.tr(
+                'translation.manage_packs_desc',
+                fallback:
+                    'Manage your offline translation models. Each pack uses ~30MB of storage.',
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -60,7 +67,10 @@ class LanguageManagerSheet extends StatelessWidget {
                 if (state.downloadedLanguages.isEmpty) {
                   return Center(
                     child: Text(
-                      context.tr('translation.no_packs_downloaded', fallback: 'No language packs downloaded yet.'),
+                      context.tr(
+                        'translation.no_packs_downloaded',
+                        fallback: 'No language packs downloaded yet.',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -133,7 +143,11 @@ class LanguageManagerSheet extends StatelessWidget {
       builder: (ctx) => AlertDialog(
         backgroundColor: isDark ? const Color(0xFF1E293B) : Colors.white,
         title: Text(
-          context.tr('translation.delete_pack_title', args: [lang], fallback: 'Delete $lang?'),
+          context.tr(
+            'translation.delete_pack_title',
+            args: [lang],
+            fallback: 'Delete $lang?',
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontWeight: FontWeight.bold,
@@ -141,7 +155,12 @@ class LanguageManagerSheet extends StatelessWidget {
           ),
         ),
         content: Text(
-          context.tr('translation.delete_pack_desc', args: [lang], fallback: 'This will free up storage space. You will need to redownload this pack to translate to $lang again.'),
+          context.tr(
+            'translation.delete_pack_desc',
+            args: [lang],
+            fallback:
+                'This will free up storage space. You will need to redownload this pack to translate to $lang again.',
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             color: isDark ? Colors.white70 : const Color(0xFF475569),
@@ -150,7 +169,10 @@ class LanguageManagerSheet extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: Text(context.tr('common.cancel', fallback: 'Cancel'), style: const TextStyle(color: Colors.grey)),
+            child: Text(
+              context.tr('common.cancel', fallback: 'Cancel'),
+              style: const TextStyle(color: Colors.grey),
+            ),
           ),
           TextButton(
             onPressed: () {

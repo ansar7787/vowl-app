@@ -88,15 +88,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           final expandedHeight = 280.h;
                           final collapsedHeight = 80.h;
                           final currentHeight = constraints.biggest.height;
-                          final collapseProgress = 1.0 -
+                          final collapseProgress =
+                              1.0 -
                               ((currentHeight - collapsedHeight) /
                                       (expandedHeight - collapsedHeight))
                                   .clamp(0.0, 1.0);
 
                           return FlexibleSpaceBar(
                             background: Opacity(
-                              opacity: (1.0 - collapseProgress * 1.5)
-                                  .clamp(0.0, 1.0),
+                              opacity: (1.0 - collapseProgress * 1.5).clamp(
+                                0.0,
+                                1.0,
+                              ),
                               child: Center(
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
@@ -107,31 +110,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           MainAxisAlignment.center,
                                       children: [
                                         SizedBox(height: 20.h),
-                                        BlocBuilder<ProfileBloc,
-                                            ProfileState>(
+                                        BlocBuilder<ProfileBloc, ProfileState>(
                                           buildWhen: (prev, curr) =>
-                                              prev.photoUrl !=
-                                              curr.photoUrl,
-                                          builder:
-                                              (context, profileState) {
+                                              prev.photoUrl != curr.photoUrl,
+                                          builder: (context, profileState) {
                                             return ProfileHeader(
                                               user: user,
                                               immediatePhotoUrl:
                                                   profileState.photoUrl,
                                               onEditName: () =>
                                                   _showEditNameSheet(
-                                                context,
-                                                user.displayName ?? '',
-                                              ),
+                                                    context,
+                                                    user.displayName ?? '',
+                                                  ),
                                               onEditPhoto: () =>
                                                   _showImageSourceSheet(
-                                                      context),
-                                            )
-                                                .animate()
-                                                .fadeIn(
-                                                  duration: 800.ms,
-                                                  curve: Curves.easeOutCubic,
-                                                );
+                                                    context,
+                                                  ),
+                                            ).animate().fadeIn(
+                                              duration: 800.ms,
+                                              curve: Curves.easeOutCubic,
+                                            );
                                           },
                                         ),
                                       ],
@@ -143,29 +142,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             // Collapsed state: show mini avatar + name
                             title: collapseProgress > 0.6
                                 ? Opacity(
-                                    opacity:
-                                        ((collapseProgress - 0.6) / 0.4)
-                                            .clamp(0.0, 1.0),
+                                    opacity: ((collapseProgress - 0.6) / 0.4)
+                                        .clamp(0.0, 1.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         CircleAvatar(
                                           radius: 16.r,
                                           backgroundColor: isDark
-                                              ? Colors.white
-                                                  .withValues(alpha: 0.1)
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.1,
+                                                )
                                               : const Color(0xFFF1F5F9),
-                                          backgroundImage: (user
-                                                      .photoUrl !=
-                                                  null)
-                                              ? NetworkImage(
-                                                  user.photoUrl!)
+                                          backgroundImage:
+                                              (user.photoUrl != null)
+                                              ? NetworkImage(user.photoUrl!)
                                               : null,
                                           child: user.photoUrl == null
                                               ? Icon(
                                                   Icons.person_rounded,
                                                   color: const Color(
-                                                      0xFF94A3B8),
+                                                    0xFF94A3B8,
+                                                  ),
                                                   size: 18.r,
                                                 )
                                               : null,
@@ -179,8 +177,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             fontWeight: FontWeight.w800,
                                             color: isDark
                                                 ? Colors.white
-                                                : const Color(
-                                                    0xFF0F172A),
+                                                : const Color(0xFF0F172A),
                                           ),
                                         ),
                                       ],
@@ -196,192 +193,230 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SliverToBoxAdapter(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // ── 0. Vowl Mascot / Companion ──
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 8.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: const VowlMascotCard(),
-                              ),
-                              SizedBox(height: 16.h),
-                            ],
-                          ),
+                        children:
+                            [
+                                  // ── 0. Vowl Mascot / Companion ──
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 8.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: const VowlMascotCard(),
+                                      ),
+                                      SizedBox(height: 16.h),
+                                    ],
+                                  ),
 
-                          // ── 1. Adventure Stats ──
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 8.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: _buildSectionHeader(
-                                  context,
-                                  context.tr(
-                                    'profile.adventure_stats',
-                                    fallback: 'Adventure Stats',
+                                  // ── 1. Adventure Stats ──
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 8.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: _buildSectionHeader(
+                                          context,
+                                          context.tr(
+                                            'profile.adventure_stats',
+                                            fallback: 'Adventure Stats',
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 12.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: ProfileBentoStats(user: user),
+                                      ),
+                                      SizedBox(height: 16.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: ProfileFeatureCard(
+                                          iconContent: Icon(
+                                            Icons.insights_rounded,
+                                            color: Colors.white,
+                                            size: 24.r,
+                                          ),
+                                          color: const Color(
+                                            0xFF10B981,
+                                          ), // Emerald
+                                          shadowColor: const Color(0xFF059669),
+                                          title: context.tr(
+                                            'profile.learning_report',
+                                            fallback: 'Learning Report',
+                                          ),
+                                          subtitle: context.tr(
+                                            'profile.learning_report_subtitle',
+                                            fallback:
+                                                'Weekly XP, mastery overview & quick resume.',
+                                          ),
+                                          onTap: () {
+                                            di.sl<HapticService>().selection();
+                                            context.push(
+                                              AppRouter.progressDashboardRoute,
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ),
-                              SizedBox(height: 12.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: ProfileBentoStats(user: user),
-                              ),
-                              SizedBox(height: 16.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: ProfileFeatureCard(
-                                  iconContent: Icon(
-                                    Icons.insights_rounded,
-                                    color: Colors.white,
-                                    size: 24.r,
-                                  ),
-                                  color: const Color(0xFF10B981), // Emerald
-                                  shadowColor: const Color(0xFF059669),
-                                  title: context.tr(
-                                    'profile.learning_report',
-                                    fallback: 'Learning Report',
-                                  ),
-                                  subtitle: context.tr(
-                                    'profile.learning_report_subtitle',
-                                    fallback:
-                                        'Weekly XP, mastery overview & quick resume.',
-                                  ),
-                                  onTap: () {
-                                    di.sl<HapticService>().selection();
-                                    context.push(
-                                        AppRouter.progressDashboardRoute);
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
 
-                          // ── 2. Key Shop (inline, compact) ──
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 16.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: _buildKeyShopBanner(context, user),
-                              ),
-                            ],
-                          ),
-
-                          // ── 3. Hall of Fame ──
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 40.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: _buildSectionHeader(
-                                  context,
-                                  context.tr(
-                                    'profile.hall_of_fame',
-                                    fallback: 'Hall of Fame',
+                                  // ── 2. Key Shop (inline, compact) ──
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: _buildKeyShopBanner(
+                                          context,
+                                          user,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ),
-                              SizedBox(height: 20.h),
-                              ProfileBadgesList(user: user),
-                            ],
-                          ),
 
-                          // ── 4. Kids Zone (conditional) ──
-                          if (user.kidsStickers.isNotEmpty ||
-                              user.kidsTotalLevelsCompleted > 0)
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 40.h),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 24.w),
-                                  child: _buildSectionHeader(
-                                    context,
-                                    context.tr(
-                                      'profile.kids_zone',
-                                      fallback: 'Kids Zone',
+                                  // ── 3. Hall of Fame ──
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 40.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: _buildSectionHeader(
+                                          context,
+                                          context.tr(
+                                            'profile.hall_of_fame',
+                                            fallback: 'Hall of Fame',
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 20.h),
+                                      ProfileBadgesList(user: user),
+                                    ],
+                                  ),
+
+                                  // ── 4. Kids Zone (conditional) ──
+                                  if (user.kidsStickers.isNotEmpty ||
+                                      user.kidsTotalLevelsCompleted > 0)
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 40.h),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          child: _buildSectionHeader(
+                                            context,
+                                            context.tr(
+                                              'profile.kids_zone',
+                                              fallback: 'Kids Zone',
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 20.h),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          child: _buildKidsRoomCard(context),
+                                        ),
+                                        SizedBox(height: 16.h),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          child: ProfileStickersProgress(
+                                            user: user,
+                                          ),
+                                        ),
+                                      ],
                                     ),
+
+                                  // ── 5. Premium CTA (single, after value) ──
+                                  if (!user.isPremium)
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 40.h),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          child: _buildPremiumBanner(context),
+                                        ),
+                                      ],
+                                    ),
+
+                                  // ── 6. Settings ──
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 40.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: ProfilePreferencesList(
+                                          user: user,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                SizedBox(height: 20.h),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 24.w),
-                                  child: _buildKidsRoomCard(context),
-                                ),
-                                SizedBox(height: 16.h),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 24.w),
-                                  child:
-                                      ProfileStickersProgress(user: user),
-                                ),
-                              ],
-                            ),
 
-                          // ── 5. Premium CTA (single, after value) ──
-                          if (!user.isPremium)
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 40.h),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 24.w),
-                                  child: _buildPremiumBanner(context),
+                                  // ── 7. Sign Out ──
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 24.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: _buildSignOutButton(context),
+                                      ),
+                                      SizedBox(height: 100.h),
+                                    ],
+                                  ),
+                                ]
+                                .animate(interval: 80.ms)
+                                .fadeIn(
+                                  duration: 600.ms,
+                                  curve: Curves.easeOutCubic,
+                                )
+                                .scaleXY(
+                                  begin: 0.95,
+                                  end: 1.0,
+                                  duration: 600.ms,
+                                  curve: Curves.easeOutBack,
+                                )
+                                .slideY(
+                                  begin: 0.05,
+                                  end: 0,
+                                  duration: 600.ms,
+                                  curve: Curves.easeOutCubic,
                                 ),
-                              ],
-                            ),
-
-                          // ── 6. Settings ──
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 40.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: ProfilePreferencesList(user: user),
-                              ),
-                            ],
-                          ),
-
-                          // ── 7. Sign Out ──
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 24.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: _buildSignOutButton(context),
-                              ),
-                              SizedBox(height: 100.h),
-                            ],
-                          ),
-                        ]
-                            .animate(interval: 80.ms)
-                            .fadeIn(
-                              duration: 600.ms,
-                              curve: Curves.easeOutCubic,
-                            )
-                            .scaleXY(
-                              begin: 0.95,
-                              end: 1.0,
-                              duration: 600.ms,
-                              curve: Curves.easeOutBack,
-                            )
-                            .slideY(
-                              begin: 0.05,
-                              end: 0,
-                              duration: 600.ms,
-                              curve: Curves.easeOutCubic,
-                            ),
                       ),
                     ),
                   ],
@@ -471,10 +506,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       color: Colors.amber,
       shadowColor: Colors.amber.shade700,
-      title: context.tr(
-        'profile.golden_keys_title',
-        fallback: 'Golden Keys',
-      ),
+      title: context.tr('profile.golden_keys_title', fallback: 'Golden Keys'),
       subtitle: context.tr(
         'profile.golden_keys_subtitle',
         fallback: 'Get more keys to unlock gates instantly!',

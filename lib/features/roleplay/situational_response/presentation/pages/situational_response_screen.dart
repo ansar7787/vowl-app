@@ -96,7 +96,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     _isFirstStagePassed.dispose();
     _shuffledOptions.dispose();
     _shuffledCorrectIndex.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -231,9 +231,17 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedOrbIndex, _isFirstStagePassed, _shuffledOptions, _shuffledCorrectIndex]),
-            builder: (context, _) {
-              return RoleplayBaseLayout(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedOrbIndex,
+            _isFirstStagePassed,
+            _shuffledOptions,
+            _shuffledCorrectIndex,
+          ]),
+          builder: (context, _) {
+            return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -252,7 +260,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -265,70 +275,125 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
                                               return Padding(
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
-                                                  vertical: isCompact ? 5.h : 10.h,
+                                                  vertical: isCompact
+                                                      ? 5.h
+                                                      : 10.h,
                                                 ),
                                                 child: Column(
                                                   children: [
                                                     SituationalResponseInstruction(
-                                                      primaryColor: theme.primaryColor,
-                                                      instruction: quest.instruction,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
                                                       isDark: isDark,
                                                     ),
-                                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 10.h
+                                                          : 16.h,
+                                                    ),
                                                     SituationalResponseSceneDisplay(
                                                       quest: quest,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      onListen: () => _triggerAutoPlay(quest),
+                                                      onListen: () =>
+                                                          _triggerAutoPlay(
+                                                            quest,
+                                                          ),
                                                     ),
-                                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 16.h
+                                                          : 24.h,
+                                                    ),
                                                     AnimatedBuilder(
-                                                      animation: Listenable.merge([_timerController, _pulseController]),
+                                                      animation:
+                                                          Listenable.merge([
+                                                            _timerController,
+                                                            _pulseController,
+                                                          ]),
                                                       builder: (context, _) {
                                                         return SituationalResponseReactionZone(
-                                                          options: _shuffledOptions.value,
-                                                          correctIndex: _shuffledCorrectIndex.value,
-                                                          color: theme.primaryColor,
+                                                          options:
+                                                              _shuffledOptions
+                                                                  .value,
+                                                          correctIndex:
+                                                              _shuffledCorrectIndex
+                                                                  .value,
+                                                          color: theme
+                                                              .primaryColor,
                                                           isDark: isDark,
-                                                          timerValue: _timerController.value,
-                                                          pulseValue: _pulseController.value,
-                                                          isAnswered: _isAnswered.value || _isFirstStagePassed.value,
-                                                          isCorrect: _isCorrect.value,
-                                                          selectedOrbIndex: _selectedOrbIndex.value,
+                                                          timerValue:
+                                                              _timerController
+                                                                  .value,
+                                                          pulseValue:
+                                                              _pulseController
+                                                                  .value,
+                                                          isAnswered:
+                                                              _isAnswered
+                                                                  .value ||
+                                                              _isFirstStagePassed
+                                                                  .value,
+                                                          isCorrect:
+                                                              _isCorrect.value,
+                                                          selectedOrbIndex:
+                                                              _selectedOrbIndex
+                                                                  .value,
                                                           onOrbTap: _onOrbTap,
                                                         );
                                                       },
                                                     ),
-                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
+                                                    ),
 
                                                     // Explanations Card when answered
                                                     AnimatedCrossFade(
-                                                      firstChild: const SizedBox(),
+                                                      firstChild:
+                                                          const SizedBox(),
                                                       secondChild:
                                                           SituationalResponseExplanationPanel(
                                                             quest: quest,
                                                             isDark: isDark,
-                                                            isCorrect: _isCorrect.value,
+                                                            isCorrect:
+                                                                _isCorrect
+                                                                    .value,
                                                           ),
-                                                      crossFadeState: _isAnswered.value
-                                                          ? CrossFadeState.showSecond
-                                                          : CrossFadeState.showFirst,
-                                                      duration: const Duration(milliseconds: 450),
+                                                      crossFadeState:
+                                                          _isAnswered.value
+                                                          ? CrossFadeState
+                                                                .showSecond
+                                                          : CrossFadeState
+                                                                .showFirst,
+                                                      duration: const Duration(
+                                                        milliseconds: 450,
+                                                      ),
                                                     ),
                                                     if (_isAnswered.value) ...[
-                                                      SizedBox(height: isCompact ? 12.h : 20.h),
+                                                      SizedBox(
+                                                        height: isCompact
+                                                            ? 12.h
+                                                            : 20.h,
+                                                      ),
                                                       SituationalResponseFormalityGauge(
                                                         quest: quest,
-                                                        primaryColor: theme.primaryColor,
+                                                        primaryColor:
+                                                            theme.primaryColor,
                                                         isDark: isDark,
                                                       ),
                                                     ],
                                                     SizedBox(
-                                                      height: isCompact ? 20.h : 40.h,
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 40.h,
                                                     ),
                                                   ],
                                                 ),
@@ -341,15 +406,22 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value && _selectedOrbIndex.value != null)
+                            if (_isFirstStagePassed.value &&
+                                !_isAnswered.value &&
+                                _selectedOrbIndex.value != null)
                               SpeakToConfirmOverlay(
-                                expectedText: _shuffledOptions.value[_selectedOrbIndex.value!],
+                                expectedText: _shuffledOptions
+                                    .value[_selectedOrbIndex.value!],
                                 primaryColor: theme.primaryColor,
                                 isPositioned: true,
                                 onConfirmed: () {
@@ -364,9 +436,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                         );
                       },
                     ),
-                );
-            },
-          );
+            );
+          },
+        );
       },
     );
   }

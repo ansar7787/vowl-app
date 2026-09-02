@@ -167,268 +167,296 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                         SliverFillRemaining(
                           hasScrollBody: false,
                           child: SizedBox(
-                          height: maxHeight,
-                          width: maxWidth,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            clipBehavior: Clip.none,
-                            children: [
-                        // 1. BATCH PROGRESS
-                        Positioned(
-                          top: counterTop,
-                          child: RepaintBoundary(
-                            child: TopicBatchCounter(
-                              count: _controller.userChoices.length,
-                              total: options.length,
-                              color: theme.primaryColor,
-                            ),
-                          ),
-                        ),
-
-                        // 3. EMISSION MACHINE
-                        Positioned(
-                          top: machineTop,
-                          child: RepaintBoundary(
-                            child: isCompact
-                                ? SizedBox(
-                                    height: 75.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: TopicMachineHead(
-                                        primaryColor: theme.primaryColor,
-                                        emoji: quest?.topicEmoji ?? "📦",
-                                      ),
-                                    ),
-                                  )
-                                : TopicMachineHead(
-                                    primaryColor: theme.primaryColor,
-                                    emoji: quest?.topicEmoji ?? "📦",
-                                  ),
-                          ),
-                        ),
-
-                        // Containment Bins
-                        Positioned(
-                          bottom: binBottom,
-                          left:
-                              8.w, // Added premium visual margin from the edge
-                          child: RepaintBoundary(
-                            child: isCompact
-                                ? SizedBox(
-                                    width: 110.w,
-                                    height: 140.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: TopicContainmentBin(
-                                        index: 0,
-                                        label: buckets[0],
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        correctAnswer: correctAnswer,
-                                        currentWord: currentWord,
-                                        words: _controller.wordsInBins[0] ?? [],
-                                        isHintActive: _controller.isHintActive,
-                                      ),
-                                    ),
-                                  )
-                                : TopicContainmentBin(
-                                    index: 0,
-                                    label: buckets[0],
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    correctAnswer: correctAnswer,
-                                    currentWord: currentWord,
-                                    words: _controller.wordsInBins[0] ?? [],
-                                    isHintActive: _controller.isHintActive,
-                                  ),
-                          ),
-                        ),
-                        if (buckets.length > 1)
-                          Positioned(
-                            bottom: binBottom,
-                            right: 8.w,
-                            child: RepaintBoundary(
-                              child: isCompact
-                                  ? SizedBox(
-                                      width: 110.w,
-                                      height: 140.h,
-                                      child: FittedBox(
-                                        fit: BoxFit.scaleDown,
-                                        child: TopicContainmentBin(
-                                          index: 1,
-                                          label: buckets[1],
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                          correctAnswer: correctAnswer,
-                                          currentWord: currentWord,
-                                          words:
-                                              _controller.wordsInBins[1] ?? [],
-                                          isHintActive:
-                                              _controller.isHintActive,
-                                        ),
-                                      ),
-                                    )
-                                  : TopicContainmentBin(
-                                      index: 1,
-                                      label: buckets[1],
+                            height: maxHeight,
+                            width: maxWidth,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              clipBehavior: Clip.none,
+                              children: [
+                                // 1. BATCH PROGRESS
+                                Positioned(
+                                  top: counterTop,
+                                  child: RepaintBoundary(
+                                    child: TopicBatchCounter(
+                                      count: _controller.userChoices.length,
+                                      total: options.length,
                                       color: theme.primaryColor,
-                                      isDark: isDark,
-                                      correctAnswer: correctAnswer,
-                                      currentWord: currentWord,
-                                      words: _controller.wordsInBins[1] ?? [],
-                                      isHintActive: _controller.isHintActive,
                                     ),
+                                  ),
+                                ),
+
+                                // 3. EMISSION MACHINE
+                                Positioned(
+                                  top: machineTop,
+                                  child: RepaintBoundary(
+                                    child: isCompact
+                                        ? SizedBox(
+                                            height: 75.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: TopicMachineHead(
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                emoji:
+                                                    quest?.topicEmoji ?? "📦",
+                                              ),
+                                            ),
+                                          )
+                                        : TopicMachineHead(
+                                            primaryColor: theme.primaryColor,
+                                            emoji: quest?.topicEmoji ?? "📦",
+                                          ),
+                                  ),
+                                ),
+
+                                // Containment Bins
+                                Positioned(
+                                  bottom: binBottom,
+                                  left: 8
+                                      .w, // Added premium visual margin from the edge
+                                  child: RepaintBoundary(
+                                    child: isCompact
+                                        ? SizedBox(
+                                            width: 110.w,
+                                            height: 140.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: TopicContainmentBin(
+                                                index: 0,
+                                                label: buckets[0],
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                                correctAnswer: correctAnswer,
+                                                currentWord: currentWord,
+                                                words:
+                                                    _controller
+                                                        .wordsInBins[0] ??
+                                                    [],
+                                                isHintActive:
+                                                    _controller.isHintActive,
+                                              ),
+                                            ),
+                                          )
+                                        : TopicContainmentBin(
+                                            index: 0,
+                                            label: buckets[0],
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            correctAnswer: correctAnswer,
+                                            currentWord: currentWord,
+                                            words:
+                                                _controller.wordsInBins[0] ??
+                                                [],
+                                            isHintActive:
+                                                _controller.isHintActive,
+                                          ),
+                                  ),
+                                ),
+                                if (buckets.length > 1)
+                                  Positioned(
+                                    bottom: binBottom,
+                                    right: 8.w,
+                                    child: RepaintBoundary(
+                                      child: isCompact
+                                          ? SizedBox(
+                                              width: 110.w,
+                                              height: 140.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: TopicContainmentBin(
+                                                  index: 1,
+                                                  label: buckets[1],
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  correctAnswer: correctAnswer,
+                                                  currentWord: currentWord,
+                                                  words:
+                                                      _controller
+                                                          .wordsInBins[1] ??
+                                                      [],
+                                                  isHintActive:
+                                                      _controller.isHintActive,
+                                                ),
+                                              ),
+                                            )
+                                          : TopicContainmentBin(
+                                              index: 1,
+                                              label: buckets[1],
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              correctAnswer: correctAnswer,
+                                              currentWord: currentWord,
+                                              words:
+                                                  _controller.wordsInBins[1] ??
+                                                  [],
+                                              isHintActive:
+                                                  _controller.isHintActive,
+                                            ),
+                                    ),
+                                  ),
+                                if (!_controller.isAnswered &&
+                                    !_controller.isFirstStagePassed &&
+                                    currentWord.isNotEmpty &&
+                                    _controller.flickedWord == null)
+                                  Positioned(
+                                    bottom: wordBottom,
+                                    child: isCompact
+                                        ? SizedBox(
+                                            width: 110.w,
+                                            height: 55.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: TopicDraggableWord(
+                                                word: currentWord,
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isDark: isDark,
+                                                onFlick: (v) =>
+                                                    _controller.handleFlick(
+                                                      v,
+                                                      currentWord,
+                                                      buckets,
+                                                      correctAnswer,
+                                                    ),
+                                              ),
+                                            ),
+                                          )
+                                        : TopicDraggableWord(
+                                                word: currentWord,
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isDark: isDark,
+                                                onFlick: (v) =>
+                                                    _controller.handleFlick(
+                                                      v,
+                                                      currentWord,
+                                                      buckets,
+                                                      correctAnswer,
+                                                    ),
+                                              )
+                                              .animate(
+                                                key: ValueKey(
+                                                  "word_${_controller.currentWordIndex}",
+                                                ),
+                                              )
+                                              .move(
+                                                begin: const Offset(0, -100),
+                                                end: Offset.zero,
+                                                duration: 500.ms,
+                                                curve: Curves.bounceOut,
+                                              )
+                                              .fadeIn(),
+                                  ),
+                                if (!_controller.isAnswered &&
+                                    !_controller.isFirstStagePassed &&
+                                    currentWord.isNotEmpty &&
+                                    _controller.flickedWord == null &&
+                                    _controller.currentWordIndex == 0 &&
+                                    _controller.userChoices.isEmpty)
+                                  Positioned(
+                                    bottom: wordBottom - 35.h,
+                                    child: IgnorePointer(
+                                      child:
+                                          Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                    Icons
+                                                        .keyboard_double_arrow_left_rounded,
+                                                    color: Colors.white
+                                                        .withValues(alpha: 0.5),
+                                                    size: 24.r,
+                                                  )
+                                                  .animate(
+                                                    onPlay: (c) => c.repeat(),
+                                                  )
+                                                  .fadeIn(duration: 500.ms)
+                                                  .fadeOut(delay: 500.ms),
+                                              SizedBox(width: 8.w),
+                                              Icon(
+                                                    Icons.touch_app_rounded,
+                                                    color: Colors.white
+                                                        .withValues(alpha: 0.9),
+                                                    size: 32.r,
+                                                  )
+                                                  .animate(
+                                                    onPlay: (c) =>
+                                                        c.repeat(reverse: true),
+                                                  )
+                                                  .moveX(
+                                                    begin: -25.w,
+                                                    end: 25.w,
+                                                    duration: 1200.ms,
+                                                    curve: Curves.easeInOutSine,
+                                                  ),
+                                              SizedBox(width: 8.w),
+                                              Icon(
+                                                    Icons
+                                                        .keyboard_double_arrow_right_rounded,
+                                                    color: Colors.white
+                                                        .withValues(alpha: 0.5),
+                                                    size: 24.r,
+                                                  )
+                                                  .animate(
+                                                    onPlay: (c) => c.repeat(),
+                                                  )
+                                                  .fadeIn(duration: 500.ms)
+                                                  .fadeOut(delay: 500.ms),
+                                            ],
+                                          ).animate().fadeIn(
+                                            delay: 1.seconds,
+                                            duration: 500.ms,
+                                          ),
+                                    ),
+                                  ),
+                                if (_controller.flickedWord != null)
+                                  Positioned(
+                                    bottom: flyingWordBottom,
+                                    left: _controller.flickTarget == 0
+                                        ? 40.w
+                                        : null,
+                                    right: _controller.flickTarget == 1
+                                        ? 40.w
+                                        : null,
+                                    child:
+                                        TopicDraggableWord(
+                                              word: _controller.flickedWord!,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              onFlick: (v) {},
+                                            )
+                                            .animate()
+                                            .move(
+                                              begin: Offset.zero,
+                                              end: Offset(
+                                                _controller.flickTarget == 0
+                                                    ? -(maxWidth / 2 - 70.w)
+                                                    : (maxWidth / 2 - 70.w),
+                                                isCompact ? 100.h : 150.h,
+                                              ),
+                                              duration: 200.ms,
+                                              curve: Curves.easeIn,
+                                            )
+                                            .scale(
+                                              begin: const Offset(1, 1),
+                                              end: const Offset(0.3, 0.3),
+                                              duration: 250.ms,
+                                            )
+                                            .rotate(
+                                              begin: 0,
+                                              end: _controller.flickTarget == 0
+                                                  ? -0.2
+                                                  : 0.2,
+                                              duration: 250.ms,
+                                            ),
+                                  ),
+                              ],
                             ),
-                          ),
-                        if (!_controller.isAnswered &&
-                            !_controller.isFirstStagePassed &&
-                            currentWord.isNotEmpty &&
-                            _controller.flickedWord == null)
-                          Positioned(
-                            bottom: wordBottom,
-                            child: isCompact
-                                ? SizedBox(
-                                    width: 110.w,
-                                    height: 55.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: TopicDraggableWord(
-                                        word: currentWord,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onFlick: (v) => _controller.handleFlick(
-                                          v,
-                                          currentWord,
-                                          buckets,
-                                          correctAnswer,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                : TopicDraggableWord(
-                                        word: currentWord,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onFlick: (v) => _controller.handleFlick(
-                                          v,
-                                          currentWord,
-                                          buckets,
-                                          correctAnswer,
-                                        ),
-                                      )
-                                      .animate(
-                                        key: ValueKey(
-                                          "word_${_controller.currentWordIndex}",
-                                        ),
-                                      )
-                                      .move(
-                                        begin: const Offset(0, -100),
-                                        end: Offset.zero,
-                                        duration: 500.ms,
-                                        curve: Curves.bounceOut,
-                                      )
-                                      .fadeIn(),
-                          ),
-                        if (!_controller.isAnswered &&
-                            !_controller.isFirstStagePassed &&
-                            currentWord.isNotEmpty &&
-                            _controller.flickedWord == null &&
-                            _controller.currentWordIndex == 0 &&
-                            _controller.userChoices.isEmpty)
-                          Positioned(
-                            bottom: wordBottom - 35.h,
-                            child: IgnorePointer(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                        Icons
-                                            .keyboard_double_arrow_left_rounded,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.5,
-                                        ),
-                                        size: 24.r,
-                                      )
-                                      .animate(onPlay: (c) => c.repeat())
-                                      .fadeIn(duration: 500.ms)
-                                      .fadeOut(delay: 500.ms),
-                                  SizedBox(width: 8.w),
-                                  Icon(
-                                        Icons.touch_app_rounded,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.9,
-                                        ),
-                                        size: 32.r,
-                                      )
-                                      .animate(
-                                        onPlay: (c) => c.repeat(reverse: true),
-                                      )
-                                      .moveX(
-                                        begin: -25.w,
-                                        end: 25.w,
-                                        duration: 1200.ms,
-                                        curve: Curves.easeInOutSine,
-                                      ),
-                                  SizedBox(width: 8.w),
-                                  Icon(
-                                        Icons
-                                            .keyboard_double_arrow_right_rounded,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.5,
-                                        ),
-                                        size: 24.r,
-                                      )
-                                      .animate(onPlay: (c) => c.repeat())
-                                      .fadeIn(duration: 500.ms)
-                                      .fadeOut(delay: 500.ms),
-                                ],
-                              ).animate().fadeIn(delay: 1.seconds, duration: 500.ms),
-                            ),
-                          ),
-                        if (_controller.flickedWord != null)
-                          Positioned(
-                            bottom: flyingWordBottom,
-                            left: _controller.flickTarget == 0 ? 40.w : null,
-                            right: _controller.flickTarget == 1 ? 40.w : null,
-                            child:
-                                TopicDraggableWord(
-                                      word: _controller.flickedWord!,
-                                      primaryColor: theme.primaryColor,
-                                      isDark: isDark,
-                                      onFlick: (v) {},
-                                    )
-                                    .animate()
-                                    .move(
-                                      begin: Offset.zero,
-                                      end: Offset(
-                                        _controller.flickTarget == 0
-                                            ? -(maxWidth / 2 - 70.w)
-                                            : (maxWidth / 2 - 70.w),
-                                        isCompact ? 100.h : 150.h,
-                                      ),
-                                      duration: 200.ms,
-                                      curve: Curves.easeIn,
-                                    )
-                                    .scale(
-                                      begin: const Offset(1, 1),
-                                      end: const Offset(0.3, 0.3),
-                                      duration: 250.ms,
-                                    )
-                                    .rotate(
-                                      begin: 0,
-                                      end: _controller.flickTarget == 0
-                                          ? -0.2
-                                          : 0.2,
-                                      duration: 250.ms,
-                                    ),
-                          ),
-                            ],
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
+                      ],
+                    ),
+                  );
                 },
               ),
             );

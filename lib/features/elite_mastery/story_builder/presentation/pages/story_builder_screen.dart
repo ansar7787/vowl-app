@@ -57,7 +57,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
       FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
     );
   }
-  
+
   @override
   void dispose() {
     _showConfetti.dispose();
@@ -65,7 +65,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _isFirstStagePassed.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -113,7 +113,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   void _submitOrder(List<int>? correctOrder) {
-    if (correctOrder == null || _isAnswered.value || _isFirstStagePassed.value) return;
+    if (correctOrder == null || _isAnswered.value || _isFirstStagePassed.value)
+      return;
 
     bool isCorrect = _isCorrectSequence(_currentOrder.value, correctOrder);
 
@@ -209,61 +210,67 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
       },
       builder: (context, state) {
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _currentOrder, _isFirstStagePassed]),
-            builder: (context, _) {
-              return EliteBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered.value,
-          state: state,
-          isCorrect: _isCorrect.value,
-          isFinalFailure: (state is EliteMasteryLoaded)
-              ? (state.isFinalFailure || state.livesRemaining <= 0)
-              : false,
-          showConfetti: _showConfetti.value,
-          title: _isAnswered.value
-              ? ""
-              : (state is EliteMasteryLoaded &&
-                    state.currentQuest.instruction.isNotEmpty)
-              ? state.currentQuest.instruction
-              : context.tr(
-                  'games.story_builder_instruction',
-                  fallback: 'Assemble the fragments into a correct story.',
-                ),
-          titleIcon: Icons.format_list_numbered_rounded,
-          useScrolling: false,
-          disablePadding: true,
-          visualConfig: _visualConfig,
-          onContinue: () {
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _isFirstStagePassed.value = false;
-            _currentOrder.value = [];
-            context.read<EliteMasteryBloc>().add(NextEliteQuestion());
-          },
-          onHint: () {
-            final bloc = context.read<EliteMasteryBloc>();
-            final s = bloc.state;
-            if (s is EliteMasteryLoaded) {
-              if (s.currentQuest.hint != null &&
-                  s.currentQuest.hint!.isNotEmpty) {
-                if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                bloc.add(ShowEliteHint());
-              } else {
-                GameDialogHelper.showHintAdDialog(
-                  context,
-                  onHintEarned: () {
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _currentOrder,
+            _isFirstStagePassed,
+          ]),
+          builder: (context, _) {
+            return EliteBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              state: state,
+              isCorrect: _isCorrect.value,
+              isFinalFailure: (state is EliteMasteryLoaded)
+                  ? (state.isFinalFailure || state.livesRemaining <= 0)
+                  : false,
+              showConfetti: _showConfetti.value,
+              title: _isAnswered.value
+                  ? ""
+                  : (state is EliteMasteryLoaded &&
+                        state.currentQuest.instruction.isNotEmpty)
+                  ? state.currentQuest.instruction
+                  : context.tr(
+                      'games.story_builder_instruction',
+                      fallback: 'Assemble the fragments into a correct story.',
+                    ),
+              titleIcon: Icons.format_list_numbered_rounded,
+              useScrolling: false,
+              disablePadding: true,
+              visualConfig: _visualConfig,
+              onContinue: () {
+                _isAnswered.value = false;
+                _isCorrect.value = null;
+                _isFirstStagePassed.value = false;
+                _currentOrder.value = [];
+                context.read<EliteMasteryBloc>().add(NextEliteQuestion());
+              },
+              onHint: () {
+                final bloc = context.read<EliteMasteryBloc>();
+                final s = bloc.state;
+                if (s is EliteMasteryLoaded) {
+                  if (s.currentQuest.hint != null &&
+                      s.currentQuest.hint!.isNotEmpty) {
                     if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
-                  },
-                );
-              }
-            }
+                  } else {
+                    GameDialogHelper.showHintAdDialog(
+                      context,
+                      onHintEarned: () {
+                        if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
+                        bloc.add(ShowEliteHint());
+                      },
+                    );
+                  }
+                }
+              },
+              child: _buildBody(context, state, isDark, theme),
+            );
           },
-          child: _buildBody(context, state, isDark, theme),
         );
-            },
-          );
       },
     );
   }
@@ -322,7 +329,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               SliverToBoxAdapter(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+                    final isCompact =
+                        constraints.maxHeight < _kCompactHeightBreakpoint;
                     return Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: Column(
@@ -339,12 +347,19 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                           if (quest.plotStructure != null) ...[
                             Container(
                               width: double.infinity,
-                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 12.h,
+                              ),
                               decoration: BoxDecoration(
-                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.03),
                                 borderRadius: BorderRadius.circular(16.r),
                                 border: Border.all(
-                                  color: theme.primaryColor.withValues(alpha: 0.2),
+                                  color: theme.primaryColor.withValues(
+                                    alpha: 0.2,
+                                  ),
                                 ),
                               ),
                               child: Column(
@@ -352,7 +367,11 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.timeline_rounded, color: theme.primaryColor, size: 14.r),
+                                      Icon(
+                                        Icons.timeline_rounded,
+                                        color: theme.primaryColor,
+                                        size: 14.r,
+                                      ),
                                       SizedBox(width: 8.w),
                                       Text(
                                         "NARRATIVE ARC",
@@ -374,7 +393,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                                       fontFamily: 'Outfit',
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w600,
-                                      color: isDark ? Colors.white70 : Colors.black87,
+                                      color: isDark
+                                          ? Colors.white70
+                                          : Colors.black87,
                                     ),
                                   ),
                                 ],
@@ -394,11 +415,14 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                     ? SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) => Padding(
-                            key: ValueKey('${quest.id}_${_currentOrder.value[index]}'),
+                            key: ValueKey(
+                              '${quest.id}_${_currentOrder.value[index]}',
+                            ),
                             padding: EdgeInsets.only(bottom: 8.h),
                             child: StoryBuilderNarrativeTile(
                               index: index,
-                              sentence: quest.sentences![_currentOrder.value[index]],
+                              sentence:
+                                  quest.sentences![_currentOrder.value[index]],
                               quest: quest,
                               isHintVisible: state.isHintVisible,
                               isDark: isDark,
@@ -412,11 +436,14 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                       )
                     : SliverReorderableList(
                         itemBuilder: (context, index) => Padding(
-                          key: ValueKey('${quest.id}_${_currentOrder.value[index]}'),
+                          key: ValueKey(
+                            '${quest.id}_${_currentOrder.value[index]}',
+                          ),
                           padding: EdgeInsets.only(bottom: 8.h),
                           child: StoryBuilderNarrativeTile(
                             index: index,
-                            sentence: quest.sentences![_currentOrder.value[index]],
+                            sentence:
+                                quest.sentences![_currentOrder.value[index]],
                             quest: quest,
                             isHintVisible: state.isHintVisible,
                             isDark: isDark,
@@ -440,7 +467,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               SliverToBoxAdapter(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+                    final isCompact =
+                        constraints.maxHeight < _kCompactHeightBreakpoint;
                     return Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: Column(
@@ -448,60 +476,79 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                           SizedBox(height: isCompact ? 16.h : 30.h),
                           if (!_isAnswered.value)
                             Semantics(
-                              button: true,
-                              label: context.tr(
-                                'games.finalize_story_caps',
-                                fallback: 'FINALIZE STORY',
-                              ),
-                              excludeSemantics: true,
-                              child: ScaleButton(
-                                onTap: () => _submitOrder(quest.correctOrder),
-                                child: Container(
-                                  width: double.infinity,
-                                  constraints: const BoxConstraints(minHeight: 48),
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: isCompact ? 14.h : 20.h,
+                                  button: true,
+                                  label: context.tr(
+                                    'games.finalize_story_caps',
+                                    fallback: 'FINALIZE STORY',
                                   ),
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        theme.primaryColor,
-                                        theme.primaryColor.withValues(alpha: 0.8),
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
-                                    borderRadius: BorderRadius.circular(
-                                      isCompact ? 16.r : 24.r,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: theme.primaryColor.withValues(alpha: 0.6),
-                                        blurRadius: isCompact ? 10 : 20,
-                                        offset: Offset(0, isCompact ? 5 : 10),
+                                  excludeSemantics: true,
+                                  child: ScaleButton(
+                                    onTap: () =>
+                                        _submitOrder(quest.correctOrder),
+                                    child: Container(
+                                      width: double.infinity,
+                                      constraints: const BoxConstraints(
+                                        minHeight: 48,
                                       ),
-                                    ],
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: isCompact ? 14.h : 20.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            theme.primaryColor,
+                                            theme.primaryColor.withValues(
+                                              alpha: 0.8,
+                                            ),
+                                          ],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          isCompact ? 16.r : 24.r,
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.6),
+                                            blurRadius: isCompact ? 10 : 20,
+                                            offset: Offset(
+                                              0,
+                                              isCompact ? 5 : 10,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          context.tr(
+                                            'games.finalize_story_caps',
+                                            fallback: 'FINALIZE STORY',
+                                          ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 16.sp : 18.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.white,
+                                            letterSpacing: isCompact
+                                                ? 1.5
+                                                : 2.5,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                  child: Center(
-                                    child: Text(
-                                      context.tr(
-                                        'games.finalize_story_caps',
-                                        fallback: 'FINALIZE STORY',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: isCompact ? 16.sp : 18.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
-                                        letterSpacing: isCompact ? 1.5 : 2.5,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
+                                )
+                                .animate()
+                                .fadeIn(delay: 400.ms)
+                                .slideY(begin: 0.2),
 
-                          SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 160.h : 60.h),
+                          SizedBox(
+                            height:
+                                _isAnswered.value || _isFirstStagePassed.value
+                                ? 160.h
+                                : 60.h,
+                          ),
                         ],
                       ),
                     );
@@ -513,8 +560,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
         ),
         if (_isFirstStagePassed.value && !_isAnswered.value)
           SpeakToConfirmOverlay(
-            expectedText: quest.sentences != null && quest.sentences!.isNotEmpty 
-                ? quest.sentences![_currentOrder.value.last] 
+            expectedText: quest.sentences != null && quest.sentences!.isNotEmpty
+                ? quest.sentences![_currentOrder.value.last]
                 : "Narrate the ending",
             displayText: "Narrate the final sentence to finish the story",
             primaryColor: theme.primaryColor,

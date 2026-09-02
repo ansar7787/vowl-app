@@ -127,7 +127,7 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
             confettiController: _confettiController,
           ),
         );
-      }
+      },
     );
   }
 }

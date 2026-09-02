@@ -13,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
+import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -43,7 +44,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String? _translationLanguageNameVal;
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
-  
+
   void _updateState() {
     _stateHash.value++;
   }
@@ -247,115 +248,158 @@ class _SettingsScreenState extends State<SettingsScreen> {
       valueListenable: _stateHash,
       builder: (context, _, child) {
         return Scaffold(
-      backgroundColor: bgColor,
-      body: Stack(
-        children: [
-          const MeshGradientBackground(),
-          CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              _buildAppBar(context, isDark),
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(
-                    20.w, 10.h, 20.w,
-                    MediaQuery.of(context).padding.bottom + 32.h,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SettingsProfileSection(
-                            user: context.watch<AuthBloc>().state.user,
-                            isDark: isDark,
-                          ),
-                          SizedBox(height: 32.h),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // FIX (HIGH-4): Sections extracted to private widgets.
-                          _SettingsAccountGroup(isDark: isDark),
-                          SizedBox(height: 32.h),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          _SettingsPreferencesGroup(
-                            translationLanguageName: _translationLanguageNameVal,
-                            isDark: isDark,
-                            soundEnabled: _soundEnabledVal,
-                            notificationsEnabled: _notificationsEnabledVal,
-                            isLoading: _isLoadingVal,
-                            onToggleSound: _toggleSound,
-                            onToggleNotifications: _toggleNotifications,
-                            onTapTranslationLanguage: () async {
-                              await LanguageSelectionBottomSheet.show(context);
-                              if (!mounted) return;
-                              _loadTranslationLanguageName();
-                            },
-                          ),
-                          SizedBox(height: 32.h),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          _SettingsSupportGroup(
-                            isDark: isDark,
-                            appVersion: _appVersionVal,
-                            buildNumber: _buildNumberVal,
-                            onSupportTap: () => _handleSupportLink(context),
-                            onLegalTap: (title) => _handleLegalLink(context, title),
-                          ),
-                          SizedBox(height: 32.h),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          _SettingsDangerGroup(
-                            onClearCache: () => _handleClearCache(context),
-                          ),
-                          SizedBox(height: 40.h),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SettingsLogoutButton(),
-                        ],
-                      ),
-                    ]
-                        .animate(interval: 80.ms)
-                        .fadeIn(
-                          duration: 600.ms,
-                          curve: Curves.easeOutCubic,
-                        )
-                        .scaleXY(
-                          begin: 0.95,
-                          end: 1.0,
-                          duration: 600.ms,
-                          curve: Curves.easeOutBack,
-                        )
-                        .slideY(
-                          begin: 0.05,
-                          end: 0,
-                          duration: 600.ms,
-                          curve: Curves.easeOutCubic,
-                        ),
-                  ),
+          backgroundColor: bgColor,
+          body: BlocSelector<AuthBloc, AuthState, bool>(
+            selector: (state) => state.status == AuthStatus.loggingOut,
+            builder: (context, isLoggingOut) {
+              return LoadingOverlay(
+                isLoading: isLoggingOut,
+                message: context.tr(
+                  'settings.signing_out_overlay',
+                  fallback: 'Signing out...',
                 ),
-              ),
-            ],
+                child: Stack(
+                  children: [
+                    const MeshGradientBackground(),
+                    CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        _buildAppBar(context, isDark),
+                        SliverToBoxAdapter(
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              20.w,
+                              10.h,
+                              20.w,
+                              MediaQuery.of(context).padding.bottom + 32.h,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children:
+                                  [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            BlocSelector<
+                                              AuthBloc,
+                                              AuthState,
+                                              dynamic
+                                            >(
+                                              selector: (state) => state.user,
+                                              builder: (context, user) {
+                                                return SettingsProfileSection(
+                                                  user: user,
+                                                  isDark: isDark,
+                                                );
+                                              },
+                                            ),
+                                            SizedBox(height: 32.h),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            // FIX (HIGH-4): Sections extracted to private widgets.
+                                            _SettingsAccountGroup(
+                                              isDark: isDark,
+                                            ),
+                                            SizedBox(height: 32.h),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            _SettingsPreferencesGroup(
+                                              translationLanguageName:
+                                                  _translationLanguageNameVal,
+                                              isDark: isDark,
+                                              soundEnabled: _soundEnabledVal,
+                                              notificationsEnabled:
+                                                  _notificationsEnabledVal,
+                                              isLoading: _isLoadingVal,
+                                              onToggleSound: _toggleSound,
+                                              onToggleNotifications:
+                                                  _toggleNotifications,
+                                              onTapTranslationLanguage: () async {
+                                                await LanguageSelectionBottomSheet.show(
+                                                  context,
+                                                );
+                                                if (!mounted) return;
+                                                _loadTranslationLanguageName();
+                                              },
+                                            ),
+                                            SizedBox(height: 32.h),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            _SettingsSupportGroup(
+                                              isDark: isDark,
+                                              appVersion: _appVersionVal,
+                                              buildNumber: _buildNumberVal,
+                                              onSupportTap: () =>
+                                                  _handleSupportLink(context),
+                                              onLegalTap: (title) =>
+                                                  _handleLegalLink(
+                                                    context,
+                                                    title,
+                                                  ),
+                                            ),
+                                            SizedBox(height: 32.h),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            _SettingsDangerGroup(
+                                              onClearCache: () =>
+                                                  _handleClearCache(context),
+                                            ),
+                                            SizedBox(height: 40.h),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const SettingsLogoutButton(),
+                                          ],
+                                        ),
+                                      ]
+                                      .animate(interval: 80.ms)
+                                      .fadeIn(
+                                        duration: 600.ms,
+                                        curve: Curves.easeOutCubic,
+                                      )
+                                      .scaleXY(
+                                        begin: 0.95,
+                                        end: 1.0,
+                                        duration: 600.ms,
+                                        curve: Curves.easeOutBack,
+                                      )
+                                      .slideY(
+                                        begin: 0.05,
+                                        end: 0,
+                                        duration: 600.ms,
+                                        curve: Curves.easeOutCubic,
+                                      ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
-        ],
-      ),
-    );
+        );
       },
     );
   }
@@ -456,8 +500,9 @@ class _SettingsAccountGroup extends StatelessWidget {
               icon: Icons.verified_user_rounded,
               color: const Color(0xFF8B5CF6),
               onTap: () async {
-                final confirm =
-                    await SettingsDialogs.showAgeVerificationReset(context);
+                final confirm = await SettingsDialogs.showAgeVerificationReset(
+                  context,
+                );
                 if (confirm == true && context.mounted) {
                   await AgeGateService.resetAgeGate();
                   if (context.mounted) {

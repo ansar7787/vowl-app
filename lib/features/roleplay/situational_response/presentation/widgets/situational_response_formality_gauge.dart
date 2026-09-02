@@ -22,7 +22,7 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
     }
 
     final double score = (quest.formalityScore ?? 50) / 100.0;
-    
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(16.r),
@@ -107,10 +107,7 @@ class SituationalResponseFormalityGauge extends StatelessWidget {
                 width: (1.sw - 64.w) * score,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                      Colors.blueAccent,
-                      primaryColor,
-                    ],
+                    colors: [Colors.blueAccent, primaryColor],
                   ),
                   borderRadius: BorderRadius.circular(3.r),
                   boxShadow: [

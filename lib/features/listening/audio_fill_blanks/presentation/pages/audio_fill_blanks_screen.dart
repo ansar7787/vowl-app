@@ -86,8 +86,6 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     );
   }
 
-
-
   // â”€â”€ Gesture handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   void _onSmear(double delta) {
@@ -101,7 +99,10 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   void _submitAnswer(String? correct) {
     // Guard: already answered, empty / whitespace-only input, or no answer key.
     final input = _controller.text.trim();
-    if (_isAnswered.value || input.isEmpty || correct == null || correct.isEmpty) {
+    if (_isAnswered.value ||
+        input.isEmpty ||
+        correct == null ||
+        correct.isEmpty) {
       return;
     }
 
@@ -126,9 +127,10 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -212,7 +214,12 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
         final quest = state is ListeningLoaded ? state.currentQuest : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _revealProgress]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _revealProgress,
+          ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
@@ -220,12 +227,12 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () =>
-              context.read<ListeningBloc>().add(const NextQuestion()),
-          // FIX: Layout now dispatches ListeningHintUsed internally.
-          // This callback is for screen-level side-effects only.
-          onHint: () => _hapticService.selection(),
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ListeningBloc>().add(const NextQuestion()),
+              // FIX: Layout now dispatches ListeningHintUsed internally.
+              // This callback is for screen-level side-effects only.
+              onHint: () => _hapticService.selection(),
               child: quest == null
                   ? const SizedBox.shrink()
                   : _AudioFillBlanksContent(
@@ -246,20 +253,26 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                       onBlindSubmit: (bool correct) {
                         if (!correct) {
                           final authState = context.read<AuthBloc>().state;
-                          if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                          if (authState.status == AuthStatus.authenticated &&
+                              authState.user != null) {
                             ErrorJournalCollector.record(
                               userId: authState.user!.id,
                               gameType: widget.gameType.name,
                               question: 'Blind Dictation',
                               userAnswer: '[Failed Dictation]',
-                              correctAnswer: quest.correctAnswer ?? quest.textToSpeak ?? '',
+                              correctAnswer:
+                                  quest.correctAnswer ??
+                                  quest.textToSpeak ??
+                                  '',
                               level: widget.level,
                             );
                           }
                         }
                         _isAnswered.value = true;
                         _isCorrect.value = correct;
-                        context.read<ListeningBloc>().add(SubmitAnswer(correct));
+                        context.read<ListeningBloc>().add(
+                          SubmitAnswer(correct),
+                        );
                       },
                     ),
             );
@@ -336,7 +349,8 @@ class _AudioFillBlanksContent extends StatelessWidget {
                     children: [
                       SizedBox(height: 6.h),
                       AudioFillBlanksInstruction(
-                        instruction: quest.instruction ??
+                        instruction:
+                            quest.instruction ??
                             'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
                         color: theme.primaryColor,
                       ),
@@ -364,7 +378,10 @@ class _AudioFillBlanksContent extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 16.h,
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

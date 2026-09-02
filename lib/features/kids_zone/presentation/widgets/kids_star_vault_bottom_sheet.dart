@@ -55,7 +55,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     return 150 + ((index - 9) * 30);
   });
   final ValueNotifier<bool> _isProcessing = ValueNotifier(false);
-  final ValueNotifier<int> _remainingClaims = ValueNotifier(RewardLimitService.maxClaimsPerDay);
+  final ValueNotifier<int> _remainingClaims = ValueNotifier(
+    RewardLimitService.maxClaimsPerDay,
+  );
   final ValueNotifier<bool> _isLoadingLimits = ValueNotifier(true);
   final ValueNotifier<int> _outOfAdsShake = ValueNotifier(0);
 
@@ -129,7 +131,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         context: context,
         builder: (ctx) => ModernGameDialog(
           title: context.tr('store.reward_failed', fallback: 'REWARD FAILED'),
-          description: context.tr('store.reward_failed_desc', fallback: "We couldn't grant your reward. Please contact support if this keeps happening."),
+          description: context.tr(
+            'store.reward_failed_desc',
+            fallback:
+                "We couldn't grant your reward. Please contact support if this keeps happening.",
+          ),
           buttonText: context.tr('common.ok', fallback: 'OK'),
           isSuccess: false,
           onButtonPressed: () => Navigator.of(ctx).pop(),
@@ -150,8 +156,15 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
           alignment: Alignment.center,
           children: [
             ModernGameDialog(
-              title: context.tr('store.chest_unlocked_title', fallback: 'CHEST UNLOCKED!'),
-              description: context.tr('store.chest_unlocked_desc', args: [coinReward.toString()], fallback: 'You found +$coinReward Toys in the magical chest!'),
+              title: context.tr(
+                'store.chest_unlocked_title',
+                fallback: 'CHEST UNLOCKED!',
+              ),
+              description: context.tr(
+                'store.chest_unlocked_desc',
+                args: [coinReward.toString()],
+                fallback: 'You found +$coinReward Toys in the magical chest!',
+              ),
               buttonText: context.tr('store.collect', fallback: 'COLLECT'),
               isSuccess: true,
               onButtonPressed: () {
@@ -161,9 +174,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                 }
               },
             ),
-            const Positioned.fill(
-              child: IgnorePointer(child: GameConfetti()),
-            ),
+            const Positioned.fill(child: IgnorePointer(child: GameConfetti())),
           ],
         ),
       ),
@@ -177,8 +188,15 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
       showDialog(
         context: context,
         builder: (ctx) => ModernGameDialog(
-          title: context.tr('store.daily_limit_reached', fallback: 'DAILY LIMIT REACHED'),
-          description: context.tr('store.daily_limit_desc', fallback: 'You have claimed all your free stars for today! Come back tomorrow or visit the Premium Store for unlimited access.'),
+          title: context.tr(
+            'store.daily_limit_reached',
+            fallback: 'DAILY LIMIT REACHED',
+          ),
+          description: context.tr(
+            'store.daily_limit_desc',
+            fallback:
+                'You have claimed all your free stars for today! Come back tomorrow or visit the Premium Store for unlimited access.',
+          ),
           buttonText: context.tr('common.got_it', fallback: 'GOT IT'),
           isSuccess: false,
           onButtonPressed: () => Navigator.of(ctx).pop(),
@@ -197,7 +215,10 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     if (!adService.isRewardedAdLoaded) {
       CustomSnackBar.show(
         context: context,
-        message: context.tr('store.ad_not_ready', fallback: "Ad not ready yet. Please wait a moment."),
+        message: context.tr(
+          'store.ad_not_ready',
+          fallback: "Ad not ready yet. Please wait a moment.",
+        ),
         type: CustomSnackBarType.warning,
       );
       _isProcessing.value = false;
@@ -206,7 +227,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
 
     final user = context.read<AuthBloc>().state.user;
     final isPremium = user?.isPremium ?? false;
-    
+
     bool rewardEarned = false;
 
     adService.showRewardedAd(
@@ -219,11 +240,11 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
       onDismissed: () async {
         if (!mounted) return;
         _isProcessing.value = false;
-        
+
         if (!rewardEarned) return;
-        
+
         _isProcessing.value = true;
-        
+
         final updateUserRewards = di.sl<UpdateUserRewards>();
         final result = await updateUserRewards(
           UpdateUserRewardsParams(
@@ -235,20 +256,27 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
             isVaultReward: true,
           ),
         );
-        
+
         if (result.isRight()) {
           await RewardLimitService.incrementClaimCount('stars');
         }
 
         if (!mounted) return;
         _isProcessing.value = false;
-        
+
         if (result.isLeft()) {
           showDialog(
             context: context,
             builder: (ctx) => ModernGameDialog(
-              title: context.tr('store.reward_failed', fallback: 'REWARD FAILED'),
-              description: context.tr('store.reward_failed_desc', fallback: "We couldn't grant your reward. Please contact support if this keeps happening."),
+              title: context.tr(
+                'store.reward_failed',
+                fallback: 'REWARD FAILED',
+              ),
+              description: context.tr(
+                'store.reward_failed_desc',
+                fallback:
+                    "We couldn't grant your reward. Please contact support if this keeps happening.",
+              ),
               buttonText: context.tr('common.ok', fallback: 'OK'),
               isSuccess: false,
               onButtonPressed: () => Navigator.of(ctx).pop(),
@@ -269,9 +297,18 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                 alignment: Alignment.center,
                 children: [
                   ModernGameDialog(
-                    title: context.tr('store.magic_stars_earned', fallback: 'MAGIC STARS EARNED!'),
-                    description: context.tr('store.magic_stars_earned_desc', fallback: 'You got +2 Magic Stars for watching the ad!'),
-                    buttonText: context.tr('common.awesome', fallback: 'AWESOME'),
+                    title: context.tr(
+                      'store.magic_stars_earned',
+                      fallback: 'MAGIC STARS EARNED!',
+                    ),
+                    description: context.tr(
+                      'store.magic_stars_earned_desc',
+                      fallback: 'You got +2 Magic Stars for watching the ad!',
+                    ),
+                    buttonText: context.tr(
+                      'common.awesome',
+                      fallback: 'AWESOME',
+                    ),
                     isSuccess: true,
                     onButtonPressed: () => Navigator.of(ctx).pop(),
                     customIcon: Icon(
@@ -326,558 +363,733 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
           builder: (context, _) {
             return GestureDetector(
               behavior: HitTestBehavior.opaque,
-          onTap: () => Navigator.pop(context),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                GestureDetector(
-                  onTap:
-                      () {}, // Prevent taps on the sheet content from closing it
-                  child: Stack(
-                    alignment: Alignment.center,
-                    clipBehavior: Clip.none,
-                    children: [
-                      Container(
-                        constraints: BoxConstraints(
-                          maxHeight: ScreenUtil().screenHeight * 0.85,
-                        ),
-                        decoration: BoxDecoration(
-                          color:
-                              (isDark ? const Color(0xFF1E293B) : Colors.white)
-                                  .withValues(alpha: 0.95),
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(40.r),
-                          ),
-                          border: Border.all(
-                            color: widget.primaryColor,
-                            width: 4.w,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: widget.primaryColor.withValues(alpha: 0.6),
-                              offset: Offset(0, -6.h),
+              onTap: () => Navigator.pop(context),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      onTap:
+                          () {}, // Prevent taps on the sheet content from closing it
+                      child: Stack(
+                        alignment: Alignment.center,
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            constraints: BoxConstraints(
+                              maxHeight: ScreenUtil().screenHeight * 0.85,
                             ),
-                          ],
-                        ),
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(height: 12.h),
-                              Container(
-                                width: 50.w,
-                                height: 6.h,
-                                decoration: BoxDecoration(
+                            decoration: BoxDecoration(
+                              color:
+                                  (isDark
+                                          ? const Color(0xFF1E293B)
+                                          : Colors.white)
+                                      .withValues(alpha: 0.95),
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(40.r),
+                              ),
+                              border: Border.all(
+                                color: widget.primaryColor,
+                                width: 4.w,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
                                   color: widget.primaryColor.withValues(
-                                    alpha: 0.3,
+                                    alpha: 0.6,
                                   ),
-                                  borderRadius: BorderRadius.circular(3.r),
+                                  offset: Offset(0, -6.h),
                                 ),
-                              ),
-                              SizedBox(height: 24.h),
-
-                              // Header
-                              Container(
-                                padding: EdgeInsets.all(16.r),
-                                decoration: BoxDecoration(
-                                  color: widget.primaryColor.withValues(
-                                    alpha: 0.15,
-                                  ),
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  Icons.auto_awesome_rounded,
-                                  color: widget.primaryColor,
-                                  size: 48.sp,
-                                ),
-                              ).animate().scale(
-                                curve: Curves.elasticOut,
-                                duration: 800.ms,
-                              ),
-                              SizedBox(height: 16.h),
-                              Text(
-                                context.tr('kids_zone.magical_star_vault', fallback: "Magical Star Vault"),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 26.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: widget.primaryColor,
-                                  letterSpacing: 1.0,
-                                ),
-                              ),
-                              SizedBox(height: 8.h),
-                              Text(
-                                context.tr('kids_zone.collect_stars_desc', fallback: "Collect stars to unlock magical toys!"),
-                                style: TextStyle(
-                                  fontSize: 16.sp,
-                                  color: isDark
-                                      ? Colors.white70
-                                      : Colors.black54,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 24.h),
-
-                              // Progress
-                              Container(
-                                margin: EdgeInsets.symmetric(horizontal: 24.w),
-                                padding: EdgeInsets.all(20.r),
-                                decoration: BoxDecoration(
-                                  color: widget.primaryColor.withValues(
-                                    alpha: 0.1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(30.r),
-                                  border: Border.all(
-                                    color: widget.primaryColor.withValues(
-                                      alpha: 0.3,
-                                    ),
-                                    width: 3.r,
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          context.tr('store.your_stars', fallback: "Your Stars"),
-                                          style: TextStyle(
-                                            fontSize: 14.sp,
-                                            color: isDark
-                                                ? Colors.white54
-                                                : Colors.black54,
-                                            fontWeight: FontWeight.w800,
-                                          ),
-                                        ),
-                                        SizedBox(height: 4.h),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              "$totalStars",
-                                              style: TextStyle(
-                                                fontSize: 36.sp,
-                                                fontFamily: 'Outfit',
-                                                fontWeight: FontWeight.w900,
-                                                color: widget.primaryColor,
-                                              ),
-                                            ),
-                                            SizedBox(width: 4.w),
-                                            Icon(
-                                              Icons.star_rounded,
-                                              color: const Color(0xFFFFD700),
-                                              size: 32.sp,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      width: 3.w,
-                                      height: 50.h,
+                              ],
+                            ),
+                            child: SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(height: 12.h),
+                                  Container(
+                                    width: 50.w,
+                                    height: 6.h,
+                                    decoration: BoxDecoration(
                                       color: widget.primaryColor.withValues(
-                                        alpha: 0.2,
+                                        alpha: 0.3,
+                                      ),
+                                      borderRadius: BorderRadius.circular(3.r),
+                                    ),
+                                  ),
+                                  SizedBox(height: 24.h),
+
+                                  // Header
+                                  Container(
+                                    padding: EdgeInsets.all(16.r),
+                                    decoration: BoxDecoration(
+                                      color: widget.primaryColor.withValues(
+                                        alpha: 0.15,
+                                      ),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Icon(
+                                      Icons.auto_awesome_rounded,
+                                      color: widget.primaryColor,
+                                      size: 48.sp,
+                                    ),
+                                  ).animate().scale(
+                                    curve: Curves.elasticOut,
+                                    duration: 800.ms,
+                                  ),
+                                  SizedBox(height: 16.h),
+                                  Text(
+                                    context.tr(
+                                      'kids_zone.magical_star_vault',
+                                      fallback: "Magical Star Vault",
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 26.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: widget.primaryColor,
+                                      letterSpacing: 1.0,
+                                    ),
+                                  ),
+                                  SizedBox(height: 8.h),
+                                  Text(
+                                    context.tr(
+                                      'kids_zone.collect_stars_desc',
+                                      fallback:
+                                          "Collect stars to unlock magical toys!",
+                                    ),
+                                    style: TextStyle(
+                                      fontSize: 16.sp,
+                                      color: isDark
+                                          ? Colors.white70
+                                          : Colors.black54,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 24.h),
+
+                                  // Progress
+                                  Container(
+                                    margin: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    padding: EdgeInsets.all(20.r),
+                                    decoration: BoxDecoration(
+                                      color: widget.primaryColor.withValues(
+                                        alpha: 0.1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(30.r),
+                                      border: Border.all(
+                                        color: widget.primaryColor.withValues(
+                                          alpha: 0.3,
+                                        ),
+                                        width: 3.r,
                                       ),
                                     ),
-                                    Column(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Text(
-                                          context.tr('store.next_chest', fallback: "Next Chest"),
-                                          style: TextStyle(
-                                            fontSize: 14.sp,
-                                            color: isDark
-                                                ? Colors.white54
-                                                : Colors.black54,
-                                            fontWeight: FontWeight.w800,
-                                          ),
-                                        ),
-                                        SizedBox(height: 4.h),
-                                        Row(
+                                        Column(
                                           children: [
                                             Text(
-                                              "$nextRequirement",
+                                              context.tr(
+                                                'store.your_stars',
+                                                fallback: "Your Stars",
+                                              ),
                                               style: TextStyle(
-                                                fontSize: 36.sp,
-                                                fontFamily: 'Outfit',
-                                                fontWeight: FontWeight.w900,
-                                                color: Colors.grey,
+                                                fontSize: 14.sp,
+                                                color: isDark
+                                                    ? Colors.white54
+                                                    : Colors.black54,
+                                                fontWeight: FontWeight.w800,
                                               ),
                                             ),
-                                            SizedBox(width: 4.w),
-                                            Icon(
-                                              Icons.star_border_rounded,
-                                              color: Colors.grey,
-                                              size: 32.sp,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              SizedBox(height: 32.h),
-
-                              // Chests ListView
-                              SizedBox(
-                                height: 170.h,
-                                child: Builder(
-                                  builder: (context) {
-                                    final tileWidth = 130.w + 16.w;
-                                    final viewportWidth = ScreenUtil().screenWidth - 48.w;
-                                    final initialOffset = (nextTierIndex * tileWidth - viewportWidth / 2 + tileWidth / 2)
-                                        .clamp(0.0, double.infinity);
-
-                                    return ListView.builder(
-                                      scrollDirection: Axis.horizontal,
-                                      controller: ScrollController(initialScrollOffset: initialOffset),
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
-                                      ),
-                                      itemCount: _chestTiers.length,
-                                  itemBuilder: (context, index) {
-                                    final requirement = _chestTiers[index];
-                                    final isClaimed = claimedTier > index;
-                                    final canClaim =
-                                        !isClaimed && totalStars >= requirement;
-                                    final isNext = index == nextTierIndex;
-
-                                    return Semantics(
-                                      button: true,
-                                      label: isClaimed
-                                          ? context.tr('store.chest_opened_label', args: [requirement.toString()], fallback: 'Chest at $requirement stars, already opened')
-                                          : canClaim
-                                          ? context.tr('store.chest_claim_label', args: [requirement.toString()], fallback: 'Open chest at $requirement stars')
-                                          : context.tr('store.chest_locked_label', args: [requirement.toString()], fallback: 'Chest at $requirement stars, locked'),
-                                      child: ScaleButton(
-                                      onTap: () {
-                                        if (canClaim) {
-                                          _claimChest(index, totalStars);
-                                        } else if (isClaimed) {
-                                          showDialog(
-                                            context: context,
-                                            builder: (ctx) => ModernGameDialog(
-                                              title: context.tr('store.already_claimed', fallback: 'ALREADY CLAIMED'),
-                                              description: context.tr('store.already_claimed_desc', fallback: 'You have already opened this chest!'),
-                                              buttonText: context.tr('common.ok', fallback: 'OK'),
-                                              isSuccess: true,
-                                              onButtonPressed: () =>
-                                                  Navigator.of(ctx).pop(),
-                                            ),
-                                          );
-                                        } else {
-                                          final needed =
-                                              requirement - totalStars;
-                                          showDialog(
-                                            context: context,
-                                            builder: (ctx) => ModernGameDialog(
-                                              title: context.tr('store.not_enough_stars', fallback: 'NOT ENOUGH STARS'),
-                                              description: context.tr('store.need_more_stars', args: [needed.toString()], fallback: 'You need $needed more stars to open this chest!'),
-                                              buttonText: context.tr('store.keep_playing', fallback: 'KEEP PLAYING'),
-                                              isSuccess: false,
-                                              onButtonPressed: () =>
-                                                  Navigator.of(ctx).pop(),
-                                              customIcon: Icon(
-                                                Icons.star_border_rounded,
-                                                color: Colors.orange,
-                                                size: 48.sp,
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                      },
-                                      child: Container(
-                                        width: 130.w,
-                                        margin: EdgeInsets.only(right: 16.w),
-                                        decoration: BoxDecoration(
-                                          gradient: canClaim
-                                              ? LinearGradient(
-                                                  colors: [
-                                                    widget.primaryColor,
-                                                    widget.primaryColor
-                                                        .withValues(alpha: 0.7),
-                                                  ],
-                                                  begin: Alignment.topLeft,
-                                                  end: Alignment.bottomRight,
-                                                )
-                                              : null,
-                                          color: canClaim
-                                              ? null
-                                              : (isClaimed
-                                                    ? Colors.grey.withValues(
-                                                        alpha: 0.1,
-                                                      )
-                                                    : isDark
-                                                    ? Colors.white.withValues(
-                                                        alpha: 0.05,
-                                                      )
-                                                    : Colors.black.withValues(
-                                                        alpha: 0.02,
-                                                      )),
-                                          borderRadius: BorderRadius.circular(
-                                            30.r,
-                                          ),
-                                          border: Border.all(
-                                            color: isClaimed
-                                                ? Colors.transparent
-                                                : canClaim
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.5,
-                                                  )
-                                                : isNext
-                                                ? widget.primaryColor
-                                                      .withValues(alpha: 0.5)
-                                                : Colors.transparent,
-                                            width: canClaim ? 4.r : 2.r,
-                                          ),
-                                        ),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                                  isClaimed
-                                                      ? Icons
-                                                            .inventory_2_rounded
-                                                      : canClaim
-                                                      ? Icons.redeem_rounded
-                                                      : Icons.lock_rounded,
-                                                  size: 52.sp,
-                                                  color: isClaimed
-                                                      ? Colors.grey
-                                                      : canClaim
-                                                      ? Colors.white
-                                                      : Colors.grey.shade400,
-                                                )
-                                                .animate(
-                                                  target: canClaim ? 1 : 0,
-                                                )
-                                                .shake(
-                                                  hz: 3,
-                                                  duration: 1.5.seconds,
-                                                )
-                                                .then()
-                                                .shimmer(
-                                                  duration: 1.seconds,
-                                                  color: Colors.white,
-                                                ),
-                                            SizedBox(height: 12.h),
+                                            SizedBox(height: 4.h),
                                             Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  "$requirement",
+                                                  "$totalStars",
                                                   style: TextStyle(
-                                                    fontSize: 18.sp,
+                                                    fontSize: 36.sp,
                                                     fontFamily: 'Outfit',
-                                                    fontWeight: FontWeight.w900,
-                                                    color: isClaimed
-                                                        ? Colors.grey
-                                                        : canClaim
-                                                        ? Colors.white
-                                                        : isDark
-                                                        ? Colors.white70
-                                                        : Colors.black87,
-                                                  ),
-                                                ),
-                                                Icon(
-                                                  Icons.star_rounded,
-                                                  size: 18.sp,
-                                                  color: isClaimed
-                                                      ? Colors.grey
-                                                      : const Color(0xFFFFD700),
-                                                ),
-                                              ],
-                                            ),
-                                            if (isClaimed) ...[
-                                              SizedBox(height: 6.h),
-                                              Text(
-                                                context.tr('store.chest_opened', fallback: "OPENED"),
-                                                style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: Colors.grey,
-                                                ),
-                                              ),
-                                            ] else if (canClaim) ...[
-                                              SizedBox(height: 6.h),
-                                              Container(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 12.w,
-                                                  vertical: 4.h,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                        16.r,
-                                                      ),
-                                                ),
-                                                child: Text(
-                                                  context.tr('store.chest_open', fallback: "OPEN"),
-                                                  style: TextStyle(
-                                                    fontSize: 12.sp,
                                                     fontWeight: FontWeight.w900,
                                                     color: widget.primaryColor,
                                                   ),
                                                 ),
-                                              ),
-                                            ],
-                                          ],
-                                        ),
-                                      ),
-                                    ));
-                                  },
-                                );
-                                }),
-                              ),
-
-                              SizedBox(height: 32.h),
-
-                              // Magic Star Ad Button
-                              if (claimedTier < _chestTiers.length &&
-                                  totalStars < nextRequirement) ...[
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: ScaleButton(
-                                    onTap: _watchAdForMagicStars,
-                                    child: ShakeableWrapper(
-                                      shakeCount: _outOfAdsShake.value,
-                                      child: Container(
-                                      width: double.infinity,
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: 18.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: const Color(0xFFEC4899),
-                                        borderRadius: BorderRadius.circular(
-                                          30.r,
-                                        ),
-                                        border: Border.all(
-                                          color: const Color(0xFFBE185D),
-                                          width: 3.w,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: const Color(0xFFBE185D),
-                                            offset: Offset(0, 6.h),
-                                          ),
-                                        ],
-                                      ),
-                                      child: _isProcessing.value || _isLoadingLimits.value
-                                          ? Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                SizedBox(
-                                                  width: 24.sp,
-                                                  height: 24.sp,
-                                                  child:
-                                                      const VowlButtonSpinner(
-                                                        color: Colors.white,
-                                                      ),
-                                                ),
-                                                SizedBox(width: 12.w),
-                                                 Text(
-                                                   context.tr('store.loading_ad', fallback: "Loading..."),
-                                                   style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 16.sp,
-                                                    fontWeight: FontWeight.w800,
-                                                    color: Colors.white70,
+                                                SizedBox(width: 4.w),
+                                                Icon(
+                                                  Icons.star_rounded,
+                                                  color: const Color(
+                                                    0xFFFFD700,
                                                   ),
+                                                  size: 32.sp,
                                                 ),
                                               ],
-                                            )
-                                          : _remainingClaims.value <= 0
-                                              ? Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.lock_clock_rounded,
-                                                      color: Colors.white70,
-                                                      size: 28.sp,
-                                                    ),
-                                                    SizedBox(width: 12.w),
-                                                     Text(
-                                                       context.tr('store.daily_limit_reached', fallback: "Daily Limit Reached"),
-                                                       style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 15.sp,
-                                                        fontWeight: FontWeight.w900,
-                                                        color: Colors.white70,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                )
-                                              : Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      isPremium ? Icons.auto_awesome_rounded : Icons
-                                                          .play_circle_filled_rounded,
-                                                      color: Colors.white,
-                                                      size: 28.sp,
-                                                    ),
-                                                    SizedBox(width: 12.w),
-                                                     Text(
-                                                       isPremium
-                                                           ? context.tr('store.claim_magic_stars', fallback: "Claim +2 Free Magic Stars")
-                                                           : context.tr('store.watch_ad_magic_stars', fallback: "Watch Ad for +2 Magic Stars"),
-                                                       style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 15.sp,
-                                                        fontWeight: FontWeight.w900,
-                                                        color: Colors.white,
-                                                      ),
-                                                    ),
-                                                  ],
+                                            ),
+                                          ],
+                                        ),
+                                        Container(
+                                          width: 3.w,
+                                          height: 50.h,
+                                          color: widget.primaryColor.withValues(
+                                            alpha: 0.2,
+                                          ),
+                                        ),
+                                        Column(
+                                          children: [
+                                            Text(
+                                              context.tr(
+                                                'store.next_chest',
+                                                fallback: "Next Chest",
+                                              ),
+                                              style: TextStyle(
+                                                fontSize: 14.sp,
+                                                color: isDark
+                                                    ? Colors.white54
+                                                    : Colors.black54,
+                                                fontWeight: FontWeight.w800,
+                                              ),
+                                            ),
+                                            SizedBox(height: 4.h),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  "$nextRequirement",
+                                                  style: TextStyle(
+                                                    fontSize: 36.sp,
+                                                    fontFamily: 'Outfit',
+                                                    fontWeight: FontWeight.w900,
+                                                    color: Colors.grey,
+                                                  ),
                                                 ),
+                                                SizedBox(width: 4.w),
+                                                Icon(
+                                                  Icons.star_border_rounded,
+                                                  color: Colors.grey,
+                                                  size: 32.sp,
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  SizedBox(height: 32.h),
+
+                                  // Chests ListView
+                                  SizedBox(
+                                    height: 170.h,
+                                    child: Builder(
+                                      builder: (context) {
+                                        final tileWidth = 130.w + 16.w;
+                                        final viewportWidth =
+                                            ScreenUtil().screenWidth - 48.w;
+                                        final initialOffset =
+                                            (nextTierIndex * tileWidth -
+                                                    viewportWidth / 2 +
+                                                    tileWidth / 2)
+                                                .clamp(0.0, double.infinity);
+
+                                        return ListView.builder(
+                                          scrollDirection: Axis.horizontal,
+                                          controller: ScrollController(
+                                            initialScrollOffset: initialOffset,
+                                          ),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          itemCount: _chestTiers.length,
+                                          itemBuilder: (context, index) {
+                                            final requirement =
+                                                _chestTiers[index];
+                                            final isClaimed =
+                                                claimedTier > index;
+                                            final canClaim =
+                                                !isClaimed &&
+                                                totalStars >= requirement;
+                                            final isNext =
+                                                index == nextTierIndex;
+
+                                            return Semantics(
+                                              button: true,
+                                              label: isClaimed
+                                                  ? context.tr(
+                                                      'store.chest_opened_label',
+                                                      args: [
+                                                        requirement.toString(),
+                                                      ],
+                                                      fallback:
+                                                          'Chest at $requirement stars, already opened',
+                                                    )
+                                                  : canClaim
+                                                  ? context.tr(
+                                                      'store.chest_claim_label',
+                                                      args: [
+                                                        requirement.toString(),
+                                                      ],
+                                                      fallback:
+                                                          'Open chest at $requirement stars',
+                                                    )
+                                                  : context.tr(
+                                                      'store.chest_locked_label',
+                                                      args: [
+                                                        requirement.toString(),
+                                                      ],
+                                                      fallback:
+                                                          'Chest at $requirement stars, locked',
+                                                    ),
+                                              child: ScaleButton(
+                                                onTap: () {
+                                                  if (canClaim) {
+                                                    _claimChest(
+                                                      index,
+                                                      totalStars,
+                                                    );
+                                                  } else if (isClaimed) {
+                                                    showDialog(
+                                                      context: context,
+                                                      builder: (ctx) => ModernGameDialog(
+                                                        title: context.tr(
+                                                          'store.already_claimed',
+                                                          fallback:
+                                                              'ALREADY CLAIMED',
+                                                        ),
+                                                        description: context.tr(
+                                                          'store.already_claimed_desc',
+                                                          fallback:
+                                                              'You have already opened this chest!',
+                                                        ),
+                                                        buttonText: context.tr(
+                                                          'common.ok',
+                                                          fallback: 'OK',
+                                                        ),
+                                                        isSuccess: true,
+                                                        onButtonPressed: () =>
+                                                            Navigator.of(
+                                                              ctx,
+                                                            ).pop(),
+                                                      ),
+                                                    );
+                                                  } else {
+                                                    final needed =
+                                                        requirement -
+                                                        totalStars;
+                                                    showDialog(
+                                                      context: context,
+                                                      builder: (ctx) => ModernGameDialog(
+                                                        title: context.tr(
+                                                          'store.not_enough_stars',
+                                                          fallback:
+                                                              'NOT ENOUGH STARS',
+                                                        ),
+                                                        description: context.tr(
+                                                          'store.need_more_stars',
+                                                          args: [
+                                                            needed.toString(),
+                                                          ],
+                                                          fallback:
+                                                              'You need $needed more stars to open this chest!',
+                                                        ),
+                                                        buttonText: context.tr(
+                                                          'store.keep_playing',
+                                                          fallback:
+                                                              'KEEP PLAYING',
+                                                        ),
+                                                        isSuccess: false,
+                                                        onButtonPressed: () =>
+                                                            Navigator.of(
+                                                              ctx,
+                                                            ).pop(),
+                                                        customIcon: Icon(
+                                                          Icons
+                                                              .star_border_rounded,
+                                                          color: Colors.orange,
+                                                          size: 48.sp,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                },
+                                                child: Container(
+                                                  width: 130.w,
+                                                  margin: EdgeInsets.only(
+                                                    right: 16.w,
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                    gradient: canClaim
+                                                        ? LinearGradient(
+                                                            colors: [
+                                                              widget
+                                                                  .primaryColor,
+                                                              widget
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.7,
+                                                                  ),
+                                                            ],
+                                                            begin: Alignment
+                                                                .topLeft,
+                                                            end: Alignment
+                                                                .bottomRight,
+                                                          )
+                                                        : null,
+                                                    color: canClaim
+                                                        ? null
+                                                        : (isClaimed
+                                                              ? Colors.grey
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.1,
+                                                                    )
+                                                              : isDark
+                                                              ? Colors.white
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.05,
+                                                                    )
+                                                              : Colors.black
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.02,
+                                                                    )),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          30.r,
+                                                        ),
+                                                    border: Border.all(
+                                                      color: isClaimed
+                                                          ? Colors.transparent
+                                                          : canClaim
+                                                          ? Colors.white
+                                                                .withValues(
+                                                                  alpha: 0.5,
+                                                                )
+                                                          : isNext
+                                                          ? widget.primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.5,
+                                                                )
+                                                          : Colors.transparent,
+                                                      width: canClaim
+                                                          ? 4.r
+                                                          : 2.r,
+                                                    ),
+                                                  ),
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                            isClaimed
+                                                                ? Icons
+                                                                      .inventory_2_rounded
+                                                                : canClaim
+                                                                ? Icons
+                                                                      .redeem_rounded
+                                                                : Icons
+                                                                      .lock_rounded,
+                                                            size: 52.sp,
+                                                            color: isClaimed
+                                                                ? Colors.grey
+                                                                : canClaim
+                                                                ? Colors.white
+                                                                : Colors
+                                                                      .grey
+                                                                      .shade400,
+                                                          )
+                                                          .animate(
+                                                            target: canClaim
+                                                                ? 1
+                                                                : 0,
+                                                          )
+                                                          .shake(
+                                                            hz: 3,
+                                                            duration:
+                                                                1.5.seconds,
+                                                          )
+                                                          .then()
+                                                          .shimmer(
+                                                            duration: 1.seconds,
+                                                            color: Colors.white,
+                                                          ),
+                                                      SizedBox(height: 12.h),
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            "$requirement",
+                                                            style: TextStyle(
+                                                              fontSize: 18.sp,
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w900,
+                                                              color: isClaimed
+                                                                  ? Colors.grey
+                                                                  : canClaim
+                                                                  ? Colors.white
+                                                                  : isDark
+                                                                  ? Colors
+                                                                        .white70
+                                                                  : Colors
+                                                                        .black87,
+                                                            ),
+                                                          ),
+                                                          Icon(
+                                                            Icons.star_rounded,
+                                                            size: 18.sp,
+                                                            color: isClaimed
+                                                                ? Colors.grey
+                                                                : const Color(
+                                                                    0xFFFFD700,
+                                                                  ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      if (isClaimed) ...[
+                                                        SizedBox(height: 6.h),
+                                                        Text(
+                                                          context.tr(
+                                                            'store.chest_opened',
+                                                            fallback: "OPENED",
+                                                          ),
+                                                          style: TextStyle(
+                                                            fontSize: 12.sp,
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ),
+                                                      ] else if (canClaim) ...[
+                                                        SizedBox(height: 6.h),
+                                                        Container(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    12.w,
+                                                                vertical: 4.h,
+                                                              ),
+                                                          decoration: BoxDecoration(
+                                                            color: Colors.white,
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  16.r,
+                                                                ),
+                                                          ),
+                                                          child: Text(
+                                                            context.tr(
+                                                              'store.chest_open',
+                                                              fallback: "OPEN",
+                                                            ),
+                                                            style: TextStyle(
+                                                              fontSize: 12.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w900,
+                                                              color: widget
+                                                                  .primaryColor,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
+                                  ),
+
+                                  SizedBox(height: 32.h),
+
+                                  // Magic Star Ad Button
+                                  if (claimedTier < _chestTiers.length &&
+                                      totalStars < nextRequirement) ...[
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 24.w,
+                                      ),
+                                      child: ScaleButton(
+                                        onTap: _watchAdForMagicStars,
+                                        child: ShakeableWrapper(
+                                          shakeCount: _outOfAdsShake.value,
+                                          child: Container(
+                                            width: double.infinity,
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 18.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: const Color(0xFFEC4899),
+                                              borderRadius:
+                                                  BorderRadius.circular(30.r),
+                                              border: Border.all(
+                                                color: const Color(0xFFBE185D),
+                                                width: 3.w,
+                                              ),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color(
+                                                    0xFFBE185D,
+                                                  ),
+                                                  offset: Offset(0, 6.h),
+                                                ),
+                                              ],
+                                            ),
+                                            child:
+                                                _isProcessing.value ||
+                                                    _isLoadingLimits.value
+                                                ? Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      SizedBox(
+                                                        width: 24.sp,
+                                                        height: 24.sp,
+                                                        child:
+                                                            const VowlButtonSpinner(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                      ),
+                                                      SizedBox(width: 12.w),
+                                                      Text(
+                                                        context.tr(
+                                                          'store.loading_ad',
+                                                          fallback:
+                                                              "Loading...",
+                                                        ),
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 16.sp,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          color: Colors.white70,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                : _remainingClaims.value <= 0
+                                                ? Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons
+                                                            .lock_clock_rounded,
+                                                        color: Colors.white70,
+                                                        size: 28.sp,
+                                                      ),
+                                                      SizedBox(width: 12.w),
+                                                      Text(
+                                                        context.tr(
+                                                          'store.daily_limit_reached',
+                                                          fallback:
+                                                              "Daily Limit Reached",
+                                                        ),
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 15.sp,
+                                                          fontWeight:
+                                                              FontWeight.w900,
+                                                          color: Colors.white70,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                : Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        isPremium
+                                                            ? Icons
+                                                                  .auto_awesome_rounded
+                                                            : Icons
+                                                                  .play_circle_filled_rounded,
+                                                        color: Colors.white,
+                                                        size: 28.sp,
+                                                      ),
+                                                      SizedBox(width: 12.w),
+                                                      Text(
+                                                        isPremium
+                                                            ? context.tr(
+                                                                'store.claim_magic_stars',
+                                                                fallback:
+                                                                    "Claim +2 Free Magic Stars",
+                                                              )
+                                                            : context.tr(
+                                                                'store.watch_ad_magic_stars',
+                                                                fallback:
+                                                                    "Watch Ad for +2 Magic Stars",
+                                                              ),
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 15.sp,
+                                                          fontWeight:
+                                                              FontWeight.w900,
+                                                          color: Colors.white,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                                SizedBox(height: 12.h),
-                                Text(
-                                    _remainingClaims.value <= 0
-                                        ? context.tr('store.come_back_tomorrow', fallback: "Come back tomorrow for more free stars!")
-                                        : context.tr('store.magic_stars_hint', fallback: "Magic Stars permanently count towards your total! ($_remainingClaims left today)"),
-                                    style: TextStyle(
-                                      fontSize: 11.sp,
-                                      color: Colors.white70,
+                                    SizedBox(height: 12.h),
+                                    Text(
+                                      _remainingClaims.value <= 0
+                                          ? context.tr(
+                                              'store.come_back_tomorrow',
+                                              fallback:
+                                                  "Come back tomorrow for more free stars!",
+                                            )
+                                          : context.tr(
+                                              'store.magic_stars_hint',
+                                              fallback:
+                                                  "Magic Stars permanently count towards your total! ($_remainingClaims left today)",
+                                            ),
+                                      style: TextStyle(
+                                        fontSize: 11.sp,
+                                        color: Colors.white70,
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  SizedBox(height: 16.h),
-                                ],
+                                    SizedBox(height: 16.h),
+                                  ],
 
-                              SizedBox(
-                                height:
-                                    MediaQuery.of(context).padding.bottom +
-                                    24.h,
+                                  SizedBox(
+                                    height:
+                                        MediaQuery.of(context).padding.bottom +
+                                        24.h,
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-        );
-          }
+              ),
+            );
+          },
         );
       },
     );

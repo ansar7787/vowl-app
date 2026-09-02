@@ -78,20 +78,33 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
 
     if (_coinX.value.abs() > 100.w) {
       final bool pending = _coinX.value > 0;
-      
-      final String correct = (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest.correctAnswer ?? "";
-      final bool isCorrect = (pending ? "true" : "false") == correct.trim().toLowerCase();
+
+      final String correct =
+          (context.read<ReadingBloc>().state as ReadingLoaded)
+              .currentQuest
+              .correctAnswer ??
+          "";
+      final bool isCorrect =
+          (pending ? "true" : "false") == correct.trim().toLowerCase();
 
       if (!isCorrect) {
         _pendingAnswer.value = pending;
-        _submitFinalAnswer(false, (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest, true);
+        _submitFinalAnswer(
+          false,
+          (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest,
+          true,
+        );
       } else {
         _pendingAnswer.value = pending;
       }
     }
   }
 
-  void _submitFinalAnswer(bool nailedEvidence, ReadingQuest quest, [bool failedCoin = false]) {
+  void _submitFinalAnswer(
+    bool nailedEvidence,
+    ReadingQuest quest, [
+    bool failedCoin = false,
+  ]) {
     if (_pendingAnswer.value == null) return;
 
     if (!nailedEvidence || failedCoin) {
@@ -105,8 +118,12 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
         userId: 'local',
         gameType: widget.gameType.name,
         question: quest.question ?? quest.instruction,
-        userAnswer: failedCoin ? (_pendingAnswer.value! ? "True" : "False") : 'Failed to find evidence',
-        correctAnswer: failedCoin ? (quest.correctAnswer ?? '') : (quest.evidenceLine ?? ''),
+        userAnswer: failedCoin
+            ? (_pendingAnswer.value! ? "True" : "False")
+            : 'Failed to find evidence',
+        correctAnswer: failedCoin
+            ? (quest.correctAnswer ?? '')
+            : (quest.evidenceLine ?? ''),
         level: widget.level,
       );
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
@@ -121,7 +138,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     _hapticService.success();
     _soundService.playCorrect();
     // Award bonus coins for finding evidence
-    context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5)); 
+    context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
     context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
@@ -158,7 +175,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('reading_games.fact_checker', fallback: 'FACT CHECKER!'),
+            title: context.tr(
+              'reading_games.fact_checker',
+              fallback: 'FACT CHECKER!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -169,7 +189,15 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
             : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _pendingAnswer, _coinX, _coinY, _coinRotation]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _pendingAnswer,
+            _coinX,
+            _coinY,
+            _coinRotation,
+          ]),
           builder: (context, _) {
             return ReadingBaseLayout(
               gameType: widget.gameType,
@@ -177,91 +205,102 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          onContinue: () =>
-              context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<ReadingBloc>().add(const ReadingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            sliver: SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 16.h),
-                                  TrueFalseReadingInstruction(
-                                    primaryColor: theme.primaryColor,
-                                    instruction: quest.instruction,
+              onContinue: () =>
+                  context.read<ReadingBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      TrueFalseReadingInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: quest.instruction,
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      TrueFalseReadingPassage(
+                                        passage: quest.passage ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      TrueFalseReadingStatement(
+                                        statement: quest.question ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: 24.h),
-                                  TrueFalseReadingPassage(
-                                    passage: quest.passage ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                  ),
-                                  SizedBox(height: 32.h),
-                                  TrueFalseReadingStatement(
-                                    statement: quest.question ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SizedBox(height: 40.h),
-                                  TrueFalseReadingCoinZone(
-                                    coinX: _coinX.value,
-                                    coinY: _coinY.value,
-                                    coinRotation: _coinRotation.value,
-                                    onFlick: _onFlick,
-                                    isDark: isDark,
-                                    themeColor: theme.primaryColor,
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
                                   ),
-                                  if (_isAnswered.value) ...[
-                                    SizedBox(height: 30.h),
-                                    TrueFalseReadingResult(
-                                      quest: quest,
-                                      isCorrect: _isCorrect.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
-                                  SizedBox(height: (_pendingAnswer.value != null && !_isAnswered.value) ? 380.h : 60.h),
-                                ],
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      SizedBox(height: 40.h),
+                                      TrueFalseReadingCoinZone(
+                                        coinX: _coinX.value,
+                                        coinY: _coinY.value,
+                                        coinRotation: _coinRotation.value,
+                                        onFlick: _onFlick,
+                                        isDark: isDark,
+                                        themeColor: theme.primaryColor,
+                                      ),
+                                      if (_isAnswered.value) ...[
+                                        SizedBox(height: 30.h),
+                                        TrueFalseReadingResult(
+                                          quest: quest,
+                                          isCorrect: _isCorrect.value == true,
+                                          isDark: isDark,
+                                        ),
+                                      ],
+                                      SizedBox(
+                                        height:
+                                            (_pendingAnswer.value != null &&
+                                                !_isAnswered.value)
+                                            ? 380.h
+                                            : 60.h,
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                        if (_pendingAnswer.value != null && !_isAnswered.value)
+                          EvidenceHighlightWrapper(
+                            passage: quest.passage ?? "",
+                            evidenceWords:
+                                (quest.evidenceLine ?? quest.passage ?? "")
+                                    .split(RegExp(r'\s+')),
+                            primaryColor: theme.primaryColor,
+                            onCorrectHighlight: () =>
+                                _submitFinalAnswer(true, quest),
+                            instruction: 'Tap the words that prove your answer',
+                            isPositioned: true,
+                          ),
+                      ],
                     ),
-                    if (_pendingAnswer.value != null && !_isAnswered.value)
-                      EvidenceHighlightWrapper(
-                        passage: quest.passage ?? "",
-                        evidenceWords: (quest.evidenceLine ?? quest.passage ?? "").split(RegExp(r'\s+')),
-                        primaryColor: theme.primaryColor,
-                        onCorrectHighlight: () => _submitFinalAnswer(true, quest),
-                        instruction: 'Tap the words that prove your answer',
-                        isPositioned: true,
-                      ),
-                  ],
-                ),
             );
           },
         );

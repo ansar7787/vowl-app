@@ -49,8 +49,9 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
 
   late AnimationController _shimmerController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
-  
-  final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
+
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -99,9 +100,10 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -111,11 +113,11 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
           level: widget.level,
         );
       }
-      
+
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
-  
+
   void _onTimeUp(String textToSpeak) {
     if (_isAnswered.value) return;
     _submitVerbalEvaluation(false, textToSpeak);
@@ -175,7 +177,10 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('speaking_games.situational_expert', fallback: 'SITUATIONAL EXPERT!'),
+            title: context.tr(
+              'speaking_games.situational_expert',
+              fallback: 'SITUATIONAL EXPERT!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -188,7 +193,13 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _scrubProgress, _timeVal]),
+            listenable: Listenable.merge([
+              _isAnswered,
+              _isCorrect,
+              _showConfetti,
+              _scrubProgress,
+              _timeVal,
+            ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 onTutorPass: _tutorPass,
@@ -197,95 +208,110 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
-            onContinue: () =>
-                context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () =>
-                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : Stack(
-                    children: [
-                      RawScrollbar(
-                        controller: _scrollController,
-                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                        radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        child: CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
-                        ),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SituationSpeakingHeader(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              SituationSpeakingFogScrubberPanel(
-                                quest: quest,
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                                scrubProgress: _scrubProgress.value,
-                                timeVal: _timeVal.value,
-                                onScrubUpdate: _onScrubUpdate,
-                                onPlayTts: () => _soundService.playTts(
-                                  quest.situationText ?? "",
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              if (!_isAnswered.value)
-                                Padding(
-                                  padding: EdgeInsets.only(bottom: 24.h),
-                                  child: SpeedChallengeTimer(
-                                    key: _timerKey,
-                                    durationSeconds: 20,
-                                    primaryColor: theme.primaryColor,
-                                    onTimeUp: () => _onTimeUp(quest.textToSpeak ?? ""),
-                                    autoStart: true,
+                onContinue: () =>
+                    context.read<SpeakingBloc>().add(const NextQuestion()),
+                onHint: () =>
+                    context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+                child: quest == null
+                    ? const SizedBox()
+                    : Stack(
+                        children: [
+                          RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverPadding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  sliver: SliverToBoxAdapter(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        SituationSpeakingHeader(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                        SituationSpeakingFogScrubberPanel(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          scrubProgress: _scrubProgress.value,
+                                          timeVal: _timeVal.value,
+                                          onScrubUpdate: _onScrubUpdate,
+                                          onPlayTts: () =>
+                                              _soundService.playTts(
+                                                quest.situationText ?? "",
+                                              ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              if (!_isAnswered.value && _scrubProgress.value >= 1.0)
-                                SpeakingSelfEvaluationControls(
-                                  expectedText: quest.textToSpeak ?? "",
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  onConfirmed: () {
-                                    _timerKey.currentState?.stop();
-                                    _submitVerbalEvaluation(true, quest.textToSpeak ?? "");
-                                  },
-                                  onSkipped: () {
-                                    _timerKey.currentState?.stop();
-                                    _submitVerbalEvaluation(false, quest.textToSpeak ?? "");
-                                  },
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 16.h,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        if (!_isAnswered.value)
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                              bottom: 24.h,
+                                            ),
+                                            child: SpeedChallengeTimer(
+                                              key: _timerKey,
+                                              durationSeconds: 20,
+                                              primaryColor: theme.primaryColor,
+                                              onTimeUp: () => _onTimeUp(
+                                                quest.textToSpeak ?? "",
+                                              ),
+                                              autoStart: true,
+                                            ),
+                                          ),
+                                        if (!_isAnswered.value &&
+                                            _scrubProgress.value >= 1.0)
+                                          SpeakingSelfEvaluationControls(
+                                            expectedText:
+                                                quest.textToSpeak ?? "",
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onConfirmed: () {
+                                              _timerKey.currentState?.stop();
+                                              _submitVerbalEvaluation(
+                                                true,
+                                                quest.textToSpeak ?? "",
+                                              );
+                                            },
+                                            onSkipped: () {
+                                              _timerKey.currentState?.stop();
+                                              _submitVerbalEvaluation(
+                                                false,
+                                                quest.textToSpeak ?? "",
+                                              );
+                                            },
+                                          ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                  ),
-                  ],
-                ),
               );
             },
           ),

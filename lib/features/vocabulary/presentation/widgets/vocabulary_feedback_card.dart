@@ -302,54 +302,54 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
       builder: (context, translated, _) {
         final displayText = translated ?? widget.explanation;
         return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-      decoration: BoxDecoration(
-        color: widget.isDark
-            ? Colors.white.withValues(alpha: 0.05)
-            : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: widget.isDark
-              ? Colors.white10
-              : Colors.black.withValues(alpha: 0.05),
-        ),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(
-            Icons.info_outline_rounded,
-            size: 18.r,
-            color: widget.accentColor.withValues(alpha: 0.7),
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: widget.isDark
+                ? Colors.white.withValues(alpha: 0.05)
+                : Colors.black.withValues(alpha: 0.02),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: widget.isDark
+                  ? Colors.white10
+                  : Colors.black.withValues(alpha: 0.05),
+            ),
           ),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: Text(
-              displayText,
-              maxLines: 15,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w500,
-                color: widget.isDark ? Colors.white70 : Colors.black54,
-                height: 1.4,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.info_outline_rounded,
+                size: 18.r,
+                color: widget.accentColor.withValues(alpha: 0.7),
               ),
-            ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: Text(
+                  displayText,
+                  maxLines: 15,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w500,
+                    color: widget.isDark ? Colors.white70 : Colors.black54,
+                    height: 1.4,
+                  ),
+                ),
+              ),
+              if (translated == null) ...[
+                SizedBox(width: 8.w),
+                TranslateButtonWidget(
+                  originalText: widget.explanation,
+                  onTranslationComplete: (result) {
+                    _translatedText.value = result;
+                  },
+                ),
+              ],
+            ],
           ),
-          if (translated == null) ...[
-            SizedBox(width: 8.w),
-            TranslateButtonWidget(
-              originalText: widget.explanation,
-              onTranslationComplete: (result) {
-                _translatedText.value = result;
-              },
-            ),
-          ],
-        ],
-      ),
-    ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.1, end: 0);
+        ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.1, end: 0);
       },
     );
   }

@@ -126,7 +126,7 @@ class _GenericRoleplayScenarioScreenState
     _isFirstStagePassed.value = false;
     _attempts.value = 0;
     _chatMessages.value = [ChatMessage.system(state.currentQuest.instruction)];
-    
+
     _playAudio(state.currentQuest.instruction);
     _scrollToBottom();
   }
@@ -137,7 +137,10 @@ class _GenericRoleplayScenarioScreenState
   // [RoleplayBloc._onSubmitAnswer]. Only a light tap haptic fires here.
 
   void _onOptionSelected(int index, int correctIndex, String text) async {
-    if (_isAnswered.value || _selectedIndex.value != null || _isProcessing.value) return;
+    if (_isAnswered.value ||
+        _selectedIndex.value != null ||
+        _isProcessing.value)
+      return;
 
     _hapticService.light(); // immediate tap affordance only
 
@@ -248,9 +251,17 @@ class _GenericRoleplayScenarioScreenState
         final correctIndex = quest.correctAnswerIndex ?? 0;
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _selectedIndex, _isProcessing, _isFirstStagePassed, _attempts, _chatMessages, _showConfetti]),
-            builder: (context, _) {
-              return RoleplayBaseLayout(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _selectedIndex,
+            _isProcessing,
+            _isFirstStagePassed,
+            _attempts,
+            _chatMessages,
+            _showConfetti,
+          ]),
+          builder: (context, _) {
+            return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               mascotId: mascotId,
@@ -274,51 +285,58 @@ class _GenericRoleplayScenarioScreenState
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         RoleplayCharacterCard(
-                    roleName: quest.roleName ?? 'Professional Advisor',
-                    icon: widget.icon,
-                    primaryColor: theme.primaryColor,
-                  ),
-                  SizedBox(height: 32.h),
-                  RoleplayChatMessagesList(
-                    messages: _chatMessages.value,
-                    isProcessing: _isProcessing.value,
-                    hint: state.hintUsed ? quest.hint : null,
-                    primaryColor: theme.primaryColor,
-                    isDark: isDark,
-                    scrollController: _chatScrollController,
-                  ),
-                  if (!_isAnswered.value && !_isFirstStagePassed.value) ...[
-                    SizedBox(height: 32.h),
-                    RoleplayOptionsSection(
-                      options: options,
-                      correctIndex: correctIndex,
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                      onOptionSelected: _onOptionSelected,
+                          roleName: quest.roleName ?? 'Professional Advisor',
+                          icon: widget.icon,
+                          primaryColor: theme.primaryColor,
+                        ),
+                        SizedBox(height: 32.h),
+                        RoleplayChatMessagesList(
+                          messages: _chatMessages.value,
+                          isProcessing: _isProcessing.value,
+                          hint: state.hintUsed ? quest.hint : null,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          scrollController: _chatScrollController,
+                        ),
+                        if (!_isAnswered.value &&
+                            !_isFirstStagePassed.value) ...[
+                          SizedBox(height: 32.h),
+                          RoleplayOptionsSection(
+                            options: options,
+                            correctIndex: correctIndex,
+                            primaryColor: theme.primaryColor,
+                            isDark: isDark,
+                            onOptionSelected: _onOptionSelected,
+                          ),
+                        ],
+                        if (_isFirstStagePassed.value &&
+                            !_isAnswered.value &&
+                            _selectedIndex.value != null)
+                          SpeakToConfirmOverlay(
+                            expectedText: options[_selectedIndex.value!],
+                            primaryColor: theme.primaryColor,
+                            isPositioned: false,
+                            onConfirmed: () {
+                              context.read<RoleplayBloc>().add(
+                                const RoleplaySpeakConfirmed(5),
+                              );
+                              _submitVerbalEvaluation(true);
+                            },
+                            onSkipped: () => _submitVerbalEvaluation(false),
+                          ),
+                        SizedBox(
+                          height: _isAnswered.value || _isFirstStagePassed.value
+                              ? 180.h
+                              : 40.h,
+                        ),
+                      ],
                     ),
-                  ],
-                  if (_isFirstStagePassed.value && !_isAnswered.value && _selectedIndex.value != null)
-                    SpeakToConfirmOverlay(
-                      expectedText: options[_selectedIndex.value!],
-                      primaryColor: theme.primaryColor,
-                      isPositioned: false,
-                      onConfirmed: () {
-                        context.read<RoleplayBloc>().add(
-                          const RoleplaySpeakConfirmed(5),
-                        );
-                        _submitVerbalEvaluation(true);
-                      },
-                      onSkipped: () => _submitVerbalEvaluation(false),
-                    ),
-                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
+                  ),
                 ],
               ),
-            ),
-          ],
-        ),
-      );
-            },
-          );
+            );
+          },
+        );
       },
     );
   }

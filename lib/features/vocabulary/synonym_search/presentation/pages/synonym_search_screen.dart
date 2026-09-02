@@ -64,9 +64,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   @override
   void dispose() {
-    for (var n in _shardOffsets) { n.dispose(); }
-    for (var n in _isWarping) { n.dispose(); }
-    for (var n in _shardTrails) { n.dispose(); }
+    for (var n in _shardOffsets) {
+      n.dispose();
+    }
+    for (var n in _isWarping) {
+      n.dispose();
+    }
+    for (var n in _shardTrails) {
+      n.dispose();
+    }
     _activeShardIndex.dispose();
     _scrollController.dispose();
     _isAnswered.dispose();
@@ -77,9 +83,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _initShards(int count) {
-    for (var n in _shardOffsets) { n.dispose(); }
-    for (var n in _isWarping) { n.dispose(); }
-    for (var n in _shardTrails) { n.dispose(); }
+    for (var n in _shardOffsets) {
+      n.dispose();
+    }
+    for (var n in _isWarping) {
+      n.dispose();
+    }
+    for (var n in _shardTrails) {
+      n.dispose();
+    }
     _shardOffsets = List.generate(count, (_) => ValueNotifier(Offset.zero));
     _isWarping = List.generate(count, (_) => ValueNotifier(false));
     _shardTrails = List.generate(count, (_) => ValueNotifier([]));
@@ -96,7 +108,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   void _onShardDragUpdate(int index, DragUpdateDetails details) {
     if (_isAnswered.value || _activeShardIndex.value != index) return;
-    
+
     final currentOffset = _shardOffsets[index].value + details.delta;
     _shardOffsets[index].value = currentOffset;
 
@@ -160,7 +172,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onWarpGateTapped(VocabularyQuest quest) {
-    if (_activeShardIndex.value == null || _isAnswered.value || _lastConstraints == null) {
+    if (_activeShardIndex.value == null ||
+        _isAnswered.value ||
+        _lastConstraints == null) {
       return;
     }
     final index = _activeShardIndex.value!;
@@ -260,15 +274,15 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                 curve: Curves.easeOutBack,
               );
             }
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered.value = false;
-              _isCorrect.value = null;
-              _isFirstStagePassed.value = false;
-              _initShards(state.currentQuest.options?.length ?? 0);
+            _lastQuest = state.currentQuest;
+            _lastProcessedIndex = state.currentIndex;
+            _isAnswered.value = false;
+            _isCorrect.value = null;
+            _isFirstStagePassed.value = false;
+            _initShards(state.currentQuest.options?.length ?? 0);
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-              _isAnswered.value = true;
-              _isCorrect.value = state.answerStatus.asBoolOrNull;
+            _isAnswered.value = true;
+            _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
@@ -303,7 +317,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             : _lastQuest;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _isFirstStagePassed,
+          ]),
           builder: (context, _) {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
@@ -314,205 +333,295 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                   ? state.isFinalFailure
                   : false,
               showConfetti: _showConfetti.value,
-          hasStage2: true,
-          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          useScrolling: false,
-          disablePadding: true,
-          onHint: () {
-            final options = quest?.options ?? [];
-            final correct = quest?.correctAnswer?.toLowerCase() ?? "";
-            for (int i = 0; i < options.length; i++) {
-              if (options[i].toLowerCase() == correct) {
-                _shardOffsets[i].value = _getShardInitialPosition(
-                  i,
-                  options.length,
-                  _lastConstraints!,
-                ) * -0.2;
-                
-                Future.delayed(1.seconds, () {
-                  if (mounted && !_isAnswered.value) {
-                    _shardOffsets[i].value = Offset.zero;
+              hasStage2: true,
+              onContinue: () =>
+                  context.read<VocabularyBloc>().add(NextQuestion()),
+              useScrolling: false,
+              disablePadding: true,
+              onHint: () {
+                final options = quest?.options ?? [];
+                final correct = quest?.correctAnswer?.toLowerCase() ?? "";
+                for (int i = 0; i < options.length; i++) {
+                  if (options[i].toLowerCase() == correct) {
+                    _shardOffsets[i].value =
+                        _getShardInitialPosition(
+                          i,
+                          options.length,
+                          _lastConstraints!,
+                        ) *
+                        -0.2;
+
+                    Future.delayed(1.seconds, () {
+                      if (mounted && !_isAnswered.value) {
+                        _shardOffsets[i].value = Offset.zero;
+                      }
+                    });
+                    break;
                   }
-                });
-                break;
-              }
-            }
-          },
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    _lastConstraints = constraints;
-                    final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-                    final screenSize = MediaQuery.of(context).size;
-                    final double safeWidth = constraints.maxWidth.isFinite
-                        ? constraints.maxWidth
-                        : screenSize.width;
-                    final double safeHeight = (constraints.maxHeight.isFinite
-                        ? constraints.maxHeight
-                        : (screenSize.height * 0.6)) + keyboardHeight;
-                    final isCompact = safeHeight < 580;
+                }
+              },
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        _lastConstraints = constraints;
+                        final keyboardHeight = MediaQuery.of(
+                          context,
+                        ).viewInsets.bottom;
+                        final screenSize = MediaQuery.of(context).size;
+                        final double safeWidth = constraints.maxWidth.isFinite
+                            ? constraints.maxWidth
+                            : screenSize.width;
+                        final double safeHeight =
+                            (constraints.maxHeight.isFinite
+                                ? constraints.maxHeight
+                                : (screenSize.height * 0.6)) +
+                            keyboardHeight;
+                        final isCompact = safeHeight < 580;
 
-                    return Stack(
-              children: [
-                RawScrollbar(
-                  controller: _scrollController,
-                  thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                  radius: Radius.circular(8.r),
-                  thickness: 4.w,
-                  child: CustomScrollView(
-                    controller: _scrollController,
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
-                        SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-
-                              IgnorePointer(
-                                ignoring: _isFirstStagePassed.value,
-                                child: SizedBox(
-                                  width: safeWidth,
-                                  height: safeHeight,
-                                  child: Stack(
-                                            alignment: Alignment.center,
-                                            clipBehavior: Clip.none,
-                                            children: [
-                                              Positioned.fill(
-                                                child: RepaintBoundary(
-                                                  child: CustomPaint(
-                                                    painter: CosmicGridPainter(
-                                                      theme.primaryColor.withValues(alpha: 0.1),
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverToBoxAdapter(
+                                    child: Column(
+                                      children: [
+                                        IgnorePointer(
+                                          ignoring: _isFirstStagePassed.value,
+                                          child: SizedBox(
+                                            width: safeWidth,
+                                            height: safeHeight,
+                                            child: Stack(
+                                              alignment: Alignment.center,
+                                              clipBehavior: Clip.none,
+                                              children: [
+                                                Positioned.fill(
+                                                  child: RepaintBoundary(
+                                                    child: CustomPaint(
+                                                      painter:
+                                                          CosmicGridPainter(
+                                                            theme.primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.1,
+                                                                ),
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                              isCompact
-                                                  ? Transform.scale(
-                                                      scale: 0.8,
-                                                      child: SynonymWarpGate(
+                                                isCompact
+                                                    ? Transform.scale(
+                                                        scale: 0.8,
+                                                        child: SynonymWarpGate(
+                                                          word:
+                                                              quest.word ?? "",
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          onTap: () =>
+                                                              _onWarpGateTapped(
+                                                                quest,
+                                                              ),
+                                                        ),
+                                                      )
+                                                    : SynonymWarpGate(
                                                         word: quest.word ?? "",
-                                                        color: theme.primaryColor,
+                                                        color:
+                                                            theme.primaryColor,
                                                         isDark: isDark,
-                                                        onTap: () => _onWarpGateTapped(quest),
+                                                        onTap: () =>
+                                                            _onWarpGateTapped(
+                                                              quest,
+                                                            ),
                                                       ),
-                                                    )
-                                                  : SynonymWarpGate(
-                                                      word: quest.word ?? "",
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onTap: () => _onWarpGateTapped(quest),
-                                                    ),
-                                              ...List.generate(quest.options?.length ?? 0, (i) {
-                                                return ValueListenableBuilder<List<Offset>>(
-                                                    valueListenable: _shardTrails[i],
+                                                ...List.generate(quest.options?.length ?? 0, (
+                                                  i,
+                                                ) {
+                                                  return ValueListenableBuilder<
+                                                    List<Offset>
+                                                  >(
+                                                    valueListenable:
+                                                        _shardTrails[i],
                                                     builder: (context, trail, child) {
-                                                      return ValueListenableBuilder<int?>(
-                                                          valueListenable: _activeShardIndex,
-                                                          builder: (context, activeIndex, _) {
-                                                            if (activeIndex == i && trail.isNotEmpty) {
-                                                              final center = Offset(safeWidth / 2, safeHeight / 2);
-                                                              final initialPos = center + _getShardInitialPosition(
-                                                                i,
-                                                                quest.options!.length,
-                                                                constraints,
-                                                              );
-                                                              final absoluteTrail = trail
-                                                                  .map(
-                                                                    (offset) => initialPos + offset,
-                                                                  )
-                                                                  .toList();
+                                                      return ValueListenableBuilder<
+                                                        int?
+                                                      >(
+                                                        valueListenable:
+                                                            _activeShardIndex,
+                                                        builder: (context, activeIndex, _) {
+                                                          if (activeIndex ==
+                                                                  i &&
+                                                              trail
+                                                                  .isNotEmpty) {
+                                                            final center =
+                                                                Offset(
+                                                                  safeWidth / 2,
+                                                                  safeHeight /
+                                                                      2,
+                                                                );
+                                                            final initialPos =
+                                                                center +
+                                                                _getShardInitialPosition(
+                                                                  i,
+                                                                  quest
+                                                                      .options!
+                                                                      .length,
+                                                                  constraints,
+                                                                );
+                                                            final absoluteTrail =
+                                                                trail
+                                                                    .map(
+                                                                      (
+                                                                        offset,
+                                                                      ) =>
+                                                                          initialPos +
+                                                                          offset,
+                                                                    )
+                                                                    .toList();
 
-                                                              return Positioned.fill(
-                                                                child: IgnorePointer(
-                                                                  child: CustomPaint(
-                                                                    painter: TrailPainter(
-                                                                      absoluteTrail,
-                                                                      theme.primaryColor,
-                                                                    ),
+                                                            return Positioned.fill(
+                                                              child: IgnorePointer(
+                                                                child: CustomPaint(
+                                                                  painter: TrailPainter(
+                                                                    absoluteTrail,
+                                                                    theme
+                                                                        .primaryColor,
                                                                   ),
                                                                 ),
-                                                              );
-                                                            }
-                                                            return const SizedBox.shrink();
+                                                              ),
+                                                            );
                                                           }
+                                                          return const SizedBox.shrink();
+                                                        },
                                                       );
-                                                    }
-                                                );
-                                              }),
-                                              ...List.generate(quest.options?.length ?? 0, (i) {
-                                                final center = Offset(safeWidth / 2, safeHeight / 2);
-                                                final initialPos = center + _getShardInitialPosition(
-                                                  i,
-                                                  quest.options!.length,
-                                                  constraints,
-                                                );
+                                                    },
+                                                  );
+                                                }),
+                                                ...List.generate(
+                                                  quest.options?.length ?? 0,
+                                                  (i) {
+                                                    final center = Offset(
+                                                      safeWidth / 2,
+                                                      safeHeight / 2,
+                                                    );
+                                                    final initialPos =
+                                                        center +
+                                                        _getShardInitialPosition(
+                                                          i,
+                                                          quest.options!.length,
+                                                          constraints,
+                                                        );
 
-                                                return SynonymWordShard(
-                                                  index: i,
-                                                  text: quest.options![i],
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  initialPos: initialPos,
-                                                  offsetNotifier: _shardOffsets[i],
-                                                  isWarpingNotifier: _isWarping[i],
-                                                  activeIndexNotifier: _activeShardIndex,
-                                                  isCompact: isCompact,
-                                                  onPanStart: (d) => _onShardDragStart(i, d),
-                                                  onPanUpdate: (d) => _onShardDragUpdate(i, d),
-                                                  onPanEnd: () => _onShardDragEnd(i, quest),
-                                                  onTap: () => _onShardTapped(i),
-                                                );
-                                              }),
-                                              Positioned(
-                                                top: isCompact ? 2.h : 10.h,
-                                                left: 16.w,
-                                                right: 16.w,
-                                                child: SynonymInstructionHeader(
-                                                  color: theme.primaryColor,
-                                                  instruction: quest.instruction.isNotEmpty
-                                                      ? quest.instruction
-                                                      : "WARP THE SYNONYM SHARD",
-                                                  isCompact: isCompact,
+                                                    return SynonymWordShard(
+                                                      index: i,
+                                                      text: quest.options![i],
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      initialPos: initialPos,
+                                                      offsetNotifier:
+                                                          _shardOffsets[i],
+                                                      isWarpingNotifier:
+                                                          _isWarping[i],
+                                                      activeIndexNotifier:
+                                                          _activeShardIndex,
+                                                      isCompact: isCompact,
+                                                      onPanStart: (d) =>
+                                                          _onShardDragStart(
+                                                            i,
+                                                            d,
+                                                          ),
+                                                      onPanUpdate: (d) =>
+                                                          _onShardDragUpdate(
+                                                            i,
+                                                            d,
+                                                          ),
+                                                      onPanEnd: () =>
+                                                          _onShardDragEnd(
+                                                            i,
+                                                            quest,
+                                                          ),
+                                                      onTap: () =>
+                                                          _onShardTapped(i),
+                                                    );
+                                                  },
                                                 ),
-                                              ),
+                                                Positioned(
+                                                  top: isCompact ? 2.h : 10.h,
+                                                  left: 16.w,
+                                                  right: 16.w,
+                                                  child: SynonymInstructionHeader(
+                                                    color: theme.primaryColor,
+                                                    instruction:
+                                                        quest
+                                                            .instruction
+                                                            .isNotEmpty
+                                                        ? quest.instruction
+                                                        : "WARP THE SYNONYM SHARD",
+                                                    isCompact: isCompact,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        if (_isFirstStagePassed.value)
+                                          Column(
+                                            children: [
+                                              SizedBox(height: 10.h),
+                                              if (quest.nuanceDifference !=
+                                                      null &&
+                                                  quest
+                                                      .nuanceDifference!
+                                                      .isNotEmpty)
+                                                SynonymNuanceScale(
+                                                  targetWord: quest.word ?? "",
+                                                  synonymWord:
+                                                      quest.correctAnswer ?? "",
+                                                  nuanceDifference:
+                                                      quest.nuanceDifference!,
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                ),
                                             ],
                                           ),
-                                      ),
-                                    ),
-                                      if (_isFirstStagePassed.value)
-                                        Column(
-                                          children: [
-                                            SizedBox(height: 10.h),
-                                            if (quest.nuanceDifference != null && quest.nuanceDifference!.isNotEmpty)
-                                              SynonymNuanceScale(
-                                                targetWord: quest.word ?? "",
-                                                synonymWord: quest.correctAnswer ?? "",
-                                                nuanceDifference: quest.nuanceDifference!,
-                                                primaryColor: theme.primaryColor,
-                                              ),
-                                          ],
+                                        SizedBox(
+                                          height:
+                                              (_isFirstStagePassed.value &&
+                                                  !_isAnswered.value)
+                                              ? 380.h
+                                              : 60.h,
                                         ),
-                                      SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
-                            ContextSentenceBuilder(
-                              targetKeyword: quest.correctAnswer ?? "",
-                              primaryColor: theme.primaryColor,
-                              acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
-                              isPositioned: true,
-                              exampleSentence: quest.contextSentence,
-                            ),
+                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                              ContextSentenceBuilder(
+                                targetKeyword: quest.correctAnswer ?? "",
+                                primaryColor: theme.primaryColor,
+                                acceptedKeywordForms:
+                                    quest.synonyms ??
+                                    [quest.correctAnswer ?? ""],
+                                onConfirmed: () =>
+                                    _submitVerbalEvaluation(true),
+                                onSkipped: () => _submitVerbalEvaluation(false),
+                                isPositioned: true,
+                                exampleSentence: quest.contextSentence,
+                              ),
                           ],
                         );
-                  },
-                ),
+                      },
+                    ),
             );
           },
         );

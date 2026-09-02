@@ -78,16 +78,22 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                                   ),
                                   decoration: BoxDecoration(
                                     color: correctDocked
-                                        ? Colors.greenAccent.withValues(alpha: 0.25)
+                                        ? Colors.greenAccent.withValues(
+                                            alpha: 0.25,
+                                          )
                                         : (wrongDocked
                                               ? Colors.redAccent.withValues(
                                                   alpha: 0.25,
                                                 )
                                               : (dockedOption != null
-                                                    ? color.withValues(alpha: 0.2)
+                                                    ? color.withValues(
+                                                        alpha: 0.2,
+                                                      )
                                                     : (isDark
                                                           ? Colors.black45
-                                                          : Colors.grey.shade200))),
+                                                          : Colors
+                                                                .grey
+                                                                .shade200))),
                                     borderRadius: BorderRadius.circular(10.r),
                                     border: Border.all(
                                       color: correctDocked
@@ -121,7 +127,9 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                                       fontFamily: 'Outfit',
                                       fontSize: 12.sp,
                                       color: dockedOption != null
-                                          ? (isDark ? Colors.white : Colors.black87)
+                                          ? (isDark
+                                                ? Colors.white
+                                                : Colors.black87)
                                           : (isDark
                                                 ? Colors.white30
                                                 : Colors.black38),

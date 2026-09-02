@@ -81,7 +81,11 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.location_on_outlined, color: outlineColor, size: 12.r),
+                  Icon(
+                    Icons.location_on_outlined,
+                    color: outlineColor,
+                    size: 12.r,
+                  ),
                   SizedBox(width: 4.w),
                   Text(
                     "SCENE: ${socialContext!.toUpperCase()}",

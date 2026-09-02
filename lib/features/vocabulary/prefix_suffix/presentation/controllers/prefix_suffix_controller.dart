@@ -19,7 +19,7 @@ class PrefixSuffixController extends ChangeNotifier {
   bool isFirstStagePassed = false;
   String? selectedAffix;
   String? hintedAffix;
-  
+
   int lastProcessedIndex = -1;
   VocabularyQuest? lastQuest;
 
@@ -28,9 +28,9 @@ class PrefixSuffixController extends ChangeNotifier {
     required SoundService soundService,
     required TtsService ttsService,
     required this.onSubmitAnswer,
-  })  : _hapticService = hapticService,
-        _soundService = soundService,
-        _ttsService = ttsService;
+  }) : _hapticService = hapticService,
+       _soundService = soundService,
+       _ttsService = ttsService;
 
   @override
   void dispose() {
@@ -48,7 +48,7 @@ class PrefixSuffixController extends ChangeNotifier {
     hintedAffix = null;
     notifyListeners();
   }
-  
+
   void setAnswered(bool correct) {
     isAnswered = true;
     isCorrect = correct;
@@ -61,26 +61,31 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
   }
 
-
-  void onAffixSelected(String option, VocabularyQuest quest, bool droppedAsPrefix) {
+  void onAffixSelected(
+    String option,
+    VocabularyQuest quest,
+    bool droppedAsPrefix,
+  ) {
     if (isAnswered || isFirstStagePassed || selectedAffix != null) return;
-    
+
     // Check if they dropped a prefix in a suffix slot or vice versa
     bool isOptionPrefix = option.endsWith('-');
     bool isOptionSuffix = option.startsWith('-');
-    
+
     // Fallback: If the JSON curriculum missed the hyphens, infer from the correct answer
     if (!isOptionPrefix && !isOptionSuffix) {
       final cleanOption = option.trim().toLowerCase();
       final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
       if (correctWord.startsWith(cleanOption) && correctWord != cleanOption) {
         isOptionPrefix = true;
-      } else if (correctWord.endsWith(cleanOption) && correctWord != cleanOption) {
+      } else if (correctWord.endsWith(cleanOption) &&
+          correctWord != cleanOption) {
         isOptionSuffix = true;
       }
     }
-    
-    if ((isOptionPrefix && !droppedAsPrefix) || (isOptionSuffix && droppedAsPrefix)) {
+
+    if ((isOptionPrefix && !droppedAsPrefix) ||
+        (isOptionSuffix && droppedAsPrefix)) {
       // Wrong slot!
       _soundService.playWrong();
       _hapticService.error();
@@ -100,23 +105,26 @@ class PrefixSuffixController extends ChangeNotifier {
     rootWord = rootWord.toLowerCase();
 
     String remainder = "";
-    
+
     if (option.endsWith('-')) {
       if (!correctWord.startsWith(cleanOption)) return false;
       remainder = correctWord.substring(cleanOption.length);
     } else if (option.startsWith('-')) {
       if (!correctWord.endsWith(cleanOption)) return false;
-      remainder = correctWord.substring(0, correctWord.length - cleanOption.length);
+      remainder = correctWord.substring(
+        0,
+        correctWord.length - cleanOption.length,
+      );
     } else {
       return correctWord.contains(cleanOption);
     }
-    
+
     // The remainder of the word must be heavily related to the root word.
     // If we just check "startsWith", a prefix like UN- will incorrectly match UNDERGROUND.
     if (remainder.contains(rootWord) || rootWord.contains(remainder)) {
       return true;
     }
-    
+
     return false;
   }
 
@@ -128,7 +136,7 @@ class PrefixSuffixController extends ChangeNotifier {
     if (isCorrectAns) {
       _soundService.playCorrect();
       _hapticService.success();
-      
+
       // Wait a moment for the user to register the success, then transition!
       Future.delayed(const Duration(milliseconds: 250), () {
         if (_isDisposed) return;
@@ -145,7 +153,11 @@ class PrefixSuffixController extends ChangeNotifier {
     }
   }
 
-  void submitFinalAnswer(bool nailedIt, VocabularyQuest? quest, {String? wrongWord}) {
+  void submitFinalAnswer(
+    bool nailedIt,
+    VocabularyQuest? quest, {
+    String? wrongWord,
+  }) {
     if (isAnswered) return;
 
     isAnswered = true;
@@ -155,7 +167,7 @@ class PrefixSuffixController extends ChangeNotifier {
     if (nailedIt) {
       _soundService.playCorrect();
       _hapticService.success();
-      
+
       final correctWord = quest?.correctAnswer ?? "";
       if (correctWord.isNotEmpty) {
         _ttsService.speak(correctWord);
@@ -172,7 +184,7 @@ class PrefixSuffixController extends ChangeNotifier {
   void onHint(VocabularyQuest? quest) {
     final options = quest?.options ?? [];
     final correctWord = quest?.correctAnswer?.toLowerCase() ?? "";
-    
+
     if (correctWord.isNotEmpty) {
       _ttsService.speak(correctWord);
     }
@@ -190,9 +202,9 @@ class PrefixSuffixController extends ChangeNotifier {
       if (_isAffixMatch(option, correctWord, rootWord)) {
         hintedAffix = option;
         notifyListeners();
-        
+
         _hapticService.light();
-        
+
         Future.delayed(const Duration(milliseconds: 1500), () {
           if (_isDisposed) return;
           if (!isAnswered) {
@@ -204,6 +216,4 @@ class PrefixSuffixController extends ChangeNotifier {
       }
     }
   }
-
-
 }

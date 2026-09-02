@@ -16,51 +16,69 @@ class PhrasalVerbsLiteralComparison extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     // Split the literal vs figurative text. Format expected: "Literal: ... \nFigurative: ..."
     final parts = literalVsFigurative.split('\n');
     final literalText = parts.isNotEmpty ? parts[0] : literalVsFigurative;
     final figurativeText = parts.length > 1 ? parts.sublist(1).join('\n') : "";
 
     return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(16.r),
-      decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-        ),
-      ),
-      child: Column(
-        children: [
-          Row(
+          width: double.infinity,
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.05)
+                : Colors.black.withValues(alpha: 0.02),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
+          ),
+          child: Column(
             children: [
-              Icon(Icons.compare_arrows_rounded, color: color, size: 20.r),
-              SizedBox(width: 8.w),
-              AutoSizeText(
-                "LITERAL VS FIGURATIVE",
-                maxLines: 1,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w800,
-                  color: color,
-                  letterSpacing: 1.5,
-                ),
+              Row(
+                children: [
+                  Icon(Icons.compare_arrows_rounded, color: color, size: 20.r),
+                  SizedBox(width: 8.w),
+                  AutoSizeText(
+                    "LITERAL VS FIGURATIVE",
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w800,
+                      color: color,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
+              _buildComparisonRow(
+                "LITERAL",
+                literalText.replaceFirst('Literal: ', ''),
+                isDark,
+                Colors.blueGrey,
+              ),
+              SizedBox(height: 8.h),
+              _buildComparisonRow(
+                "FIGURATIVE",
+                figurativeText.replaceFirst('Figurative: ', ''),
+                isDark,
+                color,
               ),
             ],
           ),
-          SizedBox(height: 12.h),
-          _buildComparisonRow("LITERAL", literalText.replaceFirst('Literal: ', ''), isDark, Colors.blueGrey),
-          SizedBox(height: 8.h),
-          _buildComparisonRow("FIGURATIVE", figurativeText.replaceFirst('Figurative: ', ''), isDark, color),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
+        )
+        .animate()
+        .fadeIn(duration: 400.ms)
+        .slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
   }
 
-  Widget _buildComparisonRow(String label, String text, bool isDark, Color accentColor) {
+  Widget _buildComparisonRow(
+    String label,
+    String text,
+    bool isDark,
+    Color accentColor,
+  ) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

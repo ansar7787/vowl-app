@@ -50,6 +50,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
     _scrollController.dispose();
     super.dispose();
   }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -135,7 +136,10 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('reading_games.semantic_master', fallback: 'SEMANTIC MASTER!'),
+            title: context.tr(
+              'reading_games.semantic_master',
+              fallback: 'SEMANTIC MASTER!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -146,7 +150,13 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
             : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _dockedOption, _pendingDockedOption]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _dockedOption,
+            _pendingDockedOption,
+          ]),
           builder: (context, _) {
             return ReadingBaseLayout(
               gameType: widget.gameType,
@@ -154,86 +164,107 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          onContinue: () =>
-              context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<ReadingBloc>().add(const ReadingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            sliver: SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 16.h),
-                                  ClozeTestInstruction(
-                                    primaryColor: theme.primaryColor,
-                                    instruction: context.tr(
-                                      'games.clozeTest_instruction',
-                                      fallback:
-                                          'Complete the sentence by docking the correct word.',
-                                    ),
-                                  ),
-                                  SizedBox(height: 32.h),
+              onContinue: () =>
+                  context.read<ReadingBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      ClozeTestInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: context.tr(
+                                          'games.clozeTest_instruction',
+                                          fallback:
+                                              'Complete the sentence by docking the correct word.',
+                                        ),
+                                      ),
+                                      SizedBox(height: 32.h),
 
-                                  ClozeTestPneumaticPort(
-                                    text: quest.passage ?? "",
-                                    correct: quest.correctAnswer ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    dockedOption:
-                                        _dockedOption.value ?? _pendingDockedOption.value,
-                                    wordCategory: quest.wordCategory,
-                                    isAnswered: _isAnswered.value,
-                                    onDock: (opt) =>
-                                        _onDock(opt, quest.correctAnswer ?? ""),
+                                      ClozeTestPneumaticPort(
+                                        text: quest.passage ?? "",
+                                        correct: quest.correctAnswer ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        dockedOption:
+                                            _dockedOption.value ??
+                                            _pendingDockedOption.value,
+                                        wordCategory: quest.wordCategory,
+                                        isAnswered: _isAnswered.value,
+                                        onDock: (opt) => _onDock(
+                                          opt,
+                                          quest.correctAnswer ?? "",
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      SizedBox(height: 40.h),
+                                      ClozeTestFuelCells(
+                                        options: quest.options ?? [],
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        dockedOption:
+                                            _dockedOption.value ??
+                                            _pendingDockedOption.value,
+                                      ),
+                                      SizedBox(
+                                        height:
+                                            (_pendingDockedOption.value !=
+                                                    null &&
+                                                !_isAnswered.value)
+                                            ? 380.h
+                                            : 60.h,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        if (_pendingDockedOption.value != null &&
+                            !_isAnswered.value)
+                          DynamicAnagramWrapper(
+                            expectedText:
+                                quest.targetWord ?? quest.correctAnswer ?? "",
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(
+                              true,
+                              quest.correctAnswer ?? "",
+                            ),
+                            onFailed: () => _submitFinalAnswer(
+                              false,
+                              quest.correctAnswer ?? "",
                             ),
                           ),
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SizedBox(height: 40.h),
-                                  ClozeTestFuelCells(
-                                    options: quest.options ?? [],
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    dockedOption:
-                                        _dockedOption.value ?? _pendingDockedOption.value,
-                                  ),
-                                  SizedBox(height: (_pendingDockedOption.value != null && !_isAnswered.value) ? 380.h : 60.h),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      ],
                     ),
-                    if (_pendingDockedOption.value != null && !_isAnswered.value)
-                      DynamicAnagramWrapper(
-                        expectedText: quest.targetWord ?? quest.correctAnswer ?? "",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true, quest.correctAnswer ?? ""),
-                        onFailed: () => _submitFinalAnswer(false, quest.correctAnswer ?? ""),
-                      ),
-                  ],
-                ),
             );
           },
         );

@@ -30,7 +30,11 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
               color: color.withValues(alpha: 0.15),
               shape: BoxShape.circle,
             ),
-            child: Icon(Icons.lightbulb_outline_rounded, color: color, size: 20.r),
+            child: Icon(
+              Icons.lightbulb_outline_rounded,
+              color: color,
+              size: 20.r,
+            ),
           ),
           SizedBox(width: 16.w),
           Expanded(
@@ -54,7 +58,9 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.9)
+                        : const Color(0xFF1E293B),
                     height: 1.4,
                   ),
                 ),

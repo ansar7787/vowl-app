@@ -22,15 +22,15 @@ class FindWordMeaningResult extends StatelessWidget {
 
     Widget card = Semantics(
       liveRegion: true,
-      label: isCorrect 
-          ? 'Correct! ${quest.explanation ?? ''}' 
+      label: isCorrect
+          ? 'Correct! ${quest.explanation ?? ''}'
           : 'Incorrect. ${quest.explanation ?? ''}',
       excludeSemantics: true,
       child: Container(
         padding: EdgeInsets.all(24.r),
         decoration: BoxDecoration(
-          color: isDark 
-              ? displayColor.withValues(alpha: 0.1) 
+          color: isDark
+              ? displayColor.withValues(alpha: 0.1)
               : displayColor.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
@@ -64,7 +64,9 @@ class FindWordMeaningResult extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               isCorrect
-                  ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
+                  ? context
+                        .tr('games.correct', fallback: 'Correct')
+                        .toUpperCase()
                   : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -83,7 +85,9 @@ class FindWordMeaningResult extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   height: 1.5,
-                  color: isDark ? Colors.white.withValues(alpha: 0.8) : const Color(0xFF475569),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.8)
+                      : const Color(0xFF475569),
                 ),
               ),
             ],
@@ -93,10 +97,14 @@ class FindWordMeaningResult extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.03),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.black.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
-                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.05),
                   ),
                 ),
                 child: Column(
@@ -120,7 +128,9 @@ class FindWordMeaningResult extends StatelessWidget {
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.italic,
-                        color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.9)
+                            : const Color(0xFF1E293B),
                         height: 1.4,
                       ),
                     ),

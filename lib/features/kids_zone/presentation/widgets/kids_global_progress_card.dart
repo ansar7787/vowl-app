@@ -32,7 +32,9 @@ class KidsGlobalProgressCard extends StatelessWidget {
         .where((k) => (user.completedLevels[k]?.isNotEmpty ?? false))
         .length;
     final categoriesMastered = user.completedLevels.keys
-        .where((k) => (user.completedLevels[k]?.length ?? 0) >= _levelsPerCategory)
+        .where(
+          (k) => (user.completedLevels[k]?.length ?? 0) >= _levelsPerCategory,
+        )
         .length;
     final totalLevels = _totalCategories * _levelsPerCategory;
     final progress = totalLevels > 0
@@ -47,7 +49,11 @@ class KidsGlobalProgressCard extends StatelessWidget {
       label: context.tr(
         'kids_zone.learning_progress_progress_label',
         fallback: 'Journey Progress',
-        args: [completed.toString(), '$categoriesStarted', '$categoriesMastered'],
+        args: [
+          completed.toString(),
+          '$categoriesStarted',
+          '$categoriesMastered',
+        ],
       ),
       child: ScaleButton(
         onTap: () => context.push(AppRouter.kidsLeaderboardRoute),
@@ -221,7 +227,6 @@ class KidsGlobalProgressCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.baseline,
                         textBaseline: TextBaseline.alphabetic,
@@ -306,7 +311,7 @@ class KidsGlobalProgressCard extends StatelessWidget {
                   ),
 
                   SizedBox(height: 20.h),
-                  
+
                   // 7-day streak thermometer
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -320,7 +325,11 @@ class KidsGlobalProgressCard extends StatelessWidget {
                           ),
                           SizedBox(width: 6.w),
                           Text(
-                            context.tr('kids_zone.streak_count', fallback: '${user.currentStreak} Day Streak!', args: ['${user.currentStreak}']),
+                            context.tr(
+                              'kids_zone.streak_count',
+                              fallback: '${user.currentStreak} Day Streak!',
+                              args: ['${user.currentStreak}'],
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
@@ -332,7 +341,9 @@ class KidsGlobalProgressCard extends StatelessWidget {
                       ),
                       Row(
                         children: List.generate(7, (index) {
-                          final activeCount = user.currentStreak == 0 ? 0 : ((user.currentStreak - 1) % 7) + 1;
+                          final activeCount = user.currentStreak == 0
+                              ? 0
+                              : ((user.currentStreak - 1) % 7) + 1;
                           final isActive = index < activeCount;
                           return Container(
                             margin: EdgeInsets.only(left: 4.w),
@@ -341,22 +352,40 @@ class KidsGlobalProgressCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               gradient: isActive
                                   ? LinearGradient(
-                                      colors: [Colors.orange.shade400, Colors.deepOrange.shade500],
+                                      colors: [
+                                        Colors.orange.shade400,
+                                        Colors.deepOrange.shade500,
+                                      ],
                                       begin: Alignment.topLeft,
                                       end: Alignment.bottomRight,
                                     )
                                   : null,
-                              color: isActive ? null : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                              color: isActive
+                                  ? null
+                                  : (isDark
+                                        ? Colors.white10
+                                        : Colors.black.withValues(alpha: 0.05)),
                               shape: BoxShape.circle,
-                              boxShadow: isActive ? [BoxShadow(color: Colors.orange.withValues(alpha: 0.4), blurRadius: 4)] : null,
+                              boxShadow: isActive
+                                  ? [
+                                      BoxShadow(
+                                        color: Colors.orange.withValues(
+                                          alpha: 0.4,
+                                        ),
+                                        blurRadius: 4,
+                                      ),
+                                    ]
+                                  : null,
                             ),
-                            child: isActive ? Center(
-                              child: Icon(
-                                Icons.local_fire_department_rounded,
-                                color: Colors.white,
-                                size: 10.sp,
-                              )
-                            ) : null,
+                            child: isActive
+                                ? Center(
+                                    child: Icon(
+                                      Icons.local_fire_department_rounded,
+                                      color: Colors.white,
+                                      size: 10.sp,
+                                    ),
+                                  )
+                                : null,
                           );
                         }),
                       ),

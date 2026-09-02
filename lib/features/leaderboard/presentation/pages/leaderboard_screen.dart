@@ -57,7 +57,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
     return BlocProvider(
       create: (_) =>
-          di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: _isKidsMode.value)),
+          di.sl<LeaderboardBloc>()
+            ..add(LoadLeaderboard(isKids: _isKidsMode.value)),
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -94,7 +95,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                             },
                           ),
                         );
-                      }
+                      },
                     ),
 
                     Expanded(
@@ -111,9 +112,10 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                           } else if (state is LeaderboardError) {
                             return _LeaderboardErrorView(
                               message: state.message,
-                              onRetry: () => context
-                                  .read<LeaderboardBloc>()
-                                  .add(LoadLeaderboard(isKids: _isKidsMode.value)),
+                              onRetry: () =>
+                                  context.read<LeaderboardBloc>().add(
+                                    LoadLeaderboard(isKids: _isKidsMode.value),
+                                  ),
                             );
                           }
                           return const SizedBox.shrink();
@@ -192,7 +194,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
           onRefresh: () async {
             final completer = Completer<void>();
             context.read<LeaderboardBloc>().add(
-              LoadLeaderboard(completer: completer, isKids: widget.state.isKids),
+              LoadLeaderboard(
+                completer: completer,
+                isKids: widget.state.isKids,
+              ),
             );
             await completer.future;
           },
@@ -250,7 +255,10 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
               // Section label with divider
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 12.h,
+                  ),
                   child: Row(
                     children: [
                       Container(
@@ -356,19 +364,26 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 // Empty state when no users beyond top 3 (e.g. Kids Zone)
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 48.h, horizontal: 32.w),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 48.h,
+                      horizontal: 32.w,
+                    ),
                     child: Column(
                       children: [
                         // Animated trophy icon
                         Icon(
-                          widget.state.isKids
-                              ? Icons.child_care_rounded
-                              : Icons.emoji_events_outlined,
-                          size: 56.r,
-                          color: isDark
-                              ? const Color(0xFF6366F1).withValues(alpha: 0.4)
-                              : const Color(0xFF6366F1).withValues(alpha: 0.3),
-                        )
+                              widget.state.isKids
+                                  ? Icons.child_care_rounded
+                                  : Icons.emoji_events_outlined,
+                              size: 56.r,
+                              color: isDark
+                                  ? const Color(
+                                      0xFF6366F1,
+                                    ).withValues(alpha: 0.4)
+                                  : const Color(
+                                      0xFF6366F1,
+                                    ).withValues(alpha: 0.3),
+                            )
                             .animate(onPlay: (c) => c.repeat(reverse: true))
                             .scaleXY(begin: 0.95, end: 1.05, duration: 1800.ms)
                             .fade(begin: 0.7, end: 1.0),
@@ -377,7 +392,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                           widget.state.isKids
                               ? context.tr(
                                   'leaderboard.kids_empty',
-                                  fallback: 'Be the first kid on the leaderboard!',
+                                  fallback:
+                                      'Be the first kid on the leaderboard!',
                                 )
                               : context.tr(
                                   'leaderboard.empty',
@@ -398,7 +414,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                           widget.state.isKids
                               ? context.tr(
                                   'leaderboard.kids_subtitle',
-                                  fallback: 'See how your child ranks globally!',
+                                  fallback:
+                                      'See how your child ranks globally!',
                                 )
                               : context.tr(
                                   'leaderboard.subtitle',
@@ -429,45 +446,51 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
             right: 20.w,
             child: GestureDetector(
               onTap: _scrollToMe,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
-                  ),
-                  borderRadius: BorderRadius.circular(24.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
-                      blurRadius: 16,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.my_location_rounded,
-                      color: Colors.white,
-                      size: 16.r,
-                    ),
-                    SizedBox(width: 6.w),
-                    Text(
-                      '#${rankIndex + 1}',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-                  .animate()
-                  .fadeIn(duration: 400.ms, delay: 800.ms)
-                  .slideY(begin: 0.3, end: 0, curve: Curves.easeOutBack),
+              child:
+                  Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14.w,
+                          vertical: 10.h,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF6366F1), Color(0xFF3B82F6)],
+                          ),
+                          borderRadius: BorderRadius.circular(24.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(
+                                0xFF6366F1,
+                              ).withValues(alpha: 0.4),
+                              blurRadius: 16,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.my_location_rounded,
+                              color: Colors.white,
+                              size: 16.r,
+                            ),
+                            SizedBox(width: 6.w),
+                            Text(
+                              '#${rankIndex + 1}',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                      .animate()
+                      .fadeIn(duration: 400.ms, delay: 800.ms)
+                      .slideY(begin: 0.3, end: 0, curve: Curves.easeOutBack),
             ),
           ),
       ],
@@ -505,8 +528,10 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     // When pinned (shrinkOffset > 10), content scrolls beneath this header.
     // A solid frosted backdrop + bottom shadow prevents the "ghost card"
     // overlap where glassmorphic tiles bleed through.
-    final collapseProgress =
-        (shrinkOffset / (maxExtent - minExtent)).clamp(0.0, 1.0);
+    final collapseProgress = (shrinkOffset / (maxExtent - minExtent)).clamp(
+      0.0,
+      1.0,
+    );
     final isPinned = collapseProgress > 0.5 || overlapsContent;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 

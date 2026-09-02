@@ -23,8 +23,8 @@ class WordFormationController extends ChangeNotifier {
     required HapticService hapticService,
     required SoundService soundService,
     required this.onSubmitAnswer,
-  })  : _hapticService = hapticService,
-        _soundService = soundService;
+  }) : _hapticService = hapticService,
+       _soundService = soundService;
 
   void reset(VocabularyQuest quest, int index) {
     lastQuest = quest;
@@ -93,7 +93,7 @@ class WordFormationController extends ChangeNotifier {
     isAnswered = true;
     isCorrect = nailedIt;
     notifyListeners();
-    
+
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();

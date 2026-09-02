@@ -100,7 +100,9 @@ class PhotoEmptyState extends StatelessWidget {
           ),
           SizedBox(height: 32.h),
           Text(
-                context.tr('vocabulary.system_standby', fallback: 'SYSTEM STANDBY').toUpperCase(),
+                context
+                    .tr('vocabulary.system_standby', fallback: 'SYSTEM STANDBY')
+                    .toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,

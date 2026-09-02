@@ -76,7 +76,10 @@ class ReadingHeader extends StatelessWidget {
 
   Widget _buildInfoButton(BuildContext context) {
     return Semantics(
-      label: context.tr('reading.view_instructions', fallback: 'View level instructions'),
+      label: context.tr(
+        'reading.view_instructions',
+        fallback: 'View level instructions',
+      ),
       button: true,
       child: ScaleButton(
         onTap: onInfoTap,
@@ -108,7 +111,9 @@ class ReadingHeader extends StatelessWidget {
     final hint = currentQuest?.hint ?? '';
 
     Widget button = Semantics(
-      label: hintUsed ? context.tr('reading.hint_used', fallback: 'Hint already used') : context.tr('reading.use_hint', fallback: 'Use hint'),
+      label: hintUsed
+          ? context.tr('reading.hint_used', fallback: 'Hint already used')
+          : context.tr('reading.use_hint', fallback: 'Use hint'),
       // Expose the hint text as the semantic hint so power users can hear
       // it without activating the button (e.g. via TalkBack "read all").
       hint: hintUsed ? null : hint,

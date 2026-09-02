@@ -25,7 +25,9 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<Map<String, dynamic>?> _currentPuzzle = ValueNotifier(null);
+  final ValueNotifier<Map<String, dynamic>?> _currentPuzzle = ValueNotifier(
+    null,
+  );
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
 
   @override
@@ -58,7 +60,7 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
     if (!isPremium) {
       final adService = di.sl<AdService>();
       bool adWatched = false;
-      
+
       adService.showRewardedAd(
         context: context,
         isPremium: false,
@@ -119,47 +121,50 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
           backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
           body: SafeArea(
             child: _currentPuzzle.value == null
-            ? GameShimmerLoading(primaryColor: primaryColor)
-            : Stack(
-                children: [
-                  CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.all(24.r),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 20.h),
-                              _buildHeaderCard(primaryColor, isDark),
-                              SizedBox(height: 40.h),
-                              _buildHintCard(primaryColor, isDark),
-                              SizedBox(height: 180.h),
-                            ],
+                ? GameShimmerLoading(primaryColor: primaryColor)
+                : Stack(
+                    children: [
+                      CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.all(24.r),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 20.h),
+                                  _buildHeaderCard(primaryColor, isDark),
+                                  SizedBox(height: 40.h),
+                                  _buildHintCard(primaryColor, isDark),
+                                  SizedBox(height: 180.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (!_isAnswered.value)
+                        DynamicAnagramWrapper(
+                          expectedText: _currentPuzzle.value!['word']!,
+                          primaryColor: primaryColor,
+                          onConfirmed: _onSuccess,
+                          onFailed: _onFail,
+                          bonusCoins: 20,
+                          title: context.tr(
+                            'home.spell_it',
+                            fallback: 'SPELL IT!',
+                          ),
+                          subtitle: context.tr(
+                            'home.spell_it_subtitle',
+                            fallback:
+                                'Tap the letters in the correct order to form the word.',
                           ),
                         ),
-                      ),
                     ],
                   ),
-                  if (!_isAnswered.value)
-                    DynamicAnagramWrapper(
-                      expectedText: _currentPuzzle.value!['word']!,
-                      primaryColor: primaryColor,
-                      onConfirmed: _onSuccess,
-                      onFailed: _onFail,
-                      bonusCoins: 20,
-                      title: context.tr('home.spell_it', fallback: 'SPELL IT!'),
-                      subtitle: context.tr(
-                        'home.spell_it_subtitle',
-                        fallback:
-                            'Tap the letters in the correct order to form the word.',
-                      ),
-                    ),
-                ],
-              ),
           ),
         );
-      }
+      },
     );
   }
 

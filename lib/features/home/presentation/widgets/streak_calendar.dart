@@ -346,17 +346,15 @@ class StreakCalendar extends StatelessWidget {
                     )
                   : (isToday
                         ? Icon(
-                                LucideIcons.circle,
-                                color: Colors.blueAccent,
-                                size: 8.r,
-                              )
-                              .animate()
-                              .scale(
-                                begin: const Offset(0.5, 0.5),
-                                end: const Offset(1, 1),
-                                duration: 800.ms,
-                                curve: Curves.easeOutBack,
-                              )
+                            LucideIcons.circle,
+                            color: Colors.blueAccent,
+                            size: 8.r,
+                          ).animate().scale(
+                            begin: const Offset(0.5, 0.5),
+                            end: const Offset(1, 1),
+                            duration: 800.ms,
+                            curve: Curves.easeOutBack,
+                          )
                         : null)),
       ),
     );

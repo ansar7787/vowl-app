@@ -78,9 +78,10 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -90,7 +91,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
           level: widget.level,
         );
       }
-      
+
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -137,7 +138,10 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('speaking_games.sound_wave_transcriber', fallback: 'SOUND WAVE TRANSCRIBER!'),
+            title: context.tr(
+              'speaking_games.sound_wave_transcriber',
+              fallback: 'SOUND WAVE TRANSCRIBER!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -151,7 +155,11 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti]),
+            listenable: Listenable.merge([
+              _isAnswered,
+              _isCorrect,
+              _showConfetti,
+            ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 onTutorPass: _tutorPass,
@@ -160,69 +168,70 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
-            onContinue: () =>
-                context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () =>
-                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : Stack(
-                    children: [
-                      RawScrollbar(
-                        controller: _scrollController,
-                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                        radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        child: CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
-                        ),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              RepeatSentenceInstruction(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              RepeatSentenceAuditionCard(
-                                quest: quest,
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                                onPlayTts: () => _soundService.playTts(
-                                  quest.textToSpeak ?? "",
+                onContinue: () =>
+                    context.read<SpeakingBloc>().add(const NextQuestion()),
+                onHint: () =>
+                    context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+                child: quest == null
+                    ? const SizedBox()
+                    : Stack(
+                        children: [
+                          RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverPadding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  sliver: SliverToBoxAdapter(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        RepeatSentenceInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                        RepeatSentenceAuditionCard(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onPlayTts: () => _soundService
+                                              .playTts(quest.textToSpeak ?? ""),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ],
+                                SliverToBoxAdapter(
+                                  child: SizedBox(
+                                    height: !_isAnswered.value ? 380.h : 60.h,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
+                          if (!_isAnswered.value)
+                            ShadowPlaybackCompare(
+                              expectedText: quest.textToSpeak ?? "",
+                              primaryColor: theme.primaryColor,
+                              isPositioned: true,
+                              onConfirmed: () =>
+                                  _submitVerbalEvaluation(true, quest),
+                              onSkipped: () =>
+                                  _submitVerbalEvaluation(false, quest),
+                            ),
+                        ],
                       ),
-                      SliverToBoxAdapter(
-                        child: SizedBox(
-                          height: !_isAnswered.value ? 380.h : 60.h,
-                        ),
-                      ),
-                    ],
-                  ),
-                      ),
-                      if (!_isAnswered.value)
-                        ShadowPlaybackCompare(
-                          expectedText: quest.textToSpeak ?? "",
-                          primaryColor: theme.primaryColor,
-                          isPositioned: true,
-                          onConfirmed: () =>
-                              _submitVerbalEvaluation(true, quest),
-                          onSkipped: () =>
-                              _submitVerbalEvaluation(false, quest),
-                        ),
-                    ],
-                  ),
               );
             },
           ),

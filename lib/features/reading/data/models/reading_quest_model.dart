@@ -130,7 +130,9 @@ class ReadingQuestModel extends ReadingQuest {
       wordInContext: getString(map['wordInContext']),
       evidenceLine: getString(map['evidenceLine']),
       transitionWords: parseStringList(map['transitionWords']),
-      wpmTarget: (map['wpmTarget'] as num?)?.toInt() ?? (map['wpm_target'] as num?)?.toInt(),
+      wpmTarget:
+          (map['wpmTarget'] as num?)?.toInt() ??
+          (map['wpm_target'] as num?)?.toInt(),
       whyThisTitle: getString(map['whyThisTitle']),
       paragraphTopic: getString(map['paragraphTopic']),
       keyPoints: parseStringList(map['keyPoints']),

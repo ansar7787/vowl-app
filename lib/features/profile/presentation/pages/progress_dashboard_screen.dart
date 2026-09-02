@@ -227,10 +227,13 @@ class _WeeklyXpChart extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: days.map((day) {
-                final fraction =
-                    maxXp > 0 ? (day.xp / maxXp).clamp(0.0, 1.0) : 0.0;
-                final barHeight =
-                    (fraction * 80.h).clamp(day.xp > 0 ? 8.h : 4.h, 80.h);
+                final fraction = maxXp > 0
+                    ? (day.xp / maxXp).clamp(0.0, 1.0)
+                    : 0.0;
+                final barHeight = (fraction * 80.h).clamp(
+                  day.xp > 0 ? 8.h : 4.h,
+                  80.h,
+                );
 
                 return Expanded(
                   child: Padding(
@@ -273,10 +276,12 @@ class _WeeklyXpChart extends StatelessWidget {
                                             const Color(0xFF818CF8),
                                           ]
                                         : [
-                                            const Color(0xFF6366F1)
-                                                .withValues(alpha: 0.6),
-                                            const Color(0xFF818CF8)
-                                                .withValues(alpha: 0.4),
+                                            const Color(
+                                              0xFF6366F1,
+                                            ).withValues(alpha: 0.6),
+                                            const Color(
+                                              0xFF818CF8,
+                                            ).withValues(alpha: 0.4),
                                           ],
                                   )
                                 : null,
@@ -296,10 +301,9 @@ class _WeeklyXpChart extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 10.sp,
-                              fontWeight:
-                                  day.isToday
-                                      ? FontWeight.w900
-                                      : FontWeight.w600,
+                              fontWeight: day.isToday
+                                  ? FontWeight.w900
+                                  : FontWeight.w600,
                               color: day.isToday
                                   ? const Color(0xFF6366F1)
                                   : (isDark
@@ -362,18 +366,21 @@ class _CategoryMasteryOverview extends StatelessWidget {
       totalCleared += cleared;
       totalMax += max;
       final progress = max > 0 ? (cleared / max).clamp(0.0, 1.0) : 0.0;
-      categoryData.add(_CategoryProgress(
-        type: cat,
-        cleared: cleared,
-        max: max,
-        progress: progress,
-        color: LevelThemeHelper.getCategoryBaseColor(cat.name),
-        icon: LevelThemeHelper.getCategoryTheme(cat.name).icon,
-      ));
+      categoryData.add(
+        _CategoryProgress(
+          type: cat,
+          cleared: cleared,
+          max: max,
+          progress: progress,
+          color: LevelThemeHelper.getCategoryBaseColor(cat.name),
+          icon: LevelThemeHelper.getCategoryTheme(cat.name).icon,
+        ),
+      );
     }
 
-    final overallProgress =
-        totalMax > 0 ? (totalCleared / totalMax).clamp(0.0, 1.0) : 0.0;
+    final overallProgress = totalMax > 0
+        ? (totalCleared / totalMax).clamp(0.0, 1.0)
+        : 0.0;
     final overallPercent = (overallProgress * 100).toStringAsFixed(1);
 
     return GlassTile(
@@ -400,10 +407,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
               SizedBox(width: 10.w),
               Flexible(
                 child: AutoSizeText(
-                  context.tr(
-                    'report.total_mastery',
-                    fallback: 'TOTAL MASTERY',
-                  ),
+                  context.tr('report.total_mastery', fallback: 'TOTAL MASTERY'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 11.sp,
@@ -435,8 +439,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
           Text(
             context.tr(
               'report.mastery_description',
-              fallback:
-                  '$totalCleared levels cleared across all categories.',
+              fallback: '$totalCleared levels cleared across all categories.',
               args: [totalCleared.toString()],
             ),
             style: TextStyle(
@@ -504,9 +507,7 @@ class _CategoryMasteryOverview extends StatelessWidget {
         decoration: BoxDecoration(
           color: cat.color.withValues(alpha: isDark ? 0.12 : 0.08),
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: cat.color.withValues(alpha: 0.2),
-          ),
+          border: Border.all(color: cat.color.withValues(alpha: 0.2)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -544,8 +545,10 @@ class _CategoryMasteryOverview extends StatelessWidget {
   String _formatTitle(String upper) {
     return upper
         .split(' ')
-        .map((w) =>
-            w.isEmpty ? w : w[0].toUpperCase() + w.substring(1).toLowerCase())
+        .map(
+          (w) =>
+              w.isEmpty ? w : w[0].toUpperCase() + w.substring(1).toLowerCase(),
+        )
         .join(' ');
   }
 }
@@ -583,7 +586,6 @@ class _ContinueLearningSection extends StatelessWidget {
     final recentGames = <_RecentGame>[];
 
     for (final subtype in GameSubtype.values) {
-
       final completedCount = user.completedLevels[subtype.name]?.length ?? 0;
       if (completedCount > 0) {
         final currentLevel = completedCount + 1;
@@ -591,15 +593,17 @@ class _ContinueLearningSection extends StatelessWidget {
           subtype.category.name,
         );
         final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
-        recentGames.add(_RecentGame(
-          subtype: subtype,
-          currentLevel: currentLevel,
-          completedCount: completedCount,
-          color: color,
-          icon: theme.icon,
-          title: theme.title,
-          categoryName: subtype.category.name,
-        ));
+        recentGames.add(
+          _RecentGame(
+            subtype: subtype,
+            currentLevel: currentLevel,
+            completedCount: completedCount,
+            color: color,
+            icon: theme.icon,
+            title: theme.title,
+            categoryName: subtype.category.name,
+          ),
+        );
       }
     }
 
@@ -719,8 +723,8 @@ class _ContinueLearningSection extends StatelessWidget {
   }
 
   Widget _buildGameResumeCard(BuildContext context, _RecentGame game) {
-    final missionPercent =
-        ((game.completedCount.clamp(0, 200)) / 200 * 100).toInt();
+    final missionPercent = ((game.completedCount.clamp(0, 200)) / 200 * 100)
+        .toInt();
     final displayColor = isDark
         ? game.color
         : HSLColor.fromColor(game.color).withLightness(0.4).toColor();
@@ -743,10 +747,7 @@ class _ContinueLearningSection extends StatelessWidget {
               height: 48.r,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [
-                    displayColor,
-                    displayColor.withValues(alpha: 0.7),
-                  ],
+                  colors: [displayColor, displayColor.withValues(alpha: 0.7)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -791,8 +792,7 @@ class _ContinueLearningSection extends StatelessWidget {
                     ),
                     child: FractionallySizedBox(
                       alignment: AlignmentDirectional.centerStart,
-                      widthFactor:
-                          (game.completedCount / 200).clamp(0.02, 1.0),
+                      widthFactor: (game.completedCount / 200).clamp(0.02, 1.0),
                       child: Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -813,7 +813,8 @@ class _ContinueLearningSection extends StatelessWidget {
                     child: Text(
                       context.tr(
                         'report.level_progress',
-                        fallback: 'Level ${game.currentLevel} · $missionPercent% complete',
+                        fallback:
+                            'Level ${game.currentLevel} · $missionPercent% complete',
                         args: [
                           game.currentLevel.toString(),
                           missionPercent.toString(),

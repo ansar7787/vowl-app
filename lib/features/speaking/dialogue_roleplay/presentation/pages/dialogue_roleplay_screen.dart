@@ -136,19 +136,24 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: _chosenReply.value.isNotEmpty ? _chosenReply.value : 'Roleplay',
+          question: _chosenReply.value.isNotEmpty
+              ? _chosenReply.value
+              : 'Roleplay',
           userAnswer: '[Failed Dialogue]',
-          correctAnswer: _chosenReply.value.isNotEmpty ? _chosenReply.value : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : ''),
+          correctAnswer: _chosenReply.value.isNotEmpty
+              ? _chosenReply.value
+              : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : ''),
           level: widget.level,
         );
       }
-      
+
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -200,7 +205,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('speaking_games.dialogue_expert', fallback: 'DIALOGUE EXPERT!'),
+            title: context.tr(
+              'speaking_games.dialogue_expert',
+              fallback: 'DIALOGUE EXPERT!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -217,11 +225,20 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _timeVal, _smartReplies, _chosenReply]),
+            listenable: Listenable.merge([
+              _isAnswered,
+              _isCorrect,
+              _showConfetti,
+              _timeVal,
+              _smartReplies,
+              _chosenReply,
+            ]),
             builder: (context, _) {
               final expectedText = _chosenReply.value.isNotEmpty
                   ? _chosenReply.value
-                  : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "");
+                  : (_acceptedSynonyms.isNotEmpty
+                        ? _acceptedSynonyms.first
+                        : "");
 
               return SpeakingBaseLayout(
                 onTutorPass: _tutorPass,
@@ -230,125 +247,132 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
-            onContinue: () =>
-                context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () =>
-                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : Stack(
-                    children: [
-                      RawScrollbar(
-                        controller: _scrollController,
-                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                        radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        child: CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
-                        ),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              DialogueRoleplayHeader(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              DialogueRoleplayExchangeStage(
-                                quest: quest,
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                                timeVal: _timeVal.value,
-                                isAnswered: _isAnswered.value,
-                                isCorrect: _isCorrect.value ?? false,
-                              ),
-                              if (_smartReplies.value.isNotEmpty && !_isAnswered.value) ...[
-                                SizedBox(height: 16.h),
-                                SizedBox(
-                                  height: 44.h,
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: _smartReplies.value.length,
-                                    itemBuilder: (context, index) {
-                                      final reply = _smartReplies.value[index];
-                                      final isPremium =
-                                          context
-                                              .read<AuthBloc>()
-                                              .state
-                                              .user
-                                              ?.isPremium ??
-                                          false;
-                                      return SmartReplyChip(
-                                        text: reply,
-                                        isPremium: isPremium,
-                                        onTap: () {
-                                          MlMonetizationController.attemptFeature(
-                                            context,
-                                            featureIcon:
-                                                Icons.auto_awesome_rounded,
-                                            featureTitle: context.tr(
-                                              'translation.smart_reply_title',
-                                              fallback: 'AI Smart Reply',
+                onContinue: () =>
+                    context.read<SpeakingBloc>().add(const NextQuestion()),
+                onHint: () =>
+                    context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+                child: quest == null
+                    ? const SizedBox()
+                    : Stack(
+                        children: [
+                          RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverPadding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  sliver: SliverToBoxAdapter(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        DialogueRoleplayHeader(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                        DialogueRoleplayExchangeStage(
+                                          quest: quest,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          timeVal: _timeVal.value,
+                                          isAnswered: _isAnswered.value,
+                                          isCorrect: _isCorrect.value ?? false,
+                                        ),
+                                        if (_smartReplies.value.isNotEmpty &&
+                                            !_isAnswered.value) ...[
+                                          SizedBox(height: 16.h),
+                                          SizedBox(
+                                            height: 44.h,
+                                            child: ListView.builder(
+                                              scrollDirection: Axis.horizontal,
+                                              itemCount:
+                                                  _smartReplies.value.length,
+                                              itemBuilder: (context, index) {
+                                                final reply =
+                                                    _smartReplies.value[index];
+                                                final isPremium =
+                                                    context
+                                                        .read<AuthBloc>()
+                                                        .state
+                                                        .user
+                                                        ?.isPremium ??
+                                                    false;
+                                                return SmartReplyChip(
+                                                  text: reply,
+                                                  isPremium: isPremium,
+                                                  onTap: () {
+                                                    MlMonetizationController.attemptFeature(
+                                                      context,
+                                                      featureIcon: Icons
+                                                          .auto_awesome_rounded,
+                                                      featureTitle: context.tr(
+                                                        'translation.smart_reply_title',
+                                                        fallback:
+                                                            'AI Smart Reply',
+                                                      ),
+                                                      featureSubtitle: context.tr(
+                                                        'translation.smart_reply_desc',
+                                                        fallback:
+                                                            'Get AI-powered conversation suggestions',
+                                                      ),
+                                                      adButtonLabel: context.tr(
+                                                        'translation.smart_reply_ad',
+                                                        fallback:
+                                                            'Watch Ad (1 Suggestion)',
+                                                      ),
+                                                      onSuccess: () {
+                                                        _chosenReply.value =
+                                                            reply;
+                                                      },
+                                                    );
+                                                  },
+                                                );
+                                              },
                                             ),
-                                            featureSubtitle: context.tr(
-                                              'translation.smart_reply_desc',
-                                              fallback:
-                                                  'Get AI-powered conversation suggestions',
-                                            ),
-                                            adButtonLabel: context.tr(
-                                              'translation.smart_reply_ad',
-                                              fallback:
-                                                  'Watch Ad (1 Suggestion)',
-                                            ),
-                                            onSuccess: () {
-                                              _chosenReply.value = reply;
-                                            },
-                                          );
-                                        },
-                                      );
-                                    },
+                                          ),
+                                        ],
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 16.h,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        if (!_isAnswered.value)
+                                          SpeakingSelfEvaluationControls(
+                                            expectedText: expectedText,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                          ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
-                            ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              if (!_isAnswered.value)
-                                SpeakingSelfEvaluationControls(
-                                  expectedText: expectedText,
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
-                                ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  ),
-                  ],
-                ),
               );
             },
           ),

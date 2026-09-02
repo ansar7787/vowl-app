@@ -88,7 +88,11 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
         if (user == null) return const SizedBox.shrink();
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_timeRemaining, _isClaiming, _lastClaimedLocally]),
+          listenable: Listenable.merge([
+            _timeRemaining,
+            _isClaiming,
+            _lastClaimedLocally,
+          ]),
           builder: (context, _) {
             final serverLastClaim = user.lastKidsDailyRewardDate;
             final lastClaim =
@@ -104,159 +108,176 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                 (lastClaim == null ||
                     now.isAfter(lastClaim.add(const Duration(hours: 24))));
 
-        final isDark = Theme.of(context).brightness == Brightness.dark;
+            final isDark = Theme.of(context).brightness == Brightness.dark;
 
-        return ScaleButton(
-          onTap: canClaim
-              ? () async {
-                  final claimTime = DateTime.now();
-                  _isClaiming.value = true;
-                  _lastClaimedLocally.value = claimTime;
+            return ScaleButton(
+              onTap: canClaim
+                  ? () async {
+                      final claimTime = DateTime.now();
+                      _isClaiming.value = true;
+                      _lastClaimedLocally.value = claimTime;
 
-                  widget.onClaimed(); // Trigger confetti/animations in parent
+                      widget
+                          .onClaimed(); // Trigger confetti/animations in parent
 
-                  // Fixed daily reward — no gambling mechanics for children
-                  const amount = 15;
+                      // Fixed daily reward — no gambling mechanics for children
+                      const amount = 15;
 
-                  if (context.mounted) {
-                    context.read<EconomyBloc>().add(
-                      const EconomyClaimKidsDailyRewardRequested(amount),
-                    );
-                    widget.showNotification(
-                      context,
-                      "🎁 Hooray! You earned $amount coins! 🪙",
-                    );
-                    di.sl<SoundService>().playCorrect();
-                  }
+                      if (context.mounted) {
+                        context.read<EconomyBloc>().add(
+                          const EconomyClaimKidsDailyRewardRequested(amount),
+                        );
+                        widget.showNotification(
+                          context,
+                          "🎁 Hooray! You earned $amount coins! 🪙",
+                        );
+                        di.sl<SoundService>().playCorrect();
+                      }
 
-                  await Future.delayed(const Duration(seconds: 2));
-                  if (mounted) _isClaiming.value = false;
-                }
-              : null,
-          child: Container(
-            padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: canClaim
-                    ? [const Color(0xFFFBBF24), const Color(0xFFF59E0B)]
-                    : [
-                        (isDark ? Colors.grey.shade900 : Colors.indigo.shade50)
-                            .withValues(alpha: isDark ? 0.4 : 0.8),
-                        (isDark ? Colors.black : Colors.indigo.shade100)
-                            .withValues(alpha: isDark ? 0.3 : 0.4),
-                      ],
-              ),
-              borderRadius: BorderRadius.circular(30.r),
-              boxShadow: canClaim
-                  ? [
-                      BoxShadow(
-                        color: Colors.orange.withValues(alpha: 0.3),
-                        blurRadius: 20,
-                        offset: const Offset(0, 10),
-                      ),
-                    ]
-                  : [],
-              border: Border.all(
-                color: canClaim
-                    ? Colors.white.withValues(alpha: 0.5)
-                    : (isDark ? Colors.white : Colors.black).withValues(
-                        alpha: 0.1,
-                      ),
-                width: 1.5,
-              ),
-            ),
-            child: Row(
-              children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    if (canClaim)
-                      Container(
-                        width: 40.r,
-                        height: 40.r,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.3),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    Icon(
-                      canClaim
-                          ? Icons.card_giftcard_rounded
-                          : Icons.lock_clock_rounded,
-                      color: canClaim
-                          ? Colors.white
-                          : (isDark ? Colors.white24 : Colors.black26),
-                      size: 32.sp,
-                    ),
-                  ],
+                      await Future.delayed(const Duration(seconds: 2));
+                      if (mounted) _isClaiming.value = false;
+                    }
+                  : null,
+              child: Container(
+                padding: EdgeInsets.all(20.r),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: canClaim
+                        ? [const Color(0xFFFBBF24), const Color(0xFFF59E0B)]
+                        : [
+                            (isDark
+                                    ? Colors.grey.shade900
+                                    : Colors.indigo.shade50)
+                                .withValues(alpha: isDark ? 0.4 : 0.8),
+                            (isDark ? Colors.black : Colors.indigo.shade100)
+                                .withValues(alpha: isDark ? 0.3 : 0.4),
+                          ],
+                  ),
+                  borderRadius: BorderRadius.circular(30.r),
+                  boxShadow: canClaim
+                      ? [
+                          BoxShadow(
+                            color: Colors.orange.withValues(alpha: 0.3),
+                            blurRadius: 20,
+                            offset: const Offset(0, 10),
+                          ),
+                        ]
+                      : [],
+                  border: Border.all(
+                    color: canClaim
+                        ? Colors.white.withValues(alpha: 0.5)
+                        : (isDark ? Colors.white : Colors.black).withValues(
+                            alpha: 0.1,
+                          ),
+                    width: 1.5,
+                  ),
                 ),
-                SizedBox(width: 20.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        canClaim
-                            ? context.tr('kids_zone.magic_chest', fallback: 'Magic Chest')
-                            : context.tr('kids_zone.chest_claimed', fallback: 'Chest Claimed'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w900,
+                child: Row(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        if (canClaim)
+                          Container(
+                            width: 40.r,
+                            height: 40.r,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.3),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        Icon(
+                          canClaim
+                              ? Icons.card_giftcard_rounded
+                              : Icons.lock_clock_rounded,
                           color: canClaim
                               ? Colors.white
-                              : (isDark
-                                    ? Colors.white38
-                                    : Colors.indigo.shade900.withValues(
-                                        alpha: 0.6,
-                                      )),
-                          letterSpacing: 1,
+                              : (isDark ? Colors.white24 : Colors.black26),
+                          size: 32.sp,
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 20.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            canClaim
+                                ? context.tr(
+                                    'kids_zone.magic_chest',
+                                    fallback: 'Magic Chest',
+                                  )
+                                : context.tr(
+                                    'kids_zone.chest_claimed',
+                                    fallback: 'Chest Claimed',
+                                  ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w900,
+                              color: canClaim
+                                  ? Colors.white
+                                  : (isDark
+                                        ? Colors.white38
+                                        : Colors.indigo.shade900.withValues(
+                                            alpha: 0.6,
+                                          )),
+                              letterSpacing: 1,
+                            ),
+                          ),
+                          Text(
+                            canClaim
+                                ? context.tr(
+                                    'kids_zone.open_for_daily_coins',
+                                    fallback: 'Open for 15 daily Kids Coins!',
+                                  )
+                                : context.tr(
+                                    'kids_zone.next_claim_in',
+                                    fallback:
+                                        'Come back in ${_timeRemaining.value}',
+                                    args: [_timeRemaining.value],
+                                  ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: canClaim
+                                  ? Colors.white70
+                                  : (isDark
+                                        ? Colors.white24
+                                        : Colors.indigo.shade800.withValues(
+                                            alpha: 0.5,
+                                          )),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    if (canClaim)
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 6.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Text(
+                          "CLAIM",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      Text(
-                        canClaim
-                            ? context.tr('kids_zone.open_for_daily_coins', fallback: 'Open for 15 daily Kids Coins!')
-                            : context.tr('kids_zone.next_claim_in', fallback: 'Come back in ${_timeRemaining.value}', args: [_timeRemaining.value]),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          color: canClaim
-                              ? Colors.white70
-                              : (isDark
-                                    ? Colors.white24
-                                    : Colors.indigo.shade800.withValues(
-                                        alpha: 0.5,
-                                      )),
-                        ),
-                      ),
-                    ],
-                  ),
+                  ],
                 ),
-                if (canClaim)
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 6.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    child: Text(
-                      "CLAIM",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        );
+              ),
+            );
           },
         );
       },

@@ -6,13 +6,15 @@ class SegmentPathPainter extends CustomPainter {
   final Color outgoingColor;
   final double currentOffset;
   final double nextOffset;
-  final double prevOffset; // Added to calculate incoming curve from previous node
+  final double
+  prevOffset; // Added to calculate incoming curve from previous node
   final bool isLast;
   final int level;
   final double incomingPathProgress;
   final double outgoingPathProgress;
   final bool isCurrent;
-  final Animation<double>? glowAnimation; // 0.0 → 1.0: glow pulse for current node path
+  final Animation<double>?
+  glowAnimation; // 0.0 → 1.0: glow pulse for current node path
 
   SegmentPathPainter({
     required this.incomingColor,
@@ -47,23 +49,19 @@ class SegmentPathPainter extends CustomPainter {
       );
 
       incomingPath.moveTo(size.width / 2, headerGap);
-      incomingPath.cubicTo(
-        size.width / 2, 0, 
-        startX, 0, 
-        startX, centerY,
-      );
+      incomingPath.cubicTo(size.width / 2, 0, startX, 0, startX, centerY);
     } else {
       // 2. Continuous Bouncy Curve from previous level
       // The previous segment ended halfway between prevX and startX at the boundary
       final double boundaryX = (prevX + startX) / 2;
       incomingPath.moveTo(boundaryX, 0);
-      
+
       incomingPath.cubicTo(
-        boundaryX + (startX - prevX) * 0.25, 
+        boundaryX + (startX - prevX) * 0.25,
         centerY * 0.5,
-        startX, 
+        startX,
         centerY * 0.5,
-        startX, 
+        startX,
         centerY,
       );
     }
@@ -71,16 +69,16 @@ class SegmentPathPainter extends CustomPainter {
     final outgoingPath = Path();
     if (!isLast) {
       outgoingPath.moveTo(startX, centerY);
-      
+
       // 3. Smooth Bouncy Curve to next level boundary
       final double boundaryX = (startX + endX) / 2;
-      
+
       outgoingPath.cubicTo(
-        startX, 
+        startX,
         centerY + (size.height - centerY) * 0.5,
-        boundaryX - (endX - startX) * 0.25, 
+        boundaryX - (endX - startX) * 0.25,
         size.height - (size.height - centerY) * 0.5,
-        boundaryX, 
+        boundaryX,
         size.height,
       );
     }
@@ -108,10 +106,13 @@ class SegmentPathPainter extends CustomPainter {
     if (incomingPathProgress > 0.0) {
       final pathMetrics = incomingPath.computeMetrics();
       for (final metric in pathMetrics) {
-        final extractedPath = metric.extractPath(0, metric.length * incomingPathProgress);
-        
+        final extractedPath = metric.extractPath(
+          0,
+          metric.length * incomingPathProgress,
+        );
+
         canvas.drawPath(extractedPath, incomingPaint);
-        
+
         final double glowValue = glowAnimation?.value ?? 0.0;
         if (glowValue > 0.0 && incomingPathProgress == 1.0) {
           final glowPaint = Paint()
@@ -121,9 +122,13 @@ class SegmentPathPainter extends CustomPainter {
             ..strokeCap = StrokeCap.butt;
           canvas.drawPath(extractedPath, glowPaint);
         }
-        
-        if (incomingPathProgress > 0.0 && incomingPathProgress < 1.0 && isCurrent) {
-          final tangent = metric.getTangentForOffset(metric.length * incomingPathProgress);
+
+        if (incomingPathProgress > 0.0 &&
+            incomingPathProgress < 1.0 &&
+            isCurrent) {
+          final tangent = metric.getTangentForOffset(
+            metric.length * incomingPathProgress,
+          );
           if (tangent != null) {
             final tipPaint = Paint()
               ..color = Colors.white

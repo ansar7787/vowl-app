@@ -41,7 +41,6 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   final ValueNotifier<StoryBeat?> _activeStoryBeat = ValueNotifier(null);
   late ScrollController _scrollController;
 
-
   // ── Smooth Animation Controllers ──
   late AnimationController _entryController;
   late AnimationController _unlockPathController;
@@ -54,22 +53,27 @@ class _KidsLevelMapState extends State<KidsLevelMap>
   @override
   void initState() {
     super.initState();
-    
+
     // Calculate initial scroll position so the user instantly lands on their current level
     double initialOffset = 0.0;
     final authState = context.read<AuthBloc>().state;
     if (authState.user != null) {
-      final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
-      final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+      final completedLevels =
+          authState.user!.completedLevels[widget.gameType] ?? [];
+      final highestCompleted = completedLevels.isEmpty
+          ? 0
+          : completedLevels.reduce(math.max);
       final targetLevel = math.min(200, highestCompleted + 1);
-      
+
       final targetOffset = (targetLevel - 1) * 200.h;
       initialOffset = math.max(0.0, targetOffset - 300.h);
       _previousActiveNode = targetLevel;
     }
 
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
-    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 2),
+    );
 
     // 1. Screen-entry animation (nodes fade and scale in instantly)
     _entryController = AnimationController(
@@ -121,15 +125,17 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       action();
       return;
     }
-    
+
     // 1. Wait for overlaying screens (like the victory game screen) to finish popping
-    if (route.secondaryAnimation != null && !route.secondaryAnimation!.isDismissed) {
+    if (route.secondaryAnimation != null &&
+        !route.secondaryAnimation!.isDismissed) {
       void listener(AnimationStatus status) {
         if (status == AnimationStatus.dismissed) {
           route.secondaryAnimation!.removeStatusListener(listener);
           if (mounted) action();
         }
       }
+
       route.secondaryAnimation!.addStatusListener(listener);
       return;
     }
@@ -142,6 +148,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           if (mounted) action();
         }
       }
+
       route.animation!.addStatusListener(listener);
       return;
     }
@@ -198,8 +205,10 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
           final completedLevels = user.completedLevels[widget.gameType] ?? [];
-          final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
-          
+          final highestCompleted = completedLevels.isEmpty
+              ? 0
+              : completedLevels.reduce(math.max);
+
           // Always scroll to the node the user actually needs to interact with next
           final targetLevel = math.min(200, highestCompleted + 1);
 
@@ -238,35 +247,33 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         // Delay slightly for smooth entry
         Future.delayed(const Duration(milliseconds: 300), () {
           if (mounted) {
-              _activeStoryBeat.value = beat;
+            _activeStoryBeat.value = beat;
           }
         });
       }
     }
   }
 
-
-
   double _getHorizontalOffset(int level, double screenWidth) {
     // 1. Maximize horizontal swing: push nodes closer to the edges to remove the "straight" feel.
     // Node width is ~100.r, so we leave a tiny 30.w safe padding on both left and right edges.
     final double availableWidth = screenWidth - 60.w - 100.r;
     final double center = 30.w + (availableWidth / 2);
-    
-    // 2. Increase frequency drastically (math.pi / 2.2). 
+
+    // 2. Increase frequency drastically (math.pi / 2.2).
     // The previous 0.6 frequency made the node travel straight down for 2-3 levels.
     // This higher frequency forces the path to aggressively wind left and right every 2 levels.
-    final double baseWave = math.sin(level * (math.pi / 2.2)); 
-    
+    final double baseWave = math.sin(level * (math.pi / 2.2));
+
     // 3. Keep amplitude consistently high so it aggressively uses all available horizontal space
     final double amplitude = 0.95 + (math.sin(level * 0.7) * 0.05);
-    
+
     // 4. Jitter for a slightly hand-drawn board game look
     final random = math.Random(level * 123);
-    final double jitter = (random.nextDouble() - 0.5) * 0.08; 
-    
+    final double jitter = (random.nextDouble() - 0.5) * 0.08;
+
     final double combined = (baseWave * amplitude + jitter).clamp(-1.0, 1.0);
-    
+
     return center + (combined * (availableWidth / 2));
   }
 
@@ -280,15 +287,20 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         final prevUnlocked =
             previous.user?.unlockedLevels[widget.gameType] ?? 1;
         final currUnlocked = current.user?.unlockedLevels[widget.gameType] ?? 1;
-        final prevCompleted = previous.user?.completedLevels[widget.gameType]?.length ?? 0;
-        final currCompleted = current.user?.completedLevels[widget.gameType]?.length ?? 0;
+        final prevCompleted =
+            previous.user?.completedLevels[widget.gameType]?.length ?? 0;
+        final currCompleted =
+            current.user?.completedLevels[widget.gameType]?.length ?? 0;
         return prevUnlocked != currUnlocked || prevCompleted != currCompleted;
       },
       listener: (context, state) {
         // Trigger smooth unlock-path-draw animation
         final prevLevel = _previousActiveNode;
-        final completedLevels = state.user?.completedLevels[widget.gameType] ?? [];
-        final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+        final completedLevels =
+            state.user?.completedLevels[widget.gameType] ?? [];
+        final highestCompleted = completedLevels.isEmpty
+            ? 0
+            : completedLevels.reduce(math.max);
         final currLevel = math.min(200, highestCompleted + 1);
         _previousActiveNode = currLevel;
 
@@ -355,186 +367,202 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       ));
 
           return ListenableBuilder(
-            listenable: Listenable.merge([_isUnlockAnimating, _celebratingLevel, _activeStoryBeat]),
+            listenable: Listenable.merge([
+              _isUnlockAnimating,
+              _celebratingLevel,
+              _activeStoryBeat,
+            ]),
             builder: (context, _) {
               return AbsorbPointer(
                 absorbing: _isUnlockAnimating.value,
-            child: Scaffold(
-              backgroundColor: bgColor,
-              body: Stack(
-                children: [
-                _buildBackground(context),
-                  CustomScrollView(
-                    controller: _scrollController,
-                    physics: _isUnlockAnimating.value
-                        ? const NeverScrollableScrollPhysics()
-                      : const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverAppBar(
-                      pinned: false,
-                      floating: false,
-                      snap: false,
-                      automaticallyImplyLeading: false,
-                      backgroundColor: Colors.transparent,
-                      surfaceTintColor: Colors.transparent,
-                      elevation: 0,
-                      toolbarHeight: 50.h,
-                      title: Align(
-                        alignment: Alignment.centerLeft,
-                        child: ScaleButton(
-                          onTap: () {
-                            if (context.canPop()) {
-                              context.pop();
-                            } else {
-                              context.go('/home');
-                            }
-                          },
-                          child: Container(
-                            width: 36.r,
-                            height: 36.r,
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? const Color(0xFF1E293B)
-                                  : Colors.white,
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: isDark
-                                    ? Colors.blue.shade700
-                                    : Colors.blue.shade200,
-                                width: 3.w,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: isDark
-                                      ? Colors.blue.shade900
-                                      : Colors.blue.shade100,
-                                  offset: Offset(0, 4.h),
+                child: Scaffold(
+                  backgroundColor: bgColor,
+                  body: Stack(
+                    children: [
+                      _buildBackground(context),
+                      CustomScrollView(
+                        controller: _scrollController,
+                        physics: _isUnlockAnimating.value
+                            ? const NeverScrollableScrollPhysics()
+                            : const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverAppBar(
+                            pinned: false,
+                            floating: false,
+                            snap: false,
+                            automaticallyImplyLeading: false,
+                            backgroundColor: Colors.transparent,
+                            surfaceTintColor: Colors.transparent,
+                            elevation: 0,
+                            toolbarHeight: 50.h,
+                            title: Align(
+                              alignment: Alignment.centerLeft,
+                              child: ScaleButton(
+                                onTap: () {
+                                  if (context.canPop()) {
+                                    context.pop();
+                                  } else {
+                                    context.go('/home');
+                                  }
+                                },
+                                child: Container(
+                                  width: 36.r,
+                                  height: 36.r,
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? const Color(0xFF1E293B)
+                                        : Colors.white,
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: isDark
+                                          ? Colors.blue.shade700
+                                          : Colors.blue.shade200,
+                                      width: 3.w,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: isDark
+                                            ? Colors.blue.shade900
+                                            : Colors.blue.shade100,
+                                        offset: Offset(0, 4.h),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: const Color(0xFF0F172A),
+                                    size: 16.r,
+                                  ),
                                 ),
-                              ],
-                            ),
-                            child: Icon(
-                              Icons.arrow_back_ios_new_rounded,
-                              color: const Color(0xFF0F172A),
-                              size: 16.r,
+                              ),
                             ),
                           ),
+
+                          // 2. The World Portal Header (Part of the Map Journey)
+                          SliverToBoxAdapter(
+                            child: _buildChunkyMapHeader(user, isDark),
+                          ),
+
+                          // ── Map Segments ──
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(vertical: 20.h),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate((
+                                context,
+                                index,
+                              ) {
+                                final level = index + 1;
+                                final highestCompleted = completedLevels.isEmpty
+                                    ? 0
+                                    : completedLevels.reduce(math.max);
+                                final isCompleted = level <= highestCompleted;
+                                final isPlayable =
+                                    level == highestCompleted + 1 &&
+                                    (level <= unlockedLevel || isPremium);
+                                final isTollGate =
+                                    level == highestCompleted + 1 &&
+                                    level > unlockedLevel &&
+                                    !isPremium;
+                                final isHalfUnlocked =
+                                    level > highestCompleted + 1 &&
+                                    level <= unlockedLevel &&
+                                    unlockedLevel > 10;
+                                final isNextZone =
+                                    level > unlockedLevel + 1 &&
+                                    level <= unlockedLevel + 3 &&
+                                    !isPremium &&
+                                    highestCompleted >= unlockedLevel;
+                                final isLocked =
+                                    !isCompleted &&
+                                    !isPlayable &&
+                                    !isHalfUnlocked &&
+                                    !isTollGate &&
+                                    !isNextZone;
+                                final isCurrent = isPlayable || isTollGate;
+                                final isLast = index == 199;
+
+                                // FIX: Check auth loading status from our selector
+                                final isLoading =
+                                    authStatus == AuthStatus.unknown;
+
+                                final currentOffset = _getHorizontalOffset(
+                                  level,
+                                  screenWidth,
+                                );
+                                final nextOffset = isLast
+                                    ? currentOffset
+                                    : _getHorizontalOffset(
+                                        level + 1,
+                                        screenWidth,
+                                      );
+                                final prevOffset = level == 1
+                                    ? currentOffset
+                                    : _getHorizontalOffset(
+                                        level - 1,
+                                        screenWidth,
+                                      );
+
+                                return KidsMapNode(
+                                  level: level,
+                                  isLocked: isLocked,
+                                  isCurrent: isCurrent,
+                                  isLast: isLast,
+                                  currentOffset: currentOffset,
+                                  nextOffset: nextOffset,
+                                  prevOffset: prevOffset,
+                                  isLoading: isLoading,
+                                  isTollGate: isTollGate,
+                                  isCompleted: isCompleted,
+                                  isPlayable: isPlayable,
+                                  isNextZone: isNextZone,
+                                  isPrevCompleted: level == 1
+                                      ? true
+                                      : (level - 1) <= highestCompleted,
+                                  gameType: widget.gameType,
+                                  primaryColor: widget.primaryColor,
+                                  unlockPathController: _unlockPathController,
+                                  entryController: _entryController,
+                                  glowController: _glowController,
+                                  confettiController: _confettiController,
+                                  isUnlockAnimating: _isUnlockAnimating.value,
+                                  celebratingLevel: _celebratingLevel.value,
+                                );
+                              }, childCount: 200),
+                            ),
+                          ),
+                        ],
+                      ),
+                      if (_activeStoryBeat.value != null)
+                        Positioned.fill(
+                          child: Container(
+                            color: Colors.black54,
+                            child: StoryDialogueBox(
+                              beat: _activeStoryBeat.value!,
+                              isKidsMode: true,
+                              onDismiss: () {
+                                _activeStoryBeat.value = null;
+                              },
+                            ),
+                          ).animate().fadeIn(),
                         ),
+                      // Global Star Vault FAB
+                      Positioned(
+                        bottom: 32.h,
+                        right: 24.w,
+                        child: _buildStarVaultButton(),
                       ),
-                    ),
 
-                    // 2. The World Portal Header (Part of the Map Journey)
-                    SliverToBoxAdapter(
-                      child: _buildChunkyMapHeader(user, isDark),
-                    ),
-
-                    // ── Map Segments ──
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(vertical: 20.h),
-                      sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate((context, index) {
-                          final level = index + 1;
-                          final highestCompleted = completedLevels.isEmpty
-                              ? 0
-                              : completedLevels.reduce(math.max);
-                          final isCompleted = level <= highestCompleted;
-                          final isPlayable =
-                              level == highestCompleted + 1 &&
-                              (level <= unlockedLevel || isPremium);
-                          final isTollGate =
-                              level == highestCompleted + 1 &&
-                              level > unlockedLevel &&
-                              !isPremium;
-                          final isHalfUnlocked =
-                              level > highestCompleted + 1 &&
-                              level <= unlockedLevel &&
-                              unlockedLevel > 10;
-                          final isNextZone =
-                              level > unlockedLevel + 1 &&
-                              level <= unlockedLevel + 3 &&
-                              !isPremium &&
-                              highestCompleted >= unlockedLevel;
-                          final isLocked =
-                              !isCompleted &&
-                              !isPlayable &&
-                              !isHalfUnlocked &&
-                              !isTollGate &&
-                              !isNextZone;
-                          final isCurrent = isPlayable || isTollGate;
-                          final isLast = index == 199;
-
-                          // FIX: Check auth loading status from our selector
-                          final isLoading = authStatus == AuthStatus.unknown;
-
-                          final currentOffset = _getHorizontalOffset(
-                            level,
-                            screenWidth,
-                          );
-                          final nextOffset = isLast
-                              ? currentOffset
-                              : _getHorizontalOffset(level + 1, screenWidth);
-                          final prevOffset = level == 1 
-                              ? currentOffset 
-                              : _getHorizontalOffset(level - 1, screenWidth);
-                              
-                          return KidsMapNode(
-                            level: level,
-                            isLocked: isLocked,
-                            isCurrent: isCurrent,
-                            isLast: isLast,
-                            currentOffset: currentOffset,
-                            nextOffset: nextOffset,
-                            prevOffset: prevOffset,
-                            isLoading: isLoading,
-                            isTollGate: isTollGate,
-                            isCompleted: isCompleted,
-                            isPlayable: isPlayable,
-                            isNextZone: isNextZone,
-                            isPrevCompleted: level == 1 ? true : (level - 1) <= highestCompleted,
-                            gameType: widget.gameType,
-                            primaryColor: widget.primaryColor,
-                            unlockPathController: _unlockPathController,
-                            entryController: _entryController,
-                            glowController: _glowController,
-                            confettiController: _confettiController,
-                            isUnlockAnimating: _isUnlockAnimating.value,
-                            celebratingLevel: _celebratingLevel.value,
-                          );
-                        }, childCount: 200),
+                      // Golden Keys FAB
+                      Positioned(
+                        bottom: 32.h,
+                        left: 24.w,
+                        child: _buildGoldenKeysButton(),
                       ),
-                    ),
-                  ],
-                ),
-                if (_activeStoryBeat.value != null)
-                  Positioned.fill(
-                    child: Container(
-                      color: Colors.black54,
-                      child: StoryDialogueBox(
-                        beat: _activeStoryBeat.value!,
-                        isKidsMode: true,
-                        onDismiss: () {
-                          _activeStoryBeat.value = null;
-                        },
-                      ),
-                    ).animate().fadeIn(),
+                    ],
                   ),
-                // Global Star Vault FAB
-                Positioned(
-                  bottom: 32.h,
-                  right: 24.w,
-                  child: _buildStarVaultButton(),
                 ),
-
-                // Golden Keys FAB
-                Positioned(
-                  bottom: 32.h,
-                  left: 24.w,
-                  child: _buildGoldenKeysButton(),
-                ),
-              ],
-            ),
-          ),
               );
-            }
+            },
           );
         },
       ),
@@ -630,7 +658,11 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          context.tr('kids_zone.coins_label_caps', args: ['${user?.kidsCoins ?? 0}'], fallback: "${user?.kidsCoins ?? 0} COINS"),
+                          context.tr(
+                            'kids_zone.coins_label_caps',
+                            args: ['${user?.kidsCoins ?? 0}'],
+                            fallback: "${user?.kidsCoins ?? 0} COINS",
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
@@ -773,7 +805,3 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     );
   }
 }
-
-
-
-

@@ -71,17 +71,16 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     );
   }
 
-
-
   void _submitFinalAnswer(bool nailedSpeaking, int correct) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
-    
+
     if (!nailedSpeaking) {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -91,7 +90,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       _selectedIndex.value = _pendingSelectedIndex.value;
@@ -112,9 +111,10 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -124,7 +124,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       _selectedIndex.value = _pendingSelectedIndex.value;
@@ -171,7 +171,13 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _pendingSelectedIndex]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedIndex,
+            _pendingSelectedIndex,
+          ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
@@ -179,107 +185,122 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-          onHint: () {
-            if (quest != null && quest.hint != null && quest.hint!.isNotEmpty) {
-              GameDialogHelper.showHintDialog(context, hint: quest.hint!);
-            }
-          },
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: 6.h),
-                                AmbientIdInstruction(
-                                  color: theme.primaryColor,
-                                  instruction: context.tr(
-                                    'games.ambientId_instruction',
-                                    fallback:
-                                        'Listen to the sounds and find the location.',
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ListeningBloc>().add(NextQuestion()),
+              onHint: () {
+                if (quest != null &&
+                    quest.hint != null &&
+                    quest.hint!.isNotEmpty) {
+                  GameDialogHelper.showHintDialog(context, hint: quest.hint!);
+                }
+              },
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 16.h,
+                                ),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: 6.h),
+                                      AmbientIdInstruction(
+                                        color: theme.primaryColor,
+                                        instruction: context.tr(
+                                          'games.ambientId_instruction',
+                                          fallback:
+                                              'Listen to the sounds and find the location.',
+                                        ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      AmbientIdSonarField(
+                                        options: quest.options ?? [],
+                                        correctAnswerIndex:
+                                            quest.correctAnswerIndex ?? 0,
+                                        color: theme.primaryColor,
+                                        radarController: _radarController,
+                                        isAnswered: _isAnswered.value,
+                                        isCorrectState: _isCorrect.value,
+                                        selectedIndex: _selectedIndex.value,
+                                        onSubmitAnswer: (index) {
+                                          if (_isAnswered.value ||
+                                              _pendingSelectedIndex.value !=
+                                                  null)
+                                            return;
+                                          _pendingSelectedIndex.value = index;
+                                        },
+                                        imageUrl: quest.imageUrl,
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                SizedBox(height: 24.h),
-                                AmbientIdSonarField(
-                                  options: quest.options ?? [],
-                                  correctAnswerIndex:
-                                      quest.correctAnswerIndex ?? 0,
-                                  color: theme.primaryColor,
-                                  radarController: _radarController,
-                                  isAnswered: _isAnswered.value,
-                                  isCorrectState: _isCorrect.value,
-                                  selectedIndex: _selectedIndex.value,
-                                  onSubmitAnswer: (index) {
-                                    if (_isAnswered.value || _pendingSelectedIndex.value != null) return;
-                                    _pendingSelectedIndex.value = index;
-                                  },
-                                  imageUrl: quest.imageUrl,
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      AmbientIdEmitterNode(
+                                        onTap: () {
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                          _hapticService.selection();
+                                        },
+                                        color: theme.primaryColor,
+                                      ),
+                                      SizedBox(
+                                        height:
+                                            (_pendingSelectedIndex.value !=
+                                                    null &&
+                                                !_isAnswered.value)
+                                            ? 380.h
+                                            : 100.h,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        SliverToBoxAdapter(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 16.h,
+                        if (_pendingSelectedIndex.value != null &&
+                            !_isAnswered.value)
+                          SpeakToConfirmOverlay(
+                            expectedText:
+                                quest.options![_pendingSelectedIndex.value!],
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(
+                              true,
+                              quest.correctAnswerIndex ?? 0,
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                AmbientIdEmitterNode(
-                                  onTap: () {
-                                    _soundService.playTts(
-                                      quest.textToSpeak ?? "",
-                                    );
-                                    _hapticService.selection();
-                                  },
-                                  color: theme.primaryColor,
-                                ),
-                                SizedBox(height: (_pendingSelectedIndex.value != null && !_isAnswered.value) ? 380.h : 100.h),
-                              ],
+                            onSkipped: () => _submitFinalAnswer(
+                              false,
+                              quest.correctAnswerIndex ?? 0,
                             ),
+                            allowSkip: true,
+                            isPositioned: true,
                           ),
-                        ),
                       ],
                     ),
-                  ),
-                  if (_pendingSelectedIndex.value != null && !_isAnswered.value)
-                    SpeakToConfirmOverlay(
-                      expectedText: quest.options![_pendingSelectedIndex.value!],
-                      primaryColor: theme.primaryColor,
-                      onConfirmed: () => _submitFinalAnswer(
-                        true,
-                        quest.correctAnswerIndex ?? 0,
-                      ),
-                      onSkipped: () => _submitFinalAnswer(
-                        false,
-                        quest.correctAnswerIndex ?? 0,
-                      ),
-                      allowSkip: true,
-                      isPositioned: true,
-                    ),
-                ],
-              ),
             );
           },
         );

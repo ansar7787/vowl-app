@@ -89,10 +89,11 @@ class ElevatorPitchPromptCard extends StatelessWidget {
                   duration: Duration(seconds: timeLimit),
                   builder: (context, value, child) {
                     final int secondsLeft = value.ceil();
-                    final int wordsSpoken = ((timeLimit - value) * 1.5).floor(); // Fake words per sec
-                    
+                    final int wordsSpoken = ((timeLimit - value) * 1.5)
+                        .floor(); // Fake words per sec
+
                     final bool isLowTime = secondsLeft <= 10;
-                    
+
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -100,7 +101,9 @@ class ElevatorPitchPromptCard extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.timer_outlined,
-                              color: isLowTime ? Colors.redAccent : color.withValues(alpha: 0.7),
+                              color: isLowTime
+                                  ? Colors.redAccent
+                                  : color.withValues(alpha: 0.7),
                               size: 14.r,
                             ),
                             SizedBox(width: 6.w),
@@ -110,7 +113,11 @@ class ElevatorPitchPromptCard extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.bold,
-                                color: isLowTime ? Colors.redAccent : (isDark ? Colors.white70 : Colors.black87),
+                                color: isLowTime
+                                    ? Colors.redAccent
+                                    : (isDark
+                                          ? Colors.white70
+                                          : Colors.black87),
                               ),
                             ),
                           ],

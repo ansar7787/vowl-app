@@ -29,7 +29,8 @@ class SettingsSectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final effectiveColor = tintColor ??
+    final effectiveColor =
+        tintColor ??
         (isDark
             ? Colors.white.withValues(alpha: 0.5)
             : const Color(0xFF0F172A).withValues(alpha: 0.4));
@@ -463,10 +464,11 @@ class SettingsProfileSection extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: (currentUser.isPremium
-                                  ? const Color(0xFFF59E0B)
-                                  : const Color(0xFF64748B))
-                              .withValues(alpha: 0.3),
+                          color:
+                              (currentUser.isPremium
+                                      ? const Color(0xFFF59E0B)
+                                      : const Color(0xFF64748B))
+                                  .withValues(alpha: 0.3),
                           blurRadius: 12,
                           spreadRadius: 2,
                         ),
@@ -475,13 +477,11 @@ class SettingsProfileSection extends StatelessWidget {
                         colors: currentUser.isPremium
                             ? [
                                 const Color(0xFFF59E0B),
-                                const Color(0xFFF59E0B)
-                                    .withValues(alpha: 0.2),
+                                const Color(0xFFF59E0B).withValues(alpha: 0.2),
                               ]
                             : [
                                 const Color(0xFF64748B),
-                                const Color(0xFF64748B)
-                                    .withValues(alpha: 0.2),
+                                const Color(0xFF64748B).withValues(alpha: 0.2),
                               ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,

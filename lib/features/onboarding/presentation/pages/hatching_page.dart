@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:confetti/confetti.dart';
 
 /// HatchingPage: introductory onboarding companion hatching animation.
 /// Guides the user through hatching their Vowl companion using a stylised egg.
@@ -27,6 +28,9 @@ class _HatchingPageState extends State<HatchingPage> {
   /// 0: Egg shown | 1: Cracking | 2: Hatched | 3: Introduction
   final ValueNotifier<int> _stage = ValueNotifier(0);
   final FlutterTts _tts = FlutterTts();
+  final ConfettiController _confettiController = ConfettiController(
+    duration: const Duration(seconds: 3),
+  );
   Timer? _hatchTimer;
 
   @override
@@ -39,17 +43,18 @@ class _HatchingPageState extends State<HatchingPage> {
   void dispose() {
     _hatchTimer?.cancel();
     // FIX (MEDIUM-3): Always stop TTS unconditionally in dispose().
-    // Previously, stop() was only called if _isTtsSpeaking == true,
-    // meaning a pending speak() call after _isTtsSpeaking was set false
-    // could still deliver audio after the widget was unmounted.
     _tts.stop();
+    _confettiController.dispose();
     _stage.dispose();
     super.dispose();
   }
 
   Future<void> _initTts() async {
     try {
-      await _tts.setLanguage('en-US');
+      // FIX (H3): Use user's locale for TTS instead of hardcoded en-US.
+      final locale = sl<LocaleService>().currentLocale;
+      final ttsLang = _mapLocaleToTtsLanguage(locale.languageCode);
+      await _tts.setLanguage(ttsLang);
       await _tts.setPitch(1.2);
       await _tts.setSpeechRate(0.5);
 
@@ -61,6 +66,32 @@ class _HatchingPageState extends State<HatchingPage> {
     }
   }
 
+  /// Maps a locale language code to a TTS-compatible language tag.
+  /// Falls back to en-US for unsupported languages.
+  String _mapLocaleToTtsLanguage(String languageCode) {
+    const map = {
+      'en': 'en-US',
+      'hi': 'hi-IN',
+      'es': 'es-ES',
+      'pt': 'pt-BR',
+      'ar': 'ar-SA',
+      'fr': 'fr-FR',
+      'ru': 'ru-RU',
+      'zh': 'zh-CN',
+      'ko': 'ko-KR',
+      'ja': 'ja-JP',
+      'de': 'de-DE',
+      'ml': 'ml-IN',
+      'kn': 'kn-IN',
+      'ta': 'ta-IN',
+      'te': 'te-IN',
+      'mr': 'mr-IN',
+      'bn': 'bn-IN',
+      'gu': 'gu-IN',
+    };
+    return map[languageCode] ?? 'en-US';
+  }
+
   void _onTapEgg() {
     if (_stage.value == 0) {
       sl<HapticService>().selection();
@@ -70,6 +101,7 @@ class _HatchingPageState extends State<HatchingPage> {
         if (mounted) {
           sl<HapticService>().success();
           _stage.value = 2;
+          _confettiController.play();
           _speakIntroduction();
         }
       });
@@ -78,13 +110,18 @@ class _HatchingPageState extends State<HatchingPage> {
     }
   }
 
-  String get _introMessage =>
-      "Hoot! I'm Owly, your AI companion. Welcome to Vowl, ${widget.userName}! We're not just here to beat levels—we're here to master English together. Let's embrace the journey and start your adventure!";
+  /// FIX (H2): Intro message is now localized via context.tr().
+  String _getIntroMessage(BuildContext context) => context.tr(
+    'hatching.intro_message',
+    fallback:
+        "Hoot! I'm Owly, your AI companion. Welcome to Vowl, {0}! We're not just here to beat levels—we're here to master English together. Let's embrace the journey and start your adventure!",
+    args: [widget.userName],
+  );
 
   Future<void> _speakIntroduction() async {
     if (!mounted) return;
     try {
-      await _tts.speak(_introMessage);
+      await _tts.speak(_getIntroMessage(context));
     } catch (e) {
       debugPrint('HatchingPage: TTS speak failed: $e');
     }
@@ -92,70 +129,95 @@ class _HatchingPageState extends State<HatchingPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: const SystemUiOverlayStyle(
+      // FIX (H1): System UI adapts to theme instead of forcing light.
+      value: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.light,
-        systemNavigationBarColor: Color(0xFFF8FAFC),
-        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+        statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
+        systemNavigationBarColor: isDark
+            ? const Color(0xFF0F172A)
+            : const Color(0xFFF8FAFC),
+        systemNavigationBarIconBrightness: isDark
+            ? Brightness.light
+            : Brightness.dark,
       ),
       child: Scaffold(
+        backgroundColor: isDark
+            ? const Color(0xFF0F172A)
+            : const Color(0xFFF8FAFC),
         body: ValueListenableBuilder<int>(
           valueListenable: _stage,
           builder: (context, currentStage, child) {
             return Stack(
-          children: [
-            const MeshGradientBackground(),
-            SafeArea(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  return SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        minHeight: constraints.maxHeight,
-                        minWidth: constraints.maxWidth,
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24.w,
-                          vertical: 24.h,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const SizedBox.shrink(),
-                            // Main focus: egg / mascot + status text
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
+              children: [
+                const MeshGradientBackground(),
+                SafeArea(
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minHeight: constraints.maxHeight,
+                            minWidth: constraints.maxWidth,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 24.w,
+                              vertical: 24.h,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                _buildMascotStage(context, currentStage),
-                                SizedBox(height: 48.h),
-                                _buildStatusText(context, currentStage),
+                                const SizedBox.shrink(),
+                                // Main focus: egg / mascot + status text
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    _buildMascotStage(context, currentStage),
+                                    SizedBox(height: 48.h),
+                                    _buildStatusText(context, currentStage),
+                                  ],
+                                ),
+                                // Bottom CTA — pre-allocated height prevents CLS
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 16.h),
+                                  child: AnimatedSize(
+                                    duration: const Duration(milliseconds: 300),
+                                    curve: Curves.easeInOut,
+                                    child: currentStage >= 2
+                                        ? _buildGetStartedButton(context)
+                                        : SizedBox(height: 60.h),
+                                  ),
+                                ),
                               ],
                             ),
-                            // Bottom CTA — pre-allocated height prevents CLS
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 16.h),
-                              child: AnimatedSize(
-                                duration: const Duration(milliseconds: 300),
-                                curve: Curves.easeInOut,
-                                child: currentStage >= 2
-                                    ? _buildGetStartedButton(context)
-                                    : SizedBox(height: 60.h),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
-        );
+                      );
+                    },
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: ConfettiWidget(
+                    confettiController: _confettiController,
+                    blastDirectionality: BlastDirectionality.explosive,
+                    shouldLoop: false,
+                    colors: const [
+                      Colors.green,
+                      Colors.blue,
+                      Colors.pink,
+                      Colors.orange,
+                      Colors.purple,
+                    ],
+                  ),
+                ),
+              ],
+            );
           },
         ),
       ),
@@ -183,9 +245,10 @@ class _HatchingPageState extends State<HatchingPage> {
             if (currentStage < 2)
               _buildEgg(currentStage)
             else
-              const VowlMascot(
+              // FIX (H10): Responsive mascot sizing with .r
+              VowlMascot(
                 state: VowlMascotState.happy,
-                size: 70,
+                size: 70.r.clamp(50, 120).toDouble(),
               ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
           ],
         ),
@@ -253,17 +316,32 @@ class _HatchingPageState extends State<HatchingPage> {
         )
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
+        // FIX (H8): Pulsing glow as tap affordance when egg is untapped (stage 0)
+        .shimmer(
+          color: currentStage == 0
+              ? Colors.white.withValues(alpha: 0.25)
+              : Colors.transparent,
+          duration: 2500.ms,
+        )
         .shake(hz: currentStage == 1 ? 10 : 0, duration: 1500.ms);
   }
 
   Widget _buildStatusText(BuildContext context, int currentStage) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    // FIX (H4): Text color adapts to theme
+    final textColor = isDark
+        ? Colors.white.withValues(alpha: 0.85)
+        : const Color(0xFF334155);
+    final subtleColor = isDark ? Colors.white60 : Colors.blueGrey;
+
     if (currentStage >= 2) {
+      final introMessage = _getIntroMessage(context);
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: TweenAnimationBuilder<int>(
           key: ValueKey('hatching_status_$currentStage'),
-          tween: IntTween(begin: 0, end: _introMessage.length),
-          duration: Duration(milliseconds: _introMessage.length * 40),
+          tween: IntTween(begin: 0, end: introMessage.length),
+          duration: Duration(milliseconds: introMessage.length * 40),
           builder: (context, value, child) {
             return GlassTile(
               padding: EdgeInsets.all(20.r),
@@ -294,9 +372,9 @@ class _HatchingPageState extends State<HatchingPage> {
                   ),
                   SizedBox(height: 12.h),
                   Text(
-                    _introMessage.substring(
+                    introMessage.substring(
                       0,
-                      value.clamp(0, _introMessage.length),
+                      value.clamp(0, introMessage.length),
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -304,7 +382,7 @@ class _HatchingPageState extends State<HatchingPage> {
                       fontSize: 16.sp,
                       height: 1.5,
                       fontWeight: FontWeight.w600,
-                      color: const Color(0xFF334155),
+                      color: textColor,
                     ),
                   ),
                 ],
@@ -331,7 +409,7 @@ class _HatchingPageState extends State<HatchingPage> {
           fontFamily: 'Outfit',
           fontSize: 18.sp,
           fontWeight: FontWeight.w600,
-          color: Colors.blueGrey,
+          color: subtleColor,
         ),
       ),
     ).animate(key: ValueKey('hatching_status_$currentStage')).fadeIn();
@@ -372,7 +450,8 @@ class _HatchingPageState extends State<HatchingPage> {
           ),
         ),
       ),
-    ).animate().fadeIn(delay: 2.seconds).slideY(begin: 0.2, end: 0);
+      // FIX (H6): Reduced delay from 2s to 600ms — less user impatience.
+    ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, end: 0);
   }
 }
 

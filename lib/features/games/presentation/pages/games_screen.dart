@@ -49,7 +49,8 @@ class GamesScreen extends StatelessWidget {
               CustomScrollView(
                 controller: di.sl<ScrollController>(instanceName: 'games'),
                 physics: const BouncingScrollPhysics(),
-                cacheExtent: 500, // PERF: Pre-render 500px off-screen for smoother scroll
+                cacheExtent:
+                    500, // PERF: Pre-render 500px off-screen for smoother scroll
                 slivers: [
                   _GamesAppBar(isDark: isDark, user: user),
                   SliverPadding(
@@ -77,10 +78,7 @@ class GamesScreen extends StatelessWidget {
     // Phase 1: Hero Dashboard
     _HeroDashboard(user: user, isDark: isDark),
     // Kids Zone — visually differentiated section
-    _AnimatedSection(
-      index: 0,
-      child: _KidsGameSection(user: user),
-    ),
+    _AnimatedSection(index: 0, child: _KidsGameSection(user: user)),
     // Adult categories with progress headers
     ...QuestType.values.asMap().entries.map((entry) {
       final i = entry.key;
@@ -117,7 +115,10 @@ class _HeroDashboard extends StatelessWidget {
       final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
       totalGames += subtypes.length;
       for (final s in subtypes) {
-        totalCleared += (user.completedLevels[s.name]?.length ?? 0).clamp(0, 200);
+        totalCleared += (user.completedLevels[s.name]?.length ?? 0).clamp(
+          0,
+          200,
+        );
       }
     }
     final totalLevels = totalGames * 200;
@@ -151,8 +152,9 @@ class _HeroDashboard extends StatelessWidget {
                         height: 56.r,
                         child: CircularProgressIndicator(
                           value: progress.clamp(0.02, 1.0),
-                          backgroundColor: const Color(0xFF3B82F6)
-                              .withValues(alpha: 0.1),
+                          backgroundColor: const Color(
+                            0xFF3B82F6,
+                          ).withValues(alpha: 0.1),
                           valueColor: const AlwaysStoppedAnimation<Color>(
                             Color(0xFF3B82F6),
                           ),
@@ -304,8 +306,9 @@ class _StatPill extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 7.sp,
                   fontWeight: FontWeight.w800,
-                  color: (isDark ? Colors.white : Colors.black)
-                      .withValues(alpha: 0.4),
+                  color: (isDark ? Colors.white : Colors.black).withValues(
+                    alpha: 0.4,
+                  ),
                   letterSpacing: 0.8,
                 ),
               ),
@@ -346,17 +349,11 @@ class _AnimatedSectionState extends State<_AnimatedSection>
       vsync: this,
       duration: const Duration(milliseconds: 500),
     );
-    _opacity = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOut,
-    );
+    _opacity = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
     _slide = Tween<Offset>(
       begin: const Offset(0, 0.08),
       end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOutCubic,
-    ));
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
   }
 
   @override
@@ -365,7 +362,7 @@ class _AnimatedSectionState extends State<_AnimatedSection>
     if (_scrollController == null && !_hasTriggered) {
       _scrollController = di.sl<ScrollController>(instanceName: 'games');
       _scrollController?.addListener(_checkVisibility);
-      
+
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _checkVisibility();
       });
@@ -382,16 +379,17 @@ class _AnimatedSectionState extends State<_AnimatedSection>
     try {
       final viewport = RenderAbstractViewport.of(renderObject);
       final offsetToReveal = viewport.getOffsetToReveal(renderObject, 0.0);
-      
+
       // Bottom edge of the current viewport
       final currentBottomEdge =
-          _scrollController!.position.pixels + MediaQuery.of(context).size.height;
-      
+          _scrollController!.position.pixels +
+          MediaQuery.of(context).size.height;
+
       // Trigger when the top of the widget enters the screen
       if (currentBottomEdge > offsetToReveal.offset + 20) {
         _hasTriggered = true;
         _scrollController!.removeListener(_checkVisibility);
-        
+
         // Micro-stagger if multiple enter at once
         Future.delayed(Duration(milliseconds: 60 * (widget.index % 3)), () {
           if (mounted) _controller.forward();
@@ -413,10 +411,7 @@ class _AnimatedSectionState extends State<_AnimatedSection>
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _opacity,
-      child: SlideTransition(
-        position: _slide,
-        child: widget.child,
-      ),
+      child: SlideTransition(position: _slide, child: widget.child),
     );
   }
 }
@@ -538,11 +533,11 @@ class _GameSection extends StatelessWidget {
           child: _GameSectionHeader(
             titleKey: titleKey,
             subtitleKey: subtitleKey,
-            fallbackTitle: type == QuestType.eliteMastery 
-                ? 'Elite Mastery' 
+            fallbackTitle: type == QuestType.eliteMastery
+                ? 'Elite Mastery'
                 : type.name[0].toUpperCase() + type.name.substring(1),
-            fallbackSubtitle: type == QuestType.eliteMastery 
-                ? 'Prestige Challenges' 
+            fallbackSubtitle: type == QuestType.eliteMastery
+                ? 'Prestige Challenges'
                 : 'Master this skill',
             color: color,
             gamesStarted: gamesStarted,
@@ -555,10 +550,7 @@ class _GameSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 16.h),
-        CategoryShelf(
-          user: user,
-          subtypes: subtypes,
-        ),
+        CategoryShelf(user: user, subtypes: subtypes),
       ],
     );
   }
@@ -701,10 +693,7 @@ class _GameSectionHeader extends StatelessWidget {
                             color: color.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(6.r),
                           ),
-                          child: Text(
-                            '🎈',
-                            style: TextStyle(fontSize: 10.sp),
-                          ),
+                          child: Text('🎈', style: TextStyle(fontSize: 10.sp)),
                         ),
                       ],
                       // Elite Mastery gold badge
@@ -721,10 +710,7 @@ class _GameSectionHeader extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(6.r),
                           ),
-                          child: Text(
-                            '👑',
-                            style: TextStyle(fontSize: 10.sp),
-                          ),
+                          child: Text('👑', style: TextStyle(fontSize: 10.sp)),
                         ),
                       ],
                     ],
@@ -806,17 +792,15 @@ class _GameSectionHeader extends StatelessWidget {
                   context.tr(
                     'games.section_progress',
                     fallback: '$gamesStarted/$totalGames Started',
-                    args: [
-                      gamesStarted.toString(),
-                      totalGames.toString(),
-                    ],
+                    args: [gamesStarted.toString(), totalGames.toString()],
                   ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 9.sp,
                     fontWeight: FontWeight.w700,
-                    color: (isDark ? Colors.white : Colors.black)
-                        .withValues(alpha: 0.3),
+                    color: (isDark ? Colors.white : Colors.black).withValues(
+                      alpha: 0.3,
+                    ),
                   ),
                 ),
               ],

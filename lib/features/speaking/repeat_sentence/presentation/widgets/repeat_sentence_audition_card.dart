@@ -84,7 +84,8 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
               height: 1.35,
             ),
           ),
-          if (quest is SpeakingQuest && (quest as SpeakingQuest).pronunciationTips != null) ...[
+          if (quest is SpeakingQuest &&
+              (quest as SpeakingQuest).pronunciationTips != null) ...[
             SizedBox(height: 16.h),
             Container(
               padding: EdgeInsets.all(12.r),
@@ -98,7 +99,11 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.tips_and_updates_rounded, color: primaryColor, size: 20.sp),
+                  Icon(
+                    Icons.tips_and_updates_rounded,
+                    color: primaryColor,
+                    size: 20.sp,
+                  ),
                   SizedBox(width: 8.w),
                   Expanded(
                     child: Text(

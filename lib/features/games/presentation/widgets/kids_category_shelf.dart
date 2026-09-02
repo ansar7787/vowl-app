@@ -63,14 +63,14 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
                   final itemWidth = 150.w + 16.w; // Card width + right margin
                   final itemCenter = 24.w + (index * itemWidth) + (150.w / 2);
                   // 2026 Spatial Physics: Left-Aligned Focal Lens
-                  // Instead of screen center, the "focus point" is exactly where 
+                  // Instead of screen center, the "focus point" is exactly where
                   // the first item rests when scroll is at 0.
-                  final focalPoint =
-                      scrollPixels + 24.w + (150.w / 2);
+                  final focalPoint = scrollPixels + 24.w + (150.w / 2);
 
                   // Distance from focus point (-1.0 to 1.0 across the screen)
                   final distance =
-                      (itemCenter - focalPoint) / MediaQuery.of(context).size.width;
+                      (itemCenter - focalPoint) /
+                      MediaQuery.of(context).size.width;
 
                   // 2026 Spatial Physics:
                   // 1. Tilt (Rotate Y)
@@ -86,30 +86,31 @@ class _KidsCategoryShelfState extends State<KidsCategoryShelf> {
                       ..rotateY(tilt)
                       ..scaleByDouble(scale, scale, 1.0, 1.0),
                     alignment: FractionalOffset.center,
-                    child: Opacity(
-                      opacity: opacity,
-                      child: child,
-                    ),
+                    child: Opacity(opacity: opacity, child: child),
                   );
                 },
-                child: Padding(
-                  padding: EdgeInsets.only(right: 16.w),
-                  child: _KidsGameEntryCard(metadata: games[index], user: widget.user),
-                )
-                    .animate(delay: (index < 3 ? 50 * index : 0).ms)
-                    .fade(duration: 400.ms)
-                    .scale(
-                      begin: const Offset(0.9, 0.9),
-                      end: const Offset(1, 1),
-                      curve: Curves.easeOutBack,
-                      duration: 500.ms,
-                    )
-                    .slideX(
-                      begin: 0.1,
-                      end: 0,
-                      curve: Curves.easeOutCubic,
-                      duration: 400.ms,
-                    ),
+                child:
+                    Padding(
+                          padding: EdgeInsets.only(right: 16.w),
+                          child: _KidsGameEntryCard(
+                            metadata: games[index],
+                            user: widget.user,
+                          ),
+                        )
+                        .animate(delay: (index < 3 ? 50 * index : 0).ms)
+                        .fade(duration: 400.ms)
+                        .scale(
+                          begin: const Offset(0.9, 0.9),
+                          end: const Offset(1, 1),
+                          curve: Curves.easeOutBack,
+                          duration: 500.ms,
+                        )
+                        .slideX(
+                          begin: 0.1,
+                          end: 0,
+                          curve: Curves.easeOutCubic,
+                          duration: 400.ms,
+                        ),
               );
             },
           ),
@@ -231,8 +232,7 @@ class _KidsGameEntryCard extends StatelessWidget {
   }
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
-    final levelsCleared =
-        user.completedLevels[metadata.gameType]?.length ?? 0;
+    final levelsCleared = user.completedLevels[metadata.gameType]?.length ?? 0;
     final currentLevel = (user.unlockedLevels[metadata.gameType] ?? 1);
     final isNew =
         currentLevel == 1 &&

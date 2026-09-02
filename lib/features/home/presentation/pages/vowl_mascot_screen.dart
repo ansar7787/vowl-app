@@ -187,7 +187,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         ),
                       ],
                     );
-                  }
+                  },
                 ),
 
                 _buildEliteStatusOverlay(context, primaryColor, isDark),
@@ -409,7 +409,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     );
   }
 
-  Widget _buildTabSwitcher(bool isDark, Color primaryColor, Color textColor, int activeTabIndex) {
+  Widget _buildTabSwitcher(
+    bool isDark,
+    Color primaryColor,
+    Color textColor,
+    int activeTabIndex,
+  ) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: GlassTile(
@@ -435,7 +440,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
     );
   }
 
-  Widget _buildTabItem(int index, String label, Color primaryColor, int activeTabIndex) {
+  Widget _buildTabItem(
+    int index,
+    String label,
+    Color primaryColor,
+    int activeTabIndex,
+  ) {
     final isSelected = activeTabIndex == index;
     return Expanded(
       child: Semantics(
@@ -1055,19 +1065,19 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                             : primaryColor.withValues(alpha: 0.15),
                         textColor: isEquipped ? Colors.redAccent : primaryColor,
                         onTap: () async {
-                                if (_isProcessing.value) return;
-                                _isProcessing.value = true;
-                                _hapticService.selection();
-                                context.read<ProfileBloc>().add(
-                                  ProfileEquipVowlAccessoryRequested(
-                                    isEquipped ? null : id,
-                                  ),
-                                );
-                                await Future.delayed(
-                                  const Duration(milliseconds: 1000),
-                                );
-                                  _isProcessing.value = false;
-                              },
+                          if (_isProcessing.value) return;
+                          _isProcessing.value = true;
+                          _hapticService.selection();
+                          context.read<ProfileBloc>().add(
+                            ProfileEquipVowlAccessoryRequested(
+                              isEquipped ? null : id,
+                            ),
+                          );
+                          await Future.delayed(
+                            const Duration(milliseconds: 1000),
+                          );
+                          _isProcessing.value = false;
+                        },
                         primaryColor: primaryColor,
                       )
                     : _buildActionButton(
@@ -1077,29 +1087,29 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                             : Colors.grey.withValues(alpha: 0.1),
                         textColor: canAfford ? primaryColor : Colors.grey,
                         onTap: () async {
-                                if (_isProcessing.value) return;
-                                if (canAfford) {
-                                  _isProcessing.value = true;
-                                  _hapticService.selection();
-                                  context.read<ProfileBloc>().add(
-                                    ProfileBuyVowlAccessoryRequested(id, price),
-                                  );
-                                  await Future.delayed(
-                                    const Duration(milliseconds: 1500),
-                                  );
-                                    _isProcessing.value = false;
-                                } else {
-                                  _hapticService.error();
-                                  _showModernSnackbar(
-                                    context,
-                                    context.tr(
-                                      'vowl_mascot.feedback_insufficient_credits',
-                                      fallback: 'Insufficient Credits',
-                                    ),
-                                    false,
-                                  );
-                                }
-                              },
+                          if (_isProcessing.value) return;
+                          if (canAfford) {
+                            _isProcessing.value = true;
+                            _hapticService.selection();
+                            context.read<ProfileBloc>().add(
+                              ProfileBuyVowlAccessoryRequested(id, price),
+                            );
+                            await Future.delayed(
+                              const Duration(milliseconds: 1500),
+                            );
+                            _isProcessing.value = false;
+                          } else {
+                            _hapticService.error();
+                            _showModernSnackbar(
+                              context,
+                              context.tr(
+                                'vowl_mascot.feedback_insufficient_credits',
+                                fallback: 'Insufficient Credits',
+                              ),
+                              false,
+                            );
+                          }
+                        },
                         icon: Icons.attach_money_rounded,
                         primaryColor: primaryColor,
                       ),

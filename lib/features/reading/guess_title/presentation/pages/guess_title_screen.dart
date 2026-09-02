@@ -49,6 +49,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     _scrollController.dispose();
     super.dispose();
   }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -60,7 +61,11 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     );
   }
 
-  void _submitFinalAnswer(bool isCorrect, [ReadingQuest? quest, String? selectedOption]) {
+  void _submitFinalAnswer(
+    bool isCorrect, [
+    ReadingQuest? quest,
+    String? selectedOption,
+  ]) {
     if (_isAnswered.value || _showTypeToConfirm.value) return;
 
     _isAnswered.value = true;
@@ -122,7 +127,10 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('reading_games.title_expert', fallback: 'TITLE EXPERT!'),
+            title: context.tr(
+              'reading_games.title_expert',
+              fallback: 'TITLE EXPERT!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -133,7 +141,12 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
             : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _showTypeToConfirm]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _showTypeToConfirm,
+          ]),
           builder: (context, _) {
             return ReadingBaseLayout(
               gameType: widget.gameType,
@@ -141,93 +154,115 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          onContinue: () =>
-              context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<ReadingBloc>().add(const ReadingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            sliver: SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 16.h),
-                                  GuessTitleInstruction(
-                                    primaryColor: theme.primaryColor,
-                                    instruction: quest.instruction,
-                                  ),
-                                  SizedBox(height: 24.h),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.all(24.r),
-                                    decoration: BoxDecoration(
-                                      color: isDark
-                                          ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(alpha: 0.02),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                      border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.3,
-                                        ),
-                                        width: 1,
+              onContinue: () =>
+                  context.read<ReadingBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      GuessTitleInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: quest.instruction,
                                       ),
-                                    ),
-                                    child: _buildPassageContent(quest, theme.primaryColor, isDark),
+                                      SizedBox(height: 24.h),
+                                      Container(
+                                        width: double.infinity,
+                                        padding: EdgeInsets.all(24.r),
+                                        decoration: BoxDecoration(
+                                          color: isDark
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.05,
+                                                )
+                                              : Colors.black.withValues(
+                                                  alpha: 0.02,
+                                                ),
+                                          borderRadius: BorderRadius.circular(
+                                            20.r,
+                                          ),
+                                          border: Border.all(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.3),
+                                            width: 1,
+                                          ),
+                                        ),
+                                        child: _buildPassageContent(
+                                          quest,
+                                          theme.primaryColor,
+                                          isDark,
+                                        ),
+                                      ),
+                                      if (!_isAnswered.value ||
+                                          _isCorrect.value == null) ...[
+                                        SizedBox(height: 24.h),
+                                        GuessTitleOptions(
+                                          options: quest.options ?? [],
+                                          correctAnswer:
+                                              quest.correctAnswer ?? "",
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          isAnswered: _isAnswered.value,
+                                          onOptionSelected:
+                                              (isCorrect, selectedOption) {
+                                                _submitFinalAnswer(
+                                                  isCorrect,
+                                                  quest,
+                                                  selectedOption,
+                                                );
+                                              },
+                                        ),
+                                      ],
+                                      if (_isAnswered.value) ...[
+                                        SizedBox(height: 30.h),
+                                        GuessTitleResult(
+                                          quest: quest,
+                                          isCorrect: _isCorrect.value == true,
+                                          isDark: isDark,
+                                        ),
+                                      ],
+                                    ],
                                   ),
-                                  if (!_isAnswered.value || _isCorrect.value == null) ...[
-                                    SizedBox(height: 24.h),
-                                    GuessTitleOptions(
-                                      options: quest.options ?? [],
-                                      correctAnswer: quest.correctAnswer ?? "",
-                                      primaryColor: theme.primaryColor,
-                                      isDark: isDark,
-                                      isAnswered: _isAnswered.value,
-                                      onOptionSelected: (isCorrect, selectedOption) {
-                                        _submitFinalAnswer(isCorrect, quest, selectedOption);
-                                      },
-                                    ),
-                                  ],
-                                  if (_isAnswered.value) ...[
-                                    SizedBox(height: 30.h),
-                                    GuessTitleResult(
-                                      quest: quest,
-                                      isCorrect: _isCorrect.value == true,
-                                      isDark: isDark,
-                                    ),
-                                  ],
-                                ],
+                                ),
                               ),
-                            ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      (_showTypeToConfirm.value &&
+                                          _isAnswered.value)
+                                      ? 380.h
+                                      : 60.h,
+                                ),
+                              ),
+                            ],
                           ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(height: (_showTypeToConfirm.value && _isAnswered.value) ? 380.h : 60.h),
+                        ),
+                        if (_showTypeToConfirm.value && _isAnswered.value)
+                          TypeToConfirmOverlay(
+                            expectedText: quest.correctAnswer ?? '',
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: _onTypeConfirmed,
+                            onSkipped: _onTypeConfirmed,
+                            allowSkip: true,
+                            isPositioned: true,
                           ),
-                        ],
-                      ),
+                      ],
                     ),
-                    if (_showTypeToConfirm.value && _isAnswered.value)
-                      TypeToConfirmOverlay(
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: _onTypeConfirmed,
-                        onSkipped: _onTypeConfirmed,
-                        allowSkip: true,
-                        isPositioned: true,
-                      ),
-                  ],
-                ),
             );
           },
         );
@@ -235,10 +270,14 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     );
   }
 
-  Widget _buildPassageContent(ReadingQuest quest, Color primaryColor, bool isDark) {
+  Widget _buildPassageContent(
+    ReadingQuest quest,
+    Color primaryColor,
+    bool isDark,
+  ) {
     final passage = quest.passage ?? "";
     final evidence = quest.evidenceLine ?? "";
-    
+
     if (!_isAnswered.value || evidence.isEmpty || !passage.contains(evidence)) {
       return Text(
         passage,
@@ -250,7 +289,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
         ),
       );
     }
-    
+
     final parts = passage.split(evidence);
     if (parts.length != 2) {
       return Text(
@@ -263,7 +302,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
         ),
       );
     }
-    
+
     return RichText(
       text: TextSpan(
         style: TextStyle(

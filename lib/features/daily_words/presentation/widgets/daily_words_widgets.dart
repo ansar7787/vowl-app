@@ -14,7 +14,8 @@ class WordCardFront extends StatelessWidget {
   final bool isTranslating;
   final String? translatedWord;
 
-  const WordCardFront({super.key, 
+  const WordCardFront({
+    super.key,
     required this.word,
     required this.isDark,
     required this.onSpeak,
@@ -118,7 +119,8 @@ class WordCardBack extends StatelessWidget {
   final String? translatedDefinition;
   final String? translatedExample;
 
-  const WordCardBack({super.key, 
+  const WordCardBack({
+    super.key,
     required this.word,
     required this.isDark,
     required this.onSpeak,
@@ -213,10 +215,7 @@ class WordCardBack extends StatelessWidget {
                 SizedBox(height: 24.h),
                 // Example
                 SectionLabel(
-                  label: context.tr(
-                    'daily_words.example',
-                    fallback: 'Example',
-                  ),
+                  label: context.tr('daily_words.example', fallback: 'Example'),
                 ),
                 SizedBox(height: 8.h),
                 Container(
@@ -239,7 +238,9 @@ class WordCardBack extends StatelessWidget {
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.italic,
-                          color: isDark ? Colors.white70 : const Color(0xFF334155),
+                          color: isDark
+                              ? Colors.white70
+                              : const Color(0xFF334155),
                           height: 1.5,
                         ),
                       ),
@@ -264,7 +265,7 @@ class WordCardBack extends StatelessWidget {
               ],
             ),
           ),
-      ),
+        ),
       ),
     );
   }
@@ -290,12 +291,16 @@ class _TranslateButton extends StatelessWidget {
         width: 44.r,
         height: 44.r,
         decoration: BoxDecoration(
-          color: isTranslated 
+          color: isTranslated
               ? const Color(0xFF10B981)
-              : const Color(0xFF10B981).withValues(alpha: isTranslating ? 0.05 : 0.15),
+              : const Color(
+                  0xFF10B981,
+                ).withValues(alpha: isTranslating ? 0.05 : 0.15),
           shape: BoxShape.circle,
           border: Border.all(
-            color: const Color(0xFF10B981).withValues(alpha: isTranslated ? 1.0 : (isTranslating ? 0.1 : 0.3)),
+            color: const Color(0xFF10B981).withValues(
+              alpha: isTranslated ? 1.0 : (isTranslating ? 0.1 : 0.3),
+            ),
           ),
         ),
         child: Center(
@@ -312,9 +317,13 @@ class _TranslateButton extends StatelessWidget {
                     color: const Color(0xFF10B981),
                   )
                 : Icon(
-                    isTranslated ? Icons.check_rounded : Icons.g_translate_rounded,
+                    isTranslated
+                        ? Icons.check_rounded
+                        : Icons.g_translate_rounded,
                     key: ValueKey(isTranslated ? 'check' : 'translate'),
-                    color: isTranslated ? Colors.white : const Color(0xFF10B981),
+                    color: isTranslated
+                        ? Colors.white
+                        : const Color(0xFF10B981),
                     size: 20.r,
                   ),
           ),
@@ -356,14 +365,11 @@ class _PulsingIconState extends State<PulsingIcon>
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
-      opacity: Tween<double>(begin: 0.3, end: 1.0).animate(
-        CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-      ),
-      child: Icon(
-        widget.icon,
-        color: widget.color,
-        size: 20.r,
-      ),
+      opacity: Tween<double>(
+        begin: 0.3,
+        end: 1.0,
+      ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut)),
+      child: Icon(widget.icon, color: widget.color, size: 20.r),
     );
   }
 }
@@ -372,7 +378,8 @@ class DailyWordsIconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  const DailyWordsIconButton({super.key, 
+  const DailyWordsIconButton({
+    super.key,
     required this.icon,
     required this.onTap,
   });
@@ -388,11 +395,7 @@ class DailyWordsIconButton extends StatelessWidget {
           color: const Color(0xFF6366F1).withValues(alpha: 0.1),
           shape: BoxShape.circle,
         ),
-        child: Icon(
-          icon,
-          color: const Color(0xFF6366F1),
-          size: 20.r,
-        ),
+        child: Icon(icon, color: const Color(0xFF6366F1), size: 20.r),
       ),
     );
   }
@@ -446,12 +449,11 @@ class ActionButton extends StatelessWidget {
         child: Ink(
           padding: EdgeInsets.symmetric(vertical: 18.h), // Taller button
           decoration: BoxDecoration(
-            color: isDark ? color.withValues(alpha: 0.15) : color.withValues(alpha: 0.1),
+            color: isDark
+                ? color.withValues(alpha: 0.15)
+                : color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: color.withValues(alpha: 0.3),
-              width: 1.5,
-            ),
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -523,7 +525,8 @@ class SessionCompleteView extends StatelessWidget {
   final int totalLearned;
   final int day;
 
-  const SessionCompleteView({super.key, 
+  const SessionCompleteView({
+    super.key,
     required this.streak,
     required this.totalLearned,
     required this.day,

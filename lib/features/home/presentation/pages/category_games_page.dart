@@ -55,7 +55,6 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -356,183 +355,205 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       clearedLevels += completed.clamp(0, 200);
     }
     final totalLevels = games.length * 200;
-    final targetProgress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
+    final targetProgress = totalLevels > 0
+        ? (clearedLevels / totalLevels)
+        : 0.0;
 
     return Semantics(
-      label: context.tr(
-        'category_games.mastery_summary_label',
-        fallback: 'Mastery Summary',
-        args: [(targetProgress * 100).toStringAsFixed(1), clearedLevels.toString(), totalLevels.toString()],
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Container(
-          padding: EdgeInsets.all(24.r),
-          decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.08)
-                : Colors.white.withValues(alpha: 0.6),
-            borderRadius: BorderRadius.circular(32.r),
-            border: Border.all(
-              color: theme.primaryColor.withValues(alpha: 0.2),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
-                blurRadius: 20,
-                offset: const Offset(0, 10),
-              ),
+          label: context.tr(
+            'category_games.mastery_summary_label',
+            fallback: 'Mastery Summary',
+            args: [
+              (targetProgress * 100).toStringAsFixed(1),
+              clearedLevels.toString(),
+              totalLevels.toString(),
             ],
           ),
-          child: ExcludeSemantics(
-            child: Column(
-              children: [
-                Row(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Container(
+              padding: EdgeInsets.all(24.r),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : Colors.white.withValues(alpha: 0.6),
+                borderRadius: BorderRadius.circular(32.r),
+                border: Border.all(
+                  color: theme.primaryColor.withValues(alpha: 0.2),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: ExcludeSemantics(
+                child: Column(
                   children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              context.tr(
-                                'category_games.overall_mastery',
-                                fallback: 'Overall Mastery',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w800,
-                                color: theme.primaryColor,
-                                letterSpacing: 2,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 4.h),
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            alignment: AlignmentDirectional.centerStart,
-                            child: TweenAnimationBuilder<double>(
-                              tween: Tween<double>(begin: 0.0, end: targetProgress),
-                              duration: const Duration(milliseconds: 1000),
-                              curve: Curves.easeOutExpo,
-                              builder: (context, value, child) {
-                                final percentLabel = (value * 100).toStringAsFixed(
-                                  value < 0.01 && value > 0 ? 2 : 1,
-                                );
-                                return Text(
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
                                   context.tr(
-                                    'category_games.percent_completed',
-                                    fallback: 'Completed',
-                                    args: [percentLabel],
+                                    'category_games.overall_mastery',
+                                    fallback: 'Overall Mastery',
                                   ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 22.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: contentColor,
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: theme.primaryColor,
+                                    letterSpacing: 2,
                                   ),
-                                  maxLines: 1,
-                                );
-                              },
+                                ),
+                              ),
+                              SizedBox(height: 4.h),
+                              FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: AlignmentDirectional.centerStart,
+                                child: TweenAnimationBuilder<double>(
+                                  tween: Tween<double>(
+                                    begin: 0.0,
+                                    end: targetProgress,
+                                  ),
+                                  duration: const Duration(milliseconds: 1000),
+                                  curve: Curves.easeOutExpo,
+                                  builder: (context, value, child) {
+                                    final percentLabel = (value * 100)
+                                        .toStringAsFixed(
+                                          value < 0.01 && value > 0 ? 2 : 1,
+                                        );
+                                    return Text(
+                                      context.tr(
+                                        'category_games.percent_completed',
+                                        fallback: 'Completed',
+                                        args: [percentLabel],
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 22.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: contentColor,
+                                      ),
+                                      maxLines: 1,
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 12.w),
+                        Flexible(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12.w,
+                              vertical: 6.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: theme.primaryColor.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(12.r),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: TweenAnimationBuilder<double>(
+                                tween: Tween<double>(
+                                  begin: 0.0,
+                                  end: clearedLevels.toDouble(),
+                                ),
+                                duration: const Duration(milliseconds: 1000),
+                                curve: Curves.easeOutExpo,
+                                builder: (context, value, child) {
+                                  return Text(
+                                    context.tr(
+                                      'category_games.levels_count_short',
+                                      fallback: 'Levels',
+                                      args: [
+                                        value.toInt().toString(),
+                                        totalLevels.toString(),
+                                      ],
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: theme.primaryColor,
+                                    ),
+                                    maxLines: 1,
+                                  );
+                                },
+                              ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 12.w),
-                    Flexible(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 12.w,
-                          vertical: 6.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: theme.primaryColor.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(12.r),
-                        ),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: TweenAnimationBuilder<double>(
-                            tween: Tween<double>(begin: 0.0, end: clearedLevels.toDouble()),
-                            duration: const Duration(milliseconds: 1000),
-                            curve: Curves.easeOutExpo,
-                            builder: (context, value, child) {
-                              return Text(
-                                context.tr(
-                                  'category_games.levels_count_short',
-                                  fallback: 'Levels',
-                                  args: [
-                                    value.toInt().toString(),
-                                    totalLevels.toString(),
-                                  ],
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: theme.primaryColor,
-                                ),
-                                maxLines: 1,
-                              );
-                            },
+                    SizedBox(height: 20.h),
+                    _buildLiquidProgressBar(
+                      theme.primaryColor,
+                      clearedLevels + 1,
+                      total: totalLevels,
+                    ),
+                    SizedBox(height: 20.h),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _buildStatMini(
+                            Icons.bolt_rounded,
+                            context.tr(
+                              'category_games.power',
+                              fallback: 'Power',
+                            ),
+                            '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
+                            theme.primaryColor,
+                            isDark,
                           ),
                         ),
-                      ),
+                        Expanded(
+                          child: Center(
+                            child: _buildStatMini(
+                              Icons.sports_esports_rounded,
+                              context.tr(
+                                'category_games.games',
+                                fallback: 'Games',
+                              ),
+                              '${games.length}',
+                              theme.primaryColor,
+                              isDark,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Align(
+                            alignment: AlignmentDirectional.centerEnd,
+                            child: _buildStatMini(
+                              Icons.stars_rounded,
+                              context.tr('home.rank', fallback: 'Rank'),
+                              _getRank(targetProgress),
+                              theme.primaryColor,
+                              isDark,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                SizedBox(height: 20.h),
-                _buildLiquidProgressBar(
-                  theme.primaryColor,
-                  clearedLevels + 1,
-                  total: totalLevels,
-                ),
-                SizedBox(height: 20.h),
-                Row(
-                  children: [
-                    Expanded(
-                      child: _buildStatMini(
-                        Icons.bolt_rounded,
-                        context.tr('category_games.power', fallback: 'Power'),
-                        '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
-                        theme.primaryColor,
-                        isDark,
-                      ),
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: _buildStatMini(
-                          Icons.sports_esports_rounded,
-                          context.tr('category_games.games', fallback: 'Games'),
-                          '${games.length}',
-                          theme.primaryColor,
-                          isDark,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: _buildStatMini(
-                          Icons.stars_rounded,
-                          context.tr('home.rank', fallback: 'Rank'),
-                          _getRank(targetProgress),
-                          theme.primaryColor,
-                          isDark,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
-    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.05, end: 0, curve: Curves.easeOutCubic);
+        )
+        .animate()
+        .fadeIn(duration: 600.ms)
+        .slideY(begin: 0.05, end: 0, curve: Curves.easeOutCubic);
   }
 
   String _getRank(double progress) {
@@ -637,134 +658,134 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         .toInt();
 
     return Semantics(
-      button: true,
-      label:
-          '${theme.title}, ${context.tr('category_games.mission_progress', fallback: 'Mission Progress', args: [missionPercent.toString()])}',
-      child: RepaintBoundary(
-        child: ScaleButton(
-          onTap: () => context.push(
-            '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
-          ),
-          child: ExcludeSemantics(
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                // Main Card Body
-                GlassTile(
-                  borderRadius: BorderRadius.circular(32.r),
-                  padding: EdgeInsets.all(24.r),
-                  glassOpacity: 0.15,
-                  showShadow: false,
-                  usePremiumStyle: true,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 60.r),
-                      SizedBox(width: 20.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AutoSizeText(
-                              theme.title.toUpperCase(),
-                              maxLines: 2,
-                              minFontSize: 12,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w900,
-                                color: contentColor,
-                                letterSpacing: 1,
-                                height: 1.1,
-                              ),
-                            ),
-                            SizedBox(height: 8.h),
-                            _buildLiquidProgressBar(displayColor, currentLevel),
-                            SizedBox(height: 8.h),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                context.tr(
-                                  'category_games.mission_progress',
-                                  fallback: 'Mission Progress',
-                                  args: [missionPercent.toString()],
+          button: true,
+          label:
+              '${theme.title}, ${context.tr('category_games.mission_progress', fallback: 'Mission Progress', args: [missionPercent.toString()])}',
+          child: RepaintBoundary(
+            child: ScaleButton(
+              onTap: () => context.push(
+                '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
+              ),
+              child: ExcludeSemantics(
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    // Main Card Body
+                    GlassTile(
+                      borderRadius: BorderRadius.circular(32.r),
+                      padding: EdgeInsets.all(24.r),
+                      glassOpacity: 0.15,
+                      showShadow: false,
+                      usePremiumStyle: true,
+                      child: Row(
+                        children: [
+                          SizedBox(width: 60.r),
+                          SizedBox(width: 20.w),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                AutoSizeText(
+                                  theme.title.toUpperCase(),
+                                  maxLines: 2,
+                                  minFontSize: 12,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: contentColor,
+                                    letterSpacing: 1,
+                                    height: 1.1,
+                                  ),
                                 ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: displayColor.withValues(alpha: 0.6),
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 12.w),
-                      _buildSpatialBadge(displayColor, currentLevel, isNew),
-                    ],
-                  ),
-                ),
-
-                // Floating Spatial Icon
-                PositionedDirectional(
-                  start: 20.w,
-                  top: -15.h,
-                  child:
-                      Container(
-                            width: 64.r,
-                            height: 64.r,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
+                                SizedBox(height: 8.h),
+                                _buildLiquidProgressBar(
                                   displayColor,
-                                  displayColor.withValues(alpha: 0.7),
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                              borderRadius: BorderRadius.circular(20.r),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: displayColor.withValues(alpha: 0.4),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 8),
+                                  currentLevel,
+                                ),
+                                SizedBox(height: 8.h),
+                                FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    context.tr(
+                                      'category_games.mission_progress',
+                                      fallback: 'Mission Progress',
+                                      args: [missionPercent.toString()],
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 9.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: displayColor.withValues(
+                                        alpha: 0.6,
+                                      ),
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
-                            child: Icon(
-                              GameHelper.getIconForSubtype(subtype),
-                              color: Colors.white,
-                              size: 32.r,
-                            ),
-                          )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .moveY(
-                            begin: 0,
-                            end: -5,
-                            duration: 2.seconds,
-                            curve: Curves.easeInOutQuad,
                           ),
+                          SizedBox(width: 12.w),
+                          _buildSpatialBadge(displayColor, currentLevel, isNew),
+                        ],
+                      ),
+                    ),
+
+                    // Floating Spatial Icon
+                    PositionedDirectional(
+                      start: 20.w,
+                      top: -15.h,
+                      child:
+                          Container(
+                                width: 64.r,
+                                height: 64.r,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      displayColor,
+                                      displayColor.withValues(alpha: 0.7),
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: displayColor.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      blurRadius: 20,
+                                      offset: const Offset(0, 8),
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  GameHelper.getIconForSubtype(subtype),
+                                  color: Colors.white,
+                                  size: 32.r,
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .moveY(
+                                begin: 0,
+                                end: -5,
+                                duration: 2.seconds,
+                                curve: Curves.easeInOutQuad,
+                              ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
-    ).animate().fadeIn(
-      delay: (index < 5 ? index * 80 : 0).ms, 
-      duration: 400.ms,
-    ).slideY(
-      begin: 0.1, 
-      end: 0, 
-      curve: Curves.easeOutBack,
-    ).scaleXY(
-      begin: 0.95, 
-      end: 1.0, 
-      curve: Curves.easeOutBack,
-    );
+        )
+        .animate()
+        .fadeIn(delay: (index < 5 ? index * 80 : 0).ms, duration: 400.ms)
+        .slideY(begin: 0.1, end: 0, curve: Curves.easeOutBack)
+        .scaleXY(begin: 0.95, end: 1.0, curve: Curves.easeOutBack);
   }
 
   Widget _buildLiquidProgressBar(
@@ -772,7 +793,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     int currentLevel, {
     int total = 200,
   }) {
-    final targetProgress = ((currentLevel - 1).clamp(0, total)) / total.toDouble();
+    final targetProgress =
+        ((currentLevel - 1).clamp(0, total)) / total.toDouble();
     return Container(
       height: 8.h,
       width: double.infinity,

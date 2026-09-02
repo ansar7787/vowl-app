@@ -128,7 +128,8 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     if (correct) {
       _hapticService.success();
       _soundService.playCorrect();
-      if ((quest.options?.isNotEmpty ?? false) && _selectedCorrection.value != null) {
+      if ((quest.options?.isNotEmpty ?? false) &&
+          _selectedCorrection.value != null) {
         _showEvidence.value = true;
       } else {
         context.read<WritingBloc>().add(SubmitAnswer(correct));
@@ -202,7 +203,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_showConfetti, _selectedCorrection, _showEvidence]),
+            listenable: Listenable.merge([
+              _showConfetti,
+              _selectedCorrection,
+              _showEvidence,
+            ]),
             builder: (context, _) {
               return activeQuest == null
                   ? const SizedBox()
@@ -217,162 +222,193 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            CorrectionWritingInstruction(
-                              instruction: activeQuest.instruction,
-                              primaryColor: theme.primaryColor,
-                            ),
-                            SizedBox(height: 16.h),
-                            if (activeQuest.errorCount != null)
-                              Container(
-                                margin: EdgeInsets.only(bottom: 16.h),
-                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.bug_report, color: theme.primaryColor, size: 16.sp),
-                                    SizedBox(width: 8.w),
-                                    Text(
-                                      "${activeQuest.errorCount} ERRORS REMAINING",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: theme.primaryColor,
-                                        letterSpacing: 2,
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      CorrectionWritingInstruction(
+                                        instruction: activeQuest.instruction,
+                                        primaryColor: theme.primaryColor,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            SizedBox(height: 8.h),
-
-                            CorrectionWritingSentenceCard(
-                              passage: activeQuest.passage ?? "",
-                              selectedCorrection: widget.level >= 6
-                                  ? null
-                                  : _selectedCorrection.value,
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 32.h),
-
-                            if (widget.level >= 6) ...[
-                              GestureDetector(
-                                onTap: () {
-                                  CustomSnackBar.show(
-                                    context: context,
-                                    message:
-                                        "Hard Mode! Tapping is disabled. Please type your answer below.",
-                                    type: CustomSnackBarType.info,
-                                  );
-                                },
-                                child: AbsorbPointer(
-                                  child: Opacity(
-                                    opacity: 0.8,
-                                    child: CorrectionWritingVault(
-                                      options: options,
-                                      selectedCorrection: null,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      onSelectCorrection: (_) {},
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 16.h),
-                              CorrectionWritingKeyboardInput(
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                onSubmit: (text) => _submitAnswer(isAnswered, text),
-                              ),
-                            ] else
-                              CorrectionWritingVault(
-                                options: options,
-                                selectedCorrection: _selectedCorrection.value,
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                onSelectCorrection: (choice) =>
-                                    _onSelectCorrection(choice, isAnswered),
-                              ),
-                            SizedBox(height: 36.h),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (!isAnswered && widget.level < 6)
-                              ScaleButton(
-                                onTap: _selectedCorrection.value != null
-                                    ? () => _submitAnswer(isAnswered)
-                                    : null,
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 60.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    color: _selectedCorrection.value != null
-                                        ? theme.primaryColor
-                                        : Colors.grey,
-                                    boxShadow: [
-                                      if (_selectedCorrection.value != null)
-                                        BoxShadow(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
+                                      SizedBox(height: 16.h),
+                                      if (activeQuest.errorCount != null)
+                                        Container(
+                                          margin: EdgeInsets.only(bottom: 16.h),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 16.w,
+                                            vertical: 8.h,
                                           ),
-                                          blurRadius: 15,
+                                          decoration: BoxDecoration(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.1),
+                                            borderRadius: BorderRadius.circular(
+                                              16.r,
+                                            ),
+                                            border: Border.all(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.3),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Icons.bug_report,
+                                                color: theme.primaryColor,
+                                                size: 16.sp,
+                                              ),
+                                              SizedBox(width: 8.w),
+                                              Text(
+                                                "${activeQuest.errorCount} ERRORS REMAINING",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 12.sp,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
+                                      SizedBox(height: 8.h),
+
+                                      CorrectionWritingSentenceCard(
+                                        passage: activeQuest.passage ?? "",
+                                        selectedCorrection: widget.level >= 6
+                                            ? null
+                                            : _selectedCorrection.value,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 32.h),
+
+                                      if (widget.level >= 6) ...[
+                                        GestureDetector(
+                                          onTap: () {
+                                            CustomSnackBar.show(
+                                              context: context,
+                                              message:
+                                                  "Hard Mode! Tapping is disabled. Please type your answer below.",
+                                              type: CustomSnackBarType.info,
+                                            );
+                                          },
+                                          child: AbsorbPointer(
+                                            child: Opacity(
+                                              opacity: 0.8,
+                                              child: CorrectionWritingVault(
+                                                options: options,
+                                                selectedCorrection: null,
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                                onSelectCorrection: (_) {},
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 16.h),
+                                        CorrectionWritingKeyboardInput(
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          onSubmit: (text) =>
+                                              _submitAnswer(isAnswered, text),
+                                        ),
+                                      ] else
+                                        CorrectionWritingVault(
+                                          options: options,
+                                          selectedCorrection:
+                                              _selectedCorrection.value,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          onSelectCorrection: (choice) =>
+                                              _onSelectCorrection(
+                                                choice,
+                                                isAnswered,
+                                              ),
+                                        ),
+                                      SizedBox(height: 36.h),
                                     ],
                                   ),
-                                  child: Center(
-                                    child: Text(
-                                      "AUDIT SYNTAX",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
-                                        letterSpacing: 2,
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      if (!isAnswered && widget.level < 6)
+                                        ScaleButton(
+                                          onTap:
+                                              _selectedCorrection.value != null
+                                              ? () => _submitAnswer(isAnswered)
+                                              : null,
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: 60.h,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20.r),
+                                              color:
+                                                  _selectedCorrection.value !=
+                                                      null
+                                                  ? theme.primaryColor
+                                                  : Colors.grey,
+                                              boxShadow: [
+                                                if (_selectedCorrection.value !=
+                                                    null)
+                                                  BoxShadow(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
+                                                    blurRadius: 15,
+                                                  ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                "AUDIT SYNTAX",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: Colors.white,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      SizedBox(
+                                        height: !isAnswered ? 380.h : 160.h,
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ),
                               ),
-                            SizedBox(height: !isAnswered ? 380.h : 160.h),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              if (_showEvidence.value && !isAnswered)
-                EvidenceHighlightWrapper(
-                  passage: (activeQuest.passage ?? "").replaceAll(RegExp(r'\[(.*?)\]'), _selectedCorrection.value ?? ""),
-                  evidenceWords: [_selectedCorrection.value ?? ""],
-                  primaryColor: theme.primaryColor,
-                  onCorrectHighlight: () {
-                    _showEvidence.value = false;
-                    context.read<WritingBloc>().add(const SubmitAnswer(true));
-                  },
-                ),
-            ],
-          );
+                        if (_showEvidence.value && !isAnswered)
+                          EvidenceHighlightWrapper(
+                            passage: (activeQuest.passage ?? "").replaceAll(
+                              RegExp(r'\[(.*?)\]'),
+                              _selectedCorrection.value ?? "",
+                            ),
+                            evidenceWords: [_selectedCorrection.value ?? ""],
+                            primaryColor: theme.primaryColor,
+                            onCorrectHighlight: () {
+                              _showEvidence.value = false;
+                              context.read<WritingBloc>().add(
+                                const SubmitAnswer(true),
+                              );
+                            },
+                          ),
+                      ],
+                    );
             },
           ),
         );

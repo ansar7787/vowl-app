@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -15,6 +17,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/signup_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/signup_widgets.dart';
+import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
 import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -41,6 +44,7 @@ class _SignUpViewState extends State<SignUpView> {
   final _nameKey = GlobalKey<FormFieldState>();
   final _emailKey = GlobalKey<FormFieldState>();
   final _passwordKey = GlobalKey<FormFieldState>();
+  final _legalKey = GlobalKey<FormFieldState<bool>>();
   final _nameFocus = FocusNode();
   final _emailFocus = FocusNode();
   final _passwordFocus = FocusNode();
@@ -48,6 +52,8 @@ class _SignUpViewState extends State<SignUpView> {
   final ValueNotifier<int> _nameShake = ValueNotifier(0);
   final ValueNotifier<int> _emailShake = ValueNotifier(0);
   final ValueNotifier<int> _passwordShake = ValueNotifier(0);
+  final ValueNotifier<int> _legalShake = ValueNotifier(0);
+  final ValueNotifier<bool> _acceptedLegal = ValueNotifier(false);
 
   @override
   void dispose() {
@@ -57,6 +63,8 @@ class _SignUpViewState extends State<SignUpView> {
     _nameShake.dispose();
     _emailShake.dispose();
     _passwordShake.dispose();
+    _legalShake.dispose();
+    _acceptedLegal.dispose();
     super.dispose();
   }
 
@@ -122,17 +130,7 @@ class _SignUpViewState extends State<SignUpView> {
               );
               final secondaryColor = contrastColor.withValues(alpha: 0.6);
 
-              Color? auraColor;
-              if (_passwordFocus.hasFocus && state.password.isNotEmpty) {
-                if (state.password.length < 6) {
-                  auraColor = Colors.red;
-                } else if (state.password.length < 10) {
-                  auraColor = Colors.blue;
-                } else {
-                  auraColor = Colors.green;
-                }
-              }
-
+              // auraColor logic moved to ListenableBuilder below
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
                 message: context.tr(
@@ -144,7 +142,23 @@ class _SignUpViewState extends State<SignUpView> {
                   resizeToAvoidBottomInset: false,
                   body: Stack(
                     children: [
-                      MeshGradientBackground(auraColor: auraColor),
+                      ListenableBuilder(
+                        listenable: _passwordFocus,
+                        builder: (context, _) {
+                          Color? auraColor;
+                          if (_passwordFocus.hasFocus &&
+                              state.password.isNotEmpty) {
+                            if (state.password.length < 6) {
+                              auraColor = Colors.red;
+                            } else if (state.password.length < 10) {
+                              auraColor = Colors.blue;
+                            } else {
+                              auraColor = Colors.green;
+                            }
+                          }
+                          return MeshGradientBackground(auraColor: auraColor);
+                        },
+                      ),
                       SafeArea(
                         child: LayoutBuilder(
                           builder: (context, constraints) {
@@ -233,12 +247,17 @@ class _SignUpViewState extends State<SignUpView> {
                                             children: [
                                               ValueListenableBuilder<int>(
                                                 valueListenable: _nameShake,
-                                                builder: (context, shakeCount, child) {
-                                                  return ShakeableWrapper(
-                                                    shakeCount: shakeCount,
-                                                    child: child!,
-                                                  );
-                                                },
+                                                builder:
+                                                    (
+                                                      context,
+                                                      shakeCount,
+                                                      child,
+                                                    ) {
+                                                      return ShakeableWrapper(
+                                                        shakeCount: shakeCount,
+                                                        child: child!,
+                                                      );
+                                                    },
                                                 child: SignUpNameInput(
                                                   fieldKey: _nameKey,
                                                   focusNode: _nameFocus,
@@ -247,12 +266,17 @@ class _SignUpViewState extends State<SignUpView> {
                                               SizedBox(height: 16.h),
                                               ValueListenableBuilder<int>(
                                                 valueListenable: _emailShake,
-                                                builder: (context, shakeCount, child) {
-                                                  return ShakeableWrapper(
-                                                    shakeCount: shakeCount,
-                                                    child: child!,
-                                                  );
-                                                },
+                                                builder:
+                                                    (
+                                                      context,
+                                                      shakeCount,
+                                                      child,
+                                                    ) {
+                                                      return ShakeableWrapper(
+                                                        shakeCount: shakeCount,
+                                                        child: child!,
+                                                      );
+                                                    },
                                                 child: SignUpEmailInput(
                                                   fieldKey: _emailKey,
                                                   focusNode: _emailFocus,
@@ -261,15 +285,238 @@ class _SignUpViewState extends State<SignUpView> {
                                               SizedBox(height: 16.h),
                                               ValueListenableBuilder<int>(
                                                 valueListenable: _passwordShake,
-                                                builder: (context, shakeCount, child) {
-                                                  return ShakeableWrapper(
-                                                    shakeCount: shakeCount,
-                                                    child: child!,
-                                                  );
-                                                },
+                                                builder:
+                                                    (
+                                                      context,
+                                                      shakeCount,
+                                                      child,
+                                                    ) {
+                                                      return ShakeableWrapper(
+                                                        shakeCount: shakeCount,
+                                                        child: child!,
+                                                      );
+                                                    },
                                                 child: SignUpPasswordInput(
                                                   fieldKey: _passwordKey,
                                                   focusNode: _passwordFocus,
+                                                ),
+                                              ),
+                                              SizedBox(height: 24.h),
+                                              ValueListenableBuilder<int>(
+                                                valueListenable: _legalShake,
+                                                builder:
+                                                    (
+                                                      context,
+                                                      shakeCount,
+                                                      child,
+                                                    ) {
+                                                      return ShakeableWrapper(
+                                                        shakeCount: shakeCount,
+                                                        child: child!,
+                                                      );
+                                                    },
+                                                child: FormField<bool>(
+                                                  key: _legalKey,
+                                                  initialValue: false,
+                                                  validator: (value) {
+                                                    if (value != true) {
+                                                      return context.tr(
+                                                        'auth.legal_consent_required',
+                                                        fallback:
+                                                            'You must agree to the Terms & Privacy Policy',
+                                                      );
+                                                    }
+                                                    return null;
+                                                  },
+                                                  builder: (state) {
+                                                    final isDark =
+                                                        Theme.of(
+                                                          context,
+                                                        ).brightness ==
+                                                        Brightness.dark;
+                                                    return Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Row(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            SizedBox(
+                                                              width: 24.r,
+                                                              height: 24.r,
+                                                              child: Checkbox(
+                                                                value:
+                                                                    state.value,
+                                                                onChanged: (val) {
+                                                                  state
+                                                                      .didChange(
+                                                                        val,
+                                                                      );
+                                                                  _acceptedLegal
+                                                                          .value =
+                                                                      val ??
+                                                                      false;
+                                                                },
+                                                                activeColor:
+                                                                    const Color(
+                                                                      0xFF6366F1,
+                                                                    ),
+                                                                shape: RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius.circular(
+                                                                        6.r,
+                                                                      ),
+                                                                ),
+                                                                side: BorderSide(
+                                                                  color:
+                                                                      state
+                                                                          .hasError
+                                                                      ? Colors
+                                                                            .red
+                                                                      : (isDark
+                                                                            ? Colors.white54
+                                                                            : Colors.black54),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              width: 12.w,
+                                                            ),
+                                                            Expanded(
+                                                              child: GestureDetector(
+                                                                onTap: () {
+                                                                  state.didChange(
+                                                                    !(state.value ??
+                                                                        false),
+                                                                  );
+                                                                  _acceptedLegal
+                                                                          .value =
+                                                                      state
+                                                                          .value ??
+                                                                      false;
+                                                                },
+                                                                child: Text.rich(
+                                                                  TextSpan(
+                                                                    children: [
+                                                                      TextSpan(
+                                                                        text: context.tr(
+                                                                          'auth.i_agree_to',
+                                                                          fallback:
+                                                                              'I agree to the ',
+                                                                        ),
+                                                                        style: TextStyle(
+                                                                          color:
+                                                                              isDark
+                                                                              ? Colors.white70
+                                                                              : Colors.black87,
+                                                                          fontSize:
+                                                                              13.sp,
+                                                                        ),
+                                                                      ),
+                                                                      TextSpan(
+                                                                        text: context.tr(
+                                                                          'auth.terms_of_service',
+                                                                          fallback:
+                                                                              'Terms of Service',
+                                                                        ),
+                                                                        style: TextStyle(
+                                                                          color: const Color(
+                                                                            0xFF6366F1,
+                                                                          ),
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          fontSize:
+                                                                              13.sp,
+                                                                        ),
+                                                                        recognizer: TapGestureRecognizer()
+                                                                          ..onTap = () async {
+                                                                            final url = Uri.parse(
+                                                                              context.tr(
+                                                                                'settings.terms_url',
+                                                                                fallback: 'https://ansar7787.github.io/vowl-legal/terms.html',
+                                                                              ),
+                                                                            );
+                                                                            if (await canLaunchUrl(
+                                                                              url,
+                                                                            )) {
+                                                                              await launchUrl(
+                                                                                url,
+                                                                                mode: LaunchMode.externalApplication,
+                                                                              );
+                                                                            }
+                                                                          },
+                                                                      ),
+                                                                      TextSpan(
+                                                                        text: context.tr(
+                                                                          'auth.and',
+                                                                          fallback:
+                                                                              ' and ',
+                                                                        ),
+                                                                        style: TextStyle(
+                                                                          color:
+                                                                              isDark
+                                                                              ? Colors.white70
+                                                                              : Colors.black87,
+                                                                          fontSize:
+                                                                              13.sp,
+                                                                        ),
+                                                                      ),
+                                                                      TextSpan(
+                                                                        text: context.tr(
+                                                                          'auth.privacy_policy',
+                                                                          fallback:
+                                                                              'Privacy Policy',
+                                                                        ),
+                                                                        style: TextStyle(
+                                                                          color: const Color(
+                                                                            0xFF6366F1,
+                                                                          ),
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          fontSize:
+                                                                              13.sp,
+                                                                        ),
+                                                                        recognizer: TapGestureRecognizer()
+                                                                          ..onTap = () async {
+                                                                            final url = Uri.parse(
+                                                                              context.tr(
+                                                                                'settings.privacy_url',
+                                                                                fallback: 'https://ansar7787.github.io/vowl-legal/privacy.html',
+                                                                              ),
+                                                                            );
+                                                                            if (await canLaunchUrl(
+                                                                              url,
+                                                                            )) {
+                                                                              await launchUrl(
+                                                                                url,
+                                                                                mode: LaunchMode.externalApplication,
+                                                                              );
+                                                                            }
+                                                                          },
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        if (state.hasError) ...[
+                                                          SizedBox(height: 8.h),
+                                                          Text(
+                                                            state.errorText!,
+                                                            style: TextStyle(
+                                                              color: Colors.red,
+                                                              fontSize: 12.sp,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ],
+                                                    );
+                                                  },
                                                 ),
                                               ),
                                               SizedBox(height: 32.h),
@@ -297,8 +544,15 @@ class _SignUpViewState extends State<SignUpView> {
                                                       true)) {
                                                     _passwordShake.value++;
                                                   }
+                                                  if (!(_legalKey.currentState
+                                                          ?.validate() ??
+                                                      true)) {
+                                                    _legalShake.value++;
+                                                  }
                                                 },
                                               ),
+                                              SizedBox(height: 16.h),
+                                              const GoogleLoginButton(),
                                             ],
                                           ),
                                         ),
@@ -326,9 +580,15 @@ class _SignUpViewState extends State<SignUpView> {
                                               ),
                                             ),
                                             TextButton(
-                                              onPressed: () => context.go(
-                                                AppRouter.loginRoute,
-                                              ),
+                                              onPressed: () {
+                                                if (context.canPop()) {
+                                                  context.pop();
+                                                } else {
+                                                  context.go(
+                                                    AppRouter.loginRoute,
+                                                  );
+                                                }
+                                              },
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(48, 48),
                                               ),

@@ -28,19 +28,18 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
   });
 
   @override
-  State<PrefixSuffixSynthesizer> createState() => _PrefixSuffixSynthesizerState();
+  State<PrefixSuffixSynthesizer> createState() =>
+      _PrefixSuffixSynthesizerState();
 }
 
 class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
-
-
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(height: 40.h),
-        
+
         // ── THE MAGNETIC TRACK (Center) ──
         Container(
           height: 120.h,
@@ -59,19 +58,22 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
         ] else ...[
           // Arsenal Dock (Draggable Chips)
           Wrap(
-            spacing: 16.w,
-            runSpacing: 16.h,
-            alignment: WrapAlignment.center,
-            children: widget.options.map((option) {
-              return _buildDraggableChip(option);
-            }).toList(),
-          ).animate(target: widget.selectedAffix != null ? 0 : 1).scale(
-            begin: const Offset(0.8, 0.8),
-            end: const Offset(1.0, 1.0),
-            duration: 300.ms,
-            curve: Curves.easeOut,
-          ).fade(duration: 300.ms),
-        ]
+                spacing: 16.w,
+                runSpacing: 16.h,
+                alignment: WrapAlignment.center,
+                children: widget.options.map((option) {
+                  return _buildDraggableChip(option);
+                }).toList(),
+              )
+              .animate(target: widget.selectedAffix != null ? 0 : 1)
+              .scale(
+                begin: const Offset(0.8, 0.8),
+                end: const Offset(1.0, 1.0),
+                duration: 300.ms,
+                curve: Curves.easeOut,
+              )
+              .fade(duration: 300.ms),
+        ],
       ],
     );
   }
@@ -82,7 +84,9 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
       child: Container(
         padding: EdgeInsets.all(12.r),
         decoration: BoxDecoration(
-          color: widget.isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02),
+          color: widget.isDark
+              ? Colors.white.withValues(alpha: 0.02)
+              : Colors.black.withValues(alpha: 0.02),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: widget.primaryColor.withValues(alpha: 0.1)),
         ),
@@ -119,7 +123,10 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
       decoration: BoxDecoration(
         color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: widget.primaryColor.withValues(alpha: 0.4), width: 2),
+        border: Border.all(
+          color: widget.primaryColor.withValues(alpha: 0.4),
+          width: 2,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.15),
@@ -143,14 +150,16 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
 
   Widget _buildDraggableChip(String affix) {
     final bool isHinted = widget.hintedAffix == affix;
-    
+
     Widget chip = Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: isHinted ? widget.primaryColor : widget.primaryColor.withValues(alpha: 0.3),
+          color: isHinted
+              ? widget.primaryColor
+              : widget.primaryColor.withValues(alpha: 0.3),
           width: isHinted ? 3 : 2,
         ),
         boxShadow: isHinted
@@ -159,7 +168,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
                   color: widget.primaryColor.withValues(alpha: 0.6),
                   blurRadius: 16,
                   spreadRadius: 4,
-                )
+                ),
               ]
             : null,
       ),
@@ -175,8 +184,13 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     );
 
     if (isHinted) {
-      chip = chip.animate(onPlay: (controller) => controller.repeat(reverse: true))
-                 .scale(begin: const Offset(1.0, 1.0), end: const Offset(1.05, 1.05), duration: 500.ms);
+      chip = chip
+          .animate(onPlay: (controller) => controller.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.05, 1.05),
+            duration: 500.ms,
+          );
     }
 
     return GestureDetector(
@@ -211,7 +225,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
                     blurRadius: 20,
                     spreadRadius: 5,
                     offset: const Offset(0, 10),
-                  )
+                  ),
                 ],
               ),
               child: Text(
@@ -226,10 +240,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
             ),
           ),
         ),
-        childWhenDragging: Opacity(
-          opacity: 0.2,
-          child: chip,
-        ),
+        childWhenDragging: Opacity(opacity: 0.2, child: chip),
         child: chip,
       ),
     );
@@ -237,37 +248,50 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
 
   Widget _buildFusedWord() {
     return FittedBox(
-      fit: BoxFit.scaleDown,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
-        decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(24.r),
-        boxShadow: [
-          BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.4),
-            blurRadius: 20,
-            offset: const Offset(0, 8),
+          fit: BoxFit.scaleDown,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  widget.primaryColor,
+                  widget.primaryColor.withValues(alpha: 0.8),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(24.r),
+              boxShadow: [
+                BoxShadow(
+                  color: widget.primaryColor.withValues(alpha: 0.4),
+                  blurRadius: 20,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: Text(
+              widget.correctAnswer.toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 36.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+                letterSpacing: 4,
+              ),
+            ),
           ),
-        ],
-      ),
-      child: Text(
-        widget.correctAnswer.toUpperCase(),
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 36.sp,
-          fontWeight: FontWeight.w900,
-          color: Colors.white,
-          letterSpacing: 4,
-        ),
-      ),
-    )).animate()
-     .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack, duration: 400.ms)
-     .shimmer(color: Colors.white.withValues(alpha: 0.5), duration: 800.ms, delay: 200.ms);
+        )
+        .animate()
+        .scale(
+          begin: const Offset(0.8, 0.8),
+          curve: Curves.easeOutBack,
+          duration: 400.ms,
+        )
+        .shimmer(
+          color: Colors.white.withValues(alpha: 0.5),
+          duration: 800.ms,
+          delay: 200.ms,
+        );
   }
 }
 
@@ -342,7 +366,9 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
             width: 130.w,
             height: 85.h,
             child: Align(
-              alignment: widget.isPrefixSlot ? Alignment.centerRight : Alignment.centerLeft,
+              alignment: widget.isPrefixSlot
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
               child: ValueListenableBuilder<bool>(
                 valueListenable: _isHovering,
                 builder: (context, isHover, child) {
@@ -351,39 +377,63 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
                     width: isHover ? 130.w : 110.w,
                     height: isHover ? 75.h : 65.h,
                     decoration: BoxDecoration(
-                      color: isHover 
+                      color: isHover
                           ? widget.primaryColor.withValues(alpha: 0.2)
-                          : (widget.isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03)),
+                          : (widget.isDark
+                                ? Colors.white.withValues(alpha: 0.05)
+                                : Colors.black.withValues(alpha: 0.03)),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: isHover ? widget.primaryColor : (widget.isDark ? Colors.white38 : Colors.black26),
+                        color: isHover
+                            ? widget.primaryColor
+                            : (widget.isDark ? Colors.white38 : Colors.black26),
                         width: isHover ? 3 : 2,
                         style: BorderStyle.solid,
                       ),
-                      boxShadow: isHover 
-                          ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.4), blurRadius: 16, spreadRadius: 4)]
+                      boxShadow: isHover
+                          ? [
+                              BoxShadow(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.4,
+                                ),
+                                blurRadius: 16,
+                                spreadRadius: 4,
+                              ),
+                            ]
                           : null,
                     ),
                     alignment: Alignment.center,
                     child: isHover
-                    ? Icon(Icons.bolt_rounded, color: widget.primaryColor, size: 36.r)
-                    : Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.add_rounded, color: widget.isDark ? Colors.white54 : Colors.black45, size: 24.r),
-                          SizedBox(height: 2.h),
-                          Text(
-                            widget.isPrefixSlot ? "PREFIX" : "SUFFIX",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              color: widget.isDark ? Colors.white54 : Colors.black45,
-                              letterSpacing: 1.5,
-                            ),
+                        ? Icon(
+                            Icons.bolt_rounded,
+                            color: widget.primaryColor,
+                            size: 36.r,
+                          )
+                        : Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.add_rounded,
+                                color: widget.isDark
+                                    ? Colors.white54
+                                    : Colors.black45,
+                                size: 24.r,
+                              ),
+                              SizedBox(height: 2.h),
+                              Text(
+                                widget.isPrefixSlot ? "PREFIX" : "SUFFIX",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: widget.isDark
+                                      ? Colors.white54
+                                      : Colors.black45,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
                   );
                 },
               ),
@@ -405,7 +455,7 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
             color: widget.primaryColor.withValues(alpha: 0.4),
             blurRadius: 12,
             spreadRadius: 2,
-          )
+          ),
         ],
       ),
       child: Text(
@@ -418,6 +468,11 @@ class _MagneticDropZoneState extends State<_MagneticDropZone> {
           letterSpacing: 2,
         ),
       ),
-    ).animate().scale(begin: const Offset(1.3, 1.3), end: const Offset(1.0, 1.0), duration: 250.ms, curve: Curves.easeOutBack);
+    ).animate().scale(
+      begin: const Offset(1.3, 1.3),
+      end: const Offset(1.0, 1.0),
+      duration: 250.ms,
+      curve: Curves.easeOutBack,
+    );
   }
 }

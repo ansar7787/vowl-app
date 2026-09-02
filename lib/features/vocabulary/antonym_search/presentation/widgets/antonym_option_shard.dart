@@ -47,54 +47,70 @@ class AntonymOptionShard extends StatelessWidget {
           onPanUpdate: onPanUpdate,
           onPanEnd: (_) => onPanEnd(),
           onTap: onTap,
-          child: Container(
-            width: 140.w,
-            height: 70.h,
-            decoration: BoxDecoration(
-              color: (isDark ? const Color(0xFF1E293B) : Colors.white)
-                  .withValues(alpha: 0.9),
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(
-                color: isDragging ? color : color.withValues(alpha: 0.2),
-                width: 2.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: isDragging ? color.withValues(alpha: 0.25) : Colors.black.withValues(alpha: 0.1),
-                  blurRadius: isDragging ? 25 : 15,
-                  offset: isDragging ? const Offset(0, 15) : const Offset(0, 8),
-                ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.all(10.r),
-                child: FittedBox(
-                  child: Text(
-                    text.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.bold,
-                      color: isDark ? Colors.white : Colors.black87,
+          child:
+              Container(
+                    width: 140.w,
+                    height: 70.h,
+                    decoration: BoxDecoration(
+                      color: (isDark ? const Color(0xFF1E293B) : Colors.white)
+                          .withValues(alpha: 0.9),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: isDragging
+                            ? color
+                            : color.withValues(alpha: 0.2),
+                        width: 2.5,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: isDragging
+                              ? color.withValues(alpha: 0.25)
+                              : Colors.black.withValues(alpha: 0.1),
+                          blurRadius: isDragging ? 25 : 15,
+                          offset: isDragging
+                              ? const Offset(0, 15)
+                              : const Offset(0, 8),
+                        ),
+                      ],
                     ),
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(10.r),
+                        child: FittedBox(
+                          child: Text(
+                            text.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.bold,
+                              color: isDark ? Colors.white : Colors.black87,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                  .animate(target: isFused ? 1 : 0)
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(0, 0),
+                    duration: 400.ms,
+                    curve: Curves.easeInBack,
+                  )
+                  .fadeOut()
+                  .animate(target: isDragging ? 1 : 0)
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.08, 1.08),
+                    duration: 150.ms,
+                    curve: Curves.easeOut,
+                  )
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .moveY(
+                    begin: isDragging ? 0 : -3,
+                    end: isDragging ? 0 : 3,
+                    duration: (2 + index * 0.4).seconds,
                   ),
-                ),
-              ),
-            ),
-          )
-          .animate(target: isFused ? 1 : 0)
-          .scale(
-            begin: const Offset(1, 1),
-            end: const Offset(0, 0),
-            duration: 400.ms,
-            curve: Curves.easeInBack,
-          )
-          .fadeOut()
-          .animate(target: isDragging ? 1 : 0)
-          .scale(begin: const Offset(1, 1), end: const Offset(1.08, 1.08), duration: 150.ms, curve: Curves.easeOut)
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(begin: isDragging ? 0 : -3, end: isDragging ? 0 : 3, duration: (2 + index * 0.4).seconds),
         ),
       ),
     );

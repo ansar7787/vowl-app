@@ -241,7 +241,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-
                       // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),

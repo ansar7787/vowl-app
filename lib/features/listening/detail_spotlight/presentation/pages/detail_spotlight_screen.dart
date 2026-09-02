@@ -56,9 +56,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     _scrollController.dispose();
     super.dispose();
   }
+
   final ValueNotifier<Offset> _spotlightPos = ValueNotifier(const Offset(0, 0));
-
-
 
   @override
   void initState() {
@@ -70,13 +69,14 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
 
   void _submitFinalAnswer(bool typedCorrectly, int correct) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
-    
+
     if (!typedCorrectly) {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -86,7 +86,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       _selectedIndex.value = _pendingSelectedIndex.value;
@@ -106,9 +106,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -118,7 +119,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       _selectedIndex.value = _pendingSelectedIndex.value;
@@ -166,7 +167,13 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _pendingSelectedIndex]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedIndex,
+            _pendingSelectedIndex,
+          ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
@@ -174,114 +181,129 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: 6.h),
-                                DetailSpotlightInstruction(
-                                  isAnswered: _isAnswered.value,
-                                  color: theme.primaryColor,
-                                  instruction: quest.instruction,
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ListeningBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 16.h,
                                 ),
-                                SizedBox(height: 24.h),
-                                DetailSpotlightEmitter(
-                                  onTap: () {
-                                    _soundService.playTts(
-                                      quest.textToSpeak ?? "",
-                                    );
-                                    _hapticService.selection();
-                                  },
-                                  color: theme.primaryColor,
-                                  emoji: quest.emoji,
-                                  isCorrectState: _isCorrect.value,
-                                ),
-                                SizedBox(height: 32.h),
-                                DetailSpotlightPrompt(
-                                  isAnswered: _isAnswered.value,
-                                  detail: quest.targetDetail ?? "Detail",
-                                  color: theme.primaryColor,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SliverToBoxAdapter(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 16.h,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                SizedBox(
-                                  height: 350.h,
-                                  child: DetailSpotlightDarkField(
-                                    options: quest.options ?? [],
-                                    correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-                                    color: theme.primaryColor,
-                                    isAnswered: _isAnswered.value,
-                                    isCorrectState: _isCorrect.value,
-                                    selectedIndex: _selectedIndex.value,
-                                    spotlightPos: _spotlightPos,
-                                    onSearch: (pos) {
-                                      if (!_isAnswered.value) {
-                                        _spotlightPos.value = pos;
-                                      }
-                                    },
-                                    onSelect: (index) {
-                                      if (_isAnswered.value || _pendingSelectedIndex.value != null) return;
-                                      _pendingSelectedIndex.value = index;
-                                    },
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: 6.h),
+                                      DetailSpotlightInstruction(
+                                        isAnswered: _isAnswered.value,
+                                        color: theme.primaryColor,
+                                        instruction: quest.instruction,
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      DetailSpotlightEmitter(
+                                        onTap: () {
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                          _hapticService.selection();
+                                        },
+                                        color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect.value,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      DetailSpotlightPrompt(
+                                        isAnswered: _isAnswered.value,
+                                        detail: quest.targetDetail ?? "Detail",
+                                        color: theme.primaryColor,
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                SizedBox(height: (_pendingSelectedIndex.value != null && !_isAnswered.value) ? 380.h : 60.h),
-                              ],
-                            ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      SizedBox(
+                                        height: 350.h,
+                                        child: DetailSpotlightDarkField(
+                                          options: quest.options ?? [],
+                                          correctAnswerIndex:
+                                              quest.correctAnswerIndex ?? 0,
+                                          color: theme.primaryColor,
+                                          isAnswered: _isAnswered.value,
+                                          isCorrectState: _isCorrect.value,
+                                          selectedIndex: _selectedIndex.value,
+                                          spotlightPos: _spotlightPos,
+                                          onSearch: (pos) {
+                                            if (!_isAnswered.value) {
+                                              _spotlightPos.value = pos;
+                                            }
+                                          },
+                                          onSelect: (index) {
+                                            if (_isAnswered.value ||
+                                                _pendingSelectedIndex.value !=
+                                                    null)
+                                              return;
+                                            _pendingSelectedIndex.value = index;
+                                          },
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height:
+                                            (_pendingSelectedIndex.value !=
+                                                    null &&
+                                                !_isAnswered.value)
+                                            ? 380.h
+                                            : 60.h,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
+                        if (_pendingSelectedIndex.value != null &&
+                            !_isAnswered.value)
+                          TypeToConfirmOverlay(
+                            expectedText:
+                                quest.options![_pendingSelectedIndex.value!],
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(
+                              true,
+                              quest.correctAnswerIndex ?? 0,
+                            ),
+                            onSkipped: () => _submitFinalAnswer(
+                              false,
+                              quest.correctAnswerIndex ?? 0,
+                            ),
+                            allowSkip: true,
+                            isPositioned: true,
+                          ),
                       ],
                     ),
-                  ),
-                  if (_pendingSelectedIndex.value != null && !_isAnswered.value)
-                      TypeToConfirmOverlay(
-                        expectedText: quest.options![_pendingSelectedIndex.value!],
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(
-                          true,
-                          quest.correctAnswerIndex ?? 0,
-                        ),
-                        onSkipped: () => _submitFinalAnswer(
-                          false,
-                          quest.correctAnswerIndex ?? 0,
-                        ),
-                        allowSkip: true,
-                        isPositioned: true,
-                      ),
-                  ],
-                ),
             );
           },
         );

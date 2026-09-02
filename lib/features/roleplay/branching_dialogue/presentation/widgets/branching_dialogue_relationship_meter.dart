@@ -17,8 +17,12 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Score defines if it's polite (+1) or rude (-1) or neutral (null/0)
-    final double value = consequenceScore == null ? 0.5 : (consequenceScore! > 0 ? 1.0 : 0.0);
-    final Color activeColor = value > 0.5 ? Colors.greenAccent : (value < 0.5 ? Colors.redAccent : primaryColor);
+    final double value = consequenceScore == null
+        ? 0.5
+        : (consequenceScore! > 0 ? 1.0 : 0.0);
+    final Color activeColor = value > 0.5
+        ? Colors.greenAccent
+        : (value < 0.5 ? Colors.redAccent : primaryColor);
 
     return Container(
       width: double.infinity,
@@ -48,7 +52,11 @@ class BranchingDialogueRelationshipMeter extends StatelessWidget {
                 ),
               ),
               Icon(
-                value > 0.5 ? Icons.thumb_up_alt_rounded : (value < 0.5 ? Icons.thumb_down_alt_rounded : Icons.thumbs_up_down_rounded),
+                value > 0.5
+                    ? Icons.thumb_up_alt_rounded
+                    : (value < 0.5
+                          ? Icons.thumb_down_alt_rounded
+                          : Icons.thumbs_up_down_rounded),
                 color: activeColor,
                 size: 14.r,
               ),

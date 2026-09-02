@@ -49,6 +49,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     _scrollController.dispose();
     super.dispose();
   }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -107,7 +108,11 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+          ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
@@ -115,77 +120,88 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : RawScrollbar(
-                  controller: _scrollController,
-                  thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                  radius: Radius.circular(8.r),
-                  thickness: 4.w,
-                  child: CustomScrollView(
-                    controller: _scrollController,
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
-                        ),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(height: 6.h),
-                              AudioSentenceOrderInstruction(
-                                color: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              AudioSentenceOrderOscilloscope(
-                                onTap: () {
-                                  _soundService.playTts(
-                                    quest.textToSpeak ?? "",
-                                  );
-                                  _hapticService.selection();
-                                },
-                                color: theme.primaryColor,
-                                emoji: quest.emoji,
-                                isCorrectState: _isCorrect.value,
-                              ),
-                              SizedBox(height: 32.h),
-                              if (!_isAnswered.value)
-                                DynamicJigsawWrapper(
-                                  expectedText: quest.textToSpeak ?? "",
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  onConfirmed: () => _submitAnswer(quest.textToSpeak ?? ""),
-                                  onSkipped: () {
-                                    final authState = context.read<AuthBloc>().state;
-                                    if (authState.status == AuthStatus.authenticated && authState.user != null) {
-                                      ErrorJournalCollector.record(
-                                        userId: authState.user!.id,
-                                        gameType: widget.gameType.name,
-                                        question: 'Sentence Order',
-                                        userAnswer: '[Skipped]',
-                                        correctAnswer: quest.textToSpeak ?? "",
-                                        level: widget.level,
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ListeningBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 16.h,
+                            ),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(height: 6.h),
+                                  AudioSentenceOrderInstruction(
+                                    color: theme.primaryColor,
+                                    instruction: quest.instruction,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  AudioSentenceOrderOscilloscope(
+                                    onTap: () {
+                                      _soundService.playTts(
+                                        quest.textToSpeak ?? "",
                                       );
-                                    }
-                                    _isAnswered.value = true;
-                                    _isCorrect.value = false;
-                                    context.read<ListeningBloc>().add(SubmitAnswer(false));
-                                  },
-                                ),
-                            ],
+                                      _hapticService.selection();
+                                    },
+                                    color: theme.primaryColor,
+                                    emoji: quest.emoji,
+                                    isCorrectState: _isCorrect.value,
+                                  ),
+                                  SizedBox(height: 32.h),
+                                  if (!_isAnswered.value)
+                                    DynamicJigsawWrapper(
+                                      expectedText: quest.textToSpeak ?? "",
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () => _submitAnswer(
+                                        quest.textToSpeak ?? "",
+                                      ),
+                                      onSkipped: () {
+                                        final authState = context
+                                            .read<AuthBloc>()
+                                            .state;
+                                        if (authState.status ==
+                                                AuthStatus.authenticated &&
+                                            authState.user != null) {
+                                          ErrorJournalCollector.record(
+                                            userId: authState.user!.id,
+                                            gameType: widget.gameType.name,
+                                            question: 'Sentence Order',
+                                            userAnswer: '[Skipped]',
+                                            correctAnswer:
+                                                quest.textToSpeak ?? "",
+                                            level: widget.level,
+                                          );
+                                        }
+                                        _isAnswered.value = true;
+                                        _isCorrect.value = false;
+                                        context.read<ListeningBloc>().add(
+                                          SubmitAnswer(false),
+                                        );
+                                      },
+                                    ),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
+                    ),
             );
           },
         );

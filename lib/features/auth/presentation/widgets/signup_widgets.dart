@@ -4,6 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/signup_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
+import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 
 // ---------------------------------------------------------------------------
 // Name Input
@@ -48,7 +51,7 @@ class SignUpNameInput extends StatelessWidget {
             keyboardType: TextInputType.name,
             autofillHints: const [AutofillHints.name],
             style: TextStyle(color: contrastColor),
-            decoration: _buildDecoration(
+            decoration: buildAuthDecoration(
               context: context,
               contrastColor: contrastColor,
               hint: context.tr(
@@ -73,12 +76,6 @@ class SignUpEmailInput extends StatelessWidget {
   final FocusNode? focusNode;
 
   const SignUpEmailInput({super.key, this.fieldKey, this.focusNode});
-
-  // Identical pattern also exists (independently — Dart's per-file privacy
-  // means a private static field can't be shared) in login_widgets.dart,
-  // forgot_password_widgets.dart, and all three auth Cubits. Verified
-  // byte-identical across all six.
-  static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +102,7 @@ class SignUpEmailInput extends StatelessWidget {
                   fallback: 'Email is required',
                 );
               }
-              if (!_emailRegex.hasMatch(value.trim())) {
+              if (!AuthValidators.emailRegex.hasMatch(value.trim())) {
                 return context.tr(
                   'auth.validation_email_invalid',
                   fallback: 'Invalid email address',
@@ -117,7 +114,7 @@ class SignUpEmailInput extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
-            decoration: _buildDecoration(
+            decoration: buildAuthDecoration(
               context: context,
               contrastColor: contrastColor,
               hint: context.tr(
@@ -151,70 +148,83 @@ class SignUpPasswordInput extends StatelessWidget {
           previous.isPasswordVisible != current.isPasswordVisible,
       builder: (context, state) {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
-        return Semantics(
-          label: context.tr('auth.password_field_label', fallback: 'Password'),
-          hint: context.tr(
-            'auth.password_field_hint_signup',
-            fallback: 'Create a password',
-          ),
-          textField: true,
-          child: TextFormField(
-            key: fieldKey,
-            focusNode: focusNode,
-            onChanged: (password) =>
-                context.read<SignUpCubit>().passwordChanged(password),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return context.tr(
-                  'auth.validation_password_required',
-                  fallback: 'Password is required',
-                );
-              }
-              if (value.length < 6) {
-                return context.tr(
-                  'auth.validation_password_too_short',
-                  fallback: 'Password must be at least 6 characters',
-                );
-              }
-              return null;
-            },
-            textInputAction: TextInputAction.done,
-            obscureText: !state.isPasswordVisible,
-            keyboardType: TextInputType.visiblePassword,
-            autofillHints: const [AutofillHints.newPassword],
-            style: TextStyle(color: contrastColor),
-            decoration: _buildDecoration(
-              context: context,
-              contrastColor: contrastColor,
-              hint: context.tr(
-                'auth.password_hint_text',
-                fallback: 'Make it strong!',
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Semantics(
+              label: context.tr(
+                'auth.password_field_label',
+                fallback: 'Password',
               ),
-              prefixIcon: Icons.lock_outlined,
-              suffixIcon: Semantics(
-                label: state.isPasswordVisible
-                    ? context.tr(
-                        'auth.hide_password',
-                        fallback: 'Hide password',
-                      )
-                    : context.tr(
-                        'auth.show_password',
-                        fallback: 'Show password',
-                      ),
-                button: true,
-                child: IconButton(
-                  icon: Icon(
-                    state.isPasswordVisible
-                        ? Icons.visibility_outlined
-                        : Icons.visibility_off_outlined,
-                    color: contrastColor.withValues(alpha: 0.5),
+              hint: context.tr(
+                'auth.password_field_hint_signup',
+                fallback: 'Create a password',
+              ),
+              textField: true,
+              child: TextFormField(
+                key: fieldKey,
+                focusNode: focusNode,
+                onChanged: (password) =>
+                    context.read<SignUpCubit>().passwordChanged(password),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return context.tr(
+                      'auth.validation_password_required',
+                      fallback: 'Password is required',
+                    );
+                  }
+                  if (value.length < 6) {
+                    return context.tr(
+                      'auth.validation_password_too_short',
+                      fallback: 'Password must be at least 6 characters',
+                    );
+                  }
+                  return null;
+                },
+                textInputAction: TextInputAction.done,
+                obscureText: !state.isPasswordVisible,
+                keyboardType: TextInputType.visiblePassword,
+                autofillHints: const [AutofillHints.newPassword],
+                style: TextStyle(color: contrastColor),
+                decoration: buildAuthDecoration(
+                  context: context,
+                  contrastColor: contrastColor,
+                  hint: context.tr(
+                    'auth.password_hint_text',
+                    fallback: 'Make it strong!',
                   ),
-                  onPressed: () =>
-                      context.read<SignUpCubit>().togglePasswordVisibility(),
+                  prefixIcon: Icons.lock_outlined,
+                  suffixIcon: Semantics(
+                    label: state.isPasswordVisible
+                        ? context.tr(
+                            'auth.hide_password',
+                            fallback: 'Hide password',
+                          )
+                        : context.tr(
+                            'auth.show_password',
+                            fallback: 'Show password',
+                          ),
+                    button: true,
+                    child: IconButton(
+                      icon: Icon(
+                        state.isPasswordVisible
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                        color: contrastColor.withValues(alpha: 0.5),
+                      ),
+                      onPressed: () => context
+                          .read<SignUpCubit>()
+                          .togglePasswordVisibility(),
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
+            if (state.password.isNotEmpty) ...[
+              SizedBox(height: 12.h),
+              _PasswordStrengthIndicator(password: state.password),
+            ],
+          ],
         );
       },
     );
@@ -274,46 +284,75 @@ class SignUpButton extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// Shared decoration builder (eliminates 3× repeated InputDecoration)
+// Password Strength Indicator
 // ---------------------------------------------------------------------------
 
-InputDecoration _buildDecoration({
-  required BuildContext context,
-  required Color contrastColor,
-  required String hint,
-  required IconData prefixIcon,
-  Widget? suffixIcon,
-}) {
-  return InputDecoration(
-    hintText: hint,
-    hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
-    errorStyle: const TextStyle(color: Colors.red),
-    prefixIcon: Icon(prefixIcon, color: contrastColor.withValues(alpha: 0.5)),
-    suffixIcon: suffixIcon,
-    filled: true,
-    fillColor: Theme.of(context).brightness == Brightness.dark
-        ? const Color(0xFF1E293B)
-        : const Color(0xFFF3F4F6),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide.none,
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide.none,
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: const BorderSide(color: Color(0xFF6366F1), width: 1.5),
-    ),
-    errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: const BorderSide(color: Colors.red, width: 1),
-    ),
-    focusedErrorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: const BorderSide(color: Colors.red, width: 1.5),
-    ),
-    contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-  );
+class _PasswordStrengthIndicator extends StatelessWidget {
+  final String password;
+
+  const _PasswordStrengthIndicator({required this.password});
+
+  @override
+  Widget build(BuildContext context) {
+    double strength = 0.0;
+    Color strengthColor = Colors.red;
+    String strengthLabel = context.tr('auth.strength_weak', fallback: 'Weak');
+
+    if (password.length >= 6) {
+      strength = 0.33;
+      if (password.length >= 10 && RegExp(r'[0-9]').hasMatch(password)) {
+        strength = 1.0;
+        strengthColor = Colors.green;
+        strengthLabel = context.tr('auth.strength_strong', fallback: 'Strong');
+      } else if (password.length >= 8) {
+        strength = 0.66;
+        strengthColor = Colors.blue;
+        strengthLabel = context.tr('auth.strength_fair', fallback: 'Fair');
+      }
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              context.tr(
+                'auth.password_strength',
+                fallback: 'Password Strength',
+              ),
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white70
+                    : Colors.black54,
+              ),
+            ),
+            Text(
+              strengthLabel,
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w700,
+                color: strengthColor,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 6.h),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(4.r),
+          child: LinearProgressIndicator(
+            value: strength,
+            backgroundColor: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white12
+                : Colors.black12,
+            valueColor: AlwaysStoppedAnimation<Color>(strengthColor),
+            minHeight: 4.h,
+          ),
+        ),
+      ],
+    );
+  }
 }

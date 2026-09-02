@@ -136,16 +136,22 @@ class WritingQuestModel extends WritingQuest {
             )
           : null,
       errorCount: (map['errorCount'] as num?)?.toInt(),
-      promptQuestions: map['promptQuestions'] != null ? List<String>.from(map['promptQuestions']) : null,
+      promptQuestions: map['promptQuestions'] != null
+          ? List<String>.from(map['promptQuestions'])
+          : null,
       modelAnswer: getString(map['modelAnswer']),
       thesisStatement: getString(map['thesisStatement']),
       errorType: getString(map['errorType']),
       structureGuide: getString(map['structureGuide']),
-      storyKeyEvents: map['storyKeyEvents'] != null ? List<String>.from(map['storyKeyEvents']) : null,
+      storyKeyEvents: map['storyKeyEvents'] != null
+          ? List<String>.from(map['storyKeyEvents'])
+          : null,
       formalityLevel: getString(map['formalityLevel']),
       sentenceType: getString(map['sentenceType']),
       grammarFocus: getString(map['grammarFocus']),
-      keywordsExpected: map['keywordsExpected'] != null ? List<String>.from(map['keywordsExpected']) : null,
+      keywordsExpected: map['keywordsExpected'] != null
+          ? List<String>.from(map['keywordsExpected'])
+          : null,
     );
   }
 

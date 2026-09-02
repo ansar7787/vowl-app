@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
+import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
 import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
 
 // ============================================================================
@@ -77,7 +78,6 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
 
   /// Compiled once — avoids per-keystroke [RegExp] allocation.
   /// `{2,}` accepts modern long-form TLDs (.academy, .international, etc.).
-  static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
   ForgotPasswordCubit({
     required ForgotPassword forgotPassword,
@@ -97,11 +97,11 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   Future<void> sendPasswordResetEmail() async {
     if (state.isSubmitting) return;
 
-    if (_lastSentTime != null && DateTime.now().difference(_lastSentTime!).inSeconds < 60) {
-      final secondsLeft = 60 - DateTime.now().difference(_lastSentTime!).inSeconds;
+    if (_lastSentTime != null &&
+        DateTime.now().difference(_lastSentTime!).inSeconds < 60) {
       emit(
         state.copyWith(
-          errorMessage: () => 'Please wait $secondsLeft seconds before requesting another email.',
+          errorMessage: () => AuthErrorHandler.getKey('rate-limited'),
         ),
       );
       return;
@@ -117,7 +117,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
       );
       return;
     }
-    if (!_emailRegex.hasMatch(trimmedEmail)) {
+    if (!AuthValidators.emailRegex.hasMatch(trimmedEmail)) {
       emit(
         state.copyWith(
           errorMessage: () => AuthErrorHandler.getKey('email-invalid'),

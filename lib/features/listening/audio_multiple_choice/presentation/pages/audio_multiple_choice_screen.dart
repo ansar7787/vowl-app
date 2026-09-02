@@ -66,7 +66,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
 
   void _submitFinalAnswer(int index, int correct) {
     if (_isAnswered.value) return;
-    
+
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
 
@@ -125,7 +125,13 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _rotation]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedIndex,
+            _rotation,
+          ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
@@ -133,119 +139,138 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: 6.h),
-                                AudioMultipleChoiceInstruction(
-                                  color: theme.primaryColor,
-                                  instruction: quest.instruction,
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ListeningBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 16.h,
                                 ),
-                                SizedBox(height: 24.h),
-                                AudioMultipleChoiceQuestion(
-                                  text: quest.question ?? "",
-                                  isDark: isDark,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SliverToBoxAdapter(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 16.h,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                if (_isAnswered.value && quest.audioTranscript != null)
-                                  SizedBox(
-                                    height: 350.h,
-                                    child: EvidenceHighlightWrapper(
-                                      passage: quest.audioTranscript!,
-                                      evidenceWords: [quest.correctAnswer ?? quest.options?[quest.correctAnswerIndex ?? 0] ?? ''],
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onCorrectHighlight: () {},
-                                      onWrongHighlight: () {
-                                        final authState = context.read<AuthBloc>().state;
-                                        if (authState.status == AuthStatus.authenticated && authState.user != null) {
-                                          ErrorJournalCollector.record(
-                                            userId: authState.user!.id,
-                                            gameType: widget.gameType.name,
-                                            question: 'Evidence Highlight',
-                                            userAnswer: '[Wrong evidence tap]',
-                                            correctAnswer: quest.correctAnswer ?? '',
-                                            level: widget.level,
-                                          );
-                                        }
-                                      },
-                                    ),
-                                  )
-                                else
-                                  SizedBox(
-                                    height: 350.h,
-                                    child: AudioMultipleChoiceSpinner(
-                                      options: quest.options ?? [],
-                                      correct: quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      tts: quest.textToSpeak ?? "",
-                                      emoji: quest.emoji,
-                                      rotation: _rotation.value,
-                                      selectedIndex: _selectedIndex.value,
-                                      isAnswered: _isAnswered.value,
-                                      isCorrectState: _isCorrect.value,
-                                      onSpin: (delta) {
-                                        if (!_isAnswered.value) {
-                                          _rotation.value += delta * 0.01;
-                                        }
-                                      },
-                                      onSelectSatellite: (index) {
-                                        _submitFinalAnswer(
-                                          index,
-                                          quest.correctAnswerIndex ?? 0,
-                                        );
-                                      },
-                                      onTapCore: () {
-                                        _soundService.playTts(
-                                          quest.textToSpeak ?? "",
-                                        );
-                                        _hapticService.selection();
-                                      },
-                                    ),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: 6.h),
+                                      AudioMultipleChoiceInstruction(
+                                        color: theme.primaryColor,
+                                        instruction: quest.instruction,
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      AudioMultipleChoiceQuestion(
+                                        text: quest.question ?? "",
+                                        isDark: isDark,
+                                      ),
+                                    ],
                                   ),
-                              ],
-                            ),
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      if (_isAnswered.value &&
+                                          quest.audioTranscript != null)
+                                        SizedBox(
+                                          height: 350.h,
+                                          child: EvidenceHighlightWrapper(
+                                            passage: quest.audioTranscript!,
+                                            evidenceWords: [
+                                              quest.correctAnswer ??
+                                                  quest.options?[quest
+                                                          .correctAnswerIndex ??
+                                                      0] ??
+                                                  '',
+                                            ],
+                                            primaryColor: theme.primaryColor,
+                                            isPositioned: false,
+                                            onCorrectHighlight: () {},
+                                            onWrongHighlight: () {
+                                              final authState = context
+                                                  .read<AuthBloc>()
+                                                  .state;
+                                              if (authState.status ==
+                                                      AuthStatus
+                                                          .authenticated &&
+                                                  authState.user != null) {
+                                                ErrorJournalCollector.record(
+                                                  userId: authState.user!.id,
+                                                  gameType:
+                                                      widget.gameType.name,
+                                                  question:
+                                                      'Evidence Highlight',
+                                                  userAnswer:
+                                                      '[Wrong evidence tap]',
+                                                  correctAnswer:
+                                                      quest.correctAnswer ?? '',
+                                                  level: widget.level,
+                                                );
+                                              }
+                                            },
+                                          ),
+                                        )
+                                      else
+                                        SizedBox(
+                                          height: 350.h,
+                                          child: AudioMultipleChoiceSpinner(
+                                            options: quest.options ?? [],
+                                            correct:
+                                                quest.correctAnswerIndex ?? 0,
+                                            color: theme.primaryColor,
+                                            tts: quest.textToSpeak ?? "",
+                                            emoji: quest.emoji,
+                                            rotation: _rotation.value,
+                                            selectedIndex: _selectedIndex.value,
+                                            isAnswered: _isAnswered.value,
+                                            isCorrectState: _isCorrect.value,
+                                            onSpin: (delta) {
+                                              if (!_isAnswered.value) {
+                                                _rotation.value += delta * 0.01;
+                                              }
+                                            },
+                                            onSelectSatellite: (index) {
+                                              _submitFinalAnswer(
+                                                index,
+                                                quest.correctAnswerIndex ?? 0,
+                                              );
+                                            },
+                                            onTapCore: () {
+                                              _soundService.playTts(
+                                                quest.textToSpeak ?? "",
+                                              );
+                                              _hapticService.selection();
+                                            },
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  ],
-                ),
             );
           },
         );

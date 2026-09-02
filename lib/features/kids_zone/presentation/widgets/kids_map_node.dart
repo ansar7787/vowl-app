@@ -37,7 +37,7 @@ class KidsMapNode extends StatefulWidget {
   final bool isPlayable;
   final bool isNextZone;
   final bool isPrevCompleted;
-  
+
   final String gameType;
   final Color primaryColor;
 
@@ -45,7 +45,7 @@ class KidsMapNode extends StatefulWidget {
   final AnimationController entryController;
   final AnimationController glowController;
   final ConfettiController confettiController;
-  
+
   final bool isUnlockAnimating;
   final int? celebratingLevel;
 
@@ -81,7 +81,9 @@ class KidsMapNode extends StatefulWidget {
 class _KidsMapNodeState extends State<KidsMapNode> {
   final ValueNotifier<String?> _buddyMessage = ValueNotifier(null);
   Timer? _buddyMessageTimer;
-  final ValueNotifier<VowlMascotState> _buddyState = ValueNotifier(VowlMascotState.neutral);
+  final ValueNotifier<VowlMascotState> _buddyState = ValueNotifier(
+    VowlMascotState.neutral,
+  );
 
   @override
   void dispose() {
@@ -109,7 +111,7 @@ class _KidsMapNodeState extends State<KidsMapNode> {
       "So smart! 🧠",
       "Wow! Keep going! 🚀",
     ];
-    
+
     final index = math.Random().nextInt(messages.length);
     final msg = context.tr(messages[index], fallback: fallbacks[index]);
 
@@ -138,35 +140,38 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                 clipBehavior: Clip.none,
                 alignment: Alignment.center,
                 children: [
-              // 10/10 Bouncy Comic Cloud Bubble
-              if (_buddyMessage.value != null)
-                Positioned(
-                  top: -30.h,
-                  right: isNearRightEdge ? 45.r : null,
-                  left: !isNearRightEdge ? 45.r : null,
-                  child: _buildBuddySpeechBubble(_buddyMessage.value!, isNearRightEdge),
-                ),
+                  // 10/10 Bouncy Comic Cloud Bubble
+                  if (_buddyMessage.value != null)
+                    Positioned(
+                      top: -30.h,
+                      right: isNearRightEdge ? 45.r : null,
+                      left: !isNearRightEdge ? 45.r : null,
+                      child: _buildBuddySpeechBubble(
+                        _buddyMessage.value!,
+                        isNearRightEdge,
+                      ),
+                    ),
 
-              VowlMascot(
-                    size: 55.r,
-                    state: _buddyState.value,
-                    useFloatingAnimation: true,
-                    isKidsMode: true,
-                  )
-                  .animate(target: _buddyMessage.value != null ? 1 : 0)
-                  .shake(hz: 10, curve: Curves.easeInOut)
-                  .scale(
-                    begin: const Offset(1, 1),
-                    end: const Offset(1.2, 1.2),
-                    duration: 200.ms,
-                    curve: Curves.easeOutBack,
-                  )
-                  .then()
-                  .scale(
-                    begin: const Offset(1.2, 1.2),
-                    end: const Offset(1, 1),
-                    duration: 200.ms,
-                  ),
+                  VowlMascot(
+                        size: 55.r,
+                        state: _buddyState.value,
+                        useFloatingAnimation: true,
+                        isKidsMode: true,
+                      )
+                      .animate(target: _buddyMessage.value != null ? 1 : 0)
+                      .shake(hz: 10, curve: Curves.easeInOut)
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.2, 1.2),
+                        duration: 200.ms,
+                        curve: Curves.easeOutBack,
+                      )
+                      .then()
+                      .scale(
+                        begin: const Offset(1.2, 1.2),
+                        end: const Offset(1, 1),
+                        duration: 200.ms,
+                      ),
                 ],
               );
             },
@@ -178,56 +183,59 @@ class _KidsMapNodeState extends State<KidsMapNode> {
 
   Widget _buildBuddySpeechBubble(String text, bool isNearRightEdge) {
     return Container(
-      constraints: BoxConstraints(maxWidth: 180.w),
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(28.r),
-          topRight: Radius.circular(28.r),
-          bottomLeft: isNearRightEdge ? Radius.circular(28.r) : Radius.circular(2.r),
-          bottomRight: isNearRightEdge ? Radius.circular(2.r) : Radius.circular(28.r),
-        ),
-        border: Border.all(
-          color: widget.primaryColor,
-          width: 4.r,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.3),
-            blurRadius: 15.r,
-            offset: Offset(0, 8.h),
+          constraints: BoxConstraints(maxWidth: 180.w),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(28.r),
+              topRight: Radius.circular(28.r),
+              bottomLeft: isNearRightEdge
+                  ? Radius.circular(28.r)
+                  : Radius.circular(2.r),
+              bottomRight: isNearRightEdge
+                  ? Radius.circular(2.r)
+                  : Radius.circular(28.r),
+            ),
+            border: Border.all(color: widget.primaryColor, width: 4.r),
+            boxShadow: [
+              BoxShadow(
+                color: widget.primaryColor.withValues(alpha: 0.3),
+                blurRadius: 15.r,
+                offset: Offset(0, 8.h),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: AutoSizeText(
-        text,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w900,
-          color: const Color(0xFF1E293B),
-        ),
-        textAlign: TextAlign.center,
-        minFontSize: 10,
-        maxLines: 4,
-        overflow: TextOverflow.ellipsis,
-      ),
-    )
-    .animate()
-    .scale(
-      alignment: isNearRightEdge ? Alignment.bottomRight : Alignment.bottomLeft,
-      curve: Curves.elasticOut,
-      duration: 700.ms,
-    )
-    .then()
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .scale(
-      begin: const Offset(1.0, 1.0),
-      end: const Offset(1.05, 1.05),
-      duration: 1.5.seconds,
-      curve: Curves.easeInOutSine,
-    );
+          child: AutoSizeText(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFF1E293B),
+            ),
+            textAlign: TextAlign.center,
+            minFontSize: 10,
+            maxLines: 4,
+            overflow: TextOverflow.ellipsis,
+          ),
+        )
+        .animate()
+        .scale(
+          alignment: isNearRightEdge
+              ? Alignment.bottomRight
+              : Alignment.bottomLeft,
+          curve: Curves.elasticOut,
+          duration: 700.ms,
+        )
+        .then()
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .scale(
+          begin: const Offset(1.0, 1.0),
+          end: const Offset(1.05, 1.05),
+          duration: 1.5.seconds,
+          curve: Curves.easeInOutSine,
+        );
   }
 
   Widget _buildStickerGoal(int level, bool isLocked) {
@@ -250,7 +258,10 @@ class _KidsMapNodeState extends State<KidsMapNode> {
       tierName = context.tr('kids_zone.tier_silver', fallback: "SILVER TIER");
     } else if (level == 200) {
       borderColor = const Color(0xFF00F0FF); // Cyan/Diamond (Legendary)
-      tierName = context.tr('kids_zone.tier_legendary', fallback: "LEGENDARY TIER");
+      tierName = context.tr(
+        'kids_zone.tier_legendary',
+        fallback: "LEGENDARY TIER",
+      );
     } else {
       borderColor = const Color(0xFFF59E0B); // Gold
       tierName = context.tr('kids_zone.tier_gold', fallback: "GOLD TIER");
@@ -342,7 +353,16 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       ),
                     ),
                     child: Text(
-                      isLocked ? context.tr('kids_zone.lvl_tier', args: ['$level', tierName], fallback: "LVL $level $tierName") : context.tr('kids_zone.sticker_won', fallback: "STICKER WON! ✨"),
+                      isLocked
+                          ? context.tr(
+                              'kids_zone.lvl_tier',
+                              args: ['$level', tierName],
+                              fallback: "LVL $level $tierName",
+                            )
+                          : context.tr(
+                              'kids_zone.sticker_won',
+                              fallback: "STICKER WON! ✨",
+                            ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 9.sp,
@@ -377,7 +397,8 @@ class _KidsMapNodeState extends State<KidsMapNode> {
           outgoingColor: Colors.white,
           currentOffset: widget.currentOffset,
           nextOffset: widget.nextOffset,
-          prevOffset: widget.currentOffset, // Shimmer doesn't need perfect continuity
+          prevOffset:
+              widget.currentOffset, // Shimmer doesn't need perfect continuity
           isLast: widget.isLast,
           level: 0, // Shimmer level
         ),
@@ -434,7 +455,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
           );
         } else if (widget.isPlayable || widget.isCompleted) {
           _navigateToGame(context, widget.level);
-        } else if (!widget.isLocked && !widget.isPlayable && !widget.isCompleted) {
+        } else if (!widget.isLocked &&
+            !widget.isPlayable &&
+            !widget.isCompleted) {
           CustomSnackBar.show(
             context: context,
             message: context.tr(
@@ -451,7 +474,11 @@ class _KidsMapNodeState extends State<KidsMapNode> {
           if (widget.isCurrent || widget.celebratingLevel == widget.level)
             Builder(
               builder: (context) {
-                final isMilestone = widget.level == 10 || widget.level == 50 || widget.level == 100 || widget.level == 200;
+                final isMilestone =
+                    widget.level == 10 ||
+                    widget.level == 50 ||
+                    widget.level == 100 ||
+                    widget.level == 200;
                 return ConfettiWidget(
                   confettiController: widget.confettiController,
                   blastDirectionality: BlastDirectionality.explosive,
@@ -510,7 +537,11 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                         ? Colors.amber.shade700
                         : widget.isNextZone
                         ? Colors.amber.shade300.withValues(alpha: 0.5)
-                        : (widget.isLocked ? widget.primaryColor.withValues(alpha: isDark ? 0.4 : 0.3) : Colors.white),
+                        : (widget.isLocked
+                              ? widget.primaryColor.withValues(
+                                  alpha: isDark ? 0.4 : 0.3,
+                                )
+                              : Colors.white),
                     width: widget.isCurrent ? 5.r : 3.r,
                   ),
                 ),
@@ -531,7 +562,9 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                       : widget.isLocked
                       ? Icon(
                           Icons.lock_rounded,
-                          color: widget.primaryColor.withValues(alpha: isDark ? 0.4 : 0.3),
+                          color: widget.primaryColor.withValues(
+                            alpha: isDark ? 0.4 : 0.3,
+                          ),
                           size: 24.r,
                         )
                       : Padding(
@@ -551,7 +584,8 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                                     height: 1.0,
                                   ),
                                 ),
-                                if (widget.isCompleted || widget.isPlayable) ...[
+                                if (widget.isCompleted ||
+                                    widget.isPlayable) ...[
                                   SizedBox(height: 2.h),
                                   Builder(
                                     builder: (context) {
@@ -561,7 +595,8 @@ class _KidsMapNodeState extends State<KidsMapNode> {
                                               .state
                                               .user
                                               ?.starRatings[widget
-                                              .gameType]?[widget.level.toString()] ??
+                                              .gameType]?[widget.level
+                                              .toString()] ??
                                           0;
                                       return Row(
                                         mainAxisAlignment:
@@ -699,11 +734,13 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     // In Kids UI, locked nodes should be clean, opaque bubbles (White in light, Slate in dark)
     // This perfectly blocks the path line without looking muddy.
-    final Color lockedNodeColor = isDark ? const Color(0xFF1E293B) : Colors.white;
-    
+    final Color lockedNodeColor = isDark
+        ? const Color(0xFF1E293B)
+        : Colors.white;
+
     // The path line can be translucent because it only sits on the background.
-    final Color lockedPathColor = isDark 
-        ? Colors.black.withValues(alpha: 0.4) 
+    final Color lockedPathColor = isDark
+        ? Colors.black.withValues(alpha: 0.4)
         : Colors.white.withValues(alpha: 0.6);
 
     if (widget.isLoading) {
@@ -717,22 +754,26 @@ class _KidsMapNodeState extends State<KidsMapNode> {
       ]),
       builder: (context, child) {
         // Immediate entry for all visible nodes (removes the empty-screen delay)
-        final entryT = Curves.easeOutCubic.transform(widget.entryController.value);
+        final entryT = Curves.easeOutCubic.transform(
+          widget.entryController.value,
+        );
 
         // Path-draw progress for the segment right before the current node
         double incomingProgress = 1.0;
         double outgoingProgress = 1.0;
-        
+
         if (widget.isUnlockAnimating) {
           final user = context.read<AuthBloc>().state.user;
           final completed = user?.completedLevels[widget.gameType] ?? [];
           final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
           final currActive = math.min(200, highest + 1);
-          
+
           // easeInOutSine creates the perfect water-flow feel: starts softly,
           // flows steadily in the middle (not too fast), and decelerates peacefully.
-          final double rawValue = Curves.easeInOutSine.transform(widget.unlockPathController.value);
-          
+          final double rawValue = Curves.easeInOutSine.transform(
+            widget.unlockPathController.value,
+          );
+
           if (widget.level == currActive) {
             // Draws the second half of the path (from the midpoint to the new node)
             incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
@@ -778,43 +819,61 @@ class _KidsMapNodeState extends State<KidsMapNode> {
             Positioned(
               left: widget.currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-                child: Builder(
-                  builder: (context) {
-                    Widget node = _buildLevelNode(context, lockedNodeColor);
-                    
-                    if (widget.isUnlockAnimating) {
-                      final user = context.read<AuthBloc>().state.user;
-                      final completed = user?.completedLevels[widget.gameType] ?? [];
-                      final highest = completed.isEmpty ? 0 : completed.reduce(math.max);
-                      final currActive = math.min(200, highest + 1);
-                      if (widget.level == currActive) {
-                        final double rawValue = Curves.easeInOutSine.transform(widget.unlockPathController.value);
-                        // The path mathematically touches the node's edge at rawValue = 0.74
-                        final double popProgress = ((rawValue - 0.74) * (1.0 / 0.26)).clamp(0.0, 1.0);
-                        final double pulseScale = math.sin(popProgress * math.pi); // 0.0 -> 1.0 -> 0.0
-                        
-                        return Transform.scale(
-                          scale: 1.0 + 0.3 * pulseScale, // Node stays 100%, swells to 130%, and settles back to 100%
-                          child: node,
-                        );
-                      }
+              child: Builder(
+                builder: (context) {
+                  Widget node = _buildLevelNode(context, lockedNodeColor);
+
+                  if (widget.isUnlockAnimating) {
+                    final user = context.read<AuthBloc>().state.user;
+                    final completed =
+                        user?.completedLevels[widget.gameType] ?? [];
+                    final highest = completed.isEmpty
+                        ? 0
+                        : completed.reduce(math.max);
+                    final currActive = math.min(200, highest + 1);
+                    if (widget.level == currActive) {
+                      final double rawValue = Curves.easeInOutSine.transform(
+                        widget.unlockPathController.value,
+                      );
+                      // The path mathematically touches the node's edge at rawValue = 0.74
+                      final double popProgress =
+                          ((rawValue - 0.74) * (1.0 / 0.26)).clamp(0.0, 1.0);
+                      final double pulseScale = math.sin(
+                        popProgress * math.pi,
+                      ); // 0.0 -> 1.0 -> 0.0
+
+                      return Transform.scale(
+                        scale:
+                            1.0 +
+                            0.3 *
+                                pulseScale, // Node stays 100%, swells to 130%, and settles back to 100%
+                        child: node,
+                      );
                     }
-                    return node;
-                  },
-                ),
+                  }
+                  return node;
+                },
+              ),
             ),
             if (widget.isCurrent)
               Positioned(
                 left: widget.currentOffset > 0.5.sw
-                    ? widget.currentOffset - 50.r // Buddy sits neatly to the left of the node
-                    : widget.currentOffset + 90.r, // Buddy sits neatly to the right of the node
+                    ? widget.currentOffset -
+                          50
+                              .r // Buddy sits neatly to the left of the node
+                    : widget.currentOffset +
+                          90.r, // Buddy sits neatly to the right of the node
                 top: 25.h,
                 child: _buildBuddy(
                   context,
                   isNearRightEdge: widget.currentOffset > 0.5.sw,
                 ),
               ),
-            if (widget.level == 10 || widget.level == 50 || widget.level == 100 || widget.level == 150 || widget.level == 200)
+            if (widget.level == 10 ||
+                widget.level == 50 ||
+                widget.level == 100 ||
+                widget.level == 150 ||
+                widget.level == 200)
               _buildStickerGoal(widget.level, widget.isLocked),
           ],
         ),
@@ -822,4 +881,3 @@ class _KidsMapNodeState extends State<KidsMapNode> {
     );
   }
 }
-

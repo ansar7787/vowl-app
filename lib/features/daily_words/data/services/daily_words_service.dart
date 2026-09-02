@@ -171,7 +171,7 @@ class DailyWordsService {
         orElse: () => batchData.days.first,
       );
 
-      // We no longer truncate based on subscription here. 
+      // We no longer truncate based on subscription here.
       // All users see 10 words to trigger the Zeigarnik effect (completion psychology).
       // Monetization gating is handled in the UI layer after word 5.
       _cachedWordSet = DailyWordSet(

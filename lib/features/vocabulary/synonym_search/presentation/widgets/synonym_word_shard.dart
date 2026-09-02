@@ -54,101 +54,110 @@ class SynonymWordShard extends StatelessWidget {
           ),
         );
       },
-      child: GestureDetector(
-        onPanStart: onPanStart,
-        onPanUpdate: onPanUpdate,
-        onPanEnd: (_) => onPanEnd(),
-        onTap: onTap,
-        child: ValueListenableBuilder<bool>(
-          valueListenable: isWarpingNotifier,
-          builder: (context, isWarping, _) {
-            return ValueListenableBuilder<int?>(
-              valueListenable: activeIndexNotifier,
-              builder: (context, activeIndex, _) {
-                final isActive = activeIndex == index;
-                return TweenAnimationBuilder<double>(
-                  duration: 400.ms,
-                  curve: Curves.easeOutBack,
-                  tween: Tween(
-                    begin: 1.0,
-                    end: isWarping ? 0.0 : (isActive ? 1.15 : 1.0),
-                  ),
-                  builder: (context, scale, child) => Transform.scale(
-                    scale: scale,
-                    child: Opacity(
-                      opacity: isWarping ? 0.0 : 1.0,
-                      child: child,
-                    ),
-                  ),
-                  child: Container(
-                    width: width,
-                    height: height,
-                    decoration: BoxDecoration(
-                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                      borderRadius: BorderRadius.circular(18.r),
-                      border: Border.all(
-                        color: isActive ? color : color.withValues(alpha: 0.4),
-                        width: isActive ? 3 : 2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: color.withValues(alpha: isActive ? 0.5 : 0.15),
-                          blurRadius: isActive ? 25 : 15,
-                          spreadRadius: isActive ? 2 : 0,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Opacity(
-                          opacity: 0.15,
-                          child: RepaintBoundary(
-                            child: CustomPaint(
-                              size: Size(width, height),
-                              painter: TechPatternPainter(color),
+      child:
+          GestureDetector(
+                onPanStart: onPanStart,
+                onPanUpdate: onPanUpdate,
+                onPanEnd: (_) => onPanEnd(),
+                onTap: onTap,
+                child: ValueListenableBuilder<bool>(
+                  valueListenable: isWarpingNotifier,
+                  builder: (context, isWarping, _) {
+                    return ValueListenableBuilder<int?>(
+                      valueListenable: activeIndexNotifier,
+                      builder: (context, activeIndex, _) {
+                        final isActive = activeIndex == index;
+                        return TweenAnimationBuilder<double>(
+                          duration: 400.ms,
+                          curve: Curves.easeOutBack,
+                          tween: Tween(
+                            begin: 1.0,
+                            end: isWarping ? 0.0 : (isActive ? 1.15 : 1.0),
+                          ),
+                          builder: (context, scale, child) => Transform.scale(
+                            scale: scale,
+                            child: Opacity(
+                              opacity: isWarping ? 0.0 : 1.0,
+                              child: child,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(padding),
-                          child: Text(
-                            text.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: fontSize,
-                              color: isDark ? Colors.white : Colors.black87,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
+                          child: Container(
+                            width: width,
+                            height: height,
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? const Color(0xFF1E293B)
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(18.r),
+                              border: Border.all(
+                                color: isActive
+                                    ? color
+                                    : color.withValues(alpha: 0.4),
+                                width: isActive ? 3 : 2,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: color.withValues(
+                                    alpha: isActive ? 0.5 : 0.15,
+                                  ),
+                                  blurRadius: isActive ? 25 : 15,
+                                  spreadRadius: isActive ? 2 : 0,
+                                  offset: const Offset(0, 8),
+                                ),
+                              ],
+                            ),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Opacity(
+                                  opacity: 0.15,
+                                  child: RepaintBoundary(
+                                    child: CustomPaint(
+                                      size: Size(width, height),
+                                      painter: TechPatternPainter(color),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(padding),
+                                  child: Text(
+                                    text.toUpperCase(),
+                                    textAlign: TextAlign.center,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: fontSize,
+                                      color: isDark
+                                          ? Colors.white
+                                          : Colors.black87,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            );
-          },
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .moveY(
-         begin: -8,
-         end: 8,
-         duration: (2 + index * 0.5).seconds,
-         curve: Curves.easeInOut,
-       )
-       .rotate(
-         begin: -0.02,
-         end: 0.02,
-         duration: (3 + index).seconds,
-         curve: Curves.easeInOut,
-       ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(
+                begin: -8,
+                end: 8,
+                duration: (2 + index * 0.5).seconds,
+                curve: Curves.easeInOut,
+              )
+              .rotate(
+                begin: -0.02,
+                end: 0.02,
+                duration: (3 + index).seconds,
+                curve: Curves.easeInOut,
+              ),
     );
   }
 }
-

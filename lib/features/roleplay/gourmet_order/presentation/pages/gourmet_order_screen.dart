@@ -75,7 +75,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -108,13 +108,18 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _submitAnswer(String correctAnswer) {
-    if (_isAnswered.value || _isFirstStagePassed.value || _selectedItems.value.isEmpty) return;
+    if (_isAnswered.value ||
+        _isFirstStagePassed.value ||
+        _selectedItems.value.isEmpty)
+      return;
 
     final targets = correctAnswer
         .split(',')
         .map((e) => e.trim().toLowerCase())
         .toList();
-    final current = _selectedItems.value.map((e) => e.trim().toLowerCase()).toList();
+    final current = _selectedItems.value
+        .map((e) => e.trim().toLowerCase())
+        .toList();
 
     bool isCorrect =
         targets.length == current.length &&
@@ -186,9 +191,15 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
         final prices = quest?.menuPrices ?? [];
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedItems, _isFirstStagePassed]),
-            builder: (context, _) {
-              return RoleplayBaseLayout(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedItems,
+            _isFirstStagePassed,
+          ]),
+          builder: (context, _) {
+            return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -207,7 +218,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -220,38 +233,63 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
                                               return Padding(
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
-                                                  vertical: isCompact ? 5.h : 10.h,
+                                                  vertical: isCompact
+                                                      ? 5.h
+                                                      : 10.h,
                                                 ),
                                                 child: Column(
                                                   children: [
                                                     GourmetOrderInstruction(
-                                                      primaryColor: theme.primaryColor,
-                                                      instruction: quest.instruction,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
                                                     ),
-                                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 10.h
+                                                          : 16.h,
+                                                    ),
                                                     GourmetOrderBanquetHeader(
-                                                      prompt: quest.prompt ?? "",
+                                                      prompt:
+                                                          quest.prompt ?? "",
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                     ),
-                                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 16.h
+                                                          : 24.h,
+                                                    ),
 
                                                     // Floating Cloche Platter
                                                     GourmetOrderTableSetting(
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      isAnswered: _isAnswered.value,
-                                                      isCorrect: _isCorrect.value,
-                                                      selectedItems: _selectedItems.value,
-                                                      steamAnimation: _steamController,
-                                                      onItemTapped: _onItemTapped,
-                                                      onHapticFeedback: _hapticService.selection,
+                                                      isAnswered:
+                                                          _isAnswered.value,
+                                                      isCorrect:
+                                                          _isCorrect.value,
+                                                      selectedItems:
+                                                          _selectedItems.value,
+                                                      steamAnimation:
+                                                          _steamController,
+                                                      onItemTapped:
+                                                          _onItemTapped,
+                                                      onHapticFeedback:
+                                                          _hapticService
+                                                              .selection,
                                                     ),
-                                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 16.h
+                                                          : 24.h,
+                                                    ),
 
                                                     // Tray of plate choices
                                                     GourmetOrderPlateTray(
@@ -259,112 +297,192 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       prices: prices,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      isAnswered: _isAnswered.value,
-                                                      isCorrect: _isCorrect.value,
-                                                      selectedItems: _selectedItems.value,
-                                                      onItemTapped: _onItemTapped,
+                                                      isAnswered:
+                                                          _isAnswered.value,
+                                                      isCorrect:
+                                                          _isCorrect.value,
+                                                      selectedItems:
+                                                          _selectedItems.value,
+                                                      onItemTapped:
+                                                          _onItemTapped,
                                                       onDragStarted: () {
-                                                        _hapticService.selection();
-                                                        _soundService.playHint(); // Play synth note
+                                                        _hapticService
+                                                            .selection();
+                                                        _soundService
+                                                            .playHint(); // Play synth note
                                                       },
                                                     ),
-                                                    SizedBox(height: isCompact ? 20.h : 28.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 28.h,
+                                                    ),
 
                                                     // Trigger Action Buttons
-                                                    if (!_isAnswered.value && _selectedItems.value.isNotEmpty)
+                                                    if (!_isAnswered.value &&
+                                                        _selectedItems
+                                                            .value
+                                                            .isNotEmpty)
                                                       Row(
-                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           ScaleButton(
                                                             onTap: _clearItems,
                                                             child: Container(
-                                                              padding: EdgeInsets.symmetric(
-                                                                horizontal: isCompact ? 16.w : 24.w,
-                                                                vertical: isCompact ? 10.h : 12.h,
-                                                              ),
+                                                              padding:
+                                                                  EdgeInsets.symmetric(
+                                                                    horizontal:
+                                                                        isCompact
+                                                                        ? 16.w
+                                                                        : 24.w,
+                                                                    vertical:
+                                                                        isCompact
+                                                                        ? 10.h
+                                                                        : 12.h,
+                                                                  ),
                                                               decoration: BoxDecoration(
-                                                                color: theme.primaryColor.withValues(
-                                                                  alpha: 0.1,
-                                                                ),
-                                                                borderRadius: BorderRadius.circular(
-                                                                  30.r,
-                                                                ),
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.1,
+                                                                    ),
+                                                                borderRadius:
+                                                                    BorderRadius.circular(
+                                                                      30.r,
+                                                                    ),
                                                                 border: Border.all(
-                                                                  color: theme.primaryColor
-                                                                      .withValues(alpha: 0.3),
+                                                                  color: theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.3,
+                                                                      ),
                                                                 ),
                                                               ),
                                                               child: Row(
                                                                 children: [
                                                                   Icon(
-                                                                    Icons.refresh_rounded,
-                                                                    color: theme.primaryColor,
-                                                                    size: isCompact ? 16.r : 18.r,
+                                                                    Icons
+                                                                        .refresh_rounded,
+                                                                    color: theme
+                                                                        .primaryColor,
+                                                                    size:
+                                                                        isCompact
+                                                                        ? 16.r
+                                                                        : 18.r,
                                                                   ),
-                                                                  SizedBox(width: 6.w),
+                                                                  SizedBox(
+                                                                    width: 6.w,
+                                                                  ),
                                                                   Text(
                                                                     "CLEAR PLATTER",
                                                                     style: TextStyle(
-                                                                      fontFamily: 'Outfit',
-                                                                      fontSize: isCompact
+                                                                      fontFamily:
+                                                                          'Outfit',
+                                                                      fontSize:
+                                                                          isCompact
                                                                           ? 10.sp
                                                                           : 12.sp,
-                                                                      fontWeight: FontWeight.bold,
-                                                                      color: theme.primaryColor,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      color: theme
+                                                                          .primaryColor,
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
                                                             ),
                                                           ),
-                                                          SizedBox(width: isCompact ? 10.w : 16.w),
+                                                          SizedBox(
+                                                            width: isCompact
+                                                                ? 10.w
+                                                                : 16.w,
+                                                          ),
                                                           ScaleButton(
-                                                            onTap: () => _submitAnswer(
-                                                              quest.correctAnswer ?? "",
-                                                            ),
-                                                            child: Container(
-                                                              padding: EdgeInsets.symmetric(
-                                                                horizontal: isCompact ? 20.w : 32.w,
-                                                                vertical: isCompact ? 10.h : 12.h,
-                                                              ),
-                                                              decoration: BoxDecoration(
-                                                                borderRadius: BorderRadius.circular(
-                                                                  30.r,
+                                                            onTap: () =>
+                                                                _submitAnswer(
+                                                                  quest.correctAnswer ??
+                                                                      "",
                                                                 ),
+                                                            child: Container(
+                                                              padding:
+                                                                  EdgeInsets.symmetric(
+                                                                    horizontal:
+                                                                        isCompact
+                                                                        ? 20.w
+                                                                        : 32.w,
+                                                                    vertical:
+                                                                        isCompact
+                                                                        ? 10.h
+                                                                        : 12.h,
+                                                                  ),
+                                                              decoration: BoxDecoration(
+                                                                borderRadius:
+                                                                    BorderRadius.circular(
+                                                                      30.r,
+                                                                    ),
                                                                 gradient: LinearGradient(
                                                                   colors: [
-                                                                    theme.primaryColor,
-                                                                    theme.primaryColor.withValues(
-                                                                      alpha: 0.8,
-                                                                    ),
+                                                                    theme
+                                                                        .primaryColor,
+                                                                    theme
+                                                                        .primaryColor
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.8,
+                                                                        ),
                                                                   ],
                                                                 ),
                                                                 boxShadow: [
                                                                   BoxShadow(
-                                                                    color: theme.primaryColor
-                                                                        .withValues(alpha: 0.35),
-                                                                    blurRadius: isCompact ? 10 : 15,
+                                                                    color: theme
+                                                                        .primaryColor
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.35,
+                                                                        ),
+                                                                    blurRadius:
+                                                                        isCompact
+                                                                        ? 10
+                                                                        : 15,
                                                                   ),
                                                                 ],
                                                               ),
                                                               child: Row(
                                                                 children: [
                                                                   Icon(
-                                                                    Icons.restaurant_menu_rounded,
-                                                                    color: Colors.white,
-                                                                    size: isCompact ? 16.r : 18.r,
+                                                                    Icons
+                                                                        .restaurant_menu_rounded,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    size:
+                                                                        isCompact
+                                                                        ? 16.r
+                                                                        : 18.r,
                                                                   ),
-                                                                  SizedBox(width: 6.w),
+                                                                  SizedBox(
+                                                                    width: 6.w,
+                                                                  ),
                                                                   Text(
                                                                     "SERVE PLATTER",
                                                                     style: TextStyle(
-                                                                      fontFamily: 'Outfit',
-                                                                      fontSize: isCompact
+                                                                      fontFamily:
+                                                                          'Outfit',
+                                                                      fontSize:
+                                                                          isCompact
                                                                           ? 10.sp
                                                                           : 12.sp,
-                                                                      fontWeight: FontWeight.bold,
-                                                                      color: Colors.white,
-                                                                      letterSpacing: 1.5,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      color: Colors
+                                                                          .white,
+                                                                      letterSpacing:
+                                                                          1.5,
                                                                     ),
                                                                   ),
                                                                 ],
@@ -372,10 +490,16 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                             ),
                                                           ),
                                                         ],
-                                                      ).animate().fadeIn(duration: 300.ms),
+                                                      ).animate().fadeIn(
+                                                        duration: 300.ms,
+                                                      ),
 
                                                     // Explanations cards post-selection
-                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 40.h,
+                                                    ),
                                                   ],
                                                 ),
                                               );
@@ -387,7 +511,11 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
@@ -395,7 +523,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                             ),
                             if (_isFirstStagePassed.value && !_isAnswered.value)
                               SpeakToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? _selectedItems.value.join(', '),
+                                expectedText:
+                                    quest.correctAnswer ??
+                                    _selectedItems.value.join(', '),
                                 primaryColor: theme.primaryColor,
                                 isPositioned: true,
                                 onConfirmed: () {
@@ -410,9 +540,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                         );
                       },
                     ),
-                );
-            },
-          );
+            );
+          },
+        );
       },
     );
   }

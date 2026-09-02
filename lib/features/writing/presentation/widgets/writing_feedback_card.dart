@@ -206,82 +206,80 @@ class _ExplanationCard extends StatelessWidget {
       builder: (context, translatedText, child) {
         final displayText = translatedText ?? explanation;
         return Semantics(
-          label: 'Explanation: $displayText',
-          child: Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-            decoration: BoxDecoration(
-              color: color.withValues(
-                alpha: isDark ? 0.08 : 0.05,
-              ),
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(
-                color: color.withValues(alpha: 0.2),
-                width: 1,
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    ExcludeSemantics(
-                      child: Icon(
-                        Icons.info_outline_rounded,
-                        color: color,
-                        size: 14.r,
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: Text(
-                        context.tr(
-                          'games.explanation_caps',
-                          fallback: 'EXPLANATION',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w900,
-                          color: color,
-                          letterSpacing: 1.2,
-                        ),
-                      ),
-                    ),
-                    if (translatedText == null)
-                      TranslateButtonWidget(
-                        originalText: explanation,
-                        onTranslationComplete: (translated) {
-                          translatedTextNotifier.value = translated;
-                        },
-                      ),
-                  ],
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  displayText,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.8)
-                        : const Color(0xFF475569),
-                    height: 1.4,
+              label: 'Explanation: $displayText',
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: isDark ? 0.08 : 0.05),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: color.withValues(alpha: 0.2),
+                    width: 1,
                   ),
                 ),
-              ],
-            ),
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 300.ms)
-        .slideY(
-          begin: 0.2,
-          end: 0,
-          duration: 400.ms,
-          curve: Curves.easeOutBack,
-        );
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        ExcludeSemantics(
+                          child: Icon(
+                            Icons.info_outline_rounded,
+                            color: color,
+                            size: 14.r,
+                          ),
+                        ),
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: Text(
+                            context.tr(
+                              'games.explanation_caps',
+                              fallback: 'EXPLANATION',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w900,
+                              color: color,
+                              letterSpacing: 1.2,
+                            ),
+                          ),
+                        ),
+                        if (translatedText == null)
+                          TranslateButtonWidget(
+                            originalText: explanation,
+                            onTranslationComplete: (translated) {
+                              translatedTextNotifier.value = translated;
+                            },
+                          ),
+                      ],
+                    ),
+                    SizedBox(height: 6.h),
+                    Text(
+                      displayText,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.8)
+                            : const Color(0xFF475569),
+                        height: 1.4,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 300.ms)
+            .slideY(
+              begin: 0.2,
+              end: 0,
+              duration: 400.ms,
+              curve: Curves.easeOutBack,
+            );
       },
     );
   }

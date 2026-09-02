@@ -14,7 +14,7 @@ class KidsRoomActionPanel extends StatelessWidget {
   final VoidCallback onTalk;
   final VoidCallback onThemeTap;
 
-  const KidsRoomActionPanel({ 
+  const KidsRoomActionPanel({
     super.key,
     required this.isSleeping,
     required this.gamesPlayedToday,
@@ -90,8 +90,8 @@ class KidsRoomActionPanel extends StatelessWidget {
                   color: Colors.orangeAccent.shade700,
                   onTap: onPlay,
                   isDark: isDark,
-                  badge: gamesPlayedToday < 3 
-                      ? '${3 - gamesPlayedToday} left' 
+                  badge: gamesPlayedToday < 3
+                      ? '${3 - gamesPlayedToday} left'
                       : 'Done',
                   badgeColor: gamesPlayedToday < 3 ? Colors.green : Colors.red,
                 ),
@@ -197,7 +197,10 @@ class KidsRoomActionPanel extends StatelessWidget {
                     top: -6.h,
                     right: -10.w,
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 6.w,
+                        vertical: 2.h,
+                      ),
                       decoration: BoxDecoration(
                         color: badgeColor ?? Colors.red,
                         borderRadius: BorderRadius.circular(10.r),

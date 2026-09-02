@@ -98,8 +98,8 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
       if (widget.passwordFocus != null) widget.passwordFocus!,
     ];
 
-    return listenables.isEmpty 
-        ? _buildContent(context) 
+    return listenables.isEmpty
+        ? _buildContent(context)
         : ListenableBuilder(
             listenable: Listenable.merge(listenables),
             builder: (context, _) => _buildContent(context),

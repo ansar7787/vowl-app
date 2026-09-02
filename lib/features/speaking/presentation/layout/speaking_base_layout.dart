@@ -177,7 +177,10 @@ class SpeakingBaseLayout extends StatelessWidget {
           isDark: isDark,
           primaryColor: theme.primaryColor,
           explanation: finalExplanation,
-          ruleTitle: context.tr('common.speaking_tip', fallback: 'SPEAKING TIP'),
+          ruleTitle: context.tr(
+            'common.speaking_tip',
+            fallback: 'SPEAKING TIP',
+          ),
           ruleContent: ruleContent,
           sampleAnswer: quest.sampleAnswer,
           onTutorPass: onTutorPass,

@@ -49,7 +49,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
       FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
     );
   }
-  
+
   @override
   void dispose() {
     _showConfetti.dispose();
@@ -57,7 +57,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     _isCorrect.dispose();
     _attempts.dispose();
     _matchedIndices.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -138,59 +138,67 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _attempts, _matchedIndices]),
-            builder: (context, _) {
-              return EliteBaseLayout(
-          onTutorPass: _tutorPass,
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered.value,
-          state: state,
-          isCorrect: _isCorrect.value,
-          isFinalFailure:
-              (state is EliteMasteryLoaded && state.isFinalFailure) ||
-              (state is EliteMasteryLoaded ? state.livesRemaining <= 0 : false),
-          showConfetti: _showConfetti.value,
-          title: _isAnswered.value
-              ? ""
-              : quest?.instruction.isNotEmpty == true
-              ? quest!.instruction
-              : context.tr(
-                  'games.accent_shadowing_instruction',
-                  fallback:
-                      'Listen to the example, then speak and match the exact accent and rhythm.',
-                ),
-          titleIcon: Icons.record_voice_over_rounded,
-          useScrolling: false,
-          onContinue: () {
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _attempts.value = 0;
-            _matchedIndices.value = {};
-            context.read<EliteMasteryBloc>().add(NextEliteQuestion());
-          },
-          onHint: () {
-            final bloc = context.read<EliteMasteryBloc>();
-            final s = bloc.state;
-            if (s is EliteMasteryLoaded) {
-              if (s.currentQuest.hint != null &&
-                  s.currentQuest.hint!.isNotEmpty) {
-                if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                bloc.add(ShowEliteHint());
-              } else {
-                GameDialogHelper.showHintAdDialog(
-                  context,
-                  onHintEarned: () {
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _attempts,
+            _matchedIndices,
+          ]),
+          builder: (context, _) {
+            return EliteBaseLayout(
+              onTutorPass: _tutorPass,
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered.value,
+              state: state,
+              isCorrect: _isCorrect.value,
+              isFinalFailure:
+                  (state is EliteMasteryLoaded && state.isFinalFailure) ||
+                  (state is EliteMasteryLoaded
+                      ? state.livesRemaining <= 0
+                      : false),
+              showConfetti: _showConfetti.value,
+              title: _isAnswered.value
+                  ? ""
+                  : quest?.instruction.isNotEmpty == true
+                  ? quest!.instruction
+                  : context.tr(
+                      'games.accent_shadowing_instruction',
+                      fallback:
+                          'Listen to the example, then speak and match the exact accent and rhythm.',
+                    ),
+              titleIcon: Icons.record_voice_over_rounded,
+              useScrolling: false,
+              onContinue: () {
+                _isAnswered.value = false;
+                _isCorrect.value = null;
+                _attempts.value = 0;
+                _matchedIndices.value = {};
+                context.read<EliteMasteryBloc>().add(NextEliteQuestion());
+              },
+              onHint: () {
+                final bloc = context.read<EliteMasteryBloc>();
+                final s = bloc.state;
+                if (s is EliteMasteryLoaded) {
+                  if (s.currentQuest.hint != null &&
+                      s.currentQuest.hint!.isNotEmpty) {
+                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
-                  },
-                );
-              }
-            }
+                  } else {
+                    GameDialogHelper.showHintAdDialog(
+                      context,
+                      onHintEarned: () {
+                        bloc.add(ShowEliteHint());
+                      },
+                    );
+                  }
+                }
+              },
+              child: _buildBody(context, state, isDark, theme),
+            );
           },
-          child: _buildBody(context, state, isDark, theme),
         );
-            },
-          );
       },
     );
   }
@@ -250,7 +258,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                     Expanded(
                       child: LayoutBuilder(
                         builder: (context, constraints) {
-                          final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+                          final isCompact =
+                              constraints.maxHeight < _kCompactHeightBreakpoint;
 
                           return Padding(
                             padding: EdgeInsets.symmetric(
@@ -274,7 +283,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                                   isAnswered: _isAnswered.value,
                                   isCorrect: _isCorrect.value,
                                   attempts: _attempts.value,
-                                  onListenTap: () => _soundService.playTts(targetText ?? ""),
+                                  onListenTap: () =>
+                                      _soundService.playTts(targetText ?? ""),
                                 ),
 
                                 if (state.isHintVisible) ...[
@@ -305,11 +315,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                   ],
                 ),
               ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 60.h,
-                ),
-              ),
+              SliverToBoxAdapter(child: SizedBox(height: 60.h)),
             ],
           ),
         ),

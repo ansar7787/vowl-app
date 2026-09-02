@@ -24,7 +24,6 @@ import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dar
 import 'package:vowl/features/daily_words/presentation/widgets/daily_words_widgets.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 
-
 class DailyWordsScreen extends StatefulWidget {
   const DailyWordsScreen({super.key});
 
@@ -46,7 +45,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   final ValueNotifier<bool> _isFlipped = ValueNotifier(false);
   final ValueNotifier<bool> _isAnimating = ValueNotifier(false);
-  
+
   // Session Access State
   final ValueNotifier<bool> _hasUnlockedFullSession = ValueNotifier(false);
 
@@ -72,20 +71,18 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       duration: const Duration(milliseconds: 400),
       vsync: this,
     );
-    _slideAnimation = Tween<Offset>(
-      begin: Offset.zero,
-      end: const Offset(1.5, 0),
-    ).animate(
-      CurvedAnimation(parent: _slideController, curve: Curves.easeInCubic),
-    );
+    _slideAnimation =
+        Tween<Offset>(begin: Offset.zero, end: const Offset(1.5, 0)).animate(
+          CurvedAnimation(parent: _slideController, curve: Curves.easeInCubic),
+        );
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     _translationUnlocked.value = isPremium;
     _hasUnlockedFullSession.value = isPremium;
 
     context.read<DailyWordsBloc>().add(
-          DailyWordsLoadRequested(isPremium: isPremium),
-        );
+      DailyWordsLoadRequested(isPremium: isPremium),
+    );
   }
 
   @override
@@ -113,6 +110,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       _flipController.reverse();
     }
   }
+
   Future<bool> _showHalfwayMonetizationGate() async {
     final completer = Completer<bool>();
 
@@ -161,7 +159,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  context.tr('daily_words.halfway_title', fallback: 'You\'re on fire!'),
+                  context.tr(
+                    'daily_words.halfway_title',
+                    fallback: 'You\'re on fire!',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 28.sp,
@@ -176,7 +177,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   child: Text(
                     context.tr(
                       'daily_words.halfway_desc',
-                      fallback: 'Unlock the final 5 words with a quick ad, or go Premium for an ad-free experience.',
+                      fallback:
+                          'Unlock the final 5 words with a quick ad, or go Premium for an ad-free experience.',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -223,13 +225,15 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           isPremium: false,
                           childSafe: false,
                           onUserEarnedReward: (_) {
-                            if (!completer.isCompleted) completer.complete(true);
+                            if (!completer.isCompleted)
+                              completer.complete(true);
                           },
                           onDismissed: () {
-                            if (!completer.isCompleted) completer.complete(false);
+                            if (!completer.isCompleted)
+                              completer.complete(false);
                             if (context.mounted) {
                               // Only close the bottom sheet after the ad is completely dismissed
-                              context.pop(); 
+                              context.pop();
                             }
                           },
                         );
@@ -237,10 +241,17 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 24.r),
+                          Icon(
+                            Icons.play_circle_fill_rounded,
+                            color: Colors.white,
+                            size: 24.r,
+                          ),
                           SizedBox(width: 12.w),
                           Text(
-                            context.tr('daily_words.watch_ad', fallback: 'Watch Ad to Unlock'),
+                            context.tr(
+                              'daily_words.watch_ad',
+                              fallback: 'Watch Ad to Unlock',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
@@ -261,7 +272,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   height: 60.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.3), width: 2),
+                    border: Border.all(
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                      width: 2,
+                    ),
                     color: const Color(0xFFF59E0B).withValues(alpha: 0.05),
                   ),
                   child: Material(
@@ -275,10 +289,17 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.workspace_premium_rounded, color: const Color(0xFFF59E0B), size: 24.r),
+                          Icon(
+                            Icons.workspace_premium_rounded,
+                            color: const Color(0xFFF59E0B),
+                            size: 24.r,
+                          ),
                           SizedBox(width: 12.w),
                           Text(
-                            context.tr('daily_words.go_premium', fallback: 'Unlock Premium'),
+                            context.tr(
+                              'daily_words.go_premium',
+                              fallback: 'Unlock Premium',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
@@ -297,10 +318,15 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 TextButton(
                   onPressed: () => context.pop(),
                   style: TextButton.styleFrom(
-                    foregroundColor: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                    foregroundColor: isDark
+                        ? Colors.white54
+                        : const Color(0xFF94A3B8),
                   ),
                   child: Text(
-                    context.tr('daily_words.maybe_later', fallback: 'Maybe Later'),
+                    context.tr(
+                      'daily_words.maybe_later',
+                      fallback: 'Maybe Later',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
@@ -316,7 +342,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     ).then((_) {
       if (!completer.isCompleted) completer.complete(false);
     });
-    
+
     return completer.future;
   }
 
@@ -326,10 +352,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     // GATING LOGIC: If they are on the 5th word (index 4) and haven't unlocked the rest
-    if (!isPremium && state.currentIndex == 4 && !_hasUnlockedFullSession.value) {
+    if (!isPremium &&
+        state.currentIndex == 4 &&
+        !_hasUnlockedFullSession.value) {
       final unlocked = await _showHalfwayMonetizationGate();
       if (!unlocked) return; // User chose not to watch ad, stay on word 5
-      
+
       _hasUnlockedFullSession.value = true;
     }
 
@@ -370,7 +398,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       if (mounted) _isTranslating.value = false;
       return;
     }
-    
+
     _isTranslating.value = true;
 
     try {
@@ -410,7 +438,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(context.tr('translation.error', fallback: 'Translation failed. Please check internet connection.')),
+            content: Text(
+              context.tr(
+                'translation.error',
+                fallback:
+                    'Translation failed. Please check internet connection.',
+              ),
+            ),
           ),
         );
       }
@@ -426,7 +460,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       final tWord = await _translationService.translate(word.word);
       final tDef = await _translationService.translate(word.definition);
       final tEx = await _translationService.translate(word.example);
-      
+
       if (mounted) {
         _translatedWord.value = tWord;
         _translatedDefinition.value = tDef;
@@ -437,7 +471,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(context.tr('translation.downloading', fallback: 'Translation model downloading... Please wait.'))),
+          SnackBar(
+            content: Text(
+              context.tr(
+                'translation.downloading',
+                fallback: 'Translation model downloading... Please wait.',
+              ),
+            ),
+          ),
         );
       }
     }
@@ -458,12 +499,16 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 return _buildShimmerLoading(isDark);
               }
               if (state.status == DailyWordsStatus.error) {
-                return SafeArea(child: DailyWordsErrorView(message: state.errorMessage ?? ''));
+                return SafeArea(
+                  child: DailyWordsErrorView(message: state.errorMessage ?? ''),
+                );
               }
               if (state.status == DailyWordsStatus.sessionComplete) {
                 return SafeArea(
                   child: SessionCompleteView(
-                    streak: context.watch<AuthBloc>().state.user?.currentStreak ?? 0,
+                    streak:
+                        context.watch<AuthBloc>().state.user?.currentStreak ??
+                        0,
                     totalLearned: state.totalWordsLearned,
                     day: state.currentDay,
                   ),
@@ -479,9 +524,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           BlocBuilder<DailyWordsBloc, DailyWordsState>(
             builder: (context, state) {
               if (state.status == DailyWordsStatus.sessionComplete) {
-                return const IgnorePointer(
-                  child: GameConfetti(),
-                );
+                return const IgnorePointer(child: GameConfetti());
               }
               return const SizedBox.shrink();
             },
@@ -550,217 +593,245 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       ]),
       builder: (context, _) {
         return SafeArea(
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-            child: Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    di.sl<HapticService>().light();
-                    context.pop();
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(8.r),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.05),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      size: 20.r,
-                      color: isDark ? Colors.white : Colors.black,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        context.tr('home.level_label_short', args: [state.currentDay.toString()], fallback: 'Lesson ${state.currentDay}'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        di.sl<HapticService>().light();
+                        context.pop();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.1)
+                              : Colors.black.withValues(alpha: 0.05),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          size: 20.r,
+                          color: isDark ? Colors.white : Colors.black,
                         ),
                       ),
-                      if (state.wordSet != null)
-                        AutoSizeText(
-                          state.wordSet!.theme,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w600,
-                            color: const Color(0xFF6366F1),
-                          ),
-                          maxLines: 1,
-                        ),
-                    ],
-                  ),
-                ),
-                Builder(
-                  builder: (context) {
-                    final streak = context.watch<AuthBloc>().state.user?.currentStreak ?? 0;
-                    if (streak == 0) return const SizedBox.shrink();
-                    return Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-                        ),
-                      ),
-                      child: Row(
+                    ),
+                    SizedBox(width: 16.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            Icons.local_fire_department_rounded,
-                            color: const Color(0xFFF59E0B),
-                            size: 16.r,
-                          ),
-                          SizedBox(width: 4.w),
                           Text(
-                            '$streak',
+                            context.tr(
+                              'home.level_label_short',
+                              args: [state.currentDay.toString()],
+                              fallback: 'Lesson ${state.currentDay}',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 14.sp,
+                              fontSize: 20.sp,
                               fontWeight: FontWeight.w900,
-                              color: const Color(0xFFF59E0B),
+                              color: isDark
+                                  ? Colors.white
+                                  : const Color(0xFF0F172A),
                             ),
                           ),
+                          if (state.wordSet != null)
+                            AutoSizeText(
+                              state.wordSet!.theme,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(0xFF6366F1),
+                              ),
+                              maxLines: 1,
+                            ),
                         ],
                       ),
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.h),
-            child: _DailyWordsProgressBar(
-              progress: state.totalWords > 0
-                  ? (state.currentIndex + 1) / state.totalWords
-                  : 0,
-              currentIndex: state.currentIndex + 1,
-              totalWords: state.totalWords,
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-              child: SlideTransition(
-                position: _slideAnimation,
-                child: GestureDetector(
-                  onTap: _toggleFlip,
-                  child: AnimatedBuilder(
-                    animation: _flipAnimation,
-                    builder: (context, child) {
-                      final angle = _flipAnimation.value * 3.14159;
-                      final showBack = _flipAnimation.value > 0.5;
-                      return Transform(
-                        alignment: Alignment.center,
-                        transform: Matrix4.identity()
-                          ..setEntry(3, 2, 0.001)
-                          ..rotateY(angle),
-                        child: showBack
-                            ? Transform(
-                                alignment: Alignment.center,
-                                transform: Matrix4.identity()..rotateY(3.14159),
-                                child: WordCardBack(
-                                  word: word,
-                                  isDark: isDark,
-                                  onSpeak: () => _speakWord(word.word),
-                                  onTranslate: () => _handleTranslate(word),
-                                  isTranslating: _isTranslating.value,
-                                  translatedDefinition: _translatedDefinition.value,
-                                  translatedExample: _translatedExample.value,
-                                ),
-                              )
-                            : WordCardFront(
-                                word: word,
-                                isDark: isDark,
-                                onSpeak: () => _speakWord(word.word),
-                                onTranslate: () => _handleTranslate(word),
-                                isTranslating: _isTranslating.value,
-                                translatedWord: _translatedWord.value,
+                    ),
+                    Builder(
+                      builder: (context) {
+                        final streak =
+                            context
+                                .watch<AuthBloc>()
+                                .state
+                                .user
+                                ?.currentStreak ??
+                            0;
+                        if (streak == 0) return const SizedBox.shrink();
+                        return Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 6.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(
+                              0xFFF59E0B,
+                            ).withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(16.r),
+                            border: Border.all(
+                              color: const Color(
+                                0xFFF59E0B,
+                              ).withValues(alpha: 0.3),
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.local_fire_department_rounded,
+                                color: const Color(0xFFF59E0B),
+                                size: 16.r,
                               ),
-                      );
-                    },
+                              SizedBox(width: 4.w),
+                              Text(
+                                '$streak',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFFF59E0B),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 10.h),
+                child: _DailyWordsProgressBar(
+                  progress: state.totalWords > 0
+                      ? (state.currentIndex + 1) / state.totalWords
+                      : 0,
+                  currentIndex: state.currentIndex + 1,
+                  totalWords: state.totalWords,
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 20.h,
+                  ),
+                  child: SlideTransition(
+                    position: _slideAnimation,
+                    child: GestureDetector(
+                      onTap: _toggleFlip,
+                      child: AnimatedBuilder(
+                        animation: _flipAnimation,
+                        builder: (context, child) {
+                          final angle = _flipAnimation.value * 3.14159;
+                          final showBack = _flipAnimation.value > 0.5;
+                          return Transform(
+                            alignment: Alignment.center,
+                            transform: Matrix4.identity()
+                              ..setEntry(3, 2, 0.001)
+                              ..rotateY(angle),
+                            child: showBack
+                                ? Transform(
+                                    alignment: Alignment.center,
+                                    transform: Matrix4.identity()
+                                      ..rotateY(3.14159),
+                                    child: WordCardBack(
+                                      word: word,
+                                      isDark: isDark,
+                                      onSpeak: () => _speakWord(word.word),
+                                      onTranslate: () => _handleTranslate(word),
+                                      isTranslating: _isTranslating.value,
+                                      translatedDefinition:
+                                          _translatedDefinition.value,
+                                      translatedExample:
+                                          _translatedExample.value,
+                                    ),
+                                  )
+                                : WordCardFront(
+                                    word: word,
+                                    isDark: isDark,
+                                    onSpeak: () => _speakWord(word.word),
+                                    onTranslate: () => _handleTranslate(word),
+                                    isTranslating: _isTranslating.value,
+                                    translatedWord: _translatedWord.value,
+                                  ),
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 20.h),
-            child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              switchInCurve: Curves.easeOutCubic,
-              switchOutCurve: Curves.easeInCubic,
-              transitionBuilder: (child, animation) {
-                return FadeTransition(
-                  opacity: animation,
-                  child: ScaleTransition(
-                    scale: Tween<double>(begin: 0.95, end: 1.0).animate(animation),
-                    child: child,
-                  ),
-                );
-              },
-              child: !_isFlipped.value
-                  ? ActionButton(
-                      key: const ValueKey('flip_btn'),
-                      label: context.tr(
-                        'daily_words.show_definition',
-                        fallback: 'Show Definition',
+              Padding(
+                padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 20.h),
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  switchInCurve: Curves.easeOutCubic,
+                  switchOutCurve: Curves.easeInCubic,
+                  transitionBuilder: (child, animation) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: ScaleTransition(
+                        scale: Tween<double>(
+                          begin: 0.95,
+                          end: 1.0,
+                        ).animate(animation),
+                        child: child,
                       ),
-                      icon: Icons.visibility_rounded,
-                      color: const Color(0xFF6366F1),
-                      isDark: isDark,
-                      onTap: _toggleFlip,
-                    )
-                  : Row(
-                      children: [
-                        Expanded(
-                          child: ActionButton(
-                            label: context.tr(
-                              'daily_words.pronounce',
-                              fallback: 'Pronounce',
-                            ),
-                            icon: Icons.volume_up_rounded,
-                            color: const Color(0xFF6366F1),
-                            isDark: isDark,
-                            onTap: () => _speakWord(word.word),
+                    );
+                  },
+                  child: !_isFlipped.value
+                      ? ActionButton(
+                          key: const ValueKey('flip_btn'),
+                          label: context.tr(
+                            'daily_words.show_definition',
+                            fallback: 'Show Definition',
                           ),
-                        ),
-                        SizedBox(width: 12.w),
-                        Expanded(
-                          child: ActionButton(
-                            key: const ValueKey('learned_btn'),
-                            label: context.tr(
-                              'daily_words.learned',
-                              fallback: 'Got it! Next Word',
+                          icon: Icons.visibility_rounded,
+                          color: const Color(0xFF6366F1),
+                          isDark: isDark,
+                          onTap: _toggleFlip,
+                        )
+                      : Row(
+                          children: [
+                            Expanded(
+                              child: ActionButton(
+                                label: context.tr(
+                                  'daily_words.pronounce',
+                                  fallback: 'Pronounce',
+                                ),
+                                icon: Icons.volume_up_rounded,
+                                color: const Color(0xFF6366F1),
+                                isDark: isDark,
+                                onTap: () => _speakWord(word.word),
+                              ),
                             ),
-                            icon: Icons.verified_rounded,
-                            color: const Color(0xFF10B981),
-                            isDark: isDark,
-                            onTap: () => _markLearnedAndNext(word),
-                          ),
+                            SizedBox(width: 12.w),
+                            Expanded(
+                              child: ActionButton(
+                                key: const ValueKey('learned_btn'),
+                                label: context.tr(
+                                  'daily_words.learned',
+                                  fallback: 'Got it! Next Word',
+                                ),
+                                icon: Icons.verified_rounded,
+                                color: const Color(0xFF10B981),
+                                isDark: isDark,
+                                onTap: () => _markLearnedAndNext(word),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-            ),
-          ),
-        ],
+                ),
+              ),
+            ],
           ),
         );
-      }
+      },
     );
   }
 }
@@ -783,7 +854,7 @@ class _DailyWordsProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Row(
@@ -820,4 +891,3 @@ class _DailyWordsProgressBar extends StatelessWidget {
     );
   }
 }
-

@@ -65,8 +65,10 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _controller.lastProcessedIndex;
-          final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
+          final isNewQuestion =
+              state.currentIndex != _controller.lastProcessedIndex;
+          final isRetry =
+              !state.answerStatus.isAnswered && _controller.isAnswered;
 
           if (isNewQuestion || isRetry) {
             _controller.reset(state.currentQuest, state.currentIndex);
@@ -118,7 +120,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                   : false,
               showConfetti: _controller.showConfetti,
               hasStage2: true,
-              onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+              onContinue: () =>
+                  context.read<VocabularyBloc>().add(NextQuestion()),
               useScrolling: false,
               onHint: () {
                 _controller.onHint(quest);
@@ -138,29 +141,48 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                             slivers: [
                               SliverToBoxAdapter(
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                    vertical: 20.h,
+                                  ),
                                   child: Column(
                                     children: [
                                       PrefixSuffixMissionControl(
                                         primaryColor: theme.primaryColor,
-                                        instruction: quest.hint ?? quest.instruction,
+                                        instruction:
+                                            quest.hint ?? quest.instruction,
                                       ),
                                       SizedBox(height: 20.h),
                                       IgnorePointer(
-                                        ignoring: _controller.isFirstStagePassed,
+                                        ignoring:
+                                            _controller.isFirstStagePassed,
                                         child: PrefixSuffixSynthesizer(
                                           rootWord: quest.rootWord ?? "???",
                                           options: quest.options ?? [],
-                                          correctAnswer: quest.correctAnswer ?? "",
-                                          selectedAffix: _controller.selectedAffix,
+                                          correctAnswer:
+                                              quest.correctAnswer ?? "",
+                                          selectedAffix:
+                                              _controller.selectedAffix,
                                           hintedAffix: _controller.hintedAffix,
-                                          isFirstStagePassed: _controller.isFirstStagePassed,
+                                          isFirstStagePassed:
+                                              _controller.isFirstStagePassed,
                                           primaryColor: theme.primaryColor,
                                           isDark: isDark,
-                                          onAffixSelected: (affix, isPrefix) => _controller.onAffixSelected(affix, quest, isPrefix),
+                                          onAffixSelected: (affix, isPrefix) =>
+                                              _controller.onAffixSelected(
+                                                affix,
+                                                quest,
+                                                isPrefix,
+                                              ),
                                         ),
                                       ),
-                                      SizedBox(height: (_controller.isFirstStagePassed && !_controller.isAnswered) ? 380.h : 60.h),
+                                      SizedBox(
+                                        height:
+                                            (_controller.isFirstStagePassed &&
+                                                !_controller.isAnswered)
+                                            ? 380.h
+                                            : 60.h,
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -168,14 +190,18 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                             ],
                           ),
                         ),
-                        if (_controller.isFirstStagePassed && !_controller.isAnswered)
+                        if (_controller.isFirstStagePassed &&
+                            !_controller.isAnswered)
                           TypeToConfirmOverlay(
                             isPositioned: true,
                             expectedText: quest.correctAnswer ?? "",
                             primaryColor: theme.primaryColor,
-                            onConfirmed: () => _controller.submitFinalAnswer(true, quest),
-                            onBypassed: () => _controller.submitFinalAnswer(true, quest),
-                            onSkipped: () => _controller.submitFinalAnswer(false, quest),
+                            onConfirmed: () =>
+                                _controller.submitFinalAnswer(true, quest),
+                            onBypassed: () =>
+                                _controller.submitFinalAnswer(true, quest),
+                            onSkipped: () =>
+                                _controller.submitFinalAnswer(false, quest),
                           ),
                       ],
                     ),

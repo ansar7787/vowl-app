@@ -40,7 +40,9 @@ class KidsAlphabetLayout extends StatelessWidget {
               flex: 5,
               child: Center(
                 child: _KidsChalkboard(
-                  key: ValueKey(quest), // CRITICAL: Reset state when the question changes
+                  key: ValueKey(
+                    quest,
+                  ), // CRITICAL: Reset state when the question changes
                   state: state,
                   quest: quest,
                 ),
@@ -94,6 +96,7 @@ class KidsAlphabetLayout extends StatelessWidget {
       },
     );
   }
+
   Widget _buildWoodenBlock(
     BuildContext context,
     KidsLoaded state,
@@ -151,7 +154,6 @@ class KidsAlphabetLayout extends StatelessWidget {
       child: blockWidget,
     );
   }
-
 }
 
 class _KidsChalkboard extends StatefulWidget {
@@ -220,9 +222,13 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                     ? null
                     : () {
                         if (widget.quest.instruction != null) {
-                          di.sl<KidsTTSService>().speak(widget.quest.instruction!);
+                          di.sl<KidsTTSService>().speak(
+                            widget.quest.instruction!,
+                          );
                         } else if (widget.quest.wordExample != null) {
-                          di.sl<KidsTTSService>().speak(widget.quest.wordExample!);
+                          di.sl<KidsTTSService>().speak(
+                            widget.quest.wordExample!,
+                          );
                         } else if (widget.quest.question != null) {
                           di.sl<KidsTTSService>().speak(widget.quest.question!);
                         }

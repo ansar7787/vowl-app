@@ -108,7 +108,9 @@ class ReadingSpeedPulseZone extends StatelessWidget {
                                       "WPM",
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
-                                        color: isDark ? Colors.white70 : color.withValues(alpha: 0.7),
+                                        color: isDark
+                                            ? Colors.white70
+                                            : color.withValues(alpha: 0.7),
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                       ),

@@ -72,8 +72,13 @@ class _ReadingHighlightablePassageState
     final selected = _sentences[index];
     // Check if the selected sentence contains the correct answer or matches it
     // Usually the correct answer in these games is the specific sentence
-    final isCorrect = selected.trim().toLowerCase().contains(widget.correctAnswer.trim().toLowerCase()) ||
-        widget.correctAnswer.trim().toLowerCase().contains(selected.trim().toLowerCase());
+    final isCorrect =
+        selected.trim().toLowerCase().contains(
+          widget.correctAnswer.trim().toLowerCase(),
+        ) ||
+        widget.correctAnswer.trim().toLowerCase().contains(
+          selected.trim().toLowerCase(),
+        );
 
     widget.onSentenceSelected(isCorrect, selected);
   }
@@ -84,93 +89,107 @@ class _ReadingHighlightablePassageState
       valueListenable: _selectedIndex,
       builder: (context, selectedIndexValue, _) {
         return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: widget.isDark
-            ? Colors.black.withValues(alpha: 0.2)
-            : Colors.white.withValues(alpha: 0.8),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: widget.isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : widget.primaryColor.withValues(alpha: 0.15),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(Icons.touch_app_rounded, color: widget.primaryColor, size: 24.sp),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Text(
-                  context.tr('reading.tap_sentence', fallback: 'TAP THE SENTENCE THAT CONTAINS THE ANSWER'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
-                    color: widget.primaryColor,
-                    letterSpacing: 1.5,
-                  ),
-                ),
+          width: double.infinity,
+          padding: EdgeInsets.all(24.r),
+          decoration: BoxDecoration(
+            color: widget.isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : Colors.white.withValues(alpha: 0.8),
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: widget.isDark
+                  ? Colors.white.withValues(alpha: 0.1)
+                  : widget.primaryColor.withValues(alpha: 0.15),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: widget.primaryColor.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
-          SizedBox(height: 16.h),
-          Wrap(
-            spacing: 4.w,
-            runSpacing: 4.h,
-            children: List.generate(_sentences.length, (index) {
-              final isSelected = selectedIndexValue == index;
-              final sentence = _sentences[index];
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.touch_app_rounded,
+                    color: widget.primaryColor,
+                    size: 24.sp,
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      context.tr(
+                        'reading.tap_sentence',
+                        fallback: 'TAP THE SENTENCE THAT CONTAINS THE ANSWER',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.primaryColor,
+                        letterSpacing: 1.5,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16.h),
+              Wrap(
+                spacing: 4.w,
+                runSpacing: 4.h,
+                children: List.generate(_sentences.length, (index) {
+                  final isSelected = selectedIndexValue == index;
+                  final sentence = _sentences[index];
 
-              return GestureDetector(
-                onTap: () => _onSentenceTap(index),
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? widget.primaryColor.withValues(alpha: 0.2)
-                        : Colors.transparent,
-                    borderRadius: BorderRadius.circular(6.r),
-                    border: Border.all(
-                      color: isSelected
-                          ? widget.primaryColor
-                          : Colors.transparent,
-                      width: 1.5,
+                  return GestureDetector(
+                    onTap: () => _onSentenceTap(index),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 4.w,
+                        vertical: 2.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? widget.primaryColor.withValues(alpha: 0.2)
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(6.r),
+                        border: Border.all(
+                          color: isSelected
+                              ? widget.primaryColor
+                              : Colors.transparent,
+                          width: 1.5,
+                        ),
+                      ),
+                      child: Text(
+                        sentence,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 17.sp,
+                          fontWeight: isSelected
+                              ? FontWeight.w600
+                              : FontWeight.w500,
+                          color: isSelected
+                              ? widget.primaryColor
+                              : (widget.isDark
+                                    ? Colors.white.withValues(alpha: 0.9)
+                                    : const Color(0xFF1E293B)),
+                          height: 1.65,
+                          letterSpacing: 0.2,
+                        ),
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    sentence,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 17.sp,
-                      fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
-                      color: isSelected
-                          ? widget.primaryColor
-                          : (widget.isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B)),
-                      height: 1.65,
-                      letterSpacing: 0.2,
-                    ),
-                  ),
-                ),
-              );
-            }),
+                  );
+                }),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
+        );
       },
     );
   }

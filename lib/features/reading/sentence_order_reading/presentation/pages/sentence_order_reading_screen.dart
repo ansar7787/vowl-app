@@ -51,6 +51,7 @@ class _SentenceOrderReadingScreenState
     _scrollController.dispose();
     super.dispose();
   }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -130,7 +131,10 @@ class _SentenceOrderReadingScreenState
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('reading_games.logic_flow_expert', fallback: 'LOGIC FLOW EXPERT!'),
+            title: context.tr(
+              'reading_games.logic_flow_expert',
+              fallback: 'LOGIC FLOW EXPERT!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -141,7 +145,12 @@ class _SentenceOrderReadingScreenState
             : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _currentOrder]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _currentOrder,
+          ]),
           builder: (context, _) {
             return ReadingBaseLayout(
               gameType: widget.gameType,
@@ -149,87 +158,94 @@ class _SentenceOrderReadingScreenState
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : RawScrollbar(
-                  controller: _scrollController,
-                  thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                  radius: Radius.circular(8.r),
-                  thickness: 4.w,
-                  child: CustomScrollView(
-                    controller: _scrollController,
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 16.h),
-                              SentenceOrderReadingInstruction(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              ReorderableListView(
-                                shrinkWrap: true,
-                                physics: const NeverScrollableScrollPhysics(),
-                                proxyDecorator: (child, index, animation) =>
-                                    _buildProxy(child, animation, theme.primaryColor),
-                                onReorder: _onReorder,
-                                children: List.generate(
-                                  _currentOrder.value.length,
-                                  (index) => SentenceOrderReadingStoneSlab(
-                                    key: ValueKey(_currentOrder.value[index]),
-                                    text: _currentOrder.value[index],
-                                    index: index,
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    transitionWords: quest.transitionWords,
+              onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
+              onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  SentenceOrderReadingInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction: quest.instruction,
                                   ),
-                                ),
+                                  SizedBox(height: 24.h),
+                                  ReorderableListView(
+                                    shrinkWrap: true,
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    proxyDecorator: (child, index, animation) =>
+                                        _buildProxy(
+                                          child,
+                                          animation,
+                                          theme.primaryColor,
+                                        ),
+                                    onReorder: _onReorder,
+                                    children: List.generate(
+                                      _currentOrder.value.length,
+                                      (index) => SentenceOrderReadingStoneSlab(
+                                        key: ValueKey(
+                                          _currentOrder.value[index],
+                                        ),
+                                        text: _currentOrder.value[index],
+                                        index: index,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        transitionWords: quest.transitionWords,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              if (!_isAnswered.value) ...[
-                                SizedBox(height: 24.h),
-                                SentenceOrderReadingCapstone(
-                                  color: theme.primaryColor,
-                                  onTap: () {
-                                    _hapticService.heavy();
-                                    _submitAnswer(
-                                      quest.correctOrder ?? [],
-                                      quest.shuffledSentences ?? [],
-                                    );
-                                  },
-                                ),
-                              ],
-                              if (_isAnswered.value) ...[
-                                SizedBox(height: 30.h),
-                                SentenceOrderReadingResult(
-                                  quest: quest,
-                                  isCorrect: _isCorrect.value == true,
-                                  isDark: isDark,
-                                ),
-                              ],
-                              SizedBox(height: 50.h),
-                            ],
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (!_isAnswered.value) ...[
+                                    SizedBox(height: 24.h),
+                                    SentenceOrderReadingCapstone(
+                                      color: theme.primaryColor,
+                                      onTap: () {
+                                        _hapticService.heavy();
+                                        _submitAnswer(
+                                          quest.correctOrder ?? [],
+                                          quest.shuffledSentences ?? [],
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                  if (_isAnswered.value) ...[
+                                    SizedBox(height: 30.h),
+                                    SentenceOrderReadingResult(
+                                      quest: quest,
+                                      isCorrect: _isCorrect.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(height: 50.h),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
+                    ),
             );
           },
         );

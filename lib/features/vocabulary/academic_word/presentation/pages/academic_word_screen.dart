@@ -51,7 +51,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   final ValueNotifier<String?> _misspelledWord = ValueNotifier(null);
-  
+
   final ScrollController _scrollController = ScrollController();
 
   int _lastProcessedIndex = -1;
@@ -212,92 +212,129 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
               context.read<VocabularyBloc>().add(NextQuestion());
             }
           },
-          onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          onHint: () =>
+              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
           disablePadding: true,
           child: quest == null
               ? const SizedBox.shrink()
               : LayoutBuilder(
                   builder: (context, constraints) {
-                    final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-                    final trueMaxHeight = constraints.maxHeight + keyboardHeight;
+                    final keyboardHeight = MediaQuery.of(
+                      context,
+                    ).viewInsets.bottom;
+                    final trueMaxHeight =
+                        constraints.maxHeight + keyboardHeight;
 
                     return Stack(
                       children: [
                         RawScrollbar(
                           controller: _scrollController,
-                          thumbColor: _cachedTheme.primaryColor.withValues(alpha: 0.5),
+                          thumbColor: _cachedTheme.primaryColor.withValues(
+                            alpha: 0.5,
+                          ),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
                             controller: _scrollController,
-                            physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                            physics: (!_isDragPassed.value)
+                                ? const NeverScrollableScrollPhysics()
+                                : const BouncingScrollPhysics(),
                             slivers: [
-                            SliverToBoxAdapter(
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(minHeight: trueMaxHeight),
-                                child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: trueMaxHeight,
-                                          child: IgnorePointer(
-                                            ignoring: _isDragPassed.value,
-                                            child: _AcademicWordGameBody(
-                                              quest: quest,
-                                              isAnswered: _isAnswered.value,
-                                              isCorrect: _isCorrect.value,
-                                              isFirstStagePassed: _isDragPassed.value,
-                                              misspelledWord: _misspelledWord.value,
-                                              slotKey: _slotKey,
-                                              activeShardIndex: _activeShardIndex.value,
-                                              dragOffset: _dragOffset.value,
-                                              themeColor: _cachedTheme.primaryColor,
-                                              onShardTap: (i) => _attemptThrust(i, quest),
-                                              onDragStart: _onShardDragStart,
-                                              onDragUpdate: _onShardDragUpdate,
-                                              onDragEnd: (i) => _onShardDragEnd(i, quest),
-                                              getInitialPosition: _getShardInitialPosition,
-                                            ),
+                              SliverToBoxAdapter(
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minHeight: trueMaxHeight,
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: trueMaxHeight,
+                                        child: IgnorePointer(
+                                          ignoring: _isDragPassed.value,
+                                          child: _AcademicWordGameBody(
+                                            quest: quest,
+                                            isAnswered: _isAnswered.value,
+                                            isCorrect: _isCorrect.value,
+                                            isFirstStagePassed:
+                                                _isDragPassed.value,
+                                            misspelledWord:
+                                                _misspelledWord.value,
+                                            slotKey: _slotKey,
+                                            activeShardIndex:
+                                                _activeShardIndex.value,
+                                            dragOffset: _dragOffset.value,
+                                            themeColor:
+                                                _cachedTheme.primaryColor,
+                                            onShardTap: (i) =>
+                                                _attemptThrust(i, quest),
+                                            onDragStart: _onShardDragStart,
+                                            onDragUpdate: _onShardDragUpdate,
+                                            onDragEnd: (i) =>
+                                                _onShardDragEnd(i, quest),
+                                            getInitialPosition:
+                                                _getShardInitialPosition,
                                           ),
                                         ),
-                                        if (_isDragPassed.value)
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                            child: Column(
-                                              children: [
-                                                SizedBox(height: 10.h),
-                                                if (quest.academicField != null || (quest.collocations != null && quest.collocations!.isNotEmpty) || quest.contextSentence != null || quest.example != null)
-                                                  AcademicWordFieldCollocations(
-                                                    academicField: quest.academicField,
-                                                    collocations: quest.collocations,
-                                                    contextSentence: quest.contextSentence ?? quest.example,
-                                                    color: _cachedTheme.primaryColor,
-                                                  ),
-                                                SizedBox(height: 10.h),
-                                              ],
-                                            ),
+                                      ),
+                                      if (_isDragPassed.value)
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 20.w,
                                           ),
-                                        SizedBox(height: (_isAnswered.value || _isDragPassed.value) ? 380.h : 60.h),
-                                      ],
-                                    ),
+                                          child: Column(
+                                            children: [
+                                              SizedBox(height: 10.h),
+                                              if (quest.academicField != null ||
+                                                  (quest.collocations != null &&
+                                                      quest
+                                                          .collocations!
+                                                          .isNotEmpty) ||
+                                                  quest.contextSentence !=
+                                                      null ||
+                                                  quest.example != null)
+                                                AcademicWordFieldCollocations(
+                                                  academicField:
+                                                      quest.academicField,
+                                                  collocations:
+                                                      quest.collocations,
+                                                  contextSentence:
+                                                      quest.contextSentence ??
+                                                      quest.example,
+                                                  color:
+                                                      _cachedTheme.primaryColor,
+                                                ),
+                                              SizedBox(height: 10.h),
+                                            ],
+                                          ),
+                                        ),
+                                      SizedBox(
+                                        height:
+                                            (_isAnswered.value ||
+                                                _isDragPassed.value)
+                                            ? 380.h
+                                            : 60.h,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ], // closes slivers
                           ), // closes CustomScrollView
                         ), // closes RawScrollbar
                         if (_isDragPassed.value && !_isAnswered.value)
-                            TypeToConfirmOverlay(
-                              expectedText: quest.correctAnswer ?? '',
-                              primaryColor: _cachedTheme.primaryColor,
-                              onConfirmed: () => _submitFinalAnswer(true),
-                              onSkipped: () => _submitFinalAnswer(false),
-                              onBypassed: () => _submitFinalAnswer(true),
-                              isPositioned: true,
-                            ),
-                        ], // closes Stack children
-                      ); // closes Stack
-                    },
-                  ),
+                          TypeToConfirmOverlay(
+                            expectedText: quest.correctAnswer ?? '',
+                            primaryColor: _cachedTheme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(true),
+                            onSkipped: () => _submitFinalAnswer(false),
+                            onBypassed: () => _submitFinalAnswer(true),
+                            isPositioned: true,
+                          ),
+                      ], // closes Stack children
+                    ); // closes Stack
+                  },
+                ),
         );
       },
     );
@@ -361,7 +398,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       _hapticService.selection();
       _isDragPassed.value = true;
       _activeShardIndex.value = null;
-      
+
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
@@ -405,7 +442,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   // ── Geometry helpers ──────────────────────────────────────────────────────
 
   bool _isNearSlot() {
-    if (_activeShardIndex.value == null || _dragConstraints == null) return false;
+    if (_activeShardIndex.value == null || _dragConstraints == null)
+      return false;
     if (!mounted) return false;
 
     final slotBox = _slotKey.currentContext?.findRenderObject() as RenderBox?;
@@ -433,7 +471,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     double maxHeight,
     double maxWidth,
   ) {
-    return _getShardInitialPosition(index, maxHeight, maxWidth) + _dragOffset.value;
+    return _getShardInitialPosition(index, maxHeight, maxWidth) +
+        _dragOffset.value;
   }
 
   Offset _getShardInitialPosition(

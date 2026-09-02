@@ -58,7 +58,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     _scrollController.dispose();
     super.dispose();
   }
-  
+
   final List<Color> _matchColors = [
     Colors.purpleAccent,
     Colors.orangeAccent,
@@ -210,7 +210,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('reading_games.relationship_master', fallback: 'RELATIONSHIP MASTER!'),
+            title: context.tr(
+              'reading_games.relationship_master',
+              fallback: 'RELATIONSHIP MASTER!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -224,7 +227,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
         // Shuffle lists but keep state-consistent orders if needed
         final keys = pairs.map((p) => p['key']!).toList();
         final values = pairs.map((p) => p['value']!).toList();
-        
+
         final Map<String, Color> colorMap = {};
         for (int i = 0; i < pairs.length; i++) {
           colorMap[pairs[i]['key']!] = _matchColors[i % _matchColors.length];
@@ -237,14 +240,23 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
         Color getColorForValue(String v) {
           // If matched, use the key's color. Otherwise primary
           if (_matches.value.containsValue(v)) {
-            final key = _matches.value.entries.firstWhere((e) => e.value == v).key;
+            final key = _matches.value.entries
+                .firstWhere((e) => e.value == v)
+                .key;
             return colorMap[key] ?? theme.primaryColor;
           }
           return theme.primaryColor;
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _matches, _activeKey, _pendingSubmission]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _matches,
+            _activeKey,
+            _pendingSubmission,
+          ]),
           builder: (context, _) {
             return ReadingBaseLayout(
               gameType: widget.gameType,
@@ -252,147 +264,185 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          onContinue: () =>
-              context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<ReadingBloc>().add(const ReadingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
-                  builder: (context, constraints) {
-                    return RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverPadding(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w),
-                            sliver: SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  SizedBox(height: 16.h),
-                                  ReadAndMatchInstruction(
-                                    primaryColor: theme.primaryColor,
-                                    instruction: quest.instruction,
-                                  ),
-                                  SizedBox(height: 32.h),
-
-                                  // Interactive Canvas Stack
-                                  SizedBox(
-                                    key: _canvasKey,
-                                    height: 420.h,
-                                    child: Stack(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            // Left Keys Column
-                                            Expanded(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
-                                                children: keys
-                                                    .map(
-                                                      (k) => ReadAndMatchTerminal(
-                                                        text: k,
-                                                        isSource: true,
-                                                        color: getColorForKey(k),
-                                                        isDark: isDark,
-                                                        isMatched: _matches.value
-                                                            .containsKey(k),
-                                                        isActive: _activeKey.value == k,
-                                                        onTap: () => _onKeyTap(k),
-                                                      ),
-                                                    )
-                                                    .toList(),
-                                              ),
-                                            ),
-                                            SizedBox(width: 40.w),
-                                            // Right Values Column
-                                            Expanded(
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.spaceEvenly,
-                                                children: values
-                                                    .map(
-                                                      (v) => ReadAndMatchTerminal(
-                                                        text: v,
-                                                        isSource: false,
-                                                        color: getColorForValue(v),
-                                                        isDark: isDark,
-                                                        isMatched: _matches.value
-                                                            .containsValue(v),
-                                                        isActive: false,
-                                                        onTap: () =>
-                                                            _onValueTap(v, pairs),
-                                                      ),
-                                                    )
-                                                    .toList(),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-
-                                        // Render Glowing Lasers dynamically using key positions!
-                                        IgnorePointer(
-                                          child: CustomPaint(
-                                            painter: LaserBridgePainter(
-                                              matches: _matches.value,
-                                              activeKey: _activeKey.value,
-                                              getCenter: _getCenterOf,
-                                              getKey: _getKeyFor,
-                                              color: theme.primaryColor,
-                                              colorMap: colorMap,
-                                            ),
-                                            size: Size.infinite,
+              onContinue: () =>
+                  context.read<ReadingBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<ReadingBloc>().add(const ReadingHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        LayoutBuilder(
+                          builder: (context, constraints) {
+                            return RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverPadding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20.w,
+                                    ),
+                                    sliver: SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          SizedBox(height: 16.h),
+                                          ReadAndMatchInstruction(
+                                            primaryColor: theme.primaryColor,
+                                            instruction: quest.instruction,
                                           ),
-                                        ),
-                                      ],
+                                          SizedBox(height: 32.h),
+
+                                          // Interactive Canvas Stack
+                                          SizedBox(
+                                            key: _canvasKey,
+                                            height: 420.h,
+                                            child: Stack(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    // Left Keys Column
+                                                    Expanded(
+                                                      child: Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: keys
+                                                            .map(
+                                                              (
+                                                                k,
+                                                              ) => ReadAndMatchTerminal(
+                                                                text: k,
+                                                                isSource: true,
+                                                                color:
+                                                                    getColorForKey(
+                                                                      k,
+                                                                    ),
+                                                                isDark: isDark,
+                                                                isMatched: _matches
+                                                                    .value
+                                                                    .containsKey(
+                                                                      k,
+                                                                    ),
+                                                                isActive:
+                                                                    _activeKey
+                                                                        .value ==
+                                                                    k,
+                                                                onTap: () =>
+                                                                    _onKeyTap(
+                                                                      k,
+                                                                    ),
+                                                              ),
+                                                            )
+                                                            .toList(),
+                                                      ),
+                                                    ),
+                                                    SizedBox(width: 40.w),
+                                                    // Right Values Column
+                                                    Expanded(
+                                                      child: Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: values
+                                                            .map(
+                                                              (
+                                                                v,
+                                                              ) => ReadAndMatchTerminal(
+                                                                text: v,
+                                                                isSource: false,
+                                                                color:
+                                                                    getColorForValue(
+                                                                      v,
+                                                                    ),
+                                                                isDark: isDark,
+                                                                isMatched: _matches
+                                                                    .value
+                                                                    .containsValue(
+                                                                      v,
+                                                                    ),
+                                                                isActive: false,
+                                                                onTap: () =>
+                                                                    _onValueTap(
+                                                                      v,
+                                                                      pairs,
+                                                                    ),
+                                                              ),
+                                                            )
+                                                            .toList(),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+
+                                                // Render Glowing Lasers dynamically using key positions!
+                                                IgnorePointer(
+                                                  child: CustomPaint(
+                                                    painter: LaserBridgePainter(
+                                                      matches: _matches.value,
+                                                      activeKey:
+                                                          _activeKey.value,
+                                                      getCenter: _getCenterOf,
+                                                      getKey: _getKeyFor,
+                                                      color: theme.primaryColor,
+                                                      colorMap: colorMap,
+                                                    ),
+                                                    size: Size.infinite,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          (_pendingSubmission.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
                               ),
+                            );
+                          },
+                        ),
+                        if (_pendingSubmission.value && !_isAnswered.value)
+                          SpeakToConfirmOverlay(
+                            expectedText:
+                                quest.textToSpeak ??
+                                quest.correctAnswer ??
+                                "Confirm",
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(true, pairs),
+                            onSkipped: () => _submitFinalAnswer(false, pairs),
+                            allowSkip: true,
+                            isPositioned: true,
+                          ),
+                        if (_isAnswered.value)
+                          Positioned(
+                            bottom: 50.h,
+                            left: 20.w,
+                            right: 20.w,
+                            child: ReadAndMatchResult(
+                              quest: quest,
+                              isCorrect: _isCorrect.value == true,
+                              isDark: isDark,
                             ),
                           ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(height: (_pendingSubmission.value && !_isAnswered.value) ? 380.h : 60.h),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-                if (_pendingSubmission.value && !_isAnswered.value)
-                  SpeakToConfirmOverlay(
-                    expectedText:
-                        quest.textToSpeak ??
-                        quest.correctAnswer ??
-                        "Confirm",
-                    primaryColor: theme.primaryColor,
-                    onConfirmed: () => _submitFinalAnswer(true, pairs),
-                    onSkipped: () => _submitFinalAnswer(false, pairs),
-                    allowSkip: true,
-                    isPositioned: true,
-                  ),
-                if (_isAnswered.value)
-                  Positioned(
-                    bottom: 50.h,
-                    left: 20.w,
-                    right: 20.w,
-                    child: ReadAndMatchResult(
-                      quest: quest,
-                      isCorrect: _isCorrect.value == true,
-                      isDark: isDark,
+                      ],
                     ),
-                  ),
-              ],
-            ),
-          );
+            );
           },
         );
       },

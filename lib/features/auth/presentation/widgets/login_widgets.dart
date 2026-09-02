@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
+import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
+import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 
 // ---------------------------------------------------------------------------
 // Email Input
@@ -16,12 +18,6 @@ class LoginEmailInput extends StatelessWidget {
   final FocusNode? focusNode;
 
   const LoginEmailInput({super.key, this.fieldKey, this.focusNode});
-
-  // Identical pattern also exists (independently — Dart's per-file privacy
-  // means a private static field can't be shared) in signup_widgets.dart,
-  // forgot_password_widgets.dart, and all three auth Cubits. Verified
-  // byte-identical across all six.
-  static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +44,7 @@ class LoginEmailInput extends StatelessWidget {
                   fallback: 'Email is required',
                 );
               }
-              if (!_emailRegex.hasMatch(value.trim())) {
+              if (!AuthValidators.emailRegex.hasMatch(value.trim())) {
                 return context.tr(
                   'auth.validation_email_invalid',
                   fallback: 'Invalid email address',
@@ -60,53 +56,14 @@ class LoginEmailInput extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
-            decoration: InputDecoration(
-              hintText: context.tr(
+            decoration: buildAuthDecoration(
+              context: context,
+              contrastColor: contrastColor,
+              hint: context.tr(
                 'auth.email_hint_short',
                 fallback: 'explorer@vowl.com',
               ),
-              hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
-              errorStyle: TextStyle(
-                fontFamily: 'Outfit',
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-                fontSize: 12.sp,
-              ),
-              prefixIcon: Icon(
-                Icons.email_outlined,
-                color: contrastColor.withValues(alpha: 0.5),
-              ),
-              filled: true,
-              fillColor: Theme.of(context).brightness == Brightness.dark
-                  ? const Color(0xFF1E293B)
-                  : const Color(0xFFF3F4F6),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide.none,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide.none,
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(
-                  color: Color(0xFF6366F1),
-                  width: 1.5,
-                ),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(color: Colors.red, width: 2),
-              ),
-              focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(color: Colors.red, width: 2.5),
-              ),
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 20.h,
-                horizontal: 20.w,
-              ),
+              prefixIcon: Icons.email_outlined,
             ),
           ),
         );
@@ -171,22 +128,14 @@ class LoginPasswordInput extends StatelessWidget {
             keyboardType: TextInputType.visiblePassword,
             autofillHints: const [AutofillHints.password],
             style: TextStyle(color: contrastColor),
-            decoration: InputDecoration(
-              hintText: context.tr(
+            decoration: buildAuthDecoration(
+              context: context,
+              contrastColor: contrastColor,
+              hint: context.tr(
                 'auth.password_hint_text',
                 fallback: 'Make it strong!',
               ),
-              hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
-              errorStyle: TextStyle(
-                fontFamily: 'Outfit',
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-                fontSize: 12.sp,
-              ),
-              prefixIcon: Icon(
-                Icons.lock_outlined,
-                color: contrastColor.withValues(alpha: 0.5),
-              ),
+              prefixIcon: Icons.lock_outlined,
               suffixIcon: Semantics(
                 label: state.isPasswordVisible
                     ? context.tr(
@@ -208,37 +157,6 @@ class LoginPasswordInput extends StatelessWidget {
                   onPressed: () =>
                       context.read<LoginCubit>().togglePasswordVisibility(),
                 ),
-              ),
-              filled: true,
-              fillColor: Theme.of(context).brightness == Brightness.dark
-                  ? const Color(0xFF1E293B)
-                  : const Color(0xFFF3F4F6),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide.none,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide.none,
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(
-                  color: Color(0xFF6366F1),
-                  width: 1.5,
-                ),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(color: Colors.red, width: 2),
-              ),
-              focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: const BorderSide(color: Colors.red, width: 2.5),
-              ),
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 20.h,
-                horizontal: 20.w,
               ),
             ),
           ),

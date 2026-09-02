@@ -186,7 +186,9 @@ class GlobalProgressCard extends StatelessWidget {
                             vertical: 8.h,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(16.r),
                           ),
                           child: Column(
@@ -197,7 +199,9 @@ class GlobalProgressCard extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w900,
-                                  color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                                  color: const Color(
+                                    0xFF6366F1,
+                                  ).withValues(alpha: 0.5),
                                   height: 1,
                                 ),
                                 maxLines: 1,
@@ -208,7 +212,9 @@ class GlobalProgressCard extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 7.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: const Color(0xFF6366F1).withValues(alpha: 0.5),
+                                  color: const Color(
+                                    0xFF6366F1,
+                                  ).withValues(alpha: 0.5),
                                   letterSpacing: 1.5,
                                 ),
                                 maxLines: 1,
@@ -385,7 +391,7 @@ class GlobalProgressCard extends StatelessWidget {
   Widget _buildCategoryDot(BuildContext context, QuestType type, int count) {
     final color = GameHelper.getQuestTypeColor(type);
     final icon = GameHelper.getIconForCategory(type);
-    
+
     return Padding(
       padding: EdgeInsets.only(left: 4.w),
       child: Tooltip(

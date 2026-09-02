@@ -101,7 +101,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      _inspectedHotspots.value = Set.from(_inspectedHotspots.value)..add(_activeHotspot.value);
+      _inspectedHotspots.value = Set.from(_inspectedHotspots.value)
+        ..add(_activeHotspot.value);
       _activeHotspot.value = -1;
 
       if (_inspectedHotspots.value.length >= 3) {
@@ -112,9 +113,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -124,7 +126,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
@@ -135,7 +137,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     GameDialogHelper.showHonestyNudge(context);
     _isAnswered.value = true;
     _isCorrect.value = true;
-    _inspectedHotspots.value = Set.from(_inspectedHotspots.value)..addAll([0, 1, 2]);
+    _inspectedHotspots.value = Set.from(_inspectedHotspots.value)
+      ..addAll([0, 1, 2]);
     context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
@@ -201,7 +204,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('speaking_games.visual_masterpiece', fallback: 'VISUAL MASTERPIECE!'),
+            title: context.tr(
+              'speaking_games.visual_masterpiece',
+              fallback: 'VISUAL MASTERPIECE!',
+            ),
             enableDoubleUp: true,
           );
         }
@@ -218,7 +224,13 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _activeHotspot, _inspectedHotspots]),
+            listenable: Listenable.merge([
+              _isAnswered,
+              _isCorrect,
+              _showConfetti,
+              _activeHotspot,
+              _inspectedHotspots,
+            ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
                 onTutorPass: _tutorPass,
@@ -227,134 +239,162 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
-            onContinue: () =>
-                context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () =>
-                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : Stack(
-                    children: [
-                      RawScrollbar(
-                        controller: _scrollController,
-                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                        radius: Radius.circular(8.r),
-                        thickness: 4.w,
-                        child: CustomScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: 16.h,
-                        ),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SceneDescriptionHeader(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: 24.h),
-                              SceneDescriptionScenicRadarMap(
-                                sceneTitle: _sceneTitle,
-                                inspectedHotspots: _inspectedHotspots.value,
-                                activeHotspot: _activeHotspot.value,
-                                hotspotLabels: _hotspotLabels,
-                                radarController: _radarController,
-                                primaryColor: theme.primaryColor,
-                                isDark: isDark,
-                                onHotspotTap: _onHotspotTap,
-                              ),
-                              SizedBox(height: 32.h),
-                              AnimatedSwitcher(
-                                duration: const Duration(milliseconds: 300),
-                                child: _activeHotspot.value != -1
-                                    ? SceneDescriptionActivePromptCard(
-                                        activeHotspot: _activeHotspot.value,
-                                        activePrompt:
-                                            _hotspotPrompts[_activeHotspot.value],
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                      )
-                                    : SceneDescriptionExplorerGuideCard(
-                                        isDark: isDark,
-                                      ),
-                              ),
-                              if (quest.keyVocabulary != null && quest.keyVocabulary!.isNotEmpty) ...[
-                                SizedBox(height: 24.h),
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    "Target Vocabulary",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: isDark ? Colors.white54 : Colors.black54,
+                onContinue: () =>
+                    context.read<SpeakingBloc>().add(const NextQuestion()),
+                onHint: () =>
+                    context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+                child: quest == null
+                    ? const SizedBox()
+                    : Stack(
+                        children: [
+                          RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverPadding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                    vertical: 16.h,
+                                  ),
+                                  sliver: SliverToBoxAdapter(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        SceneDescriptionHeader(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: quest.instruction,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                        SceneDescriptionScenicRadarMap(
+                                          sceneTitle: _sceneTitle,
+                                          inspectedHotspots:
+                                              _inspectedHotspots.value,
+                                          activeHotspot: _activeHotspot.value,
+                                          hotspotLabels: _hotspotLabels,
+                                          radarController: _radarController,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onHotspotTap: _onHotspotTap,
+                                        ),
+                                        SizedBox(height: 32.h),
+                                        AnimatedSwitcher(
+                                          duration: const Duration(
+                                            milliseconds: 300,
+                                          ),
+                                          child: _activeHotspot.value != -1
+                                              ? SceneDescriptionActivePromptCard(
+                                                  activeHotspot:
+                                                      _activeHotspot.value,
+                                                  activePrompt:
+                                                      _hotspotPrompts[_activeHotspot
+                                                          .value],
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  isDark: isDark,
+                                                )
+                                              : SceneDescriptionExplorerGuideCard(
+                                                  isDark: isDark,
+                                                ),
+                                        ),
+                                        if (quest.keyVocabulary != null &&
+                                            quest
+                                                .keyVocabulary!
+                                                .isNotEmpty) ...[
+                                          SizedBox(height: 24.h),
+                                          Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              "Target Vocabulary",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: isDark
+                                                    ? Colors.white54
+                                                    : Colors.black54,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 12.h),
+                                          Wrap(
+                                            spacing: 8.w,
+                                            runSpacing: 8.h,
+                                            alignment: WrapAlignment.start,
+                                            children: quest.keyVocabulary!.map((
+                                              word,
+                                            ) {
+                                              return Container(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 12.w,
+                                                  vertical: 6.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        12.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
+                                                  ),
+                                                ),
+                                                child: Text(
+                                                  word,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: theme.primaryColor,
+                                                  ),
+                                                ),
+                                              );
+                                            }).toList(),
+                                          ),
+                                        ],
+                                      ],
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 12.h),
-                                Wrap(
-                                  spacing: 8.w,
-                                  runSpacing: 8.h,
-                                  alignment: WrapAlignment.start,
-                                  children: quest.keyVocabulary!.map((word) {
-                                    return Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-                                      decoration: BoxDecoration(
-                                        color: theme.primaryColor.withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(12.r),
-                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                      ),
-                                      child: Text(
-                                        word,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: theme.primaryColor,
-                                        ),
-                                      ),
-                                    );
-                                  }).toList(),
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 16.h,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        if (!_isAnswered.value &&
+                                            _activeHotspot.value != -1)
+                                          SpeakingSelfEvaluationControls(
+                                            expectedText:
+                                                _hotspotPrompts[_activeHotspot
+                                                    .value],
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ],
-                            ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      SliverToBoxAdapter(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              if (!_isAnswered.value && _activeHotspot.value != -1)
-                                SpeakingSelfEvaluationControls(
-                                  expectedText: _hotspotPrompts[_activeHotspot.value],
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
-                                ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  ),
-                  ],
-                ),
               );
             },
           ),

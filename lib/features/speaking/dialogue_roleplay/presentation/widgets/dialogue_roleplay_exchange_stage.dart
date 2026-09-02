@@ -33,7 +33,10 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
       children: [
         // AI Partner Speech Card
         _buildBubbleCard(
-          title: context.tr('speaking_games.roleplay_partner', fallback: "ROLEPLAY PARTNER"),
+          title: context.tr(
+            'speaking_games.roleplay_partner',
+            fallback: "ROLEPLAY PARTNER",
+          ),
           content: quest.partnerDialogue ?? "Dialogue statement.",
           avatarIcon: Icons.support_agent_rounded,
           color: primaryColor,
@@ -59,7 +62,10 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
 
         // User Spoken Target Card
         _buildBubbleCard(
-          title: context.tr('speaking_games.your_response', fallback: "YOUR RESPONSE OBLIGATION"),
+          title: context.tr(
+            'speaking_games.your_response',
+            fallback: "YOUR RESPONSE OBLIGATION",
+          ),
           content: quest.sampleAnswer ?? "Expected response.",
           avatarIcon: Icons.face_rounded,
           color: Colors.greenAccent,

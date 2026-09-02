@@ -7,6 +7,8 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart';
 import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
+import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
+import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 
 // ---------------------------------------------------------------------------
 // Header
@@ -95,13 +97,6 @@ class ForgotPasswordEmailInput extends StatelessWidget {
     required this.contrastColor,
   });
 
-  // Identical pattern also exists (independently — Dart's per-file privacy
-  // means a private static field can't be shared) in login_widgets.dart,
-  // signup_widgets.dart, and all three auth Cubits. Verified byte-identical
-  // across all six; see the review notes for why this can't be fully
-  // deduplicated within this feature's file list.
-  static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
-
   @override
   Widget build(BuildContext context) {
     return Semantics(
@@ -124,7 +119,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
               fallback: 'Email is required',
             );
           }
-          if (!_emailRegex.hasMatch(trimmed)) {
+          if (!AuthValidators.emailRegex.hasMatch(trimmed)) {
             return context.tr(
               'auth.validation_email_invalid',
               fallback: 'Invalid email address',
@@ -136,50 +131,14 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         keyboardType: TextInputType.emailAddress,
         autofillHints: const [AutofillHints.email],
         style: TextStyle(color: contrastColor),
-        decoration: InputDecoration(
-          hintText: context.tr(
+        decoration: buildAuthDecoration(
+          context: context,
+          contrastColor: contrastColor,
+          hint: context.tr(
             'auth.email_hint_full',
             fallback: 'e.g., explorer@vowl.com',
           ),
-          hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
-          errorStyle: TextStyle(
-            fontFamily: 'Outfit',
-            color: Colors.red,
-            fontWeight: FontWeight.bold,
-            fontSize: 12.sp,
-          ),
-          prefixIcon: Icon(
-            Icons.email_outlined,
-            color: contrastColor.withValues(alpha: 0.5),
-          ),
-          filled: true,
-          fillColor: Theme.of(context).brightness == Brightness.dark
-              ? const Color(0xFF1E293B)
-              : const Color(0xFFF3F4F6),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: BorderSide.none,
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: BorderSide.none,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: Color(0xFF6366F1), width: 1.5),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: Colors.red, width: 2),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: Colors.red, width: 2.5),
-          ),
-          contentPadding: EdgeInsets.symmetric(
-            vertical: 20.h,
-            horizontal: 20.w,
-          ),
+          prefixIcon: Icons.email_outlined,
         ),
       ),
     );
@@ -261,7 +220,13 @@ class RememberPasswordFooter extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () => context.go(AppRouter.loginRoute),
+          onPressed: () {
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go(AppRouter.loginRoute);
+            }
+          },
           style: TextButton.styleFrom(minimumSize: const Size(48, 48)),
           child: Text(
             context.tr('auth.login', fallback: 'Log In'),

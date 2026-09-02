@@ -27,27 +27,67 @@ class ScanResultBlock extends StatelessWidget {
     final wordCount = words.length;
 
     if (RegExp(r'\b\w+ed\b').hasMatch(lowerText)) {
-      return context.tr('translation.tip_ed', fallback: 'Phonics Tip: Words ending in "-ed" can sound like /t/, /d/, or /id/ depending on the root word.');
+      return context.tr(
+        'translation.tip_ed',
+        fallback:
+            'Phonics Tip: Words ending in "-ed" can sound like /t/, /d/, or /id/ depending on the root word.',
+      );
     } else if (lowerText.contains('th')) {
-      return context.tr('translation.tip_th', fallback: 'Phonics Tip: Watch your "th" sounds! Remember to place your tongue slightly between your teeth.');
+      return context.tr(
+        'translation.tip_th',
+        fallback:
+            'Phonics Tip: Watch your "th" sounds! Remember to place your tongue slightly between your teeth.',
+      );
     } else if (RegExp(
       r'\b(can|could|should|would|will|must)\b',
     ).hasMatch(lowerText)) {
-      return context.tr('translation.tip_modal', fallback: 'Grammar Tip: Modal verbs (like can/should) are usually unstressed in natural spoken English.');
+      return context.tr(
+        'translation.tip_modal',
+        fallback:
+            'Grammar Tip: Modal verbs (like can/should) are usually unstressed in natural spoken English.',
+      );
     } else if (RegExp(r"\b\w+'\w+\b").hasMatch(lowerText)) {
-      return context.tr('translation.tip_contraction', fallback: 'Fluency Tip: This text contains contractions (e.g., don\'t). Pronounce them smoothly as a single sound.');
+      return context.tr(
+        'translation.tip_contraction',
+        fallback:
+            'Fluency Tip: This text contains contractions (e.g., don\'t). Pronounce them smoothly as a single sound.',
+      );
     } else if (text.contains('?')) {
-      return context.tr('translation.tip_question', fallback: 'Intonation Tip: Questions usually end with a rising voice intonation.');
+      return context.tr(
+        'translation.tip_question',
+        fallback:
+            'Intonation Tip: Questions usually end with a rising voice intonation.',
+      );
     } else if (text.contains('!')) {
-      return context.tr('translation.tip_exclamation', fallback: 'Expression Tip: Exclamation marks indicate strong emotion. Read with emphasis!');
+      return context.tr(
+        'translation.tip_exclamation',
+        fallback:
+            'Expression Tip: Exclamation marks indicate strong emotion. Read with emphasis!',
+      );
     } else if (text.contains('"') || text.contains("'")) {
-      return context.tr('translation.tip_quote', fallback: 'Expression Tip: Quotes indicate someone is speaking. Try to read with character!');
+      return context.tr(
+        'translation.tip_quote',
+        fallback:
+            'Expression Tip: Quotes indicate someone is speaking. Try to read with character!',
+      );
     } else if (wordCount > 15) {
-      return context.tr('translation.tip_pacing', fallback: 'Pacing Tip: Long text! Remember to breathe and pause briefly at commas and periods.');
+      return context.tr(
+        'translation.tip_pacing',
+        fallback:
+            'Pacing Tip: Long text! Remember to breathe and pause briefly at commas and periods.',
+      );
     } else if (RegExp(r'\b(and|but|or|because)\b').hasMatch(lowerText)) {
-      return context.tr('translation.tip_conjunction', fallback: 'Fluency Tip: Use conjunctions to smoothly link your thoughts together without pausing.');
+      return context.tr(
+        'translation.tip_conjunction',
+        fallback:
+            'Fluency Tip: Use conjunctions to smoothly link your thoughts together without pausing.',
+      );
     } else {
-      return context.tr('translation.tip_default', fallback: 'Pronunciation Tip: Focus on clearly articulating the final consonant of each word.');
+      return context.tr(
+        'translation.tip_default',
+        fallback:
+            'Pronunciation Tip: Focus on clearly articulating the final consonant of each word.',
+      );
     }
   }
 
@@ -123,7 +163,18 @@ class ScanResultBlock extends StatelessWidget {
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          context.tr('translation.words_count', args: [block.text.trim().split(RegExp(r'\s+')).length.toString()], fallback: '${block.text.trim().split(RegExp(r'\s+')).length} words'),
+                          context.tr(
+                            'translation.words_count',
+                            args: [
+                              block.text
+                                  .trim()
+                                  .split(RegExp(r'\s+'))
+                                  .length
+                                  .toString(),
+                            ],
+                            fallback:
+                                '${block.text.trim().split(RegExp(r'\s+')).length} words',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
@@ -139,7 +190,10 @@ class ScanResultBlock extends StatelessWidget {
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          context.tr('translation.reading_data', fallback: 'Reading Data'),
+                          context.tr(
+                            'translation.reading_data',
+                            fallback: 'Reading Data',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,

@@ -73,7 +73,11 @@ class ScanBountyTarget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.tr('translation.scan_word', args: [currentBounty], fallback: 'Scan Word: "$currentBounty"'),
+                            context.tr(
+                              'translation.scan_word',
+                              args: [currentBounty],
+                              fallback: 'Scan Word: "$currentBounty"',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
@@ -84,7 +88,11 @@ class ScanBountyTarget extends StatelessWidget {
                           ),
                           if (!bountyFound)
                             Text(
-                              context.tr('translation.find_text_desc', fallback: 'Find this text to earn +5 XP & 5 Coins'),
+                              context.tr(
+                                'translation.find_text_desc',
+                                fallback:
+                                    'Find this text to earn +5 XP & 5 Coins',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,

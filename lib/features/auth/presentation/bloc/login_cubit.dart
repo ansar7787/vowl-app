@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
+import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
 import 'package:vowl/features/auth/domain/usecases/log_in_with_email.dart';
 import 'package:vowl/features/auth/domain/usecases/log_in_with_google.dart';
 
@@ -101,11 +102,6 @@ class LoginCubit extends Cubit<LoginState> {
   final LogInWithGoogle _logInWithGoogle;
   final NetworkInfo? _networkInfo;
 
-  /// Compiled once per class — avoids a new [RegExp] allocation on every
-  /// validation call. The `{2,}` TLD pattern accepts modern long-form TLDs
-  /// such as `.academy`, `.international`, etc.
-  static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
-
   LoginCubit({
     required LogInWithEmail logInWithEmail,
     required LogInWithGoogle logInWithGoogle,
@@ -142,12 +138,9 @@ class LoginCubit extends Cubit<LoginState> {
     if (state.isSubmitting) return;
 
     if (_lockoutUntil != null && DateTime.now().isBefore(_lockoutUntil!)) {
-      final minutesLeft = _lockoutUntil!.difference(DateTime.now()).inMinutes;
-      final secondsLeft = _lockoutUntil!.difference(DateTime.now()).inSeconds % 60;
       emit(
         state.copyWith(
-          errorMessage: () =>
-              'Too many failed attempts. Try again in ${minutesLeft > 0 ? '$minutesLeft m ' : ''}$secondsLeft s.',
+          errorMessage: () => AuthErrorHandler.getKey('too-many-attempts'),
         ),
       );
       return;
@@ -163,7 +156,7 @@ class LoginCubit extends Cubit<LoginState> {
       );
       return;
     }
-    if (!_emailRegex.hasMatch(trimmedEmail)) {
+    if (!AuthValidators.emailRegex.hasMatch(trimmedEmail)) {
       emit(
         state.copyWith(
           errorMessage: () => AuthErrorHandler.getKey('email-invalid'),
@@ -208,7 +201,9 @@ class LoginCubit extends Cubit<LoginState> {
         _failedAttempts++;
         if (_failedAttempts >= 5) {
           // Lockout duration grows: 1 min, 2 min, 3 min...
-          _lockoutUntil = DateTime.now().add(Duration(minutes: _failedAttempts - 4));
+          _lockoutUntil = DateTime.now().add(
+            Duration(minutes: _failedAttempts - 4),
+          );
         }
         emit(
           state.copyWith(

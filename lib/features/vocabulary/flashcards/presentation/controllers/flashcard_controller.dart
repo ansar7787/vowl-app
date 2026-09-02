@@ -23,8 +23,8 @@ class FlashcardController extends ChangeNotifier {
     required HapticService hapticService,
     required SoundService soundService,
     required this.onSubmitAnswer,
-  })  : _hapticService = hapticService,
-        _soundService = soundService;
+  }) : _hapticService = hapticService,
+       _soundService = soundService;
 
   void reset(bool retry) {
     _hintTimer?.cancel();
@@ -52,7 +52,7 @@ class FlashcardController extends ChangeNotifier {
     final oldDx = dragOffset.dx;
     dragOffset = Offset(dragOffset.dx + details.delta.dx, 0);
     dragAngle = dragOffset.dx / 500;
-    
+
     if ((dragOffset.dx - oldDx).abs() > 0 && (dragOffset.dx.abs() % 20 < 2)) {
       _hapticService.selection();
     }
@@ -73,7 +73,7 @@ class FlashcardController extends ChangeNotifier {
   void submitAnswer(bool mastered) {
     if (isAnswered) return;
     _hintTimer?.cancel();
-    
+
     if (mastered) {
       _hapticService.success();
       _soundService.playCorrect();

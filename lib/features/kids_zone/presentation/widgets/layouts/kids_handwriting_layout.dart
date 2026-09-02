@@ -266,7 +266,9 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                           boxShadow: [
                             if (!isChecking)
                               BoxShadow(
-                                color: widget.primaryColor.withValues(alpha: 0.5),
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.5,
+                                ),
                                 offset: Offset(0, 8.h),
                                 blurRadius: 12,
                               ),
@@ -274,7 +276,10 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                         ),
                         child: Center(
                           child: isChecking
-                              ? VowlButtonSpinner(color: Colors.white, size: 24.h)
+                              ? VowlButtonSpinner(
+                                  color: Colors.white,
+                                  size: 24.h,
+                                )
                               : Text(
                                   context.tr(
                                     'common.check',
@@ -290,7 +295,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                         ),
                       ),
                     );
-                  }
+                  },
                 ),
               ),
 

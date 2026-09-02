@@ -68,8 +68,6 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     );
   }
 
-
-
   void _submitFinalAnswer(int index, int correct) {
     if (_isAnswered.value) return;
 
@@ -85,9 +83,10 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
@@ -97,7 +96,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
           level: widget.level,
         );
       }
-      
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
@@ -142,7 +141,12 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _selectedIndex,
+          ]),
           builder: (context, _) {
             return ListeningBaseLayout(
               gameType: widget.gameType,
@@ -150,103 +154,106 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
               isAnswered: _isAnswered.value,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          sliver: SliverToBoxAdapter(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: 6.h),
-                                ListeningInferenceInstruction(
-                                  color: theme.primaryColor,
-                                  instruction: quest.instruction,
+              useScrolling: false,
+              onContinue: () =>
+                  context.read<ListeningBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<ListeningBloc>().add(ListeningHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 16.h,
                                 ),
-                                SizedBox(height: 24.h),
-                                ListeningInferenceRadarCore(
-                                  onTap: () {
-                                    _soundService.playTts(
-                                      quest.textToSpeak ?? "",
-                                    );
-                                    _hapticService.selection();
-                                  },
-                                  pulseController: _pulseController,
-                                  color: theme.primaryColor,
-                                  emoji: quest.emoji,
-                                  isCorrectState: _isCorrect.value,
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: 6.h),
+                                      ListeningInferenceInstruction(
+                                        color: theme.primaryColor,
+                                        instruction: quest.instruction,
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      ListeningInferenceRadarCore(
+                                        onTap: () {
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                          _hapticService.selection();
+                                        },
+                                        pulseController: _pulseController,
+                                        color: theme.primaryColor,
+                                        emoji: quest.emoji,
+                                        isCorrectState: _isCorrect.value,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                        ),
+                                        child: Text(
+                                          quest.question?.toUpperCase() ??
+                                              "INFER THE ACTOR",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 16.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: theme.primaryColor,
+                                            letterSpacing: 1.2,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                SizedBox(height: 32.h),
-                                Padding(
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 16.w,
+                                    vertical: 16.h,
                                   ),
-                                  child: Text(
-                                    quest.question?.toUpperCase() ??
-                                        "INFER THE ACTOR",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: theme.primaryColor,
-                                      letterSpacing: 1.2,
-                                    ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      ListeningInferenceGrid(
+                                        options: quest.options ?? [],
+                                        correctAnswerIndex:
+                                            quest.correctAnswerIndex ?? 0,
+                                        color: theme.primaryColor,
+                                        isAnswered: _isAnswered.value,
+                                        isCorrectState: _isCorrect.value,
+                                        selectedIndex: _selectedIndex.value,
+                                        onSubmitAnswer: (index) {
+                                          _submitFinalAnswer(
+                                            index,
+                                            quest.correctAnswerIndex ?? 0,
+                                          );
+                                        },
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SliverToBoxAdapter(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 16.h,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                ListeningInferenceGrid(
-                                  options: quest.options ?? [],
-                                  correctAnswerIndex: quest.correctAnswerIndex ?? 0,
-                                  color: theme.primaryColor,
-                                  isAnswered: _isAnswered.value,
-                                  isCorrectState: _isCorrect.value,
-                                  selectedIndex: _selectedIndex.value,
-                                  onSubmitAnswer: (index) {
-                                    _submitFinalAnswer(
-                                      index,
-                                      quest.correctAnswerIndex ?? 0,
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  ],
-                ),
             );
           },
         );

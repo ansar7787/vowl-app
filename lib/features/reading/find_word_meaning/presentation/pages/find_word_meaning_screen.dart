@@ -58,7 +58,8 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   }
 
   void _submitFinalAnswer(bool isCorrect, int index, [ReadingQuest? quest]) {
-    if (_showSentenceBuilder.value || _pendingSelectedIndex.value != null) return;
+    if (_showSentenceBuilder.value || _pendingSelectedIndex.value != null)
+      return;
 
     _pendingSelectedIndex.value = index;
 
@@ -78,7 +79,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       if (quest != null) {
         ErrorJournalCollector.record(
           userId: 'local',
@@ -110,7 +111,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
           _pendingSelectedIndex.value = null;
           _showSentenceBuilder.value = false;
           _showConfetti.value = false;
-          
+
           if (_scrollController.hasClients) {
             _scrollController.animateTo(
               0,
@@ -119,23 +120,30 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
             );
           }
         }
-        
+
         if (state is ReadingGameComplete) {
           _showConfetti.value = true;
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: context.tr('reading_games.lexical_master', fallback: 'LEXICAL MASTER!'),
+            title: context.tr(
+              'reading_games.lexical_master',
+              fallback: 'LEXICAL MASTER!',
+            ),
             enableDoubleUp: true,
           );
         }
       },
       builder: (context, state) {
         final isLoaded = state is ReadingLoaded;
-        final ReadingQuest? quest = isLoaded ? state.currentQuest as ReadingQuest? : null;
+        final ReadingQuest? quest = isLoaded
+            ? state.currentQuest as ReadingQuest?
+            : null;
         final bool isAnsweredBloc = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrectBloc = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrectBloc = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
 
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -146,8 +154,13 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
           builder: (context, _) {
             // Computed state
             // If sentence builder is showing, the question is NOT finished yet.
-            final bool isAnswered = isAnsweredBloc || (_pendingSelectedIndex.value != null && !_showSentenceBuilder.value);
-            final bool? isCorrect = _showSentenceBuilder.value ? true : isCorrectBloc;
+            final bool isAnswered =
+                isAnsweredBloc ||
+                (_pendingSelectedIndex.value != null &&
+                    !_showSentenceBuilder.value);
+            final bool? isCorrect = _showSentenceBuilder.value
+                ? true
+                : isCorrectBloc;
 
             return ReadingBaseLayout(
               gameType: widget.gameType,
@@ -173,65 +186,82 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(height: 16.h),
-                                        FindWordMeaningInstruction(
-                                          primaryColor: theme.primaryColor,
-                                          instruction: quest.instruction,
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        FindWordMeaningQuestionHeader(
-                                          text: quest.question ?? "",
-                                          color: theme.primaryColor,
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      FindWordMeaningInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: quest.instruction,
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      FindWordMeaningQuestionHeader(
+                                        text: quest.question ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      FindWordMeaningInteractivePassage(
+                                        passage: quest.passage ?? "",
+                                        targetWord: quest.targetWord ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        isAnswered: isAnswered,
+                                        selectedIndex:
+                                            _pendingSelectedIndex.value,
+                                        isCorrectSelection: isCorrect,
+                                        onWordSelected:
+                                            (isCorrectTap, word, index) {
+                                              _submitFinalAnswer(
+                                                isCorrectTap,
+                                                index,
+                                                quest,
+                                              );
+                                            },
+                                      ),
+                                      if (isAnsweredBloc) ...[
+                                        SizedBox(height: 30.h),
+                                        FindWordMeaningResult(
+                                          quest: quest,
+                                          isCorrect: isCorrect == true,
                                           isDark: isDark,
                                         ),
-                                        SizedBox(height: 32.h),
-                                        FindWordMeaningInteractivePassage(
-                                          passage: quest.passage ?? "",
-                                          targetWord: quest.targetWord ?? "",
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          isAnswered: isAnswered,
-                                          selectedIndex: _pendingSelectedIndex.value,
-                                          isCorrectSelection: isCorrect,
-                                          onWordSelected: (isCorrectTap, word, index) {
-                                            _submitFinalAnswer(isCorrectTap, index, quest);
-                                          },
-                                        ),
-                                        if (isAnsweredBloc) ...[
-                                          SizedBox(height: 30.h),
-                                          FindWordMeaningResult(
-                                            quest: quest,
-                                            isCorrect: isCorrect == true,
-                                            isDark: isDark,
-                                          ),
-                                        ],
                                       ],
-                                    ),
+                                    ],
                                   ),
                                 ),
-                                if (!_showSentenceBuilder.value)
-                                  SliverToBoxAdapter(
-                                    child: Center(
-                                      child: Padding(
-                                        padding: EdgeInsets.only(top: 40.h, bottom: 20.h),
-                                        child: Icon(
-                                          Icons.menu_book_rounded,
-                                          size: 140.r,
-                                          color: isDark
-                                              ? Colors.white.withValues(alpha: 0.02)
-                                              : theme.primaryColor.withValues(alpha: 0.05),
-                                        ),
+                              ),
+                              if (!_showSentenceBuilder.value)
+                                SliverToBoxAdapter(
+                                  child: Center(
+                                    child: Padding(
+                                      padding: EdgeInsets.only(
+                                        top: 40.h,
+                                        bottom: 20.h,
+                                      ),
+                                      child: Icon(
+                                        Icons.menu_book_rounded,
+                                        size: 140.r,
+                                        color: isDark
+                                            ? Colors.white.withValues(
+                                                alpha: 0.02,
+                                              )
+                                            : theme.primaryColor.withValues(
+                                                alpha: 0.05,
+                                              ),
                                       ),
                                     ),
                                   ),
-                                SliverToBoxAdapter(
-                                  child: SizedBox(height: _showSentenceBuilder.value ? 380.h : 60.h),
                                 ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height: _showSentenceBuilder.value
+                                      ? 380.h
+                                      : 60.h,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -255,4 +285,3 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
     );
   }
 }
-

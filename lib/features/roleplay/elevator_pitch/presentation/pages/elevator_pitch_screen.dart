@@ -45,7 +45,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -130,9 +130,13 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti]),
-            builder: (context, _) {
-              return RoleplayBaseLayout(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+          ]),
+          builder: (context, _) {
+            return RoleplayBaseLayout(
               onTutorPass: _tutorPass,
               gameType: widget.gameType,
               level: widget.level,
@@ -152,7 +156,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -165,26 +171,41 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
                                               return Padding(
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
-                                                  vertical: isCompact ? 5.h : 10.h,
+                                                  vertical: isCompact
+                                                      ? 5.h
+                                                      : 10.h,
                                                 ),
                                                 child: Column(
                                                   children: [
                                                     ElevatorPitchInstruction(
-                                                      primaryColor: theme.primaryColor,
-                                                      instruction: quest.instruction,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      instruction:
+                                                          quest.instruction,
                                                     ),
-                                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 10.h
+                                                          : 16.h,
+                                                    ),
                                                     ElevatorPitchPromptCard(
-                                                      prompt: quest.prompt ?? "",
-                                                      timeLimit: quest.timeLimit ?? 30,
+                                                      prompt:
+                                                          quest.prompt ?? "",
+                                                      timeLimit:
+                                                          quest.timeLimit ?? 30,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                     ),
-                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 40.h,
+                                                    ),
                                                   ],
                                                 ),
                                               );
@@ -196,7 +217,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (!_isAnswered.value) ? 380.h : 60.h,
+                                      height: (!_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
@@ -204,7 +227,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                             ),
                             if (!_isAnswered.value)
                               SpeakToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
+                                expectedText:
+                                    quest.correctAnswer ??
+                                    "Elevator Pitch Example",
                                 primaryColor: theme.primaryColor,
                                 isPositioned: true,
                                 onConfirmed: () {
@@ -219,9 +244,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                         );
                       },
                     ),
-                );
-            },
-          );
+            );
+          },
+        );
       },
     );
   }

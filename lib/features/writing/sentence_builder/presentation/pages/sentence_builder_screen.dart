@@ -231,46 +231,57 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           // for any screen-specific side effects (currently none needed).
           onHint: () {},
           child: ListenableBuilder(
-            listenable: Listenable.merge([_showConfetti, _showTypeToConfirm, _assembledPieces]),
+            listenable: Listenable.merge([
+              _showConfetti,
+              _showTypeToConfirm,
+              _assembledPieces,
+            ]),
             builder: (context, _) {
               return quest == null
                   ? const SizedBox.shrink()
                   : Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: _theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: _SentenceBuilderBody(
-                        quest: quest,
-                        pool: pool,
-                        level: widget.level,
-                        textController: _textController,
-                        assembledPieces: _assembledPieces.value,
-                        isAnswered: isAnswered,
-                        isCorrect: isCorrect,
-                        theme: _theme,
-                        isDark: isDark,
-                        scrollController: _scrollController,
-                        onSnap: (piece) => _onSnap(piece, isAnswered),
-                        onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
-                        onSubmit: () =>
-                            _submitAnswer(quest.correctAnswer ?? '', isAnswered),
-                      ),
-                    ),
-                    if (_showTypeToConfirm.value && !isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: _theme.primaryColor,
-                        onConfirmed: _onTypeConfirmed,
-                        onSkipped: () {
-                          _showTypeToConfirm.value = false;
-                          context.read<WritingBloc>().add(const SubmitAnswer(false));
-                        },
-                      ),
-                  ],
-                );
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: _theme.primaryColor.withValues(
+                            alpha: 0.5,
+                          ),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: _SentenceBuilderBody(
+                            quest: quest,
+                            pool: pool,
+                            level: widget.level,
+                            textController: _textController,
+                            assembledPieces: _assembledPieces.value,
+                            isAnswered: isAnswered,
+                            isCorrect: isCorrect,
+                            theme: _theme,
+                            isDark: isDark,
+                            scrollController: _scrollController,
+                            onSnap: (piece) => _onSnap(piece, isAnswered),
+                            onRemovePiece: (idx) =>
+                                _onRemovePiece(idx, isAnswered),
+                            onSubmit: () => _submitAnswer(
+                              quest.correctAnswer ?? '',
+                              isAnswered,
+                            ),
+                          ),
+                        ),
+                        if (_showTypeToConfirm.value && !isAnswered)
+                          TypeToConfirmOverlay(
+                            expectedText: quest.correctAnswer ?? '',
+                            primaryColor: _theme.primaryColor,
+                            onConfirmed: _onTypeConfirmed,
+                            onSkipped: () {
+                              _showTypeToConfirm.value = false;
+                              context.read<WritingBloc>().add(
+                                const SubmitAnswer(false),
+                              );
+                            },
+                          ),
+                      ],
+                    );
             },
           ),
         );
@@ -335,11 +346,16 @@ class _SentenceBuilderBody extends StatelessWidget {
                 SizedBox(height: 16.h),
                 if (quest.sentenceType != null)
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
                       color: theme.primaryColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                      border: Border.all(
+                        color: theme.primaryColor.withValues(alpha: 0.3),
+                      ),
                     ),
                     child: Text(
                       quest.sentenceType!.toUpperCase(),

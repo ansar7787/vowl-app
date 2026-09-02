@@ -73,7 +73,9 @@ class LeaderboardRankCard extends StatelessWidget {
         ),
         child: GlassTile(
           padding: EdgeInsets.symmetric(
-              horizontal: 16.w, vertical: 12.h - (4.h * collapseProgress)),
+            horizontal: 16.w,
+            vertical: 12.h - (4.h * collapseProgress),
+          ),
           borderRadius: BorderRadius.circular(24.r),
           borderColor: isDark
               ? const Color(0xFF3B82F6).withValues(alpha: 0.5)
@@ -209,8 +211,9 @@ class LeaderboardRankCard extends StatelessWidget {
                               ),
                               TweenAnimationBuilder<double>(
                                 tween: Tween(
-                                    begin: 0.0,
-                                    end: progress.clamp(0.02, 1.0)),
+                                  begin: 0.0,
+                                  end: progress.clamp(0.02, 1.0),
+                                ),
                                 duration: const Duration(milliseconds: 800),
                                 curve: Curves.easeOutCubic,
                                 builder: (context, value, _) {
@@ -222,11 +225,12 @@ class LeaderboardRankCard extends StatelessWidget {
                                         gradient: const LinearGradient(
                                           colors: [
                                             Color(0xFF3B82F6),
-                                            Color(0xFF60A5FA)
+                                            Color(0xFF60A5FA),
                                           ],
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(3.r),
+                                        borderRadius: BorderRadius.circular(
+                                          3.r,
+                                        ),
                                       ),
                                     ),
                                   );
@@ -244,19 +248,24 @@ class LeaderboardRankCard extends StatelessWidget {
                                       ? context.tr(
                                           'leaderboard.all_kids_quests',
                                           fallback: 'Kids Quests ({0}%)',
-                                          args: [(progress * 100).toStringAsFixed(0)],
+                                          args: [
+                                            (progress * 100).toStringAsFixed(0),
+                                          ],
                                         )
                                       : context.tr(
                                           'leaderboard.all_quests',
                                           fallback: 'All Quests ({0}%)',
-                                          args: [(progress * 100).toStringAsFixed(0)],
+                                          args: [
+                                            (progress * 100).toStringAsFixed(0),
+                                          ],
                                         ),
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 9.sp,
                                     fontWeight: FontWeight.w700,
                                     color: secondaryTextColor.withValues(
-                                        alpha: 0.6),
+                                      alpha: 0.6,
+                                    ),
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -268,7 +277,8 @@ class LeaderboardRankCard extends StatelessWidget {
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w700,
                                   color: secondaryTextColor.withValues(
-                                      alpha: 0.6),
+                                    alpha: 0.6,
+                                  ),
                                 ),
                               ),
                             ],

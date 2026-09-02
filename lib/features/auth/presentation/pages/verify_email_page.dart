@@ -84,14 +84,14 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   void _startResendCooldown() {
     _canResendEmail.value = false;
     _secondsRemaining.value = 30;
-    
+
     _resendCooldownTimer?.cancel();
     _resendCooldownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!mounted) {
         timer.cancel();
         return;
       }
-      
+
       if (_secondsRemaining.value > 0) {
         _secondsRemaining.value--;
       } else {
@@ -112,7 +112,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
 
   Color _bgColor(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight = context.read<ThemeCubit>().state.isMidnight;
+    final isMidnight = context.select<ThemeCubit, bool>(
+      (c) => c.state.isMidnight,
+    );
     return isMidnight
         ? const Color(0xFF000000)
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
@@ -170,7 +172,11 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
         buildWhen: (previous, current) => previous.status != current.status,
         builder: (context, state) {
           return ListenableBuilder(
-            listenable: Listenable.merge([_isLoggingOut, _canResendEmail, _secondsRemaining]),
+            listenable: Listenable.merge([
+              _isLoggingOut,
+              _canResendEmail,
+              _secondsRemaining,
+            ]),
             builder: (context, _) {
               final bgColor = _bgColor(context);
 
@@ -184,54 +190,60 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                 );
               }
 
-          return Scaffold(
-            backgroundColor: bgColor,
-            body: Stack(
-              children: [
-                const MeshGradientBackground(),
-                SafeArea(
-                  child: Center(
-                    child: SingleChildScrollView(
-                      padding: EdgeInsets.all(24.w),
-                      child: GlassTile(
-                        padding: EdgeInsets.all(32.r),
-                        borderRadius: BorderRadius.circular(40.r),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const VerifyEmailIconHeader(),
-                            SizedBox(height: 32.h),
-                            const VerifyEmailStatusText(),
-                            SizedBox(height: 40.h),
-                            ResendEmailButton(
-                              canResendEmail: _canResendEmail.value,
-                              secondsRemaining: _secondsRemaining.value,
-                              onPressed: _requestVerificationEmail,
+              return Scaffold(
+                backgroundColor: bgColor,
+                body: Stack(
+                  children: [
+                    const MeshGradientBackground(),
+                    SafeArea(
+                      child: Center(
+                        child: SingleChildScrollView(
+                          padding: EdgeInsets.all(24.w),
+                          child: GlassTile(
+                            padding: EdgeInsets.all(32.r),
+                            borderRadius: BorderRadius.circular(40.r),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const VerifyEmailIconHeader(),
+                                SizedBox(height: 32.h),
+                                VerifyEmailStatusText(
+                                  email: context
+                                      .read<AuthBloc>()
+                                      .state
+                                      .user
+                                      ?.email,
+                                ),
+                                SizedBox(height: 40.h),
+                                ResendEmailButton(
+                                  canResendEmail: _canResendEmail.value,
+                                  secondsRemaining: _secondsRemaining.value,
+                                  onPressed: _requestVerificationEmail,
+                                ),
+                                SizedBox(height: 16.h),
+                                VerifyConfirmationButton(
+                                  onPressed: _triggerVerificationCheck,
+                                ),
+                                SizedBox(height: 16.h),
+                                VerifyLogoutButton(
+                                  onPressed: () {
+                                    _isLoggingOut.value = true;
+                                    _verificationTimer?.cancel();
+                                    _resendCooldownTimer?.cancel();
+                                    context.read<AuthBloc>().add(
+                                      const AuthLogoutRequested(),
+                                    );
+                                  },
+                                ),
+                              ],
                             ),
-                            SizedBox(height: 16.h),
-                            VerifyConfirmationButton(
-                              onPressed: _triggerVerificationCheck,
-                            ),
-                            SizedBox(height: 16.h),
-                            VerifyLogoutButton(
-                              onPressed: () {
-                                _isLoggingOut.value = true;
-                                _verificationTimer?.cancel();
-                                _resendCooldownTimer?.cancel();
-                                context.read<AuthBloc>().add(
-                                  const AuthLogoutRequested(),
-                                );
-                              },
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
-          );
+              );
             },
           );
         },

@@ -41,7 +41,9 @@ class _CardLayout {
 
     final hPad = isTablet ? 24.w : 12.w;
     final maxW = isTablet ? min(w * 0.80, 600.0) : w - (hPad * 2);
-    final double cardW = maxW.clamp(250.0, max<double>(250.0, w - (hPad * 2))).toDouble();
+    final double cardW = maxW
+        .clamp(250.0, max<double>(250.0, w - (hPad * 2)))
+        .toDouble();
     final double cardH = isLandscape
         ? (h * 0.85).clamp(220.0, max<double>(220.0, h * 0.9)).toDouble()
         : isTablet
@@ -124,7 +126,9 @@ class FlashcardGameBody extends StatelessWidget {
               child: SafeArea(
                 bottom: true,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: layout.horizontalPadding),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: layout.horizontalPadding,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -164,9 +168,15 @@ class FlashcardGameBody extends StatelessWidget {
 
   // ── Card stack ────────────────────────────────────────────────────────────
 
-  Widget _buildCardStack(BuildContext context, double width, double height, double swipeThreshold) {
+  Widget _buildCardStack(
+    BuildContext context,
+    double width,
+    double height,
+    double swipeThreshold,
+  ) {
     return Semantics(
-      label: '${quest.word ?? ""}. ${isFlipped ? context.tr('instructions.flashcards.definition_revealed') : context.tr('instructions.flashcards.tap_to_reveal')}',
+      label:
+          '${quest.word ?? ""}. ${isFlipped ? context.tr('instructions.flashcards.definition_revealed') : context.tr('instructions.flashcards.tap_to_reveal')}',
       child: GestureDetector(
         onHorizontalDragUpdate: isFlipped ? onHorizontalDragUpdate : null,
         onHorizontalDragEnd: isFlipped

@@ -217,302 +217,310 @@ class AgeGateScreen extends StatelessWidget {
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 500),
               child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                physics: const BouncingScrollPhysics(),
-                slivers: [
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 32.w,
-                        vertical: 24.h,
-                      ),
-                      child: Column(
-                        children: [
-                          const Spacer(flex: 2),
+                builder: (context, constraints) {
+                  return CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 32.w,
+                            vertical: 24.h,
+                          ),
+                          child: Column(
+                            children: [
+                              const Spacer(flex: 2),
 
-                          // Icon
-                          Semantics(
-                            label: 'Shield Icon',
-                            image: true,
-                            child:
-                                Container(
-                                      width: 80.r,
-                                      height: 80.r,
-                                      decoration: BoxDecoration(
-                                        gradient: const LinearGradient(
-                                          colors: [
-                                            Color(0xFF6366F1),
-                                            Color(0xFF8B5CF6),
-                                          ],
-                                          begin: Alignment.topLeft,
-                                          end: Alignment.bottomRight,
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          24.r,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: const Color(
-                                              0xFF6366F1,
-                                            ).withValues(alpha: 0.3),
-                                            blurRadius: 20,
-                                            offset: const Offset(0, 8),
+                              // Icon
+                              Semantics(
+                                label: 'Shield Icon',
+                                image: true,
+                                child:
+                                    Container(
+                                          width: 80.r,
+                                          height: 80.r,
+                                          decoration: BoxDecoration(
+                                            gradient: const LinearGradient(
+                                              colors: [
+                                                Color(0xFF6366F1),
+                                                Color(0xFF8B5CF6),
+                                              ],
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                            ),
+                                            borderRadius: BorderRadius.circular(
+                                              24.r,
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: const Color(
+                                                  0xFF6366F1,
+                                                ).withValues(alpha: 0.3),
+                                                blurRadius: 20,
+                                                offset: const Offset(0, 8),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                      child: Icon(
-                                        Icons.verified_user_rounded,
-                                        size: 40.r,
-                                        color: Colors.white,
-                                      ),
-                                    )
-                                    .animate()
-                                    .fadeIn(duration: 600.ms)
-                                    .scale(
-                                      begin: const Offset(0.8, 0.8),
-                                      curve: Curves.easeOutBack,
-                                    ),
-                          ),
-
-                          SizedBox(height: 32.h),
-
-                          // Title
-                          Semantics(
-                            header: true,
-                            child: Text(
-                              context.tr(
-                                'age_gate.title',
-                                fallback: 'Before we begin',
+                                          child: Icon(
+                                            Icons.verified_user_rounded,
+                                            size: 40.r,
+                                            color: Colors.white,
+                                          ),
+                                        )
+                                        .animate()
+                                        .fadeIn(duration: 600.ms)
+                                        .scale(
+                                          begin: const Offset(0.8, 0.8),
+                                          curve: Curves.easeOutBack,
+                                        ),
                               ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 28.sp,
-                                fontWeight: FontWeight.w900,
-                                color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A),
-                                letterSpacing: -0.5,
-                              ),
-                              textAlign: TextAlign.center,
-                            ).animate().fadeIn(delay: 200.ms),
-                          ),
 
-                          SizedBox(height: 12.h),
+                              SizedBox(height: 32.h),
 
-                          // Subtitle
-                          Text(
-                            context.tr(
-                              'age_gate.subtitle',
-                              fallback:
-                                  'We need to know your age to give you the best experience.',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w500,
-                              color: isDark
-                                  ? Colors.grey.shade400
-                                  : Colors.grey.shade600,
-                              height: 1.5,
-                            ),
-                            textAlign: TextAlign.center,
-                          ).animate().fadeIn(delay: 400.ms),
-
-                          const Spacer(flex: 1),
-
-                          // "I'm 16 or older" button
-                          Semantics(
-                            button: true,
-                            label: context.tr(
-                              'age_gate.adult_button',
-                              fallback: "I'm 16 or older",
-                            ),
-                            hint: context.tr(
-                              'age_gate.adult_subtitle',
-                              fallback: "Access the full learning experience",
-                            ),
-                            excludeSemantics: true,
-                            child: ScaleButton(
-                              onTap: () =>
-                                  _handleSelection(context, isAdult: true),
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.symmetric(vertical: 18.h),
-                                decoration: BoxDecoration(
-                                  gradient: const LinearGradient(
-                                    colors: [
-                                      Color(0xFF6366F1),
-                                      Color(0xFF8B5CF6),
-                                    ],
+                              // Title
+                              Semantics(
+                                header: true,
+                                child: Text(
+                                  context.tr(
+                                    'age_gate.title',
+                                    fallback: 'Before we begin',
                                   ),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: const Color(
-                                        0xFF6366F1,
-                                      ).withValues(alpha: 0.3),
-                                      blurRadius: 12,
-                                      offset: const Offset(0, 6),
-                                    ),
-                                  ],
-                                ),
-                                alignment: Alignment.center,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      context.tr(
-                                        'age_gate.adult_button',
-                                        fallback: "I'm 16 or older",
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 17.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: Colors.white,
-                                        letterSpacing: 0.3,
-                                      ),
-                                    ),
-                                    SizedBox(height: 2.h),
-                                    Text(
-                                      context.tr(
-                                        'age_gate.adult_subtitle',
-                                        fallback:
-                                            "Access the full learning experience",
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.8,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 28.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A),
+                                    letterSpacing: -0.5,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ).animate().fadeIn(delay: 200.ms),
                               ),
-                            ).animate().fadeIn(delay: 600.ms).moveY(begin: 20, end: 0),
-                          ),
 
-                          SizedBox(height: 16.h),
+                              SizedBox(height: 12.h),
 
-                          // "I'm under 16" button
-                          Semantics(
-                            button: true,
-                            label: context.tr(
-                              'age_gate.child_button',
-                              fallback: "I'm under 16",
-                            ),
-                            hint: context.tr(
-                              'age_gate.child_subtitle',
-                              fallback: "Fun, simplified games for kids",
-                            ),
-                            excludeSemantics: true,
-                            child:
-                                ScaleButton(
-                                      onTap: () => _handleSelection(
-                                        context,
-                                        isAdult: false,
-                                      ),
-                                      child: Container(
-                                        width: double.infinity,
-                                        padding: EdgeInsets.symmetric(
-                                          vertical: 18.h,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: isDark
-                                              ? const Color(0xFF1E293B)
-                                              : const Color(0xFFF1F5F9),
-                                          borderRadius: BorderRadius.circular(
-                                            16.r,
+                              // Subtitle
+                              Text(
+                                context.tr(
+                                  'age_gate.subtitle',
+                                  fallback:
+                                      'We need to know your age to give you the best experience.',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: isDark
+                                      ? Colors.grey.shade400
+                                      : Colors.grey.shade600,
+                                  height: 1.5,
+                                ),
+                                textAlign: TextAlign.center,
+                              ).animate().fadeIn(delay: 400.ms),
+
+                              const Spacer(flex: 1),
+
+                              // "I'm 16 or older" button
+                              Semantics(
+                                button: true,
+                                label: context.tr(
+                                  'age_gate.adult_button',
+                                  fallback: "I'm 16 or older",
+                                ),
+                                hint: context.tr(
+                                  'age_gate.adult_subtitle',
+                                  fallback:
+                                      "Access the full learning experience",
+                                ),
+                                excludeSemantics: true,
+                                child:
+                                    ScaleButton(
+                                          onTap: () => _handleSelection(
+                                            context,
+                                            isAdult: true,
                                           ),
-                                          border: Border.all(
-                                            color: isDark
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.1,
-                                                  )
-                                                : const Color(0xFFE2E8F0),
-                                            width: 1.5,
-                                          ),
-                                        ),
-                                        alignment: Alignment.center,
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Text(
-                                              context.tr(
-                                                'age_gate.child_button',
-                                                fallback: "I'm under 16",
+                                          child: Container(
+                                            width: double.infinity,
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 18.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              gradient: const LinearGradient(
+                                                colors: [
+                                                  Color(0xFF6366F1),
+                                                  Color(0xFF8B5CF6),
+                                                ],
                                               ),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 17.sp,
-                                                fontWeight: FontWeight.w800,
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color(
+                                                    0xFF6366F1,
+                                                  ).withValues(alpha: 0.3),
+                                                  blurRadius: 12,
+                                                  offset: const Offset(0, 6),
+                                                ),
+                                              ],
+                                            ),
+                                            alignment: Alignment.center,
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Text(
+                                                  context.tr(
+                                                    'age_gate.adult_button',
+                                                    fallback: "I'm 16 or older",
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 17.sp,
+                                                    fontWeight: FontWeight.w800,
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.3,
+                                                  ),
+                                                ),
+                                                SizedBox(height: 2.h),
+                                                Text(
+                                                  context.tr(
+                                                    'age_gate.adult_subtitle',
+                                                    fallback:
+                                                        "Access the full learning experience",
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.white
+                                                        .withValues(alpha: 0.8),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        )
+                                        .animate()
+                                        .fadeIn(delay: 600.ms)
+                                        .moveY(begin: 20, end: 0),
+                              ),
+
+                              SizedBox(height: 16.h),
+
+                              // "I'm under 16" button
+                              Semantics(
+                                button: true,
+                                label: context.tr(
+                                  'age_gate.child_button',
+                                  fallback: "I'm under 16",
+                                ),
+                                hint: context.tr(
+                                  'age_gate.child_subtitle',
+                                  fallback: "Fun, simplified games for kids",
+                                ),
+                                excludeSemantics: true,
+                                child:
+                                    ScaleButton(
+                                          onTap: () => _handleSelection(
+                                            context,
+                                            isAdult: false,
+                                          ),
+                                          child: Container(
+                                            width: double.infinity,
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 18.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: isDark
+                                                  ? const Color(0xFF1E293B)
+                                                  : const Color(0xFFF1F5F9),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                              border: Border.all(
                                                 color: isDark
-                                                    ? Colors.white70
-                                                    : Colors.grey.shade700,
-                                                letterSpacing: 0.3,
+                                                    ? Colors.white.withValues(
+                                                        alpha: 0.1,
+                                                      )
+                                                    : const Color(0xFFE2E8F0),
+                                                width: 1.5,
                                               ),
                                             ),
-                                            SizedBox(height: 2.h),
-                                            Text(
-                                              context.tr(
-                                                'age_gate.child_subtitle',
-                                                fallback:
-                                                    "Fun, simplified games for kids",
-                                              ),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 12.sp,
-                                                fontWeight: FontWeight.w500,
-                                                color: isDark
-                                                    ? Colors.white54
-                                                    : Colors.grey.shade500,
-                                              ),
+                                            alignment: Alignment.center,
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Text(
+                                                  context.tr(
+                                                    'age_gate.child_button',
+                                                    fallback: "I'm under 16",
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 17.sp,
+                                                    fontWeight: FontWeight.w800,
+                                                    color: isDark
+                                                        ? Colors.white70
+                                                        : Colors.grey.shade700,
+                                                    letterSpacing: 0.3,
+                                                  ),
+                                                ),
+                                                SizedBox(height: 2.h),
+                                                Text(
+                                                  context.tr(
+                                                    'age_gate.child_subtitle',
+                                                    fallback:
+                                                        "Fun, simplified games for kids",
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: isDark
+                                                        ? Colors.white54
+                                                        : Colors.grey.shade500,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                                    .animate()
-                                    .fadeIn(delay: 700.ms)
-                                    .moveY(begin: 20, end: 0),
+                                          ),
+                                        )
+                                        .animate()
+                                        .fadeIn(delay: 700.ms)
+                                        .moveY(begin: 20, end: 0),
+                              ),
+
+                              SizedBox(height: 24.h),
+
+                              // Privacy note
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                child: Text(
+                                  context.tr(
+                                    'age_gate.privacy_note',
+                                    fallback:
+                                        'This is stored only on your device and is never shared. You can change this later in Settings.',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey,
+                                    height: 1.4,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ).animate().fadeIn(delay: 800.ms),
+
+                              const Spacer(flex: 2),
+                            ],
                           ),
-
-                          SizedBox(height: 24.h),
-
-                          // Privacy note
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Text(
-                              context.tr(
-                                'age_gate.privacy_note',
-                                fallback:
-                                    'This is stored only on your device and is never shared. You can change this later in Settings.',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.grey,
-                                height: 1.4,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ).animate().fadeIn(delay: 800.ms),
-
-                          const Spacer(flex: 2),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                ],
-              );
-                  },
-                ),
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ),

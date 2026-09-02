@@ -39,7 +39,11 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.monitor_heart_rounded, color: primaryColor, size: 20.r),
+              Icon(
+                Icons.monitor_heart_rounded,
+                color: primaryColor,
+                size: 20.r,
+              ),
               SizedBox(width: 8.w),
               Text(
                 "BIOMETRIC SCAN: MEDICAL VOCAB",
@@ -63,14 +67,19 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: primaryColor.withValues(alpha: 0.1),
-                  border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+                  border: Border.all(
+                    color: primaryColor.withValues(alpha: 0.3),
+                  ),
                 ),
                 child: Center(
-                  child: Icon(
-                    Icons.accessibility_new_rounded,
-                    size: 60.r,
-                    color: primaryColor.withValues(alpha: 0.7),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true)).fadeIn(duration: 1000.ms),
+                  child:
+                      Icon(
+                            Icons.accessibility_new_rounded,
+                            size: 60.r,
+                            color: primaryColor.withValues(alpha: 0.7),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .fadeIn(duration: 1000.ms),
                 ),
               ),
               SizedBox(width: 20.w),

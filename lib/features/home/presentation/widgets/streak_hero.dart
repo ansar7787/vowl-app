@@ -67,32 +67,30 @@ class StreakHero extends StatelessWidget {
                         )
                         .fadeIn(duration: 800.ms),
                     Container(
-                          padding: EdgeInsets.all(20.r),
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [color, Color(0xFFFFC371)],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.3),
-                              width: 4,
-                            ),
-                          ),
-                          child: Icon(
-                            LucideIcons.flame,
-                            color: Colors.white,
-                            size: 40.r,
-                          ),
-                        )
-                        .animate()
-                        .scale(
-                          begin: const Offset(0.5, 0.5),
-                          end: const Offset(1, 1),
-                          duration: 800.ms,
-                          curve: Curves.easeOutBack,
+                      padding: EdgeInsets.all(20.r),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [color, Color(0xFFFFC371)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
                         ),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.3),
+                          width: 4,
+                        ),
+                      ),
+                      child: Icon(
+                        LucideIcons.flame,
+                        color: Colors.white,
+                        size: 40.r,
+                      ),
+                    ).animate().scale(
+                      begin: const Offset(0.5, 0.5),
+                      end: const Offset(1, 1),
+                      duration: 800.ms,
+                      curve: Curves.easeOutBack,
+                    ),
                   ],
                 ),
                 SizedBox(height: 20.h),

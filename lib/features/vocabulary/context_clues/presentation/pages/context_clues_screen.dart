@@ -47,7 +47,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
-  
+
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
@@ -110,7 +110,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     if (isCorrect) {
       _hapticService.selection(); // Subtle feedback for Phase 1
       _isFirstStagePassed.value = true;
-      
+
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted && _scrollController.hasClients) {
           _scrollController.animateTo(
@@ -202,7 +202,13 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
             : _lastQuest;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedOption]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _isFirstStagePassed,
+            _selectedOption,
+          ]),
           builder: (context, _) {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
@@ -238,35 +244,52 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                           thickness: 4.w,
                           child: CustomScrollView(
                             controller: _scrollController,
-                            physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                            physics: (!_isFirstStagePassed.value)
+                                ? const NeverScrollableScrollPhysics()
+                                : const BouncingScrollPhysics(),
                             slivers: [
-                            SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: constraints.maxHeight,
-                                    child: _buildForensicScene(
-                                      quest,
-                                      theme.primaryColor,
-                                      (state is VocabularyLoaded)
-                                          ? state.isFinalFailure
-                                          : false,
+                              SliverToBoxAdapter(
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      height: constraints.maxHeight,
+                                      child: _buildForensicScene(
+                                        quest,
+                                        theme.primaryColor,
+                                        (state is VocabularyLoaded)
+                                            ? state.isFinalFailure
+                                            : false,
+                                      ),
                                     ),
-                                  ),
-                                  if (_isFirstStagePassed.value && !_isAnswered.value)
-                                    EvidenceHighlightWrapper(
-                                      passage: quest.sentence?.replaceAll('[TARGET]', quest.correctAnswer ?? '') ?? "",
-                                      evidenceWords: quest.evidenceWords ?? [],
-                                      primaryColor: theme.primaryColor,
-                                      instruction: "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
-                                      onCorrectHighlight: () => _submitFinalAnswer(true),
-                                      onWrongHighlight: () => {},
-                                      isPositioned: false,
+                                    if (_isFirstStagePassed.value &&
+                                        !_isAnswered.value)
+                                      EvidenceHighlightWrapper(
+                                        passage:
+                                            quest.sentence?.replaceAll(
+                                              '[TARGET]',
+                                              quest.correctAnswer ?? '',
+                                            ) ??
+                                            "",
+                                        evidenceWords:
+                                            quest.evidenceWords ?? [],
+                                        primaryColor: theme.primaryColor,
+                                        instruction:
+                                            "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
+                                        onCorrectHighlight: () =>
+                                            _submitFinalAnswer(true),
+                                        onWrongHighlight: () => {},
+                                        isPositioned: false,
+                                      ),
+                                    SizedBox(
+                                      height:
+                                          (_isAnswered.value ||
+                                              _isFirstStagePassed.value)
+                                          ? 160.h
+                                          : 60.h,
                                     ),
-                                  SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 160.h : 60.h),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
                             ],
                           ),
                         );
@@ -356,7 +379,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                       TweenAnimationBuilder<double>(
                         tween: Tween<double>(
                           begin: 5.0,
-                          end: (_isAnswered.value || _isFirstStagePassed.value) ? 0.0 : 5.0,
+                          end: (_isAnswered.value || _isFirstStagePassed.value)
+                              ? 0.0
+                              : 5.0,
                         ),
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeOut,
@@ -371,7 +396,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         },
                         child: AnimatedOpacity(
                           duration: const Duration(milliseconds: 500),
-                          opacity: (_isAnswered.value || _isFirstStagePassed.value)
+                          opacity:
+                              (_isAnswered.value || _isFirstStagePassed.value)
                               ? 1.0
                               : 0.4,
                           child: ContextCluesEvidenceSentence(

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
+import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
 import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart';
 import 'package:vowl/features/auth/domain/usecases/sign_up.dart';
 
@@ -75,9 +76,6 @@ class SignUpCubit extends Cubit<SignUpState> {
   final SendEmailVerification _sendEmailVerification;
   final NetworkInfo? _networkInfo;
 
-  /// Compiled once — avoids per-keystroke [RegExp] allocation.
-  static final _emailRegex = RegExp(r'^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$');
-
   SignUpCubit({
     required SignUp signUp,
     required SendEmailVerification sendEmailVerification,
@@ -129,7 +127,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       );
       return;
     }
-    if (!_emailRegex.hasMatch(trimmedEmail)) {
+    if (!AuthValidators.emailRegex.hasMatch(trimmedEmail)) {
       emit(
         state.copyWith(
           errorMessage: () => AuthErrorHandler.getKey('email-invalid'),

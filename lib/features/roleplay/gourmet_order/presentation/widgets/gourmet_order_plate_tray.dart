@@ -68,7 +68,10 @@ class GourmetOrderPlateTray extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemCount: options.length,
-              itemBuilder: (context, i) => _buildDraggablePlate(options[i], prices.length > i ? prices[i] : "\$3.50"),
+              itemBuilder: (context, i) => _buildDraggablePlate(
+                options[i],
+                prices.length > i ? prices[i] : "\$3.50",
+              ),
             ),
           ),
         ],
@@ -180,9 +183,14 @@ class GourmetOrderPlateTray extends StatelessWidget {
                   ),
                   SizedBox(height: 8.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 4.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: isSelected ? Colors.white.withValues(alpha: 0.2) : color.withValues(alpha: 0.1),
+                      color: isSelected
+                          ? Colors.white.withValues(alpha: 0.2)
+                          : color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8.r),
                     ),
                     child: Text(

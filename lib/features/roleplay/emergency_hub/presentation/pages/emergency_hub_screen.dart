@@ -42,7 +42,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   late TextEditingController _codeController;
 
   int _lastProcessedIndex = -1;
-  final ValueNotifier<double> _rotation = ValueNotifier(0.0); // Valve rotation progress (0.0 to 1.0)
+  final ValueNotifier<double> _rotation = ValueNotifier(
+    0.0,
+  ); // Valve rotation progress (0.0 to 1.0)
   final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
@@ -73,7 +75,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
-        _scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -184,9 +186,16 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
         return ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _rotation, _isFirstStagePassed, _codeController]),
-            builder: (context, _) {
-              return RoleplayBaseLayout(
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _rotation,
+            _isFirstStagePassed,
+            _codeController,
+          ]),
+          builder: (context, _) {
+            return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -205,7 +214,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: Colors.redAccent.withValues(alpha: 0.5),
+                              thumbColor: Colors.redAccent.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -218,105 +229,177 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
                                               return Padding(
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 16.w,
-                                                  vertical: isCompact ? 5.h : 10.h,
+                                                  vertical: isCompact
+                                                      ? 5.h
+                                                      : 10.h,
                                                 ),
                                                 child: Column(
                                                   children: [
                                                     EmergencyHubInstruction(
-                                                      instruction: quest.instruction,
+                                                      instruction:
+                                                          quest.instruction,
                                                     ),
-                                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 10.h
+                                                          : 16.h,
+                                                    ),
 
                                                     // Critical dispatcher prompt telex
                                                     EmergencyHubTelexCard(
                                                       telex:
-                                                          quest.dispatcherQuestion ??
+                                                          quest
+                                                              .dispatcherQuestion ??
                                                           "AWAITING BROADCAST VECTOR DETAILS...",
-                                                      urgencyLevel: quest.urgencyLevel ?? 3,
+                                                      urgencyLevel:
+                                                          quest.urgencyLevel ??
+                                                          3,
                                                       isDark: isDark,
                                                     ),
-                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
+                                                    ),
 
                                                     // Retro terminal input text field
                                                     EmergencyHubTerminalInput(
-                                                      controller: _codeController,
-                                                      correctAnswer: quest.correctAnswer ?? "",
+                                                      controller:
+                                                          _codeController,
+                                                      correctAnswer:
+                                                          quest.correctAnswer ??
+                                                          "",
                                                       isDark: isDark,
                                                       onChanged: () {},
                                                     ),
-                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
+                                                    ),
 
                                                     // Mechanical safety valve chamber
                                                     EmergencyHubValveChamber(
-                                                      correctAnswer: quest.correctAnswer ?? "",
-                                                      inputText: _codeController.text,
+                                                      correctAnswer:
+                                                          quest.correctAnswer ??
+                                                          "",
+                                                      inputText:
+                                                          _codeController.text,
                                                       isDark: isDark,
                                                       rotation: _rotation.value,
-                                                      pulseAnimation: _pulseController,
-                                                      onValveDragged: _onValveDragged,
+                                                      pulseAnimation:
+                                                          _pulseController,
+                                                      onValveDragged:
+                                                          _onValveDragged,
                                                     ),
-                                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 16.h
+                                                          : 24.h,
+                                                    ),
 
                                                     // Dispatch lock confirm trigger button
                                                     if (!_isAnswered.value &&
-                                                        _codeController.text.isNotEmpty)
+                                                        _codeController
+                                                            .text
+                                                            .isNotEmpty)
                                                       ScaleButton(
                                                         onTap: () => _submitCode(
                                                           _codeController.text,
-                                                          quest.correctAnswer ?? "",
+                                                          quest.correctAnswer ??
+                                                              "",
                                                         ),
                                                         child: Container(
-                                                          padding: EdgeInsets.symmetric(
-                                                            horizontal: 48.w,
-                                                            vertical: isCompact ? 10.h : 14.h,
-                                                          ),
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    48.w,
+                                                                vertical:
+                                                                    isCompact
+                                                                    ? 10.h
+                                                                    : 14.h,
+                                                              ),
                                                           decoration: BoxDecoration(
-                                                            borderRadius: BorderRadius.circular(30.r),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  30.r,
+                                                                ),
                                                             gradient: const LinearGradient(
                                                               colors: [
-                                                                Colors.redAccent,
-                                                                Colors.deepOrangeAccent,
+                                                                Colors
+                                                                    .redAccent,
+                                                                Colors
+                                                                    .deepOrangeAccent,
                                                               ],
                                                             ),
                                                             boxShadow: [
                                                               BoxShadow(
-                                                                color: Colors.redAccent.withValues(
-                                                                  alpha: 0.45,
-                                                                ),
-                                                                blurRadius: isCompact ? 10 : 15,
+                                                                color: Colors
+                                                                    .redAccent
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.45,
+                                                                    ),
+                                                                blurRadius:
+                                                                    isCompact
+                                                                    ? 10
+                                                                    : 15,
                                                               ),
                                                             ],
                                                           ),
                                                           child: Row(
-                                                            mainAxisSize: MainAxisSize.min,
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: [
                                                               Icon(
-                                                                Icons.flash_on_rounded,
-                                                                color: Colors.white,
-                                                                size: isCompact ? 16.r : 18.r,
+                                                                Icons
+                                                                    .flash_on_rounded,
+                                                                color: Colors
+                                                                    .white,
+                                                                size: isCompact
+                                                                    ? 16.r
+                                                                    : 18.r,
                                                               ),
-                                                              SizedBox(width: 8.w),
+                                                              SizedBox(
+                                                                width: 8.w,
+                                                              ),
                                                               Text(
                                                                 "LAUNCH EMERGENCY BEACON",
                                                                 style: TextStyle(
-                                                                  fontFamily: 'Outfit',
-                                                                  fontSize: isCompact ? 10.sp : 12.sp,
-                                                                  fontWeight: FontWeight.bold,
-                                                                  color: Colors.white,
-                                                                  letterSpacing: 2,
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      isCompact
+                                                                      ? 10.sp
+                                                                      : 12.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      2,
                                                                 ),
                                                               ),
                                                             ],
                                                           ),
                                                         ),
-                                                      ).animate().fadeIn(duration: 300.ms),
+                                                      ).animate().fadeIn(
+                                                        duration: 300.ms,
+                                                      ),
 
                                                     // Review details
-                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 20.h
+                                                          : 40.h,
+                                                    ),
                                                   ],
                                                 ),
                                               );
@@ -328,7 +411,11 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
@@ -336,7 +423,8 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                             ),
                             if (_isFirstStagePassed.value && !_isAnswered.value)
                               SpeakToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? _codeController.text,
+                                expectedText:
+                                    quest.correctAnswer ?? _codeController.text,
                                 primaryColor: Colors.redAccent,
                                 isPositioned: true,
                                 onConfirmed: () {
@@ -351,9 +439,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                         );
                       },
                     ),
-                );
-            },
-          );
+            );
+          },
+        );
       },
     );
   }

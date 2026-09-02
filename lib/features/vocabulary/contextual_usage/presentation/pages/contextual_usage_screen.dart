@@ -220,14 +220,19 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-                        final trueMaxHeight = constraints.maxHeight + keyboardHeight;
+                        final keyboardHeight = MediaQuery.of(
+                          context,
+                        ).viewInsets.bottom;
+                        final trueMaxHeight =
+                            constraints.maxHeight + keyboardHeight;
 
                         return Stack(
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -236,115 +241,124 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                     ? const NeverScrollableScrollPhysics()
                                     : const BouncingScrollPhysics(),
                                 slivers: [
-                                SliverToBoxAdapter(
-                                  child: IgnorePointer(
-                                    ignoring: _isFirstStagePassed.value,
-                                    child: ConstrainedBox(
-                                      constraints: BoxConstraints(
-                                        minHeight: trueMaxHeight,
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                        Positioned.fill(
-                                          child: CustomPaint(
-                                            painter: GridPainter(
-                                              theme.primaryColor.withValues(
-                                                alpha: isDarkMode ? 0.05 : 0.03,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: trueMaxHeight,
-                                              child: _buildUnfoldContent(
-                                                quest,
-                                                theme.primaryColor,
-                                                isDarkMode,
-                                                constraints.maxWidth,
-                                                _selectedOption.value != null
-                                                    ? _selectedOption.value!
-                                                              .trim()
-                                                              .toLowerCase() ==
-                                                          (quest.correctAnswer ??
-                                                                  "")
-                                                              .trim()
-                                                              .toLowerCase()
-                                                    : null,
-                                              ),
-                                            ),
-                                            if (_isFirstStagePassed.value)
-                                              Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 20.w,
-                                                ),
-                                                child: Column(
-                                                  children: [
-                                                    SizedBox(height: 10.h),
-                                                    if (quest.registerLevel !=
-                                                            null ||
-                                                        quest.nuanceDifference !=
-                                                            null ||
-                                                        quest.usageExample !=
-                                                            null ||
-                                                        quest.contextSentence !=
-                                                            null ||
-                                                        quest.example != null)
-                                                      ContextualUsageRegisterMeter(
-                                                        registerLevel:
-                                                            quest.registerLevel,
-                                                        nuanceDifference: quest
-                                                            .nuanceDifference,
-                                                        usageExample:
-                                                            quest
-                                                                .usageExample ??
-                                                            quest
-                                                                .contextSentence ??
-                                                            quest.example,
-                                                        color:
-                                                            theme.primaryColor,
-                                                      ),
-                                                  ],
-                                                ),
-                                              ),
-                                            SizedBox(
-                                              height:
-                                                  (_isAnswered.value ||
-                                                      _isFirstStagePassed.value)
-                                                  ? 10.h
-                                                  : 60.h,
-                                            ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            if (_isFirstStagePassed.value &&
-                                    (!_isAnswered.value ||
-                                        _isCorrect.value == null))
                                   SliverToBoxAdapter(
-                                    child: Column(
-                                      children: [
-                                        SpeakToConfirmOverlay(
-                                          expectedText: (quest.prompt ?? "").replaceAll(
-                                            RegExp(r'_+'),
-                                            quest.correctAnswer ?? "",
-                                          ),
-                                          primaryColor: theme.primaryColor,
-                                          onConfirmed: () => _submitFinalAnswer(true),
-                                          onSkipped: () => _submitFinalAnswer(false),
-                                          isPositioned: false,
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          minHeight: trueMaxHeight,
                                         ),
-                                        SizedBox(height: 60.h),
-                                      ],
+                                        child: Stack(
+                                          children: [
+                                            Positioned.fill(
+                                              child: CustomPaint(
+                                                painter: GridPainter(
+                                                  theme.primaryColor.withValues(
+                                                    alpha: isDarkMode
+                                                        ? 0.05
+                                                        : 0.03,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Column(
+                                              children: [
+                                                SizedBox(
+                                                  height: trueMaxHeight,
+                                                  child: _buildUnfoldContent(
+                                                    quest,
+                                                    theme.primaryColor,
+                                                    isDarkMode,
+                                                    constraints.maxWidth,
+                                                    _selectedOption.value !=
+                                                            null
+                                                        ? _selectedOption.value!
+                                                                  .trim()
+                                                                  .toLowerCase() ==
+                                                              (quest.correctAnswer ??
+                                                                      "")
+                                                                  .trim()
+                                                                  .toLowerCase()
+                                                        : null,
+                                                  ),
+                                                ),
+                                                if (_isFirstStagePassed.value)
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 20.w,
+                                                        ),
+                                                    child: Column(
+                                                      children: [
+                                                        SizedBox(height: 10.h),
+                                                        if (quest.registerLevel !=
+                                                                null ||
+                                                            quest.nuanceDifference !=
+                                                                null ||
+                                                            quest.usageExample !=
+                                                                null ||
+                                                            quest.contextSentence !=
+                                                                null ||
+                                                            quest.example !=
+                                                                null)
+                                                          ContextualUsageRegisterMeter(
+                                                            registerLevel: quest
+                                                                .registerLevel,
+                                                            nuanceDifference: quest
+                                                                .nuanceDifference,
+                                                            usageExample:
+                                                                quest
+                                                                    .usageExample ??
+                                                                quest
+                                                                    .contextSentence ??
+                                                                quest.example,
+                                                            color: theme
+                                                                .primaryColor,
+                                                          ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                SizedBox(
+                                                  height:
+                                                      (_isAnswered.value ||
+                                                          _isFirstStagePassed
+                                                              .value)
+                                                      ? 10.h
+                                                      : 60.h,
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     ),
                                   ),
-                              ],
+                                  if (_isFirstStagePassed.value &&
+                                      (!_isAnswered.value ||
+                                          _isCorrect.value == null))
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          SpeakToConfirmOverlay(
+                                            expectedText: (quest.prompt ?? "")
+                                                .replaceAll(
+                                                  RegExp(r'_+'),
+                                                  quest.correctAnswer ?? "",
+                                                ),
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () =>
+                                                _submitFinalAnswer(true),
+                                            onSkipped: () =>
+                                                _submitFinalAnswer(false),
+                                            isPositioned: false,
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
+                                    ),
+                                ],
+                              ),
                             ),
-                          ),
                           ],
                         );
                       },
@@ -457,29 +471,29 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
             SizedBox(height: gapMiddle),
 
             (isCompact
-                  ? SizedBox(
-                      height: 100.h,
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: SizedBox(
-                          width: maxWidth,
-                          child: _buildChipsWrap(
-                            quest,
-                            color,
-                            isDark,
-                            isCompact,
-                            currentOptionCorrect,
-                          ),
+                ? SizedBox(
+                    height: 100.h,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: SizedBox(
+                        width: maxWidth,
+                        child: _buildChipsWrap(
+                          quest,
+                          color,
+                          isDark,
+                          isCompact,
+                          currentOptionCorrect,
                         ),
                       ),
-                    )
-                  : _buildChipsWrap(
-                      quest,
-                      color,
-                      isDark,
-                      isCompact,
-                      currentOptionCorrect,
-                    )),
+                    ),
+                  )
+                : _buildChipsWrap(
+                    quest,
+                    color,
+                    isDark,
+                    isCompact,
+                    currentOptionCorrect,
+                  )),
             SizedBox(height: gapBottom),
           ],
         );

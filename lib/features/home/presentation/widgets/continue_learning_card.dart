@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_animate/flutter_animate.dart';
@@ -51,7 +50,6 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     QuestType.roleplay,
     QuestType.eliteMastery,
   ];
-
 
   // ── Cached state ────────────────────────────────────────────────────────
   late QuestType _nextType;
@@ -130,14 +128,11 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     return recommendedType;
   }
 
-
-
-
   /// Returns the (base, target) milestone dynamically to ensure tight, achievable gaps.
   ({int baseTarget, int target}) _getNextMilestone() {
     int baseTarget = 0;
     int target = 0;
-    
+
     // Dynamic chunk sizes: Keep the gap small and achievable.
     if (_cleared < 50) {
       baseTarget = (_cleared ~/ 10) * 10;
@@ -183,14 +178,11 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         ? context.tr('home.start_your_journey', fallback: 'Start Your Journey')
         : context.tr('home.continue_learning', fallback: 'Continue Learning');
 
-
-
     final milestone = _getNextMilestone();
-
 
     final chunkSpan = milestone.target - milestone.baseTarget;
     final progressInChunk = _cleared - milestone.baseTarget;
-    
+
     final milestoneProgress = chunkSpan > 0
         ? (progressInChunk / chunkSpan).clamp(0.0, 1.0)
         : (_cleared >= _max && _max > 0 ? 1.0 : 0.0);
@@ -288,8 +280,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                                 width: 1,
                               ),
                             ),
-                            child:
-                                Icon(icon, color: Colors.white, size: 20.r),
+                            child: Icon(icon, color: Colors.white, size: 20.r),
                           ),
                           // Category eyebrow pill
                           Container(
@@ -333,7 +324,6 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
                           height: 1.1,
                         ),
                       ),
-
 
                       // ── Bottom section: Progress + Play button ─────
                       Row(
@@ -381,17 +371,10 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
       children: [
         Row(
           children: [
-            Icon(
-              Icons.rocket_launch_rounded,
-              color: Colors.white,
-              size: 16.r,
-            ),
+            Icon(Icons.rocket_launch_rounded, color: Colors.white, size: 16.r),
             SizedBox(width: 8.w),
             Text(
-              context.tr(
-                'home.ready_to_start',
-                fallback: 'Ready to launch!',
-              ),
+              context.tr('home.ready_to_start', fallback: 'Ready to launch!'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
@@ -403,10 +386,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
         ),
         SizedBox(height: 6.h),
         Text(
-          context.tr(
-            'home.zero_xp_hint',
-            fallback: 'Earn your first XP today',
-          ),
+          context.tr('home.zero_xp_hint', fallback: 'Earn your first XP today'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,
@@ -426,17 +406,12 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
-
         // Milestone progress header
         Text(
           context.tr(
             'home.cl_levels_target',
             fallback: '$_cleared → $target Levels 🎯',
-            args: [
-              _cleared.toString(),
-              target.toString(),
-            ],
+            args: [_cleared.toString(), target.toString()],
           ),
           style: TextStyle(
             fontFamily: 'Outfit',
@@ -466,32 +441,33 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
               // Fill
               FractionallySizedBox(
                 widthFactor: milestoneProgress.clamp(0.02, 1.0),
-                child: Container(
-                  height: 6.h,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.white,
-                        Colors.white.withValues(alpha: 0.85),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(100.r),
-                  ),
-                )
-                    .animate()
-                    .scaleX(
-                      begin: 0,
-                      end: 1,
-                      duration: 800.ms,
-                      curve: Curves.easeOutQuart,
-                      alignment: Alignment.centerLeft,
-                    )
-                    .then()
-                    .shimmer(
-                      delay: 400.ms,
-                      duration: 1800.ms,
-                      color: Colors.white.withValues(alpha: 0.5),
-                    ),
+                child:
+                    Container(
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Colors.white,
+                                Colors.white.withValues(alpha: 0.85),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(100.r),
+                          ),
+                        )
+                        .animate()
+                        .scaleX(
+                          begin: 0,
+                          end: 1,
+                          duration: 800.ms,
+                          curve: Curves.easeOutQuart,
+                          alignment: Alignment.centerLeft,
+                        )
+                        .then()
+                        .shimmer(
+                          delay: 400.ms,
+                          duration: 1800.ms,
+                          color: Colors.white.withValues(alpha: 0.5),
+                        ),
               ),
             ],
           ),
@@ -524,11 +500,7 @@ class _ContinueLearningCardState extends State<ContinueLearningCard> {
           ),
         ],
       ),
-      child: Icon(
-        Icons.play_arrow_rounded,
-        color: color,
-        size: 26.r,
-      ),
+      child: Icon(Icons.play_arrow_rounded, color: color, size: 26.r),
     ).animate().scale(
       begin: const Offset(0.8, 0.8),
       end: const Offset(1, 1),

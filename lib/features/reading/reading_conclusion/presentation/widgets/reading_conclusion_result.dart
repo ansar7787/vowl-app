@@ -78,7 +78,9 @@ class ReadingConclusionResult extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.03)
+                    : Colors.black.withValues(alpha: 0.03),
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isDark ? Colors.white12 : Colors.black12,

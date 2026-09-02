@@ -79,7 +79,8 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                   Text(
                     context.tr(
                       'profile.hall_of_fame_vacant_subtitle',
-                      fallback: 'Embark on adventures to unlock legendary badges.',
+                      fallback:
+                          'Embark on adventures to unlock legendary badges.',
                     ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -140,8 +141,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
 
                   // Card Physical 3D Tilt based on swipe position
                   final tiltY = (value * 0.4).clamp(-0.8, 0.8);
-                  final scale =
-                      1.0 - (value.abs() * 0.15).clamp(0.0, 0.3);
+                  final scale = 1.0 - (value.abs() * 0.15).clamp(0.0, 0.3);
 
                   // Holographic foil reflection shift
                   final foilShift = value * 1.5;
@@ -182,8 +182,9 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                     shape: BoxShape.circle,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: badge.color
-                                            .withValues(alpha: 0.6),
+                                        color: badge.color.withValues(
+                                          alpha: 0.6,
+                                        ),
                                         blurRadius: 50,
                                         spreadRadius: 15,
                                       ),
@@ -201,8 +202,9 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                     shape: BoxShape.circle,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: badge.color
-                                            .withValues(alpha: 0.4),
+                                        color: badge.color.withValues(
+                                          alpha: 0.4,
+                                        ),
                                         blurRadius: 40,
                                         spreadRadius: 8,
                                       ),
@@ -228,44 +230,46 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                         ..setEntry(3, 2, 0.001)
                                         ..rotateY(0.1),
                                       alignment: FractionalOffset.center,
-                                      child: ShaderMask(
-                                        shaderCallback: (bounds) =>
-                                            LinearGradient(
-                                          begin: Alignment(
-                                            -1.0 + foilShift,
-                                            -1.0,
-                                          ),
-                                          end: Alignment(
-                                            1.0 + foilShift,
-                                            1.0,
-                                          ),
-                                          colors: [
-                                            Colors.white,
-                                            badge.color,
-                                            badge.color
-                                                .withValues(alpha: 0.5),
-                                          ],
-                                        ).createShader(bounds),
-                                        child: Icon(
-                                          badge.icon,
-                                          size: 80.r,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                          .animate(
-                                            onPlay: (c) =>
-                                                c.repeat(reverse: true),
-                                          )
-                                          .moveY(
-                                            begin: -5,
-                                            end: 5,
-                                            duration: 3000.ms,
-                                          )
-                                          .scale(
-                                            begin: const Offset(0.95, 0.95),
-                                            end: const Offset(1.05, 1.05),
-                                            duration: 2500.ms,
-                                          ),
+                                      child:
+                                          ShaderMask(
+                                                shaderCallback: (bounds) =>
+                                                    LinearGradient(
+                                                      begin: Alignment(
+                                                        -1.0 + foilShift,
+                                                        -1.0,
+                                                      ),
+                                                      end: Alignment(
+                                                        1.0 + foilShift,
+                                                        1.0,
+                                                      ),
+                                                      colors: [
+                                                        Colors.white,
+                                                        badge.color,
+                                                        badge.color.withValues(
+                                                          alpha: 0.5,
+                                                        ),
+                                                      ],
+                                                    ).createShader(bounds),
+                                                child: Icon(
+                                                  badge.icon,
+                                                  size: 80.r,
+                                                  color: Colors.white,
+                                                ),
+                                              )
+                                              .animate(
+                                                onPlay: (c) =>
+                                                    c.repeat(reverse: true),
+                                              )
+                                              .moveY(
+                                                begin: -5,
+                                                end: 5,
+                                                duration: 3000.ms,
+                                              )
+                                              .scale(
+                                                begin: const Offset(0.95, 0.95),
+                                                end: const Offset(1.05, 1.05),
+                                                duration: 2500.ms,
+                                              ),
                                     ),
                                   ),
                                 ),
@@ -280,17 +284,15 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                     ShaderMask(
                                       shaderCallback: (bounds) =>
                                           const LinearGradient(
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          Colors.white,
-                                          Color(0xFFE2E8F0),
-                                        ],
-                                      ).createShader(bounds),
+                                            begin: Alignment.topCenter,
+                                            end: Alignment.bottomCenter,
+                                            colors: [
+                                              Colors.white,
+                                              Color(0xFFE2E8F0),
+                                            ],
+                                          ).createShader(bounds),
                                       child: AutoSizeText(
-                                        context
-                                            .tr(badge.nameKey)
-                                            .toUpperCase(),
+                                        context.tr(badge.nameKey).toUpperCase(),
                                         maxLines: 1,
                                         minFontSize: 8,
                                         style: TextStyle(
@@ -317,17 +319,17 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: [
-                                            badge.color
-                                                .withValues(alpha: 0.4),
-                                            badge.color
-                                                .withValues(alpha: 0.1),
+                                            badge.color.withValues(alpha: 0.4),
+                                            badge.color.withValues(alpha: 0.1),
                                           ],
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(16.r),
+                                        borderRadius: BorderRadius.circular(
+                                          16.r,
+                                        ),
                                         border: Border.all(
-                                          color: badge.color
-                                              .withValues(alpha: 0.6),
+                                          color: badge.color.withValues(
+                                            alpha: 0.6,
+                                          ),
                                           width: 1,
                                         ),
                                       ),
@@ -367,11 +369,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
     );
   }
 
-  Widget _buildProgressCounter(
-    BuildContext context,
-    int earned,
-    int total,
-  ) {
+  Widget _buildProgressCounter(BuildContext context, int earned, int total) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final progress = total > 0 ? earned / total : 0.0;
 
@@ -409,7 +407,9 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white70 : const Color(0xFF334155),
+                        color: isDark
+                            ? Colors.white70
+                            : const Color(0xFF334155),
                       ),
                     ),
                     Text(
@@ -443,7 +443,10 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                           ),
                         ),
                         TweenAnimationBuilder<double>(
-                          tween: Tween<double>(begin: 0.0, end: progress.clamp(0.0, 1.0)),
+                          tween: Tween<double>(
+                            begin: 0.0,
+                            end: progress.clamp(0.0, 1.0),
+                          ),
                           duration: 1500.ms,
                           curve: Curves.elasticOut,
                           builder: (context, value, child) {
@@ -452,13 +455,18 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                               width: constraints.maxWidth * value,
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
-                                  colors: [Color(0xFF8B5CF6), Color(0xFFC084FC)],
+                                  colors: [
+                                    Color(0xFF8B5CF6),
+                                    Color(0xFFC084FC),
+                                  ],
                                 ),
                                 borderRadius: BorderRadius.circular(8.r),
                                 boxShadow: [
                                   if (value > 0)
                                     BoxShadow(
-                                      color: const Color(0xFF8B5CF6).withValues(alpha: (0.4 * value).clamp(0.0, 1.0)),
+                                      color: const Color(0xFF8B5CF6).withValues(
+                                        alpha: (0.4 * value).clamp(0.0, 1.0),
+                                      ),
                                       blurRadius: 8,
                                       spreadRadius: 0,
                                       offset: const Offset(0, 2),

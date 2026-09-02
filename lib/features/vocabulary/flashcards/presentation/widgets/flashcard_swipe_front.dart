@@ -30,7 +30,7 @@ class FlashcardSwipeFront extends StatefulWidget {
 class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
   late final ScrollController _scrollController;
   final HapticService _hapticService = di.sl<HapticService>();
-  
+
   bool _hasHitTop = true;
   bool _hasHitBottom = false;
 
@@ -143,8 +143,10 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                                       _hapticService.heavy();
                                     }
                                   }
-                                } else if (notification is ScrollUpdateNotification) {
-                                  if (!notification.metrics.outOfRange && !notification.metrics.atEdge) {
+                                } else if (notification
+                                    is ScrollUpdateNotification) {
+                                  if (!notification.metrics.outOfRange &&
+                                      !notification.metrics.atEdge) {
                                     _hasHitTop = false;
                                     _hasHitBottom = false;
                                   }
@@ -154,21 +156,21 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                               child: SingleChildScrollView(
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
-                              child: Text(
-                                widget.quest.hint ?? widget.quest.instruction,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: widget.isDark
-                                      ? Colors.white
-                                      : Colors.black87,
-                                  height: 1.4,
+                                child: Text(
+                                  widget.quest.hint ?? widget.quest.instruction,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: widget.isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                    height: 1.4,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
                           ),
                         ),
                       ),

@@ -12,6 +12,8 @@ import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/forgot_password_widgets.dart';
+import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
 
 // ---------------------------------------------------------------------------
 // Page — provides the dedicated [ForgotPasswordCubit]
@@ -95,7 +97,8 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
             // visible text internally and doesn't need this rebuild to
             // reflect what's typed.
             buildWhen: (previous, current) =>
-                previous.isSubmitting != current.isSubmitting,
+                previous.isSubmitting != current.isSubmitting ||
+                previous.isSuccess != current.isSuccess,
             builder: (context, state) {
               final contrastColor = MeshGradientBackground.getContrastColor(
                 context,
@@ -149,69 +152,164 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                         ),
                                         SizedBox(height: 32.h),
                                         HolographicCard(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.stretch,
-                                            children: [
-                                              Text(
-                                                context.tr(
-                                                  'auth.forgot_password_instructions',
-                                                  fallback:
-                                                      'Enter your email address and we will send you a link to reset your password.',
+                                          child: state.isSuccess
+                                              ? Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment
+                                                          .stretch,
+                                                  children: [
+                                                    Icon(
+                                                      Icons
+                                                          .mark_email_read_outlined,
+                                                      size: 64.sp,
+                                                      color: Colors.greenAccent,
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    Text(
+                                                      context.tr(
+                                                        'auth.reset_link_sent_title',
+                                                        fallback:
+                                                            'Check your email',
+                                                      ),
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 24.sp,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: contrastColor,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    Text(
+                                                      context.tr(
+                                                        'auth.reset_link_sent_desc',
+                                                        fallback:
+                                                            'We have sent a password reset link to your email address.',
+                                                      ),
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 14.sp,
+                                                        color: contrastColor
+                                                            .withValues(
+                                                              alpha: 0.8,
+                                                            ),
+                                                        height: 1.5,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    ),
+                                                    SizedBox(height: 32.h),
+                                                    ElevatedButton(
+                                                      onPressed: () {
+                                                        if (context.canPop()) {
+                                                          context.pop();
+                                                        } else {
+                                                          context.go(
+                                                            AppRouter
+                                                                .loginRoute,
+                                                          );
+                                                        }
+                                                      },
+                                                      style:
+                                                          ElevatedButton.styleFrom(
+                                                            minimumSize:
+                                                                const Size(
+                                                                  double
+                                                                      .infinity,
+                                                                  56,
+                                                                ),
+                                                          ),
+                                                      child: Text(
+                                                        context.tr(
+                                                          'auth.back_to_login',
+                                                          fallback:
+                                                              'Back to Login',
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
+                                              : Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment
+                                                          .stretch,
+                                                  children: [
+                                                    Text(
+                                                      context.tr(
+                                                        'auth.forgot_password_instructions',
+                                                        fallback:
+                                                            'Enter your email address and we will send you a link to reset your password.',
+                                                      ),
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 14.sp,
+                                                        color: contrastColor
+                                                            .withValues(
+                                                              alpha: 0.8,
+                                                            ),
+                                                        height: 1.5,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    ),
+                                                    SizedBox(height: 32.h),
+                                                    ValueListenableBuilder<int>(
+                                                      valueListenable:
+                                                          _emailShake,
+                                                      builder:
+                                                          (
+                                                            context,
+                                                            shakeCount,
+                                                            child,
+                                                          ) {
+                                                            return ShakeableWrapper(
+                                                              shakeCount:
+                                                                  shakeCount,
+                                                              child: child!,
+                                                            );
+                                                          },
+                                                      child:
+                                                          ForgotPasswordEmailInput(
+                                                            fieldKey: _emailKey,
+                                                            focusNode:
+                                                                _emailFocus,
+                                                            contrastColor:
+                                                                contrastColor,
+                                                          ),
+                                                    ),
+                                                    SizedBox(height: 24.h),
+                                                    SendResetLinkButton(
+                                                      isSubmitting:
+                                                          state.isSubmitting,
+                                                      onPressed: () {
+                                                        if (_formKey
+                                                                .currentState
+                                                                ?.validate() ??
+                                                            false) {
+                                                          context
+                                                              .read<
+                                                                ForgotPasswordCubit
+                                                              >()
+                                                              .sendPasswordResetEmail();
+                                                        } else {
+                                                          if (!(_emailKey
+                                                                  .currentState
+                                                                  ?.validate() ??
+                                                              true)) {
+                                                            _emailShake.value++;
+                                                          }
+                                                          try {
+                                                            Haptics.vibrate(
+                                                              HapticsType.error,
+                                                            );
+                                                          } catch (_) {}
+                                                        }
+                                                      },
+                                                    ),
+                                                  ],
                                                 ),
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 14.sp,
-                                                  color: contrastColor
-                                                      .withValues(alpha: 0.8),
-                                                  height: 1.5,
-                                                ),
-                                                textAlign: TextAlign.center,
-                                              ),
-                                              SizedBox(height: 32.h),
-                                              ValueListenableBuilder<int>(
-                                                valueListenable: _emailShake,
-                                                builder: (context, shakeCount, child) {
-                                                  return ShakeableWrapper(
-                                                    shakeCount: shakeCount,
-                                                    child: child!,
-                                                  );
-                                                },
-                                                child: ForgotPasswordEmailInput(
-                                                  fieldKey: _emailKey,
-                                                  focusNode: _emailFocus,
-                                                  contrastColor: contrastColor,
-                                                ),
-                                              ),
-                                              SizedBox(height: 24.h),
-                                              SendResetLinkButton(
-                                                isSubmitting:
-                                                    state.isSubmitting,
-                                                onPressed: () {
-                                                  if (_formKey.currentState
-                                                          ?.validate() ??
-                                                      false) {
-                                                    context
-                                                        .read<
-                                                          ForgotPasswordCubit
-                                                        >()
-                                                        .sendPasswordResetEmail();
-                                                  } else {
-                                                    if (!(_emailKey.currentState
-                                                            ?.validate() ??
-                                                        true)) {
-                                                      _emailShake.value++;
-                                                    }
-                                                    try {
-                                                      Haptics.vibrate(
-                                                        HapticsType.error,
-                                                      );
-                                                    } catch (_) {}
-                                                  }
-                                                },
-                                              ),
-                                            ],
-                                          ),
                                         ),
                                         SizedBox(height: 32.h),
                                         RememberPasswordFooter(

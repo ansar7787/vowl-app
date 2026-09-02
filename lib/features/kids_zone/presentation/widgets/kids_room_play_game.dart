@@ -79,8 +79,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
             x: 0.1 + Random().nextDouble() * 0.8,
             y: 0.2 + Random().nextDouble() * 0.6,
             size: 40 + Random().nextDouble() * 40,
-            color:
-                Colors.primaries[Random().nextInt(Colors.primaries.length)],
+            color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
           ),
         );
         _bubbles.value = currentBubbles;
@@ -121,39 +120,45 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                 return Positioned(
                   left: MediaQuery.of(context).size.width * bubble.x,
                   top: MediaQuery.of(context).size.height * bubble.y,
-                  child: ScaleButton(
-                    onTap: () => _popBubble(bubble.id),
-                    child: Container(
-                      width: bubble.size.r,
-                      height: bubble.size.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: RadialGradient(
-                          colors: [
-                            bubble.color.withValues(alpha: 0.5),
-                            bubble.color.withValues(alpha: 0.9),
-                          ],
-                        ),
-                        border: Border.all(color: Colors.white, width: 3),
-                        boxShadow: [
-                          BoxShadow(
-                            color: bubble.color.withValues(alpha: 0.6),
-                            blurRadius: 15,
-                            spreadRadius: 4,
+                  child:
+                      ScaleButton(
+                        onTap: () => _popBubble(bubble.id),
+                        child: Container(
+                          width: bubble.size.r,
+                          height: bubble.size.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: RadialGradient(
+                              colors: [
+                                bubble.color.withValues(alpha: 0.5),
+                                bubble.color.withValues(alpha: 0.9),
+                              ],
+                            ),
+                            border: Border.all(color: Colors.white, width: 3),
+                            boxShadow: [
+                              BoxShadow(
+                                color: bubble.color.withValues(alpha: 0.6),
+                                blurRadius: 15,
+                                spreadRadius: 4,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          "🪙",
-                          style: TextStyle(
-                            fontSize: bubble.size.r * 0.5,
-                            shadows: [Shadow(color: Colors.white, blurRadius: 15)],
+                          child: Center(
+                            child: Text(
+                              "🪙",
+                              style: TextStyle(
+                                fontSize: bubble.size.r * 0.5,
+                                shadows: [
+                                  Shadow(color: Colors.white, blurRadius: 15),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
+                      ).animate().scale(
+                        duration: 200.ms,
+                        curve: Curves.easeOutBack,
                       ),
-                    ),
-                  ).animate().scale(duration: 200.ms, curve: Curves.easeOutBack),
                 );
               }),
 
@@ -213,48 +218,52 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
 
               if (!_isPlaying.value && _timeLeft.value <= 0)
                 Center(
-                  child: Container(
-                    padding: EdgeInsets.all(40.r),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(40.r),
-                      border: Border.all(color: Colors.amber, width: 4.w),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.amber.withValues(alpha: 0.5),
-                          blurRadius: 20,
-                          spreadRadius: 5,
+                  child:
+                      Container(
+                        padding: EdgeInsets.all(40.r),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(40.r),
+                          border: Border.all(color: Colors.amber, width: 4.w),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.amber.withValues(alpha: 0.5),
+                              blurRadius: 20,
+                              spreadRadius: 5,
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          "TIME'S UP!",
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 32.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.amber.shade700,
-                          ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              "TIME'S UP!",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 32.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.amber.shade700,
+                              ),
+                            ),
+                            SizedBox(height: 20.h),
+                            Text(
+                              "You collected ${_score.value} Kids Coins! 🪙",
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 20.h),
-                        Text(
-                          "You collected ${_score.value} Kids Coins! 🪙",
-                          style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                      ).animate().scale(
+                        duration: 400.ms,
+                        curve: Curves.easeOutBack,
+                      ),
                 ),
             ],
           );
-        }
+        },
       ),
     );
   }

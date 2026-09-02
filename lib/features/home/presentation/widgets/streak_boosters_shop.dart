@@ -364,26 +364,24 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                   children: [
                     !isDisabled
                         ? Container(
-                                padding: EdgeInsets.all(12.r),
-                                decoration: BoxDecoration(
-                                  color: color.withValues(alpha: 0.1),
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: color.withValues(alpha: 0.2),
-                                      blurRadius: 10,
-                                    ),
-                                  ],
+                            padding: EdgeInsets.all(12.r),
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.1),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: color.withValues(alpha: 0.2),
+                                  blurRadius: 10,
                                 ),
-                                child: Icon(icon, color: color, size: 24.r),
-                              )
-                              .animate()
-                              .scale(
-                                begin: const Offset(0.5, 0.5),
-                                end: const Offset(1, 1),
-                                duration: 800.ms,
-                                curve: Curves.easeOutBack,
-                              )
+                              ],
+                            ),
+                            child: Icon(icon, color: color, size: 24.r),
+                          ).animate().scale(
+                            begin: const Offset(0.5, 0.5),
+                            end: const Offset(1, 1),
+                            duration: 800.ms,
+                            curve: Curves.easeOutBack,
+                          )
                         : Container(
                             padding: EdgeInsets.all(12.r),
                             decoration: BoxDecoration(

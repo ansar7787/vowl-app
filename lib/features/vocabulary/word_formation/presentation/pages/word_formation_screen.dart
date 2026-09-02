@@ -70,8 +70,10 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _controller.lastProcessedIndex;
-          final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
+          final isNewQuestion =
+              state.currentIndex != _controller.lastProcessedIndex;
+          final isRetry =
+              !state.answerStatus.isAnswered && _controller.isAnswered;
 
           if (isNewQuestion || isRetry) {
             _controller.reset(state.currentQuest, state.currentIndex);
@@ -122,7 +124,9 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           listenable: _controller,
           builder: (context, _) {
             // Use hovering suffix if dragging, otherwise use active selection
-            final displaySuffixIndex = _controller.hoveringSuffixIndex ?? _controller.activeSuffixIndex;
+            final displaySuffixIndex =
+                _controller.hoveringSuffixIndex ??
+                _controller.activeSuffixIndex;
             final activeSuffix =
                 (displaySuffixIndex != null &&
                     options.isNotEmpty &&
@@ -131,191 +135,218 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                 : null;
 
             return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _controller.isAnswered,
-          isCorrect: _controller.isCorrect,
-          showConfetti: _controller.showConfetti,
-          hasStage2: true,
-          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          disablePadding: true,
-          onHint: () {
-            // Find correct suffix index
-            final correct = quest?.correctAnswer ?? "";
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _controller.isAnswered,
+              isCorrect: _controller.isCorrect,
+              showConfetti: _controller.showConfetti,
+              hasStage2: true,
+              onContinue: () =>
+                  context.read<VocabularyBloc>().add(NextQuestion()),
+              disablePadding: true,
+              onHint: () {
+                // Find correct suffix index
+                final correct = quest?.correctAnswer ?? "";
 
-            // Speak the target word as a powerful audio hint
-            if (correct.isNotEmpty) {
-              di.sl<TtsService>().speak(correct);
-            }
-
-            final options = quest?.options ?? [];
-            int? correctIdx;
-            for (int i = 0; i < options.length; i++) {
-              final cleanS = options[i]
-                  .replaceAll('-', '')
-                  .trim()
-                  .toLowerCase();
-              if (correct.toLowerCase().endsWith(cleanS) ||
-                  correct.toLowerCase().startsWith(cleanS)) {
-                correctIdx = i;
-                break;
-              }
-            }
-            if (correctIdx != null) {
-              _controller.setHoveringIndex(correctIdx);
-              // Auto-reset after a short delay if they don't drag
-              Future.delayed(2.seconds, () {
-                if (mounted && !_controller.isAnswered) {
-                  _controller.setHoveringIndex(null);
+                // Speak the target word as a powerful audio hint
+                if (correct.isNotEmpty) {
+                  di.sl<TtsService>().speak(correct);
                 }
-              });
-            }
-          },
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
 
-                    // Spacing calculations
-                    final double estimatedContentHeight =
-                        (isCompact ? 60.h : 80.h) +
-                        (isCompact ? 120.h : 140.h) +
-                        (options.length * (isCompact ? 46.h : 72.h)) +
-                        20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                final options = quest?.options ?? [];
+                int? correctIdx;
+                for (int i = 0; i < options.length; i++) {
+                  final cleanS = options[i]
+                      .replaceAll('-', '')
+                      .trim()
+                      .toLowerCase();
+                  if (correct.toLowerCase().endsWith(cleanS) ||
+                      correct.toLowerCase().startsWith(cleanS)) {
+                    correctIdx = i;
+                    break;
+                  }
+                }
+                if (correctIdx != null) {
+                  _controller.setHoveringIndex(correctIdx);
+                  // Auto-reset after a short delay if they don't drag
+                  Future.delayed(2.seconds, () {
+                    if (mounted && !_controller.isAnswered) {
+                      _controller.setHoveringIndex(null);
+                    }
+                  });
+                }
+              },
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 20.0)
-                        : 6.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 25.0)
-                        : 10.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(12.0, 30.0)
-                        : 12.0;
+                        // Spacing calculations
+                        final double estimatedContentHeight =
+                            (isCompact ? 60.h : 80.h) +
+                            (isCompact ? 120.h : 140.h) +
+                            (options.length * (isCompact ? 46.h : 72.h)) +
+                            20.h;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
-                    return Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverToBoxAdapter(
-                                child: ConstrainedBox(
-                                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                  child: IgnorePointer(
-                                    ignoring: _controller.isFirstStagePassed,
-                                    child: Column(
-                                      key: ValueKey(quest.id),
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        SizedBox(height: gapTop + 32.h),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
-                                          ),
-                                          child: InstructionPanel(
-                                                  color: theme.primaryColor,
-                                                  quest: quest,
-                                                )
-                                                .animate()
-                                                .fadeIn(duration: 500.ms)
-                                                .slideY(
-                                                  begin: -0.5,
-                                                  end: 0,
-                                                  duration: 500.ms,
-                                                  curve: Curves.easeOutBack,
-                                                ),
-                                        ),
-                                        SizedBox(height: gapMiddle * 0.4),
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 5
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(6.0, 20.0)
+                            : 6.0;
+                        final double gapMiddle = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(10.0, 25.0)
+                            : 10.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2).clamp(12.0, 30.0)
+                            : 12.0;
 
-                                        // Reaction Core
-                                        (isCompact
-                                                ? SizedBox(
-                                                    height: 120.h,
-                                                    child: FittedBox(
-                                                      fit: BoxFit.scaleDown,
-                                                      child: SizedBox(
-                                                        width: constraints.maxWidth,
-                                                        child: ReactionCore(
-                                                          quest: quest,
-                                                          root: root,
-                                                          suffix: activeSuffix,
-                                                          color: theme.primaryColor,
-                                                          isDark: isDark,
-                                                          controller: _controller,
-                                                        ),
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverToBoxAdapter(
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
+                                      ),
+                                      child: IgnorePointer(
+                                        ignoring:
+                                            _controller.isFirstStagePassed,
+                                        child: Column(
+                                          key: ValueKey(quest.id),
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            SizedBox(height: gapTop + 32.h),
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24.w,
+                                              ),
+                                              child:
+                                                  InstructionPanel(
+                                                        color:
+                                                            theme.primaryColor,
+                                                        quest: quest,
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 500.ms)
+                                                      .slideY(
+                                                        begin: -0.5,
+                                                        end: 0,
+                                                        duration: 500.ms,
+                                                        curve:
+                                                            Curves.easeOutBack,
                                                       ),
-                                                    ),
-                                                  )
-                                                : ReactionCore(
-                                                    quest: quest,
-                                                    root: root,
-                                                    suffix: activeSuffix,
-                                                    color: theme.primaryColor,
-                                                    isDark: isDark,
-                                                    controller: _controller,
-                                                  ))
-                                            .animate()
-                                            .scale(
-                                              begin: const Offset(0.8, 0.8),
-                                              end: const Offset(1.0, 1.0),
-                                              duration: 600.ms,
-                                              curve: Curves.easeOutBack,
-                                            )
-                                            .fadeIn(duration: 600.ms),
+                                            ),
+                                            SizedBox(height: gapMiddle * 0.4),
 
-                                        SizedBox(height: gapMiddle),
-                                        
-                                        // Injection Rails
-                                        _buildInjectionRails(
-                                          options,
-                                          root,
-                                          quest.correctAnswer ?? "",
-                                          theme.primaryColor,
-                                          isDark,
-                                          isCompact,
+                                            // Reaction Core
+                                            (isCompact
+                                                    ? SizedBox(
+                                                        height: 120.h,
+                                                        child: FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: SizedBox(
+                                                            width: constraints
+                                                                .maxWidth,
+                                                            child: ReactionCore(
+                                                              quest: quest,
+                                                              root: root,
+                                                              suffix:
+                                                                  activeSuffix,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              isDark: isDark,
+                                                              controller:
+                                                                  _controller,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    : ReactionCore(
+                                                        quest: quest,
+                                                        root: root,
+                                                        suffix: activeSuffix,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        controller: _controller,
+                                                      ))
+                                                .animate()
+                                                .scale(
+                                                  begin: const Offset(0.8, 0.8),
+                                                  end: const Offset(1.0, 1.0),
+                                                  duration: 600.ms,
+                                                  curve: Curves.easeOutBack,
+                                                )
+                                                .fadeIn(duration: 600.ms),
+
+                                            SizedBox(height: gapMiddle),
+
+                                            // Injection Rails
+                                            _buildInjectionRails(
+                                              options,
+                                              root,
+                                              quest.correctAnswer ?? "",
+                                              theme.primaryColor,
+                                              isDark,
+                                              isCompact,
+                                            ),
+                                            SizedBox(
+                                              height:
+                                                  (_controller
+                                                          .isFirstStagePassed &&
+                                                      !_controller.isAnswered)
+                                                  ? 380.h
+                                                  : gapBottom,
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(height: (_controller.isFirstStagePassed && !_controller.isAnswered) ? 380.h : gapBottom),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
-                          ),
-                        ),
-                        if (_controller.isFirstStagePassed && !_controller.isAnswered)
-                          TypeToConfirmOverlay(
-                            expectedText: quest.correctAnswer ?? '',
-                            displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _controller.submitFinalAnswer(true),
-                            onSkipped: () => _controller.submitFinalAnswer(false),
-                            onBypassed: () => _controller.submitFinalAnswer(true),
-                            isPositioned: true,
-                          ),
-                      ],
-                    );
-                  },
-                ),
+                            ),
+                            if (_controller.isFirstStagePassed &&
+                                !_controller.isAnswered)
+                              TypeToConfirmOverlay(
+                                expectedText: quest.correctAnswer ?? '',
+                                displayText:
+                                    "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () =>
+                                    _controller.submitFinalAnswer(true),
+                                onSkipped: () =>
+                                    _controller.submitFinalAnswer(false),
+                                onBypassed: () =>
+                                    _controller.submitFinalAnswer(true),
+                                isPositioned: true,
+                              ),
+                          ],
+                        );
+                      },
+                    ),
             );
           },
         );
       },
     );
   }
-
 
   Widget _buildInjectionRails(
     List<String> options,
@@ -344,12 +375,20 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         suffix: entry.value,
                         color: color,
                         isDark: isDark,
-                        isBlocked: _controller.isAnswered || _controller.isFirstStagePassed,
+                        isBlocked:
+                            _controller.isAnswered ||
+                            _controller.isFirstStagePassed,
                         onMorph: (suffix) {
-                          _controller.submitMorph(suffix, root, correct, entry.key);
+                          _controller.submitMorph(
+                            suffix,
+                            root,
+                            correct,
+                            entry.key,
+                          );
                         },
                         onHover: (index) {
-                          if (!_controller.isAnswered && !_controller.isFirstStagePassed) {
+                          if (!_controller.isAnswered &&
+                              !_controller.isFirstStagePassed) {
                             _controller.setHoveringIndex(index);
                           }
                         },
@@ -372,4 +411,3 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     );
   }
 }
-

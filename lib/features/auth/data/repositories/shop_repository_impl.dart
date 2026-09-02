@@ -71,7 +71,7 @@ class ShopRepositoryImpl
         final updates = <String, dynamic>{
           'coins': FieldValue.increment(amountChange),
         };
-        
+
         if (amountChange > 0) {
           updates['lastRewardTimestamp'] = FieldValue.serverTimestamp();
         }

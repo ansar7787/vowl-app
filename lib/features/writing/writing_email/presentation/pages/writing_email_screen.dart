@@ -132,7 +132,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         _slots.value['SUBJECT'] == options[correctOrderIndices[0]];
     bool isSalutationCorrect =
         _slots.value['SALUTATION'] == options[correctOrderIndices[1]];
-    bool isBodyCorrect = _slots.value['BODY'] == options[correctOrderIndices[2]];
+    bool isBodyCorrect =
+        _slots.value['BODY'] == options[correctOrderIndices[2]];
     bool isSignOffCorrect =
         _slots.value['SIGN-OFF'] == options[correctOrderIndices[3]];
 
@@ -173,7 +174,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           _slots.value = newSlots;
           _showSpeakToConfirm.value = false;
           final quest = state.currentQuest;
-          _shuffledOptions.value = List<String>.from(quest.options ?? [])..shuffle();
+          _shuffledOptions.value = List<String>.from(quest.options ?? [])
+            ..shuffle();
         }
         if (state is WritingGameComplete) {
           _showConfetti.value = true;
@@ -220,196 +222,235 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
               : quest == null
               ? const SizedBox.shrink()
               : ListenableBuilder(
-            listenable: Listenable.merge([_showConfetti, _slots, _shuffledOptions, _showSpeakToConfirm]),
-            builder: (context, _) {
-              final slotsFilled = _slots.value.values.every((v) => v != null);
+                  listenable: Listenable.merge([
+                    _showConfetti,
+                    _slots,
+                    _shuffledOptions,
+                    _showSpeakToConfirm,
+                  ]),
+                  builder: (context, _) {
+                    final slotsFilled = _slots.value.values.every(
+                      (v) => v != null,
+                    );
 
-              return Stack(
-                  children: [
-                    RawScrollbar(
-                      controller: _scrollController,
-                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                      radius: Radius.circular(8.r),
-                      thickness: 4.w,
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            WritingEmailInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
-                            ),
-                            SizedBox(height: 16.h),
-                            if (quest.formalityLevel != null)
-                              Container(
-                                margin: EdgeInsets.only(bottom: 16.h),
-                                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.mail_outline, color: theme.primaryColor, size: 14.sp),
-                                    SizedBox(width: 8.w),
-                                    Text(
-                                      quest.formalityLevel!.toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: theme.primaryColor,
-                                        letterSpacing: 2,
+                    return Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      WritingEmailInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: quest.instruction,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                                      SizedBox(height: 16.h),
+                                      if (quest.formalityLevel != null)
+                                        Container(
+                                          margin: EdgeInsets.only(bottom: 16.h),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 12.w,
+                                            vertical: 6.h,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.1),
+                                            borderRadius: BorderRadius.circular(
+                                              12.r,
+                                            ),
+                                            border: Border.all(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.3),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Icons.mail_outline,
+                                                color: theme.primaryColor,
+                                                size: 14.sp,
+                                              ),
+                                              SizedBox(width: 8.w),
+                                              Text(
+                                                quest.formalityLevel!
+                                                    .toUpperCase(),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 10.sp,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
 
-                            WritingEmailPromptCard(
-                              text: quest.prompt ?? "",
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 24.h),
-
-                            ..._slots.value.keys.map(
-                              (k) => WritingEmailHexSlot(
-                                slotKey: k,
-                                slotValue: _slots.value[k],
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                onSlot: (key, data) => _onSlot(key, data, isAnswered),
-                                onClearSlot: (key) => _clearSlot(key, isAnswered),
-                              ),
-                            ),
-                            if (!slotsFilled && !isAnswered) ...[
-                              SizedBox(height: 24.h),
-                              if (widget.level >= 6) ...[
-                                GestureDetector(
-                                  onTap: () {
-                                    CustomSnackBar.show(
-                                      context: context,
-                                      message:
-                                          "Hard Mode! Tapping is disabled. Please type your answer below.",
-                                      type: CustomSnackBarType.info,
-                                    );
-                                  },
-                                  child: AbsorbPointer(
-                                    child: Opacity(
-                                      opacity: 0.8,
-                                      child: WritingEmailDataStream(
-                                        items:
-                                            options, // Show full list for reference
-                                        slots: _slots.value,
+                                      WritingEmailPromptCard(
+                                        text: quest.prompt ?? "",
                                         color: theme.primaryColor,
                                         isDark: isDark,
-                                        onTapItem: (_) {}, // Disabled
                                       ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 16.h),
-                                WritingEmailKeyboardInput(
-                                  validOptions: options
-                                      .where((opt) => !_slots.value.values.contains(opt))
-                                      .toList(),
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  onValidInput: (data) =>
-                                      _onTapOption(data, isAnswered),
-                                ),
-                              ] else
-                                WritingEmailDataStream(
-                                  items: _shuffledOptions.value.isNotEmpty
-                                      ? _shuffledOptions.value
-                                      : options,
-                                  slots: _slots.value,
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  onTapItem: (data) => _onTapOption(data, isAnswered),
-                                ),
-                              SizedBox(height: 32.h),
-                            ] else ...[
-                              SizedBox(height: 48.h),
-                            ],
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (!_showSpeakToConfirm.value && !isAnswered)
-                              ScaleButton(
-                                onTap: slotsFilled
-                                    ? () => _submitAnswer(isAnswered)
-                                    : null,
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 60.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    color: slotsFilled
-                                        ? theme.primaryColor
-                                        : Colors.grey,
-                                    boxShadow: [
-                                      if (slotsFilled)
-                                        BoxShadow(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                          blurRadius: 15,
+                                      SizedBox(height: 24.h),
+
+                                      ..._slots.value.keys.map(
+                                        (k) => WritingEmailHexSlot(
+                                          slotKey: k,
+                                          slotValue: _slots.value[k],
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          onSlot: (key, data) =>
+                                              _onSlot(key, data, isAnswered),
+                                          onClearSlot: (key) =>
+                                              _clearSlot(key, isAnswered),
                                         ),
-                                    ],
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      "SEND EMAIL",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
-                                        letterSpacing: 2,
                                       ),
-                                    ),
+                                      if (!slotsFilled && !isAnswered) ...[
+                                        SizedBox(height: 24.h),
+                                        if (widget.level >= 6) ...[
+                                          GestureDetector(
+                                            onTap: () {
+                                              CustomSnackBar.show(
+                                                context: context,
+                                                message:
+                                                    "Hard Mode! Tapping is disabled. Please type your answer below.",
+                                                type: CustomSnackBarType.info,
+                                              );
+                                            },
+                                            child: AbsorbPointer(
+                                              child: Opacity(
+                                                opacity: 0.8,
+                                                child: WritingEmailDataStream(
+                                                  items:
+                                                      options, // Show full list for reference
+                                                  slots: _slots.value,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  onTapItem: (_) {}, // Disabled
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 16.h),
+                                          WritingEmailKeyboardInput(
+                                            validOptions: options
+                                                .where(
+                                                  (opt) => !_slots.value.values
+                                                      .contains(opt),
+                                                )
+                                                .toList(),
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            onValidInput: (data) =>
+                                                _onTapOption(data, isAnswered),
+                                          ),
+                                        ] else
+                                          WritingEmailDataStream(
+                                            items:
+                                                _shuffledOptions
+                                                    .value
+                                                    .isNotEmpty
+                                                ? _shuffledOptions.value
+                                                : options,
+                                            slots: _slots.value,
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            onTapItem: (data) =>
+                                                _onTapOption(data, isAnswered),
+                                          ),
+                                        SizedBox(height: 32.h),
+                                      ] else ...[
+                                        SizedBox(height: 48.h),
+                                      ],
+                                    ],
                                   ),
                                 ),
                               ),
-                            SizedBox(height: !isAnswered ? 380.h : 160.h),
-                          ],
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      if (!_showSpeakToConfirm.value &&
+                                          !isAnswered)
+                                        ScaleButton(
+                                          onTap: slotsFilled
+                                              ? () => _submitAnswer(isAnswered)
+                                              : null,
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: 60.h,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20.r),
+                                              color: slotsFilled
+                                                  ? theme.primaryColor
+                                                  : Colors.grey,
+                                              boxShadow: [
+                                                if (slotsFilled)
+                                                  BoxShadow(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
+                                                    blurRadius: 15,
+                                                  ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                "SEND EMAIL",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: Colors.white,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      SizedBox(
+                                        height: !isAnswered ? 380.h : 160.h,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              if (_showSpeakToConfirm.value && !isAnswered)
-                SpeakToConfirmOverlay(
-                  expectedText: "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}".trim(),
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: _onSpeakConfirmed,
-                  onSkipped: () {
-                    _showSpeakToConfirm.value = false;
-                    context.read<WritingBloc>().add(const SubmitAnswer(false));
+                        if (_showSpeakToConfirm.value && !isAnswered)
+                          SpeakToConfirmOverlay(
+                            expectedText:
+                                "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}"
+                                    .trim(),
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: _onSpeakConfirmed,
+                            onSkipped: () {
+                              _showSpeakToConfirm.value = false;
+                              context.read<WritingBloc>().add(
+                                const SubmitAnswer(false),
+                              );
+                            },
+                          ),
+                      ],
+                    );
                   },
                 ),
-            ],
-          );
-            },
-          ),
         );
       },
     );

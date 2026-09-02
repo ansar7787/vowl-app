@@ -82,7 +82,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     List<String> targetKeywords,
     bool isAnswered,
   ) async {
-    if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting.value) return;
+    if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting.value)
+      return;
 
     _isSubmitting.value = true;
 
@@ -239,7 +240,13 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_showConfetti, _showSpeakToConfirm, _wordCount, _journalProgress, _isSubmitting]),
+            listenable: Listenable.merge([
+              _showConfetti,
+              _showSpeakToConfirm,
+              _wordCount,
+              _journalProgress,
+              _isSubmitting,
+            ]),
             builder: (context, _) {
               return activeQuest == null
                   ? const SizedBox()
@@ -254,151 +261,182 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            DailyJournalInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: activeQuest.instruction,
-                            ),
-                            SizedBox(height: 24.h),
-
-                            DailyJournalPrompt(
-                              text: activeQuest.prompt ?? "",
-                              primaryColor: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 16.h),
-                            if (activeQuest.promptQuestions != null)
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.help_outline, color: theme.primaryColor, size: 16.sp),
-                                        SizedBox(width: 8.w),
-                                        Text(
-                                          "GUIDING QUESTIONS",
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 10.sp,
-                                            fontWeight: FontWeight.w800,
-                                            color: theme.primaryColor,
-                                            letterSpacing: 2,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 8.h),
-                                    ...activeQuest.promptQuestions!.map((q) => Padding(
-                                      padding: EdgeInsets.only(bottom: 4.h),
-                                      child: Text(
-                                        "• $q",
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 12.sp,
-                                          color: isDark ? Colors.white70 : Colors.black87,
-                                        ),
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 16.h),
+                                      DailyJournalInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: activeQuest.instruction,
                                       ),
-                                    )),
-                                  ],
-                                ),
-                              ),
-                            SizedBox(height: 24.h),
+                                      SizedBox(height: 24.h),
 
-                            DailyJournalBoosterTokens(
-                              keywords: targetKeywords,
-                              text: _controller.text,
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 24.h),
-
-                            DailyJournalScratchArea(
-                              controller: _controller,
-                              isAnswered: isAnswered,
-                              wordCount: _wordCount.value,
-                              journalProgress: _journalProgress.value,
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 32.h),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (!_showSpeakToConfirm.value && !isAnswered)
-                              ScaleButton(
-                                onTap: () =>
-                                    _submitAnswer(targetKeywords, isAnswered),
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 60.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    color: _wordCount.value >= 10
-                                        ? theme.primaryColor
-                                        : Colors.grey,
-                                    boxShadow: [
-                                      if (_wordCount.value >= 10)
-                                        BoxShadow(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
+                                      DailyJournalPrompt(
+                                        text: activeQuest.prompt ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 16.h),
+                                      if (activeQuest.promptQuestions != null)
+                                        Container(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 16.w,
+                                            vertical: 12.h,
                                           ),
-                                          blurRadius: 15,
+                                          decoration: BoxDecoration(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.1),
+                                            borderRadius: BorderRadius.circular(
+                                              16.r,
+                                            ),
+                                            border: Border.all(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.3),
+                                            ),
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.help_outline,
+                                                    color: theme.primaryColor,
+                                                    size: 16.sp,
+                                                  ),
+                                                  SizedBox(width: 8.w),
+                                                  Text(
+                                                    "GUIDING QUESTIONS",
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 10.sp,
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                      color: theme.primaryColor,
+                                                      letterSpacing: 2,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(height: 8.h),
+                                              ...activeQuest.promptQuestions!
+                                                  .map(
+                                                    (q) => Padding(
+                                                      padding: EdgeInsets.only(
+                                                        bottom: 4.h,
+                                                      ),
+                                                      child: Text(
+                                                        "• $q",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          color: isDark
+                                                              ? Colors.white70
+                                                              : Colors.black87,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                            ],
+                                          ),
                                         ),
+                                      SizedBox(height: 24.h),
+
+                                      DailyJournalBoosterTokens(
+                                        keywords: targetKeywords,
+                                        text: _controller.text,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 24.h),
+
+                                      DailyJournalScratchArea(
+                                        controller: _controller,
+                                        isAnswered: isAnswered,
+                                        wordCount: _wordCount.value,
+                                        journalProgress: _journalProgress.value,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 32.h),
                                     ],
                                   ),
-                                  child: Center(
-                                    child: Text(
-                                      "CRYSTALLIZE MEMORY",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
-                                        letterSpacing: 2,
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      if (!_showSpeakToConfirm.value &&
+                                          !isAnswered)
+                                        ScaleButton(
+                                          onTap: () => _submitAnswer(
+                                            targetKeywords,
+                                            isAnswered,
+                                          ),
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: 60.h,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20.r),
+                                              color: _wordCount.value >= 10
+                                                  ? theme.primaryColor
+                                                  : Colors.grey,
+                                              boxShadow: [
+                                                if (_wordCount.value >= 10)
+                                                  BoxShadow(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
+                                                    blurRadius: 15,
+                                                  ),
+                                              ],
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                "CRYSTALLIZE MEMORY",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: Colors.white,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      SizedBox(
+                                        height: !isAnswered ? 380.h : 160.h,
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ),
                               ),
-                            SizedBox(height: !isAnswered ? 380.h : 160.h),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              if (_showSpeakToConfirm.value && !isAnswered)
-                SpeakToConfirmOverlay(
-                  expectedText: _controller.text.trim(),
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: _onSpeakConfirmed,
-                  onSkipped: () {
-                    _showSpeakToConfirm.value = false;
-                    context.read<WritingBloc>().add(const SubmitAnswer(false));
-                  },
-                ),
-            ],
-          );
+                        if (_showSpeakToConfirm.value && !isAnswered)
+                          SpeakToConfirmOverlay(
+                            expectedText: _controller.text.trim(),
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: _onSpeakConfirmed,
+                            onSkipped: () {
+                              _showSpeakToConfirm.value = false;
+                              context.read<WritingBloc>().add(
+                                const SubmitAnswer(false),
+                              );
+                            },
+                          ),
+                      ],
+                    );
             },
           ),
         );

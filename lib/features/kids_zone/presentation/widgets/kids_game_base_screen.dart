@@ -229,7 +229,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                   valueListenable: _showBriefing,
                   builder: (context, showBriefing, _) {
                     if (!showBriefing) return const SizedBox.shrink();
-                    
+
                     // Get briefing using the gameType (category) as the fallback title
                     final briefing = GameInstructionService.getBriefing(
                       context,

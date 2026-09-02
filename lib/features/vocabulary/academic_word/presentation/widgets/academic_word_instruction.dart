@@ -25,24 +25,22 @@ class AcademicWordInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery.withClampedTextScaling(
-          maxScaleFactor: 1.1,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-            constraints: BoxConstraints(maxWidth: 320.w),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.05),
-              borderRadius: BorderRadius.circular(30.r),
-              border: Border.all(color: color.withValues(alpha: 0.2)),
-            ),
-            child: Text(
-              label,
-              maxLines: 2,
-              textAlign: TextAlign.center,
-              style: _labelStyle(color),
-            ).animate().shimmer(duration: 2.seconds),
-          ),
-        )
-        .animate()
-        .fadeIn(duration: 800.ms);
+      maxScaleFactor: 1.1,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+        constraints: BoxConstraints(maxWidth: 320.w),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(30.r),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
+        ),
+        child: Text(
+          label,
+          maxLines: 2,
+          textAlign: TextAlign.center,
+          style: _labelStyle(color),
+        ).animate().shimmer(duration: 2.seconds),
+      ),
+    ).animate().fadeIn(duration: 800.ms);
   }
 }

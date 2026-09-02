@@ -136,17 +136,7 @@ class _LoginViewState extends State<LoginView> {
               );
               final secondaryColor = contrastColor.withValues(alpha: 0.6);
 
-              Color? auraColor;
-              if (_passwordFocus.hasFocus && state.password.isNotEmpty) {
-                if (state.password.length < 6) {
-                  auraColor = Colors.red;
-                } else if (state.password.length < 10) {
-                  auraColor = Colors.blue;
-                } else {
-                  auraColor = Colors.green;
-                }
-              }
-
+              // auraColor logic moved to ListenableBuilder below
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
                 message: context.tr(
@@ -158,7 +148,23 @@ class _LoginViewState extends State<LoginView> {
                   resizeToAvoidBottomInset: false,
                   body: Stack(
                     children: [
-                      MeshGradientBackground(auraColor: auraColor),
+                      ListenableBuilder(
+                        listenable: _passwordFocus,
+                        builder: (context, _) {
+                          Color? auraColor;
+                          if (_passwordFocus.hasFocus &&
+                              state.password.isNotEmpty) {
+                            if (state.password.length < 6) {
+                              auraColor = Colors.red;
+                            } else if (state.password.length < 10) {
+                              auraColor = Colors.blue;
+                            } else {
+                              auraColor = Colors.green;
+                            }
+                          }
+                          return MeshGradientBackground(auraColor: auraColor);
+                        },
+                      ),
                       SafeArea(
                         child: LayoutBuilder(
                           builder: (context, constraints) {
@@ -245,12 +251,17 @@ class _LoginViewState extends State<LoginView> {
                                             children: [
                                               ValueListenableBuilder<int>(
                                                 valueListenable: _emailShake,
-                                                builder: (context, shakeCount, child) {
-                                                  return ShakeableWrapper(
-                                                    shakeCount: shakeCount,
-                                                    child: child!,
-                                                  );
-                                                },
+                                                builder:
+                                                    (
+                                                      context,
+                                                      shakeCount,
+                                                      child,
+                                                    ) {
+                                                      return ShakeableWrapper(
+                                                        shakeCount: shakeCount,
+                                                        child: child!,
+                                                      );
+                                                    },
                                                 child: LoginEmailInput(
                                                   fieldKey: _emailKey,
                                                   focusNode: _emailFocus,
@@ -259,12 +270,17 @@ class _LoginViewState extends State<LoginView> {
                                               SizedBox(height: 16.h),
                                               ValueListenableBuilder<int>(
                                                 valueListenable: _passwordShake,
-                                                builder: (context, shakeCount, child) {
-                                                  return ShakeableWrapper(
-                                                    shakeCount: shakeCount,
-                                                    child: child!,
-                                                  );
-                                                },
+                                                builder:
+                                                    (
+                                                      context,
+                                                      shakeCount,
+                                                      child,
+                                                    ) {
+                                                      return ShakeableWrapper(
+                                                        shakeCount: shakeCount,
+                                                        child: child!,
+                                                      );
+                                                    },
                                                 child: LoginPasswordInput(
                                                   fieldKey: _passwordKey,
                                                   formKey: _formKey,
@@ -285,7 +301,7 @@ class _LoginViewState extends State<LoginView> {
                                                 alignment: AlignmentDirectional
                                                     .centerEnd,
                                                 child: TextButton(
-                                                  onPressed: () => context.go(
+                                                  onPressed: () => context.push(
                                                     AppRouter
                                                         .forgotPasswordRoute,
                                                   ),
@@ -364,7 +380,7 @@ class _LoginViewState extends State<LoginView> {
                                               ),
                                             ),
                                             TextButton(
-                                              onPressed: () => context.go(
+                                              onPressed: () => context.push(
                                                 AppRouter.signupRoute,
                                               ),
                                               style: TextButton.styleFrom(

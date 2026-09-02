@@ -200,244 +200,252 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
       builder: (context, isVisible, _) {
         if (!isVisible) return const SizedBox.shrink();
 
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final title = _getDynamicTitle();
-    final subtitle = _getDynamicSubtitle();
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        final title = _getDynamicTitle();
+        final subtitle = _getDynamicSubtitle();
 
-    return SizeTransition(
-      sizeFactor: _animationController,
-      child: ScaleTransition(
-        scale: _scaleAnimation,
-        child: Padding(
-          padding: EdgeInsets.only(
-            left: 24.w,
-            right: 24.w,
-            top: 24.h,
-            bottom: 8.h,
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
-              borderRadius: BorderRadius.circular(24.r),
-              border: Border.all(
-                color: const Color(0xFFF97316).withValues(alpha: 0.15),
-                width: 1.0,
+        return SizeTransition(
+          sizeFactor: _animationController,
+          child: ScaleTransition(
+            scale: _scaleAnimation,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 24.w,
+                right: 24.w,
+                top: 24.h,
+                bottom: 8.h,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFFF97316).withValues(alpha: 0.08),
-                  blurRadius: 24.r,
-                  offset: const Offset(0, 8),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(24.r),
+                  border: Border.all(
+                    color: const Color(0xFFF97316).withValues(alpha: 0.15),
+                    width: 1.0,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFF97316).withValues(alpha: 0.08),
+                      blurRadius: 24.r,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: Stack(
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(20.r),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ExcludeSemantics(
-                        child: Container(
-                          width: 48.r,
-                          height: 48.r,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFF97316).withValues(alpha: 0.15),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Icon(
-                                Icons.notifications_active_rounded,
-                                color: const Color(0xFFF97316),
-                                size: 24.r,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(20.r),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ExcludeSemantics(
+                            child: Container(
+                              width: 48.r,
+                              height: 48.r,
+                              decoration: BoxDecoration(
+                                color: const Color(
+                                  0xFFF97316,
+                                ).withValues(alpha: 0.15),
+                                shape: BoxShape.circle,
                               ),
-                              PositionedDirectional(
-                                top: 10.r,
-                                end: 12.r,
-                                child: Container(
-                                  width: 10.r,
-                                  height: 10.r,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFEF4444),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                                      width: 1.5.r,
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.notifications_active_rounded,
+                                    color: const Color(0xFFF97316),
+                                    size: 24.r,
+                                  ),
+                                  PositionedDirectional(
+                                    top: 10.r,
+                                    end: 12.r,
+                                    child: Container(
+                                      width: 10.r,
+                                      height: 10.r,
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFFEF4444),
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          color: isDark
+                                              ? const Color(0xFF1E293B)
+                                              : Colors.white,
+                                          width: 1.5.r,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 16.w),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.only(
+                                    end: 24.w,
+                                  ),
+                                  child: Semantics(
+                                    header: true,
+                                    child: Text(
+                                      title,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: isDark
+                                            ? Colors.white
+                                            : const Color(0xFF0F172A),
+                                      ),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 16.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.only(end: 24.w),
-                              child: Semantics(
-                                header: true,
-                                child: Text(
-                                  title,
+                                SizedBox(height: 4.h),
+                                Text(
+                                  subtitle,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w500,
                                     color: isDark
-                                        ? Colors.white
-                                        : const Color(0xFF0F172A),
+                                        ? Colors.white60
+                                        : Colors.black54,
                                   ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
-                              ),
-                            ),
-                            SizedBox(height: 4.h),
-                            Text(
-                              subtitle,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: isDark ? Colors.white60 : Colors.black54,
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            SizedBox(height: 16.h),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: SizedBox(
-                                    height: 44.h,
-                                    child: ElevatedButton(
-                                      onPressed: _requestPermission,
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: const Color(0xFFF97316),
-                                        foregroundColor: Colors.white,
-                                        elevation: 0,
-                                        padding: EdgeInsets.zero,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(
-                                            12.r,
+                                SizedBox(height: 16.h),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: SizedBox(
+                                        height: 44.h,
+                                        child: ElevatedButton(
+                                          onPressed: _requestPermission,
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: const Color(
+                                              0xFFF97316,
+                                            ),
+                                            foregroundColor: Colors.white,
+                                            elevation: 0,
+                                            padding: EdgeInsets.zero,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.r),
+                                            ),
+                                          ),
+                                          child: Text(
+                                            context.tr(
+                                              'notification_card.remind_me',
+                                              fallback: 'Remind Me',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 0.5,
+                                            ),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
                                           ),
                                         ),
                                       ),
-                                      child: Text(
-                                        context.tr(
-                                          'notification_card.remind_me',
-                                          fallback: 'Remind Me',
-                                        ),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w700,
-                                          letterSpacing: 0.5,
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
                                     ),
-                                  ),
-                                ),
-                                SizedBox(width: 12.w),
-                                Expanded(
-                                  child: SizedBox(
-                                    height: 44.h,
-                                    child: TextButton(
-                                      onPressed: _dismissCard,
-                                      style: TextButton.styleFrom(
-                                        foregroundColor: isDark
-                                            ? Colors.white70
-                                            : Colors.black54,
-                                        backgroundColor: isDark
-                                            ? Colors.white.withValues(
-                                                alpha: 0.05,
-                                              )
-                                            : Colors.black.withValues(
-                                                alpha: 0.05,
-                                              ),
-                                        padding: EdgeInsets.zero,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(
-                                            12.r,
+                                    SizedBox(width: 12.w),
+                                    Expanded(
+                                      child: SizedBox(
+                                        height: 44.h,
+                                        child: TextButton(
+                                          onPressed: _dismissCard,
+                                          style: TextButton.styleFrom(
+                                            foregroundColor: isDark
+                                                ? Colors.white70
+                                                : Colors.black54,
+                                            backgroundColor: isDark
+                                                ? Colors.white.withValues(
+                                                    alpha: 0.05,
+                                                  )
+                                                : Colors.black.withValues(
+                                                    alpha: 0.05,
+                                                  ),
+                                            padding: EdgeInsets.zero,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.r),
+                                            ),
+                                          ),
+                                          child: Text(
+                                            context.tr(
+                                              'notification_card.not_now',
+                                              fallback: 'Not Now',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w700,
+                                              letterSpacing: 0.5,
+                                            ),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
                                           ),
                                         ),
                                       ),
-                                      child: Text(
-                                        context.tr(
-                                          'notification_card.not_now',
-                                          fallback: 'Not Now',
-                                        ),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w700,
-                                          letterSpacing: 0.5,
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ],
                             ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                PositionedDirectional(
-                  top: 0,
-                  end: 0,
-                  child: Semantics(
-                    button: true,
-                    label: context.tr('common.close', fallback: 'Close'),
-                    child: GestureDetector(
-                      onTap: _dismissCard,
-                      behavior: HitTestBehavior.opaque,
-                      child: Container(
-                        // Fixed 48x48 invisible hit area anchored at the
-                        // card's corner; centering the original 24x24 glyph
-                        // inside it reproduces the exact same visual offset
-                        // (12,12) the design had, while satisfying the 48dp
-                        // minimum accessible touch target.
-                        width: 48.r,
-                        height: 48.r,
-                        alignment: Alignment.center,
-                        child: Container(
-                          padding: EdgeInsets.all(4.r),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.1)
-                                : Colors.black.withValues(alpha: 0.05),
-                            shape: BoxShape.circle,
                           ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            size: 16.r,
-                            color: isDark ? Colors.white54 : Colors.black54,
+                        ],
+                      ),
+                    ),
+                    PositionedDirectional(
+                      top: 0,
+                      end: 0,
+                      child: Semantics(
+                        button: true,
+                        label: context.tr('common.close', fallback: 'Close'),
+                        child: GestureDetector(
+                          onTap: _dismissCard,
+                          behavior: HitTestBehavior.opaque,
+                          child: Container(
+                            // Fixed 48x48 invisible hit area anchored at the
+                            // card's corner; centering the original 24x24 glyph
+                            // inside it reproduces the exact same visual offset
+                            // (12,12) the design had, while satisfying the 48dp
+                            // minimum accessible touch target.
+                            width: 48.r,
+                            height: 48.r,
+                            alignment: Alignment.center,
+                            child: Container(
+                              padding: EdgeInsets.all(4.r),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.1)
+                                    : Colors.black.withValues(alpha: 0.05),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.close_rounded,
+                                size: 16.r,
+                                color: isDark ? Colors.white54 : Colors.black54,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
-    );
-      }
+        );
+      },
     );
   }
 }

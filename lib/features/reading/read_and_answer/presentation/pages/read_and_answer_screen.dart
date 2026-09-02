@@ -206,9 +206,15 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                         ),
                         if (_showEvidenceStep.value && !isAnswered) ...[
                           Positioned.fill(
-                            child: Container(
-                              color: isDark ? Colors.black87 : Colors.black.withValues(alpha: 0.6),
-                            ).animate().fadeIn(duration: 400.ms, curve: Curves.easeOut),
+                            child:
+                                Container(
+                                  color: isDark
+                                      ? Colors.black87
+                                      : Colors.black.withValues(alpha: 0.6),
+                                ).animate().fadeIn(
+                                  duration: 400.ms,
+                                  curve: Curves.easeOut,
+                                ),
                           ),
                           EvidenceHighlightWrapper(
                             passage: displayPassage,
@@ -304,7 +310,11 @@ class _QuestContent extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 16.w),
-                        _buildReadTimeBadge(primaryColor, isDark, displayPassage),
+                        _buildReadTimeBadge(
+                          primaryColor,
+                          isDark,
+                          displayPassage,
+                        ),
                       ],
                     ),
                     SizedBox(height: 16.h),
@@ -326,7 +336,8 @@ class _QuestContent extends StatelessWidget {
                         final isOptionCorrect =
                             e.key == quest.correctAnswerIndex ||
                             e.value.trim().toLowerCase() ==
-                                (quest.correctAnswer?.trim().toLowerCase() ?? '');
+                                (quest.correctAnswer?.trim().toLowerCase() ??
+                                    '');
 
                         return ReadAndAnswerBuoyOption(
                           index: e.key,
@@ -348,7 +359,9 @@ class _QuestContent extends StatelessWidget {
                         isDark: isDark,
                       ),
                     ],
-                    SizedBox(height: (showEvidenceStep && !isAnswered) ? 380.h : 60.h),
+                    SizedBox(
+                      height: (showEvidenceStep && !isAnswered) ? 380.h : 60.h,
+                    ),
                   ],
                 ),
               ),

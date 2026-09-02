@@ -370,92 +370,130 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
-      listenable: Listenable.merge([_translatedText, _entities, _isExtracting, _entitiesRevealed]),
+      listenable: Listenable.merge([
+        _translatedText,
+        _entities,
+        _isExtracting,
+        _entitiesRevealed,
+      ]),
       builder: (context, _) {
         final displayText = _translatedText.value ?? widget.explanation;
-        
+
         Widget card = Column(
-      children: [
-        if (widget.passage != null && widget.passage!.isNotEmpty) ...[
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(20.w),
-            decoration: BoxDecoration(
-              color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: widget.shadowColor.withValues(alpha: 0.3),
-                width: 1.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: widget.shadowColor.withValues(alpha: 0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      context.tr(
-                        'reading.passage_review',
-                        fallback: 'PASSAGE REVIEW',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.shadowColor,
-                        letterSpacing: 1,
-                      ),
+          children: [
+            if (widget.passage != null && widget.passage!.isNotEmpty) ...[
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(20.w),
+                decoration: BoxDecoration(
+                  color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: widget.shadowColor.withValues(alpha: 0.3),
+                    width: 1.5,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: widget.shadowColor.withValues(alpha: 0.1),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
                     ),
-                    if (!_entitiesRevealed.value && !_isExtracting.value)
-                      ScaleButton(
-                        onTap: _onRevealEntitiesTap,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.amber.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(color: Colors.amber),
-                          ),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.search_rounded,
-                                color: Colors.amber.shade700,
-                                size: 14.sp,
-                              ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                context.tr(
-                                  'reading.reveal',
-                                  fallback: 'Reveal Entities',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.amber.shade700,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
                   ],
                 ),
-                SizedBox(height: 12.h),
-                if (_isExtracting.value)
-                  Text(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          context.tr(
+                            'reading.passage_review',
+                            fallback: 'PASSAGE REVIEW',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w800,
+                            color: widget.shadowColor,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                        if (!_entitiesRevealed.value && !_isExtracting.value)
+                          ScaleButton(
+                            onTap: _onRevealEntitiesTap,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 4.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.amber.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(color: Colors.amber),
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.search_rounded,
+                                    color: Colors.amber.shade700,
+                                    size: 14.sp,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    context.tr(
+                                      'reading.reveal',
+                                      fallback: 'Reveal Entities',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.amber.shade700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    SizedBox(height: 12.h),
+                    if (_isExtracting.value)
+                      Text(
+                            widget.passage!,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                              color: widget.isDark
+                                  ? Colors.white70
+                                  : Colors.black87,
+                              height: 1.5,
+                            ),
+                          )
+                          .animate(onPlay: (controller) => controller.repeat())
+                          .shimmer(
+                            duration: 1500.ms,
+                            color: widget.shadowColor.withValues(alpha: 0.3),
+                          )
+                    else if (_entitiesRevealed.value && _entities.value != null)
+                      EntityHighlightedText(
+                        text: widget.passage!,
+                        annotations: _entities.value!,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          color: widget.isDark
+                              ? Colors.white70
+                              : Colors.black87,
+                          height: 1.5,
+                        ),
+                        isDark: widget.isDark,
+                      )
+                    else
+                      Text(
                         widget.passage!,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -466,152 +504,123 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                               : Colors.black87,
                           height: 1.5,
                         ),
-                      )
-                      .animate(onPlay: (controller) => controller.repeat())
-                      .shimmer(
-                        duration: 1500.ms,
-                        color: widget.shadowColor.withValues(alpha: 0.3),
-                      )
-                else if (_entitiesRevealed.value && _entities.value != null)
-                  EntityHighlightedText(
-                    text: widget.passage!,
-                    annotations: _entities.value!,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: widget.isDark ? Colors.white70 : Colors.black87,
-                      height: 1.5,
-                    ),
-                    isDark: widget.isDark,
-                  )
-                else
-                  Text(
-                    widget.passage!,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: widget.isDark ? Colors.white70 : Colors.black87,
-                      height: 1.5,
-                    ),
-                  ),
-                if (_entitiesRevealed.value &&
-                    _entities.value != null &&
-                    _entities.value!.isNotEmpty) ...[
-                  SizedBox(height: 12.h),
-                  Container(
-                    padding: EdgeInsets.all(8.r),
-                    decoration: BoxDecoration(
-                      color: widget.shadowColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.lightbulb_rounded,
-                          color: widget.shadowColor,
-                          size: 16.sp,
+                      ),
+                    if (_entitiesRevealed.value &&
+                        _entities.value != null &&
+                        _entities.value!.isNotEmpty) ...[
+                      SizedBox(height: 12.h),
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: widget.shadowColor.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
-                        SizedBox(width: 8.w),
-                        Expanded(
-                          child: Text(
-                            context.tr(
-                              'reading.entities_found',
-                              fallback:
-                                  'Tap the highlighted words to see their types!',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.lightbulb_rounded,
                               color: widget.shadowColor,
+                              size: 16.sp,
                             ),
-                          ),
+                            SizedBox(width: 8.w),
+                            Expanded(
+                              child: Text(
+                                context.tr(
+                                  'reading.entities_found',
+                                  fallback:
+                                      'Tap the highlighted words to see their types!',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: widget.shadowColor,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-          SizedBox(height: 16.h),
-        ],
-        Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.shadowColor.withValues(alpha: 0.08),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.shadowColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  ExcludeSemantics(
-                    child: Icon(
-                      Icons.info_outline_rounded,
-                      color: widget.shadowColor,
-                      size: 14.r,
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      context.tr(
-                        'games.explanation_caps',
-                        fallback: 'EXPLANATION',
                       ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.shadowColor,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText.value == null)
-                    TranslateButtonWidget(
-                      originalText: widget.explanation,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          _translatedText.value = translated;
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
+                    ],
+                  ],
                 ),
               ),
+              SizedBox(height: 16.h),
             ],
-          ),
-        ),
-      ],
-    );
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+              decoration: BoxDecoration(
+                color: widget.shadowColor.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: widget.shadowColor.withValues(alpha: 0.2),
+                  width: 1.5,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      ExcludeSemantics(
+                        child: Icon(
+                          Icons.info_outline_rounded,
+                          color: widget.shadowColor,
+                          size: 14.r,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Expanded(
+                        child: Text(
+                          context.tr(
+                            'games.explanation_caps',
+                            fallback: 'EXPLANATION',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w800,
+                            color: widget.shadowColor,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                      ),
+                      if (_translatedText.value == null)
+                        TranslateButtonWidget(
+                          originalText: widget.explanation,
+                          onTranslationComplete: (translated) {
+                            if (mounted) {
+                              _translatedText.value = translated;
+                            }
+                          },
+                        ),
+                    ],
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    displayText,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w600,
+                      color: widget.isDark ? Colors.white : Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
 
-    if (!widget.reduceMotion) {
-      card = card
-          .animate()
-          .fadeIn(delay: 300.ms)
-          .scale(duration: 400.ms, curve: Curves.easeOutBack);
-    }
+        if (!widget.reduceMotion) {
+          card = card
+              .animate()
+              .fadeIn(delay: 300.ms)
+              .scale(duration: 400.ms, curve: Curves.easeOutBack);
+        }
 
-    return card;
+        return card;
       },
     );
   }

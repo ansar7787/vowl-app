@@ -187,7 +187,10 @@ class ReadingBaseLayout extends StatelessWidget {
               isDark: isDark,
               primaryColor: theme.primaryColor,
               explanation: finalExplanation,
-              ruleTitle: context.tr('common.reading_context', fallback: 'READING CONTEXT'),
+              ruleTitle: context.tr(
+                'common.reading_context',
+                fallback: 'READING CONTEXT',
+              ),
               ruleContent: ruleContent,
               isTwoStageGame: hasStage2,
             );

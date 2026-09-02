@@ -242,14 +242,20 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (consequencePreviews.length > index && (isHovered || isSelected))
+              if (consequencePreviews.length > index &&
+                  (isHovered || isSelected))
                 Padding(
                   padding: EdgeInsets.only(top: 4.h),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.h,
+                    ),
                     decoration: BoxDecoration(
-                      color: (isSelected && isAnswered) 
-                          ? (index == correctIndex ? Colors.greenAccent.withValues(alpha: 0.2) : Colors.redAccent.withValues(alpha: 0.2))
+                      color: (isSelected && isAnswered)
+                          ? (index == correctIndex
+                                ? Colors.greenAccent.withValues(alpha: 0.2)
+                                : Colors.redAccent.withValues(alpha: 0.2))
                           : color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(4.r),
                     ),
@@ -259,9 +265,11 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 8.sp,
                         fontWeight: FontWeight.bold,
-                        color: (isSelected && isAnswered) 
-                          ? (index == correctIndex ? Colors.greenAccent : Colors.redAccent)
-                          : color,
+                        color: (isSelected && isAnswered)
+                            ? (index == correctIndex
+                                  ? Colors.greenAccent
+                                  : Colors.redAccent)
+                            : color,
                       ),
                     ),
                   ).animate().fadeIn(duration: 200.ms),

@@ -175,12 +175,20 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
         final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedOption]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _isFirstStagePassed,
+            _selectedOption,
+          ]),
           builder: (context, _) {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value && (_isCorrect.value != null || !_isFirstStagePassed.value),
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               hasStage2: true,
@@ -208,94 +216,144 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                   context.read<VocabularyBloc>().add(VocabularyHintUsed()),
               useScrolling: false,
               disablePadding: true,
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                            slivers: [
-                            SliverToBoxAdapter(
-                              child: IgnorePointer(
-                                ignoring: _isFirstStagePassed.value,
-                                child: ConstrainedBox(
-                                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                  child: Stack(
-                                    children: [
-                              Positioned.fill(
-                            child: CustomPaint(
-                              painter: GridPainter(
-                                theme.primaryColor.withValues(
-                                  alpha: isDarkMode ? 0.05 : 0.03,
-                                ),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
                               ),
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              AnimatedContainer(
-                                duration: const Duration(milliseconds: 600),
-                                curve: Curves.easeInOutCubic,
-                                height: _isFirstStagePassed.value ? constraints.maxHeight * 0.65 : constraints.maxHeight,
-                                child: _buildChatInterface(quest, theme.primaryColor, isDarkMode),
-                              ),
-                              if (_isFirstStagePassed.value)
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: Column(
-                                    children: [
-                                      if ((quest.origin != null && quest.origin!.isNotEmpty) || quest.literalVsFigurative != null || quest.contextSentence != null || quest.example != null)
-                                        IdiomsOriginCard(
-                                          origin: quest.origin,
-                                          literalVsFigurative: quest.literalVsFigurative,
-                                          contextSentence: quest.contextSentence ?? quest.example,
-                                          color: theme.primaryColor,
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: (!_isFirstStagePassed.value)
+                                    ? const NeverScrollableScrollPhysics()
+                                    : const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(
+                                          minHeight: constraints.maxHeight,
                                         ),
-                                    ],
+                                        child: Stack(
+                                          children: [
+                                            Positioned.fill(
+                                              child: CustomPaint(
+                                                painter: GridPainter(
+                                                  theme.primaryColor.withValues(
+                                                    alpha: isDarkMode
+                                                        ? 0.05
+                                                        : 0.03,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            Column(
+                                              children: [
+                                                AnimatedContainer(
+                                                  duration: const Duration(
+                                                    milliseconds: 600,
+                                                  ),
+                                                  curve: Curves.easeInOutCubic,
+                                                  height:
+                                                      _isFirstStagePassed.value
+                                                      ? constraints.maxHeight *
+                                                            0.65
+                                                      : constraints.maxHeight,
+                                                  child: _buildChatInterface(
+                                                    quest,
+                                                    theme.primaryColor,
+                                                    isDarkMode,
+                                                  ),
+                                                ),
+                                                if (_isFirstStagePassed.value)
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 20.w,
+                                                        ),
+                                                    child: Column(
+                                                      children: [
+                                                        if ((quest.origin !=
+                                                                    null &&
+                                                                quest
+                                                                    .origin!
+                                                                    .isNotEmpty) ||
+                                                            quest.literalVsFigurative !=
+                                                                null ||
+                                                            quest.contextSentence !=
+                                                                null ||
+                                                            quest.example !=
+                                                                null)
+                                                          IdiomsOriginCard(
+                                                            origin:
+                                                                quest.origin,
+                                                            literalVsFigurative:
+                                                                quest
+                                                                    .literalVsFigurative,
+                                                            contextSentence:
+                                                                quest
+                                                                    .contextSentence ??
+                                                                quest.example,
+                                                            color: theme
+                                                                .primaryColor,
+                                                          ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                SizedBox(
+                                                  height:
+                                                      (_isAnswered.value ||
+                                                          _isFirstStagePassed
+                                                              .value)
+                                                      ? 400.h
+                                                      : 60.h,
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              SizedBox(height: (_isAnswered.value || _isFirstStagePassed.value) ? 400.h : 60.h),
-                            ],
-                          ),
-                        ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          if (_isFirstStagePassed.value && (!_isAnswered.value || _isCorrect.value == null))
-                            SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  SpeakToConfirmOverlay(
-                                    expectedText: quest.correctAnswer ?? '',
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _submitFinalAnswer(true),
-                                    onSkipped: () => _submitFinalAnswer(false),
-                                    isPositioned: false,
-                                  ),
-                                  SizedBox(height: 60.h),
+                                  if (_isFirstStagePassed.value &&
+                                      (!_isAnswered.value ||
+                                          _isCorrect.value == null))
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          SpeakToConfirmOverlay(
+                                            expectedText:
+                                                quest.correctAnswer ?? '',
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () =>
+                                                _submitFinalAnswer(true),
+                                            onSkipped: () =>
+                                                _submitFinalAnswer(false),
+                                            isPositioned: false,
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
-                        ],
-                          ),
-                        ),
-                      ],
-                  );
+                          ],
+                        );
+                      },
+                    ),
+            );
           },
-        ),
-      );
-    },
-  );
-},
+        );
+      },
     );
   }
 
@@ -324,120 +382,117 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
             : 15.0;
 
         return Column(
-              children: [
-                SizedBox(height: gapTop),
-                isCompact
-                    ? SizedBox(
-                        height: 30.h,
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: _buildHeaderBadge(color, isCompact: true),
-                        ),
-                      )
-                    : _buildHeaderBadge(color, isCompact: false),
-
-                SizedBox(height: gapMiddle),
-
-                Expanded(
-                  child: ListView(
-                    physics: const BouncingScrollPhysics(),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 5.h,
+          children: [
+            SizedBox(height: gapTop),
+            isCompact
+                ? SizedBox(
+                    height: 30.h,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: _buildHeaderBadge(color, isCompact: true),
                     ),
+                  )
+                : _buildHeaderBadge(color, isCompact: false),
+
+            SizedBox(height: gapMiddle),
+
+            Expanded(
+              child: ListView(
+                physics: const BouncingScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                children: [
+                  IdiomsSystemMessage(
+                    text: "INCOMING TRANSMISSION...",
+                    color: color,
+                  ),
+                  SizedBox(height: isCompact ? 10.h : 20.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      IdiomsSystemMessage(
-                        text: "INCOMING TRANSMISSION...",
+                      CircleAvatar(
+                        radius: isCompact ? 14.r : 18.r,
+                        backgroundColor: color.withValues(alpha: 0.2),
+                        child: Icon(
+                          Icons.psychology_alt_rounded,
+                          size: isCompact ? 16.r : 20.r,
+                          color: color,
+                        ),
+                      ),
+                      SizedBox(width: 10.w),
+                      IdiomsStrangerMessage(
+                        emojis: quest.topicEmoji ?? "❓",
                         color: color,
+                        isDark: isDark,
                       ),
-                      SizedBox(height: isCompact ? 10.h : 20.h),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          CircleAvatar(
-                            radius: isCompact ? 14.r : 18.r,
-                            backgroundColor: color.withValues(alpha: 0.2),
-                            child: Icon(
-                              Icons.psychology_alt_rounded,
-                              size: isCompact ? 16.r : 20.r,
-                              color: color,
-                            ),
-                          ),
-                          SizedBox(width: 10.w),
-                          IdiomsStrangerMessage(
-                            emojis: quest.topicEmoji ?? "❓",
-                            color: color,
-                            isDark: isDark,
-                          ),
-                        ],
-                      ),
-
-                      if (_selectedOption.value != null) ...[
-                        SizedBox(height: isCompact ? 14.h : 24.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            IdiomsUserMessage(
-                              text: _selectedOption.value!,
-                              color: color,
-                              isCorrect: _isCorrect.value,
-                              isDark: isDark,
-                            ),
-                            SizedBox(width: 10.w),
-                            CircleAvatar(
-                              radius: isCompact ? 14.r : 18.r,
-                              backgroundColor: color.withValues(alpha: 0.1),
-                              child: Icon(
-                                Icons.face_retouching_natural_rounded,
-                                size: isCompact ? 16.r : 20.r,
-                                color: color,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-
-                      if (_isAnswered.value && _isCorrect.value == false) ...[
-                        SizedBox(height: 10.h),
-                        IdiomsSystemMessage(
-                          text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
-                          color: Colors.redAccent,
-                        ),
-                      ],
                     ],
                   ),
-                ),
 
-                SizedBox(height: gapMiddle),
-
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: Wrap(
-                          spacing: 12.w,
-                          runSpacing: isCompact ? 8.h : 12.h,
-                          alignment: WrapAlignment.center,
-                          children: (quest.options ?? []).map((o) {
-                            return IdiomsOptionChip(
-                              text: o,
-                              correct: quest.correctAnswer ?? "",
-                              color: color,
-                              isDark: isDark,
-                              isAnswered: _isAnswered.value,
-                              isCorrect: _isCorrect.value,
-                              selectedOption: _selectedOption.value,
-                              onTap: () =>
-                                  _submitAnswer(o, quest.correctAnswer ?? ""),
-                            );
-                          }).toList(),
+                  if (_selectedOption.value != null) ...[
+                    SizedBox(height: isCompact ? 14.h : 24.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        IdiomsUserMessage(
+                          text: _selectedOption.value!,
+                          color: color,
+                          isCorrect: _isCorrect.value,
+                          isDark: isDark,
                         ),
-                      )
-                      .animate()
-                      .fadeIn(delay: 800.ms)
-                      .slideY(begin: 0.3, curve: Curves.easeOutCubic),
-                SizedBox(height: gapBottom),
-              ],
-            );
+                        SizedBox(width: 10.w),
+                        CircleAvatar(
+                          radius: isCompact ? 14.r : 18.r,
+                          backgroundColor: color.withValues(alpha: 0.1),
+                          child: Icon(
+                            Icons.face_retouching_natural_rounded,
+                            size: isCompact ? 16.r : 20.r,
+                            color: color,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+
+                  if (_isAnswered.value && _isCorrect.value == false) ...[
+                    SizedBox(height: 10.h),
+                    IdiomsSystemMessage(
+                      text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
+                      color: Colors.redAccent,
+                    ),
+                  ],
+                ],
+              ),
+            ),
+
+            SizedBox(height: gapMiddle),
+
+            Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Wrap(
+                    spacing: 12.w,
+                    runSpacing: isCompact ? 8.h : 12.h,
+                    alignment: WrapAlignment.center,
+                    children: (quest.options ?? []).map((o) {
+                      return IdiomsOptionChip(
+                        text: o,
+                        correct: quest.correctAnswer ?? "",
+                        color: color,
+                        isDark: isDark,
+                        isAnswered: _isAnswered.value,
+                        isCorrect: _isCorrect.value,
+                        selectedOption: _selectedOption.value,
+                        onTap: () =>
+                            _submitAnswer(o, quest.correctAnswer ?? ""),
+                      );
+                    }).toList(),
+                  ),
+                )
+                .animate()
+                .fadeIn(delay: 800.ms)
+                .slideY(begin: 0.3, curve: Curves.easeOutCubic),
+            SizedBox(height: gapBottom),
+          ],
+        );
       },
     );
   }

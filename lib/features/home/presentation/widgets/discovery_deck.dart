@@ -136,7 +136,8 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                   builder: (context, child) {
                     double page;
                     try {
-                      page = _pageController.page ?? _currentPage.value.toDouble();
+                      page =
+                          _pageController.page ?? _currentPage.value.toDouble();
                     } catch (_) {
                       page = _currentPage.value.toDouble();
                     }
@@ -190,7 +191,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                   height: 6.r,
                 ),
               );
-            }
+            },
           ),
         ],
       ),
@@ -256,7 +257,9 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                         child: Icon(
                           icon,
                           size: 160.r,
-                          color: color.withValues(alpha: isSelected ? 0.08 : 0.03),
+                          color: color.withValues(
+                            alpha: isSelected ? 0.08 : 0.03,
+                          ),
                         ),
                       ),
                     )
@@ -267,7 +270,9 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                       child: Icon(
                         icon,
                         size: 140.r,
-                        color: color.withValues(alpha: isSelected ? 0.08 : 0.03),
+                        color: color.withValues(
+                          alpha: isSelected ? 0.08 : 0.03,
+                        ),
                       ),
                     ),
 
@@ -364,7 +369,9 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: index == 2 ? 22.sp : 20.sp,
-                              fontStyle: index == 2 ? FontStyle.italic : FontStyle.normal,
+                              fontStyle: index == 2
+                                  ? FontStyle.italic
+                                  : FontStyle.normal,
                               fontWeight: FontWeight.w900,
                               color: isDark
                                   ? Colors.white
@@ -465,28 +472,24 @@ class _DiscoveryCollectionCard extends StatelessWidget {
 
   Widget _buildStartButton(Color color, bool isRtl) {
     return Container(
-          padding: EdgeInsets.all(12.r),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.12),
-            shape: BoxShape.circle,
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-            boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.1),
-                blurRadius: 12,
-                spreadRadius: 2,
-              ),
-            ],
+      padding: EdgeInsets.all(12.r),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        shape: BoxShape.circle,
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.1),
+            blurRadius: 12,
+            spreadRadius: 2,
           ),
-          child: Icon(
-            isRtl
-                ? Icons.arrow_back_ios_rounded
-                : Icons.arrow_forward_ios_rounded,
-            size: 14.r,
-            color: color,
-          ),
-        )
-        .animate()
-        .shimmer(delay: 1.seconds, duration: 2.seconds);
+        ],
+      ),
+      child: Icon(
+        isRtl ? Icons.arrow_back_ios_rounded : Icons.arrow_forward_ios_rounded,
+        size: 14.r,
+        color: color,
+      ),
+    ).animate().shimmer(delay: 1.seconds, duration: 2.seconds);
   }
 }
