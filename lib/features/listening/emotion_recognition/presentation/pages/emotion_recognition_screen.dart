@@ -268,8 +268,9 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                           onSubmitAnswer: (index) {
                                             if (_isAnswered.value ||
                                                 _pendingSelectedIndex.value !=
-                                                    null)
+                                                    null) {
                                               return;
+                                            }
                                             _pendingSelectedIndex.value = index;
                                           },
                                         ),

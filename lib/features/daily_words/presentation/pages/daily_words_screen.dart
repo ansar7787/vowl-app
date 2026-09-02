@@ -225,12 +225,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           isPremium: false,
                           childSafe: false,
                           onUserEarnedReward: (_) {
-                            if (!completer.isCompleted)
+                            if (!completer.isCompleted) {
                               completer.complete(true);
+                            }
                           },
                           onDismissed: () {
-                            if (!completer.isCompleted)
+                            if (!completer.isCompleted) {
                               completer.complete(false);
+                            }
                             if (context.mounted) {
                               // Only close the bottom sheet after the ad is completely dismissed
                               context.pop();

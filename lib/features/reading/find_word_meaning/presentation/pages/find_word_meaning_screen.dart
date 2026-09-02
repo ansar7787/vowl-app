@@ -58,8 +58,9 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   }
 
   void _submitFinalAnswer(bool isCorrect, int index, [ReadingQuest? quest]) {
-    if (_showSentenceBuilder.value || _pendingSelectedIndex.value != null)
+    if (_showSentenceBuilder.value || _pendingSelectedIndex.value != null) {
       return;
+    }
 
     _pendingSelectedIndex.value = index;
 

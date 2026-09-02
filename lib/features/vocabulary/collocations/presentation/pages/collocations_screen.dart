@@ -68,8 +68,9 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   void _submitAnswer(String selected, String correct) {
     if (_isAnswered.value ||
         _isDragPassed.value ||
-        _selectedOption.value != null)
+        _selectedOption.value != null) {
       return;
+    }
 
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
@@ -99,8 +100,9 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   }
 
   String? _getFormattedExampleSentence(VocabularyQuest quest) {
-    if (quest.contextSentence == null || quest.contextSentence!.isEmpty)
+    if (quest.contextSentence == null || quest.contextSentence!.isEmpty) {
       return null;
+    }
 
     final sentence = quest.contextSentence!;
     final word = quest.word ?? "";
@@ -481,8 +483,9 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                       .toList();
 
                                                   if (filteredWrongPairs
-                                                      .isEmpty)
+                                                      .isEmpty) {
                                                     return const SizedBox.shrink();
+                                                  }
 
                                                   return Column(
                                                     children: [

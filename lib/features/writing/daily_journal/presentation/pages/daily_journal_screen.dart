@@ -82,8 +82,9 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     List<String> targetKeywords,
     bool isAnswered,
   ) async {
-    if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting.value)
+    if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting.value) {
       return;
+    }
 
     _isSubmitting.value = true;
 

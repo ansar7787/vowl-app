@@ -442,8 +442,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   // ── Geometry helpers ──────────────────────────────────────────────────────
 
   bool _isNearSlot() {
-    if (_activeShardIndex.value == null || _dragConstraints == null)
+    if (_activeShardIndex.value == null || _dragConstraints == null) {
       return false;
+    }
     if (!mounted) return false;
 
     final slotBox = _slotKey.currentContext?.findRenderObject() as RenderBox?;

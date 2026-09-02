@@ -261,8 +261,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                               quest.options?.length ?? 0,
                                               (i) {
                                                 if (_shardOffsets[i] == null ||
-                                                    _isFused[i] == null)
+                                                    _isFused[i] == null) {
                                                   return const SizedBox.shrink();
+                                                }
                                                 return ListenableBuilder(
                                                   listenable: Listenable.merge([
                                                     _shardOffsets[i]!,
@@ -304,8 +305,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                             ...List.generate(
                                               quest.options?.length ?? 0,
                                               (i) {
-                                                if (_shardOffsets[i] == null)
+                                                if (_shardOffsets[i] == null) {
                                                   return const SizedBox.shrink();
+                                                }
                                                 return ValueListenableBuilder<
                                                   int?
                                                 >(

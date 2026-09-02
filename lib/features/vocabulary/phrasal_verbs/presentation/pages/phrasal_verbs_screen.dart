@@ -74,8 +74,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   void _submitChoice(String selected, String correct) async {
     if (_isAnswered.value ||
         _isFirstStagePassed.value ||
-        _selectedOption.value != null)
+        _selectedOption.value != null) {
       return;
+    }
 
     _selectedOption.value = selected;
     bool isCorrect =

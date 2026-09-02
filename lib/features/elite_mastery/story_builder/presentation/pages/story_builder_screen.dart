@@ -113,8 +113,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   void _submitOrder(List<int>? correctOrder) {
-    if (correctOrder == null || _isAnswered.value || _isFirstStagePassed.value)
+    if (correctOrder == null || _isAnswered.value || _isFirstStagePassed.value) {
       return;
+    }
 
     bool isCorrect = _isCorrectSequence(_currentOrder.value, correctOrder);
 

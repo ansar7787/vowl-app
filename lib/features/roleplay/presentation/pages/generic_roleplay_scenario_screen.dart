@@ -139,8 +139,9 @@ class _GenericRoleplayScenarioScreenState
   void _onOptionSelected(int index, int correctIndex, String text) async {
     if (_isAnswered.value ||
         _selectedIndex.value != null ||
-        _isProcessing.value)
+        _isProcessing.value) {
       return;
+    }
 
     _hapticService.light(); // immediate tap affordance only
 

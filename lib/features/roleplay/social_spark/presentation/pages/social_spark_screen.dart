@@ -102,8 +102,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   void _submitAnswer(List<String> shuffledWords, String correctAnswer) {
     if (_isAnswered.value ||
         _isFirstStagePassed.value ||
-        _selectedIndices.value.isEmpty)
+        _selectedIndices.value.isEmpty) {
       return;
+    }
 
     // Assemble sentence in correct tapped order
     final String result = _selectedIndices.value

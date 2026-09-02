@@ -110,8 +110,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   void _submitAnswer(String correctAnswer) {
     if (_isAnswered.value ||
         _isFirstStagePassed.value ||
-        _selectedItems.value.isEmpty)
+        _selectedItems.value.isEmpty) {
       return;
+    }
 
     final targets = correctAnswer
         .split(',')

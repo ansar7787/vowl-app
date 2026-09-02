@@ -239,8 +239,9 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         onSubmitAnswer: (index) {
                                           if (_isAnswered.value ||
                                               _pendingSelectedIndex.value !=
-                                                  null)
+                                                  null) {
                                             return;
+                                          }
                                           _pendingSelectedIndex.value = index;
                                         },
                                         imageUrl: quest.imageUrl,
