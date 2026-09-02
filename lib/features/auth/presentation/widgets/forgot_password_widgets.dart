@@ -214,7 +214,7 @@ class RememberPasswordFooter extends StatelessWidget {
             child: Text(
               context.tr(
                 'auth.remember_password_prompt',
-                fallback: 'Remember your password?',
+                fallback: 'Remembered your password?',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',

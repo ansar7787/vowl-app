@@ -127,7 +127,7 @@ class VerifyEmailStatusText extends StatelessWidget {
               child: Text(
                 context.tr(
                   'auth.check_spam_hint',
-                  fallback: "Can't find it? Check your spam folder.",
+                  fallback: "Didn't get it? Take a quick peek in your spam folder.",
                 ),
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -167,7 +167,7 @@ class ResendEmailButton extends StatelessWidget {
         ? context.tr('auth.resend_email', fallback: 'Resend Email')
         : context.tr(
             'auth.resend_in',
-            fallback: 'Resend in {0} s',
+            fallback: 'Resend available in {0}s',
             args: ['$secondsRemaining'],
           );
     return Semantics(
@@ -240,7 +240,7 @@ class VerifyConfirmationButton extends StatelessWidget {
           child: Text(
             context.tr(
               'auth.verified_confirmation',
-              fallback: "I've Verified My Email",
+              fallback: "Yes, I've verified it!",
             ),
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -271,7 +271,7 @@ class VerifyLogoutButton extends StatelessWidget {
       button: true,
       label: context.tr(
         'auth.cancel_and_logout_semantic',
-        fallback: 'Cancel and log out',
+        fallback: 'Log Out',
       ),
       child: TextButton(
         onPressed: onPressed,

@@ -139,7 +139,7 @@ class _SignUpViewState extends State<SignUpView> {
                 isLoading: state.isSubmitting || state.isSuccess,
                 message: context.tr(
                   'auth.preparing_journey',
-                  fallback: 'Preparing your journey...',
+                  fallback: 'Getting things ready...',
                 ),
                 child: Scaffold(
                   backgroundColor: bgColor,

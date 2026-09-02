@@ -141,7 +141,7 @@ class _LoginViewState extends State<LoginView> {
                 isLoading: state.isSubmitting || state.isSuccess,
                 message: context.tr(
                   'auth.preparing_adventure',
-                  fallback: 'Preparing your adventure...',
+                  fallback: 'Getting things ready...',
                 ),
                 child: Scaffold(
                   backgroundColor: bgColor,
@@ -373,8 +373,7 @@ class _LoginViewState extends State<LoginView> {
                                                 child: Text(
                                                   context.tr(
                                                     'auth.no_account_prompt',
-                                                    fallback:
-                                                        'Don\'t have an account?',
+                                                    fallback: 'New to Vowl?',
                                                   ),
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',

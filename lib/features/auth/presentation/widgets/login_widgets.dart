@@ -61,7 +61,7 @@ class LoginEmailInput extends StatelessWidget {
               contrastColor: contrastColor,
               hint: context.tr(
                 'auth.email_hint_short',
-                fallback: 'explorer@vowl.com',
+                fallback: 'you@email.com',
               ),
               prefixIcon: Icons.email_outlined,
             ),
@@ -133,7 +133,7 @@ class LoginPasswordInput extends StatelessWidget {
               contrastColor: contrastColor,
               hint: context.tr(
                 'auth.password_hint_text',
-                fallback: 'Make it strong!',
+                fallback: 'Your secret key',
               ),
               prefixIcon: Icons.lock_outlined,
               suffixIcon: Semantics(
@@ -241,7 +241,7 @@ class GoogleLoginButton extends StatelessWidget {
           button: true,
           label: context.tr(
             'auth.sign_in_with_google',
-            fallback: 'Sign in with Google',
+            fallback: 'Continue with Google',
           ),
           child: OutlinedButton(
             onPressed: state.isSubmitting
@@ -278,7 +278,7 @@ class GoogleLoginButton extends StatelessWidget {
                           child: Text(
                             context.tr(
                               'auth.sign_in_with_google',
-                              fallback: 'Sign in with Google',
+                              fallback: 'Continue with Google',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',

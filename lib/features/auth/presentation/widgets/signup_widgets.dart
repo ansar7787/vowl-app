@@ -26,7 +26,7 @@ class SignUpNameInput extends StatelessWidget {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
           label: context.tr('auth.name_field_label', fallback: 'Name'),
-          hint: context.tr('auth.name_field_hint', fallback: 'Enter your name'),
+          hint: context.tr('auth.name_field_hint', fallback: 'What should we call you?'),
           textField: true,
           child: TextFormField(
             key: fieldKey,
@@ -119,7 +119,7 @@ class SignUpEmailInput extends StatelessWidget {
               contrastColor: contrastColor,
               hint: context.tr(
                 'auth.email_hint_short',
-                fallback: 'explorer@vowl.com',
+                fallback: 'you@email.com',
               ),
               prefixIcon: Icons.email_outlined,
             ),
@@ -191,7 +191,7 @@ class SignUpPasswordInput extends StatelessWidget {
                   contrastColor: contrastColor,
                   hint: context.tr(
                     'auth.password_hint_text',
-                    fallback: 'Make it strong!',
+                    fallback: 'Your secret key',
                   ),
                   prefixIcon: Icons.lock_outlined,
                   suffixIcon: Semantics(
