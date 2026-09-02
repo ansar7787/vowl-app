@@ -52,6 +52,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -77,6 +78,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -304,8 +306,16 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
+                : Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -379,6 +389,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                       ),
                     ],
                   ),
+                  ),
+                  ],
+                ),
               );
             },
           ),
