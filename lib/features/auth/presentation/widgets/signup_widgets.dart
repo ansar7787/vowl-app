@@ -56,7 +56,7 @@ class SignUpNameInput extends StatelessWidget {
               contrastColor: contrastColor,
               hint: context.tr(
                 'auth.name_hint_text',
-                fallback: 'What should we call you?',
+                fallback: 'Enter your full name',
               ),
               prefixIcon: Icons.person_outline,
             ),
