@@ -54,6 +54,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   List<String> _hotspotPrompts = [];
   List<List<String>> _hotspotKeywords = [];
   String _sceneTitle = "Scene Visualizer";
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -76,6 +77,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -231,8 +233,16 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
+                : Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -342,6 +352,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                       ),
                     ],
                   ),
+                  ),
+                  ],
+                ),
               );
             },
           ),
