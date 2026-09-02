@@ -73,8 +73,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 **4. Context Clues**
 - [x] Dual-Stage Scroll UX

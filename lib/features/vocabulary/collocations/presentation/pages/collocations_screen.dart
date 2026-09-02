@@ -251,193 +251,167 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                             ? (gapUnit * 2).clamp(12.0, 60.0)
                             : 12.0;
 
-                        return CustomScrollView(
-                          controller: _scrollController,
-                          physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
-                          slivers: [
-                        SliverToBoxAdapter(
-                          child: IgnorePointer(
-                            ignoring: _isDragPassed.value,
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(minHeight: maxHeight),
-                              child: Column(
-                                children: [
-                                    Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(height: gapTop),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 20.w,
-                                        ),
-                                        child: _buildInstruction(
-                                          theme.primaryColor,
-                                          isDark,
-                                          quest.instruction,
-                                        ),
-                                      ),
-                                      SizedBox(height: gapInstruction),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 20.w,
-                                        ),
-                                        child: DragTarget<String>(
-                                          onWillAcceptWithDetails: (details) {
-                                            _hapticService.selection();
-                                            return !_isAnswered.value &&
-                                                !_isDragPassed.value;
-                                          },
-                                          onAcceptWithDetails: (details) {
-                                            _submitAnswer(
-                                              details.data,
-                                              quest.correctAnswer ?? "",
-                                            );
-                                          },
-                                          builder:
-                                              (
-                                                context,
-                                                candidateData,
-                                                rejectedData,
-                                              ) {
-                                                bool isHovered =
-                                                    candidateData.isNotEmpty;
-                                                return AnimatedScale(
-                                                  scale: isHovered ? 1.05 : 1.0,
-                                                  duration: 200.ms,
-                                                  curve: Curves.easeOutBack,
-                                                  child: AnimatedContainer(
-                                                    duration: 200.ms,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            40.r,
-                                                          ),
-                                                      boxShadow: isHovered
-                                                          ? [
-                                                              BoxShadow(
-                                                                color: theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.8,
-                                                                    ),
-                                                                blurRadius: 40,
-                                                                spreadRadius:
-                                                                    10,
-                                                              ),
-                                                            ]
-                                                          : [],
-                                                    ),
-                                                    child:
-                                                        CollocationAnchorBubble(
-                                                          text:
-                                                              quest.word ?? "",
-                                                          color: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                        ),
-                                                  ),
-                                                );
-                                              },
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(height: gapAnchor),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: constraints.maxWidth,
-                                                  child: _buildOptionsWrap(
-                                                    quest,
-                                                    theme.primaryColor,
-                                                    isDark,
-                                                    state is VocabularyLoaded
-                                                        ? state.isFinalFailure
-                                                        : false,
-                                                    isCompact,
-                                                    state is VocabularyLoaded
-                                                        ? state.hintUsed
-                                                        : false,
-                                                  ),
-                                                ),
-                                              ),
-                                            )
-                                          : _buildOptionsWrap(
-                                              quest,
-                                              theme.primaryColor,
-                                              isDark,
-                                              state is VocabularyLoaded
-                                                  ? state.isFinalFailure
-                                                  : false,
-                                              isCompact,
-                                              state is VocabularyLoaded
-                                                  ? state.hintUsed
-                                                  : false,
-                                            ),
-                                      SizedBox(height: gapBottom),
-                                    ],
-                                  ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            ),
-                          ),
-                        ),
-                        if (_isDragPassed.value && (!_isAnswered.value || _isCorrect.value == null))
-                          SliverToBoxAdapter(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w),
-                              child: Column(
-                                children: [
-                                  if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty) ...[
-                                    Builder(
-                                      builder: (context) {
-                                        final correctPair = '${quest.word} ${quest.correctAnswer}'.toLowerCase().trim();
-                                        final filteredWrongPairs = quest.wrongCollocations!
-                                            .where((w) => w.toLowerCase().trim() != correctPair)
-                                            .toList();
-
-                                        if (filteredWrongPairs.isEmpty) return const SizedBox.shrink();
-
-                                        return Column(
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: (!_isDragPassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverToBoxAdapter(
+                                    child: IgnorePointer(
+                                      ignoring: _isDragPassed.value,
+                                      child: ConstrainedBox(
+                                        constraints: BoxConstraints(minHeight: maxHeight),
+                                        child: Column(
                                           children: [
-                                            CollocationsWrongPairs(
-                                              wrongCollocations: filteredWrongPairs,
-                                              color: theme.primaryColor,
+                                            Column(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Column(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    SizedBox(height: gapTop),
+                                                    Padding(
+                                                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                                      child: _buildInstruction(theme.primaryColor, isDark, quest.instruction),
+                                                    ),
+                                                    SizedBox(height: gapInstruction),
+                                                    Padding(
+                                                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                                      child: DragTarget<String>(
+                                                        onWillAcceptWithDetails: (details) {
+                                                          _hapticService.selection();
+                                                          return !_isAnswered.value && !_isDragPassed.value;
+                                                        },
+                                                        onAcceptWithDetails: (details) {
+                                                          _submitAnswer(details.data, quest.correctAnswer ?? "");
+                                                        },
+                                                        builder: (context, candidateData, rejectedData) {
+                                                          bool isHovered = candidateData.isNotEmpty;
+                                                          return AnimatedScale(
+                                                            scale: isHovered ? 1.05 : 1.0,
+                                                            duration: 200.ms,
+                                                            curve: Curves.easeOutBack,
+                                                            child: AnimatedContainer(
+                                                              duration: 200.ms,
+                                                              decoration: BoxDecoration(
+                                                                borderRadius: BorderRadius.circular(40.r),
+                                                                boxShadow: isHovered
+                                                                    ? [
+                                                                        BoxShadow(
+                                                                          color: theme.primaryColor.withValues(alpha: 0.8),
+                                                                          blurRadius: 40,
+                                                                          spreadRadius: 10,
+                                                                        ),
+                                                                      ]
+                                                                    : [],
+                                                              ),
+                                                              child: CollocationAnchorBubble(
+                                                                text: quest.word ?? "",
+                                                                color: theme.primaryColor,
+                                                                isDark: isDark,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    SizedBox(height: gapAnchor),
+                                                    isCompact
+                                                        ? SizedBox(
+                                                            height: 100.h,
+                                                            child: FittedBox(
+                                                              fit: BoxFit.scaleDown,
+                                                              child: SizedBox(
+                                                                width: constraints.maxWidth,
+                                                                child: _buildOptionsWrap(
+                                                                  quest,
+                                                                  theme.primaryColor,
+                                                                  isDark,
+                                                                  state is VocabularyLoaded ? state.isFinalFailure : false,
+                                                                  isCompact,
+                                                                  state is VocabularyLoaded ? state.hintUsed : false,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          )
+                                                        : _buildOptionsWrap(
+                                                            quest,
+                                                            theme.primaryColor,
+                                                            isDark,
+                                                            state is VocabularyLoaded ? state.isFinalFailure : false,
+                                                            isCompact,
+                                                            state is VocabularyLoaded ? state.hintUsed : false,
+                                                          ),
+                                                    SizedBox(height: gapBottom),
+                                                  ],
+                                                ),
+                                              ],
                                             ),
-                                            SizedBox(height: 24.h),
                                           ],
-                                        );
-                                      },
+                                        ),
+                                      ),
                                     ),
-                                  ],
-                                  ContextSentenceBuilder(
-                                    targetKeyword: '${quest.word} ${quest.correctAnswer}',
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _submitFinalAnswer(true),
-                                    onSkipped: () => _submitFinalAnswer(false),
-                                    isPositioned: false,
-                                    exampleSentence: _getFormattedExampleSentence(quest),
                                   ),
-                                  SizedBox(height: 40.h),
+                                  if (_isDragPassed.value && (!_isAnswered.value || _isCorrect.value == null))
+                                    SliverToBoxAdapter(
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                        child: Column(
+                                          children: [
+                                            if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty) ...[
+                                              Builder(
+                                                builder: (context) {
+                                                  final correctPair = '${quest.word} ${quest.correctAnswer}'.toLowerCase().trim();
+                                                  final filteredWrongPairs = quest.wrongCollocations!
+                                                      .where((w) => w.toLowerCase().trim() != correctPair)
+                                                      .toList();
+          
+                                                  if (filteredWrongPairs.isEmpty) return const SizedBox.shrink();
+          
+                                                  return Column(
+                                                    children: [
+                                                      CollocationsWrongPairs(
+                                                        wrongCollocations: filteredWrongPairs,
+                                                        color: theme.primaryColor,
+                                                      ),
+                                                      SizedBox(height: 10.h),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ],
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(height: (_isDragPassed.value && (!_isAnswered.value || _isCorrect.value == null)) ? 380.h : 60.h),
+                                  ),
                                 ],
                               ),
                             ),
-                          ),
-                      ],
-                    );
+                            if (_isDragPassed.value && (!_isAnswered.value || _isCorrect.value == null))
+                              ContextSentenceBuilder(
+                                targetKeyword: '${quest.word} ${quest.correctAnswer}',
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: true,
+                                exampleSentence: _getFormattedExampleSentence(quest),
+                              ),
+                          ],
+                        );
                   },
                 ),
             );
