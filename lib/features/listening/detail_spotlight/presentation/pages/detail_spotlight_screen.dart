@@ -43,6 +43,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   int? _lastLives;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -52,6 +53,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     _selectedIndex.dispose();
     _pendingSelectedIndex.dispose();
     _spotlightPos.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   final ValueNotifier<Offset> _spotlightPos = ValueNotifier(const Offset(0, 0));
@@ -179,8 +181,14 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
                       slivers: [
                         SliverPadding(
                           padding: EdgeInsets.symmetric(
@@ -249,14 +257,15 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                     },
                                   ),
                                 ),
-                                SizedBox(height: 100.h), // Spacing for TypeToConfirmOverlay
+                                SizedBox(height: (_pendingSelectedIndex.value != null && !_isAnswered.value) ? 380.h : 60.h),
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                    if (_pendingSelectedIndex.value != null && !_isAnswered.value)
+                  ),
+                  if (_pendingSelectedIndex.value != null && !_isAnswered.value)
                       TypeToConfirmOverlay(
                         expectedText: quest.options![_pendingSelectedIndex.value!],
                         primaryColor: theme.primaryColor,
@@ -269,6 +278,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                           quest.correctAnswerIndex ?? 0,
                         ),
                         allowSkip: true,
+                        isPositioned: true,
                       ),
                   ],
                 ),
