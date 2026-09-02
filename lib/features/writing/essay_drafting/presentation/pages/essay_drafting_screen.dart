@@ -41,8 +41,11 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _pendingSubmit = ValueNotifier(false);
 
+  late final ScrollController _scrollController;
+
   @override
   void dispose() {
+    _scrollController.dispose();
     _blueprintSlots.dispose();
     _shuffledOptions.dispose();
     _showConfetti.dispose();
@@ -53,6 +56,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -197,9 +201,15 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                   ? const SizedBox()
                   : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
                         SliverPadding(
                           padding: EdgeInsets.symmetric(horizontal: 24.w),
                           sliver: SliverToBoxAdapter(
@@ -332,14 +342,15 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                                       ),
                                     ),
                                   ),
-                                SizedBox(height: isAnswered ? 160.h : 60.h),
+                                SizedBox(height: !isAnswered ? 380.h : 160.h),
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                    if (_pendingSubmit.value && !isAnswered)
+                  ),
+                  if (_pendingSubmit.value && !isAnswered)
                       TypeToConfirmOverlay(
                         expectedText:
                             _blueprintSlots.value.isNotEmpty &&
