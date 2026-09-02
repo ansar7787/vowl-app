@@ -53,6 +53,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   List<String> _acceptedSynonyms = [];
   final ValueNotifier<List<String>> _smartReplies = ValueNotifier([]);
   final ValueNotifier<String> _chosenReply = ValueNotifier("");
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -78,6 +79,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     _timeVal.dispose();
     _smartReplies.dispose();
     _chosenReply.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -234,8 +236,16 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
+                : Stack(
+                    children: [
+                      RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
@@ -336,6 +346,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                       ),
                     ],
                   ),
+                  ),
+                  ],
+                ),
               );
             },
           ),
