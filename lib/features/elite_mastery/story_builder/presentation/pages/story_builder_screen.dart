@@ -34,6 +34,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   final ValueNotifier<List<int>> _currentOrder = ValueNotifier([]);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
@@ -64,6 +65,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _isFirstStagePassed.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -310,7 +312,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     return Stack(
       children: [
         RawScrollbar(
-          controller: ScrollController(),
+          controller: _scrollController,
           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
           radius: Radius.circular(8.r),
           thickness: 4.w,

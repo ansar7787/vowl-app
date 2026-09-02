@@ -41,6 +41,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
 
   int _lastProcessedIndex = -1;
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
@@ -81,6 +82,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     _hoveredIndex.dispose();
     _selectedIndex.dispose();
     _isFirstStagePassed.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -237,7 +239,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                           return Stack(
                             children: [
                               RawScrollbar(
-                                controller: ScrollController(),
+                                controller: _scrollController,
                                 thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                                 radius: Radius.circular(8.r),
                                 thickness: 4.w,

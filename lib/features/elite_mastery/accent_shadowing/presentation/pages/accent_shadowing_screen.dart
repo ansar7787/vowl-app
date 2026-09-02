@@ -33,6 +33,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   final _soundService = di.sl<SoundService>();
 
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<int> _attempts = ValueNotifier(0);
@@ -56,6 +57,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     _isCorrect.dispose();
     _attempts.dispose();
     _matchedIndices.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -234,7 +236,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     return Stack(
       children: [
         RawScrollbar(
-          controller: ScrollController(),
+          controller: _scrollController,
           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
           radius: Radius.circular(8.r),
           thickness: 4.w,

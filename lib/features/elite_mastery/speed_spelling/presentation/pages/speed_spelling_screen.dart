@@ -33,6 +33,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<String> _currentInput = ValueNotifier("");
   final ValueNotifier<List<String>> _shuffledChars = ValueNotifier([]);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
@@ -64,6 +65,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     _isCorrect.dispose();
     _attempts.dispose();
     _tapHistory.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -329,7 +331,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     return Stack(
       children: [
         RawScrollbar(
-          controller: ScrollController(),
+          controller: _scrollController,
           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
           radius: Radius.circular(8.r),
           thickness: 4.w,

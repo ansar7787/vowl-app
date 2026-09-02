@@ -43,6 +43,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
 
   // Track selected words by their original shuffled index to support duplicate words flawlessly
   final ValueNotifier<List<int>> _selectedIndices = ValueNotifier([]);
+  final ScrollController _scrollController = ScrollController();
 
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
@@ -70,6 +71,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -204,7 +206,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                         return Stack(
                           children: [
                             RawScrollbar(
-                              controller: ScrollController(),
+                              controller: _scrollController,
                               thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,

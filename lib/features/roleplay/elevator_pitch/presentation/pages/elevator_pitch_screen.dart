@@ -36,6 +36,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
 
   int _lastProcessedIndex = -1;
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
 
@@ -44,6 +45,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -149,7 +151,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                         return Stack(
                           children: [
                             RawScrollbar(
-                              controller: ScrollController(),
+                              controller: _scrollController,
                               thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,

@@ -41,6 +41,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
 
   int _lastProcessedIndex = -1;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -77,6 +78,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
     _shuffledCorrectIndex.dispose();
     _mercuryLevel.dispose();
     _isFirstStagePassed.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -195,7 +197,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                         return Stack(
                           children: [
                             RawScrollbar(
-                              controller: ScrollController(),
+                              controller: _scrollController,
                               thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,

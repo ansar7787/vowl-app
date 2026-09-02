@@ -43,6 +43,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
   int _lastProcessedIndex = -1;
   final ValueNotifier<double> _rotation = ValueNotifier(0.0); // Valve rotation progress (0.0 to 1.0)
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -72,6 +73,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -202,7 +204,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                         return Stack(
                           children: [
                             RawScrollbar(
-                              controller: ScrollController(),
+                              controller: _scrollController,
                               thumbColor: Colors.redAccent.withValues(alpha: 0.5),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,

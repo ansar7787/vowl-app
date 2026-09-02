@@ -41,6 +41,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
 
   int _lastProcessedIndex = -1;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -76,6 +77,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
     _hoveredIndex.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -183,7 +185,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                         return Stack(
                           children: [
                             RawScrollbar(
-                              controller: ScrollController(),
+                              controller: _scrollController,
                               thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,

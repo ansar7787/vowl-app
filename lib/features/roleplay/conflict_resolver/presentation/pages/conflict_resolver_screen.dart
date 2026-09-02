@@ -43,6 +43,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
 
   int _lastProcessedIndex = -1;
   final ValueNotifier<double> _rotation = ValueNotifier(0.0); // Slider score level (0.0 to 1.0)
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -74,6 +75,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -202,7 +204,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                         return Stack(
                           children: [
                             RawScrollbar(
-                              controller: ScrollController(),
+                              controller: _scrollController,
                               thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,

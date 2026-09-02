@@ -34,6 +34,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   final _soundService = di.sl<SoundService>();
 
   final ValueNotifier<List<String>> _shuffledOptions = ValueNotifier([]);
+  final ScrollController _scrollController = ScrollController();
   final ValueNotifier<List<int>> _originalIndices = ValueNotifier([]);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
@@ -64,6 +65,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     _isCorrect.dispose();
     _isFirstStagePassed.dispose();
     _wrongIndices.dispose();
+        _scrollController.dispose();
     super.dispose();
   }
 
@@ -324,7 +326,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     return Stack(
       children: [
         RawScrollbar(
-          controller: ScrollController(),
+          controller: _scrollController,
           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
           radius: Radius.circular(8.r),
           thickness: 4.w,
