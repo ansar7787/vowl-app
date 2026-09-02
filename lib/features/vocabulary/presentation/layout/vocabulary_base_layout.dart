@@ -128,20 +128,6 @@ class VocabularyBaseLayout extends StatelessWidget {
           }
         }
 
-        // Clean up redundant passage text from the explanation
-        if (explanation != null && quest.passage != null && quest.correctAnswer != null) {
-          String filledPassage = quest.passage!.replaceAll('[TARGET]', quest.correctAnswer!);
-          if (explanation.contains(filledPassage)) {
-            explanation = explanation.replaceAll(filledPassage, '').trim();
-            if (explanation.startsWith('Academic context:')) {
-              explanation = explanation.replaceFirst('Academic context:', '').trim();
-            }
-            while (explanation!.startsWith('.') || explanation.startsWith(',')) {
-              explanation = explanation.substring(1).trim();
-            }
-          }
-        }
-
         String? ruleContent = quest.definition ?? explanation;
         String? finalExplanation = (ruleContent == explanation)
             ? null
