@@ -50,9 +50,12 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
   Timer? _resetTimer;
 
+  late final ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<AccentBloc>().add(
       FetchAccentQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -60,6 +63,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
@@ -196,7 +200,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
             useScrolling: false,
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
+                : Stack(
+                        children: [
+                          LayoutBuilder(
                         builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
                           final bool isCompact = maxHeight < 580;
@@ -230,13 +236,19 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                               ? (gapUnit * 1).clamp(12.0, 40.0)
                               : 12.0;
 
-                          return CustomScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverToBoxAdapter(
-                                child: Column(
-                                  children: [
-                                    Expanded(
+                          return RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverFillRemaining(
+                                  hasScrollBody: false,
+                                  child: Column(
+                                    children: [
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
                                           horizontal: 24.w,
@@ -307,31 +319,32 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                         ),
                                       ),
                                     ),
-                                    if (_isFirstStagePassed.value && !_isAnswered.value)
-                                      ShadowPlaybackCompare(
-                                        expectedText: quest.textToSpeak ?? quest.word ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isPositioned: false,
-                                        onConfirmed: () {
-                                          context.read<AccentBloc>().add(
-                                            const AccentSpeakConfirmed(5),
-                                          );
-                                          _submitVerbalEvaluation(true);
-                                        },
-                                        onSkipped: () => _submitVerbalEvaluation(
-                                          false,
-                                        ),
-                                      ),
-                                    SizedBox(
-                                      height: (_isAnswered.value || _isFirstStagePassed.value) ? 120.h : 20.h,
-                                    ),
+                                    SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 160.h),
                                   ],
                                 ),
                               ),
                             ],
+                          ),
                           );
                         },
                       ),
+                          if (_isFirstStagePassed.value && !_isAnswered.value)
+                            ShadowPlaybackCompare(
+                              expectedText: quest.textToSpeak ?? quest.word ?? "",
+                              primaryColor: theme.primaryColor,
+                              isPositioned: true,
+                              onConfirmed: () {
+                                context.read<AccentBloc>().add(
+                                  const AccentSpeakConfirmed(5),
+                                );
+                                _submitVerbalEvaluation(true);
+                              },
+                              onSkipped: () => _submitVerbalEvaluation(
+                                false,
+                              ),
+                            ),
+                        ],
+                      );
               );
             },
           ),
