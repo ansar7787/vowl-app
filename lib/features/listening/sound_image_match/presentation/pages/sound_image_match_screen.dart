@@ -44,6 +44,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   int? _lastLives;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -53,6 +54,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     _selectedIndex.dispose();
     _pendingSelectedIndex.dispose();
     _lensPosition.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
@@ -182,9 +184,15 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
           child: quest == null
               ? const SizedBox()
               : Stack(
-                    children: [
-                      CustomScrollView(
-                        physics: const BouncingScrollPhysics(),
+                  children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
                             padding: EdgeInsets.symmetric(
@@ -275,12 +283,13 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                       },
                                     ),
                                   ),
-                                  SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
+                                  SizedBox(height: (_pendingSelectedIndex.value != null && !_isAnswered.value) ? 380.h : 60.h),
                                 ],
                               ),
                             ),
                           ),
                         ],
+                      ),
                       ),
                       if (_pendingSelectedIndex.value != null && !_isAnswered.value)
                         SpeakToConfirmOverlay(
@@ -299,6 +308,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                             );
                           },
                           allowSkip: true,
+                          isPositioned: true,
                         ),
                     ],
                   ),
