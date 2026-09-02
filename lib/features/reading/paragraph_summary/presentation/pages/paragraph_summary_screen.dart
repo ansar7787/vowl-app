@@ -36,6 +36,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -44,6 +45,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -143,82 +145,91 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            ParagraphSummaryInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
-                            ),
-                            SizedBox(height: 24.h),
-                            GestureDetector(
-                              onScaleUpdate: (details) =>
-                                  _onPinchUpdate(details.scale),
-                              onScaleEnd: (details) => _onPinchEnd(),
-                              child: ParagraphSummaryTube(
-                                passage: quest.passage ?? "",
-                                keywords: quest.keywords ?? [],
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                pinchWidth: _pinchWidth.value,
-                                isDistilled: _isDistilled.value,
+              : Stack(
+                  children: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 16.h),
+                                  ParagraphSummaryInstruction(
+                                    primaryColor: theme.primaryColor,
+                                    instruction: quest.instruction,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  GestureDetector(
+                                    onScaleUpdate: (details) =>
+                                        _onPinchUpdate(details.scale),
+                                    onScaleEnd: (details) => _onPinchEnd(),
+                                    child: ParagraphSummaryTube(
+                                      passage: quest.passage ?? "",
+                                      keywords: quest.keywords ?? [],
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                      pinchWidth: _pinchWidth.value,
+                                      isDistilled: _isDistilled.value,
+                                    ),
+                                  ),
+                                  SizedBox(height: 16.h),
+                                  Text(
+                                    _isDistilled.value
+                                        ? "DISTILLATION COMPLETE! THINK OF THE CORE SUMMARY AND REVEAL:"
+                                        : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: _isDistilled.value
+                                          ? Colors.greenAccent
+                                          : theme.primaryColor.withValues(alpha: 0.6),
+                                      fontSize: 11.sp,
+                                      letterSpacing: 2,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            SizedBox(height: 16.h),
-                            Text(
-                              _isDistilled.value
-                                  ? "DISTILLATION COMPLETE! THINK OF THE CORE SUMMARY AND REVEAL:"
-                                  : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                color: _isDistilled.value
-                                    ? Colors.greenAccent
-                                    : theme.primaryColor.withValues(alpha: 0.6),
-                                fontSize: 11.sp,
-                                letterSpacing: 2,
+                          ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  if (_isAnswered.value) ...[
+                                    SizedBox(height: 30.h),
+                                    ParagraphSummaryResult(
+                                      quest: quest,
+                                      isCorrect: _isCorrect.value == true,
+                                      isDark: isDark,
+                                    ),
+                                  ],
+                                  SizedBox(height: (_isDistilled.value && !_isAnswered.value) ? 380.h : 60.h),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (_isDistilled.value && !_isAnswered.value) ...[
-                              SizedBox(height: 24.h),
-                              TypeToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? "",
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true, quest),
-                                onSkipped: () => _submitFinalAnswer(false, quest),
-                                allowSkip: true,
-                                isPositioned: false,
-                              ),
-                            ],
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: 30.h),
-                              ParagraphSummaryResult(
-                                quest: quest,
-                                isCorrect: _isCorrect.value == true,
-                                isDark: isDark,
-                              ),
-                            ],
-                            SizedBox(height: 60.h),
-                          ],
-                        ),
+                    if (_isDistilled.value && !_isAnswered.value)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest),
+                        onSkipped: () => _submitFinalAnswer(false, quest),
+                        allowSkip: true,
+                        isPositioned: true,
                       ),
-                    ),
                   ],
                 ),
             );
