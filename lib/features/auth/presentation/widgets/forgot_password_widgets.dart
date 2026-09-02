@@ -163,7 +163,7 @@ class SendResetLinkButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr('auth.send_reset_link', fallback: 'Send Reset Link'),
+      label: context.tr('auth.send_reset_link', fallback: 'Reset Password'),
       child: ElevatedButton(
         onPressed: isSubmitting ? null : onPressed,
         style: ElevatedButton.styleFrom(
@@ -181,7 +181,7 @@ class SendResetLinkButton extends StatelessWidget {
             : FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  context.tr('auth.send_reset_link', fallback: 'Send Reset Link'),
+                  context.tr('auth.send_reset_link', fallback: 'Reset Password'),
                   maxLines: 1,
                 ),
               ),
