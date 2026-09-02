@@ -44,20 +44,24 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _showEvidence = ValueNotifier(false);
 
-  @override
-  void dispose() {
-    _selectedCorrection.dispose();
-    _showConfetti.dispose();
-    _showEvidence.dispose();
-    super.dispose();
-  }
+  late final ScrollController _scrollController;
 
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    _selectedCorrection.dispose();
+    _showConfetti.dispose();
+    _showEvidence.dispose();
+    super.dispose();
   }
 
   void _onSelectCorrection(String choice, bool isAnswered) {
@@ -202,9 +206,17 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
             builder: (context, _) {
               return activeQuest == null
                   ? const SizedBox()
-                  : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
                     SliverPadding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       sliver: SliverToBoxAdapter(
@@ -341,23 +353,26 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                                   ),
                                 ),
                               ),
-                            SizedBox(height: isAnswered ? 160.h : 60.h),
+                            SizedBox(height: !isAnswered ? 380.h : 160.h),
                           ],
                         ),
                       ),
                     ),
-                    if (_showEvidence.value && !isAnswered)
-                      EvidenceHighlightWrapper(
-                        passage: (activeQuest.passage ?? "").replaceAll(RegExp(r'\[(.*?)\]'), _selectedCorrection.value ?? ""),
-                        evidenceWords: [_selectedCorrection.value ?? ""],
-                        primaryColor: theme.primaryColor,
-                        onCorrectHighlight: () {
-                          _showEvidence.value = false;
-                          context.read<WritingBloc>().add(const SubmitAnswer(true));
-                        },
-                      ),
                   ],
-                );
+                ),
+              ),
+              if (_showEvidence.value && !isAnswered)
+                EvidenceHighlightWrapper(
+                  passage: (activeQuest.passage ?? "").replaceAll(RegExp(r'\[(.*?)\]'), _selectedCorrection.value ?? ""),
+                  evidenceWords: [_selectedCorrection.value ?? ""],
+                  primaryColor: theme.primaryColor,
+                  onCorrectHighlight: () {
+                    _showEvidence.value = false;
+                    context.read<WritingBloc>().add(const SubmitAnswer(true));
+                  },
+                ),
+            ],
+          );
             },
           ),
         );
