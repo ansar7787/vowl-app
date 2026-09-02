@@ -157,8 +157,8 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [x] Keyboard Scroll Stability (FocusNode visibility)
 - [x] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 **11. Topic Vocab**
 - [N/A] Dual-Stage Scroll UX
@@ -193,6 +193,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 2. **Clause Connector**
@@ -200,6 +204,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 3. **Conditionals**
@@ -207,6 +215,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 4. **Conjunctions**
@@ -214,6 +226,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 5. **Direct/Indirect Speech**
@@ -221,6 +237,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 6. **Grammar Quest**
@@ -228,6 +248,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 7. **Modals Selection**
@@ -235,6 +259,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 8. **Modifier Placement**
@@ -242,6 +270,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 9. **Parts of Speech**
@@ -249,6 +281,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 10. **Preposition Choice**
@@ -256,6 +292,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 11. **Pronoun Resolution**
@@ -263,6 +303,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 12. **Punctuation Mastery**
@@ -270,6 +314,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 13. **Question Formatter**
@@ -277,6 +325,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 14. **Relative Clauses**
@@ -284,6 +336,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 15. **Sentence Correction**
@@ -291,6 +347,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 16. **Subject-Verb Agreement**
@@ -298,6 +358,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 17. **Tense Mastery**
@@ -305,6 +369,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 18. **Voice Swap**
@@ -312,6 +380,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 19. **Word Reorder**
@@ -319,6 +391,10 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Sliver Performance Layout
 - [x] Zero setState (ValueNotifier)
 - [x] Feedback Card Logic
+- [x] Pedagogical Component Hardening
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
 - [x] 10/10 UX Confirmation (No Patchwork)
 - [x] Git Commit & Push
 
