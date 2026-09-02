@@ -43,6 +43,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   int? _lastLives;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -51,6 +52,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     _showConfetti.dispose();
     _selectedIndex.dispose();
     _rotation.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -138,8 +140,14 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
                       slivers: [
                         SliverPadding(
                           padding: EdgeInsets.symmetric(
@@ -235,6 +243,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                         ),
                       ],
                     ),
+                  ),
                   ],
                 ),
             );
