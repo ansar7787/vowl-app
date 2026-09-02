@@ -15,13 +15,17 @@ class MinimalPairsMouthDiagram extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (mouthPosition == null || mouthPosition!.isEmpty) return const SizedBox();
+    if (mouthPosition == null || mouthPosition!.isEmpty) {
+      return const SizedBox();
+    }
 
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: isDark ? color.withValues(alpha: 0.05) : color.withValues(alpha: 0.05),
+        color: isDark
+            ? color.withValues(alpha: 0.05)
+            : color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),

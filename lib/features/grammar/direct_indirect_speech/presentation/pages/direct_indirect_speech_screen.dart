@@ -56,6 +56,7 @@ class _DirectIndirectSpeechScreenState
     _scrollController.dispose();
     super.dispose();
   }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -170,7 +171,14 @@ class _DirectIndirectSpeechScreenState
         final options = quest?.options ?? ["REF A", "REF B", "REF C"];
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isFirstStagePassed, _selectedReflection, _rotation]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _isFirstStagePassed,
+            _selectedReflection,
+            _rotation,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -190,7 +198,9 @@ class _DirectIndirectSpeechScreenState
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -204,28 +214,44 @@ class _DirectIndirectSpeechScreenState
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final maxHeight = constraints.maxHeight;
+                                              final maxHeight =
+                                                  constraints.maxHeight;
                                               final isCompact = maxHeight < 580;
 
-                                              final double estimatedContentHeight =
+                                              final double
+                                              estimatedContentHeight =
                                                   (isCompact ? 30.h : 40.h) +
                                                   (isCompact ? 130.h : 180.h) +
                                                   (isCompact ? 30.h : 50.h) +
                                                   40.h;
                                               final remainingHeight =
-                                                  maxHeight - estimatedContentHeight;
+                                                  maxHeight -
+                                                  estimatedContentHeight;
 
-                                              final double gapUnit = remainingHeight > 0
+                                              final double gapUnit =
+                                                  remainingHeight > 0
                                                   ? remainingHeight / 5
                                                   : 0;
-                                              final double gapTop = remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(4.0, 15.0)
+                                              final double gapTop =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(
+                                                      4.0,
+                                                      15.0,
+                                                    )
                                                   : 4.0;
-                                              final double gapMiddle = remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                              final double gapMiddle =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(
+                                                      6.0,
+                                                      20.0,
+                                                    )
                                                   : 6.0;
-                                              final double gapBottom = remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                              final double gapBottom =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(
+                                                      10.0,
+                                                      30.0,
+                                                    )
                                                   : 10.0;
 
                                               return Column(
@@ -235,120 +261,236 @@ class _DirectIndirectSpeechScreenState
                                                       ? SizedBox(
                                                           height: 25.h,
                                                           child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
-                                                            child:
-                                                                DirectIndirectSpeechInstruction(
-                                                                  primaryColor:
-                                                                      theme.primaryColor,
-                                                                ),
+                                                            fit: BoxFit
+                                                                .scaleDown,
+                                                            child: DirectIndirectSpeechInstruction(
+                                                              primaryColor: theme
+                                                                  .primaryColor,
+                                                            ),
                                                           ),
                                                         )
                                                       : DirectIndirectSpeechInstruction(
-                                                          primaryColor: theme.primaryColor,
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                         ),
                                                   SizedBox(height: gapMiddle),
 
-                                                  if (quest.changesList != null && quest.changesList!.isNotEmpty) ...[
+                                                  if (quest.changesList !=
+                                                          null &&
+                                                      quest
+                                                          .changesList!
+                                                          .isNotEmpty) ...[
                                                     Container(
-                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 16.w,
+                                                            vertical: 8.h,
+                                                          ),
                                                       decoration: BoxDecoration(
-                                                        color: theme.primaryColor.withValues(alpha: 0.1),
-                                                        borderRadius: BorderRadius.circular(16.r),
-                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              16.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
                                                       ),
                                                       child: Column(
                                                         children: [
                                                           Text(
                                                             "REQUIRED CHANGES",
                                                             style: TextStyle(
-                                                              fontFamily: 'Outfit',
+                                                              fontFamily:
+                                                                  'Outfit',
                                                               fontSize: 12.sp,
-                                                              color: theme.primaryColor,
-                                                              fontWeight: FontWeight.bold,
-                                                              letterSpacing: 1.2,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              letterSpacing:
+                                                                  1.2,
                                                             ),
                                                           ),
                                                           SizedBox(height: 6.h),
                                                           Wrap(
-                                                            alignment: WrapAlignment.center,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .center,
                                                             spacing: 12.w,
                                                             runSpacing: 4.h,
-                                                            children: quest.changesList!.map((change) {
-                                                              final parts = change.split('->');
-                                                              if (parts.length != 2) return Text(change, style: TextStyle(fontSize: 10.sp, color: theme.primaryColor));
-                                                              return Row(
-                                                                mainAxisSize: MainAxisSize.min,
-                                                                children: [
-                                                                  Text(parts[0].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
-                                                                  Padding(
-                                                                    padding: EdgeInsets.symmetric(horizontal: 4.w),
-                                                                    child: Icon(Icons.arrow_forward_rounded, size: 12.sp, color: theme.primaryColor.withValues(alpha: 0.6)),
+                                                            children: quest.changesList!.map((
+                                                              change,
+                                                            ) {
+                                                              final parts =
+                                                                  change.split(
+                                                                    '->',
+                                                                  );
+                                                              if (parts
+                                                                      .length !=
+                                                                  2) {
+                                                                return Text(
+                                                                  change,
+                                                                  style: TextStyle(
+                                                                    fontSize:
+                                                                        10.sp,
+                                                                    color: theme
+                                                                        .primaryColor,
                                                                   ),
-                                                                  Text(parts[1].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                                                );
+                                                              }
+                                                              return Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                children: [
+                                                                  Text(
+                                                                    parts[0]
+                                                                        .trim(),
+                                                                    style: TextStyle(
+                                                                      fontSize:
+                                                                          11.sp,
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsets.symmetric(
+                                                                      horizontal:
+                                                                          4.w,
+                                                                    ),
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .arrow_forward_rounded,
+                                                                      size:
+                                                                          12.sp,
+                                                                      color: theme
+                                                                          .primaryColor
+                                                                          .withValues(
+                                                                            alpha:
+                                                                                0.6,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                  Text(
+                                                                    parts[1]
+                                                                        .trim(),
+                                                                    style: TextStyle(
+                                                                      fontSize:
+                                                                          11.sp,
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                    ),
+                                                                  ),
                                                                 ],
                                                               );
                                                             }).toList(),
                                                           ),
                                                         ],
                                                       ),
-                                                    ).animate().fadeIn(duration: 400.ms),
-                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    ).animate().fadeIn(
+                                                      duration: 400.ms,
+                                                    ),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
+                                                    ),
                                                   ],
 
                                                   // Holographic Mirror
                                                   DirectIndirectSpeechMirror(
                                                     rotation: _rotation.value,
                                                     directText: displayDirect,
-                                                    indirectText: displayIndirect,
+                                                    indirectText:
+                                                        displayIndirect,
                                                     isCorrect: _isCorrect.value,
                                                     isDark: isDark,
-                                                    primaryColor: theme.primaryColor,
+                                                    primaryColor:
+                                                        theme.primaryColor,
                                                     isCompact: isCompact,
                                                   ),
 
-                                                  SizedBox(height: isCompact ? 12.h : 30.h),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 12.h
+                                                        : 30.h,
+                                                  ),
 
                                                   // Reflection Options
                                                   Expanded(
                                                     child: SingleChildScrollView(
-                                                      physics: const BouncingScrollPhysics(),
+                                                      physics:
+                                                          const BouncingScrollPhysics(),
                                                       child: Column(
                                                         children: [
                                                           Wrap(
-                                                            alignment: WrapAlignment.center,
-                                                            spacing: isCompact ? 8.w : 12.w,
-                                                            runSpacing: isCompact
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .center,
+                                                            spacing: isCompact
+                                                                ? 8.w
+                                                                : 12.w,
+                                                            runSpacing:
+                                                                isCompact
                                                                 ? 8.h
                                                                 : 12.h,
                                                             children: List.generate(
                                                               options.length,
-                                                              (i) => _buildReflectionChip(
+                                                              (
+                                                                i,
+                                                              ) => _buildReflectionChip(
                                                                 options[i],
                                                                 i,
-                                                                quest.correctAnswerIndex ?? 0,
-                                                                theme.primaryColor,
+                                                                quest.correctAnswerIndex ??
+                                                                    0,
+                                                                theme
+                                                                    .primaryColor,
                                                                 isDark,
                                                                 isCompact,
                                                               ),
                                                             ),
                                                           ),
-                                                          if (_isAnswered.value) ...[
+                                                          if (_isAnswered
+                                                              .value) ...[
                                                             SizedBox(
-                                                              height: isCompact ? 12.h : 30.h,
+                                                              height: isCompact
+                                                                  ? 12.h
+                                                                  : 30.h,
                                                             ),
                                                             Padding(
-                                                              padding: EdgeInsets.symmetric(
-                                                                horizontal: 24.w,
-                                                              ),
+                                                              padding:
+                                                                  EdgeInsets.symmetric(
+                                                                    horizontal:
+                                                                        24.w,
+                                                                  ),
                                                               child: _buildCorrectResult(
                                                                 quest,
-                                                                theme.primaryColor,
+                                                                theme
+                                                                    .primaryColor,
                                                                 isDark,
                                                                 isCompact,
                                                               ),
                                                             ),
                                                           ],
-                                                          SizedBox(height: gapBottom),
+                                                          SizedBox(
+                                                            height: gapBottom,
+                                                          ),
                                                         ],
                                                       ),
                                                     ),
@@ -363,7 +505,9 @@ class _DirectIndirectSpeechScreenState
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value)
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
                                           ? 380.h
                                           : 60.h,
                                     ),
@@ -373,17 +517,20 @@ class _DirectIndirectSpeechScreenState
                             ),
                             if (_isFirstStagePassed.value && !_isAnswered.value)
                               TypeToConfirmOverlay(
-                                expectedText: options[_selectedReflection.value],
+                                expectedText:
+                                    options[_selectedReflection.value],
                                 primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitVerbalEvaluation(true),
+                                onConfirmed: () =>
+                                    _submitVerbalEvaluation(true),
                                 onSkipped: () => _submitVerbalEvaluation(false),
                                 isPositioned: true,
-                                displayText: "Type the indirect speech to lock it in",
+                                displayText:
+                                    "Type the indirect speech to lock it in",
                               ),
                           ],
                         );
                       },
-                ),
+                    ),
             );
           },
         );

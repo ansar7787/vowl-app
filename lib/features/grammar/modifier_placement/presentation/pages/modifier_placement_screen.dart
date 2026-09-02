@@ -66,7 +66,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
   }
 
   void _submitAnswer(GrammarQuest quest) {
-    if (_isAnswered.value || _targetIndex.value == -1 || _pendingJigsaw.value) return;
+    if (_isAnswered.value || _targetIndex.value == -1 || _pendingJigsaw.value) {
+      return;
+    }
 
     final allWords = quest.shuffledWords ?? [];
     if (allWords.isEmpty) return;
@@ -153,7 +155,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
+        final quest = (state is GrammarLoaded)
+            ? state.currentQuest as GrammarQuest?
+            : null;
         final allWords = quest?.shuffledWords ?? [];
         if (allWords.isEmpty) return const SizedBox();
 
@@ -173,7 +177,14 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _targetIndex, _pendingJigsaw, _assembledSentence]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _targetIndex,
+            _pendingJigsaw,
+            _assembledSentence,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -182,7 +193,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-              useScrolling: false, // Stack needs finite space to anchor to bottom
+              useScrolling:
+                  false, // Stack needs finite space to anchor to bottom
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -195,7 +207,9 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -209,10 +223,12 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final maxHeight = constraints.maxHeight;
+                                              final maxHeight =
+                                                  constraints.maxHeight;
                                               final isCompact = maxHeight < 580;
 
-                                              final double estimatedContentHeight =
+                                              final double
+                                              estimatedContentHeight =
                                                   (isCompact ? 30.h : 40.h) +
                                                   (isCompact ? 50.h : 80.h) +
                                                   (isCompact ? 100.h : 180.h) +
@@ -220,19 +236,33 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                   (isCompact ? 40.h : 65.h) +
                                                   40.h;
                                               final remainingHeight =
-                                                  maxHeight - estimatedContentHeight;
+                                                  maxHeight -
+                                                  estimatedContentHeight;
 
-                                              final double gapUnit = remainingHeight > 0
+                                              final double gapUnit =
+                                                  remainingHeight > 0
                                                   ? remainingHeight / 5
                                                   : 0;
-                                              final double gapTop = remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(4.0, 15.0)
+                                              final double gapTop =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(
+                                                      4.0,
+                                                      15.0,
+                                                    )
                                                   : 4.0;
-                                              final double gapMiddle = remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                              final double gapMiddle =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(
+                                                      6.0,
+                                                      20.0,
+                                                    )
                                                   : 6.0;
-                                              final double gapBottom = remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                              final double gapBottom =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(
+                                                      10.0,
+                                                      30.0,
+                                                    )
                                                   : 10.0;
 
                                               return Column(
@@ -242,74 +272,126 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                       ? SizedBox(
                                                           height: 25.h,
                                                           child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
+                                                            fit: BoxFit
+                                                                .scaleDown,
                                                             child: ModifierPlacementInstruction(
-                                                              primaryColor: theme.primaryColor,
+                                                              primaryColor: theme
+                                                                  .primaryColor,
                                                             ),
                                                           ),
                                                         )
                                                       : ModifierPlacementInstruction(
-                                                          primaryColor: theme.primaryColor,
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                         ),
                                                   SizedBox(height: gapMiddle),
 
-                                                  if (quest.modifierType != null) ...[
+                                                  if (quest.modifierType !=
+                                                      null) ...[
                                                     Container(
-                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 16.w,
+                                                            vertical: 6.h,
+                                                          ),
                                                       decoration: BoxDecoration(
-                                                        color: theme.primaryColor.withValues(alpha: 0.1),
-                                                        borderRadius: BorderRadius.circular(12.r),
-                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
                                                       ),
                                                       child: Text(
                                                         "MODIFIER: ${quest.modifierType!.toUpperCase()}",
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           fontSize: 12.sp,
-                                                          color: theme.primaryColor,
-                                                          fontWeight: FontWeight.bold,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold,
                                                           letterSpacing: 1.2,
                                                         ),
                                                       ),
-                                                    ).animate().fadeIn(duration: 400.ms),
-                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    ).animate().fadeIn(
+                                                      duration: 400.ms,
+                                                    ),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
+                                                    ),
                                                   ],
 
                                                   // Context Card
                                                   Padding(
-                                                        padding: EdgeInsets.symmetric(
-                                                          horizontal: 24.w,
-                                                        ),
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 24.w,
+                                                            ),
                                                         child: Container(
-                                                          width: double.infinity,
-                                                          padding: EdgeInsets.all(
-                                                            isCompact ? 14.r : 22.r,
-                                                          ),
+                                                          width:
+                                                              double.infinity,
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                isCompact
+                                                                    ? 14.r
+                                                                    : 22.r,
+                                                              ),
                                                           decoration: BoxDecoration(
                                                             color: isDark
-                                                                ? Colors.white.withValues(alpha: 0.05)
-                                                                : Colors.black.withValues(
-                                                                    alpha: 0.03,
-                                                                  ),
-                                                            borderRadius: BorderRadius.circular(
-                                                              isCompact ? 18.r : 28.r,
-                                                            ),
+                                                                ? Colors.white
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.05,
+                                                                      )
+                                                                : Colors.black
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.03,
+                                                                      ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 18.r
+                                                                      : 28.r,
+                                                                ),
                                                             border: Border.all(
-                                                              color: theme.primaryColor.withValues(
-                                                                alpha: 0.15,
-                                                              ),
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.15,
+                                                                  ),
                                                               width: 1.5,
                                                             ),
                                                           ),
                                                           child: Text(
                                                             "Insert the modifier '$modifier' into the correct position.",
-                                                            textAlign: TextAlign.center,
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             style: TextStyle(
-                                                              fontFamily: 'Outfit',
-                                                              fontSize: isCompact ? 14.sp : 18.sp,
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize:
+                                                                  isCompact
+                                                                  ? 14.sp
+                                                                  : 18.sp,
                                                               color: isDark
-                                                                  ? Colors.white70
-                                                                  : Colors.black87,
+                                                                  ? Colors
+                                                                        .white70
+                                                                  : Colors
+                                                                        .black87,
                                                               height: 1.4,
                                                             ),
                                                           ),
@@ -317,11 +399,18 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                       )
                                                       .animate()
                                                       .fadeIn(duration: 600.ms)
-                                                      .slideY(begin: 0.2, end: 0),
+                                                      .slideY(
+                                                        begin: 0.2,
+                                                        end: 0,
+                                                      ),
 
                                                   // Result Feedback
                                                   if (_isAnswered.value) ...[
-                                                    SizedBox(height: isCompact ? 8.h : 24.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 8.h
+                                                          : 24.h,
+                                                    ),
                                                     _buildResult(
                                                       quest,
                                                       theme.primaryColor,
@@ -336,14 +425,21 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                       child: ModifierMagneticArena(
                                                         words: words,
                                                         modifier: modifier,
-                                                        targetIndex: _targetIndex.value,
-                                                        isAnswered: _isAnswered.value || _pendingJigsaw.value,
+                                                        targetIndex:
+                                                            _targetIndex.value,
+                                                        isAnswered:
+                                                            _isAnswered.value ||
+                                                            _pendingJigsaw
+                                                                .value,
                                                         isDark: isDark,
-                                                        primaryColor: theme.primaryColor,
+                                                        primaryColor:
+                                                            theme.primaryColor,
                                                         onSlotAccepted: (idx) =>
-                                                            _targetIndex.value = idx,
+                                                            _targetIndex.value =
+                                                                idx,
                                                         onSlotReset: () =>
-                                                            _targetIndex.value = -1,
+                                                            _targetIndex.value =
+                                                                -1,
                                                         isCompact: isCompact,
                                                       ),
                                                     ),
@@ -355,25 +451,32 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                       _targetIndex.value == -1)
                                                     Draggable<String>(
                                                       data: modifier,
-                                                      feedback: _buildTactileMagnet(
-                                                        modifier,
-                                                        theme.primaryColor,
-                                                        isDragging: true,
-                                                        isCompact: isCompact,
-                                                      ),
+                                                      feedback:
+                                                          _buildTactileMagnet(
+                                                            modifier,
+                                                            theme.primaryColor,
+                                                            isDragging: true,
+                                                            isCompact:
+                                                                isCompact,
+                                                          ),
                                                       childWhenDragging: Opacity(
                                                         opacity: 0.2,
-                                                        child: _buildTactileMagnet(
-                                                          modifier,
-                                                          theme.primaryColor,
-                                                          isCompact: isCompact,
-                                                        ),
+                                                        child:
+                                                            _buildTactileMagnet(
+                                                              modifier,
+                                                              theme
+                                                                  .primaryColor,
+                                                              isCompact:
+                                                                  isCompact,
+                                                            ),
                                                       ),
-                                                      child: _buildTactileMagnet(
-                                                        modifier,
-                                                        theme.primaryColor,
-                                                        isCompact: isCompact,
-                                                      ),
+                                                      child:
+                                                          _buildTactileMagnet(
+                                                            modifier,
+                                                            theme.primaryColor,
+                                                            isCompact:
+                                                                isCompact,
+                                                          ),
                                                     ).animate().scale(
                                                       duration: 400.ms,
                                                       curve: Curves.easeOutBack,
@@ -382,34 +485,62 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                   // Submit Button
                                                   if (!_isAnswered.value &&
                                                       !_pendingJigsaw.value &&
-                                                      _targetIndex.value != -1) ...[
-                                                    SizedBox(height: isCompact ? 8.h : 16.h),
+                                                      _targetIndex.value !=
+                                                          -1) ...[
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 8.h
+                                                          : 16.h,
+                                                    ),
                                                     Padding(
-                                                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 24.w,
+                                                          ),
                                                       child: ScaleButton(
-                                                        onTap: () => _submitAnswer(quest),
-                                                        child: Container(
-                                                          width: double.infinity,
-                                                          height: isCompact ? 48.h : 65.h,
-                                                          decoration: BoxDecoration(
-                                                            borderRadius: BorderRadius.circular(
-                                                              isCompact ? 14.r : 24.r,
+                                                        onTap: () =>
+                                                            _submitAnswer(
+                                                              quest,
                                                             ),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: isCompact
+                                                              ? 48.h
+                                                              : 65.h,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 14.r
+                                                                      : 24.r,
+                                                                ),
                                                             gradient: LinearGradient(
                                                               colors: [
-                                                                theme.primaryColor,
-                                                                theme.primaryColor.withValues(
-                                                                  alpha: 0.8,
-                                                                ),
+                                                                theme
+                                                                    .primaryColor,
+                                                                theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.8,
+                                                                    ),
                                                               ],
                                                             ),
                                                             boxShadow: [
                                                               BoxShadow(
-                                                                color: theme.primaryColor.withValues(
-                                                                  alpha: 0.4,
-                                                                ),
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.4,
+                                                                    ),
                                                                 blurRadius: 25,
-                                                                offset: const Offset(0, 12),
+                                                                offset:
+                                                                    const Offset(
+                                                                      0,
+                                                                      12,
+                                                                    ),
                                                               ),
                                                             ],
                                                           ),
@@ -417,11 +548,19 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                             child: Text(
                                                               "FINALIZE SYNTAX",
                                                               style: TextStyle(
-                                                                fontFamily: 'Outfit',
-                                                                fontSize: isCompact ? 13.sp : 16.sp,
-                                                                fontWeight: FontWeight.w900,
-                                                                color: Colors.white,
-                                                                letterSpacing: 2,
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 13.sp
+                                                                    : 16.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w900,
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    2,
                                                               ),
                                                             ),
                                                           ),
@@ -441,7 +580,11 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_pendingJigsaw.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
@@ -456,12 +599,13 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
                                 isPositioned: true,
-                                displayText: "Type the complete sentence to lock it in",
+                                displayText:
+                                    "Type the complete sentence to lock it in",
                               ),
                           ],
                         );
                       },
-                ),
+                    ),
             );
           },
         );

@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+
 class GrammarQuestScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -23,6 +24,7 @@ class GrammarQuestScreen extends StatefulWidget {
   @override
   State<GrammarQuestScreen> createState() => _GrammarQuestScreenState();
 }
+
 class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
@@ -41,6 +43,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
     _scrollController.dispose();
     super.dispose();
   }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
   @override
@@ -50,6 +53,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
       FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
     );
   }
+
   void _submitInitialAnswer(bool correct) {
     if (_isAnswered.value) return;
     if (correct) {
@@ -64,6 +68,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
+
   void _submitFinalAnswer(bool correct) {
     _pendingTypeSubmit.value = false;
     if (correct) {
@@ -80,6 +85,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
@@ -126,7 +132,12 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
           }
         }
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _pendingTypeSubmit]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _pendingTypeSubmit,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -135,7 +146,8 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-              useScrolling: false, // Stack needs finite space to anchor to bottom
+              useScrolling:
+                  false, // Stack needs finite space to anchor to bottom
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -168,23 +180,35 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                           margin: EdgeInsets.only(bottom: 24.h),
                                           padding: EdgeInsets.all(16.r),
                                           decoration: BoxDecoration(
-                                            color: theme.primaryColor.withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(16.r),
-                                            border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.1),
+                                            borderRadius: BorderRadius.circular(
+                                              16.r,
+                                            ),
+                                            border: Border.all(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.3),
+                                            ),
                                           ),
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Row(
                                                 children: [
-                                                  Icon(Icons.rule, color: theme.primaryColor, size: 16.sp),
+                                                  Icon(
+                                                    Icons.rule,
+                                                    color: theme.primaryColor,
+                                                    size: 16.sp,
+                                                  ),
                                                   SizedBox(width: 8.w),
                                                   Text(
                                                     "GRAMMAR RULE",
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
                                                       fontSize: 12.sp,
-                                                      fontWeight: FontWeight.w800,
+                                                      fontWeight:
+                                                          FontWeight.w800,
                                                       color: theme.primaryColor,
                                                       letterSpacing: 2,
                                                     ),
@@ -198,21 +222,34 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                                   fontFamily: 'Outfit',
                                                   fontSize: 16.sp,
                                                   fontWeight: FontWeight.w700,
-                                                  color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+                                                  color:
+                                                      Theme.of(
+                                                            context,
+                                                          ).brightness ==
+                                                          Brightness.dark
+                                                      ? Colors.white
+                                                      : Colors.black87,
                                                 ),
                                               ),
-                                              if (quest.ruleExplanation != null) ...[
+                                              if (quest.ruleExplanation !=
+                                                  null) ...[
                                                 SizedBox(height: 8.h),
                                                 Text(
                                                   quest.ruleExplanation!,
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
                                                     fontSize: 14.sp,
-                                                    color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
+                                                    color:
+                                                        Theme.of(
+                                                              context,
+                                                            ).brightness ==
+                                                            Brightness.dark
+                                                        ? Colors.white70
+                                                        : Colors.black54,
                                                     height: 1.4,
                                                   ),
                                                 ),
-                                              ]
+                                              ],
                                             ],
                                           ),
                                         ),
@@ -236,16 +273,22 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                               SliverFillRemaining(
                                 hasScrollBody: false,
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 0.w), // No padding for Jigsaw wrapper as it provides its own padding
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 0.w,
+                                  ), // No padding for Jigsaw wrapper as it provides its own padding
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      if (!_isAnswered.value && !_pendingTypeSubmit.value && targetText.isNotEmpty)
+                                      if (!_isAnswered.value &&
+                                          !_pendingTypeSubmit.value &&
+                                          targetText.isNotEmpty)
                                         DynamicJigsawWrapper(
                                           expectedText: targetText,
                                           primaryColor: theme.primaryColor,
-                                          onConfirmed: () => _submitInitialAnswer(true),
-                                          onSkipped: () => _submitInitialAnswer(false),
+                                          onConfirmed: () =>
+                                              _submitInitialAnswer(true),
+                                          onSkipped: () =>
+                                              _submitInitialAnswer(false),
                                           isPositioned: false,
                                         ),
                                     ],
@@ -254,7 +297,10 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                               ),
                               SliverToBoxAdapter(
                                 child: SizedBox(
-                                  height: (_pendingTypeSubmit.value && !_isAnswered.value && targetText.isNotEmpty)
+                                  height:
+                                      (_pendingTypeSubmit.value &&
+                                          !_isAnswered.value &&
+                                          targetText.isNotEmpty)
                                       ? 380.h
                                       : 60.h,
                                 ),
@@ -262,10 +308,13 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                             ],
                           ),
                         ),
-                        if (_pendingTypeSubmit.value && !_isAnswered.value && targetText.isNotEmpty)
+                        if (_pendingTypeSubmit.value &&
+                            !_isAnswered.value &&
+                            targetText.isNotEmpty)
                           TypeToConfirmOverlay(
                             expectedText: targetText,
-                            displayText: "Type the complete sentence to lock in the rule",
+                            displayText:
+                                "Type the complete sentence to lock in the rule",
                             primaryColor: theme.primaryColor,
                             onConfirmed: () => _submitFinalAnswer(true),
                             onSkipped: () => _submitFinalAnswer(false),

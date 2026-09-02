@@ -186,151 +186,186 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
           child: ListenableBuilder(
-            listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _selectedIndex, _isFirstStagePassed]),
+            listenable: Listenable.merge([
+              _isAnswered,
+              _isCorrect,
+              _showConfetti,
+              _selectedIndex,
+              _isFirstStagePassed,
+            ]),
             builder: (context, _) {
               return AccentBaseLayout(
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered.value,
-            isCorrect: _isCorrect.value,
-            showConfetti: _showConfetti.value,
-            onContinue: () =>
-                context.read<AccentBloc>().add(NextQuestion()),
-            onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-            useScrolling: false,
-            child: quest == null
-                ? const SizedBox()
-                : Stack(
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered.value,
+                isCorrect: _isCorrect.value,
+                showConfetti: _showConfetti.value,
+                onContinue: () =>
+                    context.read<AccentBloc>().add(NextQuestion()),
+                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                useScrolling: false,
+                child: quest == null
+                    ? const SizedBox()
+                    : Stack(
                         children: [
                           LayoutBuilder(
-                        builder: (context, constraints) {
-                          final maxHeight = constraints.maxHeight;
-                          final bool isCompact = maxHeight < 580;
+                            builder: (context, constraints) {
+                              final maxHeight = constraints.maxHeight;
+                              final bool isCompact = maxHeight < 580;
 
-                          // Estimated content height in ScreenUtil units
-                          final double estimatedContentHeight =
-                              24.h +
-                              (isCompact ? 90.h : 120.h) +
-                              100.h +
-                              (isCompact ? 130.h : 172.h);
-                          final remainingHeight =
-                              maxHeight - estimatedContentHeight;
+                              // Estimated content height in ScreenUtil units
+                              final double estimatedContentHeight =
+                                  24.h +
+                                  (isCompact ? 90.h : 120.h) +
+                                  100.h +
+                                  (isCompact ? 130.h : 172.h);
+                              final remainingHeight =
+                                  maxHeight - estimatedContentHeight;
 
-                          // Dynamic layout spacers based on remaining height
-                          final double gapUnit = remainingHeight > 0
-                              ? remainingHeight / 8
-                              : 0;
-                          final double gapTop = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(8.0, 24.0)
-                              : 8.0;
-                          final double gapInstruction = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(8.0, 24.0)
-                              : 8.0;
-                          final double gapPrompt = remainingHeight > 0
-                              ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                              : 12.0;
-                          final double gapSpeaker = remainingHeight > 0
-                              ? (gapUnit * 2).clamp(16.0, 48.0)
-                              : 16.0;
-                          final double gapBottom = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(12.0, 40.0)
-                              : 12.0;
+                              // Dynamic layout spacers based on remaining height
+                              final double gapUnit = remainingHeight > 0
+                                  ? remainingHeight / 8
+                                  : 0;
+                              final double gapTop = remainingHeight > 0
+                                  ? (gapUnit * 1).clamp(8.0, 24.0)
+                                  : 8.0;
+                              final double gapInstruction = remainingHeight > 0
+                                  ? (gapUnit * 1).clamp(8.0, 24.0)
+                                  : 8.0;
+                              final double gapPrompt = remainingHeight > 0
+                                  ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                                  : 12.0;
+                              final double gapSpeaker = remainingHeight > 0
+                                  ? (gapUnit * 2).clamp(16.0, 48.0)
+                                  : 16.0;
+                              final double gapBottom = remainingHeight > 0
+                                  ? (gapUnit * 1).clamp(12.0, 40.0)
+                                  : 12.0;
 
-                          return RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverFillRemaining(
-                                  hasScrollBody: false,
-                                  child: Column(
-                                    children: [
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 24.w,
-                                        ),
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            Column(
-                                              mainAxisSize: MainAxisSize.min,
+                              return RawScrollbar(
+                                controller: _scrollController,
+                                thumbColor: theme.primaryColor.withValues(
+                                  alpha: 0.5,
+                                ),
+                                radius: Radius.circular(8.r),
+                                thickness: 4.w,
+                                child: CustomScrollView(
+                                  controller: _scrollController,
+                                  physics: const BouncingScrollPhysics(),
+                                  slivers: [
+                                    SliverFillRemaining(
+                                      hasScrollBody: false,
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 24.w,
+                                            ),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
                                               children: [
-                                                SizedBox(height: gapTop),
-                                                ConnectedSpeechInstruction(
-                                                  primaryColor: theme.primaryColor,
-                                                  instruction: _isFirstStagePassed.value
-                                                      ? "Great job! Now confirm by speaking the phrase."
-                                                      : context.tr(
-                                                          'games.connected_speech_instruction',
-                                                          fallback:
-                                                              "SELECT THE CORRECT SOUND CHANGE",
-                                                        ),
-                                                  isCompact: isCompact,
-                                                ),
-                                                SizedBox(height: gapInstruction),
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    SizedBox(height: gapTop),
+                                                    ConnectedSpeechInstruction(
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      instruction:
+                                                          _isFirstStagePassed
+                                                              .value
+                                                          ? "Great job! Now confirm by speaking the phrase."
+                                                          : context.tr(
+                                                              'games.connected_speech_instruction',
+                                                              fallback:
+                                                                  "SELECT THE CORRECT SOUND CHANGE",
+                                                            ),
+                                                      isCompact: isCompact,
+                                                    ),
+                                                    SizedBox(
+                                                      height: gapInstruction,
+                                                    ),
 
-                                                ConnectedSpeechPromptCard(
-                                                  word: quest.word ?? "",
-                                                  spokenForm: quest.spokenForm,
-                                                  phenomenonType: quest.phenomenonType,
-                                                  isAnswered: _isFirstStagePassed.value || _isAnswered.value,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isCompact: isCompact,
-                                                ),
-                                                SizedBox(height: gapPrompt),
+                                                    ConnectedSpeechPromptCard(
+                                                      word: quest.word ?? "",
+                                                      spokenForm:
+                                                          quest.spokenForm,
+                                                      phenomenonType:
+                                                          quest.phenomenonType,
+                                                      isAnswered:
+                                                          _isFirstStagePassed
+                                                              .value ||
+                                                          _isAnswered.value,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isCompact: isCompact,
+                                                    ),
+                                                    SizedBox(height: gapPrompt),
 
-                                                ConnectedSpeechPulseSpeaker(
-                                                  text: quest.textToSpeak ?? "",
-                                                  color: theme.primaryColor,
-                                                  onPlayTts: _playTts,
+                                                    ConnectedSpeechPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: gapSpeaker,
+                                                    ),
+                                                    ConnectedSpeechLinkerCards(
+                                                      key: ValueKey(quest.id),
+                                                      options: options,
+                                                      correctIndex:
+                                                          _shuffledOptions
+                                                              .isNotEmpty
+                                                          ? _shuffledCorrectIndex
+                                                          : (quest.correctAnswerIndex ??
+                                                                0),
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered:
+                                                          _isAnswered.value ||
+                                                          _isFirstStagePassed
+                                                              .value,
+                                                      selectedIndex:
+                                                          _selectedIndex.value,
+                                                      onSubmitChoice:
+                                                          _submitChoice,
+                                                      isCompact: isCompact,
+                                                    ),
+                                                    SizedBox(height: gapBottom),
+                                                  ],
                                                 ),
                                               ],
                                             ),
-                                            Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                SizedBox(height: gapSpeaker),
-                                                ConnectedSpeechLinkerCards(
-                                                  key: ValueKey(quest.id),
-                                                  options: options,
-                                                  correctIndex:
-                                                      _shuffledOptions.isNotEmpty
-                                                      ? _shuffledCorrectIndex
-                                                      : (quest.correctAnswerIndex ??
-                                                            0),
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered:
-                                                      _isAnswered.value ||
-                                                      _isFirstStagePassed.value,
-                                                  selectedIndex: _selectedIndex.value,
-                                                  onSubmitChoice: _submitChoice,
-                                                  isCompact: isCompact,
-                                                ),
-                                                SizedBox(height: gapBottom),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
+                                          ),
+                                          SizedBox(
+                                            height:
+                                                (_isFirstStagePassed.value &&
+                                                    !_isAnswered.value)
+                                                ? 380.h
+                                                : 160.h,
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 160.h),
                                   ],
                                 ),
-                              ),
-                            ],
+                              );
+                            },
                           ),
-                          );
-                        },
-                      ),
                           if (_isFirstStagePassed.value && !_isAnswered.value)
                             ShadowPlaybackCompare(
-                              expectedText: quest.textToSpeak ?? quest.word ?? "",
+                              expectedText:
+                                  quest.textToSpeak ?? quest.word ?? "",
                               primaryColor: theme.primaryColor,
                               isPositioned: true,
                               onConfirmed: () {
@@ -339,12 +374,10 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                 );
                                 _submitVerbalEvaluation(true);
                               },
-                              onSkipped: () => _submitVerbalEvaluation(
-                                false,
-                              ),
+                              onSkipped: () => _submitVerbalEvaluation(false),
                             ),
                         ],
-                      );
+                      ),
               );
             },
           ),

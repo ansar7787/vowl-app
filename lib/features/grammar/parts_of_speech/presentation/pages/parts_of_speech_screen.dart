@@ -111,7 +111,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
     final threshold = isCompact ? 60.r : 100.r;
     if (distance <= threshold) return;
 
-    final targetIndex = switch ((_dragOffset.value.dx < 0, _dragOffset.value.dy < 0)) {
+    final targetIndex = switch ((
+      _dragOffset.value.dx < 0,
+      _dragOffset.value.dy < 0,
+    )) {
       (true, true) => 0, // Top-Left
       (false, true) => 1, // Top-Right
       (true, false) => 2, // Bottom-Left
@@ -141,7 +144,14 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _dragOffset, _isSubmitting, _pendingTypeSubmit]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _dragOffset,
+            _isSubmitting,
+            _pendingTypeSubmit,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -163,7 +173,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -177,27 +189,42 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
                                               return _PosQuestLayout(
                                                 quest: quest,
                                                 options: options,
                                                 theme: theme,
                                                 isDark: isDark,
                                                 isCompact: isCompact,
-                                                maxHeight: constraints.maxHeight,
+                                                maxHeight:
+                                                    constraints.maxHeight,
                                                 dragOffset: _dragOffset.value,
-                                                isAnswered: _isAnswered.value || _pendingTypeSubmit.value,
+                                                isAnswered:
+                                                    _isAnswered.value ||
+                                                    _pendingTypeSubmit.value,
                                                 onPanUpdate: (details) {
-                                                  if (_pendingTypeSubmit.value || _isAnswered.value) return;
-                                                  _dragOffset.value += details.delta;
+                                                  if (_pendingTypeSubmit
+                                                          .value ||
+                                                      _isAnswered.value) {
+                                                    return;
+                                                  }
+                                                  _dragOffset.value +=
+                                                      details.delta;
                                                   _checkCollision(
-                                                    quest.correctAnswerIndex ?? 0,
+                                                    quest.correctAnswerIndex ??
+                                                        0,
                                                     isCompact: isCompact,
                                                   );
                                                 },
                                                 onPanEnd: (_) {
-                                                  if (_pendingTypeSubmit.value || _isAnswered.value) return;
-                                                  _dragOffset.value = Offset.zero;
+                                                  if (_pendingTypeSubmit
+                                                          .value ||
+                                                      _isAnswered.value) {
+                                                    return;
+                                                  }
+                                                  _dragOffset.value =
+                                                      Offset.zero;
                                                 },
                                               );
                                             },
@@ -208,16 +235,23 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_pendingTypeSubmit.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_pendingTypeSubmit.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_pendingTypeSubmit.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                            if (_pendingTypeSubmit.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
                               TypeToConfirmOverlay(
                                 expectedText: cleanTargetSentence,
-                                displayText: "Type the complete sentence to lock in the part of speech",
+                                displayText:
+                                    "Type the complete sentence to lock in the part of speech",
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
@@ -227,7 +261,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                           ],
                         );
                       },
-                ),
+                    ),
             );
           },
         );

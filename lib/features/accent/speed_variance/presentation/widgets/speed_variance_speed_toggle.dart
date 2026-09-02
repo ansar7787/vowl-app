@@ -23,7 +23,9 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
       width: 280.w,
       height: 44.h,
       decoration: BoxDecoration(
-        color: isDark ? primaryColor.withValues(alpha: 0.1) : primaryColor.withValues(alpha: 0.05),
+        color: isDark
+            ? primaryColor.withValues(alpha: 0.1)
+            : primaryColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(22.r),
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
@@ -55,7 +57,9 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                         Icon(
                           Icons.speed_rounded,
                           size: 16.r,
-                          color: isNatural ? primaryColor : (isDark ? Colors.white54 : Colors.black54),
+                          color: isNatural
+                              ? primaryColor
+                              : (isDark ? Colors.white54 : Colors.black54),
                         ),
                         SizedBox(width: 8.w),
                         Text(
@@ -64,7 +68,9 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.bold,
-                            color: isNatural ? primaryColor : (isDark ? Colors.white54 : Colors.black54),
+                            color: isNatural
+                                ? primaryColor
+                                : (isDark ? Colors.white54 : Colors.black54),
                             letterSpacing: 1,
                           ),
                         ),
@@ -83,7 +89,9 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                         Icon(
                           Icons.hearing_rounded,
                           size: 16.r,
-                          color: !isNatural ? primaryColor : (isDark ? Colors.white54 : Colors.black54),
+                          color: !isNatural
+                              ? primaryColor
+                              : (isDark ? Colors.white54 : Colors.black54),
                         ),
                         SizedBox(width: 8.w),
                         Text(
@@ -92,7 +100,9 @@ class SpeedVarianceSpeedToggle extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.bold,
-                            color: !isNatural ? primaryColor : (isDark ? Colors.white54 : Colors.black54),
+                            color: !isNatural
+                                ? primaryColor
+                                : (isDark ? Colors.white54 : Colors.black54),
                             letterSpacing: 1,
                           ),
                         ),

@@ -146,52 +146,73 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 580;
-                        return CustomScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
-                            SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: isCompact ? 5.h : 10.h,
-                                    ),
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: ScrollController(),
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
                                     child: Column(
                                       children: [
-                              ElevatorPitchInstruction(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: isCompact ? 10.h : 16.h),
-                              ElevatorPitchPromptCard(
-                                prompt: quest.prompt ?? "",
-                                timeLimit: quest.timeLimit ?? 30,
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                              ),
-                                          SizedBox(height: isCompact ? 20.h : 40.h),
-                                        ],
-                                      ),
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final isCompact = constraints.maxHeight < 580;
+                                              return Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                  vertical: isCompact ? 5.h : 10.h,
+                                                ),
+                                                child: Column(
+                                                  children: [
+                                                    ElevatorPitchInstruction(
+                                                      primaryColor: theme.primaryColor,
+                                                      instruction: quest.instruction,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                                    ElevatorPitchPromptCard(
+                                                      prompt: quest.prompt ?? "",
+                                                      timeLimit: quest.timeLimit ?? 30,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  if (!_isAnswered.value)
-                                    SpeakToConfirmOverlay(
-                                      expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onConfirmed: () {
-                                        context.read<RoleplayBloc>().add(
-                                          const RoleplaySpeakConfirmed(5),
-                                        );
-                                        _submitVerbalEvaluation(true);
-                                      },
-                                      onSkipped: () => _submitVerbalEvaluation(false),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (!_isAnswered.value) ? 380.h : 60.h,
                                     ),
-                                  SizedBox(height: _isAnswered.value ? 180.h : 40.h),
+                                  ),
                                 ],
                               ),
                             ),
+                            if (!_isAnswered.value)
+                              SpeakToConfirmOverlay(
+                                expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
+                                primaryColor: theme.primaryColor,
+                                isPositioned: true,
+                                onConfirmed: () {
+                                  context.read<RoleplayBloc>().add(
+                                    const RoleplaySpeakConfirmed(5),
+                                  );
+                                  _submitVerbalEvaluation(true);
+                                },
+                                onSkipped: () => _submitVerbalEvaluation(false),
+                              ),
                           ],
                         );
                       },

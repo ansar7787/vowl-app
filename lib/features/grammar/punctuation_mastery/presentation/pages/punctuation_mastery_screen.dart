@@ -155,7 +155,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
+        final quest = (state is GrammarLoaded)
+            ? state.currentQuest as GrammarQuest?
+            : null;
         final marks = [".", ",", "!", "?", ";", ":"];
 
         String cleanTargetSentence = "";
@@ -171,7 +173,14 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _placedStickers, _pendingTyping, _assembledSentence]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _placedStickers,
+            _pendingTyping,
+            _assembledSentence,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -180,225 +189,350 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false, // Required for Stack Overlays
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverFillRemaining(
-                                hasScrollBody: false,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                builder: (context, constraints) {
-                                  final isCompact = constraints.maxHeight < 580;
+              useScrolling: false, // Required for Stack Overlays
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
 
-                                  return Column(
-                                    children: [
-                                      SizedBox(height: isCompact ? 4.h : 10.h),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 25.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: PunctuationMasteryInstruction(
-                                                  primaryColor: theme.primaryColor,
-                                                ),
-                                              ),
-                                            )
-                                          : PunctuationMasteryInstruction(
-                                              primaryColor: theme.primaryColor,
-                                            ),
-                                      SizedBox(height: isCompact ? 8.h : 20.h),
-
-                                      if (quest.punctuationRule != null) ...[
-                                        Container(
-                                          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                                          decoration: BoxDecoration(
-                                            color: theme.primaryColor.withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(16.r),
-                                            border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                "RULE: ${quest.punctuationRule!.toUpperCase()}",
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  color: theme.primaryColor,
-                                                  fontWeight: FontWeight.bold,
-                                                  letterSpacing: 1.2,
-                                                ),
-                                              ),
-                                              SizedBox(height: 4.h),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.min,
+                                              return Column(
                                                 children: [
-                                                  Text(", = Pause   |   . = Stop   |   ? = Ask", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ).animate().fadeIn(duration: 400.ms),
-                                        SizedBox(height: isCompact ? 12.h : 20.h),
-                                      ],
-
-                                      // Context Card with Sticker Slots
-                                      Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                            ),
-                                            child: Container(
-                                              width: double.infinity,
-                                              padding: EdgeInsets.all(
-                                                isCompact ? 14.r : 22.r,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: isDark
-                                                    ? Colors.white.withValues(alpha: 0.05)
-                                                    : Colors.black.withValues(
-                                                        alpha: 0.03,
-                                                      ),
-                                                borderRadius: BorderRadius.circular(
-                                                  isCompact ? 18.r : 28.r,
-                                                ),
-                                                border: Border.all(
-                                                  color: theme.primaryColor.withValues(
-                                                    alpha: 0.15,
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 4.h
+                                                        : 10.h,
                                                   ),
-                                                  width: 1.5,
-                                                ),
-                                              ),
-                                              child: _buildStickerSentence(
-                                                quest.sentence ?? "Missing sentence.",
-                                                theme.primaryColor,
-                                                isDark,
-                                                isCompact,
-                                              ),
-                                            ),
-                                          )
-                                          .animate()
-                                          .fadeIn(duration: 600.ms)
-                                          .slideY(begin: 0.2, end: 0),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit
+                                                                .scaleDown,
+                                                            child: PunctuationMasteryInstruction(
+                                                              primaryColor: theme
+                                                                  .primaryColor,
+                                                            ),
+                                                          ),
+                                                        )
+                                                      : PunctuationMasteryInstruction(
+                                                          primaryColor: theme
+                                                              .primaryColor,
+                                                        ),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 8.h
+                                                        : 20.h,
+                                                  ),
 
-                                      // Result
-                                      if (_isAnswered.value) ...[
-                                        SizedBox(height: isCompact ? 12.h : 32.h),
-                                        _buildResult(
-                                          quest,
-                                          theme.primaryColor,
-                                          isDark,
-                                          isCompact,
-                                        ),
-                                      ],
-
-                                      SizedBox(height: isCompact ? 16.h : 48.h),
-
-                                      // Sticker Sheet
-                                      if (!_isAnswered.value && !_pendingTyping.value)
-                                        PunctuationStickerSheet(
-                                          marks: marks,
-                                          primaryColor: theme.primaryColor,
-                                        ),
-
-                                      const Spacer(),
-
-                                      // Submit Button
-                                      if (!_isAnswered.value && !_pendingTyping.value)
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                          child: ScaleButton(
-                                            onTap: () => _submitAnswer(quest),
-                                            child: Container(
-                                              width: double.infinity,
-                                              height: isCompact ? 48.h : 65.h,
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(
-                                                  isCompact ? 16.r : 24.r,
-                                                ),
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    theme.primaryColor,
-                                                    theme.primaryColor.withValues(
-                                                      alpha: 0.8,
+                                                  if (quest.punctuationRule !=
+                                                      null) ...[
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 16.w,
+                                                            vertical: 8.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              16.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "RULE: ${quest.punctuationRule!.toUpperCase()}",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 12.sp,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              letterSpacing:
+                                                                  1.2,
+                                                            ),
+                                                          ),
+                                                          SizedBox(height: 4.h),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              Text(
+                                                                ", = Pause   |   . = Stop   |   ? = Ask",
+                                                                style: TextStyle(
+                                                                  fontSize:
+                                                                      10.sp,
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ).animate().fadeIn(
+                                                      duration: 400.ms,
+                                                    ),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
                                                     ),
                                                   ],
-                                                ),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: theme.primaryColor.withValues(
-                                                      alpha: 0.4,
+
+                                                  // Context Card with Sticker Slots
+                                                  Padding(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 24.w,
+                                                            ),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                isCompact
+                                                                    ? 14.r
+                                                                    : 22.r,
+                                                              ),
+                                                          decoration: BoxDecoration(
+                                                            color: isDark
+                                                                ? Colors.white
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.05,
+                                                                      )
+                                                                : Colors.black
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.03,
+                                                                      ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 18.r
+                                                                      : 28.r,
+                                                                ),
+                                                            border: Border.all(
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.15,
+                                                                  ),
+                                                              width: 1.5,
+                                                            ),
+                                                          ),
+                                                          child: _buildStickerSentence(
+                                                            quest.sentence ??
+                                                                "Missing sentence.",
+                                                            theme.primaryColor,
+                                                            isDark,
+                                                            isCompact,
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 600.ms)
+                                                      .slideY(
+                                                        begin: 0.2,
+                                                        end: 0,
+                                                      ),
+
+                                                  // Result
+                                                  if (_isAnswered.value) ...[
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 32.h,
                                                     ),
-                                                    blurRadius: 25,
-                                                    offset: const Offset(0, 12),
+                                                    _buildResult(
+                                                      quest,
+                                                      theme.primaryColor,
+                                                      isDark,
+                                                      isCompact,
+                                                    ),
+                                                  ],
+
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 16.h
+                                                        : 48.h,
+                                                  ),
+
+                                                  // Sticker Sheet
+                                                  if (!_isAnswered.value &&
+                                                      !_pendingTyping.value)
+                                                    PunctuationStickerSheet(
+                                                      marks: marks,
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                    ),
+
+                                                  const Spacer(),
+
+                                                  // Submit Button
+                                                  if (!_isAnswered.value &&
+                                                      !_pendingTyping.value)
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 24.w,
+                                                          ),
+                                                      child: ScaleButton(
+                                                        onTap: () =>
+                                                            _submitAnswer(
+                                                              quest,
+                                                            ),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: isCompact
+                                                              ? 48.h
+                                                              : 65.h,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 16.r
+                                                                      : 24.r,
+                                                                ),
+                                                            gradient: LinearGradient(
+                                                              colors: [
+                                                                theme
+                                                                    .primaryColor,
+                                                                theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.8,
+                                                                    ),
+                                                              ],
+                                                            ),
+                                                            boxShadow: [
+                                                              BoxShadow(
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.4,
+                                                                    ),
+                                                                blurRadius: 25,
+                                                                offset:
+                                                                    const Offset(
+                                                                      0,
+                                                                      12,
+                                                                    ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          child: Center(
+                                                            child: Text(
+                                                              "FINALIZE ARCHITECTURE",
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 13.sp
+                                                                    : 16.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w900,
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    2,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 12.h
+                                                        : 40.h,
                                                   ),
                                                 ],
-                                              ),
-                                              child: Center(
-                                                child: Text(
-                                                  "FINALIZE ARCHITECTURE",
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: isCompact ? 13.sp : 16.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Colors.white,
-                                                    letterSpacing: 2,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
+                                              );
+                                            },
                                           ),
                                         ),
-
-                                      SizedBox(height: isCompact ? 12.h : 40.h),
-                                    ],
-                                  );
-                                },
+                                      ],
+                                    ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          (_pendingTyping.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                                  ],
-                                ),
+                            if (_pendingTyping.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: true,
                               ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height: (_pendingTyping.value && !_isAnswered.value) ? 380.h : 60.h,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        if (_pendingTyping.value &&
-                            !_isAnswered.value &&
-                            cleanTargetSentence.isNotEmpty)
-                          TypeToConfirmOverlay(
-                            expectedText: cleanTargetSentence,
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                            isPositioned: true,
-                          ),
-                      ],
-                    );
-                  },
-                  },
-                ),
+                          ],
+                        );
+                      },
+                    ),
             );
           },
         );
@@ -471,9 +605,13 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                       child: mark != null
                           ? GestureDetector(
                               onTap: () {
-                                if (_isAnswered.value || _pendingTyping.value) return;
+                                if (_isAnswered.value || _pendingTyping.value) {
+                                  return;
+                                }
                                 _hapticService.selection();
-                                _placedStickers.value = Map.from(_placedStickers.value)..remove(slotIndex);
+                                _placedStickers.value = Map.from(
+                                  _placedStickers.value,
+                                )..remove(slotIndex);
                               },
                               child: Text(
                                 mark,

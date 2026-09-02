@@ -254,8 +254,8 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                       ),
                       if (!_isAnswered.value)
                         ShadowPlaybackCompare(
-                          expectedText: _targetWord,
-                          displayText: '$_targetWord\n\n/$_phonetic/',
+                          expectedText: quest.targetWord ?? "",
+                          displayText: '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
                           primaryColor: theme.primaryColor,
                           isPositioned: true,
                           onConfirmed: () =>

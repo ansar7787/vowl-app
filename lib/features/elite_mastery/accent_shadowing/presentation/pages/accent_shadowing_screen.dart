@@ -231,56 +231,84 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     final quest = state.currentQuest;
     final targetText = quest.text ?? quest.textToSpeak;
 
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverToBoxAdapter(
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+    return Stack(
+      children: [
+        RawScrollbar(
+          controller: ScrollController(),
+          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+          radius: Radius.circular(8.r),
+          thickness: 4.w,
+          child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
-              return Column(
-          children: [
-            AccentShadowingTargetPanel(
-              text:
-                  targetText ??
-                  context.tr(
-                    'games.target_text_fallback',
-                    fallback: 'Target Text',
-                  ),
-              shadowingFocus: quest.shadowingFocus,
-              targetAccent: quest.targetAccent,
-              matchedIndices: _matchedIndices.value,
-              isDark: isDark,
-              primaryColor: theme.primaryColor,
-              isAnswered: _isAnswered.value,
-              isCorrect: _isCorrect.value,
-              attempts: _attempts.value,
-              onListenTap: () => _soundService.playTts(targetText ?? ""),
-            ),
+                          return Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: isCompact ? 5.h : 10.h,
+                            ),
+                            child: Column(
+                              children: [
+                                AccentShadowingTargetPanel(
+                                  text:
+                                      targetText ??
+                                      context.tr(
+                                        'games.target_text_fallback',
+                                        fallback: 'Target Text',
+                                      ),
+                                  shadowingFocus: quest.shadowingFocus,
+                                  targetAccent: quest.targetAccent,
+                                  matchedIndices: _matchedIndices.value,
+                                  isDark: isDark,
+                                  primaryColor: theme.primaryColor,
+                                  isAnswered: _isAnswered.value,
+                                  isCorrect: _isCorrect.value,
+                                  attempts: _attempts.value,
+                                  onListenTap: () => _soundService.playTts(targetText ?? ""),
+                                ),
 
-            if (state.isHintVisible) ...[
-              SizedBox(height: isCompact ? 12.h : 20.h),
-              EliteHintCard(
-                hintText: quest.hint,
-                isVisible: true,
-                onShowHint: () {},
-                primaryColor: theme.primaryColor,
+                                if (state.isHintVisible) ...[
+                                  SizedBox(height: isCompact ? 12.h : 20.h),
+                                  EliteHintCard(
+                                    hintText: quest.hint,
+                                    isVisible: true,
+                                    onShowHint: () {},
+                                    primaryColor: theme.primaryColor,
+                                  ),
+                                ],
+                                SizedBox(height: isCompact ? 16.h : 30.h),
+
+                                if (!_isAnswered.value)
+                                  AccentSelfEvaluationPanel(
+                                    textToSpeak:
+                                        "", // Removed duplicate text, it's already shown in the target panel
+                                    primaryColor: theme.primaryColor,
+                                    isCompact: isCompact,
+                                    onEvaluate: _submitVerbalEvaluation,
+                                  ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 60.h,
+                ),
               ),
             ],
-            SizedBox(height: isCompact ? 16.h : 30.h),
-
-            if (!_isAnswered.value)
-              AccentSelfEvaluationPanel(
-                textToSpeak:
-                    "", // Removed duplicate text, it's already shown in the target panel
-                primaryColor: theme.primaryColor,
-                isCompact: isCompact,
-                onEvaluate: _submitVerbalEvaluation,
-              ),
-          ],
-        );
-      },
           ),
         ),
       ],

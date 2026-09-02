@@ -51,6 +51,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     _scrollController.dispose();
     super.dispose();
   }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -139,7 +140,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
+        final quest = (state is GrammarLoaded)
+            ? state.currentQuest as GrammarQuest?
+            : null;
 
         String targetVoiceStr = "";
         String expectedConversion = "";
@@ -157,7 +160,13 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _isPassive, _isFirstStagePassed]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _isPassive,
+            _isFirstStagePassed,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -177,7 +186,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -191,86 +202,133 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
 
                                               return Column(
                                                 children: [
-                                                  SizedBox(height: isCompact ? 4.h : 10.h),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 4.h
+                                                        : 10.h,
+                                                  ),
                                                   isCompact
                                                       ? SizedBox(
                                                           height: 25.h,
                                                           child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
+                                                            fit: BoxFit
+                                                                .scaleDown,
                                                             child: VoiceSwapInstruction(
-                                                              primaryColor: theme.primaryColor,
+                                                              primaryColor: theme
+                                                                  .primaryColor,
                                                             ),
                                                           ),
                                                         )
                                                       : VoiceSwapInstruction(
-                                                          primaryColor: theme.primaryColor,
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                         ),
-                                                  SizedBox(height: isCompact ? 8.h : 20.h),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 8.h
+                                                        : 20.h,
+                                                  ),
 
                                                   // Context Card
                                                   Padding(
-                                                        padding: EdgeInsets.symmetric(
-                                                          horizontal: 24.w,
-                                                        ),
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 24.w,
+                                                            ),
                                                         child: Container(
-                                                          padding: EdgeInsets.all(
-                                                            isCompact ? 14.r : 22.r,
-                                                          ),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                isCompact
+                                                                    ? 14.r
+                                                                    : 22.r,
+                                                              ),
                                                           decoration: BoxDecoration(
                                                             color: isDark
-                                                                ? Colors.white.withValues(alpha: 0.05)
-                                                                : Colors.black.withValues(
-                                                                    alpha: 0.03,
-                                                                  ),
-                                                            borderRadius: BorderRadius.circular(
-                                                              isCompact ? 16.r : 24.r,
-                                                            ),
+                                                                ? Colors.white
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.05,
+                                                                      )
+                                                                : Colors.black
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.03,
+                                                                      ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  isCompact
+                                                                      ? 16.r
+                                                                      : 24.r,
+                                                                ),
                                                             border: Border.all(
-                                                              color: theme.primaryColor.withValues(
-                                                                alpha: 0.15,
-                                                              ),
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.15,
+                                                                  ),
                                                               width: 1.5,
                                                             ),
                                                           ),
                                                           child: Text(
-                                                            quest.sentence ?? "",
-                                                            textAlign: TextAlign.center,
+                                                            quest.sentence ??
+                                                                "",
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             style: TextStyle(
-                                                              fontFamily: 'Outfit',
-                                                              fontSize: isCompact ? 15.sp : 20.sp,
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize:
+                                                                  isCompact
+                                                                  ? 15.sp
+                                                                  : 20.sp,
                                                               color: isDark
                                                                   ? Colors.white
-                                                                  : Colors.black87,
+                                                                  : Colors
+                                                                        .black87,
                                                               height: 1.5,
-                                                              fontWeight: FontWeight.w500,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                             ),
                                                           ),
                                                         ),
                                                       )
                                                       .animate()
                                                       .fadeIn(duration: 600.ms)
-                                                      .slideY(begin: 0.2, end: 0),
+                                                      .slideY(
+                                                        begin: 0.2,
+                                                        end: 0,
+                                                      ),
 
                                                   SizedBox(height: 60.h),
 
                                                   // Voice Toggle
                                                   VoiceSwapToggle(
                                                     isPassive: _isPassive.value,
-                                                    isAnswered: _isAnswered.value,
-                                                    primaryColor: theme.primaryColor,
+                                                    isAnswered:
+                                                        _isAnswered.value,
+                                                    primaryColor:
+                                                        theme.primaryColor,
                                                     isDark: isDark,
                                                     onToggle: (val) =>
                                                         _isPassive.value = val,
                                                   ),
 
                                                   if (_isAnswered.value) ...[
-                                                    SizedBox(height: isCompact ? 12.h : 32.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 32.h,
+                                                    ),
                                                     VoiceSwapResult(
-                                                      isCorrect: _isCorrect.value == true,
+                                                      isCorrect:
+                                                          _isCorrect.value ==
+                                                          true,
                                                       quest: quest,
                                                       isDark: isDark,
                                                     ),
@@ -280,32 +338,56 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
 
                                                   if (!_isAnswered.value)
                                                     ScaleButton(
-                                                          onTap: () => _submitAnswer(quest),
-                                                          child: Container(
-                                                            width: double.infinity,
-                                                            height: isCompact ? 48.h : 65.h,
-                                                            decoration: BoxDecoration(
-                                                              borderRadius: BorderRadius.circular(
-                                                                isCompact ? 14.r : 20.r,
+                                                          onTap: () =>
+                                                              _submitAnswer(
+                                                                quest,
                                                               ),
-                                                              gradient: LinearGradient(
-                                                                begin: Alignment.topCenter,
-                                                                end: Alignment.bottomCenter,
-                                                                colors: [
-                                                                  theme.primaryColor,
-                                                                  theme.primaryColor.withValues(
-                                                                    alpha: 0.8,
+                                                          child: Container(
+                                                            width:
+                                                                double.infinity,
+                                                            height: isCompact
+                                                                ? 48.h
+                                                                : 65.h,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius.circular(
+                                                                    isCompact
+                                                                        ? 14.r
+                                                                        : 20.r,
                                                                   ),
+                                                              gradient: LinearGradient(
+                                                                begin: Alignment
+                                                                    .topCenter,
+                                                                end: Alignment
+                                                                    .bottomCenter,
+                                                                colors: [
+                                                                  theme
+                                                                      .primaryColor,
+                                                                  theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.8,
+                                                                      ),
                                                                 ],
                                                               ),
                                                               boxShadow: [
                                                                 BoxShadow(
-                                                                  color: theme.primaryColor
-                                                                      .withValues(alpha: 0.4),
-                                                                  blurRadius: isCompact ? 12 : 20,
+                                                                  color: theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.4,
+                                                                      ),
+                                                                  blurRadius:
+                                                                      isCompact
+                                                                      ? 12
+                                                                      : 20,
                                                                   offset: Offset(
                                                                     0,
-                                                                    isCompact ? 4 : 8,
+                                                                    isCompact
+                                                                        ? 4
+                                                                        : 8,
                                                                   ),
                                                                 ),
                                                               ],
@@ -314,25 +396,42 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                                               child: Text(
                                                                 "ENGAGE TRANSMUTER",
                                                                 style: TextStyle(
-                                                                  fontFamily: 'Outfit',
-                                                                  fontSize: isCompact ? 13.sp : 16.sp,
-                                                                  fontWeight: FontWeight.w900,
-                                                                  color: Colors.white,
-                                                                  letterSpacing: isCompact ? 2 : 3,
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      isCompact
+                                                                      ? 13.sp
+                                                                      : 16.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w900,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      isCompact
+                                                                      ? 2
+                                                                      : 3,
                                                                 ),
                                                               ),
                                                             ),
                                                           ),
                                                         )
                                                         .animate(
-                                                          onPlay: (c) => c.repeat(reverse: true),
+                                                          onPlay: (c) =>
+                                                              c.repeat(
+                                                                reverse: true,
+                                                              ),
                                                         )
                                                         .shimmer(
                                                           duration: 2.seconds,
                                                           color: Colors.white24,
                                                         ),
 
-                                                  SizedBox(height: isCompact ? 12.h : 40.h),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 12.h
+                                                        : 40.h,
+                                                  ),
                                                 ],
                                               );
                                             },
@@ -343,7 +442,11 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
@@ -352,16 +455,18 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                             if (_isFirstStagePassed.value && !_isAnswered.value)
                               TypeToConfirmOverlay(
                                 expectedText: expectedConversion,
-                                displayText: "Type the $targetVoiceStr conversion to lock it in",
+                                displayText:
+                                    "Type the $targetVoiceStr conversion to lock it in",
                                 primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitVerbalEvaluation(true),
+                                onConfirmed: () =>
+                                    _submitVerbalEvaluation(true),
                                 onSkipped: () => _submitVerbalEvaluation(false),
                                 isPositioned: true,
                               ),
                           ],
                         );
                       },
-                ),
+                    ),
             );
           },
         );

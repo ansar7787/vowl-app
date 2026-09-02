@@ -21,7 +21,9 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark ? color.withValues(alpha: 0.05) : color.withValues(alpha: 0.05),
+        color: isDark
+            ? color.withValues(alpha: 0.05)
+            : color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),

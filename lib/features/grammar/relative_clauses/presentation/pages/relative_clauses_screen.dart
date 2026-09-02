@@ -158,7 +158,14 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _targetFish, _pendingJigsaw, _hookPoint]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _targetFish,
+            _pendingJigsaw,
+            _hookPoint,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -167,7 +174,8 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-              useScrolling: false, // Stack needs finite space to anchor to bottom
+              useScrolling:
+                  false, // Stack needs finite space to anchor to bottom
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -180,7 +188,9 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -194,130 +204,249 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final isCompact = constraints.maxHeight < 580;
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
 
                                               return Column(
                                                 children: [
-                                                  SizedBox(height: isCompact ? 4.h : 10.h),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 4.h
+                                                        : 10.h,
+                                                  ),
                                                   isCompact
                                                       ? SizedBox(
                                                           height: 25.h,
                                                           child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
+                                                            fit: BoxFit
+                                                                .scaleDown,
                                                             child: RelativeClausesInstruction(
-                                                              primaryColor: theme.primaryColor,
+                                                              primaryColor: theme
+                                                                  .primaryColor,
                                                             ),
                                                           ),
                                                         )
                                                       : RelativeClausesInstruction(
-                                                          primaryColor: theme.primaryColor,
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                         ),
-                                                  SizedBox(height: isCompact ? 8.h : 20.h),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 8.h
+                                                        : 20.h,
+                                                  ),
 
-                                                  if (quest.clauseType != null) ...[
+                                                  if (quest.clauseType !=
+                                                      null) ...[
                                                     Container(
-                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 16.w,
+                                                            vertical: 8.h,
+                                                          ),
                                                       decoration: BoxDecoration(
-                                                        color: theme.primaryColor.withValues(alpha: 0.1),
-                                                        borderRadius: BorderRadius.circular(16.r),
-                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              16.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
                                                       ),
                                                       child: Column(
                                                         children: [
                                                           Text(
                                                             "CLAUSE: ${quest.clauseType!.toUpperCase()}",
                                                             style: TextStyle(
-                                                              fontFamily: 'Outfit',
+                                                              fontFamily:
+                                                                  'Outfit',
                                                               fontSize: 12.sp,
-                                                              color: theme.primaryColor,
-                                                              fontWeight: FontWeight.bold,
-                                                              letterSpacing: 1.2,
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              letterSpacing:
+                                                                  1.2,
                                                             ),
                                                           ),
                                                           SizedBox(height: 4.h),
                                                           Row(
-                                                            mainAxisSize: MainAxisSize.min,
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: [
                                                               Text(
-                                                                "Defining (No Commas) ", 
+                                                                "Defining (No Commas) ",
                                                                 style: TextStyle(
-                                                                  fontSize: 10.sp, 
-                                                                  color: quest.clauseType!.toLowerCase().contains('non') ? theme.primaryColor.withValues(alpha: 0.4) : theme.primaryColor,
-                                                                  fontWeight: quest.clauseType!.toLowerCase().contains('non') ? FontWeight.normal : FontWeight.bold,
-                                                                )
+                                                                  fontSize:
+                                                                      10.sp,
+                                                                  color:
+                                                                      quest
+                                                                          .clauseType!
+                                                                          .toLowerCase()
+                                                                          .contains(
+                                                                            'non',
+                                                                          )
+                                                                      ? theme.primaryColor.withValues(
+                                                                          alpha:
+                                                                              0.4,
+                                                                        )
+                                                                      : theme
+                                                                            .primaryColor,
+                                                                  fontWeight:
+                                                                      quest
+                                                                          .clauseType!
+                                                                          .toLowerCase()
+                                                                          .contains(
+                                                                            'non',
+                                                                          )
+                                                                      ? FontWeight
+                                                                            .normal
+                                                                      : FontWeight
+                                                                            .bold,
+                                                                ),
                                                               ),
-                                                              Icon(Icons.compare_arrows_rounded, color: theme.primaryColor.withValues(alpha: 0.5), size: 16.sp),
+                                                              Icon(
+                                                                Icons
+                                                                    .compare_arrows_rounded,
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.5,
+                                                                    ),
+                                                                size: 16.sp,
+                                                              ),
                                                               Text(
-                                                                " Non-Defining (Commas)", 
+                                                                " Non-Defining (Commas)",
                                                                 style: TextStyle(
-                                                                  fontSize: 10.sp, 
-                                                                  color: quest.clauseType!.toLowerCase().contains('non') ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.4),
-                                                                  fontWeight: quest.clauseType!.toLowerCase().contains('non') ? FontWeight.bold : FontWeight.normal,
-                                                                )
+                                                                  fontSize:
+                                                                      10.sp,
+                                                                  color:
+                                                                      quest
+                                                                          .clauseType!
+                                                                          .toLowerCase()
+                                                                          .contains(
+                                                                            'non',
+                                                                          )
+                                                                      ? theme
+                                                                            .primaryColor
+                                                                      : theme.primaryColor.withValues(
+                                                                          alpha:
+                                                                              0.4,
+                                                                        ),
+                                                                  fontWeight:
+                                                                      quest
+                                                                          .clauseType!
+                                                                          .toLowerCase()
+                                                                          .contains(
+                                                                            'non',
+                                                                          )
+                                                                      ? FontWeight
+                                                                            .bold
+                                                                      : FontWeight
+                                                                            .normal,
+                                                                ),
                                                               ),
                                                             ],
                                                           ),
                                                         ],
                                                       ),
-                                                    ).animate().fadeIn(duration: 400.ms),
-                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    ).animate().fadeIn(
+                                                      duration: 400.ms,
+                                                    ),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
+                                                    ),
                                                   ],
 
                                                   // Context Card
                                                   Padding(
-                                                        padding: EdgeInsets.symmetric(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
                                                           horizontal: 24.w,
                                                         ),
-                                                        child: Container(
-                                                          width: double.infinity,
-                                                          padding: EdgeInsets.all(
-                                                            isCompact ? 14.r : 22.r,
-                                                          ),
-                                                          decoration: BoxDecoration(
-                                                            color: isDark
-                                                                ? Colors.white.withValues(alpha: 0.05)
-                                                                : Colors.black.withValues(
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      padding: EdgeInsets.all(
+                                                        isCompact ? 14.r : 22.r,
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                        color: isDark
+                                                            ? Colors.white
+                                                                  .withValues(
+                                                                    alpha: 0.05,
+                                                                  )
+                                                            : Colors.black
+                                                                  .withValues(
                                                                     alpha: 0.03,
                                                                   ),
-                                                            borderRadius: BorderRadius.circular(
-                                                              isCompact ? 18.r : 28.r,
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              isCompact
+                                                                  ? 18.r
+                                                                  : 28.r,
                                                             ),
-                                                            border: Border.all(
-                                                              color: theme.primaryColor.withValues(
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
                                                                 alpha: 0.15,
                                                               ),
-                                                              width: 1.5,
-                                                            ),
-                                                          ),
-                                                          child: Text(
-                                                            quest.question?.replaceAll(
-                                                                  '___',
-                                                                  (_isAnswered.value || _pendingJigsaw.value) &&
-                                                                          _targetFish.value != -1
-                                                                      ? fishOptions[_targetFish.value]
-                                                                      : '_____',
-                                                                ) ??
-                                                                "The data ____",
-                                                            textAlign: TextAlign.center,
-                                                            style: TextStyle(
-                                                              fontFamily: 'Outfit',
-                                                              fontSize: isCompact ? 15.sp : 20.sp,
-                                                              color: isDark
-                                                                  ? Colors.white
-                                                                  : Colors.black87,
-                                                              height: 1.5,
-                                                              fontWeight: FontWeight.w600,
-                                                            ),
-                                                          ),
+                                                          width: 1.5,
                                                         ),
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 600.ms)
-                                                      .slideY(begin: 0.2, end: 0),
+                                                      ),
+                                                      child: Text(
+                                                        quest.question?.replaceAll(
+                                                              '___',
+                                                              (_isAnswered.value ||
+                                                                          _pendingJigsaw
+                                                                              .value) &&
+                                                                      _targetFish
+                                                                              .value !=
+                                                                          -1
+                                                                  ? fishOptions[_targetFish
+                                                                        .value]
+                                                                  : '_____',
+                                                            ) ??
+                                                            "The data ____",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: isCompact
+                                                              ? 15.sp
+                                                              : 20.sp,
+                                                          color: isDark
+                                                              ? Colors.white
+                                                              : Colors.black87,
+                                                          height: 1.5,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
 
                                                   // Result
                                                   if (_isAnswered.value) ...[
-                                                    SizedBox(height: isCompact ? 8.h : 20.h),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 8.h
+                                                          : 20.h,
+                                                    ),
                                                     _buildResult(
                                                       quest,
                                                       theme.primaryColor,
@@ -330,14 +459,19 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                                                   Expanded(
                                                     child: _buildQuantumArena(
                                                       fishOptions,
-                                                      quest.correctAnswerIndex ?? 0,
+                                                      quest.correctAnswerIndex ??
+                                                          0,
                                                       theme.primaryColor,
                                                       isDark,
                                                       isCompact,
                                                     ),
                                                   ),
 
-                                                  SizedBox(height: isCompact ? 12.h : 40.h),
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 12.h
+                                                        : 40.h,
+                                                  ),
                                                 ],
                                               );
                                             },
@@ -348,7 +482,11 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                                   ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h,
+                                      height:
+                                          (_pendingJigsaw.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
                                   ),
                                 ],
@@ -363,12 +501,13 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
                                 isPositioned: true,
-                                displayText: "Type the complete sentence to lock it in",
+                                displayText:
+                                    "Type the complete sentence to lock it in",
                               ),
                           ],
                         );
                       },
-                ),
+                    ),
             );
           },
         );

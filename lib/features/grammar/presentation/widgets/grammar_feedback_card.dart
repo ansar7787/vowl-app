@@ -325,66 +325,66 @@ class _ExplanationCardState extends State<_ExplanationCard> {
       builder: (context, translatedText, child) {
         final displayText = translatedText ?? widget.originalExplanation;
         return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.info_outline_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    context.tr(
-                      'games.explanation_caps',
-                      fallback: 'EXPLANATION',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: widget.accentColor,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                  const Spacer(),
-                  if (translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.originalExplanation,
-                      onTranslationComplete: (translated) {
-                        _translatedText.value = translated;
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+              decoration: BoxDecoration(
+                color: widget.accentColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: widget.accentColor.withValues(alpha: 0.2),
+                  width: 1.5,
                 ),
               ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 300.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.info_outline_rounded,
+                        color: widget.accentColor,
+                        size: 14.r,
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        context.tr(
+                          'games.explanation_caps',
+                          fallback: 'EXPLANATION',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          color: widget.accentColor,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                      const Spacer(),
+                      if (translatedText == null)
+                        TranslateButtonWidget(
+                          originalText: widget.originalExplanation,
+                          onTranslationComplete: (translated) {
+                            _translatedText.value = translated;
+                          },
+                        ),
+                    ],
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    displayText,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w600,
+                      color: widget.isDark ? Colors.white : Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 300.ms)
+            .scale(duration: 400.ms, curve: Curves.easeOutBack);
       },
     );
   }

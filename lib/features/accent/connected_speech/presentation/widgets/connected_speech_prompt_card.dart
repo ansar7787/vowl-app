@@ -56,7 +56,10 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                 if (isAnswered && spokenForm != null) ...[
                   SizedBox(height: 16.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 8.h,
+                    ),
                     decoration: BoxDecoration(
                       color: color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),
@@ -91,7 +94,11 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          child: Icon(Icons.arrow_forward_rounded, color: color, size: 20.r),
+                          child: Icon(
+                            Icons.arrow_forward_rounded,
+                            color: color,
+                            size: 20.r,
+                          ),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,

@@ -48,7 +48,7 @@ class _DialectDrillHologramConsoleState
       _hoveredTowerIndex.value = null;
     }
   }
-  
+
   @override
   void dispose() {
     _hoveredTowerIndex.dispose();
@@ -61,99 +61,111 @@ class _DialectDrillHologramConsoleState
       valueListenable: _hoveredTowerIndex,
       builder: (context, hoveredTowerIndex, child) {
         return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ScaleButton(
-          onTap: widget.onPlayTargetAudio,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
-            decoration: BoxDecoration(
-              color: widget.color.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: widget.color.withValues(alpha: 0.3)),
-              boxShadow: [
-                BoxShadow(
-                  color: widget.color.withValues(alpha: 0.2),
-                  blurRadius: 12,
-                ),
-              ],
-            ),
-            child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.volume_up_rounded, color: widget.color, size: 28.r),
-                SizedBox(width: 8.w),
-                Text(
-                  context
-                      .tr('games.play_audio', fallback: 'PLAY AUDIO')
-                      .toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w900,
-                    color: widget.color,
-                    letterSpacing: 2.0,
+                ScaleButton(
+                  onTap: widget.onPlayTargetAudio,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 32.w,
+                      vertical: 16.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: widget.color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(20.r),
+                      border: Border.all(
+                        color: widget.color.withValues(alpha: 0.3),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: widget.color.withValues(alpha: 0.2),
+                          blurRadius: 12,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.volume_up_rounded,
+                          color: widget.color,
+                          size: 28.r,
+                        ),
+                        SizedBox(width: 8.w),
+                        Text(
+                          context
+                              .tr('games.play_audio', fallback: 'PLAY AUDIO')
+                              .toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w900,
+                            color: widget.color,
+                            letterSpacing: 2.0,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+                SizedBox(height: 48.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [_buildDragTarget(0), _buildDragTarget(1)],
+                ),
+                if (!widget.isAnswered) ...[
+                  SizedBox(height: 48.h),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Draggable<int>(
+                        data: 0,
+                        onDragStarted: () => _hapticService.selection(),
+                        onDraggableCanceled: (_, _) => _hapticService.error(),
+                        feedback: Material(
+                          color: Colors.transparent,
+                          child: DialectDrillDataProbePin(
+                            color: widget.color,
+                            isAnswered: widget.isAnswered,
+                            isCorrect: widget.isCorrect,
+                            hasTargetGlow: hoveredTowerIndex != null,
+                          ),
+                        ),
+                        childWhenDragging: Opacity(
+                          opacity: 0.3,
+                          child: DialectDrillDataProbePin(
+                            color: widget.color,
+                            isAnswered: widget.isAnswered,
+                            isCorrect: widget.isCorrect,
+                            hasTargetGlow: false,
+                          ),
+                        ),
+                        child: DialectDrillDataProbePin(
+                          color: widget.color,
+                          isAnswered: widget.isAnswered,
+                          isCorrect: widget.isCorrect,
+                          hasTargetGlow: hoveredTowerIndex != null,
+                        ),
+                      ),
+                      SizedBox(height: 12.h),
+                      Text(
+                        "DRAG PIN OR TAP TO SELECT",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 2,
+                          color: widget.color.withValues(alpha: 0.6),
+                        ),
+                      ).animate().fadeIn().slideY(begin: 0.2),
+                    ],
+                  ),
+                ],
               ],
-            ),
-          ),
-        ),
-        SizedBox(height: 48.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [_buildDragTarget(0), _buildDragTarget(1)],
-        ),
-        if (!widget.isAnswered) ...[
-          SizedBox(height: 48.h),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Draggable<int>(
-                data: 0,
-                onDragStarted: () => _hapticService.selection(),
-                onDraggableCanceled: (_, _) => _hapticService.error(),
-                feedback: Material(
-                  color: Colors.transparent,
-                  child: DialectDrillDataProbePin(
-                    color: widget.color,
-                    isAnswered: widget.isAnswered,
-                    isCorrect: widget.isCorrect,
-                    hasTargetGlow: hoveredTowerIndex != null,
-                  ),
-                ),
-                childWhenDragging: Opacity(
-                  opacity: 0.3,
-                  child: DialectDrillDataProbePin(
-                    color: widget.color,
-                    isAnswered: widget.isAnswered,
-                    isCorrect: widget.isCorrect,
-                    hasTargetGlow: false,
-                  ),
-                ),
-                child: DialectDrillDataProbePin(
-                  color: widget.color,
-                  isAnswered: widget.isAnswered,
-                  isCorrect: widget.isCorrect,
-                  hasTargetGlow: hoveredTowerIndex != null,
-                ),
-              ),
-              SizedBox(height: 12.h),
-              Text(
-                "DRAG PIN OR TAP TO SELECT",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2,
-                  color: widget.color.withValues(alpha: 0.6),
-                ),
-              ).animate().fadeIn().slideY(begin: 0.2),
-            ],
-          ),
-        ],
-      ],
-        ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.95, 0.95));
+            )
+            .animate()
+            .fadeIn(duration: 400.ms)
+            .scale(begin: const Offset(0.95, 0.95));
       },
     );
   }
@@ -215,7 +227,8 @@ class _DialectDrillHologramConsoleState
             maxWidth: MediaQuery.of(context).size.width,
             color: widget.color,
             isDark: widget.isDark,
-            isHovered: _hoveredTowerIndex.value == index || candidateData.isNotEmpty,
+            isHovered:
+                _hoveredTowerIndex.value == index || candidateData.isNotEmpty,
             isAnswered: widget.isAnswered,
             isCorrect: widget.isCorrect,
             hoveredTowerIndex: _hoveredTowerIndex.value,

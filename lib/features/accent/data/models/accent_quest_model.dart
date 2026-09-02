@@ -161,7 +161,9 @@ class AccentQuestModel extends AccentQuest {
       emotionContext: getString(map['emotionContext']),
       stressIndex: (map['stressIndex'] as num?)?.toInt(),
       linkingType: getString(map['linkingType']),
-      speedLevel: (map['speedLevel'] as num?)?.toDouble() ?? (map['targetSpeed'] as num?)?.toDouble(),
+      speedLevel:
+          (map['speedLevel'] as num?)?.toDouble() ??
+          (map['targetSpeed'] as num?)?.toDouble(),
       vowelChart: map['vowelChart'] as Map<String, dynamic>?,
       voicing: map['voicing'] as String?,
       airflow: map['airflow'] as String?,

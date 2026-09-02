@@ -24,7 +24,9 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: isDark ? color.withValues(alpha: 0.05) : color.withValues(alpha: 0.05),
+        color: isDark
+            ? color.withValues(alpha: 0.05)
+            : color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
@@ -36,20 +38,24 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
             height: 56.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: isVoiced ? color.withValues(alpha: 0.2) : Colors.grey.withValues(alpha: 0.2),
+              color: isVoiced
+                  ? color.withValues(alpha: 0.2)
+                  : Colors.grey.withValues(alpha: 0.2),
             ),
             child: Stack(
               alignment: Alignment.center,
               children: [
                 Icon(
-                  Icons.graphic_eq_rounded,
-                  color: isVoiced ? color : Colors.grey,
-                  size: 28.r,
-                ).animate(
-                  onPlay: (c) {
-                    if (isVoiced) c.repeat();
-                  },
-                ).shimmer(duration: 1.seconds),
+                      Icons.graphic_eq_rounded,
+                      color: isVoiced ? color : Colors.grey,
+                      size: 28.r,
+                    )
+                    .animate(
+                      onPlay: (c) {
+                        if (isVoiced) c.repeat();
+                      },
+                    )
+                    .shimmer(duration: 1.seconds),
                 if (!isVoiced)
                   Icon(
                     Icons.do_not_disturb_alt_rounded,

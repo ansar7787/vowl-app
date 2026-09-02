@@ -199,131 +199,152 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 580;
-                        return CustomScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
-                            SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: isCompact ? 5.h : 10.h,
-                                    ),
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: ScrollController(),
+                              thumbColor: Colors.redAccent.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
                                     child: Column(
                                       children: [
-                              EmergencyHubInstruction(
-                                instruction: quest.instruction,
-                              ),
-                              SizedBox(height: isCompact ? 10.h : 16.h),
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final isCompact = constraints.maxHeight < 580;
+                                              return Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                  vertical: isCompact ? 5.h : 10.h,
+                                                ),
+                                                child: Column(
+                                                  children: [
+                                                    EmergencyHubInstruction(
+                                                      instruction: quest.instruction,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 10.h : 16.h),
 
-                              // Critical dispatcher prompt telex
-                              EmergencyHubTelexCard(
-                                telex:
-                                    quest.dispatcherQuestion ??
-                                    "AWAITING BROADCAST VECTOR DETAILS...",
-                                urgencyLevel: quest.urgencyLevel ?? 3,
-                                isDark: isDark,
-                              ),
-                              SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    // Critical dispatcher prompt telex
+                                                    EmergencyHubTelexCard(
+                                                      telex:
+                                                          quest.dispatcherQuestion ??
+                                                          "AWAITING BROADCAST VECTOR DETAILS...",
+                                                      urgencyLevel: quest.urgencyLevel ?? 3,
+                                                      isDark: isDark,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
 
-                              // Retro terminal input text field
-                              EmergencyHubTerminalInput(
-                                controller: _codeController,
-                                correctAnswer: quest.correctAnswer ?? "",
-                                isDark: isDark,
-                                onChanged: () {},
-                              ),
-                              SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    // Retro terminal input text field
+                                                    EmergencyHubTerminalInput(
+                                                      controller: _codeController,
+                                                      correctAnswer: quest.correctAnswer ?? "",
+                                                      isDark: isDark,
+                                                      onChanged: () {},
+                                                    ),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
 
-                              // Mechanical safety valve chamber
-                              EmergencyHubValveChamber(
-                                correctAnswer: quest.correctAnswer ?? "",
-                                inputText: _codeController.text,
-                                isDark: isDark,
-                                rotation: _rotation.value,
-                                pulseAnimation: _pulseController,
-                                onValveDragged: _onValveDragged,
-                              ),
-                              SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    // Mechanical safety valve chamber
+                                                    EmergencyHubValveChamber(
+                                                      correctAnswer: quest.correctAnswer ?? "",
+                                                      inputText: _codeController.text,
+                                                      isDark: isDark,
+                                                      rotation: _rotation.value,
+                                                      pulseAnimation: _pulseController,
+                                                      onValveDragged: _onValveDragged,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 16.h : 24.h),
 
-                              // Dispatch lock confirm trigger button
-                              if (!_isAnswered.value &&
-                                  _codeController.text.isNotEmpty)
-                                ScaleButton(
-                                  onTap: () => _submitCode(
-                                    _codeController.text,
-                                    quest.correctAnswer ?? "",
-                                  ),
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 48.w,
-                                      vertical: isCompact ? 10.h : 14.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30.r),
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Colors.redAccent,
-                                          Colors.deepOrangeAccent,
-                                        ],
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.redAccent.withValues(
-                                            alpha: 0.45,
+                                                    // Dispatch lock confirm trigger button
+                                                    if (!_isAnswered.value &&
+                                                        _codeController.text.isNotEmpty)
+                                                      ScaleButton(
+                                                        onTap: () => _submitCode(
+                                                          _codeController.text,
+                                                          quest.correctAnswer ?? "",
+                                                        ),
+                                                        child: Container(
+                                                          padding: EdgeInsets.symmetric(
+                                                            horizontal: 48.w,
+                                                            vertical: isCompact ? 10.h : 14.h,
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                            borderRadius: BorderRadius.circular(30.r),
+                                                            gradient: const LinearGradient(
+                                                              colors: [
+                                                                Colors.redAccent,
+                                                                Colors.deepOrangeAccent,
+                                                              ],
+                                                            ),
+                                                            boxShadow: [
+                                                              BoxShadow(
+                                                                color: Colors.redAccent.withValues(
+                                                                  alpha: 0.45,
+                                                                ),
+                                                                blurRadius: isCompact ? 10 : 15,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          child: Row(
+                                                            mainAxisSize: MainAxisSize.min,
+                                                            children: [
+                                                              Icon(
+                                                                Icons.flash_on_rounded,
+                                                                color: Colors.white,
+                                                                size: isCompact ? 16.r : 18.r,
+                                                              ),
+                                                              SizedBox(width: 8.w),
+                                                              Text(
+                                                                "LAUNCH EMERGENCY BEACON",
+                                                                style: TextStyle(
+                                                                  fontFamily: 'Outfit',
+                                                                  fontSize: isCompact ? 10.sp : 12.sp,
+                                                                  fontWeight: FontWeight.bold,
+                                                                  color: Colors.white,
+                                                                  letterSpacing: 2,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ).animate().fadeIn(duration: 300.ms),
+
+                                                    // Review details
+                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                  ],
+                                                ),
+                                              );
+                                            },
                                           ),
-                                          blurRadius: isCompact ? 10 : 15,
                                         ),
                                       ],
                                     ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Icon(
-                                          Icons.flash_on_rounded,
-                                          color: Colors.white,
-                                          size: isCompact ? 16.r : 18.r,
-                                        ),
-                                        SizedBox(width: 8.w),
-                                        Text(
-                                          "LAUNCH EMERGENCY BEACON",
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: isCompact ? 10.sp : 12.sp,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            letterSpacing: 2,
-                                          ),
-                                        ),
-                                      ],
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
                                     ),
                                   ),
-                                ).animate().fadeIn(duration: 300.ms),
-
-                                          // Review details
-                                          SizedBox(height: isCompact ? 20.h : 40.h),
-                                        ],
-                                      ),
-                                    ),
-                                  if (_isFirstStagePassed.value && !_isAnswered.value)
-                                    SpeakToConfirmOverlay(
-                                      expectedText: quest.correctAnswer ?? _codeController.text,
-                                      primaryColor: Colors.redAccent,
-                                      isPositioned: false,
-                                      onConfirmed: () {
-                                        context.read<RoleplayBloc>().add(
-                                          const RoleplaySpeakConfirmed(5),
-                                        );
-                                        _submitVerbalEvaluation(true);
-                                      },
-                                      onSkipped: () => _submitVerbalEvaluation(false),
-                                    ),
-                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
                                 ],
                               ),
                             ),
+                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                              SpeakToConfirmOverlay(
+                                expectedText: quest.correctAnswer ?? _codeController.text,
+                                primaryColor: Colors.redAccent,
+                                isPositioned: true,
+                                onConfirmed: () {
+                                  context.read<RoleplayBloc>().add(
+                                    const RoleplaySpeakConfirmed(5),
+                                  );
+                                  _submitVerbalEvaluation(true);
+                                },
+                                onSkipped: () => _submitVerbalEvaluation(false),
+                              ),
                           ],
                         );
                       },

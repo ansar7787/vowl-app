@@ -152,23 +152,39 @@ class WordLinkingSentenceField extends StatelessWidget {
                             if (linkingType != null)
                               Positioned(
                                 top: -24.h,
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                                  decoration: BoxDecoration(
-                                    color: nodeColor.withValues(alpha: 0.15),
-                                    borderRadius: BorderRadius.circular(8.r),
-                                    border: Border.all(color: nodeColor.withValues(alpha: 0.3)),
-                                  ),
-                                  child: Text(
-                                    _formatLinkingType(linkingType!),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 10.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: nodeColor,
+                                child:
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 8.w,
+                                        vertical: 4.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: nodeColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
+                                        border: Border.all(
+                                          color: nodeColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        _formatLinkingType(linkingType!),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.w800,
+                                          color: nodeColor,
+                                        ),
+                                      ),
+                                    ).animate().scale(
+                                      delay: 300.ms,
+                                      duration: 400.ms,
+                                      curve: Curves.easeOutBack,
                                     ),
-                                  ),
-                                ).animate().scale(delay: 300.ms, duration: 400.ms, curve: Curves.easeOutBack),
                               ),
                           ],
                         )

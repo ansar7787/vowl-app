@@ -23,7 +23,9 @@ class VowelTrapezoidChart extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: isDark ? color.withValues(alpha: 0.05) : color.withValues(alpha: 0.05),
+        color: isDark
+            ? color.withValues(alpha: 0.05)
+            : color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
@@ -41,17 +43,20 @@ class VowelTrapezoidChart extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           SizedBox(
-            width: 200.w,
-            height: 120.h,
-            child: CustomPaint(
-              painter: _TrapezoidPainter(
-                color: color,
-                isDark: isDark,
-                x: x,
-                y: y,
-              ),
-            ),
-          ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.95, 0.95)),
+                width: 200.w,
+                height: 120.h,
+                child: CustomPaint(
+                  painter: _TrapezoidPainter(
+                    color: color,
+                    isDark: isDark,
+                    x: x,
+                    y: y,
+                  ),
+                ),
+              )
+              .animate()
+              .fadeIn(duration: 400.ms)
+              .scale(begin: const Offset(0.95, 0.95)),
         ],
       ),
     );
@@ -133,6 +138,8 @@ class _TrapezoidPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _TrapezoidPainter oldDelegate) {
-    return oldDelegate.x != x || oldDelegate.y != y || oldDelegate.color != color;
+    return oldDelegate.x != x ||
+        oldDelegate.y != y ||
+        oldDelegate.color != color;
   }
 }

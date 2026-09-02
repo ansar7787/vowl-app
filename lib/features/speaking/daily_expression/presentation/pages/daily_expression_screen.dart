@@ -318,7 +318,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                       onSkipped: () =>
                           _submitVerbalEvaluation(false),
                     ),
-                ],
+                  ],
+                ),
               );
             },
           ),

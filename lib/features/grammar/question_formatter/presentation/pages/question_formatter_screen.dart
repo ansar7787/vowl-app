@@ -67,7 +67,11 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _autoSpin() {
-    if (_isAnswered.value || _crankRotation.value.abs() >= 6.28 || _pendingJigsaw.value) return;
+    if (_isAnswered.value ||
+        _crankRotation.value.abs() >= 6.28 ||
+        _pendingJigsaw.value) {
+      return;
+    }
     _hapticService.success();
     final controller = AnimationController(
       vsync: this,
@@ -169,7 +173,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
+        final quest = (state is GrammarLoaded)
+            ? state.currentQuest as GrammarQuest?
+            : null;
         final options =
             quest?.options ??
             ["Is he...?", "Does he...?", "Has he...?", "Was he...?"];
@@ -187,7 +193,14 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _crankRotation, _pendingJigsaw, _selectedOptionText]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _crankRotation,
+            _pendingJigsaw,
+            _selectedOptionText,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -196,212 +209,329 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false, // Stack layout required for Jigsaw Overlay
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverFillRemaining(
-                                hasScrollBody: false,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: LayoutBuilder(
-                                builder: (context, constraints) {
-                                  final isCompact = constraints.maxHeight < 580;
+              useScrolling: false, // Stack layout required for Jigsaw Overlay
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final isCompact =
+                                                  constraints.maxHeight < 580;
 
-                                  return Column(
-                                    children: [
-                                      SizedBox(height: isCompact ? 4.h : 10.h),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 25.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: QuestionFormatterInstruction(
-                                                  primaryColor: theme.primaryColor,
-                                                ),
-                                              ),
-                                            )
-                                          : QuestionFormatterInstruction(
-                                              primaryColor: theme.primaryColor,
-                                            ),
-                                      SizedBox(height: isCompact ? 8.h : 20.h),
-
-                                      if (quest.questionType != null) ...[
-                                        Container(
-                                          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
-                                          decoration: BoxDecoration(
-                                            color: theme.primaryColor.withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(12.r),
-                                            border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                          ),
-                                          child: Text(
-                                            "TYPE: ${quest.questionType!.toUpperCase()}  |  FORMULA: Aux + S + V + ?",
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 12.sp,
-                                              color: theme.primaryColor,
-                                              fontWeight: FontWeight.bold,
-                                              letterSpacing: 1.2,
-                                            ),
-                                          ),
-                                        ).animate().fadeIn(duration: 400.ms),
-                                        SizedBox(height: isCompact ? 12.h : 24.h),
-                                      ],
-
-                                      // 3D Inverter Context Card
-                                      Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                            ),
-                                            child: Transform(
-                                              transform: Matrix4.identity()
-                                                ..setEntry(3, 2, 0.001)
-                                                ..rotateX(_crankRotation.value),
-                                              alignment: Alignment.center,
-                                              child: Container(
-                                                width: double.infinity,
-                                                padding: EdgeInsets.all(
-                                                  isCompact ? 16.r : 28.r,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: isDark
-                                                      ? Colors.white.withValues(
-                                                          alpha: 0.05,
+                                              return Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 4.h
+                                                        : 10.h,
+                                                  ),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit
+                                                                .scaleDown,
+                                                            child: QuestionFormatterInstruction(
+                                                              primaryColor: theme
+                                                                  .primaryColor,
+                                                            ),
+                                                          ),
                                                         )
-                                                      : Colors.black.withValues(
-                                                          alpha: 0.03,
+                                                      : QuestionFormatterInstruction(
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                         ),
-                                                  borderRadius: BorderRadius.circular(
-                                                    isCompact ? 18.r : 28.r,
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 8.h
+                                                        : 20.h,
                                                   ),
-                                                  border: Border.all(
-                                                    color: theme.primaryColor.withValues(
-                                                      alpha: 0.2,
+
+                                                  if (quest.questionType !=
+                                                      null) ...[
+                                                    Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 16.w,
+                                                            vertical: 6.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                      child: Text(
+                                                        "TYPE: ${quest.questionType!.toUpperCase()}  |  FORMULA: Aux + S + V + ?",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          letterSpacing: 1.2,
+                                                        ),
+                                                      ),
+                                                    ).animate().fadeIn(
+                                                      duration: 400.ms,
                                                     ),
-                                                    width: 1.5,
-                                                  ),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: theme.primaryColor
-                                                          .withValues(alpha: 0.05),
-                                                      blurRadius: 30,
-                                                      spreadRadius: 5,
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 24.h,
                                                     ),
                                                   ],
-                                                ),
-                                                child: Text(
-                                                  quest.sentence ?? "Missing statement.",
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: isCompact ? 16.sp : 22.sp,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: isDark
-                                                        ? Colors.white
-                                                        : Colors.black87,
+
+                                                  // 3D Inverter Context Card
+                                                  Padding(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 24.w,
+                                                            ),
+                                                        child: Transform(
+                                                          transform:
+                                                              Matrix4.identity()
+                                                                ..setEntry(
+                                                                  3,
+                                                                  2,
+                                                                  0.001,
+                                                                )
+                                                                ..rotateX(
+                                                                  _crankRotation
+                                                                      .value,
+                                                                ),
+                                                          alignment:
+                                                              Alignment.center,
+                                                          child: Container(
+                                                            width:
+                                                                double.infinity,
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                  isCompact
+                                                                      ? 16.r
+                                                                      : 28.r,
+                                                                ),
+                                                            decoration: BoxDecoration(
+                                                              color: isDark
+                                                                  ? Colors.white
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.05,
+                                                                        )
+                                                                  : Colors.black
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.03,
+                                                                        ),
+                                                              borderRadius:
+                                                                  BorderRadius.circular(
+                                                                    isCompact
+                                                                        ? 18.r
+                                                                        : 28.r,
+                                                                  ),
+                                                              border: Border.all(
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.2,
+                                                                    ),
+                                                                width: 1.5,
+                                                              ),
+                                                              boxShadow: [
+                                                                BoxShadow(
+                                                                  color: theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.05,
+                                                                      ),
+                                                                  blurRadius:
+                                                                      30,
+                                                                  spreadRadius:
+                                                                      5,
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            child: Text(
+                                                              quest.sentence ??
+                                                                  "Missing statement.",
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 16.sp
+                                                                    : 22.sp,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                color: isDark
+                                                                    ? Colors
+                                                                          .white
+                                                                    : Colors
+                                                                          .black87,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 600.ms)
+                                                      .scale(
+                                                        begin: const Offset(
+                                                          0.9,
+                                                          0.9,
+                                                        ),
+                                                        end: const Offset(1, 1),
+                                                      ),
+
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 16.h
+                                                        : 48.h,
                                                   ),
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                          .animate()
-                                          .fadeIn(duration: 600.ms)
-                                          .scale(
-                                            begin: const Offset(0.9, 0.9),
-                                            end: const Offset(1, 1),
-                                          ),
 
-                                      SizedBox(height: isCompact ? 16.h : 48.h),
+                                                  // Game Mechanic Area
+                                                  Expanded(
+                                                    child: SingleChildScrollView(
+                                                      child: Column(
+                                                        children: [
+                                                          if (!_isAnswered
+                                                                  .value &&
+                                                              !_pendingJigsaw
+                                                                  .value &&
+                                                              _crankRotation
+                                                                      .value
+                                                                      .abs() <
+                                                                  6.28)
+                                                            QuestionFormatterCrank(
+                                                              crankRotation:
+                                                                  _crankRotation
+                                                                      .value,
+                                                              isAnswered:
+                                                                  _isAnswered
+                                                                      .value ||
+                                                                  _pendingJigsaw
+                                                                      .value,
+                                                              isDark: isDark,
+                                                              primaryColor: theme
+                                                                  .primaryColor,
+                                                              onPanUpdate:
+                                                                  _onCrankUpdate,
+                                                              onAutoSpin:
+                                                                  _autoSpin,
+                                                            )
+                                                          else if (!_isAnswered
+                                                                  .value &&
+                                                              !_pendingJigsaw
+                                                                  .value)
+                                                            _buildQuestionOptions(
+                                                              options,
+                                                              quest.correctAnswerIndex ??
+                                                                  0,
+                                                              theme
+                                                                  .primaryColor,
+                                                              isDark,
+                                                              isCompact,
+                                                            )
+                                                          else if (_isAnswered
+                                                              .value)
+                                                            _buildResult(
+                                                              quest.correctAnswer ??
+                                                                  _selectedOptionText
+                                                                      .value ??
+                                                                  "",
+                                                              theme
+                                                                  .primaryColor,
+                                                              isDark,
+                                                              isCompact,
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
 
-                                      // Game Mechanic Area
-                                      Expanded(
-                                        child: SingleChildScrollView(
-                                          child: Column(
-                                            children: [
-                                              if (!_isAnswered.value &&
-                                                  !_pendingJigsaw.value &&
-                                                  _crankRotation.value.abs() < 6.28)
-                                                QuestionFormatterCrank(
-                                                  crankRotation: _crankRotation.value,
-                                                  isAnswered:
-                                                      _isAnswered.value || _pendingJigsaw.value,
-                                                  isDark: isDark,
-                                                  primaryColor: theme.primaryColor,
-                                                  onPanUpdate: _onCrankUpdate,
-                                                  onAutoSpin: _autoSpin,
-                                                )
-                                              else if (!_isAnswered.value && !_pendingJigsaw.value)
-                                                _buildQuestionOptions(
-                                                  options,
-                                                  quest.correctAnswerIndex ?? 0,
-                                                  theme.primaryColor,
-                                                  isDark,
-                                                  isCompact,
-                                                )
-                                              else if (_isAnswered.value)
-                                                _buildResult(
-                                                  quest.correctAnswer ??
-                                                      _selectedOptionText.value ??
-                                                      "",
-                                                  theme.primaryColor,
-                                                  isDark,
-                                                  isCompact,
-                                                ),
-                                            ],
+                                                  SizedBox(
+                                                    height: isCompact
+                                                        ? 12.h
+                                                        : 40.h,
+                                                  ),
+                                                ],
+                                              );
+                                            },
                                           ),
                                         ),
-                                      ),
-
-                                      SizedBox(height: isCompact ? 12.h : 40.h),
-                                    ],
-                                  );
-                                },
+                                      ],
+                                    ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          (_pendingJigsaw.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                                  ],
-                                ),
+                            if (_pendingJigsaw.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: true,
+                                displayText:
+                                    "Type the full question to lock it in",
                               ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        if (_pendingJigsaw.value &&
-                            !_isAnswered.value &&
-                            cleanTargetSentence.isNotEmpty)
-                          TypeToConfirmOverlay(
-                            expectedText: cleanTargetSentence,
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                            isPositioned: true,
-                            displayText: "Type the full question to lock it in",
-                          ),
-                      ],
-                    );
-                  },
-                  },
-                ),
+                          ],
+                        );
+                      },
+                    ),
             );
           },
         );

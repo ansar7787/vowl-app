@@ -307,103 +307,96 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   ) {
     final quest = state.currentQuest;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Stack(
-          children: [
-            Builder(
-              builder: (context) {
-                final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
-
-                return Column(
-                children: [
-            // FIX: every Story Builder quest carries a real, hand-written
-            // narrative hint (verified across all four sample batches), and
-            // tapping the hint button does spend it (MarkEliteHintUsed,
-            // ShowEliteHint) — but this screen never actually rendered an
-            // EliteHintCard anywhere, unlike all three sibling screens. The
-            // only visible effect of "using a hint" was the small position
-            // badge on each tile below; the actual clue text was completely
-            // inaccessible, so every hint spent here bought strictly less
-            // value than in any other game in the category.
-            if (state.isHintVisible) ...[
-              EliteHintCard(
-                hintText: quest.hint,
-                isVisible: true,
-                onShowHint: () {},
-                primaryColor: theme.primaryColor,
-              ),
-              SizedBox(height: isCompact ? 12.h : 20.h),
-            ],
-                  if (quest.plotStructure != null) ...[
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: theme.primaryColor.withValues(alpha: 0.2),
-                        ),
-                      ),
+    return Stack(
+      children: [
+        RawScrollbar(
+          controller: ScrollController(),
+          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+          radius: Radius.circular(8.r),
+          thickness: 4.w,
+          child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverToBoxAdapter(
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.timeline_rounded, color: theme.primaryColor, size: 14.r),
-                              SizedBox(width: 8.w),
-                              Text(
-                                "NARRATIVE ARC",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: theme.primaryColor,
-                                  letterSpacing: 1.5,
+                          if (state.isHintVisible) ...[
+                            EliteHintCard(
+                              hintText: quest.hint,
+                              isVisible: true,
+                              onShowHint: () {},
+                              primaryColor: theme.primaryColor,
+                            ),
+                            SizedBox(height: isCompact ? 12.h : 20.h),
+                          ],
+                          if (quest.plotStructure != null) ...[
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                              decoration: BoxDecoration(
+                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: theme.primaryColor.withValues(alpha: 0.2),
                                 ),
                               ),
-                            ],
-                          ),
-                          SizedBox(height: 8.h),
-                          Text(
-                            quest.plotStructure!.split(',').join(' ➔ '),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark ? Colors.white70 : Colors.black87,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.timeline_rounded, color: theme.primaryColor, size: 14.r),
+                                      SizedBox(width: 8.w),
+                                      Text(
+                                        "NARRATIVE ARC",
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: theme.primaryColor,
+                                          letterSpacing: 1.5,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 8.h),
+                                  Text(
+                                    quest.plotStructure!.split(',').join(' ➔ '),
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: isDark ? Colors.white70 : Colors.black87,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
+                            SizedBox(height: isCompact ? 12.h : 20.h),
+                          ],
                         ],
                       ),
-                    ),
-                    SizedBox(height: isCompact ? 12.h : 20.h),
-                  ],
-                  Expanded(
-                    child: ReorderableListView(
-                      physics: _isFirstStagePassed.value && !_isAnswered.value
-                          ? const NeverScrollableScrollPhysics()
-                          : const BouncingScrollPhysics(),
-                      onReorder: _onReorder,
-                      buildDefaultDragHandles: false,
-                      proxyDecorator: (child, index, animation) => Material(
-                        color: Colors.transparent,
-                        child: child.animate().scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.02, 1.02),
-                          duration: 150.ms,
-                        ),
-                      ),
-                      children: [
-                        for (int i = 0; i < _currentOrder.value.length; i++)
-                          Padding(
-                            key: ValueKey('${quest.id}_${_currentOrder.value[i]}'),
+                    );
+                  },
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                sliver: _isFirstStagePassed.value && !_isAnswered.value
+                    ? SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) => Padding(
+                            key: ValueKey('${quest.id}_${_currentOrder.value[index]}'),
                             padding: EdgeInsets.only(bottom: 8.h),
                             child: StoryBuilderNarrativeTile(
-                              index: i,
-                              sentence: quest.sentences![_currentOrder.value[i]],
+                              index: index,
+                              sentence: quest.sentences![_currentOrder.value[index]],
                               quest: quest,
                               isHintVisible: state.isHintVisible,
                               isDark: isDark,
@@ -412,84 +405,122 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                               isCorrect: _isCorrect.value,
                             ),
                           ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: isCompact ? 16.h : 30.h),
-                  if (!_isAnswered.value)
-                    Semantics(
-                      button: true,
-                      label: context.tr(
-                        'games.finalize_story_caps',
-                        fallback: 'FINALIZE STORY',
-                      ),
-                      excludeSemantics: true,
-                      child: ScaleButton(
-                        onTap: () => _submitOrder(quest.correctOrder),
-                        child: Container(
-                          width: double.infinity,
-                          constraints: const BoxConstraints(minHeight: 48),
-                          padding: EdgeInsets.symmetric(
-                            vertical: isCompact ? 14.h : 20.h,
+                          childCount: _currentOrder.value.length,
+                        ),
+                      )
+                    : SliverReorderableList(
+                        itemBuilder: (context, index) => Padding(
+                          key: ValueKey('${quest.id}_${_currentOrder.value[index]}'),
+                          padding: EdgeInsets.only(bottom: 8.h),
+                          child: StoryBuilderNarrativeTile(
+                            index: index,
+                            sentence: quest.sentences![_currentOrder.value[index]],
+                            quest: quest,
+                            isHintVisible: state.isHintVisible,
+                            isDark: isDark,
+                            theme: theme,
+                            isAnswered: _isAnswered.value,
+                            isCorrect: _isCorrect.value,
                           ),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                theme.primaryColor,
-                                theme.primaryColor.withValues(alpha: 0.8),
-                              ],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            borderRadius: BorderRadius.circular(
-                              isCompact ? 16.r : 24.r,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: theme.primaryColor.withValues(alpha: 0.6),
-                                blurRadius: isCompact ? 10 : 20,
-                                offset: Offset(0, isCompact ? 5 : 10),
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              context.tr(
-                                'games.finalize_story_caps',
-                                fallback: 'FINALIZE STORY',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: isCompact ? 16.sp : 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                                letterSpacing: isCompact ? 1.5 : 2.5,
-                              ),
-                            ),
+                        ),
+                        itemCount: _currentOrder.value.length,
+                        onReorder: _onReorder,
+                        proxyDecorator: (child, index, animation) => Material(
+                          color: Colors.transparent,
+                          child: child.animate().scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.02, 1.02),
+                            duration: 150.ms,
                           ),
                         ),
                       ),
-                    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
+              ),
+              SliverToBoxAdapter(
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: Column(
+                        children: [
+                          SizedBox(height: isCompact ? 16.h : 30.h),
+                          if (!_isAnswered.value)
+                            Semantics(
+                              button: true,
+                              label: context.tr(
+                                'games.finalize_story_caps',
+                                fallback: 'FINALIZE STORY',
+                              ),
+                              excludeSemantics: true,
+                              child: ScaleButton(
+                                onTap: () => _submitOrder(quest.correctOrder),
+                                child: Container(
+                                  width: double.infinity,
+                                  constraints: const BoxConstraints(minHeight: 48),
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: isCompact ? 14.h : 20.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        theme.primaryColor,
+                                        theme.primaryColor.withValues(alpha: 0.8),
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ),
+                                    borderRadius: BorderRadius.circular(
+                                      isCompact ? 16.r : 24.r,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: theme.primaryColor.withValues(alpha: 0.6),
+                                        blurRadius: isCompact ? 10 : 20,
+                                        offset: Offset(0, isCompact ? 5 : 10),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      context.tr(
+                                        'games.finalize_story_caps',
+                                        fallback: 'FINALIZE STORY',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: isCompact ? 16.sp : 18.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: isCompact ? 1.5 : 2.5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
 
-                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 160.h : 20.h),
-                ],
-              );
-            },
+                          SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 160.h : 60.h),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-    if (_isFirstStagePassed.value && !_isAnswered.value)
-      SpeakToConfirmOverlay(
-        expectedText: quest.sentences != null && quest.sentences!.isNotEmpty 
-            ? quest.sentences![_currentOrder.value.last] 
-            : "Narrate the ending",
-        displayText: "Narrate the final sentence to finish the story",
-        primaryColor: theme.primaryColor,
-        isPositioned: true,
-        onConfirmed: () => _submitVerbalEvaluation(true),
-        onSkipped: () => _submitVerbalEvaluation(false),
-      ),
-  ],
-);
-      },
+        ),
+        if (_isFirstStagePassed.value && !_isAnswered.value)
+          SpeakToConfirmOverlay(
+            expectedText: quest.sentences != null && quest.sentences!.isNotEmpty 
+                ? quest.sentences![_currentOrder.value.last] 
+                : "Narrate the ending",
+            displayText: "Narrate the final sentence to finish the story",
+            primaryColor: theme.primaryColor,
+            isPositioned: true,
+            onConfirmed: () => _submitVerbalEvaluation(true),
+            onSkipped: () => _submitVerbalEvaluation(false),
+          ),
+      ],
     );
   }
 }

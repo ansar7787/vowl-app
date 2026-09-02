@@ -192,95 +192,116 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 580;
-                        return CustomScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
-                            SliverToBoxAdapter(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: isCompact ? 5.h : 10.h,
-                                    ),
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: ScrollController(),
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
                                     child: Column(
                                       children: [
-                              JobInterviewInstruction(
-                                primaryColor: theme.primaryColor,
-                                instruction: quest.instruction,
-                                isDark: isDark,
-                              ),
-                              SizedBox(height: isCompact ? 10.h : 16.h),
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final isCompact = constraints.maxHeight < 580;
+                                              return Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                  vertical: isCompact ? 5.h : 10.h,
+                                                ),
+                                                child: Column(
+                                                  children: [
+                                                    JobInterviewInstruction(
+                                                      primaryColor: theme.primaryColor,
+                                                      instruction: quest.instruction,
+                                                      isDark: isDark,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 10.h : 16.h),
 
-                              // Professionalism telemetry reactor bar
-                              JobInterviewTelemetryDashboard(
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                mercuryLevel: _mercuryLevel.value,
-                                reactorAnimation: _reactorController,
-                              ),
-                              SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    // Professionalism telemetry reactor bar
+                                                    JobInterviewTelemetryDashboard(
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      mercuryLevel: _mercuryLevel.value,
+                                                      reactorAnimation: _reactorController,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 16.h : 24.h),
 
-                              // Holographic Interviewer Dialog Bubble
-                              JobInterviewInterviewerPanel(
-                                text: quest.interviewerQuestion ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                reaction: _isAnswered.value && _selectedIndex.value != null && quest.interviewerReaction != null && quest.options != null
-                                    ? quest.interviewerReaction![quest.options!.indexOf(_shuffledOptions.value[_selectedIndex.value!])]
-                                    : null,
-                              ),
-                              SizedBox(height: isCompact ? 16.h : 24.h),
+                                                    // Holographic Interviewer Dialog Bubble
+                                                    JobInterviewInterviewerPanel(
+                                                      text: quest.interviewerQuestion ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      reaction: _isAnswered.value && _selectedIndex.value != null && quest.interviewerReaction != null && quest.options != null
+                                                          ? quest.interviewerReaction![quest.options!.indexOf(_shuffledOptions.value[_selectedIndex.value!])]
+                                                          : null,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 16.h : 24.h),
 
-                              // Option response cards
-                              JobInterviewResponseConsole(
-                                options: _shuffledOptions.value,
-                                correctIndex: _shuffledCorrectIndex.value,
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                selectedIndex: _selectedIndex.value,
-                                isAnswered: _isAnswered.value || _isFirstStagePassed.value,
-                                isCorrect: _isCorrect.value,
-                                onOptionSelected: _onOptionSelected,
-                              ),
-                              SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    // Option response cards
+                                                    JobInterviewResponseConsole(
+                                                      options: _shuffledOptions.value,
+                                                      correctIndex: _shuffledCorrectIndex.value,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      selectedIndex: _selectedIndex.value,
+                                                      isAnswered: _isAnswered.value || _isFirstStagePassed.value,
+                                                      isCorrect: _isCorrect.value,
+                                                      onOptionSelected: _onOptionSelected,
+                                                    ),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
 
-                              // Post-answer review cards
-                              AnimatedCrossFade(
-                                firstChild: const SizedBox(),
-                                secondChild: JobInterviewExplanationPanel(
-                                  quest: quest,
-                                  isDark: isDark,
-                                  isCorrect: _isCorrect.value,
-                                  primaryColor: theme.primaryColor,
-                                ),
-                                crossFadeState: _isAnswered.value
-                                    ? CrossFadeState.showSecond
-                                    : CrossFadeState.showFirst,
-                                duration: const Duration(milliseconds: 450),
-                              ),
-                                          SizedBox(height: isCompact ? 20.h : 40.h),
-                                        ],
-                                      ),
+                                                    // Post-answer review cards
+                                                    AnimatedCrossFade(
+                                                      firstChild: const SizedBox(),
+                                                      secondChild: JobInterviewExplanationPanel(
+                                                        quest: quest,
+                                                        isDark: isDark,
+                                                        isCorrect: _isCorrect.value,
+                                                        primaryColor: theme.primaryColor,
+                                                      ),
+                                                      crossFadeState: _isAnswered.value
+                                                          ? CrossFadeState.showSecond
+                                                          : CrossFadeState.showFirst,
+                                                      duration: const Duration(milliseconds: 450),
+                                                    ),
+                                                    SizedBox(height: isCompact ? 20.h : 40.h),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  if (_isFirstStagePassed.value && !_isAnswered.value && _selectedIndex.value != null)
-                                    SpeakToConfirmOverlay(
-                                      expectedText: _shuffledOptions.value[_selectedIndex.value!],
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onConfirmed: () {
-                                        context.read<RoleplayBloc>().add(
-                                          const RoleplaySpeakConfirmed(5),
-                                        );
-                                        _submitVerbalEvaluation(true);
-                                      },
-                                      onSkipped: () => _submitVerbalEvaluation(false),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 60.h,
                                     ),
-                                  SizedBox(height: _isAnswered.value || _isFirstStagePassed.value ? 180.h : 40.h),
+                                  ),
                                 ],
                               ),
                             ),
+                            if (_isFirstStagePassed.value && !_isAnswered.value && _selectedIndex.value != null)
+                              SpeakToConfirmOverlay(
+                                expectedText: _shuffledOptions.value[_selectedIndex.value!],
+                                primaryColor: theme.primaryColor,
+                                isPositioned: true,
+                                onConfirmed: () {
+                                  context.read<RoleplayBloc>().add(
+                                    const RoleplaySpeakConfirmed(5),
+                                  );
+                                  _submitVerbalEvaluation(true);
+                                },
+                                onSkipped: () => _submitVerbalEvaluation(false),
+                              ),
                           ],
                         );
                       },

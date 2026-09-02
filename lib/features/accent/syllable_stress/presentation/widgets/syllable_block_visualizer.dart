@@ -33,7 +33,7 @@ class SyllableBlockVisualizer extends StatelessWidget {
       children: List.generate(syllables.length, (index) {
         final isSelected = selectedIndex == index;
         final isCorrect = index == correctIndex;
-        
+
         bool showCorrect = isAnswered && isCorrect;
         bool showWrong = isAnswered && isSelected && !isCorrect;
 
@@ -74,7 +74,7 @@ class SyllableBlockVisualizer extends StatelessWidget {
                         color: Colors.green.withValues(alpha: 0.3),
                         blurRadius: 12,
                         spreadRadius: 2,
-                      )
+                      ),
                     ]
                   : [],
             ),
@@ -92,18 +92,16 @@ class SyllableBlockVisualizer extends StatelessWidget {
         );
 
         if (showCorrect) {
-          block = block.animate(onPlay: (c) => c.repeat(reverse: true)).scaleXY(
+          block = block
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scaleXY(
                 begin: 1.0,
                 end: 1.05,
                 duration: 500.ms,
                 curve: Curves.easeInOut,
               );
         } else if (showWrong) {
-          block = block.animate().shakeX(
-                hz: 4,
-                amount: 4,
-                duration: 400.ms,
-              );
+          block = block.animate().shakeX(hz: 4, amount: 4, duration: 400.ms);
         }
 
         return block;

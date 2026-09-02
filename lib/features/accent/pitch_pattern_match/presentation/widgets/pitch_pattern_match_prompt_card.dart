@@ -60,7 +60,10 @@ class PitchPatternMatchPromptCard extends StatelessWidget {
                 if (emotionContext != null) ...[
                   SizedBox(height: 12.h),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 4.h,
+                    ),
                     decoration: BoxDecoration(
                       color: color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12.r),

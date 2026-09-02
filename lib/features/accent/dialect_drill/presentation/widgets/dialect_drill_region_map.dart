@@ -26,7 +26,9 @@ class DialectDrillRegionMap extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: isDark ? color.withValues(alpha: 0.1) : color.withValues(alpha: 0.05),
+        color: isDark
+            ? color.withValues(alpha: 0.1)
+            : color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
         boxShadow: [

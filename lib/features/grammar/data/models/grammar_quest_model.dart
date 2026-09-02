@@ -139,7 +139,9 @@ class GrammarQuestModel extends GrammarQuest {
       errorHighlight: getString(map['errorHighlight']),
       structureType: getString(map['structureType']),
       timelinePosition: getString(map['timelinePosition']),
-      transformations: map['transformations'] != null ? List<String>.from(map['transformations']) : null,
+      transformations: map['transformations'] != null
+          ? List<String>.from(map['transformations'])
+          : null,
       subjectType: getString(map['subjectType']),
       connectorCategory: getString(map['connectorCategory']),
       activeVoice: getString(map['activeVoice']),
@@ -154,7 +156,9 @@ class GrammarQuestModel extends GrammarQuest {
       clauseType: getString(map['clauseType']),
       conditionalType: getString(map['conditionalType']),
       conjunctionPurpose: getString(map['conjunctionPurpose']),
-      changesList: map['changesList'] != null ? List<String>.from(map['changesList']) : null,
+      changesList: map['changesList'] != null
+          ? List<String>.from(map['changesList'])
+          : null,
     );
   }
 

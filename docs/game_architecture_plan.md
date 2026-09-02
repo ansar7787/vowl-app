@@ -1025,160 +1025,160 @@ Every single one of the 100 games must pass these 9 checks:
 
 ### 🎭 Roleplay (10 Games)
 1. **Branching Dialogue**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `BranchingDialoguePersonaConsole` & `BranchingDialogueConsoleBoard` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 2. **Conflict Resolver**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `ConflictResolverConflictCard` & `ConflictResolverDialConsole` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 3. **Elevator Pitch**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `ElevatorPitchPromptCard` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 4. **Emergency Hub**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `EmergencyHubTelexCard` & `EmergencyHubTerminalInput` & `EmergencyHubValveChamber` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 5. **Gourmet Order**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `GourmetOrderBanquetHeader` & `GourmetOrderTableSetting` & `GourmetOrderPlateTray` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 6. **Job Interview**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `JobInterviewTelemetryDashboard` & `JobInterviewInterviewerPanel` & `JobInterviewResponseConsole` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 7. **Medical Consult**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `MedicalConsultPatientRecord` & `MedicalConsultScanBay` & `MedicalConsultDiagnosticTray` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 8. **Situational Response**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `SituationalResponseSceneDisplay` & `SituationalResponseReactionZone` & `SituationalResponseFormalityGauge` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 9. **Social Spark**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `SocialSparkConnectionMonitor` & `SocialSparkGalaxyBoard` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 10. **Travel Desk**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `TravelDeskCustomsTerminal` & `TravelDeskPassportBook` & `TravelDeskStampStation` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 ---
 
 ### 👑 Elite Mastery (4 Games)
 1. **Accent Shadowing**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `AccentShadowingTargetPanel` & `AccentSelfEvaluationPanel`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 2. **Idiom Match**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `IdiomMatchOptionsPanel` & `SpeakToConfirmOverlay`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 3. **Speed Spelling**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `SpeedSpellingInputField` & `SpeedSpellingCharacterDeck`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 4. **Story Builder**
-- [ ] Dual-Stage Scroll UX
-- [ ] Sliver Performance Layout
-- [ ] Zero setState (ValueNotifier)
-- [ ] Feedback Card Logic
-- [ ] Pedagogical Component: `TBD`
-- [ ] Edge-to-Edge Scrollbar (RawScrollbar)
-- [ ] Keyboard Scroll Stability (FocusNode visibility)
-- [ ] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] Dual-Stage Scroll UX
+- [x] Sliver Performance Layout
+- [x] Zero setState (ValueNotifier)
+- [x] Feedback Card Logic
+- [x] Pedagogical Component: `StoryBuilderNarrativeTile`
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Keyboard Scroll Stability (FocusNode visibility)
+- [x] Docked Input Padding (Keyboard Games Only)
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push

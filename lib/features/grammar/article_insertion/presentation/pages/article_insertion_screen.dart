@@ -191,12 +191,20 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
+        final quest = (state is GrammarLoaded)
+            ? state.currentQuest as GrammarQuest?
+            : null;
         final options = quest?.options ?? ["a", "an", "the", "Ø"];
         final correctAnswer = quest?.correctAnswer ?? "";
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _selectedArticle, _showConfetti, _pendingJigsaw]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _selectedArticle,
+            _showConfetti,
+            _pendingJigsaw,
+          ]),
           builder: (context, _) {
             String cleanTargetSentence = "";
             if (quest != null) {
@@ -207,7 +215,10 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                     _selectedArticle.value!.toLowerCase() == "(no article)"
                     ? ""
                     : _selectedArticle.value!;
-                fullSentence = sentence.replaceFirst(RegExp(r'_{3,}'), replaceWith);
+                fullSentence = sentence.replaceFirst(
+                  RegExp(r'_{3,}'),
+                  replaceWith,
+                );
               }
               cleanTargetSentence = fullSentence
                   .replaceAll(RegExp(r'\s+'), ' ')
@@ -234,7 +245,9 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -248,27 +261,43 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final maxHeight = constraints.maxHeight;
+                                              final maxHeight =
+                                                  constraints.maxHeight;
                                               final isCompact = maxHeight < 580;
 
-                                              final double estimatedContentHeight =
+                                              final double
+                                              estimatedContentHeight =
                                                   (isCompact ? 30.h : 40.h) +
                                                   (isCompact ? 90.h : 130.h) +
                                                   40.h;
                                               final remainingHeight =
-                                                  maxHeight - estimatedContentHeight;
+                                                  maxHeight -
+                                                  estimatedContentHeight;
 
-                                              final double gapUnit = remainingHeight > 0
+                                              final double gapUnit =
+                                                  remainingHeight > 0
                                                   ? remainingHeight / 5
                                                   : 0;
-                                              final double gapTop = remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(6.0, 20.0)
+                                              final double gapTop =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(
+                                                      6.0,
+                                                      20.0,
+                                                    )
                                                   : 6.0;
-                                              final double gapMiddle = remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(10.0, 25.0)
+                                              final double gapMiddle =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(
+                                                      10.0,
+                                                      25.0,
+                                                    )
                                                   : 10.0;
-                                              final double gapBottom = remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(15.0, 40.0)
+                                              final double gapBottom =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(
+                                                      15.0,
+                                                      40.0,
+                                                    )
                                                   : 15.0;
 
                                               return Column(
@@ -278,9 +307,11 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                                       ? SizedBox(
                                                           height: 25.h,
                                                           child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
+                                                            fit: BoxFit
+                                                                .scaleDown,
                                                             child: ArticleInsertionInstruction(
-                                                              primaryColor: theme.primaryColor,
+                                                              primaryColor: theme
+                                                                  .primaryColor,
                                                               instruction: context.tr(
                                                                 'games.article_insertion_instruction',
                                                                 fallback:
@@ -290,75 +321,128 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                                           ),
                                                         )
                                                       : ArticleInsertionInstruction(
-                                                          primaryColor: theme.primaryColor,
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                           instruction: context.tr(
                                                             'games.article_insertion_instruction',
-                                                            fallback: "Pop the correct article orb",
+                                                            fallback:
+                                                                "Pop the correct article orb",
                                                           ),
                                                         ),
                                                   SizedBox(height: gapMiddle),
 
-                                                  if (quest.articleRule != null) ...[
+                                                  if (quest.articleRule !=
+                                                      null) ...[
                                                     Container(
-                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 16.w,
+                                                            vertical: 6.h,
+                                                          ),
                                                       decoration: BoxDecoration(
-                                                        color: theme.primaryColor.withValues(alpha: 0.1),
-                                                        borderRadius: BorderRadius.circular(12.r),
-                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
                                                       ),
                                                       child: Text(
                                                         quest.articleRule!,
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           fontSize: 12.sp,
-                                                          color: theme.primaryColor,
-                                                          fontWeight: FontWeight.bold,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold,
                                                         ),
                                                       ),
-                                                    ).animate().fadeIn(duration: 400.ms),
-                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                    ).animate().fadeIn(
+                                                      duration: 400.ms,
+                                                    ),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 20.h,
+                                                    ),
                                                   ],
 
                                                   // Context Card
                                                   Padding(
-                                                        padding: EdgeInsets.symmetric(
-                                                          horizontal: 24.w,
-                                                        ),
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 24.w,
+                                                            ),
                                                         child: Container(
-                                                          padding: EdgeInsets.all(
-                                                            isCompact ? 14.r : 22.r,
-                                                          ),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                isCompact
+                                                                    ? 14.r
+                                                                    : 22.r,
+                                                              ),
                                                           decoration: BoxDecoration(
                                                             color: isDark
-                                                                ? Colors.white.withValues(alpha: 0.05)
-                                                                : Colors.black.withValues(
-                                                                    alpha: 0.03,
-                                                                  ),
-                                                            borderRadius: BorderRadius.circular(28.r),
+                                                                ? Colors.white
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.05,
+                                                                      )
+                                                                : Colors.black
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.03,
+                                                                      ),
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  28.r,
+                                                                ),
                                                             border: Border.all(
-                                                              color: theme.primaryColor.withValues(
-                                                                alpha: 0.15,
-                                                              ),
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.15,
+                                                                  ),
                                                               width: 1.5,
                                                             ),
                                                           ),
                                                           child: RichText(
-                                                            textAlign: TextAlign.center,
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             text: TextSpan(
                                                               style: TextStyle(
-                                                                fontFamily: 'Outfit',
-                                                                fontSize: isCompact ? 16.sp : 20.sp,
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 16.sp
+                                                                    : 20.sp,
                                                                 color: isDark
-                                                                    ? Colors.white
-                                                                    : Colors.black87,
+                                                                    ? Colors
+                                                                          .white
+                                                                    : Colors
+                                                                          .black87,
                                                                 height: 1.5,
                                                               ),
                                                               children: _buildSentenceWithBlank(
                                                                 quest.sentence ??
-                                                                    quest.question ??
+                                                                    quest
+                                                                        .question ??
                                                                     "___ sentence.",
-                                                                _selectedArticle.value,
-                                                                theme.primaryColor,
+                                                                _selectedArticle
+                                                                    .value,
+                                                                theme
+                                                                    .primaryColor,
                                                                 isDark,
                                                                 isCompact,
                                                               ),
@@ -368,27 +452,48 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                                       )
                                                       .animate()
                                                       .fadeIn(duration: 600.ms)
-                                                      .slideY(begin: 0.2, end: 0),
+                                                      .slideY(
+                                                        begin: 0.2,
+                                                        end: 0,
+                                                      ),
 
                                                   // Floating Orb Bubble Area
                                                   Expanded(
                                                     child: Stack(
-                                                      children: options.asMap().entries.map((entry) {
-                                                        final article = entry.value;
+                                                      children: options.asMap().entries.map((
+                                                        entry,
+                                                      ) {
+                                                        final article =
+                                                            entry.value;
                                                         return ArticleFloatingOrb(
                                                           article: article,
                                                           index: entry.key,
-                                                          onTap: () => _onPop(article, correctAnswer),
-                                                          primaryColor: theme.primaryColor,
+                                                          onTap: () => _onPop(
+                                                            article,
+                                                            correctAnswer,
+                                                          ),
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                           isDark: isDark,
-                                                          isAnswered: _isAnswered.value || _pendingJigsaw.value,
-                                                          isSelected: _selectedArticle.value == article,
+                                                          isAnswered:
+                                                              _isAnswered
+                                                                  .value ||
+                                                              _pendingJigsaw
+                                                                  .value,
+                                                          isSelected:
+                                                              _selectedArticle
+                                                                  .value ==
+                                                              article,
                                                           isCorrectAnswer:
-                                                              article.toLowerCase() ==
-                                                              correctAnswer.toLowerCase(),
+                                                              article
+                                                                  .toLowerCase() ==
+                                                              correctAnswer
+                                                                  .toLowerCase(),
                                                           isFinalFailure:
-                                                              state is GrammarLoaded &&
-                                                              state.isFinalFailure,
+                                                              state
+                                                                  is GrammarLoaded &&
+                                                              state
+                                                                  .isFinalFailure,
                                                           isCompact: isCompact,
                                                         );
                                                       }).toList(),
@@ -405,19 +510,28 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                     ),
                                   ),
                                   SliverToBoxAdapter(
-                                    child: SizedBox(height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h),
+                                    child: SizedBox(
+                                      height:
+                                          (_pendingJigsaw.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_pendingJigsaw.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                            if (_pendingJigsaw.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
                               TypeToConfirmOverlay(
                                 expectedText: cleanTargetSentence,
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
                                 isPositioned: true,
-                                displayText: "Type the full sentence with the article to lock it in",
+                                displayText:
+                                    "Type the full sentence with the article to lock it in",
                               ),
                           ],
                         );

@@ -157,7 +157,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         }
 
         return ListenableBuilder(
-          listenable: Listenable.merge([_isAnswered, _isCorrect, _showConfetti, _pendingTypeSubmit, _draggingConnector]),
+          listenable: Listenable.merge([
+            _isAnswered,
+            _isCorrect,
+            _showConfetti,
+            _pendingTypeSubmit,
+            _draggingConnector,
+          ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
@@ -179,7 +185,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                           children: [
                             RawScrollbar(
                               controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              thumbColor: theme.primaryColor.withValues(
+                                alpha: 0.5,
+                              ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
                               child: CustomScrollView(
@@ -193,29 +201,46 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                         Expanded(
                                           child: LayoutBuilder(
                                             builder: (context, constraints) {
-                                              final maxHeight = constraints.maxHeight;
+                                              final maxHeight =
+                                                  constraints.maxHeight;
                                               final isCompact = maxHeight < 580;
 
-                                              final double estimatedContentHeight =
+                                              final double
+                                              estimatedContentHeight =
                                                   (isCompact ? 30.h : 40.h) +
-                                                  (isCompact ? 50.h : 80.h) * 2 +
+                                                  (isCompact ? 50.h : 80.h) *
+                                                      2 +
                                                   (isCompact ? 50.h : 80.h) +
                                                   (isCompact ? 60.h : 100.h) +
                                                   40.h;
                                               final remainingHeight =
-                                                  maxHeight - estimatedContentHeight;
+                                                  maxHeight -
+                                                  estimatedContentHeight;
 
-                                              final double gapUnit = remainingHeight > 0
+                                              final double gapUnit =
+                                                  remainingHeight > 0
                                                   ? remainingHeight / 5
                                                   : 0;
-                                              final double gapTop = remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(4.0, 15.0)
+                                              final double gapTop =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(
+                                                      4.0,
+                                                      15.0,
+                                                    )
                                                   : 4.0;
-                                              final double gapMiddle = remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                              final double gapMiddle =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(
+                                                      6.0,
+                                                      20.0,
+                                                    )
                                                   : 6.0;
-                                              final double gapBottom = remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                              final double gapBottom =
+                                                  remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(
+                                                      10.0,
+                                                      30.0,
+                                                    )
                                                   : 10.0;
 
                                               return Column(
@@ -225,31 +250,54 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                                       ? SizedBox(
                                                           height: 25.h,
                                                           child: FittedBox(
-                                                            fit: BoxFit.scaleDown,
+                                                            fit: BoxFit
+                                                                .scaleDown,
                                                             child: ClauseConnectorInstruction(
-                                                              primaryColor: theme.primaryColor,
+                                                              primaryColor: theme
+                                                                  .primaryColor,
                                                             ),
                                                           ),
                                                         )
                                                       : ClauseConnectorInstruction(
-                                                          primaryColor: theme.primaryColor,
+                                                          primaryColor: theme
+                                                              .primaryColor,
                                                         ),
-                                                  if (quest.connectorCategory != null) ...[
+                                                  if (quest.connectorCategory !=
+                                                      null) ...[
                                                     SizedBox(height: 10.h),
                                                     Container(
-                                                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 12.w,
+                                                            vertical: 6.h,
+                                                          ),
                                                       decoration: BoxDecoration(
-                                                        color: theme.primaryColor.withValues(alpha: 0.1),
-                                                        borderRadius: BorderRadius.circular(12.r),
-                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: theme
+                                                              .primaryColor
+                                                              .withValues(
+                                                                alpha: 0.3,
+                                                              ),
+                                                        ),
                                                       ),
                                                       child: Text(
                                                         "TYPE: ${quest.connectorCategory!.toUpperCase()}",
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           fontSize: 10.sp,
-                                                          fontWeight: FontWeight.w800,
-                                                          color: theme.primaryColor,
+                                                          fontWeight:
+                                                              FontWeight.w800,
+                                                          color: theme
+                                                              .primaryColor,
                                                           letterSpacing: 1.5,
                                                         ),
                                                       ),
@@ -260,9 +308,14 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                                   // Magnetic Energy Port Container
                                                   Expanded(
                                                     child: Padding(
-                                                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 24.w,
+                                                          ),
                                                       child: Column(
-                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           _buildHolographicPlate(
                                                             clauseA,
@@ -270,7 +323,11 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                                             isDark,
                                                             isCompact,
                                                           ),
-                                                          SizedBox(height: isCompact ? 10.h : 16.h),
+                                                          SizedBox(
+                                                            height: isCompact
+                                                                ? 10.h
+                                                                : 16.h,
+                                                          ),
                                                           _buildMagneticPort(
                                                             quest,
                                                             options,
@@ -278,25 +335,33 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                                             isDark,
                                                             isCompact,
                                                           ),
-                                                          SizedBox(height: isCompact ? 10.h : 16.h),
+                                                          SizedBox(
+                                                            height: isCompact
+                                                                ? 10.h
+                                                                : 16.h,
+                                                          ),
                                                           _buildHolographicPlate(
                                                             clauseB,
                                                             theme.primaryColor,
                                                             isDark,
                                                             isCompact,
-                                                          ).animate().fadeIn(delay: 300.ms),
+                                                          ).animate().fadeIn(
+                                                            delay: 300.ms,
+                                                          ),
                                                         ],
                                                       ),
                                                     ),
                                                   ),
                                                   SizedBox(height: gapMiddle),
 
-                                                  if (!_isAnswered.value && !_pendingTypeSubmit.value)
+                                                  if (!_isAnswered.value &&
+                                                      !_pendingTypeSubmit.value)
                                                     _buildConnectorPalette(
                                                       options,
                                                       theme.primaryColor,
                                                       isDark,
-                                                      quest.correctAnswerIndex ?? 0,
+                                                      quest.correctAnswerIndex ??
+                                                          0,
                                                       isCompact,
                                                     ),
                                                   SizedBox(height: gapBottom),
@@ -309,15 +374,24 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                     ),
                                   ),
                                   SliverToBoxAdapter(
-                                    child: SizedBox(height: (_pendingTypeSubmit.value && !_isAnswered.value) ? 380.h : 60.h),
+                                    child: SizedBox(
+                                      height:
+                                          (_pendingTypeSubmit.value &&
+                                              !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_pendingTypeSubmit.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                            if (_pendingTypeSubmit.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
                               TypeToConfirmOverlay(
                                 expectedText: cleanTargetSentence,
-                                displayText: "Type the complete sentence to lock in the clause structure",
+                                displayText:
+                                    "Type the complete sentence to lock in the clause structure",
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
@@ -343,13 +417,16 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     bool isCompact,
   ) {
     return DragTarget<String>(
-      onWillAcceptWithDetails: (details) => !_isAnswered.value && !_pendingTypeSubmit.value,
+      onWillAcceptWithDetails: (details) =>
+          !_isAnswered.value && !_pendingTypeSubmit.value,
       onAcceptWithDetails: (details) =>
           _onSnap(details.data, quest?.correctAnswerIndex ?? 0, options),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
         final portColor = (_isAnswered.value || _pendingTypeSubmit.value)
-            ? (_isCorrect.value != false ? Colors.greenAccent : Colors.redAccent)
+            ? (_isCorrect.value != false
+                  ? Colors.greenAccent
+                  : Colors.redAccent)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.3));
