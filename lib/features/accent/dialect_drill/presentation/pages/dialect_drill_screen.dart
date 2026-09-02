@@ -45,8 +45,11 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   List<String>? _shuffledOptions;
   int? _shuffledCorrectIndex;
 
+  late final ScrollController _scrollController;
+
   @override
   void dispose() {
+    _scrollController.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
@@ -57,6 +60,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<AccentBloc>().add(
       FetchAccentQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -215,16 +219,24 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
             useScrolling: false,
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
+                : Stack(
+                    children: [
+                      LayoutBuilder(
                     builder: (context, constraints) {
 
-                      return CustomScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        slivers: [
-                          SliverToBoxAdapter(
-                            child: Column(
-                              children: [
-                                Expanded(
+                          return RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverFillRemaining(
+                                  hasScrollBody: false,
+                                  child: Column(
+                                    children: [
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 16.w,
@@ -323,34 +335,37 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                   );
                                                 },
                                               ),
-                                              if (_isFirstStagePassed.value && !_isAnswered.value) ...[
-                                                SizedBox(height: 16.h),
-                                                ShadowPlaybackCompare(
-                                                  expectedText: quest.word ?? "",
-                                                  primaryColor: theme.primaryColor,
-                                                  isPositioned: false,
-                                                  onConfirmed: () {
-                                                    _submitVerbalEvaluation(true);
-                                                  },
-                                                  onSkipped: () {
-                                                    _submitVerbalEvaluation(false);
-                                                  },
-                                                ),
-                                              ],
+                                              SizedBox(height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 160.h),
                                             ],
                                           ),
                                         )
-                                      : const SizedBox(
+                                      : SizedBox(
                                           width: double.infinity,
+                                          height: (_isFirstStagePassed.value && !_isAnswered.value) ? 380.h : 160.h,
                                         ),
                                 ),
                               ],
                             ),
                           ),
                         ],
+                      ),
                       );
                     },
                   ),
+                      if (_isFirstStagePassed.value && !_isAnswered.value)
+                        ShadowPlaybackCompare(
+                          expectedText: quest.word ?? "",
+                          primaryColor: theme.primaryColor,
+                          isPositioned: true,
+                          onConfirmed: () {
+                            _submitVerbalEvaluation(true);
+                          },
+                          onSkipped: () {
+                            _submitVerbalEvaluation(false);
+                          },
+                        ),
+                    ],
+                  );
               );
             },
           ),
