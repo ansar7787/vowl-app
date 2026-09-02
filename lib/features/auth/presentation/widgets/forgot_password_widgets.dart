@@ -181,7 +181,6 @@ class SendResetLinkButton extends StatelessWidget {
             : Text(
                 context.tr('auth.send_reset_link', fallback: 'Send Reset Link'),
                 maxLines: 1,
-                overflow: TextOverflow.ellipsis,
               ),
       ),
     );
@@ -216,7 +215,6 @@ class RememberPasswordFooter extends StatelessWidget {
               color: secondaryColor,
               fontWeight: FontWeight.w600,
             ),
-            overflow: TextOverflow.ellipsis,
           ),
         ),
         TextButton(

@@ -212,7 +212,6 @@ class LoginButton extends StatelessWidget {
                 : Text(
                     context.tr('auth.login', fallback: 'Log In'),
                     maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
           ),
         );
@@ -279,7 +278,6 @@ class GoogleLoginButton extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
                           ),
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],

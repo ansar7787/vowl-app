@@ -274,7 +274,6 @@ class SignUpButton extends StatelessWidget {
                 : Text(
                     context.tr('auth.signup', fallback: 'Sign Up'),
                     maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
           ),
         );

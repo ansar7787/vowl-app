@@ -378,7 +378,6 @@ class _LoginViewState extends State<LoginView> {
                                                   color: secondaryColor,
                                                   fontWeight: FontWeight.w600,
                                                 ),
-                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
                                             TextButton(

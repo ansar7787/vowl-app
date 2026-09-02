@@ -102,7 +102,6 @@ class VerifyEmailStatusText extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       color: const Color(0xFF6366F1),
                     ),
-                    overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
                 ),
@@ -133,7 +132,6 @@ class VerifyEmailStatusText extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                 ),
                 maxLines: 2,
-                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -201,7 +199,6 @@ class ResendEmailButton extends StatelessWidget {
           // direct child (no Row ancestor), and Flexible requires an
           // immediate Flex ancestor or it throws at runtime.
           maxLines: 1,
-          overflow: TextOverflow.ellipsis,
         ),
       ),
     );
@@ -246,7 +243,6 @@ class VerifyConfirmationButton extends StatelessWidget {
             color: const Color(0xFF6366F1),
           ),
           maxLines: 1,
-          overflow: TextOverflow.ellipsis,
         ),
       ),
     );
@@ -284,7 +280,6 @@ class VerifyLogoutButton extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
           maxLines: 1,
-          overflow: TextOverflow.ellipsis,
         ),
       ),
     );

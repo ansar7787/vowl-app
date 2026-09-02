@@ -233,7 +233,7 @@ class _SignUpViewState extends State<SignUpView> {
                                           context.tr(
                                             'auth.signup_subtitle',
                                             fallback:
-                                                'Create an account to start your learning adventure.',
+                                                'Start your learning adventure today.',
                                           ),
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
@@ -580,7 +580,6 @@ class _SignUpViewState extends State<SignUpView> {
                                                   color: secondaryColor,
                                                   fontWeight: FontWeight.w600,
                                                 ),
-                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
                                             TextButton(
