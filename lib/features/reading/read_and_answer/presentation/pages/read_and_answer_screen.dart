@@ -41,12 +41,14 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ValueNotifier<bool> _showEvidenceStep = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _showConfetti.dispose();
     _pendingSelectedIndex.dispose();
     _showEvidenceStep.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -197,6 +199,8 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                           isAnswered: isAnswered,
                           isCorrect: isCorrect,
                           pendingSelectedIndex: _pendingSelectedIndex.value,
+                          showEvidenceStep: _showEvidenceStep.value,
+                          scrollController: _scrollController,
                           onOptionSelected: (idx, isCorrect) =>
                               _onOptionTap(idx, isCorrect, quest),
                         ),
@@ -251,6 +255,8 @@ class _QuestContent extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final int? pendingSelectedIndex;
+  final bool showEvidenceStep;
+  final ScrollController scrollController;
   final void Function(int index, bool isCorrect) onOptionSelected;
 
   const _QuestContent({
@@ -262,6 +268,8 @@ class _QuestContent extends StatelessWidget {
     required this.isAnswered,
     required this.isCorrect,
     required this.pendingSelectedIndex,
+    required this.showEvidenceStep,
+    required this.scrollController,
     required this.onOptionSelected,
   });
 
@@ -269,10 +277,13 @@ class _QuestContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       explicitChildNodes: true,
-      child: Scrollbar(
+      child: RawScrollbar(
+        controller: scrollController,
+        thumbColor: primaryColor.withValues(alpha: 0.5),
+        radius: Radius.circular(8.r),
         thickness: 4.w,
-        radius: Radius.circular(10.r),
         child: CustomScrollView(
+          controller: scrollController,
           physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
@@ -337,7 +348,7 @@ class _QuestContent extends StatelessWidget {
                         isDark: isDark,
                       ),
                     ],
-                    SizedBox(height: 40.h),
+                    SizedBox(height: (showEvidenceStep && !isAnswered) ? 380.h : 60.h),
                   ],
                 ),
               ),
