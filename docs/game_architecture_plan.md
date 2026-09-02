@@ -166,11 +166,11 @@ Every single one of the 100 games must pass these 9 checks:
 - [x] Zero setState (ValueNotifier)
 - [N/A] Feedback Card Logic
 - [N/A] Pedagogical Component: (Drag & drop bucket interaction)
-- [N/A] Edge-to-Edge Scrollbar (RawScrollbar)
+- [x] Edge-to-Edge Scrollbar (RawScrollbar)
 - [N/A] Keyboard Scroll Stability (FocusNode visibility)
 - [N/A] Docked Input Padding (Keyboard Games Only)
-- [ ] 10/10 UX Confirmation (No Patchwork)
-- [ ] Git Commit & Push
+- [x] 10/10 UX Confirmation (No Patchwork)
+- [x] Git Commit & Push
 
 **12. Word Formation**
 - [x] Dual-Stage Scroll UX

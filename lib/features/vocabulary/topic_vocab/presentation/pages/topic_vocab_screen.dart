@@ -37,6 +37,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
   late final TopicVocabController _controller;
   VocabularyQuest? _lastQuest;
   int? _lastProcessedIndex = -1;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -55,6 +56,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _controller.dispose();
     super.dispose();
   }
@@ -153,12 +155,18 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                   final flyingWordBottom = isCompact ? 145.h : maxHeight * 0.42;
                   final binBottom = isCompact ? 10.h : maxHeight * 0.04;
 
-                  return CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
-                      SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: SizedBox(
+                  return RawScrollbar(
+                    controller: _scrollController,
+                    thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                    radius: Radius.circular(8.r),
+                    thickness: 4.w,
+                    child: CustomScrollView(
+                      controller: _scrollController,
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: SizedBox(
                           height: maxHeight,
                           width: maxWidth,
                           child: Stack(
@@ -419,7 +427,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                         ),
                       ),
                     ],
-                  );
+                  ),
+                );
                 },
               ),
             );
