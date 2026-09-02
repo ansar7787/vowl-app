@@ -46,8 +46,11 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   final ValueNotifier<List<String>?> _shuffledOptions = ValueNotifier(null);
   final _ttsService = di.sl<TtsService>();
 
+  late final ScrollController _scrollController;
+
   @override
   void dispose() {
+    _scrollController.dispose();
     _erasePoints.dispose();
     _isWiped.dispose();
     _selectedOption.dispose();
@@ -61,6 +64,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -173,9 +177,15 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                   ? const SizedBox()
                   : Stack(
                   children: [
-                    CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
                         SliverPadding(
                           padding: EdgeInsets.symmetric(horizontal: 24.w),
                           sliver: SliverToBoxAdapter(
@@ -258,13 +268,14 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              SizedBox(height: 160.h), // Bottom padding for feedback card
+                              SizedBox(height: !isAnswered ? 380.h : 160.h),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    if (_pendingSelectedOption.value != null && !isAnswered)
+                  ),
+                  if (_pendingSelectedOption.value != null && !isAnswered)
                       TypeToConfirmOverlay(
                         expectedText: _pendingSelectedOption.value!,
                         primaryColor: theme.primaryColor,
