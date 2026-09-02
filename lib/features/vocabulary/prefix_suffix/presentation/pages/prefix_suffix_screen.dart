@@ -123,49 +123,58 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               },
               child: quest == null
                   ? const SizedBox()
-                  : CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverToBoxAdapter(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-                            child: Column(
-                              children: [
-                                PrefixSuffixMissionControl(
-                                  primaryColor: theme.primaryColor,
-                                  instruction: quest.hint ?? quest.instruction,
-                                ),
-                                SizedBox(height: 20.h),
-                                IgnorePointer(
-                                  ignoring: _controller.isFirstStagePassed,
-                                  child: PrefixSuffixSynthesizer(
-                                    rootWord: quest.rootWord ?? "???",
-                                    options: quest.options ?? [],
-                                    correctAnswer: quest.correctAnswer ?? "",
-                                    selectedAffix: _controller.selectedAffix,
-                                    hintedAffix: _controller.hintedAffix,
-                                    isFirstStagePassed: _controller.isFirstStagePassed,
-                                    primaryColor: theme.primaryColor,
-                                    isDark: isDark,
-                                    onAffixSelected: (affix, isPrefix) => _controller.onAffixSelected(affix, quest, isPrefix),
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                                  child: Column(
+                                    children: [
+                                      PrefixSuffixMissionControl(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: quest.hint ?? quest.instruction,
+                                      ),
+                                      SizedBox(height: 20.h),
+                                      IgnorePointer(
+                                        ignoring: _controller.isFirstStagePassed,
+                                        child: PrefixSuffixSynthesizer(
+                                          rootWord: quest.rootWord ?? "???",
+                                          options: quest.options ?? [],
+                                          correctAnswer: quest.correctAnswer ?? "",
+                                          selectedAffix: _controller.selectedAffix,
+                                          hintedAffix: _controller.hintedAffix,
+                                          isFirstStagePassed: _controller.isFirstStagePassed,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onAffixSelected: (affix, isPrefix) => _controller.onAffixSelected(affix, quest, isPrefix),
+                                        ),
+                                      ),
+                                      SizedBox(height: (_controller.isFirstStagePassed && !_controller.isAnswered) ? 380.h : 60.h),
+                                    ],
                                   ),
                                 ),
-                                if (_controller.isFirstStagePassed && !_controller.isAnswered)
-                                  TypeToConfirmOverlay(
-                                    isPositioned: false,
-                                    expectedText: quest.correctAnswer ?? "",
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _controller.submitFinalAnswer(true, quest),
-                                    onBypassed: () => _controller.submitFinalAnswer(true, quest),
-                                    onSkipped: () => _controller.submitFinalAnswer(false, quest),
-                                  ),
-                                SizedBox(height: 60.h),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
+                        if (_controller.isFirstStagePassed && !_controller.isAnswered)
+                          TypeToConfirmOverlay(
+                            isPositioned: true,
+                            expectedText: quest.correctAnswer ?? "",
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _controller.submitFinalAnswer(true, quest),
+                            onBypassed: () => _controller.submitFinalAnswer(true, quest),
+                            onSkipped: () => _controller.submitFinalAnswer(false, quest),
+                          ),
                       ],
-              ),
+                    ),
             );
             return baseLayout;
           },
