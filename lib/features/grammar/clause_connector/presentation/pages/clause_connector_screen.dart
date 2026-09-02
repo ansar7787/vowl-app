@@ -37,6 +37,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -45,6 +46,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _pendingTypeSubmit.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -173,145 +175,155 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return CustomScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                final maxHeight = constraints.maxHeight;
-                        final isCompact = maxHeight < 580;
-
-                        final double estimatedContentHeight =
-                            (isCompact ? 30.h : 40.h) +
-                            (isCompact ? 50.h : 80.h) * 2 +
-                            (isCompact ? 50.h : 80.h) +
-                            (isCompact ? 60.h : 100.h) +
-                            40.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
-
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 5
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(4.0, 15.0)
-                            : 4.0;
-                        final double gapMiddle = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                            : 6.0;
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                            : 10.0;
-
-                        return Column(
+                        return Stack(
                           children: [
-                            SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: ClauseConnectorInstruction(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                    ),
-                                  )
-                                : ClauseConnectorInstruction(
-                                    primaryColor: theme.primaryColor,
-                                  ),
-                            if (quest.connectorCategory != null) ...[
-                              SizedBox(height: 10.h),
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Text(
-                                  "TYPE: ${quest.connectorCategory!.toUpperCase()}",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: theme.primaryColor,
-                                    letterSpacing: 1.5,
-                                  ),
-                                ),
-                              ),
-                            ],
-                            SizedBox(height: gapMiddle),
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final maxHeight = constraints.maxHeight;
+                                              final isCompact = maxHeight < 580;
 
-                            // Magnetic Energy Port Container
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    _buildHolographicPlate(
-                                      clauseA,
-                                      theme.primaryColor,
-                                      isDark,
-                                      isCompact,
+                                              final double estimatedContentHeight =
+                                                  (isCompact ? 30.h : 40.h) +
+                                                  (isCompact ? 50.h : 80.h) * 2 +
+                                                  (isCompact ? 50.h : 80.h) +
+                                                  (isCompact ? 60.h : 100.h) +
+                                                  40.h;
+                                              final remainingHeight =
+                                                  maxHeight - estimatedContentHeight;
+
+                                              final double gapUnit = remainingHeight > 0
+                                                  ? remainingHeight / 5
+                                                  : 0;
+                                              final double gapTop = remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(4.0, 15.0)
+                                                  : 4.0;
+                                              final double gapMiddle = remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                                  : 6.0;
+                                              final double gapBottom = remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                                  : 10.0;
+
+                                              return Column(
+                                                children: [
+                                                  SizedBox(height: gapTop),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit.scaleDown,
+                                                            child: ClauseConnectorInstruction(
+                                                              primaryColor: theme.primaryColor,
+                                                            ),
+                                                          ),
+                                                        )
+                                                      : ClauseConnectorInstruction(
+                                                          primaryColor: theme.primaryColor,
+                                                        ),
+                                                  if (quest.connectorCategory != null) ...[
+                                                    SizedBox(height: 10.h),
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                                      decoration: BoxDecoration(
+                                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                                        borderRadius: BorderRadius.circular(12.r),
+                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                      ),
+                                                      child: Text(
+                                                        "TYPE: ${quest.connectorCategory!.toUpperCase()}",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 10.sp,
+                                                          fontWeight: FontWeight.w800,
+                                                          color: theme.primaryColor,
+                                                          letterSpacing: 1.5,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                  SizedBox(height: gapMiddle),
+
+                                                  // Magnetic Energy Port Container
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                                      child: Column(
+                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        children: [
+                                                          _buildHolographicPlate(
+                                                            clauseA,
+                                                            theme.primaryColor,
+                                                            isDark,
+                                                            isCompact,
+                                                          ),
+                                                          SizedBox(height: isCompact ? 10.h : 16.h),
+                                                          _buildMagneticPort(
+                                                            quest,
+                                                            options,
+                                                            theme.primaryColor,
+                                                            isDark,
+                                                            isCompact,
+                                                          ),
+                                                          SizedBox(height: isCompact ? 10.h : 16.h),
+                                                          _buildHolographicPlate(
+                                                            clauseB,
+                                                            theme.primaryColor,
+                                                            isDark,
+                                                            isCompact,
+                                                          ).animate().fadeIn(delay: 300.ms),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: gapMiddle),
+
+                                                  if (!_isAnswered.value && !_pendingTypeSubmit.value)
+                                                    _buildConnectorPalette(
+                                                      options,
+                                                      theme.primaryColor,
+                                                      isDark,
+                                                      quest.correctAnswerIndex ?? 0,
+                                                      isCompact,
+                                                    ),
+                                                  SizedBox(height: gapBottom),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    SizedBox(height: isCompact ? 10.h : 16.h),
-                                    _buildMagneticPort(
-                                      quest,
-                                      options,
-                                      theme.primaryColor,
-                                      isDark,
-                                      isCompact,
-                                    ),
-                                    SizedBox(height: isCompact ? 10.h : 16.h),
-                                    _buildHolographicPlate(
-                                      clauseB,
-                                      theme.primaryColor,
-                                      isDark,
-                                      isCompact,
-                                    ).animate().fadeIn(delay: 300.ms),
-                                  ],
-                                ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(height: (_pendingTypeSubmit.value && !_isAnswered.value) ? 380.h : 60.h),
+                                  ),
+                                ],
                               ),
                             ),
-                            SizedBox(height: gapMiddle),
-
-                            if (!_isAnswered.value && !_pendingTypeSubmit.value)
-                              _buildConnectorPalette(
-                                options,
-                                theme.primaryColor,
-                                isDark,
-                                quest.correctAnswerIndex ?? 0,
-                                isCompact,
-                              ),
-                            SizedBox(height: gapBottom),
-                          ],
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
                             if (_pendingTypeSubmit.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
-                              SliverToBoxAdapter(
-                                child: TypeToConfirmOverlay(
-                                  expectedText: cleanTargetSentence,
-                                  displayText: "Type the complete sentence to lock in the clause structure",
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(true),
-                                  onSkipped: () => _submitFinalAnswer(false),
-                                  allowSkip: true,
-                                ),
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                displayText: "Type the complete sentence to lock in the clause structure",
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                allowSkip: true,
+                                isPositioned: true,
                               ),
-                            SliverToBoxAdapter(
-                              child: SizedBox(height: (_isAnswered.value || _pendingTypeSubmit.value) ? 160.h : 60.h),
-                            ),
                           ],
                         );
                       },

@@ -37,6 +37,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -46,6 +47,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _pendingTypeSubmit.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -180,116 +182,126 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          useScrolling: false,
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverToBoxAdapter(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 10.h),
-                          WordReorderInstruction(primaryColor: theme.primaryColor),
-                          SizedBox(height: 16.h),
-                          if (quest.structureType != null)
-                            Container(
-                              margin: EdgeInsets.only(bottom: 16.h, left: 24.w, right: 24.w),
-                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                              decoration: BoxDecoration(
-                                color: theme.primaryColor.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(16.r),
-                                border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.account_tree_outlined, color: theme.primaryColor, size: 16.sp),
-                                  SizedBox(width: 8.w),
-                                  Text(
-                                    "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: theme.primaryColor,
-                                      letterSpacing: 1.5,
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              useScrolling: false,
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverToBoxAdapter(
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 10.h),
+                                        WordReorderInstruction(primaryColor: theme.primaryColor),
+                                        SizedBox(height: 16.h),
+                                        if (quest.structureType != null)
+                                          Container(
+                                            margin: EdgeInsets.only(bottom: 16.h, left: 24.w, right: 24.w),
+                                            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                            decoration: BoxDecoration(
+                                              color: theme.primaryColor.withValues(alpha: 0.1),
+                                              borderRadius: BorderRadius.circular(16.r),
+                                              border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Icon(Icons.account_tree_outlined, color: theme.primaryColor, size: 16.sp),
+                                                SizedBox(width: 8.w),
+                                                Text(
+                                                  "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    fontWeight: FontWeight.w800,
+                                                    color: theme.primaryColor,
+                                                    letterSpacing: 1.5,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        SizedBox(height: 8.h),
+                                        WordReorderAssemblyCard(
+                                          assembledIndices: _assembledIndices.value,
+                                          shuffledWords: shuffledWords,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          isAnswered: _isAnswered.value,
+                                          onWordRemove: _onWordRemove,
+                                        ),
+                                        SizedBox(height: 30.h),
+                                      ],
                                     ),
                                   ),
-                                ],
-                              ),
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                          child: Wrap(
+                                            spacing: 12.w,
+                                            runSpacing: 16.h,
+                                            alignment: WrapAlignment.center,
+                                            children: _availableIndices.value.map((idx) {
+                                              return WordReorderFloatingTile(
+                                                word: shuffledWords[idx],
+                                                index: idx,
+                                                onTap: () => _onWordTap(idx),
+                                                primaryColor: theme.primaryColor,
+                                                isDark: isDark,
+                                                isHighlighted: idx == expectedNextIndex,
+                                              );
+                                            }).toList(),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 20.h),
+                                      if (!_isAnswered.value && !_pendingTypeSubmit.value)
+                                        WordReorderCheckButton(
+                                          hasWords: _assembledIndices.value.isNotEmpty,
+                                          isDark: isDark,
+                                          primaryColor: theme.primaryColor,
+                                          onCheck: () => _checkSentence(correctOrder),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                                SliverToBoxAdapter(
+                                  child: SizedBox(
+                                    height: (_pendingTypeSubmit.value && !_isAnswered.value) ? 380.h : 60.h,
+                                  ),
+                                ),
+                              ],
                             ),
-                          SizedBox(height: 8.h),
-                          WordReorderAssemblyCard(
-                            assembledIndices: _assembledIndices.value,
-                            shuffledWords: shuffledWords,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                            isAnswered: _isAnswered.value,
-                            onWordRemove: _onWordRemove,
                           ),
-                          SizedBox(height: 30.h),
+                          if (_pendingTypeSubmit.value && !_isAnswered.value)
+                            TypeToConfirmOverlay(
+                              expectedText: correctOrder.map((idx) => shuffledWords[idx]).join(" "),
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitFinalAnswer(true),
+                              onSkipped: () => _submitFinalAnswer(false),
+                              isPositioned: true,
+                            ),
                         ],
-                      ),
-                    ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w),
-                            child: Wrap(
-                              spacing: 12.w,
-                              runSpacing: 16.h,
-                              alignment: WrapAlignment.center,
-                              children: _availableIndices.value.map((idx) {
-                                return WordReorderFloatingTile(
-                                  word: shuffledWords[idx],
-                                  index: idx,
-                                  onTap: () => _onWordTap(idx),
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  isHighlighted: idx == expectedNextIndex,
-                                );
-                              }).toList(),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 20.h),
-                        if (!_isAnswered.value && !_pendingTypeSubmit.value)
-                          WordReorderCheckButton(
-                            hasWords: _assembledIndices.value.isNotEmpty,
-                            isDark: isDark,
-                            primaryColor: theme.primaryColor,
-                            onCheck: () => _checkSentence(correctOrder),
-                          ),
-                      ],
-                    ),
-                  ),
-                if (_pendingTypeSubmit.value && !_isAnswered.value)
-                  SliverToBoxAdapter(
-                    child: TypeToConfirmOverlay(
-                      expectedText: correctOrder.map((idx) => shuffledWords[idx]).join(" "),
-                      primaryColor: theme.primaryColor,
-                      onConfirmed: () => _submitFinalAnswer(true),
-                      onSkipped: () => _submitFinalAnswer(false),
-                      isPositioned: false,
-                    ),
-                  ),
-                SliverToBoxAdapter(
-                  child: SizedBox(height: _isAnswered.value ? 160.h : 60.h),
-                ),
-              ],
-            );
-          },
-        ),
+                      );
+                    },
         );
           },
         );

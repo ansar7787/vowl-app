@@ -30,12 +30,15 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void dispose() {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
     _pendingTypeSubmit.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -132,140 +135,145 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Stack(
-                  children: [
-                    CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 24.h),
-                            GrammarQuestInstruction(
-                              primaryColor: theme.primaryColor,
-                            ),
-                            SizedBox(height: 16.h),
-                            if (quest.grammarRule != null)
-                              Container(
-                                margin: EdgeInsets.only(bottom: 24.h),
-                                padding: EdgeInsets.all(16.r),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.rule, color: theme.primaryColor, size: 16.sp),
-                                        SizedBox(width: 8.w),
-                                        Text(
-                                          "GRAMMAR RULE",
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w800,
-                                            color: theme.primaryColor,
-                                            letterSpacing: 2,
+              useScrolling: false, // Stack needs finite space to anchor to bottom
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                sliver: SliverToBoxAdapter(
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 24.h),
+                                      GrammarQuestInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                      SizedBox(height: 16.h),
+                                      if (quest.grammarRule != null)
+                                        Container(
+                                          margin: EdgeInsets.only(bottom: 24.h),
+                                          padding: EdgeInsets.all(16.r),
+                                          decoration: BoxDecoration(
+                                            color: theme.primaryColor.withValues(alpha: 0.1),
+                                            borderRadius: BorderRadius.circular(16.r),
+                                            border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                          ),
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Icon(Icons.rule, color: theme.primaryColor, size: 16.sp),
+                                                  SizedBox(width: 8.w),
+                                                  Text(
+                                                    "GRAMMAR RULE",
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 12.sp,
+                                                      fontWeight: FontWeight.w800,
+                                                      color: theme.primaryColor,
+                                                      letterSpacing: 2,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(height: 8.h),
+                                              Text(
+                                                quest.grammarRule!,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+                                                ),
+                                              ),
+                                              if (quest.ruleExplanation != null) ...[
+                                                SizedBox(height: 8.h),
+                                                Text(
+                                                  quest.ruleExplanation!,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 14.sp,
+                                                    color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
+                                                    height: 1.4,
+                                                  ),
+                                                ),
+                                              ]
+                                            ],
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 8.h),
-                                    Text(
-                                      quest.grammarRule!,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
-                                      ),
-                                    ),
-                                    if (quest.ruleExplanation != null) ...[
-                                      SizedBox(height: 8.h),
-                                      Text(
-                                        quest.ruleExplanation!,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
-                                          height: 1.4,
+                                      if (_isAnswered.value)
+                                        Text(
+                                          targetText,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 24.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: _isCorrect.value == true
+                                                ? Colors.green
+                                                : Colors.red,
+                                          ),
                                         ),
-                                      ),
-                                    ]
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
-                            if (_isAnswered.value)
-                              Text(
-                                targetText,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: _isCorrect.value == true
-                                      ? Colors.green
-                                      : Colors.red,
+                              SliverFillRemaining(
+                                hasScrollBody: false,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 0.w), // No padding for Jigsaw wrapper as it provides its own padding
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      if (!_isAnswered.value && !_pendingTypeSubmit.value && targetText.isNotEmpty)
+                                        DynamicJigsawWrapper(
+                                          expectedText: targetText,
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () => _submitInitialAnswer(true),
+                                          onSkipped: () => _submitInitialAnswer(false),
+                                          isPositioned: false,
+                                        ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 0.w), // No padding for Jigsaw wrapper as it provides its own padding
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            if (!_isAnswered.value && !_pendingTypeSubmit.value && targetText.isNotEmpty)
-                              DynamicJigsawWrapper(
-                                expectedText: targetText,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitInitialAnswer(true),
-                                onSkipped: () => _submitInitialAnswer(false),
-                                isPositioned: false,
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height: (_pendingTypeSubmit.value && !_isAnswered.value && targetText.isNotEmpty)
+                                      ? 380.h
+                                      : 60.h,
+                                ),
                               ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
+                        if (_pendingTypeSubmit.value && !_isAnswered.value && targetText.isNotEmpty)
+                          TypeToConfirmOverlay(
+                            expectedText: targetText,
+                            displayText: "Type the complete sentence to lock in the rule",
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(true),
+                            onSkipped: () => _submitFinalAnswer(false),
+                            allowSkip: true,
+                            isPositioned: true,
+                          ),
+                      ],
                     ),
-                  ],
-                ),
-                    if (_pendingTypeSubmit.value && !_isAnswered.value && targetText.isNotEmpty)
-                      SliverToBoxAdapter(
-                        child: TypeToConfirmOverlay(
-                          expectedText: targetText,
-                          displayText: "Type the complete sentence to lock in the rule",
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(true),
-                          onSkipped: () => _submitFinalAnswer(false),
-                          allowSkip: true,
-                          isPositioned: false,
-                        ),
-                      ),
-                    SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: (_isAnswered.value || _pendingTypeSubmit.value)
-                            ? 160.h
-                            : 60.h,
-                      ),
-                    ),
-                  ],
-                ),
             );
           },
         );

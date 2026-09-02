@@ -43,6 +43,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
   int? _lastLives;
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
   final ValueNotifier<String?> _assembledSentence = ValueNotifier(null);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -52,6 +53,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     _showConfetti.dispose();
     _pendingJigsaw.dispose();
     _assembledSentence.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -180,274 +182,285 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LayoutBuilder(
+              useScrolling: false, // Stack needs finite space to anchor to bottom
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
                       builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
-                        final isCompact = maxHeight < 580;
-
-                        final double estimatedContentHeight =
-                            (isCompact ? 30.h : 40.h) +
-                            (isCompact ? 50.h : 80.h) +
-                            (isCompact ? 100.h : 180.h) +
-                            (isCompact ? 40.h : 60.h) +
-                            (isCompact ? 40.h : 65.h) +
-                            40.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
-
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 5
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(4.0, 15.0)
-                            : 4.0;
-                        final double gapMiddle = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                            : 6.0;
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                            : 10.0;
-
-                        return Column(
+                        return Stack(
                           children: [
-                            SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: ModifierPlacementInstruction(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                    ),
-                                  )
-                                : ModifierPlacementInstruction(
-                                    primaryColor: theme.primaryColor,
-                                  ),
-                            SizedBox(height: gapMiddle),
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final maxHeight = constraints.maxHeight;
+                                              final isCompact = maxHeight < 580;
 
-                            if (quest.modifierType != null) ...[
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Text(
-                                  "MODIFIER: ${quest.modifierType!.toUpperCase()}",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    color: theme.primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.2,
-                                  ),
-                                ),
-                              ).animate().fadeIn(duration: 400.ms),
-                              SizedBox(height: isCompact ? 12.h : 20.h),
-                            ],
+                                              final double estimatedContentHeight =
+                                                  (isCompact ? 30.h : 40.h) +
+                                                  (isCompact ? 50.h : 80.h) +
+                                                  (isCompact ? 100.h : 180.h) +
+                                                  (isCompact ? 40.h : 60.h) +
+                                                  (isCompact ? 40.h : 65.h) +
+                                                  40.h;
+                                              final remainingHeight =
+                                                  maxHeight - estimatedContentHeight;
 
-                            // Context Card
-                            Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.all(
-                                      isCompact ? 14.r : 22.r,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: isDark
-                                          ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(
-                                              alpha: 0.03,
-                                            ),
-                                      borderRadius: BorderRadius.circular(
-                                        isCompact ? 18.r : 28.r,
-                                      ),
-                                      border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        width: 1.5,
-                                      ),
-                                    ),
-                                    child: Text(
-                                      "Insert the modifier '$modifier' into the correct position.",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: isCompact ? 14.sp : 18.sp,
-                                        color: isDark
-                                            ? Colors.white70
-                                            : Colors.black87,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                )
-                                .animate()
-                                .fadeIn(duration: 600.ms)
-                                .slideY(begin: 0.2, end: 0),
+                                              final double gapUnit = remainingHeight > 0
+                                                  ? remainingHeight / 5
+                                                  : 0;
+                                              final double gapTop = remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(4.0, 15.0)
+                                                  : 4.0;
+                                              final double gapMiddle = remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                                  : 6.0;
+                                              final double gapBottom = remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                                  : 10.0;
 
-                            // Result Feedback
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: isCompact ? 8.h : 24.h),
-                              _buildResult(
-                                quest,
-                                theme.primaryColor,
-                                isDark,
-                                isCompact,
-                              ),
-                            ],
+                                              return Column(
+                                                children: [
+                                                  SizedBox(height: gapTop),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit.scaleDown,
+                                                            child: ModifierPlacementInstruction(
+                                                              primaryColor: theme.primaryColor,
+                                                            ),
+                                                          ),
+                                                        )
+                                                      : ModifierPlacementInstruction(
+                                                          primaryColor: theme.primaryColor,
+                                                        ),
+                                                  SizedBox(height: gapMiddle),
 
-                            // Magnetic Arena
-                            Expanded(
-                              child: Center(
-                                child: ModifierMagneticArena(
-                                  words: words,
-                                  modifier: modifier,
-                                  targetIndex: _targetIndex.value,
-                                  isAnswered: _isAnswered.value || _pendingJigsaw.value,
-                                  isDark: isDark,
-                                  primaryColor: theme.primaryColor,
-                                  onSlotAccepted: (idx) =>
-                                      _targetIndex.value = idx,
-                                  onSlotReset: () =>
-                                      _targetIndex.value = -1,
-                                  isCompact: isCompact,
-                                ),
-                              ),
-                            ),
+                                                  if (quest.modifierType != null) ...[
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                                      decoration: BoxDecoration(
+                                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                                        borderRadius: BorderRadius.circular(12.r),
+                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                      ),
+                                                      child: Text(
+                                                        "MODIFIER: ${quest.modifierType!.toUpperCase()}",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          color: theme.primaryColor,
+                                                          fontWeight: FontWeight.bold,
+                                                          letterSpacing: 1.2,
+                                                        ),
+                                                      ),
+                                                    ).animate().fadeIn(duration: 400.ms),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                  ],
 
-                            // Draggable Magnet
-                            if (!_isAnswered.value &&
-                                !_pendingJigsaw.value &&
-                                _targetIndex.value == -1)
-                              Draggable<String>(
-                                data: modifier,
-                                feedback: _buildTactileMagnet(
-                                  modifier,
-                                  theme.primaryColor,
-                                  isDragging: true,
-                                  isCompact: isCompact,
-                                ),
-                                childWhenDragging: Opacity(
-                                  opacity: 0.2,
-                                  child: _buildTactileMagnet(
-                                    modifier,
-                                    theme.primaryColor,
-                                    isCompact: isCompact,
-                                  ),
-                                ),
-                                child: _buildTactileMagnet(
-                                  modifier,
-                                  theme.primaryColor,
-                                  isCompact: isCompact,
-                                ),
-                              ).animate().scale(
-                                duration: 400.ms,
-                                curve: Curves.easeOutBack,
-                              ),
+                                                  // Context Card
+                                                  Padding(
+                                                        padding: EdgeInsets.symmetric(
+                                                          horizontal: 24.w,
+                                                        ),
+                                                        child: Container(
+                                                          width: double.infinity,
+                                                          padding: EdgeInsets.all(
+                                                            isCompact ? 14.r : 22.r,
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                            color: isDark
+                                                                ? Colors.white.withValues(alpha: 0.05)
+                                                                : Colors.black.withValues(
+                                                                    alpha: 0.03,
+                                                                  ),
+                                                            borderRadius: BorderRadius.circular(
+                                                              isCompact ? 18.r : 28.r,
+                                                            ),
+                                                            border: Border.all(
+                                                              color: theme.primaryColor.withValues(
+                                                                alpha: 0.15,
+                                                              ),
+                                                              width: 1.5,
+                                                            ),
+                                                          ),
+                                                          child: Text(
+                                                            "Insert the modifier '$modifier' into the correct position.",
+                                                            textAlign: TextAlign.center,
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: isCompact ? 14.sp : 18.sp,
+                                                              color: isDark
+                                                                  ? Colors.white70
+                                                                  : Colors.black87,
+                                                              height: 1.4,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 600.ms)
+                                                      .slideY(begin: 0.2, end: 0),
 
-                            // Submit Button
-                            if (!_isAnswered.value &&
-                                !_pendingJigsaw.value &&
-                                _targetIndex.value != -1) ...[
-                              SizedBox(height: isCompact ? 8.h : 16.h),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                child: ScaleButton(
-                                  onTap: () => _submitAnswer(quest),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: isCompact ? 48.h : 65.h,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                        isCompact ? 14.r : 24.r,
-                                      ),
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          theme.primaryColor,
-                                          theme.primaryColor.withValues(
-                                            alpha: 0.8,
+                                                  // Result Feedback
+                                                  if (_isAnswered.value) ...[
+                                                    SizedBox(height: isCompact ? 8.h : 24.h),
+                                                    _buildResult(
+                                                      quest,
+                                                      theme.primaryColor,
+                                                      isDark,
+                                                      isCompact,
+                                                    ),
+                                                  ],
+
+                                                  // Magnetic Arena
+                                                  Expanded(
+                                                    child: Center(
+                                                      child: ModifierMagneticArena(
+                                                        words: words,
+                                                        modifier: modifier,
+                                                        targetIndex: _targetIndex.value,
+                                                        isAnswered: _isAnswered.value || _pendingJigsaw.value,
+                                                        isDark: isDark,
+                                                        primaryColor: theme.primaryColor,
+                                                        onSlotAccepted: (idx) =>
+                                                            _targetIndex.value = idx,
+                                                        onSlotReset: () =>
+                                                            _targetIndex.value = -1,
+                                                        isCompact: isCompact,
+                                                      ),
+                                                    ),
+                                                  ),
+
+                                                  // Draggable Magnet
+                                                  if (!_isAnswered.value &&
+                                                      !_pendingJigsaw.value &&
+                                                      _targetIndex.value == -1)
+                                                    Draggable<String>(
+                                                      data: modifier,
+                                                      feedback: _buildTactileMagnet(
+                                                        modifier,
+                                                        theme.primaryColor,
+                                                        isDragging: true,
+                                                        isCompact: isCompact,
+                                                      ),
+                                                      childWhenDragging: Opacity(
+                                                        opacity: 0.2,
+                                                        child: _buildTactileMagnet(
+                                                          modifier,
+                                                          theme.primaryColor,
+                                                          isCompact: isCompact,
+                                                        ),
+                                                      ),
+                                                      child: _buildTactileMagnet(
+                                                        modifier,
+                                                        theme.primaryColor,
+                                                        isCompact: isCompact,
+                                                      ),
+                                                    ).animate().scale(
+                                                      duration: 400.ms,
+                                                      curve: Curves.easeOutBack,
+                                                    ),
+
+                                                  // Submit Button
+                                                  if (!_isAnswered.value &&
+                                                      !_pendingJigsaw.value &&
+                                                      _targetIndex.value != -1) ...[
+                                                    SizedBox(height: isCompact ? 8.h : 16.h),
+                                                    Padding(
+                                                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                                      child: ScaleButton(
+                                                        onTap: () => _submitAnswer(quest),
+                                                        child: Container(
+                                                          width: double.infinity,
+                                                          height: isCompact ? 48.h : 65.h,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius: BorderRadius.circular(
+                                                              isCompact ? 14.r : 24.r,
+                                                            ),
+                                                            gradient: LinearGradient(
+                                                              colors: [
+                                                                theme.primaryColor,
+                                                                theme.primaryColor.withValues(
+                                                                  alpha: 0.8,
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            boxShadow: [
+                                                              BoxShadow(
+                                                                color: theme.primaryColor.withValues(
+                                                                  alpha: 0.4,
+                                                                ),
+                                                                blurRadius: 25,
+                                                                offset: const Offset(0, 12),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          child: Center(
+                                                            child: Text(
+                                                              "FINALIZE SYNTAX",
+                                                              style: TextStyle(
+                                                                fontFamily: 'Outfit',
+                                                                fontSize: isCompact ? 13.sp : 16.sp,
+                                                                fontWeight: FontWeight.w900,
+                                                                color: Colors.white,
+                                                                letterSpacing: 2,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+
+                                                  SizedBox(height: gapBottom),
+                                                ],
+                                              );
+                                            },
                                           ),
-                                        ],
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.4,
-                                          ),
-                                          blurRadius: 25,
-                                          offset: const Offset(0, 12),
                                         ),
                                       ],
                                     ),
-                                    child: Center(
-                                      child: Text(
-                                        "FINALIZE SYNTAX",
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: isCompact ? 13.sp : 16.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: Colors.white,
-                                          letterSpacing: 2,
-                                        ),
-                                      ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h,
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
-
-                            SizedBox(height: gapBottom),
+                            ),
+                            if (_pendingJigsaw.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: true,
+                                displayText: "Type the complete sentence to lock it in",
+                              ),
                           ],
                         );
                       },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-                    if (_pendingJigsaw.value &&
-                        !_isAnswered.value &&
-                        cleanTargetSentence.isNotEmpty)
-                      SliverToBoxAdapter(
-                        child: TypeToConfirmOverlay(
-                          expectedText: cleanTargetSentence,
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(true),
-                          onSkipped: () => _submitFinalAnswer(false),
-                          isPositioned: false,
-                          displayText: "Type the complete sentence to lock it in",
-                        ),
-                      ),
-                    SliverToBoxAdapter(
-                      child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
-                    ),
-                  ],
-                );
-                  },
                 ),
             );
           },

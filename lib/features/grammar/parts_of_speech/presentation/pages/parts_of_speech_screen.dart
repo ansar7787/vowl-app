@@ -44,6 +44,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
 
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
   final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -53,6 +54,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
     _showConfetti.dispose();
     _isSubmitting.dispose();
     _pendingTypeSubmit.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -148,72 +150,83 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false, // Stack layout constraint
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox.shrink()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                final isCompact = constraints.maxHeight < 580;
-                                return _PosQuestLayout(
-                                  quest: quest,
-                                  options: options,
-                                  theme: theme,
-                                  isDark: isDark,
-                                  isCompact: isCompact,
-                                  maxHeight: constraints.maxHeight,
-                                  dragOffset: _dragOffset.value,
-                                  isAnswered: _isAnswered.value || _pendingTypeSubmit.value,
-                                  onPanUpdate: (details) {
-                                    if (_pendingTypeSubmit.value || _isAnswered.value) return;
-                                    _dragOffset.value += details.delta;
-                                    _checkCollision(
-                                      quest.correctAnswerIndex ?? 0,
-                                      isCompact: isCompact,
-                                    );
-                                  },
-                                  onPanEnd: (_) {
-                                    if (_pendingTypeSubmit.value || _isAnswered.value) return;
-                                    _dragOffset.value = Offset.zero;
-                                  },
-                                );
-                              },
+              useScrolling: false, // Stack layout constraint
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox.shrink()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final isCompact = constraints.maxHeight < 580;
+                                              return _PosQuestLayout(
+                                                quest: quest,
+                                                options: options,
+                                                theme: theme,
+                                                isDark: isDark,
+                                                isCompact: isCompact,
+                                                maxHeight: constraints.maxHeight,
+                                                dragOffset: _dragOffset.value,
+                                                isAnswered: _isAnswered.value || _pendingTypeSubmit.value,
+                                                onPanUpdate: (details) {
+                                                  if (_pendingTypeSubmit.value || _isAnswered.value) return;
+                                                  _dragOffset.value += details.delta;
+                                                  _checkCollision(
+                                                    quest.correctAnswerIndex ?? 0,
+                                                    isCompact: isCompact,
+                                                  );
+                                                },
+                                                onPanEnd: (_) {
+                                                  if (_pendingTypeSubmit.value || _isAnswered.value) return;
+                                                  _dragOffset.value = Offset.zero;
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (_pendingTypeSubmit.value && !_isAnswered.value) ? 380.h : 60.h,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
+                            if (_pendingTypeSubmit.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                displayText: "Type the complete sentence to lock in the part of speech",
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                allowSkip: true,
+                                isPositioned: true,
+                              ),
                           ],
-                        ),
-                      ),
-                      if (_pendingTypeSubmit.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
-                        SliverToBoxAdapter(
-                          child: TypeToConfirmOverlay(
-                            expectedText: cleanTargetSentence,
-                            displayText: "Type the complete sentence to lock in the part of speech",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                            allowSkip: true,
-                            isPositioned: false,
-                          ),
-                        ),
-                      SliverToBoxAdapter(
-                        child: SizedBox(height: (_isAnswered.value || _pendingTypeSubmit.value) ? 160.h : 60.h),
-                      ),
-                    ],
-                  );
-                  },
+                        );
+                      },
                 ),
             );
           },

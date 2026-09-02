@@ -41,6 +41,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -50,6 +51,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _pendingJigsaw.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -135,7 +137,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)
-            ? state.currentQuest
+            ? state.currentQuest as GrammarQuest?
             : null;
         final fishOptions =
             quest?.options ?? ["WHO IS SMART", "WHICH IS RED", "THAT I LIKE"];
@@ -165,196 +167,207 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LayoutBuilder(
+              useScrolling: false, // Stack needs finite space to anchor to bottom
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
                       builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 580;
-
-                        return Column(
+                        return Stack(
                           children: [
-                            SizedBox(height: isCompact ? 4.h : 10.h),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: RelativeClausesInstruction(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                    ),
-                                  )
-                                : RelativeClausesInstruction(
-                                    primaryColor: theme.primaryColor,
-                                  ),
-                            SizedBox(height: isCompact ? 8.h : 20.h),
-
-                            if (quest.clauseType != null) ...[
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      "CLAUSE: ${quest.clauseType!.toUpperCase()}",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        color: theme.primaryColor,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 1.2,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4.h),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
                                       children: [
-                                        Text(
-                                          "Defining (No Commas) ", 
-                                          style: TextStyle(
-                                            fontSize: 10.sp, 
-                                            color: quest.clauseType!.toLowerCase().contains('non') ? theme.primaryColor.withValues(alpha: 0.4) : theme.primaryColor,
-                                            fontWeight: quest.clauseType!.toLowerCase().contains('non') ? FontWeight.normal : FontWeight.bold,
-                                          )
-                                        ),
-                                        Icon(Icons.compare_arrows_rounded, color: theme.primaryColor.withValues(alpha: 0.5), size: 16.sp),
-                                        Text(
-                                          " Non-Defining (Commas)", 
-                                          style: TextStyle(
-                                            fontSize: 10.sp, 
-                                            color: quest.clauseType!.toLowerCase().contains('non') ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.4),
-                                            fontWeight: quest.clauseType!.toLowerCase().contains('non') ? FontWeight.bold : FontWeight.normal,
-                                          )
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final isCompact = constraints.maxHeight < 580;
+
+                                              return Column(
+                                                children: [
+                                                  SizedBox(height: isCompact ? 4.h : 10.h),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit.scaleDown,
+                                                            child: RelativeClausesInstruction(
+                                                              primaryColor: theme.primaryColor,
+                                                            ),
+                                                          ),
+                                                        )
+                                                      : RelativeClausesInstruction(
+                                                          primaryColor: theme.primaryColor,
+                                                        ),
+                                                  SizedBox(height: isCompact ? 8.h : 20.h),
+
+                                                  if (quest.clauseType != null) ...[
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                                      decoration: BoxDecoration(
+                                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                                        borderRadius: BorderRadius.circular(16.r),
+                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "CLAUSE: ${quest.clauseType!.toUpperCase()}",
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: 12.sp,
+                                                              color: theme.primaryColor,
+                                                              fontWeight: FontWeight.bold,
+                                                              letterSpacing: 1.2,
+                                                            ),
+                                                          ),
+                                                          SizedBox(height: 4.h),
+                                                          Row(
+                                                            mainAxisSize: MainAxisSize.min,
+                                                            children: [
+                                                              Text(
+                                                                "Defining (No Commas) ", 
+                                                                style: TextStyle(
+                                                                  fontSize: 10.sp, 
+                                                                  color: quest.clauseType!.toLowerCase().contains('non') ? theme.primaryColor.withValues(alpha: 0.4) : theme.primaryColor,
+                                                                  fontWeight: quest.clauseType!.toLowerCase().contains('non') ? FontWeight.normal : FontWeight.bold,
+                                                                )
+                                                              ),
+                                                              Icon(Icons.compare_arrows_rounded, color: theme.primaryColor.withValues(alpha: 0.5), size: 16.sp),
+                                                              Text(
+                                                                " Non-Defining (Commas)", 
+                                                                style: TextStyle(
+                                                                  fontSize: 10.sp, 
+                                                                  color: quest.clauseType!.toLowerCase().contains('non') ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.4),
+                                                                  fontWeight: quest.clauseType!.toLowerCase().contains('non') ? FontWeight.bold : FontWeight.normal,
+                                                                )
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ).animate().fadeIn(duration: 400.ms),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                  ],
+
+                                                  // Context Card
+                                                  Padding(
+                                                        padding: EdgeInsets.symmetric(
+                                                          horizontal: 24.w,
+                                                        ),
+                                                        child: Container(
+                                                          width: double.infinity,
+                                                          padding: EdgeInsets.all(
+                                                            isCompact ? 14.r : 22.r,
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                            color: isDark
+                                                                ? Colors.white.withValues(alpha: 0.05)
+                                                                : Colors.black.withValues(
+                                                                    alpha: 0.03,
+                                                                  ),
+                                                            borderRadius: BorderRadius.circular(
+                                                              isCompact ? 18.r : 28.r,
+                                                            ),
+                                                            border: Border.all(
+                                                              color: theme.primaryColor.withValues(
+                                                                alpha: 0.15,
+                                                              ),
+                                                              width: 1.5,
+                                                            ),
+                                                          ),
+                                                          child: Text(
+                                                            quest.question?.replaceAll(
+                                                                  '___',
+                                                                  (_isAnswered.value || _pendingJigsaw.value) &&
+                                                                          _targetFish.value != -1
+                                                                      ? fishOptions[_targetFish.value]
+                                                                      : '_____',
+                                                                ) ??
+                                                                "The data ____",
+                                                            textAlign: TextAlign.center,
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: isCompact ? 15.sp : 20.sp,
+                                                              color: isDark
+                                                                  ? Colors.white
+                                                                  : Colors.black87,
+                                                              height: 1.5,
+                                                              fontWeight: FontWeight.w600,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 600.ms)
+                                                      .slideY(begin: 0.2, end: 0),
+
+                                                  // Result
+                                                  if (_isAnswered.value) ...[
+                                                    SizedBox(height: isCompact ? 8.h : 20.h),
+                                                    _buildResult(
+                                                      quest,
+                                                      theme.primaryColor,
+                                                      isDark,
+                                                      isCompact,
+                                                    ),
+                                                  ],
+
+                                                  // Game Arena
+                                                  Expanded(
+                                                    child: _buildQuantumArena(
+                                                      fishOptions,
+                                                      quest.correctAnswerIndex ?? 0,
+                                                      theme.primaryColor,
+                                                      isDark,
+                                                      isCompact,
+                                                    ),
+                                                  ),
+
+                                                  SizedBox(height: isCompact ? 12.h : 40.h),
+                                                ],
+                                              );
+                                            },
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ],
-                                ),
-                              ).animate().fadeIn(duration: 400.ms),
-                              SizedBox(height: isCompact ? 12.h : 20.h),
-                            ],
-
-                            // Context Card
-                            Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
                                   ),
-                                  child: Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.all(
-                                      isCompact ? 14.r : 22.r,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: isDark
-                                          ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(
-                                              alpha: 0.03,
-                                            ),
-                                      borderRadius: BorderRadius.circular(
-                                        isCompact ? 18.r : 28.r,
-                                      ),
-                                      border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        width: 1.5,
-                                      ),
-                                    ),
-                                    child: Text(
-                                      quest.question?.replaceAll(
-                                            '___',
-                                            (_isAnswered.value || _pendingJigsaw.value) &&
-                                                    _targetFish.value != -1
-                                                ? fishOptions[_targetFish.value]
-                                                : '_____',
-                                          ) ??
-                                          "The data ____",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: isCompact ? 15.sp : 20.sp,
-                                        color: isDark
-                                            ? Colors.white
-                                            : Colors.black87,
-                                        height: 1.5,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h,
                                     ),
                                   ),
-                                )
-                                .animate()
-                                .fadeIn(duration: 600.ms)
-                                .slideY(begin: 0.2, end: 0),
-
-                            // Result
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: isCompact ? 8.h : 20.h),
-                              _buildResult(
-                                quest,
-                                theme.primaryColor,
-                                isDark,
-                                isCompact,
-                              ),
-                            ],
-
-                            // Game Arena
-                            Expanded(
-                              child: _buildQuantumArena(
-                                fishOptions,
-                                quest.correctAnswerIndex ?? 0,
-                                theme.primaryColor,
-                                isDark,
-                                isCompact,
+                                ],
                               ),
                             ),
-
-                            SizedBox(height: isCompact ? 12.h : 40.h),
+                            if (_pendingJigsaw.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: true,
+                                displayText: "Type the complete sentence to lock it in",
+                              ),
                           ],
                         );
                       },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-                    if (_pendingJigsaw.value &&
-                        !_isAnswered.value &&
-                        cleanTargetSentence.isNotEmpty)
-                      SliverToBoxAdapter(
-                        child: TypeToConfirmOverlay(
-                          expectedText: cleanTargetSentence,
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(true),
-                          onSkipped: () => _submitFinalAnswer(false),
-                          isPositioned: false,
-                          displayText: "Type the complete sentence to lock it in",
-                        ),
-                      ),
-                    SliverToBoxAdapter(
-                      child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
-                    ),
-                  ],
-                );
-                  },
                 ),
             );
           },

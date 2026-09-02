@@ -41,6 +41,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -49,6 +50,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _pendingJigsaw.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -210,257 +212,268 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () =>
-              context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<GrammarBloc>().add(const GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LayoutBuilder(
+              useScrolling: false, // Stack needs finite space to anchor to bottom
+              onContinue: () =>
+                  context.read<GrammarBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<GrammarBloc>().add(const GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
                       builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
-                        final isCompact = maxHeight < 580;
-
-                        final double estimatedContentHeight =
-                            (isCompact ? 30.h : 40.h) +
-                            (isCompact ? 50.h : 80.h) +
-                            (isCompact ? 180.r : 280.r) +
-                            (isCompact ? 40.h : 65.h) +
-                            40.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
-
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 5
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(4.0, 15.0)
-                            : 4.0;
-                        final double gapMiddle = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                            : 6.0;
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                            : 10.0;
-
-                        return Column(
+                        return Stack(
                           children: [
-                            SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: ModalsSelectionInstruction(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                    ),
-                                  )
-                                : ModalsSelectionInstruction(
-                                    primaryColor: theme.primaryColor,
-                                  ),
-                            SizedBox(height: gapMiddle),
-
-                            if (quest.modalMeaning != null) ...[
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      "MEANING: ${quest.modalMeaning!.toUpperCase()}",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        color: theme.primaryColor,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 1.2,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4.h),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
                                       children: [
-                                        Text("LOW (might) ", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
-                                        Icon(Icons.arrow_right_alt, color: theme.primaryColor, size: 16.sp),
-                                        Text(" HIGH (must)", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final maxHeight = constraints.maxHeight;
+                                              final isCompact = maxHeight < 580;
+
+                                              final double estimatedContentHeight =
+                                                  (isCompact ? 30.h : 40.h) +
+                                                  (isCompact ? 50.h : 80.h) +
+                                                  (isCompact ? 180.r : 280.r) +
+                                                  (isCompact ? 40.h : 65.h) +
+                                                  40.h;
+                                              final remainingHeight =
+                                                  maxHeight - estimatedContentHeight;
+
+                                              final double gapUnit = remainingHeight > 0
+                                                  ? remainingHeight / 5
+                                                  : 0;
+                                              final double gapTop = remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(4.0, 15.0)
+                                                  : 4.0;
+                                              final double gapMiddle = remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                                  : 6.0;
+                                              final double gapBottom = remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                                  : 10.0;
+
+                                              return Column(
+                                                children: [
+                                                  SizedBox(height: gapTop),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit.scaleDown,
+                                                            child: ModalsSelectionInstruction(
+                                                              primaryColor: theme.primaryColor,
+                                                            ),
+                                                          ),
+                                                        )
+                                                      : ModalsSelectionInstruction(
+                                                          primaryColor: theme.primaryColor,
+                                                        ),
+                                                  SizedBox(height: gapMiddle),
+
+                                                  if (quest.modalMeaning != null) ...[
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                                      decoration: BoxDecoration(
+                                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                                        borderRadius: BorderRadius.circular(12.r),
+                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "MEANING: ${quest.modalMeaning!.toUpperCase()}",
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: 12.sp,
+                                                              color: theme.primaryColor,
+                                                              fontWeight: FontWeight.bold,
+                                                              letterSpacing: 1.2,
+                                                            ),
+                                                          ),
+                                                          SizedBox(height: 4.h),
+                                                          Row(
+                                                            mainAxisSize: MainAxisSize.min,
+                                                            children: [
+                                                              Text("LOW (might) ", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                                              Icon(Icons.arrow_right_alt, color: theme.primaryColor, size: 16.sp),
+                                                              Text(" HIGH (must)", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ).animate().fadeIn(duration: 400.ms),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                  ],
+
+                                                  // Context Card with Fill-in-the-Blank
+                                                  Padding(
+                                                        padding: EdgeInsets.symmetric(
+                                                          horizontal: 24.w,
+                                                        ),
+                                                        child: Container(
+                                                          width: double.infinity,
+                                                          padding: EdgeInsets.all(
+                                                            isCompact ? 14.r : 22.r,
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                            color: isDark
+                                                                ? Colors.white.withValues(alpha: 0.05)
+                                                                : Colors.black.withValues(
+                                                                    alpha: 0.03,
+                                                                  ),
+                                                            borderRadius: BorderRadius.circular(
+                                                              isCompact ? 18.r : 28.r,
+                                                            ),
+                                                            border: Border.all(
+                                                              color: theme.primaryColor.withValues(
+                                                                alpha: 0.15,
+                                                              ),
+                                                              width: 1.5,
+                                                            ),
+                                                          ),
+                                                          child: RichText(
+                                                            textAlign: TextAlign.center,
+                                                            text: TextSpan(
+                                                              style: TextStyle(
+                                                                fontFamily: 'Outfit',
+                                                                fontSize: isCompact ? 15.sp : 20.sp,
+                                                                color: isDark
+                                                                    ? Colors.white
+                                                                    : Colors.black87,
+                                                                height: 1.5,
+                                                              ),
+                                                              children: _buildSentenceWithBlank(
+                                                                quest.question ?? "___ sentence.",
+                                                                options[_selectedIndex.value],
+                                                                theme.primaryColor,
+                                                                isDark,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 600.ms)
+                                                      .slideY(begin: 0.2, end: 0),
+
+                                                  // Result Feedback
+                                                  if (_isAnswered.value) ...[
+                                                    SizedBox(height: isCompact ? 8.h : 24.h),
+                                                    _buildResult(
+                                                      quest,
+                                                      theme.primaryColor,
+                                                      isDark,
+                                                      isCompact,
+                                                    ),
+                                                  ],
+
+                                                  // Rotary Dial
+                                                  Expanded(
+                                                    child: ModalsRotaryDial(
+                                                      options: options,
+                                                      isAnswered: _isAnswered.value || _pendingJigsaw.value,
+                                                      isDark: isDark,
+                                                      primaryColor: theme.primaryColor,
+                                                      onSelectionChanged: (index) {
+                                                        if (_isAnswered.value || _pendingJigsaw.value) return;
+                                                        _selectedIndex.value = index;
+                                                      },
+                                                      isCompact: isCompact,
+                                                    ),
+                                                  ),
+
+                                                  // Submit Button
+                                                  if (!_isAnswered.value && !_pendingJigsaw.value)
+                                                    Padding(
+                                                      padding: EdgeInsets.symmetric(horizontal: 40.w),
+                                                      child: ScaleButton(
+                                                        onTap: () => _submitAnswer(
+                                                          quest.correctAnswerIndex ?? 0,
+                                                        ),
+                                                        child: Container(
+                                                          width: double.infinity,
+                                                          height: isCompact ? 48.h : 65.h,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius: BorderRadius.circular(
+                                                              isCompact ? 14.r : 22.r,
+                                                            ),
+                                                            gradient: LinearGradient(
+                                                              colors: [
+                                                                theme.primaryColor,
+                                                                theme.primaryColor.withValues(
+                                                                  alpha: 0.8,
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            boxShadow: [
+                                                              BoxShadow(
+                                                                color: theme.primaryColor.withValues(
+                                                                  alpha: 0.3,
+                                                                ),
+                                                                blurRadius: 15,
+                                                                offset: const Offset(0, 5),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          child: Center(
+                                                            child: Text(
+                                                              "LOCK CONFIGURATION",
+                                                              style: TextStyle(
+                                                                fontFamily: 'Outfit',
+                                                                fontSize: isCompact ? 12.sp : 14.sp,
+                                                                fontWeight: FontWeight.w900,
+                                                                color: Colors.white,
+                                                                letterSpacing: 2,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+
+                                                  SizedBox(height: gapBottom),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        ),
                                       ],
                                     ),
-                                  ],
-                                ),
-                              ).animate().fadeIn(duration: 400.ms),
-                              SizedBox(height: isCompact ? 12.h : 20.h),
-                            ],
-
-                            // Context Card with Fill-in-the-Blank
-                            Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
                                   ),
-                                  child: Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.all(
-                                      isCompact ? 14.r : 22.r,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: isDark
-                                          ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(
-                                              alpha: 0.03,
-                                            ),
-                                      borderRadius: BorderRadius.circular(
-                                        isCompact ? 18.r : 28.r,
-                                      ),
-                                      border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        width: 1.5,
-                                      ),
-                                    ),
-                                    child: RichText(
-                                      textAlign: TextAlign.center,
-                                      text: TextSpan(
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: isCompact ? 15.sp : 20.sp,
-                                          color: isDark
-                                              ? Colors.white
-                                              : Colors.black87,
-                                          height: 1.5,
-                                        ),
-                                        children: _buildSentenceWithBlank(
-                                          quest.question ?? "___ sentence.",
-                                          options[_selectedIndex.value],
-                                          theme.primaryColor,
-                                          isDark,
-                                        ),
-                                      ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h,
                                     ),
                                   ),
-                                )
-                                .animate()
-                                .fadeIn(duration: 600.ms)
-                                .slideY(begin: 0.2, end: 0),
-
-                            // Result Feedback
-                            if (_isAnswered.value) ...[
-                              SizedBox(height: isCompact ? 8.h : 24.h),
-                              _buildResult(
-                                quest,
-                                theme.primaryColor,
-                                isDark,
-                                isCompact,
-                              ),
-                            ],
-
-                            // Rotary Dial
-                            Expanded(
-                              child: ModalsRotaryDial(
-                                options: options,
-                                isAnswered: _isAnswered.value || _pendingJigsaw.value,
-                                isDark: isDark,
-                                primaryColor: theme.primaryColor,
-                                onSelectionChanged: (index) {
-                                  if (_isAnswered.value || _pendingJigsaw.value) return;
-                                  _selectedIndex.value = index;
-                                },
-                                isCompact: isCompact,
+                                ],
                               ),
                             ),
-
-                            // Submit Button
-                            if (!_isAnswered.value && !_pendingJigsaw.value)
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 40.w),
-                                child: ScaleButton(
-                                  onTap: () => _submitAnswer(
-                                    quest.correctAnswerIndex ?? 0,
-                                  ),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: isCompact ? 48.h : 65.h,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                        isCompact ? 14.r : 22.r,
-                                      ),
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          theme.primaryColor,
-                                          theme.primaryColor.withValues(
-                                            alpha: 0.8,
-                                          ),
-                                        ],
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: theme.primaryColor.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                          blurRadius: 15,
-                                          offset: const Offset(0, 5),
-                                        ),
-                                      ],
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        "LOCK CONFIGURATION",
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: isCompact ? 12.sp : 14.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: Colors.white,
-                                          letterSpacing: 2,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                            if (_pendingJigsaw.value &&
+                                !_isAnswered.value &&
+                                cleanTargetSentence.isNotEmpty)
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: true,
+                                displayText: "Type the full sentence to lock it in",
                               ),
-
-                            SizedBox(height: gapBottom),
                           ],
                         );
                       },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-                    if (_pendingJigsaw.value &&
-                        !_isAnswered.value &&
-                        cleanTargetSentence.isNotEmpty)
-                      SliverToBoxAdapter(
-                        child: TypeToConfirmOverlay(
-                          expectedText: cleanTargetSentence,
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(true),
-                          onSkipped: () => _submitFinalAnswer(false),
-                          isPositioned: false,
-                          displayText: "Type the full sentence to lock it in",
-                        ),
-                      ),
-                    SliverToBoxAdapter(
-                      child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
-                    ),
-                  ],
-                );
-                  },
                 ),
             );
           },

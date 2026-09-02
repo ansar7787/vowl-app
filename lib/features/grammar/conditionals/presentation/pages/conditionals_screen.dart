@@ -39,6 +39,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -48,6 +49,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -165,216 +167,225 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
               ? const SizedBox()
               : LayoutBuilder(
                   builder: (context, constraints) {
-                    return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                final maxHeight = constraints.maxHeight;
-                                final isCompact = maxHeight < 580;
-
-                                final double estimatedContentHeight =
-                                    (isCompact ? 30.h : 40.h) +
-                                    (isCompact ? 70.h : 100.h) +
-                                    (_isAnswered.value
-                                        ? (isCompact ? 50.h : 90.h)
-                                        : 0) +
-                                    40.h;
-                                final remainingHeight =
-                                    maxHeight - estimatedContentHeight;
-
-                                final double gapUnit = remainingHeight > 0
-                                    ? remainingHeight / 5
-                                    : 0;
-                                final double gapTop = remainingHeight > 0
-                                    ? (gapUnit * 1).clamp(4.0, 15.0)
-                                    : 4.0;
-                                final double gapMiddle = remainingHeight > 0
-                                    ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                                    : 6.0;
-                                final double gapBottom = remainingHeight > 0
-                                    ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                                    : 10.0;
-
-                                return Column(
+                    return Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverFillRemaining(
+                                hasScrollBody: false,
+                                child: Column(
                                   children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 25.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: ConditionalsInstruction(
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                              ),
-                                            ),
-                                          )
-                                        : ConditionalsInstruction(
-                                            primaryColor: theme.primaryColor,
-                                          ),
-                                    SizedBox(height: gapMiddle),
-
-                                    if (quest.conditionalType != null) ...[
-                                      Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(alpha: 0.1),
-                                          borderRadius: BorderRadius.circular(16.r),
-                                          border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              "TYPE: ${quest.conditionalType!.toUpperCase()}",
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 12.sp,
-                                                color: theme.primaryColor,
-                                                fontWeight: FontWeight.bold,
-                                                letterSpacing: 1.2,
-                                              ),
-                                            ),
-                                            SizedBox(height: 4.h),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                Text("0: Fact  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '0' || quest.conditionalType == 'zero' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '0' || quest.conditionalType == 'zero' ? FontWeight.bold : FontWeight.normal)),
-                                                Text("|  1: Real  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '1' || quest.conditionalType == 'first' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '1' || quest.conditionalType == 'first' ? FontWeight.bold : FontWeight.normal)),
-                                                Text("|  2: Unreal  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '2' || quest.conditionalType == 'second' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '2' || quest.conditionalType == 'second' ? FontWeight.bold : FontWeight.normal)),
-                                                Text("|  3: Past", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '3' || quest.conditionalType == 'third' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '3' || quest.conditionalType == 'third' ? FontWeight.bold : FontWeight.normal)),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ).animate().fadeIn(duration: 400.ms),
-                                      SizedBox(height: isCompact ? 12.h : 20.h),
-                                    ],
-
-                                    // Context Card
-                                    Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
-                                          ),
-                                          child: Container(
-                                            padding: EdgeInsets.all(
-                                              isCompact ? 12.r : 22.r,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: isDark
-                                                  ? Colors.white.withValues(
-                                                      alpha: 0.05,
-                                                    )
-                                                  : Colors.black.withValues(
-                                                      alpha: 0.03,
-                                                    ),
-                                              borderRadius:
-                                                  BorderRadius.circular(24.r),
-                                              border: Border.all(
-                                                color: theme.primaryColor
-                                                    .withValues(alpha: 0.15),
-                                                width: 1.5,
-                                              ),
-                                            ),
-                                            child: Column(
-                                              children: [
-                                                Text(
-                                                  "IF CONDITION",
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: isCompact
-                                                        ? 8.sp
-                                                        : 10.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: theme.primaryColor,
-                                                    letterSpacing: 2,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: isCompact
-                                                      ? 6.h
-                                                      : 12.h,
-                                                ),
-                                                Text(
-                                                  quest.question ?? "",
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: isCompact
-                                                        ? 16.sp
-                                                        : 20.sp,
-                                                    color: isDark
-                                                        ? Colors.white
-                                                        : Colors.black87,
-                                                    height: 1.4,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        )
-                                        .animate()
-                                        .fadeIn(duration: 600.ms)
-                                        .slideY(begin: 0.2, end: 0),
-
-                                    // Result
-                                    if (_isAnswered.value) ...[
-                                      SizedBox(height: gapMiddle),
-                                      _buildResult(
-                                        quest,
-                                        theme.primaryColor,
-                                        isDark,
-                                        isCompact,
-                                      ),
-                                    ],
-
-                                    // Chain Arena
                                     Expanded(
-                                      child: _buildChainArena(
-                                        options,
-                                        quest.correctAnswerIndex ?? 0,
-                                        theme.primaryColor,
-                                        isDark,
-                                        isCompact,
+                                      child: LayoutBuilder(
+                                        builder: (context, constraints) {
+                                          final maxHeight = constraints.maxHeight;
+                                          final isCompact = maxHeight < 580;
+
+                                          final double estimatedContentHeight =
+                                              (isCompact ? 30.h : 40.h) +
+                                              (isCompact ? 70.h : 100.h) +
+                                              (_isAnswered.value
+                                                  ? (isCompact ? 50.h : 90.h)
+                                                  : 0) +
+                                              40.h;
+                                          final remainingHeight =
+                                              maxHeight - estimatedContentHeight;
+
+                                          final double gapUnit = remainingHeight > 0
+                                              ? remainingHeight / 5
+                                              : 0;
+                                          final double gapTop = remainingHeight > 0
+                                              ? (gapUnit * 1).clamp(4.0, 15.0)
+                                              : 4.0;
+                                          final double gapMiddle = remainingHeight > 0
+                                              ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                              : 6.0;
+                                          final double gapBottom = remainingHeight > 0
+                                              ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                              : 10.0;
+
+                                          return Column(
+                                            children: [
+                                              SizedBox(height: gapTop),
+                                              isCompact
+                                                  ? SizedBox(
+                                                      height: 25.h,
+                                                      child: FittedBox(
+                                                        fit: BoxFit.scaleDown,
+                                                        child: ConditionalsInstruction(
+                                                          primaryColor:
+                                                              theme.primaryColor,
+                                                        ),
+                                                      ),
+                                                    )
+                                                  : ConditionalsInstruction(
+                                                      primaryColor: theme.primaryColor,
+                                                    ),
+                                              SizedBox(height: gapMiddle),
+
+                                              if (quest.conditionalType != null) ...[
+                                                Container(
+                                                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                                  decoration: BoxDecoration(
+                                                    color: theme.primaryColor.withValues(alpha: 0.1),
+                                                    borderRadius: BorderRadius.circular(16.r),
+                                                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                  ),
+                                                  child: Column(
+                                                    children: [
+                                                      Text(
+                                                        "TYPE: ${quest.conditionalType!.toUpperCase()}",
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          color: theme.primaryColor,
+                                                          fontWeight: FontWeight.bold,
+                                                          letterSpacing: 1.2,
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 4.h),
+                                                      Row(
+                                                        mainAxisSize: MainAxisSize.min,
+                                                        children: [
+                                                          Text("0: Fact  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '0' || quest.conditionalType == 'zero' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '0' || quest.conditionalType == 'zero' ? FontWeight.bold : FontWeight.normal)),
+                                                          Text("|  1: Real  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '1' || quest.conditionalType == 'first' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '1' || quest.conditionalType == 'first' ? FontWeight.bold : FontWeight.normal)),
+                                                          Text("|  2: Unreal  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '2' || quest.conditionalType == 'second' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '2' || quest.conditionalType == 'second' ? FontWeight.bold : FontWeight.normal)),
+                                                          Text("|  3: Past", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '3' || quest.conditionalType == 'third' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '3' || quest.conditionalType == 'third' ? FontWeight.bold : FontWeight.normal)),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ).animate().fadeIn(duration: 400.ms),
+                                                SizedBox(height: isCompact ? 12.h : 20.h),
+                                              ],
+
+                                              // Context Card
+                                              Padding(
+                                                    padding: EdgeInsets.symmetric(
+                                                      horizontal: 24.w,
+                                                    ),
+                                                    child: Container(
+                                                      padding: EdgeInsets.all(
+                                                        isCompact ? 12.r : 22.r,
+                                                      ),
+                                                      decoration: BoxDecoration(
+                                                        color: isDark
+                                                            ? Colors.white.withValues(
+                                                                alpha: 0.05,
+                                                              )
+                                                            : Colors.black.withValues(
+                                                                alpha: 0.03,
+                                                              ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(24.r),
+                                                        border: Border.all(
+                                                          color: theme.primaryColor
+                                                              .withValues(alpha: 0.15),
+                                                          width: 1.5,
+                                                        ),
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "IF CONDITION",
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: isCompact
+                                                                  ? 8.sp
+                                                                  : 10.sp,
+                                                              fontWeight: FontWeight.w900,
+                                                              color: theme.primaryColor,
+                                                              letterSpacing: 2,
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: isCompact
+                                                                ? 6.h
+                                                                : 12.h,
+                                                          ),
+                                                          Text(
+                                                            quest.question ?? "",
+                                                            textAlign: TextAlign.center,
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: isCompact
+                                                                  ? 16.sp
+                                                                  : 20.sp,
+                                                              color: isDark
+                                                                  ? Colors.white
+                                                                  : Colors.black87,
+                                                              height: 1.4,
+                                                              fontWeight: FontWeight.w500,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  )
+                                                  .animate()
+                                                  .fadeIn(duration: 600.ms)
+                                                  .slideY(begin: 0.2, end: 0),
+
+                                              // Result
+                                              if (_isAnswered.value) ...[
+                                                SizedBox(height: gapMiddle),
+                                                _buildResult(
+                                                  quest,
+                                                  theme.primaryColor,
+                                                  isDark,
+                                                  isCompact,
+                                                ),
+                                              ],
+
+                                              // Chain Arena
+                                              Expanded(
+                                                child: _buildChainArena(
+                                                  options,
+                                                  quest.correctAnswerIndex ?? 0,
+                                                  theme.primaryColor,
+                                                  isDark,
+                                                  isCompact,
+                                                ),
+                                              ),
+
+                                              SizedBox(height: gapBottom),
+                                            ],
+                                          );
+                                        },
                                       ),
                                     ),
-
-                                    SizedBox(height: gapBottom),
                                   ],
-                                );
-                              },
-                            ),
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height: (_isFirstStagePassed.value && !_isAnswered.value)
+                                      ? 380.h
+                                      : 60.h,
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
-                    if (_isFirstStagePassed.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
-                      SliverToBoxAdapter(
-                        child: TypeToConfirmOverlay(
-                          expectedText: cleanTargetSentence,
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitVerbalEvaluation(true),
-                          onSkipped: () => _submitVerbalEvaluation(false),
-                          isPositioned: false,
-                          displayText: "Type the full sentence to lock it in",
                         ),
-                      ),
-                    SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: (_isAnswered.value || _isFirstStagePassed.value)
-                            ? 160.h
-                            : 60.h,
-                      ),
-                    ),
-                  ],
-                );
-                      },
+                        if (_isFirstStagePassed.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
+                          TypeToConfirmOverlay(
+                            expectedText: cleanTargetSentence,
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitVerbalEvaluation(true),
+                            onSkipped: () => _submitVerbalEvaluation(false),
+                            isPositioned: true,
+                            displayText: "Type the full sentence to lock it in",
+                          ),
+                      ],
+                    );
+                  },
                     ),
             );
           },

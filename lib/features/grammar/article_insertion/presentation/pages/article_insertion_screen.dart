@@ -39,6 +39,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<bool> _pendingJigsaw = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -47,6 +48,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _pendingJigsaw.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -228,186 +230,195 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return CustomScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    child: LayoutBuilder(
-                      builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
-                        final isCompact = maxHeight < 580;
-
-                        final double estimatedContentHeight =
-                            (isCompact ? 30.h : 40.h) +
-                            (isCompact ? 90.h : 130.h) +
-                            40.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
-
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 5
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(6.0, 20.0)
-                            : 6.0;
-                        final double gapMiddle = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(10.0, 25.0)
-                            : 10.0;
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 2.5).clamp(15.0, 40.0)
-                            : 15.0;
-
-                        return Column(
+                        return Stack(
                           children: [
-                            SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: ArticleInsertionInstruction(
-                                        primaryColor: theme.primaryColor,
-                                        instruction: context.tr(
-                                          'games.article_insertion_instruction',
-                                          fallback:
-                                              "Pop the correct article orb",
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                : ArticleInsertionInstruction(
-                                    primaryColor: theme.primaryColor,
-                                    instruction: context.tr(
-                                      'games.article_insertion_instruction',
-                                      fallback: "Pop the correct article orb",
-                                    ),
-                                  ),
-                            SizedBox(height: gapMiddle),
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final maxHeight = constraints.maxHeight;
+                                              final isCompact = maxHeight < 580;
 
-                            if (quest.articleRule != null) ...[
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                ),
-                                child: Text(
-                                  quest.articleRule!,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    color: theme.primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ).animate().fadeIn(duration: 400.ms),
-                              SizedBox(height: isCompact ? 12.h : 20.h),
-                            ],
+                                              final double estimatedContentHeight =
+                                                  (isCompact ? 30.h : 40.h) +
+                                                  (isCompact ? 90.h : 130.h) +
+                                                  40.h;
+                                              final remainingHeight =
+                                                  maxHeight - estimatedContentHeight;
 
-                            // Context Card
-                            Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Container(
-                                    padding: EdgeInsets.all(
-                                      isCompact ? 14.r : 22.r,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: isDark
-                                          ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(
-                                              alpha: 0.03,
-                                            ),
-                                      borderRadius: BorderRadius.circular(28.r),
-                                      border: Border.all(
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        width: 1.5,
-                                      ),
-                                    ),
-                                    child: RichText(
-                                      textAlign: TextAlign.center,
-                                      text: TextSpan(
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: isCompact ? 16.sp : 20.sp,
-                                          color: isDark
-                                              ? Colors.white
-                                              : Colors.black87,
-                                          height: 1.5,
-                                        ),
-                                        children: _buildSentenceWithBlank(
-                                          quest.sentence ??
-                                              quest.question ??
-                                              "___ sentence.",
-                                          _selectedArticle.value,
-                                          theme.primaryColor,
-                                          isDark,
-                                          isCompact,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                )
-                                .animate()
-                                .fadeIn(duration: 600.ms)
-                                .slideY(begin: 0.2, end: 0),
+                                              final double gapUnit = remainingHeight > 0
+                                                  ? remainingHeight / 5
+                                                  : 0;
+                                              final double gapTop = remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(6.0, 20.0)
+                                                  : 6.0;
+                                              final double gapMiddle = remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(10.0, 25.0)
+                                                  : 10.0;
+                                              final double gapBottom = remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(15.0, 40.0)
+                                                  : 15.0;
 
-                            // Floating Orb Bubble Area
-                            Expanded(
-                              child: Stack(
-                                children: options.asMap().entries.map((entry) {
-                                  final article = entry.value;
-                                  return ArticleFloatingOrb(
-                                    article: article,
-                                    index: entry.key,
-                                    onTap: () => _onPop(article, correctAnswer),
-                                    primaryColor: theme.primaryColor,
-                                    isDark: isDark,
-                                    isAnswered: _isAnswered.value || _pendingJigsaw.value,
-                                    isSelected: _selectedArticle.value == article,
-                                    isCorrectAnswer:
-                                        article.toLowerCase() ==
-                                        correctAnswer.toLowerCase(),
-                                    isFinalFailure:
-                                        state is GrammarLoaded &&
-                                        state.isFinalFailure,
-                                    isCompact: isCompact,
-                                  );
-                                }).toList(),
+                                              return Column(
+                                                children: [
+                                                  SizedBox(height: gapTop),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit.scaleDown,
+                                                            child: ArticleInsertionInstruction(
+                                                              primaryColor: theme.primaryColor,
+                                                              instruction: context.tr(
+                                                                'games.article_insertion_instruction',
+                                                                fallback:
+                                                                    "Pop the correct article orb",
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        )
+                                                      : ArticleInsertionInstruction(
+                                                          primaryColor: theme.primaryColor,
+                                                          instruction: context.tr(
+                                                            'games.article_insertion_instruction',
+                                                            fallback: "Pop the correct article orb",
+                                                          ),
+                                                        ),
+                                                  SizedBox(height: gapMiddle),
+
+                                                  if (quest.articleRule != null) ...[
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                                      decoration: BoxDecoration(
+                                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                                        borderRadius: BorderRadius.circular(12.r),
+                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                      ),
+                                                      child: Text(
+                                                        quest.articleRule!,
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 12.sp,
+                                                          color: theme.primaryColor,
+                                                          fontWeight: FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                    ).animate().fadeIn(duration: 400.ms),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                                  ],
+
+                                                  // Context Card
+                                                  Padding(
+                                                        padding: EdgeInsets.symmetric(
+                                                          horizontal: 24.w,
+                                                        ),
+                                                        child: Container(
+                                                          padding: EdgeInsets.all(
+                                                            isCompact ? 14.r : 22.r,
+                                                          ),
+                                                          decoration: BoxDecoration(
+                                                            color: isDark
+                                                                ? Colors.white.withValues(alpha: 0.05)
+                                                                : Colors.black.withValues(
+                                                                    alpha: 0.03,
+                                                                  ),
+                                                            borderRadius: BorderRadius.circular(28.r),
+                                                            border: Border.all(
+                                                              color: theme.primaryColor.withValues(
+                                                                alpha: 0.15,
+                                                              ),
+                                                              width: 1.5,
+                                                            ),
+                                                          ),
+                                                          child: RichText(
+                                                            textAlign: TextAlign.center,
+                                                            text: TextSpan(
+                                                              style: TextStyle(
+                                                                fontFamily: 'Outfit',
+                                                                fontSize: isCompact ? 16.sp : 20.sp,
+                                                                color: isDark
+                                                                    ? Colors.white
+                                                                    : Colors.black87,
+                                                                height: 1.5,
+                                                              ),
+                                                              children: _buildSentenceWithBlank(
+                                                                quest.sentence ??
+                                                                    quest.question ??
+                                                                    "___ sentence.",
+                                                                _selectedArticle.value,
+                                                                theme.primaryColor,
+                                                                isDark,
+                                                                isCompact,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .animate()
+                                                      .fadeIn(duration: 600.ms)
+                                                      .slideY(begin: 0.2, end: 0),
+
+                                                  // Floating Orb Bubble Area
+                                                  Expanded(
+                                                    child: Stack(
+                                                      children: options.asMap().entries.map((entry) {
+                                                        final article = entry.value;
+                                                        return ArticleFloatingOrb(
+                                                          article: article,
+                                                          index: entry.key,
+                                                          onTap: () => _onPop(article, correctAnswer),
+                                                          primaryColor: theme.primaryColor,
+                                                          isDark: isDark,
+                                                          isAnswered: _isAnswered.value || _pendingJigsaw.value,
+                                                          isSelected: _selectedArticle.value == article,
+                                                          isCorrectAnswer:
+                                                              article.toLowerCase() ==
+                                                              correctAnswer.toLowerCase(),
+                                                          isFinalFailure:
+                                                              state is GrammarLoaded &&
+                                                              state.isFinalFailure,
+                                                          isCompact: isCompact,
+                                                        );
+                                                      }).toList(),
+                                                    ),
+                                                  ),
+
+                                                  SizedBox(height: gapBottom),
+                                                ],
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(height: (_pendingJigsaw.value && !_isAnswered.value) ? 380.h : 60.h),
+                                  ),
+                                ],
                               ),
                             ),
-
-                            SizedBox(height: gapBottom),
-                          ],
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
                             if (_pendingJigsaw.value && !_isAnswered.value && cleanTargetSentence.isNotEmpty)
-                              SliverToBoxAdapter(
-                                child: TypeToConfirmOverlay(
-                                  expectedText: cleanTargetSentence,
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(true),
-                                  onSkipped: () => _submitFinalAnswer(false),
-                                  isPositioned: false,
-                                  displayText: "Type the full sentence with the article to lock it in",
-                                ),
+                              TypeToConfirmOverlay(
+                                expectedText: cleanTargetSentence,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: true,
+                                displayText: "Type the full sentence with the article to lock it in",
                               ),
-                            SliverToBoxAdapter(
-                              child: SizedBox(height: (_isAnswered.value || _pendingJigsaw.value) ? 160.h : 60.h),
-                            ),
                           ],
                         );
                       },

@@ -43,6 +43,7 @@ class _DirectIndirectSpeechScreenState
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -52,6 +53,7 @@ class _DirectIndirectSpeechScreenState
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
   int _lastProcessedIndex = -1;
@@ -122,7 +124,6 @@ class _DirectIndirectSpeechScreenState
             _selectedReflection.value = -1;
             _rotation.value = 0.0;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             _isAnswered.value = true;
             _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
@@ -178,201 +179,210 @@ class _DirectIndirectSpeechScreenState
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-          useScrolling: false,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                final maxHeight = constraints.maxHeight;
-                                final isCompact = maxHeight < 580;
+              useScrolling: false,
+              onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
+              onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        return Stack(
+                          children: [
+                            RawScrollbar(
+                              controller: _scrollController,
+                              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                              radius: Radius.circular(8.r),
+                              thickness: 4.w,
+                              child: CustomScrollView(
+                                controller: _scrollController,
+                                physics: const BouncingScrollPhysics(),
+                                slivers: [
+                                  SliverFillRemaining(
+                                    hasScrollBody: false,
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          child: LayoutBuilder(
+                                            builder: (context, constraints) {
+                                              final maxHeight = constraints.maxHeight;
+                                              final isCompact = maxHeight < 580;
 
-                                final double estimatedContentHeight =
-                                    (isCompact ? 30.h : 40.h) +
-                                    (isCompact ? 130.h : 180.h) +
-                                    (isCompact ? 30.h : 50.h) +
-                                    40.h;
-                                final remainingHeight =
-                                    maxHeight - estimatedContentHeight;
+                                              final double estimatedContentHeight =
+                                                  (isCompact ? 30.h : 40.h) +
+                                                  (isCompact ? 130.h : 180.h) +
+                                                  (isCompact ? 30.h : 50.h) +
+                                                  40.h;
+                                              final remainingHeight =
+                                                  maxHeight - estimatedContentHeight;
 
-                                final double gapUnit = remainingHeight > 0
-                                    ? remainingHeight / 5
-                                    : 0;
-                                final double gapTop = remainingHeight > 0
-                                    ? (gapUnit * 1).clamp(4.0, 15.0)
-                                    : 4.0;
-                                final double gapMiddle = remainingHeight > 0
-                                    ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                                    : 6.0;
-                                final double gapBottom = remainingHeight > 0
-                                    ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                                    : 10.0;
+                                              final double gapUnit = remainingHeight > 0
+                                                  ? remainingHeight / 5
+                                                  : 0;
+                                              final double gapTop = remainingHeight > 0
+                                                  ? (gapUnit * 1).clamp(4.0, 15.0)
+                                                  : 4.0;
+                                              final double gapMiddle = remainingHeight > 0
+                                                  ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                                  : 6.0;
+                                              final double gapBottom = remainingHeight > 0
+                                                  ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                                  : 10.0;
 
-                                return Column(
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 25.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child:
-                                                  DirectIndirectSpeechInstruction(
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                  ),
-                                            ),
-                                          )
-                                        : DirectIndirectSpeechInstruction(
-                                            primaryColor: theme.primaryColor,
-                                          ),
-                                    SizedBox(height: gapMiddle),
+                                              return Column(
+                                                children: [
+                                                  SizedBox(height: gapTop),
+                                                  isCompact
+                                                      ? SizedBox(
+                                                          height: 25.h,
+                                                          child: FittedBox(
+                                                            fit: BoxFit.scaleDown,
+                                                            child:
+                                                                DirectIndirectSpeechInstruction(
+                                                                  primaryColor:
+                                                                      theme.primaryColor,
+                                                                ),
+                                                          ),
+                                                        )
+                                                      : DirectIndirectSpeechInstruction(
+                                                          primaryColor: theme.primaryColor,
+                                                        ),
+                                                  SizedBox(height: gapMiddle),
 
-                                    if (quest.changesList != null && quest.changesList!.isNotEmpty) ...[
-                                      Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(alpha: 0.1),
-                                          borderRadius: BorderRadius.circular(16.r),
-                                          border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              "REQUIRED CHANGES",
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 12.sp,
-                                                color: theme.primaryColor,
-                                                fontWeight: FontWeight.bold,
-                                                letterSpacing: 1.2,
-                                              ),
-                                            ),
-                                            SizedBox(height: 6.h),
-                                            Wrap(
-                                              alignment: WrapAlignment.center,
-                                              spacing: 12.w,
-                                              runSpacing: 4.h,
-                                              children: quest.changesList!.map((change) {
-                                                final parts = change.split('->');
-                                                if (parts.length != 2) return Text(change, style: TextStyle(fontSize: 10.sp, color: theme.primaryColor));
-                                                return Row(
-                                                  mainAxisSize: MainAxisSize.min,
-                                                  children: [
-                                                    Text(parts[0].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
-                                                    Padding(
-                                                      padding: EdgeInsets.symmetric(horizontal: 4.w),
-                                                      child: Icon(Icons.arrow_forward_rounded, size: 12.sp, color: theme.primaryColor.withValues(alpha: 0.6)),
-                                                    ),
-                                                    Text(parts[1].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                                  if (quest.changesList != null && quest.changesList!.isNotEmpty) ...[
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                                      decoration: BoxDecoration(
+                                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                                        borderRadius: BorderRadius.circular(16.r),
+                                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "REQUIRED CHANGES",
+                                                            style: TextStyle(
+                                                              fontFamily: 'Outfit',
+                                                              fontSize: 12.sp,
+                                                              color: theme.primaryColor,
+                                                              fontWeight: FontWeight.bold,
+                                                              letterSpacing: 1.2,
+                                                            ),
+                                                          ),
+                                                          SizedBox(height: 6.h),
+                                                          Wrap(
+                                                            alignment: WrapAlignment.center,
+                                                            spacing: 12.w,
+                                                            runSpacing: 4.h,
+                                                            children: quest.changesList!.map((change) {
+                                                              final parts = change.split('->');
+                                                              if (parts.length != 2) return Text(change, style: TextStyle(fontSize: 10.sp, color: theme.primaryColor));
+                                                              return Row(
+                                                                mainAxisSize: MainAxisSize.min,
+                                                                children: [
+                                                                  Text(parts[0].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                                                  Padding(
+                                                                    padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                                                    child: Icon(Icons.arrow_forward_rounded, size: 12.sp, color: theme.primaryColor.withValues(alpha: 0.6)),
+                                                                  ),
+                                                                  Text(parts[1].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                                                ],
+                                                              );
+                                                            }).toList(),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ).animate().fadeIn(duration: 400.ms),
+                                                    SizedBox(height: isCompact ? 12.h : 20.h),
                                                   ],
-                                                );
-                                              }).toList(),
-                                            ),
-                                          ],
+
+                                                  // Holographic Mirror
+                                                  DirectIndirectSpeechMirror(
+                                                    rotation: _rotation.value,
+                                                    directText: displayDirect,
+                                                    indirectText: displayIndirect,
+                                                    isCorrect: _isCorrect.value,
+                                                    isDark: isDark,
+                                                    primaryColor: theme.primaryColor,
+                                                    isCompact: isCompact,
+                                                  ),
+
+                                                  SizedBox(height: isCompact ? 12.h : 30.h),
+
+                                                  // Reflection Options
+                                                  Expanded(
+                                                    child: SingleChildScrollView(
+                                                      physics: const BouncingScrollPhysics(),
+                                                      child: Column(
+                                                        children: [
+                                                          Wrap(
+                                                            alignment: WrapAlignment.center,
+                                                            spacing: isCompact ? 8.w : 12.w,
+                                                            runSpacing: isCompact
+                                                                ? 8.h
+                                                                : 12.h,
+                                                            children: List.generate(
+                                                              options.length,
+                                                              (i) => _buildReflectionChip(
+                                                                options[i],
+                                                                i,
+                                                                quest.correctAnswerIndex ?? 0,
+                                                                theme.primaryColor,
+                                                                isDark,
+                                                                isCompact,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          if (_isAnswered.value) ...[
+                                                            SizedBox(
+                                                              height: isCompact ? 12.h : 30.h,
+                                                            ),
+                                                            Padding(
+                                                              padding: EdgeInsets.symmetric(
+                                                                horizontal: 24.w,
+                                                              ),
+                                                              child: _buildCorrectResult(
+                                                                quest,
+                                                                theme.primaryColor,
+                                                                isDark,
+                                                                isCompact,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                          SizedBox(height: gapBottom),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ),
                                         ),
-                                      ).animate().fadeIn(duration: 400.ms),
-                                      SizedBox(height: isCompact ? 12.h : 20.h),
-                                    ],
-
-                                    // Holographic Mirror
-                                    DirectIndirectSpeechMirror(
-                                      rotation: _rotation.value,
-                                      directText: displayDirect,
-                                      indirectText: displayIndirect,
-                                      isCorrect: _isCorrect.value,
-                                      isDark: isDark,
-                                      primaryColor: theme.primaryColor,
-                                      isCompact: isCompact,
+                                      ],
                                     ),
-
-                                    SizedBox(height: isCompact ? 12.h : 30.h),
-
-                                    // Reflection Options
-                                    Expanded(
-                                      child: SingleChildScrollView(
-                                        physics: const BouncingScrollPhysics(),
-                                        child: Column(
-                                          children: [
-                                            Wrap(
-                                              alignment: WrapAlignment.center,
-                                              spacing: isCompact ? 8.w : 12.w,
-                                              runSpacing: isCompact
-                                                  ? 8.h
-                                                  : 12.h,
-                                              children: List.generate(
-                                                options.length,
-                                                (i) => _buildReflectionChip(
-                                                  options[i],
-                                                  i,
-                                                  quest.correctAnswerIndex ?? 0,
-                                                  theme.primaryColor,
-                                                  isDark,
-                                                  isCompact,
-                                                ),
-                                              ),
-                                            ),
-                                            if (_isAnswered.value) ...[
-                                              SizedBox(
-                                                height: isCompact ? 12.h : 30.h,
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 24.w,
-                                                ),
-                                                child: _buildCorrectResult(
-                                                  quest,
-                                                  theme.primaryColor,
-                                                  isDark,
-                                                  isCompact,
-                                                ),
-                                              ),
-                                            ],
-                                            SizedBox(height: gapBottom),
-                                          ],
-                                        ),
-                                      ),
+                                  ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: (_isFirstStagePassed.value && !_isAnswered.value)
+                                          ? 380.h
+                                          : 60.h,
                                     ),
-                                  ],
-                                );
-                              },
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    if (_isFirstStagePassed.value && !_isAnswered.value)
-                      SliverToBoxAdapter(
-                        child: TypeToConfirmOverlay(
-                          expectedText: options[_selectedReflection.value],
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitVerbalEvaluation(true),
-                          onSkipped: () => _submitVerbalEvaluation(false),
-                          isPositioned: false,
-                          displayText: "Type the indirect speech to lock it in",
-                        ),
-                      ),
-                    SliverToBoxAdapter(
-                      child: SizedBox(
-                        height: (_isAnswered.value || _isFirstStagePassed.value)
-                            ? 160.h
-                            : 60.h,
-                      ),
-                    ),
-                  ],
-                );
-                  },
+                            if (_isFirstStagePassed.value && !_isAnswered.value)
+                              TypeToConfirmOverlay(
+                                expectedText: options[_selectedReflection.value],
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitVerbalEvaluation(true),
+                                onSkipped: () => _submitVerbalEvaluation(false),
+                                isPositioned: true,
+                                displayText: "Type the indirect speech to lock it in",
+                              ),
+                          ],
+                        );
+                      },
                 ),
             );
           },
