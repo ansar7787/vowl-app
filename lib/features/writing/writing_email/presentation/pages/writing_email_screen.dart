@@ -49,8 +49,11 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
   final ValueNotifier<bool> _showSpeakToConfirm = ValueNotifier(false);
   WritingQuest? _lastQuest;
 
+  late final ScrollController _scrollController;
+
   @override
   void dispose() {
+    _scrollController.dispose();
     _slots.dispose();
     _shuffledOptions.dispose();
     _showConfetti.dispose();
@@ -61,6 +64,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     context.read<WritingBloc>().add(
       FetchWritingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -220,9 +224,17 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
             builder: (context, _) {
               final slotsFilled = _slots.value.values.every((v) => v != null);
 
-              return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
+              return Stack(
+                  children: [
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
                     SliverPadding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       sliver: SliverToBoxAdapter(
@@ -339,17 +351,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_showSpeakToConfirm.value && !isAnswered)
-                              SpeakToConfirmOverlay(
-                                expectedText: "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}".trim(),
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: _onSpeakConfirmed,
-                                onSkipped: () {
-                                  _showSpeakToConfirm.value = false;
-                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
-                                },
-                              )
-                            else if (!isAnswered)
+                            if (!_showSpeakToConfirm.value && !isAnswered)
                               ScaleButton(
                                 onTap: slotsFilled
                                     ? () => _submitAnswer(isAnswered)
@@ -386,13 +388,26 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                                   ),
                                 ),
                               ),
-                            SizedBox(height: isAnswered ? 160.h : 60.h),
+                            SizedBox(height: !isAnswered ? 380.h : 160.h),
                           ],
                         ),
                       ),
                     ),
                   ],
-                );
+                ),
+              ),
+              if (_showSpeakToConfirm.value && !isAnswered)
+                SpeakToConfirmOverlay(
+                  expectedText: "${_slots.value['SUBJECT'] ?? ''} ${_slots.value['SALUTATION'] ?? ''} ${_slots.value['BODY'] ?? ''} ${_slots.value['SIGN-OFF'] ?? ''}".trim(),
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: _onSpeakConfirmed,
+                  onSkipped: () {
+                    _showSpeakToConfirm.value = false;
+                    context.read<WritingBloc>().add(const SubmitAnswer(false));
+                  },
+                ),
+            ],
+          );
             },
           ),
         );
