@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 
 class InstructionPanel extends StatelessWidget {
   final Color color;
@@ -41,14 +42,14 @@ class InstructionPanel extends StatelessWidget {
               SizedBox(width: 6.w),
               Flexible(
                 child: Text(
-                  "TARGET MEANING",
+                  InstructionHelper.getInstruction(quest).toUpperCase(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w800,
                     color: color,
-                    letterSpacing: 2.0,
+                    letterSpacing: 1.2,
                   ),
                 ),
               ),

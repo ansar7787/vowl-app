@@ -38,6 +38,29 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
   late final WordFormationController _controller;
   final ScrollController _scrollController = ScrollController();
+  bool _hasScrolledToStage2 = false;
+
+  void _onControllerUpdate() {
+    if (!mounted) return;
+    if (_controller.isFirstStagePassed &&
+        !_controller.isAnswered &&
+        !_hasScrolledToStage2) {
+      _hasScrolledToStage2 = true;
+      Future.delayed(const Duration(milliseconds: 400), _scrollToBottom);
+    } else if (!_controller.isFirstStagePassed) {
+      _hasScrolledToStage2 = false;
+    }
+  }
+
+  void _scrollToBottom() {
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeOutCubic,
+      );
+    }
+  }
 
   @override
   void initState() {
@@ -52,6 +75,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
       },
     );
 
+    _controller.addListener(_onControllerUpdate);
+
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -59,6 +84,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
   @override
   void dispose() {
+    _controller.removeListener(_onControllerUpdate);
     _scrollController.dispose();
     _controller.dispose();
     super.dispose();
@@ -194,20 +220,18 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                             ? (gapUnit * 2).clamp(12.0, 30.0)
                             : 12.0;
 
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverToBoxAdapter(
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(
+                            alpha: 0.5,
+                          ),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverToBoxAdapter(
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
                                         minHeight: constraints.maxHeight,
@@ -308,27 +332,39 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                       ),
                                     ),
                                   ),
+                                  if (_controller.isFirstStagePassed &&
+                                      !_controller.isAnswered)
+                                    SliverToBoxAdapter(
+                                      child: Padding(
+                                        padding: EdgeInsets.only(
+                                          bottom: 24.h,
+                                        ),
+                                        child: TypeToConfirmOverlay(
+                                          expectedText:
+                                              quest.correctAnswer ?? '',
+                                          displayText:
+                                              "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () =>
+                                              _controller.submitFinalAnswer(
+                                                true,
+                                              ),
+                                          onSkipped: () =>
+                                              _controller.submitFinalAnswer(
+                                                false,
+                                              ),
+                                          onBypassed: () =>
+                                              _controller.submitFinalAnswer(
+                                                true,
+                                              ),
+                                          isPositioned: false,
+                                        ),
+                                      ),
+                                    ),
                                 ],
                               ),
-                            ),
-                            if (_controller.isFirstStagePassed &&
-                                !_controller.isAnswered)
-                              TypeToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? '',
-                                displayText:
-                                    "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () =>
-                                    _controller.submitFinalAnswer(true),
-                                onSkipped: () =>
-                                    _controller.submitFinalAnswer(false),
-                                onBypassed: () =>
-                                    _controller.submitFinalAnswer(true),
-                                isPositioned: true,
-                              ),
-                          ],
-                        );
-                      },
+                            );
+                          },
                     ),
             );
           },
@@ -353,36 +389,29 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                 padding: EdgeInsets.only(bottom: isCompact ? 6.h : 12.h),
                 child: SizedBox(
                   width: 1.sw,
-                  height: isCompact ? 40.h : 60.h,
-                  child: FittedBox(
-                    fit: BoxFit.fill,
-                    child: SizedBox(
-                      width: 1.sw - 48.w,
-                      height: 60.h,
-                      child: MorphInjectionRail(
-                        index: entry.key,
-                        suffix: entry.value,
-                        color: color,
-                        isDark: isDark,
-                        isBlocked:
-                            _controller.isAnswered ||
-                            _controller.isFirstStagePassed,
-                        onMorph: (suffix) {
-                          _controller.submitMorph(
-                            suffix,
-                            root,
-                            correct,
-                            entry.key,
-                          );
-                        },
-                        onHover: (index) {
-                          if (!_controller.isAnswered &&
-                              !_controller.isFirstStagePassed) {
-                            _controller.setHoveringIndex(index);
-                          }
-                        },
-                      ),
-                    ),
+                  height: isCompact ? 50.h : 60.h,
+                  child: MorphInjectionRail(
+                    index: entry.key,
+                    suffix: entry.value,
+                    color: color,
+                    isDark: isDark,
+                    isBlocked:
+                        _controller.isAnswered ||
+                        _controller.isFirstStagePassed,
+                    onMorph: (suffix) {
+                      _controller.submitMorph(
+                        suffix,
+                        root,
+                        correct,
+                        entry.key,
+                      );
+                    },
+                    onHover: (index) {
+                      if (!_controller.isAnswered &&
+                          !_controller.isFirstStagePassed) {
+                        _controller.setHoveringIndex(index);
+                      }
+                    },
                   ),
                 ),
               )

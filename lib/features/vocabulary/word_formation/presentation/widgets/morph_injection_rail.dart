@@ -71,8 +71,8 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
             borderRadius: BorderRadius.circular(22.r),
             child: Stack(
               children: [
-                // Rail Path - RepaintBoundary for static content
-                const RepaintBoundary(child: _RailPathIndicators()),
+                // Rail Path - Static background indicators
+                _RailPathIndicators(isDark: widget.isDark),
 
                 // Dynamic Energy Glow - Positioned with ValueListenable
                 ValueListenableBuilder<double>(
@@ -80,19 +80,17 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
                   builder: (context, value, _) {
                     return Positioned(
                       left: (value * maxSlide) - 20.w,
-                      child: RepaintBoundary(
-                        child: Container(
-                          width: handleWidth + 40.w,
-                          height: 60.h,
-                          decoration: BoxDecoration(
-                            gradient: RadialGradient(
-                              colors: [
-                                widget.color.withValues(alpha: 0.2),
-                                widget.color.withValues(alpha: 0.0),
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(30.r),
+                      child: Container(
+                        width: handleWidth + 40.w,
+                        height: constraints.maxHeight,
+                        decoration: BoxDecoration(
+                          gradient: RadialGradient(
+                            colors: [
+                              widget.color.withValues(alpha: 0.2),
+                              widget.color.withValues(alpha: 0.0),
+                            ],
                           ),
+                          borderRadius: BorderRadius.circular(30.r),
                         ),
                       ),
                     );
@@ -135,11 +133,9 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
                             _progress.value = 0.0;
                           }
                         },
-                        child: RepaintBoundary(
-                          child: _HandleDecoration(
-                            color: widget.color,
-                            suffix: widget.suffix,
-                          ),
+                        child: _HandleDecoration(
+                          color: widget.color,
+                          suffix: widget.suffix,
                         ),
                       ),
                     );
@@ -155,20 +151,22 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
 }
 
 class _RailPathIndicators extends StatelessWidget {
-  const _RailPathIndicators();
+  final bool isDark;
+  const _RailPathIndicators({required this.isDark});
   @override
   Widget build(BuildContext context) {
+    final iconColor = isDark ? Colors.white12 : Colors.black12;
     return Center(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(Icons.drag_handle_rounded, color: Colors.black12, size: 20),
-            Icon(Icons.chevron_right_rounded, color: Colors.black12, size: 20),
-            Icon(Icons.chevron_right_rounded, color: Colors.black12, size: 20),
-            Icon(Icons.chevron_right_rounded, color: Colors.black12, size: 20),
-            Icon(Icons.bolt_rounded, color: Colors.black12, size: 22),
+            Icon(Icons.drag_handle_rounded, color: iconColor, size: 20),
+            Icon(Icons.chevron_right_rounded, color: iconColor, size: 20),
+            Icon(Icons.chevron_right_rounded, color: iconColor, size: 20),
+            Icon(Icons.chevron_right_rounded, color: iconColor, size: 20),
+            Icon(Icons.bolt_rounded, color: iconColor, size: 22),
           ],
         ),
       ),
@@ -185,7 +183,7 @@ class _HandleDecoration extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 110.w,
-      height: 60.h,
+      height: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,

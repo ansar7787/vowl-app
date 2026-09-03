@@ -167,7 +167,6 @@ class VocabularyBaseLayout extends StatelessWidget {
 
         if (hasStage2) {
           ruleContent = null;
-          customContent = null;
           finalExplanation = quest.explanation ?? quest.definition;
         }
 
