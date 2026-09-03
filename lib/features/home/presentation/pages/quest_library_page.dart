@@ -479,7 +479,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w800,
                                 color: const Color(0xFF3B82F6),
-                                letterSpacing: 2,
+                                letterSpacing: 0.5,
                               ),
                             ),
                           ),
@@ -509,11 +509,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         ],
                       ),
                     ),
-                    SizedBox(width: 12.w),
+                    SizedBox(width: 8.w),
                     Flexible(
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 12.w,
+                          horizontal: 8.w,
                           vertical: 6.h,
                         ),
                         decoration: BoxDecoration(
