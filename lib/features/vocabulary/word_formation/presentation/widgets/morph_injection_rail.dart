@@ -103,6 +103,8 @@ class _MorphInjectionRailState extends State<MorphInjectionRail> {
                   builder: (context, value, _) {
                     return Positioned(
                       left: value * maxSlide,
+                      top: 0,
+                      bottom: 0,
                       child: GestureDetector(
                         onTap: () {
                           if (widget.isBlocked || _isFusing) return;
