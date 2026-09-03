@@ -1527,8 +1527,9 @@ class _TransparentTopPaddingDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    // Transparent, allowing content to visibly scroll underneath
-    return const SizedBox.shrink();
+    // Transparent, allowing content to visibly scroll underneath, but must
+    // expand to fill the sliver geometry constraints to prevent layout crash.
+    return const SizedBox.expand();
   }
 
   @override
