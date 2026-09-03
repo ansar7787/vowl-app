@@ -4,7 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class TopicDraggableWord extends StatefulWidget {
   final String word;
-  final Function(double velocity) onFlick;
+  final Function(double velocity, double dropOffset) onFlick;
   final Color primaryColor;
   final bool isDark;
 
@@ -38,12 +38,17 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
       onHorizontalDragUpdate: (details) {
         _dragOffset.value += details.delta.dx;
       },
+      onHorizontalDragCancel: () {
+        _dragOffset.value = 0;
+        _isDragging.value = false;
+      },
       onHorizontalDragEnd: (details) {
         final velocity = details.primaryVelocity ?? 0;
         if (velocity.abs() > 500 || _dragOffset.value.abs() > 60) {
           // Lower threshold for extra small card
           widget.onFlick(
             velocity != 0 ? velocity : (_dragOffset.value > 0 ? 1000 : -1000),
+            _dragOffset.value,
           );
         }
         _dragOffset.value = 0;
@@ -79,15 +84,23 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
                       ],
                     ),
                     child: Center(
-                      child: Text(
-                        widget.word.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp, // Reduced font for extra small card
-                          fontWeight: FontWeight.bold,
-                          color: widget.isDark ? Colors.white : Colors.black87,
-                          letterSpacing: 1,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            widget.word.toUpperCase(),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.bold,
+                              color: widget.isDark
+                                  ? Colors.white
+                                  : Colors.black87,
+                              letterSpacing: 1,
+                            ),
+                          ),
                         ),
                       ),
                     ),

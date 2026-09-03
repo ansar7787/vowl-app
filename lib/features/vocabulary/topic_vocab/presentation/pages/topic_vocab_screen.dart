@@ -10,6 +10,7 @@ import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_lay
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 // Extracted Optimized Widgets
@@ -109,7 +110,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             final currentWord = _controller.currentWordIndex < options.length
                 ? options[_controller.currentWordIndex]
                 : "";
-            final correctAnswer = quest?.correctAnswer ?? "";
 
             return VocabularyBaseLayout(
               gameType: widget.gameType,
@@ -137,7 +137,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
 
                   // Define relative positions as percentages of the actual available height or absolute sizes
                   final counterTop = isCompact ? 15.h : maxHeight * 0.05;
-                  final machineTop = isCompact ? 65.h : maxHeight * 0.18;
+                  final instructionTop = isCompact ? 45.h : maxHeight * 0.12;
+                  final machineTop = isCompact ? 95.h : maxHeight * 0.22;
 
                   // Word is positioned relative to bottom to work nicely with flicking physics
                   final wordBottom = isCompact ? 145.h : maxHeight * 0.42;
@@ -174,6 +175,18 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                   ),
                                 ),
 
+                                // 2. INSTRUCTION BANNER
+                                if (quest != null)
+                                  Positioned(
+                                    top: instructionTop,
+                                    child: RepaintBoundary(
+                                      child: _TopicInstructionBanner(
+                                        primaryColor: theme.primaryColor,
+                                        quest: quest,
+                                      ),
+                                    ),
+                                  ),
+
                                 // 3. EMISSION MACHINE
                                 Positioned(
                                   top: machineTop,
@@ -203,84 +216,128 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                   bottom: binBottom,
                                   left: 8
                                       .w, // Added premium visual margin from the edge
-                                  child: RepaintBoundary(
-                                    child: isCompact
-                                        ? SizedBox(
-                                            width: 110.w,
-                                            height: 140.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: TopicContainmentBin(
+                                  child: Semantics(
+                                    button: true,
+                                    label: 'Sort into ${buckets[0]}',
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        if (!_controller.isAnswered &&
+                                            !_controller.isFirstStagePassed &&
+                                            currentWord.isNotEmpty &&
+                                            _controller.flickedWord == null) {
+                                          _controller.handleFlick(
+                                            -1000,
+                                            0,
+                                            currentWord,
+                                            buckets,
+                                          );
+                                        }
+                                      },
+                                      child: RepaintBoundary(
+                                        child: isCompact
+                                            ? SizedBox(
+                                                width: 110.w,
+                                                height: 140.h,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: TopicContainmentBin(
+                                                    index: 0,
+                                                    label: buckets[0],
+                                                    color: theme.primaryColor,
+                                                    isDark: isDark,
+                                                    words:
+                                                        _controller
+                                                            .wordsInBins[0] ??
+                                                        [],
+                                                    isHinted: _controller
+                                                        .isHintTarget(
+                                                          currentWord,
+                                                          buckets[0],
+                                                        ),
+                                                  ),
+                                                ),
+                                              )
+                                            : TopicContainmentBin(
                                                 index: 0,
                                                 label: buckets[0],
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
-                                                correctAnswer: correctAnswer,
-                                                currentWord: currentWord,
                                                 words:
                                                     _controller
                                                         .wordsInBins[0] ??
                                                     [],
-                                                isHintActive:
-                                                    _controller.isHintActive,
+                                                isHinted: _controller
+                                                    .isHintTarget(
+                                                      currentWord,
+                                                      buckets[0],
+                                                    ),
                                               ),
-                                            ),
-                                          )
-                                        : TopicContainmentBin(
-                                            index: 0,
-                                            label: buckets[0],
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            correctAnswer: correctAnswer,
-                                            currentWord: currentWord,
-                                            words:
-                                                _controller.wordsInBins[0] ??
-                                                [],
-                                            isHintActive:
-                                                _controller.isHintActive,
-                                          ),
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 if (buckets.length > 1)
                                   Positioned(
                                     bottom: binBottom,
                                     right: 8.w,
-                                    child: RepaintBoundary(
-                                      child: isCompact
-                                          ? SizedBox(
-                                              width: 110.w,
-                                              height: 140.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: TopicContainmentBin(
+                                    child: Semantics(
+                                      button: true,
+                                      label: 'Sort into ${buckets[1]}',
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          if (!_controller.isAnswered &&
+                                              !_controller.isFirstStagePassed &&
+                                              currentWord.isNotEmpty &&
+                                              _controller.flickedWord == null) {
+                                            _controller.handleFlick(
+                                              1000,
+                                              0,
+                                              currentWord,
+                                              buckets,
+                                            );
+                                          }
+                                        },
+                                        child: RepaintBoundary(
+                                          child: isCompact
+                                              ? SizedBox(
+                                                  width: 110.w,
+                                                  height: 140.h,
+                                                  child: FittedBox(
+                                                    fit: BoxFit.scaleDown,
+                                                    child: TopicContainmentBin(
+                                                      index: 1,
+                                                      label: buckets[1],
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      words:
+                                                          _controller
+                                                              .wordsInBins[1] ??
+                                                          [],
+                                                      isHinted: _controller
+                                                          .isHintTarget(
+                                                            currentWord,
+                                                            buckets[1],
+                                                          ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : TopicContainmentBin(
                                                   index: 1,
                                                   label: buckets[1],
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  correctAnswer: correctAnswer,
-                                                  currentWord: currentWord,
                                                   words:
                                                       _controller
                                                           .wordsInBins[1] ??
                                                       [],
-                                                  isHintActive:
-                                                      _controller.isHintActive,
+                                                  isHinted: _controller
+                                                      .isHintTarget(
+                                                        currentWord,
+                                                        buckets[1],
+                                                      ),
                                                 ),
-                                              ),
-                                            )
-                                          : TopicContainmentBin(
-                                              index: 1,
-                                              label: buckets[1],
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              correctAnswer: correctAnswer,
-                                              currentWord: currentWord,
-                                              words:
-                                                  _controller.wordsInBins[1] ??
-                                                  [],
-                                              isHintActive:
-                                                  _controller.isHintActive,
-                                            ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 if (!_controller.isAnswered &&
@@ -300,12 +357,12 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                                 primaryColor:
                                                     theme.primaryColor,
                                                 isDark: isDark,
-                                                onFlick: (v) =>
+                                                onFlick: (v, offset) =>
                                                     _controller.handleFlick(
                                                       v,
+                                                      offset,
                                                       currentWord,
                                                       buckets,
-                                                      correctAnswer,
                                                     ),
                                               ),
                                             ),
@@ -315,12 +372,12 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                                 primaryColor:
                                                     theme.primaryColor,
                                                 isDark: isDark,
-                                                onFlick: (v) =>
+                                                onFlick: (v, offset) =>
                                                     _controller.handleFlick(
                                                       v,
+                                                      offset,
                                                       currentWord,
                                                       buckets,
-                                                      correctAnswer,
                                                     ),
                                               )
                                               .animate(
@@ -401,26 +458,24 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                 if (_controller.flickedWord != null)
                                   Positioned(
                                     bottom: flyingWordBottom,
-                                    left: _controller.flickTarget == 0
-                                        ? 40.w
-                                        : null,
-                                    right: _controller.flickTarget == 1
-                                        ? 40.w
-                                        : null,
                                     child:
                                         TopicDraggableWord(
                                               word: _controller.flickedWord!,
                                               primaryColor: theme.primaryColor,
                                               isDark: isDark,
-                                              onFlick: (v) {},
+                                              onFlick: (v, offset) {},
                                             )
                                             .animate()
                                             .move(
-                                              begin: Offset.zero,
+                                              begin: Offset(
+                                                _controller.flickStartOffset ??
+                                                    0,
+                                                0,
+                                              ),
                                               end: Offset(
                                                 _controller.flickTarget == 0
-                                                    ? -(maxWidth / 2 - 70.w)
-                                                    : (maxWidth / 2 - 70.w),
+                                                    ? -(maxWidth / 2 - 78.w)
+                                                    : (maxWidth / 2 - 78.w),
                                                 isCompact ? 100.h : 150.h,
                                               ),
                                               duration: 200.ms,
@@ -452,6 +507,56 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           },
         );
       },
+    );
+  }
+}
+
+// ─── Instruction banner ───────────────────────────────────────────────────────
+
+class _TopicInstructionBanner extends StatelessWidget {
+  final Color primaryColor;
+  final VocabularyQuest quest;
+
+  const _TopicInstructionBanner({
+    required this.primaryColor,
+    required this.quest,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: screenWidth - 32.w),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        decoration: BoxDecoration(
+          color: primaryColor.withValues(alpha: 0.10),
+          borderRadius: BorderRadius.circular(30.r),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.touch_app_rounded, size: 14.r, color: primaryColor),
+              SizedBox(width: 8.w),
+              Text(
+                '${InstructionHelper.getInstruction(quest).toUpperCase()} (OR TAP)',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w900,
+                  color: primaryColor,
+                  letterSpacing: 1.1,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
     );
   }
 }

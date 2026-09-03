@@ -7,10 +7,8 @@ class TopicContainmentBin extends StatelessWidget {
   final String label;
   final Color color;
   final bool isDark;
-  final String correctAnswer;
-  final String currentWord;
   final List<String> words;
-  final bool isHintActive;
+  final bool isHinted;
 
   const TopicContainmentBin({
     super.key,
@@ -18,35 +16,12 @@ class TopicContainmentBin extends StatelessWidget {
     required this.label,
     required this.color,
     required this.isDark,
-    required this.correctAnswer,
-    required this.currentWord,
     required this.words,
-    required this.isHintActive,
+    required this.isHinted,
   });
 
   @override
   Widget build(BuildContext context) {
-    // Robust validation check parsing the JSON string accurately
-    final cleanWord = currentWord.trim().toLowerCase();
-    final cleanLabel = label.trim().toLowerCase();
-    bool isHinted = false;
-
-    if (isHintActive) {
-      final pairs = correctAnswer.split(',');
-      for (var pair in pairs) {
-        final parts = pair.split(':');
-        if (parts.length == 2) {
-          final targetBucket = parts[0].trim().toLowerCase();
-          final targetWord = parts[1].trim().toLowerCase();
-
-          if (targetWord == cleanWord && targetBucket == cleanLabel) {
-            isHinted = true;
-            break;
-          }
-        }
-      }
-    }
-
     IconData bucketIcon = Icons.category_rounded;
 
     return Column(
@@ -117,13 +92,16 @@ class TopicContainmentBin extends StatelessWidget {
                                 .map(
                                   (w) => Padding(
                                     padding: EdgeInsets.only(bottom: 4.h),
-                                    child: Text(
-                                      w.toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 9.sp,
-                                        color: color.withValues(alpha: 0.8),
-                                        fontWeight: FontWeight.bold,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        w.toUpperCase(),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 9.sp,
+                                          color: color.withValues(alpha: 0.8),
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -159,14 +137,19 @@ class TopicContainmentBin extends StatelessWidget {
                     children: [
                       Icon(bucketIcon, color: Colors.white, size: 10.r),
                       SizedBox(width: 4.w),
-                      Text(
-                        label.toUpperCase(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          letterSpacing: 1,
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            label.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              letterSpacing: 1,
+                            ),
+                          ),
                         ),
                       ),
                     ],

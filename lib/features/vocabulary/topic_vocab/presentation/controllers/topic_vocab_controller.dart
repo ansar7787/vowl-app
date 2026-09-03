@@ -22,8 +22,10 @@ class TopicVocabController extends ChangeNotifier {
 
   String? flickedWord;
   int? flickTarget;
+  double? flickStartOffset;
 
   VocabularyQuest? currentQuest;
+  bool _isDisposed = false;
 
   TopicVocabController({
     required HapticService hapticService,
@@ -31,6 +33,12 @@ class TopicVocabController extends ChangeNotifier {
     required this.onSubmitAnswer,
   }) : _hapticService = hapticService,
        _soundService = soundService;
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+    super.dispose();
+  }
 
   void reset(VocabularyQuest? quest) {
     currentQuest = quest;
@@ -71,23 +79,27 @@ class TopicVocabController extends ChangeNotifier {
 
   void handleFlick(
     double velocity,
+    double dropOffset,
     String word,
     List<String> buckets,
-    String correctAnswer,
   ) {
     if (isAnswered || flickedWord != null) return;
 
     int targetBin = velocity < 0 ? 0 : 1;
     String bucketName = buckets[targetBin % buckets.length];
-    bool isCorrectChoice = _validateChoice(word, bucketName, correctAnswer);
+    bool isCorrectChoice = _validateChoice(word, bucketName);
 
     flickedWord = word;
     flickTarget = targetBin;
+    flickStartOffset = dropOffset;
     notifyListeners();
 
     Future.delayed(const Duration(milliseconds: 250), () {
+      if (_isDisposed) return;
+
       flickedWord = null;
       flickTarget = null;
+      flickStartOffset = null;
 
       if (!isCorrectChoice) {
         _submitFinalAnswer(false);
@@ -99,7 +111,11 @@ class TopicVocabController extends ChangeNotifier {
       isHintActive = false;
       _soundService.playCorrect();
 
-      final maxWords = (buckets.length * 2 + 1).clamp(3, 5);
+      final idealMax = (buckets.length * 2 + 1).clamp(3, 5);
+      final maxWords = shuffledOptions.isNotEmpty
+          ? idealMax.clamp(1, shuffledOptions.length)
+          : idealMax;
+
       if (currentWordIndex < maxWords - 1) {
         currentWordIndex++;
       } else {
@@ -112,7 +128,7 @@ class TopicVocabController extends ChangeNotifier {
   }
 
   void _submitFinalAnswer(bool nailedIt) {
-    if (isAnswered) return;
+    if (isAnswered || _isDisposed) return;
     isAnswered = true;
     isCorrect = nailedIt;
     notifyListeners();
@@ -128,7 +144,14 @@ class TopicVocabController extends ChangeNotifier {
     }
   }
 
-  bool _validateChoice(String word, String bucket, String correctAnswer) {
+  bool isHintTarget(String word, String bucket) {
+    if (!isHintActive) return false;
+    final cleanWord = word.trim().toLowerCase();
+    final cleanLabel = bucket.trim().toLowerCase();
+    return _expectedAnswers[cleanWord] == cleanLabel;
+  }
+
+  bool _validateChoice(String word, String bucket) {
     final cleanWord = word.trim().toLowerCase();
     final cleanLabel = bucket.trim().toLowerCase();
 
