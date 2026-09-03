@@ -1415,7 +1415,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           ],
         ),
         child: Text(
-          context.tr('quest_archive.new_badge', fallback: 'New'),
+          context.tr('quest_archive.new_badge', fallback: 'NEW').toUpperCase(),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 9.sp,
