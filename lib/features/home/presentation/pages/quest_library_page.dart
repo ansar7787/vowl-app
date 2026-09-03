@@ -209,7 +209,6 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                             contentColor: contentColor,
                             searchField: _buildSearchField(isDark, contentColor),
                             categoriesTrack: _buildCategoriesTrack(isDark),
-                            topPadding: MediaQuery.paddingOf(context).top + 95.h,
                           ),
                         ),
 
@@ -1458,14 +1457,12 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
   final Color contentColor;
   final Widget searchField;
   final Widget categoriesTrack;
-  final double topPadding;
 
   _StickyFilterDelegate({
     required this.isDark,
     required this.contentColor,
     required this.searchField,
     required this.categoriesTrack,
-    required this.topPadding,
   });
 
   @override
