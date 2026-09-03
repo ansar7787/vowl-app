@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
@@ -50,9 +49,11 @@ class CurriculumService {
 
   static Future<void> _prewarmCacheFromManifest(List<String> gameTypes) async {
     try {
-      // 1. Load the manifest ONCE (O(1) disk read instead of 1,560 probes).
-      final manifestContent = await rootBundle.loadString('AssetManifest.json');
-      final Map<String, dynamic> manifestMap = json.decode(manifestContent);
+      // 1. Load the manifest using the official future-proof API (handles .json or .bin natively).
+      final AssetManifest manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      
+      // Convert to Set for O(1) lookups in memory.
+      final Set<String> manifestPaths = manifest.listAssets().toSet();
 
       // 2. Loop through games and count levels instantly in RAM.
       for (final type in gameTypes) {
@@ -64,8 +65,7 @@ class CurriculumService {
             final start = (batchIndex - 1) * 10 + 1;
             final path = QuestRegistry.getAssetPath(type, start);
             
-            // AssetManifest keys exactly match the full asset path string.
-            if (manifestMap.containsKey(path)) {
+            if (manifestPaths.contains(path)) {
               totalLevels += 10;
               batchIndex++;
             } else {
