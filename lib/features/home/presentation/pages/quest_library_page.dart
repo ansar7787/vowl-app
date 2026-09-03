@@ -388,20 +388,17 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       ),
                       SizedBox(width: 8.w),
                       Flexible(
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            context.tr(
-                              'quest_archive.title',
-                              fallback: 'Quest Library',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: contentColor,
-                              letterSpacing: 1.5,
-                            ),
+                        child: Text(
+                          context.tr(
+                            'quest_archive.title',
+                            fallback: 'Quest Library',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: contentColor,
+                            letterSpacing: 1.5,
                           ),
                         ),
                       ),
@@ -469,21 +466,17 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            alignment: AlignmentDirectional.centerStart,
-                            child: Text(
-                              context.tr(
-                                'quest_archive.global_progress',
-                                fallback: 'Global Progress',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w800,
-                                color: const Color(0xFF3B82F6),
-                                letterSpacing: 2,
-                              ),
+                          Text(
+                            context.tr(
+                              'quest_archive.global_progress',
+                              fallback: 'Global Progress',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w800,
+                              color: const Color(0xFF3B82F6),
+                              letterSpacing: 2,
                             ),
                           ),
                           SizedBox(height: 4.h),
@@ -655,20 +648,16 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             Icon(icon, color: color, size: 12.r),
             SizedBox(width: 4.w),
             Flexible(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                alignment: AlignmentDirectional.centerStart,
-                child: Text(
-                  label,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 8.sp,
-                    fontWeight: FontWeight.w800,
-                    color: (isDark ? Colors.white : Colors.black).withValues(
-                      alpha: 0.4,
-                    ),
-                    letterSpacing: 1,
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 8.sp,
+                  fontWeight: FontWeight.w800,
+                  color: (isDark ? Colors.white : Colors.black).withValues(
+                    alpha: 0.4,
                   ),
+                  letterSpacing: 1,
                 ),
               ),
             ),
@@ -830,20 +819,18 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       ),
                     ),
                     child: Center(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          label,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isSelected
-                                ? activeColor
-                                : (isDark ? Colors.white60 : Colors.black54),
-                            letterSpacing: 1,
-                          ),
+                      child: Text(
+                        label,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isSelected
+                              ? activeColor
+                              : (isDark ? Colors.white60 : Colors.black54),
+                          letterSpacing: 1,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
@@ -902,18 +889,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        alignment: AlignmentDirectional.centerStart,
-                        child: Text(
-                          catLabel.toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w900,
-                            color: contentColor,
-                            letterSpacing: 1.5,
-                          ),
+                      Text(
+                        catLabel.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w900,
+                          color: contentColor,
+                          letterSpacing: 1.5,
                         ),
                       ),
                       SizedBox(height: 2.h),
@@ -1335,18 +1318,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                               ],
                             ),
                             SizedBox(height: 8.h),
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              alignment: AlignmentDirectional.centerStart,
-                              child: Text(
-                                theme.title.toUpperCase(),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: contentColor,
-                                  letterSpacing: 0.8,
-                                ),
+                            Text(
+                              theme.title.toUpperCase(),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w900,
+                                color: contentColor,
+                                letterSpacing: 0.8,
                               ),
                             ),
                             SizedBox(height: 10.h),
