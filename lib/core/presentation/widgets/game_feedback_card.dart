@@ -134,7 +134,7 @@ class GameFeedbackCard extends StatelessWidget {
               children: [
                 _buildResultRow(icon, title, gradient),
 
-                if (showPedagogicalFields && customContent != null) ...[
+                if (showEducationalInfo && customContent != null) ...[
                   SizedBox(height: 16.h),
                   customContent!,
                 ],
