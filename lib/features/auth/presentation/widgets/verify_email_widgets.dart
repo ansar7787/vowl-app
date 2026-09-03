@@ -135,7 +135,6 @@ class VerifyEmailStatusText extends StatelessWidget {
                   color: isDark ? Colors.white38 : Colors.grey,
                   fontStyle: FontStyle.italic,
                 ),
-                maxLines: 2,
               ),
             ),
           ],

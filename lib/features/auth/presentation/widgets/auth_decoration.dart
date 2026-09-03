@@ -11,7 +11,10 @@ InputDecoration buildAuthDecoration({
 }) {
   return InputDecoration(
     hintText: hint,
-    hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
+    hintStyle: TextStyle(
+      fontFamily: 'Outfit',
+      color: contrastColor.withValues(alpha: 0.5),
+    ),
     errorStyle: TextStyle(
       fontFamily: 'Outfit',
       color: Colors.red,

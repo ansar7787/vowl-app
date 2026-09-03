@@ -3,8 +3,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
+/// Interactive mascot companion for auth screens.
+///
+/// ### Design philosophy
+/// - The mascot reacts to which field is focused with a contextual speech bubble.
+/// - When the keyboard opens, the mascot shrinks and the speech bubble
+///   repositions to stay visible without clipping.
+/// - Text in the speech bubble NEVER uses ellipsis — it uses [FittedBox]
+///   with [BoxFit.scaleDown] to guarantee 100% visibility.
+///
+/// ### Architecture
+/// - Uses [ListenableBuilder] on focus nodes — zero setState.
+/// - [SpeechBubblePainter] properly repaints when theme colors change.
 class VowlBotAuthCompanion extends StatefulWidget {
   final FocusNode? nameFocus;
   final String nameValue;
@@ -20,7 +31,7 @@ class VowlBotAuthCompanion extends StatefulWidget {
     this.nameValue = "",
     this.emailFocus,
     this.passwordFocus,
-    this.size = 60, // Default to 60 for better Row fit
+    this.size = 60,
     this.isSignup = false,
     this.isForgotPassword = false,
   });
@@ -36,7 +47,6 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       precacheImage(const AssetImage(VowlAssets.vowlbotHappy), context);
-      precacheImage(const AssetImage(VowlAssets.vowlbotNeutral), context);
       precacheImage(const AssetImage(VowlAssets.vowlbotThinking), context);
       precacheImage(const AssetImage(VowlAssets.vowlbotWorried), context);
     });
@@ -47,7 +57,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
     if (widget.passwordFocus?.hasFocus ?? false) {
       return context.tr(
         'auth_companion.password_focus',
-        fallback: "I'm not looking! 🙈",
+        fallback: "I'm not looking!",
       );
     }
 
@@ -56,18 +66,18 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
       if (widget.isSignup) {
         return context.tr(
           'auth_companion.email_focus_signup',
-          fallback: 'Choose your email! 📧',
+          fallback: 'Your best email',
         );
       }
       if (widget.isForgotPassword) {
         return context.tr(
           'auth_companion.email_focus_forgot',
-          fallback: 'Where to send it? 📧',
+          fallback: 'Where should we send it?',
         );
       }
       return context.tr(
         'auth_companion.email_focus_signin',
-        fallback: 'Time to sign in! 📧',
+        fallback: 'Welcome back!',
       );
     }
 
@@ -76,17 +86,30 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
       return widget.nameValue.isEmpty
           ? context.tr(
               'auth_companion.name_focus_empty',
-              fallback: "Hello! What's your name? 👋",
+              fallback: "What's your name?",
             )
           : context.tr(
               'auth_companion.name_focus_filled',
-              fallback: 'What a great name! ✨',
+              fallback: 'Great name!',
             );
     }
 
+    // Default (No Focus) - Mascot acts as the page subtitle
+    if (widget.isSignup) {
+      return context.tr(
+        'auth_companion.default_signup',
+        fallback: 'Begin your learning adventure.',
+      );
+    }
+    if (widget.isForgotPassword) {
+      return context.tr(
+        'auth_companion.default_forgot',
+        fallback: "Let's get you back on track.",
+      );
+    }
     return context.tr(
-      'auth_companion.default_greeting',
-      fallback: 'Ready for an adventure? ✨',
+      'auth_companion.default_login',
+      fallback: 'Ready to continue your journey?',
     );
   }
 
@@ -107,7 +130,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
   }
 
   Widget _buildContent(BuildContext context) {
-    String currentAsset = VowlAssets.vowlbotNeutral;
+    String currentAsset = VowlAssets.vowlbotHappy;
     if (widget.passwordFocus?.hasFocus ?? false) {
       currentAsset = VowlAssets.vowlbotWorried;
     } else if (widget.emailFocus?.hasFocus ?? false) {
@@ -116,13 +139,9 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
       currentAsset = VowlAssets.vowlbotHappy;
     }
 
-    final isFocused =
-        (widget.nameFocus?.hasFocus ?? false) ||
-        (widget.emailFocus?.hasFocus ?? false) ||
-        (widget.passwordFocus?.hasFocus ?? false);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Adaptive Colors based on Time of Day / Theme
+    // Adaptive Colors based on Theme
     final bubbleColor = isDark
         ? Colors.black.withValues(alpha: 0.75)
         : Colors.white.withValues(alpha: 0.85);
@@ -132,22 +151,16 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
         : Colors.black.withValues(alpha: 0.1);
     final greeting = _getGreeting(context);
 
-    // BUG FIX: this avatar is meant to be perfectly circular/square, but
-    // sizing height with `.h` and width with `.w` independently scales each
-    // axis by a *different* factor whenever the device's aspect ratio
-    // differs from ScreenUtil's design reference (true on most tablets,
-    // foldables, and landscape orientation) — visibly squashing or
-    // stretching the mascot. `.r` scales both axes by the same (min of the
-    // two) factor, which is exactly ScreenUtil's intended unit for
-    // symmetric/circular elements.
+    // BUG FIX: Use .r for symmetric scaling to prevent squashing on
+    // non-standard aspect ratios (tablets, foldables, landscape).
     return SizedBox(
       height: widget.size.r,
       width: widget.size.r,
       child: Stack(
-        clipBehavior: Clip.none, // Allow bubble to float outside
+        clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
-          // 1. The Mascot (Static for performance)
+          // 1. The Mascot
           Semantics(
             label: context.tr(
               'auth_companion.mascot_label',
@@ -157,46 +170,43 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
             child: Image.asset(currentAsset, height: widget.size.r),
           ),
 
-          // 2. Adaptive Speech Bubble (Floating & Expanding)
+          // 2. Adaptive Speech Bubble — positioned above mascot
+          //    with responsive offset that scales with screen size.
           Positioned(
-            top: -35.h, // Float above the mascot
-            child: Visibility(
-              visible: isFocused,
-              child:
-                  CustomPaint(
-                        painter: SpeechBubblePainter(
-                          color: bubbleColor,
-                          borderColor: borderColor,
-                        ),
-                        child: Container(
-                          constraints: BoxConstraints(
-                            minWidth: 60.w,
-                            maxWidth: 180.w,
-                          ),
-                          padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 18.h),
-                          child: AutoSizeText(
-                            greeting,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: textColor,
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 0.1,
-                            ),
-                            maxLines: 3,
-                            minFontSize: 6,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      )
-                      .animate()
-                      .fade(duration: 300.ms)
-                      .scale(
-                        begin: const Offset(0.4, 0.4),
-                        curve: Curves.elasticOut,
-                        duration: 1000.ms,
-                      ),
+            top: -(28.r).clamp(20.0, 40.0),
+            child: CustomPaint(
+              painter: SpeechBubblePainter(
+                color: bubbleColor,
+                borderColor: borderColor,
+              ),
+              child: Container(
+                constraints: BoxConstraints(
+                  minWidth: 50.w,
+                  maxWidth: 160.w,
+                ),
+                padding: EdgeInsets.fromLTRB(12.w, 6.h, 12.w, 16.h),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    greeting,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: textColor,
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 0.1,
+                    ),
+                  ),
+                ),
+              ),
+            )
+            .animate()
+            .fade(duration: 300.ms)
+            .scale(
+              begin: const Offset(0.4, 0.4),
+              curve: Curves.elasticOut,
+              duration: 1000.ms,
             ),
           ),
         ],
@@ -219,10 +229,10 @@ class SpeechBubblePainter extends CustomPainter {
     final borderPaint = Paint()
       ..color = borderColor
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0; // Slightly thicker border
+      ..strokeWidth = 2.0;
 
     final path = Path();
-    final r = 50.0; // Perfect Pill Curves
+    final r = 50.0;
 
     // Draw rounded rectangle (The Bubble)
     path.addRRect(
@@ -245,6 +255,9 @@ class SpeechBubblePainter extends CustomPainter {
     canvas.drawPath(fullPath, borderPaint);
   }
 
+  // FIX: Properly repaint when theme colors change (e.g., dark↔light switch
+  // while the bubble is visible).
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant SpeechBubblePainter oldDelegate) =>
+      oldDelegate.color != color || oldDelegate.borderColor != borderColor;
 }

@@ -121,9 +121,6 @@ class _SignUpViewState extends State<SignUpView> {
               : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
           return BlocBuilder<SignUpCubit, SignUpState>(
-            // Same rebuild-scoping fix as LoginPage: previously rebuilt this
-            // whole subtree on every keystroke in every field, even fields
-            // this builder's own output doesn't depend on.
             buildWhen: (previous, current) =>
                 previous.password != current.password ||
                 previous.isSubmitting != current.isSubmitting ||
@@ -134,7 +131,6 @@ class _SignUpViewState extends State<SignUpView> {
               );
               final secondaryColor = contrastColor.withValues(alpha: 0.6);
 
-              // auraColor logic moved to ListenableBuilder below
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
                 message: context.tr(
@@ -166,12 +162,8 @@ class _SignUpViewState extends State<SignUpView> {
                       SafeArea(
                         child: LayoutBuilder(
                           builder: (context, constraints) {
-                            final keyboardOpen =
-                                MediaQuery.of(context).viewInsets.bottom > 0;
                             return SingleChildScrollView(
-                              physics: keyboardOpen
-                                  ? const BouncingScrollPhysics()
-                                  : const NeverScrollableScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               padding: EdgeInsets.only(
                                 bottom:
                                     MediaQuery.of(context).viewInsets.bottom +
@@ -192,59 +184,37 @@ class _SignUpViewState extends State<SignUpView> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            VowlBotAuthCompanion(
-                                              nameFocus: _nameFocus,
-                                              nameValue: state.name,
-                                              emailFocus: _emailFocus,
-                                              passwordFocus: _passwordFocus,
-                                              size: 60,
-                                              isSignup: true,
-                                            ),
-                                            SizedBox(width: 10.w),
-                                            // 'Vowl' is the app's brand name —
-                                            // deliberately not localized.
-                                            Hero(
-                                              tag: 'auth_title',
-                                              child: Material(
-                                                color: Colors.transparent,
-                                                child: Text(
-                                                  'Vowl',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 48.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: const Color(
-                                                      0xFF6366F1,
-                                                    ),
-                                                    letterSpacing: -1.5,
-                                                  ),
+                                        // --- Header: Brand (Always visible) ---
+                                        Hero(
+                                          tag: 'auth_title',
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: Text(
+                                                'Vowl',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 42.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: const Color(0xFF6366F1),
+                                                  letterSpacing: -1.5,
                                                 ),
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                        Text(
-                                          context.tr(
-                                            'auth.signup_subtitle',
-                                            fallback:
-                                                'Start your learning adventure today.',
                                           ),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 15.sp,
-                                            fontWeight: FontWeight.w600,
-                                            color: secondaryColor,
-                                          ),
-                                          textAlign: TextAlign.center,
                                         ),
                                         SizedBox(height: 32.h),
-                                        HolographicCard(
+                                        
+                                        // --- Interactive Form Card ---
+                                        Stack(
+                                          clipBehavior: Clip.none,
+                                          alignment: Alignment.topCenter,
+                                          children: [
+                                            // The card itself, pushed down slightly so the mascot can straddle the top border
+                                            Padding(
+                                              padding: EdgeInsets.only(top: 30.r),
+                                              child: HolographicCard(
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.stretch,
@@ -412,12 +382,14 @@ class _SignUpViewState extends State<SignUpView> {
                                                                               'I agree to the ',
                                                                         ),
                                                                         style: TextStyle(
+                                                                          fontFamily:
+                                                                              'Outfit',
                                                                           color:
                                                                               isDark
                                                                               ? Colors.white70
                                                                               : Colors.black87,
                                                                           fontSize:
-                                                                              13.sp,
+                                                                              14.sp,
                                                                         ),
                                                                       ),
                                                                       TextSpan(
@@ -427,13 +399,15 @@ class _SignUpViewState extends State<SignUpView> {
                                                                               'Terms of Service',
                                                                         ),
                                                                         style: TextStyle(
+                                                                          fontFamily:
+                                                                              'Outfit',
                                                                           color: const Color(
                                                                             0xFF6366F1,
                                                                           ),
                                                                           fontWeight:
                                                                               FontWeight.bold,
                                                                           fontSize:
-                                                                              13.sp,
+                                                                              14.sp,
                                                                         ),
                                                                         recognizer: TapGestureRecognizer()
                                                                           ..onTap = () async {
@@ -460,12 +434,14 @@ class _SignUpViewState extends State<SignUpView> {
                                                                               ' and ',
                                                                         ),
                                                                         style: TextStyle(
+                                                                          fontFamily:
+                                                                              'Outfit',
                                                                           color:
                                                                               isDark
                                                                               ? Colors.white70
                                                                               : Colors.black87,
                                                                           fontSize:
-                                                                              13.sp,
+                                                                              14.sp,
                                                                         ),
                                                                       ),
                                                                       TextSpan(
@@ -475,13 +451,15 @@ class _SignUpViewState extends State<SignUpView> {
                                                                               'Privacy Policy',
                                                                         ),
                                                                         style: TextStyle(
+                                                                          fontFamily:
+                                                                              'Outfit',
                                                                           color: const Color(
                                                                             0xFF6366F1,
                                                                           ),
                                                                           fontWeight:
                                                                               FontWeight.bold,
                                                                           fontSize:
-                                                                              13.sp,
+                                                                              14.sp,
                                                                         ),
                                                                         recognizer: TapGestureRecognizer()
                                                                           ..onTap = () async {
@@ -513,6 +491,8 @@ class _SignUpViewState extends State<SignUpView> {
                                                           Text(
                                                             state.errorText!,
                                                             style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
                                                               color: Colors.red,
                                                               fontSize: 12.sp,
                                                             ),
@@ -560,14 +540,28 @@ class _SignUpViewState extends State<SignUpView> {
                                             ],
                                           ),
                                         ),
-                                        SizedBox(height: 32.h),
+                                      ), // Close Padding
+                                      Positioned(
+                                        top: 0,
+                                        child: VowlBotAuthCompanion(
+                                          nameFocus: _nameFocus,
+                                          nameValue: state.name,
+                                          emailFocus: _emailFocus,
+                                          passwordFocus: _passwordFocus,
+                                          size: 60,
+                                          isSignup: true,
+                                        ),
+                                      ),
+                                    ],
+                                  ), // Close Stack
+                                  SizedBox(height: 16.h),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            // Flexible + ellipsis — same
-                                            // overflow-safety reasoning as
-                                            // LoginPage's equivalent Row.
+                                            // FittedBox ensures text scales
+                                            // down on narrow devices instead
+                                            // of overflowing.
                                             Flexible(
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,

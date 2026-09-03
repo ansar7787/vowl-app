@@ -114,20 +114,23 @@ class AgeGateScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16.r),
                           ),
                         ),
-                        child: Text(
-                          context.tr(
-                            'age_gate.oops_adult',
-                            fallback: "Oops, I'm an Adult",
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            context.tr(
+                              'age_gate.oops_adult',
+                              fallback: "Oops, I'm an Adult",
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              color: isDarkSheet
+                                  ? Colors.white70
+                                  : Colors.black54,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDarkSheet
-                                ? Colors.white70
-                                : Colors.black54,
-                          ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -144,17 +147,20 @@ class AgeGateScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16.r),
                           ),
                         ),
-                        child: Text(
-                          context.tr(
-                            'age_gate.yes_kid',
-                            fallback: "Yes, I'm a Kid",
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            context.tr(
+                              'age_gate.yes_kid',
+                              fallback: "Yes, I'm a Kid",
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -281,22 +287,25 @@ class AgeGateScreen extends StatelessWidget {
                               // Title
                               Semantics(
                                 header: true,
-                                child: Text(
-                                  context.tr(
-                                    'age_gate.title',
-                                    fallback: 'Before we begin',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 28.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: isDark
-                                        ? Colors.white
-                                        : const Color(0xFF0F172A),
-                                    letterSpacing: -0.5,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ).animate().fadeIn(delay: 200.ms),
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    context.tr(
+                                      'age_gate.title',
+                                      fallback: 'Before we begin',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 28.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isDark
+                                          ? Colors.white
+                                          : const Color(0xFF0F172A),
+                                      letterSpacing: -0.5,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ).animate().fadeIn(delay: 200.ms),
+                                ),
                               ),
 
                               SizedBox(height: 12.h),
@@ -369,17 +378,20 @@ class AgeGateScreen extends StatelessWidget {
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
-                                                Text(
-                                                  context.tr(
-                                                    'age_gate.adult_button',
-                                                    fallback: "I'm 16 or older",
-                                                  ),
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 17.sp,
-                                                    fontWeight: FontWeight.w800,
-                                                    color: Colors.white,
-                                                    letterSpacing: 0.3,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    context.tr(
+                                                      'age_gate.adult_button',
+                                                      fallback: "I'm 16 or older",
+                                                    ),
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 17.sp,
+                                                      fontWeight: FontWeight.w800,
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.3,
+                                                    ),
                                                   ),
                                                 ),
                                                 SizedBox(height: 2.h),
@@ -450,19 +462,22 @@ class AgeGateScreen extends StatelessWidget {
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
-                                                Text(
-                                                  context.tr(
-                                                    'age_gate.child_button',
-                                                    fallback: "I'm under 16",
-                                                  ),
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 17.sp,
-                                                    fontWeight: FontWeight.w800,
-                                                    color: isDark
-                                                        ? Colors.white70
-                                                        : Colors.grey.shade700,
-                                                    letterSpacing: 0.3,
+                                                FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    context.tr(
+                                                      'age_gate.child_button',
+                                                      fallback: "I'm under 16",
+                                                    ),
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 17.sp,
+                                                      fontWeight: FontWeight.w800,
+                                                      color: isDark
+                                                          ? Colors.white70
+                                                          : Colors.grey.shade700,
+                                                      letterSpacing: 0.3,
+                                                    ),
                                                   ),
                                                 ),
                                                 SizedBox(height: 2.h),

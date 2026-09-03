@@ -117,15 +117,6 @@ class _LoginViewState extends State<LoginView> {
               : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
           return BlocBuilder<LoginCubit, LoginState>(
-            // Previously had no buildWhen at all, so this entire subtree
-            // (gradient background, holographic card, every child widget)
-            // rebuilt on *every* LoginState change — including typing in the
-            // email field, which this builder's own output never depends on.
-            // The individual field widgets already scope their own rebuilds
-            // precisely (see LoginEmailInput/LoginPasswordInput's buildWhen);
-            // this builder only needs to react to what it actually reads
-            // below: password (for the aura color) and the submit/success
-            // flags (for the loading overlay).
             buildWhen: (previous, current) =>
                 previous.password != current.password ||
                 previous.isSubmitting != current.isSubmitting ||
@@ -136,7 +127,6 @@ class _LoginViewState extends State<LoginView> {
               );
               final secondaryColor = contrastColor.withValues(alpha: 0.6);
 
-              // auraColor logic moved to ListenableBuilder below
               return LoadingOverlay(
                 isLoading: state.isSubmitting || state.isSuccess,
                 message: context.tr(
@@ -168,12 +158,8 @@ class _LoginViewState extends State<LoginView> {
                       SafeArea(
                         child: LayoutBuilder(
                           builder: (context, constraints) {
-                            final keyboardOpen =
-                                MediaQuery.of(context).viewInsets.bottom > 0;
                             return SingleChildScrollView(
-                              physics: keyboardOpen
-                                  ? const BouncingScrollPhysics()
-                                  : const NeverScrollableScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               padding: EdgeInsets.only(
                                 bottom:
                                     MediaQuery.of(context).viewInsets.bottom +
@@ -194,57 +180,37 @@ class _LoginViewState extends State<LoginView> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            VowlBotAuthCompanion(
-                                              emailFocus: _emailFocus,
-                                              passwordFocus: _passwordFocus,
-                                              size: 60,
-                                            ),
-                                            SizedBox(width: 8.w),
-                                            // 'Vowl' is the app's brand name —
-                                            // deliberately not localized, same
-                                            // as everywhere else it appears.
-                                            Hero(
-                                              tag: 'auth_title',
-                                              child: Material(
-                                                color: Colors.transparent,
-                                                child: Text(
-                                                  'Vowl',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 44.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: const Color(
-                                                      0xFF6366F1,
-                                                    ),
-                                                    letterSpacing: -1.5,
-                                                  ),
+                                        // --- Header: Brand (Always visible) ---
+                                        Hero(
+                                          tag: 'auth_title',
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: Text(
+                                                'Vowl',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 42.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: const Color(0xFF6366F1),
+                                                  letterSpacing: -1.5,
                                                 ),
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                        Text(
-                                          context.tr(
-                                            'auth.login_subtitle',
-                                            fallback:
-                                                'Welcome back! Your journey continues here.',
                                           ),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 15.sp,
-                                            fontWeight: FontWeight.w600,
-                                            color: secondaryColor,
-                                          ),
-                                          textAlign: TextAlign.center,
                                         ),
                                         SizedBox(height: 32.h),
-                                        HolographicCard(
+                                        
+                                        // --- Interactive Form Card ---
+                                        Stack(
+                                          clipBehavior: Clip.none,
+                                          alignment: Alignment.topCenter,
+                                          children: [
+                                            // The card itself, pushed down slightly so the mascot can straddle the top border
+                                            Padding(
+                                              padding: EdgeInsets.only(top: 30.r),
+                                              child: HolographicCard(
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.stretch,
@@ -313,17 +279,20 @@ class _LoginViewState extends State<LoginView> {
                                                     splashFactory: NoSplash.splashFactory,
                                                     overlayColor: Colors.transparent,
                                                   ),
-                                                  child: Text(
-                                                    context.tr(
-                                                      'auth.forgot_password_question',
-                                                      fallback:
-                                                          'Forgot your password?',
-                                                    ),
-                                                    style: const TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      color: Color(0xFF6366F1),
-                                                      fontWeight:
-                                                          FontWeight.w700,
+                                                  child: FittedBox(
+                                                    fit: BoxFit.scaleDown,
+                                                    child: Text(
+                                                      context.tr(
+                                                        'auth.forgot_password_question',
+                                                        fallback:
+                                                            'Forgot your password?',
+                                                      ),
+                                                      style: const TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        color: Color(0xFF6366F1),
+                                                        fontWeight:
+                                                            FontWeight.w700,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -355,17 +324,25 @@ class _LoginViewState extends State<LoginView> {
                                             ],
                                           ),
                                         ),
-                                        SizedBox(height: 32.h),
+                                      ), // Close Padding
+                                      Positioned(
+                                        top: 0,
+                                        child: VowlBotAuthCompanion(
+                                          emailFocus: _emailFocus,
+                                          passwordFocus: _passwordFocus,
+                                          size: 60,
+                                        ),
+                                      ),
+                                    ],
+                                  ), // Close Stack
+                                  SizedBox(height: 16.h),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            // Flexible + ellipsis: a longer
-                                            // translation of this prompt on a
-                                            // narrow (320px) device could
-                                            // otherwise push this Row into a
-                                            // RenderFlex overflow next to the
-                                            // "Sign Up" button.
+                                            // FittedBox ensures the text
+                                            // scales down on narrow devices
+                                            // instead of overflowing.
                                             Flexible(
                                               child: FittedBox(
                                                 fit: BoxFit.scaleDown,

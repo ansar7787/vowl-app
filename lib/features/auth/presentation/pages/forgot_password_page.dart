@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/forgot_password_widgets.dart';
+import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 
@@ -116,16 +117,19 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   resizeToAvoidBottomInset: false,
                   body: Stack(
                     children: [
-                      const MeshGradientBackground(auraColor: Colors.blue),
+                      ListenableBuilder(
+                        listenable: _emailFocus,
+                        builder: (context, _) {
+                          return MeshGradientBackground(
+                            auraColor: _emailFocus.hasFocus ? Colors.blue : null,
+                          );
+                        },
+                      ),
                       SafeArea(
                         child: LayoutBuilder(
                           builder: (context, constraints) {
-                            final keyboardOpen =
-                                MediaQuery.of(context).viewInsets.bottom > 0;
                             return SingleChildScrollView(
-                              physics: keyboardOpen
-                                  ? const BouncingScrollPhysics()
-                                  : const NeverScrollableScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               padding: EdgeInsets.only(
                                 bottom:
                                     MediaQuery.of(context).viewInsets.bottom +
@@ -151,7 +155,16 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                           secondaryColor: secondaryColor,
                                         ),
                                         SizedBox(height: 32.h),
-                                        HolographicCard(
+                                        
+                                        // --- Interactive Form Card ---
+                                        Stack(
+                                          clipBehavior: Clip.none,
+                                          alignment: Alignment.topCenter,
+                                          children: [
+                                            // Pushed down slightly so the mascot can straddle the top border
+                                            Padding(
+                                              padding: EdgeInsets.only(top: 30.r),
+                                              child: HolographicCard(
                                           child: state.isSuccess
                                               ? Column(
                                                   crossAxisAlignment:
@@ -221,11 +234,14 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                                   56,
                                                                 ),
                                                           ),
-                                                      child: Text(
-                                                        context.tr(
-                                                          'auth.back_to_login',
-                                                          fallback:
-                                                              'Back to Login',
+                                                      child: FittedBox(
+                                                        fit: BoxFit.scaleDown,
+                                                        child: Text(
+                                                          context.tr(
+                                                            'auth.back_to_login',
+                                                            fallback:
+                                                                'Back to Login',
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -311,7 +327,18 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                   ],
                                                 ),
                                         ),
-                                        SizedBox(height: 32.h),
+                                      ), // Close Padding
+                                      Positioned(
+                                        top: 0,
+                                        child: VowlBotAuthCompanion(
+                                          emailFocus: _emailFocus,
+                                          size: 60,
+                                          isForgotPassword: true,
+                                        ),
+                                      ),
+                                    ],
+                                  ), // Close Stack
+                                  SizedBox(height: 16.h),
                                         RememberPasswordFooter(
                                           secondaryColor: secondaryColor,
                                         ),
