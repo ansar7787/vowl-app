@@ -133,7 +133,10 @@ class FlashcardGameBody extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: layout.topSpacing),
-                      _InstructionBanner(primaryColor: primaryColor),
+                      _InstructionBanner(
+                        primaryColor: primaryColor,
+                        isFlipped: isFlipped,
+                      ),
                       SizedBox(height: layout.instructionToCard),
                       Expanded(
                         child: Center(
@@ -176,7 +179,7 @@ class FlashcardGameBody extends StatelessWidget {
   ) {
     return Semantics(
       label:
-          '${quest.word ?? ""}. ${isFlipped ? context.tr('instructions.flashcards.definition_revealed') : context.tr('instructions.flashcards.tap_to_reveal')}',
+          '${quest.word ?? ""}. ${isFlipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'DEFINITION REVEALED') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
       child: GestureDetector(
         onHorizontalDragUpdate: isFlipped ? onHorizontalDragUpdate : null,
         onHorizontalDragEnd: isFlipped
@@ -254,8 +257,12 @@ class FlashcardGameBody extends StatelessWidget {
 
 class _InstructionBanner extends StatelessWidget {
   final Color primaryColor;
+  final bool isFlipped;
 
-  const _InstructionBanner({required this.primaryColor});
+  const _InstructionBanner({
+    required this.primaryColor,
+    required this.isFlipped,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -268,25 +275,42 @@ class _InstructionBanner extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.r),
           border: Border.all(color: primaryColor.withValues(alpha: 0.20)),
         ),
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          spacing: 8.w,
-          runSpacing: 4.h,
-          children: [
-            Icon(Icons.swipe_rounded, size: 14.r, color: primaryColor),
-            Text(
-              context.tr('instructions.flashcards.swipe_instruction'),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.1,
+        child: AnimatedSwitcher(
+          duration: 300.ms,
+          child: FittedBox(
+            key: ValueKey<bool>(isFlipped),
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  isFlipped ? Icons.swipe_rounded : Icons.touch_app_rounded,
+                  size: 14.r,
+                  color: primaryColor,
+                ),
+                SizedBox(width: 8.w),
+                Text(
+                  isFlipped
+                      ? context.tr(
+                          'instructions.flashcards.swipe_instruction',
+                          fallback: 'SWIPE LEFT OR RIGHT',
+                        )
+                      : context.tr(
+                          'instructions.flashcards.tap_to_reveal',
+                          fallback: 'TAP TO REVEAL',
+                        ),
+                  textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 9.sp,
+                  fontWeight: FontWeight.w900,
+                  color: primaryColor,
+                  letterSpacing: 1.1,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
+        ),
         ),
       ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
     );
