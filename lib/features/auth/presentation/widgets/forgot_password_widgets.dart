@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -9,49 +9,6 @@ import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart'
 import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
 import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 
-// ---------------------------------------------------------------------------
-// Header
-// ---------------------------------------------------------------------------
-
-class ForgotPasswordHeader extends StatelessWidget {
-  final FocusNode emailFocus;
-  final Color secondaryColor;
-
-  const ForgotPasswordHeader({
-    super.key,
-    required this.emailFocus,
-    required this.secondaryColor,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        // 'Vowl' is the app's brand name — deliberately not localized.
-        Hero(
-          tag: 'auth_title',
-          child: Material(
-            color: Colors.transparent,
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                'Vowl',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 42.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF6366F1),
-                  letterSpacing: -1.5,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
 
 // ---------------------------------------------------------------------------
 // Email Input

@@ -150,9 +150,25 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        ForgotPasswordHeader(
-                                          emailFocus: _emailFocus,
-                                          secondaryColor: secondaryColor,
+                                        // --- Header: Brand (Always visible) ---
+                                        Hero(
+                                          tag: 'auth_title',
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: Text(
+                                                'Vowl',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 42.sp,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: const Color(0xFF6366F1),
+                                                  letterSpacing: -1.5,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                         SizedBox(height: 32.h),
                                         

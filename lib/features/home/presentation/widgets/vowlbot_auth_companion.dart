@@ -175,6 +175,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
           Positioned(
             top: -(28.r).clamp(20.0, 40.0),
             child: CustomPaint(
+              key: ValueKey(greeting),
               painter: SpeechBubblePainter(
                 color: bubbleColor,
                 borderColor: borderColor,
