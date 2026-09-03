@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -295,7 +296,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                       child: _buildInstruction(
                                                         theme.primaryColor,
                                                         isDark,
-                                                        quest.instruction,
+                                                        InstructionHelper.getInstruction(quest),
                                                       ),
                                                     ),
                                                     SizedBox(

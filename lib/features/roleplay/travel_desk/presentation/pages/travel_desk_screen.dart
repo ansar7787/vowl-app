@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -82,7 +83,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(quest.instruction);
+    _soundService.playTts(InstructionHelper.getInstruction(quest));
     if (quest.prompt != null) {
       Future.delayed(const Duration(milliseconds: 1200), () {
         if (mounted) _soundService.playTts(quest.prompt!);
@@ -225,7 +226,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          quest.instruction,
+                                                          InstructionHelper.getInstruction(quest),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

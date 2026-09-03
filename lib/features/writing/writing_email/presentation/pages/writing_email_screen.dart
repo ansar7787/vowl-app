@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -252,7 +253,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                                       SizedBox(height: 16.h),
                                       WritingEmailInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: quest.instruction,
+                                        instruction: InstructionHelper.getInstruction(quest),
                                       ),
                                       SizedBox(height: 16.h),
                                       if (quest.formalityLevel != null)

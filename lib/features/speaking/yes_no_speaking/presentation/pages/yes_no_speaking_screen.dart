@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -244,7 +245,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                         YesNoSpeakingHeaderInstruction(
                                           primaryColor: theme.primaryColor,
                                           isSnapped: _isSnapped.value,
-                                          instruction: quest.instruction,
+                                          instruction: InstructionHelper.getInstruction(quest),
                                         ),
                                         SizedBox(height: 24.h),
                                         YesNoSpeakingAuditionCard(

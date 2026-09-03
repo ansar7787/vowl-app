@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,7 +51,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
   Widget build(BuildContext context) {
     return Semantics(
       label:
-          '${context.tr('hint')}: ${widget.quest.hint ?? widget.quest.instruction}. ${context.tr('instructions.flashcards.tap_to_reveal')}',
+          '${context.tr('hint')}: ${widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest)}. ${context.tr('instructions.flashcards.tap_to_reveal')}',
       child: Container(
         width: widget.width,
         height: widget.height,
@@ -110,7 +111,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                       flex: 6,
                       child: Center(
                         child: AutoSizeText(
-                          widget.quest.hint ?? widget.quest.instruction,
+                          widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest),
                           textAlign: TextAlign.center,
                           minFontSize: 14,
                           wrapWords: false,
@@ -157,7 +158,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
                                 child: Text(
-                                  widget.quest.hint ?? widget.quest.instruction,
+                                  widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest),
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',

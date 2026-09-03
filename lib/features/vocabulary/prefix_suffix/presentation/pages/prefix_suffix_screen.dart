@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -139,7 +140,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                       PrefixSuffixMissionControl(
                                         primaryColor: theme.primaryColor,
                                         instruction:
-                                            quest.hint ?? quest.instruction,
+                                            quest.hint ?? InstructionHelper.getInstruction(quest),
                                       ),
                                       SizedBox(height: 20.h),
                                       IgnorePointer(

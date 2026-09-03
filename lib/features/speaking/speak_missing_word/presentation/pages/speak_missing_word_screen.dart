@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -342,7 +343,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                         SpeakMissingWordInstruction(
                                           primaryColor: theme.primaryColor,
                                           isWordPlaced: _isWordPlaced.value,
-                                          instruction: quest.instruction,
+                                          instruction: InstructionHelper.getInstruction(quest),
                                         ),
                                         SizedBox(height: 24.h),
                                         SpeakMissingWordVortexSentence(

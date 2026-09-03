@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -226,7 +227,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                       children: [
                                         PronunciationFocusHeader(
                                           primaryColor: theme.primaryColor,
-                                          instruction: quest.instruction,
+                                          instruction: InstructionHelper.getInstruction(quest),
                                         ),
                                         SizedBox(height: 24.h),
                                         PronunciationFocusPhonemeCrucible(

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 
 class VocabularyQuestionCard extends StatelessWidget {
   final VocabularyQuest quest;
@@ -27,7 +28,7 @@ class VocabularyQuestionCard extends StatelessWidget {
 
     // Cached once — avoids repeated null-coalescing and toUpperCase on rebuild.
     final String displayWord = quest.word ?? quest.prompt ?? 'Quest';
-    final String instruction = quest.instruction.toUpperCase();
+    final String instruction = InstructionHelper.getInstruction(quest).toUpperCase();
 
     final compositeLabel =
         '$instruction. $displayWord'

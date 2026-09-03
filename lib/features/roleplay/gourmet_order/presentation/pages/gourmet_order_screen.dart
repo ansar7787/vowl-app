@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -80,7 +81,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(quest.instruction);
+    _soundService.playTts(InstructionHelper.getInstruction(quest));
     if (quest.prompt != null) {
       Future.delayed(const Duration(milliseconds: 1200), () {
         if (mounted) _soundService.playTts(quest.prompt!);
@@ -251,7 +252,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          quest.instruction,
+                                                          InstructionHelper.getInstruction(quest),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

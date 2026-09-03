@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -254,7 +255,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                                       : context.tr(
                                                           'games.shadowing_challenge_instruction',
                                                           fallback:
-                                                              quest.instruction,
+                                                              InstructionHelper.getInstruction(quest),
                                                         ),
                                                 ),
                                                 SizedBox(height: 16.h),

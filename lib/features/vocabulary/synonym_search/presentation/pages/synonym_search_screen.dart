@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -554,7 +555,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                         quest
                                                             .instruction
                                                             .isNotEmpty
-                                                        ? quest.instruction
+                                                        ? InstructionHelper.getInstruction(quest)
                                                         : "WARP THE SYNONYM SHARD",
                                                     isCompact: isCompact,
                                                   ),

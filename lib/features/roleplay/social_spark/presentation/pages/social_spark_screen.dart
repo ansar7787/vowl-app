@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -76,7 +77,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(quest.instruction);
+    _soundService.playTts(InstructionHelper.getInstruction(quest));
   }
 
   void _onStarTap(int index) {
@@ -249,7 +250,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          quest.instruction,
+                                                          InstructionHelper.getInstruction(quest),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

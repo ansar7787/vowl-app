@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -58,7 +59,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(quest.instruction);
+    _soundService.playTts(InstructionHelper.getInstruction(quest));
     if (quest.prompt != null) {
       Future.delayed(const Duration(milliseconds: 1400), () {
         if (mounted) _soundService.playTts(quest.prompt!);
@@ -186,7 +187,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          quest.instruction,
+                                                          InstructionHelper.getInstruction(quest),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

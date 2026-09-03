@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -227,7 +228,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                       SizedBox(height: 6.h),
                                       FastSpeechDecoderInstruction(
                                         color: theme.primaryColor,
-                                        instruction: quest.instruction,
+                                        instruction: InstructionHelper.getInstruction(quest),
                                       ),
                                       SizedBox(height: 24.h),
                                       (() {

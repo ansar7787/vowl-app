@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,7 +95,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   }
 
   void _triggerAutoPlay(AccentQuest quest) {
-    final instruction = quest.instruction.toLowerCase();
+    final instruction = InstructionHelper.getInstruction(quest).toLowerCase();
     final String targetLocale = instruction.contains('british')
         ? "en-GB"
         : "en-US";

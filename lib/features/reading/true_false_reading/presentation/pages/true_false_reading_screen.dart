@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -117,7 +118,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
       ErrorJournalCollector.record(
         userId: 'local',
         gameType: widget.gameType.name,
-        question: quest.question ?? quest.instruction,
+        question: quest.question ?? InstructionHelper.getInstruction(quest),
         userAnswer: failedCoin
             ? (_pendingAnswer.value! ? "True" : "False")
             : 'Failed to find evidence',
@@ -230,7 +231,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                                       SizedBox(height: 16.h),
                                       TrueFalseReadingInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: quest.instruction,
+                                        instruction: InstructionHelper.getInstruction(quest),
                                       ),
                                       SizedBox(height: 24.h),
                                       TrueFalseReadingPassage(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:ui';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -359,7 +360,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Text(
-                quest.instruction.toUpperCase(),
+                InstructionHelper.getInstruction(quest).toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 9.sp,

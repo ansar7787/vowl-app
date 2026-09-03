@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -257,7 +258,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
                         final double estimatedContentHeight =
                             (isCompact ? 30.h : 40.h) +
-                            (quest.instruction.isNotEmpty
+                            (InstructionHelper.getInstruction(quest).isNotEmpty
                                 ? (isCompact ? 60.h : 80.h)
                                 : 0) +
                             (isCompact ? 70.h : 90.h) +
@@ -354,7 +355,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                                             height: gapTop / 2,
                                                           ),
                                                           _buildInstruction(
-                                                            quest.instruction,
+                                                            InstructionHelper.getInstruction(quest),
                                                             theme.primaryColor,
                                                             isCompact,
                                                           ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -203,7 +204,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                                   ReadingSpeedInstruction(
                                     primaryColor: theme.primaryColor,
                                     isRevealed: _isRevealed.value,
-                                    instruction: quest.instruction,
+                                    instruction: InstructionHelper.getInstruction(quest),
                                   ),
                                   SizedBox(height: 32.h),
                                   if (!_isRevealed.value)

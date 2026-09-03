@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -82,7 +83,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
         ErrorJournalCollector.record(
           userId: 'local',
           gameType: widget.gameType.name,
-          question: quest.question ?? quest.instruction,
+          question: quest.question ?? InstructionHelper.getInstruction(quest),
           userAnswer: selectedOption ?? 'Unknown',
           correctAnswer: quest.correctAnswer ?? '',
           level: widget.level,
@@ -179,7 +180,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                       SizedBox(height: 16.h),
                                       GuessTitleInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: quest.instruction,
+                                        instruction: InstructionHelper.getInstruction(quest),
                                       ),
                                       SizedBox(height: 24.h),
                                       Container(

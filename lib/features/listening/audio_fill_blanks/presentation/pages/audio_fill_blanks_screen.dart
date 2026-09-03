@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -350,8 +351,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                       SizedBox(height: 6.h),
                       AudioFillBlanksInstruction(
                         instruction:
-                            quest.instruction ??
-                            'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
+                            InstructionHelper.getInstruction(quest),
                         color: theme.primaryColor,
                       ),
                       SizedBox(height: 24.h),

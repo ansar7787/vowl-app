@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -82,7 +83,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
-    _soundService.playTts(quest.instruction);
+    _soundService.playTts(InstructionHelper.getInstruction(quest));
     if (quest.scene != null) {
       Future.delayed(const Duration(milliseconds: 1400), () {
         if (mounted) _soundService.playTts(quest.scene!);
@@ -245,7 +246,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          quest.instruction,
+                                                          InstructionHelper.getInstruction(quest),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -137,8 +138,8 @@ class KidsEmotionsLayout extends StatelessWidget {
           onTap: state.answerStatus.isAnswered
               ? null
               : () {
-                  if (quest.instruction != null) {
-                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  if (InstructionHelper.getInstruction(quest).isNotEmpty) {
+                    di.sl<KidsTTSService>().speak(InstructionHelper.getInstruction(quest));
                   }
                 },
           child: Stack(

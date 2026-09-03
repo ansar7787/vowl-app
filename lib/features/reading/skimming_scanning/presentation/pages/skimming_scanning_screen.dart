@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -222,7 +223,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                                   Text(
                                     _isAnswered.value
                                         ? "TARGET ACQUIRED!"
-                                        : (quest.instruction.toUpperCase()),
+                                        : (InstructionHelper.getInstruction(quest).toUpperCase()),
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',

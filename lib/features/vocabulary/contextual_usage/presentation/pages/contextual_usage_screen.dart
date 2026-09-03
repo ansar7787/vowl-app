@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -399,7 +400,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        quest.instruction.toUpperCase(),
+                        InstructionHelper.getInstruction(quest).toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -412,7 +413,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     ),
                   )
                 : Text(
-                        quest.instruction.toUpperCase(),
+                        InstructionHelper.getInstruction(quest).toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',

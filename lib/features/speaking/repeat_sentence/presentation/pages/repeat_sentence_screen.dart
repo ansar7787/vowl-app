@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -85,7 +86,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: quest.instruction,
+          question: InstructionHelper.getInstruction(quest),
           userAnswer: '[Pronunciation Error]',
           correctAnswer: quest.textToSpeak ?? '',
           level: widget.level,
@@ -198,7 +199,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                       children: [
                                         RepeatSentenceInstruction(
                                           primaryColor: theme.primaryColor,
-                                          instruction: quest.instruction,
+                                          instruction: InstructionHelper.getInstruction(quest),
                                         ),
                                         SizedBox(height: 24.h),
                                         RepeatSentenceAuditionCard(

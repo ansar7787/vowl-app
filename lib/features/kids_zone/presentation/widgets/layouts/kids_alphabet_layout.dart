@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -221,9 +222,9 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                 onTap: widget.state.answerStatus.isAnswered
                     ? null
                     : () {
-                        if (widget.quest.instruction != null) {
+                        if (InstructionHelper.getInstruction(widget.quest).isNotEmpty) {
                           di.sl<KidsTTSService>().speak(
-                            widget.quest.instruction!,
+                            InstructionHelper.getInstruction(widget.quest),
                           );
                         } else if (widget.quest.wordExample != null) {
                           di.sl<KidsTTSService>().speak(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -251,7 +252,7 @@ class _SummarizeStoryWritingScreenState
                                           SummarizeStoryWritingInstruction(
                                             instruction: context.tr(
                                               'games.summarizeStoryWriting_instruction',
-                                              fallback: quest.instruction,
+                                              fallback: InstructionHelper.getInstruction(quest),
                                             ),
                                             primaryColor: theme.primaryColor,
                                           ),
