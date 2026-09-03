@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
+import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
 class VocabularyBaseLayout extends StatelessWidget {
   final GameSubtype gameType;
@@ -160,7 +161,18 @@ class VocabularyBaseLayout extends StatelessWidget {
         } else if (gameType == GameSubtype.prefixSuffix) {
           ruleTitle = 'WORD BREAKDOWN';
           if (quest.meaningBreakdown != null) {
-            ruleContent = quest.meaningBreakdown;
+            customContent = PedagogicalRuleBox(
+              icon: Icons.menu_book_rounded,
+              capsKey: '',
+              capsFallback: 'WORD BREAKDOWN',
+              titleKey: '',
+              titleFallback: 'Word Breakdown',
+              rule: quest.meaningBreakdown!,
+              shadowColor: isCorrect == true
+                  ? const Color(0xFF10B981)
+                  : theme.primaryColor,
+              isDark: isDark,
+            );
             finalExplanation = quest.explanation;
           }
         }
