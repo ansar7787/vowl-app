@@ -230,39 +230,58 @@ class SpeechBubblePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5;
 
-    final path = Path();
+    final fullPath = Path();
     final bubbleHeight = size.height - 10; // Sleek 10px tail
-    final r = 12.0; // Tighter squircle radius for a slimmer bubble
-
-    // 1. Draw the main bubble body
-    path.addRRect(
-      RRect.fromLTRBR(0, 0, size.width, bubbleHeight, Radius.circular(r)),
-    );
-
-    // 2. The "Liquid Tail" - mathematically continuous bezier curves (Centered)
-    final tailPath = Path();
     
-    // Start the tail smoothly on the bottom edge, 12px left of center
-    tailPath.moveTo(size.width / 2 - 12, bubbleHeight);
+    // Safety clamp: ensure radius is never larger than half the shortest side
+    // to prevent the bezier path from inverting/crossing itself on tiny screens.
+    final r = 12.0.clamp(0.0, bubbleHeight / 2);
+
+    // Start at Top-Left, just after the corner radius
+    fullPath.moveTo(r, 0);
     
-    // Swoop down to the exact center tip (10px down)
-    tailPath.cubicTo(
-      size.width / 2 - 6, bubbleHeight, // Control 1
-      size.width / 2 - 2, bubbleHeight + 10, // Control 2
-      size.width / 2, bubbleHeight + 10, // Tail tip
+    // Top Edge
+    fullPath.lineTo(size.width - r, 0);
+    
+    // Top-Right Corner
+    fullPath.quadraticBezierTo(size.width, 0, size.width, r);
+    
+    // Right Edge
+    fullPath.lineTo(size.width, bubbleHeight - r);
+    
+    // Bottom-Right Corner
+    fullPath.quadraticBezierTo(size.width, bubbleHeight, size.width - r, bubbleHeight);
+    
+    // Bottom Edge (Right of tail)
+    fullPath.lineTo(size.width / 2 + 12, bubbleHeight);
+    
+    // The "Liquid Tail" - mathematically continuous bezier curves (Swoop Down)
+    fullPath.cubicTo(
+      size.width / 2 + 6, bubbleHeight, // Control 1
+      size.width / 2 + 2, bubbleHeight + 10, // Control 2
+      size.width / 2, bubbleHeight + 10, // Tail tip (Dead center, 10px down)
     );
     
-    // Swoop back up to 12px right of center
-    tailPath.cubicTo(
-      size.width / 2 + 2, bubbleHeight + 10, // Control 1
-      size.width / 2 + 6, bubbleHeight, // Control 2
-      size.width / 2 + 12, bubbleHeight, // Melt point
+    // The "Liquid Tail" - mathematically continuous bezier curves (Swoop Up)
+    fullPath.cubicTo(
+      size.width / 2 - 2, bubbleHeight + 10, // Control 1
+      size.width / 2 - 6, bubbleHeight, // Control 2
+      size.width / 2 - 12, bubbleHeight, // Melt point (Left of tail)
     );
-
-    tailPath.close();
-
-    // 3. Combine shapes flawlessly
-    final fullPath = Path.combine(PathOperation.union, path, tailPath);
+    
+    // Bottom Edge (Left of tail)
+    fullPath.lineTo(r, bubbleHeight);
+    
+    // Bottom-Left Corner
+    fullPath.quadraticBezierTo(0, bubbleHeight, 0, bubbleHeight - r);
+    
+    // Left Edge
+    fullPath.lineTo(0, r);
+    
+    // Top-Left Corner
+    fullPath.quadraticBezierTo(0, 0, r, 0);
+    
+    fullPath.close();
 
     // 4. Draw Premium Drop Shadows (3D depth)
     // Ambient colored glow
