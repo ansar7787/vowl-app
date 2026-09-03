@@ -1477,6 +1477,7 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
           sigmaY: isPinned ? 8 : 0,
         ),
         child: Container(
+          alignment: Alignment.bottomCenter,
           decoration: BoxDecoration(
             color: isPinned
                 ? (isDark ? Colors.black : Colors.white).withValues(alpha: 0.8)
