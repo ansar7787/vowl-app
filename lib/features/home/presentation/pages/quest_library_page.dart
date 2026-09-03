@@ -181,10 +181,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       controller: _scrollController,
                       physics: const BouncingScrollPhysics(),
                       slivers: [
-                        // Safe area spacing for floating app bar
-                        SliverToBoxAdapter(
-                          child: SizedBox(
-                            height: MediaQuery.paddingOf(context).top + 95.h,
+                        // Safe area spacing for floating app bar — pinned so the Sticky Filters stack below it
+                        SliverPersistentHeader(
+                          pinned: true,
+                          delegate: _TransparentTopPaddingDelegate(
+                            MediaQuery.paddingOf(context).top + 95.h,
                           ),
                         ),
 
@@ -1512,5 +1513,26 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(covariant _StickyFilterDelegate oldDelegate) {
     return true; // Parent ListenableBuilder ensures we only rebuild on state change
+  }
+}
+
+class _TransparentTopPaddingDelegate extends SliverPersistentHeaderDelegate {
+  final double height;
+  _TransparentTopPaddingDelegate(this.height);
+
+  @override
+  double get minExtent => height;
+  @override
+  double get maxExtent => height;
+
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    // Transparent, allowing content to visibly scroll underneath
+    return const SizedBox.shrink();
+  }
+
+  @override
+  bool shouldRebuild(covariant _TransparentTopPaddingDelegate oldDelegate) {
+    return oldDelegate.height != height;
   }
 }
