@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -195,7 +196,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
+                        // Prevent the layout from crushing when the keyboard opens
+                        final maxHeight = math.max(constraints.maxHeight, 600.h);
                         final isCompact = maxHeight < 580;
 
                         // Spacing calculations
@@ -234,7 +236,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                               SliverToBoxAdapter(
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
-                                        minHeight: constraints.maxHeight,
+                                        minHeight: maxHeight,
                                       ),
                                       child: IgnorePointer(
                                         ignoring:
