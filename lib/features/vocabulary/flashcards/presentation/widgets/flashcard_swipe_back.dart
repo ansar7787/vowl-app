@@ -52,45 +52,14 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
     super.dispose();
   }
 
-  double _getOptimalFontSize(
-    String text,
-    double availableWidth,
-    double maxFontSize,
-    double minFontSize,
-  ) {
-    if (text.isEmpty) return maxFontSize;
-    double fontSize = maxFontSize;
-    while (fontSize > minFontSize) {
-      final textPainter = TextPainter(
-        text: TextSpan(
-          text: text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: fontSize,
-            fontWeight: FontWeight.w800,
-            letterSpacing: 2,
-          ),
-        ),
-        maxLines: 1,
-        textDirection: TextDirection.ltr,
-      )..layout(minWidth: 0, maxWidth: double.infinity);
 
-      final width = textPainter.width;
-      textPainter.dispose(); // Prevent native memory leaks
-
-      if (width <= availableWidth) {
-        break;
-      }
-      fontSize -= 1;
-    }
-    return fontSize;
-  }
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       label:
           'Word: ${widget.quest.word ?? ""}. Definition: ${widget.quest.definition ?? ""}. '
+          '${widget.quest.explanation != null ? "Explanation: ${widget.quest.explanation}. " : ""}'
           '${widget.quest.example != null ? "Example: ${widget.quest.example}" : ""}',
       child: Container(
         width: widget.width,
@@ -127,14 +96,6 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
 
               final maxWordFontSize = compact ? 24.sp : 28.sp;
               final iconSize = compact ? 24.r : 28.r;
-              final availableWordWidth = widget.width - 32.w;
-
-              final optimalWordSize = _getOptimalFontSize(
-                widget.quest.word?.toUpperCase() ?? '',
-                availableWordWidth,
-                maxWordFontSize,
-                14.sp,
-              );
 
               return Stack(
                 children: [
@@ -197,17 +158,20 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      widget.quest.word?.toUpperCase() ?? '',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: optimalWordSize,
-                                        color: widget.isDark
-                                            ? Colors.white
-                                            : Colors.black87,
-                                        fontWeight: FontWeight.w800,
-                                        letterSpacing: 2,
+                                    FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        widget.quest.word?.toUpperCase() ?? '',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: maxWordFontSize,
+                                          color: widget.isDark
+                                              ? Colors.white
+                                              : Colors.black87,
+                                          fontWeight: FontWeight.w800,
+                                          letterSpacing: 2,
+                                        ),
                                       ),
                                     ),
                                     SizedBox(height: 8.h),
@@ -275,6 +239,51 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                             : null,
                                       ),
                                     ),
+                                    if (widget.quest.explanation != null &&
+                                        widget.quest.explanation!.isNotEmpty) ...[
+                                      SizedBox(height: compact ? 12.h : 16.h),
+                                      Container(
+                                        padding: EdgeInsets.all(12.r),
+                                        decoration: BoxDecoration(
+                                          color: widget.color.withValues(alpha: 0.05),
+                                          borderRadius: BorderRadius.circular(12.r),
+                                          border: Border.all(color: widget.color.withValues(alpha: 0.2)),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Icon(Icons.lightbulb_outline_rounded, color: widget.color, size: 14.r),
+                                                SizedBox(width: 6.w),
+                                                Text(
+                                                  'DID YOU KNOW?',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 10.sp,
+                                                    color: widget.color,
+                                                    fontWeight: FontWeight.w900,
+                                                    letterSpacing: 1.5,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(height: 8.h),
+                                            Text(
+                                              widget.quest.explanation!,
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: compact ? 13.sp : 14.sp,
+                                                color: widget.isDark ? Colors.white70 : Colors.black87,
+                                                height: 1.4,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                     if (widget.quest.example != null &&
                                         widget.quest.example!.isNotEmpty) ...[
                                       SizedBox(height: compact ? 12.h : 16.h),
@@ -296,7 +305,7 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 10.sp,
-                                          color: Colors.amber.shade700,
+                                          color: widget.color,
                                           fontWeight: FontWeight.w900,
                                           letterSpacing: 2,
                                         ),

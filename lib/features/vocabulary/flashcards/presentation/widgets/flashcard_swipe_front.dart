@@ -2,7 +2,6 @@ import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -109,66 +108,55 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                     SizedBox(height: compactHeight ? 16.h : 24.h),
                     Flexible(
                       flex: 6,
-                      child: Center(
-                        child: AutoSizeText(
-                          widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest),
-                          textAlign: TextAlign.center,
-                          minFontSize: 14,
-                          wrapWords: false,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: compactWidth ? 18.sp : 22.sp,
-                            fontWeight: FontWeight.w600,
-                            color: widget.isDark
-                                ? Colors.white
-                                : Colors.black87,
-                            height: 1.4,
-                          ),
-                          overflowReplacement: RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: widget.color.withValues(alpha: 0.4),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            crossAxisMargin: -16.w,
-                            child: NotificationListener<ScrollNotification>(
-                              onNotification: (notification) {
-                                if (notification is OverscrollNotification) {
-                                  if (notification.overscroll < 0) {
-                                    if (!_hasHitTop) {
-                                      _hasHitTop = true;
-                                      _hapticService.heavy();
-                                    }
-                                  } else if (notification.overscroll > 0) {
-                                    if (!_hasHitBottom) {
-                                      _hasHitBottom = true;
-                                      _hapticService.heavy();
-                                    }
-                                  }
-                                } else if (notification
-                                    is ScrollUpdateNotification) {
-                                  if (!notification.metrics.outOfRange &&
-                                      !notification.metrics.atEdge) {
-                                    _hasHitTop = false;
-                                    _hasHitBottom = false;
-                                  }
+                      child: RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: widget.color.withValues(alpha: 0.4),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        crossAxisMargin: -16.w,
+                        child: NotificationListener<ScrollNotification>(
+                          onNotification: (notification) {
+                            if (notification is OverscrollNotification) {
+                              if (notification.overscroll < 0) {
+                                if (!_hasHitTop) {
+                                  _hasHitTop = true;
+                                  _hapticService.heavy();
                                 }
-                                return false;
-                              },
-                              child: SingleChildScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                child: Text(
-                                  widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest),
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: widget.isDark
-                                        ? Colors.white
-                                        : Colors.black87,
-                                    height: 1.4,
-                                  ),
+                              } else if (notification.overscroll > 0) {
+                                if (!_hasHitBottom) {
+                                  _hasHitBottom = true;
+                                  _hapticService.heavy();
+                                }
+                              }
+                            } else if (notification
+                                is ScrollUpdateNotification) {
+                              if (!notification.metrics.outOfRange &&
+                                  !notification.metrics.atEdge) {
+                                _hasHitTop = false;
+                                _hasHitBottom = false;
+                              }
+                            }
+                            return false;
+                          },
+                          child: SingleChildScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: BoxConstraints(
+                                minHeight: compactHeight ? 80.h : 120.h,
+                              ),
+                              child: Text(
+                                widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: compactWidth ? 18.sp : 22.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: widget.isDark
+                                      ? Colors.white
+                                      : Colors.black87,
+                                  height: 1.4,
                                 ),
                               ),
                             ),

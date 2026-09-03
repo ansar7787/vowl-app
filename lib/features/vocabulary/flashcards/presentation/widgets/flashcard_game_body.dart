@@ -8,6 +8,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_action_buttons.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_back.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_front.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 
 // ─── Layout value object ──────────────────────────────────────────────────────
 
@@ -41,14 +42,8 @@ class _CardLayout {
 
     final hPad = isTablet ? 24.w : 12.w;
     final maxW = isTablet ? min(w * 0.80, 600.0) : w - (hPad * 2);
-    final double cardW = maxW
-        .clamp(250.0, max<double>(250.0, w - (hPad * 2)))
-        .toDouble();
-    final double cardH = isLandscape
-        ? (h * 0.85).clamp(220.0, max<double>(220.0, h * 0.9)).toDouble()
-        : isTablet
-        ? (h * 0.75).clamp(290.0, max<double>(290.0, h * 0.85)).toDouble()
-        : (h * 0.75).clamp(250.0, max<double>(250.0, h * 0.85)).toDouble();
+    final double cardW = maxW;
+    final double cardH = isLandscape ? h * 0.85 : h * 0.72;
 
     return _CardLayout._(
       horizontalPadding: hPad,
@@ -80,13 +75,13 @@ class FlashcardGameBody extends StatelessWidget {
   final bool isDark;
 
   // ── Card visual state (owned by parent) ──────────────────────────────────
-  final bool isFlipped;
+  final ValueNotifier<bool> isFlipped;
   final bool isAnswered;
   final bool isRetrying;
   final bool isHintActive;
   final bool hideActions;
-  final Offset dragOffset;
-  final double dragAngle;
+  final ValueNotifier<Offset> dragOffset;
+  final ValueNotifier<double> dragAngle;
 
   // ── Interaction callbacks ─────────────────────────────────────────────────
   final void Function(DragUpdateDetails) onHorizontalDragUpdate;
@@ -133,12 +128,16 @@ class FlashcardGameBody extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: layout.topSpacing),
-                      _InstructionBanner(
-                        primaryColor: primaryColor,
-                        isFlipped: isFlipped,
+                      ValueListenableBuilder<bool>(
+                        valueListenable: isFlipped,
+                        builder: (context, flipped, _) => _InstructionBanner(
+                          primaryColor: primaryColor,
+                          isFlipped: flipped,
+                          quest: quest,
+                        ),
                       ),
                       SizedBox(height: layout.instructionToCard),
-                      Expanded(
+                      Flexible(
                         child: Center(
                           child: _buildCardStack(
                             context,
@@ -150,12 +149,15 @@ class FlashcardGameBody extends StatelessWidget {
                       ),
                       SizedBox(height: layout.cardToActions),
                       if (!hideActions)
-                        FlashcardActionButtons(
-                          isFlipped: isFlipped,
-                          isTransitioning: isAnswered || isRetrying,
-                          isDark: isDark,
-                          onAgain: () => onSubmitAnswer(false),
-                          onGotIt: () => onSubmitAnswer(true),
+                        ValueListenableBuilder<bool>(
+                          valueListenable: isFlipped,
+                          builder: (context, flipped, _) => FlashcardActionButtons(
+                            isFlipped: flipped,
+                            isTransitioning: isAnswered || isRetrying,
+                            isDark: isDark,
+                            onAgain: () => onSubmitAnswer(false),
+                            onGotIt: () => onSubmitAnswer(true),
+                          ),
                         ),
                       SizedBox(height: layout.actionsToBottom),
                     ],
@@ -177,77 +179,94 @@ class FlashcardGameBody extends StatelessWidget {
     double height,
     double swipeThreshold,
   ) {
-    return Semantics(
-      label:
-          '${quest.word ?? ""}. ${isFlipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'DEFINITION REVEALED') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
-      child: GestureDetector(
-        onHorizontalDragUpdate: isFlipped ? onHorizontalDragUpdate : null,
-        onHorizontalDragEnd: isFlipped
-            ? (d) => onHorizontalDragEnd(d, swipeThreshold)
-            : null,
-        onTap: onCardTap,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // ── Shadow card beneath the draggable card ──────────────────
-            Transform.translate(
-              offset: const Offset(0, 10),
-              child: Container(
-                width: width * 0.96,
-                height: height,
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white10
-                      : Colors.black.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(24.r),
-                ),
+    return ValueListenableBuilder<bool>(
+      valueListenable: isFlipped,
+      builder: (context, flipped, child) {
+        return Semantics(
+          label:
+              '${quest.word ?? ""}. ${flipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'DEFINITION REVEALED') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP TO REVEAL')}',
+          child: GestureDetector(
+            onHorizontalDragUpdate: flipped ? onHorizontalDragUpdate : null,
+            onHorizontalDragEnd: flipped
+                ? (d) => onHorizontalDragEnd(d, swipeThreshold)
+                : null,
+            onTap: onCardTap,
+            child: child,
+          ),
+        );
+      },
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // ── Shadow card beneath the draggable card ──────────────────
+          Transform.translate(
+            offset: const Offset(0, 10),
+            child: Container(
+              width: width * 0.96,
+              height: height,
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white10
+                    : Colors.black.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(24.r),
               ),
             ),
-            // ── Draggable + flippable card ───────────────────────────────
-            RepaintBoundary(
-              child: AnimatedContainer(
-                duration: (isAnswered || isRetrying) ? 400.ms : Duration.zero,
-                curve: Curves.easeOutBack,
-                transform: Matrix4.identity()
-                  ..setTranslationRaw(dragOffset.dx, dragOffset.dy, 0.0)
-                  ..rotateZ(dragAngle),
-                child: TweenAnimationBuilder<double>(
-                  tween: Tween<double>(begin: 0, end: isFlipped ? 1 : 0),
-                  duration: 400.ms,
-                  curve: Curves.easeInOutBack,
-                  builder: (context, value, _) {
-                    return Transform(
-                      transform: Matrix4.identity()
-                        ..setEntry(3, 2, 0.001)
-                        ..rotateY(value * pi),
-                      alignment: Alignment.center,
-                      child: value > 0.5
-                          ? Transform(
-                              transform: Matrix4.identity()..rotateY(pi),
-                              alignment: Alignment.center,
-                              child: FlashcardSwipeBack(
+          ),
+          // ── Draggable + flippable card ───────────────────────────────
+          RepaintBoundary(
+            child: ListenableBuilder(
+              listenable: Listenable.merge([dragOffset, dragAngle]),
+              builder: (context, child) {
+                return AnimatedContainer(
+                  duration: (isAnswered || isRetrying) ? 400.ms : Duration.zero,
+                  curve: Curves.easeOutBack,
+                  transform: Matrix4.identity()
+                    ..setTranslationRaw(dragOffset.value.dx, dragOffset.value.dy, 0.0)
+                    ..rotateZ(dragAngle.value),
+                  child: child,
+                );
+              },
+              child: ValueListenableBuilder<bool>(
+                valueListenable: isFlipped,
+                builder: (context, flipped, _) {
+                  return TweenAnimationBuilder<double>(
+                    tween: Tween<double>(begin: 0, end: flipped ? 1 : 0),
+                    duration: 400.ms,
+                    curve: Curves.easeInOutBack,
+                    builder: (context, value, _) {
+                      return Transform(
+                        transform: Matrix4.identity()
+                          ..setEntry(3, 2, 0.001)
+                          ..rotateY(value * pi),
+                        alignment: Alignment.center,
+                        child: value > 0.5
+                            ? Transform(
+                                transform: Matrix4.identity()..rotateY(pi),
+                                alignment: Alignment.center,
+                                child: FlashcardSwipeBack(
+                                  quest: quest,
+                                  color: primaryColor,
+                                  isDark: isDark,
+                                  width: width,
+                                  height: height,
+                                  isHintActive: isHintActive,
+                                ),
+                              )
+                            : FlashcardSwipeFront(
                                 quest: quest,
                                 color: primaryColor,
                                 isDark: isDark,
                                 width: width,
                                 height: height,
-                                isHintActive: isHintActive,
                               ),
-                            )
-                          : FlashcardSwipeFront(
-                              quest: quest,
-                              color: primaryColor,
-                              isDark: isDark,
-                              width: width,
-                              height: height,
-                            ),
-                    );
-                  },
-                ),
+                      );
+                    },
+                  );
+                },
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -258,10 +277,12 @@ class FlashcardGameBody extends StatelessWidget {
 class _InstructionBanner extends StatelessWidget {
   final Color primaryColor;
   final bool isFlipped;
+  final VocabularyQuest quest;
 
   const _InstructionBanner({
     required this.primaryColor,
     required this.isFlipped,
+    required this.quest,
   });
 
   @override
@@ -295,14 +316,11 @@ class _InstructionBanner extends StatelessWidget {
                           'instructions.flashcards.swipe_instruction',
                           fallback: 'SWIPE LEFT OR RIGHT',
                         )
-                      : context.tr(
-                          'instructions.flashcards.tap_to_reveal',
-                          fallback: 'TAP TO REVEAL',
-                        ),
+                      : InstructionHelper.getInstruction(quest),
                   textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 9.sp,
+                  fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
                   letterSpacing: 1.1,

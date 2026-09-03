@@ -8,9 +8,10 @@ class FlashcardController extends ChangeNotifier {
   final SoundService _soundService;
   final void Function(bool) onSubmitAnswer;
 
-  Offset dragOffset = Offset.zero;
-  double dragAngle = 0.0;
-  bool isFlipped = false;
+  final ValueNotifier<Offset> dragOffset = ValueNotifier(Offset.zero);
+  final ValueNotifier<double> dragAngle = ValueNotifier(0.0);
+  final ValueNotifier<bool> isFlipped = ValueNotifier(false);
+
   bool isAnswered = false;
   bool isRetrying = false;
   bool? isCorrect;
@@ -31,10 +32,10 @@ class FlashcardController extends ChangeNotifier {
     isAnswered = false;
     isRetrying = retry;
     isCorrect = null;
-    isFlipped = false;
+    isFlipped.value = false;
     isHintActive = false;
-    dragOffset = Offset.zero;
-    dragAngle = 0.0;
+    dragOffset.value = Offset.zero;
+    dragAngle.value = 0.0;
     notifyListeners();
   }
 
@@ -48,25 +49,24 @@ class FlashcardController extends ChangeNotifier {
     if (isAnswered) return;
     if (isRetrying) {
       isRetrying = false;
+      notifyListeners();
     }
-    final oldDx = dragOffset.dx;
-    dragOffset = Offset(dragOffset.dx + details.delta.dx, 0);
-    dragAngle = dragOffset.dx / 500;
+    final oldDx = dragOffset.value.dx;
+    dragOffset.value = Offset(oldDx + details.delta.dx, 0);
+    dragAngle.value = dragOffset.value.dx / 500;
 
-    if ((dragOffset.dx - oldDx).abs() > 0 && (dragOffset.dx.abs() % 20 < 2)) {
+    if ((dragOffset.value.dx - oldDx).abs() > 0 && (dragOffset.value.dx.abs() % 20 < 2)) {
       _hapticService.selection();
     }
-    notifyListeners();
   }
 
   void onHorizontalDragEnd(DragEndDetails details, double threshold) {
     if (isAnswered) return;
-    if (dragOffset.dx.abs() > threshold) {
-      submitAnswer(dragOffset.dx > 0);
+    if (dragOffset.value.dx.abs() > threshold) {
+      submitAnswer(dragOffset.value.dx > 0);
     } else {
-      dragOffset = Offset.zero;
-      dragAngle = 0.0;
-      notifyListeners();
+      dragOffset.value = Offset.zero;
+      dragAngle.value = 0.0;
     }
   }
 
@@ -84,22 +84,22 @@ class FlashcardController extends ChangeNotifier {
 
     isAnswered = true;
     isCorrect = mastered;
-    dragOffset = Offset(mastered ? 1000 : -1000, 0);
+    dragOffset.value = Offset(mastered ? 1000 : -1000, 0);
     notifyListeners();
 
     onSubmitAnswer(mastered);
   }
 
   void requestHint() {
-    if (isFlipped) return;
-    isFlipped = true;
+    if (isFlipped.value) return;
+    isFlipped.value = true;
     isHintActive = true;
     notifyListeners();
 
     _hintTimer?.cancel();
     _hintTimer = Timer(const Duration(seconds: 4), () {
       if (!isHintActive || isAnswered) return;
-      isFlipped = false;
+      isFlipped.value = false;
       isHintActive = false;
       notifyListeners();
     });
@@ -108,14 +108,19 @@ class FlashcardController extends ChangeNotifier {
   void flipCard() {
     if (isAnswered) return;
     _hapticService.light();
-    if (isRetrying) isRetrying = false;
-    isFlipped = !isFlipped;
-    notifyListeners();
+    if (isRetrying) {
+      isRetrying = false;
+      notifyListeners();
+    }
+    isFlipped.value = !isFlipped.value;
   }
 
   @override
   void dispose() {
     _hintTimer?.cancel();
+    dragOffset.dispose();
+    dragAngle.dispose();
+    isFlipped.dispose();
     super.dispose();
   }
 }

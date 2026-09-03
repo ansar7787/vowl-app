@@ -109,6 +109,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               child: quest == null
                   ? const SizedBox()
                   : FlashcardGameBody(
+                      key: ValueKey(quest.id),
                       quest: quest,
                       primaryColor: _theme.primaryColor,
                       isDark: isDark,

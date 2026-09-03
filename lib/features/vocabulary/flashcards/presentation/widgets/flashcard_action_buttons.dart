@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class FlashcardActionButtons extends StatelessWidget {
   final bool isFlipped;
@@ -40,7 +41,7 @@ class FlashcardActionButtons extends StatelessWidget {
                 ),
             SizedBox(height: 8.h),
             Text(
-              'TAP CARD TO REVEAL',
+              context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP CARD TO REVEAL'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -62,9 +63,9 @@ class FlashcardActionButtons extends StatelessWidget {
         children: [
           Expanded(
             child: _ActionBtn(
-              label: 'AGAIN',
+              label: context.tr('actions.again', fallback: 'AGAIN'),
               icon: Icons.keyboard_double_arrow_left_rounded,
-              color: Colors.redAccent,
+              color: const Color(0xFFEF4444), // Premium Red
               isDark: isDark,
               onTap: isTransitioning ? null : onAgain,
             ),
@@ -72,9 +73,9 @@ class FlashcardActionButtons extends StatelessWidget {
           SizedBox(width: 16.w),
           Expanded(
             child: _ActionBtn(
-              label: 'GOT IT',
+              label: context.tr('actions.got_it', fallback: 'GOT IT'),
               icon: Icons.keyboard_double_arrow_right_rounded,
-              color: Colors.green,
+              color: const Color(0xFF10B981), // Premium Green
               isDark: isDark,
               onTap: isTransitioning ? null : onGotIt,
               isRight: true,
@@ -106,18 +107,18 @@ class _ActionBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: color.withValues(alpha: 0.15),
+      color: color.withValues(alpha: 0.10), // Softer background
       borderRadius: BorderRadius.circular(16.r),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(16.r),
-        splashColor: color.withValues(alpha: 0.3),
-        highlightColor: color.withValues(alpha: 0.2),
+        splashColor: color.withValues(alpha: 0.2),
+        highlightColor: color.withValues(alpha: 0.1),
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 16.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5), // Softer border
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -126,14 +127,19 @@ class _ActionBtn extends StatelessWidget {
                 Icon(icon, color: color, size: 20.r),
                 SizedBox(width: 4.w),
               ],
-              Text(
-                label,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: color,
-                  fontWeight: FontWeight.w900,
-                  fontSize: 14.sp,
-                  letterSpacing: 1.5,
+              Flexible( // Added flexible to prevent ellipsis if translated text is long
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    label,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: color,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 14.sp,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
                 ),
               ),
               if (isRight) ...[
