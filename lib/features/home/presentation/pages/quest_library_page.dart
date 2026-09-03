@@ -581,7 +581,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         alignment: AlignmentDirectional.centerEnd,
                         child: _buildStatMini(
                           Icons.arrow_upward_rounded,
-                          'NEXT RANK',
+                          context.tr('quest_archive.next_rank', fallback: 'NEXT RANK'),
                           progress >= 0.99
                               ? '🏆'
                               : _getNextStatus(context, progress),
@@ -901,7 +901,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       ),
                       SizedBox(height: 2.h),
                       Text(
-                        '${subtypes.length} Quests · $progressPercent%',
+                        context.tr(
+                          'quest_archive.quests_progress',
+                          fallback: '{} Quests · {}%',
+                          args: [subtypes.length.toString(), progressPercent.toString()],
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
@@ -1075,7 +1079,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           borderRadius: BorderRadius.circular(8.r),
                         ),
                         child: Text(
-                          'NEW',
+                          context.tr('quest_archive.new_badge', fallback: 'NEW').toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 7.sp,
@@ -1092,7 +1096,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       )
                     else
                       Text(
-                        'Lv.$currentLevel',
+                        context.tr('quest_archive.level', fallback: 'Lv.{}', args: [currentLevel.toString()]),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 9.sp,
@@ -1157,7 +1161,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             ),
             SizedBox(height: 8.h),
             Text(
-              'Try a different search or category',
+              context.tr('quest_archive.no_results_sub', fallback: 'Try a different search or category'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 12.sp,
@@ -1425,7 +1429,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Text(
-        "Lv.$currentLevel",
+        context.tr('quest_archive.level', fallback: 'Lv.{}', args: [currentLevel.toString()]),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 9.sp,
