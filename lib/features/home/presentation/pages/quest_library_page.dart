@@ -13,7 +13,6 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -107,6 +106,39 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     }).toList();
   }
 
+  /// Returns the category-specific accent color for filter chips.
+  Color _getCategoryChipColor(String cat) {
+    switch (cat) {
+      case 'all':
+        return const Color(0xFF6366F1);
+      case 'elite':
+        return LevelThemeHelper.getCategoryBaseColor('elitemastery');
+      default:
+        return LevelThemeHelper.getCategoryBaseColor(cat);
+    }
+  }
+
+  /// Returns the next rank label the user should aim for.
+  String _getNextStatus(BuildContext context, double progress) {
+    if (progress <= 0.0) return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
+    if (progress < 0.15) return context.tr('quest_archive.status_adventurer', fallback: 'Adventurer');
+    if (progress < 0.35) return context.tr('quest_archive.status_champion', fallback: 'Champion');
+    if (progress < 0.55) return context.tr('quest_archive.status_conqueror', fallback: 'Conqueror');
+    if (progress < 0.80) return context.tr('quest_archive.status_grandmaster', fallback: 'Grandmaster');
+    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
+  }
+
+  /// Category progress for section headers in the grouped "all" view.
+  double _getCategoryProgress(UserEntity user, QuestType category) {
+    final subtypes = _allSubtypes.where((s) => s.category == category);
+    if (subtypes.isEmpty) return 0;
+    int cleared = 0;
+    for (final s in subtypes) {
+      cleared += (user.completedLevels[s.name]?.length ?? 0).clamp(0, 200);
+    }
+    return cleared / (subtypes.length * 200);
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -161,67 +193,81 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           child: _buildLibraryStatsDashboard(user, isDark),
                         ),
 
-                        // 4. Horizontal Categories Track & Search Capsule (Sticky-like placement)
-                        SliverToBoxAdapter(
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 24.h),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                _buildSearchField(isDark, contentColor),
-                                SizedBox(height: 16.h),
-                                _buildCategoriesTrack(isDark),
-                              ],
-                            ),
+                        // 4. Sticky Filters (Search & Categories)
+                        SliverPersistentHeader(
+                          pinned: true,
+                          delegate: _StickyFilterDelegate(
+                            isDark: isDark,
+                            contentColor: contentColor,
+                            searchField: _buildSearchField(isDark, contentColor),
+                            categoriesTrack: _buildCategoriesTrack(isDark),
+                            topPadding: MediaQuery.of(context).padding.top + 95.h,
                           ),
                         ),
 
-                        // 5. Dynamic Quest Cards Grid/List
-                        filteredList.isEmpty
-                            ? SliverFillRemaining(
-                                hasScrollBody: false,
-                                child: Center(
-                                  child: Text(
-                                    context.tr(
-                                      'quest_archive.no_results',
-                                      fallback: 'No quests found.',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: contentColor.withValues(
-                                        alpha: 0.5,
-                                      ),
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              )
-                            : SliverPadding(
-                                padding: EdgeInsets.fromLTRB(
-                                  24.w,
-                                  24.h,
-                                  24.w,
-                                  100.h,
-                                ),
-                                sliver: SliverList(
-                                  delegate: SliverChildBuilderDelegate((
-                                    context,
-                                    index,
-                                  ) {
-                                    return Padding(
-                                      padding: EdgeInsets.only(bottom: 16.h),
-                                      child: _buildLibraryQuestCard(
-                                        context,
-                                        user,
-                                        filteredList[index],
-                                        isDark,
-                                      ),
-                                    );
-                                  }, childCount: filteredList.length),
-                                ),
+                        // 5. Content: Grouped sections vs Filtered vertical list
+                        //    - "all" + no search → horizontal sections per category
+                        //    - specific category or search → vertical card list
+                        if (_selectedCategory.value == 'all' &&
+                            _searchQuery.value.isEmpty) ...[
+                          // ── Grouped Category Sections ──
+                          SliverList(
+                            delegate: SliverChildBuilderDelegate((
+                              context,
+                              index,
+                            ) {
+                              final category = QuestType.values[index];
+                              final subtypes = _allSubtypes
+                                  .where((s) => s.category == category)
+                                  .toList();
+                              if (subtypes.isEmpty) {
+                                return const SizedBox.shrink();
+                              }
+                              return _buildCategorySection(
+                                category,
+                                subtypes,
+                                user,
+                                isDark,
+                                contentColor,
+                              );
+                            }, childCount: QuestType.values.length),
+                          ),
+                          SliverToBoxAdapter(
+                            child: SizedBox(height: 100.h),
+                          ),
+                        ] else ...[
+                          // ── Filtered Vertical List ──
+                          if (filteredList.isEmpty)
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: _buildEmptyState(contentColor),
+                            )
+                          else
+                            SliverPadding(
+                              padding: EdgeInsets.fromLTRB(
+                                24.w,
+                                24.h,
+                                24.w,
+                                100.h,
                               ),
+                              sliver: SliverList(
+                                delegate: SliverChildBuilderDelegate((
+                                  context,
+                                  index,
+                                ) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(bottom: 20.h),
+                                    child: _buildLibraryQuestCard(
+                                      context,
+                                      user,
+                                      filteredList[index],
+                                      isDark,
+                                    ),
+                                  );
+                                }, childCount: filteredList.length),
+                              ),
+                            ),
+                        ],
                       ],
                     );
                   },
@@ -362,28 +408,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                   ),
                 ),
               ),
-              // Stats Indicator (decorative)
-              ExcludeSemantics(
-                child: Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.03),
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: (isDark ? Colors.white : Colors.black).withValues(
-                        alpha: 0.1,
-                      ),
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.travel_explore_rounded,
-                    color: const Color(0xFF3B82F6),
-                    size: 20.r,
-                  ),
-                ),
-              ),
+              // Balanced spacer to match back button width
+              SizedBox(width: 48.r),
             ],
           ),
         ),
@@ -529,12 +555,13 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                   children: [
                     Expanded(
                       child: _buildStatMini(
-                        Icons.military_tech_rounded,
+                        Icons.check_circle_rounded,
                         context.tr(
-                          'quest_archive.xp_power',
-                          fallback: 'XP Power',
+                          'quest_archive.levels_cleared',
+                          fallback: 'Levels Cleared',
+                          args: [clearedLevels.toString(), totalLevels.toString()],
                         ),
-                        '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
+                        '$clearedLevels',
                         const Color(0xFF3B82F6),
                         isDark,
                       ),
@@ -542,12 +569,12 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     Expanded(
                       child: Center(
                         child: _buildStatMini(
-                          Icons.auto_stories_rounded,
+                          Icons.stars_rounded,
                           context.tr(
-                            'quest_archive.quests',
-                            fallback: 'Quests',
+                            'quest_archive.status',
+                            fallback: 'Status',
                           ),
-                          "${_allSubtypes.length}",
+                          _getGlobalStatus(context, progress),
                           const Color(0xFF3B82F6),
                           isDark,
                         ),
@@ -557,13 +584,12 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       child: Align(
                         alignment: AlignmentDirectional.centerEnd,
                         child: _buildStatMini(
-                          Icons.stars_rounded,
-                          context.tr(
-                            'quest_archive.status',
-                            fallback: 'Status',
-                          ),
-                          _getGlobalStatus(context, progress),
-                          const Color(0xFF3B82F6),
+                          Icons.arrow_upward_rounded,
+                          'NEXT RANK',
+                          progress >= 0.99
+                              ? '🏆'
+                              : _getNextStatus(context, progress),
+                          const Color(0xFF10B981),
                           isDark,
                         ),
                       ),
@@ -759,8 +785,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
           final cat = _categories[index];
           final isSelected = _selectedCategory.value == cat;
 
-          Color activeColor = const Color(0xFF3B82F6);
-          if (cat == 'elite') activeColor = const Color(0xFFFFD700);
+          Color activeColor = _getCategoryChipColor(cat);
           final label = context
               .tr('categories.${cat.toLowerCase()}')
               .toUpperCase();
@@ -825,6 +850,343 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     );
   }
 
+  // ═══════════════════════════════════════════════════════════════════════════
+  // GROUPED "ALL" VIEW — Category Section (Netflix pattern)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  Widget _buildCategorySection(
+    QuestType category,
+    List<GameSubtype> subtypes,
+    UserEntity user,
+    bool isDark,
+    Color contentColor,
+  ) {
+    final catColor = LevelThemeHelper.getCategoryBaseColor(
+      category == QuestType.eliteMastery ? 'elitemastery' : category.name,
+    );
+    final displayCatColor = isDark
+        ? catColor
+        : HSLColor.fromColor(catColor).withLightness(0.4).toColor();
+    final progress = _getCategoryProgress(user, category);
+    final progressPercent = (progress * 100).toInt();
+    final catLabel = context.tr(
+      'categories.${category == QuestType.eliteMastery ? 'elite' : category.name}',
+    );
+
+    return Padding(
+      padding: EdgeInsets.only(top: 28.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // ── Section Header ──
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Row(
+              children: [
+                Container(
+                  width: 6.w,
+                  height: 24.h,
+                  decoration: BoxDecoration(
+                    color: displayCatColor,
+                    borderRadius: BorderRadius.circular(3.r),
+                  ),
+                ),
+                SizedBox(width: 10.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        catLabel.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w900,
+                          color: contentColor,
+                          letterSpacing: 1.5,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(height: 2.h),
+                      Text(
+                        '${subtypes.length} Quests · $progressPercent%',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w700,
+                          color: displayCatColor.withValues(alpha: 0.7),
+                        ),
+                        maxLines: 1,
+                      ),
+                    ],
+                  ),
+                ),
+                ScaleButton(
+                  onTap: () {
+                    _selectedCategory.value =
+                        category == QuestType.eliteMastery
+                            ? 'elite'
+                            : category.name;
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: displayCatColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: displayCatColor.withValues(alpha: 0.2),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          context.tr('profile.view_all', fallback: 'VIEW ALL'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w900,
+                            color: displayCatColor,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        SizedBox(width: 4.w),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          size: 10.r,
+                          color: displayCatColor,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 16.h),
+
+          // ── Horizontal Card Scroll ──
+          SizedBox(
+            height: 160.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              itemCount: subtypes.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsetsDirectional.only(end: 14.w),
+                  child: _buildCompactQuestCard(
+                    subtypes[index],
+                    user,
+                    isDark,
+                    displayCatColor,
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCompactQuestCard(
+    GameSubtype subtype,
+    UserEntity user,
+    bool isDark,
+    Color catColor,
+  ) {
+    final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
+    final currentLevel = (user.completedLevels[subtype.name]?.length ?? 0) + 1;
+    final completedCount = (currentLevel - 1).clamp(0, 200);
+    final isMastered = completedCount >= 200;
+    final isNew =
+        !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
+    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+
+    return Semantics(
+      button: true,
+      label: '${theme.title}, Level $currentLevel',
+      child: ScaleButton(
+        onTap: () => context.push(
+          '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(subtype.category.name)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
+        ),
+        child: ExcludeSemantics(
+          child: Container(
+            width: 148.w,
+            padding: EdgeInsets.all(16.r),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.06)
+                  : Colors.white.withValues(alpha: 0.7),
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: isMastered
+                    ? const Color(0xFFFFD700).withValues(alpha: 0.4)
+                    : catColor.withValues(alpha: isDark ? 0.15 : 0.1),
+                width: isMastered ? 1.5 : 1,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.04),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Icon + Badge Row
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 42.r,
+                      height: 42.r,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            catColor,
+                            catColor.withValues(alpha: 0.7),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(14.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: catColor.withValues(alpha: 0.3),
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        GameHelper.getIconForSubtype(subtype),
+                        color: Colors.white,
+                        size: 22.r,
+                      ),
+                    ),
+                    if (isNew)
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 6.w,
+                          vertical: 3.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: catColor,
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                        child: Text(
+                          'NEW',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 7.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )
+                    else if (isMastered)
+                      Icon(
+                        Icons.verified_rounded,
+                        color: const Color(0xFFFFD700),
+                        size: 18.r,
+                      )
+                    else
+                      Text(
+                        'Lv.$currentLevel',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w900,
+                          color: catColor.withValues(alpha: 0.7),
+                        ),
+                      ),
+                  ],
+                ),
+                const Spacer(),
+                // Title
+                Text(
+                  theme.title,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w900,
+                    color: contentColor,
+                    height: 1.2,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(height: 8.h),
+                // Mini Progress Bar
+                _buildProgressBar(catColor, currentLevel),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // EMPTY STATE
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  Widget _buildEmptyState(Color contentColor) {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 48.w),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.search_off_rounded,
+              size: 56.r,
+              color: contentColor.withValues(alpha: 0.2),
+            ),
+            SizedBox(height: 16.h),
+            Text(
+              context.tr(
+                'quest_archive.no_results',
+                fallback: 'No matching quests found',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                color: contentColor.withValues(alpha: 0.5),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              'Try a different search or category',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w500,
+                color: contentColor.withValues(alpha: 0.3),
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // FILTERED VIEW — Expanded Quest Card
+  // ═══════════════════════════════════════════════════════════════════════════
+
   Widget _buildLibraryQuestCard(
     BuildContext context,
     UserEntity user,
@@ -833,14 +1195,15 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   ) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final currentLevel = (user.completedLevels[subtype.name]?.length ?? 0) + 1;
+    final completedCount = (currentLevel - 1).clamp(0, 200);
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
+    final isMastered = completedCount >= 200;
     final displayColor = isDark
         ? theme.primaryColor
         : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
-    final completedPercent = (((currentLevel - 1).clamp(0, 200)) / 200 * 100)
-        .toInt();
+    final completedPercent = (completedCount / 200 * 100).toInt();
 
     return Semantics(
       button: true,
@@ -852,72 +1215,135 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(subtype.category.name)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
           ),
           child: ExcludeSemantics(
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                // Card Body
-                GlassTile(
-                  borderRadius: BorderRadius.circular(32.r),
-                  padding: EdgeInsets.all(24.r),
-                  glassOpacity: 0.15,
-                  showShadow: false,
-                  usePremiumStyle: true,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 60.r),
-                      SizedBox(width: 20.w),
-                      Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : Colors.white.withValues(alpha: 0.7),
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: isMastered
+                      ? const Color(0xFFFFD700).withValues(alpha: 0.4)
+                      : displayColor.withValues(alpha: isDark ? 0.12 : 0.08),
+                  width: isMastered ? 1.5 : 1,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: isDark ? 0.15 : 0.04),
+                    blurRadius: 16,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: IntrinsicHeight(
+                child: Row(
+                  children: [
+                    // Left Color Stripe — instant category identification
+                    Container(
+                      width: 5.w,
+                      decoration: BoxDecoration(
+                        color: displayColor,
+                        borderRadius: BorderRadiusDirectional.only(
+                          topStart: Radius.circular(24.r),
+                          bottomStart: Radius.circular(24.r),
+                        ),
+                      ),
+                    ),
+                    // Icon Column
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 20.h,
+                      ),
+                      child: Container(
+                        width: 52.r,
+                        height: 52.r,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              displayColor,
+                              displayColor.withValues(alpha: 0.7),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(18.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: displayColor.withValues(alpha: 0.3),
+                              blurRadius: 12,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          GameHelper.getIconForSubtype(subtype),
+                          color: Colors.white,
+                          size: 26.r,
+                        ),
+                      ),
+                    ),
+                    // Content Column
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          top: 18.h,
+                          bottom: 18.h,
+                          right: 16.w,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Row(
                               children: [
-                                Flexible(
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 8.w,
-                                      vertical: 4.h,
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 8.w,
+                                    vertical: 3.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: displayColor.withValues(alpha: 0.12),
+                                    borderRadius: BorderRadius.circular(8.r),
+                                  ),
+                                  child: Text(
+                                    context.tr(
+                                      'categories.${subtype.category.name.toLowerCase()}',
                                     ),
-                                    decoration: BoxDecoration(
-                                      color: displayColor.withValues(
-                                        alpha: 0.12,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.r),
-                                    ),
-                                    child: Text(
-                                      context.tr(
-                                        'categories.${subtype.category.name.toLowerCase()}',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 8.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: displayColor,
-                                        letterSpacing: 0.5,
-                                      ),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: displayColor,
+                                      letterSpacing: 0.5,
                                     ),
                                   ),
                                 ),
+                                const Spacer(),
+                                _buildBadge(
+                                  displayColor,
+                                  currentLevel,
+                                  isNew,
+                                  isMastered,
+                                ),
                               ],
                             ),
-                            SizedBox(height: 6.h),
+                            SizedBox(height: 8.h),
                             Text(
                               theme.title.toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 16.sp,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.w900,
                                 color: contentColor,
-                                letterSpacing: 1,
+                                letterSpacing: 0.8,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
-                            SizedBox(height: 8.h),
+                            SizedBox(height: 10.h),
                             _buildProgressBar(displayColor, currentLevel),
-                            SizedBox(height: 8.h),
+                            SizedBox(height: 6.h),
                             Text(
                               context.tr(
                                 'quest_archive.completed',
@@ -931,57 +1357,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                                 color: displayColor.withValues(alpha: 0.6),
                                 letterSpacing: 0.5,
                               ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(width: 12.w),
-                      _buildBadge(displayColor, currentLevel, isNew),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-
-                // Floating Spatial Icon
-                PositionedDirectional(
-                  start: 20.w,
-                  top: -15.h,
-                  child:
-                      Container(
-                        width: 64.r,
-                        height: 64.r,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              displayColor,
-                              displayColor.withValues(alpha: 0.7),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: displayColor.withValues(alpha: 0.4),
-                              blurRadius: 20,
-                              offset: const Offset(0, 8),
-                            ),
-                          ],
-                        ),
-                        child: Icon(
-                          GameHelper.getIconForSubtype(subtype),
-                          color: Colors.white,
-                          size: 32.r,
-                        ),
-                      ).animate().moveY(
-                        begin: 10,
-                        end: 0,
-                        duration: 400.ms,
-                        curve: Curves.easeOutBack,
-                      ),
-                ),
-              ],
+              ),
             ),
           ),
         ),
@@ -1016,48 +1399,123 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     );
   }
 
-  Widget _buildBadge(Color color, int currentLevel, bool isNew) {
+  Widget _buildBadge(Color color, int currentLevel, bool isNew, [bool isMastered = false]) {
+    if (isMastered) {
+      return Icon(
+        Icons.verified_rounded,
+        color: const Color(0xFFFFD700),
+        size: 20.r,
+      );
+    }
+
     if (isNew) {
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(10.r),
           boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10),
+            BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 8),
           ],
         ),
         child: Text(
           context.tr('quest_archive.new_badge', fallback: 'New'),
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 10.sp,
+            fontSize: 9.sp,
             fontWeight: FontWeight.w900,
             color: Colors.white,
           ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
         ),
       ).animate().shimmer(duration: 1.seconds);
     }
 
     return Container(
-      padding: EdgeInsets.all(10.r),
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
-        shape: BoxShape.circle,
+        borderRadius: BorderRadius.circular(10.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Text(
-        "$currentLevel",
+        "Lv.$currentLevel",
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 14.sp,
+          fontSize: 9.sp,
           fontWeight: FontWeight.w900,
           color: color,
         ),
-        maxLines: 1,
       ),
     );
+  }
+}
+
+class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
+  final bool isDark;
+  final Color contentColor;
+  final Widget searchField;
+  final Widget categoriesTrack;
+  final double topPadding;
+
+  _StickyFilterDelegate({
+    required this.isDark,
+    required this.contentColor,
+    required this.searchField,
+    required this.categoriesTrack,
+    required this.topPadding,
+  });
+
+  @override
+  double get minExtent => 140.h; // search (60) + space (16) + chips (40) + padding
+  @override
+  double get maxExtent => 140.h;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    // Determine how much glass effect to show based on scroll overlap
+    final isPinned = overlapsContent || shrinkOffset > 0;
+
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(
+          sigmaX: isPinned ? 8 : 0,
+          sigmaY: isPinned ? 8 : 0,
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            color: isPinned
+                ? (isDark ? Colors.black : Colors.white).withValues(alpha: 0.8)
+                : Colors.transparent,
+            border: isPinned
+                ? Border(
+                    bottom: BorderSide(
+                      color: (isDark ? Colors.white : Colors.black)
+                          .withValues(alpha: 0.05),
+                    ),
+                  )
+                : null,
+          ),
+          padding: EdgeInsets.only(top: 16.h, bottom: 8.h),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              searchField,
+              SizedBox(height: 12.h),
+              categoriesTrack,
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  bool shouldRebuild(covariant _StickyFilterDelegate oldDelegate) {
+    return isDark != oldDelegate.isDark ||
+        contentColor != oldDelegate.contentColor;
   }
 }
