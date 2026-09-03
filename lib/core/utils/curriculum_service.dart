@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
@@ -44,10 +45,50 @@ class CurriculumService {
   /// Pre-warms the level count cache for a list of game types in the
   /// background. Safe to call during app startup — completions are ignored.
   static void prewarmCache(List<String> gameTypes) {
-    for (final type in gameTypes) {
-      if (!levelCache.containsKey(type)) {
-        // unawaited: intentional fire-and-forget; suppresses lint warning.
-        unawaited(getTotalLevels(type));
+    unawaited(_prewarmCacheFromManifest(gameTypes));
+  }
+
+  static Future<void> _prewarmCacheFromManifest(List<String> gameTypes) async {
+    try {
+      // 1. Load the manifest ONCE (O(1) disk read instead of 1,560 probes).
+      final manifestContent = await rootBundle.loadString('AssetManifest.json');
+      final Map<String, dynamic> manifestMap = json.decode(manifestContent);
+
+      // 2. Loop through games and count levels instantly in RAM.
+      for (final type in gameTypes) {
+        if (!levelCache.containsKey(type)) {
+          int totalLevels = 0;
+          int batchIndex = 1;
+
+          while (batchIndex <= 20) {
+            final start = (batchIndex - 1) * 10 + 1;
+            final path = QuestRegistry.getAssetPath(type, start);
+            
+            // AssetManifest keys exactly match the full asset path string.
+            if (manifestMap.containsKey(path)) {
+              totalLevels += 10;
+              batchIndex++;
+            } else {
+              break;
+            }
+          }
+
+          final finalCount = totalLevels > 0 ? totalLevels : 10;
+          levelCache[type] = finalCount;
+
+          if (kDebugMode) {
+            debugPrint(
+              'CurriculumService: "$type" resolved as $finalCount levels.',
+            );
+          }
+        }
+      }
+    } catch (e) {
+      // Fallback if AssetManifest parsing fails for any reason
+      for (final type in gameTypes) {
+        if (!levelCache.containsKey(type)) {
+          unawaited(getTotalLevels(type));
+        }
       }
     }
   }
@@ -56,11 +97,6 @@ class CurriculumService {
   ///
   /// Results are cached after the first call. Parallel calls for the same
   /// type share a single in-flight future to avoid redundant asset probes.
-  ///
-  /// ### Complexity
-  /// O(b) asset-bundle `load` calls where b ≤ 20 (safety cap at 200 levels).
-  /// Each `load` is a native platform channel call with negligible latency on
-  /// modern devices. The result is cached so subsequent calls are O(1).
   static Future<int> getTotalLevels(String gameType) {
     final cached = levelCache[gameType];
     if (cached != null) return Future.value(cached);
@@ -97,7 +133,7 @@ class CurriculumService {
 
       if (kDebugMode) {
         debugPrint(
-          'CurriculumService: "$gameType" resolved as $finalCount levels.',
+          'CurriculumService: "$gameType" resolved as $finalCount levels (Fallback).',
         );
       }
 
