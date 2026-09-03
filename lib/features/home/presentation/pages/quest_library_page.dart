@@ -181,12 +181,19 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       controller: _scrollController,
                       physics: const BouncingScrollPhysics(),
                       slivers: [
-                        // Safe area spacing for floating app bar — pinned so the Sticky Filters stack below it
+                        // 1. Pinned spacer: Determines exactly where the Sticky Filter stops.
+                        // Matches the height of the Floating App Bar (approx 60.h) + Status Bar.
                         SliverPersistentHeader(
                           pinned: true,
                           delegate: _TransparentTopPaddingDelegate(
-                            MediaQuery.paddingOf(context).top + 95.h,
+                            MediaQuery.paddingOf(context).top + 60.h,
                           ),
+                        ),
+
+                        // 2. Unpinned spacer: Adds the extra initial space so the Stats Dashboard
+                        // starts at the original desired position (95.h total), but this space scrolls away.
+                        SliverToBoxAdapter(
+                          child: SizedBox(height: 35.h),
                         ),
 
                         // 3. Stats Dashboard Panel
