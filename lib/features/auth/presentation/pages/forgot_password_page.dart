@@ -150,7 +150,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        // --- Header: Brand (Always visible) ---
+                                        // --- Header: Brand (Perfectly Centered) ---
                                         Hero(
                                           tag: 'auth_title',
                                           child: Material(
@@ -161,16 +161,17 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                 'Vowl',
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
-                                                  fontSize: 42.sp,
+                                                  fontSize: 48.sp,
                                                   fontWeight: FontWeight.w900,
-                                                  color: const Color(0xFF6366F1),
+                                                  color: const Color(0xFF6366F1), // Solid premium brand color
                                                   letterSpacing: -1.5,
+                                                  height: 1.0,
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                        SizedBox(height: 32.h),
+                                        SizedBox(height: 36.h), // Perfect premium gap without disconnecting the UI
                                         
                                         // --- Interactive Form Card ---
                                         Stack(

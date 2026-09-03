@@ -146,9 +146,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
         ? Colors.black.withValues(alpha: 0.75)
         : Colors.white.withValues(alpha: 0.85);
     final textColor = isDark ? Colors.white : Colors.black87;
-    final borderColor = isDark
-        ? Colors.white.withValues(alpha: 0.15)
-        : Colors.black.withValues(alpha: 0.1);
+    final borderColor = const Color(0xFF6366F1); // Primary Indigo for neon-glass effect
     final greeting = _getGreeting(context);
 
     // BUG FIX: Use .r for symmetric scaling to prevent squashing on
@@ -170,22 +168,21 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
             child: Image.asset(currentAsset, height: widget.size.r),
           ),
 
-          // 2. Adaptive Speech Bubble — positioned above mascot
-          //    with responsive offset that scales with screen size.
+          // 2. Adaptive Speech Bubble — perfectly centered above the mascot
+          //    to maintain Diamond Standard vertical symmetry and focus.
           Positioned(
-            top: -(28.r).clamp(20.0, 40.0),
+            bottom: widget.size.r * 0.9,
             child: CustomPaint(
-              key: ValueKey(greeting),
               painter: SpeechBubblePainter(
                 color: bubbleColor,
                 borderColor: borderColor,
               ),
               child: Container(
                 constraints: BoxConstraints(
-                  minWidth: 50.w,
+                  minWidth: 60.w,
                   maxWidth: 160.w,
                 ),
-                padding: EdgeInsets.fromLTRB(12.w, 6.h, 12.w, 16.h),
+                padding: EdgeInsets.fromLTRB(16.w, 8, 16.w, 18),
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
@@ -195,19 +192,20 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
                       fontFamily: 'Outfit',
                       color: textColor,
                       fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w500,
                       letterSpacing: 0.1,
                     ),
                   ),
                 ),
               ),
             )
-            .animate()
+            .animate(key: ValueKey(greeting))
             .fade(duration: 300.ms)
             .scale(
               begin: const Offset(0.4, 0.4),
               curve: Curves.elasticOut,
               duration: 1000.ms,
+              alignment: Alignment.bottomCenter,
             ),
           ),
         ],
@@ -228,30 +226,68 @@ class SpeechBubblePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     final borderPaint = Paint()
-      ..color = borderColor
+      ..color = borderColor.withValues(alpha: 0.6) // Premium translucent border
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
+      ..strokeWidth = 1.5;
 
     final path = Path();
-    final r = 50.0;
+    final bubbleHeight = size.height - 10; // Sleek 10px tail
+    final r = 12.0; // Tighter squircle radius for a slimmer bubble
 
-    // Draw rounded rectangle (The Bubble)
+    // 1. Draw the main bubble body
     path.addRRect(
-      RRect.fromLTRBR(0, 0, size.width, size.height - 10, Radius.circular(r)),
+      RRect.fromLTRBR(0, 0, size.width, bubbleHeight, Radius.circular(r)),
     );
 
-    // Draw a "Friendly" rounded tail
+    // 2. The "Liquid Tail" - mathematically continuous bezier curves (Centered)
     final tailPath = Path();
-    tailPath.moveTo(size.width / 2 - 14, size.height - 10);
-    tailPath.quadraticBezierTo(
-      size.width / 2,
-      size.height + 6,
-      size.width / 2 + 14,
-      size.height - 10,
+    
+    // Start the tail smoothly on the bottom edge, 12px left of center
+    tailPath.moveTo(size.width / 2 - 12, bubbleHeight);
+    
+    // Swoop down to the exact center tip (10px down)
+    tailPath.cubicTo(
+      size.width / 2 - 6, bubbleHeight, // Control 1
+      size.width / 2 - 2, bubbleHeight + 10, // Control 2
+      size.width / 2, bubbleHeight + 10, // Tail tip
+    );
+    
+    // Swoop back up to 12px right of center
+    tailPath.cubicTo(
+      size.width / 2 + 2, bubbleHeight + 10, // Control 1
+      size.width / 2 + 6, bubbleHeight, // Control 2
+      size.width / 2 + 12, bubbleHeight, // Melt point
     );
 
+    tailPath.close();
+
+    // 3. Combine shapes flawlessly
     final fullPath = Path.combine(PathOperation.union, path, tailPath);
 
+    // 4. Draw Premium Drop Shadows (3D depth)
+    // Ambient colored glow
+    canvas.save();
+    canvas.translate(0, 8);
+    canvas.drawPath(
+      fullPath,
+      Paint()
+        ..color = borderColor.withValues(alpha: 0.15)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12.0),
+    );
+    canvas.restore();
+
+    // Direct soft contact shadow
+    canvas.save();
+    canvas.translate(0, 3);
+    canvas.drawPath(
+      fullPath,
+      Paint()
+        ..color = Colors.black.withValues(alpha: 0.08)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4.0),
+    );
+    canvas.restore();
+
+    // 5. Draw the actual bubble and border
     canvas.drawPath(fullPath, paint);
     canvas.drawPath(fullPath, borderPaint);
   }
