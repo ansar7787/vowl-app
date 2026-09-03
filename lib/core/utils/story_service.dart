@@ -213,7 +213,7 @@ class StoryServiceImpl implements StoryService {
     'synonymSearch':
         "Having a variety of words for the same thing makes you a much better speaker. Let's build your word flexibility!",
     'topicVocab':
-        "Let's build your vocabulary naturally by organizing words into groups. It's much easier to remember them this way!",
+        "Your brain loves grouping things! Let's sort these words by topic so they naturally stick in your memory.",
     'wordFormation':
         "Welcome to word building! We're going to learn how to create powerful new words by mixing and matching their core pieces.",
     'contextualUsage':
@@ -1224,11 +1224,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'topicvocab': [
       "",
-      "Great start! Grouping words by topic helps you recall them much faster in real conversations.",
-      "You're developing a real instinct for organizing your vocabulary bank.",
-      "50 levels cleared! Your ability to sort and categorize words is incredibly sharp.",
-      "Level 100! Your topical vocabulary is extremely vast. Keep up the amazing work!",
-      "Double Centurion! You have a highly organized, native-like command of English vocabulary.",
+      "You're off to a great start! Sorting words like this makes it so much easier to find them when you're actually speaking.",
+      "You're getting so fast at this! You're building a mental map of English that'll make talking feel effortless.",
+      "50 levels down! Your brain is doing an amazing job soaking all these related words up. Keep it going!",
+      "Level 100! That's a massive milestone. You've built a seriously impressive vocabulary that you can actually use in real life.",
+      "Level 200! Honestly, it's incredible how many words you've mastered. You can talk about almost anything with total confidence.",
     ],
     'wordformation': [
       "",
