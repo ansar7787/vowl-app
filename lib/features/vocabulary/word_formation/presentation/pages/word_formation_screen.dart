@@ -322,12 +322,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                               isCompact,
                                             ),
                                             SizedBox(
-                                              height:
-                                                  (_controller
-                                                          .isFirstStagePassed &&
-                                                      !_controller.isAnswered)
-                                                  ? 380.h
-                                                  : gapBottom,
+                                              height: gapBottom,
                                             ),
                                           ],
                                         ),
