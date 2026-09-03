@@ -56,11 +56,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     // FIX: Prewarm the curriculum cache for ALL game subtypes so that when the
     // user taps any quest card, ModernCategoryMap can read the level count
     // synchronously from cache instead of doing a cold async asset probe.
-    // This is exactly what CategoryGamesPage does for its subset of games —
-    // without it, the Quest Library path skipped the cache warm-up entirely,
-    // causing the map to show a blank loading state on entry (the "stuck/laggy"
-    // transition bug).
-    CurriculumService.prewarmCache(_allSubtypes.map((s) => s.name).toList());
+    // Moved to addPostFrameCallback to guarantee 60fps page transition animations
+    // by deferring the heavy JSON parsing (78 files) until after the layout builds.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      CurriculumService.prewarmCache(_allSubtypes.map((s) => s.name).toList());
+    });
   }
 
   void _onSearchChanged() {
