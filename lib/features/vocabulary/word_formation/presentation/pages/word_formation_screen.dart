@@ -339,7 +339,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                     SliverToBoxAdapter(
                                       child: Padding(
                                         padding: EdgeInsets.only(
-                                          bottom: 24.h,
+                                          bottom: 24.h + MediaQuery.viewInsetsOf(context).bottom,
                                         ),
                                         child: TypeToConfirmOverlay(
                                           expectedText:
