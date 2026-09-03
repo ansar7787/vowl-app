@@ -1232,11 +1232,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'wordformation': [
       "",
-      "Great job! You're really getting the hang of morphing words to fit the sentence.",
-      "You're doing fantastic! Your instinct for grammatical endings is growing stronger every day.",
-      "50 levels cleared! You're bending words like a true natural now.",
-      "Level 100! This is a massive milestone. You've truly mastered the art of word building!",
-      "Level 200! Absolutely incredible. You understand the very DNA of the English language.",
+      "Great job! You're getting a real feel for how to naturally adapt words to fit exactly what you want to say.",
+      "You're doing fantastic! Changing nouns into adjectives and verbs into nouns is how native speakers think.",
+      "50 levels cleared! Your ability to build new words on the fly is getting seriously impressive.",
+      "Level 100! You've hit a huge milestone. Your understanding of English word structure is now incredibly strong.",
+      "Level 200! Absolutely phenomenal. You have completely mastered the art of word formation.",
     ],
     'contextualusage_beat_deleted': [],
     'completesentence': [
