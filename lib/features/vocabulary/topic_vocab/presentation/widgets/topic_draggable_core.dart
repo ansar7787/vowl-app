@@ -45,9 +45,14 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
       onHorizontalDragEnd: (details) {
         final velocity = details.primaryVelocity ?? 0;
         if (velocity.abs() > 500 || _dragOffset.value.abs() > 60) {
-          // Lower threshold for extra small card
+          // Determine intent: If flicked hard, trust velocity. 
+          // If dragged into position (velocity low but offset high), trust offset.
+          final double intentVelocity = velocity.abs() > 500
+              ? velocity
+              : (_dragOffset.value > 0 ? 1000 : -1000);
+
           widget.onFlick(
-            velocity != 0 ? velocity : (_dragOffset.value > 0 ? 1000 : -1000),
+            intentVelocity,
             _dragOffset.value,
           );
         }
