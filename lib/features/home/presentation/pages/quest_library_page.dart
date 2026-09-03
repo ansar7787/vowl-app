@@ -466,17 +466,21 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            context.tr(
-                              'quest_archive.global_progress',
-                              fallback: 'Global Progress',
-                            ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF3B82F6),
-                              letterSpacing: 2,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: AlignmentDirectional.centerStart,
+                            child: Text(
+                              context.tr(
+                                'quest_archive.global_progress',
+                                fallback: 'Global Progress',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w800,
+                                color: const Color(0xFF3B82F6),
+                                letterSpacing: 2,
+                              ),
                             ),
                           ),
                           SizedBox(height: 4.h),
