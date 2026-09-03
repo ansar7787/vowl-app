@@ -388,20 +388,21 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       ),
                       SizedBox(width: 8.w),
                       Flexible(
-                        child: Text(
-                          context.tr(
-                            'quest_archive.title',
-                            fallback: 'Quest Library',
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            context.tr(
+                              'quest_archive.title',
+                              fallback: 'Quest Library',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: contentColor,
+                              letterSpacing: 1.5,
+                            ),
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: contentColor,
-                            letterSpacing: 1.5,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],
@@ -468,20 +469,22 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            context.tr(
-                              'quest_archive.global_progress',
-                              fallback: 'Global Progress',
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: AlignmentDirectional.centerStart,
+                            child: Text(
+                              context.tr(
+                                'quest_archive.global_progress',
+                                fallback: 'Global Progress',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w800,
+                                color: const Color(0xFF3B82F6),
+                                letterSpacing: 2,
+                              ),
                             ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF3B82F6),
-                              letterSpacing: 2,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
                           ),
                           SizedBox(height: 4.h),
                           FittedBox(
@@ -652,19 +655,21 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             Icon(icon, color: color, size: 12.r),
             SizedBox(width: 4.w),
             Flexible(
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.w800,
-                  color: (isDark ? Colors.white : Colors.black).withValues(
-                    alpha: 0.4,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: AlignmentDirectional.centerStart,
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 8.sp,
+                    fontWeight: FontWeight.w800,
+                    color: (isDark ? Colors.white : Colors.black).withValues(
+                      alpha: 0.4,
+                    ),
+                    letterSpacing: 1,
                   ),
-                  letterSpacing: 1,
                 ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -825,19 +830,20 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       ),
                     ),
                     child: Center(
-                      child: Text(
-                        label,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isSelected
-                              ? activeColor
-                              : (isDark ? Colors.white60 : Colors.black54),
-                          letterSpacing: 1,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          label,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isSelected
+                                ? activeColor
+                                : (isDark ? Colors.white60 : Colors.black54),
+                            letterSpacing: 1,
+                          ),
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
@@ -896,17 +902,19 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        catLabel.toUpperCase(),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w900,
-                          color: contentColor,
-                          letterSpacing: 1.5,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: AlignmentDirectional.centerStart,
+                        child: Text(
+                          catLabel.toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w900,
+                            color: contentColor,
+                            letterSpacing: 1.5,
+                          ),
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(height: 2.h),
                       Text(
@@ -1122,8 +1130,6 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     color: contentColor,
                     height: 1.2,
                   ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 8.h),
                 // Mini Progress Bar
@@ -1329,17 +1335,19 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                               ],
                             ),
                             SizedBox(height: 8.h),
-                            Text(
-                              theme.title.toUpperCase(),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.w900,
-                                color: contentColor,
-                                letterSpacing: 0.8,
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: AlignmentDirectional.centerStart,
+                              child: Text(
+                                theme.title.toUpperCase(),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: contentColor,
+                                  letterSpacing: 0.8,
+                                ),
                               ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
                             ),
                             SizedBox(height: 10.h),
                             _buildProgressBar(displayColor, currentLevel),
@@ -1466,9 +1474,9 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
   });
 
   @override
-  double get minExtent => 140.h; // search (60) + space (16) + chips (40) + padding
+  double get minExtent => 160.h; // increased to prevent RenderFlex overflow
   @override
-  double get maxExtent => 140.h;
+  double get maxExtent => 160.h;
 
   @override
   Widget build(
