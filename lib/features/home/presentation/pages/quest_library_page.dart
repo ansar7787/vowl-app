@@ -184,7 +184,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         // Safe area spacing for floating app bar
                         SliverToBoxAdapter(
                           child: SizedBox(
-                            height: MediaQuery.of(context).padding.top + 95.h,
+                            height: MediaQuery.paddingOf(context).top + 95.h,
                           ),
                         ),
 
@@ -201,7 +201,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                             contentColor: contentColor,
                             searchField: _buildSearchField(isDark, contentColor),
                             categoriesTrack: _buildCategoriesTrack(isDark),
-                            topPadding: MediaQuery.of(context).padding.top + 95.h,
+                            topPadding: MediaQuery.paddingOf(context).top + 95.h,
                           ),
                         ),
 
@@ -302,7 +302,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
         child: Container(
           padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + 12.h,
+            top: MediaQuery.paddingOf(context).top + 12.h,
             bottom: 16.h,
             left: 20.w,
             right: 20.w,
@@ -1523,7 +1523,6 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(covariant _StickyFilterDelegate oldDelegate) {
-    return isDark != oldDelegate.isDark ||
-        contentColor != oldDelegate.contentColor;
+    return true; // Parent ListenableBuilder ensures we only rebuild on state change
   }
 }
