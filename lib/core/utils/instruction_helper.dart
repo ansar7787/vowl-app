@@ -18,18 +18,42 @@ class InstructionHelper {
   /// Resolves the instruction for a given [GameQuest] by prioritizing
   /// centralized localization in `en.json` while allowing for custom
   /// JSON overrides.
-  static String getInstruction(GameQuest quest) {
-    final lowerInstruction = quest.instruction.trim().toLowerCase();
+  static String getInstruction(dynamic quest) {
+    if (quest == null) return '';
+
+    String? rawInstruction;
+    try {
+      rawInstruction = quest.instruction;
+    } catch (e) {
+      return '';
+    }
+
+    if (rawInstruction == null || rawInstruction.isEmpty) {
+      return 'Complete the task';
+    }
+
+    final lowerInstruction = rawInstruction.trim().toLowerCase();
     final localeService = di.sl<LocaleService>();
     
-    // 1. Is this just a hardcoded parser fallback? (e.g., JSON didn't have an instruction)
+    // 1. Is this just a hardcoded parser fallback?
     final isGenericParserFallback = _genericFallbacks.contains(lowerInstruction);
     
     // 2. Fetch the standard default instruction from en.json (if it exists)
     String? localizedDefault;
-    if (quest.subtype != null) {
-      final camelKey = 'games.${quest.subtype!.name}_instruction';
-      final snakeKey = 'games.${_camelToSnake(quest.subtype!.name)}_instruction';
+    String? gameTypeName;
+
+    try {
+      // Safely extract the game type identifier depending on the quest class
+      if (quest.runtimeType.toString().contains('KidsQuest')) {
+        gameTypeName = quest.gameType; // KidsQuest uses String gameType
+      } else {
+        gameTypeName = quest.subtype?.name; // GameQuest uses enum GameSubtype
+      }
+    } catch (_) {}
+
+    if (gameTypeName != null && gameTypeName.isNotEmpty) {
+      final camelKey = 'games.${gameTypeName}_instruction';
+      final snakeKey = 'games.${_camelToSnake(gameTypeName)}_instruction';
       
       final camelTranslated = localeService.tr(camelKey);
       if (camelTranslated != camelKey) {
@@ -42,7 +66,7 @@ class InstructionHelper {
       }
     }
 
-    // 3. Is the JSON's instruction redundant? (Exactly matches the en.json default)
+    // 3. Is the JSON's instruction redundant?
     bool isRedundantJsonInstruction = false;
     if (localizedDefault != null && 
         localizedDefault.trim().toLowerCase() == lowerInstruction) {
@@ -50,11 +74,8 @@ class InstructionHelper {
     }
     
     // 4. If it's a TRULY custom override from the JSON curriculum, use it!
-    // (Not a parser generic fallback, and not redundant with en.json)
-    if (!isGenericParserFallback && !isRedundantJsonInstruction && quest.instruction.isNotEmpty) {
-      // If it doesn't match en.json, but en.json HAS a key, it's a unique override for this level.
-      // If en.json DOESN'T have a key yet, it's just the normal instruction from JSON.
-      return quest.instruction;
+    if (!isGenericParserFallback && !isRedundantJsonInstruction && rawInstruction.isNotEmpty) {
+      return rawInstruction;
     }
     
     // 5. Otherwise, prefer the centralized en.json translation!
@@ -63,7 +84,7 @@ class InstructionHelper {
     }
     
     // 6. Ultimate fallback (returns the parser's generic default if no translation exists)
-    return quest.instruction.isNotEmpty ? quest.instruction : 'Complete the task';
+    return rawInstruction;
   }
   
   static String _camelToSnake(String camelCase) {
