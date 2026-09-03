@@ -73,11 +73,15 @@ class _BentoArenaState extends State<BentoArena> {
 
     // Determine which steps to render
     final collapsedIndices = _getCollapsedIndices();
-    final visibleSteps = _isExpanded.value
-        ? List.generate(allSteps.length, (i) => i)
-        : collapsedIndices;
 
-    return Column(
+    return ValueListenableBuilder<bool>(
+      valueListenable: _isExpanded,
+      builder: (context, isExpanded, _) {
+        final visibleSteps = isExpanded
+            ? List.generate(allSteps.length, (i) => i)
+            : collapsedIndices;
+
+        return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Stack(
@@ -150,7 +154,7 @@ class _BentoArenaState extends State<BentoArena> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      _isExpanded.value
+                      isExpanded
                           ? context.tr('home.show_less', fallback: 'Show Less')
                           : context.tr(
                               'home.see_all_categories',
@@ -166,7 +170,7 @@ class _BentoArenaState extends State<BentoArena> {
                     ),
                     SizedBox(width: 8.w),
                     AnimatedRotation(
-                      turns: _isExpanded.value ? 0.5 : 0,
+                      turns: isExpanded ? 0.5 : 0,
                       duration: const Duration(milliseconds: 300),
                       child: Icon(
                         Icons.keyboard_arrow_down_rounded,
@@ -180,7 +184,9 @@ class _BentoArenaState extends State<BentoArena> {
             ),
           ),
         ],
-      ],
+        ],
+      );
+      },
     );
   }
 }
