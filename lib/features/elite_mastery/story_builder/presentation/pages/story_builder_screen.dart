@@ -69,6 +69,18 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     super.dispose();
   }
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   void _onReorder(int oldIndex, int newIndex) {
     if (_isAnswered.value) return;
     _isCorrect.value = null; // Clear feedback borders on move
@@ -122,6 +134,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     if (isCorrect) {
       _hapticService.success();
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -222,7 +235,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
             return EliteBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               state: state,
               isCorrect: _isCorrect.value,
               isFinalFailure: (state is EliteMasteryLoaded)
@@ -315,7 +330,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           radius: Radius.circular(8.r),
           thickness: 4.w,
           child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
+            physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(
                 child: LayoutBuilder(
@@ -418,7 +433,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                               isHintVisible: state.isHintVisible,
                               isDark: isDark,
                               theme: theme,
-                              isAnswered: _isAnswered.value,
+                              isAnswered:
+                                  _isAnswered.value &&
+                                  (_isCorrect.value != null || !_isFirstStagePassed.value),
                               isCorrect: _isCorrect.value,
                             ),
                           ),
@@ -439,7 +456,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                             isHintVisible: state.isHintVisible,
                             isDark: isDark,
                             theme: theme,
-                            isAnswered: _isAnswered.value,
+                            isAnswered:
+                                _isAnswered.value &&
+                                (_isCorrect.value != null || !_isFirstStagePassed.value),
                             isCorrect: _isCorrect.value,
                           ),
                         ),
@@ -546,20 +565,27 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   },
                 ),
               ),
+              if (_isFirstStagePassed.value && !_isAnswered.value)
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.sentences != null && quest.sentences!.isNotEmpty
+                            ? quest.sentences![_currentOrder.value.last]
+                            : "Narrate the ending",
+                        displayText: "Narrate the final sentence to finish the story",
+                        primaryColor: theme.primaryColor,
+                        isPositioned: false,
+                        onConfirmed: () => _submitVerbalEvaluation(true),
+                        onSkipped: () => _submitVerbalEvaluation(false),
+                      ),
+                      SizedBox(height: 60.h),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),
-        if (_isFirstStagePassed.value && !_isAnswered.value)
-          SpeakToConfirmOverlay(
-            expectedText: quest.sentences != null && quest.sentences!.isNotEmpty
-                ? quest.sentences![_currentOrder.value.last]
-                : "Narrate the ending",
-            displayText: "Narrate the final sentence to finish the story",
-            primaryColor: theme.primaryColor,
-            isPositioned: true,
-            onConfirmed: () => _submitVerbalEvaluation(true),
-            onSkipped: () => _submitVerbalEvaluation(false),
-          ),
       ],
     );
   }

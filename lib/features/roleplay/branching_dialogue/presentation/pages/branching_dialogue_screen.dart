@@ -232,7 +232,9 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
             return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               onContinue: () =>

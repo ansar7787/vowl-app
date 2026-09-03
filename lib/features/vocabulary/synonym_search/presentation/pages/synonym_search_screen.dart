@@ -316,7 +316,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               isFinalFailure: (state is VocabularyLoaded)
                   ? state.isFinalFailure
@@ -557,8 +559,28 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                     isCompact: isCompact,
                                                   ),
                                                 ),
-                                              ],
-                                            ),
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          ContextSentenceBuilder(
+                                            targetKeyword: quest.correctAnswer ?? "",
+                                            primaryColor: theme.primaryColor,
+                                            acceptedKeywordForms:
+                                                quest.synonyms ??
+                                                [quest.correctAnswer ?? ""],
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () => _submitVerbalEvaluation(false),
+                                            isPositioned: false,
+                                            exampleSentence: quest.contextSentence,
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
+                                    ),
+                                ],
+                              ),
                                           ),
                                         ),
                                         if (_isFirstStagePassed.value)
@@ -582,31 +604,19 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                             ],
                                           ),
                                         SizedBox(
-                                          height:
-                                              (_isFirstStagePassed.value &&
-                                                  !_isAnswered.value)
-                                              ? 380.h
-                                              : 60.h,
-                                        ),
+                                                height:
+                                                    (_isFirstStagePassed.value &&
+                                                        !_isAnswered.value)
+                                                    ? 180.h
+                                                    : 60.h,
+                                              ),
                                       ],
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
-                              ContextSentenceBuilder(
-                                targetKeyword: quest.correctAnswer ?? "",
-                                primaryColor: theme.primaryColor,
-                                acceptedKeywordForms:
-                                    quest.synonyms ??
-                                    [quest.correctAnswer ?? ""],
-                                onConfirmed: () =>
-                                    _submitVerbalEvaluation(true),
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                                isPositioned: true,
-                                exampleSentence: quest.contextSentence,
-                              ),
+
                           ],
                         );
                       },

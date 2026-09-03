@@ -517,6 +517,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                 SliverToBoxAdapter(
                                   child: Column(
                                     children: [
+                                      SizedBox(height: 32.h),
                                       ShadowPlaybackCompare(
                                         expectedText: _currentOptions.isNotEmpty
                                             ? _currentOptions[_currentCorrectIndex]['word']!

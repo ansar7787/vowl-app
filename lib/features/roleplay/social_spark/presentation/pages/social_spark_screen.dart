@@ -201,7 +201,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
             return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               onContinue: () =>
@@ -262,7 +264,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered.value,
+                                                          _isAnswered.value &&
+                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                     ),
@@ -280,7 +283,8 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                           _selectedIndices
                                                               .value,
                                                       isAnswered:
-                                                          _isAnswered.value,
+                                                          _isAnswered.value &&
+                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                       pulseValue:

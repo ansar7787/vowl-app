@@ -203,7 +203,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
             return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               onContinue: () =>
@@ -273,7 +275,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered.value,
+                                                          _isAnswered.value &&
+                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                       selectedItems:
@@ -299,7 +302,8 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered.value,
+                                                          _isAnswered.value &&
+                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                       selectedItems:

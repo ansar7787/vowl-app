@@ -571,26 +571,34 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                                       height:
                                           (_isFirstStagePassed.value &&
                                               !_isAnswered.value)
-                                          ? 380.h
+                                          ? 180.h
                                           : 60.h,
                                     ),
                                   ),
+                                  if (_isFirstStagePassed.value &&
+                                      !_isAnswered.value &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          TypeToConfirmOverlay(
+                                            expectedText: cleanTargetSentence,
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                            isPositioned: false,
+                                            displayText:
+                                                "Type the full sentence to lock it in",
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-                              TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () =>
-                                    _submitVerbalEvaluation(true),
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                                isPositioned: true,
-                                displayText:
-                                    "Type the full sentence to lock it in",
-                              ),
                           ],
                         );
                       },

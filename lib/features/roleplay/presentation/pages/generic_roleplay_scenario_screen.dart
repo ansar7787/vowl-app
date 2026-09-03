@@ -159,7 +159,7 @@ class _GenericRoleplayScenarioScreenState
       if (!mounted) return;
       _isFirstStagePassed.value = true;
       _isProcessing.value = false;
-      // Waif for SpeakToConfirmOverlay Phase 2
+      _scrollToBottom();
     } else {
       _attempts.value++;
       await Future.delayed(kRoleplayWrongAnswerDelay);
@@ -277,12 +277,14 @@ class _GenericRoleplayScenarioScreenState
               useScrolling: false,
               child: CustomScrollView(
                 controller: _chatScrollController,
-                physics: const BouncingScrollPhysics(),
+                physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                 slivers: [
                   SliverToBoxAdapter(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
+                    child: IgnorePointer(
+                      ignoring: _isFirstStagePassed.value,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
                         RoleplayCharacterCard(
                           roleName: quest.roleName ?? 'Professional Advisor',
                           icon: widget.icon,
@@ -308,9 +310,16 @@ class _GenericRoleplayScenarioScreenState
                             onOptionSelected: _onOptionSelected,
                           ),
                         ],
-                        if (_isFirstStagePassed.value &&
-                            !_isAnswered.value &&
-                            _selectedIndex.value != null)
+                        ],
+                      ),
+                    ),
+                  ),
+                  if (_isFirstStagePassed.value &&
+                      !_isAnswered.value &&
+                      _selectedIndex.value != null)
+                    SliverToBoxAdapter(
+                      child: Column(
+                        children: [
                           SpeakToConfirmOverlay(
                             expectedText: options[_selectedIndex.value!],
                             primaryColor: theme.primaryColor,
@@ -323,12 +332,15 @@ class _GenericRoleplayScenarioScreenState
                             },
                             onSkipped: () => _submitVerbalEvaluation(false),
                           ),
-                        SizedBox(
-                          height: _isAnswered.value || _isFirstStagePassed.value
-                              ? 180.h
-                              : 40.h,
-                        ),
-                      ],
+                          SizedBox(height: 60.h),
+                        ],
+                      ),
+                    ),
+                  SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: (_isFirstStagePassed.value && !_isAnswered.value)
+                          ? 180.h
+                          : 60.h,
                     ),
                   ),
                 ],

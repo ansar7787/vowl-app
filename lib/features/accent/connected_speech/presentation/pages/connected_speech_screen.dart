@@ -395,7 +395,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                       SliverToBoxAdapter(
                                         child: Column(
                                           children: [
-                                            ShadowPlaybackCompare(
+                                      SizedBox(height: 32.h),
+                                      ShadowPlaybackCompare(
                                               expectedText: quest.textToSpeak ??
                                                   quest.word ??
                                                   "",

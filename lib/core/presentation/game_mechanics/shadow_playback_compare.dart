@@ -312,25 +312,30 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
 
     final content = Material(
       type: MaterialType.transparency,
-      child: Container(
-        padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
-        decoration: BoxDecoration(
-          color: bgColor,
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(32.r),
-          ),
-          border: Border.all(
-            color: widget.primaryColor.withValues(alpha: 0.2),
-            width: 1.5,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: widget.primaryColor.withValues(alpha: 0.15),
-              blurRadius: 30,
-              offset: const Offset(0, -8),
-            ),
-          ],
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: widget.isPositioned ? 0 : 20.w,
+          right: widget.isPositioned ? 0 : 20.w,
         ),
+        child: Container(
+          padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+          decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: widget.isPositioned
+                ? BorderRadius.vertical(top: Radius.circular(32.r))
+                : BorderRadius.circular(32.r),
+            border: Border.all(
+              color: widget.primaryColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: widget.primaryColor.withValues(alpha: 0.15),
+                blurRadius: 30,
+                offset: const Offset(0, -8),
+              ),
+            ],
+          ),
         child: SafeArea(
           top: false,
           child: Column(

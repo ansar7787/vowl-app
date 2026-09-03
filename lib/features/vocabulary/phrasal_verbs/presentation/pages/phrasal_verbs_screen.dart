@@ -213,7 +213,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               hasStage2: true,
@@ -534,22 +536,29 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                       ),
                                     ),
                                   ),
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          ContextSentenceBuilder(
+                                            targetKeyword:
+                                                "${quest.word} ${quest.correctAnswer}"
+                                                    .trim(),
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () => _submitFinalAnswer(true),
+                                            onSkipped: () => _submitFinalAnswer(false),
+                                            isPositioned: false,
+                                            exampleSentence: _getFormattedExampleSentence(
+                                              quest,
+                                            ),
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
+                                    ),
                                 ],
                               ), // CustomScrollView
                             ), // RawScrollbar
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
-                              ContextSentenceBuilder(
-                                targetKeyword:
-                                    "${quest.word} ${quest.correctAnswer}"
-                                        .trim(),
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: true,
-                                exampleSentence: _getFormattedExampleSentence(
-                                  quest,
-                                ),
-                              ),
                           ],
                         );
                       }, // LayoutBuilder builder
@@ -656,7 +665,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           correct: quest.correctAnswer ?? "",
           color: color,
           isDark: isDark,
-          isAnswered: _isAnswered.value,
+          isAnswered:
+              _isAnswered.value &&
+              (_isCorrect.value != null || !_isFirstStagePassed.value),
           isCorrect: _isCorrect.value,
           selectedOption: _selectedOption.value,
           isFinalFailure: isFinalFailure,

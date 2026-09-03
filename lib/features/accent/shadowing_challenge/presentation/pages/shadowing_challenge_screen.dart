@@ -315,7 +315,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                       SliverToBoxAdapter(
                                         child: Column(
                                           children: [
-                                            ShadowPlaybackCompare(
+                                      SizedBox(height: 32.h),
+                                      ShadowPlaybackCompare(
                                               expectedText: quest.textToSpeak ?? "",
                                               displayText: quest.textToSpeak ?? "",
                                               primaryColor: theme.primaryColor,

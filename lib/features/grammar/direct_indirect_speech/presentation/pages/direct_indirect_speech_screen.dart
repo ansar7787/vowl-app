@@ -57,6 +57,18 @@ class _DirectIndirectSpeechScreenState
     super.dispose();
   }
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -78,6 +90,7 @@ class _DirectIndirectSpeechScreenState
       _hapticService.success();
       _soundService.playCorrect();
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
       _rotation.value = 3.14;
     } else {
       _hapticService.error();
@@ -183,7 +196,9 @@ class _DirectIndirectSpeechScreenState
             return GrammarBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
@@ -205,11 +220,13 @@ class _DirectIndirectSpeechScreenState
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
+                                physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
                                     hasScrollBody: false,
-                                    child: Column(
+                                    child: IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: Column(
                                       children: [
                                         Expanded(
                                           child: LayoutBuilder(
@@ -503,30 +520,33 @@ class _DirectIndirectSpeechScreenState
                                       ],
                                     ),
                                   ),
+                                ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
-                                          ? 380.h
+                                      height: (_isFirstStagePassed.value && !_isAnswered.value)
+                                          ? 180.h
                                           : 60.h,
                                     ),
                                   ),
+                                  if (_isFirstStagePassed.value && !_isAnswered.value)
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          TypeToConfirmOverlay(
+                                            expectedText: options[_selectedReflection.value],
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () => _submitVerbalEvaluation(true),
+                                            onSkipped: () => _submitVerbalEvaluation(false),
+                                            isPositioned: false,
+                                            displayText: "Type the indirect speech to lock it in",
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
-                            if (_isFirstStagePassed.value && !_isAnswered.value)
-                              TypeToConfirmOverlay(
-                                expectedText:
-                                    options[_selectedReflection.value],
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () =>
-                                    _submitVerbalEvaluation(true),
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                                isPositioned: true,
-                                displayText:
-                                    "Type the indirect speech to lock it in",
-                              ),
                           ],
                         );
                       },

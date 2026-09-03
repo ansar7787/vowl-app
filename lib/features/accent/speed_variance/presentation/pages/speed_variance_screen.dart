@@ -439,6 +439,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                 SliverToBoxAdapter(
                                   child: Column(
                                     children: [
+                                      SizedBox(height: 32.h),
                                       SpeakToConfirmOverlay(
                                         expectedText: quest.textToSpeak ?? quest.word ?? "",
                                         primaryColor: theme.primaryColor,

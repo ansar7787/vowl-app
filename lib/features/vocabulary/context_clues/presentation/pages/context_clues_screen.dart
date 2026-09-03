@@ -70,6 +70,18 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     super.dispose();
   }
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   void _onLensMove(DragUpdateDetails details, BoxConstraints constraints) {
     if (_isAnswered.value) return;
 
@@ -109,6 +121,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     if (isCorrect) {
       _hapticService.selection(); // Subtle feedback for Phase 1
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
 
       Future.delayed(const Duration(milliseconds: 300), () {
         if (mounted && _scrollController.hasClients) {
@@ -202,7 +215,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               hasStage2: true,
@@ -240,7 +255,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                               SliverToBoxAdapter(
                                 child: Column(
                                   children: [
-                                    SizedBox(
+                                    IgnorePointer(ignoring: _isFirstStagePassed.value, child: SizedBox(
                                       height: constraints.maxHeight,
                                       child: _buildForensicScene(
                                         quest,
@@ -249,6 +264,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                             ? state.isFinalFailure
                                             : false,
                                       ),
+                                    ),
                                     ),
                                     if (_isFirstStagePassed.value &&
                                         !_isAnswered.value)
@@ -393,7 +409,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                             sentence: quest.sentence ?? "",
                             color: color,
                             isCompact: isCompact,
-                            isAnswered: _isAnswered.value,
+                            isAnswered:
+                                _isAnswered.value &&
+                                (_isCorrect.value != null || !_isFirstStagePassed.value),
                             isCorrect: _isCorrect.value,
                             selectedOption: _selectedOption.value,
                           ),
@@ -425,7 +443,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                         sentence: quest.sentence ?? "",
                                         color: color,
                                         isCompact: isCompact,
-                                        isAnswered: _isAnswered.value,
+                                        isAnswered:
+                                            _isAnswered.value &&
+                                            (_isCorrect.value != null || !_isFirstStagePassed.value),
                                         isCorrect: _isCorrect.value,
                                         selectedOption: _selectedOption.value,
                                       ),
@@ -467,7 +487,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               options: quest.options ?? [],
               correct: quest.correctAnswer ?? "",
               color: color,
-              isAnswered: _isAnswered.value,
+              isAnswered:
+                  _isAnswered.value &&
+                  (_isCorrect.value != null || !_isFirstStagePassed.value),
               isCorrect: _isCorrect.value,
               selectedOption: _selectedOption.value,
               isFinalFailure: isFinalFailure,

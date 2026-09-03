@@ -69,6 +69,18 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     super.dispose();
   }
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   void _initializeOptions(GameQuest quest) {
     if (quest.options == null || quest.options!.isEmpty) {
       _shuffledOptions.value = [];
@@ -106,6 +118,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     if (isCorrect) {
       _hapticService.selection();
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
       _selectedIndex.value = shuffledIndex;
       // Do NOT submit yet! Wait for Phase 2.
     } else {
@@ -325,21 +338,25 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
     return Stack(
       children: [
-        RawScrollbar(
-          controller: _scrollController,
-          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-          radius: Radius.circular(8.r),
-          thickness: 4.w,
-          child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: LayoutBuilder(
-                        builder: (context, constraints) {
+        LayoutBuilder(
+          builder: (context, outerConstraints) {
+            return RawScrollbar(
+              controller: _scrollController,
+              thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+              radius: Radius.circular(8.r),
+              thickness: 4.w,
+              child: CustomScrollView(
+                physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: IgnorePointer(
+                      ignoring: _isFirstStagePassed.value,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: outerConstraints.maxHeight),
+                        child: Column(
+                          children: [
+                            LayoutBuilder(
+                              builder: (context, constraints) {
                           final isCompact =
                               constraints.maxHeight < _kCompactHeightBreakpoint;
 
@@ -560,30 +577,39 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                           );
                         },
                       ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: (_isAnswered.value || _isFirstStagePassed.value)
+                    ? 180.h
+                    : 60.h,
+              ),
+            ),
+            if (_isFirstStagePassed.value && !_isAnswered.value)
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    SpeakToConfirmOverlay(
+                      expectedText: expectedText,
+                      displayText: "Speak the idiom in context:\n\n\"$expectedText\"",
+                      primaryColor: theme.primaryColor,
+                      isPositioned: false,
+                      onConfirmed: () => _submitVerbalEvaluation(true),
+                      onSkipped: () => _submitVerbalEvaluation(false),
                     ),
+                    SizedBox(height: 60.h),
                   ],
                 ),
               ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: (_isAnswered.value || _isFirstStagePassed.value)
-                      ? 180.h
-                      : 60.h,
-                ),
-              ),
-            ],
-          ),
+          ],
         ),
-        if (_isFirstStagePassed.value && !_isAnswered.value)
-          SpeakToConfirmOverlay(
-            expectedText: expectedText,
-            displayText: "Speak the idiom in context:\n\n\"$expectedText\"",
-            primaryColor: theme.primaryColor,
-            isPositioned: true,
-            onConfirmed: () => _submitVerbalEvaluation(true),
-            onSkipped: () => _submitVerbalEvaluation(false),
-          ),
-      ],
-    );
+      );
+    }),
+    ],
+  );
   }
 }
