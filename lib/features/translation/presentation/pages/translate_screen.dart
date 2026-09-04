@@ -854,7 +854,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                                         borderRadius: BorderRadius.circular(8.r),
                                       ),
                                       child: Text(
-                                        'READY',
+                                        context.tr('common.ready', fallback: 'READY'),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 9.sp,
