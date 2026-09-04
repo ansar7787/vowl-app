@@ -108,6 +108,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
   void _onShardDragUpdate(int index, DragUpdateDetails details) {
     if (_isAnswered.value || _activeShardIndex.value != index) return;
+    if (_lastConstraints == null) return;
 
     final currentOffset = _shardOffsets[index].value + details.delta;
     _shardOffsets[index].value = currentOffset;
@@ -194,6 +195,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     if (isCorrect) {
       _hapticService.selection(); // Subtle feedback for Phase 1
       _isFirstStagePassed.value = true;
+      _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();
@@ -201,6 +203,20 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       _isAnswered.value = true;
       _isCorrect.value = false;
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _scrollToBottom() {
+    if (_scrollController.hasClients) {
+      Future.delayed(const Duration(milliseconds: 300), () {
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     }
   }
 
@@ -255,6 +271,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         return Offset(math.cos(angle) * hDist, math.sin(angle) * vDist);
     }
   }
+
+  double _lastKeyboardHeight = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -331,6 +349,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               useScrolling: false,
               disablePadding: true,
               onHint: () {
+                if (_lastConstraints == null) return;
                 final options = quest?.options ?? [];
                 final correct = quest?.correctAnswer?.toLowerCase() ?? "";
                 for (int i = 0; i < options.length; i++) {
@@ -360,6 +379,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         final keyboardHeight = MediaQuery.of(
                           context,
                         ).viewInsets.bottom;
+                        
+                        if (keyboardHeight > 0 && _lastKeyboardHeight == 0) {
+                          _scrollToBottom();
+                        }
+                        _lastKeyboardHeight = keyboardHeight;
+
                         final screenSize = MediaQuery.of(context).size;
                         final double safeWidth = constraints.maxWidth.isFinite
                             ? constraints.maxWidth
@@ -367,8 +392,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         final double safeHeight =
                             (constraints.maxHeight.isFinite
                                 ? constraints.maxHeight
-                                : (screenSize.height * 0.6)) +
-                            keyboardHeight;
+                                : (screenSize.height * 0.6));
                         final isCompact = safeHeight < 580;
 
                         return Stack(
@@ -380,6 +404,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              crossAxisMargin: 2.w,
+                              mainAxisMargin: 2.h,
+                              interactive: true,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
@@ -555,69 +582,75 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                         quest
                                                             .instruction
                                                             .isNotEmpty
-                                                        ? InstructionHelper.getInstruction(quest)
+                                                        ? InstructionHelper.getInstruction(
+                                                            quest,
+                                                          )
                                                         : "WARP THE SYNONYM SHARD",
+                                                    hint: quest.hint,
                                                     isCompact: isCompact,
                                                   ),
                                                 ),
-                                  if (_isFirstStagePassed.value && !_isAnswered.value)
-                                    SliverToBoxAdapter(
-                                      child: Column(
-                                        children: [
-                                          ContextSentenceBuilder(
-                                            targetKeyword: quest.correctAnswer ?? "",
-                                            primaryColor: theme.primaryColor,
-                                            acceptedKeywordForms:
-                                                quest.synonyms ??
-                                                [quest.correctAnswer ?? ""],
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(true),
-                                            onSkipped: () => _submitVerbalEvaluation(false),
-                                            isPositioned: false,
-                                            exampleSentence: quest.contextSentence,
-                                          ),
-                                          SizedBox(height: 60.h),
-                                        ],
-                                      ),
-                                    ),
-                                ],
-                              ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                         if (_isFirstStagePassed.value)
                                           Column(
                                             children: [
                                               SizedBox(height: 10.h),
-                                              if (quest.nuanceDifference !=
-                                                      null &&
-                                                  quest
-                                                      .nuanceDifference!
-                                                      .isNotEmpty)
+                                              if (quest.explanation != null &&
+                                                  quest.explanation!.isNotEmpty)
                                                 SynonymNuanceScale(
                                                   targetWord: quest.word ?? "",
                                                   synonymWord:
                                                       quest.correctAnswer ?? "",
-                                                  nuanceDifference:
-                                                      quest.nuanceDifference!,
+                                                  explanation:
+                                                      quest.explanation!,
                                                   primaryColor:
                                                       theme.primaryColor,
                                                 ),
                                             ],
                                           ),
                                         SizedBox(
-                                                height:
-                                                    (_isFirstStagePassed.value &&
-                                                        !_isAnswered.value)
-                                                    ? 180.h
-                                                    : 60.h,
-                                              ),
+                                          height:
+                                              (_isFirstStagePassed.value &&
+                                                  !_isAnswered.value)
+                                              ? 24.h
+                                              : 60.h,
+                                        ),
                                       ],
                                     ),
                                   ),
+                                  if (_isFirstStagePassed.value &&
+                                      !_isAnswered.value)
+                                    SliverToBoxAdapter(
+                                      child: Align(
+                                        alignment: Alignment.bottomCenter,
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                            bottom: 24.h + keyboardHeight,
+                                          ),
+                                          child: ContextSentenceBuilder(
+                                            targetKeyword:
+                                                quest.correctAnswer ?? "",
+                                            primaryColor: theme.primaryColor,
+                                            acceptedKeywordForms:
+                                                quest.synonyms ??
+                                                [quest.correctAnswer ?? ""],
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                            isPositioned: false,
+                                            exampleSentence:
+                                                quest.contextSentence,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
-
                           ],
                         );
                       },

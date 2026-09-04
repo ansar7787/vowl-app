@@ -64,7 +64,7 @@ class PrefixSuffixController extends ChangeNotifier {
   void onAffixSelected(
     String option,
     VocabularyQuest quest,
-    bool droppedAsPrefix,
+    bool? droppedAsPrefix,
   ) {
     if (isAnswered || isFirstStagePassed || selectedAffix != null) return;
 
@@ -84,13 +84,15 @@ class PrefixSuffixController extends ChangeNotifier {
       }
     }
 
-    if ((isOptionPrefix && !droppedAsPrefix) ||
-        (isOptionSuffix && droppedAsPrefix)) {
-      // Wrong slot!
-      _soundService.playWrong();
-      _hapticService.error();
-      // We don't fail the whole game, just reject the drop.
-      return;
+    if (droppedAsPrefix != null) {
+      if ((isOptionPrefix && !droppedAsPrefix) ||
+          (isOptionSuffix && droppedAsPrefix)) {
+        // Wrong slot!
+        _soundService.playWrong();
+        _hapticService.error();
+        // We don't fail the whole game, just reject the drop.
+        return;
+      }
     }
 
     selectedAffix = option;
@@ -99,39 +101,88 @@ class PrefixSuffixController extends ChangeNotifier {
     _submitAffix(option, quest);
   }
 
-  bool _isAffixMatch(String option, String correctWord, String rootWord) {
-    final cleanOption = option.replaceAll('-', '').trim().toLowerCase();
-    correctWord = correctWord.toLowerCase();
-    rootWord = rootWord.toLowerCase();
+  String? _findCorrectOption(VocabularyQuest quest) {
+    final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
+    final rootWord = quest.rootWord?.toLowerCase() ?? "";
+    final options = quest.options ?? [];
 
-    String remainder = "";
+    // First pass: exact remainder match
+    for (final option in options) {
+      final clean = option.replaceAll('-', '').trim().toLowerCase();
+      bool isPrefix = option.endsWith('-');
+      bool isSuffix = option.startsWith('-');
 
-    if (option.endsWith('-')) {
-      if (!correctWord.startsWith(cleanOption)) return false;
-      remainder = correctWord.substring(cleanOption.length);
-    } else if (option.startsWith('-')) {
-      if (!correctWord.endsWith(cleanOption)) return false;
-      remainder = correctWord.substring(
-        0,
-        correctWord.length - cleanOption.length,
-      );
-    } else {
-      return correctWord.contains(cleanOption);
+      if (!isPrefix && !isSuffix) {
+        if (correctWord.startsWith(clean) && correctWord != clean) {
+          isPrefix = true;
+        } else if (correctWord.endsWith(clean) && correctWord != clean) {
+          isSuffix = true;
+        }
+      }
+
+      if (isPrefix && correctWord.startsWith(clean)) {
+        final remainder = correctWord.substring(clean.length);
+        if (remainder == rootWord) return option;
+      } else if (isSuffix && correctWord.endsWith(clean)) {
+        final remainder = correctWord.substring(
+          0,
+          correctWord.length - clean.length,
+        );
+        if (remainder == rootWord) return option;
+      }
     }
 
-    // The remainder of the word must be heavily related to the root word.
-    // If we just check "startsWith", a prefix like UN- will incorrectly match UNDERGROUND.
-    if (remainder.contains(rootWord) || rootWord.contains(remainder)) {
-      return true;
+    // Second pass: handle spelling changes by scoring common prefix length
+    String? bestOption;
+    int bestScore = -1;
+
+    for (final option in options) {
+      final clean = option.replaceAll('-', '').trim().toLowerCase();
+      bool isPrefix = option.endsWith('-');
+      bool isSuffix = option.startsWith('-');
+
+      if (!isPrefix && !isSuffix) {
+        if (correctWord.startsWith(clean) && correctWord != clean) {
+          isPrefix = true;
+        } else if (correctWord.endsWith(clean) && correctWord != clean) {
+          isSuffix = true;
+        }
+      }
+
+      String remainder = "";
+
+      if (isPrefix && correctWord.startsWith(clean)) {
+        remainder = correctWord.substring(clean.length);
+      } else if (isSuffix && correctWord.endsWith(clean)) {
+        remainder = correctWord.substring(0, correctWord.length - clean.length);
+      } else {
+        continue;
+      }
+
+      int score = 0;
+      int minLength = remainder.length < rootWord.length
+          ? remainder.length
+          : rootWord.length;
+      for (int i = 0; i < minLength; i++) {
+        if (remainder[i] == rootWord[i]) {
+          score++;
+        } else {
+          break;
+        }
+      }
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestOption = option;
+      }
     }
 
-    return false;
+    return bestOption;
   }
 
   void _submitAffix(String option, VocabularyQuest quest) {
-    final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
-    final rootWord = quest.rootWord?.toLowerCase() ?? "";
-    final isCorrectAns = _isAffixMatch(option, correctWord, rootWord);
+    final correctOption = _findCorrectOption(quest);
+    final isCorrectAns = (correctOption != null && option == correctOption);
 
     if (isCorrectAns) {
       _soundService.playCorrect();
@@ -182,7 +233,6 @@ class PrefixSuffixController extends ChangeNotifier {
   }
 
   void onHint(VocabularyQuest? quest) {
-    final options = quest?.options ?? [];
     final correctWord = quest?.correctAnswer?.toLowerCase() ?? "";
 
     if (correctWord.isNotEmpty) {
@@ -194,26 +244,21 @@ class PrefixSuffixController extends ChangeNotifier {
       return;
     }
 
-    final rootWord = quest?.rootWord?.toLowerCase() ?? "";
+    final correctOption = _findCorrectOption(quest!);
 
-    // Find the correct option using the DRY helper
-    for (int i = 0; i < options.length; i++) {
-      final option = options[i];
-      if (_isAffixMatch(option, correctWord, rootWord)) {
-        hintedAffix = option;
-        notifyListeners();
+    if (correctOption != null) {
+      hintedAffix = correctOption;
+      notifyListeners();
 
-        _hapticService.light();
+      _hapticService.light();
 
-        Future.delayed(const Duration(milliseconds: 1500), () {
-          if (_isDisposed) return;
-          if (!isAnswered) {
-            hintedAffix = null;
-            notifyListeners();
-          }
-        });
-        break;
-      }
+      Future.delayed(const Duration(milliseconds: 1500), () {
+        if (_isDisposed) return;
+        if (!isAnswered) {
+          hintedAffix = null;
+          notifyListeners();
+        }
+      });
     }
   }
 }

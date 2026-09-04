@@ -12,7 +12,7 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
   final bool isFirstStagePassed;
   final Color primaryColor;
   final bool isDark;
-  final Function(String, bool) onAffixSelected;
+  final Function(String, bool?) onAffixSelected;
 
   const PrefixSuffixSynthesizer({
     super.key,
@@ -196,9 +196,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     return GestureDetector(
       onTap: () {
         HapticFeedback.lightImpact();
-        // A prefix ends with a hyphen (e.g., "RE-"), a suffix starts with one (e.g., "-FUL")
-        final isPrefix = affix.endsWith('-');
-        widget.onAffixSelected(affix, isPrefix);
+        widget.onAffixSelected(affix, null);
       },
       child: Draggable<String>(
         data: affix,
@@ -300,7 +298,7 @@ class _MagneticDropZone extends StatefulWidget {
   final String? selectedAffix;
   final Color primaryColor;
   final bool isDark;
-  final Function(String, bool) onAffixSelected;
+  final Function(String, bool?) onAffixSelected;
 
   const _MagneticDropZone({
     required this.isPrefixSlot,

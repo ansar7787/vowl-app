@@ -32,6 +32,29 @@ class PrefixSuffixScreen extends StatefulWidget {
 class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
   late final PrefixSuffixController _controller;
   final ScrollController _scrollController = ScrollController();
+  bool _hasScrolledToStage2 = false;
+
+  void _onControllerUpdate() {
+    if (!mounted) return;
+    if (_controller.isFirstStagePassed &&
+        !_controller.isAnswered &&
+        !_hasScrolledToStage2) {
+      _hasScrolledToStage2 = true;
+      Future.delayed(const Duration(milliseconds: 400), _scrollToBottom);
+    } else if (!_controller.isFirstStagePassed) {
+      _hasScrolledToStage2 = false;
+    }
+  }
+
+  void _scrollToBottom() {
+    if (_scrollController.hasClients) {
+      _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeOutCubic,
+      );
+    }
+  }
 
   @override
   void initState() {
@@ -46,6 +69,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
         }
       },
     );
+
+    _controller.addListener(_onControllerUpdate);
+
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -53,6 +79,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
   @override
   void dispose() {
+    _controller.removeListener(_onControllerUpdate);
     _scrollController.dispose();
     _controller.dispose();
     super.dispose();
@@ -112,15 +139,18 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               hasStage2: true,
               onContinue: () =>
                   context.read<VocabularyBloc>().add(NextQuestion()),
+              disablePadding: true,
               useScrolling: false,
               onHint: () {
                 _controller.onHint(quest);
               },
               child: quest == null
                   ? const SizedBox()
-                  : Stack(
-                      children: [
-                        RawScrollbar(
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+
+                        return RawScrollbar(
                           controller: _scrollController,
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
@@ -130,70 +160,87 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                             physics: const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 20.w,
-                                    vertical: 20.h,
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minHeight: maxHeight,
                                   ),
-                                  child: Column(
-                                    children: [
-                                      PrefixSuffixMissionControl(
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            quest.hint ?? InstructionHelper.getInstruction(quest),
-                                      ),
-                                      SizedBox(height: 20.h),
-                                      IgnorePointer(
-                                        ignoring:
-                                            _controller.isFirstStagePassed,
-                                        child: PrefixSuffixSynthesizer(
-                                          rootWord: quest.rootWord ?? "???",
-                                          options: quest.options ?? [],
-                                          correctAnswer:
-                                              quest.correctAnswer ?? "",
-                                          selectedAffix:
-                                              _controller.selectedAffix,
-                                          hintedAffix: _controller.hintedAffix,
-                                          isFirstStagePassed:
-                                              _controller.isFirstStagePassed,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20.w,
+                                      vertical: 20.h,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        PrefixSuffixMissionControl(
                                           primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onAffixSelected: (affix, isPrefix) =>
-                                              _controller.onAffixSelected(
-                                                affix,
+                                          instruction:
+                                              quest.hint ??
+                                              InstructionHelper.getInstruction(
                                                 quest,
-                                                isPrefix,
                                               ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        height:
-                                            (_controller.isFirstStagePassed &&
-                                                !_controller.isAnswered)
-                                            ? 380.h
-                                            : 60.h,
-                                      ),
-                                    ],
+                                        SizedBox(height: 32.h),
+                                        IgnorePointer(
+                                          ignoring:
+                                              _controller.isFirstStagePassed,
+                                          child: PrefixSuffixSynthesizer(
+                                            rootWord: quest.rootWord ?? "???",
+                                            options: quest.options ?? [],
+                                            correctAnswer:
+                                                quest.correctAnswer ?? "",
+                                            selectedAffix:
+                                                _controller.selectedAffix,
+                                            hintedAffix:
+                                                _controller.hintedAffix,
+                                            isFirstStagePassed:
+                                                _controller.isFirstStagePassed,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onAffixSelected:
+                                                (affix, isPrefix) =>
+                                                    _controller.onAffixSelected(
+                                                      affix,
+                                                      quest,
+                                                      isPrefix,
+                                                    ),
+                                          ),
+                                        ),
+                                        SizedBox(height: 60.h),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
+                              if (_controller.isFirstStagePassed &&
+                                  !_controller.isAnswered)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom:
+                                          24.h +
+                                          MediaQuery.viewInsetsOf(
+                                            context,
+                                          ).bottom,
+                                    ),
+                                    child: TypeToConfirmOverlay(
+                                      isPositioned: false,
+                                      expectedText: quest.correctAnswer ?? "",
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () => _controller
+                                          .submitFinalAnswer(true, quest),
+                                      onBypassed: () => _controller
+                                          .submitFinalAnswer(true, quest),
+                                      onSkipped: () => _controller
+                                          .submitFinalAnswer(false, quest),
+                                    ),
+                                  ),
+                                ),
                             ],
                           ),
-                        ),
-                        if (_controller.isFirstStagePassed &&
-                            !_controller.isAnswered)
-                          TypeToConfirmOverlay(
-                            isPositioned: true,
-                            expectedText: quest.correctAnswer ?? "",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () =>
-                                _controller.submitFinalAnswer(true, quest),
-                            onBypassed: () =>
-                                _controller.submitFinalAnswer(true, quest),
-                            onSkipped: () =>
-                                _controller.submitFinalAnswer(false, quest),
-                          ),
-                      ],
+                        );
+                      },
                     ),
             );
             return baseLayout;

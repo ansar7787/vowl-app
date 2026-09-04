@@ -6,12 +6,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 class SynonymInstructionHeader extends StatelessWidget {
   final Color color;
   final String instruction;
+  final String? hint;
   final bool isCompact;
 
   const SynonymInstructionHeader({
     super.key,
     required this.color,
     this.instruction = "WARP THE SYNONYM SHARD",
+    this.hint,
     this.isCompact = false,
   });
 
@@ -79,17 +81,39 @@ class SynonymInstructionHeader extends StatelessWidget {
                             ),
                         SizedBox(width: 12.w),
                         Flexible(
-                          child: Text(
-                            instruction.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: isCompact ? 10.sp : 12.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.white : Colors.black87,
-                              letterSpacing: 1.2,
-                              height: 1.3,
-                            ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                instruction.toUpperCase(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isCompact ? 10.sp : 12.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: isDark ? Colors.white : Colors.black87,
+                                  letterSpacing: 1.2,
+                                  height: 1.3,
+                                ),
+                              ),
+                              if (hint != null && hint!.isNotEmpty) ...[
+                                SizedBox(height: 4.h),
+                                Text(
+                                  hint!,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: isCompact ? 11.sp : 13.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: isDark
+                                        ? Colors.white70
+                                        : Colors.black54,
+                                    height: 1.3,
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
                         ),
                       ],

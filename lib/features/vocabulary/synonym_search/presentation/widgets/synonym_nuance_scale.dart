@@ -7,14 +7,14 @@ import 'package:auto_size_text/auto_size_text.dart';
 class SynonymNuanceScale extends StatelessWidget {
   final String targetWord;
   final String synonymWord;
-  final String nuanceDifference;
+  final String explanation;
   final Color primaryColor;
 
   const SynonymNuanceScale({
     super.key,
     required this.targetWord,
     required this.synonymWord,
-    required this.nuanceDifference,
+    required this.explanation,
     required this.primaryColor,
   });
 
@@ -245,7 +245,7 @@ class SynonymNuanceScale extends StatelessWidget {
                           SizedBox(width: 12.w),
                           Expanded(
                             child: Text(
-                              nuanceDifference,
+                              explanation,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,

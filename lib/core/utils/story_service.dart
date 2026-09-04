@@ -209,7 +209,7 @@ class StoryServiceImpl implements StoryService {
     'phrasalVerbs':
         "Phrasal verbs are the secret to conversational English! Let's master these combinations so you sound totally fluent.",
     'prefixSuffix':
-        "Word Alchemy! Let's see how tiny word pieces can completely change a word's meaning. Build some words with me!",
+        "Did you know that adding just a few tiny letters can completely flip a word's meaning? Let's build some words together and see how it works!",
     'synonymSearch':
         "Having a variety of words for the same thing makes you a much better speaker. Let's build your word flexibility!",
     'topicVocab':
@@ -1208,19 +1208,19 @@ class StoryServiceImpl implements StoryService {
     ],
     'prefixsuffix': [
       "",
-      "Nice! You're getting the hang of how these little word pieces fit together.",
-      "You're doing great! Spotting prefixes and suffixes is becoming second nature to you.",
-      "50 levels cleared! Your vocabulary is expanding so much just by knowing these building blocks.",
-      "Level 100! This is huge. You're shaping words just like a native speaker.",
+      "Great start! You're beginning to see how a few tiny letters can completely flip a word's meaning.",
+      "You're doing fantastic. Recognizing prefixes and suffixes is becoming completely natural to you.",
+      "Level 50! You're basically doubling your vocabulary just by learning how to use these building blocks.",
+      "Level 100! You've officially unlocked the secret to English vocabulary. You're snapping words together just like a native speaker.",
       "Level 200! Incredible work. You've completely mastered how English words are built from the ground up.",
     ],
     'synonymsearch': [
       "",
-      "Great start! Finding words with the same meaning helps you avoid repeating yourself.",
-      "Your linguistic reflexes are getting sharp! You're warping synonyms like a pro.",
-      "50 levels cleared! Your brain is making word connections faster than ever.",
-      "Level 100! That takes serious dedication. You should be really proud of your rich vocabulary.",
-      "Double Centurion! Honestly, your vocabulary is incredible. You have a word for every single situation.",
+      "Great start! Knowing different words that mean the same thing is the secret to sounding totally natural.",
+      "You're doing fantastic! You're picking out the right synonyms faster and faster.",
+      "50 levels cleared! Your brain is automatically linking related words together now.",
+      "Level 100! That takes serious dedication. You should be really proud of how much your vocabulary has grown.",
+      "Level 200! Honestly, your vocabulary is incredible. You always know exactly the right word to say.",
     ],
     'topicvocab': [
       "",

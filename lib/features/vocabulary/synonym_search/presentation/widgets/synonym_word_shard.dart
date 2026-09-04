@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -82,8 +83,11 @@ class SynonymWordShard extends StatelessWidget {
                             ),
                           ),
                           child: Container(
-                            width: width,
-                            height: height,
+                            constraints: BoxConstraints(
+                              minWidth: width,
+                              minHeight: height,
+                              maxWidth: isCompact ? 120.w : 150.w,
+                            ),
                             decoration: BoxDecoration(
                               color: isDark
                                   ? const Color(0xFF1E293B)
@@ -109,22 +113,24 @@ class SynonymWordShard extends StatelessWidget {
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
-                                Opacity(
-                                  opacity: 0.15,
-                                  child: RepaintBoundary(
-                                    child: CustomPaint(
-                                      size: Size(width, height),
-                                      painter: TechPatternPainter(color),
+                                Positioned.fill(
+                                  child: Opacity(
+                                    opacity: 0.15,
+                                    child: RepaintBoundary(
+                                      child: CustomPaint(
+                                        painter: TechPatternPainter(color),
+                                      ),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(padding),
-                                  child: Text(
+                                  padding: EdgeInsets.symmetric(horizontal: padding + 4.w, vertical: padding + 2.h),
+                                  child: AutoSizeText(
                                     text.toUpperCase(),
                                     textAlign: TextAlign.center,
                                     maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
+                                    minFontSize: 8,
+                                    stepGranularity: 0.5,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: fontSize,
