@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,6 +39,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
+  bool _isAnimatingTap = false;
+  int? _hapticZoneIndex;
 
   final Map<int, ValueNotifier<Offset>> _shardOffsets = {};
   final Map<int, ValueNotifier<bool>> _isFused = {};
@@ -94,6 +95,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     }
 
     _activeShardIndex.value = null;
+    _isAnimatingTap = false;
+    _hapticZoneIndex = null;
   }
 
   @override
@@ -208,11 +211,16 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                                         height: 140.w,
                                                         child: FittedBox(
                                                           fit: BoxFit.scaleDown,
-                                                          child: AntonymNebulaCore(
-                                                            word: quest.word ?? "",
-                                                            color: targetColor,
-                                                            isDark: isDark,
-                                                          ),
+                                                          child:
+                                                              AntonymNebulaCore(
+                                                                word:
+                                                                    quest
+                                                                        .word ??
+                                                                    "",
+                                                                color:
+                                                                    targetColor,
+                                                                isDark: isDark,
+                                                              ),
                                                         ),
                                                       )
                                                     : AntonymNebulaCore(
@@ -327,21 +335,43 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                               primaryColor: theme.primaryColor,
                                             ),
                                           if (quest.explanation != null &&
-                                              quest.explanation!.isNotEmpty) ...[
+                                              quest
+                                                  .explanation!
+                                                  .isNotEmpty) ...[
                                             SizedBox(height: 16.h),
                                             Padding(
-                                              padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20.w,
+                                              ),
                                               child: Container(
                                                 padding: EdgeInsets.all(16.r),
                                                 decoration: BoxDecoration(
-                                                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-                                                  borderRadius: BorderRadius.circular(16.r),
-                                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                  color: isDark
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.05,
+                                                        )
+                                                      : Colors.black.withValues(
+                                                          alpha: 0.03,
+                                                        ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        16.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
+                                                  ),
                                                 ),
                                                 child: Row(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
                                                   children: [
-                                                    Icon(Icons.lightbulb_outline_rounded, color: theme.primaryColor, size: 20.r),
+                                                    Icon(
+                                                      Icons
+                                                          .lightbulb_outline_rounded,
+                                                      color: theme.primaryColor,
+                                                      size: 20.r,
+                                                    ),
                                                     SizedBox(width: 12.w),
                                                     Expanded(
                                                       child: Text(
@@ -349,8 +379,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                                         style: TextStyle(
                                                           fontFamily: 'Outfit',
                                                           fontSize: 14.sp,
-                                                          fontWeight: FontWeight.w500,
-                                                          color: isDark ? Colors.white70 : Colors.black87,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: isDark
+                                                              ? Colors.white70
+                                                              : Colors.black87,
                                                           height: 1.4,
                                                         ),
                                                       ),
@@ -418,7 +451,12 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onShardStart(int index) {
-    if (_isAnswered.value || _isDragPassed.value || _isFused[index]?.value == true) return;
+    if (_isAnswered.value ||
+        _isDragPassed.value ||
+        _isAnimatingTap ||
+        _isFused[index]?.value == true) {
+      return;
+    }
     _activeShardIndex.value = index;
     _hapticService.light();
   }
@@ -434,8 +472,12 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
       final triggerTop = maxHeight * 0.40;
       final triggerBottom = maxHeight * 0.60;
 
-      if (currentY > triggerTop && currentY < triggerBottom) {
+      final inZone = currentY > triggerTop && currentY < triggerBottom;
+      if (inZone && _hapticZoneIndex != index) {
         _hapticService.selection();
+        _hapticZoneIndex = index;
+      } else if (!inZone && _hapticZoneIndex == index) {
+        _hapticZoneIndex = null;
       }
     }
   }
@@ -447,7 +489,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final currentY = initial.dy + offset.dy;
 
     final maxHeight = _lastConstraints!.maxHeight;
-    final bool nearCenter = currentY > maxHeight * 0.35 && currentY < maxHeight * 0.65;
+    final bool nearCenter =
+        currentY > maxHeight * 0.35 && currentY < maxHeight * 0.65;
 
     if (nearCenter) {
       _evaluateShard(index);
@@ -461,7 +504,12 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onShardTapped(int index) {
-    if (_isAnswered.value || _isDragPassed.value || _isFused[index]?.value == true) return;
+    if (_isAnswered.value ||
+        _isDragPassed.value ||
+        _isAnimatingTap ||
+        _isFused[index]?.value == true) {
+      return;
+    }
     _activeShardIndex.value = index;
     _hapticService.light();
   }
@@ -470,10 +518,25 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     if (_activeShardIndex.value == null ||
         _isAnswered.value ||
         _isDragPassed.value ||
+        _isAnimatingTap ||
         _lastConstraints == null) {
       return;
     }
-    _evaluateShard(_activeShardIndex.value!);
+    
+    final activeIndex = _activeShardIndex.value!;
+    _isAnimatingTap = true;
+    _activeShardIndex.value = null; // trigger animation
+    
+    final initial = _getInitialPosition(activeIndex);
+    final center = Offset(_lastConstraints!.maxWidth / 2, _lastConstraints!.maxHeight / 2);
+    _shardOffsets[activeIndex]?.value = center - initial;
+
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (mounted) {
+        _isAnimatingTap = false;
+        _evaluateShard(activeIndex);
+      }
+    });
   }
 
   void _evaluateShard(int index) {
