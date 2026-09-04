@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 
 class TranslationBottomSheet extends StatelessWidget {
@@ -86,7 +87,10 @@ class TranslationBottomSheet extends StatelessWidget {
               if (state.currentTargetLanguage == null &&
                   !state.isModelDownloading) {
                 return Text(
-                  'Please select a language in the Translate tab first.',
+                  context.tr(
+                    'translation.no_language_configured',
+                    fallback: 'Please select a language in the Translate tab first.',
+                  ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -102,7 +106,7 @@ class TranslationBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'English',
+                        context.tr('translation.english_caps', fallback: 'English'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
