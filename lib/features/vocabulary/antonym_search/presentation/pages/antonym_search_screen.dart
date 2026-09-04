@@ -12,7 +12,6 @@ import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_lay
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_painters.dart';
-import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_pulsar.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_option_shard.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_gradient_scale.dart';
@@ -41,7 +40,6 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
-  bool _targetIsPositive = true;
 
   final Map<int, ValueNotifier<Offset>> _shardOffsets = {};
   final Map<int, ValueNotifier<bool>> _isFused = {};
@@ -52,7 +50,6 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   @override
   void initState() {
     super.initState();
-    _targetIsPositive = math.Random().nextBool();
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -87,7 +84,6 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     _isAnswered.value = false;
     _isCorrect.value = null;
     _isDragPassed.value = false;
-    _targetIsPositive = math.Random().nextBool();
 
     _disposeShardNotifiers();
 
@@ -103,9 +99,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final targetColor = _targetIsPositive
-        ? const Color(0xFF00E5FF)
-        : const Color(0xFFFF4D00);
+    final targetColor = const Color(0xFF00E5FF);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
@@ -205,45 +199,28 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                               ),
                                             ),
 
-                                            AntonymPulsar(
-                                              isTop: true,
-                                              targetIsPositive:
-                                                  _targetIsPositive,
-                                              onTap: () =>
-                                                  _onPulsarTapped(true),
-                                            ),
-                                            AntonymPulsar(
-                                              isTop: false,
-                                              targetIsPositive:
-                                                  _targetIsPositive,
-                                              onTap: () =>
-                                                  _onPulsarTapped(false),
-                                            ),
-
                                             Center(
-                                              child: isCompact
-                                                  ? SizedBox(
-                                                      width: 140.w,
-                                                      height: 140.w,
-                                                      child: FittedBox(
-                                                        fit: BoxFit.scaleDown,
-                                                        child: AntonymNebulaCore(
-                                                          word:
-                                                              quest.word ?? "",
-                                                          color: targetColor,
-                                                          isDark: isDark,
-                                                          targetIsPositive:
-                                                              _targetIsPositive,
+                                              child: GestureDetector(
+                                                onTap: _onCoreTapped,
+                                                child: isCompact
+                                                    ? SizedBox(
+                                                        width: 140.w,
+                                                        height: 140.w,
+                                                        child: FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: AntonymNebulaCore(
+                                                            word: quest.word ?? "",
+                                                            color: targetColor,
+                                                            isDark: isDark,
+                                                          ),
                                                         ),
+                                                      )
+                                                    : AntonymNebulaCore(
+                                                        word: quest.word ?? "",
+                                                        color: targetColor,
+                                                        isDark: isDark,
                                                       ),
-                                                    )
-                                                  : AntonymNebulaCore(
-                                                      word: quest.word ?? "",
-                                                      color: targetColor,
-                                                      isDark: isDark,
-                                                      targetIsPositive:
-                                                          _targetIsPositive,
-                                                    ),
+                                              ),
                                             ),
 
                                             ...List.generate(
@@ -454,10 +431,10 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
       final currentY = initial.dy + _shardOffsets[index]!.value.dy;
       final maxHeight = _lastConstraints?.maxHeight ?? 600;
 
-      final triggerTop = maxHeight * 0.20;
-      final triggerBottom = maxHeight * 0.80;
+      final triggerTop = maxHeight * 0.40;
+      final triggerBottom = maxHeight * 0.60;
 
-      if (currentY < triggerTop || currentY > triggerBottom) {
+      if (currentY > triggerTop && currentY < triggerBottom) {
         _hapticService.selection();
       }
     }
@@ -470,11 +447,10 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final currentY = initial.dy + offset.dy;
 
     final maxHeight = _lastConstraints!.maxHeight;
-    final bool nearTop = currentY < maxHeight * 0.20;
-    final bool nearBottom = currentY > maxHeight * 0.80;
+    final bool nearCenter = currentY > maxHeight * 0.35 && currentY < maxHeight * 0.65;
 
-    if (nearTop || nearBottom) {
-      _evaluateShard(index, nearTop);
+    if (nearCenter) {
+      _evaluateShard(index);
     } else {
       if (_shardOffsets[index] != null) {
         _shardOffsets[index]!.value = Offset.zero;
@@ -490,26 +466,22 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     _hapticService.light();
   }
 
-  void _onPulsarTapped(bool isTop) {
+  void _onCoreTapped() {
     if (_activeShardIndex.value == null ||
         _isAnswered.value ||
         _isDragPassed.value ||
         _lastConstraints == null) {
       return;
     }
-    _evaluateShard(_activeShardIndex.value!, isTop);
+    _evaluateShard(_activeShardIndex.value!);
   }
 
-  void _evaluateShard(int index, bool toTop) {
-    final bool toPositive = toTop;
-    final bool isOpposite =
-        (toPositive && !_targetIsPositive) ||
-        (!toPositive && _targetIsPositive);
+  void _evaluateShard(int index) {
     final bool isAntonym =
         _lastQuest!.options![index].trim().toLowerCase() ==
         _lastQuest!.correctAnswer?.trim().toLowerCase();
 
-    if (isAntonym && isOpposite) {
+    if (isAntonym) {
       _onSuccess(index);
     } else {
       _onFailure(index);

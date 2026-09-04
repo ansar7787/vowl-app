@@ -7,14 +7,12 @@ class AntonymNebulaCore extends StatelessWidget {
   final String word;
   final Color color;
   final bool isDark;
-  final bool targetIsPositive;
 
   const AntonymNebulaCore({
     super.key,
     required this.word,
     required this.color,
     required this.isDark,
-    required this.targetIsPositive,
   });
 
   @override
@@ -61,15 +59,6 @@ class AntonymNebulaCore extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        targetIsPositive ? "[+]" : "[-]",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
-                          color: color,
-                        ),
-                      ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10.w),
                         child: FittedBox(

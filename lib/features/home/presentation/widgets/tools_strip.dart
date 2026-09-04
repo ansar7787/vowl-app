@@ -72,10 +72,10 @@ class ToolsStrip extends StatelessWidget {
       ),
       _ToolDef(
         title: context.tr('home.translation_title', fallback: 'Translate'),
-        subtitle: context.tr('home.tools_offline_ready', fallback: '120+ Langs'),
+        subtitle: context.tr('home.tools_offline_ready', fallback: '50+ Langs'),
         tooltip: context.tr(
           'home.tools_translate_tip',
-          fallback: 'Offline translation for 120+ languages',
+          fallback: 'Offline translation for 50+ languages',
         ),
         icon: Icons.translate_rounded,
         emoji: '💬',
@@ -270,6 +270,32 @@ class _FeaturedToolCard extends StatelessWidget {
         message: def.tooltip ?? def.subtitle,
         preferBelow: true,
         triggerMode: TooltipTriggerMode.longPress,
+        showDuration: const Duration(seconds: 3),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        margin: EdgeInsets.symmetric(horizontal: 24.w),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(
+            color: def.color.withValues(alpha: 0.5),
+            width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: def.color.withValues(alpha: 0.2),
+              blurRadius: 16,
+              spreadRadius: 4,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        textStyle: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w600,
+          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          height: 1.3,
+        ),
         child: ScaleButton(
           onTap: () => _handleToolTap(context, def),
           child: ExcludeSemantics(
@@ -421,6 +447,32 @@ class _CompactToolCard extends StatelessWidget {
         message: def.tooltip ?? def.subtitle,
         preferBelow: true,
         triggerMode: TooltipTriggerMode.longPress,
+        showDuration: const Duration(seconds: 3),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        margin: EdgeInsets.symmetric(horizontal: 24.w),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(
+            color: def.color.withValues(alpha: 0.5),
+            width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: def.color.withValues(alpha: 0.2),
+              blurRadius: 16,
+              spreadRadius: 4,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        textStyle: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w600,
+          color: isDark ? Colors.white : const Color(0xFF0F172A),
+          height: 1.3,
+        ),
         child: ScaleButton(
           onTap: () => _handleToolTap(context, def),
           child: ExcludeSemantics(
