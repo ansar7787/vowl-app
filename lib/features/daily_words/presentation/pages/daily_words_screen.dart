@@ -23,6 +23,7 @@ import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
 import 'package:vowl/features/daily_words/presentation/widgets/daily_words_widgets.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class DailyWordsScreen extends StatefulWidget {
   const DailyWordsScreen({super.key});
@@ -35,8 +36,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     with TickerProviderStateMixin {
   late final AnimationController _flipController;
   late final AnimationController _slideController;
+  late final AnimationController _entranceController;
   late final Animation<double> _flipAnimation;
   late final Animation<Offset> _slideAnimation;
+  late final Animation<Offset> _entranceAnimation;
+  late Tween<Offset> _slideTween;
 
   final HapticService _haptics = di.sl<HapticService>();
   final SoundService _sound = di.sl<SoundService>();
@@ -45,6 +49,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   final ValueNotifier<bool> _isFlipped = ValueNotifier(false);
   final ValueNotifier<bool> _isAnimating = ValueNotifier(false);
+  final ValueNotifier<bool> _showFlipHint = ValueNotifier(true);
+  final ValueNotifier<DailyWord?> _activeRecallWord = ValueNotifier(null);
 
   // Session Access State
   final ValueNotifier<bool> _hasUnlockedFullSession = ValueNotifier(false);
@@ -68,13 +74,26 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     );
 
     _slideController = AnimationController(
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 550),
       vsync: this,
     );
-    _slideAnimation =
-        Tween<Offset>(begin: Offset.zero, end: const Offset(1.5, 0)).animate(
-          CurvedAnimation(parent: _slideController, curve: Curves.easeInCubic),
+    _slideTween = Tween<Offset>(begin: Offset.zero, end: const Offset(1.5, 0));
+    _slideAnimation = _slideTween.animate(
+      CurvedAnimation(parent: _slideController, curve: Curves.easeOutCubic),
+    );
+
+    _entranceController = AnimationController(
+      duration: const Duration(milliseconds: 450),
+      vsync: this,
+    );
+    _entranceAnimation =
+        Tween<Offset>(begin: const Offset(-1.0, 0), end: Offset.zero).animate(
+          CurvedAnimation(
+            parent: _entranceController,
+            curve: Curves.easeOutCubic,
+          ),
         );
+    _entranceController.value = 1.0; // Start at final position
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     _translationUnlocked.value = isPremium;
@@ -89,8 +108,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   void dispose() {
     _flipController.dispose();
     _slideController.dispose();
+    _entranceController.dispose();
     _isFlipped.dispose();
     _isAnimating.dispose();
+    _showFlipHint.dispose();
+    _activeRecallWord.dispose();
     _hasUnlockedFullSession.dispose();
     _translationUnlocked.dispose();
     _isTranslating.dispose();
@@ -103,6 +125,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   void _toggleFlip() {
     if (_isAnimating.value) return;
     _haptics.light();
+    _showFlipHint.value = false;
     _isFlipped.value = !_isFlipped.value;
     if (_isFlipped.value) {
       _flipController.forward();
@@ -348,7 +371,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     return completer.future;
   }
 
-  Future<void> _markLearnedAndNext(DailyWord word) async {
+  void _triggerActiveRecall(DailyWord word) {
+    if (_isAnimating.value) return;
+    _activeRecallWord.value = word;
+  }
+
+  Future<void> _executeGotIt(DailyWord word) async {
     if (_isAnimating.value) return;
     final state = context.read<DailyWordsBloc>().state;
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
@@ -370,6 +398,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     if (!mounted) return;
     context.read<DailyWordsBloc>().add(DailyWordMarkedLearned(word));
 
+    _slideTween.end = const Offset(1.5, 0);
     await _slideController.forward();
     if (!mounted) return;
 
@@ -377,6 +406,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _flipController.reset();
     _isFlipped.value = false;
     _isAnimating.value = false;
+    _showFlipHint.value = true;
     _translationUnlocked.value = isPremium;
     // Reset translations for the new card
     _translatedWord.value = null;
@@ -384,6 +414,51 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _translatedExample.value = null;
 
     context.read<DailyWordsBloc>().add(const DailyWordNextRequested());
+
+    // Entrance animation for new card
+    _entranceController.value = 0.0;
+    _entranceController.forward();
+  }
+
+  Future<void> _markNeedsReviewAndNext(DailyWord word) async {
+    if (_isAnimating.value) return;
+    final state = context.read<DailyWordsBloc>().state;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
+    if (!isPremium &&
+        state.currentIndex == 4 &&
+        !_hasUnlockedFullSession.value) {
+      final unlocked = await _showHalfwayMonetizationGate();
+      if (!unlocked) return;
+      _hasUnlockedFullSession.value = true;
+    }
+
+    _isAnimating.value = true;
+    _haptics.light();
+
+    // Mark as learned to keep progression, but user intent was "Review Later"
+    // (Leitner system puts everything in Box 1 initially anyway).
+    if (!mounted) return;
+    context.read<DailyWordsBloc>().add(DailyWordMarkedLearned(word));
+
+    _slideTween.end = const Offset(-1.5, 0); // Slide left for review later
+    await _slideController.forward();
+    if (!mounted) return;
+
+    _slideController.reset();
+    _flipController.reset();
+    _isFlipped.value = false;
+    _isAnimating.value = false;
+    _showFlipHint.value = true;
+    _translationUnlocked.value = isPremium;
+    _translatedWord.value = null;
+    _translatedDefinition.value = null;
+    _translatedExample.value = null;
+
+    context.read<DailyWordsBloc>().add(const DailyWordNextRequested());
+
+    _entranceController.value = 0.0;
+    _entranceController.forward();
   }
 
   void _speakWord(String word) {
@@ -513,6 +588,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                         0,
                     totalLearned: state.totalWordsLearned,
                     day: state.currentDay,
+                    wordsThisSession: state.learnedThisSession.length,
+                    isPremium:
+                        context.read<AuthBloc>().state.user?.isPremium ?? false,
                   ),
                 );
               }
@@ -529,6 +607,25 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 return const IgnorePointer(child: GameConfetti());
               }
               return const SizedBox.shrink();
+            },
+          ),
+          ValueListenableBuilder<DailyWord?>(
+            valueListenable: _activeRecallWord,
+            builder: (context, recallWord, _) {
+              if (recallWord == null) return const SizedBox.shrink();
+              return TypeToConfirmOverlay(
+                expectedText: recallWord.word,
+                displayText: recallWord.definition,
+                primaryColor: const Color(0xFF10B981),
+                onConfirmed: () {
+                  _activeRecallWord.value = null;
+                  _executeGotIt(recallWord);
+                },
+                onSkipped: () {
+                  _activeRecallWord.value = null;
+                  _markNeedsReviewAndNext(recallWord);
+                },
+              );
             },
           ),
         ],
@@ -592,6 +689,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
         _translatedWord,
         _translatedDefinition,
         _translatedExample,
+        _showFlipHint,
       ]),
       builder: (context, _) {
         return SafeArea(
@@ -724,45 +822,61 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   ),
                   child: SlideTransition(
                     position: _slideAnimation,
-                    child: GestureDetector(
-                      onTap: _toggleFlip,
-                      child: AnimatedBuilder(
-                        animation: _flipAnimation,
-                        builder: (context, child) {
-                          final angle = _flipAnimation.value * 3.14159;
-                          final showBack = _flipAnimation.value > 0.5;
-                          return Transform(
-                            alignment: Alignment.center,
-                            transform: Matrix4.identity()
-                              ..setEntry(3, 2, 0.001)
-                              ..rotateY(angle),
-                            child: showBack
-                                ? Transform(
-                                    alignment: Alignment.center,
-                                    transform: Matrix4.identity()
-                                      ..rotateY(3.14159),
-                                    child: WordCardBack(
+                    child: SlideTransition(
+                      position: _entranceAnimation,
+                      child: GestureDetector(
+                        onTap: _toggleFlip,
+                        onHorizontalDragEnd: (details) {
+                          if (_isAnimating.value) return;
+                          if (details.primaryVelocity! < -300) {
+                            // Swiped left -> Review Later
+                            _markNeedsReviewAndNext(word);
+                          } else if (details.primaryVelocity! > 300) {
+                            // Swiped right -> Got it (Active Recall)
+                            _triggerActiveRecall(word);
+                          }
+                        },
+                        child: AnimatedBuilder(
+                          animation: _flipAnimation,
+                          builder: (context, child) {
+                            final angle = _flipAnimation.value * 3.14159;
+                            final showBack = _flipAnimation.value > 0.5;
+                            return Transform(
+                              alignment: Alignment.center,
+                              transform: Matrix4.identity()
+                                ..setEntry(3, 2, 0.001)
+                                ..rotateY(angle),
+                              child: showBack
+                                  ? Transform(
+                                      alignment: Alignment.center,
+                                      transform: Matrix4.identity()
+                                        ..rotateY(3.14159),
+                                      child: WordCardBack(
+                                        word: word,
+                                        isDark: isDark,
+                                        onSpeak: () => _speakWord(word.word),
+                                        onTranslate: () => _handleTranslate(word),
+                                        isTranslating: _isTranslating.value,
+                                        translatedDefinition:
+                                            _translatedDefinition.value,
+                                        translatedExample:
+                                            _translatedExample.value,
+                                      ),
+                                    )
+                                  : WordCardFront(
                                       word: word,
                                       isDark: isDark,
                                       onSpeak: () => _speakWord(word.word),
                                       onTranslate: () => _handleTranslate(word),
                                       isTranslating: _isTranslating.value,
-                                      translatedDefinition:
-                                          _translatedDefinition.value,
-                                      translatedExample:
-                                          _translatedExample.value,
+                                      translatedWord: _translatedWord.value,
+                                      difficulty: word.difficulty,
+                                      theme: state.wordSet?.theme,
+                                      showFlipHint: _showFlipHint.value,
                                     ),
-                                  )
-                                : WordCardFront(
-                                    word: word,
-                                    isDark: isDark,
-                                    onSpeak: () => _speakWord(word.word),
-                                    onTranslate: () => _handleTranslate(word),
-                                    isTranslating: _isTranslating.value,
-                                    translatedWord: _translatedWord.value,
-                                  ),
-                          );
-                        },
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),
@@ -802,14 +916,15 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           children: [
                             Expanded(
                               child: ActionButton(
+                                key: const ValueKey('skip_btn'),
                                 label: context.tr(
-                                  'daily_words.pronounce',
-                                  fallback: 'Pronounce',
+                                  'daily_words.skip',
+                                  fallback: 'Review Later',
                                 ),
-                                icon: Icons.volume_up_rounded,
-                                color: const Color(0xFF6366F1),
+                                icon: Icons.replay_rounded,
+                                color: const Color(0xFFF59E0B),
                                 isDark: isDark,
-                                onTap: () => _speakWord(word.word),
+                                onTap: () => _markNeedsReviewAndNext(word),
                               ),
                             ),
                             SizedBox(width: 12.w),
@@ -818,12 +933,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                 key: const ValueKey('learned_btn'),
                                 label: context.tr(
                                   'daily_words.learned',
-                                  fallback: 'Got it! Next Word',
+                                  fallback: 'Got it!',
                                 ),
                                 icon: Icons.verified_rounded,
                                 color: const Color(0xFF10B981),
                                 isDark: isDark,
-                                onTap: () => _markLearnedAndNext(word),
+                                onTap: () => _triggerActiveRecall(word),
                               ),
                             ),
                           ],
