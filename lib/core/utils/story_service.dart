@@ -463,11 +463,11 @@ class StoryServiceImpl implements StoryService {
   static const Map<String, List<String>> legacyAdultScripts = {
     'academicword': [
       "",
-      "Great start! You're getting the hang of these academic terms.",
-      "Impressive! You're handling complex academic vocabulary with ease.",
-      "50 levels cleared! Your command of professional English is rock solid.",
-      "Level 100! You are now a master of academic vocabulary.",
-      "Level 200 reached! Your academic lexicon is unmatched globally.",
+      "Great start! You're really getting a feel for these professional words.",
+      "Impressive! You're dropping those advanced words into sentences with natural ease.",
+      "50 levels cleared! Your command of professional English is becoming incredibly strong.",
+      "Level 100! You are expressing complex ideas clearly, confidently, and naturally.",
+      "Level 200 reached! You sound like a native professional. Absolutely brilliant work!",
     ],
     'antonymsearch': [
       "",

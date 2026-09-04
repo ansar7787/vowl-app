@@ -9,7 +9,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_painters.dart';
@@ -18,6 +17,7 @@ import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/acad
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_shard.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_field_collocations.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/utils/instruction_helper.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Public screen widget
@@ -50,6 +50,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _isDragPassed = ValueNotifier(false);
   final ValueNotifier<String?> _misspelledWord = ValueNotifier(null);
+  final ValueNotifier<bool> _isSlotSelected = ValueNotifier(false);
 
   final ScrollController _scrollController = ScrollController();
 
@@ -67,6 +68,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     _showConfetti.dispose();
     _isDragPassed.dispose();
     _misspelledWord.dispose();
+    _isSlotSelected.dispose();
     _dragOffset.dispose();
     _activeShardIndex.dispose();
     _scrollController.dispose();
@@ -133,6 +135,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         _isCorrect.value = null;
         _isDragPassed.value = false;
         _misspelledWord.value = null;
+        _isSlotSelected.value = false;
         return;
       }
 
@@ -149,7 +152,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         context,
         xp: state.xpEarned,
         coins: state.coinsEarned,
-        title: AcademicWordStrings.completionTitle,
         enableDoubleUp: true,
       );
       Future.delayed(const Duration(seconds: 3), () {
@@ -171,6 +173,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         _showConfetti,
         _isDragPassed,
         _misspelledWord,
+        _isSlotSelected,
         _dragOffset,
         _activeShardIndex,
       ]),
@@ -213,8 +216,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                     final keyboardHeight = MediaQuery.of(
                       context,
                     ).viewInsets.bottom;
-                    final trueMaxHeight =
-                        constraints.maxHeight + keyboardHeight;
+                    final trueMaxHeight = constraints.maxHeight;
 
                     return Stack(
                       children: [
@@ -250,6 +252,13 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                                 _isDragPassed.value,
                                             misspelledWord:
                                                 _misspelledWord.value,
+                                            isSlotSelected:
+                                                _isSlotSelected.value,
+                                            onSlotTap: () {
+                                              _hapticService.light();
+                                              _isSlotSelected.value =
+                                                  !_isSlotSelected.value;
+                                            },
                                             slotKey: _slotKey,
                                             activeShardIndex:
                                                 _activeShardIndex.value,
@@ -268,22 +277,22 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                         ),
                                       ),
                                       if (_isDragPassed.value)
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 20.w,
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              SizedBox(height: 10.h),
-                                              if (quest.academicField != null ||
-                                                  (quest.collocations != null &&
-                                                      quest
-                                                          .collocations!
-                                                          .isNotEmpty) ||
-                                                  quest.contextSentence !=
-                                                      null ||
-                                                  quest.example != null)
-                                                AcademicWordFieldCollocations(
+                                        Column(
+                                          children: [
+                                            SizedBox(height: 10.h),
+                                            if (quest.academicField != null ||
+                                                (quest.collocations != null &&
+                                                    quest
+                                                        .collocations!
+                                                        .isNotEmpty) ||
+                                                quest.contextSentence !=
+                                                    null ||
+                                                quest.example != null)
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 20.w,
+                                                ),
+                                                child: AcademicWordFieldCollocations(
                                                   academicField:
                                                       quest.academicField,
                                                   collocations:
@@ -294,17 +303,26 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                                   color:
                                                       _cachedTheme.primaryColor,
                                                 ),
-                                              SizedBox(height: 10.h),
-                                            ],
-                                          ),
+                                              ),
+                                            if (_isDragPassed.value && !_isAnswered.value)
+                                              Column(
+                                                children: [
+                                                  SizedBox(height: 24.h),
+                                                  TypeToConfirmOverlay(
+                                                    expectedText: quest.correctAnswer ?? '',
+                                                    primaryColor: _cachedTheme.primaryColor,
+                                                    onConfirmed: () => _submitFinalAnswer(true),
+                                                    onSkipped: () => _submitFinalAnswer(false),
+                                                    onBypassed: () => _submitFinalAnswer(true),
+                                                    isPositioned: false,
+                                                  ),
+                                                ],
+                                              ),
+                                            SizedBox(
+                                              height: 80.h + keyboardHeight,
+                                            ),
+                                          ],
                                         ),
-                                      SizedBox(
-                                        height:
-                                            (_isAnswered.value ||
-                                                _isDragPassed.value)
-                                            ? 380.h
-                                            : 60.h,
-                                      ),
                                     ],
                                   ),
                                 ),
@@ -312,15 +330,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                             ], // closes slivers
                           ), // closes CustomScrollView
                         ), // closes RawScrollbar
-                        if (_isDragPassed.value && !_isAnswered.value)
-                          TypeToConfirmOverlay(
-                            expectedText: quest.correctAnswer ?? '',
-                            primaryColor: _cachedTheme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                            onBypassed: () => _submitFinalAnswer(true),
-                            isPositioned: true,
-                          ),
                       ], // closes Stack children
                     ); // closes Stack
                   },
@@ -386,6 +395,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
 
     if (selected == correct) {
       _hapticService.selection();
+      _isSlotSelected.value = false;
       _isDragPassed.value = true;
       _activeShardIndex.value = null;
 
@@ -401,10 +411,12 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      _isSlotSelected.value = false;
       _isAnswered.value = true;
       _isCorrect.value = false;
       _activeShardIndex.value = null;
       _dragOffset.value = Offset.zero;
+      _misspelledWord.value = options[index];
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -515,6 +527,8 @@ class _AcademicWordGameBody extends StatelessWidget {
   final bool? isCorrect;
   final bool isFirstStagePassed;
   final String? misspelledWord;
+  final bool isSlotSelected;
+  final VoidCallback onSlotTap;
   final GlobalKey slotKey;
   final int? activeShardIndex;
   final Offset dragOffset;
@@ -531,6 +545,8 @@ class _AcademicWordGameBody extends StatelessWidget {
     required this.isCorrect,
     required this.isFirstStagePassed,
     required this.misspelledWord,
+    required this.isSlotSelected,
+    required this.onSlotTap,
     required this.slotKey,
     required this.activeShardIndex,
     required this.dragOffset,
@@ -617,10 +633,7 @@ class _AcademicWordGameBody extends StatelessWidget {
             fit: isAnyCompact ? BoxFit.scaleDown : BoxFit.none,
             child: AcademicWordInstruction(
               color: themeColor,
-              label: context.tr(
-                'games.academic_word_instruction',
-                fallback: "Drag the precise word into the passage.",
-              ),
+              label: InstructionHelper.getInstruction(quest),
             ),
           ),
         ),
@@ -656,6 +669,8 @@ class _AcademicWordGameBody extends StatelessWidget {
             isCorrect: isCorrect,
             correctAnswer: quest.correctAnswer,
             userSpelledWord: misspelledWord,
+            isSlotSelected: isSlotSelected,
+            onSlotTap: onSlotTap,
           ),
         ),
       ),

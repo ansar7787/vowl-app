@@ -4,6 +4,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class InstructionHelper {
   static const List<String> _genericFallbacks = [
+    'drag the correct word to complete the sentence.',
     'choose the correct answer.',
     'write the response.',
     'speak the words.',
@@ -84,6 +85,9 @@ class InstructionHelper {
     }
     
     // 6. Ultimate fallback (returns the parser's generic default if no translation exists)
+    if (lowerInstruction == 'drag the correct word to complete the sentence.') {
+      return 'Tap or drag to complete the sentence.';
+    }
     return rawInstruction;
   }
   

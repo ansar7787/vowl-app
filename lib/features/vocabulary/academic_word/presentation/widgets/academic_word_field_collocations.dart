@@ -100,11 +100,11 @@ class AcademicWordFieldCollocations extends StatelessWidget {
                   SizedBox(height: 16.h),
                 Row(
                   children: [
-                    Icon(Icons.format_quote_rounded, color: color, size: 20.r),
+                    Icon(Icons.lightbulb_rounded, color: color, size: 20.r),
                     SizedBox(width: 8.w),
                     Expanded(
                       child: Text(
-                        "\"$contextSentence\"",
+                        contextSentence!,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,

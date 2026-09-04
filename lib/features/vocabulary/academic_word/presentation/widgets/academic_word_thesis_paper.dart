@@ -12,6 +12,8 @@ class AcademicWordThesisPaper extends StatelessWidget {
   final bool? isCorrect;
   final String? correctAnswer;
   final String? userSpelledWord;
+  final bool isSlotSelected;
+  final VoidCallback onSlotTap;
 
   const AcademicWordThesisPaper({
     super.key,
@@ -22,6 +24,8 @@ class AcademicWordThesisPaper extends StatelessWidget {
     required this.isCorrect,
     required this.correctAnswer,
     this.userSpelledWord,
+    required this.isSlotSelected,
+    required this.onSlotTap,
   });
 
   @override
@@ -60,6 +64,8 @@ class AcademicWordThesisPaper extends StatelessWidget {
                     isCorrect: isCorrect,
                     correctAnswer: correctAnswer,
                     userSpelledWord: userSpelledWord,
+                    isSlotSelected: isSlotSelected,
+                    onSlotTap: onSlotTap,
                     isDark: isDark,
                     slotWidth: slotWidth,
                     slotHeight: slotHeight,
@@ -107,6 +113,8 @@ class _ThesisPaperContent extends StatefulWidget {
   final bool? isCorrect;
   final String? correctAnswer;
   final String? userSpelledWord;
+  final bool isSlotSelected;
+  final VoidCallback onSlotTap;
   final bool isDark;
   final double slotWidth;
   final double slotHeight;
@@ -119,6 +127,8 @@ class _ThesisPaperContent extends StatefulWidget {
     required this.isCorrect,
     required this.correctAnswer,
     required this.userSpelledWord,
+    required this.isSlotSelected,
+    required this.onSlotTap,
     required this.isDark,
     required this.slotWidth,
     required this.slotHeight,
@@ -195,6 +205,8 @@ class _ThesisPaperContentState extends State<_ThesisPaperContent> {
               isCorrect: widget.isCorrect,
               correctAnswer: widget.correctAnswer,
               userSpelledWord: widget.userSpelledWord,
+              isSlotSelected: widget.isSlotSelected,
+              onSlotTap: widget.onSlotTap,
               answerStyle: _answerStyle(widget.color),
               pendingColor: pendingColor,
             ),
@@ -217,6 +229,8 @@ class _AnswerSlot extends StatelessWidget {
   final bool? isCorrect;
   final String? correctAnswer;
   final String? userSpelledWord;
+  final bool isSlotSelected;
+  final VoidCallback onSlotTap;
   final TextStyle answerStyle;
   final Color pendingColor;
 
@@ -230,46 +244,58 @@ class _AnswerSlot extends StatelessWidget {
     required this.isCorrect,
     required this.correctAnswer,
     required this.userSpelledWord,
+    required this.isSlotSelected,
+    required this.onSlotTap,
     required this.answerStyle,
     required this.pendingColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      key: slotKey,
-      width: width,
-      height: height,
-      margin: EdgeInsets.symmetric(horizontal: 6.w),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05),
-        border: Border(bottom: BorderSide(color: underlineColor, width: 2.5)),
-      ),
-      child: Center(
+    final effectiveColor = isSlotSelected ? color : color.withValues(alpha: 0.05);
+    final borderColor = isSlotSelected ? color : underlineColor;
+    
+    return GestureDetector(
+      onTap: onSlotTap,
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        key: slotKey,
+        width: width,
+        height: height,
+        margin: EdgeInsets.symmetric(horizontal: 6.w),
+        decoration: BoxDecoration(
+          color: effectiveColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
+          border: Border(bottom: BorderSide(color: borderColor, width: 2.5)),
+        ),
+        child: Center(
         child:
             (isAnswered && isCorrect == true) ||
                 (isAnswered && isCorrect == false && userSpelledWord != null)
-            ? Text(
-                (isCorrect == true ? correctAnswer : userSpelledWord)
-                        ?.toUpperCase() ??
-                    '',
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: isCorrect == true
-                    ? answerStyle
-                    : answerStyle.copyWith(color: AcademicWordColors.slotError),
-              ).animate().fadeIn().scale()
-            : Text(
-                AcademicWordStrings.slotPending,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: pendingColor,
-                  fontSize: 9,
-                  letterSpacing: 1,
-                ),
-              ).animate(onPlay: (c) => c.repeat()).shimmer(),
+            ? FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  (isCorrect == true ? correctAnswer : userSpelledWord)
+                          ?.toUpperCase() ??
+                      '',
+                  style: isCorrect == true
+                      ? answerStyle
+                      : answerStyle.copyWith(color: AcademicWordColors.slotError),
+                ).animate().fadeIn().scale(),
+              )
+            : FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  AcademicWordStrings.slotPending,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: isSlotSelected ? Colors.white : pendingColor,
+                    fontSize: 9,
+                    letterSpacing: 1,
+                  ),
+                ).animate(onPlay: (c) => c.repeat()).shimmer(),
+              ),
+      ),
       ),
     );
   }

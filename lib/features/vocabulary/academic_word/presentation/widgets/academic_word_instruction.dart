@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/features/vocabulary/academic_word/academic_word_constants.dart';
 
 /// Animated pill-shaped instruction banner at the top of the game.
 class AcademicWordInstruction extends StatelessWidget {
@@ -11,7 +10,7 @@ class AcademicWordInstruction extends StatelessWidget {
   const AcademicWordInstruction({
     super.key,
     required this.color,
-    this.label = AcademicWordStrings.instruction,
+    required this.label,
   });
 
   static TextStyle _labelStyle(Color color) => TextStyle(

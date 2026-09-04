@@ -217,6 +217,20 @@ class GameInstructionService {
 
   // Large centralized static register matching GameSubtypes to their Briefing parameters.
   static const Map<GameSubtype, GameBriefing> _briefings = {
+    GameSubtype.academicWord: GameBriefing(
+      title: "Academic Word",
+      icon: Icons.school_rounded,
+      objective:
+          "Read the context of the sentence carefully and drop in the perfect academic word. Expanding this vocabulary helps you sound highly professional and articulate in any setting.",
+      rules: [
+        "Analyze context clues",
+        "Look for collocations",
+        "Drop in the exact word",
+      ],
+      actionText: "Start Challenge",
+      tip:
+          "PRO TIP: Pay close attention to the surrounding words and prepositions—they naturally pull the correct answer towards them!",
+    ),
     GameSubtype.speedSpelling: GameBriefing(
       title: "Speed Spelling",
       icon: Icons.bolt_rounded,
@@ -1199,20 +1213,6 @@ class GameInstructionService {
       actionText: "Decrypt Message",
       tip:
           "PRO TIP: Idioms are colorful cultural keys! Don't translate them literally word-for-word.",
-    ),
-    GameSubtype.academicWord: GameBriefing(
-      title: "Academic Vocabulary",
-      icon: Icons.auto_stories_rounded,
-      objective:
-          "Read the thesis excerpt and drag the correct academic word into the blank, then spell it to verify your mastery.",
-      rules: [
-        "Read the context carefully",
-        "Drag word into the slot",
-        "Spell accurately to win",
-      ],
-      actionText: "Start Analysis",
-      tip:
-          "PRO TIP: Pay attention to the collocations or surrounding words—they often give a strong hint about which academic term fits best.",
     ),
     GameSubtype.topicVocab: GameBriefing(
       title: "Topic Sorter",
