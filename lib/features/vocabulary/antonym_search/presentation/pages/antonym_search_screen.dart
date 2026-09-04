@@ -349,6 +349,40 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                                   quest.gradientScale!,
                                               primaryColor: theme.primaryColor,
                                             ),
+                                          if (quest.explanation != null &&
+                                              quest.explanation!.isNotEmpty) ...[
+                                            SizedBox(height: 16.h),
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                              child: Container(
+                                                padding: EdgeInsets.all(16.r),
+                                                decoration: BoxDecoration(
+                                                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                                                  borderRadius: BorderRadius.circular(16.r),
+                                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                                ),
+                                                child: Row(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Icon(Icons.lightbulb_outline_rounded, color: theme.primaryColor, size: 20.r),
+                                                    SizedBox(width: 12.w),
+                                                    Expanded(
+                                                      child: Text(
+                                                        quest.explanation!,
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 14.sp,
+                                                          fontWeight: FontWeight.w500,
+                                                          color: isDark ? Colors.white70 : Colors.black87,
+                                                          height: 1.4,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                           SizedBox(height: 24.h),
                                           SpeakToConfirmOverlay(
                                             expectedText:
@@ -407,7 +441,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onShardStart(int index) {
-    if (_isAnswered.value || _isFused[index]?.value == true) return;
+    if (_isAnswered.value || _isDragPassed.value || _isFused[index]?.value == true) return;
     _activeShardIndex.value = index;
     _hapticService.light();
   }
@@ -451,7 +485,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onShardTapped(int index) {
-    if (_isAnswered.value || _isFused[index]?.value == true) return;
+    if (_isAnswered.value || _isDragPassed.value || _isFused[index]?.value == true) return;
     _activeShardIndex.value = index;
     _hapticService.light();
   }
@@ -459,6 +493,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   void _onPulsarTapped(bool isTop) {
     if (_activeShardIndex.value == null ||
         _isAnswered.value ||
+        _isDragPassed.value ||
         _lastConstraints == null) {
       return;
     }
