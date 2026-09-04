@@ -247,7 +247,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 24.h),
+                              SizedBox(height: 32.h),
                               HomeSectionHeader(
                                 title: context.tr(
                                   'home.quest_arena_title',
@@ -303,7 +303,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         subtitle: context.tr(
                           'home.tools_subtitle',
-                          fallback: 'Quick access to learning tools',
+                          fallback: 'Your learning toolkit',
                         ),
                         categoryColor: const Color(0xFF10B981),
                       ),

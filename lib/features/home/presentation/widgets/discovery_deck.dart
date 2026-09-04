@@ -5,6 +5,8 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:go_router/go_router.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
 
 class DiscoveryDeck extends StatefulWidget {
@@ -49,7 +51,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           fallback: 'Recommended Quests',
         ),
         icon: Icons.lightbulb_outline_rounded,
-        color: const Color(0xFF6366F1),
+        color: const Color(0xFF6366F1), // Indigo — unique
         quests: 3,
         difficulty: context.tr(
           'home.discovery_diff_adaptive',
@@ -67,7 +69,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
           fallback: 'Quick Practice',
         ),
         icon: Icons.auto_awesome_motion_rounded,
-        color: const Color(0xFF6366F1),
+        color: const Color(0xFF06B6D4), // Cyan — was duplicate indigo
         quests: 2,
         difficulty: context.tr(
           'home.discovery_diff_medium',
@@ -108,6 +110,18 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         ),
         onTap: () => widget.onLaunchQuest('grammar_pro'),
       ),
+      (
+        title: context.tr('home.discovery_seemore_title', fallback: 'See More'),
+        subtitle: context.tr(
+          'home.discovery_seemore_subtitle',
+          fallback: 'Explore full library',
+        ),
+        icon: Icons.explore_rounded,
+        color: const Color(0xFFF43F5E), // Rose
+        quests: -1,
+        difficulty: context.tr('home.discovery_diff_all', fallback: 'All'),
+        onTap: () => context.push(AppRouter.libraryRoute),
+      ),
     ];
 
     return MediaQuery.withClampedTextScaling(
@@ -119,9 +133,14 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
-            height: 220.h,
-            child: PageView.builder(
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: 180.h,
+              maxHeight: 240.h,
+            ),
+            child: SizedBox(
+              height: 220.h,
+              child: PageView.builder(
               controller: _pageController,
               physics: const BouncingScrollPhysics(),
               onPageChanged: (int page) {
@@ -167,6 +186,7 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                   },
                 );
               },
+            ),
             ),
           ),
           SizedBox(height: 16.h),
@@ -327,7 +347,9 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                                 ),
                                               ),
                                             )
-                                            .animate()
+                                            .animate(
+                                              onPlay: (c) => c.repeat(),
+                                            )
                                             .scale(
                                               begin: const Offset(0.5, 0.5),
                                               end: const Offset(2, 2),
@@ -407,16 +429,21 @@ class _DiscoveryCollectionCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
+        // Was 0.05 opacity — invisible. Now 0.12 for readable contrast.
+        color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.2),
+          width: 0.5,
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
             Icons.psychology_rounded,
-            size: 10.r,
-            color: color.withValues(alpha: 0.7),
+            size: 12.r,
+            color: color,
           ),
           SizedBox(width: 4.w),
           Flexible(
@@ -424,9 +451,11 @@ class _DiscoveryCollectionCard extends StatelessWidget {
               text.toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 8.sp,
+                // Was 8sp — illegible. Bumped to 10sp minimum.
+                fontSize: 10.sp,
                 fontWeight: FontWeight.w800,
-                color: color.withValues(alpha: 0.7),
+                color: color,
+                letterSpacing: 0.5,
               ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -438,6 +467,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
   }
 
   Widget _buildQuestCount(BuildContext context, int count, Color color) {
+    if (count < 0) return const SizedBox.shrink();
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -447,7 +477,8 @@ class _DiscoveryCollectionCard extends StatelessWidget {
             color: color.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
-          child: Icon(Icons.layers_rounded, size: 12.r, color: color),
+          // gamepad/list icon better communicates "N playable quests".
+          child: Icon(Icons.videogame_asset_rounded, size: 12.r, color: color),
         ),
         SizedBox(width: 8.w),
         Text(
@@ -477,19 +508,18 @@ class _DiscoveryCollectionCard extends StatelessWidget {
         color: color.withValues(alpha: 0.12),
         shape: BoxShape.circle,
         border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.1),
-            blurRadius: 12,
-            spreadRadius: 2,
-          ),
-        ],
       ),
       child: Icon(
-        isRtl ? Icons.arrow_back_ios_rounded : Icons.arrow_forward_ios_rounded,
-        size: 14.r,
+        isRtl ? Icons.arrow_outward_rounded : Icons.arrow_outward_rounded,
+        size: 16.r,
         color: color,
       ),
-    ).animate().shimmer(delay: 1.seconds, duration: 2.seconds);
+    ).animate(
+      onPlay: (c) => c.repeat(reverse: true),
+    ).shimmer(
+      delay: 1.seconds,
+      duration: 2500.ms,
+      color: color.withValues(alpha: 0.3),
+    );
   }
 }
