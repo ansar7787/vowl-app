@@ -55,6 +55,7 @@ class TranslationState extends Equatable {
   final String? errorMessage;
   final int freeTranslationsRemaining;
   final bool isLimitReached;
+  final bool isTranslating;
 
   const TranslationState({
     this.status = TranslationStatus.initial,
@@ -66,6 +67,7 @@ class TranslationState extends Equatable {
     this.errorMessage,
     this.freeTranslationsRemaining = 3,
     this.isLimitReached = false,
+    this.isTranslating = false,
   });
 
   TranslationState copyWith({
@@ -78,6 +80,7 @@ class TranslationState extends Equatable {
     String? errorMessage,
     int? freeTranslationsRemaining,
     bool? isLimitReached,
+    bool? isTranslating,
   }) {
     return TranslationState(
       status: status ?? this.status,
@@ -91,6 +94,7 @@ class TranslationState extends Equatable {
       freeTranslationsRemaining:
           freeTranslationsRemaining ?? this.freeTranslationsRemaining,
       isLimitReached: isLimitReached ?? this.isLimitReached,
+      isTranslating: isTranslating ?? this.isTranslating,
     );
   }
 
@@ -105,6 +109,7 @@ class TranslationState extends Equatable {
     errorMessage,
     freeTranslationsRemaining,
     isLimitReached,
+    isTranslating,
   ];
 }
 
@@ -202,7 +207,11 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     emit(state.copyWith(sourceText: text, errorMessage: null));
 
     if (text.isEmpty) {
-      emit(state.copyWith(translatedText: '', isLimitReached: false));
+      emit(state.copyWith(
+        translatedText: '', 
+        isLimitReached: false,
+        isTranslating: false,
+      ));
       _lastTokenDeductionTime = null;
       return;
     }
@@ -226,6 +235,8 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       if (!isDownloaded) {
         emit(state.copyWith(isModelDownloading: true));
       }
+
+      emit(state.copyWith(isTranslating: true));
 
       final result = await _service.translate(text);
       final newDownloaded = await _service.getDownloadedLanguageNames();
@@ -251,12 +262,14 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
           downloadedLanguages: newDownloaded,
           freeTranslationsRemaining: finalRemaining,
           isLimitReached: false,
+          isTranslating: false,
         ),
       );
     } catch (e) {
       emit(
         state.copyWith(
           isModelDownloading: false,
+          isTranslating: false,
           errorMessage: e.toString().replaceAll('Exception: ', ''),
         ),
       );

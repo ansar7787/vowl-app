@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,6 +36,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
   void initState() {
     super.initState();
     context.read<TranslationBloc>().add(TranslationInitRequested());
+    _focusNode.addListener(() {
+      if (mounted) setState(() {});
+    });
   }
 
   @override
@@ -112,9 +117,15 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           SizedBox(height: 16.h),
-                          _buildLanguageSelector(context, isDark, isPremium),
+                          _buildLanguageSelector(context, isDark, isPremium)
+                              .animate()
+                              .fadeIn(duration: 400.ms, curve: Curves.easeOut)
+                              .slideY(begin: 0.1, end: 0, curve: Curves.easeOut),
                           SizedBox(height: 16.h),
-                          _buildInputArea(context, isDark, isPremium),
+                          _buildInputArea(context, isDark, isPremium)
+                              .animate(delay: 100.ms)
+                              .fadeIn(duration: 400.ms, curve: Curves.easeOut)
+                              .slideY(begin: 0.1, end: 0, curve: Curves.easeOut),
                           SizedBox(height: 16.h),
                           BlocBuilder<TranslationBloc, TranslationState>(
                             builder: (context, state) {
@@ -137,7 +148,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                               }
                               return _buildOutputArea(context, isDark);
                             },
-                          ),
+                          )
+                              .animate(delay: 200.ms)
+                              .fadeIn(duration: 400.ms, curve: Curves.easeOut)
+                              .slideY(begin: 0.1, end: 0, curve: Curves.easeOut),
                           SizedBox(height: 80.h),
                         ],
                       ),
@@ -273,6 +287,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
       behavior: HitTestBehavior.opaque,
       child: GlassTile(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        borderColor: _focusNode.hasFocus
+            ? const Color(0xFF6366F1).withValues(alpha: 0.5)
+            : null,
+        borderWidth: _focusNode.hasFocus ? 2.0 : null,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -334,21 +352,72 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     ],
                   ],
                 ),
-                if (_inputController.text.isNotEmpty)
-                  GestureDetector(
-                    onTap: () {
-                      _inputController.clear();
-                      context.read<TranslationBloc>().add(
-                        TranslationTextChanged('', isPremium: isPremium),
-                      );
-                      _haptics.light();
-                    },
-                    child: Icon(
-                      Icons.close_rounded,
-                      color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
-                      size: 18.r,
-                    ),
-                  ),
+                Row(
+                  children: [
+                    if (_inputController.text.isEmpty)
+                      GestureDetector(
+                        onTap: () async {
+                          final data = await Clipboard.getData('text/plain');
+                          if (data != null && (data.text?.isNotEmpty ?? false)) {
+                            _inputController.text = data.text!;
+                            _onInputChanged(data.text!);
+                            _haptics.light();
+                          }
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 6.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.paste_rounded,
+                                color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                                size: 14.r,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                context.tr('common.paste', fallback: 'Paste'),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ).animate().fadeIn(duration: 200.ms),
+                    if (_inputController.text.isNotEmpty)
+                      GestureDetector(
+                        onTap: () {
+                          _inputController.clear();
+                          context.read<TranslationBloc>().add(
+                            TranslationTextChanged('', isPremium: isPremium),
+                          );
+                          _haptics.light();
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(4.r),
+                          decoration: BoxDecoration(
+                            color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.close_rounded,
+                            color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                            size: 16.r,
+                          ),
+                        ),
+                      ).animate().scale(duration: 200.ms, curve: Curves.easeOutBack),
+                  ],
+                ),
               ],
             ),
             SizedBox(height: 12.h),
@@ -416,15 +485,80 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       letterSpacing: 1.5,
                     ),
                   ),
-                  if (state.isModelDownloading)
-                    SizedBox(
-                      width: 14.r,
-                      height: 14.r,
-                      child: const CircularProgressIndicator(
-                        strokeWidth: 2,
-                        color: Color(0xFF10B981),
-                      ),
-                    ),
+                  Row(
+                    children: [
+                      if (state.isTranslating)
+                        Padding(
+                          padding: EdgeInsets.only(right: 12.w),
+                          child: Text(
+                            context.tr('translation.translating', fallback: 'Translating...'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF10B981).withValues(alpha: 0.8),
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ).animate(onPlay: (controller) => controller.repeat()).shimmer(duration: 1.seconds),
+                        ),
+                      if (state.isModelDownloading)
+                        SizedBox(
+                          width: 14.r,
+                          height: 14.r,
+                          child: const CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Color(0xFF10B981),
+                          ),
+                        ),
+                      if (state.translatedText.isNotEmpty && !state.isTranslating)
+                        GestureDetector(
+                          onTap: () {
+                            Clipboard.setData(ClipboardData(text: state.translatedText));
+                            _haptics.success();
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  context.tr('common.copied', fallback: 'Copied to clipboard'),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                behavior: SnackBarBehavior.floating,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                                duration: const Duration(seconds: 2),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(16.r),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.copy_rounded,
+                                  color: const Color(0xFF10B981),
+                                  size: 14.r,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  context.tr('common.copy', fallback: 'Copy'),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: const Color(0xFF10B981),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ).animate().fadeIn(duration: 200.ms),
+                    ],
+                  ),
                 ],
               ),
               SizedBox(height: 12.h),
