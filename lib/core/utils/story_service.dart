@@ -199,7 +199,7 @@ class StoryServiceImpl implements StoryService {
     'academicWord':
         "Let's elevate your speaking! Academic words are perfect for sounding professional and confident in any situation.",
     'antonymSearch':
-        "Finding exact opposites is a great way to double your vocabulary instantly. Let's practice some contrast!",
+        "Finding exact opposites is a great way to double your vocabulary instantly. Let's practice matching them up!",
     'contextClues':
         "You don't need to know every single word in English! Let's practice reading between the lines to figure out what things mean.",
     'flashcards':
@@ -472,9 +472,9 @@ class StoryServiceImpl implements StoryService {
     'antonymsearch': [
       "",
       "Nice work! Finding exact opposites is a great way to double your vocabulary.",
-      "Your linguistic reflexes are getting sharp. Keep finding those contrasts!",
-      "50 levels cleared! Your ability to identify polar opposites is incredible.",
-      "Level 100! You are a master of vocabulary contrast and polarity.",
+      "Your linguistic reflexes are getting sharp. Keep finding those opposite meanings!",
+      "50 levels cleared! You are incredibly fast at spotting the exact opposite word.",
+      "Level 100! You have completely mastered opposite meanings. Your vocabulary is massive!",
       "Double Centurion! No one matches opposite words faster than you.",
     ],
     'collocations': [

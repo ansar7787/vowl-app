@@ -1148,15 +1148,15 @@ class GameInstructionService {
       title: "Antonym Search",
       icon: Icons.electrical_services_rounded,
       objective:
-          "Identify the core word's exact opposite and drag it into the opposing polarity field, then speak the pair aloud.",
+          "Identify the core word's exact opposite and snap it into the center core to fuse them. Then, speak the pair aloud to confirm your answer.",
       rules: [
-        "Read the core word",
-        "Drag antonym to opposite field",
-        "Speak the word pair clearly",
+        "Read the center core word",
+        "Snap the opposite word into the core",
+        "Speak the pair clearly aloud",
       ],
       actionText: "Begin Search",
       tip:
-          "PRO TIP: Opposite polarity! If the core word is cyan, its antonym belongs in the orange field.",
+          "PRO TIP: Antonyms are completely opposite concepts. If the core says 'hot', you're looking for 'cold' to neutralize it!",
     ),
     GameSubtype.contextClues: GameBriefing(
       title: "Context Clues",
