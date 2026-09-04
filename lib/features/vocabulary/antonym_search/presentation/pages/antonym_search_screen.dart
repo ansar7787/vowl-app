@@ -611,17 +611,15 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     final initial = _getInitialPosition(activeIndex);
     final current = initial + offset;
     final maxHeight = _lastConstraints!.maxHeight;
-    final bool toTop = current.dy < (maxHeight / 2);
-
-    // The pulsars are near the top/bottom edges
-    final targetY = toTop ? maxHeight * 0.12 : maxHeight * 0.88;
+    // Connect the dragged shard directly to the central core
+    final corePosition = Offset(_lastConstraints!.maxWidth / 2, maxHeight / 2);
 
     return IgnorePointer(
       child: CustomPaint(
         painter: PlasmaArcPainter(
           current,
-          Offset(_lastConstraints!.maxWidth / 2, targetY),
-          toTop ? const Color(0xFF00E5FF) : const Color(0xFFFF4D00),
+          corePosition,
+          targetColor,
         ),
       ),
     );
