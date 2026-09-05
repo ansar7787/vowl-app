@@ -208,9 +208,14 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
           ]),
           builder: (context, _) {
             final bool isBaseAnswered = _isAnswered.value;
-            final bool sceneIsAnswered = _isAnswered.value || _isFirstStagePassed.value;
-            final bool? sceneIsCorrect = _isFirstStagePassed.value ? true : _isCorrect.value;
-            final bool isFinalFailure = (state is VocabularyLoaded) ? state.isFinalFailure : false;
+            final bool sceneIsAnswered =
+                _isAnswered.value || _isFirstStagePassed.value;
+            final bool? sceneIsCorrect = _isFirstStagePassed.value
+                ? true
+                : _isCorrect.value;
+            final bool isFinalFailure = (state is VocabularyLoaded)
+                ? state.isFinalFailure
+                : false;
 
             return VocabularyBaseLayout(
               gameType: widget.gameType,
