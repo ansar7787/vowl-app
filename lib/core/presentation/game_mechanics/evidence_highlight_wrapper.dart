@@ -190,7 +190,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                 valueListenable: _isComplete,
                 builder: (context, isComplete, _) {
                   return Container(
-                    padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+                    padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 20.h),
                     decoration: BoxDecoration(
                       color: bgColor,
                       borderRadius: BorderRadius.vertical(

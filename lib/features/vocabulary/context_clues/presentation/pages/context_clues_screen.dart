@@ -290,13 +290,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                         onWrongHighlight: () => {},
                                         isPositioned: false,
                                       ),
-                                    SizedBox(
-                                      height:
-                                          (_isAnswered.value ||
-                                              _isFirstStagePassed.value)
-                                          ? 160.h
-                                          : 60.h,
-                                    ),
+                                    SizedBox(height: 60.h),
                                   ],
                                 ),
                               ),
