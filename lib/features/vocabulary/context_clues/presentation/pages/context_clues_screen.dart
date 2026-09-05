@@ -83,7 +83,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     });
   }
 
-  void _onLensMove(DragUpdateDetails details, BoxConstraints constraints, double lensSize) {
+  void _onLensMove(
+    DragUpdateDetails details,
+    BoxConstraints constraints,
+    double lensSize,
+  ) {
     if (_isAnswered.value) return;
 
     final double halfWidth = constraints.maxWidth / 2;
@@ -203,12 +207,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
             _selectedOption,
           ]),
           builder: (context, _) {
+            final bool isBaseAnswered = _isAnswered.value;
+            final bool sceneIsAnswered = _isAnswered.value || _isFirstStagePassed.value;
+            final bool? sceneIsCorrect = _isFirstStagePassed.value ? true : _isCorrect.value;
+            final bool isFinalFailure = (state is VocabularyLoaded) ? state.isFinalFailure : false;
+
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
-              isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
+              isAnswered: isBaseAnswered,
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               hasStage2: true,
@@ -246,16 +253,18 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                               SliverToBoxAdapter(
                                 child: Column(
                                   children: [
-                                    IgnorePointer(ignoring: _isFirstStagePassed.value, child: SizedBox(
-                                      height: constraints.maxHeight,
-                                      child: _buildForensicScene(
-                                        quest,
-                                        theme.primaryColor,
-                                        (state is VocabularyLoaded)
-                                            ? state.isFinalFailure
-                                            : false,
+                                    IgnorePointer(
+                                      ignoring: _isFirstStagePassed.value,
+                                      child: SizedBox(
+                                        height: constraints.maxHeight,
+                                        child: _buildForensicScene(
+                                          quest,
+                                          theme.primaryColor,
+                                          isFinalFailure,
+                                          sceneIsAnswered,
+                                          sceneIsCorrect,
+                                        ),
                                       ),
-                                    ),
                                     ),
                                     if (_isFirstStagePassed.value &&
                                         !_isAnswered.value)
@@ -302,6 +311,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     VocabularyQuest quest,
     Color color,
     bool isFinalFailure,
+    bool sceneIsAnswered,
+    bool? sceneIsCorrect,
   ) {
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -375,9 +386,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                       TweenAnimationBuilder<double>(
                         tween: Tween<double>(
                           begin: 5.0,
-                          end: (_isAnswered.value || _isFirstStagePassed.value)
-                              ? 0.0
-                              : 5.0,
+                          end: sceneIsAnswered ? 0.0 : 5.0,
                         ),
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeOut,
@@ -392,23 +401,19 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         },
                         child: AnimatedOpacity(
                           duration: const Duration(milliseconds: 500),
-                          opacity:
-                              (_isAnswered.value || _isFirstStagePassed.value)
-                              ? 1.0
-                              : 0.4,
+                          opacity: sceneIsAnswered ? 1.0 : 0.4,
                           child: ContextCluesEvidenceSentence(
                             sentence: quest.sentence ?? "",
                             color: color,
                             isCompact: isCompact,
-                            isAnswered:
-                                _isAnswered.value || _isFirstStagePassed.value,
-                            isCorrect: _isFirstStagePassed.value ? true : _isCorrect.value,
+                            isAnswered: sceneIsAnswered,
+                            isCorrect: sceneIsCorrect,
                             selectedOption: _selectedOption.value,
                           ),
                         ),
                       ),
                       // LENS SYSTEM (The Flashlight)
-                      if (!_isAnswered.value && !_isFirstStagePassed.value)
+                      if (!sceneIsAnswered)
                         ValueListenableBuilder<Offset>(
                           valueListenable: _lensPosition,
                           builder: (context, pos, _) {
@@ -433,9 +438,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                         sentence: quest.sentence ?? "",
                                         color: color,
                                         isCompact: isCompact,
-                                        isAnswered:
-                                            _isAnswered.value || _isFirstStagePassed.value,
-                                        isCorrect: _isFirstStagePassed.value ? true : _isCorrect.value,
+                                        isAnswered: sceneIsAnswered,
+                                        isCorrect: sceneIsCorrect,
                                         selectedOption: _selectedOption.value,
                                       ),
                                     ),
@@ -445,8 +449,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                     left: centerPos.dx - lensRadius,
                                     top: centerPos.dy - lensRadius,
                                     child: GestureDetector(
-                                      onPanUpdate: (d) =>
-                                          _onLensMove(d, innerConstraints, lensSize),
+                                      onPanUpdate: (d) => _onLensMove(
+                                        d,
+                                        innerConstraints,
+                                        lensSize,
+                                      ),
                                       child: isCompact
                                           ? SizedBox(
                                               width: lensSize,
@@ -476,8 +483,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               options: quest.options ?? [],
               correct: quest.correctAnswer ?? "",
               color: color,
-              isAnswered: _isAnswered.value || _isFirstStagePassed.value,
-              isCorrect: _isFirstStagePassed.value ? true : _isCorrect.value,
+              isAnswered: sceneIsAnswered,
+              isCorrect: sceneIsCorrect,
               selectedOption: _selectedOption.value,
               isFinalFailure: isFinalFailure,
               onOptionSelected: (o) =>
