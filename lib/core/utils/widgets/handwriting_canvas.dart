@@ -33,7 +33,7 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
   void initState() {
     super.initState();
   }
-  
+
   @override
   void dispose() {
     _strokes.dispose();
@@ -51,13 +51,13 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
       final newStrokes = List<Stroke>.from(_strokes.value);
       newStrokes.removeLast();
       _strokes.value = newStrokes;
-      
+
       // Rebuild Ink object without the last stroke
       _ink.strokes.clear();
       for (var stroke in newStrokes) {
         _ink.strokes.add(stroke);
       }
-      
+
       widget.onInkUpdated(_ink);
     }
   }
@@ -130,7 +130,7 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
                       painter: _SignaturePainter(strokes, widget.strokeColor),
                       size: Size.infinite,
                     );
-                  }
+                  },
                 ),
               ),
             ),

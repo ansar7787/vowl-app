@@ -222,7 +222,9 @@ class _KidsChalkboardState extends State<_KidsChalkboard> {
                 onTap: widget.state.answerStatus.isAnswered
                     ? null
                     : () {
-                        if (InstructionHelper.getInstruction(widget.quest).isNotEmpty) {
+                        if (InstructionHelper.getInstruction(
+                          widget.quest,
+                        ).isNotEmpty) {
                           di.sl<KidsTTSService>().speak(
                             InstructionHelper.getInstruction(widget.quest),
                           );

@@ -41,7 +41,10 @@ class FlashcardActionButtons extends StatelessWidget {
                 ),
             SizedBox(height: 8.h),
             Text(
-              context.tr('instructions.flashcards.tap_to_reveal', fallback: 'TAP CARD TO REVEAL'),
+              context.tr(
+                'instructions.flashcards.tap_to_reveal',
+                fallback: 'TAP CARD TO REVEAL',
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -118,7 +121,10 @@ class _ActionBtn extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 16.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5), // Softer border
+            border: Border.all(
+              color: color.withValues(alpha: 0.3),
+              width: 1.5,
+            ), // Softer border
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -127,7 +133,8 @@ class _ActionBtn extends StatelessWidget {
                 Icon(icon, color: color, size: 20.r),
                 SizedBox(width: 4.w),
               ],
-              Flexible( // Added flexible to prevent ellipsis if translated text is long
+              Flexible(
+                // Added flexible to prevent ellipsis if translated text is long
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(

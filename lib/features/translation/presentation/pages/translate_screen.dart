@@ -76,7 +76,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
           currentLanguage: blocState.currentTargetLanguage,
           downloadedLanguages: blocState.downloadedLanguages,
           onSelected: (lang) {
-            context.read<TranslationBloc>().add(TranslationLanguageChanged(lang));
+            context.read<TranslationBloc>().add(
+              TranslationLanguageChanged(lang),
+            );
             Navigator.pop(ctx);
           },
         );
@@ -127,39 +129,55 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           _buildLanguageSelector(context, isDark, isPremium)
                               .animate()
                               .fadeIn(duration: 400.ms, curve: Curves.easeOut)
-                              .slideY(begin: 0.1, end: 0, curve: Curves.easeOut),
+                              .slideY(
+                                begin: 0.1,
+                                end: 0,
+                                curve: Curves.easeOut,
+                              ),
                           SizedBox(height: 16.h),
                           _buildInputArea(context, isDark, isPremium)
                               .animate(delay: 100.ms)
                               .fadeIn(duration: 400.ms, curve: Curves.easeOut)
-                              .slideY(begin: 0.1, end: 0, curve: Curves.easeOut),
+                              .slideY(
+                                begin: 0.1,
+                                end: 0,
+                                curve: Curves.easeOut,
+                              ),
                           SizedBox(height: 16.h),
                           BlocBuilder<TranslationBloc, TranslationState>(
-                            builder: (context, state) {
-                              if (!isPremium && state.isLimitReached) {
-                                return PremiumLockCard(
-                                  onPremiumTap: () => context.push('/premium'),
-                                  onTap: () {
-                                    di.sl<AdService>().showRewardedAd(
-                                      context: context,
-                                      isPremium: false,
-                                      onUserEarnedReward: (_) {
-                                        context.read<TranslationBloc>().add(
-                                          TranslationAdWatched(),
+                                builder: (context, state) {
+                                  if (!isPremium && state.isLimitReached) {
+                                    return PremiumLockCard(
+                                      onPremiumTap: () =>
+                                          context.push('/premium'),
+                                      onTap: () {
+                                        di.sl<AdService>().showRewardedAd(
+                                          context: context,
+                                          isPremium: false,
+                                          onUserEarnedReward: (_) {
+                                            context.read<TranslationBloc>().add(
+                                              TranslationAdWatched(),
+                                            );
+                                          },
+                                          onDismissed: () {},
                                         );
                                       },
-                                      onDismissed: () {},
                                     );
-                                  },
-                                );
-                              }
-                              return _buildOutputArea(context, isDark);
-                            },
-                          )
+                                  }
+                                  return _buildOutputArea(context, isDark);
+                                },
+                              )
                               .animate(delay: 200.ms)
                               .fadeIn(duration: 400.ms, curve: Curves.easeOut)
-                              .slideY(begin: 0.1, end: 0, curve: Curves.easeOut),
-                          SizedBox(height: MediaQuery.of(context).padding.bottom + 24.h),
+                              .slideY(
+                                begin: 0.1,
+                                end: 0,
+                                curve: Curves.easeOut,
+                              ),
+                          SizedBox(
+                            height:
+                                MediaQuery.of(context).padding.bottom + 24.h,
+                          ),
                         ],
                       ),
                     ),
@@ -369,11 +387,13 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       GestureDetector(
                         onTap: () async {
                           final data = await Clipboard.getData('text/plain');
-                          if (data != null && (data.text?.isNotEmpty ?? false)) {
+                          if (data != null &&
+                              (data.text?.isNotEmpty ?? false)) {
                             _inputController.text = data.text!;
-                            _inputController.selection = TextSelection.collapsed(
-                              offset: data.text!.length,
-                            );
+                            _inputController.selection =
+                                TextSelection.collapsed(
+                                  offset: data.text!.length,
+                                );
                             _onInputChanged(data.text!);
                             _haptics.light();
                           }
@@ -384,14 +404,18 @@ class _TranslateScreenState extends State<TranslateScreen> {
                             vertical: 6.h,
                           ),
                           decoration: BoxDecoration(
-                            color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
+                            color: isDark
+                                ? Colors.white10
+                                : const Color(0xFFF1F5F9),
                             borderRadius: BorderRadius.circular(16.r),
                           ),
                           child: Row(
                             children: [
                               Icon(
                                 Icons.paste_rounded,
-                                color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                                color: isDark
+                                    ? Colors.white70
+                                    : const Color(0xFF64748B),
                                 size: 14.r,
                               ),
                               SizedBox(width: 4.w),
@@ -401,7 +425,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                                  color: isDark
+                                      ? Colors.white70
+                                      : const Color(0xFF64748B),
                                 ),
                               ),
                             ],
@@ -420,16 +446,23 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         child: Container(
                           padding: EdgeInsets.all(4.r),
                           decoration: BoxDecoration(
-                            color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
+                            color: isDark
+                                ? Colors.white10
+                                : const Color(0xFFF1F5F9),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons.close_rounded,
-                            color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                            color: isDark
+                                ? Colors.white54
+                                : const Color(0xFF64748B),
                             size: 16.r,
                           ),
                         ),
-                      ).animate().scale(duration: 200.ms, curve: Curves.easeOutBack),
+                      ).animate().scale(
+                        duration: 200.ms,
+                        curve: Curves.easeOutBack,
+                      ),
                   ],
                 ),
               ],
@@ -504,16 +537,26 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       if (state.isTranslating)
                         Padding(
                           padding: EdgeInsets.only(right: 12.w),
-                          child: Text(
-                            context.tr('translation.translating', fallback: 'Translating...'),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: const Color(0xFF10B981).withValues(alpha: 0.8),
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ).animate(onPlay: (controller) => controller.repeat()).shimmer(duration: 1.seconds),
+                          child:
+                              Text(
+                                    context.tr(
+                                      'translation.translating',
+                                      fallback: 'Translating...',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: const Color(
+                                        0xFF10B981,
+                                      ).withValues(alpha: 0.8),
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  )
+                                  .animate(
+                                    onPlay: (controller) => controller.repeat(),
+                                  )
+                                  .shimmer(duration: 1.seconds),
                         ),
                       if (state.isModelDownloading)
                         SizedBox(
@@ -524,32 +567,45 @@ class _TranslateScreenState extends State<TranslateScreen> {
                             color: Color(0xFF10B981),
                           ),
                         ),
-                      if (state.translatedText.isNotEmpty && !state.isTranslating)
+                      if (state.translatedText.isNotEmpty &&
+                          !state.isTranslating)
                         GestureDetector(
                           onTap: () {
-                            Clipboard.setData(ClipboardData(text: state.translatedText));
+                            Clipboard.setData(
+                              ClipboardData(text: state.translatedText),
+                            );
                             _haptics.success();
                             ScaffoldMessenger.of(context)
                               ..clearSnackBars()
                               ..showSnackBar(
                                 SnackBar(
                                   content: Text(
-                                    context.tr('common.copied', fallback: 'Copied to clipboard'),
+                                    context.tr(
+                                      'common.copied',
+                                      fallback: 'Copied to clipboard',
+                                    ),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   behavior: SnackBarBehavior.floating,
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12.r),
+                                  ),
                                   duration: const Duration(seconds: 2),
                                 ),
                               );
                           },
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12.w,
+                              vertical: 6.h,
+                            ),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                              color: const Color(
+                                0xFF10B981,
+                              ).withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(16.r),
                             ),
                             child: Row(
@@ -739,7 +795,9 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white.withValues(alpha: 0.06) : const Color(0xFFF1F5F9),
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.06)
+                    : const Color(0xFFF1F5F9),
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isDark ? Colors.white12 : const Color(0xFFE2E8F0),
@@ -762,11 +820,16 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
                       ),
                       decoration: InputDecoration(
-                        hintText: context.tr('common.search', fallback: 'Search'),
+                        hintText: context.tr(
+                          'common.search',
+                          fallback: 'Search',
+                        ),
                         hintStyle: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
-                          color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                          color: isDark
+                              ? Colors.white38
+                              : const Color(0xFF94A3B8),
                         ),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(vertical: 14.h),
@@ -778,7 +841,9 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                       onTap: () => _searchController.clear(),
                       child: Icon(
                         Icons.close_rounded,
-                        color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                        color: isDark
+                            ? Colors.white38
+                            : const Color(0xFF94A3B8),
                         size: 18.r,
                       ),
                     ),
@@ -791,11 +856,16 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
             child: _filteredLanguages.isEmpty
                 ? Center(
                     child: Text(
-                      context.tr('language_picker.no_results', fallback: 'No results found'),
+                      context.tr(
+                        'language_picker.no_results',
+                        fallback: 'No results found',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                        color: isDark
+                            ? Colors.white38
+                            : const Color(0xFF94A3B8),
                       ),
                     ),
                   )
@@ -806,7 +876,9 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                     itemBuilder: (context, index) {
                       final lang = _filteredLanguages[index];
                       final isActive = lang == widget.currentLanguage;
-                      final isDownloaded = widget.downloadedLanguages.contains(lang);
+                      final isDownloaded = widget.downloadedLanguages.contains(
+                        lang,
+                      );
 
                       return Padding(
                         padding: EdgeInsets.only(bottom: 4.h),
@@ -815,18 +887,27 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                           child: InkWell(
                             onTap: () => widget.onSelected(lang),
                             borderRadius: BorderRadius.circular(16.r),
-                            splashColor: const Color(0xFF6366F1).withValues(alpha: 0.08),
+                            splashColor: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.08),
                             highlightColor: Colors.transparent,
                             child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 14.h,
+                              ),
                               decoration: BoxDecoration(
                                 color: isActive
-                                    ? const Color(0xFF6366F1).withValues(alpha: isDark ? 0.15 : 0.08)
+                                    ? const Color(
+                                        0xFF6366F1,
+                                      ).withValues(alpha: isDark ? 0.15 : 0.08)
                                     : Colors.transparent,
                                 borderRadius: BorderRadius.circular(16.r),
                                 border: isActive
                                     ? Border.all(
-                                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                                        color: const Color(
+                                          0xFF6366F1,
+                                        ).withValues(alpha: 0.3),
                                       )
                                     : null,
                               ),
@@ -838,23 +919,37 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 16.sp,
-                                        fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
+                                        fontWeight: isActive
+                                            ? FontWeight.w700
+                                            : FontWeight.w500,
                                         color: isActive
                                             ? const Color(0xFF6366F1)
-                                            : (isDark ? Colors.white : const Color(0xFF1E293B)),
+                                            : (isDark
+                                                  ? Colors.white
+                                                  : const Color(0xFF1E293B)),
                                       ),
                                     ),
                                   ),
                                   if (isDownloaded)
                                     Container(
                                       margin: EdgeInsets.only(right: 8.w),
-                                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 8.w,
+                                        vertical: 3.h,
+                                      ),
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFF10B981).withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(8.r),
+                                        color: const Color(
+                                          0xFF10B981,
+                                        ).withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
                                       ),
                                       child: Text(
-                                        context.tr('common.ready', fallback: 'READY'),
+                                        context.tr(
+                                          'common.ready',
+                                          fallback: 'READY',
+                                        ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 9.sp,

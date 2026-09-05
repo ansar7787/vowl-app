@@ -205,7 +205,10 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                                       FixTheSentenceInstruction(
                                         isWiped: _isWiped.value,
                                         primaryColor: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 16.h),
                                       if (quest.errorType != null)

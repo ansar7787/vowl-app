@@ -9,7 +9,6 @@ import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart'
 import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
 import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 
-
 // ---------------------------------------------------------------------------
 // Email Input
 // ---------------------------------------------------------------------------
@@ -115,7 +114,10 @@ class SendResetLinkButton extends StatelessWidget {
             : FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  context.tr('auth.send_reset_link', fallback: 'Reset Password'),
+                  context.tr(
+                    'auth.send_reset_link',
+                    fallback: 'Reset Password',
+                  ),
                   maxLines: 1,
                 ),
               ),

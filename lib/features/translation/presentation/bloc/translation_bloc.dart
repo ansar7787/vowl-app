@@ -207,11 +207,13 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     emit(state.copyWith(sourceText: text, errorMessage: null));
 
     if (text.isEmpty) {
-      emit(state.copyWith(
-        translatedText: '', 
-        isLimitReached: false,
-        isTranslating: false,
-      ));
+      emit(
+        state.copyWith(
+          translatedText: '',
+          isLimitReached: false,
+          isTranslating: false,
+        ),
+      );
       _lastTokenDeductionTime = null;
       return;
     }

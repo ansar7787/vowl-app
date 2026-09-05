@@ -197,7 +197,10 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         // Prevent the layout from crushing when the keyboard opens
-                        final maxHeight = math.max(constraints.maxHeight, 600.h);
+                        final maxHeight = math.max(
+                          constraints.maxHeight,
+                          600.h,
+                        );
                         final isCompact = maxHeight < 580;
 
                         // Spacing calculations
@@ -224,9 +227,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
                         return RawScrollbar(
                           controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(
-                            alpha: 0.5,
-                          ),
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
@@ -234,134 +235,124 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                             physics: const BouncingScrollPhysics(),
                             slivers: [
                               SliverToBoxAdapter(
-                                    child: ConstrainedBox(
-                                      constraints: BoxConstraints(
-                                        minHeight: maxHeight,
-                                      ),
-                                      child: IgnorePointer(
-                                        ignoring:
-                                            _controller.isFirstStagePassed,
-                                        child: Column(
-                                          key: ValueKey(quest.id),
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            SizedBox(height: gapTop + 32.h),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 24.w,
-                                              ),
-                                              child:
-                                                  InstructionPanel(
-                                                        color:
-                                                            theme.primaryColor,
-                                                        quest: quest,
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 500.ms)
-                                                      .slideY(
-                                                        begin: -0.5,
-                                                        end: 0,
-                                                        duration: 500.ms,
-                                                        curve:
-                                                            Curves.easeOutBack,
-                                                      ),
-                                            ),
-                                            SizedBox(height: gapMiddle * 0.4),
-
-                                            // Reaction Core
-                                            (isCompact
-                                                    ? SizedBox(
-                                                        height: 120.h,
-                                                        child: FittedBox(
-                                                          fit: BoxFit.scaleDown,
-                                                          child: SizedBox(
-                                                            width: constraints
-                                                                .maxWidth,
-                                                            child: ReactionCore(
-                                                              quest: quest,
-                                                              root: root,
-                                                              suffix:
-                                                                  activeSuffix,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              isDark: isDark,
-                                                              controller:
-                                                                  _controller,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      )
-                                                    : ReactionCore(
-                                                        quest: quest,
-                                                        root: root,
-                                                        suffix: activeSuffix,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        controller: _controller,
-                                                      ))
-                                                .animate()
-                                                .scale(
-                                                  begin: const Offset(0.8, 0.8),
-                                                  end: const Offset(1.0, 1.0),
-                                                  duration: 600.ms,
-                                                  curve: Curves.easeOutBack,
-                                                )
-                                                .fadeIn(duration: 600.ms),
-
-                                            SizedBox(height: gapMiddle),
-
-                                            // Injection Rails
-                                            _buildInjectionRails(
-                                              options,
-                                              root,
-                                              quest.correctAnswer ?? "",
-                                              theme.primaryColor,
-                                              isDark,
-                                              isCompact,
-                                            ),
-                                            SizedBox(
-                                              height: gapBottom,
-                                            ),
-                                          ],
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minHeight: maxHeight,
+                                  ),
+                                  child: IgnorePointer(
+                                    ignoring: _controller.isFirstStagePassed,
+                                    child: Column(
+                                      key: ValueKey(quest.id),
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: gapTop + 32.h),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          child:
+                                              InstructionPanel(
+                                                    color: theme.primaryColor,
+                                                    quest: quest,
+                                                  )
+                                                  .animate()
+                                                  .fadeIn(duration: 500.ms)
+                                                  .slideY(
+                                                    begin: -0.5,
+                                                    end: 0,
+                                                    duration: 500.ms,
+                                                    curve: Curves.easeOutBack,
+                                                  ),
                                         ),
-                                      ),
+                                        SizedBox(height: gapMiddle * 0.4),
+
+                                        // Reaction Core
+                                        (isCompact
+                                                ? SizedBox(
+                                                    height: 120.h,
+                                                    child: FittedBox(
+                                                      fit: BoxFit.scaleDown,
+                                                      child: SizedBox(
+                                                        width: constraints
+                                                            .maxWidth,
+                                                        child: ReactionCore(
+                                                          quest: quest,
+                                                          root: root,
+                                                          suffix: activeSuffix,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          controller:
+                                                              _controller,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
+                                                : ReactionCore(
+                                                    quest: quest,
+                                                    root: root,
+                                                    suffix: activeSuffix,
+                                                    color: theme.primaryColor,
+                                                    isDark: isDark,
+                                                    controller: _controller,
+                                                  ))
+                                            .animate()
+                                            .scale(
+                                              begin: const Offset(0.8, 0.8),
+                                              end: const Offset(1.0, 1.0),
+                                              duration: 600.ms,
+                                              curve: Curves.easeOutBack,
+                                            )
+                                            .fadeIn(duration: 600.ms),
+
+                                        SizedBox(height: gapMiddle),
+
+                                        // Injection Rails
+                                        _buildInjectionRails(
+                                          options,
+                                          root,
+                                          quest.correctAnswer ?? "",
+                                          theme.primaryColor,
+                                          isDark,
+                                          isCompact,
+                                        ),
+                                        SizedBox(height: gapBottom),
+                                      ],
                                     ),
                                   ),
-                                  if (_controller.isFirstStagePassed &&
-                                      !_controller.isAnswered)
-                                    SliverToBoxAdapter(
-                                      child: Padding(
-                                        padding: EdgeInsets.only(
-                                          bottom: 24.h + MediaQuery.viewInsetsOf(context).bottom,
-                                        ),
-                                        child: TypeToConfirmOverlay(
-                                          expectedText:
-                                              quest.correctAnswer ?? '',
-                                          displayText:
-                                              "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
-                                          primaryColor: theme.primaryColor,
-                                          onConfirmed: () =>
-                                              _controller.submitFinalAnswer(
-                                                true,
-                                              ),
-                                          onSkipped: () =>
-                                              _controller.submitFinalAnswer(
-                                                false,
-                                              ),
-                                          onBypassed: () =>
-                                              _controller.submitFinalAnswer(
-                                                true,
-                                              ),
-                                          isPositioned: false,
-                                        ),
-                                      ),
-                                    ),
-                                ],
+                                ),
                               ),
-                            );
-                          },
+                              if (_controller.isFirstStagePassed &&
+                                  !_controller.isAnswered)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom:
+                                          24.h +
+                                          MediaQuery.viewInsetsOf(
+                                            context,
+                                          ).bottom,
+                                    ),
+                                    child: TypeToConfirmOverlay(
+                                      expectedText: quest.correctAnswer ?? '',
+                                      displayText:
+                                          "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () =>
+                                          _controller.submitFinalAnswer(true),
+                                      onSkipped: () =>
+                                          _controller.submitFinalAnswer(false),
+                                      onBypassed: () =>
+                                          _controller.submitFinalAnswer(true),
+                                      isPositioned: false,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
             );
           },
@@ -396,12 +387,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         _controller.isAnswered ||
                         _controller.isFirstStagePassed,
                     onMorph: (suffix) {
-                      _controller.submitMorph(
-                        suffix,
-                        root,
-                        correct,
-                        entry.key,
-                      );
+                      _controller.submitMorph(suffix, root, correct, entry.key);
                     },
                     onHover: (index) {
                       if (!_controller.isAnswered &&

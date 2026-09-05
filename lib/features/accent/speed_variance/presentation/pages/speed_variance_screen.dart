@@ -314,139 +314,163 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                     ),
                                     child: Column(
                                       children: [
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
-                                      ),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Column(
-                                            mainAxisSize: MainAxisSize.min,
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 24.w,
+                                          ),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
                                             children: [
-                                              SizedBox(height: gapTop),
-                                              if (!_isFirstStagePassed.value &&
-                                                  !_isAnswered.value)
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                    bottom: 16.h,
-                                                  ),
-                                                  child: SpeedChallengeTimer(
-                                                    key: _timerKey,
-                                                    durationSeconds: 15,
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    onTimeUp:
-                                                        _handleTimeExpired,
-                                                  ),
-                                                ),
-                                              SpeedVarianceInstruction(
-                                                color: theme.primaryColor,
-                                                instruction:
-                                                    _isFirstStagePassed.value
-                                                    ? "Great job! Now record yourself saying the word."
-                                                    : context.tr(
-                                                        'games.speed_variance_instruction',
-                                                        fallback:
-                                                            InstructionHelper.getInstruction(quest),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  SizedBox(height: gapTop),
+                                                  if (!_isFirstStagePassed
+                                                          .value &&
+                                                      !_isAnswered.value)
+                                                    Padding(
+                                                      padding: EdgeInsets.only(
+                                                        bottom: 16.h,
                                                       ),
-                                              ),
-                                              SizedBox(height: gapInstruction),
-                                              SpeedVariancePromptCard(
-                                                word: quest.word ?? "",
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                              ),
-                                              SizedBox(height: gapPrompt),
-                                              if (_isFirstStagePassed.value &&
-                                                  !_isAnswered.value)
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                    bottom: 16.h,
+                                                      child: SpeedChallengeTimer(
+                                                        key: _timerKey,
+                                                        durationSeconds: 15,
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                        onTimeUp:
+                                                            _handleTimeExpired,
+                                                      ),
+                                                    ),
+                                                  SpeedVarianceInstruction(
+                                                    color: theme.primaryColor,
+                                                    instruction:
+                                                        _isFirstStagePassed
+                                                            .value
+                                                        ? "Great job! Now record yourself saying the word."
+                                                        : context.tr(
+                                                            'games.speed_variance_instruction',
+                                                            fallback:
+                                                                InstructionHelper.getInstruction(
+                                                                  quest,
+                                                                ),
+                                                          ),
                                                   ),
-                                                  child: SpeedVarianceSpeedToggle(
-                                                    isNatural:
-                                                        _isNaturalSpeed.value,
-                                                    onChanged: (val) {
-                                                      _isNaturalSpeed.value =
-                                                          val;
-                                                      _playTts(
-                                                        quest.textToSpeak ?? "",
-                                                        speed: val
-                                                            ? (quest.naturalSpeed ??
-                                                                  1.0)
-                                                            : (quest.clearSpeed ??
-                                                                  0.75),
-                                                      );
-                                                    },
-                                                    primaryColor:
-                                                        theme.primaryColor,
+                                                  SizedBox(
+                                                    height: gapInstruction,
+                                                  ),
+                                                  SpeedVariancePromptCard(
+                                                    word: quest.word ?? "",
+                                                    color: theme.primaryColor,
                                                     isDark: isDark,
                                                   ),
-                                                ),
-                                              SpeedVariancePulseSpeaker(
-                                                text: quest.textToSpeak ?? "",
-                                                color: theme.primaryColor,
-                                                onPlayTts: (text) => _playTts(
-                                                  text,
-                                                  speed:
-                                                      _isFirstStagePassed.value
-                                                      ? (_isNaturalSpeed.value
-                                                            ? (quest.naturalSpeed ??
-                                                                  1.0)
-                                                            : (quest.clearSpeed ??
-                                                                  0.75))
-                                                      : quest.targetSpeed,
-                                                ),
+                                                  SizedBox(height: gapPrompt),
+                                                  if (_isFirstStagePassed
+                                                          .value &&
+                                                      !_isAnswered.value)
+                                                    Padding(
+                                                      padding: EdgeInsets.only(
+                                                        bottom: 16.h,
+                                                      ),
+                                                      child: SpeedVarianceSpeedToggle(
+                                                        isNatural:
+                                                            _isNaturalSpeed
+                                                                .value,
+                                                        onChanged: (val) {
+                                                          _isNaturalSpeed
+                                                                  .value =
+                                                              val;
+                                                          _playTts(
+                                                            quest.textToSpeak ??
+                                                                "",
+                                                            speed: val
+                                                                ? (quest.naturalSpeed ??
+                                                                      1.0)
+                                                                : (quest.clearSpeed ??
+                                                                      0.75),
+                                                          );
+                                                        },
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                      ),
+                                                    ),
+                                                  SpeedVariancePulseSpeaker(
+                                                    text:
+                                                        quest.textToSpeak ?? "",
+                                                    color: theme.primaryColor,
+                                                    onPlayTts: (text) => _playTts(
+                                                      text,
+                                                      speed:
+                                                          _isFirstStagePassed
+                                                              .value
+                                                          ? (_isNaturalSpeed
+                                                                    .value
+                                                                ? (quest.naturalSpeed ??
+                                                                      1.0)
+                                                                : (quest.clearSpeed ??
+                                                                      0.75))
+                                                          : quest.targetSpeed,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  SizedBox(height: gapSpeaker),
+                                                  SpeedVarianceTempoDial(
+                                                    options: options,
+                                                    correctIndex:
+                                                        quest
+                                                            .correctAnswerIndex ??
+                                                        0,
+                                                    color: theme.primaryColor,
+                                                    isDark: isDark,
+                                                    isAnswered:
+                                                        _isAnswered.value ||
+                                                        _isFirstStagePassed
+                                                            .value,
+                                                    isDragging:
+                                                        _isDragging.value,
+                                                    dialRotation:
+                                                        _dialRotation.value,
+                                                    selectedIndex:
+                                                        _selectedIndex.value,
+                                                    onDialRotate: _onDialRotate,
+                                                    onDialRelease:
+                                                        _onDialRelease,
+                                                    onSubmitChoice:
+                                                        _submitChoice,
+                                                  ),
+                                                  SizedBox(height: gapBottom),
+                                                ],
                                               ),
                                             ],
                                           ),
-                                          Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              SizedBox(height: gapSpeaker),
-                                              SpeedVarianceTempoDial(
-                                                options: options,
-                                                correctIndex:
-                                                    quest.correctAnswerIndex ??
-                                                    0,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isAnswered:
-                                                    _isAnswered.value ||
-                                                    _isFirstStagePassed.value,
-                                                isDragging: _isDragging.value,
-                                                dialRotation:
-                                                    _dialRotation.value,
-                                                selectedIndex:
-                                                    _selectedIndex.value,
-                                                onDialRotate: _onDialRotate,
-                                                onDialRelease: _onDialRelease,
-                                                onSubmitChoice: _submitChoice,
-                                              ),
-                                              SizedBox(height: gapBottom),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                          if (_isFirstStagePassed.value && !_isAnswered.value)
+                              if (_isFirstStagePassed.value &&
+                                  !_isAnswered.value)
                                 SliverToBoxAdapter(
                                   child: Column(
                                     children: [
                                       SizedBox(height: 32.h),
                                       SpeakToConfirmOverlay(
-                                        expectedText: quest.textToSpeak ?? quest.word ?? "",
+                                        expectedText:
+                                            quest.textToSpeak ??
+                                            quest.word ??
+                                            "",
                                         primaryColor: theme.primaryColor,
                                         isPositioned: false,
-                                        onConfirmed: () => _submitVerbalEvaluation(true),
-                                        onSkipped: () => _submitVerbalEvaluation(false),
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
                                       ),
                                       SizedBox(height: 60.h),
                                     ],

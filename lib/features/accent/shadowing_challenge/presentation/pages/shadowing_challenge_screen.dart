@@ -237,78 +237,89 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                             minHeight: constraints.maxHeight,
                                           ),
                                           child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                              vertical: 24.h,
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                ShadowingChallengeInstruction(
-                                                  color: theme.primaryColor,
-                                                  instruction:
-                                                      _isFirstStagePassed.value
-                                                      ? "Great job! Now record yourself saying the phrase."
-                                                      : context.tr(
-                                                          'games.shadowing_challenge_instruction',
-                                                          fallback:
-                                                              InstructionHelper.getInstruction(quest),
-                                                        ),
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                  vertical: 24.h,
                                                 ),
-                                                SizedBox(height: 16.h),
-                                                ShadowingChallengePromptCard(
-                                                  word: quest.word ?? "",
-                                                  ipa: quest.phonetic ?? "",
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    ShadowingChallengeInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          _isFirstStagePassed
+                                                              .value
+                                                          ? "Great job! Now record yourself saying the phrase."
+                                                          : context.tr(
+                                                              'games.shadowing_challenge_instruction',
+                                                              fallback:
+                                                                  InstructionHelper.getInstruction(
+                                                                    quest,
+                                                                  ),
+                                                            ),
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    ShadowingChallengePromptCard(
+                                                      word: quest.word ?? "",
+                                                      ipa: quest.phonetic ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                                    SizedBox(height: 24.h),
+                                                    ShadowingChallengePulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    ShadowingChallengeSpeedSlider(
+                                                      speed:
+                                                          _currentSpeed.value,
+                                                      onChanged: (val) {
+                                                        _currentSpeed.value =
+                                                            val;
+                                                      },
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                                    SizedBox(height: 32.h),
+                                                    ShadowingChallengeDialogueList(
+                                                      options: options,
+                                                      correctIndex:
+                                                          correctIndex,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered:
+                                                          _isAnswered.value ||
+                                                          _isFirstStagePassed
+                                                              .value,
+                                                      selectedIndex:
+                                                          _selectedIndex.value,
+                                                      onSubmitChoice:
+                                                          _submitChoice,
+                                                    ),
+                                                    SizedBox(height: 24.h),
+                                                  ],
                                                 ),
-                                                SizedBox(height: 24.h),
-                                                ShadowingChallengePulseSpeaker(
-                                                  text: quest.textToSpeak ?? "",
-                                                  color: theme.primaryColor,
-                                                  onPlayTts: _playTts,
-                                                ),
-                                                SizedBox(height: 16.h),
-                                                ShadowingChallengeSpeedSlider(
-                                                  speed: _currentSpeed.value,
-                                                  onChanged: (val) {
-                                                    _currentSpeed.value = val;
-                                                  },
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                ),
-                                                SizedBox(height: 32.h),
-                                                ShadowingChallengeDialogueList(
-                                                  options: options,
-                                                  correctIndex: correctIndex,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered:
-                                                      _isAnswered.value ||
-                                                      _isFirstStagePassed.value,
-                                                  selectedIndex:
-                                                      _selectedIndex.value,
-                                                  onSubmitChoice: _submitChoice,
-                                                ),
-                                                SizedBox(height: 24.h),
-                                              ],
-                                            ),
-                                          ),
+                                              ),
 
-                                            SizedBox(
-                                              height:
-                                                  (_isAnswered.value ||
-                                                      _isFirstStagePassed.value)
-                                                  ? 10.h
-                                                  : 60.h,
-                                            ),
-                                          ],
+                                              SizedBox(
+                                                height:
+                                                    (_isAnswered.value ||
+                                                        _isFirstStagePassed
+                                                            .value)
+                                                    ? 10.h
+                                                    : 60.h,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                    ),
                                     ),
                                     if (_isFirstStagePassed.value &&
                                         (!_isAnswered.value ||
@@ -316,15 +327,22 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                       SliverToBoxAdapter(
                                         child: Column(
                                           children: [
-                                      SizedBox(height: 32.h),
-                                      ShadowPlaybackCompare(
-                                              expectedText: quest.textToSpeak ?? "",
-                                              displayText: quest.textToSpeak ?? "",
+                                            SizedBox(height: 32.h),
+                                            ShadowPlaybackCompare(
+                                              expectedText:
+                                                  quest.textToSpeak ?? "",
+                                              displayText:
+                                                  quest.textToSpeak ?? "",
                                               primaryColor: theme.primaryColor,
                                               isPositioned: false,
-                                              speedMultiplier: _currentSpeed.value,
-                                              onConfirmed: () => _submitVerbalEvaluation(true),
-                                              onSkipped: () => _submitVerbalEvaluation(false),
+                                              speedMultiplier:
+                                                  _currentSpeed.value,
+                                              onConfirmed: () =>
+                                                  _submitVerbalEvaluation(true),
+                                              onSkipped: () =>
+                                                  _submitVerbalEvaluation(
+                                                    false,
+                                                  ),
                                             ),
                                             SizedBox(height: 60.h),
                                           ],

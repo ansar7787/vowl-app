@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 /// Renders the scrollable (or fixed) content area with title, subtitle, and
 /// the question-specific [child] widget.
 ///

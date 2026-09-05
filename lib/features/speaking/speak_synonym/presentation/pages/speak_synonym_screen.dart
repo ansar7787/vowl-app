@@ -238,7 +238,10 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                       children: [
                                         SpeakSynonymHeader(
                                           primaryColor: theme.primaryColor,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         SpeakSynonymSentencePanel(

@@ -270,7 +270,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                       children: [
                                         SceneDescriptionHeader(
                                           primaryColor: theme.primaryColor,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         SceneDescriptionScenicRadarMap(

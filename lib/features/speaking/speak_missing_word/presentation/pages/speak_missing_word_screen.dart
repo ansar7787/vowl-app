@@ -343,7 +343,10 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                         SpeakMissingWordInstruction(
                                           primaryColor: theme.primaryColor,
                                           isWordPlaced: _isWordPlaced.value,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         SpeakMissingWordVortexSentence(

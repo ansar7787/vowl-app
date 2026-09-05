@@ -262,268 +262,274 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                 child: CustomScrollView(
                                   controller: _scrollController,
                                   physics: (!_isFirstStagePassed.value)
-                                        ? const NeverScrollableScrollPhysics()
-                                        : const BouncingScrollPhysics(),
+                                      ? const NeverScrollableScrollPhysics()
+                                      : const BouncingScrollPhysics(),
                                   slivers: [
                                     SliverToBoxAdapter(
-                                    child: IgnorePointer(
-                                      ignoring: _isFirstStagePassed.value,
-                                      child: ConstrainedBox(
-                                        constraints: BoxConstraints(
-                                          minHeight: constraints.maxHeight,
-                                        ),
-                                        child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
+                                      child: IgnorePointer(
+                                        ignoring: _isFirstStagePassed.value,
+                                        child: ConstrainedBox(
+                                          constraints: BoxConstraints(
+                                            minHeight: constraints.maxHeight,
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    SizedBox(height: gapTop),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 32.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: VowelDistinctionInstruction(
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  instruction:
-                                                                      _isFirstStagePassed
-                                                                          .value
-                                                                      ? "Great job! Now confirm by speaking the word."
-                                                                      : context.tr(
-                                                                          'games.vowel_distinction_instruction',
-                                                                          fallback:
-                                                                              'Match the vowel sound',
-                                                                        ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : VowelDistinctionInstruction(
-                                                            color: theme
-                                                                .primaryColor,
-                                                            instruction:
-                                                                _isFirstStagePassed
-                                                                    .value
-                                                                ? "Great job! Now confirm by speaking the word."
-                                                                : context.tr(
-                                                                    'games.vowel_distinction_instruction',
-                                                                    fallback:
-                                                                        'Match the vowel sound',
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapTop,
+                                                        ),
+                                                        isCompact
+                                                            ? SizedBox(
+                                                                height: 32.h,
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: SizedBox(
+                                                                    width:
+                                                                        maxWidth -
+                                                                        48.w,
+                                                                    child: VowelDistinctionInstruction(
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      instruction:
+                                                                          _isFirstStagePassed
+                                                                              .value
+                                                                          ? "Great job! Now confirm by speaking the word."
+                                                                          : context.tr(
+                                                                              'games.vowel_distinction_instruction',
+                                                                              fallback: 'Match the vowel sound',
+                                                                            ),
+                                                                    ),
                                                                   ),
-                                                          ),
-                                                    SizedBox(
-                                                      height: gapInstruction,
-                                                    ),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 90.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: VowelDistinctionPromptCard(
-                                                                  word:
-                                                                      quest
-                                                                          .word ??
-                                                                      "",
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  isDark:
-                                                                      isDark,
                                                                 ),
+                                                              )
+                                                            : VowelDistinctionInstruction(
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                instruction:
+                                                                    _isFirstStagePassed
+                                                                        .value
+                                                                    ? "Great job! Now confirm by speaking the word."
+                                                                    : context.tr(
+                                                                        'games.vowel_distinction_instruction',
+                                                                        fallback:
+                                                                            'Match the vowel sound',
+                                                                      ),
                                                               ),
-                                                            ),
-                                                          )
-                                                        : VowelDistinctionPromptCard(
-                                                            word:
-                                                                quest.word ??
-                                                                "",
-                                                            color: theme
-                                                                .primaryColor,
-                                                            isDark: isDark,
-                                                          ),
-                                                    SizedBox(height: gapPrompt),
-                                                    if (_isFirstStagePassed
-                                                            .value &&
-                                                        quest.vowelChart !=
-                                                            null)
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                              bottom: 24.h,
-                                                            ),
-                                                        child:
-                                                            VowelTrapezoidChart(
+                                                        SizedBox(
+                                                          height:
+                                                              gapInstruction,
+                                                        ),
+                                                        isCompact
+                                                            ? SizedBox(
+                                                                height: 90.h,
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: SizedBox(
+                                                                    width:
+                                                                        maxWidth -
+                                                                        48.w,
+                                                                    child: VowelDistinctionPromptCard(
+                                                                      word:
+                                                                          quest
+                                                                              .word ??
+                                                                          "",
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      isDark:
+                                                                          isDark,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              )
+                                                            : VowelDistinctionPromptCard(
+                                                                word:
+                                                                    quest
+                                                                        .word ??
+                                                                    "",
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                isDark: isDark,
+                                                              ),
+                                                        SizedBox(
+                                                          height: gapPrompt,
+                                                        ),
+                                                        if (_isFirstStagePassed
+                                                                .value &&
+                                                            quest.vowelChart !=
+                                                                null)
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsets.only(
+                                                                  bottom: 24.h,
+                                                                ),
+                                                            child: VowelTrapezoidChart(
                                                               vowelChart: quest
                                                                   .vowelChart!,
                                                               color: theme
                                                                   .primaryColor,
                                                               isDark: isDark,
                                                             ),
-                                                      )
-                                                    else
-                                                      VowelDistinctionPulseSpeaker(
-                                                        text:
-                                                            quest.textToSpeak ??
-                                                            "",
-                                                        color:
-                                                            theme.primaryColor,
-                                                        onPlayTts: _playTts,
-                                                      ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: gapSpeaker,
-                                                    ),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 110.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: VowelDistinctionSpectralSlider(
-                                                                  options:
-                                                                      options,
-                                                                  correctIndex:
-                                                                      quest
-                                                                          .correctAnswerIndex ??
-                                                                      0,
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  isDark:
-                                                                      isDark,
-                                                                  isAnswered:
-                                                                      _isAnswered
-                                                                          .value ||
-                                                                      _isFirstStagePassed
-                                                                          .value,
-                                                                  selectedIndex:
-                                                                      _selectedIndex
-                                                                          .value,
-                                                                  sliderValue:
-                                                                      _sliderValue
-                                                                          .value,
-                                                                  onSubmitChoice:
-                                                                      _submitChoice,
-                                                                  onSliderUpdate:
-                                                                      _onSliderUpdate,
-                                                                ),
-                                                              ),
-                                                            ),
                                                           )
-                                                        : VowelDistinctionSpectralSlider(
-                                                            options: options,
-                                                            correctIndex:
+                                                        else
+                                                          VowelDistinctionPulseSpeaker(
+                                                            text:
                                                                 quest
-                                                                    .correctAnswerIndex ??
-                                                                0,
+                                                                    .textToSpeak ??
+                                                                "",
                                                             color: theme
                                                                 .primaryColor,
-                                                            isDark: isDark,
-                                                            isAnswered:
-                                                                _isAnswered
-                                                                    .value ||
-                                                                _isFirstStagePassed
-                                                                    .value,
-                                                            selectedIndex:
-                                                                _selectedIndex
-                                                                    .value,
-                                                            sliderValue:
-                                                                _sliderValue
-                                                                    .value,
-                                                            onSubmitChoice:
-                                                                _submitChoice,
-                                                            onSliderUpdate:
-                                                                _onSliderUpdate,
+                                                            onPlayTts: _playTts,
                                                           ),
-                                                    SizedBox(height: gapBottom),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapSpeaker,
+                                                        ),
+                                                        isCompact
+                                                            ? SizedBox(
+                                                                height: 110.h,
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: SizedBox(
+                                                                    width:
+                                                                        maxWidth -
+                                                                        48.w,
+                                                                    child: VowelDistinctionSpectralSlider(
+                                                                      options:
+                                                                          options,
+                                                                      correctIndex:
+                                                                          quest
+                                                                              .correctAnswerIndex ??
+                                                                          0,
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      isDark:
+                                                                          isDark,
+                                                                      isAnswered:
+                                                                          _isAnswered
+                                                                              .value ||
+                                                                          _isFirstStagePassed
+                                                                              .value,
+                                                                      selectedIndex:
+                                                                          _selectedIndex
+                                                                              .value,
+                                                                      sliderValue:
+                                                                          _sliderValue
+                                                                              .value,
+                                                                      onSubmitChoice:
+                                                                          _submitChoice,
+                                                                      onSliderUpdate:
+                                                                          _onSliderUpdate,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              )
+                                                            : VowelDistinctionSpectralSlider(
+                                                                options:
+                                                                    options,
+                                                                correctIndex:
+                                                                    quest
+                                                                        .correctAnswerIndex ??
+                                                                    0,
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                isDark: isDark,
+                                                                isAnswered:
+                                                                    _isAnswered
+                                                                        .value ||
+                                                                    _isFirstStagePassed
+                                                                        .value,
+                                                                selectedIndex:
+                                                                    _selectedIndex
+                                                                        .value,
+                                                                sliderValue:
+                                                                    _sliderValue
+                                                                        .value,
+                                                                onSubmitChoice:
+                                                                    _submitChoice,
+                                                                onSliderUpdate:
+                                                                    _onSliderUpdate,
+                                                              ),
+                                                        SizedBox(
+                                                          height: gapBottom,
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ],
                                                 ),
-                                              ],
-                                            ),
-                                          ),
+                                              ),
 
-                                          SizedBox(
-                                            height:
-                                                (_isFirstStagePassed.value &&
-                                                    !_isAnswered.value)
-                                                ? 380.h
-                                                : 160.h,
+                                              SizedBox(
+                                                height:
+                                                    (_isFirstStagePassed
+                                                            .value &&
+                                                        !_isAnswered.value)
+                                                    ? 380.h
+                                                    : 160.h,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-
+                                        ),
                                       ),
-
                                     ),
 
-                                  ),
+                                    if (_isFirstStagePassed.value &&
+                                        !_isAnswered.value)
+                                      SliverToBoxAdapter(
+                                        child: Column(
+                                          children: [
+                                            if (_isFirstStagePassed.value &&
+                                                !_isAnswered.value)
+                                              SpeakToConfirmOverlay(
+                                                expectedText:
+                                                    quest.textToSpeak ??
+                                                    quest.word ??
+                                                    "",
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isPositioned: false,
+                                                onConfirmed: () {
+                                                  context.read<AccentBloc>().add(
+                                                    const AccentSpeakConfirmed(
+                                                      5,
+                                                    ),
+                                                  );
+                                                  _submitVerbalEvaluation(true);
+                                                },
+                                                onSkipped: () =>
+                                                    _submitVerbalEvaluation(
+                                                      false,
+                                                    ),
+                                              ),
 
+                                            SizedBox(height: 60.h),
+                                          ],
+                                        ),
+                                      ),
+                                  ],
                                 ),
-
-                                if (_isFirstStagePassed.value && !_isAnswered.value)
-
-                                  SliverToBoxAdapter(
-
-                                    child: Column(
-
-                                      children: [
-if (_isFirstStagePassed.value && !_isAnswered.value)
-                            SpeakToConfirmOverlay(
-                              expectedText:
-                                  quest.textToSpeak ?? quest.word ?? "",
-                              primaryColor: theme.primaryColor,
-                              isPositioned: false,
-                              onConfirmed: () {
-                                context.read<AccentBloc>().add(
-                                  const AccentSpeakConfirmed(5),
-                                );
-                                _submitVerbalEvaluation(true);
-                              },
-                              onSkipped: () => _submitVerbalEvaluation(false),
-                            ),
-  
-
-                                        SizedBox(height: 60.h),
-
-                                      ],
-
-                                    ),
-
-                                  ),
-
-                                ],
-
-                              ),
                               );
                             },
                           ),
-                                                ],
+                        ],
                       ),
               );
             },

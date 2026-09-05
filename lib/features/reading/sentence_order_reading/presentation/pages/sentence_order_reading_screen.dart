@@ -180,7 +180,8 @@ class _SentenceOrderReadingScreenState
                                   SizedBox(height: 16.h),
                                   SentenceOrderReadingInstruction(
                                     primaryColor: theme.primaryColor,
-                                    instruction: InstructionHelper.getInstruction(quest),
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
                                   ),
                                   SizedBox(height: 24.h),
                                   ReorderableListView(

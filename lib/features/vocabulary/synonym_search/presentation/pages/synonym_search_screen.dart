@@ -379,7 +379,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         final keyboardHeight = MediaQuery.of(
                           context,
                         ).viewInsets.bottom;
-                        
+
                         if (keyboardHeight > 0 && _lastKeyboardHeight == 0) {
                           _scrollToBottom();
                         }
@@ -391,8 +391,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             : screenSize.width;
                         final double safeHeight =
                             (constraints.maxHeight.isFinite
-                                ? constraints.maxHeight
-                                : (screenSize.height * 0.6));
+                            ? constraints.maxHeight
+                            : (screenSize.height * 0.6));
                         final isCompact = safeHeight < 580;
 
                         return Stack(

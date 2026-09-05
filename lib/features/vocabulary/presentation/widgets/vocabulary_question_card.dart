@@ -28,7 +28,9 @@ class VocabularyQuestionCard extends StatelessWidget {
 
     // Cached once — avoids repeated null-coalescing and toUpperCase on rebuild.
     final String displayWord = quest.word ?? quest.prompt ?? 'Quest';
-    final String instruction = InstructionHelper.getInstruction(quest).toUpperCase();
+    final String instruction = InstructionHelper.getInstruction(
+      quest,
+    ).toUpperCase();
 
     final compositeLabel =
         '$instruction. $displayWord'

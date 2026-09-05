@@ -231,7 +231,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                                       SizedBox(height: 16.h),
                                       TrueFalseReadingInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       TrueFalseReadingPassage(

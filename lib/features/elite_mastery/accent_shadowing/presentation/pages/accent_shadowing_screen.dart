@@ -135,7 +135,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         }
       },
       builder: (context, state) {
-
         return ListenableBuilder(
           listenable: Listenable.merge([
             _isAnswered,

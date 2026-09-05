@@ -193,7 +193,9 @@ class _LoginViewState extends State<LoginView> {
                                                   fontFamily: 'Outfit',
                                                   fontSize: 48.sp,
                                                   fontWeight: FontWeight.w900,
-                                                  color: const Color(0xFF6366F1), // Solid premium brand color
+                                                  color: const Color(
+                                                    0xFF6366F1,
+                                                  ), // Solid premium brand color
                                                   letterSpacing: -1.5,
                                                   height: 1.0,
                                                 ),
@@ -201,8 +203,9 @@ class _LoginViewState extends State<LoginView> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(height: 36.h), // Perfect premium gap without disconnecting the UI
-                                        
+                                        SizedBox(
+                                          height: 36.h,
+                                        ), // Perfect premium gap without disconnecting the UI
                                         // --- Interactive Form Card ---
                                         Stack(
                                           clipBehavior: Clip.none,
@@ -210,133 +213,153 @@ class _LoginViewState extends State<LoginView> {
                                           children: [
                                             // The card itself, pushed down slightly so the mascot can straddle the top border
                                             Padding(
-                                              padding: EdgeInsets.only(top: 30.r),
+                                              padding: EdgeInsets.only(
+                                                top: 30.r,
+                                              ),
                                               child: HolographicCard(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.stretch,
-                                            children: [
-                                              ValueListenableBuilder<int>(
-                                                valueListenable: _emailShake,
-                                                builder:
-                                                    (
-                                                      context,
-                                                      shakeCount,
-                                                      child,
-                                                    ) {
-                                                      return ShakeableWrapper(
-                                                        shakeCount: shakeCount,
-                                                        child: child!,
-                                                      );
-                                                    },
-                                                child: LoginEmailInput(
-                                                  fieldKey: _emailKey,
-                                                  focusNode: _emailFocus,
-                                                ),
-                                              ),
-                                              SizedBox(height: 16.h),
-                                              ValueListenableBuilder<int>(
-                                                valueListenable: _passwordShake,
-                                                builder:
-                                                    (
-                                                      context,
-                                                      shakeCount,
-                                                      child,
-                                                    ) {
-                                                      return ShakeableWrapper(
-                                                        shakeCount: shakeCount,
-                                                        child: child!,
-                                                      );
-                                                    },
-                                                child: LoginPasswordInput(
-                                                  fieldKey: _passwordKey,
-                                                  formKey: _formKey,
-                                                  focusNode: _passwordFocus,
-                                                ),
-                                              ),
-                                              Align(
-                                                // AlignmentDirectional.centerEnd,
-                                                // not Alignment.centerRight —
-                                                // the latter is a physical
-                                                // (non-mirroring) alignment
-                                                // that would stay pinned to
-                                                // the visual right even in
-                                                // Arabic, where this link
-                                                // should sit on the visual
-                                                // left (the "end" of the
-                                                // line in an RTL layout).
-                                                alignment: AlignmentDirectional
-                                                    .centerEnd,
-                                                child: TextButton(
-                                                  onPressed: () => context.push(
-                                                    AppRouter
-                                                        .forgotPasswordRoute,
-                                                  ),
-                                                  style: TextButton.styleFrom(
-                                                    minimumSize: const Size(
-                                                      48,
-                                                      48,
-                                                    ),
-                                                    splashFactory: NoSplash.splashFactory,
-                                                    overlayColor: Colors.transparent,
-                                                  ),
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    child: Text(
-                                                      context.tr(
-                                                        'auth.forgot_password_question',
-                                                        fallback:
-                                                            'Forgot your password?',
-                                                      ),
-                                                      style: const TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        color: Color(0xFF6366F1),
-                                                        fontWeight:
-                                                            FontWeight.w700,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment
+                                                          .stretch,
+                                                  children: [
+                                                    ValueListenableBuilder<int>(
+                                                      valueListenable:
+                                                          _emailShake,
+                                                      builder:
+                                                          (
+                                                            context,
+                                                            shakeCount,
+                                                            child,
+                                                          ) {
+                                                            return ShakeableWrapper(
+                                                              shakeCount:
+                                                                  shakeCount,
+                                                              child: child!,
+                                                            );
+                                                          },
+                                                      child: LoginEmailInput(
+                                                        fieldKey: _emailKey,
+                                                        focusNode: _emailFocus,
                                                       ),
                                                     ),
-                                                  ),
+                                                    SizedBox(height: 16.h),
+                                                    ValueListenableBuilder<int>(
+                                                      valueListenable:
+                                                          _passwordShake,
+                                                      builder:
+                                                          (
+                                                            context,
+                                                            shakeCount,
+                                                            child,
+                                                          ) {
+                                                            return ShakeableWrapper(
+                                                              shakeCount:
+                                                                  shakeCount,
+                                                              child: child!,
+                                                            );
+                                                          },
+                                                      child: LoginPasswordInput(
+                                                        fieldKey: _passwordKey,
+                                                        formKey: _formKey,
+                                                        focusNode:
+                                                            _passwordFocus,
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      // AlignmentDirectional.centerEnd,
+                                                      // not Alignment.centerRight —
+                                                      // the latter is a physical
+                                                      // (non-mirroring) alignment
+                                                      // that would stay pinned to
+                                                      // the visual right even in
+                                                      // Arabic, where this link
+                                                      // should sit on the visual
+                                                      // left (the "end" of the
+                                                      // line in an RTL layout).
+                                                      alignment:
+                                                          AlignmentDirectional
+                                                              .centerEnd,
+                                                      child: TextButton(
+                                                        onPressed: () =>
+                                                            context.push(
+                                                              AppRouter
+                                                                  .forgotPasswordRoute,
+                                                            ),
+                                                        style: TextButton.styleFrom(
+                                                          minimumSize:
+                                                              const Size(
+                                                                48,
+                                                                48,
+                                                              ),
+                                                          splashFactory: NoSplash
+                                                              .splashFactory,
+                                                          overlayColor: Colors
+                                                              .transparent,
+                                                        ),
+                                                        child: FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: Text(
+                                                            context.tr(
+                                                              'auth.forgot_password_question',
+                                                              fallback:
+                                                                  'Forgot your password?',
+                                                            ),
+                                                            style:
+                                                                const TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  color: Color(
+                                                                    0xFF6366F1,
+                                                                  ),
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w700,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 8.h),
+                                                    LoginButton(
+                                                      formKey: _formKey,
+                                                      onValidationError: () {
+                                                        try {
+                                                          Haptics.vibrate(
+                                                            HapticsType.error,
+                                                          );
+                                                        } catch (_) {}
+                                                        if (!(_emailKey
+                                                                .currentState
+                                                                ?.validate() ??
+                                                            true)) {
+                                                          _emailShake.value++;
+                                                        }
+                                                        if (!(_passwordKey
+                                                                .currentState
+                                                                ?.validate() ??
+                                                            true)) {
+                                                          _passwordShake
+                                                              .value++;
+                                                        }
+                                                      },
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                    const GoogleLoginButton(),
+                                                  ],
                                                 ),
                                               ),
-                                              SizedBox(height: 8.h),
-                                              LoginButton(
-                                                formKey: _formKey,
-                                                onValidationError: () {
-                                                  try {
-                                                    Haptics.vibrate(
-                                                      HapticsType.error,
-                                                    );
-                                                  } catch (_) {}
-                                                  if (!(_emailKey.currentState
-                                                          ?.validate() ??
-                                                      true)) {
-                                                    _emailShake.value++;
-                                                  }
-                                                  if (!(_passwordKey
-                                                          .currentState
-                                                          ?.validate() ??
-                                                      true)) {
-                                                    _passwordShake.value++;
-                                                  }
-                                                },
+                                            ), // Close Padding
+                                            Positioned(
+                                              top: 0,
+                                              child: VowlBotAuthCompanion(
+                                                emailFocus: _emailFocus,
+                                                passwordFocus: _passwordFocus,
+                                                size: 60,
                                               ),
-                                              SizedBox(height: 16.h),
-                                              const GoogleLoginButton(),
-                                            ],
-                                          ),
-                                        ),
-                                      ), // Close Padding
-                                      Positioned(
-                                        top: 0,
-                                        child: VowlBotAuthCompanion(
-                                          emailFocus: _emailFocus,
-                                          passwordFocus: _passwordFocus,
-                                          size: 60,
-                                        ),
-                                      ),
-                                    ],
-                                  ), // Close Stack
-                                  SizedBox(height: 16.h),
+                                            ),
+                                          ],
+                                        ), // Close Stack
+                                        SizedBox(height: 16.h),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -367,8 +390,10 @@ class _LoginViewState extends State<LoginView> {
                                               ),
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(48, 48),
-                                                splashFactory: NoSplash.splashFactory,
-                                                overlayColor: Colors.transparent,
+                                                splashFactory:
+                                                    NoSplash.splashFactory,
+                                                overlayColor:
+                                                    Colors.transparent,
                                               ),
                                               child: Text(
                                                 context.tr(

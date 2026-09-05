@@ -149,7 +149,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                   SizedBox(height: 6.h),
                                   AudioSentenceOrderInstruction(
                                     color: theme.primaryColor,
-                                    instruction: InstructionHelper.getInstruction(quest),
+                                    instruction:
+                                        InstructionHelper.getInstruction(quest),
                                   ),
                                   SizedBox(height: 24.h),
                                   AudioSentenceOrderOscilloscope(

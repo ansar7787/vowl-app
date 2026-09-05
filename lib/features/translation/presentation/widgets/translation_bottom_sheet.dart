@@ -89,7 +89,8 @@ class TranslationBottomSheet extends StatelessWidget {
                 return Text(
                   context.tr(
                     'translation.no_language_configured',
-                    fallback: 'Please select a language in the Translate tab first.',
+                    fallback:
+                        'Please select a language in the Translate tab first.',
                   ),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -106,7 +107,10 @@ class TranslationBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        context.tr('translation.english_caps', fallback: 'English'),
+                        context.tr(
+                          'translation.english_caps',
+                          fallback: 'English',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,

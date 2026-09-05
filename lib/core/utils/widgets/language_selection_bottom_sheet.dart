@@ -74,504 +74,536 @@ class _LanguageSelectionBottomSheetState
     final primaryIndigo = const Color(0xFF6366F1);
 
     return ListenableBuilder(
-      listenable: Listenable.merge([_selectedLanguage, _isLoading, _downloadProgress, _searchQuery]),
+      listenable: Listenable.merge([
+        _selectedLanguage,
+        _isLoading,
+        _downloadProgress,
+        _searchQuery,
+      ]),
       builder: (context, _) {
         return ClipRRect(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          padding: EdgeInsets.only(
-            left: 20.w,
-            right: 20.w,
-            top: 20.h,
-            bottom: MediaQuery.of(context).padding.bottom + 20.h,
-          ),
-          decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF0F172A).withValues(alpha: 0.85)
-                : Colors.white.withValues(alpha: 0.9),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-            border: Border(
-              top: BorderSide(
-                color: Colors.white.withValues(alpha: 0.2),
-                width: 1,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+            child: Container(
+              padding: EdgeInsets.only(
+                left: 20.w,
+                right: 20.w,
+                top: 20.h,
+                bottom: MediaQuery.of(context).padding.bottom + 20.h,
               ),
-            ),
-          ),
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height * 0.85,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(
-                  width: 48.w,
-                  height: 5.h,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.3),
-                    borderRadius: BorderRadius.circular(2.5.r),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? const Color(0xFF0F172A).withValues(alpha: 0.85)
+                    : Colors.white.withValues(alpha: 0.9),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+                border: Border(
+                  top: BorderSide(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    width: 1,
                   ),
                 ),
               ),
-              SizedBox(height: 24.h),
-
-              // Premium Header
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(12.r),
-                    decoration: BoxDecoration(
-                      color: primaryIndigo.withValues(alpha: 0.15),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      LucideIcons.languages,
-                      color: primaryIndigo,
-                      size: 24.r,
-                    ),
-                  ),
-                  SizedBox(width: 16.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          context.tr(
-                            'translation.first_time_title',
-                            fallback: 'Translation Language',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 22.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white : Colors.black87,
-                            letterSpacing: -0.5,
-                          ),
-                        ),
-                        SizedBox(height: 4.h),
-                        Text(
-                          context.tr(
-                            'translation.language_selection_subtitle',
-                            fallback:
-                                'We will translate in-game hints & explanations into this language.',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            color: isDark ? Colors.white60 : Colors.black54,
-                            height: 1.3,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.85,
               ),
-              SizedBox(height: 16.h),
-
-              // Auto-Detect Feature Button
-              ScaleButton(
-                onTap: () =>
-                    _showAutoDetectDialog(context, isDark, primaryIndigo),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 14.h,
-                    horizontal: 16.w,
-                  ),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        primaryIndigo.withValues(alpha: 0.1),
-                        const Color(0xFF8B5CF6).withValues(alpha: 0.1),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(
-                      color: primaryIndigo.withValues(alpha: 0.3),
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.auto_awesome_rounded,
-                        color: primaryIndigo,
-                        size: 20.r,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Container(
+                      width: 48.w,
+                      height: 5.h,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withValues(alpha: 0.3),
+                        borderRadius: BorderRadius.circular(2.5.r),
                       ),
-                      SizedBox(width: 12.w),
+                    ),
+                  ),
+                  SizedBox(height: 24.h),
+
+                  // Premium Header
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(12.r),
+                        decoration: BoxDecoration(
+                          color: primaryIndigo.withValues(alpha: 0.15),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          LucideIcons.languages,
+                          color: primaryIndigo,
+                          size: 24.r,
+                        ),
+                      ),
+                      SizedBox(width: 16.w),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               context.tr(
-                                'translation.auto_detect',
-                                fallback: 'Auto-Detect Language',
+                                'translation.first_time_title',
+                                fallback: 'Translation Language',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 22.sp,
+                                fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white : Colors.black87,
+                                letterSpacing: -0.5,
                               ),
                             ),
+                            SizedBox(height: 4.h),
                             Text(
                               context.tr(
-                                'translation.auto_detect_desc',
+                                'translation.language_selection_subtitle',
                                 fallback:
-                                    'Type a sentence and we will find your language.',
+                                    'We will translate in-game hints & explanations into this language.',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 12.sp,
+                                fontSize: 13.sp,
                                 color: isDark ? Colors.white60 : Colors.black54,
+                                height: 1.3,
                               ),
                             ),
                           ],
                         ),
                       ),
-                      Icon(
-                        Icons.chevron_right_rounded,
-                        color: isDark ? Colors.white54 : Colors.black45,
-                        size: 24.r,
-                      ),
                     ],
                   ),
-                ),
-              ),
-              SizedBox(height: 12.h),
+                  SizedBox(height: 16.h),
 
-              // Search field
-              Container(
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.black.withValues(alpha: 0.2)
-                      : Colors.black.withValues(alpha: 0.03),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.05),
-                  ),
-                ),
-                child: TextField(
-                  controller: _searchController,
-                  onChanged: (val) => _searchQuery.value = val,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    color: isDark ? Colors.white : Colors.black87,
-                  ),
-                  decoration: InputDecoration(
-                    hintText: context.tr(
-                      'language_picker.search_hint',
-                      fallback: 'Search languages...',
-                    ),
-                    hintStyle: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      color: isDark ? Colors.white38 : Colors.black26,
-                    ),
-                    prefixIcon: Icon(
-                      LucideIcons.search,
-                      size: 18.r,
-                      color: isDark ? Colors.white38 : Colors.black26,
-                    ),
-                    suffixIcon: _searchQuery.value.isNotEmpty
-                        ? GestureDetector(
-                            onTap: () {
-                              _searchController.clear();
-                              _searchQuery.value = '';
-                            },
-                            child: Icon(
-                              Icons.close_rounded,
-                              size: 18.r,
-                              color: isDark ? Colors.white38 : Colors.black38,
-                            ),
-                          )
-                        : null,
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 14.h,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 12.h),
-
-              // Language List
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.black.withValues(alpha: 0.2)
-                        : Colors.black.withValues(alpha: 0.02),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.05),
-                    ),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.r),
-                    child: Builder(
-                      builder: (context) {
-                        final filteredEntries = TranslationService
-                            .supportedLanguages
-                            .entries
-                            .where(
-                              (e) => e.key.toLowerCase().contains(
-                                _searchQuery.value.toLowerCase(),
-                              ),
-                            )
-                            .toList();
-
-                        if (filteredEntries.isEmpty) {
-                          return Center(
-                            child: Padding(
-                              padding: EdgeInsets.all(32.r),
-                              child: Text(
-                                context.tr(
-                                  'language_picker.no_results',
-                                  fallback: 'No results found',
+                  // Auto-Detect Feature Button
+                  ScaleButton(
+                    onTap: () =>
+                        _showAutoDetectDialog(context, isDark, primaryIndigo),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(
+                        vertical: 14.h,
+                        horizontal: 16.w,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            primaryIndigo.withValues(alpha: 0.1),
+                            const Color(0xFF8B5CF6).withValues(alpha: 0.1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: primaryIndigo.withValues(alpha: 0.3),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.auto_awesome_rounded,
+                            color: primaryIndigo,
+                            size: 20.r,
+                          ),
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  context.tr(
+                                    'translation.auto_detect',
+                                    fallback: 'Auto-Detect Language',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                  ),
                                 ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
+                                Text(
+                                  context.tr(
+                                    'translation.auto_detect_desc',
+                                    fallback:
+                                        'Type a sentence and we will find your language.',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    color: isDark
+                                        ? Colors.white60
+                                        : Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Icon(
+                            Icons.chevron_right_rounded,
+                            color: isDark ? Colors.white54 : Colors.black45,
+                            size: 24.r,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12.h),
+
+                  // Search field
+                  Container(
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.black.withValues(alpha: 0.2)
+                          : Colors.black.withValues(alpha: 0.03),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.05),
+                      ),
+                    ),
+                    child: TextField(
+                      controller: _searchController,
+                      onChanged: (val) => _searchQuery.value = val,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        color: isDark ? Colors.white : Colors.black87,
+                      ),
+                      decoration: InputDecoration(
+                        hintText: context.tr(
+                          'language_picker.search_hint',
+                          fallback: 'Search languages...',
+                        ),
+                        hintStyle: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          color: isDark ? Colors.white38 : Colors.black26,
+                        ),
+                        prefixIcon: Icon(
+                          LucideIcons.search,
+                          size: 18.r,
+                          color: isDark ? Colors.white38 : Colors.black26,
+                        ),
+                        suffixIcon: _searchQuery.value.isNotEmpty
+                            ? GestureDetector(
+                                onTap: () {
+                                  _searchController.clear();
+                                  _searchQuery.value = '';
+                                },
+                                child: Icon(
+                                  Icons.close_rounded,
+                                  size: 18.r,
                                   color: isDark
                                       ? Colors.white38
                                       : Colors.black38,
                                 ),
-                              ),
-                            ),
-                          );
-                        }
-
-                        return ListView.separated(
-                          padding: EdgeInsets.all(16.r),
-                          itemCount: filteredEntries.length,
-                          separatorBuilder: (context, index) =>
-                              SizedBox(height: 8.h),
-                          itemBuilder: (context, index) {
-                            final entry = filteredEntries[index];
-                            final isSelected = _selectedLanguage.value == entry.key;
-
-                            return Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                onTap: () => _selectedLanguage.value = entry.key,
-                                borderRadius: BorderRadius.circular(16.r),
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 14.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: isSelected
-                                        ? primaryIndigo.withValues(alpha: 0.1)
-                                        : Colors.transparent,
-                                    borderRadius: BorderRadius.circular(16.r),
-                                    border: Border.all(
-                                      color: isSelected
-                                          ? primaryIndigo.withValues(alpha: 0.5)
-                                          : Colors.transparent,
-                                      width: 1.5,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        entry.key,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 16.sp,
-                                          fontWeight: isSelected
-                                              ? FontWeight.w800
-                                              : FontWeight.w600,
-                                          color: isSelected
-                                              ? primaryIndigo
-                                              : (isDark
-                                                    ? Colors.white70
-                                                    : Colors.black87),
-                                        ),
-                                      ),
-                                      const Spacer(),
-                                      if (isSelected)
-                                        Icon(
-                                          LucideIcons.checkCircle2,
-                                          color: primaryIndigo,
-                                          size: 22.r,
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      },
+                              )
+                            : null,
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 14.h,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-              SizedBox(height: 16.h),
+                  SizedBox(height: 12.h),
 
-              // Premium CTA Button
-              SizedBox(
-                width: double.infinity,
-                child: Semantics(
-                  button: true,
-                  label: context.tr(
-                    'common.continue_text',
-                    fallback: 'Continue',
-                  ),
-                  child: ScaleButton(
-                    onTap: (_selectedLanguage.value == null || _isLoading.value)
-                        ? () {}
-                        : () async {
-                            _isLoading.value = true;
-                            _startFakeProgress();
-                            final target = TranslationService
-                                .supportedLanguages[_selectedLanguage.value]!;
+                  // Language List
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.black.withValues(alpha: 0.2)
+                            : Colors.black.withValues(alpha: 0.02),
+                        borderRadius: BorderRadius.circular(24.r),
+                        border: Border.all(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.05)
+                              : Colors.black.withValues(alpha: 0.05),
+                        ),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(24.r),
+                        child: Builder(
+                          builder: (context) {
+                            final filteredEntries = TranslationService
+                                .supportedLanguages
+                                .entries
+                                .where(
+                                  (e) => e.key.toLowerCase().contains(
+                                    _searchQuery.value.toLowerCase(),
+                                  ),
+                                )
+                                .toList();
 
-                            try {
-                              await di
-                                  .sl<TranslationService>()
-                                  .setTargetLanguage(target);
-                              _progressTimer?.cancel();
-                              if (mounted) {
-                                _downloadProgress.value = 100;
-                              }
-                              // Add a tiny delay so user can see 100%
-                              await Future.delayed(
-                                const Duration(milliseconds: 300),
+                            if (filteredEntries.isEmpty) {
+                              return Center(
+                                child: Padding(
+                                  padding: EdgeInsets.all(32.r),
+                                  child: Text(
+                                    context.tr(
+                                      'language_picker.no_results',
+                                      fallback: 'No results found',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      color: isDark
+                                          ? Colors.white38
+                                          : Colors.black38,
+                                    ),
+                                  ),
+                                ),
                               );
-                              if (context.mounted) Navigator.pop(context);
-                            } catch (e) {
-                              if (mounted) _isLoading.value = false;
-                              if (context.mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      context.tr(
-                                        'translation.error',
-                                        fallback: 'Failed to set language',
+                            }
+
+                            return ListView.separated(
+                              padding: EdgeInsets.all(16.r),
+                              itemCount: filteredEntries.length,
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 8.h),
+                              itemBuilder: (context, index) {
+                                final entry = filteredEntries[index];
+                                final isSelected =
+                                    _selectedLanguage.value == entry.key;
+
+                                return Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: () =>
+                                        _selectedLanguage.value = entry.key,
+                                    borderRadius: BorderRadius.circular(16.r),
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: 14.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? primaryIndigo.withValues(
+                                                alpha: 0.1,
+                                              )
+                                            : Colors.transparent,
+                                        borderRadius: BorderRadius.circular(
+                                          16.r,
+                                        ),
+                                        border: Border.all(
+                                          color: isSelected
+                                              ? primaryIndigo.withValues(
+                                                  alpha: 0.5,
+                                                )
+                                              : Colors.transparent,
+                                          width: 1.5,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            entry.key,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 16.sp,
+                                              fontWeight: isSelected
+                                                  ? FontWeight.w800
+                                                  : FontWeight.w600,
+                                              color: isSelected
+                                                  ? primaryIndigo
+                                                  : (isDark
+                                                        ? Colors.white70
+                                                        : Colors.black87),
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          if (isSelected)
+                                            Icon(
+                                              LucideIcons.checkCircle2,
+                                              color: primaryIndigo,
+                                              size: 22.r,
+                                            ),
+                                        ],
                                       ),
                                     ),
-                                    backgroundColor: const Color(0xFFF43F5E),
                                   ),
                                 );
-                              }
-                            }
+                              },
+                            );
                           },
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 300),
-                      padding: EdgeInsets.symmetric(vertical: 16.h),
-                      decoration: BoxDecoration(
-                        color: _selectedLanguage.value == null
-                            ? Colors.grey.withValues(alpha: 0.3)
-                            : primaryIndigo,
-                        borderRadius: BorderRadius.circular(20.r),
-                        boxShadow: _selectedLanguage.value != null
-                            ? [
-                                BoxShadow(
-                                  color: primaryIndigo.withValues(alpha: 0.4),
-                                  blurRadius: 15,
-                                  offset: const Offset(0, 5),
-                                ),
-                              ]
-                            : [],
-                      ),
-                      child: Center(
-                        child: _isLoading.value
-                            ? Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(
-                                        width: 24.r,
-                                        height: 24.r,
-                                        child: Stack(
-                                          alignment: Alignment.center,
-                                          children: [
-                                            CircularProgressIndicator(
-                                              value: _downloadProgress.value == 0
-                                                  ? null
-                                                  : _downloadProgress.value / 100,
-                                              color: Colors.white,
-                                              backgroundColor: Colors.white
-                                                  .withValues(alpha: 0.2),
-                                              strokeWidth: 2.5,
-                                            ),
-                                            Text(
-                                              '${_downloadProgress.value}%',
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 8.sp,
-                                                fontWeight: FontWeight.w900,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(width: 12.w),
-                                      Flexible(
-                                        child: Text(
-                                          context.tr(
-                                            'translation.downloading_short',
-                                            fallback: 'Downloading...',
-                                          ),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 15.sp,
-                                            fontWeight: FontWeight.w900,
-                                            color: Colors.white,
-                                            letterSpacing: 1,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .shimmer(
-                                    duration: 1500.ms,
-                                    color: Colors.white54,
-                                  )
-                            : Text(
-                                context
-                                    .tr(
-                                      'common.continue_text',
-                                      fallback: 'Continue',
-                                    )
-                                    .toUpperCase(),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: _selectedLanguage.value == null
-                                      ? Colors.grey.withValues(alpha: 0.8)
-                                      : Colors.white,
-                                  letterSpacing: 1,
-                                ),
-                              ),
+                        ),
                       ),
                     ),
                   ),
-                ),
+                  SizedBox(height: 16.h),
+
+                  // Premium CTA Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: Semantics(
+                      button: true,
+                      label: context.tr(
+                        'common.continue_text',
+                        fallback: 'Continue',
+                      ),
+                      child: ScaleButton(
+                        onTap:
+                            (_selectedLanguage.value == null ||
+                                _isLoading.value)
+                            ? () {}
+                            : () async {
+                                _isLoading.value = true;
+                                _startFakeProgress();
+                                final target =
+                                    TranslationService
+                                        .supportedLanguages[_selectedLanguage
+                                        .value]!;
+
+                                try {
+                                  await di
+                                      .sl<TranslationService>()
+                                      .setTargetLanguage(target);
+                                  _progressTimer?.cancel();
+                                  if (mounted) {
+                                    _downloadProgress.value = 100;
+                                  }
+                                  // Add a tiny delay so user can see 100%
+                                  await Future.delayed(
+                                    const Duration(milliseconds: 300),
+                                  );
+                                  if (context.mounted) Navigator.pop(context);
+                                } catch (e) {
+                                  if (mounted) _isLoading.value = false;
+                                  if (context.mounted) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          context.tr(
+                                            'translation.error',
+                                            fallback: 'Failed to set language',
+                                          ),
+                                        ),
+                                        backgroundColor: const Color(
+                                          0xFFF43F5E,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                }
+                              },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          padding: EdgeInsets.symmetric(vertical: 16.h),
+                          decoration: BoxDecoration(
+                            color: _selectedLanguage.value == null
+                                ? Colors.grey.withValues(alpha: 0.3)
+                                : primaryIndigo,
+                            borderRadius: BorderRadius.circular(20.r),
+                            boxShadow: _selectedLanguage.value != null
+                                ? [
+                                    BoxShadow(
+                                      color: primaryIndigo.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      blurRadius: 15,
+                                      offset: const Offset(0, 5),
+                                    ),
+                                  ]
+                                : [],
+                          ),
+                          child: Center(
+                            child: _isLoading.value
+                                ? Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          SizedBox(
+                                            width: 24.r,
+                                            height: 24.r,
+                                            child: Stack(
+                                              alignment: Alignment.center,
+                                              children: [
+                                                CircularProgressIndicator(
+                                                  value:
+                                                      _downloadProgress.value ==
+                                                          0
+                                                      ? null
+                                                      : _downloadProgress
+                                                                .value /
+                                                            100,
+                                                  color: Colors.white,
+                                                  backgroundColor: Colors.white
+                                                      .withValues(alpha: 0.2),
+                                                  strokeWidth: 2.5,
+                                                ),
+                                                Text(
+                                                  '${_downloadProgress.value}%',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 8.sp,
+                                                    fontWeight: FontWeight.w900,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(width: 12.w),
+                                          Flexible(
+                                            child: Text(
+                                              context.tr(
+                                                'translation.downloading_short',
+                                                fallback: 'Downloading...',
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 15.sp,
+                                                fontWeight: FontWeight.w900,
+                                                color: Colors.white,
+                                                letterSpacing: 1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                      .animate(onPlay: (c) => c.repeat())
+                                      .shimmer(
+                                        duration: 1500.ms,
+                                        color: Colors.white54,
+                                      )
+                                : Text(
+                                    context
+                                        .tr(
+                                          'common.continue_text',
+                                          fallback: 'Continue',
+                                        )
+                                        .toUpperCase(),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: _selectedLanguage.value == null
+                                          ? Colors.grey.withValues(alpha: 0.8)
+                                          : Colors.white,
+                                      letterSpacing: 1,
+                                    ),
+                                  ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        );
       },
     );
   }

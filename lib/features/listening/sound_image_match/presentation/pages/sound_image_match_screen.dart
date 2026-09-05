@@ -262,7 +262,10 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                         ),
                                       SoundImageMatchInstruction(
                                         color: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       SoundImageMatchEmitter(

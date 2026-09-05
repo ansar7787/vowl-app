@@ -180,7 +180,10 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                       SizedBox(height: 16.h),
                                       GuessTitleInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       Container(

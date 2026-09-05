@@ -103,74 +103,80 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
       listenable: Listenable.merge([_progress, _languageName]),
       builder: (context, _) {
         return Dialog(
-      backgroundColor: isDark ? const Color(0xFF1E1E2A) : Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Stack(
-              alignment: Alignment.center,
+          backgroundColor: isDark ? const Color(0xFF1E1E2A) : Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24.r),
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(
-                  width: 80.r,
-                  height: 80.r,
-                  child: CircularProgressIndicator(
-                    value: _progress.value == 0 ? null : _progress.value / 100,
-                    strokeWidth: 6,
-                    backgroundColor: isDark ? Colors.white10 : Colors.black12,
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      Color(0xFF6366F1),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    SizedBox(
+                      width: 80.r,
+                      height: 80.r,
+                      child: CircularProgressIndicator(
+                        value: _progress.value == 0
+                            ? null
+                            : _progress.value / 100,
+                        strokeWidth: 6,
+                        backgroundColor: isDark
+                            ? Colors.white10
+                            : Colors.black12,
+                        valueColor: const AlwaysStoppedAnimation<Color>(
+                          Color(0xFF6366F1),
+                        ),
+                      ),
                     ),
-                  ),
+                    Text(
+                      '${_progress.value}%',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: isDark ? Colors.white : Colors.black87,
+                      ),
+                    ),
+                  ],
                 ),
+                SizedBox(height: 24.h),
                 Text(
-                  '${_progress.value}%',
+                  context.tr(
+                    'translation.downloading_model',
+                    fallback: 'Downloading Model...',
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: isDark ? Colors.white : Colors.black87,
                   ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 8.h),
+                Text(
+                  context
+                      .tr(
+                        'translation.downloading_desc',
+                        fallback:
+                            'Downloading offline AI model for {lang}. This only happens once.',
+                      )
+                      .replaceAll('{lang}', _languageName.value ?? ''),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
-            SizedBox(height: 24.h),
-            Text(
-              context.tr(
-                'translation.downloading_model',
-                fallback: 'Downloading Model...',
-              ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
-                color: isDark ? Colors.white : Colors.black87,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 8.h),
-            Text(
-              context
-                  .tr(
-                    'translation.downloading_desc',
-                    fallback:
-                        'Downloading offline AI model for {lang}. This only happens once.',
-                  )
-                  .replaceAll('{lang}', _languageName.value ?? ''),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-      }
+          ),
+        );
+      },
     );
   }
 }

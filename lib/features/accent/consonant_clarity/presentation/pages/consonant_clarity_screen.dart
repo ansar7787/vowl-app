@@ -282,119 +282,126 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                 child: CustomScrollView(
                                   controller: _scrollController,
                                   physics: (!_isFirstStagePassed.value)
-                                        ? const NeverScrollableScrollPhysics()
-                                        : const BouncingScrollPhysics(),
+                                      ? const NeverScrollableScrollPhysics()
+                                      : const BouncingScrollPhysics(),
                                   slivers: [
                                     SliverToBoxAdapter(
-                                    child: IgnorePointer(
-                                      ignoring: _isFirstStagePassed.value,
-                                      child: ConstrainedBox(
-                                        constraints: BoxConstraints(
-                                          minHeight: constraints.maxHeight,
-                                        ),
-                                        child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
+                                      child: IgnorePointer(
+                                        ignoring: _isFirstStagePassed.value,
+                                        child: ConstrainedBox(
+                                          constraints: BoxConstraints(
+                                            minHeight: constraints.maxHeight,
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    SizedBox(height: gapTop),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 32.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: ConsonantClarityInstruction(
-                                                                  primaryColor:
-                                                                      theme
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapTop,
+                                                        ),
+                                                        isCompact
+                                                            ? SizedBox(
+                                                                height: 32.h,
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: SizedBox(
+                                                                    width:
+                                                                        maxWidth -
+                                                                        48.w,
+                                                                    child: ConsonantClarityInstruction(
+                                                                      primaryColor:
+                                                                          theme
+                                                                              .primaryColor,
+                                                                      instruction:
+                                                                          _isFirstStagePassed
+                                                                              .value
+                                                                          ? "Great job! Now confirm by speaking the word."
+                                                                          : null,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              )
+                                                            : ConsonantClarityInstruction(
+                                                                primaryColor: theme
+                                                                    .primaryColor,
+                                                                instruction:
+                                                                    _isFirstStagePassed
+                                                                        .value
+                                                                    ? "Great job! Now confirm by speaking the word."
+                                                                    : null,
+                                                              ),
+                                                        SizedBox(
+                                                          height:
+                                                              gapInstruction,
+                                                        ),
+                                                        isCompact
+                                                            ? SizedBox(
+                                                                height: 90.h,
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: SizedBox(
+                                                                    width:
+                                                                        maxWidth -
+                                                                        48.w,
+                                                                    child: ConsonantClarityPromptCard(
+                                                                      word:
+                                                                          quest
+                                                                              .word ??
+                                                                          "",
+                                                                      color: theme
                                                                           .primaryColor,
-                                                                  instruction:
-                                                                      _isFirstStagePassed
-                                                                          .value
-                                                                      ? "Great job! Now confirm by speaking the word."
-                                                                      : null,
+                                                                      isDark:
+                                                                          isDark,
+                                                                      isAnswered:
+                                                                          _isAnswered
+                                                                              .value ||
+                                                                          _isFirstStagePassed
+                                                                              .value,
+                                                                    ),
+                                                                  ),
                                                                 ),
+                                                              )
+                                                            : ConsonantClarityPromptCard(
+                                                                word:
+                                                                    quest
+                                                                        .word ??
+                                                                    "",
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                isDark: isDark,
+                                                                isAnswered:
+                                                                    _isAnswered
+                                                                        .value ||
+                                                                    _isFirstStagePassed
+                                                                        .value,
                                                               ),
-                                                            ),
-                                                          )
-                                                        : ConsonantClarityInstruction(
-                                                            primaryColor: theme
-                                                                .primaryColor,
-                                                            instruction:
-                                                                _isFirstStagePassed
-                                                                    .value
-                                                                ? "Great job! Now confirm by speaking the word."
-                                                                : null,
-                                                          ),
-                                                    SizedBox(
-                                                      height: gapInstruction,
-                                                    ),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 90.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: ConsonantClarityPromptCard(
-                                                                  word:
-                                                                      quest
-                                                                          .word ??
-                                                                      "",
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  isDark:
-                                                                      isDark,
-                                                                  isAnswered:
-                                                                      _isAnswered
-                                                                          .value ||
-                                                                      _isFirstStagePassed
-                                                                          .value,
+                                                        SizedBox(
+                                                          height: gapPrompt,
+                                                        ),
+                                                        if (_isFirstStagePassed
+                                                                .value &&
+                                                            quest.voicing !=
+                                                                null &&
+                                                            quest.airflow !=
+                                                                null)
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsets.only(
+                                                                  bottom: 24.h,
                                                                 ),
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : ConsonantClarityPromptCard(
-                                                            word:
-                                                                quest.word ??
-                                                                "",
-                                                            color: theme
-                                                                .primaryColor,
-                                                            isDark: isDark,
-                                                            isAnswered:
-                                                                _isAnswered
-                                                                    .value ||
-                                                                _isFirstStagePassed
-                                                                    .value,
-                                                          ),
-                                                    SizedBox(height: gapPrompt),
-                                                    if (_isFirstStagePassed
-                                                            .value &&
-                                                        quest.voicing != null &&
-                                                        quest.airflow != null)
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                              bottom: 24.h,
-                                                            ),
-                                                        child:
-                                                            ConsonantClarityThroatIndicator(
+                                                            child: ConsonantClarityThroatIndicator(
                                                               voicing: quest
                                                                   .voicing!,
                                                               airflow: quest
@@ -403,139 +410,138 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                                   .primaryColor,
                                                               isDark: isDark,
                                                             ),
-                                                      )
-                                                    else
-                                                      ConsonantClarityPulseSpeaker(
-                                                        text:
-                                                            quest.textToSpeak ??
-                                                            "",
-                                                        color:
-                                                            theme.primaryColor,
-                                                        onPlayTts: _playTts,
-                                                      ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: gapSpeaker,
-                                                    ),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 110.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: ConsonantClarityTactileGrid(
-                                                                  options:
-                                                                      options,
-                                                                  correctIndex:
-                                                                      correctIndex,
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  isDark:
-                                                                      isDark,
-                                                                  isAnswered:
-                                                                      _isAnswered
-                                                                          .value ||
-                                                                      _isFirstStagePassed
-                                                                          .value,
-                                                                  selectedIndex:
-                                                                      _selectedIndex
-                                                                          .value,
-                                                                  onSubmitChoice:
-                                                                      _submitChoice,
-                                                                ),
-                                                              ),
-                                                            ),
                                                           )
-                                                        : ConsonantClarityTactileGrid(
-                                                            options: options,
-                                                            correctIndex:
-                                                                correctIndex,
+                                                        else
+                                                          ConsonantClarityPulseSpeaker(
+                                                            text:
+                                                                quest
+                                                                    .textToSpeak ??
+                                                                "",
                                                             color: theme
                                                                 .primaryColor,
-                                                            isDark: isDark,
-                                                            isAnswered:
-                                                                _isAnswered
-                                                                    .value ||
-                                                                _isFirstStagePassed
-                                                                    .value,
-                                                            selectedIndex:
-                                                                _selectedIndex
-                                                                    .value,
-                                                            onSubmitChoice:
-                                                                _submitChoice,
+                                                            onPlayTts: _playTts,
                                                           ),
-                                                    SizedBox(height: gapBottom),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapSpeaker,
+                                                        ),
+                                                        isCompact
+                                                            ? SizedBox(
+                                                                height: 110.h,
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: SizedBox(
+                                                                    width:
+                                                                        maxWidth -
+                                                                        48.w,
+                                                                    child: ConsonantClarityTactileGrid(
+                                                                      options:
+                                                                          options,
+                                                                      correctIndex:
+                                                                          correctIndex,
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      isDark:
+                                                                          isDark,
+                                                                      isAnswered:
+                                                                          _isAnswered
+                                                                              .value ||
+                                                                          _isFirstStagePassed
+                                                                              .value,
+                                                                      selectedIndex:
+                                                                          _selectedIndex
+                                                                              .value,
+                                                                      onSubmitChoice:
+                                                                          _submitChoice,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              )
+                                                            : ConsonantClarityTactileGrid(
+                                                                options:
+                                                                    options,
+                                                                correctIndex:
+                                                                    correctIndex,
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                isDark: isDark,
+                                                                isAnswered:
+                                                                    _isAnswered
+                                                                        .value ||
+                                                                    _isFirstStagePassed
+                                                                        .value,
+                                                                selectedIndex:
+                                                                    _selectedIndex
+                                                                        .value,
+                                                                onSubmitChoice:
+                                                                    _submitChoice,
+                                                              ),
+                                                        SizedBox(
+                                                          height: gapBottom,
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ],
                                                 ),
-                                              ],
-                                            ),
-                                          ),
+                                              ),
 
-                                          SizedBox(
-                                            height:
-                                                (_isFirstStagePassed.value &&
-                                                    !_isAnswered.value)
-                                                ? 380.h
-                                                : 160.h,
+                                              SizedBox(
+                                                height:
+                                                    (_isFirstStagePassed
+                                                            .value &&
+                                                        !_isAnswered.value)
+                                                    ? 380.h
+                                                    : 160.h,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-
+                                        ),
                                       ),
-
                                     ),
 
-                                  ),
+                                    if (_isFirstStagePassed.value &&
+                                        !_isAnswered.value)
+                                      SliverToBoxAdapter(
+                                        child: Column(
+                                          children: [
+                                            if (_isFirstStagePassed.value &&
+                                                !_isAnswered.value)
+                                              ShadowPlaybackCompare(
+                                                expectedText: quest.word ?? "",
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isPositioned: false,
+                                                onConfirmed: () {
+                                                  context.read<AccentBloc>().add(
+                                                    const AccentSpeakConfirmed(
+                                                      5,
+                                                    ),
+                                                  );
+                                                  _submitVerbalEvaluation(true);
+                                                },
+                                                onSkipped: () {
+                                                  _submitVerbalEvaluation(
+                                                    false,
+                                                  );
+                                                },
+                                              ),
 
+                                            SizedBox(height: 60.h),
+                                          ],
+                                        ),
+                                      ),
+                                  ],
                                 ),
-
-                                if (_isFirstStagePassed.value && !_isAnswered.value)
-
-                                  SliverToBoxAdapter(
-
-                                    child: Column(
-
-                                      children: [
-if (_isFirstStagePassed.value && !_isAnswered.value)
-                            ShadowPlaybackCompare(
-                              expectedText: quest.word ?? "",
-                              primaryColor: theme.primaryColor,
-                              isPositioned: false,
-                              onConfirmed: () {
-                                context.read<AccentBloc>().add(
-                                  const AccentSpeakConfirmed(5),
-                                );
-                                _submitVerbalEvaluation(true);
-                              },
-                              onSkipped: () {
-                                _submitVerbalEvaluation(false);
-                              },
-                            ),
-  
-
-                                        SizedBox(height: 60.h),
-
-                                      ],
-
-                                    ),
-
-                                  ),
-
-                                ],
-
-                              ),
                               );
                             },
                           ),
-                                                ],
+                        ],
                       ),
               );
             },

@@ -481,8 +481,8 @@ class GameDialogHelper {
         },
         adButtonText: context.tr(
           'games.watch_ad_for_hint_button',
-          fallback: (context.read<AuthBloc>().state.user?.isPremium ?? false) 
-              ? 'GET FREE HINT' 
+          fallback: (context.read<AuthBloc>().state.user?.isPremium ?? false)
+              ? 'GET FREE HINT'
               : 'WATCH AD FOR HINT',
         ),
         isRescueLife: true,

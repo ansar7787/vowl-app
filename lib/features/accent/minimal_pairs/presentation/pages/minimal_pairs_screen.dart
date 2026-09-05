@@ -99,7 +99,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
     super.dispose();
   }
 
-
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 300), () {
       if (_scrollController.hasClients) {
@@ -111,7 +110,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
       }
     });
   }
-
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered.value) return;
@@ -282,270 +280,280 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                         ),
                                         child: Column(
                                           children: [
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
-                                          ),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  SizedBox(height: gapTop),
-                                                  MinimalPairsInstruction(
-                                                    color: theme.primaryColor,
-                                                    instruction:
-                                                        _isFirstStagePassed
-                                                            .value
-                                                        ? "Great job! Now confirm by speaking the word."
-                                                        : context.tr(
-                                                            'games.minimal_pairs_instruction',
-                                                            fallback: quest
-                                                                .instruction,
-                                                          ),
-                                                  ),
-                                                  SizedBox(
-                                                    height: gapInstruction,
-                                                  ),
-                                                ],
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24.w,
                                               ),
-                                              MinimalPairsSpeakerCore(
-                                                text: quest.textToSpeak ?? "",
-                                                color: theme.primaryColor,
-                                                onPlayTts: _playTts,
-                                              ),
-                                              Column(
-                                                mainAxisSize: MainAxisSize.min,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
                                                 children: [
-                                                  SizedBox(height: gapSpeaker),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 110.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: SizedBox(
-                                                              width:
-                                                                  maxWidth -
-                                                                  48.w,
-                                                              child: Row(
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  MinimalPairsDroneOption(
-                                                                    index: 0,
-                                                                    word:
-                                                                        _currentOptions
-                                                                            .isNotEmpty
-                                                                        ? _currentOptions[0]['word']!
-                                                                        : quest.word1 ??
-                                                                              "",
-                                                                    ipa:
-                                                                        _currentOptions
-                                                                            .isNotEmpty
-                                                                        ? _currentOptions[0]['ipa']!
-                                                                        : quest.ipa1 ??
-                                                                              "",
-                                                                    correctIndex:
-                                                                        _currentOptions
-                                                                            .isNotEmpty
-                                                                        ? _currentCorrectIndex
-                                                                        : quest.correctAnswerIndex ??
-                                                                              0,
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                    isAnswered:
-                                                                        _isAnswered
-                                                                            .value ||
-                                                                        _isFirstStagePassed
-                                                                            .value,
-                                                                    selectedDroneIndex:
-                                                                        _selectedDroneIndex
-                                                                            .value,
-                                                                    onShoot:
-                                                                        _onShoot,
-                                                                  ),
-                                                                  MinimalPairsDroneOption(
-                                                                    index: 1,
-                                                                    word:
-                                                                        _currentOptions
-                                                                            .isNotEmpty
-                                                                        ? _currentOptions[1]['word']!
-                                                                        : quest.word2 ??
-                                                                              "",
-                                                                    ipa:
-                                                                        _currentOptions
-                                                                            .isNotEmpty
-                                                                        ? _currentOptions[1]['ipa']!
-                                                                        : quest.ipa2 ??
-                                                                              "",
-                                                                    correctIndex:
-                                                                        _currentOptions
-                                                                            .isNotEmpty
-                                                                        ? _currentCorrectIndex
-                                                                        : quest.correctAnswerIndex ??
-                                                                              0,
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                    isAnswered:
-                                                                        _isAnswered
-                                                                            .value ||
-                                                                        _isFirstStagePassed
-                                                                            .value,
-                                                                    selectedDroneIndex:
-                                                                        _selectedDroneIndex
-                                                                            .value,
-                                                                    onShoot:
-                                                                        _onShoot,
-                                                                  ),
-                                                                ],
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      SizedBox(height: gapTop),
+                                                      MinimalPairsInstruction(
+                                                        color:
+                                                            theme.primaryColor,
+                                                        instruction:
+                                                            _isFirstStagePassed
+                                                                .value
+                                                            ? "Great job! Now confirm by speaking the word."
+                                                            : context.tr(
+                                                                'games.minimal_pairs_instruction',
+                                                                fallback: quest
+                                                                    .instruction,
                                                               ),
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: [
-                                                            MinimalPairsDroneOption(
-                                                              index: 0,
-                                                              word:
-                                                                  _currentOptions
-                                                                      .isNotEmpty
-                                                                  ? _currentOptions[0]['word']!
-                                                                  : quest.word1 ??
-                                                                        "",
-                                                              ipa:
-                                                                  _currentOptions
-                                                                      .isNotEmpty
-                                                                  ? _currentOptions[0]['ipa']!
-                                                                  : quest.ipa1 ??
-                                                                        "",
-                                                              correctIndex:
-                                                                  _currentOptions
-                                                                      .isNotEmpty
-                                                                  ? _currentCorrectIndex
-                                                                  : quest.correctAnswerIndex ??
-                                                                        0,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              isDark: isDark,
-                                                              isAnswered:
-                                                                  _isAnswered
-                                                                      .value ||
-                                                                  _isFirstStagePassed
-                                                                      .value,
-                                                              selectedDroneIndex:
-                                                                  _selectedDroneIndex
-                                                                      .value,
-                                                              onShoot: _onShoot,
-                                                            ),
-                                                            MinimalPairsDroneOption(
-                                                              index: 1,
-                                                              word:
-                                                                  _currentOptions
-                                                                      .isNotEmpty
-                                                                  ? _currentOptions[1]['word']!
-                                                                  : quest.word2 ??
-                                                                        "",
-                                                              ipa:
-                                                                  _currentOptions
-                                                                      .isNotEmpty
-                                                                  ? _currentOptions[1]['ipa']!
-                                                                  : quest.ipa2 ??
-                                                                        "",
-                                                              correctIndex:
-                                                                  _currentOptions
-                                                                      .isNotEmpty
-                                                                  ? _currentCorrectIndex
-                                                                  : quest.correctAnswerIndex ??
-                                                                        0,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              isDark: isDark,
-                                                              isAnswered:
-                                                                  _isAnswered
-                                                                      .value ||
-                                                                  _isFirstStagePassed
-                                                                      .value,
-                                                              selectedDroneIndex:
-                                                                  _selectedDroneIndex
-                                                                      .value,
-                                                              onShoot: _onShoot,
-                                                            ),
-                                                          ],
-                                                        ),
-
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 16.h
-                                                        : 24.h,
+                                                      ),
+                                                      SizedBox(
+                                                        height: gapInstruction,
+                                                      ),
+                                                    ],
                                                   ),
-                                                  SizedBox(height: gapBottom),
+                                                  MinimalPairsSpeakerCore(
+                                                    text:
+                                                        quest.textToSpeak ?? "",
+                                                    color: theme.primaryColor,
+                                                    onPlayTts: _playTts,
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      SizedBox(
+                                                        height: gapSpeaker,
+                                                      ),
+                                                      isCompact
+                                                          ? SizedBox(
+                                                              height: 110.h,
+                                                              child: FittedBox(
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                                child: SizedBox(
+                                                                  width:
+                                                                      maxWidth -
+                                                                      48.w,
+                                                                  child: Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceEvenly,
+                                                                    children: [
+                                                                      MinimalPairsDroneOption(
+                                                                        index:
+                                                                            0,
+                                                                        word:
+                                                                            _currentOptions.isNotEmpty
+                                                                            ? _currentOptions[0]['word']!
+                                                                            : quest.word1 ??
+                                                                                  "",
+                                                                        ipa:
+                                                                            _currentOptions.isNotEmpty
+                                                                            ? _currentOptions[0]['ipa']!
+                                                                            : quest.ipa1 ??
+                                                                                  "",
+                                                                        correctIndex:
+                                                                            _currentOptions.isNotEmpty
+                                                                            ? _currentCorrectIndex
+                                                                            : quest.correctAnswerIndex ??
+                                                                                  0,
+                                                                        color: theme
+                                                                            .primaryColor,
+                                                                        isDark:
+                                                                            isDark,
+                                                                        isAnswered:
+                                                                            _isAnswered.value ||
+                                                                            _isFirstStagePassed.value,
+                                                                        selectedDroneIndex:
+                                                                            _selectedDroneIndex.value,
+                                                                        onShoot:
+                                                                            _onShoot,
+                                                                      ),
+                                                                      MinimalPairsDroneOption(
+                                                                        index:
+                                                                            1,
+                                                                        word:
+                                                                            _currentOptions.isNotEmpty
+                                                                            ? _currentOptions[1]['word']!
+                                                                            : quest.word2 ??
+                                                                                  "",
+                                                                        ipa:
+                                                                            _currentOptions.isNotEmpty
+                                                                            ? _currentOptions[1]['ipa']!
+                                                                            : quest.ipa2 ??
+                                                                                  "",
+                                                                        correctIndex:
+                                                                            _currentOptions.isNotEmpty
+                                                                            ? _currentCorrectIndex
+                                                                            : quest.correctAnswerIndex ??
+                                                                                  0,
+                                                                        color: theme
+                                                                            .primaryColor,
+                                                                        isDark:
+                                                                            isDark,
+                                                                        isAnswered:
+                                                                            _isAnswered.value ||
+                                                                            _isFirstStagePassed.value,
+                                                                        selectedDroneIndex:
+                                                                            _selectedDroneIndex.value,
+                                                                        onShoot:
+                                                                            _onShoot,
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            )
+                                                          : Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
+                                                                MinimalPairsDroneOption(
+                                                                  index: 0,
+                                                                  word:
+                                                                      _currentOptions
+                                                                          .isNotEmpty
+                                                                      ? _currentOptions[0]['word']!
+                                                                      : quest.word1 ??
+                                                                            "",
+                                                                  ipa:
+                                                                      _currentOptions
+                                                                          .isNotEmpty
+                                                                      ? _currentOptions[0]['ipa']!
+                                                                      : quest.ipa1 ??
+                                                                            "",
+                                                                  correctIndex:
+                                                                      _currentOptions
+                                                                          .isNotEmpty
+                                                                      ? _currentCorrectIndex
+                                                                      : quest.correctAnswerIndex ??
+                                                                            0,
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  isDark:
+                                                                      isDark,
+                                                                  isAnswered:
+                                                                      _isAnswered
+                                                                          .value ||
+                                                                      _isFirstStagePassed
+                                                                          .value,
+                                                                  selectedDroneIndex:
+                                                                      _selectedDroneIndex
+                                                                          .value,
+                                                                  onShoot:
+                                                                      _onShoot,
+                                                                ),
+                                                                MinimalPairsDroneOption(
+                                                                  index: 1,
+                                                                  word:
+                                                                      _currentOptions
+                                                                          .isNotEmpty
+                                                                      ? _currentOptions[1]['word']!
+                                                                      : quest.word2 ??
+                                                                            "",
+                                                                  ipa:
+                                                                      _currentOptions
+                                                                          .isNotEmpty
+                                                                      ? _currentOptions[1]['ipa']!
+                                                                      : quest.ipa2 ??
+                                                                            "",
+                                                                  correctIndex:
+                                                                      _currentOptions
+                                                                          .isNotEmpty
+                                                                      ? _currentCorrectIndex
+                                                                      : quest.correctAnswerIndex ??
+                                                                            0,
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  isDark:
+                                                                      isDark,
+                                                                  isAnswered:
+                                                                      _isAnswered
+                                                                          .value ||
+                                                                      _isFirstStagePassed
+                                                                          .value,
+                                                                  selectedDroneIndex:
+                                                                      _selectedDroneIndex
+                                                                          .value,
+                                                                  onShoot:
+                                                                      _onShoot,
+                                                                ),
+                                                              ],
+                                                            ),
+
+                                                      SizedBox(
+                                                        height: isCompact
+                                                            ? 16.h
+                                                            : 24.h,
+                                                      ),
+                                                      SizedBox(
+                                                        height: gapBottom,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  if (_isFirstStagePassed
+                                                          .value &&
+                                                      quest.mouthPosition !=
+                                                          null) ...[
+                                                    MinimalPairsMouthDiagram(
+                                                      mouthPosition:
+                                                          quest.mouthPosition,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                                    SizedBox(height: 16.h),
+                                                  ],
                                                 ],
                                               ),
-                                              if (_isFirstStagePassed.value &&
-                                                  quest.mouthPosition !=
-                                                      null) ...[
-                                                MinimalPairsMouthDiagram(
-                                                  mouthPosition:
-                                                      quest.mouthPosition,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                ),
-                                                SizedBox(height: 16.h),
-                                              ],
-                                            ],
-                                          ),
+                                            ),
+                                            SizedBox(),
+                                          ],
                                         ),
-                                        SizedBox(
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
-                              if (_isFirstStagePassed.value && !_isAnswered.value)
-                                SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 32.h),
-                                      ShadowPlaybackCompare(
-                                        expectedText: _currentOptions.isNotEmpty
-                                            ? _currentOptions[_currentCorrectIndex]['word']!
-                                            : (quest.correctAnswer ?? quest.word1 ?? ""),
-                                        displayText: _currentOptions.isNotEmpty
-                                            ? _currentOptions[_currentCorrectIndex]['word']!
-                                            : (quest.correctAnswer ?? quest.word1 ?? ""),
-                                        primaryColor: theme.primaryColor,
-                                        isPositioned: false,
-                                        onConfirmed: () {
-                                          context.read<AccentBloc>().add(
-                                            const AccentSpeakConfirmed(5),
-                                          );
-                                          _submitVerbalEvaluation(true);
-                                        },
-                                        onSkipped: () => _submitVerbalEvaluation(false),
+                                  if (_isFirstStagePassed.value &&
+                                      !_isAnswered.value)
+                                    SliverToBoxAdapter(
+                                      child: Column(
+                                        children: [
+                                          SizedBox(height: 32.h),
+                                          ShadowPlaybackCompare(
+                                            expectedText:
+                                                _currentOptions.isNotEmpty
+                                                ? _currentOptions[_currentCorrectIndex]['word']!
+                                                : (quest.correctAnswer ??
+                                                      quest.word1 ??
+                                                      ""),
+                                            displayText:
+                                                _currentOptions.isNotEmpty
+                                                ? _currentOptions[_currentCorrectIndex]['word']!
+                                                : (quest.correctAnswer ??
+                                                      quest.word1 ??
+                                                      ""),
+                                            primaryColor: theme.primaryColor,
+                                            isPositioned: false,
+                                            onConfirmed: () {
+                                              context.read<AccentBloc>().add(
+                                                const AccentSpeakConfirmed(5),
+                                              );
+                                              _submitVerbalEvaluation(true);
+                                            },
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                          ),
+                                          SizedBox(height: 60.h),
+                                        ],
                                       ),
-                                      SizedBox(height: 60.h),
-                                    ],
-                                  ),
-                                ),
-                            ],
-                          ),
-                        );
-                      },
+                                    ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ],
                     ),
-                  ],
-                ),
             );
           },
         );

@@ -253,7 +253,10 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                                       SizedBox(height: 16.h),
                                       WritingEmailInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 16.h),
                                       if (quest.formalityLevel != null)

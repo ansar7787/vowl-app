@@ -120,11 +120,25 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
   /// Returns the next rank label the user should aim for.
   String _getNextStatus(BuildContext context, double progress) {
-    if (progress <= 0.0) return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
-    if (progress < 0.15) return context.tr('quest_archive.status_adventurer', fallback: 'Adventurer');
-    if (progress < 0.35) return context.tr('quest_archive.status_champion', fallback: 'Champion');
-    if (progress < 0.55) return context.tr('quest_archive.status_conqueror', fallback: 'Conqueror');
-    if (progress < 0.80) return context.tr('quest_archive.status_grandmaster', fallback: 'Grandmaster');
+    if (progress <= 0.0)
+      return context.tr('quest_archive.status_explorer', fallback: 'Explorer');
+    if (progress < 0.15)
+      return context.tr(
+        'quest_archive.status_adventurer',
+        fallback: 'Adventurer',
+      );
+    if (progress < 0.35)
+      return context.tr('quest_archive.status_champion', fallback: 'Champion');
+    if (progress < 0.55)
+      return context.tr(
+        'quest_archive.status_conqueror',
+        fallback: 'Conqueror',
+      );
+    if (progress < 0.80)
+      return context.tr(
+        'quest_archive.status_grandmaster',
+        fallback: 'Grandmaster',
+      );
     return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
   }
 
@@ -192,9 +206,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
                         // 2. Unpinned spacer: Adds the extra initial space so the Stats Dashboard
                         // starts at the original desired position (95.h total), but this space scrolls away.
-                        SliverToBoxAdapter(
-                          child: SizedBox(height: 35.h),
-                        ),
+                        SliverToBoxAdapter(child: SizedBox(height: 35.h)),
 
                         // 3. Stats Dashboard Panel
                         SliverToBoxAdapter(
@@ -207,7 +219,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           delegate: _StickyFilterDelegate(
                             isDark: isDark,
                             contentColor: contentColor,
-                            searchField: _buildSearchField(isDark, contentColor),
+                            searchField: _buildSearchField(
+                              isDark,
+                              contentColor,
+                            ),
                             categoriesTrack: _buildCategoriesTrack(isDark),
                           ),
                         ),
@@ -239,9 +254,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                               );
                             }, childCount: QuestType.values.length),
                           ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(height: 100.h),
-                          ),
+                          SliverToBoxAdapter(child: SizedBox(height: 100.h)),
                         ] else ...[
                           // ── Filtered Vertical List ──
                           if (filteredList.isEmpty)
@@ -566,7 +579,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         context.tr(
                           'quest_archive.levels_cleared',
                           fallback: 'Levels Cleared',
-                          args: [clearedLevels.toString(), totalLevels.toString()],
+                          args: [
+                            clearedLevels.toString(),
+                            totalLevels.toString(),
+                          ],
                         ),
                         '$clearedLevels',
                         const Color(0xFF3B82F6),
@@ -592,7 +608,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         alignment: AlignmentDirectional.centerEnd,
                         child: _buildStatMini(
                           Icons.arrow_upward_rounded,
-                          context.tr('quest_archive.next_rank', fallback: 'NEXT RANK'),
+                          context.tr(
+                            'quest_archive.next_rank',
+                            fallback: 'NEXT RANK',
+                          ),
                           progress >= 0.99
                               ? '🏆'
                               : _getNextStatus(context, progress),
@@ -915,7 +934,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         context.tr(
                           'quest_archive.quests_progress',
                           fallback: '{} Quests · {}%',
-                          args: [subtypes.length.toString(), progressPercent.toString()],
+                          args: [
+                            subtypes.length.toString(),
+                            progressPercent.toString(),
+                          ],
                         ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -930,10 +952,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                 ),
                 ScaleButton(
                   onTap: () {
-                    _selectedCategory.value =
-                        category == QuestType.eliteMastery
-                            ? 'elite'
-                            : category.name;
+                    _selectedCategory.value = category == QuestType.eliteMastery
+                        ? 'elite'
+                        : category.name;
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
@@ -1057,10 +1078,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       height: 42.r,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [
-                            catColor,
-                            catColor.withValues(alpha: 0.7),
-                          ],
+                          colors: [catColor, catColor.withValues(alpha: 0.7)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -1090,7 +1108,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                           borderRadius: BorderRadius.circular(8.r),
                         ),
                         child: Text(
-                          context.tr('quest_archive.new_badge', fallback: 'NEW').toUpperCase(),
+                          context
+                              .tr('quest_archive.new_badge', fallback: 'NEW')
+                              .toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 7.sp,
@@ -1107,7 +1127,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                       )
                     else
                       Text(
-                        context.tr('quest_archive.level', fallback: 'Lv.{}', args: [currentLevel.toString()]),
+                        context.tr(
+                          'quest_archive.level',
+                          fallback: 'Lv.{}',
+                          args: [currentLevel.toString()],
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 9.sp,
@@ -1172,7 +1196,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
             ),
             SizedBox(height: 8.h),
             Text(
-              context.tr('quest_archive.no_results_sub', fallback: 'Try a different search or category'),
+              context.tr(
+                'quest_archive.no_results_sub',
+                fallback: 'Try a different search or category',
+              ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 12.sp,
@@ -1401,7 +1428,12 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     );
   }
 
-  Widget _buildBadge(Color color, int currentLevel, bool isNew, [bool isMastered = false]) {
+  Widget _buildBadge(
+    Color color,
+    int currentLevel,
+    bool isNew, [
+    bool isMastered = false,
+  ]) {
     if (isMastered) {
       return Icon(
         Icons.verified_rounded,
@@ -1440,7 +1472,11 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Text(
-        context.tr('quest_archive.level', fallback: 'Lv.{}', args: [currentLevel.toString()]),
+        context.tr(
+          'quest_archive.level',
+          fallback: 'Lv.{}',
+          args: [currentLevel.toString()],
+        ),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 9.sp,
@@ -1494,8 +1530,9 @@ class _StickyFilterDelegate extends SliverPersistentHeaderDelegate {
             border: isPinned
                 ? Border(
                     bottom: BorderSide(
-                      color: (isDark ? Colors.white : Colors.black)
-                          .withValues(alpha: 0.05),
+                      color: (isDark ? Colors.white : Colors.black).withValues(
+                        alpha: 0.05,
+                      ),
                     ),
                   )
                 : null,
@@ -1530,7 +1567,11 @@ class _TransparentTopPaddingDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => height;
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     // Transparent, allowing content to visibly scroll underneath, but must
     // expand to fill the sliver geometry constraints to prevent layout crash.
     return const SizedBox.expand();

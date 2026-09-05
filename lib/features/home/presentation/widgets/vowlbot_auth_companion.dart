@@ -146,7 +146,9 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
         ? Colors.black.withValues(alpha: 0.75)
         : Colors.white.withValues(alpha: 0.85);
     final textColor = isDark ? Colors.white : Colors.black87;
-    final borderColor = const Color(0xFF6366F1); // Primary Indigo for neon-glass effect
+    final borderColor = const Color(
+      0xFF6366F1,
+    ); // Primary Indigo for neon-glass effect
     final greeting = _getGreeting(context);
 
     // BUG FIX: Use .r for symmetric scaling to prevent squashing on
@@ -172,41 +174,42 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
           //    to maintain Diamond Standard vertical symmetry and focus.
           Positioned(
             bottom: widget.size.r * 0.9,
-            child: CustomPaint(
-              painter: SpeechBubblePainter(
-                color: bubbleColor,
-                borderColor: borderColor,
-              ),
-              child: Container(
-                constraints: BoxConstraints(
-                  minWidth: 60.w,
-                  maxWidth: 160.w,
-                ),
-                padding: EdgeInsets.fromLTRB(16.w, 8, 16.w, 18),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    greeting,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: textColor,
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w500,
-                      letterSpacing: 0.1,
+            child:
+                CustomPaint(
+                      painter: SpeechBubblePainter(
+                        color: bubbleColor,
+                        borderColor: borderColor,
+                      ),
+                      child: Container(
+                        constraints: BoxConstraints(
+                          minWidth: 60.w,
+                          maxWidth: 160.w,
+                        ),
+                        padding: EdgeInsets.fromLTRB(16.w, 8, 16.w, 18),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            greeting,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: textColor,
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 0.1,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                    .animate(key: ValueKey(greeting))
+                    .fade(duration: 300.ms)
+                    .scale(
+                      begin: const Offset(0.4, 0.4),
+                      curve: Curves.elasticOut,
+                      duration: 1000.ms,
+                      alignment: Alignment.bottomCenter,
                     ),
-                  ),
-                ),
-              ),
-            )
-            .animate(key: ValueKey(greeting))
-            .fade(duration: 300.ms)
-            .scale(
-              begin: const Offset(0.4, 0.4),
-              curve: Curves.elasticOut,
-              duration: 1000.ms,
-              alignment: Alignment.bottomCenter,
-            ),
           ),
         ],
       ),
@@ -226,61 +229,73 @@ class SpeechBubblePainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     final borderPaint = Paint()
-      ..color = borderColor.withValues(alpha: 0.6) // Premium translucent border
+      ..color = borderColor
+          .withValues(alpha: 0.6) // Premium translucent border
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5;
 
     final fullPath = Path();
     final bubbleHeight = size.height - 10; // Sleek 10px tail
-    
+
     // Safety clamp: ensure radius is never larger than half the shortest side
     // to prevent the bezier path from inverting/crossing itself on tiny screens.
     final r = 12.0.clamp(0.0, bubbleHeight / 2);
 
     // Start at Top-Left, just after the corner radius
     fullPath.moveTo(r, 0);
-    
+
     // Top Edge
     fullPath.lineTo(size.width - r, 0);
-    
+
     // Top-Right Corner
     fullPath.quadraticBezierTo(size.width, 0, size.width, r);
-    
+
     // Right Edge
     fullPath.lineTo(size.width, bubbleHeight - r);
-    
+
     // Bottom-Right Corner
-    fullPath.quadraticBezierTo(size.width, bubbleHeight, size.width - r, bubbleHeight);
-    
+    fullPath.quadraticBezierTo(
+      size.width,
+      bubbleHeight,
+      size.width - r,
+      bubbleHeight,
+    );
+
     // Bottom Edge (Right of tail)
     fullPath.lineTo(size.width / 2 + 12, bubbleHeight);
-    
+
     // The "Liquid Tail" - mathematically continuous bezier curves (Swoop Down)
     fullPath.cubicTo(
-      size.width / 2 + 6, bubbleHeight, // Control 1
-      size.width / 2 + 2, bubbleHeight + 10, // Control 2
-      size.width / 2, bubbleHeight + 10, // Tail tip (Dead center, 10px down)
+      size.width / 2 + 6,
+      bubbleHeight, // Control 1
+      size.width / 2 + 2,
+      bubbleHeight + 10, // Control 2
+      size.width / 2,
+      bubbleHeight + 10, // Tail tip (Dead center, 10px down)
     );
-    
+
     // The "Liquid Tail" - mathematically continuous bezier curves (Swoop Up)
     fullPath.cubicTo(
-      size.width / 2 - 2, bubbleHeight + 10, // Control 1
-      size.width / 2 - 6, bubbleHeight, // Control 2
-      size.width / 2 - 12, bubbleHeight, // Melt point (Left of tail)
+      size.width / 2 - 2,
+      bubbleHeight + 10, // Control 1
+      size.width / 2 - 6,
+      bubbleHeight, // Control 2
+      size.width / 2 - 12,
+      bubbleHeight, // Melt point (Left of tail)
     );
-    
+
     // Bottom Edge (Left of tail)
     fullPath.lineTo(r, bubbleHeight);
-    
+
     // Bottom-Left Corner
     fullPath.quadraticBezierTo(0, bubbleHeight, 0, bubbleHeight - r);
-    
+
     // Left Edge
     fullPath.lineTo(0, r);
-    
+
     // Top-Left Corner
     fullPath.quadraticBezierTo(0, 0, r, 0);
-    
+
     fullPath.close();
 
     // 4. Draw Premium Drop Shadows (3D depth)

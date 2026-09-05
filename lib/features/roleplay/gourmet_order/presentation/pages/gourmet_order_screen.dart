@@ -252,7 +252,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact
@@ -277,7 +279,10 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       isDark: isDark,
                                                       isAnswered:
                                                           _isAnswered.value &&
-                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
+                                                          (_isCorrect.value !=
+                                                                  null ||
+                                                              !_isFirstStagePassed
+                                                                  .value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                       selectedItems:
@@ -304,7 +309,10 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                                       isDark: isDark,
                                                       isAnswered:
                                                           _isAnswered.value &&
-                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
+                                                          (_isCorrect.value !=
+                                                                  null ||
+                                                              !_isFirstStagePassed
+                                                                  .value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                       selectedItems:

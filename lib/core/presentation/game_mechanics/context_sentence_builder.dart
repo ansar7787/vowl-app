@@ -385,14 +385,10 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         vertical: 4.h,
                       ),
                       decoration: BoxDecoration(
-                        color: widget.primaryColor.withValues(
-                          alpha: 0.1,
-                        ),
+                        color: widget.primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(6.r),
                         border: Border.all(
-                          color: widget.primaryColor.withValues(
-                            alpha: 0.2,
-                          ),
+                          color: widget.primaryColor.withValues(alpha: 0.2),
                         ),
                       ),
                       child: AutoSizeText(
@@ -404,9 +400,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                           fontSize: 10.sp,
                           fontStyle: FontStyle.italic,
                           fontWeight: FontWeight.w600,
-                          color: isDark
-                              ? Colors.white70
-                              : Colors.black87,
+                          color: isDark ? Colors.white70 : Colors.black87,
                         ),
                       ),
                     ),
@@ -425,10 +419,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
 
         // Target keyword chip
         Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: 16.w,
-            vertical: 8.h,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
           decoration: BoxDecoration(
             color: widget.primaryColor.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(16.r),
@@ -500,18 +491,17 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                             maxLines: 3,
                             minLines: 1,
                             onChanged: (_) {
-                              if (_status.value ==
-                                  _BuilderStatus.error) {
+                              if (_status.value == _BuilderStatus.error) {
                                 _status.value = _BuilderStatus.idle;
                               }
                             },
                             onSubmitted: (_) => _evaluate(),
                             decoration: InputDecoration(
-                              hintText: ContextSentenceStrings.hintText(context),
+                              hintText: ContextSentenceStrings.hintText(
+                                context,
+                              ),
                               hintStyle: TextStyle(
-                                color: subtitleColor.withValues(
-                                  alpha: 0.5,
-                                ),
+                                color: subtitleColor.withValues(alpha: 0.5),
                                 fontWeight: FontWeight.w400,
                               ),
                               border: InputBorder.none,
@@ -539,12 +529,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w700,
-                                    color:
-                                        wordCount >= widget.minWordCount
+                                    color: wordCount >= widget.minWordCount
                                         ? Colors.greenAccent
-                                        : subtitleColor.withValues(
-                                            alpha: 0.6,
-                                          ),
+                                        : subtitleColor.withValues(alpha: 0.6),
                                   ),
                                 );
                               },
@@ -566,18 +553,23 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                         fontFamily: 'Outfit',
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.redAccent
-                                            .withValues(alpha: 0.8),
+                                        color: Colors.redAccent.withValues(
+                                          alpha: 0.8,
+                                        ),
                                       ),
                                     );
                                   } else {
                                     return AutoSizeText(
-                                      ContextSentenceStrings.practiceMode(context),
+                                      ContextSentenceStrings.practiceMode(
+                                        context,
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w600,
-                                        color: subtitleColor.withValues(alpha: 0.6),
+                                        color: subtitleColor.withValues(
+                                          alpha: 0.6,
+                                        ),
                                       ),
                                     );
                                   }
@@ -589,9 +581,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                         ],
                       ),
                     )
-                    .animate(
-                      target: status == _BuilderStatus.error ? 1 : 0,
-                    )
+                    .animate(target: status == _BuilderStatus.error ? 1 : 0)
                     .shakeX(amount: 5, duration: 400.ms),
 
                 // Error message
@@ -611,9 +601,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w700,
-                            color: Colors.redAccent.withValues(
-                              alpha: 0.9,
-                            ),
+                            color: Colors.redAccent.withValues(alpha: 0.9),
                           ),
                         ),
                       );
@@ -630,13 +618,13 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     final wordCount = text.isEmpty
                         ? 0
                         : text.split(RegExp(r'\s+')).length;
-                    final hasEnoughWords =
-                        wordCount >= widget.minWordCount;
+                    final hasEnoughWords = wordCount >= widget.minWordCount;
 
                     return ValueListenableBuilder<int>(
                       valueListenable: _attempts,
                       builder: (context, attempts, _) {
-                        final canEarnCoins = widget.bonusCoins != null &&
+                        final canEarnCoins =
+                            widget.bonusCoins != null &&
                             widget.bonusCoins! > 0 &&
                             attempts < widget.maxAttempts;
 
@@ -669,7 +657,9 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   AutoSizeText(
-                                    ContextSentenceStrings.submitButton(context),
+                                    ContextSentenceStrings.submitButton(
+                                      context,
+                                    ),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 14.sp,
@@ -681,11 +671,22 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                                   if (canEarnCoins) ...[
                                     SizedBox(width: 8.w),
                                     Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 6.w,
+                                        vertical: 2.h,
+                                      ),
                                       decoration: BoxDecoration(
-                                        color: Colors.amberAccent.withValues(alpha: 0.2),
-                                        borderRadius: BorderRadius.circular(8.r),
-                                        border: Border.all(color: Colors.amberAccent.withValues(alpha: 0.5)),
+                                        color: Colors.amberAccent.withValues(
+                                          alpha: 0.2,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
+                                        border: Border.all(
+                                          color: Colors.amberAccent.withValues(
+                                            alpha: 0.5,
+                                          ),
+                                        ),
                                       ),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
@@ -781,13 +782,16 @@ class ContextSentenceValidator {
     required String? exampleSentence,
   }) {
     if (text.isEmpty) {
-      return ValidationResult(false, ContextSentenceStrings.errorEmpty(context));
+      return ValidationResult(
+        false,
+        ContextSentenceStrings.errorEmpty(context),
+      );
     }
 
     final wordCount = text.split(RegExp(r'\s+')).length;
     if (wordCount < minWordCount) {
       return ValidationResult(
-        false, 
+        false,
         ContextSentenceStrings.errorTooShort(context, minWordCount),
       );
     }
@@ -799,7 +803,7 @@ class ContextSentenceValidator {
 
     if (!keywordFound) {
       return ValidationResult(
-        false, 
+        false,
         ContextSentenceStrings.errorMissingKeyword(context, targetKeyword),
       );
     }
@@ -814,12 +818,18 @@ class ContextSentenceValidator {
           .trim();
 
       if (formattedInput == formattedExample) {
-        return ValidationResult(false, ContextSentenceStrings.errorCopiedExample(context));
+        return ValidationResult(
+          false,
+          ContextSentenceStrings.errorCopiedExample(context),
+        );
       }
     }
 
     if (!GibberishDetectorService.isNaturalSentence(context, text)) {
-      return ValidationResult(false, ContextSentenceStrings.errorGibberish(context));
+      return ValidationResult(
+        false,
+        ContextSentenceStrings.errorGibberish(context),
+      );
     }
 
     return const ValidationResult(true);
@@ -827,23 +837,71 @@ class ContextSentenceValidator {
 }
 
 class ContextSentenceStrings {
-  static String errorEmpty(BuildContext context) => context.tr('game.sentence_builder.error_empty', fallback: 'Please write a sentence.');
-  static String errorTooShort(BuildContext context, int count) => context.tr('game.sentence_builder.error_too_short', fallback: 'Too short! Write at least {count} words.').replaceAll('{count}', count.toString());
-  static String errorMissingKeyword(BuildContext context, String keyword) => context.tr('game.sentence_builder.error_missing_keyword', fallback: 'Your sentence must include "{keyword}".').replaceAll('{keyword}', keyword);
-  static String errorCopiedExample(BuildContext context) => context.tr('game.sentence_builder.error_copied_example', fallback: 'Nice try! You must write your own original sentence, not copy the example.');
-  static String errorGibberish(BuildContext context) => context.tr('game.sentence_builder.error_gibberish', fallback: 'Write a proper, meaningful sentence.');
-  static String successMessage(BuildContext context) => context.tr('game.sentence_builder.success_message', fallback: 'Great sentence! 🎯');
-  
-  static String skipButton(BuildContext context) => context.tr('game.sentence_builder.skip_button', fallback: 'SKIP');
-  static String headerTitle(BuildContext context) => context.tr('game.sentence_builder.header_title', fallback: 'USE IT IN A SENTENCE');
-  static String headerSubtitle(BuildContext context) => context.tr('game.sentence_builder.header_subtitle', fallback: 'Prove your mastery using the target word.');
-  static String examplePrefix(BuildContext context) => context.tr('game.sentence_builder.example_prefix', fallback: 'Example: ');
-  static String hintText(BuildContext context) => context.tr('game.sentence_builder.hint_text', fallback: 'Type your sentence here...');
-  
-  static String wordsSuffix(BuildContext context) => context.tr('game.sentence_builder.words_suffix', fallback: 'words');
-  static String attemptsLeftSuffix(BuildContext context) => context.tr('game.sentence_builder.attempts_left_suffix', fallback: 'attempts left');
-  static String practiceMode(BuildContext context) => context.tr('game.sentence_builder.practice_mode', fallback: 'Practice Mode');
-  
-  static String submitButton(BuildContext context) => context.tr('game.sentence_builder.submit_button', fallback: 'SUBMIT SENTENCE');
-  static String masteryProven(BuildContext context) => context.tr('game.sentence_builder.mastery_proven', fallback: 'MASTERY PROVEN! 🎯');
+  static String errorEmpty(BuildContext context) => context.tr(
+    'game.sentence_builder.error_empty',
+    fallback: 'Please write a sentence.',
+  );
+  static String errorTooShort(BuildContext context, int count) => context
+      .tr(
+        'game.sentence_builder.error_too_short',
+        fallback: 'Too short! Write at least {count} words.',
+      )
+      .replaceAll('{count}', count.toString());
+  static String errorMissingKeyword(BuildContext context, String keyword) =>
+      context
+          .tr(
+            'game.sentence_builder.error_missing_keyword',
+            fallback: 'Your sentence must include "{keyword}".',
+          )
+          .replaceAll('{keyword}', keyword);
+  static String errorCopiedExample(BuildContext context) => context.tr(
+    'game.sentence_builder.error_copied_example',
+    fallback:
+        'Nice try! You must write your own original sentence, not copy the example.',
+  );
+  static String errorGibberish(BuildContext context) => context.tr(
+    'game.sentence_builder.error_gibberish',
+    fallback: 'Write a proper, meaningful sentence.',
+  );
+  static String successMessage(BuildContext context) => context.tr(
+    'game.sentence_builder.success_message',
+    fallback: 'Great sentence! 🎯',
+  );
+
+  static String skipButton(BuildContext context) =>
+      context.tr('game.sentence_builder.skip_button', fallback: 'SKIP');
+  static String headerTitle(BuildContext context) => context.tr(
+    'game.sentence_builder.header_title',
+    fallback: 'USE IT IN A SENTENCE',
+  );
+  static String headerSubtitle(BuildContext context) => context.tr(
+    'game.sentence_builder.header_subtitle',
+    fallback: 'Prove your mastery using the target word.',
+  );
+  static String examplePrefix(BuildContext context) =>
+      context.tr('game.sentence_builder.example_prefix', fallback: 'Example: ');
+  static String hintText(BuildContext context) => context.tr(
+    'game.sentence_builder.hint_text',
+    fallback: 'Type your sentence here...',
+  );
+
+  static String wordsSuffix(BuildContext context) =>
+      context.tr('game.sentence_builder.words_suffix', fallback: 'words');
+  static String attemptsLeftSuffix(BuildContext context) => context.tr(
+    'game.sentence_builder.attempts_left_suffix',
+    fallback: 'attempts left',
+  );
+  static String practiceMode(BuildContext context) => context.tr(
+    'game.sentence_builder.practice_mode',
+    fallback: 'Practice Mode',
+  );
+
+  static String submitButton(BuildContext context) => context.tr(
+    'game.sentence_builder.submit_button',
+    fallback: 'SUBMIT SENTENCE',
+  );
+  static String masteryProven(BuildContext context) => context.tr(
+    'game.sentence_builder.mastery_proven',
+    fallback: 'MASTERY PROVEN! 🎯',
+  );
 }

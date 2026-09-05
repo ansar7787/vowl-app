@@ -330,7 +330,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact
@@ -383,7 +385,10 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                                               .value,
                                                       isAnswered:
                                                           _isAnswered.value &&
-                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
+                                                          (_isCorrect.value !=
+                                                                  null ||
+                                                              !_isFirstStagePassed
+                                                                  .value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                       onSymptomTapped:

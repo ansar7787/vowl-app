@@ -11,14 +11,20 @@ void main() {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(
-                  children: List.generate(100, (i) => Text('Item $i', style: TextStyle(fontSize: 20))),
+                  children: List.generate(
+                    100,
+                    (i) => Text('Item $i', style: TextStyle(fontSize: 20)),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
       ),
     );
-    expect(find.text('Item 99'), findsOneWidget); // if it doesn't overflow violently
+    expect(
+      find.text('Item 99'),
+      findsOneWidget,
+    ); // if it doesn't overflow violently
   });
 }

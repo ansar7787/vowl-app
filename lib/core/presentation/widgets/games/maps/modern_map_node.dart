@@ -42,7 +42,6 @@ class ModernMapNode extends StatefulWidget {
 
   final ThemeResult theme;
   final bool isDark;
-  
 
   final String categoryId;
   final String gameType;
@@ -93,7 +92,9 @@ class _ModernMapNodeState extends State<ModernMapNode> {
     } else if (level >= 150) {
       return const Color(0xFFFFD700); // Gold
     } else if (level >= 100) {
-      return const Color(0xFFA0B2C6); // Premium Ice-Silver (Distinct from locked nodes)
+      return const Color(
+        0xFFA0B2C6,
+      ); // Premium Ice-Silver (Distinct from locked nodes)
     } else if (level >= 50) {
       return const Color(0xFFCD7F32); // Bronze
     }
@@ -126,47 +127,53 @@ class _ModernMapNodeState extends State<ModernMapNode> {
 
   Widget _buildModernSpeechBubble(Color primaryColor, bool isLeft) {
     return CustomPaint(
-      painter: _PremiumBubblePainter(
-        baseColor: primaryColor,
-        isDark: widget.isDark,
-        isLeft: isLeft,
-      ),
-      child: Container(
-        constraints: BoxConstraints(maxWidth: 190.w),
-        padding: EdgeInsets.only(
-          top: 14.h,
-          bottom: 14.h,
-          left: isLeft ? 28.w : 16.w,
-          right: !isLeft ? 28.w : 16.w,
-        ),
-        child: AutoSizeText(
-          _buddyMessageNotifier.value!,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            color: Colors.white,
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w700,
-            shadows: const [
-              Shadow(
-                color: Colors.black45,
-                offset: Offset(0, 1),
-                blurRadius: 2,
-              ),
-            ],
+          painter: _PremiumBubblePainter(
+            baseColor: primaryColor,
+            isDark: widget.isDark,
+            isLeft: isLeft,
           ),
-          maxLines: 4,
-          minFontSize: 9,
-          overflow: TextOverflow.ellipsis,
-        ),
-      ),
-    ).animate().fadeIn(duration: 200.ms).scale(
-      alignment: isLeft ? Alignment.bottomLeft : Alignment.bottomRight,
-      curve: Curves.easeOutBack,
-    );
+          child: Container(
+            constraints: BoxConstraints(maxWidth: 190.w),
+            padding: EdgeInsets.only(
+              top: 14.h,
+              bottom: 14.h,
+              left: isLeft ? 28.w : 16.w,
+              right: !isLeft ? 28.w : 16.w,
+            ),
+            child: AutoSizeText(
+              _buddyMessageNotifier.value!,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                color: Colors.white,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w700,
+                shadows: const [
+                  Shadow(
+                    color: Colors.black45,
+                    offset: Offset(0, 1),
+                    blurRadius: 2,
+                  ),
+                ],
+              ),
+              maxLines: 4,
+              minFontSize: 9,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        )
+        .animate()
+        .fadeIn(duration: 200.ms)
+        .scale(
+          alignment: isLeft ? Alignment.bottomLeft : Alignment.bottomRight,
+          curve: Curves.easeOutBack,
+        );
   }
 
   Widget _buildMascotMarker(BuildContext context) {
-    final theme = LevelThemeHelper.getTheme(widget.gameType, isDark: widget.isDark);
+    final theme = LevelThemeHelper.getTheme(
+      widget.gameType,
+      isDark: widget.isDark,
+    );
     final user = context.read<AuthBloc>().state.user;
     final mascotId = user?.vowlMascot ?? 'vowl_prime';
 
@@ -258,7 +265,10 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                     top: -30.h,
                     left: isLeftHalf ? 45.r : null,
                     right: !isLeftHalf ? 45.r : null,
-                    child: _buildModernSpeechBubble(theme.primaryColor, isLeftHalf),
+                    child: _buildModernSpeechBubble(
+                      theme.primaryColor,
+                      isLeftHalf,
+                    ),
                   );
                 },
               ),
@@ -295,12 +305,28 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                   Colors.amber.withValues(alpha: 0.3),
                 ]
               : [
-                  widget.isDark 
-                      ? Color.lerp(const Color(0xFF0F172A), widget.theme.primaryColor, 0.08)! 
-                      : Color.lerp(const Color(0xFFF8FAFC), widget.theme.primaryColor, 0.08)!,
-                  widget.isDark 
-                      ? Color.lerp(const Color(0xFF0F172A), widget.theme.primaryColor, 0.03)! 
-                      : Color.lerp(const Color(0xFFF8FAFC), widget.theme.primaryColor, 0.03)!,
+                  widget.isDark
+                      ? Color.lerp(
+                          const Color(0xFF0F172A),
+                          widget.theme.primaryColor,
+                          0.08,
+                        )!
+                      : Color.lerp(
+                          const Color(0xFFF8FAFC),
+                          widget.theme.primaryColor,
+                          0.08,
+                        )!,
+                  widget.isDark
+                      ? Color.lerp(
+                          const Color(0xFF0F172A),
+                          widget.theme.primaryColor,
+                          0.03,
+                        )!
+                      : Color.lerp(
+                          const Color(0xFFF8FAFC),
+                          widget.theme.primaryColor,
+                          0.03,
+                        )!,
                 ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -325,7 +351,9 @@ class _ModernMapNodeState extends State<ModernMapNode> {
               ? Colors.amber.shade600
               : isNextZone
               ? Colors.amber.withValues(alpha: 0.4)
-              : widget.theme.primaryColor.withValues(alpha: widget.isDark ? 0.3 : 0.2),
+              : widget.theme.primaryColor.withValues(
+                  alpha: widget.isDark ? 0.3 : 0.2,
+                ),
           width: 3.r,
         ),
       ),
@@ -403,7 +431,8 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                                       .read<AuthBloc>()
                                       .state
                                       .user
-                                      ?.starRatings[widget.gameType]?[widget.levelNumber
+                                      ?.starRatings[widget.gameType]?[widget
+                                      .levelNumber
                                       .toString()] ??
                                   0;
                               return Row(
@@ -426,7 +455,13 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                     ),
                   ),
                 )
-              : Icon(Icons.lock_rounded, size: 32.r, color: widget.theme.primaryColor.withValues(alpha: widget.isDark ? 0.3 : 0.2)),
+              : Icon(
+                  Icons.lock_rounded,
+                  size: 32.r,
+                  color: widget.theme.primaryColor.withValues(
+                    alpha: widget.isDark ? 0.3 : 0.2,
+                  ),
+                ),
         ),
       ),
     );
@@ -496,7 +531,9 @@ class _ModernMapNodeState extends State<ModernMapNode> {
         !widget.isPremium;
     final bool isCurrent = isPlayable || isTollGateSegment;
     final bool isJustUnlocked = widget.levelNumber == widget.justUnlockedLevel;
-    final bool isPrevToJustUnlocked = widget.justUnlockedLevel != null && widget.levelNumber == widget.justUnlockedLevel! - 1;
+    final bool isPrevToJustUnlocked =
+        widget.justUnlockedLevel != null &&
+        widget.levelNumber == widget.justUnlockedLevel! - 1;
     final bool isHalfUnlocked =
         widget.levelNumber > widget.completedLevels + 1 &&
         widget.levelNumber <= widget.unlockedLevels &&
@@ -507,7 +544,11 @@ class _ModernMapNodeState extends State<ModernMapNode> {
         !widget.isPremium &&
         widget.completedLevels >= widget.unlockedLevels;
     final bool isUnlockedForClick = isNodeCompleted || isPlayable;
-    final Color tierColor = _getTierColor(widget.levelNumber, isTollGateSegment, widget.theme.primaryColor);
+    final Color tierColor = _getTierColor(
+      widget.levelNumber,
+      isTollGateSegment,
+      widget.theme.primaryColor,
+    );
 
     final Animation<double> nodeAnimation;
     if (isCurrent) {
@@ -520,27 +561,37 @@ class _ModernMapNodeState extends State<ModernMapNode> {
 
     return RepaintBoundary(
       child: AnimatedBuilder(
-        animation: Listenable.merge([nodeAnimation, widget.unlockPathController]),
+        animation: Listenable.merge([
+          nodeAnimation,
+          widget.unlockPathController,
+        ]),
         builder: (context, child) {
           Widget nodeWidget = child!;
-          
+
           double incomingProgress = 1.0;
           double outgoingProgress = 1.0;
-          
+
           if (widget.justUnlockedLevel != null) {
-            final double rawValue = Curves.easeInOutSine.transform(widget.unlockPathController.value);
+            final double rawValue = Curves.easeInOutSine.transform(
+              widget.unlockPathController.value,
+            );
             if (isJustUnlocked) {
               incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
             } else if (isPrevToJustUnlocked) {
               outgoingProgress = (rawValue * 2).clamp(0.0, 1.0);
             }
           }
-          
+
           if (isJustUnlocked) {
-            final double rawValue = Curves.easeInOutSine.transform(widget.unlockPathController.value);
-            final double popProgress = ((rawValue - 0.74) * (1.0 / 0.26)).clamp(0.0, 1.0);
+            final double rawValue = Curves.easeInOutSine.transform(
+              widget.unlockPathController.value,
+            );
+            final double popProgress = ((rawValue - 0.74) * (1.0 / 0.26)).clamp(
+              0.0,
+              1.0,
+            );
             final double pulseScale = math.sin(popProgress * math.pi);
-            
+
             nodeWidget = Transform.scale(
               scale: 1.0 + 0.3 * pulseScale,
               child: nodeWidget,
@@ -554,7 +605,10 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                   ? Offset(widget.points[widget.index - 1].dx, 0)
                   : null,
               nextPoint: widget.index < widget.totalLevels - 1
-                  ? Offset(widget.points[widget.index + 1].dx, widget.rowSpacing)
+                  ? Offset(
+                      widget.points[widget.index + 1].dx,
+                      widget.rowSpacing,
+                    )
                   : null,
               prevPrevX: widget.index > 1
                   ? widget.points[widget.index - 2].dx
@@ -582,10 +636,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
           child: Align(
             alignment: Alignment.center,
             child: Transform.translate(
-              offset: Offset(
-                widget.point.dx - ScreenUtil().screenWidth / 2,
-                0,
-              ),
+              offset: Offset(widget.point.dx - ScreenUtil().screenWidth / 2, 0),
               child: SizedBox(
                 width: 160.r,
                 height: 220.h,
@@ -595,11 +646,16 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                   children: [
                     Semantics(
                       button: true,
-                      label: context.tr('games.level_label_short', args: [widget.levelNumber.toString()], fallback: 'Level ${widget.levelNumber}'),
+                      label: context.tr(
+                        'games.level_label_short',
+                        args: [widget.levelNumber.toString()],
+                        fallback: 'Level ${widget.levelNumber}',
+                      ),
                       child: ScaleButton(
                         onTap: () {
                           if (isTollGateSegment) {
-                            if (widget.levelNumber > widget.completedLevels + 1) {
+                            if (widget.levelNumber >
+                                widget.completedLevels + 1) {
                               _showLockedFeedback(context, Colors.amber);
                               return;
                             }
@@ -612,7 +668,10 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                           }
 
                           if (!isUnlockedForClick) {
-                            _showLockedFeedback(context, widget.theme.primaryColor);
+                            _showLockedFeedback(
+                              context,
+                              widget.theme.primaryColor,
+                            );
                             return;
                           }
 
@@ -624,15 +683,24 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
-                              if (isCurrent || widget.celebratingLevel == widget.levelNumber)
+                              if (isCurrent ||
+                                  widget.celebratingLevel == widget.levelNumber)
                                 Builder(
                                   builder: (context) {
-                                    final isMilestone = widget.levelNumber == 10 || widget.levelNumber == 50 || widget.levelNumber == 100 || widget.levelNumber == 200;
+                                    final isMilestone =
+                                        widget.levelNumber == 10 ||
+                                        widget.levelNumber == 50 ||
+                                        widget.levelNumber == 100 ||
+                                        widget.levelNumber == 200;
                                     return ConfettiWidget(
-                                      confettiController: widget.confettiController,
-                                      blastDirectionality: BlastDirectionality.explosive,
+                                      confettiController:
+                                          widget.confettiController,
+                                      blastDirectionality:
+                                          BlastDirectionality.explosive,
                                       shouldLoop: false,
-                                      emissionFrequency: isMilestone ? 0.05 : 0.1,
+                                      emissionFrequency: isMilestone
+                                          ? 0.05
+                                          : 0.1,
                                       numberOfParticles: isMilestone ? 80 : 20,
                                       gravity: isMilestone ? 0.1 : 0.2,
                                       colors: const [
@@ -686,7 +754,10 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                         child: _buildMascotMarker(context)
                             .animate()
                             .fadeIn(duration: 600.milliseconds)
-                            .scale(delay: 200.milliseconds, curve: Curves.elasticOut),
+                            .scale(
+                              delay: 200.milliseconds,
+                              curve: Curves.elasticOut,
+                            ),
                       ),
                   ],
                 ),
@@ -707,16 +778,22 @@ class _SpeechBubbleClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final double r = 16.r;
     final double tailW = 14.w;
-    
+
     final path = Path();
     if (isLeft) {
       path.moveTo(tailW + r, 0);
       path.lineTo(size.width - r, 0);
       path.arcToPoint(Offset(size.width, r), radius: Radius.circular(r));
       path.lineTo(size.width, size.height - r);
-      path.arcToPoint(Offset(size.width - r, size.height), radius: Radius.circular(r));
+      path.arcToPoint(
+        Offset(size.width - r, size.height),
+        radius: Radius.circular(r),
+      );
       path.lineTo(tailW + r, size.height);
-      path.arcToPoint(Offset(tailW, size.height - r), radius: Radius.circular(r));
+      path.arcToPoint(
+        Offset(tailW, size.height - r),
+        radius: Radius.circular(r),
+      );
       path.lineTo(tailW, size.height - r - 10.h);
       path.lineTo(0, size.height - r - 2.h);
       path.lineTo(tailW, size.height - r - 26.h);
@@ -725,12 +802,18 @@ class _SpeechBubbleClipper extends CustomClipper<Path> {
     } else {
       path.moveTo(r, 0);
       path.lineTo(size.width - tailW - r, 0);
-      path.arcToPoint(Offset(size.width - tailW, r), radius: Radius.circular(r));
+      path.arcToPoint(
+        Offset(size.width - tailW, r),
+        radius: Radius.circular(r),
+      );
       path.lineTo(size.width - tailW, size.height - r - 26.h);
       path.lineTo(size.width, size.height - r - 2.h);
       path.lineTo(size.width - tailW, size.height - r - 10.h);
       path.lineTo(size.width - tailW, size.height - r);
-      path.arcToPoint(Offset(size.width - tailW - r, size.height), radius: Radius.circular(r));
+      path.arcToPoint(
+        Offset(size.width - tailW - r, size.height),
+        radius: Radius.circular(r),
+      );
       path.lineTo(r, size.height);
       path.arcToPoint(Offset(0, size.height - r), radius: Radius.circular(r));
       path.lineTo(0, r);
@@ -741,7 +824,8 @@ class _SpeechBubbleClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(covariant _SpeechBubbleClipper oldClipper) => oldClipper.isLeft != isLeft;
+  bool shouldReclip(covariant _SpeechBubbleClipper oldClipper) =>
+      oldClipper.isLeft != isLeft;
 }
 
 class _PremiumBubblePainter extends CustomPainter {
@@ -771,17 +855,19 @@ class _PremiumBubblePainter extends CustomPainter {
     );
 
     final paint = Paint()
-      ..shader = gradient.createShader(Rect.fromLTWH(0, 0, size.width, size.height))
+      ..shader = gradient.createShader(
+        Rect.fromLTWH(0, 0, size.width, size.height),
+      )
       ..style = PaintingStyle.fill;
-      
+
     canvas.drawPath(path, paint);
-    
+
     // Crisp solid inner highlight border (cheap to render, sells the 3D look)
     final borderPaint = Paint()
       ..color = Colors.white.withValues(alpha: isDark ? 0.2 : 0.4)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5.r;
-    
+
     canvas.drawPath(path, borderPaint);
   }
 

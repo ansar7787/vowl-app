@@ -278,7 +278,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                       children: [
                                         DialogueRoleplayHeader(
                                           primaryColor: theme.primaryColor,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         DialogueRoleplayExchangeStage(

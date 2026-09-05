@@ -81,7 +81,7 @@ class EliteBaseLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 60.h),
-                  // Titles removed to standardize global layout cleanliness
+                // Titles removed to standardize global layout cleanliness
                 SizedBox(height: 20.h),
                 child,
               ],

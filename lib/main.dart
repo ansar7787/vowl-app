@@ -162,7 +162,7 @@ void main() async {
         }
         FirebaseCrashlytics.instance.recordFlutterFatalError(details);
       };
-      
+
       PlatformDispatcher.instance.onError = (error, stack) {
         if (error is MissingPluginException) {
           final msg = error.message;

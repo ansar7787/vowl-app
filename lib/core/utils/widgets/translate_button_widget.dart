@@ -103,41 +103,41 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
       valueListenable: _isTranslating,
       builder: (context, isTranslating, _) {
         if (isTranslating) {
-      return Container(
-        width: 32.r,
-        height: 32.r,
-        decoration: BoxDecoration(
-          color: widget.isKidsZone
-              ? Colors.white24
-              : Theme.of(context).primaryColor.withValues(alpha: 0.1),
-          shape: BoxShape.circle,
-        ),
-        child: Center(
-          child:
-              Icon(
-                    LucideIcons.sparkles,
-                    size: 18.r,
-                    color: widget.isKidsZone
-                        ? Colors.white
-                        : Theme.of(context).primaryColor,
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(0.8, 0.8),
-                    end: const Offset(1.2, 1.2),
-                  ),
-        ),
-      );
-    }
+          return Container(
+            width: 32.r,
+            height: 32.r,
+            decoration: BoxDecoration(
+              color: widget.isKidsZone
+                  ? Colors.white24
+                  : Theme.of(context).primaryColor.withValues(alpha: 0.1),
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child:
+                  Icon(
+                        LucideIcons.sparkles,
+                        size: 18.r,
+                        color: widget.isKidsZone
+                            ? Colors.white
+                            : Theme.of(context).primaryColor,
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(0.8, 0.8),
+                        end: const Offset(1.2, 1.2),
+                      ),
+            ),
+          );
+        }
 
-    return IconButton(
-      onPressed: _handleTranslatePress,
-      icon: Icon(LucideIcons.languages, size: 24.r, color: Colors.grey),
-      tooltip: 'Translate',
-      constraints: const BoxConstraints(),
-      padding: EdgeInsets.zero,
-    );
-      }
+        return IconButton(
+          onPressed: _handleTranslatePress,
+          icon: Icon(LucideIcons.languages, size: 24.r, color: Colors.grey),
+          tooltip: 'Translate',
+          constraints: const BoxConstraints(),
+          padding: EdgeInsets.zero,
+        );
+      },
     );
   }
 }

@@ -252,7 +252,10 @@ class _SummarizeStoryWritingScreenState
                                           SummarizeStoryWritingInstruction(
                                             instruction: context.tr(
                                               'games.summarizeStoryWriting_instruction',
-                                              fallback: InstructionHelper.getInstruction(quest),
+                                              fallback:
+                                                  InstructionHelper.getInstruction(
+                                                    quest,
+                                                  ),
                                             ),
                                             primaryColor: theme.primaryColor,
                                           ),

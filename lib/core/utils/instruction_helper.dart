@@ -35,10 +35,12 @@ class InstructionHelper {
 
     final lowerInstruction = rawInstruction.trim().toLowerCase();
     final localeService = di.sl<LocaleService>();
-    
+
     // 1. Is this just a hardcoded parser fallback?
-    final isGenericParserFallback = _genericFallbacks.contains(lowerInstruction);
-    
+    final isGenericParserFallback = _genericFallbacks.contains(
+      lowerInstruction,
+    );
+
     // 2. Fetch the standard default instruction from en.json (if it exists)
     String? localizedDefault;
     String? gameTypeName;
@@ -55,7 +57,7 @@ class InstructionHelper {
     if (gameTypeName != null && gameTypeName.isNotEmpty) {
       final camelKey = 'games.${gameTypeName}_instruction';
       final snakeKey = 'games.${_camelToSnake(gameTypeName)}_instruction';
-      
+
       final camelTranslated = localeService.tr(camelKey);
       if (camelTranslated != camelKey) {
         localizedDefault = camelTranslated;
@@ -69,30 +71,34 @@ class InstructionHelper {
 
     // 3. Is the JSON's instruction redundant?
     bool isRedundantJsonInstruction = false;
-    if (localizedDefault != null && 
+    if (localizedDefault != null &&
         localizedDefault.trim().toLowerCase() == lowerInstruction) {
       isRedundantJsonInstruction = true;
     }
-    
+
     // 4. If it's a TRULY custom override from the JSON curriculum, use it!
-    if (!isGenericParserFallback && !isRedundantJsonInstruction && rawInstruction.isNotEmpty) {
+    if (!isGenericParserFallback &&
+        !isRedundantJsonInstruction &&
+        rawInstruction.isNotEmpty) {
       return rawInstruction;
     }
-    
+
     // 5. Otherwise, prefer the centralized en.json translation!
     if (localizedDefault != null) {
       return localizedDefault;
     }
-    
+
     // 6. Ultimate fallback (returns the parser's generic default if no translation exists)
     if (lowerInstruction == 'drag the correct word to complete the sentence.') {
       return 'Tap or drag to complete the sentence.';
     }
     return rawInstruction;
   }
-  
+
   static String _camelToSnake(String camelCase) {
     RegExp exp = RegExp(r'(?<=[a-z])[A-Z]');
-    return camelCase.replaceAllMapped(exp, (Match m) => '_${m.group(0)}').toLowerCase();
+    return camelCase
+        .replaceAllMapped(exp, (Match m) => '_${m.group(0)}')
+        .toLowerCase();
   }
 }

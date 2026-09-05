@@ -147,7 +147,10 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                                 minHeight: compactHeight ? 80.h : 120.h,
                               ),
                               child: Text(
-                                widget.quest.hint ?? InstructionHelper.getInstruction(widget.quest),
+                                widget.quest.hint ??
+                                    InstructionHelper.getInstruction(
+                                      widget.quest,
+                                    ),
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',

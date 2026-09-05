@@ -522,13 +522,16 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
         _lastConstraints == null) {
       return;
     }
-    
+
     final activeIndex = _activeShardIndex.value!;
     _isAnimatingTap = true;
     _activeShardIndex.value = null; // trigger animation
-    
+
     final initial = _getInitialPosition(activeIndex);
-    final center = Offset(_lastConstraints!.maxWidth / 2, _lastConstraints!.maxHeight / 2);
+    final center = Offset(
+      _lastConstraints!.maxWidth / 2,
+      _lastConstraints!.maxHeight / 2,
+    );
     _shardOffsets[activeIndex]?.value = center - initial;
 
     Future.delayed(const Duration(milliseconds: 300), () {
@@ -616,11 +619,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
     return IgnorePointer(
       child: CustomPaint(
-        painter: PlasmaArcPainter(
-          current,
-          corePosition,
-          targetColor,
-        ),
+        painter: PlasmaArcPainter(current, corePosition, targetColor),
       ),
     );
   }

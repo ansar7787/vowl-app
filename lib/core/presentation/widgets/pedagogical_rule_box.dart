@@ -45,77 +45,81 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
       builder: (context, translatedTextValue, _) {
         final displayText = translatedTextValue ?? widget.rule;
 
-    return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-      decoration: BoxDecoration(
-        color: widget.shadowColor.withValues(
-          alpha: widget.isDark ? 0.08 : 0.05,
-        ),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: widget.shadowColor.withValues(alpha: 0.2),
-          width: 1,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              ExcludeSemantics(
-                child: Icon(widget.icon, color: widget.shadowColor, size: 16.r),
-              ),
-              SizedBox(width: 8.w),
-              Expanded(
-                child: Text(
-                  context.tr(widget.capsKey, fallback: widget.capsFallback),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w900,
-                    color: widget.shadowColor,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
-              if (translatedTextValue == null)
-                TranslateButtonWidget(
-                  originalText: widget.rule,
-                  onTranslationComplete: (translated) {
-                    if (mounted) {
-                      _translatedText.value = translated;
-                    }
-                  },
-                ),
-            ],
-          ),
-          SizedBox(height: 6.h),
-          ConstrainedBox(
-            constraints: BoxConstraints(maxHeight: 120.h),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Semantics(
-                label:
-                    '${context.tr(widget.titleKey, fallback: widget.titleFallback)}: $displayText',
-                child: Text(
-                  displayText,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w700,
-                    color: widget.isDark
-                        ? Colors.white.withValues(alpha: 0.8)
-                        : const Color(0xFF475569),
-                    height: 1.4,
-                  ),
-                ),
-              ),
+        return Container(
+          width: 342.w,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: widget.shadowColor.withValues(
+              alpha: widget.isDark ? 0.08 : 0.05,
+            ),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: widget.shadowColor.withValues(alpha: 0.2),
+              width: 1,
             ),
           ),
-        ],
-      ),
-    );
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  ExcludeSemantics(
+                    child: Icon(
+                      widget.icon,
+                      color: widget.shadowColor,
+                      size: 16.r,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      context.tr(widget.capsKey, fallback: widget.capsFallback),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w900,
+                        color: widget.shadowColor,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ),
+                  if (translatedTextValue == null)
+                    TranslateButtonWidget(
+                      originalText: widget.rule,
+                      onTranslationComplete: (translated) {
+                        if (mounted) {
+                          _translatedText.value = translated;
+                        }
+                      },
+                    ),
+                ],
+              ),
+              SizedBox(height: 6.h),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 120.h),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Semantics(
+                    label:
+                        '${context.tr(widget.titleKey, fallback: widget.titleFallback)}: $displayText',
+                    child: Text(
+                      displayText,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w700,
+                        color: widget.isDark
+                            ? Colors.white.withValues(alpha: 0.8)
+                            : const Color(0xFF475569),
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
       },
     );
   }

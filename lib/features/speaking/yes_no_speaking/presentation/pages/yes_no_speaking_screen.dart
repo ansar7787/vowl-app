@@ -245,7 +245,10 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                         YesNoSpeakingHeaderInstruction(
                                           primaryColor: theme.primaryColor,
                                           isSnapped: _isSnapped.value,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         YesNoSpeakingAuditionCard(

@@ -93,7 +93,8 @@ class TranslationMonetizationController {
                       titleKey: 'translation.premium_upsell',
                       titleFallback: 'Instant Translation',
                       subtitleKey: 'translation.translate_cta',
-                      subtitleFallback: 'Watch a quick ad to translate this text, or get Premium for unlimited access.',
+                      subtitleFallback:
+                          'Watch a quick ad to translate this text, or get Premium for unlimited access.',
                       adButtonTextKey: 'translation.watch_ad_button',
                       adButtonTextFallback: 'Watch Ad (1 Translation)',
                       onPremiumTap: () => Navigator.pop(ctx, 'premium'),

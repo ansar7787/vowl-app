@@ -125,7 +125,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   void _submitOrder(List<int>? correctOrder) {
-    if (correctOrder == null || _isAnswered.value || _isFirstStagePassed.value) {
+    if (correctOrder == null ||
+        _isAnswered.value ||
+        _isFirstStagePassed.value) {
       return;
     }
 
@@ -330,7 +332,9 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           radius: Radius.circular(8.r),
           thickness: 4.w,
           child: CustomScrollView(
-            physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+            physics: (!_isFirstStagePassed.value)
+                ? const NeverScrollableScrollPhysics()
+                : const BouncingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(
                 child: LayoutBuilder(
@@ -435,7 +439,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                               theme: theme,
                               isAnswered:
                                   _isAnswered.value &&
-                                  (_isCorrect.value != null || !_isFirstStagePassed.value),
+                                  (_isCorrect.value != null ||
+                                      !_isFirstStagePassed.value),
                               isCorrect: _isCorrect.value,
                             ),
                           ),
@@ -458,7 +463,8 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                             theme: theme,
                             isAnswered:
                                 _isAnswered.value &&
-                                (_isCorrect.value != null || !_isFirstStagePassed.value),
+                                (_isCorrect.value != null ||
+                                    !_isFirstStagePassed.value),
                             isCorrect: _isCorrect.value,
                           ),
                         ),
@@ -570,10 +576,13 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   child: Column(
                     children: [
                       SpeakToConfirmOverlay(
-                        expectedText: quest.sentences != null && quest.sentences!.isNotEmpty
+                        expectedText:
+                            quest.sentences != null &&
+                                quest.sentences!.isNotEmpty
                             ? quest.sentences![_currentOrder.value.last]
                             : "Narrate the ending",
-                        displayText: "Narrate the final sentence to finish the story",
+                        displayText:
+                            "Narrate the final sentence to finish the story",
                         primaryColor: theme.primaryColor,
                         isPositioned: false,
                         onConfirmed: () => _submitVerbalEvaluation(true),

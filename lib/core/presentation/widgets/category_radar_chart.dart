@@ -27,13 +27,18 @@ class CategoryRadarChart extends StatefulWidget {
 }
 
 class _CategoryRadarChartState extends State<CategoryRadarChart> {
-  final ValueNotifier<List<double>> _displayScores = ValueNotifier([0.15, 0.15, 0.15, 0.15]);
+  final ValueNotifier<List<double>> _displayScores = ValueNotifier([
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+  ]);
   PedagogicalBlueprint? _blueprint;
 
   @override
   void initState() {
     super.initState();
-    
+
     _computeScores();
   }
 
@@ -86,8 +91,8 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
     int totalLevels = games.length * 200;
     int completedLevels = 0;
     for (var game in games) {
-      completedLevels +=
-          (widget.user.completedLevels[game.name]?.length ?? 0).clamp(0, 200);
+      completedLevels += (widget.user.completedLevels[game.name]?.length ?? 0)
+          .clamp(0, 200);
     }
     return totalLevels > 0
         ? (completedLevels / totalLevels).clamp(0.0, 1.0)
@@ -146,17 +151,19 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                 return ValueListenableBuilder<List<double>>(
                   valueListenable: _displayScores,
                   builder: (context, scores, _) {
-                    final animatedScores = scores.map((s) => s * animValue).toList();
-                return CustomPaint(
-                  size: Size(double.infinity, 200.r),
-                  painter: _RadarChartPainter(
-                    scores: animatedScores,
-                    primaryColor: widget.primaryColor,
-                    isDark: widget.isDark,
-                    bgAnimValue: animValue.clamp(0.0, 1.0),
-                  ),
-                );
-                  }
+                    final animatedScores = scores
+                        .map((s) => s * animValue)
+                        .toList();
+                    return CustomPaint(
+                      size: Size(double.infinity, 200.r),
+                      painter: _RadarChartPainter(
+                        scores: animatedScores,
+                        primaryColor: widget.primaryColor,
+                        isDark: widget.isDark,
+                        bgAnimValue: animValue.clamp(0.0, 1.0),
+                      ),
+                    );
+                  },
                 );
               },
             ),
@@ -167,19 +174,43 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
             children: [
               ValueListenableBuilder<List<double>>(
                 valueListenable: _displayScores,
-                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[0], widget.primaryColor, scores[0]))
+                builder: (context, scores, _) => Expanded(
+                  child: _buildLegend(
+                    _blueprint!.radarAxes[0],
+                    widget.primaryColor,
+                    scores[0],
+                  ),
+                ),
               ),
               ValueListenableBuilder<List<double>>(
                 valueListenable: _displayScores,
-                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[1], widget.primaryColor, scores[1]))
+                builder: (context, scores, _) => Expanded(
+                  child: _buildLegend(
+                    _blueprint!.radarAxes[1],
+                    widget.primaryColor,
+                    scores[1],
+                  ),
+                ),
               ),
               ValueListenableBuilder<List<double>>(
                 valueListenable: _displayScores,
-                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[2], widget.primaryColor, scores[2]))
+                builder: (context, scores, _) => Expanded(
+                  child: _buildLegend(
+                    _blueprint!.radarAxes[2],
+                    widget.primaryColor,
+                    scores[2],
+                  ),
+                ),
               ),
               ValueListenableBuilder<List<double>>(
                 valueListenable: _displayScores,
-                builder: (context, scores, _) => Expanded(child: _buildLegend(_blueprint!.radarAxes[3], widget.primaryColor, scores[3]))
+                builder: (context, scores, _) => Expanded(
+                  child: _buildLegend(
+                    _blueprint!.radarAxes[3],
+                    widget.primaryColor,
+                    scores[3],
+                  ),
+                ),
               ),
             ],
           ),
@@ -237,7 +268,8 @@ class _RadarChartPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
-    final radius = (math.min(size.width / 2, size.height / 2) - 20) * bgAnimValue;
+    final radius =
+        (math.min(size.width / 2, size.height / 2) - 20) * bgAnimValue;
     if (radius <= 0) return; // Prevent drawing when completely scaled down
 
     final paintBg = Paint()
@@ -329,8 +361,8 @@ class _RadarChartPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _RadarChartPainter oldDelegate) {
     return bgAnimValue != oldDelegate.bgAnimValue ||
-           !listEquals(oldDelegate.scores, scores) ||
-           oldDelegate.primaryColor != primaryColor ||
-           oldDelegate.isDark != isDark;
+        !listEquals(oldDelegate.scores, scores) ||
+        oldDelegate.primaryColor != primaryColor ||
+        oldDelegate.isDark != isDark;
   }
 }

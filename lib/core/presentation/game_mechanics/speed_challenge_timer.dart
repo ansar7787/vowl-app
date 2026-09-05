@@ -72,7 +72,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
   void initState() {
     super.initState();
     _remainingSecondsNotifier = ValueNotifier(widget.durationSeconds);
-    
+
     _controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: widget.durationSeconds),
@@ -96,7 +96,8 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
   }
 
   void _onTick() {
-    final remaining = ((1.0 - _controller.value) * widget.durationSeconds).ceil();
+    final remaining = ((1.0 - _controller.value) * widget.durationSeconds)
+        .ceil();
     if (remaining != _lastTickSecond) {
       _lastTickSecond = remaining;
       _remainingSecondsNotifier.value = remaining;
@@ -178,45 +179,46 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
               )!;
             }
 
-            final isUrgent = (remaining * widget.durationSeconds) <= 5.0; // Pulse at exactly 5 seconds left
+            final isUrgent =
+                (remaining * widget.durationSeconds) <=
+                5.0; // Pulse at exactly 5 seconds left
 
             return Container(
-              height: 6.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.08)
-                    : Colors.black.withValues(alpha: 0.06),
-                borderRadius: BorderRadius.circular(3.r),
-              ),
-              child: FractionallySizedBox(
-                alignment: Alignment.centerLeft,
-                widthFactor: remaining.clamp(0.0, 1.0),
-                child: Container(
+                  height: 6.h,
+                  width: double.infinity,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        barColor,
-                        barColor.withValues(alpha: 0.7),
-                      ],
-                    ),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : Colors.black.withValues(alpha: 0.06),
                     borderRadius: BorderRadius.circular(3.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: barColor.withValues(alpha: 0.4),
-                        blurRadius: 8,
-                        spreadRadius: 0,
-                      ),
-                    ],
                   ),
-                ),
-              ),
-            ).animate(target: isUrgent ? 1 : 0).scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1, 1.4),
-              duration: 500.ms,
-              curve: Curves.easeInOut,
-            );
+                  child: FractionallySizedBox(
+                    alignment: Alignment.centerLeft,
+                    widthFactor: remaining.clamp(0.0, 1.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [barColor, barColor.withValues(alpha: 0.7)],
+                        ),
+                        borderRadius: BorderRadius.circular(3.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: barColor.withValues(alpha: 0.4),
+                            blurRadius: 8,
+                            spreadRadius: 0,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+                .animate(target: isUrgent ? 1 : 0)
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1, 1.4),
+                  duration: 500.ms,
+                  curve: Curves.easeInOut,
+                );
           },
         ),
 
@@ -227,7 +229,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
           valueListenable: _remainingSecondsNotifier,
           builder: (context, remainingSec, _) {
             final remainingFraction = remainingSec / widget.durationSeconds;
-            
+
             Color barColor;
             if (remainingFraction > 0.5) {
               barColor = Color.lerp(
@@ -250,21 +252,21 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
               children: [
                 // Remaining time
                 AutoSizeText(
-                  '${remainingSec}s',
-                  maxLines: 1,
-                  minFontSize: 6,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w800,
-                    color: barColor,
-                    letterSpacing: 1,
-                  ),
-                )
-                .animate(target: isUrgent ? 1 : 0)
-                .fade(begin: 1.0, end: 0.4, duration: 400.ms)
-                .then()
-                .fade(begin: 0.4, end: 1.0, duration: 400.ms),
+                      '${remainingSec}s',
+                      maxLines: 1,
+                      minFontSize: 6,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w800,
+                        color: barColor,
+                        letterSpacing: 1,
+                      ),
+                    )
+                    .animate(target: isUrgent ? 1 : 0)
+                    .fade(begin: 1.0, end: 0.4, duration: 400.ms)
+                    .then()
+                    .fade(begin: 0.4, end: 1.0, duration: 400.ms),
 
                 // Speed bonus indicator
                 if (widget.showBonusLabel && widget.bonusCoinsForSpeed > 0)
@@ -292,7 +294,7 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
                   ),
               ],
             );
-          }
+          },
         ),
       ],
     );

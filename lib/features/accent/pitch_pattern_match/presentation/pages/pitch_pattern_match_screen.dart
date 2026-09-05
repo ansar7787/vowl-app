@@ -291,199 +291,211 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                 child: CustomScrollView(
                                   controller: _scrollController,
                                   physics: (!_isFirstStagePassed.value)
-                                        ? const NeverScrollableScrollPhysics()
-                                        : const BouncingScrollPhysics(),
+                                      ? const NeverScrollableScrollPhysics()
+                                      : const BouncingScrollPhysics(),
                                   slivers: [
                                     SliverToBoxAdapter(
-                                    child: IgnorePointer(
-                                      ignoring: _isFirstStagePassed.value,
-                                      child: ConstrainedBox(
-                                        constraints: BoxConstraints(
-                                          minHeight: constraints.maxHeight,
-                                        ),
-                                        child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
+                                      child: IgnorePointer(
+                                        ignoring: _isFirstStagePassed.value,
+                                        child: ConstrainedBox(
+                                          constraints: BoxConstraints(
+                                            minHeight: constraints.maxHeight,
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    PitchPatternMatchInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          _isFirstStagePassed
-                                                              .value
-                                                          ? "Great job! Now record yourself saying the word."
-                                                          : context.tr(
-                                                              'games.pitch_pattern_match_instruction',
-                                                              fallback:
-                                                                  'Identify the pitch pattern',
-                                                            ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: gapInstruction,
-                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        PitchPatternMatchInstruction(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          instruction:
+                                                              _isFirstStagePassed
+                                                                  .value
+                                                              ? "Great job! Now record yourself saying the word."
+                                                              : context.tr(
+                                                                  'games.pitch_pattern_match_instruction',
+                                                                  fallback:
+                                                                      'Identify the pitch pattern',
+                                                                ),
+                                                        ),
+                                                        SizedBox(
+                                                          height:
+                                                              gapInstruction,
+                                                        ),
 
-                                                    PitchPatternMatchPromptCard(
-                                                      word: quest.word ?? "",
-                                                      emotionContext:
-                                                          quest.emotionContext,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                                    SizedBox(height: gapPrompt),
+                                                        PitchPatternMatchPromptCard(
+                                                          word:
+                                                              quest.word ?? "",
+                                                          emotionContext: quest
+                                                              .emotionContext,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                        ),
+                                                        SizedBox(
+                                                          height: gapPrompt,
+                                                        ),
 
-                                                    if (_isAnswered.value ||
-                                                        _isFirstStagePassed
-                                                            .value) ...[
-                                                      ValueListenableBuilder<
-                                                        bool
-                                                      >(
-                                                        valueListenable:
-                                                            _isPreviewing,
-                                                        builder: (context, isPreviewing, _) {
-                                                          return ValueListenableBuilder<
-                                                            double
+                                                        if (_isAnswered.value ||
+                                                            _isFirstStagePassed
+                                                                .value) ...[
+                                                          ValueListenableBuilder<
+                                                            bool
                                                           >(
                                                             valueListenable:
-                                                                _previewProgress,
+                                                                _isPreviewing,
                                                             builder:
                                                                 (
                                                                   context,
-                                                                  previewProgress,
+                                                                  isPreviewing,
                                                                   _,
                                                                 ) {
-                                                                  return PitchPatternMatchMelodicCanvas(
-                                                                    pattern:
-                                                                        pattern,
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                    isPreviewing:
-                                                                        isPreviewing,
-                                                                    isAnswered:
-                                                                        _isAnswered
-                                                                            .value ||
-                                                                        _isFirstStagePassed
-                                                                            .value,
-                                                                    previewProgress:
-                                                                        previewProgress,
+                                                                  return ValueListenableBuilder<
+                                                                    double
+                                                                  >(
+                                                                    valueListenable:
+                                                                        _previewProgress,
+                                                                    builder:
+                                                                        (
+                                                                          context,
+                                                                          previewProgress,
+                                                                          _,
+                                                                        ) {
+                                                                          return PitchPatternMatchMelodicCanvas(
+                                                                            pattern:
+                                                                                pattern,
+                                                                            color:
+                                                                                theme.primaryColor,
+                                                                            isDark:
+                                                                                isDark,
+                                                                            isPreviewing:
+                                                                                isPreviewing,
+                                                                            isAnswered:
+                                                                                _isAnswered.value ||
+                                                                                _isFirstStagePassed.value,
+                                                                            previewProgress:
+                                                                                previewProgress,
+                                                                          );
+                                                                        },
                                                                   );
                                                                 },
-                                                          );
-                                                        },
-                                                      ),
-                                                      SizedBox(
-                                                        height: gapSpeaker,
-                                                      ),
-                                                    ],
+                                                          ),
+                                                          SizedBox(
+                                                            height: gapSpeaker,
+                                                          ),
+                                                        ],
 
-                                                    PitchPatternMatchPulseSpeaker(
-                                                      text:
-                                                          quest.textToSpeak ??
-                                                          "",
-                                                      color: theme.primaryColor,
-                                                      onPlayTts: _playTts,
+                                                        PitchPatternMatchPulseSpeaker(
+                                                          text:
+                                                              quest
+                                                                  .textToSpeak ??
+                                                              "",
+                                                          color: theme
+                                                              .primaryColor,
+                                                          onPlayTts: _playTts,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapSpeaker,
+                                                        ),
+                                                        PitchPatternMatchVerticalFader(
+                                                          options: options,
+                                                          correctIndex:
+                                                              quest
+                                                                  .correctAnswerIndex ??
+                                                              0,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          isAnswered:
+                                                              _isAnswered
+                                                                  .value ||
+                                                              _isFirstStagePassed
+                                                                  .value,
+                                                          selectedIndex:
+                                                              _selectedIndex
+                                                                  .value,
+                                                          sliderValue:
+                                                              _sliderValue
+                                                                  .value,
+                                                          onSubmitChoice:
+                                                              _submitChoice,
+                                                          onSliderUpdate:
+                                                              _onSliderUpdate,
+                                                        ),
+                                                        SizedBox(
+                                                          height: gapBottom,
+                                                        ),
+                                                      ],
                                                     ),
                                                   ],
                                                 ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: gapSpeaker,
-                                                    ),
-                                                    PitchPatternMatchVerticalFader(
-                                                      options: options,
-                                                      correctIndex:
-                                                          quest
-                                                              .correctAnswerIndex ??
-                                                          0,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
-                                                              .value,
-                                                      selectedIndex:
-                                                          _selectedIndex.value,
-                                                      sliderValue:
-                                                          _sliderValue.value,
-                                                      onSubmitChoice:
-                                                          _submitChoice,
-                                                      onSliderUpdate:
-                                                          _onSliderUpdate,
-                                                    ),
-                                                    SizedBox(height: gapBottom),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
+                                              ),
 
-                                          SizedBox(
-                                            height:
-                                                (_isFirstStagePassed.value &&
-                                                    !_isAnswered.value)
-                                                ? 380.h
-                                                : 160.h,
+                                              SizedBox(
+                                                height:
+                                                    (_isFirstStagePassed
+                                                            .value &&
+                                                        !_isAnswered.value)
+                                                    ? 380.h
+                                                    : 160.h,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-
+                                        ),
                                       ),
-
                                     ),
 
-                                  ),
+                                    if (_isFirstStagePassed.value &&
+                                        !_isAnswered.value)
+                                      SliverToBoxAdapter(
+                                        child: Column(
+                                          children: [
+                                            if (_isFirstStagePassed.value &&
+                                                !_isAnswered.value)
+                                              SpeakToConfirmOverlay(
+                                                expectedText:
+                                                    quest.textToSpeak ??
+                                                    quest.word ??
+                                                    "",
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isPositioned: false,
+                                                onConfirmed: () {
+                                                  _submitVerbalEvaluation(true);
+                                                },
+                                                onSkipped: () {
+                                                  _submitVerbalEvaluation(
+                                                    false,
+                                                  );
+                                                },
+                                              ),
 
+                                            SizedBox(height: 60.h),
+                                          ],
+                                        ),
+                                      ),
+                                  ],
                                 ),
-
-                                if (_isFirstStagePassed.value && !_isAnswered.value)
-
-                                  SliverToBoxAdapter(
-
-                                    child: Column(
-
-                                      children: [
-if (_isFirstStagePassed.value && !_isAnswered.value)
-                            SpeakToConfirmOverlay(
-                              expectedText:
-                                  quest.textToSpeak ?? quest.word ?? "",
-                              primaryColor: theme.primaryColor,
-                              isPositioned: false,
-                              onConfirmed: () {
-                                _submitVerbalEvaluation(true);
-                              },
-                              onSkipped: () {
-                                _submitVerbalEvaluation(false);
-                              },
-                            ),
-  
-
-                                        SizedBox(height: 60.h),
-
-                                      ],
-
-                                    ),
-
-                                  ),
-
-                                ],
-
-                              ),
                               );
                             },
                           ),
-                                                ],
+                        ],
                       ),
               );
             },

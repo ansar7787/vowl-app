@@ -254,7 +254,10 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                                       SizedBox(height: 16.h),
                                       ShortAnswerInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
 

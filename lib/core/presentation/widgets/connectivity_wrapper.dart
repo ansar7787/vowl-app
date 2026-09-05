@@ -150,8 +150,6 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
         }
         _wasOffline = isOffline;
 
-
-
         return ValueListenableBuilder(
           valueListenable: _refreshTrigger,
           builder: (context, _, child) {
@@ -182,9 +180,13 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                         duration: const Duration(milliseconds: 400),
                         switchInCurve: Curves.easeInOut,
                         switchOutCurve: Curves.easeInOut,
-                        transitionBuilder: (Widget child, Animation<double> animation) {
-                          return FadeTransition(opacity: animation, child: child);
-                        },
+                        transitionBuilder:
+                            (Widget child, Animation<double> animation) {
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            },
                         child: shouldShowQuotaBlock
                             ? OfflineQuotaExhaustedPage(
                                 key: const ValueKey('connectivity_quota_block'),
@@ -208,13 +210,15 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                         top: 0,
                         left: 0,
                         right: 0,
-                        child: OfflineBanner(key: ValueKey('connectivity_soft_banner')),
+                        child: OfflineBanner(
+                          key: ValueKey('connectivity_soft_banner'),
+                        ),
                       ),
                   ],
                 );
-              }
+              },
             );
-          }
+          },
         );
       },
     );

@@ -89,14 +89,14 @@ class QuestHintButton extends StatelessWidget {
                   fallback: 'Use hint ($hintCount remaining)',
                 )
               : isPremium
-                  ? context.tr(
-                      'hint.get_free_hint_semantic',
-                      fallback: 'Get a free hint',
-                    )
-                  : context.tr(
-                      'hint.watch_ad_semantic',
-                      fallback: 'Watch ad to earn a hint',
-                    ),
+              ? context.tr(
+                  'hint.get_free_hint_semantic',
+                  fallback: 'Get a free hint',
+                )
+              : context.tr(
+                  'hint.watch_ad_semantic',
+                  fallback: 'Watch ad to earn a hint',
+                ),
           child: ScaleButton(
             onTap: () => _handleTap(context, hintCount),
             child: RepaintBoundary(
@@ -139,7 +139,9 @@ class QuestHintButton extends StatelessWidget {
                               ? Colors.grey
                               : (hintCount > 0
                                     ? primaryColor
-                                    : (isPremium ? Colors.greenAccent : Colors.amber[700])),
+                                    : (isPremium
+                                          ? Colors.greenAccent
+                                          : Colors.amber[700])),
                           size: 26.r,
                         )
                         .animate(
@@ -189,7 +191,9 @@ class QuestHintButton extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.all(2.r),
                           decoration: BoxDecoration(
-                            color: isPremium ? Colors.green : const Color(0xFFF59E0B),
+                            color: isPremium
+                                ? Colors.green
+                                : const Color(0xFFF59E0B),
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.white, width: 1),
                           ),

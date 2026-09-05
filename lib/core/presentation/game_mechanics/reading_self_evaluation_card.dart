@@ -58,7 +58,7 @@ class ReadingSelfEvaluationCard extends StatefulWidget {
 class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final ValueNotifier<bool> _isRevealed = ValueNotifier(false);
   final ValueNotifier<bool> _isEvaluated = ValueNotifier(false);
 
@@ -116,8 +116,8 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
     return ValueListenableBuilder<bool>(
       valueListenable: _isRevealed,
       builder: (context, isRevealed, _) {
-        final content = !isRevealed 
-            ? _buildRevealButton(context) 
+        final content = !isRevealed
+            ? _buildRevealButton(context)
             : _buildAnswerCard(
                 context,
                 isDark: isDark,
@@ -126,80 +126,80 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
               );
 
         if (widget.isPositioned) {
-          return Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: content,
-          );
+          return Positioned(bottom: 0, left: 0, right: 0, child: content);
         }
 
         return content;
-      }
+      },
     );
   }
 
   Widget _buildRevealButton(BuildContext context) {
     return GestureDetector(
       onTap: _reveal,
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 24.w),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              widget.primaryColor.withValues(alpha: 0.8),
-              widget.primaryColor,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(24.r),
-          boxShadow: [
-            BoxShadow(
-              color: widget.primaryColor.withValues(alpha: 0.3),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
+      child:
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 24.w),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  widget.primaryColor.withValues(alpha: 0.8),
+                  widget.primaryColor,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(24.r),
+              boxShadow: [
+                BoxShadow(
+                  color: widget.primaryColor.withValues(alpha: 0.3),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
             ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Icon(Icons.visibility_rounded, color: Colors.white, size: 32.sp),
-            SizedBox(height: 12.h),
-            AutoSizeText(
-              context.tr(
-                'reading.tap_reveal_answer',
-                fallback: 'TAP TO REVEAL ANSWER',
-              ),
-              maxLines: 1,
-              minFontSize: 10,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w800,
-                color: Colors.white,
-                letterSpacing: 1.5,
-              ),
+            child: Column(
+              children: [
+                Icon(
+                  Icons.visibility_rounded,
+                  color: Colors.white,
+                  size: 32.sp,
+                ),
+                SizedBox(height: 12.h),
+                AutoSizeText(
+                  context.tr(
+                    'reading.tap_reveal_answer',
+                    fallback: 'TAP TO REVEAL ANSWER',
+                  ),
+                  maxLines: 1,
+                  minFontSize: 10,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                    letterSpacing: 1.5,
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                AutoSizeText(
+                  context.tr(
+                    'reading.think_answer_first',
+                    fallback: 'Think of the answer first!',
+                  ),
+                  maxLines: 1,
+                  minFontSize: 8,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white.withValues(alpha: 0.8),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 8.h),
-            AutoSizeText(
-              context.tr(
-                'reading.think_answer_first',
-                fallback: 'Think of the answer first!',
-              ),
-              maxLines: 1,
-              minFontSize: 8,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
-                color: Colors.white.withValues(alpha: 0.8),
-              ),
-            ),
-          ],
-        ),
-      ).animate().scale(
+          ).animate().scale(
             delay: 200.ms,
             duration: 400.ms,
             curve: Curves.easeOutBack,
@@ -239,10 +239,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AutoSizeText(
-                context.tr(
-                  'reading.the_answer_is',
-                  fallback: 'THE ANSWER IS',
-                ),
+                context.tr('reading.the_answer_is', fallback: 'THE ANSWER IS'),
                 maxLines: 1,
                 minFontSize: 8,
                 style: TextStyle(
@@ -256,10 +253,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
               if (widget.bonusCoins != null) ...[
                 SizedBox(width: 10.w),
                 Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 8.w,
-                    vertical: 2.h,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -302,8 +296,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
           ),
 
           // Explanation
-          if (widget.explanation != null &&
-              widget.explanation!.isNotEmpty) ...[
+          if (widget.explanation != null && widget.explanation!.isNotEmpty) ...[
             SizedBox(height: 16.h),
             Container(
               padding: EdgeInsets.all(12.r),
@@ -380,7 +373,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
                   ),
                 ],
               );
-            }
+            },
           ),
         ],
       ),
@@ -400,10 +393,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: color.withValues(alpha: 0.5),
-            width: 2,
-          ),
+          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
         ),
         child: Column(
           children: [

@@ -246,7 +246,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

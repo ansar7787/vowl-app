@@ -213,7 +213,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                       DetailSpotlightInstruction(
                                         isAnswered: _isAnswered.value,
                                         color: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       DetailSpotlightEmitter(

@@ -199,7 +199,10 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                       children: [
                                         RepeatSentenceInstruction(
                                           primaryColor: theme.primaryColor,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         RepeatSentenceAuditionCard(

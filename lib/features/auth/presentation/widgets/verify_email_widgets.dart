@@ -268,10 +268,7 @@ class VerifyLogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: context.tr(
-        'auth.cancel_and_logout_semantic',
-        fallback: 'Log Out',
-      ),
+      label: context.tr('auth.cancel_and_logout_semantic', fallback: 'Log Out'),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(

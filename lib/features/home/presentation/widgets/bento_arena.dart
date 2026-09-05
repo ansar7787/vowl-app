@@ -82,110 +82,118 @@ class _BentoArenaState extends State<BentoArena> {
             : collapsedIndices;
 
         return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Stack(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // The Journey Path Line
-            Positioned.fill(
-              child: RepaintBoundary(
-                child: CustomPaint(
-                  painter: JourneyPathPainter(
-                    isDark: isDark,
-                    isRtl: isRtl,
-                    stepsCount: visibleSteps.length,
-                    types: visibleSteps.map((i) => allSteps[i]).toList(),
-                  ),
-                ),
-              ),
-            ),
-            // The Step Cards
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.h),
-              child: Column(
-                children: List.generate(visibleSteps.length, (vi) {
-                  final actualIndex = visibleSteps[vi];
-                  final isLeft = vi % 2 == 0;
-                  final isLast = vi == visibleSteps.length - 1;
-                  // Mirror the zig-zag so the journey still visually winds
-                  // from the reading-start side in RTL locales.
-                  final visualLeft = isRtl ? !isLeft : isLeft;
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: isLast ? 0 : 40.h),
-                    child: Align(
-                      alignment: visualLeft
-                          ? Alignment.centerLeft
-                          : Alignment.centerRight,
-                      child: FractionallySizedBox(
-                        widthFactor: 0.85,
-                        child: _BentoCategoryTile(
-                          type: allSteps[actualIndex],
-                          user: widget.user,
-                          step: actualIndex + 1,
-                          isLeft: visualLeft,
-                        ),
+            Stack(
+              children: [
+                // The Journey Path Line
+                Positioned.fill(
+                  child: RepaintBoundary(
+                    child: CustomPaint(
+                      painter: JourneyPathPainter(
+                        isDark: isDark,
+                        isRtl: isRtl,
+                        stepsCount: visibleSteps.length,
+                        types: visibleSteps.map((i) => allSteps[i]).toList(),
                       ),
                     ),
-                  );
-                }),
-              ),
-            ),
-          ],
-        ),
-
-        // Expand / Collapse button
-        if (widget.collapsed) ...[
-          SizedBox(height: 16.h),
-          Center(
-            child: ScaleButton(
-              onTap: () => _isExpanded.value = !_isExpanded.value,
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeInOut,
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.3),
                   ),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      isExpanded
-                          ? context.tr('home.show_less', fallback: 'Show Less')
-                          : context.tr(
-                              'home.see_all_categories',
-                              fallback: 'See All 9 Categories',
+                // The Step Cards
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20.h),
+                  child: Column(
+                    children: List.generate(visibleSteps.length, (vi) {
+                      final actualIndex = visibleSteps[vi];
+                      final isLeft = vi % 2 == 0;
+                      final isLast = vi == visibleSteps.length - 1;
+                      // Mirror the zig-zag so the journey still visually winds
+                      // from the reading-start side in RTL locales.
+                      final visualLeft = isRtl ? !isLeft : isLeft;
+                      return Padding(
+                        padding: EdgeInsets.only(bottom: isLast ? 0 : 40.h),
+                        child: Align(
+                          alignment: visualLeft
+                              ? Alignment.centerLeft
+                              : Alignment.centerRight,
+                          child: FractionallySizedBox(
+                            widthFactor: 0.85,
+                            child: _BentoCategoryTile(
+                              type: allSteps[actualIndex],
+                              user: widget.user,
+                              step: actualIndex + 1,
+                              isLeft: visualLeft,
                             ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w800,
-                        color: const Color(0xFF6366F1),
-                        letterSpacing: 0.5,
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+              ],
+            ),
+
+            // Expand / Collapse button
+            if (widget.collapsed) ...[
+              SizedBox(height: 16.h),
+              Center(
+                child: ScaleButton(
+                  onTap: () => _isExpanded.value = !_isExpanded.value,
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 12.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(20.r),
+                      border: Border.all(
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
                       ),
                     ),
-                    SizedBox(width: 8.w),
-                    AnimatedRotation(
-                      turns: isExpanded ? 0.5 : 0,
-                      duration: const Duration(milliseconds: 300),
-                      child: Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.7),
-                        size: 20.r,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          isExpanded
+                              ? context.tr(
+                                  'home.show_less',
+                                  fallback: 'Show Less',
+                                )
+                              : context.tr(
+                                  'home.see_all_categories',
+                                  fallback: 'See All 9 Categories',
+                                ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w800,
+                            color: const Color(0xFF6366F1),
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        SizedBox(width: 8.w),
+                        AnimatedRotation(
+                          turns: isExpanded ? 0.5 : 0,
+                          duration: const Duration(milliseconds: 300),
+                          child: Icon(
+                            Icons.keyboard_arrow_down_rounded,
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.7),
+                            size: 20.r,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ),
-        ],
-        ],
-      );
+            ],
+          ],
+        );
       },
     );
   }

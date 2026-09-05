@@ -228,7 +228,10 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                       SizedBox(height: 6.h),
                                       FastSpeechDecoderInstruction(
                                         color: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       (() {

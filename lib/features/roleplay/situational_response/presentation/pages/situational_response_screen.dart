@@ -293,7 +293,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                       isDark: isDark,
                                                     ),
                                                     SizedBox(

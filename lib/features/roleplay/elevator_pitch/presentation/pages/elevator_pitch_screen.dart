@@ -187,7 +187,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

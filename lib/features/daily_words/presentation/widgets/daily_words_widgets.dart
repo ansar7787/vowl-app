@@ -45,7 +45,10 @@ class WordCardFront extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 6.h,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFF6366F1).withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20.r),
@@ -69,7 +72,10 @@ class WordCardFront extends StatelessWidget {
               if (theme != null && theme!.isNotEmpty) ...[
                 SizedBox(height: 12.h),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 4.h,
+                  ),
                   decoration: BoxDecoration(
                     color: const Color(0xFFF59E0B).withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(12.r),
@@ -650,7 +656,10 @@ class SessionCompleteView extends StatelessWidget {
                     child: _CompletionStatTile(
                       icon: Icons.local_fire_department_rounded,
                       value: '$streak',
-                      label: context.tr('daily_words.streak_label', fallback: 'Day Streak'),
+                      label: context.tr(
+                        'daily_words.streak_label',
+                        fallback: 'Day Streak',
+                      ),
                       color: const Color(0xFFF59E0B),
                       isDark: isDark,
                     ),
@@ -660,7 +669,10 @@ class SessionCompleteView extends StatelessWidget {
                     child: _CompletionStatTile(
                       icon: Icons.auto_stories_rounded,
                       value: '$wordsThisSession',
-                      label: context.tr('daily_words.words_today', fallback: 'Words Today'),
+                      label: context.tr(
+                        'daily_words.words_today',
+                        fallback: 'Words Today',
+                      ),
                       color: const Color(0xFF6366F1),
                       isDark: isDark,
                     ),
@@ -670,7 +682,10 @@ class SessionCompleteView extends StatelessWidget {
                     child: _CompletionStatTile(
                       icon: Icons.library_books_rounded,
                       value: '$totalLearned',
-                      label: context.tr('daily_words.total_learned', fallback: 'Total Words'),
+                      label: context.tr(
+                        'daily_words.total_learned',
+                        fallback: 'Total Words',
+                      ),
                       color: const Color(0xFF10B981),
                       isDark: isDark,
                     ),
@@ -702,7 +717,9 @@ class SessionCompleteView extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.all(10.r),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.15),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -717,22 +734,33 @@ class SessionCompleteView extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                context.tr('daily_words.premium_cta_title', fallback: 'Learn Without Limits'),
+                                context.tr(
+                                  'daily_words.premium_cta_title',
+                                  fallback: 'Learn Without Limits',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                  color: isDark
+                                      ? Colors.white
+                                      : const Color(0xFF0F172A),
                                 ),
                               ),
                               SizedBox(height: 2.h),
                               Text(
-                                context.tr('daily_words.premium_cta_desc', fallback: 'Unlock all 10 words daily, ad-free'),
+                                context.tr(
+                                  'daily_words.premium_cta_desc',
+                                  fallback:
+                                      'Unlock all 10 words daily, ad-free',
+                                ),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w500,
-                                  color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                                  color: isDark
+                                      ? Colors.white54
+                                      : const Color(0xFF64748B),
                                 ),
                               ),
                             ],
@@ -919,9 +947,10 @@ class _FlipHintState extends State<_FlipHint>
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
-      opacity: Tween<double>(begin: 0.4, end: 1.0).animate(
-        CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-      ),
+      opacity: Tween<double>(
+        begin: 0.4,
+        end: 1.0,
+      ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut)),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

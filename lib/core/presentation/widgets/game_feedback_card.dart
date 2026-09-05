@@ -128,102 +128,102 @@ class GameFeedbackCard extends StatelessWidget {
           ],
         ),
         child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _buildResultRow(icon, title, gradient),
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildResultRow(icon, title, gradient),
 
-                if (showEducationalInfo && customContent != null) ...[
-                  SizedBox(height: 16.h),
-                  customContent!,
-                ],
+              if (showEducationalInfo && customContent != null) ...[
+                SizedBox(height: 16.h),
+                customContent!,
+              ],
 
-                if (showPedagogicalFields &&
-                    ruleContent != null &&
-                    ruleContent!.isNotEmpty) ...[
-                  SizedBox(height: 16.h),
-                  PedagogicalRuleBox(
-                    icon: Icons.menu_book_rounded,
-                    capsKey: '',
-                    capsFallback: ruleTitle ?? 'RULE',
-                    titleKey: '',
-                    titleFallback: ruleTitle ?? 'Rule',
-                    rule: ruleContent!,
-                    shadowColor: shadowColor,
-                    isDark: isDark,
-                  ),
-                ],
+              if (showPedagogicalFields &&
+                  ruleContent != null &&
+                  ruleContent!.isNotEmpty) ...[
+                SizedBox(height: 16.h),
+                PedagogicalRuleBox(
+                  icon: Icons.menu_book_rounded,
+                  capsKey: '',
+                  capsFallback: ruleTitle ?? 'RULE',
+                  titleKey: '',
+                  titleFallback: ruleTitle ?? 'Rule',
+                  rule: ruleContent!,
+                  shadowColor: shadowColor,
+                  isDark: isDark,
+                ),
+              ],
 
-                if (showEducationalInfo &&
-                    explanation != null &&
-                    explanation!.isNotEmpty) ...[
-                  SizedBox(height: 16.h),
-                  _ExplanationCard(
-                    originalExplanation: explanation!,
-                    accentColor: shadowColor,
-                    isDark: isDark,
-                  ),
-                ],
+              if (showEducationalInfo &&
+                  explanation != null &&
+                  explanation!.isNotEmpty) ...[
+                SizedBox(height: 16.h),
+                _ExplanationCard(
+                  originalExplanation: explanation!,
+                  accentColor: shadowColor,
+                  isDark: isDark,
+                ),
+              ],
 
-                if (showPedagogicalFields &&
-                    sampleAnswer != null &&
-                    sampleAnswer!.isNotEmpty) ...[
-                  SizedBox(height: 16.h),
-                  PedagogicalRuleBox(
-                    icon: Icons.lightbulb_outline_rounded,
-                    capsKey: 'games.sample_answer_caps',
-                    capsFallback: 'SAMPLE ANSWER',
-                    titleKey: 'games.sample_answer',
-                    titleFallback: 'Sample Answer',
-                    rule: sampleAnswer!,
-                    shadowColor: shadowColor,
-                    isDark: isDark,
-                  ),
-                ],
+              if (showPedagogicalFields &&
+                  sampleAnswer != null &&
+                  sampleAnswer!.isNotEmpty) ...[
+                SizedBox(height: 16.h),
+                PedagogicalRuleBox(
+                  icon: Icons.lightbulb_outline_rounded,
+                  capsKey: 'games.sample_answer_caps',
+                  capsFallback: 'SAMPLE ANSWER',
+                  titleKey: 'games.sample_answer',
+                  titleFallback: 'Sample Answer',
+                  rule: sampleAnswer!,
+                  shadowColor: shadowColor,
+                  isDark: isDark,
+                ),
+              ],
 
-                if (showPedagogicalFields &&
-                    requiredPoints != null &&
-                    requiredPoints!.isNotEmpty) ...[
-                  SizedBox(height: 16.h),
-                  PedagogicalRuleBox(
-                    icon: Icons.checklist_rounded,
-                    capsKey: 'games.required_points_caps',
-                    capsFallback: 'REQUIRED POINTS',
-                    titleKey: 'games.required_points',
-                    titleFallback: 'Required Points',
-                    rule: requiredPoints!.join("\n• "),
-                    shadowColor: shadowColor,
-                    isDark: isDark,
-                  ),
-                ],
+              if (showPedagogicalFields &&
+                  requiredPoints != null &&
+                  requiredPoints!.isNotEmpty) ...[
+                SizedBox(height: 16.h),
+                PedagogicalRuleBox(
+                  icon: Icons.checklist_rounded,
+                  capsKey: 'games.required_points_caps',
+                  capsFallback: 'REQUIRED POINTS',
+                  titleKey: 'games.required_points',
+                  titleFallback: 'Required Points',
+                  rule: requiredPoints!.join("\n• "),
+                  shadowColor: shadowColor,
+                  isDark: isDark,
+                ),
+              ],
 
-                SizedBox(height: 28.h),
-                _buildActionButton(buttonText, gradient, shadowColor),
+              SizedBox(height: 28.h),
+              _buildActionButton(buttonText, gradient, shadowColor),
 
-                if (onTutorPass != null && isFinalFailure) ...[
-                  SizedBox(height: 16.h),
-                  ScaleButton(
-                    onTap: onTutorPass,
-                    child: Text(
-                      context.tr(
-                        'games.pass_to_tutor',
-                        fallback: 'Pass to Tutor',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: shadowColor,
-                        decoration: TextDecoration.underline,
-                      ),
+              if (onTutorPass != null && isFinalFailure) ...[
+                SizedBox(height: 16.h),
+                ScaleButton(
+                  onTap: onTutorPass,
+                  child: Text(
+                    context.tr(
+                      'games.pass_to_tutor',
+                      fallback: 'Pass to Tutor',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: shadowColor,
+                      decoration: TextDecoration.underline,
                     ),
                   ),
-                ],
+                ),
               ],
-            ),
+            ],
           ),
         ),
+      ),
     );
   }
 
@@ -355,74 +355,74 @@ class _ExplanationCardState extends State<_ExplanationCard> {
       builder: (context, translatedText, child) {
         final displayText = translatedText ?? widget.originalExplanation;
         return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.info_outline_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    context.tr(
-                      'games.explanation_caps',
-                      fallback: 'EXPLANATION',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: widget.accentColor,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                  const Spacer(),
-                  if (translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.originalExplanation,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          _translatedTextNotifier.value = translated;
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w700,
-                  height: 1.4,
-                  color: widget.isDark ? Colors.white : Colors.black87,
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+              decoration: BoxDecoration(
+                color: widget.accentColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: widget.accentColor.withValues(alpha: 0.2),
+                  width: 1.5,
                 ),
               ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 100.ms)
-        .slideY(
-          begin: 0.2,
-          end: 0,
-          duration: 300.ms,
-          curve: Curves.easeOutBack,
-        );
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.info_outline_rounded,
+                        color: widget.accentColor,
+                        size: 14.r,
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        context.tr(
+                          'games.explanation_caps',
+                          fallback: 'EXPLANATION',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          color: widget.accentColor,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                      const Spacer(),
+                      if (translatedText == null)
+                        TranslateButtonWidget(
+                          originalText: widget.originalExplanation,
+                          onTranslationComplete: (translated) {
+                            if (mounted) {
+                              _translatedTextNotifier.value = translated;
+                            }
+                          },
+                        ),
+                    ],
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    displayText,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
+                      height: 1.4,
+                      color: widget.isDark ? Colors.white : Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 100.ms)
+            .slideY(
+              begin: 0.2,
+              end: 0,
+              duration: 300.ms,
+              curve: Curves.easeOutBack,
+            );
       },
     );
   }

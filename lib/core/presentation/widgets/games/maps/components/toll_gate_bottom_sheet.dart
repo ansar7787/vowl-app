@@ -62,19 +62,23 @@ class TollGateBottomSheet {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(16.r),
-                      decoration: BoxDecoration(
-                        color: Colors.amber.withValues(alpha: 0.15),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.lock_rounded,
-                        size: 56.r,
-                        color: Colors.amber.shade600,
-                      ),
-                    )
+                          padding: EdgeInsets.all(16.r),
+                          decoration: BoxDecoration(
+                            color: Colors.amber.withValues(alpha: 0.15),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.lock_rounded,
+                            size: 56.r,
+                            color: Colors.amber.shade600,
+                          ),
+                        )
                         .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .shake(hz: 2, curve: Curves.easeInOutSine, duration: 1500.ms)
+                        .shake(
+                          hz: 2,
+                          curve: Curves.easeInOutSine,
+                          duration: 1500.ms,
+                        )
                         .then(delay: 2000.ms),
                     SizedBox(height: 16.h),
                     Text(

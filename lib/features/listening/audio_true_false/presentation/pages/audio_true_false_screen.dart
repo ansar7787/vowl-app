@@ -208,7 +208,10 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                       SizedBox(height: 6.h),
                                       AudioTrueFalseInstruction(
                                         color: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       AudioTrueFalseTuner(

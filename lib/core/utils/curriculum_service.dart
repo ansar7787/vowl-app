@@ -50,8 +50,10 @@ class CurriculumService {
   static Future<void> _prewarmCacheFromManifest(List<String> gameTypes) async {
     try {
       // 1. Load the manifest using the official future-proof API (handles .json or .bin natively).
-      final AssetManifest manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
-      
+      final AssetManifest manifest = await AssetManifest.loadFromAssetBundle(
+        rootBundle,
+      );
+
       // Convert to Set for O(1) lookups in memory.
       final Set<String> manifestPaths = manifest.listAssets().toSet();
 
@@ -64,7 +66,7 @@ class CurriculumService {
           while (batchIndex <= 20) {
             final start = (batchIndex - 1) * 10 + 1;
             final path = QuestRegistry.getAssetPath(type, start);
-            
+
             if (manifestPaths.contains(path)) {
               totalLevels += 10;
               batchIndex++;

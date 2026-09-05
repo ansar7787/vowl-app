@@ -355,7 +355,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                                             height: gapTop / 2,
                                                           ),
                                                           _buildInstruction(
-                                                            InstructionHelper.getInstruction(quest),
+                                                            InstructionHelper.getInstruction(
+                                                              quest,
+                                                            ),
                                                             theme.primaryColor,
                                                             isCompact,
                                                           ),
@@ -537,7 +539,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                       ),
                                     ),
                                   ),
-                                  if (_isFirstStagePassed.value && !_isAnswered.value)
+                                  if (_isFirstStagePassed.value &&
+                                      !_isAnswered.value)
                                     SliverToBoxAdapter(
                                       child: Column(
                                         children: [
@@ -546,12 +549,15 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                                 "${quest.word} ${quest.correctAnswer}"
                                                     .trim(),
                                             primaryColor: theme.primaryColor,
-                                            onConfirmed: () => _submitFinalAnswer(true),
-                                            onSkipped: () => _submitFinalAnswer(false),
+                                            onConfirmed: () =>
+                                                _submitFinalAnswer(true),
+                                            onSkipped: () =>
+                                                _submitFinalAnswer(false),
                                             isPositioned: false,
-                                            exampleSentence: _getFormattedExampleSentence(
-                                              quest,
-                                            ),
+                                            exampleSentence:
+                                                _getFormattedExampleSentence(
+                                                  quest,
+                                                ),
                                           ),
                                           SizedBox(height: 60.h),
                                         ],

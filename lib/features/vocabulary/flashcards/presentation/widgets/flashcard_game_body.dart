@@ -151,13 +151,14 @@ class FlashcardGameBody extends StatelessWidget {
                       if (!hideActions)
                         ValueListenableBuilder<bool>(
                           valueListenable: isFlipped,
-                          builder: (context, flipped, _) => FlashcardActionButtons(
-                            isFlipped: flipped,
-                            isTransitioning: isAnswered || isRetrying,
-                            isDark: isDark,
-                            onAgain: () => onSubmitAnswer(false),
-                            onGotIt: () => onSubmitAnswer(true),
-                          ),
+                          builder: (context, flipped, _) =>
+                              FlashcardActionButtons(
+                                isFlipped: flipped,
+                                isTransitioning: isAnswered || isRetrying,
+                                isDark: isDark,
+                                onAgain: () => onSubmitAnswer(false),
+                                onGotIt: () => onSubmitAnswer(true),
+                              ),
                         ),
                       SizedBox(height: layout.actionsToBottom),
                     ],
@@ -221,7 +222,11 @@ class FlashcardGameBody extends StatelessWidget {
                   duration: (isAnswered || isRetrying) ? 400.ms : Duration.zero,
                   curve: Curves.easeOutBack,
                   transform: Matrix4.identity()
-                    ..setTranslationRaw(dragOffset.value.dx, dragOffset.value.dy, 0.0)
+                    ..setTranslationRaw(
+                      dragOffset.value.dx,
+                      dragOffset.value.dy,
+                      0.0,
+                    )
                     ..rotateZ(dragAngle.value),
                   child: child,
                 );
@@ -318,17 +323,17 @@ class _InstructionBanner extends StatelessWidget {
                         )
                       : InstructionHelper.getInstruction(quest),
                   textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w900,
-                  color: primaryColor,
-                  letterSpacing: 1.1,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w900,
+                    color: primaryColor,
+                    letterSpacing: 1.1,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
         ),
       ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0),
     );

@@ -48,10 +48,10 @@ class ModernSegmentPathPainter extends CustomPainter {
     final double nodeX = currentPoint.dx;
     final double centerY = size.height / 2;
     const double strokeW = 18.0;
-    
+
     // We use the exact same 8% tint as the locked node so they match perfectly,
     // while remaining fully opaque (visible) and dark (locked).
-    final Color lockedColor = isDark 
+    final Color lockedColor = isDark
         ? Color.lerp(const Color(0xFF0F172A), baseColor, 0.08)!
         : Color.lerp(const Color(0xFFF8FAFC), baseColor, 0.08)!;
 
@@ -62,7 +62,7 @@ class ModernSegmentPathPainter extends CustomPainter {
       final topCenter = Offset(size.width / 2, headerGap);
       canvas.drawCircle(topCenter, 8.0, Paint()..color = activeColor);
 
-      // The user requested a clean, straight diagonal line pulling from the header 
+      // The user requested a clean, straight diagonal line pulling from the header
       // rather than a boring curve.
       final headerPath = Path()
         ..moveTo(topCenter.dx, topCenter.dy)
@@ -73,9 +73,7 @@ class ModernSegmentPathPainter extends CustomPainter {
       canvas.drawPath(
         headerPath,
         Paint()
-          ..color = isActive
-              ? activeColor
-              : lockedColor
+          ..color = isActive ? activeColor : lockedColor
           ..style = PaintingStyle.stroke
           ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.round,
@@ -90,9 +88,11 @@ class ModernSegmentPathPainter extends CustomPainter {
             ..style = PaintingStyle.stroke
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
         );
-        
+
         if (glowAnimation != null) {
-          final glowValue = Curves.easeInOutSine.transform(glowAnimation!.value);
+          final glowValue = Curves.easeInOutSine.transform(
+            glowAnimation!.value,
+          );
           canvas.drawPath(
             headerPath,
             Paint()
@@ -105,30 +105,29 @@ class ModernSegmentPathPainter extends CustomPainter {
       }
     }
 
-
     // ── Incoming path from top boundary (y=0) to node center (y=centerY) ──
     //
-    // Uses a mathematically exact split of a Catmull-Rom spline. 
-    // This is the TRUE INDUSTRY STANDARD. It allows the path to flow naturally 
+    // Uses a mathematically exact split of a Catmull-Rom spline.
+    // This is the TRUE INDUSTRY STANDARD. It allows the path to flow naturally
     // diagonally through center nodes, completely eliminating artificial Z-kinks.
     if (!isFirst && prevPoint != null) {
       final x0 = prevPoint!.dx;
       final x1 = nodeX;
-      
+
       // Calculate smooth natural tangents based on the neighbors
       final t0 = (x1 - (prevPrevX ?? x0)) / 2;
       final t1 = ((nextPoint?.dx ?? x1) - x0) / 2;
-      
+
       // PERFECT MATHEMATICAL SPLIT at t=0.5
       final startX = 0.5 * x0 + 0.5 * x1 + (t0 - t1) / 8;
 
       final incomingPath = Path()
         ..moveTo(startX, 0)
         ..cubicTo(
-          0.25 * x0 + 0.75 * x1 + t0 / 12 - t1 / 6,    // cp1.x
-          centerY * 0.333333,                          // cp1.y 
-          x1 - t1 / 6,                                 // cp2.x 
-          centerY * 0.666667,                          // cp2.y 
+          0.25 * x0 + 0.75 * x1 + t0 / 12 - t1 / 6, // cp1.x
+          centerY * 0.333333, // cp1.y
+          x1 - t1 / 6, // cp2.x
+          centerY * 0.666667, // cp2.y
           x1,
           centerY,
         );
@@ -144,39 +143,44 @@ class ModernSegmentPathPainter extends CustomPainter {
           ..strokeCap = StrokeCap.butt,
       );
 
-        if (isActive && incomingPathProgress > 0.0) {
-          for (final metric in incomingPath.computeMetrics()) {
-            final extracted = metric.extractPath(0, metric.length * incomingPathProgress);
-            canvas.drawPath(
-              extracted,
-              Paint()
-                ..color = activeColor.withValues(alpha: 0.35)
-                ..strokeWidth = strokeW + 12.0
-                ..style = PaintingStyle.stroke
-                ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
+      if (isActive && incomingPathProgress > 0.0) {
+        for (final metric in incomingPath.computeMetrics()) {
+          final extracted = metric.extractPath(
+            0,
+            metric.length * incomingPathProgress,
+          );
+          canvas.drawPath(
+            extracted,
+            Paint()
+              ..color = activeColor.withValues(alpha: 0.35)
+              ..strokeWidth = strokeW + 12.0
+              ..style = PaintingStyle.stroke
+              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
+          );
+          canvas.drawPath(
+            extracted,
+            Paint()
+              ..color = activeColor
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = strokeW
+              ..strokeCap = StrokeCap.round,
+          );
+
+          if (glowAnimation != null && incomingPathProgress == 1.0) {
+            final glowValue = Curves.easeInOutSine.transform(
+              glowAnimation!.value,
             );
             canvas.drawPath(
               extracted,
               Paint()
-                ..color = activeColor
+                ..color = Colors.white.withValues(alpha: 0.4 * glowValue)
                 ..style = PaintingStyle.stroke
-                ..strokeWidth = strokeW
+                ..strokeWidth = strokeW - 8.0
                 ..strokeCap = StrokeCap.round,
             );
-            
-            if (glowAnimation != null && incomingPathProgress == 1.0) {
-              final glowValue = Curves.easeInOutSine.transform(glowAnimation!.value);
-              canvas.drawPath(
-                extracted,
-                Paint()
-                  ..color = Colors.white.withValues(alpha: 0.4 * glowValue)
-                  ..style = PaintingStyle.stroke
-                  ..strokeWidth = strokeW - 8.0
-                  ..strokeCap = StrokeCap.round,
-              );
-            }
           }
         }
+      }
     }
 
     // ── Outgoing path from node center (y=centerY) to bottom boundary (y=size.height) ──
@@ -186,10 +190,10 @@ class ModernSegmentPathPainter extends CustomPainter {
       final x0 = prevPoint?.dx ?? nodeX;
       final x1 = nodeX;
       final x2 = nextPoint!.dx;
-      
+
       final t1 = (x2 - x0) / 2;
       final t2 = ((nextNextX ?? x2) - x1) / 2;
-      
+
       // PERFECT MATHEMATICAL SPLIT at t=0.5
       final endX = 0.5 * x1 + 0.5 * x2 + (t1 - t2) / 8;
       final bottomY = size.height;
@@ -197,10 +201,10 @@ class ModernSegmentPathPainter extends CustomPainter {
       final outgoingPath = Path()
         ..moveTo(x1, centerY)
         ..cubicTo(
-          x1 + t1 / 6,                                 // cp1.x 
-          centerY * 1.333333,                          // cp1.y 
-          0.75 * x1 + 0.25 * x2 + t1 / 6 - t2 / 12,    // cp2.x 
-          centerY * 1.666667,                          // cp2.y 
+          x1 + t1 / 6, // cp1.x
+          centerY * 1.333333, // cp1.y
+          0.75 * x1 + 0.25 * x2 + t1 / 6 - t2 / 12, // cp2.x
+          centerY * 1.666667, // cp2.y
           endX,
           bottomY,
         );
@@ -220,7 +224,10 @@ class ModernSegmentPathPainter extends CustomPainter {
 
         if (isActive && outgoingPathProgress > 0.0) {
           for (final metric in outgoingPath.computeMetrics()) {
-            final extracted = metric.extractPath(0, metric.length * outgoingPathProgress);
+            final extracted = metric.extractPath(
+              0,
+              metric.length * outgoingPathProgress,
+            );
             _drawDashedPath(
               canvas,
               extracted,
@@ -253,7 +260,10 @@ class ModernSegmentPathPainter extends CustomPainter {
 
         if (isActive && outgoingPathProgress > 0.0) {
           for (final metric in outgoingPath.computeMetrics()) {
-            final extracted = metric.extractPath(0, metric.length * outgoingPathProgress);
+            final extracted = metric.extractPath(
+              0,
+              metric.length * outgoingPathProgress,
+            );
             canvas.drawPath(
               extracted,
               Paint()
@@ -277,15 +287,19 @@ class ModernSegmentPathPainter extends CustomPainter {
 
     // ── Current-Node glow ring at the node center ──
     final double glowValue = glowAnimation?.value ?? 0.0;
-    
+
     // The subtle ambient glow behind the current unlocked level
     if (glowValue > 0.0) {
       final glowPaint = Paint()
         ..color = activeColor.withValues(alpha: 0.15 * glowValue)
         ..style = PaintingStyle.fill
         ..maskFilter = MaskFilter.blur(BlurStyle.normal, 24.0 * glowValue);
-        
-      canvas.drawCircle(Offset(nodeX, centerY), 60.0 + (10.0 * glowValue), glowPaint);
+
+      canvas.drawCircle(
+        Offset(nodeX, centerY),
+        60.0 + (10.0 * glowValue),
+        glowPaint,
+      );
     }
   }
 

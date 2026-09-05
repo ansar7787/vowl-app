@@ -52,8 +52,6 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Semantics(
@@ -240,21 +238,38 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                       ),
                                     ),
                                     if (widget.quest.explanation != null &&
-                                        widget.quest.explanation!.isNotEmpty) ...[
+                                        widget
+                                            .quest
+                                            .explanation!
+                                            .isNotEmpty) ...[
                                       SizedBox(height: compact ? 12.h : 16.h),
                                       Container(
                                         padding: EdgeInsets.all(12.r),
                                         decoration: BoxDecoration(
-                                          color: widget.color.withValues(alpha: 0.05),
-                                          borderRadius: BorderRadius.circular(12.r),
-                                          border: Border.all(color: widget.color.withValues(alpha: 0.2)),
+                                          color: widget.color.withValues(
+                                            alpha: 0.05,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
+                                          ),
+                                          border: Border.all(
+                                            color: widget.color.withValues(
+                                              alpha: 0.2,
+                                            ),
+                                          ),
                                         ),
                                         child: Column(
                                           children: [
                                             Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
                                               children: [
-                                                Icon(Icons.lightbulb_outline_rounded, color: widget.color, size: 14.r),
+                                                Icon(
+                                                  Icons
+                                                      .lightbulb_outline_rounded,
+                                                  color: widget.color,
+                                                  size: 14.r,
+                                                ),
                                                 SizedBox(width: 6.w),
                                                 Text(
                                                   'DID YOU KNOW?',
@@ -274,8 +289,12 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
-                                                fontSize: compact ? 13.sp : 14.sp,
-                                                color: widget.isDark ? Colors.white70 : Colors.black87,
+                                                fontSize: compact
+                                                    ? 13.sp
+                                                    : 14.sp,
+                                                color: widget.isDark
+                                                    ? Colors.white70
+                                                    : Colors.black87,
                                                 height: 1.4,
                                                 fontWeight: FontWeight.w500,
                                               ),

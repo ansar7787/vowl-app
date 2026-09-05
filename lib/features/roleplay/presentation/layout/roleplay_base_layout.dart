@@ -59,14 +59,10 @@ class RoleplayBaseLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final wrappedChild = Center(
       child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: kRoleplayMaxContentWidth,
-        ),
+        constraints: const BoxConstraints(maxWidth: kRoleplayMaxContentWidth),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            child,
-          ],
+          children: [child],
         ),
       ),
     );

@@ -223,7 +223,9 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                                   Text(
                                     _isAnswered.value
                                         ? "TARGET ACQUIRED!"
-                                        : (InstructionHelper.getInstruction(quest).toUpperCase()),
+                                        : (InstructionHelper.getInstruction(
+                                            quest,
+                                          ).toUpperCase()),
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',

@@ -78,7 +78,6 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     super.dispose();
   }
 
-
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 300), () {
       if (_scrollController.hasClients) {
@@ -90,7 +89,6 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       }
     });
   }
-
 
   void _playTts(String text) {
     _hapticService.selection();
@@ -320,236 +318,250 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                 child: CustomScrollView(
                                   controller: _scrollController,
                                   physics: (!_isFirstStagePassed.value)
-                                        ? const NeverScrollableScrollPhysics()
-                                        : const BouncingScrollPhysics(),
+                                      ? const NeverScrollableScrollPhysics()
+                                      : const BouncingScrollPhysics(),
                                   slivers: [
                                     SliverToBoxAdapter(
-                                    child: IgnorePointer(
-                                      ignoring: _isFirstStagePassed.value,
-                                      child: ConstrainedBox(
-                                        constraints: BoxConstraints(
-                                          minHeight: constraints.maxHeight,
-                                        ),
-                                        child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
+                                      child: IgnorePointer(
+                                        ignoring: _isFirstStagePassed.value,
+                                        child: ConstrainedBox(
+                                          constraints: BoxConstraints(
+                                            minHeight: constraints.maxHeight,
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    SizedBox(height: gapTop),
-                                                    IntonationMimicInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          _isFirstStagePassed
-                                                              .value
-                                                          ? "Great job! Now record yourself saying the word."
-                                                          : context.tr(
-                                                              'games.intonation_mimic_instruction',
-                                                              fallback:
-                                                                  "Identify the intonation",
-                                                            ),
-                                                    ),
-                                                    SizedBox(
-                                                      height: gapInstruction,
-                                                    ),
-
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 90.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: IntonationMimicPromptCard(
-                                                                  word:
-                                                                      quest
-                                                                          .word ??
-                                                                      "",
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  isDark:
-                                                                      isDark,
-                                                                  emotionContext:
-                                                                      quest
-                                                                          .emotionContext,
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapTop,
+                                                        ),
+                                                        IntonationMimicInstruction(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          instruction:
+                                                              _isFirstStagePassed
+                                                                  .value
+                                                              ? "Great job! Now record yourself saying the word."
+                                                              : context.tr(
+                                                                  'games.intonation_mimic_instruction',
+                                                                  fallback:
+                                                                      "Identify the intonation",
                                                                 ),
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : IntonationMimicPromptCard(
-                                                            word:
-                                                                quest.word ??
-                                                                "",
-                                                            color: theme
-                                                                .primaryColor,
-                                                            isDark: isDark,
-                                                            emotionContext: quest
-                                                                .emotionContext,
-                                                          ),
-                                                    SizedBox(height: gapPrompt),
+                                                        ),
+                                                        SizedBox(
+                                                          height:
+                                                              gapInstruction,
+                                                        ),
 
-                                                    if (_isAnswered.value ||
-                                                        _isFirstStagePassed
-                                                            .value) ...[
-                                                      ValueListenableBuilder<
-                                                        bool
-                                                      >(
-                                                        valueListenable:
-                                                            _isRiding,
-                                                        builder: (context, isRiding, _) {
-                                                          return ValueListenableBuilder<
-                                                            double
+                                                        isCompact
+                                                            ? SizedBox(
+                                                                height: 90.h,
+                                                                child: FittedBox(
+                                                                  fit: BoxFit
+                                                                      .scaleDown,
+                                                                  child: SizedBox(
+                                                                    width:
+                                                                        maxWidth -
+                                                                        48.w,
+                                                                    child: IntonationMimicPromptCard(
+                                                                      word:
+                                                                          quest
+                                                                              .word ??
+                                                                          "",
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      isDark:
+                                                                          isDark,
+                                                                      emotionContext:
+                                                                          quest
+                                                                              .emotionContext,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              )
+                                                            : IntonationMimicPromptCard(
+                                                                word:
+                                                                    quest
+                                                                        .word ??
+                                                                    "",
+                                                                color: theme
+                                                                    .primaryColor,
+                                                                isDark: isDark,
+                                                                emotionContext:
+                                                                    quest
+                                                                        .emotionContext,
+                                                              ),
+                                                        SizedBox(
+                                                          height: gapPrompt,
+                                                        ),
+
+                                                        if (_isAnswered.value ||
+                                                            _isFirstStagePassed
+                                                                .value) ...[
+                                                          ValueListenableBuilder<
+                                                            bool
                                                           >(
                                                             valueListenable:
-                                                                _cartPosition,
-                                                            builder:
-                                                                (
-                                                                  context,
-                                                                  cartPosition,
-                                                                  _,
-                                                                ) {
-                                                                  return IntonationMimicRollercoaster(
-                                                                    contour:
-                                                                        contour,
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                    isRiding:
-                                                                        isRiding,
-                                                                    cartPosition:
-                                                                        cartPosition,
-                                                                  );
-                                                                },
-                                                          );
-                                                        },
-                                                      ),
-                                                      SizedBox(
-                                                        height: gapSpeaker,
-                                                      ),
-                                                    ],
+                                                                _isRiding,
+                                                            builder: (context, isRiding, _) {
+                                                              return ValueListenableBuilder<
+                                                                double
+                                                              >(
+                                                                valueListenable:
+                                                                    _cartPosition,
+                                                                builder:
+                                                                    (
+                                                                      context,
+                                                                      cartPosition,
+                                                                      _,
+                                                                    ) {
+                                                                      return IntonationMimicRollercoaster(
+                                                                        contour:
+                                                                            contour,
+                                                                        color: theme
+                                                                            .primaryColor,
+                                                                        isDark:
+                                                                            isDark,
+                                                                        isRiding:
+                                                                            isRiding,
+                                                                        cartPosition:
+                                                                            cartPosition,
+                                                                      );
+                                                                    },
+                                                              );
+                                                            },
+                                                          ),
+                                                          SizedBox(
+                                                            height: gapSpeaker,
+                                                          ),
+                                                        ],
 
-                                                    IntonationMimicPulseSpeaker(
-                                                      text:
-                                                          quest.textToSpeak ??
-                                                          "",
-                                                      color: theme.primaryColor,
-                                                      onPlayTts: _playTts,
+                                                        IntonationMimicPulseSpeaker(
+                                                          text:
+                                                              quest
+                                                                  .textToSpeak ??
+                                                              "",
+                                                          color: theme
+                                                              .primaryColor,
+                                                          onPlayTts: _playTts,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapSpeaker,
+                                                        ),
+                                                        IntonationMimicVerticalFader(
+                                                          options: options,
+                                                          correctIndex:
+                                                              quest
+                                                                  .correctAnswerIndex ??
+                                                              0,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          isAnswered:
+                                                              _isAnswered
+                                                                  .value ||
+                                                              _isFirstStagePassed
+                                                                  .value,
+                                                          selectedIndex:
+                                                              _selectedIndex
+                                                                  .value,
+                                                          sliderValue:
+                                                              _sliderValue
+                                                                  .value,
+                                                          topIndex: topIndex,
+                                                          bottomIndex:
+                                                              bottomIndex,
+                                                          onSubmitChoice:
+                                                              (idx, correct) =>
+                                                                  _submitChoice(
+                                                                    idx,
+                                                                    correct,
+                                                                    topIndex,
+                                                                    bottomIndex,
+                                                                  ),
+                                                          onSliderUpdate:
+                                                              (val, correct) =>
+                                                                  _onSliderUpdate(
+                                                                    val,
+                                                                    correct,
+                                                                    topIndex,
+                                                                    bottomIndex,
+                                                                  ),
+                                                        ),
+
+                                                        SizedBox(
+                                                          height: gapBottom,
+                                                        ),
+                                                      ],
                                                     ),
                                                   ],
                                                 ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: gapSpeaker,
-                                                    ),
-                                                    IntonationMimicVerticalFader(
-                                                      options: options,
-                                                      correctIndex:
-                                                          quest
-                                                              .correctAnswerIndex ??
-                                                          0,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
-                                                              .value,
-                                                      selectedIndex:
-                                                          _selectedIndex.value,
-                                                      sliderValue:
-                                                          _sliderValue.value,
-                                                      topIndex: topIndex,
-                                                      bottomIndex: bottomIndex,
-                                                      onSubmitChoice:
-                                                          (idx, correct) =>
-                                                              _submitChoice(
-                                                                idx,
-                                                                correct,
-                                                                topIndex,
-                                                                bottomIndex,
-                                                              ),
-                                                      onSliderUpdate:
-                                                          (val, correct) =>
-                                                              _onSliderUpdate(
-                                                                val,
-                                                                correct,
-                                                                topIndex,
-                                                                bottomIndex,
-                                                              ),
-                                                    ),
+                                              ),
 
-                                                    SizedBox(height: gapBottom),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
+                                              SizedBox(
+                                                height:
+                                                    (_isFirstStagePassed
+                                                            .value &&
+                                                        !_isAnswered.value)
+                                                    ? 380.h
+                                                    : 160.h,
+                                              ),
+                                            ],
                                           ),
-
-                                          SizedBox(
-                                            height:
-                                                (_isFirstStagePassed.value &&
-                                                    !_isAnswered.value)
-                                                ? 380.h
-                                                : 160.h,
-                                          ),
-                                        ],
-
+                                        ),
                                       ),
-
                                     ),
 
-                                  ),
+                                    if (_isFirstStagePassed.value &&
+                                        !_isAnswered.value)
+                                      SliverToBoxAdapter(
+                                        child: Column(
+                                          children: [
+                                            if (_isFirstStagePassed.value &&
+                                                !_isAnswered.value)
+                                              SpeakToConfirmOverlay(
+                                                expectedText: quest.word ?? "",
+                                                displayText:
+                                                    "Speak the sentence with the correct intonation:\n${quest.word ?? ""}",
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                onConfirmed: () =>
+                                                    _submitVerbalEvaluation(
+                                                      true,
+                                                    ),
+                                                onSkipped: () =>
+                                                    _submitVerbalEvaluation(
+                                                      false,
+                                                    ),
+                                                isPositioned: false,
+                                              ),
 
+                                            SizedBox(height: 60.h),
+                                          ],
+                                        ),
+                                      ),
+                                  ],
                                 ),
-
-                                if (_isFirstStagePassed.value && !_isAnswered.value)
-
-                                  SliverToBoxAdapter(
-
-                                    child: Column(
-
-                                      children: [
-if (_isFirstStagePassed.value && !_isAnswered.value)
-                            SpeakToConfirmOverlay(
-                              expectedText: quest.word ?? "",
-                              displayText:
-                                  "Speak the sentence with the correct intonation:\n${quest.word ?? ""}",
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
-                              isPositioned: false,
-                            ),
-  
-
-                                        SizedBox(height: 60.h),
-
-                                      ],
-
-                                    ),
-
-                                  ),
-
-                                ],
-
-                              ),
                               );
                             },
                           ),
-                                                ],
+                        ],
                       ),
               );
             },

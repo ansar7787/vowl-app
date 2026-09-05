@@ -25,7 +25,6 @@ import 'package:vowl/core/presentation/widgets/games/maps/modern_map_node.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/glass_map_header.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-
 /// A premium, highly-performant quest category selection map.
 ///
 /// Incorporates organic paths, mesh gradient backgrounds, interactive mascot triggers,
@@ -100,15 +99,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   @override
   void initState() {
     super.initState();
-    
+
     // Calculate initial scroll position so the user instantly lands on their current level
     double initialOffset = 0.0;
     final authState = context.read<AuthBloc>().state;
     if (authState.user != null) {
-      final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
-      final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+      final completedLevels =
+          authState.user!.completedLevels[widget.gameType] ?? [];
+      final highestCompleted = completedLevels.isEmpty
+          ? 0
+          : completedLevels.reduce(math.max);
       final targetLevel = math.min(200, highestCompleted + 1);
-      
+
       // Obtain GameCategory using a dummy isDark value (doesn't affect category mapping)
       final theme = LevelThemeHelper.getCategoryTheme(
         widget.categoryId,
@@ -121,7 +123,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     }
 
     _scrollController = ScrollController(initialScrollOffset: initialOffset);
-    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+    _confettiController = ConfettiController(
+      duration: const Duration(seconds: 2),
+    );
 
     // 1. Unified fade-in entry animation (path + nodes together)
     _entryController = AnimationController(
@@ -227,10 +231,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
               user.vowlMascot ?? 'vowl_prime',
             );
             _buddyMessage = context.tr(
-                'category_map.first_level_greeting',
-                args: [mascotName],
-                fallback: "Hey! $mascotName here. Let's start Level 1! 🚀",
-              );
+              'category_map.first_level_greeting',
+              args: [mascotName],
+              fallback: "Hey! $mascotName here. Let's start Level 1! 🚀",
+            );
             _updateState();
             _buddyMessageTimer = Timer(const Duration(seconds: 5), () {
               if (mounted) {
@@ -250,8 +254,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final authState = context.read<AuthBloc>().state;
     final List<int> completedLevels =
         authState.user?.completedLevels[widget.gameType] ?? [];
-    final int highestCompleted =
-        completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
+    final int highestCompleted = completedLevels.isEmpty
+        ? 0
+        : completedLevels.reduce(math.max);
 
     // Always scroll to the node the user actually needs to interact with next
     final int targetLevel = math.min(200, highestCompleted + 1);
@@ -300,15 +305,17 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       action();
       return;
     }
-    
+
     // 1. Wait for overlaying screens (like the victory game screen) to finish popping
-    if (route.secondaryAnimation != null && !route.secondaryAnimation!.isDismissed) {
+    if (route.secondaryAnimation != null &&
+        !route.secondaryAnimation!.isDismissed) {
       void listener(AnimationStatus status) {
         if (status == AnimationStatus.dismissed) {
           route.secondaryAnimation!.removeStatusListener(listener);
           if (mounted) action();
         }
       }
+
       route.secondaryAnimation!.addStatusListener(listener);
       return;
     }
@@ -321,6 +328,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
           if (mounted) action();
         }
       }
+
       route.animation!.addStatusListener(listener);
       return;
     }
@@ -410,8 +418,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       listenWhen: (prev, curr) {
         final prevUnlocked = prev.user?.unlockedLevels[widget.gameType] ?? 1;
         final currUnlocked = curr.user?.unlockedLevels[widget.gameType] ?? 1;
-        final prevCompleted = prev.user?.completedLevels[widget.gameType]?.length ?? 0;
-        final currCompleted = curr.user?.completedLevels[widget.gameType]?.length ?? 0;
+        final prevCompleted =
+            prev.user?.completedLevels[widget.gameType]?.length ?? 0;
+        final currCompleted =
+            curr.user?.completedLevels[widget.gameType]?.length ?? 0;
         return prevUnlocked != currUnlocked || prevCompleted != currCompleted;
       },
       listener: (context, state) {
@@ -466,193 +476,208 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
           valueListenable: _stateHash,
           builder: (context, _, child) {
             return AbsorbPointer(
-          absorbing: _isSequenceAnimating,
-          child: Scaffold(
-            backgroundColor: theme.backgroundColors[1],
-            extendBody: true,
-            body: Stack(
-            children: [
-              // 1. Clean Minimal Static Background
-              _buildBackground(theme, isDark),
+              absorbing: _isSequenceAnimating,
+              child: Scaffold(
+                backgroundColor: theme.backgroundColors[1],
+                extendBody: true,
+                body: Stack(
+                  children: [
+                    // 1. Clean Minimal Static Background
+                    _buildBackground(theme, isDark),
 
-              // 2. Scrollable Map Core
-              CustomScrollView(
-                controller: _scrollController,
-                physics: _isSequenceAnimating
-                    ? const NeverScrollableScrollPhysics()
-                    : const BouncingScrollPhysics(),
-                slivers: [
-                  // SliverAppBar Back Pill
-                  SliverAppBar(
-                    pinned: false,
-                    floating: false,
-                    snap: false,
-                    automaticallyImplyLeading: false,
-                    backgroundColor: Colors.transparent,
-                    surfaceTintColor: Colors.transparent,
-                    elevation: 0,
-                    toolbarHeight: 50.h,
-                    leadingWidth: 70.r,
-                    leading: Padding(
-                      padding: EdgeInsets.only(left: 16.r),
-                      child: Semantics(
-                        button: true,
-                        label: context.tr('common.back', fallback: 'Back'),
-                        child: ScaleButton(
-                          onTap: () {
-                            if (context.canPop()) {
-                              context.pop();
-                            } else {
-                              context.go('/home');
-                            }
-                          },
-                          child: Container(
-                            width: 48.r,
-                            height: 48.r,
-                            alignment: Alignment.center,
-                            child: ExcludeSemantics(
-                              child: Builder(
-                                builder: (context) {
-                                  final isRtl =
-                                      Directionality.of(context) ==
-                                      TextDirection.rtl;
-                                  return Container(
-                                    width: 36.r,
-                                    height: 36.r,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      isRtl
-                                          ? Icons.arrow_forward_ios_rounded
-                                          : Icons.arrow_back_ios_new_rounded,
-                                      color: const Color(0xFF0F172A),
-                                      size: 16.r,
-                                    ),
-                                  );
+                    // 2. Scrollable Map Core
+                    CustomScrollView(
+                      controller: _scrollController,
+                      physics: _isSequenceAnimating
+                          ? const NeverScrollableScrollPhysics()
+                          : const BouncingScrollPhysics(),
+                      slivers: [
+                        // SliverAppBar Back Pill
+                        SliverAppBar(
+                          pinned: false,
+                          floating: false,
+                          snap: false,
+                          automaticallyImplyLeading: false,
+                          backgroundColor: Colors.transparent,
+                          surfaceTintColor: Colors.transparent,
+                          elevation: 0,
+                          toolbarHeight: 50.h,
+                          leadingWidth: 70.r,
+                          leading: Padding(
+                            padding: EdgeInsets.only(left: 16.r),
+                            child: Semantics(
+                              button: true,
+                              label: context.tr(
+                                'common.back',
+                                fallback: 'Back',
+                              ),
+                              child: ScaleButton(
+                                onTap: () {
+                                  if (context.canPop()) {
+                                    context.pop();
+                                  } else {
+                                    context.go('/home');
+                                  }
                                 },
+                                child: Container(
+                                  width: 48.r,
+                                  height: 48.r,
+                                  alignment: Alignment.center,
+                                  child: ExcludeSemantics(
+                                    child: Builder(
+                                      builder: (context) {
+                                        final isRtl =
+                                            Directionality.of(context) ==
+                                            TextDirection.rtl;
+                                        return Container(
+                                          width: 36.r,
+                                          height: 36.r,
+                                          decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Icon(
+                                            isRtl
+                                                ? Icons
+                                                      .arrow_forward_ios_rounded
+                                                : Icons
+                                                      .arrow_back_ios_new_rounded,
+                                            color: const Color(0xFF0F172A),
+                                            size: 16.r,
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                  ),
 
-                  // Header Panel Widget
-                  SliverToBoxAdapter(
-                    child: GlassMapHeader(
-                      theme: theme,
-                      user: user,
-                      isDark: isDark,
-                      gameType: widget.gameType,
-                    ),
-                  ),
-
-                  // Track View — Lazy SliverList with per-segment path painting & smooth entrance fade
-                  if (_isLoading)
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(
-                              width: 40.r,
-                              height: 40.r,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 3.r,
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  theme.primaryColor.withValues(alpha: 0.6),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 16.h),
-                            Text(
-                              context.tr('games.loading_map', fallback: 'Loading map...'),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w600,
-                                color: isDark ? Colors.white38 : Colors.black26,
-                              ),
-                            ),
-                          ],
+                        // Header Panel Widget
+                        SliverToBoxAdapter(
+                          child: GlassMapHeader(
+                            theme: theme,
+                            user: user,
+                            isDark: isDark,
+                            gameType: widget.gameType,
+                          ),
                         ),
+
+                        // Track View — Lazy SliverList with per-segment path painting & smooth entrance fade
+                        if (_isLoading)
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Center(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(
+                                    width: 40.r,
+                                    height: 40.r,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 3.r,
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        theme.primaryColor.withValues(
+                                          alpha: 0.6,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 16.h),
+                                  Text(
+                                    context.tr(
+                                      'games.loading_map',
+                                      fallback: 'Loading map...',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: isDark
+                                          ? Colors.white38
+                                          : Colors.black26,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        else
+                          SliverFadeTransition(
+                            opacity: CurvedAnimation(
+                              parent: _entryController,
+                              curve: Curves.easeOut,
+                            ),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate((
+                                context,
+                                index,
+                              ) {
+                                // Last item: bottom spacer
+                                if (index == _totalLevels) {
+                                  return SizedBox(height: 150.h);
+                                }
+                                final levelNumber = index + 1;
+                                final point = points[index];
+                                return ModernMapNode(
+                                  index: index,
+                                  levelNumber: levelNumber,
+                                  totalLevels: _totalLevels,
+                                  point: point,
+                                  points: points,
+                                  rowSpacing: rowSpacing,
+                                  unlockedLevels: unlockedLevels,
+                                  completedLevels: completedLevels,
+                                  isPremium: isPremium,
+                                  justUnlockedLevel: _justUnlockedLevel,
+                                  celebratingLevel: _celebratingLevel,
+                                  unlockPathController: _unlockPathController,
+                                  glowController: _glowController,
+                                  confettiController: _confettiController,
+                                  theme: theme,
+                                  isDark: isDark,
+                                  categoryId: widget.categoryId,
+                                  gameType: widget.gameType,
+                                );
+                              }, childCount: _totalLevels + 1),
+                            ),
+                          ),
+                      ],
+                    ),
+
+                    if (_activeStoryBeat != null)
+                      Positioned.fill(
+                        child: Container(
+                          color: Colors.black54,
+                          child: StoryDialogueBox(
+                            beat: _activeStoryBeat!,
+                            onDismiss: () {
+                              _activeStoryBeat = null;
+                              _updateState();
+                            },
+                          ),
+                        ).animate().fadeIn(),
                       ),
-                    )
-                  else
-                  SliverFadeTransition(
-                    opacity: CurvedAnimation(
-                      parent: _entryController,
-                      curve: Curves.easeOut,
-                    ),
-                    sliver: SliverList(
-                      delegate: SliverChildBuilderDelegate((context, index) {
-                        // Last item: bottom spacer
-                        if (index == _totalLevels) {
-                          return SizedBox(height: 150.h);
-                        }
-                        final levelNumber = index + 1;
-                        final point = points[index];
-                        return ModernMapNode(
-                          index: index,
-                          levelNumber: levelNumber,
-                          totalLevels: _totalLevels,
-                          point: point,
-                          points: points,
-                          rowSpacing: rowSpacing,
-                          unlockedLevels: unlockedLevels,
-                          completedLevels: completedLevels,
-                          isPremium: isPremium,
-                          justUnlockedLevel: _justUnlockedLevel,
-                          celebratingLevel: _celebratingLevel,
-                          unlockPathController: _unlockPathController,
-                          glowController: _glowController,
-                          confettiController: _confettiController,
-                          theme: theme,
-                          isDark: isDark,
-                          categoryId: widget.categoryId,
-                          gameType: widget.gameType,
-                        );
-                      }, childCount: _totalLevels + 1),
-                    ),
-                  ),
-                ],
-              ),
 
-              if (_activeStoryBeat != null)
-                Positioned.fill(
-                  child: Container(
-                    color: Colors.black54,
-                    child: StoryDialogueBox(
-                      beat: _activeStoryBeat!,
-                      onDismiss: () {
-                        _activeStoryBeat = null;
-                        _updateState();
-                      },
+                    // Star Vault FAB
+                    Positioned(
+                      bottom: 32.h,
+                      right: 24.w,
+                      child: _buildStarVaultButton(theme),
                     ),
-                  ).animate().fadeIn(),
+
+                    // Golden Keys FAB
+                    Positioned(
+                      bottom: 32.h,
+                      left: 24.w,
+                      child: _buildGoldenKeysButton(theme),
+                    ), // end of Positioned
+                  ],
                 ),
-
-              // Star Vault FAB
-              Positioned(
-                bottom: 32.h,
-                right: 24.w,
-                child: _buildStarVaultButton(theme),
               ),
-
-              // Golden Keys FAB
-              Positioned(
-                bottom: 32.h,
-                left: 24.w,
-                child: _buildGoldenKeysButton(theme),
-              ), // end of Positioned
-            ],
-          ),
-        ),
-        );
+            );
           },
         ),
       ),
@@ -660,7 +685,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   double _getVerticalSpacing(GameCategory category) {
-    // 170.h is the true Diamond Standard. It keeps the map content-rich 
+    // 170.h is the true Diamond Standard. It keeps the map content-rich
     // and perfectly dense without feeling squished.
     return 170.h;
   }
@@ -690,41 +715,46 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final maxOffset = screenWidth * 0.36;
 
     // ── Beautiful Premium S-Curve Path ──
-    // 
-    // We use a 7-node sine wave (freq = pi/3.5) combined with the perfectly 
+    //
+    // We use a 7-node sine wave (freq = pi/3.5) combined with the perfectly
     // smooth Catmull-Rom spline in the painter. This creates a massive, gorgeous,
     // organic river that flows naturally without any sharp Z-kinks or boring repetition!
-    
+
     final rng = math.Random(category.index * 7919 + 31);
-    const double freq = math.pi / 3.5; 
-    
+    const double freq = math.pi / 3.5;
+
     for (int i = 0; i < _totalLevels; i++) {
       // Offset by category index to give each category a slightly different starting phase
       final double phase = (category.index * math.pi / 2);
-      
+
       // Base pure sine wave that creates the sweeping S-shape
       final double baseSine = math.sin((i * freq) + phase);
-      
+
       // ── STABILITY FIX ──
-      // Previously, the amplitude could drop to 50% width, making certain sections 
-      // (like the first 20 levels) look narrow, tight, or "straight". 
-      // Now it varies smoothly between 85% and 100%, so the curves are ALWAYS 
+      // Previously, the amplitude could drop to 50% width, making certain sections
+      // (like the first 20 levels) look narrow, tight, or "straight".
+      // Now it varies smoothly between 85% and 100%, so the curves are ALWAYS
       // wide, gorgeous, and sweeping everywhere.
-      final double slowAmplitude = 0.925 + math.sin(i * 0.15 + category.index * 3) * 0.075;
-      
+      final double slowAmplitude =
+          0.925 + math.sin(i * 0.15 + category.index * 3) * 0.075;
+
       // Smoothly drift the entire S-curve slightly left or right across the screen
       final double slowDrift = math.sin(i * 0.08 + category.index * 7) * 0.12;
-      
+
       // Add a slight per-node organic jitter (±3%) so it feels beautifully hand-placed
       final double jitter = (rng.nextDouble() - 0.5) * 0.06;
-      
-      // Force the first node (i=0) to be exactly in the center so the connection 
-      // from the header is perfectly vertical. We gracefully fade the amplitude 
+
+      // Force the first node (i=0) to be exactly in the center so the connection
+      // from the header is perfectly vertical. We gracefully fade the amplitude
       // in over the first 1.5 nodes to smoothly start the sweeping S-curve.
       final double startFade = math.min(i / 1.5, 1.0);
-      
+
       // Combine it all
-      final double combined = ((baseSine * slowAmplitude + slowDrift + jitter) * startFade).clamp(-1.0, 1.0);
+      final double combined =
+          ((baseSine * slowAmplitude + slowDrift + jitter) * startFade).clamp(
+            -1.0,
+            1.0,
+          );
 
       final offsetX = centerX + (combined * maxOffset);
       final y = (i * spacing) + (spacing / 2);
@@ -756,53 +786,55 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             fallback: 'Star Vault, $totalStars stars',
           ),
           child: ScaleButton(
-          onTap: () => StarVaultBottomSheet.show(
-            context,
-            widget.gameType,
-            theme.primaryColor,
+            onTap: () => StarVaultBottomSheet.show(
+              context,
+              widget.gameType,
+              theme.primaryColor,
+            ),
+            child: ExcludeSemantics(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: theme.primaryColor,
+                  borderRadius: BorderRadius.circular(30.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: theme.primaryColor.withValues(alpha: 0.4),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.lock_outline_rounded,
+                      color: Colors.white,
+                      size: 20.sp,
+                    ),
+                    SizedBox(width: 8.w),
+                    Text(
+                      "$totalStars",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                    SizedBox(width: 4.w),
+                    Icon(
+                      Icons.star_rounded,
+                      color: const Color(0xFFFFD700),
+                      size: 18.sp,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
-          child: ExcludeSemantics(
-            child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: theme.primaryColor,
-              borderRadius: BorderRadius.circular(30.r),
-              boxShadow: [
-                BoxShadow(
-                  color: theme.primaryColor.withValues(alpha: 0.4),
-                  blurRadius: 12,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.lock_outline_rounded,
-                  color: Colors.white,
-                  size: 20.sp,
-                ),
-                SizedBox(width: 8.w),
-                Text(
-                  "$totalStars",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    fontSize: 16.sp,
-                  ),
-                ),
-                SizedBox(width: 4.w),
-                Icon(
-                  Icons.star_rounded,
-                  color: const Color(0xFFFFD700),
-                  size: 18.sp,
-                ),
-              ],
-            ),
-          )),
-        ));
+        );
       },
     );
   }
@@ -820,43 +852,45 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             fallback: 'Golden Keys, $keys keys',
           ),
           child: ScaleButton(
-          onTap: () => KeyShopBottomSheet.show(
-            context: context,
-            isKidsMode: false,
-            primaryColor: theme.primaryColor,
+            onTap: () => KeyShopBottomSheet.show(
+              context: context,
+              isKidsMode: false,
+              primaryColor: theme.primaryColor,
+            ),
+            child: ExcludeSemantics(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(30.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.amber.withValues(alpha: 0.4),
+                      blurRadius: 12,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.key_rounded, color: Colors.white, size: 20.sp),
+                    SizedBox(width: 8.w),
+                    Text(
+                      "$keys",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
-          child: ExcludeSemantics(
-            child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(30.r),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.amber.withValues(alpha: 0.4),
-                  blurRadius: 12,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.key_rounded, color: Colors.white, size: 20.sp),
-                SizedBox(width: 8.w),
-                Text(
-                  "$keys",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    fontSize: 16.sp,
-                  ),
-                ),
-              ],
-            ),
-          )),
-        ));
+        );
       },
     );
   }
@@ -875,25 +909,67 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       IconData icon;
       switch (theme.category) {
         case GameCategory.reading:
-          icon = [Icons.menu_book_rounded, Icons.auto_stories_rounded, Icons.chrome_reader_mode_rounded, Icons.library_books_rounded, Icons.book_rounded][index];
+          icon = [
+            Icons.menu_book_rounded,
+            Icons.auto_stories_rounded,
+            Icons.chrome_reader_mode_rounded,
+            Icons.library_books_rounded,
+            Icons.book_rounded,
+          ][index];
           break;
         case GameCategory.writing:
-          icon = [Icons.edit_note_rounded, Icons.history_edu_rounded, Icons.draw_rounded, Icons.create_rounded, Icons.article_rounded][index];
+          icon = [
+            Icons.edit_note_rounded,
+            Icons.history_edu_rounded,
+            Icons.draw_rounded,
+            Icons.create_rounded,
+            Icons.article_rounded,
+          ][index];
           break;
         case GameCategory.speaking:
-          icon = [Icons.mic_external_on_rounded, Icons.record_voice_over_rounded, Icons.mic_rounded, Icons.campaign_rounded, Icons.interpreter_mode_rounded][index];
+          icon = [
+            Icons.mic_external_on_rounded,
+            Icons.record_voice_over_rounded,
+            Icons.mic_rounded,
+            Icons.campaign_rounded,
+            Icons.interpreter_mode_rounded,
+          ][index];
           break;
         case GameCategory.listening:
-          icon = [Icons.headset_rounded, Icons.graphic_eq_rounded, Icons.hearing_rounded, Icons.music_note_rounded, Icons.volume_up_rounded][index];
+          icon = [
+            Icons.headset_rounded,
+            Icons.graphic_eq_rounded,
+            Icons.hearing_rounded,
+            Icons.music_note_rounded,
+            Icons.volume_up_rounded,
+          ][index];
           break;
         case GameCategory.grammar:
-          icon = [Icons.architecture_rounded, Icons.account_tree_rounded, Icons.hub_rounded, Icons.schema_rounded, Icons.lan_rounded][index];
+          icon = [
+            Icons.architecture_rounded,
+            Icons.account_tree_rounded,
+            Icons.hub_rounded,
+            Icons.schema_rounded,
+            Icons.lan_rounded,
+          ][index];
           break;
         case GameCategory.vocabulary:
-          icon = [Icons.bubble_chart_rounded, Icons.category_rounded, Icons.extension_rounded, Icons.widgets_rounded, Icons.apps_rounded][index];
+          icon = [
+            Icons.bubble_chart_rounded,
+            Icons.category_rounded,
+            Icons.extension_rounded,
+            Icons.widgets_rounded,
+            Icons.apps_rounded,
+          ][index];
           break;
         case GameCategory.eliteMastery:
-          icon = [Icons.workspace_premium_rounded, Icons.military_tech_rounded, Icons.diamond_rounded, Icons.emoji_events_rounded, Icons.star_rounded][index];
+          icon = [
+            Icons.workspace_premium_rounded,
+            Icons.military_tech_rounded,
+            Icons.diamond_rounded,
+            Icons.emoji_events_rounded,
+            Icons.star_rounded,
+          ][index];
           break;
         default:
           icon = Icons.star_rounded;
@@ -940,7 +1016,3 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
   }
 }
-
-
-
-

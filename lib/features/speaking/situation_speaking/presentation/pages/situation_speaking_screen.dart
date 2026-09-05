@@ -239,7 +239,10 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                       children: [
                                         SituationSpeakingHeader(
                                           primaryColor: theme.primaryColor,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         SituationSpeakingFogScrubberPanel(

@@ -30,7 +30,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
   final ValueNotifier<bool> _isLoading = ValueNotifier(false);
 
   static const int _coinReward = 20;
-  
+
   int _remainingClaims = RewardLimitService.maxClaimsPerDay;
   bool _isLoadingLimits = true;
 
@@ -78,7 +78,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
         },
         onDismissed: () async {
           if (!rewardEarned) return;
-          
+
           await RewardLimitService.incrementClaimCount('coins');
           if (mounted) await _loadLimits();
 
@@ -90,7 +90,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                 isEarned: true,
               ),
             );
-            
+
             CustomSnackBar.show(
               context: context,
               message: context.tr(
@@ -122,133 +122,138 @@ class _AdRewardCardState extends State<AdRewardCard> {
         valueListenable: _stateHash,
         builder: (context, _, child) {
           return GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(20.r),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              isPremium
-                  ? context.tr(
-                      'games.claim_free_coins_title',
-                      fallback: 'CLAIM FREE COINS',
-                    )
-                  : context.tr(
-                      'games.watch_earn_coins_title',
-                      fallback: 'WATCH AND EARN COINS',
-                    ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF6366F1),
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 16.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            borderRadius: BorderRadius.circular(24.r),
+            padding: EdgeInsets.all(20.r),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                // ── Coin label ────────────────────────────────────
-                Flexible(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(6.r),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF10B981).withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
+                Text(
+                  isPremium
+                      ? context.tr(
+                          'games.claim_free_coins_title',
+                          fallback: 'CLAIM FREE COINS',
+                        )
+                      : context.tr(
+                          'games.watch_earn_coins_title',
+                          fallback: 'WATCH AND EARN COINS',
                         ),
-                        child: Icon(
-                          Icons.monetization_on_rounded,
-                          color: const Color(0xFF10B981),
-                          size: 16.r,
-                        ),
-                      ),
-                      SizedBox(width: 8.w),
-                      Flexible(
-                        child: Text(
-                          context.tr(
-                            'games.vowl_coins_amount',
-                            args: ['$_coinReward'],
-                            fallback: '$_coinReward VOWL COINS',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF0F172A),
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    ],
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFF6366F1),
+                    letterSpacing: 2.0,
                   ),
                 ),
-
-                SizedBox(width: 8.w),
-
-                // ── Watch button ──────────────────────────────────
-                ValueListenableBuilder<bool>(
-                  valueListenable: _isLoading,
-                  builder: (context, loading, child) {
-                    return Semantics(
-                      button: true,
-                      enabled: !loading,
-                      label: isPremium
-                          ? context.tr(
-                              'games.coins_semantic_claim_label',
-                              args: ['$_coinReward'],
-                              fallback: 'Claim $_coinReward free coins',
-                            )
-                          : context.tr(
-                              'games.coins_semantic_label',
-                              args: ['$_coinReward'],
-                              fallback: 'Watch ad to earn $_coinReward coins',
+                SizedBox(height: 16.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // ── Coin label ────────────────────────────────────
+                    Flexible(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(6.r),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFF10B981,
+                              ).withValues(alpha: 0.1),
+                              shape: BoxShape.circle,
                             ),
-                      child: ScaleButton(
-                        onTap: loading ? null : _showRewardAd,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 8.h,
+                            child: Icon(
+                              Icons.monetization_on_rounded,
+                              color: const Color(0xFF10B981),
+                              size: 16.r,
+                            ),
                           ),
-                          constraints: BoxConstraints(minHeight: 48.h),
-                          decoration: BoxDecoration(
-                            gradient: loading
-                                ? null
-                                : const LinearGradient(
-                                    colors: [
-                                      Color(0xFF6366F1),
-                                      Color(0xFF6366F1),
-                                    ],
-                                  ),
-                            color: loading
-                                ? const Color(0xFF6366F1).withValues(alpha: 0.4)
-                                : null,
-                            borderRadius: BorderRadius.circular(20.r),
-                            boxShadow: loading
-                                ? null
-                                : [
-                                    BoxShadow(
-                                      color: const Color(
-                                        0xFF6366F1,
-                                      ).withValues(alpha: 0.3),
-                                      blurRadius: 10,
-                                      offset: const Offset(0, 4),
-                                    ),
-                                  ],
+                          SizedBox(width: 8.w),
+                          Flexible(
+                            child: Text(
+                              context.tr(
+                                'games.vowl_coins_amount',
+                                args: ['$_coinReward'],
+                                fallback: '$_coinReward VOWL COINS',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                          child: loading || _isLoadingLimits
-                              ? const VowlButtonSpinner(
-                                  size: 18,
-                                  color: Colors.white,
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(width: 8.w),
+
+                    // ── Watch button ──────────────────────────────────
+                    ValueListenableBuilder<bool>(
+                      valueListenable: _isLoading,
+                      builder: (context, loading, child) {
+                        return Semantics(
+                          button: true,
+                          enabled: !loading,
+                          label: isPremium
+                              ? context.tr(
+                                  'games.coins_semantic_claim_label',
+                                  args: ['$_coinReward'],
+                                  fallback: 'Claim $_coinReward free coins',
                                 )
-                              : _remainingClaims <= 0
+                              : context.tr(
+                                  'games.coins_semantic_label',
+                                  args: ['$_coinReward'],
+                                  fallback:
+                                      'Watch ad to earn $_coinReward coins',
+                                ),
+                          child: ScaleButton(
+                            onTap: loading ? null : _showRewardAd,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 8.h,
+                              ),
+                              constraints: BoxConstraints(minHeight: 48.h),
+                              decoration: BoxDecoration(
+                                gradient: loading
+                                    ? null
+                                    : const LinearGradient(
+                                        colors: [
+                                          Color(0xFF6366F1),
+                                          Color(0xFF6366F1),
+                                        ],
+                                      ),
+                                color: loading
+                                    ? const Color(
+                                        0xFF6366F1,
+                                      ).withValues(alpha: 0.4)
+                                    : null,
+                                borderRadius: BorderRadius.circular(20.r),
+                                boxShadow: loading
+                                    ? null
+                                    : [
+                                        BoxShadow(
+                                          color: const Color(
+                                            0xFF6366F1,
+                                          ).withValues(alpha: 0.3),
+                                          blurRadius: 10,
+                                          offset: const Offset(0, 4),
+                                        ),
+                                      ],
+                              ),
+                              child: loading || _isLoadingLimits
+                                  ? const VowlButtonSpinner(
+                                      size: 18,
+                                      color: Colors.white,
+                                    )
+                                  : _remainingClaims <= 0
                                   ? Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
@@ -273,7 +278,9 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Icon(
-                                          isPremium ? Icons.redeem_rounded : Icons.play_arrow_rounded,
+                                          isPremium
+                                              ? Icons.redeem_rounded
+                                              : Icons.play_arrow_rounded,
                                           color: Colors.white,
                                           size: 20.r,
                                         ),
@@ -297,15 +304,15 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                         ),
                                       ],
                                     ),
-                        ),
-                      ),
-                    );
-                  },
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
           );
         },
       ),

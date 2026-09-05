@@ -296,7 +296,9 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                       child: _buildInstruction(
                                                         theme.primaryColor,
                                                         isDark,
-                                                        InstructionHelper.getInstruction(quest),
+                                                        InstructionHelper.getInstruction(
+                                                          quest,
+                                                        ),
                                                       ),
                                                     ),
                                                     SizedBox(

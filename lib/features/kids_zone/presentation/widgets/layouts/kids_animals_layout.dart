@@ -162,7 +162,9 @@ class KidsAnimalsLayout extends StatelessWidget {
               ? null
               : () {
                   if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                    di.sl<KidsTTSService>().speak(InstructionHelper.getInstruction(quest));
+                    di.sl<KidsTTSService>().speak(
+                      InstructionHelper.getInstruction(quest),
+                    );
                   }
                 },
           child: Container(

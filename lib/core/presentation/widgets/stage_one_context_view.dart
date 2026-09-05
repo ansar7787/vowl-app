@@ -53,7 +53,10 @@ class StageOneContextView extends StatelessWidget {
                       color: primaryColor,
                       size: 32.r,
                     ),
-                  ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                  ).animate().scale(
+                    duration: 400.ms,
+                    curve: Curves.easeOutBack,
+                  ),
                   SizedBox(height: 24.h),
 
                   // Main Context Label
@@ -73,7 +76,9 @@ class StageOneContextView extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(24.r),
                     decoration: BoxDecoration(
-                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.03),
                       borderRadius: BorderRadius.circular(24.r),
                       border: Border.all(
                         color: primaryColor.withValues(alpha: 0.2),
@@ -95,12 +100,15 @@ class StageOneContextView extends StatelessWidget {
 
                   // Optional Pedagogical Fields
                   if (pedagogicalContent != null)
-                    pedagogicalContent!.animate().fadeIn(delay: 400.ms).slideY(begin: 0.1),
+                    pedagogicalContent!
+                        .animate()
+                        .fadeIn(delay: 400.ms)
+                        .slideY(begin: 0.1),
                 ],
               ),
             ),
           ),
-          
+
           // Proceed Button
           SizedBox(height: 16.h),
           ScaleButton(

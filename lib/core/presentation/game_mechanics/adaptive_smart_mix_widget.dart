@@ -50,7 +50,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
       _computeMix();
     }
   }
-  
+
   @override
   void dispose() {
     _mixNotifier.dispose();
@@ -91,7 +91,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
       if (_blueprint!.tier3.isNotEmpty) getWeakestGame(_blueprint!.tier3),
     ];
 
-    // Prevent unnecessary ValueNotifier triggers and re-animations 
+    // Prevent unnecessary ValueNotifier triggers and re-animations
     // if the resulting weakest games list is exactly the same as before.
     if (!listEquals(_mixNotifier.value, newMix)) {
       _mixNotifier.value = newMix;
@@ -161,18 +161,24 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
                   if (entry.key == 2) tierLabel = _blueprint!.tier3Label;
 
                   return Padding(
-                    key: ValueKey('${entry.value.name}_${entry.key}'),
-                    padding: EdgeInsets.only(bottom: 12.h),
-                    child: _buildMixCard(
-                      context,
-                      entry.value,
-                      entry.key + 1,
-                      theme.primaryColor,
-                      tierLabel,
-                    ),
-                  ).animate(key: ValueKey('anim_${entry.value.name}_${entry.key}'))
-                   .fadeIn(delay: (200 + entry.key * 100).ms, duration: 400.ms)
-                   .slideY(begin: 0.2, end: 0, curve: Curves.easeOutBack);
+                        key: ValueKey('${entry.value.name}_${entry.key}'),
+                        padding: EdgeInsets.only(bottom: 12.h),
+                        child: _buildMixCard(
+                          context,
+                          entry.value,
+                          entry.key + 1,
+                          theme.primaryColor,
+                          tierLabel,
+                        ),
+                      )
+                      .animate(
+                        key: ValueKey('anim_${entry.value.name}_${entry.key}'),
+                      )
+                      .fadeIn(
+                        delay: (200 + entry.key * 100).ms,
+                        duration: 400.ms,
+                      )
+                      .slideY(begin: 0.2, end: 0, curve: Curves.easeOutBack);
                 }).toList(),
               );
             },
@@ -189,11 +195,13 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     Color accentColor,
     String tierLabel,
   ) {
-    final theme = LevelThemeHelper.getTheme(subtype.name, isDark: widget.isDark);
-    final displayColor =
-        widget.isDark
-            ? theme.primaryColor
-            : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final theme = LevelThemeHelper.getTheme(
+      subtype.name,
+      isDark: widget.isDark,
+    );
+    final displayColor = widget.isDark
+        ? theme.primaryColor
+        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
     final contentColor = widget.isDark ? Colors.white : const Color(0xFF0F172A);
 
     return ScaleButton(
@@ -270,7 +278,11 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
                 ],
               ),
             ),
-            Icon(Icons.play_circle_fill_rounded, color: displayColor, size: 32.r),
+            Icon(
+              Icons.play_circle_fill_rounded,
+              color: displayColor,
+              size: 32.r,
+            ),
           ],
         ),
       ),

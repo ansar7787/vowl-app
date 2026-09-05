@@ -285,35 +285,49 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                                     quest
                                                         .collocations!
                                                         .isNotEmpty) ||
-                                                quest.contextSentence !=
-                                                    null ||
+                                                quest.contextSentence != null ||
                                                 quest.example != null)
                                               Padding(
                                                 padding: EdgeInsets.symmetric(
                                                   horizontal: 20.w,
                                                 ),
-                                                child: AcademicWordFieldCollocations(
-                                                  academicField:
-                                                      quest.academicField,
-                                                  collocations:
-                                                      quest.collocations,
-                                                  contextSentence:
-                                                      quest.contextSentence ??
-                                                      quest.example,
-                                                  color:
-                                                      _cachedTheme.primaryColor,
-                                                ),
+                                                child:
+                                                    AcademicWordFieldCollocations(
+                                                      academicField:
+                                                          quest.academicField,
+                                                      collocations:
+                                                          quest.collocations,
+                                                      contextSentence:
+                                                          quest
+                                                              .contextSentence ??
+                                                          quest.example,
+                                                      color: _cachedTheme
+                                                          .primaryColor,
+                                                    ),
                                               ),
-                                            if (_isDragPassed.value && !_isAnswered.value)
+                                            if (_isDragPassed.value &&
+                                                !_isAnswered.value)
                                               Column(
                                                 children: [
                                                   SizedBox(height: 24.h),
                                                   TypeToConfirmOverlay(
-                                                    expectedText: quest.correctAnswer ?? '',
-                                                    primaryColor: _cachedTheme.primaryColor,
-                                                    onConfirmed: () => _submitFinalAnswer(true),
-                                                    onSkipped: () => _submitFinalAnswer(false),
-                                                    onBypassed: () => _submitFinalAnswer(true),
+                                                    expectedText:
+                                                        quest.correctAnswer ??
+                                                        '',
+                                                    primaryColor: _cachedTheme
+                                                        .primaryColor,
+                                                    onConfirmed: () =>
+                                                        _submitFinalAnswer(
+                                                          true,
+                                                        ),
+                                                    onSkipped: () =>
+                                                        _submitFinalAnswer(
+                                                          false,
+                                                        ),
+                                                    onBypassed: () =>
+                                                        _submitFinalAnswer(
+                                                          true,
+                                                        ),
                                                     isPositioned: false,
                                                   ),
                                                 ],

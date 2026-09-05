@@ -226,7 +226,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

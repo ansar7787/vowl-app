@@ -293,192 +293,196 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       valueListenable: _stateHash,
       builder: (context, _, child) {
         return BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.85,
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-              border: Border(
-                top: BorderSide(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  width: 1,
-                ),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.4),
-                  blurRadius: 40,
-                  offset: const Offset(0, -10),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                // Handle
-                Center(
-                  child: Container(
-                    margin: EdgeInsets.only(top: 12.h, bottom: 20.h),
-                    width: 48.w,
-                    height: 5.h,
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.white24 : Colors.black12,
-                      borderRadius: BorderRadius.circular(10.r),
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.85,
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? const Color(0xFF0F172A)
+                      : const Color(0xFFF8FAFC),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(40.r),
+                  ),
+                  border: Border(
+                    top: BorderSide(
+                      color: Colors.white.withValues(alpha: 0.2),
+                      width: 1,
                     ),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.4),
+                      blurRadius: 40,
+                      offset: const Offset(0, -10),
+                    ),
+                  ],
                 ),
-
-                // Header
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(12.r),
+                child: Column(
+                  children: [
+                    // Handle
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 12.h, bottom: 20.h),
+                        width: 48.w,
+                        height: 5.h,
                         decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        child: Icon(
-                          Icons.storefront_rounded,
-                          color: Colors.white,
-                          size: 28.r,
+                          color: isDark ? Colors.white24 : Colors.black12,
+                          borderRadius: BorderRadius.circular(10.r),
                         ),
                       ),
-                      SizedBox(width: 16.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              context.tr(
-                                'store.premium_store_label',
-                                fallback: 'PREMIUM STORE',
+                    ),
+
+                    // Header
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(12.r),
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
                               ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w800,
-                                color: const Color(0xFF8B5CF6),
-                                letterSpacing: 2,
-                              ),
+                              borderRadius: BorderRadius.circular(16.r),
                             ),
-                            Text(
-                              context.tr(
-                                'store.stock_up',
-                                fallback: 'Stock up on supplies!',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 22.sp,
-                                fontWeight: FontWeight.w900,
+                            child: Icon(
+                              Icons.storefront_rounded,
+                              color: Colors.white,
+                              size: 28.r,
+                            ),
+                          ),
+                          SizedBox(width: 16.w),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  context.tr(
+                                    'store.premium_store_label',
+                                    fallback: 'PREMIUM STORE',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: const Color(0xFF8B5CF6),
+                                    letterSpacing: 2,
+                                  ),
+                                ),
+                                Text(
+                                  context.tr(
+                                    'store.stock_up',
+                                    fallback: 'Stock up on supplies!',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 22.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          ScaleButton(
+                            onTap: () => Navigator.pop(context),
+                            child: Container(
+                              padding: EdgeInsets.all(8.r),
+                              decoration: BoxDecoration(
                                 color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                    ? Colors.white10
+                                    : Colors.black.withValues(alpha: 0.05),
+                                shape: BoxShape.circle,
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      ScaleButton(
-                        onTap: () => Navigator.pop(context),
-                        child: Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white10
-                                : Colors.black.withValues(alpha: 0.05),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.close_rounded,
-                            color: isDark ? Colors.white70 : Colors.black54,
-                            size: 20.r,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                SizedBox(height: 24.h),
-
-                // Content
-                Expanded(
-                  child: ListView(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    physics: const BouncingScrollPhysics(),
-                    children: [
-                      // Vowl Premium Subscription Upsell
-                      _buildPremiumUpsell(context, isDark)
-                          .animate()
-                          .fadeIn()
-                          .moveX(begin: -20, end: 0, delay: 100.ms),
-
-                      SizedBox(height: 32.h),
-
-                      Text(
-                        context.tr(
-                          'store.coins_and_keys_label',
-                          fallback: 'COINS & KEYS',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark
-                              ? Colors.grey.shade400
-                              : Colors.grey.shade600,
-                          letterSpacing: 1.5,
-                        ),
-                      ).animate().fadeIn(delay: 200.ms),
-
-                      SizedBox(height: 16.h),
-
-                      if (_isLoadingPacks)
-                        Column(
-                          children: List.generate(
-                            3,
-                            (index) => Padding(
-                              padding: EdgeInsets.only(bottom: 16.h),
-                              child: ShimmerLoading.rounded(
-                                width: double.infinity,
-                                height: 100.h,
-                                borderRadius: 24,
+                              child: Icon(
+                                Icons.close_rounded,
+                                color: isDark ? Colors.white70 : Colors.black54,
+                                size: 20.r,
                               ),
                             ),
                           ),
-                        )
-                      else
-                        // Real coin packs
-                        ...List.generate(_activePacks.length, (index) {
-                          final pack = _activePacks[index];
-                          return Padding(
-                            padding: EdgeInsets.only(bottom: 16.h),
-                            child: _buildPackCard(
-                              context: context,
-                              isDark: isDark,
-                              pack: pack,
-                              delay: 300 + (index * 100),
-                            ),
-                          );
-                        }),
+                        ],
+                      ),
+                    ),
 
-                      SizedBox(height: 40.h),
-                    ],
-                  ),
+                    SizedBox(height: 24.h),
+
+                    // Content
+                    Expanded(
+                      child: ListView(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        physics: const BouncingScrollPhysics(),
+                        children: [
+                          // Vowl Premium Subscription Upsell
+                          _buildPremiumUpsell(context, isDark)
+                              .animate()
+                              .fadeIn()
+                              .moveX(begin: -20, end: 0, delay: 100.ms),
+
+                          SizedBox(height: 32.h),
+
+                          Text(
+                            context.tr(
+                              'store.coins_and_keys_label',
+                              fallback: 'COINS & KEYS',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark
+                                  ? Colors.grey.shade400
+                                  : Colors.grey.shade600,
+                              letterSpacing: 1.5,
+                            ),
+                          ).animate().fadeIn(delay: 200.ms),
+
+                          SizedBox(height: 16.h),
+
+                          if (_isLoadingPacks)
+                            Column(
+                              children: List.generate(
+                                3,
+                                (index) => Padding(
+                                  padding: EdgeInsets.only(bottom: 16.h),
+                                  child: ShimmerLoading.rounded(
+                                    width: double.infinity,
+                                    height: 100.h,
+                                    borderRadius: 24,
+                                  ),
+                                ),
+                              ),
+                            )
+                          else
+                            // Real coin packs
+                            ...List.generate(_activePacks.length, (index) {
+                              final pack = _activePacks[index];
+                              return Padding(
+                                padding: EdgeInsets.only(bottom: 16.h),
+                                child: _buildPackCard(
+                                  context: context,
+                                  isDark: isDark,
+                                  pack: pack,
+                                  delay: 300 + (index * 100),
+                                ),
+                              );
+                            }),
+
+                          SizedBox(height: 40.h),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-        )
-        .animate()
-        .fadeIn(duration: 300.ms)
-        .moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
+              ),
+            )
+            .animate()
+            .fadeIn(duration: 300.ms)
+            .moveY(begin: 40, end: 0, curve: Curves.easeOutBack);
       },
     );
   }

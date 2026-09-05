@@ -73,7 +73,6 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     super.dispose();
   }
 
-
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 300), () {
       if (_scrollController.hasClients) {
@@ -85,7 +84,6 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       }
     });
   }
-
 
   void _playTts(String text) {
     _hapticService.selection();
@@ -286,108 +284,125 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                             minHeight: constraints.maxHeight,
                                           ),
                                           child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 24.w,
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    SizedBox(height: gapTop),
-                                                    ConnectedSpeechInstruction(
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      instruction:
-                                                          _isFirstStagePassed
-                                                              .value
-                                                          ? "Great job! Now confirm by speaking the phrase."
-                                                          : context.tr(
-                                                              'games.connected_speech_instruction',
-                                                              fallback:
-                                                                  "SELECT THE CORRECT SOUND CHANGE",
-                                                            ),
-                                                      isCompact: isCompact,
-                                                    ),
-                                                    SizedBox(
-                                                      height: gapInstruction,
-                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapTop,
+                                                        ),
+                                                        ConnectedSpeechInstruction(
+                                                          primaryColor: theme
+                                                              .primaryColor,
+                                                          instruction:
+                                                              _isFirstStagePassed
+                                                                  .value
+                                                              ? "Great job! Now confirm by speaking the phrase."
+                                                              : context.tr(
+                                                                  'games.connected_speech_instruction',
+                                                                  fallback:
+                                                                      "SELECT THE CORRECT SOUND CHANGE",
+                                                                ),
+                                                          isCompact: isCompact,
+                                                        ),
+                                                        SizedBox(
+                                                          height:
+                                                              gapInstruction,
+                                                        ),
 
-                                                    ConnectedSpeechPromptCard(
-                                                      word: quest.word ?? "",
-                                                      spokenForm:
-                                                          quest.spokenForm,
-                                                      phenomenonType:
-                                                          quest.phenomenonType,
-                                                      isAnswered:
-                                                          _isFirstStagePassed
-                                                              .value ||
-                                                          _isAnswered.value,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isCompact: isCompact,
-                                                    ),
-                                                    SizedBox(height: gapPrompt),
+                                                        ConnectedSpeechPromptCard(
+                                                          word:
+                                                              quest.word ?? "",
+                                                          spokenForm:
+                                                              quest.spokenForm,
+                                                          phenomenonType: quest
+                                                              .phenomenonType,
+                                                          isAnswered:
+                                                              _isFirstStagePassed
+                                                                  .value ||
+                                                              _isAnswered.value,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          isCompact: isCompact,
+                                                        ),
+                                                        SizedBox(
+                                                          height: gapPrompt,
+                                                        ),
 
-                                                    ConnectedSpeechPulseSpeaker(
-                                                      text:
-                                                          quest.textToSpeak ??
-                                                          "",
-                                                      color: theme.primaryColor,
-                                                      onPlayTts: _playTts,
+                                                        ConnectedSpeechPulseSpeaker(
+                                                          text:
+                                                              quest
+                                                                  .textToSpeak ??
+                                                              "",
+                                                          color: theme
+                                                              .primaryColor,
+                                                          onPlayTts: _playTts,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        SizedBox(
+                                                          height: gapSpeaker,
+                                                        ),
+                                                        ConnectedSpeechLinkerCards(
+                                                          key: ValueKey(
+                                                            quest.id,
+                                                          ),
+                                                          options: options,
+                                                          correctIndex:
+                                                              _shuffledOptions
+                                                                  .isNotEmpty
+                                                              ? _shuffledCorrectIndex
+                                                              : (quest.correctAnswerIndex ??
+                                                                    0),
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          isAnswered:
+                                                              _isAnswered
+                                                                  .value ||
+                                                              _isFirstStagePassed
+                                                                  .value,
+                                                          selectedIndex:
+                                                              _selectedIndex
+                                                                  .value,
+                                                          onSubmitChoice:
+                                                              _submitChoice,
+                                                          isCompact: isCompact,
+                                                        ),
+                                                        SizedBox(
+                                                          height: gapBottom,
+                                                        ),
+                                                      ],
                                                     ),
                                                   ],
                                                 ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: gapSpeaker,
-                                                    ),
-                                                    ConnectedSpeechLinkerCards(
-                                                      key: ValueKey(quest.id),
-                                                      options: options,
-                                                      correctIndex:
-                                                          _shuffledOptions
-                                                              .isNotEmpty
-                                                          ? _shuffledCorrectIndex
-                                                          : (quest.correctAnswerIndex ??
-                                                                0),
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
-                                                              .value,
-                                                      selectedIndex:
-                                                          _selectedIndex.value,
-                                                      onSubmitChoice:
-                                                          _submitChoice,
-                                                      isCompact: isCompact,
-                                                    ),
-                                                    SizedBox(height: gapBottom),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
+                                              ),
+                                              SizedBox(
+                                                height:
+                                                    (_isAnswered.value ||
+                                                        _isFirstStagePassed
+                                                            .value)
+                                                    ? 10.h
+                                                    : 60.h,
+                                              ),
+                                            ],
                                           ),
-                                            SizedBox(
-                                              height:
-                                                  (_isAnswered.value ||
-                                                      _isFirstStagePassed.value)
-                                                  ? 10.h
-                                                  : 60.h,
-                                            ),
-                                          ],
                                         ),
                                       ),
-                                    ),
                                     ),
                                     if (_isFirstStagePassed.value &&
                                         (!_isAnswered.value ||
@@ -395,9 +410,10 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                       SliverToBoxAdapter(
                                         child: Column(
                                           children: [
-                                      SizedBox(height: 32.h),
-                                      ShadowPlaybackCompare(
-                                              expectedText: quest.textToSpeak ??
+                                            SizedBox(height: 32.h),
+                                            ShadowPlaybackCompare(
+                                              expectedText:
+                                                  quest.textToSpeak ??
                                                   quest.word ??
                                                   "",
                                               primaryColor: theme.primaryColor,
@@ -409,7 +425,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                                 _submitVerbalEvaluation(true);
                                               },
                                               onSkipped: () =>
-                                                  _submitVerbalEvaluation(false),
+                                                  _submitVerbalEvaluation(
+                                                    false,
+                                                  ),
                                             ),
                                             SizedBox(height: 60.h),
                                           ],

@@ -175,7 +175,10 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                                       SizedBox(height: 16.h),
                                       ParagraphSummaryInstruction(
                                         primaryColor: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       GestureDetector(

@@ -277,7 +277,9 @@ class _GenericRoleplayScenarioScreenState
               useScrolling: false,
               child: CustomScrollView(
                 controller: _chatScrollController,
-                physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                physics: (!_isFirstStagePassed.value)
+                    ? const NeverScrollableScrollPhysics()
+                    : const BouncingScrollPhysics(),
                 slivers: [
                   SliverToBoxAdapter(
                     child: IgnorePointer(
@@ -285,31 +287,31 @@ class _GenericRoleplayScenarioScreenState
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                        RoleplayCharacterCard(
-                          roleName: quest.roleName ?? 'Professional Advisor',
-                          icon: widget.icon,
-                          primaryColor: theme.primaryColor,
-                        ),
-                        SizedBox(height: 32.h),
-                        RoleplayChatMessagesList(
-                          messages: _chatMessages.value,
-                          isProcessing: _isProcessing.value,
-                          hint: state.hintUsed ? quest.hint : null,
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          scrollController: _chatScrollController,
-                        ),
-                        if (!_isAnswered.value &&
-                            !_isFirstStagePassed.value) ...[
+                          RoleplayCharacterCard(
+                            roleName: quest.roleName ?? 'Professional Advisor',
+                            icon: widget.icon,
+                            primaryColor: theme.primaryColor,
+                          ),
                           SizedBox(height: 32.h),
-                          RoleplayOptionsSection(
-                            options: options,
-                            correctIndex: correctIndex,
+                          RoleplayChatMessagesList(
+                            messages: _chatMessages.value,
+                            isProcessing: _isProcessing.value,
+                            hint: state.hintUsed ? quest.hint : null,
                             primaryColor: theme.primaryColor,
                             isDark: isDark,
-                            onOptionSelected: _onOptionSelected,
+                            scrollController: _chatScrollController,
                           ),
-                        ],
+                          if (!_isAnswered.value &&
+                              !_isFirstStagePassed.value) ...[
+                            SizedBox(height: 32.h),
+                            RoleplayOptionsSection(
+                              options: options,
+                              correctIndex: correctIndex,
+                              primaryColor: theme.primaryColor,
+                              isDark: isDark,
+                              onOptionSelected: _onOptionSelected,
+                            ),
+                          ],
                         ],
                       ),
                     ),

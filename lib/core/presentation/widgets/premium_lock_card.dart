@@ -8,7 +8,11 @@ class PremiumLockCard extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onPremiumTap;
 
-  const PremiumLockCard({super.key, required this.onTap, required this.onPremiumTap});
+  const PremiumLockCard({
+    super.key,
+    required this.onTap,
+    required this.onPremiumTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,8 @@ class PremiumLockCard extends StatelessWidget {
         titleKey: 'translation.limit_reached',
         titleFallback: 'Translation Limit Reached',
         subtitleKey: 'translation.translate_cta',
-        subtitleFallback: 'Watch a quick ad to get 3 more translations, or get Premium for unlimited access.',
+        subtitleFallback:
+            'Watch a quick ad to get 3 more translations, or get Premium for unlimited access.',
         adButtonTextKey: 'translation.watch_ad_button',
         adButtonTextFallback: 'Watch Ad (3 Translations)',
         onPremiumTap: onPremiumTap,

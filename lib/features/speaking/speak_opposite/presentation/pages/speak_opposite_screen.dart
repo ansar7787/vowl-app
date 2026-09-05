@@ -242,7 +242,10 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         SpeakOppositeHeader(
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         SpeakOppositePositivePolePanel(

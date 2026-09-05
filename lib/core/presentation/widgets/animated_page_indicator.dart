@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AnimatedPageIndicator extends StatelessWidget {
   final int itemCount;
   final int currentIndex;
-  
+
   /// The active color used for all items. Defaults to primary color if [itemColors] is null.
   final Color? activeColor;
-  
+
   /// A specific color for each individual item. Overrides [activeColor] if provided.
   final List<Color>? itemColors;
-  
+
   final double? activeWidth;
   final double? inactiveWidth;
   final double? height;
@@ -37,12 +37,12 @@ class AnimatedPageIndicator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(itemCount, (index) {
         final isSelected = index == currentIndex;
-        
+
         // Determine the specific color for this dot
-        final dotColor = itemColors != null && index < itemColors!.length 
-            ? itemColors![index] 
+        final dotColor = itemColors != null && index < itemColors!.length
+            ? itemColors![index]
             : defaultActiveColor;
-            
+
         // Determine inactive color
         final inactiveColor = itemColors != null
             ? dotColor.withValues(alpha: 0.2)
@@ -56,7 +56,9 @@ class AnimatedPageIndicator extends StatelessWidget {
           width: isSelected ? (activeWidth ?? 24.w) : (inactiveWidth ?? 6.w),
           decoration: BoxDecoration(
             color: isSelected ? dotColor : inactiveColor,
-            borderRadius: BorderRadius.circular((height ?? 6.h) * 2), // Ensures it's fully rounded
+            borderRadius: BorderRadius.circular(
+              (height ?? 6.h) * 2,
+            ), // Ensures it's fully rounded
           ),
         );
       }),

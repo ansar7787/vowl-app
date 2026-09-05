@@ -227,7 +227,10 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                       children: [
                                         PronunciationFocusHeader(
                                           primaryColor: theme.primaryColor,
-                                          instruction: InstructionHelper.getInstruction(quest),
+                                          instruction:
+                                              InstructionHelper.getInstruction(
+                                                quest,
+                                              ),
                                         ),
                                         SizedBox(height: 24.h),
                                         PronunciationFocusPhonemeCrucible(

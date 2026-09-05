@@ -383,12 +383,14 @@ class AgeGateScreen extends StatelessWidget {
                                                   child: Text(
                                                     context.tr(
                                                       'age_gate.adult_button',
-                                                      fallback: "I'm 16 or older",
+                                                      fallback:
+                                                          "I'm 16 or older",
                                                     ),
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
                                                       fontSize: 17.sp,
-                                                      fontWeight: FontWeight.w800,
+                                                      fontWeight:
+                                                          FontWeight.w800,
                                                       color: Colors.white,
                                                       letterSpacing: 0.3,
                                                     ),
@@ -472,10 +474,13 @@ class AgeGateScreen extends StatelessWidget {
                                                     style: TextStyle(
                                                       fontFamily: 'Outfit',
                                                       fontSize: 17.sp,
-                                                      fontWeight: FontWeight.w800,
+                                                      fontWeight:
+                                                          FontWeight.w800,
                                                       color: isDark
                                                           ? Colors.white70
-                                                          : Colors.grey.shade700,
+                                                          : Colors
+                                                                .grey
+                                                                .shade700,
                                                       letterSpacing: 0.3,
                                                     ),
                                                   ),

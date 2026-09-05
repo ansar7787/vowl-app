@@ -245,7 +245,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                                   children: [
                                                     EmergencyHubInstruction(
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact

@@ -55,7 +55,8 @@ class FlashcardController extends ChangeNotifier {
     dragOffset.value = Offset(oldDx + details.delta.dx, 0);
     dragAngle.value = dragOffset.value.dx / 500;
 
-    if ((dragOffset.value.dx - oldDx).abs() > 0 && (dragOffset.value.dx.abs() % 20 < 2)) {
+    if ((dragOffset.value.dx - oldDx).abs() > 0 &&
+        (dragOffset.value.dx.abs() % 20 < 2)) {
       _hapticService.selection();
     }
   }

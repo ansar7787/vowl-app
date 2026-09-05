@@ -252,9 +252,11 @@ class _AnswerSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final effectiveColor = isSlotSelected ? color : color.withValues(alpha: 0.05);
+    final effectiveColor = isSlotSelected
+        ? color
+        : color.withValues(alpha: 0.05);
     final borderColor = isSlotSelected ? color : underlineColor;
-    
+
     return GestureDetector(
       onTap: onSlotTap,
       behavior: HitTestBehavior.opaque,
@@ -269,33 +271,35 @@ class _AnswerSlot extends StatelessWidget {
           border: Border(bottom: BorderSide(color: borderColor, width: 2.5)),
         ),
         child: Center(
-        child:
-            (isAnswered && isCorrect == true) ||
-                (isAnswered && isCorrect == false && userSpelledWord != null)
-            ? FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  (isCorrect == true ? correctAnswer : userSpelledWord)
-                          ?.toUpperCase() ??
-                      '',
-                  style: isCorrect == true
-                      ? answerStyle
-                      : answerStyle.copyWith(color: AcademicWordColors.slotError),
-                ).animate().fadeIn().scale(),
-              )
-            : FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  AcademicWordStrings.slotPending,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: isSlotSelected ? Colors.white : pendingColor,
-                    fontSize: 9,
-                    letterSpacing: 1,
-                  ),
-                ).animate(onPlay: (c) => c.repeat()).shimmer(),
-              ),
-      ),
+          child:
+              (isAnswered && isCorrect == true) ||
+                  (isAnswered && isCorrect == false && userSpelledWord != null)
+              ? FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    (isCorrect == true ? correctAnswer : userSpelledWord)
+                            ?.toUpperCase() ??
+                        '',
+                    style: isCorrect == true
+                        ? answerStyle
+                        : answerStyle.copyWith(
+                            color: AcademicWordColors.slotError,
+                          ),
+                  ).animate().fadeIn().scale(),
+                )
+              : FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    AcademicWordStrings.slotPending,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isSlotSelected ? Colors.white : pendingColor,
+                      fontSize: 9,
+                      letterSpacing: 1,
+                    ),
+                  ).animate(onPlay: (c) => c.repeat()).shimmer(),
+                ),
+        ),
       ),
     );
   }

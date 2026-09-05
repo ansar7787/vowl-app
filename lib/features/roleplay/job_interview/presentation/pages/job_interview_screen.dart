@@ -240,7 +240,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                       isDark: isDark,
                                                     ),
                                                     SizedBox(

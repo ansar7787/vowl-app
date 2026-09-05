@@ -134,59 +134,57 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
         mainAxisSize: MainAxisSize.min,
         children: [
           ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: 180.h,
-              maxHeight: 240.h,
-            ),
+            constraints: BoxConstraints(minHeight: 180.h, maxHeight: 240.h),
             child: SizedBox(
               height: 220.h,
               child: PageView.builder(
-              controller: _pageController,
-              physics: const BouncingScrollPhysics(),
-              onPageChanged: (int page) {
-                _currentPage.value = page;
-              },
-              itemCount: discoveryItems.length,
-              itemBuilder: (context, index) {
-                final item = discoveryItems[index];
+                controller: _pageController,
+                physics: const BouncingScrollPhysics(),
+                onPageChanged: (int page) {
+                  _currentPage.value = page;
+                },
+                itemCount: discoveryItems.length,
+                itemBuilder: (context, index) {
+                  final item = discoveryItems[index];
 
-                return AnimatedBuilder(
-                  animation: _pageController,
-                  builder: (context, child) {
-                    double page;
-                    try {
-                      page =
-                          _pageController.page ?? _currentPage.value.toDouble();
-                    } catch (_) {
-                      page = _currentPage.value.toDouble();
-                    }
+                  return AnimatedBuilder(
+                    animation: _pageController,
+                    builder: (context, child) {
+                      double page;
+                      try {
+                        page =
+                            _pageController.page ??
+                            _currentPage.value.toDouble();
+                      } catch (_) {
+                        page = _currentPage.value.toDouble();
+                      }
 
-                    // Calculate how centered the card is (1.0 = center, 0.0 = far away)
-                    final double diff = (page - index).abs();
-                    final double activeFactor = (1 - diff).clamp(0.0, 1.0);
+                      // Calculate how centered the card is (1.0 = center, 0.0 = far away)
+                      final double diff = (page - index).abs();
+                      final double activeFactor = (1 - diff).clamp(0.0, 1.0);
 
-                    // Scale from 0.9 to 1.0 based on center proximity
-                    final double scale = 0.9 + (activeFactor * 0.1);
+                      // Scale from 0.9 to 1.0 based on center proximity
+                      final double scale = 0.9 + (activeFactor * 0.1);
 
-                    return Transform.scale(
-                      scale: scale,
-                      child: _DiscoveryCollectionCard(
-                        title: item.title,
-                        subtitle: item.subtitle,
-                        icon: item.icon,
-                        color: item.color,
-                        quests: item.quests,
-                        difficulty: item.difficulty,
-                        isSelected: activeFactor > 0.8,
-                        isRtl: isRtl,
-                        index: index,
-                        onTap: item.onTap,
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
+                      return Transform.scale(
+                        scale: scale,
+                        child: _DiscoveryCollectionCard(
+                          title: item.title,
+                          subtitle: item.subtitle,
+                          icon: item.icon,
+                          color: item.color,
+                          quests: item.quests,
+                          difficulty: item.difficulty,
+                          isSelected: activeFactor > 0.8,
+                          isRtl: isRtl,
+                          index: index,
+                          onTap: item.onTap,
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
           SizedBox(height: 16.h),
@@ -347,9 +345,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                                 ),
                                               ),
                                             )
-                                            .animate(
-                                              onPlay: (c) => c.repeat(),
-                                            )
+                                            .animate(onPlay: (c) => c.repeat())
                                             .scale(
                                               begin: const Offset(0.5, 0.5),
                                               end: const Offset(2, 2),
@@ -432,19 +428,12 @@ class _DiscoveryCollectionCard extends StatelessWidget {
         // Was 0.05 opacity — invisible. Now 0.12 for readable contrast.
         color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.2),
-          width: 0.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.2), width: 0.5),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.psychology_rounded,
-            size: 12.r,
-            color: color,
-          ),
+          Icon(Icons.psychology_rounded, size: 12.r, color: color),
           SizedBox(width: 4.w),
           Flexible(
             child: Text(
@@ -503,23 +492,23 @@ class _DiscoveryCollectionCard extends StatelessWidget {
 
   Widget _buildStartButton(Color color, bool isRtl) {
     return Container(
-      padding: EdgeInsets.all(12.r),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.12),
-        shape: BoxShape.circle,
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-      ),
-      child: Icon(
-        isRtl ? Icons.arrow_outward_rounded : Icons.arrow_outward_rounded,
-        size: 16.r,
-        color: color,
-      ),
-    ).animate(
-      onPlay: (c) => c.repeat(reverse: true),
-    ).shimmer(
-      delay: 1.seconds,
-      duration: 2500.ms,
-      color: color.withValues(alpha: 0.3),
-    );
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.12),
+            shape: BoxShape.circle,
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+          ),
+          child: Icon(
+            isRtl ? Icons.arrow_outward_rounded : Icons.arrow_outward_rounded,
+            size: 16.r,
+            color: color,
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(
+          delay: 1.seconds,
+          duration: 2500.ms,
+          color: color.withValues(alpha: 0.3),
+        );
   }
 }

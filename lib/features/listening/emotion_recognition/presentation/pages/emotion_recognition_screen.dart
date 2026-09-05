@@ -226,7 +226,10 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                       EmotionRecognitionInstruction(
                                         isAnswered: _isAnswered.value,
                                         color: theme.primaryColor,
-                                        instruction: InstructionHelper.getInstruction(quest),
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
                                       ),
                                       SizedBox(height: 24.h),
                                       EmotionRecognitionEmitter(

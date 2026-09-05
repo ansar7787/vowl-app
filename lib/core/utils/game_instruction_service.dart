@@ -1138,7 +1138,7 @@ class GameInstructionService {
       rules: [
         "Guess the meaning first",
         "Tap to flip the card",
-        "Swipe Right: Mastered, Left: Review"
+        "Swipe Right: Mastered, Left: Review",
       ],
       actionText: "Start Review",
       tip:

@@ -124,7 +124,10 @@ class SynonymWordShard extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: padding + 4.w, vertical: padding + 2.h),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: padding + 4.w,
+                                    vertical: padding + 2.h,
+                                  ),
                                   child: AutoSizeText(
                                     text.toUpperCase(),
                                     textAlign: TextAlign.center,

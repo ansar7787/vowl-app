@@ -250,7 +250,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction:
-                                                          InstructionHelper.getInstruction(quest),
+                                                          InstructionHelper.getInstruction(
+                                                            quest,
+                                                          ),
                                                     ),
                                                     SizedBox(
                                                       height: isCompact
@@ -266,7 +268,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                       isDark: isDark,
                                                       isAnswered:
                                                           _isAnswered.value &&
-                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
+                                                          (_isCorrect.value !=
+                                                                  null ||
+                                                              !_isFirstStagePassed
+                                                                  .value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                     ),
@@ -285,7 +290,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                                               .value,
                                                       isAnswered:
                                                           _isAnswered.value &&
-                                                          (_isCorrect.value != null || !_isFirstStagePassed.value),
+                                                          (_isCorrect.value !=
+                                                                  null ||
+                                                              !_isFirstStagePassed
+                                                                  .value),
                                                       isCorrect:
                                                           _isCorrect.value,
                                                       pulseValue:

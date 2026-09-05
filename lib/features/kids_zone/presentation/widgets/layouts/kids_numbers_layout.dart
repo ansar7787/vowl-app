@@ -148,7 +148,9 @@ class KidsNumbersLayout extends StatelessWidget {
                 : () {
                     // Play the instruction sound
                     if (InstructionHelper.getInstruction(quest).isNotEmpty) {
-                      di.sl<KidsTTSService>().speak(InstructionHelper.getInstruction(quest));
+                      di.sl<KidsTTSService>().speak(
+                        InstructionHelper.getInstruction(quest),
+                      );
                     }
                   },
             child: Stack(

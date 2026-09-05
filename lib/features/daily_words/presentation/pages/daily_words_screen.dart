@@ -855,7 +855,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                                         word: word,
                                         isDark: isDark,
                                         onSpeak: () => _speakWord(word.word),
-                                        onTranslate: () => _handleTranslate(word),
+                                        onTranslate: () =>
+                                            _handleTranslate(word),
                                         isTranslating: _isTranslating.value,
                                         translatedDefinition:
                                             _translatedDefinition.value,

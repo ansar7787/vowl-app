@@ -208,274 +208,294 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
-                                physics: (!_isFirstStagePassed.value) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                                physics: (!_isFirstStagePassed.value)
+                                    ? const NeverScrollableScrollPhysics()
+                                    : const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
                                     hasScrollBody: false,
                                     child: IgnorePointer(
                                       ignoring: _isFirstStagePassed.value,
                                       child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
-                                              final isCompact =
-                                                  constraints.maxHeight < 580;
+                                        children: [
+                                          Expanded(
+                                            child: LayoutBuilder(
+                                              builder: (context, constraints) {
+                                                final isCompact =
+                                                    constraints.maxHeight < 580;
 
-                                              return Column(
-                                                children: [
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 4.h
-                                                        : 10.h,
-                                                  ),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: VoiceSwapInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : VoiceSwapInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                        ),
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 8.h
-                                                        : 20.h,
-                                                  ),
-
-                                                  // Context Card
-                                                  Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 24.w,
-                                                            ),
-                                                        child: Container(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                isCompact
-                                                                    ? 14.r
-                                                                    : 22.r,
-                                                              ),
-                                                          decoration: BoxDecoration(
-                                                            color: isDark
-                                                                ? Colors.white
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.05,
-                                                                      )
-                                                                : Colors.black
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.03,
-                                                                      ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  isCompact
-                                                                      ? 16.r
-                                                                      : 24.r,
-                                                                ),
-                                                            border: Border.all(
-                                                              color: theme
-                                                                  .primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.15,
-                                                                  ),
-                                                              width: 1.5,
-                                                            ),
-                                                          ),
-                                                          child: Text(
-                                                            quest.sentence ??
-                                                                "",
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize:
-                                                                  isCompact
-                                                                  ? 15.sp
-                                                                  : 20.sp,
-                                                              color: isDark
-                                                                  ? Colors.white
-                                                                  : Colors
-                                                                        .black87,
-                                                              height: 1.5,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 600.ms)
-                                                      .slideY(
-                                                        begin: 0.2,
-                                                        end: 0,
-                                                      ),
-
-                                                  SizedBox(height: 60.h),
-
-                                                  // Voice Toggle
-                                                  VoiceSwapToggle(
-                                                    isPassive: _isPassive.value,
-                                                    isAnswered:
-                                                        _isAnswered.value &&
-                                                        (_isCorrect.value != null || !_isFirstStagePassed.value),
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    isDark: isDark,
-                                                    onToggle: (val) =>
-                                                        _isPassive.value = val,
-                                                  ),
-
-                                                  if (_isAnswered.value) ...[
+                                                return Column(
+                                                  children: [
                                                     SizedBox(
                                                       height: isCompact
-                                                          ? 12.h
-                                                          : 32.h,
+                                                          ? 4.h
+                                                          : 10.h,
                                                     ),
-                                                    VoiceSwapResult(
-                                                      isCorrect:
-                                                          _isCorrect.value ==
-                                                          true,
-                                                      quest: quest,
-                                                      isDark: isDark,
+                                                    isCompact
+                                                        ? SizedBox(
+                                                            height: 25.h,
+                                                            child: FittedBox(
+                                                              fit: BoxFit
+                                                                  .scaleDown,
+                                                              child: VoiceSwapInstruction(
+                                                                primaryColor: theme
+                                                                    .primaryColor,
+                                                              ),
+                                                            ),
+                                                          )
+                                                        : VoiceSwapInstruction(
+                                                            primaryColor: theme
+                                                                .primaryColor,
+                                                          ),
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 8.h
+                                                          : 20.h,
                                                     ),
-                                                  ],
 
-                                                  const Spacer(),
-
-                                                  if (!_isAnswered.value)
-                                                    ScaleButton(
-                                                          onTap: () =>
-                                                              _submitAnswer(
-                                                                quest,
+                                                    // Context Card
+                                                    Padding(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    24.w,
                                                               ),
                                                           child: Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: isCompact
-                                                                ? 48.h
-                                                                : 65.h,
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                  isCompact
+                                                                      ? 14.r
+                                                                      : 22.r,
+                                                                ),
                                                             decoration: BoxDecoration(
+                                                              color: isDark
+                                                                  ? Colors.white
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.05,
+                                                                        )
+                                                                  : Colors.black
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.03,
+                                                                        ),
                                                               borderRadius:
                                                                   BorderRadius.circular(
                                                                     isCompact
-                                                                        ? 14.r
-                                                                        : 20.r,
+                                                                        ? 16.r
+                                                                        : 24.r,
                                                                   ),
-                                                              gradient: LinearGradient(
-                                                                begin: Alignment
-                                                                    .topCenter,
-                                                                end: Alignment
-                                                                    .bottomCenter,
-                                                                colors: [
-                                                                  theme
-                                                                      .primaryColor,
-                                                                  theme
-                                                                      .primaryColor
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.8,
-                                                                      ),
-                                                                ],
+                                                              border: Border.all(
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.15,
+                                                                    ),
+                                                                width: 1.5,
                                                               ),
-                                                              boxShadow: [
-                                                                BoxShadow(
-                                                                  color: theme
-                                                                      .primaryColor
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.4,
-                                                                      ),
-                                                                  blurRadius:
-                                                                      isCompact
-                                                                      ? 12
-                                                                      : 20,
-                                                                  offset: Offset(
-                                                                    0,
-                                                                    isCompact
-                                                                        ? 4
-                                                                        : 8,
-                                                                  ),
-                                                                ),
-                                                              ],
                                                             ),
-                                                            child: Center(
-                                                              child: Text(
-                                                                "ENGAGE TRANSMUTER",
-                                                                style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      isCompact
-                                                                      ? 13.sp
-                                                                      : 16.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w900,
-                                                                  color: Colors
-                                                                      .white,
-                                                                  letterSpacing:
-                                                                      isCompact
-                                                                      ? 2
-                                                                      : 3,
-                                                                ),
+                                                            child: Text(
+                                                              quest.sentence ??
+                                                                  "",
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize:
+                                                                    isCompact
+                                                                    ? 15.sp
+                                                                    : 20.sp,
+                                                                color: isDark
+                                                                    ? Colors
+                                                                          .white
+                                                                    : Colors
+                                                                          .black87,
+                                                                height: 1.5,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
                                                               ),
                                                             ),
                                                           ),
                                                         )
-                                                        .animate(
-                                                          onPlay: (c) =>
-                                                              c.repeat(
-                                                                reverse: true,
-                                                              ),
+                                                        .animate()
+                                                        .fadeIn(
+                                                          duration: 600.ms,
                                                         )
-                                                        .shimmer(
-                                                          duration: 2.seconds,
-                                                          color: Colors.white24,
+                                                        .slideY(
+                                                          begin: 0.2,
+                                                          end: 0,
                                                         ),
 
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 12.h
-                                                        : 40.h,
-                                                  ),
-                                                ],
-                                              );
-                                            },
+                                                    SizedBox(height: 60.h),
+
+                                                    // Voice Toggle
+                                                    VoiceSwapToggle(
+                                                      isPassive:
+                                                          _isPassive.value,
+                                                      isAnswered:
+                                                          _isAnswered.value &&
+                                                          (_isCorrect.value !=
+                                                                  null ||
+                                                              !_isFirstStagePassed
+                                                                  .value),
+                                                      primaryColor:
+                                                          theme.primaryColor,
+                                                      isDark: isDark,
+                                                      onToggle: (val) =>
+                                                          _isPassive.value =
+                                                              val,
+                                                    ),
+
+                                                    if (_isAnswered.value) ...[
+                                                      SizedBox(
+                                                        height: isCompact
+                                                            ? 12.h
+                                                            : 32.h,
+                                                      ),
+                                                      VoiceSwapResult(
+                                                        isCorrect:
+                                                            _isCorrect.value ==
+                                                            true,
+                                                        quest: quest,
+                                                        isDark: isDark,
+                                                      ),
+                                                    ],
+
+                                                    const Spacer(),
+
+                                                    if (!_isAnswered.value)
+                                                      ScaleButton(
+                                                            onTap: () =>
+                                                                _submitAnswer(
+                                                                  quest,
+                                                                ),
+                                                            child: Container(
+                                                              width: double
+                                                                  .infinity,
+                                                              height: isCompact
+                                                                  ? 48.h
+                                                                  : 65.h,
+                                                              decoration: BoxDecoration(
+                                                                borderRadius:
+                                                                    BorderRadius.circular(
+                                                                      isCompact
+                                                                          ? 14.r
+                                                                          : 20.r,
+                                                                    ),
+                                                                gradient: LinearGradient(
+                                                                  begin: Alignment
+                                                                      .topCenter,
+                                                                  end: Alignment
+                                                                      .bottomCenter,
+                                                                  colors: [
+                                                                    theme
+                                                                        .primaryColor,
+                                                                    theme
+                                                                        .primaryColor
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.8,
+                                                                        ),
+                                                                  ],
+                                                                ),
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    color: theme
+                                                                        .primaryColor
+                                                                        .withValues(
+                                                                          alpha:
+                                                                              0.4,
+                                                                        ),
+                                                                    blurRadius:
+                                                                        isCompact
+                                                                        ? 12
+                                                                        : 20,
+                                                                    offset: Offset(
+                                                                      0,
+                                                                      isCompact
+                                                                          ? 4
+                                                                          : 8,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              child: Center(
+                                                                child: Text(
+                                                                  "ENGAGE TRANSMUTER",
+                                                                  style: TextStyle(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    fontSize:
+                                                                        isCompact
+                                                                        ? 13.sp
+                                                                        : 16.sp,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w900,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    letterSpacing:
+                                                                        isCompact
+                                                                        ? 2
+                                                                        : 3,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          )
+                                                          .animate(
+                                                            onPlay: (c) =>
+                                                                c.repeat(
+                                                                  reverse: true,
+                                                                ),
+                                                          )
+                                                          .shimmer(
+                                                            duration: 2.seconds,
+                                                            color:
+                                                                Colors.white24,
+                                                          ),
+
+                                                    SizedBox(
+                                                      height: isCompact
+                                                          ? 12.h
+                                                          : 40.h,
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
-                                      height: (_isFirstStagePassed.value && !_isAnswered.value)
+                                      height:
+                                          (_isFirstStagePassed.value &&
+                                              !_isAnswered.value)
                                           ? 180.h
                                           : 60.h,
                                     ),
                                   ),
-                                  if (_isFirstStagePassed.value && !_isAnswered.value)
+                                  if (_isFirstStagePassed.value &&
+                                      !_isAnswered.value)
                                     SliverToBoxAdapter(
                                       child: Column(
                                         children: [
                                           TypeToConfirmOverlay(
                                             expectedText: expectedConversion,
-                                            displayText: "Type the $targetVoiceStr conversion to lock it in",
+                                            displayText:
+                                                "Type the $targetVoiceStr conversion to lock it in",
                                             primaryColor: theme.primaryColor,
-                                            onConfirmed: () => _submitVerbalEvaluation(true),
-                                            onSkipped: () => _submitVerbalEvaluation(false),
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
                                             isPositioned: false,
                                           ),
                                           SizedBox(height: 60.h),

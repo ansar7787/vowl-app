@@ -276,10 +276,7 @@ class _FeaturedToolCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(
-            color: def.color.withValues(alpha: 0.5),
-            width: 1,
-          ),
+          border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
           boxShadow: [
             BoxShadow(
               color: def.color.withValues(alpha: 0.2),
@@ -453,10 +450,7 @@ class _CompactToolCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(
-            color: def.color.withValues(alpha: 0.5),
-            width: 1,
-          ),
+          border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
           boxShadow: [
             BoxShadow(
               color: def.color.withValues(alpha: 0.2),
@@ -483,8 +477,7 @@ class _CompactToolCard extends StatelessWidget {
                 blur: 0,
                 showShadow: false,
                 borderRadius: BorderRadius.circular(24.r),
-                borderColor:
-                    def.color.withValues(alpha: isDark ? 0.25 : 0.15),
+                borderColor: def.color.withValues(alpha: isDark ? 0.25 : 0.15),
                 padding: EdgeInsets.all(16.r),
                 child: SizedBox(
                   width: width,
@@ -518,8 +511,9 @@ class _CompactToolCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w900,
-                          color:
-                              isDark ? Colors.white : const Color(0xFF0F172A),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
                         ),
                       ),
                       SizedBox(height: 4.h),

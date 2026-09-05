@@ -40,7 +40,7 @@ class _SpeakingSelfEvaluationControlsState
   final ValueNotifier<bool> _hasRecorded = ValueNotifier(false);
   final ValueNotifier<bool> _isPlaying = ValueNotifier(false);
   final ValueNotifier<String> _playingContext = ValueNotifier("");
-  
+
   bool _isProcessingAudioAction = false;
   String? _recordingPath;
   int _playbackSessionId = 0;
@@ -87,7 +87,8 @@ class _SpeakingSelfEvaluationControlsState
   }
 
   Future<void> _startRecording() async {
-    if (_isPlaying.value || _isRecording.value || _isProcessingAudioAction) return;
+    if (_isPlaying.value || _isRecording.value || _isProcessingAudioAction)
+      return;
     _isProcessingAudioAction = true;
 
     try {
@@ -256,35 +257,51 @@ class _SpeakingSelfEvaluationControlsState
                         _stopRecording();
                       }
                     },
-                    child: Container(
-                      width: 80.r,
-                      height: 80.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: isRecording ? Colors.redAccent : widget.primaryColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: (isRecording ? Colors.redAccent : widget.primaryColor).withValues(alpha: 0.4),
-                            blurRadius: 20,
-                            spreadRadius: isRecording ? 8 : 0,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        isRecording ? Icons.stop_rounded : Icons.mic_rounded,
-                        color: Colors.white,
-                        size: 40.r,
-                      ),
-                    ).animate(target: isRecording ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+                    child:
+                        Container(
+                              width: 80.r,
+                              height: 80.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: isRecording
+                                    ? Colors.redAccent
+                                    : widget.primaryColor,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color:
+                                        (isRecording
+                                                ? Colors.redAccent
+                                                : widget.primaryColor)
+                                            .withValues(alpha: 0.4),
+                                    blurRadius: 20,
+                                    spreadRadius: isRecording ? 8 : 0,
+                                  ),
+                                ],
+                              ),
+                              child: Icon(
+                                isRecording
+                                    ? Icons.stop_rounded
+                                    : Icons.mic_rounded,
+                                color: Colors.white,
+                                size: 40.r,
+                              ),
+                            )
+                            .animate(target: isRecording ? 1 : 0)
+                            .scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.1, 1.1),
+                            ),
                   );
-                }
+                },
               ),
               SizedBox(height: 12.h),
               ValueListenableBuilder<bool>(
                 valueListenable: _isRecording,
                 builder: (context, isRecording, _) {
                   return Text(
-                    isRecording ? "Recording... Tap to stop" : "Tap or Hold to speak",
+                    isRecording
+                        ? "Recording... Tap to stop"
+                        : "Tap or Hold to speak",
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
@@ -292,7 +309,7 @@ class _SpeakingSelfEvaluationControlsState
                       color: isRecording ? Colors.redAccent : subtitleColor,
                     ),
                   ).animate(target: isRecording ? 1 : 0).fade();
-                }
+                },
               ),
             ] else ...[
               ValueListenableBuilder<bool>(
@@ -302,39 +319,52 @@ class _SpeakingSelfEvaluationControlsState
                     return Column(
                       children: [
                         Container(
-                          height: 70.r,
-                          width: 70.r,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: widget.primaryColor.withValues(alpha: 0.15),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.graphic_eq_rounded,
-                              color: widget.primaryColor,
-                              size: 32.sp,
-                            ),
-                          ),
-                        )
-                        .animate(onPlay: (controller) => controller.repeat(reverse: true))
-                        .scale(begin: const Offset(0.9, 0.9), end: const Offset(1.15, 1.15), duration: 600.ms, curve: Curves.easeInOut)
-                        .fade(begin: 0.6, end: 1.0),
+                              height: 70.r,
+                              width: 70.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.15,
+                                ),
+                              ),
+                              child: Center(
+                                child: Icon(
+                                  Icons.graphic_eq_rounded,
+                                  color: widget.primaryColor,
+                                  size: 32.sp,
+                                ),
+                              ),
+                            )
+                            .animate(
+                              onPlay: (controller) =>
+                                  controller.repeat(reverse: true),
+                            )
+                            .scale(
+                              begin: const Offset(0.9, 0.9),
+                              end: const Offset(1.15, 1.15),
+                              duration: 600.ms,
+                              curve: Curves.easeInOut,
+                            )
+                            .fade(begin: 0.6, end: 1.0),
                         SizedBox(height: 12.h),
                         ValueListenableBuilder<String>(
                           valueListenable: _playingContext,
                           builder: (context, playingContext, _) {
                             return Text(
-                              playingContext,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
-                                color: widget.primaryColor,
-                              ),
-                            )
-                            .animate(onPlay: (controller) => controller.repeat(reverse: true))
-                            .fade(begin: 0.5, end: 1.0, duration: 800.ms);
-                          }
+                                  playingContext,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: widget.primaryColor,
+                                  ),
+                                )
+                                .animate(
+                                  onPlay: (controller) =>
+                                      controller.repeat(reverse: true),
+                                )
+                                .fade(begin: 0.5, end: 1.0, duration: 800.ms);
+                          },
                         ),
                       ],
                     );
@@ -358,9 +388,13 @@ class _SpeakingSelfEvaluationControlsState
                                 width: 64.r,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: widget.primaryColor.withValues(alpha: 0.15),
+                                  color: widget.primaryColor.withValues(
+                                    alpha: 0.15,
+                                  ),
                                   border: Border.all(
-                                    color: widget.primaryColor.withValues(alpha: 0.3),
+                                    color: widget.primaryColor.withValues(
+                                      alpha: 0.3,
+                                    ),
                                     width: 2,
                                   ),
                                 ),
@@ -396,7 +430,7 @@ class _SpeakingSelfEvaluationControlsState
                       ],
                     );
                   }
-                }
+                },
               ),
               SizedBox(height: 24.h),
               Row(
@@ -434,7 +468,7 @@ class _SpeakingSelfEvaluationControlsState
             ],
           ],
         );
-      }
+      },
     );
   }
 

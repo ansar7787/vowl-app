@@ -350,8 +350,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                     children: [
                       SizedBox(height: 6.h),
                       AudioFillBlanksInstruction(
-                        instruction:
-                            InstructionHelper.getInstruction(quest),
+                        instruction: InstructionHelper.getInstruction(quest),
                         color: theme.primaryColor,
                       ),
                       SizedBox(height: 24.h),

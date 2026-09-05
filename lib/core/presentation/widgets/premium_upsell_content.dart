@@ -161,10 +161,7 @@ class PremiumUpsellContent extends StatelessWidget {
                 ),
                 SizedBox(width: 8.w),
                 Text(
-                  context.tr(
-                    adButtonTextKey,
-                    fallback: adButtonTextFallback,
-                  ),
+                  context.tr(adButtonTextKey, fallback: adButtonTextFallback),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontWeight: FontWeight.bold,

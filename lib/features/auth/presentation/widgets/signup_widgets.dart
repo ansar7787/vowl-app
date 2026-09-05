@@ -26,7 +26,10 @@ class SignUpNameInput extends StatelessWidget {
         final contrastColor = MeshGradientBackground.getContrastColor(context);
         return Semantics(
           label: context.tr('auth.name_field_label', fallback: 'Name'),
-          hint: context.tr('auth.name_field_hint', fallback: 'Enter your full name'),
+          hint: context.tr(
+            'auth.name_field_hint',
+            fallback: 'Enter your full name',
+          ),
           textField: true,
           child: TextFormField(
             key: fieldKey,
