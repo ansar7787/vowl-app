@@ -77,18 +77,19 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
   final ValueNotifier<Set<int>> _highlightedIndices = ValueNotifier({});
   final ValueNotifier<int> _wrongTapIndex = ValueNotifier(-1);
   final ValueNotifier<bool> _isComplete = ValueNotifier(false);
-  final ValueNotifier<bool> _isSubmitting = ValueNotifier(false); // Double tap lock
+  final ValueNotifier<bool> _isSubmitting = ValueNotifier(
+    false,
+  ); // Double tap lock
 
   late int _targetCount;
 
   @override
   void initState() {
     super.initState();
-    _targetCount =
-        widget.requiredHighlights ?? widget.evidenceWords.length;
+    _targetCount = widget.requiredHighlights ?? widget.evidenceWords.length;
     _parsePassage();
   }
-  
+
   @override
   void dispose() {
     _highlightedIndices.dispose();
@@ -110,15 +111,19 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
 
     for (int i = 0; i < rawWords.length; i++) {
       final word = rawWords[i];
-      final cleanWord =
-          word.toLowerCase().replaceAll(RegExp('[.,!?;:"\']+'), '');
+      final cleanWord = word.toLowerCase().replaceAll(
+        RegExp('[.,!?;:"\']+'),
+        '',
+      );
       final isEvidence = normalised.contains(cleanWord);
-      _words.add(_HighlightWord(
-        index: i,
-        display: word,
-        cleaned: cleanWord,
-        isEvidence: isEvidence,
-      ));
+      _words.add(
+        _HighlightWord(
+          index: i,
+          display: word,
+          cleaned: cleanWord,
+          isEvidence: isEvidence,
+        ),
+      );
     }
   }
 
@@ -138,7 +143,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
       // Correct evidence word
       _hapticService.success();
       _soundService.playCorrect();
-      
+
       final newSet = Set<int>.from(_highlightedIndices.value);
       newSet.add(index);
       _highlightedIndices.value = newSet;
@@ -159,7 +164,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
       // Wrong tap
       _hapticService.error();
       _wrongTapIndex.value = index;
-      
+
       widget.onWrongHighlight?.call();
 
       // Clear wrong indicator after animation
@@ -178,273 +183,303 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
-    final content = Material(
-      type: MaterialType.transparency,
-      child: ValueListenableBuilder<bool>(
-        valueListenable: _isComplete,
-        builder: (context, isComplete, _) {
-          return Container(
-            padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
-            decoration: BoxDecoration(
-              color: bgColor,
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(32.r),
-              ),
-              border: Border.all(
-                color: isComplete
-                    ? Colors.greenAccent.withValues(alpha: 0.5)
-                    : widget.primaryColor.withValues(alpha: 0.2),
-                width: 1.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: widget.primaryColor.withValues(alpha: 0.15),
-                  blurRadius: 30,
-                  offset: const Offset(0, -8),
-                ),
-              ],
-            ),
-            child: SafeArea(
-              top: false,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Handle bar
-                  Container(
-                    width: 48.w,
-                    height: 4.h,
+    final content =
+        Material(
+              type: MaterialType.transparency,
+              child: ValueListenableBuilder<bool>(
+                valueListenable: _isComplete,
+                builder: (context, isComplete, _) {
+                  return Container(
+                    padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
                     decoration: BoxDecoration(
-                      color: subtitleColor.withValues(alpha: 0.3),
-                      borderRadius: BorderRadius.circular(2.r),
-                    ),
-                  ),
-                  SizedBox(height: 16.h),
-
-                  // Header
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10.r),
-                        decoration: BoxDecoration(
-                          color: widget.primaryColor.withValues(alpha: 0.12),
-                          borderRadius: BorderRadius.circular(14.r),
-                        ),
-                        child: Icon(
-                          Icons.highlight_alt_rounded,
-                          color: widget.primaryColor,
-                          size: 22.r,
-                        ),
+                      color: bgColor,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(32.r),
                       ),
-                      SizedBox(width: 12.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AutoSizeText(
-                              'FIND THE EVIDENCE',
-                              maxLines: 1,
-                              minFontSize: 8,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w900,
-                                color: widget.primaryColor,
-                                letterSpacing: 2,
-                              ),
-                            ),
-                            SizedBox(height: 2.h),
-                            AutoSizeText(
-                              widget.instruction ??
-                                  'Tap the word(s) that prove the answer',
-                              maxLines: 2,
-                              minFontSize: 6,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w500,
-                                color: subtitleColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // Progress indicator
-                      ValueListenableBuilder<Set<int>>(
-                        valueListenable: _highlightedIndices,
-                        builder: (context, highlighted, _) {
-                          final evidenceFound = highlighted
-                              .where((i) => _words[i].isEvidence)
-                              .length;
-                              
-                          return Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 10.w,
-                              vertical: 4.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: evidenceFound >= _targetCount
-                                  ? Colors.greenAccent.withValues(alpha: 0.15)
-                                  : widget.primaryColor.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(20.r),
-                            ),
-                            child: AutoSizeText(
-                              '$evidenceFound / $_targetCount',
-                              maxLines: 1,
-                              minFontSize: 6,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w800,
-                                color: evidenceFound >= _targetCount
-                                    ? Colors.greenAccent
-                                    : widget.primaryColor,
-                              ),
-                            ),
-                          );
-                        }
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20.h),
-
-                  // Passage with tappable words
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(16.r),
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.04)
-                          : Colors.black.withValues(alpha: 0.02),
-                      borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: widget.primaryColor.withValues(alpha: 0.1),
+                        color: isComplete
+                            ? Colors.greenAccent.withValues(alpha: 0.5)
+                            : widget.primaryColor.withValues(alpha: 0.2),
+                        width: 1.5,
                       ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: widget.primaryColor.withValues(alpha: 0.15),
+                          blurRadius: 30,
+                          offset: const Offset(0, -8),
+                        ),
+                      ],
                     ),
-                    child: ListenableBuilder(
-                      listenable: Listenable.merge([_highlightedIndices, _wrongTapIndex]),
-                      builder: (context, _) {
-                        return Wrap(
-                          spacing: 4.w,
-                          runSpacing: 6.h,
-                          children: _words.map((word) {
-                            final isHighlighted =
-                                _highlightedIndices.value.contains(word.index);
-                            final isWrongTap = _wrongTapIndex.value == word.index;
-                            final isCorrectEvidence =
-                                isHighlighted && word.isEvidence;
-
-                            return GestureDetector(
-                              onTap: () => _onWordTapped(word.index),
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 200),
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 6.w,
-                                  vertical: 3.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isWrongTap
-                                      ? Colors.redAccent.withValues(alpha: 0.2)
-                                      : isCorrectEvidence
-                                          ? Colors.greenAccent.withValues(alpha: 0.2)
-                                          : isHighlighted
-                                              ? widget.primaryColor
-                                                  .withValues(alpha: 0.15)
-                                              : Colors.transparent,
-                                  borderRadius: BorderRadius.circular(6.r),
-                                  border: isCorrectEvidence
-                                      ? Border.all(
-                                          color: Colors.greenAccent
-                                              .withValues(alpha: 0.5),
-                                          width: 1.5,
-                                        )
-                                      : isWrongTap
-                                          ? Border.all(
-                                              color: Colors.redAccent
-                                                  .withValues(alpha: 0.5),
-                                              width: 1.5,
-                                            )
-                                          : null,
-                                ),
-                                child: Text(
-                                  word.display,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: isCorrectEvidence
-                                        ? FontWeight.w800
-                                        : FontWeight.w500,
-                                    color: isWrongTap
-                                        ? Colors.redAccent
-                                        : isCorrectEvidence
-                                            ? Colors.greenAccent
-                                            : textColor,
-                                    height: 1.5,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                        );
-                      }
-                    ),
-                  ),
-
-                  // Completion state
-                  if (isComplete)
-                    Padding(
-                      padding: EdgeInsets.only(top: 16.h),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    child: SafeArea(
+                      top: false,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(
-                            Icons.verified_rounded,
-                            color: Colors.greenAccent,
-                            size: 24.r,
-                          ),
-                          SizedBox(width: 8.w),
-                          AutoSizeText(
-                            'EVIDENCE FOUND! 🎯',
-                            maxLines: 1,
-                            minFontSize: 8,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.greenAccent,
-                              letterSpacing: 1,
+                          // Handle bar
+                          Container(
+                            width: 48.w,
+                            height: 4.h,
+                            decoration: BoxDecoration(
+                              color: subtitleColor.withValues(alpha: 0.3),
+                              borderRadius: BorderRadius.circular(2.r),
                             ),
                           ),
-                        ],
-                      ).animate().fadeIn(duration: 300.ms).scale(
-                            begin: const Offset(0.8, 0.8),
-                            end: const Offset(1, 1),
-                            duration: 400.ms,
-                            curve: Curves.easeOutBack,
+                          SizedBox(height: 16.h),
+
+                          // Header
+                          Row(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10.r),
+                                decoration: BoxDecoration(
+                                  color: widget.primaryColor.withValues(
+                                    alpha: 0.12,
+                                  ),
+                                  borderRadius: BorderRadius.circular(14.r),
+                                ),
+                                child: Icon(
+                                  Icons.highlight_alt_rounded,
+                                  color: widget.primaryColor,
+                                  size: 22.r,
+                                ),
+                              ),
+                              SizedBox(width: 12.w),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    AutoSizeText(
+                                      'FIND THE EVIDENCE',
+                                      maxLines: 1,
+                                      minFontSize: 8,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: widget.primaryColor,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                    SizedBox(height: 2.h),
+                                    AutoSizeText(
+                                      widget.instruction ??
+                                          'Tap the word(s) that prove the answer',
+                                      maxLines: 2,
+                                      minFontSize: 6,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w500,
+                                        color: subtitleColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              // Progress indicator
+                              ValueListenableBuilder<Set<int>>(
+                                valueListenable: _highlightedIndices,
+                                builder: (context, highlighted, _) {
+                                  final evidenceFound = highlighted
+                                      .where((i) => _words[i].isEvidence)
+                                      .length;
+
+                                  return Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 10.w,
+                                      vertical: 4.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: evidenceFound >= _targetCount
+                                          ? Colors.greenAccent.withValues(
+                                              alpha: 0.15,
+                                            )
+                                          : widget.primaryColor.withValues(
+                                              alpha: 0.1,
+                                            ),
+                                      borderRadius: BorderRadius.circular(20.r),
+                                    ),
+                                    child: AutoSizeText(
+                                      '$evidenceFound / $_targetCount',
+                                      maxLines: 1,
+                                      minFontSize: 6,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: evidenceFound >= _targetCount
+                                            ? Colors.greenAccent
+                                            : widget.primaryColor,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
                           ),
+                          SizedBox(height: 20.h),
+
+                          // Passage with tappable words
+                          Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.all(16.r),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.04)
+                                  : Colors.black.withValues(alpha: 0.02),
+                              borderRadius: BorderRadius.circular(16.r),
+                              border: Border.all(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.1,
+                                ),
+                              ),
+                            ),
+                            child: ListenableBuilder(
+                              listenable: Listenable.merge([
+                                _highlightedIndices,
+                                _wrongTapIndex,
+                              ]),
+                              builder: (context, _) {
+                                return Wrap(
+                                  spacing: 4.w,
+                                  runSpacing: 6.h,
+                                  children: _words.map((word) {
+                                    final isHighlighted = _highlightedIndices
+                                        .value
+                                        .contains(word.index);
+                                    final isWrongTap =
+                                        _wrongTapIndex.value == word.index;
+                                    final isCorrectEvidence =
+                                        isHighlighted && word.isEvidence;
+
+                                    Widget wordWidget = AnimatedContainer(
+                                      duration: const Duration(
+                                        milliseconds: 200,
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 6.w,
+                                        vertical: 3.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: isWrongTap
+                                            ? Colors.redAccent.withValues(
+                                                alpha: 0.2,
+                                              )
+                                            : isCorrectEvidence
+                                            ? Colors.greenAccent.withValues(
+                                                alpha: 0.2,
+                                              )
+                                            : isHighlighted
+                                            ? widget.primaryColor.withValues(
+                                                alpha: 0.15,
+                                              )
+                                            : Colors.transparent,
+                                        borderRadius: BorderRadius.circular(
+                                          6.r,
+                                        ),
+                                        border: isCorrectEvidence
+                                            ? Border.all(
+                                                color: Colors.greenAccent
+                                                    .withValues(alpha: 0.5),
+                                                width: 1.5,
+                                              )
+                                            : isWrongTap
+                                            ? Border.all(
+                                                color: Colors.redAccent
+                                                    .withValues(alpha: 0.5),
+                                                width: 1.5,
+                                              )
+                                            : null,
+                                      ),
+                                      child: Text(
+                                        word.display,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 16.sp,
+                                          fontWeight: isCorrectEvidence
+                                              ? FontWeight.w800
+                                              : FontWeight.w500,
+                                          color: isWrongTap
+                                              ? Colors.redAccent
+                                              : isCorrectEvidence
+                                              ? Colors.greenAccent
+                                              : textColor,
+                                          height: 1.5,
+                                        ),
+                                      ),
+                                    );
+
+                                    if (isWrongTap) {
+                                      wordWidget = wordWidget
+                                          .animate(
+                                            key: ValueKey(
+                                              'shake_${word.index}',
+                                            ),
+                                          )
+                                          .shakeX(amount: 3, duration: 300.ms);
+                                    }
+
+                                    return GestureDetector(
+                                      onTap: () => _onWordTapped(word.index),
+                                      child: wordWidget,
+                                    );
+                                  }).toList(),
+                                );
+                              },
+                            ),
+                          ),
+
+                          // Completion state
+                          if (isComplete)
+                            Padding(
+                              padding: EdgeInsets.only(top: 16.h),
+                              child:
+                                  Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.verified_rounded,
+                                            color: Colors.greenAccent,
+                                            size: 24.r,
+                                          ),
+                                          SizedBox(width: 8.w),
+                                          AutoSizeText(
+                                            'EVIDENCE FOUND! 🎯',
+                                            maxLines: 1,
+                                            minFontSize: 8,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.greenAccent,
+                                              letterSpacing: 1,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                      .animate()
+                                      .fadeIn(duration: 300.ms)
+                                      .scale(
+                                        begin: const Offset(0.8, 0.8),
+                                        end: const Offset(1, 1),
+                                        duration: 400.ms,
+                                        curve: Curves.easeOutBack,
+                                      ),
+                            ),
+                        ],
+                      ),
                     ),
-                ],
+                  );
+                },
               ),
-            ),
-          );
-        }
-      ),
-    )
-    .animate()
-    .slideY(
-      begin: 1.0,
-      end: 0,
-      duration: 400.ms,
-      curve: Curves.easeOut,
-    )
-    .fadeIn(duration: 300.ms);
+            )
+            .animate()
+            .slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut)
+            .fadeIn(duration: 300.ms);
 
     if (widget.isPositioned) {
-      return Positioned(
-        bottom: 0,
-        left: 0,
-        right: 0,
-        child: content,
-      );
+      return Positioned(bottom: 0, left: 0, right: 0, child: content);
     }
 
     return content;

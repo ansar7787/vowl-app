@@ -83,12 +83,12 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     });
   }
 
-  void _onLensMove(DragUpdateDetails details, BoxConstraints constraints) {
+  void _onLensMove(DragUpdateDetails details, BoxConstraints constraints, double lensSize) {
     if (_isAnswered.value) return;
 
     final double halfWidth = constraints.maxWidth / 2;
     final double halfHeight = constraints.maxHeight / 2;
-    final double padding = 90.r;
+    final double padding = (lensSize / 2) + 10.r;
 
     final double maxX = math.max(0.0, halfWidth - padding);
     final double maxY = math.max(0.0, halfHeight - padding);
@@ -123,16 +123,6 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
       _hapticService.selection(); // Subtle feedback for Phase 1
       _isFirstStagePassed.value = true;
       _scrollToBottom();
-
-      Future.delayed(const Duration(milliseconds: 300), () {
-        if (mounted && _scrollController.hasClients) {
-          _scrollController.animateTo(
-            _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 600),
-            curve: Curves.easeOutCubic,
-          );
-        }
-      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -411,9 +401,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                             color: color,
                             isCompact: isCompact,
                             isAnswered:
-                                _isAnswered.value &&
-                                (_isCorrect.value != null || !_isFirstStagePassed.value),
-                            isCorrect: _isCorrect.value,
+                                _isAnswered.value || _isFirstStagePassed.value,
+                            isCorrect: _isFirstStagePassed.value ? true : _isCorrect.value,
                             selectedOption: _selectedOption.value,
                           ),
                         ),
@@ -445,9 +434,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                         color: color,
                                         isCompact: isCompact,
                                         isAnswered:
-                                            _isAnswered.value &&
-                                            (_isCorrect.value != null || !_isFirstStagePassed.value),
-                                        isCorrect: _isCorrect.value,
+                                            _isAnswered.value || _isFirstStagePassed.value,
+                                        isCorrect: _isFirstStagePassed.value ? true : _isCorrect.value,
                                         selectedOption: _selectedOption.value,
                                       ),
                                     ),
@@ -458,7 +446,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                     top: centerPos.dy - lensRadius,
                                     child: GestureDetector(
                                       onPanUpdate: (d) =>
-                                          _onLensMove(d, innerConstraints),
+                                          _onLensMove(d, innerConstraints, lensSize),
                                       child: isCompact
                                           ? SizedBox(
                                               width: lensSize,
@@ -488,10 +476,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               options: quest.options ?? [],
               correct: quest.correctAnswer ?? "",
               color: color,
-              isAnswered:
-                  _isAnswered.value &&
-                  (_isCorrect.value != null || !_isFirstStagePassed.value),
-              isCorrect: _isCorrect.value,
+              isAnswered: _isAnswered.value || _isFirstStagePassed.value,
+              isCorrect: _isFirstStagePassed.value ? true : _isCorrect.value,
               selectedOption: _selectedOption.value,
               isFinalFailure: isFinalFailure,
               onOptionSelected: (o) =>
