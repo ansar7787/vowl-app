@@ -245,68 +245,68 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                                                 ),
                                               ),
                                             ),
-                                            Column(
-                                              children: [
-                                                AnimatedContainer(
-                                                  duration: const Duration(
-                                                    milliseconds: 600,
-                                                  ),
-                                                  curve: Curves.easeInOutCubic,
-                                                  height:
-                                                      _isFirstStagePassed.value
-                                                      ? constraints.maxHeight *
-                                                            0.65
-                                                      : constraints.maxHeight,
-                                                  child: _buildChatInterface(
-                                                    quest,
-                                                    theme.primaryColor,
-                                                    isDarkMode,
-                                                  ),
-                                                ),
-                                                if (_isFirstStagePassed.value)
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          horizontal: 20.w,
-                                                        ),
-                                                    child: Column(
-                                                      children: [
-                                                        if ((quest.origin !=
-                                                                    null &&
-                                                                quest
-                                                                    .origin!
-                                                                    .isNotEmpty) ||
-                                                            quest.literalVsFigurative !=
-                                                                null ||
-                                                            quest.contextSentence !=
-                                                                null ||
-                                                            quest.example !=
-                                                                null)
-                                                          IdiomsOriginCard(
-                                                            origin:
-                                                                quest.origin,
-                                                            literalVsFigurative:
-                                                                quest
-                                                                    .literalVsFigurative,
-                                                            contextSentence:
-                                                                quest
-                                                                    .contextSentence ??
-                                                                quest.example,
-                                                            color: theme
-                                                                .primaryColor,
-                                                          ),
-                                                      ],
+                                            Center(
+                                              child: ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                      maxWidth: 600,
                                                     ),
-                                                  ),
-                                                SizedBox(
-                                                  height:
-                                                      (_isAnswered.value ||
-                                                          _isFirstStagePassed
-                                                              .value)
-                                                      ? 400.h
-                                                      : 60.h,
+                                                child: Column(
+                                                  children: [
+                                                    _buildChatInterface(
+                                                      quest,
+                                                      theme.primaryColor,
+                                                      isDarkMode,
+                                                      constraints.maxHeight,
+                                                    ),
+                                                    if (_isFirstStagePassed
+                                                        .value)
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 20.w,
+                                                            ),
+                                                        child: Column(
+                                                          children: [
+                                                            if ((quest.origin !=
+                                                                        null &&
+                                                                    quest
+                                                                        .origin!
+                                                                        .isNotEmpty) ||
+                                                                quest.literalVsFigurative !=
+                                                                    null ||
+                                                                quest.contextSentence !=
+                                                                    null ||
+                                                                quest.example !=
+                                                                    null)
+                                                              IdiomsOriginCard(
+                                                                origin: quest
+                                                                    .origin,
+                                                                literalVsFigurative:
+                                                                    quest
+                                                                        .literalVsFigurative,
+                                                                contextSentence:
+                                                                    quest
+                                                                        .contextSentence ??
+                                                                    quest
+                                                                        .example,
+                                                                color: theme
+                                                                    .primaryColor,
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    SizedBox(
+                                                      height:
+                                                          (_isAnswered.value ||
+                                                              _isFirstStagePassed
+                                                                  .value)
+                                                          ? 40.h
+                                                          : 40.h,
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -317,20 +317,28 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                                       (!_isAnswered.value ||
                                           _isCorrect.value == null))
                                     SliverToBoxAdapter(
-                                      child: Column(
-                                        children: [
-                                          SpeakToConfirmOverlay(
-                                            expectedText:
-                                                quest.correctAnswer ?? '',
-                                            primaryColor: theme.primaryColor,
-                                            onConfirmed: () =>
-                                                _submitFinalAnswer(true),
-                                            onSkipped: () =>
-                                                _submitFinalAnswer(false),
-                                            isPositioned: false,
+                                      child: Center(
+                                        child: ConstrainedBox(
+                                          constraints: const BoxConstraints(
+                                            maxWidth: 600,
                                           ),
-                                          SizedBox(height: 60.h),
-                                        ],
+                                          child: Column(
+                                            children: [
+                                              SpeakToConfirmOverlay(
+                                                expectedText:
+                                                    quest.correctAnswer ?? '',
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                onConfirmed: () =>
+                                                    _submitFinalAnswer(true),
+                                                onSkipped: () =>
+                                                    _submitFinalAnswer(false),
+                                                isPositioned: false,
+                                              ),
+                                              SizedBox(height: 60.h),
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ),
                                 ],
@@ -347,143 +355,159 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
     );
   }
 
-  Widget _buildChatInterface(VocabularyQuest quest, Color color, bool isDark) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final maxHeight = constraints.maxHeight;
-        final isCompact = maxHeight < 580;
+  Widget _buildChatInterface(
+    VocabularyQuest quest,
+    Color color,
+    bool isDark,
+    double screenHeight,
+  ) {
+    final isCompact = screenHeight < 580;
 
-        final double estimatedContentHeight =
-            (isCompact ? 30.h : 40.h) +
-            (isCompact ? 40.h : 60.h) +
-            (isCompact ? 100.h : 180.h) +
-            (isCompact ? 20.h : 40.h);
-        final remainingHeight = maxHeight - estimatedContentHeight;
+    final double estimatedContentHeight =
+        (isCompact ? 30.h : 40.h) +
+        (isCompact ? 40.h : 60.h) +
+        (isCompact ? 100.h : 180.h) +
+        (isCompact ? 20.h : 40.h);
+    final remainingHeight = screenHeight - estimatedContentHeight;
 
-        final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-        final double gapTop = remainingHeight > 0
-            ? (gapUnit * 1).clamp(10.0, 30.0)
-            : 10.0;
-        final double gapMiddle = remainingHeight > 0
-            ? (gapUnit * 1.5).clamp(10.0, 24.0)
-            : 10.0;
-        final double gapBottom = remainingHeight > 0
-            ? (gapUnit * 2.5).clamp(15.0, 40.0)
-            : 15.0;
+    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+    final double gapTop = remainingHeight > 0
+        ? (gapUnit * 1).clamp(10.0, 30.0)
+        : 10.0;
+    final double gapMiddle = remainingHeight > 0
+        ? (gapUnit * 1.5).clamp(10.0, 24.0)
+        : 10.0;
+    final double gapBottom = remainingHeight > 0
+        ? (gapUnit * 2.5).clamp(15.0, 40.0)
+        : 15.0;
 
-        return Column(
-          children: [
-            SizedBox(height: gapTop),
-            isCompact
-                ? SizedBox(
-                    height: 30.h,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: _buildHeaderBadge(color, isCompact: true),
-                    ),
-                  )
-                : _buildHeaderBadge(color, isCompact: false),
-
-            SizedBox(height: gapMiddle),
-
-            Expanded(
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+    return Column(
+      children: [
+        SizedBox(height: gapTop),
+        isCompact
+            ? SizedBox(
+                height: 30.h,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: _buildHeaderBadge(color, isCompact: true),
+                ),
+              )
+            : _buildHeaderBadge(color, isCompact: false),
+        SizedBox(height: gapMiddle),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+          child: Column(
+            children: [
+              IdiomsSystemMessage(
+                text: "INCOMING TRANSMISSION...",
+                color: color,
+              ),
+              SizedBox(height: isCompact ? 10.h : 20.h),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  IdiomsSystemMessage(
-                    text: "INCOMING TRANSMISSION...",
+                  CircleAvatar(
+                    radius: isCompact ? 14.r : 18.r,
+                    backgroundColor: color.withValues(alpha: 0.2),
+                    child: Icon(
+                      Icons.psychology_alt_rounded,
+                      size: isCompact ? 16.r : 20.r,
+                      color: color,
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+                  IdiomsStrangerMessage(
+                    emojis: quest.topicEmoji ?? "❓",
                     color: color,
+                    isDark: isDark,
                   ),
-                  SizedBox(height: isCompact ? 10.h : 20.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      CircleAvatar(
-                        radius: isCompact ? 14.r : 18.r,
-                        backgroundColor: color.withValues(alpha: 0.2),
-                        child: Icon(
-                          Icons.psychology_alt_rounded,
-                          size: isCompact ? 16.r : 20.r,
-                          color: color,
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      IdiomsStrangerMessage(
-                        emojis: quest.topicEmoji ?? "❓",
-                        color: color,
-                        isDark: isDark,
-                      ),
-                    ],
-                  ),
-
-                  if (_selectedOption.value != null) ...[
-                    SizedBox(height: isCompact ? 14.h : 24.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        IdiomsUserMessage(
-                          text: _selectedOption.value!,
-                          color: color,
-                          isCorrect: _isCorrect.value,
-                          isDark: isDark,
-                        ),
-                        SizedBox(width: 10.w),
-                        CircleAvatar(
-                          radius: isCompact ? 14.r : 18.r,
-                          backgroundColor: color.withValues(alpha: 0.1),
-                          child: Icon(
-                            Icons.face_retouching_natural_rounded,
-                            size: isCompact ? 16.r : 20.r,
-                            color: color,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-
-                  if (_isAnswered.value && _isCorrect.value == false) ...[
-                    SizedBox(height: 10.h),
-                    IdiomsSystemMessage(
-                      text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
-                      color: Colors.redAccent,
-                    ),
-                  ],
                 ],
               ),
-            ),
-
-            SizedBox(height: gapMiddle),
-
-            Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: Wrap(
-                    spacing: 12.w,
-                    runSpacing: isCompact ? 8.h : 12.h,
-                    alignment: WrapAlignment.center,
-                    children: (quest.options ?? []).map((o) {
-                      return IdiomsOptionChip(
-                        text: o,
-                        correct: quest.correctAnswer ?? "",
+              if (quest.hint != null && quest.hint!.isNotEmpty) ...[
+                SizedBox(height: isCompact ? 8.h : 12.h),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width: (isCompact ? 28.r : 36.r) + 10.w,
+                    ), // alignment with above
+                    Flexible(
+                      child: IdiomsStrangerTextMessage(
+                        text: quest.hint!,
                         color: color,
                         isDark: isDark,
-                        isAnswered: _isAnswered.value,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+
+              if (_selectedOption.value != null) ...[
+                SizedBox(height: isCompact ? 14.h : 24.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Flexible(
+                      child: IdiomsUserMessage(
+                        text: _selectedOption.value!,
+                        color: color,
                         isCorrect: _isCorrect.value,
-                        selectedOption: _selectedOption.value,
-                        onTap: () =>
-                            _submitAnswer(o, quest.correctAnswer ?? ""),
-                      );
-                    }).toList(),
-                  ),
-                )
-                .animate()
-                .fadeIn(delay: 800.ms)
-                .slideY(begin: 0.3, curve: Curves.easeOutCubic),
-            SizedBox(height: gapBottom),
-          ],
-        );
-      },
+                        isDark: isDark,
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+                    CircleAvatar(
+                      radius: isCompact ? 14.r : 18.r,
+                      backgroundColor: color.withValues(alpha: 0.1),
+                      child: Icon(
+                        Icons.face_retouching_natural_rounded,
+                        size: isCompact ? 16.r : 20.r,
+                        color: color,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+
+              if (_isAnswered.value && _isCorrect.value == false) ...[
+                SizedBox(height: 10.h),
+                IdiomsSystemMessage(
+                  text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
+                  color: Colors.redAccent,
+                ),
+              ],
+            ],
+          ),
+        ),
+
+        SizedBox(height: gapMiddle),
+
+        Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Wrap(
+                spacing: 12.w,
+                runSpacing: isCompact ? 8.h : 12.h,
+                alignment: WrapAlignment.center,
+                children: (quest.options ?? []).map((o) {
+                  return IdiomsOptionChip(
+                    text: o,
+                    correct: quest.correctAnswer ?? "",
+                    color: color,
+                    isDark: isDark,
+                    isAnswered: _isAnswered.value,
+                    isCorrect: _isCorrect.value,
+                    selectedOption: _selectedOption.value,
+                    onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
+                  );
+                }).toList(),
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 800.ms)
+            .slideY(begin: 0.3, curve: Curves.easeOutCubic),
+        SizedBox(height: gapBottom),
+      ],
     );
   }
 

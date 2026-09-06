@@ -26,7 +26,7 @@ class IdiomsSystemMessage extends StatelessWidget {
           text,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 9.sp,
+            fontSize: 10.sp,
             color: color,
             letterSpacing: 1.5,
             fontWeight: FontWeight.bold,
@@ -78,6 +78,61 @@ class IdiomsStrangerMessage extends StatelessWidget {
           child: Text(emojis, style: TextStyle(fontSize: 48.sp)),
         )
         .animate()
+        .slideX(begin: -0.1, duration: 500.ms, curve: Curves.easeOutCubic)
+        .fadeIn();
+  }
+}
+
+class IdiomsStrangerTextMessage extends StatelessWidget {
+  final String text;
+  final Color color;
+  final bool isDark;
+
+  const IdiomsStrangerTextMessage({
+    super.key,
+    required this.text,
+    required this.color,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+          constraints: BoxConstraints(maxWidth: 0.75.sw),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24.r),
+              topRight: Radius.circular(24.r),
+              bottomRight: Radius.circular(24.r),
+            ),
+            border: Border.all(
+              color: isDark
+                  ? color.withValues(alpha: 0.3)
+                  : color.withValues(alpha: 0.15),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: isDark ? 0.2 : 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, 5),
+              ),
+            ],
+          ),
+          child: Text(
+            text.replaceFirst('DEFINITION: ', ''),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.white70 : Colors.black87,
+              height: 1.3,
+            ),
+          ),
+        )
+        .animate(delay: 300.ms)
         .slideX(begin: -0.1, duration: 500.ms, curve: Curves.easeOutCubic)
         .fadeIn();
   }

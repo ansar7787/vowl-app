@@ -1192,11 +1192,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'idioms': [
       "",
-      "Great start! You're decoding these cultural emojis perfectly.",
-      "Your instinct for natural English expressions is getting incredibly sharp.",
-      "50 levels cleared! You're cracking these idiom vaults like a true native speaker.",
-      "Level 100! Your understanding of colorful English phrasing is virtually flawless.",
-      "Double Centurion! Your conversational English is absolutely top-tier.",
+      "Great start! You're picking up these fun expressions really fast.",
+      "Your instinct for natural English is getting so much better. Trust your gut!",
+      "50 levels cleared! You're really getting the hang of reading between the lines.",
+      "Level 100! You've learned so many idioms. You can definitely use these in real conversations now.",
+      "200 levels! Your conversational English is absolutely phenomenal. Keep it up!",
     ],
     'phrasalverbs': [
       "",
