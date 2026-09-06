@@ -631,8 +631,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                               ValueListenableBuilder<bool>(
                                 valueListenable: _isSubmitting,
                                 builder: (context, isSubmitting, _) {
-                                  if (isSubmitting)
+                                  if (isSubmitting) {
                                     return const SizedBox.shrink();
+                                  }
                                   return Padding(
                                     padding: EdgeInsets.only(top: 16.h),
                                     child: ScaleButton(
@@ -665,8 +666,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                               }
                                             },
                                             onDismissed: () {
-                                              if (mounted)
+                                              if (mounted) {
                                                 _isSubmitting.value = false;
+                                              }
                                             },
                                           );
                                         }

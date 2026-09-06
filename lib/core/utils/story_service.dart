@@ -207,7 +207,7 @@ class StoryServiceImpl implements StoryService {
     'idioms':
         "Native speakers use idioms all the time! Let's learn these colorful phrases so you can sound completely natural.",
     'phrasalVerbs':
-        "Phrasal verbs are the secret to conversational English! Let's master these combinations so you sound totally fluent.",
+        "Native speakers use phrasal verbs all the time! Let's learn these tricky combinations so you sound completely natural.",
     'prefixSuffix':
         "Did you know that adding just a few tiny letters can completely flip a word's meaning? Let's build some words together and see how it works!",
     'synonymSearch':
@@ -1200,10 +1200,10 @@ class StoryServiceImpl implements StoryService {
     ],
     'phrasalverbs': [
       "",
-      "Great start! You're discovering how adding a simple particle completely changes a verb's meaning.",
+      "Great start! You're discovering how adding a simple word completely changes a verb's meaning.",
       "You're getting the hang of it! Phrasal verbs are the secret to sounding like a native speaker.",
       "50 levels cleared! Your ability to crack the meaning of these verb vaults is seriously impressive.",
-      "Level 100! You are mastering the trickiest part of the English language. Keep up this amazing momentum!",
+      "Level 100! You're cracking these tricky verbs like a true native speaker. Keep up the amazing work!",
       "Level 200! You've completely unlocked the verb vault. Your conversational English is absolutely phenomenal!",
     ],
     'prefixsuffix': [

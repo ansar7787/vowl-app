@@ -87,8 +87,9 @@ class _SpeakingSelfEvaluationControlsState
   }
 
   Future<void> _startRecording() async {
-    if (_isPlaying.value || _isRecording.value || _isProcessingAudioAction)
+    if (_isPlaying.value || _isRecording.value || _isProcessingAudioAction) {
       return;
+    }
     _isProcessingAudioAction = true;
 
     try {

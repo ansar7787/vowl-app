@@ -1190,15 +1190,15 @@ class GameInstructionService {
       title: "Verb Vault",
       icon: Icons.vpn_key_rounded,
       objective:
-          "Master hidden combinations by selecting the correct preposition particle to crack the verb vault. Then, speak the natural English sentence aloud.",
+          "Phrasal verbs are tricky combinations like 'turn up' or 'break down'. Read the clue, choose the missing word to crack the vault, and then speak the full sentence aloud.",
       rules: [
-        "Read the LCD definition",
-        "Tap the correct particle key",
-        "Speak the sentence to confirm",
+        "Read the vault's clue",
+        "Choose the missing word",
+        "Speak the full sentence",
       ],
-      actionText: "Hack Vault",
+      actionText: "Crack Vault",
       tip:
-          "PRO TIP: Particles change everything! 'Turn up' has a completely different meaning than 'turn down'.",
+          "PRO TIP: The second word changes everything! 'Turn up' (increase) means something totally different than 'turn down' (refuse).",
     ),
     GameSubtype.idioms: GameBriefing(
       title: "Emojify",

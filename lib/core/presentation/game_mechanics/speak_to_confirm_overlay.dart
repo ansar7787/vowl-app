@@ -282,8 +282,9 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                                             }
                                           },
                                           onDismissed: () {
-                                            if (mounted)
+                                            if (mounted) {
                                               _isSubmitting.value = false;
+                                            }
                                           },
                                         );
                                       }

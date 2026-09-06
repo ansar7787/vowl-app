@@ -617,8 +617,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                           }
                                         },
                                         onDismissed: () {
-                                          if (mounted)
+                                          if (mounted) {
                                             _isSubmitting.value = false;
+                                          }
                                         },
                                       );
                                     }

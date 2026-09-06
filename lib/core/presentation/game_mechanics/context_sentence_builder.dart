@@ -67,12 +67,12 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
     _focusNode.addListener(() {
       if (_focusNode.hasFocus && !widget.isPositioned) {
         Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted && _focusNode.context != null) {
+          if (mounted) {
             Scrollable.ensureVisible(
-              _focusNode.context!,
+              context,
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeOutCubic,
-              alignment: 0.5,
+              alignment: 1.0,
             );
           }
         });
@@ -300,7 +300,11 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                       child: innerContent,
                     )
                   : Padding(
-                      padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                      padding: EdgeInsets.only(
+                        left: 20.w,
+                        right: 20.w,
+                        bottom: MediaQuery.of(context).viewInsets.bottom,
+                      ),
                       child: innerContent,
                     ),
             )

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class PhrasalVerbsLcd extends StatelessWidget {
   final String text;
@@ -34,18 +33,15 @@ class PhrasalVerbsLcd extends StatelessWidget {
         ],
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.radar_rounded, size: 12.sp, color: color),
                   SizedBox(width: 8.w),
-                  AutoSizeText(
+                  Text(
                     "DECRYPTING TARGET",
-                    maxLines: 1,
-                    minFontSize: 4,
-                    stepGranularity: 0.5,
-                    overflow: TextOverflow.visible,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
@@ -59,13 +55,9 @@ class PhrasalVerbsLcd extends StatelessWidget {
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .fade(duration: 1.seconds),
           SizedBox(height: 10.h),
-          AutoSizeText(
+          Text(
             text.toUpperCase(),
             textAlign: TextAlign.center,
-            maxLines: 2,
-            minFontSize: 4,
-            stepGranularity: 0.5,
-            overflow: TextOverflow.visible,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 15.sp,
