@@ -14,6 +14,7 @@ class CollocationOptionBubble extends StatelessWidget {
   final bool isFirstStagePassed;
   final bool isHintUsed;
   final int index;
+  final bool isCompact;
   final VoidCallback onTap;
 
   const CollocationOptionBubble({
@@ -29,6 +30,7 @@ class CollocationOptionBubble extends StatelessWidget {
     required this.isFirstStagePassed,
     this.isHintUsed = false,
     required this.index,
+    this.isCompact = false,
     required this.onTap,
   });
 
@@ -70,8 +72,8 @@ class CollocationOptionBubble extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeOutCubic,
-        width: 130.w,
-        height: 130.w,
+        width: isCompact ? 100.w : 130.w,
+        height: isCompact ? 100.w : 130.w,
         decoration: BoxDecoration(
           color: bubbleColor,
           shape: BoxShape.circle,
@@ -125,6 +127,17 @@ class CollocationOptionBubble extends StatelessWidget {
           curve: Curves.easeOutBack,
         )
         .fadeOut(duration: 500.ms);
+
+    // Apply scale out for unselected options in phase 2
+    final isUnselectedInPhase2 = isFirstStagePassed && !isSelected;
+    animatedBubble = animatedBubble
+        .animate(target: isUnselectedInPhase2 ? 1 : 0)
+        .scale(
+          end: const Offset(0.0, 0.0),
+          duration: 300.ms,
+          curve: Curves.easeIn,
+        )
+        .fadeOut(duration: 300.ms);
 
     // Apply a pulsing glow if it's a hint
     if (isGlowingHint) {

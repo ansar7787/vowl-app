@@ -220,6 +220,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               onHint: () => context.read<VocabularyBloc>().add(
                 const VocabularyHintUsed(),
               ),
+              customHintText: quest?.hint,
               useScrolling: false,
               disablePadding: true,
               child: quest == null
@@ -309,75 +310,82 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                           EdgeInsets.symmetric(
                                                             horizontal: 20.w,
                                                           ),
-                                                      child: DragTarget<String>(
-                                                        onWillAcceptWithDetails:
-                                                            (details) {
-                                                              _hapticService
-                                                                  .selection();
-                                                              return !_isAnswered
-                                                                      .value &&
-                                                                  !_isDragPassed
-                                                                      .value;
-                                                            },
-                                                        onAcceptWithDetails:
-                                                            (details) {
-                                                              _submitAnswer(
-                                                                details.data,
-                                                                quest.correctAnswer ??
-                                                                    "",
-                                                              );
-                                                            },
-                                                        builder:
-                                                            (
-                                                              context,
-                                                              candidateData,
-                                                              rejectedData,
-                                                            ) {
-                                                              bool isHovered =
-                                                                  candidateData
-                                                                      .isNotEmpty;
-                                                              return AnimatedScale(
-                                                                scale: isHovered
-                                                                    ? 1.05
-                                                                    : 1.0,
-                                                                duration:
-                                                                    200.ms,
-                                                                curve: Curves
-                                                                    .easeOutBack,
-                                                                child: AnimatedContainer(
+                                                      child: Semantics(
+                                                        label:
+                                                            'Drop target for ${quest.word ?? ""}. Drag a matching word here to complete the pair.',
+                                                        child: DragTarget<String>(
+                                                          onWillAcceptWithDetails:
+                                                              (details) {
+                                                                _hapticService
+                                                                    .selection();
+                                                                return !_isAnswered
+                                                                        .value &&
+                                                                    !_isDragPassed
+                                                                        .value;
+                                                              },
+                                                          onAcceptWithDetails:
+                                                              (details) {
+                                                                _submitAnswer(
+                                                                  details.data,
+                                                                  quest.correctAnswer ??
+                                                                      "",
+                                                                );
+                                                              },
+                                                          builder:
+                                                              (
+                                                                context,
+                                                                candidateData,
+                                                                rejectedData,
+                                                              ) {
+                                                                bool isHovered =
+                                                                    candidateData
+                                                                        .isNotEmpty;
+                                                                return AnimatedScale(
+                                                                  scale:
+                                                                      isHovered
+                                                                      ? 1.05
+                                                                      : 1.0,
                                                                   duration:
                                                                       200.ms,
-                                                                  decoration: BoxDecoration(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                          40.r,
-                                                                        ),
-                                                                    boxShadow:
-                                                                        isHovered
-                                                                        ? [
-                                                                            BoxShadow(
-                                                                              color: theme.primaryColor.withValues(
-                                                                                alpha: 0.8,
+                                                                  curve: Curves
+                                                                      .easeOutBack,
+                                                                  child: AnimatedContainer(
+                                                                    duration:
+                                                                        200.ms,
+                                                                    decoration: BoxDecoration(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                            40.r,
+                                                                          ),
+                                                                      boxShadow:
+                                                                          isHovered
+                                                                          ? [
+                                                                              BoxShadow(
+                                                                                color: theme.primaryColor.withValues(
+                                                                                  alpha: 0.8,
+                                                                                ),
+                                                                                blurRadius: 40,
+                                                                                spreadRadius: 10,
                                                                               ),
-                                                                              blurRadius: 40,
-                                                                              spreadRadius: 10,
-                                                                            ),
-                                                                          ]
-                                                                        : [],
+                                                                            ]
+                                                                          : [],
+                                                                    ),
+                                                                    child: CollocationAnchorBubble(
+                                                                      text:
+                                                                          _isDragPassed
+                                                                              .value
+                                                                          ? '${quest.word ?? ""} ${quest.correctAnswer ?? ""}'
+                                                                          : (quest.word ??
+                                                                                ""),
+                                                                      color: theme
+                                                                          .primaryColor,
+                                                                      isDark:
+                                                                          isDark,
+                                                                    ),
                                                                   ),
-                                                                  child: CollocationAnchorBubble(
-                                                                    text:
-                                                                        quest
-                                                                            .word ??
-                                                                        "",
-                                                                    color: theme
-                                                                        .primaryColor,
-                                                                    isDark:
-                                                                        isDark,
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            },
+                                                                );
+                                                              },
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -496,33 +504,42 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                         ),
                                       ),
                                     ),
+                                  if (_isDragPassed.value &&
+                                      (!_isAnswered.value ||
+                                          _isCorrect.value == null))
+                                    SliverToBoxAdapter(
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          vertical: 20.h,
+                                        ),
+                                        child: ContextSentenceBuilder(
+                                          targetKeyword:
+                                              '${quest.word} ${quest.correctAnswer}',
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () =>
+                                              _submitFinalAnswer(true),
+                                          onSkipped: () =>
+                                              _submitFinalAnswer(false),
+                                          isPositioned: false,
+                                          exampleSentence:
+                                              _getFormattedExampleSentence(
+                                                quest,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          (_isDragPassed.value &&
-                                              (!_isAnswered.value ||
-                                                  _isCorrect.value == null))
-                                          ? 380.h
-                                          : 60.h,
+                                          MediaQuery.of(
+                                            context,
+                                          ).viewInsets.bottom +
+                                          60.h,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_isDragPassed.value &&
-                                (!_isAnswered.value ||
-                                    _isCorrect.value == null))
-                              ContextSentenceBuilder(
-                                targetKeyword:
-                                    '${quest.word} ${quest.correctAnswer}',
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: true,
-                                exampleSentence: _getFormattedExampleSentence(
-                                  quest,
-                                ),
-                              ),
                           ],
                         );
                       },
@@ -571,31 +588,35 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           return bubble;
         }
 
-        return Draggable<String>(
-          data: entry.value,
-          feedback: Material(
-            color: Colors.transparent,
-            child: Transform.scale(
-              scale: 1.1,
-              child: CollocationOptionBubble(
-                text: entry.value,
-                correct: quest.correctAnswer ?? "",
-                color: color,
-                isDark: isDark,
-                isAnswered: false,
-                isCorrect: null,
-                selectedOption: null,
-                isFinalFailure: false,
-                isFirstStagePassed: false,
-                index: entry.key,
-                isHintUsed: isHintUsed,
-                onTap: () {},
+        return Semantics(
+          label:
+              'Draggable option: ${entry.value}. Double tap and hold to drag.',
+          child: Draggable<String>(
+            data: entry.value,
+            feedback: Material(
+              color: Colors.transparent,
+              child: Transform.scale(
+                scale: 1.1,
+                child: CollocationOptionBubble(
+                  text: entry.value,
+                  correct: quest.correctAnswer ?? "",
+                  color: color,
+                  isDark: isDark,
+                  isAnswered: false,
+                  isCorrect: null,
+                  selectedOption: null,
+                  isFinalFailure: false,
+                  isFirstStagePassed: false,
+                  index: entry.key,
+                  isHintUsed: isHintUsed,
+                  onTap: () {},
+                ),
               ),
             ),
+            childWhenDragging: Opacity(opacity: 0.3, child: bubble),
+            onDragStarted: () => _hapticService.selection(),
+            child: bubble,
           ),
-          childWhenDragging: Opacity(opacity: 0.3, child: bubble),
-          onDragStarted: () => _hapticService.selection(),
-          child: bubble,
         );
       }).toList(),
     );

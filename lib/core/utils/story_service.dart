@@ -479,11 +479,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'collocations': [
       "",
-      "Great job! Learning which words naturally pair together is the secret to sounding native.",
-      "Your vocabulary is sounding much more natural and fluid.",
-      "50 levels cleared! You are pairing words like a true language expert.",
-      "Level 100! Your command of collocations is virtually native-like.",
-      "Level 200 reached! You have mastered the natural flow of English phrasing.",
+      "Nice! You're starting to feel the rhythm of which words naturally stick together.",
+      "You're getting the hang of this! Your instinct for picking the right word pairs is getting sharper.",
+      "Halfway to a hundred! Your brain is starting to automatically link these words just like a native speaker would.",
+      "Level 100! That takes real dedication. You should be incredibly proud of how natural your English sounds now.",
+      "Level 200! Honestly, your vocabulary is amazing. You never have to guess which words fit together anymore.",
     ],
     'contextualusage': [
       "",

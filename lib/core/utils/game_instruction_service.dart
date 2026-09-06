@@ -1257,18 +1257,18 @@ class GameInstructionService {
           "PRO TIP: If the target meaning says 'again', look for 're-'. If it says 'without', look for '-less'.",
     ),
     GameSubtype.collocations: GameBriefing(
-      title: "Collocation Match",
+      title: "Natural Word Pairs",
       icon: Icons.join_inner_rounded,
       objective:
-          "Drag the correct word bubble to the anchor to form a natural English collocation, then build a sentence using it.",
+          "Native speakers rely heavily on word pairs. Your mission is to find the word that naturally belongs with the anchor, then use that exact pair to complete a real sentence.",
       rules: [
-        "Read the anchor word",
-        "Drag the bubble that pairs best",
-        "Build a sentence with the pair",
+        "Look at the main anchor word",
+        "Drop the word that naturally belongs with it",
+        "Lock it in by typing the missing phrase",
       ],
-      actionText: "Match Pair",
+      actionText: "Let's Pair Them",
       tip:
-          "PRO TIP: Native speakers use these pairs naturally. Don't translate word-for-word, think about what sounds right!",
+          "PRO TIP: Don't try to translate these word-for-word from your native language! Just trust your gut and choose the pair that sounds the most natural to you.",
     ),
     GameSubtype.contextualUsage: GameBriefing(
       title: "Contextual Usage",

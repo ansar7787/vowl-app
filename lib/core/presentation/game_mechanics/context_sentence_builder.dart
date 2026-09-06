@@ -270,7 +270,13 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                 radius: Radius.circular(8.r),
                 thickness: 4.w,
                 child: SingleChildScrollView(
-                  child: _buildFormContent(isDark, subtitleColor, textColor),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 24.h,
+                    ),
+                    child: _buildFormContent(isDark, subtitleColor, textColor),
+                  ),
                 ),
               )
             : Padding(
