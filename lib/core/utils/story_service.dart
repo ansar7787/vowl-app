@@ -217,7 +217,7 @@ class StoryServiceImpl implements StoryService {
     'wordFormation':
         "Welcome to word building! We're going to learn how to create powerful new words by mixing and matching their core pieces.",
     'contextualUsage':
-        "Knowing a word is good, but knowing exactly how to use it in a sentence is true mastery. Let's get it right!",
+        "Knowing a word is good, but knowing when to use it is what really matters. Let's practice choosing the right word for the situation.",
     'collocations':
         "Some words naturally belong together. Let's practice these pairs so you sound more natural.",
 
@@ -487,11 +487,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'contextualusage': [
       "",
-      "Nice work! Understanding context is crucial for picking the right word.",
-      "You're becoming a true detective of meaning. Your word choices are spot on!",
-      "50 levels done! Your sensitivity to register and nuance is extremely impressive.",
-      "Level 100! You are a master of contextual vocabulary usage.",
-      "Double Centurion! Your ability to adapt vocabulary to any situation is flawless.",
+      "Nice work! You're getting better at picking the right word for the situation.",
+      "You're starting to really notice the subtle differences between words.",
+      "Level 50! Your word choices are sounding much more natural.",
+      "Level 100! You're consistently choosing the perfect word without hesitation.",
+      "Level 200! You have a great instinct for picking the right word in any context.",
     ],
     'grammar': [
       "", // level 1 handled dynamically
