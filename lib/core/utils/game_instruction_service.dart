@@ -1260,15 +1260,15 @@ class GameInstructionService {
       title: "Natural Word Pairs",
       icon: Icons.join_inner_rounded,
       objective:
-          "Native speakers rely heavily on word pairs. Your mission is to find the word that naturally belongs with the anchor, then use that exact pair to complete a real sentence.",
+          "Find the word that naturally belongs with the anchor, then confirm the complete phrase in a real sentence.",
       rules: [
-        "Look at the main anchor word",
-        "Drop the word that naturally belongs with it",
-        "Lock it in by typing the missing phrase",
+        "Read the main anchor word",
+        "Drag the matching word to the drop zone",
+        "Review the complete sentence and confirm",
       ],
-      actionText: "Let's Pair Them",
+      actionText: "Start Pairing",
       tip:
-          "PRO TIP: Don't try to translate these word-for-word from your native language! Just trust your gut and choose the pair that sounds the most natural to you.",
+          "PRO TIP: Try not to translate word-for-word. Just trust your ear and choose the pair that sounds right to you.",
     ),
     GameSubtype.contextualUsage: GameBriefing(
       title: "Contextual Usage",

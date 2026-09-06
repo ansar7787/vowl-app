@@ -254,13 +254,16 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                             ),
                                             Column(
                                               children: [
-                                                SizedBox(
-                                                  height: trueMaxHeight,
+                                                Container(
+                                                  constraints: BoxConstraints(
+                                                    minHeight: trueMaxHeight,
+                                                  ),
                                                   child: _buildUnfoldContent(
                                                     quest,
                                                     theme.primaryColor,
                                                     isDarkMode,
                                                     constraints.maxWidth,
+                                                    trueMaxHeight,
                                                     _selectedOption.value !=
                                                             null
                                                         ? _selectedOption.value!
@@ -289,8 +292,6 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                                             quest.usageExample !=
                                                                 null ||
                                                             quest.contextSentence !=
-                                                                null ||
-                                                            quest.example !=
                                                                 null)
                                                           ContextualUsageRegisterMeter(
                                                             registerLevel: quest
@@ -301,8 +302,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                                                 quest
                                                                     .usageExample ??
                                                                 quest
-                                                                    .contextSentence ??
-                                                                quest.example,
+                                                                    .contextSentence,
                                                             color: theme
                                                                 .primaryColor,
                                                           ),
@@ -366,89 +366,71 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
     Color color,
     bool isDark,
     double maxWidth,
+    double maxHeight,
     bool? currentOptionCorrect,
   ) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final maxHeight = constraints.maxHeight;
-        final isCompact = maxHeight < 580;
+    final isCompact = maxHeight < 580;
 
-        final double estimatedContentHeight =
-            (isCompact ? 40.h : 60.h) +
-            (isCompact ? 100.h : 150.h) +
-            (isCompact ? 80.h : 120.h) +
-            20.h;
-        final remainingHeight = maxHeight - estimatedContentHeight;
+    final double estimatedContentHeight =
+        (isCompact ? 40.h : 60.h) +
+        (isCompact ? 100.h : 150.h) +
+        (isCompact ? 80.h : 120.h) +
+        20.h;
+    final remainingHeight = maxHeight - estimatedContentHeight;
 
-        final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
-        final double gapTop = remainingHeight > 0
-            ? (gapUnit * 1).clamp(10.0, 40.0)
-            : 10.0;
-        final double gapMiddle = remainingHeight > 0
-            ? (gapUnit * 1.5).clamp(15.0, 40.0)
-            : 15.0;
-        final double gapBottom = remainingHeight > 0
-            ? (gapUnit * 2.5).clamp(20.0, 60.0)
-            : 20.0;
+    final double gapUnit = remainingHeight > 0 ? remainingHeight / 5 : 0;
+    final double gapTop = remainingHeight > 0
+        ? (gapUnit * 1).clamp(10.0, 40.0)
+        : 10.0;
+    final double gapMiddle = remainingHeight > 0
+        ? (gapUnit * 1.5).clamp(15.0, 40.0)
+        : 15.0;
+    final double gapBottom = remainingHeight > 0
+        ? (gapUnit * 2.5).clamp(20.0, 60.0)
+        : 20.0;
 
-        return Column(
-          children: [
-            SizedBox(height: gapTop),
-            isCompact
-                ? SizedBox(
-                    height: 25.h,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        InstructionHelper.getInstruction(quest).toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          color: color,
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+    return Column(
+      children: [
+        SizedBox(height: gapTop),
+        isCompact
+            ? SizedBox(
+                height: 25.h,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    InstructionHelper.getInstruction(quest).toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      color: color,
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.bold,
                     ),
-                  )
-                : Text(
-                        InstructionHelper.getInstruction(quest).toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          color: color,
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )
-                      .animate()
-                      .fadeIn(duration: 800.ms)
-                      .shimmer(duration: 2.seconds),
+                  ),
+                ),
+              )
+            : Text(
+                InstructionHelper.getInstruction(quest).toUpperCase(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  color: color,
+                  letterSpacing: 2,
+                  fontWeight: FontWeight.bold,
+                ),
+              ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds),
 
-            SizedBox(height: gapMiddle),
+        SizedBox(height: gapMiddle),
 
-            isCompact
-                ? SizedBox(
-                    height: 120.h,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: SizedBox(
-                        width: maxWidth - 40.w,
-                        child: ContextualUsageCard(
-                          question: quest.prompt ?? "",
-                          color: color,
-                          isDark: isDark,
-                          isAnswered: _isAnswered.value,
-                          isCorrect: _isCorrect.value ?? currentOptionCorrect,
-                          selectedOption: _selectedOption.value,
-                        ),
-                      ),
-                    ),
-                  )
-                : Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+        isCompact
+            ? SizedBox(
+                height: 120.h,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: SizedBox(
+                    width: maxWidth - 40.w,
                     child: ContextualUsageCard(
                       question: quest.prompt ?? "",
                       color: color,
@@ -458,37 +440,48 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                       selectedOption: _selectedOption.value,
                     ),
                   ),
+                ),
+              )
+            : Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: ContextualUsageCard(
+                  question: quest.prompt ?? "",
+                  color: color,
+                  isDark: isDark,
+                  isAnswered: _isAnswered.value,
+                  isCorrect: _isCorrect.value ?? currentOptionCorrect,
+                  selectedOption: _selectedOption.value,
+                ),
+              ),
 
-            SizedBox(height: gapMiddle),
+        SizedBox(height: gapMiddle),
 
-            (isCompact
-                ? SizedBox(
-                    height: 100.h,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: SizedBox(
-                        width: maxWidth,
-                        child: _buildChipsWrap(
-                          quest,
-                          color,
-                          isDark,
-                          isCompact,
-                          currentOptionCorrect,
-                        ),
-                      ),
+        (isCompact
+            ? SizedBox(
+                height: 100.h,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: SizedBox(
+                    width: maxWidth,
+                    child: _buildChipsWrap(
+                      quest,
+                      color,
+                      isDark,
+                      isCompact,
+                      currentOptionCorrect,
                     ),
-                  )
-                : _buildChipsWrap(
-                    quest,
-                    color,
-                    isDark,
-                    isCompact,
-                    currentOptionCorrect,
-                  )),
-            SizedBox(height: gapBottom),
-          ],
-        );
-      },
+                  ),
+                ),
+              )
+            : _buildChipsWrap(
+                quest,
+                color,
+                isDark,
+                isCompact,
+                currentOptionCorrect,
+              )),
+        SizedBox(height: gapBottom),
+      ],
     );
   }
 

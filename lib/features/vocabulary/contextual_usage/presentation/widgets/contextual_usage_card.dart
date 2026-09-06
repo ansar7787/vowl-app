@@ -61,6 +61,7 @@ class ContextualUsageCard extends StatelessWidget {
                   ],
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
                       height: 1,
@@ -68,15 +69,15 @@ class ContextualUsageCard extends StatelessWidget {
                       color: color.withValues(alpha: 0.1),
                     ),
                     SizedBox(height: 20.h),
-                    RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
+                    Text.rich(
+                          TextSpan(
                             children: _buildSentenceSpans(
                               question,
                               color,
                               isDark,
                             ),
                           ),
+                          textAlign: TextAlign.center,
                         )
                         .animate(target: isAnswered ? 1 : 0)
                         .shimmer(

@@ -219,7 +219,7 @@ class StoryServiceImpl implements StoryService {
     'contextualUsage':
         "Knowing a word is good, but knowing exactly how to use it in a sentence is true mastery. Let's get it right!",
     'collocations':
-        "Some words just naturally belong together! Let's practice these natural pairs so your English flows perfectly.",
+        "Some words naturally belong together. Let's practice these pairs so you sound more natural.",
 
     // Writing
     'completeSentence':
@@ -479,11 +479,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'collocations': [
       "",
-      "Nice! You're starting to feel the rhythm of which words naturally stick together.",
-      "You're getting the hang of this! Your instinct for picking the right word pairs is getting sharper.",
-      "Halfway to a hundred! Your brain is starting to automatically link these words just like a native speaker would.",
-      "Level 100! That takes real dedication. You should be incredibly proud of how natural your English sounds now.",
-      "Level 200! Honestly, your vocabulary is amazing. You never have to guess which words fit together anymore.",
+      "Good start! You're noticing which words naturally belong together.",
+      "You're building a good ear for word pairs.",
+      "Level 50! Your sentences are starting to flow much better.",
+      "Level 100! You're pairing words naturally without overthinking.",
+      "Level 200! You've got a great feel for natural English phrasing.",
     ],
     'contextualusage': [
       "",
