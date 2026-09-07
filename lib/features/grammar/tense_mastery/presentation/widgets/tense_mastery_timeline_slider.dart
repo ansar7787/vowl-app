@@ -44,18 +44,23 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
           final leftPos = sliderValue * maxLeft;
 
           return Stack(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             clipBehavior: Clip.none,
             children: [
               // The Track
-              Container(
-                height: 6.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.05)
-                      : Colors.black.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(3.r),
+              Positioned(
+                top: (sphereWidth / 2) - 3.h,
+                left: 0,
+                right: 0,
+                child: Container(
+                  height: 6.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(3.r),
+                  ),
                 ),
               ),
 
@@ -92,29 +97,33 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
-                              width: 14.r,
-                              height: 14.r,
-                              decoration: BoxDecoration(
-                                color: isCurrent
-                                    ? primaryColor
-                                    : (isDark
-                                          ? Colors.white10
-                                          : Colors.black12),
-                                shape: BoxShape.circle,
-                                boxShadow: isCurrent
-                                    ? [
-                                        BoxShadow(
-                                          color: primaryColor.withValues(
-                                            alpha: 0.4,
+                              height: sphereWidth,
+                              alignment: Alignment.center,
+                              child: Container(
+                                width: 14.r,
+                                height: 14.r,
+                                decoration: BoxDecoration(
+                                  color: isCurrent
+                                      ? primaryColor
+                                      : (isDark
+                                            ? Colors.white10
+                                            : Colors.black12),
+                                  shape: BoxShape.circle,
+                                  boxShadow: isCurrent
+                                      ? [
+                                          BoxShadow(
+                                            color: primaryColor.withValues(
+                                              alpha: 0.4,
+                                            ),
+                                            blurRadius: 15,
+                                            spreadRadius: 4,
                                           ),
-                                          blurRadius: 15,
-                                          spreadRadius: 4,
-                                        ),
-                                      ]
-                                    : [],
+                                        ]
+                                      : [],
+                                ),
                               ),
                             ),
-                            SizedBox(height: 28.h),
+                            SizedBox(height: 8.h),
                             Text(
                               tense.toUpperCase(),
                               textAlign: TextAlign.center,
@@ -147,6 +156,7 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                     : const Duration(milliseconds: 300),
                 curve: Curves.easeOutBack,
                 left: leftPos,
+                top: 0,
                 child: Semantics(
                   label: 'Timeline Slider',
                   hint:

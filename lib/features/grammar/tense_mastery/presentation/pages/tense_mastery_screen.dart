@@ -310,8 +310,8 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                                             fontFamily:
                                                                 'Outfit',
                                                             fontSize: isCompact
-                                                                ? 15.sp
-                                                                : 20.sp,
+                                                                ? 14.sp
+                                                                : 18.sp,
                                                             color: isDark
                                                                 ? Colors.white
                                                                 : Colors
@@ -381,75 +381,82 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                                   ScaleButton(
                                                         onTap:
                                                             _onFreezeTimeline,
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          height: isCompact
-                                                              ? 48.h
-                                                              : 65.h,
-                                                          decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  isCompact
-                                                                      ? 14.r
-                                                                      : 20.r,
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.symmetric(
+                                                                horizontal:
+                                                                    24.w,
+                                                              ),
+                                                          child: Container(
+                                                            width:
+                                                                double.infinity,
+                                                            height: isCompact
+                                                                ? 48.h
+                                                                : 65.h,
+                                                            decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius.circular(
+                                                                    isCompact
+                                                                        ? 14.r
+                                                                        : 20.r,
+                                                                  ),
+                                                              gradient: LinearGradient(
+                                                                begin: Alignment
+                                                                    .topCenter,
+                                                                end: Alignment
+                                                                    .bottomCenter,
+                                                                colors: [
+                                                                  theme
+                                                                      .primaryColor,
+                                                                  theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.8,
+                                                                      ),
+                                                                ],
+                                                              ),
+                                                              boxShadow: [
+                                                                BoxShadow(
+                                                                  color: theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.4,
+                                                                      ),
+                                                                  blurRadius:
+                                                                      isCompact
+                                                                      ? 12
+                                                                      : 20,
+                                                                  offset: Offset(
+                                                                    0,
+                                                                    isCompact
+                                                                        ? 4
+                                                                        : 8,
+                                                                  ),
                                                                 ),
-                                                            gradient: LinearGradient(
-                                                              begin: Alignment
-                                                                  .topCenter,
-                                                              end: Alignment
-                                                                  .bottomCenter,
-                                                              colors: [
-                                                                theme
-                                                                    .primaryColor,
-                                                                theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.8,
-                                                                    ),
                                                               ],
                                                             ),
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                color: theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.4,
-                                                                    ),
-                                                                blurRadius:
-                                                                    isCompact
-                                                                    ? 12
-                                                                    : 20,
-                                                                offset: Offset(
-                                                                  0,
-                                                                  isCompact
-                                                                      ? 4
-                                                                      : 8,
+                                                            child: Center(
+                                                              child: Text(
+                                                                "FREEZE TIMELINE",
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      isCompact
+                                                                      ? 13.sp
+                                                                      : 16.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w900,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      isCompact
+                                                                      ? 2
+                                                                      : 3,
                                                                 ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          child: Center(
-                                                            child: Text(
-                                                              "FREEZE TIMELINE",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    isCompact
-                                                                    ? 13.sp
-                                                                    : 16.sp,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w900,
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    isCompact
-                                                                    ? 2
-                                                                    : 3,
                                                               ),
                                                             ),
                                                           ),
