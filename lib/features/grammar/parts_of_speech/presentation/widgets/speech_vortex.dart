@@ -15,6 +15,7 @@ class SpeechVortex extends StatelessWidget {
   final Color color;
   final Alignment alignment;
   final bool isCompact;
+  final VoidCallback? onTap;
 
   const SpeechVortex({
     super.key,
@@ -23,53 +24,55 @@ class SpeechVortex extends StatelessWidget {
     required this.color,
     required this.alignment,
     this.isCompact = false,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    // FIX: index now drives the rotation speed — was unused before.
-    // Each vortex rotates at a different rate (2600ms → 4200ms) for visual
-    // richness and to avoid synchronised motion.
     final rotationMs = 2600 + index * 400;
     final size = isCompact ? 85.r : 120.r;
     final margin = isCompact ? 4.r : 10.r;
 
     return Align(
       alignment: alignment,
-      child: Semantics(
-        label: '${label.toUpperCase()} drop zone',
-        child: Container(
-          width: size,
-          height: size,
-          margin: EdgeInsets.all(margin),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: RadialGradient(
-                        colors: [
-                          color.withValues(alpha: 0.6),
-                          color.withValues(alpha: 0.1),
-                          Colors.transparent,
-                        ],
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        child: Semantics(
+          label: '${label.toUpperCase()} drop zone',
+          child: Container(
+            width: size,
+            height: size,
+            margin: EdgeInsets.all(margin),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: RadialGradient(
+                          colors: [
+                            color.withValues(alpha: 0.6),
+                            color.withValues(alpha: 0.1),
+                            Colors.transparent,
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                  .animate(onPlay: (c) => c.repeat())
-                  .rotate(duration: Duration(milliseconds: rotationMs)),
-              Text(
-                label.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: isCompact ? 8.sp : 10.sp,
-                  fontWeight: FontWeight.w900,
-                  color: color,
-                  letterSpacing: 1,
+                    )
+                    .animate(onPlay: (c) => c.repeat())
+                    .rotate(duration: Duration(milliseconds: rotationMs)),
+                Text(
+                  label.toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: isCompact ? 8.sp : 10.sp,
+                    fontWeight: FontWeight.w900,
+                    color: color,
+                    letterSpacing: 1,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

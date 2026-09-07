@@ -8,7 +8,7 @@ class SpeechInstruction extends StatelessWidget {
 
   const SpeechInstruction({super.key, required this.primaryColor});
 
-  static const _label = 'FLICK INTO THE VORTEX';
+  static const _label = 'FLICK OR TAP TO ANSWER';
 
   @override
   Widget build(BuildContext context) {

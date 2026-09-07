@@ -15,7 +15,6 @@ import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speec
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_context_card.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_vortex.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_draggable_word.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class PartsOfSpeechScreen extends StatefulWidget {
   final int level;
@@ -42,8 +41,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
+  final ValueNotifier<bool> _isWordSelected = ValueNotifier(false);
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
-  final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -53,7 +52,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
     _isCorrect.dispose();
     _showConfetti.dispose();
     _isSubmitting.dispose();
-    _pendingTypeSubmit.dispose();
+    _isWordSelected.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -76,9 +75,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
 
     final isCorrect = targetIndex == correctIndex;
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _pendingTypeSubmit.value = true;
+      _submitFinalAnswer(true);
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -89,7 +86,6 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-    _pendingTypeSubmit.value = false;
     _isAnswered.value = true;
     _isCorrect.value = correct;
 
@@ -105,7 +101,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   }
 
   void _checkCollision(int correctIndex, {required bool isCompact}) {
-    if (_pendingTypeSubmit.value || _isAnswered.value) return;
+    if (_isAnswered.value) return;
 
     final distance = _dragOffset.value.distance;
     final threshold = isCompact ? 60.r : 100.r;
@@ -136,13 +132,6 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
             ? quest!.options!.sublist(0, 4)
             : _fallbackOptions;
 
-        String cleanTargetSentence = "";
-        if (quest != null && quest.sentence != null) {
-          cleanTargetSentence = quest.sentence!
-              .replaceAll('[', '')
-              .replaceAll(']', '');
-        }
-
         return ListenableBuilder(
           listenable: Listenable.merge([
             _isAnswered,
@@ -150,7 +139,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
             _showConfetti,
             _dragOffset,
             _isSubmitting,
-            _pendingTypeSubmit,
+            _isWordSelected,
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
@@ -183,7 +172,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(
@@ -200,15 +189,26 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                                 maxHeight:
                                                     constraints.maxHeight,
                                                 dragOffset: _dragOffset.value,
-                                                isAnswered:
-                                                    _isAnswered.value ||
-                                                    _pendingTypeSubmit.value,
-                                                onPanUpdate: (details) {
-                                                  if (_pendingTypeSubmit
-                                                          .value ||
-                                                      _isAnswered.value) {
+                                                isAnswered: _isAnswered.value,
+                                                isWordSelected:
+                                                    _isWordSelected.value,
+                                                onWordTap: () {
+                                                  _isWordSelected.value =
+                                                      !_isWordSelected.value;
+                                                  _hapticService.selection();
+                                                },
+                                                onVortexTap: (index) {
+                                                  if (!_isWordSelected.value) {
                                                     return;
                                                   }
+                                                  _onFlick(
+                                                    index,
+                                                    quest.correctAnswerIndex ??
+                                                        0,
+                                                  );
+                                                },
+                                                onPanUpdate: (details) {
+                                                  if (_isAnswered.value) return;
                                                   _dragOffset.value +=
                                                       details.delta;
                                                   _checkCollision(
@@ -218,11 +218,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                                   );
                                                 },
                                                 onPanEnd: (_) {
-                                                  if (_pendingTypeSubmit
-                                                          .value ||
-                                                      _isAnswered.value) {
-                                                    return;
-                                                  }
+                                                  if (_isAnswered.value) return;
                                                   _dragOffset.value =
                                                       Offset.zero;
                                                 },
@@ -234,30 +230,11 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                     ),
                                   ),
                                   SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_pendingTypeSubmit.value &&
-                                              !_isAnswered.value)
-                                          ? 380.h
-                                          : 60.h,
-                                    ),
+                                    child: SizedBox(height: 60.h),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_pendingTypeSubmit.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-                              TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                displayText:
-                                    "Type the complete sentence to lock in the part of speech",
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                allowSkip: true,
-                                isPositioned: true,
-                              ),
                           ],
                         );
                       },
@@ -282,7 +259,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         _isCorrect.value = null;
         _dragOffset.value = Offset.zero;
         _isSubmitting.value = false;
-        _pendingTypeSubmit.value = false;
+        _isWordSelected.value = false;
       } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
         _isAnswered.value = true;
         _isCorrect.value = state.answerStatus.asBoolOrNull;
@@ -314,6 +291,9 @@ class _PosQuestLayout extends StatelessWidget {
   final bool isAnswered;
   final GestureDragUpdateCallback onPanUpdate;
   final GestureDragEndCallback onPanEnd;
+  final bool isWordSelected;
+  final VoidCallback onWordTap;
+  final void Function(int index) onVortexTap;
 
   static const _vortexColors = [
     Colors.blueAccent,
@@ -340,6 +320,9 @@ class _PosQuestLayout extends StatelessWidget {
     required this.isAnswered,
     required this.onPanUpdate,
     required this.onPanEnd,
+    required this.isWordSelected,
+    required this.onWordTap,
+    required this.onVortexTap,
   });
 
   ({double top, double middle, double bottom}) _computeGaps() {
@@ -383,11 +366,13 @@ class _PosQuestLayout extends StatelessWidget {
                   color: _vortexColors[i],
                   alignment: _vortexAlignments[i],
                   isCompact: isCompact,
+                  onTap: () => onVortexTap(i),
                 ),
               if (!isAnswered)
                 GestureDetector(
                   onPanUpdate: onPanUpdate,
                   onPanEnd: onPanEnd,
+                  onTap: onWordTap,
                   child: Transform.translate(
                     offset: dragOffset,
                     child: Transform.rotate(
@@ -397,6 +382,7 @@ class _PosQuestLayout extends StatelessWidget {
                         primaryColor: theme.primaryColor as Color,
                         isDark: isDark,
                         isCompact: isCompact,
+                        isSelected: isWordSelected,
                       ),
                     ),
                   ),

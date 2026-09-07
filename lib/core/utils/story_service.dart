@@ -73,7 +73,7 @@ class StoryServiceImpl implements StoryService {
     'modifierPlacement':
         "Word order matters! Let's practice putting adjectives and adverbs in exactly the right spot.",
     'partsOfSpeech':
-        "Knowing your nouns from your verbs is the first step to true fluency. Let's break down these sentences!",
+        "Let's figure out what job each word is doing in these sentences! It's a great way to boost your fluency.",
     'questionFormatter':
         "Asking good questions is how you keep a conversation going. Let's practice formatting them perfectly!",
     'sentenceCorrection':
@@ -719,11 +719,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'partsofspeech': [
       "",
-      "Well done! You are building a strong foundation in parts of speech.",
-      "You are decoding parts of speech with impressive accuracy.",
-      "Halfway there! You are a rising star in parts of speech.",
-      "100 levels beat! You truly dominate parts of speech.",
-      "Level 200! You are a supreme grandmaster of parts of speech.",
+      "Great start! You're getting the hang of how words work together.",
+      "Nice! You're really starting to see the patterns in sentences.",
+      "Halfway there! You can figure out tricky words just by looking at the context.",
+      "100 levels! You have a fantastic feel for English grammar.",
+      "Level 200! Your understanding of sentence structure is totally natural now.",
     ],
     'questionformatter': [
       "",
