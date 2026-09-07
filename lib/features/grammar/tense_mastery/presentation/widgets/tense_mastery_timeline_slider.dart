@@ -76,59 +76,64 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                       behavior: HitTestBehavior.opaque,
                       onTap: () {
                         if (isAnswered) return;
-                      onHapticFeedback();
-                      onDraggingChanged(false);
-                      if (tense == "Past") {
-                        onSliderChanged(0.0);
-                      } else if (tense == "Future") {
-                        onSliderChanged(1.0);
-                      } else {
-                        onSliderChanged(0.5);
-                      }
-                    },
-                    child: SizedBox(
-                      width: sphereWidth,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            width: 14.r,
-                            height: 14.r,
-                            decoration: BoxDecoration(
-                              color: isCurrent
-                                  ? primaryColor
-                                  : (isDark ? Colors.white10 : Colors.black12),
-                              shape: BoxShape.circle,
-                              boxShadow: isCurrent
-                                  ? [
-                                      BoxShadow(
-                                        color: primaryColor.withValues(
-                                          alpha: 0.4,
+                        onHapticFeedback();
+                        onDraggingChanged(false);
+                        if (tense == "Past") {
+                          onSliderChanged(0.0);
+                        } else if (tense == "Future") {
+                          onSliderChanged(1.0);
+                        } else {
+                          onSliderChanged(0.5);
+                        }
+                      },
+                      child: SizedBox(
+                        width: sphereWidth,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              width: 14.r,
+                              height: 14.r,
+                              decoration: BoxDecoration(
+                                color: isCurrent
+                                    ? primaryColor
+                                    : (isDark
+                                          ? Colors.white10
+                                          : Colors.black12),
+                                shape: BoxShape.circle,
+                                boxShadow: isCurrent
+                                    ? [
+                                        BoxShadow(
+                                          color: primaryColor.withValues(
+                                            alpha: 0.4,
+                                          ),
+                                          blurRadius: 15,
+                                          spreadRadius: 4,
                                         ),
-                                        blurRadius: 15,
-                                        spreadRadius: 4,
-                                      ),
-                                    ]
-                                  : [],
+                                      ]
+                                    : [],
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 28.h),
-                          Text(
-                            tense.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: isCurrent
-                                  ? FontWeight.w900
-                                  : FontWeight.w600,
-                              color: isCurrent
-                                  ? primaryColor
-                                  : (isDark ? Colors.white24 : Colors.black26),
-                              letterSpacing: 1.5,
+                            SizedBox(height: 28.h),
+                            Text(
+                              tense.toUpperCase(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: isCurrent
+                                    ? FontWeight.w900
+                                    : FontWeight.w600,
+                                color: isCurrent
+                                    ? primaryColor
+                                    : (isDark
+                                          ? Colors.white24
+                                          : Colors.black26),
+                                letterSpacing: 1.5,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   );
@@ -144,7 +149,8 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                 left: leftPos,
                 child: Semantics(
                   label: 'Timeline Slider',
-                  hint: 'Drag left for Past, right for Future, center for Present',
+                  hint:
+                      'Drag left for Past, right for Future, center for Present',
                   value: currentTense,
                   slider: true,
                   child: GestureDetector(
@@ -152,63 +158,66 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                       if (isAnswered) return;
                       onDraggingChanged(true);
                     },
-                  onHorizontalDragUpdate: (details) {
-                    if (isAnswered) return;
-                    onDraggingChanged(true);
-                    final newValue = (sliderValue + details.delta.dx / maxLeft)
-                        .clamp(0.0, 1.0);
-                    onSliderChanged(newValue);
+                    onHorizontalDragUpdate: (details) {
+                      if (isAnswered) return;
+                      onDraggingChanged(true);
+                      final newValue =
+                          (sliderValue + details.delta.dx / maxLeft).clamp(
+                            0.0,
+                            1.0,
+                          );
+                      onSliderChanged(newValue);
 
-                    if ((newValue - 0.0).abs() < 0.02 ||
-                        (newValue - 0.5).abs() < 0.02 ||
-                        (newValue - 1.0).abs() < 0.02) {
-                      onHapticFeedback();
-                    }
-                  },
-                  onHorizontalDragEnd: (details) {
-                    if (isAnswered) return;
-                    onDraggingChanged(false);
-                    if (sliderValue < 0.25) {
-                      onSliderChanged(0.0);
-                    } else if (sliderValue > 0.75) {
-                      onSliderChanged(1.0);
-                    } else {
-                      onSliderChanged(0.5);
-                    }
-                    onHeavyHapticFeedback();
-                  },
-                  child:
-                      Container(
-                            width: sphereWidth,
-                            height: sphereWidth,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: primaryColor.withValues(alpha: 0.4),
-                                  blurRadius: 25,
-                                  spreadRadius: 5,
+                      if ((newValue - 0.0).abs() < 0.02 ||
+                          (newValue - 0.5).abs() < 0.02 ||
+                          (newValue - 1.0).abs() < 0.02) {
+                        onHapticFeedback();
+                      }
+                    },
+                    onHorizontalDragEnd: (details) {
+                      if (isAnswered) return;
+                      onDraggingChanged(false);
+                      if (sliderValue < 0.25) {
+                        onSliderChanged(0.0);
+                      } else if (sliderValue > 0.75) {
+                        onSliderChanged(1.0);
+                      } else {
+                        onSliderChanged(0.5);
+                      }
+                      onHeavyHapticFeedback();
+                    },
+                    child:
+                        Container(
+                              width: sphereWidth,
+                              height: sphereWidth,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: primaryColor.withValues(alpha: 0.4),
+                                    blurRadius: 25,
+                                    spreadRadius: 5,
+                                  ),
+                                ],
+                                border: Border.all(
+                                  color: primaryColor,
+                                  width: 6.r,
                                 ),
-                              ],
-                              border: Border.all(
-                                color: primaryColor,
-                                width: 6.r,
                               ),
-                            ),
-                            child: Center(
-                              child: Icon(
-                                Icons.timer_rounded,
-                                color: primaryColor,
-                                size: 28.r,
+                              child: Center(
+                                child: Icon(
+                                  Icons.timer_rounded,
+                                  color: primaryColor,
+                                  size: 28.r,
+                                ),
                               ),
+                            )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .shimmer(
+                              duration: 1500.ms,
+                              color: primaryColor.withValues(alpha: 0.2),
                             ),
-                          )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .shimmer(
-                            duration: 1500.ms,
-                            color: primaryColor.withValues(alpha: 0.2),
-                          ),
                   ),
                 ),
               ),
