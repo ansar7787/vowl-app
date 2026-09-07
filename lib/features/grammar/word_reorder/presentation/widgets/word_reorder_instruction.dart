@@ -3,7 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WordReorderInstruction extends StatelessWidget {
   final Color primaryColor;
-  const WordReorderInstruction({super.key, required this.primaryColor});
+  final String instruction;
+  const WordReorderInstruction({
+    super.key,
+    required this.primaryColor,
+    required this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +24,17 @@ class WordReorderInstruction extends StatelessWidget {
         children: [
           Icon(Icons.auto_fix_high_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "REORDER THE SENTENCE",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
         ],

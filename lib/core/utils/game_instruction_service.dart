@@ -901,18 +901,18 @@ class GameInstructionService {
           "PRO TIP: Focus on subject-verb agreement first—it's the most common source of errors!",
     ),
     GameSubtype.wordReorder: GameBriefing(
-      title: "Syntax Reorder",
+      title: "Sentence Builder",
       icon: Icons.reorder_rounded,
       objective:
-          "Arrange scrambled words into a grammatically sound sentence. Mastering structural rules ensures your English is accurate and easily understood.",
+          "First, tap the words to build a natural-sounding English sentence. Once you get it right, type it out to lock it into your muscle memory!",
       rules: [
-        "Identify the subject",
-        "Find the main verb",
-        "Arrange complements",
+        "Tap words to build",
+        "No changing after check",
+        "Type the exact sentence",
       ],
-      actionText: "Align Syntax",
+      actionText: "Start Building",
       tip:
-          "PRO TIP: Adjectives usually come before nouns, and adverbs often follow verbs.",
+          "PRO TIP: Look for capital letters to find the first word, and punctuation for the last!",
     ),
     GameSubtype.tenseMastery: GameBriefing(
       title: "Tense Mastery",

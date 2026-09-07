@@ -772,6 +772,11 @@ class StoryServiceImpl implements StoryService {
       "Halfway there! You are a rising star in syntax.",
       "Centurion! You have conquered the complexities of syntax.",
       "Double Centurion! No one knows syntax better than you.",
+      "Great start! You're already getting a feel for how English sentences flow.",
+      "Nice work! You're putting sentences together much faster now.",
+      "Halfway to 100! Your sentence structure is looking incredibly natural.",
+      "Level 100! You can build English sentences without even thinking about it.",
+      "Level 200! Your instinct for English sentence structure is completely native.",
     ],
     'modalsselection': [
       "",

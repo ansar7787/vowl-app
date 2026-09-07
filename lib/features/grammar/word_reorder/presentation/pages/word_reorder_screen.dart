@@ -63,14 +63,14 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
   }
 
   void _onWordTap(int index) {
-    if (_isAnswered.value) return;
+    if (_isAnswered.value || _pendingTypeSubmit.value) return;
     _hapticService.selection();
     _assembledIndices.value = List.from(_assembledIndices.value)..add(index);
     _availableIndices.value = List.from(_availableIndices.value)..remove(index);
   }
 
   void _onWordRemove(int index) {
-    if (_isAnswered.value) return;
+    if (_isAnswered.value || _pendingTypeSubmit.value) return;
     _hapticService.selection();
     _assembledIndices.value = List.from(_assembledIndices.value)..remove(index);
     _availableIndices.value = List.from(_availableIndices.value)
@@ -95,6 +95,15 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _pendingTypeSubmit.value = true;
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -122,8 +131,26 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     }
   }
 
+  double _lastKeyboardHeight = 0;
+
   @override
   Widget build(BuildContext context) {
+    final keyboardHeight = MediaQuery.viewInsetsOf(context).bottom;
+    if (keyboardHeight != _lastKeyboardHeight) {
+      _lastKeyboardHeight = keyboardHeight;
+      if (keyboardHeight > 0 && _pendingTypeSubmit.value) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (_scrollController.hasClients) {
+            _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOutCubic,
+            );
+          }
+        });
+      }
+    }
+
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
@@ -183,8 +210,6 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
             _isAnswered,
             _isCorrect,
             _showConfetti,
-            _availableIndices,
-            _assembledIndices,
             _pendingTypeSubmit,
           ]),
           builder: (context, _) {
@@ -200,99 +225,108 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
               onHint: () =>
                   context.read<GrammarBloc>().add(const GrammarHintUsed()),
               useScrolling: false,
+              disablePadding: true,
               child: quest == null
                   ? const SizedBox()
-                  : LayoutBuilder(
-                      builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverToBoxAdapter(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(height: 10.h),
-                                        WordReorderInstruction(
-                                          primaryColor: theme.primaryColor,
+                  : ListenableBuilder(
+                      listenable: Listenable.merge([
+                        _availableIndices,
+                        _assembledIndices,
+                      ]),
+                      builder: (context, _) {
+                        return LayoutBuilder(
+                          builder: (context, constraints) {
+                            return Stack(
+                              children: [
+                                RawScrollbar(
+                                  controller: _scrollController,
+                                  thumbColor: theme.primaryColor.withValues(
+                                    alpha: 0.5,
+                                  ),
+                                  radius: Radius.circular(8.r),
+                                  thickness: 4.w,
+                                  child: CustomScrollView(
+                                    controller: _scrollController,
+                                    physics: const BouncingScrollPhysics(),
+                                    slivers: [
+                                      SliverPadding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
                                         ),
-                                        SizedBox(height: 16.h),
-                                        if (quest.structureType != null)
-                                          Container(
-                                            margin: EdgeInsets.only(
-                                              bottom: 16.h,
-                                              left: 24.w,
-                                              right: 24.w,
-                                            ),
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                              vertical: 12.h,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color: theme.primaryColor
-                                                  .withValues(alpha: 0.1),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.r),
-                                              border: Border.all(
-                                                color: theme.primaryColor
-                                                    .withValues(alpha: 0.3),
+                                        sliver: SliverList(
+                                          delegate: SliverChildListDelegate([
+                                            SizedBox(height: 10.h),
+                                            Center(
+                                              child: WordReorderInstruction(
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                instruction: quest.instruction,
                                               ),
                                             ),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.account_tree_outlined,
-                                                  color: theme.primaryColor,
-                                                  size: 16.sp,
+                                            SizedBox(height: 16.h),
+                                            if (quest.structureType != null)
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                  bottom: 16.h,
+                                                  left: 8.w,
+                                                  right: 8.w,
                                                 ),
-                                                SizedBox(width: 8.w),
-                                                Text(
-                                                  "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 12.sp,
-                                                    fontWeight: FontWeight.w800,
-                                                    color: theme.primaryColor,
-                                                    letterSpacing: 1.5,
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                  vertical: 12.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        16.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
                                                   ),
                                                 ),
-                                              ],
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Icon(
+                                                      Icons
+                                                          .account_tree_outlined,
+                                                      color: theme.primaryColor,
+                                                      size: 16.sp,
+                                                    ),
+                                                    SizedBox(width: 8.w),
+                                                    Text(
+                                                      "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 12.sp,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        letterSpacing: 1.5,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            SizedBox(height: 8.h),
+                                            WordReorderAssemblyCard(
+                                              assembledIndices:
+                                                  _assembledIndices.value,
+                                              shuffledWords: shuffledWords,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              isAnswered:
+                                                  _isAnswered.value ||
+                                                  _pendingTypeSubmit.value,
+                                              onWordRemove: _onWordRemove,
                                             ),
-                                          ),
-                                        SizedBox(height: 8.h),
-                                        WordReorderAssemblyCard(
-                                          assembledIndices:
-                                              _assembledIndices.value,
-                                          shuffledWords: shuffledWords,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          isAnswered: _isAnswered.value,
-                                          onWordRemove: _onWordRemove,
-                                        ),
-                                        SizedBox(height: 30.h),
-                                      ],
-                                    ),
-                                  ),
-                                  SliverFillRemaining(
-                                    hasScrollBody: false,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 20.w,
-                                            ),
-                                            child: Wrap(
+                                            SizedBox(height: 32.h),
+                                            Wrap(
                                               spacing: 12.w,
                                               runSpacing: 16.h,
                                               alignment: WrapAlignment.center,
@@ -313,46 +347,69 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                                                   })
                                                   .toList(),
                                             ),
+                                            SizedBox(height: 32.h),
+                                            if (!_isAnswered.value &&
+                                                !_pendingTypeSubmit.value)
+                                              WordReorderCheckButton(
+                                                hasWords:
+                                                    _assembledIndices
+                                                        .value
+                                                        .length ==
+                                                    correctOrder.length,
+                                                isDark: isDark,
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                onCheck: () => _checkSentence(
+                                                  correctOrder,
+                                                ),
+                                              ),
+                                          ]),
+                                        ),
+                                      ),
+                                      if (_pendingTypeSubmit.value &&
+                                          !_isAnswered.value)
+                                        SliverToBoxAdapter(
+                                          child: Padding(
+                                            padding: EdgeInsets.only(
+                                              top: 16.h,
+                                              bottom: 24.h,
+                                            ),
+                                            child: TypeToConfirmOverlay(
+                                              expectedText:
+                                                  quest.sentence ??
+                                                  correctOrder
+                                                      .map(
+                                                        (idx) =>
+                                                            shuffledWords[idx],
+                                                      )
+                                                      .join(" "),
+                                              primaryColor: theme.primaryColor,
+                                              onConfirmed: () =>
+                                                  _submitFinalAnswer(true),
+                                              onSkipped: () =>
+                                                  _submitFinalAnswer(false),
+                                              isPositioned: false,
+                                            ),
                                           ),
                                         ),
-                                        SizedBox(height: 20.h),
-                                        if (!_isAnswered.value &&
-                                            !_pendingTypeSubmit.value)
-                                          WordReorderCheckButton(
-                                            hasWords: _assembledIndices
-                                                .value
-                                                .isNotEmpty,
-                                            isDark: isDark,
-                                            primaryColor: theme.primaryColor,
-                                            onCheck: () =>
-                                                _checkSentence(correctOrder),
-                                          ),
-                                      ],
-                                    ),
+                                      SliverToBoxAdapter(
+                                        child: SizedBox(
+                                          height:
+                                              MediaQuery.viewInsetsOf(
+                                                context,
+                                              ).bottom +
+                                              ((_pendingTypeSubmit.value &&
+                                                      !_isAnswered.value)
+                                                  ? 16.h
+                                                  : 60.h),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_pendingTypeSubmit.value &&
-                                              !_isAnswered.value)
-                                          ? 380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            if (_pendingTypeSubmit.value && !_isAnswered.value)
-                              TypeToConfirmOverlay(
-                                expectedText: correctOrder
-                                    .map((idx) => shuffledWords[idx])
-                                    .join(" "),
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: true,
-                              ),
-                          ],
+                                ),
+                              ],
+                            );
+                          },
                         );
                       },
                     ),

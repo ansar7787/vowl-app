@@ -262,16 +262,9 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
             child: child,
           );
         },
-        child: RawScrollbar(
-          controller: _scrollController,
-          thumbColor: widget.primaryColor.withValues(alpha: 0.5),
-          radius: Radius.circular(8.r),
-          thickness: 4.w,
-          child: SingleChildScrollView(
-            controller: _scrollController,
-            padding: EdgeInsets.symmetric(vertical: 28.h),
-            physics: const BouncingScrollPhysics(),
-            child: Column(
+        child: Builder(
+          builder: (context) {
+            final innerContent = Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 // Header
@@ -631,8 +624,28 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                   },
                 ),
               ],
-            ),
-          ),
+            );
+
+            if (!widget.isPositioned) {
+              return Padding(
+                padding: EdgeInsets.symmetric(vertical: 28.h),
+                child: innerContent,
+              );
+            }
+
+            return RawScrollbar(
+              controller: _scrollController,
+              thumbColor: widget.primaryColor.withValues(alpha: 0.5),
+              radius: Radius.circular(8.r),
+              thickness: 4.w,
+              child: SingleChildScrollView(
+                controller: _scrollController,
+                padding: EdgeInsets.symmetric(vertical: 28.h),
+                physics: const BouncingScrollPhysics(),
+                child: innerContent,
+              ),
+            );
+          },
         ),
       ),
     );
