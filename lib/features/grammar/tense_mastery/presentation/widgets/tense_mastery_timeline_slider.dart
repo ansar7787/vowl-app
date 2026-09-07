@@ -64,10 +64,18 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: tenses.map((tense) {
                   final isCurrent = currentTense == tense;
-                  return GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTap: () {
-                      if (isAnswered) return;
+                  return Semantics(
+                    label: '$tense Tense',
+                    hint: isCurrent
+                        ? 'Currently selected'
+                        : 'Double tap to select $tense tense',
+                    selected: isCurrent,
+                    button: true,
+                    excludeSemantics: true,
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        if (isAnswered) return;
                       onHapticFeedback();
                       onDraggingChanged(false);
                       if (tense == "Past") {
@@ -134,11 +142,16 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                     : const Duration(milliseconds: 300),
                 curve: Curves.easeOutBack,
                 left: leftPos,
-                child: GestureDetector(
-                  onHorizontalDragStart: (_) {
-                    if (isAnswered) return;
-                    onDraggingChanged(true);
-                  },
+                child: Semantics(
+                  label: 'Timeline Slider',
+                  hint: 'Drag left for Past, right for Future, center for Present',
+                  value: currentTense,
+                  slider: true,
+                  child: GestureDetector(
+                    onHorizontalDragStart: (_) {
+                      if (isAnswered) return;
+                      onDraggingChanged(true);
+                    },
                   onHorizontalDragUpdate: (details) {
                     if (isAnswered) return;
                     onDraggingChanged(true);
@@ -196,6 +209,7 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                             duration: 1500.ms,
                             color: primaryColor.withValues(alpha: 0.2),
                           ),
+                  ),
                 ),
               ),
             ],
