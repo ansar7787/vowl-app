@@ -377,7 +377,8 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
-                                                if (!_isAnswered.value)
+                                                if (!_isAnswered.value &&
+                                                    !_pendingSubmit.value)
                                                   ScaleButton(
                                                         onTap:
                                                             _onFreezeTimeline,
