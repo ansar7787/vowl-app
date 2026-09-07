@@ -317,6 +317,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                                   listenable: Listenable.merge([
                                                     _sliderValue,
                                                     _isDragging,
+                                                    _pendingSubmit,
                                                   ]),
                                                   builder: (context, _) {
                                                     return TenseMasteryTimelineSlider(
@@ -325,7 +326,8 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                                       currentTense:
                                                           _currentTense,
                                                       isAnswered:
-                                                          _isAnswered.value,
+                                                          _isAnswered.value ||
+                                                          _pendingSubmit.value,
                                                       isDragging:
                                                           _isDragging.value,
                                                       isDark: isDark,
