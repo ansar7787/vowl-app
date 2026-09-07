@@ -194,8 +194,8 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
       type: MaterialType.transparency,
       child: Padding(
         padding: EdgeInsets.only(
-          left: 20.w,
-          right: 20.w,
+          left: 24.w,
+          right: 24.w,
           bottom: widget.isPositioned
               ? MediaQuery.of(context).viewInsets.bottom + 12.h
               : 0,

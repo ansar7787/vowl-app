@@ -89,19 +89,39 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
               border: Border.all(color: borderColor, width: borderWidth),
               boxShadow: shadows,
             ),
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 22.sp,
-                fontWeight: isCorrectZap || isWrongZap || isSuspected
-                    ? FontWeight.bold
-                    : FontWeight.normal,
-                color: textColor,
-                decoration: textDecoration,
-                decorationColor: decorationColor,
-                decorationThickness: 2,
-              ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (isCorrectZap) ...[
+                  Icon(
+                    Icons.check_circle_rounded,
+                    color: Colors.greenAccent,
+                    size: 20.sp,
+                  ),
+                  SizedBox(width: 6.w),
+                ] else if (isWrongZap) ...[
+                  Icon(
+                    Icons.cancel_rounded,
+                    color: Colors.redAccent,
+                    size: 20.sp,
+                  ),
+                  SizedBox(width: 6.w),
+                ],
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 22.sp,
+                    fontWeight: isCorrectZap || isWrongZap || isSuspected
+                        ? FontWeight.bold
+                        : FontWeight.normal,
+                    color: textColor,
+                    decoration: textDecoration,
+                    decorationColor: decorationColor,
+                    decorationThickness: 2,
+                  ),
+                ),
+              ],
             ),
           ),
         )

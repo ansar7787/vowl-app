@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -38,8 +37,15 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
   final ValueNotifier<int?> _selectedWordIndex = ValueNotifier(null);
   final ValueNotifier<String?> _selectedOption = ValueNotifier(null);
   List<String>? _shuffledOptions;
+
+  // States
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
+
+  // Detailed feedback states
+  final ValueNotifier<bool?> _wordSelectionCorrect = ValueNotifier(null);
+  final ValueNotifier<bool?> _optionSelectionCorrect = ValueNotifier(null);
+
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
@@ -50,6 +56,8 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
     _selectedOption.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
+    _wordSelectionCorrect.dispose();
+    _optionSelectionCorrect.dispose();
     _showConfetti.dispose();
     _isFirstStagePassed.dispose();
     _scrollController.dispose();
@@ -171,23 +179,8 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
         (chosenIndex == quest.correctAnswerIndex);
     bool overallCorrect = isWordCorrect && isOptionCorrect;
 
-    if (kDebugMode) {
-      print("=== SYNTAX REPAIR DIAGNOSTICS ===");
-      print("Sentence: ${quest.sentence}");
-      print("Words split list: $words");
-      print(
-        "Tapped Word Index: ${_selectedWordIndex.value} (Word: ${words[_selectedWordIndex.value!]})",
-      );
-      print("Target Error Indices calculated: $correctIndices");
-      print("Is Word Target Correct? $isWordCorrect");
-      print("Tapped Option: '$_selectedOption'");
-      print("Correct Answer: '${quest.correctAnswer}'");
-      print("Options List: ${quest.options}");
-      print("Correct Answer Index: ${quest.correctAnswerIndex}");
-      print("Is Option Correct? $isOptionCorrect");
-      print("Overall Resolution Correct? $overallCorrect");
-      print("================================");
-    }
+    _wordSelectionCorrect.value = isWordCorrect;
+    _optionSelectionCorrect.value = isOptionCorrect;
 
     if (overallCorrect) {
       _hapticService.heavy();
@@ -238,9 +231,13 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
+            _wordSelectionCorrect.value = null;
+            _optionSelectionCorrect.value = null;
             _isFirstStagePassed.value = false;
+            _selectedWordIndex.value = null;
+            _selectedOption.value = null;
+            _shuffledOptions = null;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             _isAnswered.value = true;
             _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
@@ -286,11 +283,14 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
             _selectedWordIndex,
             _selectedOption,
             _isFirstStagePassed,
+            _wordSelectionCorrect,
+            _optionSelectionCorrect,
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
+              disablePadding: true,
               isAnswered:
                   _isAnswered.value &&
                   (_isCorrect.value != null || !_isFirstStagePassed.value),
@@ -309,11 +309,13 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
+                          crossAxisMargin:
+                              2, // Pushes it completely to the right edge
                           child: CustomScrollView(
                             controller: _scrollController,
-                            physics: (!_isFirstStagePassed.value)
-                                ? const NeverScrollableScrollPhysics()
-                                : const BouncingScrollPhysics(),
+                            physics: const BouncingScrollPhysics(
+                              parent: AlwaysScrollableScrollPhysics(),
+                            ),
                             slivers: [
                               SliverToBoxAdapter(
                                 child: IgnorePointer(
@@ -325,16 +327,21 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                                         primaryColor: theme.primaryColor,
                                       ),
                                       SizedBox(height: 12.h),
-                                      Text(
-                                        "Tap the incorrect word to diagnose, then choose the repair option.",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 13.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: isDark
-                                              ? Colors.white60
-                                              : Colors.black54,
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: Text(
+                                          "Tap the incorrect word to diagnose, then choose the repair option.",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 13.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: isDark
+                                                ? Colors.white60
+                                                : Colors.black54,
+                                          ),
                                         ),
                                       ),
                                       SizedBox(height: 16.h),
@@ -380,27 +387,39 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                                                 children: List.generate(
                                                   words.length,
                                                   (i) {
-                                                    bool isHighlighted = false;
-                                                    if (quest.errorHighlight !=
-                                                        null) {
-                                                      final highlightClean =
-                                                          quest.errorHighlight!
-                                                              .toLowerCase()
-                                                              .replaceAll(
-                                                                RegExp(
-                                                                  r'[^\w]',
-                                                                ),
-                                                                '',
-                                                              );
-                                                      final wordClean = words[i]
-                                                          .toLowerCase()
-                                                          .replaceAll(
-                                                            RegExp(r'[^\w]'),
-                                                            '',
-                                                          );
-                                                      if (highlightClean ==
-                                                          wordClean) {
-                                                        isHighlighted = true;
+                                                    bool isTargetWord =
+                                                        correctIndices.contains(
+                                                          i,
+                                                        );
+                                                    bool isSelectedWord =
+                                                        _selectedWordIndex
+                                                            .value ==
+                                                        i;
+
+                                                    bool isCorrectZap = false;
+                                                    bool isWrongZap = false;
+
+                                                    if (_isAnswered.value) {
+                                                      if (_isCorrect.value ==
+                                                          true) {
+                                                        if (isTargetWord) {
+                                                          isCorrectZap = true;
+                                                        }
+                                                      } else {
+                                                        if (_isFirstStagePassed
+                                                            .value) {
+                                                          if (isTargetWord) {
+                                                            isCorrectZap = true;
+                                                          }
+                                                        } else {
+                                                          if (isSelectedWord &&
+                                                              !isTargetWord) {
+                                                            isWrongZap = true;
+                                                          }
+                                                          if (isTargetWord) {
+                                                            isCorrectZap = true;
+                                                          }
+                                                        }
                                                       }
                                                     }
 
@@ -408,24 +427,11 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                                                       text: words[i],
                                                       index: i,
                                                       isSuspected:
-                                                          _selectedWordIndex
-                                                              .value ==
-                                                          i,
+                                                          isSelectedWord,
                                                       isCorrectZap:
-                                                          _isAnswered.value &&
-                                                          _isCorrect.value ==
-                                                              true &&
-                                                          correctIndices
-                                                              .contains(i),
-                                                      isWrongZap:
-                                                          _isAnswered.value &&
-                                                          _isCorrect.value ==
-                                                              false &&
-                                                          _selectedWordIndex
-                                                                  .value ==
-                                                              i,
-                                                      isErrorHighlight:
-                                                          isHighlighted,
+                                                          isCorrectZap,
+                                                      isWrongZap: isWrongZap,
+                                                      isErrorHighlight: false,
                                                       isDark: isDark,
                                                       primaryColor:
                                                           theme.primaryColor,
@@ -512,6 +518,13 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                                         SizedBox(height: 24.h),
                                         SentenceCorrectionFeedback(
                                           correction: quest.correctedPart ?? "",
+                                          incorrectPart: quest.incorrectPart,
+                                          wasWordSelectionCorrect:
+                                              _wordSelectionCorrect.value ??
+                                              false,
+                                          wasOptionSelectionCorrect:
+                                              _optionSelectionCorrect.value ??
+                                              false,
                                           primaryColor: theme.primaryColor,
                                         ),
                                       ],
@@ -526,31 +539,39 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                                   height:
                                       (_isFirstStagePassed.value &&
                                           !_isAnswered.value)
-                                      ? 180.h
+                                      ? 32.h
                                       : 60.h,
                                 ),
                               ),
                               if (_isFirstStagePassed.value &&
                                   !_isAnswered.value)
                                 SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      TypeToConfirmOverlay(
-                                        expectedText:
-                                            quest.correctAnswer ??
-                                            _selectedOption.value ??
-                                            '',
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(true),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(false),
-                                        isPositioned: false,
-                                      ),
-                                      SizedBox(height: 60.h),
-                                    ],
+                                  child: TypeToConfirmOverlay(
+                                    expectedText:
+                                        quest.correctAnswer ??
+                                        _selectedOption.value ??
+                                        '',
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () =>
+                                        _submitVerbalEvaluation(true),
+                                    onSkipped: () =>
+                                        _submitVerbalEvaluation(false),
+                                    isPositioned: false,
                                   ),
                                 ),
+                              // Buffer to accommodate the keyboard popping up seamlessly without obscuring the typing card.
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 120.h,
+                                ),
+                              ),
                             ],
                           ),
                         ),
