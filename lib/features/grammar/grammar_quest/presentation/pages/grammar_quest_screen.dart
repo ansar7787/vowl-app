@@ -11,7 +11,8 @@ import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.da
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_sentence.dart';
 
 class GrammarQuestScreen extends StatefulWidget {
   final int level;
@@ -60,6 +61,15 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _pendingTypeSubmit.value = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -121,6 +131,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         String targetText = "";
+        String fullSentence = "";
         if (quest != null) {
           if (quest.options != null &&
               quest.options!.isNotEmpty &&
@@ -130,6 +141,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
           } else {
             targetText = quest.correctAnswer ?? quest.sentence ?? "";
           }
+          fullSentence = (quest.question ?? "").replaceAll('___', targetText);
         }
         return ListenableBuilder(
           listenable: Listenable.merge([
@@ -148,6 +160,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
               showConfetti: _showConfetti.value,
               useScrolling:
                   false, // Stack needs finite space to anchor to bottom
+              disablePadding: true,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -161,6 +174,8 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
+                          crossAxisMargin: 0,
+                          mainAxisMargin: 0,
                           child: CustomScrollView(
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
@@ -192,9 +207,11 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                           ),
                                           child: Column(
                                             crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     Icons.rule,
@@ -218,6 +235,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                               SizedBox(height: 8.h),
                                               Text(
                                                 quest.grammarRule!,
+                                                textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                   fontFamily: 'Outfit',
                                                   fontSize: 16.sp,
@@ -236,6 +254,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                                 SizedBox(height: 8.h),
                                                 Text(
                                                   quest.ruleExplanation!,
+                                                  textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
                                                     fontSize: 14.sp,
@@ -253,74 +272,91 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                             ],
                                           ),
                                         ),
-                                      if (_isAnswered.value)
-                                        Text(
-                                          targetText,
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 24.sp,
-                                            fontWeight: FontWeight.bold,
-                                            color: _isCorrect.value == true
-                                                ? Colors.green
-                                                : Colors.red,
+                                      if (quest.question != null)
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            bottom: 24.h,
+                                          ),
+                                          child: GrammarQuestSentence(
+                                            text:
+                                                (_isAnswered.value ||
+                                                    _pendingTypeSubmit.value)
+                                                ? fullSentence
+                                                : quest.question!,
+                                            isDark:
+                                                Theme.of(context).brightness ==
+                                                Brightness.dark,
                                           ),
                                         ),
                                     ],
                                   ),
                                 ),
                               ),
-                              SliverFillRemaining(
-                                hasScrollBody: false,
+                              SliverToBoxAdapter(
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 0.w,
-                                  ), // No padding for Jigsaw wrapper as it provides its own padding
+                                  ),
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      if (!_isAnswered.value &&
-                                          !_pendingTypeSubmit.value &&
-                                          targetText.isNotEmpty)
-                                        DynamicJigsawWrapper(
-                                          expectedText: targetText,
-                                          primaryColor: theme.primaryColor,
-                                          onConfirmed: () =>
-                                              _submitInitialAnswer(true),
-                                          onSkipped: () =>
-                                              _submitInitialAnswer(false),
-                                          isPositioned: false,
-                                        ),
+                                      SizedBox(height: 16.h),
+                                      GrammarQuestCompass(
+                                        options: quest.options ?? [],
+                                        correctAnswerIndex:
+                                            quest.correctAnswerIndex ?? 0,
+                                        primaryColor: theme.primaryColor,
+                                        isDark:
+                                            Theme.of(context).brightness ==
+                                            Brightness.dark,
+                                        isAnswered:
+                                            _isAnswered.value ||
+                                            _pendingTypeSubmit.value,
+                                        isCorrect: _isCorrect.value,
+                                        onQuadrantSelect: (index) {
+                                          bool isCorrect =
+                                              index == quest.correctAnswerIndex;
+                                          _submitInitialAnswer(isCorrect);
+                                        },
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
+                              if (_pendingTypeSubmit.value &&
+                                  !_isAnswered.value &&
+                                  targetText.isNotEmpty)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(top: 32.h),
+                                    child: TypeToConfirmOverlay(
+                                      expectedText: fullSentence,
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () =>
+                                          _submitFinalAnswer(true),
+                                      onSkipped: () =>
+                                          _submitFinalAnswer(false),
+                                      allowSkip: true,
+                                      isPositioned: false,
+                                    ),
+                                  ),
+                                ),
                               SliverToBoxAdapter(
                                 child: SizedBox(
                                   height:
                                       (_pendingTypeSubmit.value &&
                                           !_isAnswered.value &&
                                           targetText.isNotEmpty)
-                                      ? 380.h
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            60.h
                                       : 60.h,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        if (_pendingTypeSubmit.value &&
-                            !_isAnswered.value &&
-                            targetText.isNotEmpty)
-                          TypeToConfirmOverlay(
-                            expectedText: targetText,
-                            displayText:
-                                "Type the complete sentence to lock in the rule",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
                       ],
                     ),
             );

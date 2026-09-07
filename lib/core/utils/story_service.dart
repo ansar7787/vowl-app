@@ -69,7 +69,7 @@ class StoryServiceImpl implements StoryService {
     'clauseConnector':
         "Let's practice linking ideas! Combining short sentences into longer ones makes your English flow beautifully.",
     'grammarQuest':
-        "Time for a mixed grammar review! Let's test everything you've learned to build rock-solid confidence.",
+        "Let's put your grammar skills to the test! Use the compass to find the missing word and type the sentence to lock it in.",
     'modifierPlacement':
         "Word order matters! Let's practice putting adjectives and adverbs in exactly the right spot.",
     'partsOfSpeech':
@@ -703,11 +703,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'grammarquest': [
       "",
-      "Excellent start! Your understanding of grammar rules is growing.",
-      "Your mastery of grammar rules is noticeably improving daily.",
-      "Amazing! You manipulate grammar rules with natural ease.",
-      "Centurion! You have conquered the complexities of grammar rules.",
-      "Level 200 reached! Your grasp of grammar rules is legendary.",
+      "Great start! You're getting the hang of these grammar rules.",
+      "Nice! You're really starting to see the patterns in these sentences.",
+      "Halfway there! You're fixing mistakes without even thinking about it.",
+      "100 levels! You have a fantastic feel for English grammar.",
+      "Level 200! Your understanding of grammar is totally natural now.",
     ],
     'modifierplacement': [
       "",
