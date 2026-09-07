@@ -124,21 +124,27 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 8.h),
-                            Text(
-                              tense.toUpperCase(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: isCurrent
-                                    ? FontWeight.w900
-                                    : FontWeight.w600,
-                                color: isCurrent
-                                    ? primaryColor
-                                    : (isDark
-                                          ? Colors.white24
-                                          : Colors.black26),
-                                letterSpacing: 1.5,
+                            SizedBox(
+                              width: sphereWidth,
+                              child: OverflowBox(
+                                maxWidth: double.infinity,
+                                child: Text(
+                                  tense.toUpperCase(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: isCurrent
+                                        ? FontWeight.w900
+                                        : FontWeight.w600,
+                                    color: isCurrent
+                                        ? primaryColor
+                                        : (isDark
+                                              ? Colors.white24
+                                              : Colors.black26),
+                                    letterSpacing: 1.5,
+                                  ),
+                                ),
                               ),
                             ),
                           ],
