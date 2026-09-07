@@ -87,6 +87,27 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
 
   void _onFreezeTimeline() {
     if (_isAnswered.value) return;
+
+    final state = context.read<GrammarBloc>().state;
+    if (state is GrammarLoaded) {
+      final quest = state.currentQuest;
+      final selectedTense = _currentTense;
+      bool isTenseCorrect =
+          selectedTense.toLowerCase() ==
+          (quest.correctAnswerCategory?.toLowerCase() ??
+              quest.correctAnswer?.toLowerCase());
+
+      if (!isTenseCorrect) {
+        _hapticService.error();
+        _soundService.playWrong();
+        _isAnswered.value = true;
+        _isCorrect.value = false;
+        context.read<GrammarBloc>().add(const SubmitAnswer(false));
+        return;
+      }
+    }
+
+    _hapticService.heavy();
     _pendingSubmit.value = true;
   }
 
