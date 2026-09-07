@@ -483,33 +483,38 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                       },
                                     ),
                                   ),
+                                  if (_pendingSubmit.value &&
+                                      !_isAnswered.value)
+                                    SliverToBoxAdapter(
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: quest.sentence ?? '',
+                                        displayText: null,
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(quest, true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(quest, false),
+                                        isPositioned: false,
+                                        allowSkip: true,
+                                      ),
+                                    ),
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
-                                          (_pendingSubmit.value &&
-                                              !_isAnswered.value)
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
                                           ? MediaQuery.of(
                                                   context,
                                                 ).viewInsets.bottom +
-                                                380.h
+                                                200.h
                                           : 60.h,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            if (_pendingSubmit.value && !_isAnswered.value)
-                              TypeToConfirmOverlay(
-                                expectedText: quest.sentence ?? '',
-                                displayText: null,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () =>
-                                    _submitFinalAnswer(quest, true),
-                                onSkipped: () =>
-                                    _submitFinalAnswer(quest, false),
-                                isPositioned: true,
-                                allowSkip: true,
-                              ),
                           ],
                         );
                       },
