@@ -153,6 +153,7 @@ class _SubjectVerbAgreementScreenState
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -178,6 +179,7 @@ class _SubjectVerbAgreementScreenState
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              crossAxisMargin: 2,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
@@ -187,10 +189,12 @@ class _SubjectVerbAgreementScreenState
                                     child: Column(
                                       children: [
                                         Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
-                                              final isCompact =
-                                                  constraints.maxHeight < 580;
+                                          child: Builder(
+                                            builder: (context) {
+                                              final maxHeight = MediaQuery.of(
+                                                context,
+                                              ).size.height;
+                                              final isCompact = maxHeight < 700;
 
                                               return Column(
                                                 children: [
@@ -593,7 +597,10 @@ class _SubjectVerbAgreementScreenState
                                       height:
                                           (_pendingTypeSubmit.value &&
                                               !_isAnswered.value)
-                                          ? 380.h
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                380.h
                                           : 60.h,
                                     ),
                                   ),

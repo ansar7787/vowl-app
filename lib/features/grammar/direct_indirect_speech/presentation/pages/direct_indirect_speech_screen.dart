@@ -72,9 +72,23 @@ class _DirectIndirectSpeechScreenState
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
+  void _onStagePassedScroll() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
+    _isFirstStagePassed.addListener(_onStagePassedScroll);
+
     context.read<GrammarBloc>().add(
       FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -194,6 +208,7 @@ class _DirectIndirectSpeechScreenState
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
@@ -218,6 +233,7 @@ class _DirectIndirectSpeechScreenState
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              crossAxisMargin: 2,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: (!_isFirstStagePassed.value)
@@ -231,8 +247,8 @@ class _DirectIndirectSpeechScreenState
                                       child: Column(
                                         children: [
                                           Expanded(
-                                            child: LayoutBuilder(
-                                              builder: (context, constraints) {
+                                            child: Builder(
+                                              builder: (context) {
                                                 final maxHeight =
                                                     constraints.maxHeight;
                                                 final isCompact =

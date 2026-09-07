@@ -56,9 +56,23 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
+  void _onStagePassedScroll() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
+    _isFirstStagePassed.addListener(_onStagePassedScroll);
+
     context.read<GrammarBloc>().add(
       FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -166,6 +180,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -188,6 +203,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              crossAxisMargin: 2,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
@@ -197,8 +213,8 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                                     child: Column(
                                       children: [
                                         Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
+                                          child: Builder(
+                                            builder: (context) {
                                               final maxHeight =
                                                   constraints.maxHeight;
                                               final isCompact = maxHeight < 580;

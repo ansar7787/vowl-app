@@ -166,6 +166,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,
@@ -191,6 +192,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              crossAxisMargin: 2,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
@@ -200,8 +202,8 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                                     child: Column(
                                       children: [
                                         Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
+                                          child: Builder(
+                                            builder: (context) {
                                               final maxHeight =
                                                   constraints.maxHeight;
                                               final isCompact = maxHeight < 580;
@@ -471,7 +473,10 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                                       height:
                                           (_pendingJigsaw.value &&
                                               !_isAnswered.value)
-                                          ? 380.h
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                380.h
                                           : 60.h,
                                     ),
                                   ),

@@ -176,10 +176,12 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                     child: Column(
                                       children: [
                                         Expanded(
-                                          child: LayoutBuilder(
-                                            builder: (context, constraints) {
-                                              final isCompact =
-                                                  constraints.maxHeight < 580;
+                                          child: Builder(
+                                            builder: (context) {
+                                              final maxHeight = MediaQuery.of(
+                                                context,
+                                              ).size.height;
+                                              final isCompact = maxHeight < 700;
                                               return _PosQuestLayout(
                                                 quest: quest,
                                                 options: options,

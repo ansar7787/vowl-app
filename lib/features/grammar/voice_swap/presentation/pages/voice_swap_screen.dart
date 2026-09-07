@@ -67,9 +67,23 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
+  void _onStagePassedScroll() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
+    _isFirstStagePassed.addListener(_onStagePassedScroll);
+
     context.read<GrammarBloc>().add(
       FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -182,6 +196,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
+              disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered:
@@ -206,6 +221,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                               ),
                               radius: Radius.circular(8.r),
                               thickness: 4.w,
+                              crossAxisMargin: 2,
                               child: CustomScrollView(
                                 controller: _scrollController,
                                 physics: (!_isFirstStagePassed.value)
@@ -219,10 +235,13 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                       child: Column(
                                         children: [
                                           Expanded(
-                                            child: LayoutBuilder(
-                                              builder: (context, constraints) {
+                                            child: Builder(
+                                              builder: (context) {
+                                                final maxHeight = MediaQuery.of(
+                                                  context,
+                                                ).size.height;
                                                 final isCompact =
-                                                    constraints.maxHeight < 580;
+                                                    maxHeight < 700;
 
                                                 return Column(
                                                   children: [
