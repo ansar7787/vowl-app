@@ -751,11 +751,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'tensemastery': [
       "",
-      "Great job! Mastering tenses is key to true fluency.",
-      "Your mastery of tenses is noticeably improving daily.",
-      "50 levels cleared! Your tenses skills are rock solid.",
-      "100 levels beat! You truly dominate tenses.",
-      "Level 200! You have transcended the limits of tenses.",
+      "Great job! You're really getting the hang of moving through time.",
+      "Your sense of time is getting sharper every day. Keep it up!",
+      "50 levels cleared! You're sliding through the timeline like a pro.",
+      "100 levels beat! Past, present, or future—you always know exactly where you are.",
+      "Level 200! You've completely mastered English time travel. Amazing work!",
     ],
     'voiceswap': [
       "",

@@ -126,8 +126,8 @@ class TenseMasteryTimelineSlider extends StatelessWidget {
                             SizedBox(height: 8.h),
                             SizedBox(
                               width: sphereWidth,
-                              child: OverflowBox(
-                                maxWidth: double.infinity,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
                                 child: Text(
                                   tense.toUpperCase(),
                                   textAlign: TextAlign.center,
