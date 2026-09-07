@@ -592,25 +592,11 @@ class _SubjectVerbAgreementScreenState
                                       ],
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_pendingTypeSubmit.value &&
-                                              !_isAnswered.value)
-                                          ? MediaQuery.of(
-                                                  context,
-                                                ).viewInsets.bottom +
-                                                380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            if (_pendingTypeSubmit.value &&
+                                            if (_pendingTypeSubmit.value &&
                                 !_isAnswered.value &&
                                 cleanTargetSentence.isNotEmpty)
-                              TypeToConfirmOverlay(
+            SliverToBoxAdapter(
+              child: TypeToConfirmOverlay(
                                 expectedText: cleanTargetSentence,
                                 displayText:
                                     "Type the complete sentence to lock in the rule",
@@ -618,8 +604,20 @@ class _SubjectVerbAgreementScreenState
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
                                 allowSkip: true,
-                                isPositioned: true,
+                                isPositioned: false,
                               ),
+            ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom > 0
+                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                  : 60.h,
+            ),
+          ),
+        ],
+                              ),
+                            ),
+
                           ],
                         );
                       },

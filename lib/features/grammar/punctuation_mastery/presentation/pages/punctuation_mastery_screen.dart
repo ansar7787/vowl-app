@@ -511,31 +511,29 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                       ],
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_pendingTyping.value &&
-                                              !_isAnswered.value)
-                                          ? MediaQuery.of(
-                                                  context,
-                                                ).viewInsets.bottom +
-                                                380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            if (_pendingTyping.value &&
+                                            if (_pendingTyping.value &&
                                 !_isAnswered.value &&
                                 cleanTargetSentence.isNotEmpty)
-                              TypeToConfirmOverlay(
+            SliverToBoxAdapter(
+              child: TypeToConfirmOverlay(
                                 expectedText: cleanTargetSentence,
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: true,
+                                isPositioned: false,
                               ),
+            ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom > 0
+                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                  : 60.h,
+            ),
+          ),
+        ],
+                              ),
+                            ),
+
                           ],
                         );
                       },

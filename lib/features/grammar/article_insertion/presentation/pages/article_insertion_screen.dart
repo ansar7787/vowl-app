@@ -511,33 +511,31 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                       ],
                                     ),
                                   ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_pendingJigsaw.value &&
-                                              !_isAnswered.value)
-                                          ? MediaQuery.of(
-                                                  context,
-                                                ).viewInsets.bottom +
-                                                380.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            if (_pendingJigsaw.value &&
+                                            if (_pendingJigsaw.value &&
                                 !_isAnswered.value &&
                                 cleanTargetSentence.isNotEmpty)
-                              TypeToConfirmOverlay(
+            SliverToBoxAdapter(
+              child: TypeToConfirmOverlay(
                                 expectedText: cleanTargetSentence,
                                 primaryColor: theme.primaryColor,
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: true,
+                                isPositioned: false,
                                 displayText:
                                     "Type the full sentence with the article to lock it in",
                               ),
+            ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom > 0
+                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
+                  : 60.h,
+            ),
+          ),
+        ],
+                              ),
+                            ),
+
                           ],
                         );
                       },
