@@ -83,7 +83,7 @@ class StoryServiceImpl implements StoryService {
     'tenseMastery':
         "Past, present, or future? Mastering your tenses is the key to telling great stories in English.",
     'voiceSwap':
-        "Let's practice switching between active and passive voice. It's a great trick for professional writing!",
+        "Let's learn when to put the doer in the spotlight, and when to focus on the action itself! Flipping the voice is a fantastic trick for professional speaking and writing.",
     'wordReorder':
         "These sentences are all mixed up! Can you put the words back in the natural, native order?",
     'modalsSelection':
@@ -759,11 +759,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'voiceswap': [
       "",
-      "Excellent start! Your understanding of active/passive voice is growing.",
-      "Your skills in active/passive voice are becoming incredibly sharp.",
-      "50 levels cleared! Your active/passive voice skills are rock solid.",
-      "Level 100! Your execution of active/passive voice is flawless.",
-      "Level 200! You have transcended the limits of active/passive voice.",
+      "Great start! You're already getting the hang of flipping the sentence focus.",
+      "Look at you go! Shifting between active and passive voice is becoming second nature.",
+      "50 levels down! You're officially a natural at knowing exactly when to use the passive voice.",
+      "100 levels cleared! You're effortlessly bending sentence structures to your will.",
+      "Level 200! You're a true Voice Transmuter now—nothing gets past you!",
     ],
     'wordreorder': [
       "",

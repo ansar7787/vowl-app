@@ -33,86 +33,92 @@ class VoiceSwapToggle extends StatelessWidget {
           children: [
             _buildToggleLabel("ACTIVE", !isPassive),
             SizedBox(width: 20.w),
-            GestureDetector(
-              onTap: () {
-                if (isAnswered) return;
-                onToggle(!isPassive);
-                hapticService.heavy();
-                soundService.playClick();
-              },
-              child: Container(
-                width: 130.w,
-                height: 65.h,
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.05)
-                      : Colors.black.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(35.r),
-                  border: Border.all(
-                    color: primaryColor.withValues(alpha: 0.15),
-                    width: 2,
+            Semantics(
+              button: true,
+              enabled: !isAnswered,
+              label:
+                  'Voice mode toggle. Currently ${isPassive ? "Passive" : "Active"}. Double tap to switch to ${isPassive ? "Active" : "Passive"}.',
+              child: GestureDetector(
+                onTap: () {
+                  if (isAnswered) return;
+                  onToggle(!isPassive);
+                  hapticService.heavy();
+                  soundService.playClick();
+                },
+                child: Container(
+                  width: 130.w,
+                  height: 65.h,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(35.r),
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.15),
+                      width: 2,
+                    ),
                   ),
-                ),
-                child: Stack(
-                  children: [
-                    // Energy Pulse Track
-                    Center(
-                      child:
-                          Container(
-                                width: 100.w,
-                                height: 4.h,
-                                decoration: BoxDecoration(
-                                  color: primaryColor.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                              )
-                              .animate(onPlay: (c) => c.repeat())
-                              .shimmer(duration: 2.seconds),
-                    ),
-                    AnimatedPositioned(
-                      duration: const Duration(milliseconds: 400),
-                      curve: Curves.elasticOut,
-                      left: isPassive ? 66.w : 4.w,
-                      top: 4.h,
-                      child:
-                          Container(
-                                width: 58.w,
-                                height: 53.h,
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      primaryColor,
-                                      primaryColor.withValues(alpha: 0.8),
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
+                  child: Stack(
+                    children: [
+                      // Energy Pulse Track
+                      Center(
+                        child:
+                            Container(
+                                  width: 100.w,
+                                  height: 4.h,
+                                  decoration: BoxDecoration(
+                                    color: primaryColor.withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(10.r),
                                   ),
-                                  borderRadius: BorderRadius.circular(30.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: primaryColor.withValues(
-                                        alpha: 0.4,
-                                      ),
-                                      blurRadius: 15,
-                                      offset: const Offset(0, 5),
+                                )
+                                .animate(onPlay: (c) => c.repeat())
+                                .shimmer(duration: 2.seconds),
+                      ),
+                      AnimatedPositioned(
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.elasticOut,
+                        left: isPassive ? 66.w : 4.w,
+                        top: 4.h,
+                        child:
+                            Container(
+                                  width: 58.w,
+                                  height: 53.h,
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        primaryColor,
+                                        primaryColor.withValues(alpha: 0.8),
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
                                     ),
-                                  ],
+                                    borderRadius: BorderRadius.circular(30.r),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: primaryColor.withValues(
+                                          alpha: 0.4,
+                                        ),
+                                        blurRadius: 15,
+                                        offset: const Offset(0, 5),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    isPassive
+                                        ? Icons.waves_rounded
+                                        : Icons.bolt_rounded,
+                                    color: Colors.white,
+                                    size: 26.r,
+                                  ),
+                                )
+                                .animate(key: ValueKey(isPassive))
+                                .scale(
+                                  begin: const Offset(0.8, 0.8),
+                                  end: const Offset(1, 1),
                                 ),
-                                child: Icon(
-                                  isPassive
-                                      ? Icons.waves_rounded
-                                      : Icons.bolt_rounded,
-                                  color: Colors.white,
-                                  size: 26.r,
-                                ),
-                              )
-                              .animate(key: ValueKey(isPassive))
-                              .scale(
-                                begin: const Offset(0.8, 0.8),
-                                end: const Offset(1, 1),
-                              ),
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
