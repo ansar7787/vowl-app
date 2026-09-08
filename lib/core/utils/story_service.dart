@@ -695,11 +695,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'clauseconnector': [
       "",
-      "Nice work! Conquering clauses is a huge step forward.",
-      "Your skills in clauses are becoming incredibly sharp.",
-      "Halfway there! You are a rising star in clauses.",
-      "Level 100! Your expertise in clauses is elite.",
-      "Level 200 reached! Your grasp of clauses is legendary.",
+      "Great start! Linking your ideas together makes your speaking sound so much smoother.",
+      "You're doing really well. Your sentences are starting to flow naturally.",
+      "Halfway there! You're connecting complex thoughts without even thinking about it.",
+      "Level 100! Your ability to link ideas makes you sound incredibly fluent.",
+      "Level 200 reached! You've completely mastered the art of natural, flowing English sentences.",
     ],
     'grammarquest': [
       "",

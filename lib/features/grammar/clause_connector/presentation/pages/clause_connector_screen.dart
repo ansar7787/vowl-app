@@ -68,6 +68,15 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       _soundService.playCorrect();
       _draggingConnector.value = connector;
       _pendingTypeSubmit.value = true;
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -136,24 +145,31 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           ' ____ ',
         );
         final clauseA = parts[0];
-        final clauseB = parts.length > 1 ? parts[1] : "...";
+        final clauseB = parts.length > 1
+            ? parts.sublist(1).join(' ____ ')
+            : "...";
         final options = quest?.options ?? [];
 
         String cleanTargetSentence = "";
         if (quest != null) {
-          final sentence = quest.correctAnswer ?? quest.sentence ?? "";
-          if (sentence.isNotEmpty) {
-            cleanTargetSentence = sentence
-                .replaceAll('[', '')
-                .replaceAll(']', '');
+          final connector =
+              quest.correctAnswer ??
+              (options.isNotEmpty && quest.correctAnswerIndex != null
+                  ? options[quest.correctAnswerIndex!]
+                  : "");
+          final rawSentence = quest.sentence ?? quest.question ?? "";
+
+          if (rawSentence.contains('____')) {
+            cleanTargetSentence = rawSentence
+                .replaceAll(RegExp(r'\s*____\s*'), ' $connector ')
+                .trim();
           } else {
-            // Fallback to assembling it
-            final correctConnector =
-                options.isNotEmpty && quest.correctAnswerIndex != null
-                ? options[quest.correctAnswerIndex!]
-                : "";
-            cleanTargetSentence = "$clauseA $correctConnector $clauseB";
+            cleanTargetSentence = "$clauseA $connector $clauseB".trim();
           }
+          cleanTargetSentence = cleanTargetSentence
+              .replaceAll('[', '')
+              .replaceAll(']', '')
+              .replaceAll('  ', ' ');
         }
 
         return ListenableBuilder(
@@ -198,209 +214,119 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                 slivers: [
                                   SliverFillRemaining(
                                     hasScrollBody: false,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: Builder(
-                                            builder: (context) {
-                                              final maxHeight =
-                                                  constraints.maxHeight;
-                                              final isCompact = maxHeight < 580;
-
-                                              final double
-                                              estimatedContentHeight =
-                                                  (isCompact ? 30.h : 40.h) +
-                                                  (isCompact ? 50.h : 80.h) *
-                                                      2 +
-                                                  (isCompact ? 50.h : 80.h) +
-                                                  (isCompact ? 60.h : 100.h) +
-                                                  40.h;
-                                              final remainingHeight =
-                                                  maxHeight -
-                                                  estimatedContentHeight;
-
-                                              final double gapUnit =
-                                                  remainingHeight > 0
-                                                  ? remainingHeight / 5
-                                                  : 0;
-                                              final double gapTop =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(
-                                                      4.0,
-                                                      15.0,
-                                                    )
-                                                  : 4.0;
-                                              final double gapMiddle =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(
-                                                      6.0,
-                                                      20.0,
-                                                    )
-                                                  : 6.0;
-                                              final double gapBottom =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(
-                                                      10.0,
-                                                      30.0,
-                                                    )
-                                                  : 10.0;
-
-                                              return Column(
-                                                children: [
-                                                  SizedBox(height: gapTop),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: ClauseConnectorInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : ClauseConnectorInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                        ),
-                                                  if (quest.connectorCategory !=
-                                                      null) ...[
-                                                    SizedBox(height: 10.h),
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 12.w,
-                                                            vertical: 6.h,
-                                                          ),
-                                                      decoration: BoxDecoration(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.1,
-                                                            ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              12.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.3,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      child: Text(
-                                                        "TYPE: ${quest.connectorCategory!.toUpperCase()}",
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 10.sp,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                          color: theme
-                                                              .primaryColor,
-                                                          letterSpacing: 1.5,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                  SizedBox(height: gapMiddle),
-
-                                                  // Magnetic Energy Port Container
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
-                                                          ),
-                                                      child: Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          _buildHolographicPlate(
-                                                            clauseA,
-                                                            theme.primaryColor,
-                                                            isDark,
-                                                            isCompact,
-                                                          ),
-                                                          SizedBox(
-                                                            height: isCompact
-                                                                ? 10.h
-                                                                : 16.h,
-                                                          ),
-                                                          _buildMagneticPort(
-                                                            quest,
-                                                            options,
-                                                            theme.primaryColor,
-                                                            isDark,
-                                                            isCompact,
-                                                          ),
-                                                          SizedBox(
-                                                            height: isCompact
-                                                                ? 10.h
-                                                                : 16.h,
-                                                          ),
-                                                          _buildHolographicPlate(
-                                                            clauseB,
-                                                            theme.primaryColor,
-                                                            isDark,
-                                                            isCompact,
-                                                          ).animate().fadeIn(
-                                                            delay: 300.ms,
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(height: gapMiddle),
-
-                                                  if (!_isAnswered.value &&
-                                                      !_pendingTypeSubmit.value)
-                                                    _buildConnectorPalette(
-                                                      options,
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      quest.correctAnswerIndex ??
-                                                          0,
-                                                      isCompact,
-                                                    ),
-                                                  SizedBox(height: gapBottom),
-                                                ],
-                                              );
-                                            },
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 24.w,
+                                        vertical: 24.h,
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          ClauseConnectorInstruction(
+                                            primaryColor: theme.primaryColor,
+                                            instructionText: quest.instruction,
                                           ),
-                                        ),
-                                      ],
+                                          if (quest.connectorCategory !=
+                                              null) ...[
+                                            SizedBox(height: 12.h),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 12.w,
+                                                vertical: 6.h,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.1),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.r),
+                                                border: Border.all(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.3),
+                                                ),
+                                              ),
+                                              child: Text(
+                                                "TYPE: ${quest.connectorCategory!.toUpperCase()}",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 10.sp,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 1.5,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                          SizedBox(height: 32.h),
+                                          _buildHolographicPlate(
+                                            clauseA,
+                                            theme.primaryColor,
+                                            isDark,
+                                            constraints.maxHeight < 580,
+                                          ),
+                                          SizedBox(height: 24.h),
+                                          _buildMagneticPort(
+                                            quest,
+                                            options,
+                                            theme.primaryColor,
+                                            isDark,
+                                            constraints.maxHeight < 580,
+                                          ),
+                                          SizedBox(height: 24.h),
+                                          _buildHolographicPlate(
+                                            clauseB,
+                                            theme.primaryColor,
+                                            isDark,
+                                            constraints.maxHeight < 580,
+                                          ).animate().fadeIn(delay: 300.ms),
+                                          SizedBox(height: 48.h),
+                                          if (!_isAnswered.value &&
+                                              !_pendingTypeSubmit.value)
+                                            _buildConnectorPalette(
+                                              options,
+                                              theme.primaryColor,
+                                              isDark,
+                                              quest.correctAnswerIndex ?? 0,
+                                              constraints.maxHeight < 580,
+                                            ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                            if (_pendingTypeSubmit.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-            SliverToBoxAdapter(
-              child: TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                displayText:
-                                    "Type the complete sentence to lock in the clause structure",
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                allowSkip: true,
-                                isPositioned: false,
-                              ),
-            ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom > 0
-                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                  : 60.h,
-            ),
-          ),
-        ],
+                                  if (_pendingTypeSubmit.value &&
+                                      !_isAnswered.value &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: cleanTargetSentence,
+                                        displayText:
+                                            "Type the complete sentence to lock in the clause structure",
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(false),
+                                        allowSkip: true,
+                                        isPositioned: false,
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-
                           ],
                         );
                       },
@@ -439,7 +365,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           height: isCompact ? 50.h : 80.h,
           decoration: BoxDecoration(
             color: portColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(30.r),
             border: Border.all(
               color: portColor.withValues(alpha: 0.4),
               width: 2,
@@ -465,15 +391,27 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                     isCompact,
                     isCorrect: _isCorrect.value != false,
                   ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
-                : Text(
-                    isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isCompact ? 8.sp : 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: portColor.withValues(alpha: 0.6),
-                      letterSpacing: 2,
-                    ),
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.add_link_rounded,
+                        color: portColor.withValues(alpha: 0.5),
+                        size: isCompact ? 20.sp : 24.sp,
+                      ),
+                      SizedBox(height: 4.h),
+                      Text(
+                        isHighlight ? "RELEASE" : "TAP OR DRAG",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 10.sp : 12.sp,
+                          fontWeight: FontWeight.w800,
+                          color: portColor.withValues(alpha: 0.5),
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );
@@ -577,7 +515,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         color: isDark
             ? Colors.white.withValues(alpha: 0.08)
             : Colors.black.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(isCompact ? 12.r : 16.r),
+        borderRadius: BorderRadius.circular(30.r),
         border: Border.all(color: borderColor, width: 2),
         boxShadow: [
           if (isDragging || isCorrect != null)
@@ -588,19 +526,34 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             ),
         ],
       ),
-      child: Text(
-        text.toUpperCase(),
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: isCompact ? 12.sp : 15.sp,
-          fontWeight: FontWeight.w900,
-          color: isCorrect == true
-              ? Colors.greenAccent
-              : (isCorrect == false
-                    ? Colors.redAccent
-                    : (isDark ? Colors.white : Colors.black87)),
-          letterSpacing: 1.5,
-        ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.link_rounded,
+            size: isCompact ? 14.sp : 18.sp,
+            color: isCorrect == true
+                ? Colors.greenAccent
+                : (isCorrect == false
+                      ? Colors.redAccent
+                      : (isDark ? Colors.white70 : Colors.black54)),
+          ),
+          SizedBox(width: 8.w),
+          Text(
+            text.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: isCompact ? 12.sp : 15.sp,
+              fontWeight: FontWeight.w900,
+              color: isCorrect == true
+                  ? Colors.greenAccent
+                  : (isCorrect == false
+                        ? Colors.redAccent
+                        : (isDark ? Colors.white : Colors.black87)),
+              letterSpacing: 1.5,
+            ),
+          ),
+        ],
       ),
     );
   }

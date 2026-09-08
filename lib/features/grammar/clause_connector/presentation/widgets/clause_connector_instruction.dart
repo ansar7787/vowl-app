@@ -3,7 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ClauseConnectorInstruction extends StatelessWidget {
   final Color primaryColor;
-  const ClauseConnectorInstruction({super.key, required this.primaryColor});
+  final String? instructionText;
+
+  const ClauseConnectorInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instructionText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +30,7 @@ class ClauseConnectorInstruction extends StatelessWidget {
           ),
           SizedBox(width: 12.w),
           Text(
-            "SNAP THE LINGUISTIC COUPLER",
+            instructionText?.toUpperCase() ?? "CHOOSE THE CORRECT CONNECTOR",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,

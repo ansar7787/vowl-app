@@ -457,6 +457,10 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                                   TextField(
                                     controller: _textController,
                                     focusNode: _focusNode,
+                                    minLines: 1,
+                                    maxLines: 4,
+                                    keyboardType: TextInputType.multiline,
+                                    textInputAction: TextInputAction.done,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 16.sp,

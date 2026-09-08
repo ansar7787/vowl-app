@@ -798,7 +798,22 @@ class GameInstructionService {
         "Write naturally and clearly",
       ],
       actionText: "Submit Answer",
-      tip: "PRO TIP: Get straight to the point! Keep it short and accurate.",
+      tip:
+          "PRO TIP: Don't overcomplicate it! Simple, direct sentences are the best.",
+    ),
+    GameSubtype.clauseConnector: GameBriefing(
+      title: "Clause Connector",
+      icon: Icons.add_link_rounded,
+      objective:
+          "Drag the correct connector to link the two clauses together. Connecting short sentences makes your English flow much more naturally in real conversations.",
+      rules: [
+        "Read both parts carefully",
+        "Find the logical link",
+        "Drop the correct connector",
+      ],
+      actionText: "Link Clauses",
+      tip:
+          "PRO TIP: Think about the relationship. Is it showing a result (so), a contrast (but), or adding info (and)?",
     ),
     GameSubtype.opinionWriting: GameBriefing(
       title: "Vocal Pen",
@@ -955,20 +970,6 @@ class GameInstructionService {
       actionText: "Sync Agreement",
       tip:
           "PRO TIP: Watch out for 'distractors'—prepositional phrases that sit between subject and verb!",
-    ),
-    GameSubtype.clauseConnector: GameBriefing(
-      title: "Clause Linker",
-      icon: Icons.link_rounded,
-      objective:
-          "Choose the appropriate conjunction to connect the clauses. Mastering structural rules ensures your English is accurate and easily understood.",
-      rules: [
-        "Analyze relationship",
-        "Choose the connector",
-        "Ensure logical flow",
-      ],
-      actionText: "Link Clauses",
-      tip:
-          "PRO TIP: Use 'Because' for reasons, 'Although' for contrast, and 'While' for simultaneous actions.",
     ),
     GameSubtype.voiceSwap: GameBriefing(
       title: "Voice Swap",
