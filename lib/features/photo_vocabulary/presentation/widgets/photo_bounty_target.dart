@@ -85,6 +85,7 @@ class PhotoBountyTarget extends StatelessWidget {
                               color: textColor,
                             ),
                             overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
                           ),
                           if (!bountyFound)
                             Text(
@@ -103,6 +104,23 @@ class PhotoBountyTarget extends StatelessWidget {
                         ],
                       ),
                     ),
+                    if (!bountyFound)
+                      Tooltip(
+                        message: context.tr(
+                          'vocabulary.bounty_info',
+                          fallback:
+                              'Take a photo containing this object to earn bonus XP and Coins! A new object appears each time.',
+                        ),
+                        preferBelow: true,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 8.w),
+                          child: Icon(
+                            Icons.info_outline_rounded,
+                            size: 20.r,
+                            color: isDark ? Colors.white38 : Colors.black38,
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),

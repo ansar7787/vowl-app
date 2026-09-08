@@ -103,6 +103,22 @@ class ScanBountyTarget extends StatelessWidget {
                         ],
                       ),
                     ),
+                    if (!bountyFound)
+                      Tooltip(
+                        message: context.tr(
+                          'translation.bounty_info',
+                          fallback: 'Scan real-world text that contains this word to earn bonus XP and Coins! A new word appears each scan.',
+                        ),
+                        preferBelow: true,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 8.w),
+                          child: Icon(
+                            Icons.info_outline_rounded,
+                            size: 20.r,
+                            color: isDark ? Colors.white38 : Colors.black38,
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),

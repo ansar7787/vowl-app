@@ -1,5 +1,5 @@
 class PhotoDictionaryEntry {
-  final String ipa;
+  final String? ipa;
   final String definition;
   final String example;
   final String grammarTip;
@@ -292,7 +292,7 @@ class PhotoVocabularyDictionary {
 
     if (key.isEmpty) {
       return const PhotoDictionaryEntry(
-        ipa: 'Noun',
+        ipa: null,
         definition: 'An object identified in your environment.',
         example: 'I can see an object in this image.',
         grammarTip: 'Grammar: Nouns represent people, places, or things.',
@@ -328,7 +328,7 @@ class PhotoVocabularyDictionary {
     }
 
     return PhotoDictionaryEntry(
-      ipa: 'Noun',
+      ipa: null,
       definition: 'An object identified in your environment.',
       example: 'I can see $article $key in this image.',
       grammarTip: generatedGrammarTip,

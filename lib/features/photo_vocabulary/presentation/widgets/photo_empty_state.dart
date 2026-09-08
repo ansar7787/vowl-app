@@ -22,80 +22,90 @@ class PhotoEmptyState extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Standby AI Core Radar
-          Container(
-            height: 200.r,
-            width: 200.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
-                width: 1.w,
-              ),
-            ),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                // Pulsing rings
-                Container(
-                      height: 140.r,
-                      width: 140.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
-                          width: 1.5.w,
-                        ),
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scaleXY(begin: 0.9, end: 1.1, duration: 2.seconds),
-                // Glowing Core
-                Container(
-                  height: 80.r,
-                  width: 80.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: const Color(0xFF14B8A6).withValues(alpha: 0.15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
-                        blurRadius: 30,
-                        spreadRadius: 10,
-                      ),
-                    ],
-                  ),
-                  child:
-                      Icon(
-                            Icons.camera_alt_rounded,
-                            size: 40.r,
-                            color: const Color(0xFF14B8A6),
-                          )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
+          ExcludeSemantics(
+            child: Container(
+              height: 200.r,
+              width: 200.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                  width: 1.w,
                 ),
-                // Radar sweep line
-                Positioned.fill(
-                      child: Center(
-                        child: Container(
-                          width: 2.w,
-                          height: 180.r,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                const Color(0xFF14B8A6).withValues(alpha: 0.0),
-                                const Color(0xFF14B8A6).withValues(alpha: 0.8),
-                                const Color(0xFF14B8A6).withValues(alpha: 0.0),
-                              ],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
+              ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Pulsing rings
+                  Container(
+                        height: 140.r,
+                        width: 140.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: const Color(
+                              0xFF14B8A6,
+                            ).withValues(alpha: 0.4),
+                            width: 1.5.w,
+                          ),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scaleXY(begin: 0.9, end: 1.1, duration: 2.seconds),
+                  // Glowing Core
+                  Container(
+                    height: 80.r,
+                    width: 80.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                          blurRadius: 30,
+                          spreadRadius: 10,
+                        ),
+                      ],
+                    ),
+                    child:
+                        Icon(
+                              Icons.camera_alt_rounded,
+                              size: 40.r,
+                              color: const Color(0xFF14B8A6),
+                            )
+                            .animate(onPlay: (c) => c.repeat(reverse: true))
+                            .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
+                  ),
+                  // Radar sweep line
+                  Positioned.fill(
+                        child: Center(
+                          child: Container(
+                            width: 2.w,
+                            height: 180.r,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  const Color(
+                                    0xFF14B8A6,
+                                  ).withValues(alpha: 0.0),
+                                  const Color(
+                                    0xFF14B8A6,
+                                  ).withValues(alpha: 0.8),
+                                  const Color(
+                                    0xFF14B8A6,
+                                  ).withValues(alpha: 0.0),
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat())
-                    .rotate(duration: 4.seconds),
-              ],
+                      )
+                      .animate(onPlay: (c) => c.repeat())
+                      .rotate(duration: 4.seconds),
+                ],
+              ),
             ),
           ),
           SizedBox(height: 32.h),
@@ -154,6 +164,10 @@ class PhotoEmptyState extends StatelessWidget {
                 context,
                 icon: LucideIcons.camera,
                 label: context.tr('common.camera', fallback: 'Camera'),
+                subtitle: context.tr(
+                  'vocabulary.take_photo',
+                  fallback: 'Take live photo',
+                ),
                 onTap: () => onPickImage(ImageSource.camera),
                 isDark: isDark,
               ).animate(delay: 200.ms).fadeIn().slideY(begin: 0.2),
@@ -162,6 +176,10 @@ class PhotoEmptyState extends StatelessWidget {
                 context,
                 icon: LucideIcons.image,
                 label: context.tr('common.gallery', fallback: 'Gallery'),
+                subtitle: context.tr(
+                  'vocabulary.pick_saved',
+                  fallback: 'Pick saved photo',
+                ),
                 onTap: () => onPickImage(ImageSource.gallery),
                 isDark: isDark,
               ).animate(delay: 300.ms).fadeIn().slideY(begin: 0.2),
@@ -176,53 +194,69 @@ class PhotoEmptyState extends StatelessWidget {
     BuildContext context, {
     required IconData icon,
     required String label,
+    required String subtitle,
     required VoidCallback onTap,
     required bool isDark,
   }) {
-    return ScaleButton(
-      onTap: onTap,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(40.r), // Pill shape
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  const Color(0xFF14B8A6).withValues(alpha: 0.15),
-                  const Color(0xFF0D9488).withValues(alpha: 0.05),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(40.r),
-              border: Border.all(
-                color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
-                width: 1.5.w,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFF14B8A6).withValues(alpha: 0.1),
-                  blurRadius: 20,
-                  offset: const Offset(0, 8),
+    return Semantics(
+      label: label,
+      button: true,
+      child: ScaleButton(
+        onTap: onTap,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(40.r), // Pill shape
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                    const Color(0xFF0D9488).withValues(alpha: 0.05),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Icon(icon, color: const Color(0xFF14B8A6), size: 24.r),
-                SizedBox(width: 8.w),
-                Text(
-                  label,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w800,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                borderRadius: BorderRadius.circular(40.r),
+                border: Border.all(
+                  color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                  width: 1.5.w,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF14B8A6).withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    offset: const Offset(0, 8),
                   ),
-                ),
-              ],
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(icon, color: const Color(0xFF14B8A6), size: 36.r),
+                  SizedBox(height: 12.h),
+                  Text(
+                    label,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    ),
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white54 : Colors.black45,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

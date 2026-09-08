@@ -46,6 +46,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   String? _imagePathVal;
   List<ImageLabel>? _labelsVal;
   bool _isProcessingVal = false;
+  bool _hasErrorVal = false;
 
   Map<int, String> _translationsVal = {};
   Map<int, bool> _isTranslatingVal = {};
@@ -68,10 +69,8 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   bool _bountyFoundVal = false;
   bool _bountiesLoadedVal = false;
 
-  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
-
   void _updateState() {
-    _stateHash.value++;
+    if (mounted) setState(() {});
   }
 
   late final AnimationController _scannerController;
@@ -117,7 +116,6 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   void dispose() {
     _scannerController.dispose();
     _confettiController.dispose();
-    _stateHash.dispose();
     super.dispose();
   }
 
@@ -152,85 +150,99 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     _isProcessingVal = true;
     _labelsVal = null;
     _bountyFoundVal = false;
+    _hasErrorVal = false;
     _translationsVal = {};
     _isTranslatingVal = {};
     _updateState();
 
-    final allLabels = await di.sl<ImageLabelingService>().labelImage(path);
-    // Filter out low-confidence "junk" guesses to prevent user frustration
-    final confidentLabels = allLabels
-        .where((l) => l.confidence >= 0.65)
-        .toList();
+    try {
+      final allLabels = await di.sl<ImageLabelingService>().labelImage(path);
+      // Filter out low-confidence "junk" guesses to prevent user frustration
+      final confidentLabels = allLabels
+          .where((l) => l.confidence >= 0.65)
+          .toList();
 
-    bool found = false;
-    for (var l in confidentLabels) {
-      if (l.label.toLowerCase() == _currentBountyVal.toLowerCase()) {
-        found = true;
-        break;
+      bool found = false;
+      final bountyWords = _currentBountyVal.toLowerCase().split(' ');
+      for (var l in confidentLabels) {
+        final labelLower = l.label.toLowerCase();
+        // Exact full match OR any word exactly matches
+        if (labelLower == _currentBountyVal.toLowerCase() ||
+            bountyWords.any((w) => labelLower.split(' ').contains(w))) {
+          found = true;
+          break;
+        }
       }
-    }
 
-    bool limitReached = false;
-
-    if (found) {
-      _bountyFoundVal = true;
-      _confettiController.play();
-      di.sl<HapticService>().heavy();
-      di.sl<SoundService>().playCorrect();
-
-      try {
-        final prefs = await SharedPreferences.getInstance();
-        final today = DateTime.now().toIso8601String().substring(0, 10);
-        final lastDate = prefs.getString('photo_bounty_date') ?? '';
-        int count = prefs.getInt('photo_bounty_count') ?? 0;
-
-        if (lastDate != today) {
-          count = 0;
-          await prefs.setString('photo_bounty_date', today);
-        }
-
-        if (count < 3) {
-          await prefs.setInt('photo_bounty_count', count + 1);
-          int total = prefs.getInt('photo_total_bounties') ?? 0;
-          total++;
-          await prefs.setInt('photo_total_bounties', total);
-
-          await di.sl<UpdateUserRewards>()(
-            UpdateUserRewardsParams(
-              xpIncrease: 5,
-              coinIncrease: 5,
-              level: total,
-              gameType: 'PhotoVocabulary',
-            ),
-          );
-        } else {
-          limitReached = true;
-        }
-      } catch (_) {}
-    }
-
-    if (mounted) {
-      _isProcessingVal = false;
-      _labelsVal = confidentLabels;
-      _updateState();
+      bool limitReached = false;
 
       if (found) {
-        CustomSnackBar.show(
-          context: context,
-          message: limitReached
-              ? context.tr(
-                  'vocabulary.bounty_limit',
-                  fallback: 'Bounty Found! (Daily limit of 3 reached)',
-                )
-              : context.tr(
-                  'vocabulary.bounty_found',
-                  fallback: 'Bounty Found! +5 XP & 5 Coins!',
-                ),
-          type: limitReached
-              ? CustomSnackBarType.info
-              : CustomSnackBarType.success,
-        );
+        _bountyFoundVal = true;
+        _confettiController.play();
+        di.sl<HapticService>().heavy();
+        di.sl<SoundService>().playCorrect();
+
+        try {
+          final prefs = await SharedPreferences.getInstance();
+          final today = DateTime.now().toIso8601String().substring(0, 10);
+          final lastDate = prefs.getString('photo_bounty_date') ?? '';
+          int count = prefs.getInt('photo_bounty_count') ?? 0;
+
+          if (lastDate != today) {
+            count = 0;
+            await prefs.setString('photo_bounty_date', today);
+          }
+
+          if (count < 3) {
+            await prefs.setInt('photo_bounty_count', count + 1);
+            int total = prefs.getInt('photo_total_bounties') ?? 0;
+            total++;
+            await prefs.setInt('photo_total_bounties', total);
+
+            await di.sl<UpdateUserRewards>()(
+              UpdateUserRewardsParams(
+                xpIncrease: 5,
+                coinIncrease: 5,
+                level: total,
+                gameType: 'PhotoVocabulary',
+              ),
+            );
+          } else {
+            limitReached = true;
+          }
+        } catch (_) {}
       }
+
+      if (mounted) {
+        _isProcessingVal = false;
+        _labelsVal = confidentLabels;
+        _updateState();
+
+        if (found) {
+          CustomSnackBar.show(
+            context: context,
+            message: limitReached
+                ? context.tr(
+                    'vocabulary.bounty_limit',
+                    fallback: 'Bounty Found! (Daily limit of 3 reached)',
+                  )
+                : context.tr(
+                    'vocabulary.bounty_found',
+                    fallback: 'Bounty Found! +5 XP & 5 Coins!',
+                  ),
+            type: limitReached
+                ? CustomSnackBarType.info
+                : CustomSnackBarType.success,
+          );
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+        _isProcessingVal = false;
+        _hasErrorVal = true;
+        _updateState();
+      }
+      return;
     }
   }
 
@@ -322,119 +334,130 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     di.sl<SoundService>().playTts(text, speed: 0.4, locale: 'en-US');
   }
 
+  void _resetForNewPhoto() {
+    _imagePathVal = null;
+    _labelsVal = null;
+    _translationsVal = {};
+    _isTranslatingVal = {};
+    _currentBountyVal = _bountyOptions[Random().nextInt(_bountyOptions.length)];
+    _bountyFoundVal = false;
+    _updateState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<int>(
-      valueListenable: _stateHash,
-      builder: (context, value, child) {
-        if (!_bountiesLoadedVal) {
-          return const Scaffold(
-            body: SafeArea(
-              child: GameShimmerLoading(primaryColor: Color(0xFF14B8A6)),
-            ),
-          );
-        }
+    if (!_bountiesLoadedVal) {
+      return const Scaffold(
+        body: SafeArea(
+          child: GameShimmerLoading(primaryColor: Color(0xFF14B8A6)),
+        ),
+      );
+    }
 
-        final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-        return PopScope(
-          canPop: _imagePathVal == null,
-          onPopInvokedWithResult: (didPop, result) {
-            if (didPop) return;
-            GameDialogHelper.showExitConfirmation(
-              context,
-              title: context.tr(
-                'vocabulary.quit_photo_title',
-                fallback: 'QUIT EXPLORING?',
-              ),
-              description: context.tr(
-                'vocabulary.quit_photo_desc',
-                fallback:
-                    'Your current photo will be lost. Are you sure you want to quit?',
-              ),
-              onQuit: () => context.pop(),
-            );
-          },
-          child: Scaffold(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            body: Stack(
-              fit: StackFit.expand,
-              children: [
-                // 1. Background Layer (Image or Gradient)
-                if (_imagePathVal != null)
-                  Image.file(File(_imagePathVal!), fit: BoxFit.cover)
-                else
-                  const MeshGradientBackground(showLetters: false),
-
-                // 2. Dark Overlay for better contrast when image is present
-                if (_imagePathVal != null)
-                  Container(color: Colors.black.withValues(alpha: 0.5))
-                else
-                  Container(
-                    color: isDark
-                        ? Colors.black.withValues(alpha: 0.5)
-                        : Colors.white.withValues(alpha: 0.3),
-                  ),
-
-                // 3. Cinematic Laser Scanner (only when processing)
-                if (_isProcessingVal) _buildLaserScanner(),
-
-                // 4. UI Layer
-                CustomScrollView(
-                  physics: const BouncingScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics(),
-                  ),
-                  slivers: [
-                    _buildSliverAppBar(context, isDark),
-                    SliverToBoxAdapter(
-                      child: PhotoBountyTarget(
-                        currentBounty: _currentBountyVal,
-                        bountyFound: _bountyFoundVal,
-                      ),
-                    ),
-                    if (_imagePathVal == null)
-                      SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: PhotoEmptyState(onPickImage: _pickAndLabelImage),
-                      )
-                    else
-                      _buildSliverResults(isDark),
-
-                    // Bottom padding for the floating retake button
-                    SliverToBoxAdapter(child: SizedBox(height: 120.h)),
-                  ],
-                ),
-
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: ConfettiWidget(
-                    confettiController: _confettiController,
-                    blastDirectionality: BlastDirectionality.explosive,
-                    shouldLoop: false,
-                    colors: const [
-                      Colors.green,
-                      Colors.blue,
-                      Colors.pink,
-                      Colors.orange,
-                      Colors.purple,
-                    ],
-                    numberOfParticles: 50,
-                    gravity: 0.1,
-                  ),
-                ),
-
-                if (_imagePathVal != null && !_isProcessingVal)
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: _buildRetakeBar(),
-                  ),
-              ],
-            ),
+    return PopScope(
+      canPop: _imagePathVal == null,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        GameDialogHelper.showExitConfirmation(
+          context,
+          title: context.tr(
+            'vocabulary.quit_photo_title',
+            fallback: 'QUIT EXPLORING?',
           ),
+          description: context.tr(
+            'vocabulary.quit_photo_desc',
+            fallback:
+                'Your current photo will be lost. Are you sure you want to quit?',
+          ),
+          onQuit: () => context.pop(),
         );
       },
+      child: Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        body: Stack(
+          fit: StackFit.expand,
+          children: [
+            // 1. Background Layer (Image or Gradient)
+            if (_imagePathVal != null)
+              Image.file(File(_imagePathVal!), fit: BoxFit.cover)
+            else
+              const MeshGradientBackground(showLetters: false),
+
+            // 2. Dark Overlay for better contrast when image is present
+            if (_imagePathVal != null)
+              Container(color: Colors.black.withValues(alpha: 0.5))
+            else
+              Container(
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.5)
+                    : Colors.white.withValues(alpha: 0.3),
+              ),
+
+            // 3. Cinematic Laser Scanner (only when processing)
+            if (_isProcessingVal) _buildLaserScanner(),
+
+            // 4. UI Layer
+            CustomScrollView(
+              physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics(),
+              ),
+              slivers: [
+                _buildSliverAppBar(context, isDark),
+                SliverToBoxAdapter(
+                  child: PhotoBountyTarget(
+                    currentBounty: _currentBountyVal,
+                    bountyFound: _bountyFoundVal,
+                  ),
+                ),
+                if (_imagePathVal == null)
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: PhotoEmptyState(onPickImage: _pickAndLabelImage),
+                  )
+                else ...[
+                  if (!_isProcessingVal &&
+                      !_hasErrorVal &&
+                      _labelsVal != null &&
+                      _labelsVal!.isNotEmpty)
+                    _buildPhotoSummary(isDark),
+                  _buildSliverResults(isDark),
+                ],
+
+                // Bottom padding for the floating retake button
+                SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+              ],
+            ),
+
+            Align(
+              alignment: Alignment.topCenter,
+              child: ConfettiWidget(
+                confettiController: _confettiController,
+                blastDirectionality: BlastDirectionality.explosive,
+                shouldLoop: false,
+                colors: const [
+                  Colors.green,
+                  Colors.blue,
+                  Colors.pink,
+                  Colors.orange,
+                  Colors.purple,
+                ],
+                numberOfParticles: 50,
+                gravity: 0.1,
+              ),
+            ),
+
+            if (_imagePathVal != null && !_isProcessingVal)
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: _buildRetakeBar(),
+              ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -512,8 +535,181 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     );
   }
 
+  /// Summary header showing objects detected count after a successful scan.
+  Widget _buildPhotoSummary(bool isDark) {
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16.r),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : Colors.black.withValues(alpha: 0.04),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    LucideIcons.scanLine,
+                    size: 16.r,
+                    color: const Color(0xFF14B8A6),
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    context.tr(
+                      'vocabulary.photo_summary',
+                      args: [_labelsVal!.length.toString()],
+                      fallback: '${_labelsVal!.length} objects detected',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ).animate().fadeIn(duration: 400.ms),
+    );
+  }
+
   Widget _buildSliverResults(bool isDark) {
-    if (_isProcessingVal || _labelsVal == null) {
+    if (_isProcessingVal) {
+      return const SliverToBoxAdapter(child: SizedBox.shrink());
+    }
+
+    if (_hasErrorVal) {
+      return SliverToBoxAdapter(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+          child: Center(
+            child: Container(
+              padding: EdgeInsets.all(32.r),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.6)
+                    : Colors.white.withValues(alpha: 0.85),
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05),
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    LucideIcons.alertTriangle,
+                    color: isDark
+                        ? Colors.redAccent.shade100
+                        : Colors.redAccent,
+                    size: 48.r,
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    context.tr(
+                      'vocabulary.processing_error',
+                      fallback: 'Something went wrong',
+                    ),
+                    style: TextStyle(
+                      color: isDark ? Colors.white : Colors.black87,
+                      fontSize: 20.sp,
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.w800,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    context.tr(
+                      'vocabulary.processing_error_desc',
+                      fallback:
+                          'We couldn\'t analyze this image. Try again with a clearer photo.',
+                    ),
+                    style: TextStyle(
+                      color: isDark ? Colors.white54 : Colors.black54,
+                      fontSize: 14.sp,
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.w500,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 24.h),
+                  ScaleButton(
+                    onTap: () {
+                      _imagePathVal = null;
+                      _labelsVal = null;
+                      _hasErrorVal = false;
+                      _updateState();
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24.w,
+                        vertical: 14.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF14B8A6),
+                        borderRadius: BorderRadius.circular(16.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(
+                              0xFF14B8A6,
+                            ).withValues(alpha: 0.4),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            LucideIcons.camera,
+                            color: Colors.white,
+                            size: 20.r,
+                          ),
+                          SizedBox(width: 10.w),
+                          Text(
+                            context.tr(
+                              'vocabulary.try_again',
+                              fallback: 'Try Again',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    if (_labelsVal == null) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
 
@@ -522,28 +718,121 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
           child: Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(24.r),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Container(
-                  padding: EdgeInsets.all(32.r),
+            child: Container(
+              padding: EdgeInsets.all(32.r),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.6)
+                    : Colors.white.withValues(alpha: 0.85),
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
                   color: isDark
-                      ? Colors.black.withValues(alpha: 0.5)
-                      : Colors.white.withValues(alpha: 0.5),
-                  child: Text(
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05),
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    LucideIcons.searchX,
+                    color: isDark ? Colors.white54 : Colors.black38,
+                    size: 48.r,
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
                     context.tr(
                       'vocabulary.no_objects',
-                      fallback: 'No confident objects recognized.',
+                      fallback: 'No objects recognized',
                     ),
                     style: TextStyle(
                       color: isDark ? Colors.white : Colors.black87,
-                      fontSize: 18.sp,
+                      fontSize: 20.sp,
                       fontFamily: 'Outfit',
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w800,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20.h),
+                  // Actionable tips
+                  _buildTip(
+                    isDark,
+                    icon: LucideIcons.sun,
+                    text: context.tr(
+                      'vocabulary.tip_lighting',
+                      fallback: 'Try better lighting',
                     ),
                   ),
-                ),
+                  SizedBox(height: 8.h),
+                  _buildTip(
+                    isDark,
+                    icon: LucideIcons.zoomIn,
+                    text: context.tr(
+                      'vocabulary.tip_closer',
+                      fallback: 'Move closer to objects',
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  _buildTip(
+                    isDark,
+                    icon: LucideIcons.focus,
+                    text: context.tr(
+                      'vocabulary.tip_blur',
+                      fallback: 'Avoid blurry photos',
+                    ),
+                  ),
+                  SizedBox(height: 24.h),
+                  // Inline retry button
+                  ScaleButton(
+                    onTap: () {
+                      _imagePathVal = null;
+                      _labelsVal = null;
+                      _updateState();
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24.w,
+                        vertical: 14.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF14B8A6),
+                        borderRadius: BorderRadius.circular(16.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(
+                              0xFF14B8A6,
+                            ).withValues(alpha: 0.4),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            LucideIcons.camera,
+                            color: Colors.white,
+                            size: 20.r,
+                          ),
+                          SizedBox(width: 10.w),
+                          Text(
+                            context.tr(
+                              'vocabulary.try_again',
+                              fallback: 'Try Again',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -571,17 +860,50 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     );
   }
 
+  Widget _buildTip(
+    bool isDark, {
+    required IconData icon,
+    required String text,
+  }) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 16.r, color: isDark ? Colors.white38 : Colors.black38),
+        SizedBox(width: 10.w),
+        Text(
+          text,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: isDark ? Colors.white54 : Colors.black54,
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildRetakeBar() {
     return Padding(
       padding: EdgeInsets.all(24.w),
       child: ScaleButton(
         onTap: () {
-          _imagePathVal = null;
-          _labelsVal = null;
-          _currentBountyVal =
-              _bountyOptions[Random().nextInt(_bountyOptions.length)];
-          _bountyFoundVal = false;
-          _updateState();
+          if (_translationsVal.isNotEmpty) {
+            GameDialogHelper.showExitConfirmation(
+              context,
+              title: context.tr(
+                'vocabulary.retake_title',
+                fallback: 'RETAKE PHOTO?',
+              ),
+              description: context.tr(
+                'vocabulary.retake_desc',
+                fallback: 'Your translations will be lost. Are you sure?',
+              ),
+              onQuit: () => _resetForNewPhoto(),
+            );
+          } else {
+            _resetForNewPhoto();
+          }
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100.r),
@@ -771,6 +1093,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                                         controller.repeat(reverse: true),
                                   )
                                   .fade(duration: 500.ms),
+                              _AnimatedScannerText(),
                             ],
                           ),
                         ),
@@ -823,6 +1146,55 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           ),
         ),
       ],
+    );
+  }
+}
+
+class _AnimatedScannerText extends StatefulWidget {
+  @override
+  State<_AnimatedScannerText> createState() => _AnimatedScannerTextState();
+}
+
+class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
+  static const _steps = [
+    'SCANNING OBJECTS...',
+    'MATCHING VOCABULARY...',
+    'ANALYZING...',
+  ];
+  int _currentStep = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _cycle();
+  }
+
+  void _cycle() async {
+    while (mounted) {
+      await Future.delayed(const Duration(milliseconds: 1200));
+      if (mounted) {
+        setState(() {
+          _currentStep = (_currentStep + 1) % _steps.length;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 400),
+      child: Text(
+        _steps[_currentStep],
+        key: ValueKey(_currentStep),
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontWeight: FontWeight.w900,
+          fontSize: 16.sp,
+          color: const Color(0xFF14B8A6),
+          letterSpacing: 4.0,
+        ),
+      ),
     );
   }
 }

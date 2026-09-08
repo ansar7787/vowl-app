@@ -36,22 +36,25 @@ class ArticleFloatingOrb extends StatefulWidget {
 class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
     with SingleTickerProviderStateMixin {
   late AnimationController _driftController;
-  late double _top;
-  late double _left;
 
   @override
   void initState() {
     super.initState();
-    _top =
-        widget.index * (widget.isCompact ? 40.h : 70.h) +
-        (widget.isCompact ? 5.h : 20.h);
-    _left = (widget.index % 2 == 0)
-        ? (widget.isCompact ? 55.w : 45.w)
-        : (widget.isCompact ? 220.w : 210.w);
     _driftController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 4 + widget.index),
-    )..repeat(reverse: true);
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final disableAnimations = MediaQuery.of(context).disableAnimations;
+    if (disableAnimations) {
+      _driftController.stop();
+    } else if (!_driftController.isAnimating) {
+      _driftController.repeat(reverse: true);
+    }
   }
 
   @override
@@ -62,6 +65,8 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
 
   @override
   Widget build(BuildContext context) {
+    final disableAnimations = MediaQuery.of(context).disableAnimations;
+
     Color textColor;
     Color borderColor;
     List<Color> gradientColors;
@@ -145,9 +150,13 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
     return AnimatedBuilder(
       animation: _driftController,
       builder: (context, child) {
-        return Positioned(
-          top: _top + (15.h * _driftController.value),
-          left: _left + (12.w * (1 - _driftController.value)),
+        return Transform.translate(
+          offset: disableAnimations
+              ? Offset.zero
+              : Offset(
+                  12.w * (1 - _driftController.value),
+                  15.h * _driftController.value,
+                ),
           child: Opacity(
             opacity: opacity,
             child: GestureDetector(
@@ -179,10 +188,16 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
                           ),
                         ),
                       )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .animate(
+                        onPlay: disableAnimations
+                            ? null
+                            : (c) => c.repeat(reverse: true),
+                      )
                       .scale(
                         begin: const Offset(1, 1),
-                        end: const Offset(1.08, 1.08),
+                        end: disableAnimations
+                            ? const Offset(1, 1)
+                            : const Offset(1.08, 1.08),
                         duration: 2500.ms,
                         curve: Curves.easeInOutSine,
                       ),

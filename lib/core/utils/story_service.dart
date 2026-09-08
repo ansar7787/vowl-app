@@ -65,7 +65,7 @@ class StoryServiceImpl implements StoryService {
 
     // Grammar
     'articleInsertion':
-        "Let's master 'a', 'an', and 'the'! These small words make a huge difference in sounding completely fluent.",
+        "Let's practice 'a', 'an', and 'the'! Using these small words correctly makes your English sound much more natural.",
     'clauseConnector':
         "Let's practice linking ideas! Combining short sentences into longer ones makes your English flow beautifully.",
     'grammarQuest':
@@ -687,11 +687,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'articleinsertion': [
       "",
-      "Great job! Mastering articles is key to true fluency.",
-      "Your skills in articles are becoming incredibly sharp.",
-      "50 levels cleared! Your articles skills are rock solid.",
-      "Level 100! Your execution of articles is flawless.",
-      "Level 200! You are a supreme grandmaster of articles.",
+      "Great start! Getting these small words right really helps you sound more natural.",
+      "Nice work! You're starting to instinctively know which article fits best.",
+      "Halfway to 100! You're getting a great feel for when to use 'a', 'an', and 'the'.",
+      "100 levels cleared! You're choosing the right articles without even having to think about it.",
+      "Level 200! Your sentences are flowing incredibly naturally. Amazing work!",
     ],
     'clauseconnector': [
       "",

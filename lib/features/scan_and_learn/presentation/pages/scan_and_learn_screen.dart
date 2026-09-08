@@ -45,6 +45,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   String? _imagePathVal;
   RecognizedText? _recognizedTextVal;
   bool _isProcessingVal = false;
+  bool _hasErrorVal = false;
 
   Map<int, String> _translationsVal = {};
   Map<int, bool> _isTranslatingVal = {};
@@ -66,12 +67,6 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   String _currentBountyVal = '';
   bool _bountyFoundVal = false;
   bool _bountiesLoadedVal = false;
-
-  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
-
-  void _updateState() {
-    _stateHash.value++;
-  }
 
   late final AnimationController _scannerController;
   late ConfettiController _confettiController;
@@ -105,10 +100,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       // Keep fallback
     }
     if (mounted) {
-      _currentBountyVal =
-          _bountyOptions[Random().nextInt(_bountyOptions.length)];
-      _bountiesLoadedVal = true;
-      _updateState();
+      setState(() {
+        _currentBountyVal =
+            _bountyOptions[Random().nextInt(_bountyOptions.length)];
+        _bountiesLoadedVal = true;
+      });
     }
   }
 
@@ -116,7 +112,6 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   void dispose() {
     _scannerController.dispose();
     _confettiController.dispose();
-    _stateHash.dispose();
     super.dispose();
   }
 
@@ -147,17 +142,31 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   }
 
   Future<void> _processImage(String path) async {
-    _imagePathVal = path;
-    _isProcessingVal = true;
-    _recognizedTextVal = null;
-    _bountyFoundVal = false;
-    _translationsVal = {};
-    _isTranslatingVal = {};
-    _updateState();
+    setState(() {
+      _imagePathVal = path;
+      _isProcessingVal = true;
+      _recognizedTextVal = null;
+      _bountyFoundVal = false;
+      _hasErrorVal = false;
+      _translationsVal = {};
+      _isTranslatingVal = {};
+    });
 
-    final recognized = await di.sl<TextRecognitionService>().recognizeFromFile(
-      path,
-    );
+    RecognizedText? recognized;
+
+    try {
+      recognized = await di.sl<TextRecognitionService>().recognizeFromFile(
+        path,
+      );
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isProcessingVal = false;
+          _hasErrorVal = true;
+        });
+      }
+      return;
+    }
 
     bool found = false;
     if (recognized != null) {
@@ -206,9 +215,10 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     }
 
     if (mounted) {
-      _isProcessingVal = false;
-      _recognizedTextVal = recognized;
-      _updateState();
+      setState(() {
+        _isProcessingVal = false;
+        _recognizedTextVal = recognized;
+      });
 
       if (found) {
         CustomSnackBar.show(
@@ -265,8 +275,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
         fallback: 'Watch Ad to Translate',
       ),
       onSuccess: () async {
-        _isTranslatingVal[index] = true;
-        _updateState();
+        setState(() {
+          _isTranslatingVal[index] = true;
+        });
 
         try {
           final isDownloaded = await di
@@ -282,8 +293,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 .isTargetModelDownloaded();
             if (!isDownloadedNow) {
               if (mounted) {
-                _isTranslatingVal[index] = false;
-                _updateState();
+                setState(() {
+                  _isTranslatingVal[index] = false;
+                });
               }
               return;
             }
@@ -296,14 +308,16 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
             textToTranslate,
           );
           if (mounted) {
-            _translationsVal[index] = translated;
-            _isTranslatingVal[index] = false;
-            _updateState();
+            setState(() {
+              _translationsVal[index] = translated;
+              _isTranslatingVal[index] = false;
+            });
           }
         } catch (e) {
           if (mounted) {
-            _isTranslatingVal[index] = false;
-            _updateState();
+            setState(() {
+              _isTranslatingVal[index] = false;
+            });
             CustomSnackBar.show(
               context: context,
               message: e.toString().replaceAll('Exception: ', ''),
@@ -315,118 +329,124 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     );
   }
 
+  void _playPronunciation(String text) {
+    di.sl<SoundService>().playTts(text, speed: 0.4, locale: 'en-US');
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<int>(
-      valueListenable: _stateHash,
-      builder: (context, value, child) {
-        if (!_bountiesLoadedVal) {
-          return const Scaffold(
-            body: SafeArea(
-              child: GameShimmerLoading(primaryColor: Color(0xFF6366F1)),
-            ),
-          );
-        }
+    if (!_bountiesLoadedVal) {
+      return const Scaffold(
+        body: SafeArea(
+          child: GameShimmerLoading(primaryColor: Color(0xFF6366F1)),
+        ),
+      );
+    }
 
-        final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-        return PopScope(
-          canPop: _imagePathVal == null,
-          onPopInvokedWithResult: (didPop, result) {
-            if (didPop) return;
-            GameDialogHelper.showExitConfirmation(
-              context,
-              title: context.tr(
-                'translation.quit_scan_title',
-                fallback: 'QUIT SCANNING?',
-              ),
-              description: context.tr(
-                'translation.quit_scan_desc',
-                fallback:
-                    'Your scanned text will be lost. Are you sure you want to quit?',
-              ),
-              onQuit: () => context.pop(),
-            );
-          },
-          child: Scaffold(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            body: Stack(
-              fit: StackFit.expand,
-              children: [
-                // 1. Background Layer (Image or Gradient)
-                if (_imagePathVal != null)
-                  Image.file(File(_imagePathVal!), fit: BoxFit.cover)
-                else
-                  const MeshGradientBackground(showLetters: false),
-
-                // 2. Dark Overlay for better contrast when image is present
-                if (_imagePathVal != null)
-                  Container(color: Colors.black.withValues(alpha: 0.5))
-                else
-                  Container(
-                    color: isDark
-                        ? Colors.black.withValues(alpha: 0.5)
-                        : Colors.white.withValues(alpha: 0.3),
-                  ),
-
-                // 3. Cinematic Laser Scanner (only when processing)
-                if (_isProcessingVal) _buildLaserScanner(),
-
-                // 4. UI Layer
-                CustomScrollView(
-                  physics: const BouncingScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics(),
-                  ),
-                  slivers: [
-                    _buildSliverAppBar(context, isDark),
-                    SliverToBoxAdapter(
-                      child: ScanBountyTarget(
-                        currentBounty: _currentBountyVal,
-                        bountyFound: _bountyFoundVal,
-                      ),
-                    ),
-                    if (_imagePathVal == null)
-                      SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: ScanEmptyState(onPickImage: _pickAndScanImage),
-                      )
-                    else
-                      _buildSliverResults(isDark),
-
-                    SliverToBoxAdapter(child: SizedBox(height: 120.h)),
-                  ],
-                ),
-
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: ConfettiWidget(
-                    confettiController: _confettiController,
-                    blastDirectionality: BlastDirectionality.explosive,
-                    shouldLoop: false,
-                    colors: const [
-                      Colors.green,
-                      Colors.blue,
-                      Colors.pink,
-                      Colors.orange,
-                      Colors.purple,
-                    ],
-                    numberOfParticles: 50,
-                    gravity: 0.1,
-                  ),
-                ),
-
-                if (_imagePathVal != null && !_isProcessingVal)
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: _buildRetakeBar(),
-                  ),
-              ],
-            ),
+    return PopScope(
+      canPop: _imagePathVal == null,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        GameDialogHelper.showExitConfirmation(
+          context,
+          title: context.tr(
+            'translation.quit_scan_title',
+            fallback: 'QUIT SCANNING?',
           ),
+          description: context.tr(
+            'translation.quit_scan_desc',
+            fallback:
+                'Your scanned text will be lost. Are you sure you want to quit?',
+          ),
+          onQuit: () => context.pop(),
         );
       },
+      child: Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        body: Stack(
+          fit: StackFit.expand,
+          children: [
+            // 1. Background Layer (Image or Gradient)
+            if (_imagePathVal != null)
+              Image.file(File(_imagePathVal!), fit: BoxFit.cover)
+            else
+              const MeshGradientBackground(showLetters: false),
+
+            // 2. Dark Overlay for better contrast when image is present
+            if (_imagePathVal != null)
+              Container(color: Colors.black.withValues(alpha: 0.5))
+            else
+              Container(
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.5)
+                    : Colors.white.withValues(alpha: 0.3),
+              ),
+
+            // 3. Cinematic Laser Scanner (only when processing)
+            if (_isProcessingVal) _buildLaserScanner(),
+
+            // 4. UI Layer
+            CustomScrollView(
+              physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics(),
+              ),
+              slivers: [
+                _buildSliverAppBar(context, isDark),
+                SliverToBoxAdapter(
+                  child: ScanBountyTarget(
+                    currentBounty: _currentBountyVal,
+                    bountyFound: _bountyFoundVal,
+                  ),
+                ),
+                if (_imagePathVal == null)
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: ScanEmptyState(onPickImage: _pickAndScanImage),
+                  )
+                else ...[
+                  // Scan summary header
+                  if (!_isProcessingVal &&
+                      !_hasErrorVal &&
+                      _recognizedTextVal != null &&
+                      _recognizedTextVal!.blocks.isNotEmpty)
+                    _buildScanSummary(isDark),
+                  _buildSliverResults(isDark),
+                ],
+
+                SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+              ],
+            ),
+
+            Align(
+              alignment: Alignment.topCenter,
+              child: ConfettiWidget(
+                confettiController: _confettiController,
+                blastDirectionality: BlastDirectionality.explosive,
+                shouldLoop: false,
+                colors: const [
+                  Colors.green,
+                  Colors.blue,
+                  Colors.pink,
+                  Colors.orange,
+                  Colors.purple,
+                ],
+                numberOfParticles: 50,
+                gravity: 0.1,
+              ),
+            ),
+
+            if (_imagePathVal != null && !_isProcessingVal)
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: _buildRetakeBar(),
+              ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -501,11 +521,200 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
     );
   }
 
+  /// Summary header showing block and word counts after a successful scan.
+  Widget _buildScanSummary(bool isDark) {
+    final blocks = _recognizedTextVal!.blocks;
+    final totalWords = blocks.fold<int>(
+      0,
+      (sum, b) => sum + b.text.trim().split(RegExp(r'\s+')).length,
+    );
+
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16.r),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.08)
+                    : Colors.black.withValues(alpha: 0.04),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.document_scanner_rounded,
+                    size: 16.r,
+                    color: const Color(0xFF6366F1),
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    context.tr(
+                      'translation.scan_summary',
+                      args: [blocks.length.toString(), totalWords.toString()],
+                      fallback:
+                          '${blocks.length} blocks · $totalWords words detected',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ).animate().fadeIn(duration: 400.ms),
+    );
+  }
+
   Widget _buildSliverResults(bool isDark) {
-    if (_isProcessingVal || _recognizedTextVal == null) {
+    if (_isProcessingVal) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
 
+    // Error state with retry
+    if (_hasErrorVal) {
+      return SliverToBoxAdapter(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
+          child: Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(24.r),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Container(
+                  padding: EdgeInsets.all(32.r),
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.black.withValues(alpha: 0.6)
+                        : Colors.white.withValues(alpha: 0.85),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.05),
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        LucideIcons.alertTriangle,
+                        color: isDark
+                            ? Colors.redAccent.shade100
+                            : Colors.redAccent,
+                        size: 48.r,
+                      ),
+                      SizedBox(height: 16.h),
+                      Text(
+                        context.tr(
+                          'translation.processing_error',
+                          fallback: 'Something went wrong',
+                        ),
+                        style: TextStyle(
+                          color: isDark ? Colors.white : Colors.black87,
+                          fontSize: 20.sp,
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w800,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 8.h),
+                      Text(
+                        context.tr(
+                          'translation.processing_error_desc',
+                          fallback:
+                              'We couldn\'t process this image. Try again with clearer text.',
+                        ),
+                        style: TextStyle(
+                          color: isDark ? Colors.white54 : Colors.black54,
+                          fontSize: 14.sp,
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 24.h),
+                      ScaleButton(
+                        onTap: () {
+                          setState(() {
+                            _imagePathVal = null;
+                            _recognizedTextVal = null;
+                            _hasErrorVal = false;
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 24.w,
+                            vertical: 14.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF6366F1),
+                            borderRadius: BorderRadius.circular(16.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(
+                                  0xFF6366F1,
+                                ).withValues(alpha: 0.4),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                LucideIcons.camera,
+                                color: Colors.white,
+                                size: 20.r,
+                              ),
+                              SizedBox(width: 10.w),
+                              Text(
+                                context.tr(
+                                  'vocabulary.try_again',
+                                  fallback: 'Try Again',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    if (_recognizedTextVal == null) {
+      return const SliverToBoxAdapter(child: SizedBox.shrink());
+    }
+
+    // Empty results — full designed state with tips and retry
     if (_recognizedTextVal!.blocks.isEmpty) {
       return SliverToBoxAdapter(
         child: Padding(
@@ -517,20 +726,120 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(
                   padding: EdgeInsets.all(32.r),
-                  color: isDark
-                      ? Colors.black.withValues(alpha: 0.5)
-                      : Colors.white.withValues(alpha: 0.5),
-                  child: Text(
-                    context.tr(
-                      'translation.no_results',
-                      fallback: 'No text extracted yet.',
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.black.withValues(alpha: 0.6)
+                        : Colors.white.withValues(alpha: 0.85),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.05),
                     ),
-                    style: TextStyle(
-                      color: isDark ? Colors.white : Colors.black87,
-                      fontSize: 18.sp,
-                      fontFamily: 'Outfit',
-                      fontWeight: FontWeight.w600,
-                    ),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        LucideIcons.searchX,
+                        color: isDark ? Colors.white54 : Colors.black38,
+                        size: 48.r,
+                      ),
+                      SizedBox(height: 16.h),
+                      Text(
+                        context.tr(
+                          'translation.no_text_found',
+                          fallback: 'No text found',
+                        ),
+                        style: TextStyle(
+                          color: isDark ? Colors.white : Colors.black87,
+                          fontSize: 20.sp,
+                          fontFamily: 'Outfit',
+                          fontWeight: FontWeight.w800,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 20.h),
+                      // Actionable tips
+                      _buildTip(
+                        isDark,
+                        icon: LucideIcons.type,
+                        text: context.tr(
+                          'translation.tip_clear_text',
+                          fallback: 'Use printed text, not handwriting',
+                        ),
+                      ),
+                      SizedBox(height: 8.h),
+                      _buildTip(
+                        isDark,
+                        icon: LucideIcons.sun,
+                        text: context.tr(
+                          'translation.tip_lighting',
+                          fallback: 'Try better lighting',
+                        ),
+                      ),
+                      SizedBox(height: 8.h),
+                      _buildTip(
+                        isDark,
+                        icon: LucideIcons.focus,
+                        text: context.tr(
+                          'translation.tip_blur',
+                          fallback: 'Avoid blurry photos',
+                        ),
+                      ),
+                      SizedBox(height: 24.h),
+                      // Inline retry button
+                      ScaleButton(
+                        onTap: () {
+                          setState(() {
+                            _imagePathVal = null;
+                            _recognizedTextVal = null;
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 24.w,
+                            vertical: 14.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF6366F1),
+                            borderRadius: BorderRadius.circular(16.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(
+                                  0xFF6366F1,
+                                ).withValues(alpha: 0.4),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                LucideIcons.camera,
+                                color: Colors.white,
+                                size: 20.r,
+                              ),
+                              SizedBox(width: 10.w),
+                              Text(
+                                context.tr(
+                                  'vocabulary.try_again',
+                                  fallback: 'Try Again',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -552,10 +861,34 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
               translatedText: _translationsVal[index],
               isTranslating: _isTranslatingVal[index] ?? false,
               onTranslate: _translateBlock,
+              onPlayPronunciation: _playPronunciation,
             ),
           );
         }, childCount: _recognizedTextVal!.blocks.length),
       ),
+    );
+  }
+
+  Widget _buildTip(
+    bool isDark, {
+    required IconData icon,
+    required String text,
+  }) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 16.r, color: isDark ? Colors.white38 : Colors.black38),
+        SizedBox(width: 10.w),
+        Text(
+          text,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: isDark ? Colors.white54 : Colors.black54,
+          ),
+        ),
+      ],
     );
   }
 
@@ -564,12 +897,43 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
       padding: EdgeInsets.all(24.w),
       child: ScaleButton(
         onTap: () {
-          _imagePathVal = null;
-          _recognizedTextVal = null;
-          _currentBountyVal =
-              _bountyOptions[Random().nextInt(_bountyOptions.length)];
-          _bountyFoundVal = false;
-          _updateState();
+          if (_translationsVal.isNotEmpty) {
+            GameDialogHelper.showExitConfirmation(
+              context,
+              title: context.tr(
+                'translation.retake_title',
+                fallback: 'SCAN NEW PAGE?',
+              ),
+              description: context.tr(
+                'translation.retake_desc',
+                fallback:
+                    'Your current scan and translations will be lost. Are you sure?',
+              ),
+              onQuit: () {
+                setState(() {
+                  _imagePathVal = null;
+                  _recognizedTextVal = null;
+                  _hasErrorVal = false;
+                  _currentBountyVal =
+                      _bountyOptions[Random().nextInt(_bountyOptions.length)];
+                  _bountyFoundVal = false;
+                  _translationsVal = {};
+                  _isTranslatingVal = {};
+                });
+              },
+            );
+          } else {
+            setState(() {
+              _imagePathVal = null;
+              _recognizedTextVal = null;
+              _hasErrorVal = false;
+              _currentBountyVal =
+                  _bountyOptions[Random().nextInt(_bountyOptions.length)];
+              _bountyFoundVal = false;
+              _translationsVal = {};
+              _isTranslatingVal = {};
+            });
+          }
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100.r),
@@ -739,26 +1103,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                                     color: Colors.white,
                                   ),
                               SizedBox(height: 16.h),
-                              Text(
-                                    context
-                                        .tr(
-                                          'translation.extracting',
-                                          fallback: 'EXTRACTING...',
-                                        )
-                                        .toUpperCase(),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 16.sp,
-                                      color: const Color(0xFF6366F1),
-                                      letterSpacing: 4.0,
-                                    ),
-                                  )
-                                  .animate(
-                                    onPlay: (controller) =>
-                                        controller.repeat(reverse: true),
-                                  )
-                                  .fade(duration: 500.ms),
+                              const _AnimatedScannerText(),
                             ],
                           ),
                         ),
@@ -811,6 +1156,58 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Animated text that cycles through scan stages for visual feedback.
+class _AnimatedScannerText extends StatefulWidget {
+  const _AnimatedScannerText();
+
+  @override
+  State<_AnimatedScannerText> createState() => _AnimatedScannerTextState();
+}
+
+class _AnimatedScannerTextState extends State<_AnimatedScannerText> {
+  static const _steps = [
+    'DETECTING TEXT...',
+    'EXTRACTING WORDS...',
+    'PROCESSING...',
+  ];
+  int _currentStep = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _cycle();
+  }
+
+  void _cycle() async {
+    while (mounted) {
+      await Future.delayed(const Duration(milliseconds: 1200));
+      if (mounted) {
+        setState(() {
+          _currentStep = (_currentStep + 1) % _steps.length;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 400),
+      child: Text(
+        _steps[_currentStep],
+        key: ValueKey(_currentStep),
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontWeight: FontWeight.w900,
+          fontSize: 16.sp,
+          color: const Color(0xFF6366F1),
+          letterSpacing: 4.0,
+        ),
+      ),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -11,6 +12,7 @@ class ScanResultBlock extends StatelessWidget {
   final String? translatedText;
   final bool isTranslating;
   final void Function(int, String) onTranslate;
+  final void Function(String) onPlayPronunciation;
 
   const ScanResultBlock({
     super.key,
@@ -19,7 +21,25 @@ class ScanResultBlock extends StatelessWidget {
     required this.translatedText,
     required this.isTranslating,
     required this.onTranslate,
+    required this.onPlayPronunciation,
   });
+
+  static bool _isLikelyEnglish(String text) {
+    if (text.isEmpty) return false;
+    final asciiLetters = text.runes
+        .where((r) => (r >= 65 && r <= 90) || (r >= 97 && r <= 122))
+        .length;
+    final totalLetters = text.runes
+        .where(
+          (r) => !RegExp(
+            r'[\s\d\p{P}]',
+            unicode: true,
+          ).hasMatch(String.fromCharCode(r)),
+        )
+        .length;
+    if (totalLetters == 0) return false;
+    return asciiLetters / totalLetters > 0.8;
+  }
 
   static String generateReadingTip(BuildContext context, String text) {
     final lowerText = text.toLowerCase();
@@ -106,284 +126,346 @@ class ScanResultBlock extends StatelessWidget {
         : null;
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          padding: EdgeInsets.all(20.r),
-          decoration: BoxDecoration(
-            color: isDark
-                ? Colors.black.withValues(alpha: 0.5)
-                : Colors.white.withValues(alpha: 0.7),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.15)
-                  : Colors.black.withValues(alpha: 0.05),
-              width: 1.5.w,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: primaryIndigo.withValues(alpha: 0.1),
-                blurRadius: 20,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Glowing Data Line Indicator
-              Container(
-                width: 4.w,
-                height: 40.h,
-                margin: EdgeInsets.only(top: 4.h),
-                decoration: BoxDecoration(
-                  color: primaryIndigo,
-                  borderRadius: BorderRadius.circular(4.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: primaryIndigo.withValues(alpha: 0.6),
-                      blurRadius: 8,
-                    ),
-                  ],
+          borderRadius: BorderRadius.circular(20.r),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+            child: Container(
+              padding: EdgeInsets.all(20.r),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.5)
+                    : Colors.white.withValues(alpha: 0.7),
+                borderRadius: BorderRadius.circular(20.r),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.15)
+                      : Colors.black.withValues(alpha: 0.05),
+                  width: 1.5.w,
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: primaryIndigo.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
               ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.text_format_rounded,
-                          size: 14.r,
-                          color: primaryIndigo,
-                        ),
-                        SizedBox(width: 4.w),
-                        Text(
-                          context.tr(
-                            'translation.words_count',
-                            args: [
-                              block.text
-                                  .trim()
-                                  .split(RegExp(r'\s+'))
-                                  .length
-                                  .toString(),
-                            ],
-                            fallback:
-                                '${block.text.trim().split(RegExp(r'\s+')).length} words',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: primaryIndigo,
-                          ),
-                        ),
-                        SizedBox(width: 12.w),
-                        Icon(
-                          Icons.auto_stories_rounded,
-                          size: 14.r,
-                          color: primaryIndigo,
-                        ),
-                        SizedBox(width: 4.w),
-                        Text(
-                          context.tr(
-                            'translation.reading_data',
-                            fallback: 'Reading Data',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: primaryIndigo,
-                          ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Glowing Data Line Indicator
+                  Container(
+                    width: 4.w,
+                    height: 40.h,
+                    margin: EdgeInsets.only(top: 4.h),
+                    decoration: BoxDecoration(
+                      color: primaryIndigo,
+                      borderRadius: BorderRadius.circular(4.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: primaryIndigo.withValues(alpha: 0.6),
+                          blurRadius: 8,
                         ),
                       ],
                     ),
-                    SizedBox(height: 12.h),
-                    Text(
-                      block.text,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp, // slightly larger text for readability
-                        fontWeight: FontWeight.w700,
-                        color: textColor,
-                        height: 1.3,
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-                    Container(
-                      padding: EdgeInsets.all(12.r),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : Colors.black.withValues(alpha: 0.03),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Icon(
-                                Icons.tips_and_updates_rounded,
-                                size: 16.r,
-                                color: Colors.amber,
+                  ),
+                  SizedBox(width: 16.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.text_format_rounded,
+                              size: 14.r,
+                              color: primaryIndigo,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              context.tr(
+                                'translation.words_count',
+                                args: [
+                                  block.text
+                                      .trim()
+                                      .split(RegExp(r'\s+'))
+                                      .length
+                                      .toString(),
+                                ],
+                                fallback:
+                                    '${block.text.trim().split(RegExp(r'\s+')).length} words',
                               ),
-                              SizedBox(width: 8.w),
-                              Expanded(
-                                child: Text(
-                                  generateReadingTip(context, block.text),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w500,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: primaryIndigo,
+                              ),
+                            ),
+                            SizedBox(width: 12.w),
+                            Icon(
+                              Icons.auto_stories_rounded,
+                              size: 14.r,
+                              color: primaryIndigo,
+                            ),
+                            SizedBox(width: 4.w),
+                            Text(
+                              context.tr(
+                                'translation.reading_data',
+                                fallback: 'Reading Data',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: primaryIndigo,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 12.h),
+                        Row(
+                          children: [
+                            Semantics(
+                              label: 'Listen to text',
+                              button: true,
+                              child: ScaleButton(
+                                onTap: () => onPlayPronunciation(block.text),
+                                child: Container(
+                                  padding: EdgeInsets.all(6.r),
+                                  decoration: BoxDecoration(
+                                    color: primaryIndigo.withValues(
+                                      alpha: 0.15,
+                                    ),
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: primaryIndigo.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                      width: 1.w,
+                                    ),
+                                  ),
+                                  child: Icon(
+                                    Icons.volume_up_rounded,
                                     color: isDark
-                                        ? Colors.white70
-                                        : Colors.black87,
-                                    fontStyle: FontStyle.italic,
+                                        ? const Color(0xFF818CF8)
+                                        : primaryIndigo,
+                                    size: 18.r,
                                   ),
                                 ),
                               ),
-                            ],
+                            ),
+                            SizedBox(width: 8.w),
+                            Text(
+                              context.tr(
+                                'translation.listen',
+                                fallback: 'Listen',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: primaryIndigo,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 12.h),
+                        Text(
+                          block.text,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize:
+                                18.sp, // slightly larger text for readability
+                            fontWeight: FontWeight.w700,
+                            color: textColor,
+                            height: 1.3,
                           ),
-                          if (translatedTip != null) ...[
-                            SizedBox(height: 8.h),
-                            Row(
+                        ),
+                        if (_isLikelyEnglish(block.text)) ...[
+                          SizedBox(height: 16.h),
+                          Container(
+                            padding: EdgeInsets.all(12.r),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.05)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              borderRadius: BorderRadius.circular(12.r),
+                            ),
+                            child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SizedBox(width: 24.w),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Icon(
+                                      Icons.tips_and_updates_rounded,
+                                      size: 16.r,
+                                      color: Colors.amber,
+                                    ),
+                                    SizedBox(width: 8.w),
+                                    Expanded(
+                                      child: Text(
+                                        generateReadingTip(context, block.text),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 13.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: isDark
+                                              ? Colors.white70
+                                              : Colors.black87,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                if (translatedTip != null) ...[
+                                  SizedBox(height: 8.h),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(width: 24.w),
+                                      Expanded(
+                                        child: Text(
+                                          translatedTip,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 13.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: primaryIndigo,
+                                            fontStyle: FontStyle.italic,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ],
+                            ),
+                          ),
+                        ],
+                        if (translatedBlockText != null) ...[
+                          SizedBox(height: 16.h),
+                          Container(
+                            padding: EdgeInsets.all(16.r),
+                            decoration: BoxDecoration(
+                              color: primaryIndigo.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(16.r),
+                              border: Border.all(
+                                color: primaryIndigo.withValues(alpha: 0.3),
+                              ),
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.g_translate_rounded,
+                                  color: primaryIndigo,
+                                  size: 20.r,
+                                ),
+                                SizedBox(width: 12.w),
                                 Expanded(
                                   child: Text(
-                                    translatedTip,
+                                    translatedBlockText,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: primaryIndigo,
-                                      fontStyle: FontStyle.italic,
+                                      fontSize: 16.sp,
+                                      color: isDark
+                                          ? const Color(0xFF818CF8)
+                                          : primaryIndigo,
+                                      fontWeight: FontWeight.w700,
+                                      height: 1.3,
                                     ),
                                   ),
                                 ),
                               ],
                             ),
-                          ],
-                        ],
-                      ),
-                    ),
-                    if (translatedBlockText != null) ...[
-                      SizedBox(height: 16.h),
-                      Container(
-                        padding: EdgeInsets.all(16.r),
-                        decoration: BoxDecoration(
-                          color: primaryIndigo.withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: primaryIndigo.withValues(alpha: 0.3),
                           ),
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.g_translate_rounded,
+                        ] else if (isTranslating) ...[
+                          SizedBox(height: 16.h),
+                          SizedBox(
+                            height: 4.h,
+                            width: double.infinity,
+                            child: LinearProgressIndicator(
                               color: primaryIndigo,
-                              size: 20.r,
-                            ),
-                            SizedBox(width: 12.w),
-                            Expanded(
-                              child: Text(
-                                translatedBlockText,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  color: isDark
-                                      ? const Color(0xFF818CF8)
-                                      : primaryIndigo,
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.3,
-                                ),
+                              backgroundColor: primaryIndigo.withValues(
+                                alpha: 0.2,
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ] else if (isTranslating) ...[
-                      SizedBox(height: 16.h),
-                      SizedBox(
-                        height: 4.h,
-                        width: double.infinity,
-                        child: LinearProgressIndicator(
-                          color: primaryIndigo,
-                          backgroundColor: primaryIndigo.withValues(alpha: 0.2),
-                        ),
-                      ),
-                    ] else ...[
-                      SizedBox(height: 16.h),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: ScaleButton(
-                          onTap: () => onTranslate(index, block.text),
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 10.h,
-                            ),
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  primaryIndigo.withValues(alpha: 0.2),
-                                  const Color(
-                                    0xFF4F46E5,
-                                  ).withValues(alpha: 0.05),
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                              borderRadius: BorderRadius.circular(12.r),
-                              border: Border.all(
-                                color: primaryIndigo.withValues(alpha: 0.4),
-                                width: 1.w,
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.g_translate_rounded,
-                                  color: primaryIndigo,
-                                  size: 16.r,
-                                ),
-                                SizedBox(width: 8.w),
-                                Text(
-                                  context.tr(
-                                    'translation.translate',
-                                    fallback: 'Translate',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: primaryIndigo,
-                                  ),
-                                ),
-                              ],
                             ),
                           ),
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
+                        ] else ...[
+                          SizedBox(height: 16.h),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Semantics(
+                              label: 'Translate text',
+                              button: true,
+                              child: ScaleButton(
+                                onTap: () => onTranslate(index, block.text),
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                    vertical: 10.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        primaryIndigo.withValues(alpha: 0.2),
+                                        const Color(
+                                          0xFF4F46E5,
+                                        ).withValues(alpha: 0.05),
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.r),
+                                    border: Border.all(
+                                      color: primaryIndigo.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      width: 1.w,
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        Icons.g_translate_rounded,
+                                        color: primaryIndigo,
+                                        size: 16.r,
+                                      ),
+                                      SizedBox(width: 8.w),
+                                      Text(
+                                        context.tr(
+                                          'translation.translate',
+                                          fallback: 'Translate',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: primaryIndigo,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        )
+        .animate(delay: (100 * index).ms)
+        .fadeIn(duration: 400.ms)
+        .slideY(begin: 0.15, curve: Curves.easeOutCubic);
   }
 }

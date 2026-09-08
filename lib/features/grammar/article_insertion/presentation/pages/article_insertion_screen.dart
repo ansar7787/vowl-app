@@ -71,6 +71,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
       _soundService.playCorrect();
       _selectedArticle.value = article;
       _pendingJigsaw.value = true;
+      _scrollToBottom();
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -79,6 +80,18 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
       _selectedArticle.value = article;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
+
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _submitFinalAnswer(bool correct) {
@@ -104,9 +117,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
     bool isDark,
     bool isCompact,
   ) {
-    final parts = template.contains("____")
-        ? template.split("____")
-        : template.split("___");
+    final parts = template.split(RegExp(r'_{3,}'));
     List<InlineSpan> spans = [];
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(text: parts[i]));
@@ -223,6 +234,11 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
               cleanTargetSentence = fullSentence
                   .replaceAll(RegExp(r'\s+'), ' ')
                   .trim();
+              if (cleanTargetSentence.isNotEmpty) {
+                cleanTargetSentence =
+                    cleanTargetSentence[0].toUpperCase() +
+                    cleanTargetSentence.substring(1);
+              }
             }
 
             return GrammarBaseLayout(
@@ -461,44 +477,212 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
 
                                                   // Floating Orb Bubble Area
                                                   Expanded(
-                                                    child: Stack(
-                                                      children: options.asMap().entries.map((
-                                                        entry,
-                                                      ) {
-                                                        final article =
-                                                            entry.value;
-                                                        return ArticleFloatingOrb(
-                                                          article: article,
-                                                          index: entry.key,
-                                                          onTap: () => _onPop(
-                                                            article,
-                                                            correctAnswer,
+                                                    child: Center(
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              if (options
+                                                                  .isNotEmpty)
+                                                                ArticleFloatingOrb(
+                                                                  article:
+                                                                      options[0],
+                                                                  index: 0,
+                                                                  onTap: () => _onPop(
+                                                                    options[0],
+                                                                    correctAnswer,
+                                                                  ),
+                                                                  primaryColor:
+                                                                      theme
+                                                                          .primaryColor,
+                                                                  isDark:
+                                                                      isDark,
+                                                                  isAnswered:
+                                                                      _isAnswered
+                                                                          .value ||
+                                                                      _pendingJigsaw
+                                                                          .value,
+                                                                  isSelected:
+                                                                      _selectedArticle
+                                                                          .value ==
+                                                                      options[0],
+                                                                  isCorrectAnswer:
+                                                                      options[0]
+                                                                          .toLowerCase() ==
+                                                                      correctAnswer
+                                                                          .toLowerCase(),
+                                                                  isFinalFailure:
+                                                                      state
+                                                                          is GrammarLoaded &&
+                                                                      state
+                                                                          .isFinalFailure,
+                                                                  isCompact:
+                                                                      isCompact,
+                                                                ),
+                                                              if (options
+                                                                      .length >
+                                                                  2)
+                                                                SizedBox(
+                                                                  height:
+                                                                      isCompact
+                                                                      ? 10.h
+                                                                      : 20.h,
+                                                                ),
+                                                              if (options
+                                                                      .length >
+                                                                  2)
+                                                                ArticleFloatingOrb(
+                                                                  article:
+                                                                      options[2],
+                                                                  index: 2,
+                                                                  onTap: () => _onPop(
+                                                                    options[2],
+                                                                    correctAnswer,
+                                                                  ),
+                                                                  primaryColor:
+                                                                      theme
+                                                                          .primaryColor,
+                                                                  isDark:
+                                                                      isDark,
+                                                                  isAnswered:
+                                                                      _isAnswered
+                                                                          .value ||
+                                                                      _pendingJigsaw
+                                                                          .value,
+                                                                  isSelected:
+                                                                      _selectedArticle
+                                                                          .value ==
+                                                                      options[2],
+                                                                  isCorrectAnswer:
+                                                                      options[2]
+                                                                          .toLowerCase() ==
+                                                                      correctAnswer
+                                                                          .toLowerCase(),
+                                                                  isFinalFailure:
+                                                                      state
+                                                                          is GrammarLoaded &&
+                                                                      state
+                                                                          .isFinalFailure,
+                                                                  isCompact:
+                                                                      isCompact,
+                                                                ),
+                                                            ],
                                                           ),
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                          isAnswered:
-                                                              _isAnswered
-                                                                  .value ||
-                                                              _pendingJigsaw
-                                                                  .value,
-                                                          isSelected:
-                                                              _selectedArticle
-                                                                  .value ==
-                                                              article,
-                                                          isCorrectAnswer:
-                                                              article
-                                                                  .toLowerCase() ==
-                                                              correctAnswer
-                                                                  .toLowerCase(),
-                                                          isFinalFailure:
-                                                              state
-                                                                  is GrammarLoaded &&
-                                                              state
-                                                                  .isFinalFailure,
-                                                          isCompact: isCompact,
-                                                        );
-                                                      }).toList(),
+                                                          SizedBox(
+                                                            width: isCompact
+                                                                ? 20.w
+                                                                : 40.w,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsets.only(
+                                                                  top: isCompact
+                                                                      ? 30.h
+                                                                      : 50.h,
+                                                                ),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              children: [
+                                                                if (options
+                                                                        .length >
+                                                                    1)
+                                                                  ArticleFloatingOrb(
+                                                                    article:
+                                                                        options[1],
+                                                                    index: 1,
+                                                                    onTap: () => _onPop(
+                                                                      options[1],
+                                                                      correctAnswer,
+                                                                    ),
+                                                                    primaryColor:
+                                                                        theme
+                                                                            .primaryColor,
+                                                                    isDark:
+                                                                        isDark,
+                                                                    isAnswered:
+                                                                        _isAnswered
+                                                                            .value ||
+                                                                        _pendingJigsaw
+                                                                            .value,
+                                                                    isSelected:
+                                                                        _selectedArticle
+                                                                            .value ==
+                                                                        options[1],
+                                                                    isCorrectAnswer:
+                                                                        options[1]
+                                                                            .toLowerCase() ==
+                                                                        correctAnswer
+                                                                            .toLowerCase(),
+                                                                    isFinalFailure:
+                                                                        state
+                                                                            is GrammarLoaded &&
+                                                                        state
+                                                                            .isFinalFailure,
+                                                                    isCompact:
+                                                                        isCompact,
+                                                                  ),
+                                                                if (options
+                                                                        .length >
+                                                                    3)
+                                                                  SizedBox(
+                                                                    height:
+                                                                        isCompact
+                                                                        ? 10.h
+                                                                        : 20.h,
+                                                                  ),
+                                                                if (options
+                                                                        .length >
+                                                                    3)
+                                                                  ArticleFloatingOrb(
+                                                                    article:
+                                                                        options[3],
+                                                                    index: 3,
+                                                                    onTap: () => _onPop(
+                                                                      options[3],
+                                                                      correctAnswer,
+                                                                    ),
+                                                                    primaryColor:
+                                                                        theme
+                                                                            .primaryColor,
+                                                                    isDark:
+                                                                        isDark,
+                                                                    isAnswered:
+                                                                        _isAnswered
+                                                                            .value ||
+                                                                        _pendingJigsaw
+                                                                            .value,
+                                                                    isSelected:
+                                                                        _selectedArticle
+                                                                            .value ==
+                                                                        options[3],
+                                                                    isCorrectAnswer:
+                                                                        options[3]
+                                                                            .toLowerCase() ==
+                                                                        correctAnswer
+                                                                            .toLowerCase(),
+                                                                    isFinalFailure:
+                                                                        state
+                                                                            is GrammarLoaded &&
+                                                                        state
+                                                                            .isFinalFailure,
+                                                                    isCompact:
+                                                                        isCompact,
+                                                                  ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
 
@@ -511,31 +695,39 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                       ],
                                     ),
                                   ),
-                                            if (_pendingJigsaw.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-            SliverToBoxAdapter(
-              child: TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: false,
-                                displayText:
-                                    "Type the full sentence with the article to lock it in",
-                              ),
-            ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom > 0
-                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                  : 60.h,
-            ),
-          ),
-        ],
+                                  if (_pendingJigsaw.value &&
+                                      !_isAnswered.value &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: cleanTargetSentence,
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(false),
+                                        isPositioned: false,
+                                        displayText:
+                                            "Type the full sentence with the article to lock it in",
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-
                           ],
                         );
                       },
