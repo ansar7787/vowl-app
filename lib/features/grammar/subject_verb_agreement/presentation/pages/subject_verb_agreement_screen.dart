@@ -10,8 +10,8 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/features/grammar/subject_verb_agreement/presentation/widgets/subject_verb_agreement_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:flutter/physics.dart';
 
 class SubjectVerbAgreementScreen extends StatefulWidget {
   final int level;
@@ -27,8 +27,8 @@ class SubjectVerbAgreementScreen extends StatefulWidget {
       _SubjectVerbAgreementScreenState();
 }
 
-class _SubjectVerbAgreementScreenState
-    extends State<SubjectVerbAgreementScreen> {
+class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final ValueNotifier<Offset> _ringOffset = ValueNotifier(Offset.zero);
@@ -39,9 +39,25 @@ class _SubjectVerbAgreementScreenState
   int? _lastLives;
   final ValueNotifier<bool> _pendingTypeSubmit = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  late final AnimationController _springController;
+  int _currentCorrectIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<GrammarBloc>().add(
+      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
+    );
+    _springController = AnimationController(vsync: this);
+    _springController.addListener(() {
+      _ringOffset.value = Offset(_springController.value, 0);
+      _checkHarmony(_currentCorrectIndex);
+    });
+  }
 
   @override
   void dispose() {
+    _springController.dispose();
     _ringOffset.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
@@ -51,30 +67,41 @@ class _SubjectVerbAgreementScreenState
     super.dispose();
   }
 
-  @override
-  void initState() {
-    super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
-    );
-  }
-
   void _onConnect(int targetIndex, int correctIndex) {
     if (_isAnswered.value || _pendingTypeSubmit.value) return;
 
     bool isCorrect = targetIndex == correctIndex;
 
+    final bool isCompact = MediaQuery.sizeOf(context).shortestSide < 600;
+    final double snapTarget = targetIndex == 0
+        ? (isCompact ? -100.w : -130.w)
+        : (isCompact ? 100.w : 130.w);
+
+    if (_springController.isAnimating) {
+      _springController.stop();
+    }
+    _ringOffset.value = Offset(snapTarget, 0.0);
+
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      _ringOffset.value = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
       _pendingTypeSubmit.value = true;
+
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (!mounted) return;
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
       _isAnswered.value = true;
       _isCorrect.value = false;
-      _ringOffset.value = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -133,11 +160,21 @@ class _SubjectVerbAgreementScreenState
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        if (quest != null) {
+          _currentCorrectIndex = quest.correctAnswerIndex ?? 0;
+        }
         final options = quest?.options ?? ["Is", "Are"];
 
         String cleanTargetSentence = "";
         if (quest != null) {
-          final sentence = quest.correctAnswer ?? quest.sentence ?? "";
+          String sentence = "";
+          if (quest.question != null &&
+              quest.question!.contains('___') &&
+              quest.correctAnswer != null) {
+            sentence = quest.question!.replaceAll('___', quest.correctAnswer!);
+          } else {
+            sentence = quest.correctAnswer ?? quest.sentence ?? "";
+          }
           cleanTargetSentence = sentence
               .replaceAll('[', '')
               .replaceAll(']', '');
@@ -148,7 +185,6 @@ class _SubjectVerbAgreementScreenState
             _isAnswered,
             _isCorrect,
             _showConfetti,
-            _ringOffset,
             _pendingTypeSubmit,
           ]),
           builder: (context, _) {
@@ -200,240 +236,91 @@ class _SubjectVerbAgreementScreenState
                                                 children: [
                                                   SizedBox(
                                                     height: isCompact
-                                                        ? 4.h
-                                                        : 10.h,
+                                                        ? 14.h
+                                                        : 34.h,
                                                   ),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: SubjectVerbAgreementInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : SubjectVerbAgreementInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
+
+                                                  // Atmospheric Harmony Hub
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 24.w,
                                                         ),
-                                                  if (quest.grammarRule !=
-                                                      null) ...[
-                                                    SizedBox(height: 16.h),
-                                                    Container(
-                                                      margin:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 24.w,
-                                                          ),
+                                                    child: Container(
+                                                      width: double.infinity,
                                                       padding: EdgeInsets.all(
-                                                        16.r,
+                                                        isCompact ? 14.r : 24.r,
                                                       ),
                                                       decoration: BoxDecoration(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.1,
-                                                            ),
+                                                        color: isDark
+                                                            ? Colors.white
+                                                                  .withValues(
+                                                                    alpha: 0.05,
+                                                                  )
+                                                            : Colors.black
+                                                                  .withValues(
+                                                                    alpha: 0.03,
+                                                                  ),
                                                         borderRadius:
                                                             BorderRadius.circular(
-                                                              16.r,
+                                                              isCompact
+                                                                  ? 20.r
+                                                                  : 32.r,
                                                             ),
                                                         border: Border.all(
                                                           color: theme
                                                               .primaryColor
                                                               .withValues(
-                                                                alpha: 0.3,
+                                                                alpha: 0.2,
                                                               ),
+                                                          width: 1.5,
                                                         ),
-                                                      ),
-                                                      child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Row(
-                                                            children: [
-                                                              Icon(
-                                                                Icons.rule,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                size: 16.sp,
-                                                              ),
-                                                              SizedBox(
-                                                                width: 8.w,
-                                                              ),
-                                                              Text(
-                                                                "AGREEMENT RULE",
-                                                                style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      12.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w800,
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  letterSpacing:
-                                                                      2,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: theme
+                                                                .primaryColor
+                                                                .withValues(
+                                                                  alpha: 0.05,
                                                                 ),
-                                                              ),
-                                                              if (quest
-                                                                      .subjectType !=
-                                                                  null) ...[
-                                                                const Spacer(),
-                                                                Container(
-                                                                  padding:
-                                                                      EdgeInsets.symmetric(
-                                                                        horizontal:
-                                                                            8.w,
-                                                                        vertical:
-                                                                            4.h,
-                                                                      ),
-                                                                  decoration: BoxDecoration(
-                                                                    color: theme
-                                                                        .primaryColor
-                                                                        .withValues(
-                                                                          alpha:
-                                                                              0.2,
-                                                                        ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                          8.r,
-                                                                        ),
-                                                                  ),
-                                                                  child: Text(
-                                                                    quest
-                                                                        .subjectType!
-                                                                        .toUpperCase(),
-                                                                    style: TextStyle(
-                                                                      fontFamily:
-                                                                          'Outfit',
-                                                                      fontSize:
-                                                                          10.sp,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w700,
-                                                                      color: theme
-                                                                          .primaryColor,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ],
-                                                          ),
-                                                          SizedBox(height: 8.h),
-                                                          Text(
-                                                            quest.grammarRule!,
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 14.sp,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              color: isDark
-                                                                  ? Colors.white
-                                                                  : Colors
-                                                                        .black87,
-                                                            ),
+                                                            blurRadius: 40,
+                                                            spreadRadius: 5,
                                                           ),
                                                         ],
                                                       ),
-                                                    ),
-                                                  ],
-                                                  SizedBox(
-                                                    height: isCompact
-                                                        ? 10.h
-                                                        : 24.h,
-                                                  ),
-
-                                                  // Atmospheric Harmony Hub
-                                                  Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 24.w,
-                                                            ),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                isCompact
-                                                                    ? 14.r
-                                                                    : 24.r,
-                                                              ),
-                                                          decoration: BoxDecoration(
-                                                            color: isDark
-                                                                ? Colors.white
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.05,
-                                                                      )
-                                                                : Colors.black
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.03,
-                                                                      ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  isCompact
-                                                                      ? 20.r
-                                                                      : 32.r,
-                                                                ),
-                                                            border: Border.all(
-                                                              color: theme
-                                                                  .primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.2,
-                                                                  ),
-                                                              width: 1.5,
-                                                            ),
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                color: theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.05,
-                                                                    ),
-                                                                blurRadius: 40,
-                                                                spreadRadius: 5,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          child: Text(
-                                                            quest.question ??
-                                                                "Complete the agreement...",
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize:
-                                                                  isCompact
-                                                                  ? 16.sp
-                                                                  : 22.sp,
-                                                              color: isDark
-                                                                  ? Colors.white
-                                                                  : Colors
-                                                                        .black87,
-                                                              height: 1.5,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
+                                                      child: Text(
+                                                        ((_pendingTypeSubmit
+                                                                        .value ||
+                                                                    _isCorrect
+                                                                            .value ==
+                                                                        true) &&
+                                                                quest.correctAnswer !=
+                                                                    null)
+                                                            ? (quest.question ??
+                                                                      "")
+                                                                  .replaceAll(
+                                                                    '___',
+                                                                    quest
+                                                                        .correctAnswer!,
+                                                                  )
+                                                            : (quest.question ??
+                                                                  "Complete the agreement..."),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: isCompact
+                                                              ? 16.sp
+                                                              : 22.sp,
+                                                          color: isDark
+                                                              ? Colors.white
+                                                              : Colors.black87,
+                                                          height: 1.5,
+                                                          fontWeight:
+                                                              FontWeight.w600,
                                                         ),
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 800.ms)
-                                                      .slideY(
-                                                        begin: 0.1,
-                                                        end: 0,
                                                       ),
+                                                    ),
+                                                  ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.1, end: 0),
 
                                                   Expanded(
                                                     child: Padding(
@@ -525,6 +412,11 @@ class _SubjectVerbAgreementScreenState
                                                                         .value
                                                                 ? null
                                                                 : (details) {
+                                                                    if (_springController
+                                                                        .isAnimating) {
+                                                                      _springController
+                                                                          .stop();
+                                                                    }
                                                                     final double
                                                                     newDx =
                                                                         (_ringOffset.value.dx +
@@ -555,15 +447,45 @@ class _SubjectVerbAgreementScreenState
                                                                         .value
                                                                 ? null
                                                                 : (details) {
-                                                                    _ringOffset
-                                                                            .value =
-                                                                        Offset
-                                                                            .zero;
+                                                                    final spring = SpringDescription(
+                                                                      mass: 1.0,
+                                                                      stiffness:
+                                                                          500.0,
+                                                                      damping:
+                                                                          20.0,
+                                                                    );
+                                                                    final simulation = SpringSimulation(
+                                                                      spring,
+                                                                      _ringOffset
+                                                                          .value
+                                                                          .dx,
+                                                                      0.0,
+                                                                      details
+                                                                          .velocity
+                                                                          .pixelsPerSecond
+                                                                          .dx,
+                                                                    );
+                                                                    _springController
+                                                                        .animateWith(
+                                                                          simulation,
+                                                                        );
                                                                   },
-                                                            child: Transform.translate(
-                                                              offset:
-                                                                  _ringOffset
-                                                                      .value,
+                                                            child: ValueListenableBuilder<Offset>(
+                                                              valueListenable:
+                                                                  _ringOffset,
+                                                              builder:
+                                                                  (
+                                                                    context,
+                                                                    offset,
+                                                                    child,
+                                                                  ) {
+                                                                    return Transform.translate(
+                                                                      offset:
+                                                                          offset,
+                                                                      child:
+                                                                          child,
+                                                                    );
+                                                                  },
                                                               child: _buildQuantumCore(
                                                                 theme
                                                                     .primaryColor,
@@ -592,32 +514,40 @@ class _SubjectVerbAgreementScreenState
                                       ],
                                     ),
                                   ),
-                                            if (_pendingTypeSubmit.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-            SliverToBoxAdapter(
-              child: TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                displayText:
-                                    "Type the complete sentence to lock in the rule",
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                allowSkip: true,
-                                isPositioned: false,
-                              ),
-            ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom > 0
-                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                  : 60.h,
-            ),
-          ),
-        ],
+                                  if (_pendingTypeSubmit.value &&
+                                      !_isAnswered.value &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: cleanTargetSentence,
+                                        displayText:
+                                            "Type the complete sentence to lock in the rule",
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(false),
+                                        allowSkip: true,
+                                        isPositioned: false,
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-
                           ],
                         );
                       },
@@ -630,7 +560,8 @@ class _SubjectVerbAgreementScreenState
   }
 
   void _checkHarmony(int correctIndex) {
-    final double threshold = 110.w;
+    final bool isCompact = MediaQuery.sizeOf(context).shortestSide < 600;
+    final double threshold = isCompact ? 90.w : 110.w;
     if (_ringOffset.value.dx < -threshold) {
       _onConnect(0, correctIndex);
     } else if (_ringOffset.value.dx > threshold) {

@@ -79,7 +79,7 @@ class StoryServiceImpl implements StoryService {
     'sentenceCorrection':
         "Even native speakers make mistakes! Let's train your eye to catch these common grammar errors.",
     'subjectVerbAgreement':
-        "This is the golden rule of English! Let's make sure your subjects and verbs are always working together perfectly.",
+        "Connect the core to the right verb terminal! A perfectly synced sentence sounds incredibly natural.",
     'tenseMastery':
         "Past, present, or future? Mastering your tenses is the key to telling great stories in English.",
     'voiceSwap':
@@ -743,11 +743,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'subjectverbagreement': [
       "",
-      "Excellent start! Your understanding of subject-verb agreement is growing.",
-      "You are navigating subject-verb agreement with increasing confidence.",
-      "Halfway to 100! You are handling subject-verb agreement effortlessly.",
-      "100 levels beat! You truly dominate subject-verb agreement.",
-      "Double Centurion! No one knows subject-verb agreement better than you.",
+      "You're getting the hang of it! You can already start to hear when a sentence sounds just right.",
+      "Awesome work! Those tricky plural verbs don't stand a chance against you anymore.",
+      "Halfway to 100! You're syncing up subjects and verbs without even breaking a sweat.",
+      "Level 100 reached! Your sentences are flowing incredibly naturally now.",
+      "Level 200! You've completely mastered the rhythm of English grammar.",
     ],
     'tensemastery': [
       "",
