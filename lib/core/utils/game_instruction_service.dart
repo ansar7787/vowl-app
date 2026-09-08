@@ -985,14 +985,18 @@ class GameInstructionService {
           "PRO TIP: In Passive voice, the object becomes the star! Use 'by [someone]' only if needed.",
     ),
     GameSubtype.questionFormatter: GameBriefing(
-      title: "Inquiry Logic",
+      title: "Question Formatter",
       icon: Icons.help_outline_rounded,
       objective:
-          "Arrange words or choose forms to create an accurate question. Mastering structural rules ensures your English is accurate and easily understood.",
-      rules: ["Invert subject/verb", "Add auxiliary verbs", "Match the tense"],
-      actionText: "Format Inquiry",
+          "Master the art of asking questions. Spin the crank to reveal the options, find the one that correctly flips the sentence, and type the final question to lock it in.",
+      rules: [
+        "Read the statement",
+        "Spin to reveal options",
+        "Find the perfect question",
+      ],
+      actionText: "Start Formatting",
       tip:
-          "PRO TIP: Remember the 'Qu-A-S-V' rule: Question word, Auxiliary, Subject, Verb!",
+          "PRO TIP: Pay attention to the helping verb! If the sentence uses 'is' or 'can', the question usually starts with it.",
     ),
     GameSubtype.articleInsertion: GameBriefing(
       title: "Article Orb",

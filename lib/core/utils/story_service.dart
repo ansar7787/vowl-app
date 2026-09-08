@@ -727,11 +727,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'questionformatter': [
       "",
-      "Excellent start! Your understanding of questions is growing.",
-      "You are navigating questions with increasing confidence.",
-      "Halfway there! You are a rising star in questions.",
-      "Centurion! You have conquered the complexities of questions.",
-      "Double Centurion! No one knows questions better than you.",
+      "Nice start! You're really getting a feel for how to turn English sentences into questions.",
+      "You're doing fantastic! Asking good questions is the secret to keeping any conversation going.",
+      "50 levels down! Your brain is automatically flipping these sentences now.",
+      "Level 100! That's a massive milestone. You've totally mastered English question structure.",
+      "Level 200! Honestly, it's incredible. You can effortlessly form any question naturally.",
     ],
     'sentencecorrection': [
       "",

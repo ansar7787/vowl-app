@@ -26,7 +26,7 @@ class QuestionFormatterCrank extends StatelessWidget {
     return GestureDetector(
       onPanUpdate: (details) {
         if (isAnswered) return;
-        onPanUpdate(details.delta.dx + details.delta.dy);
+        onPanUpdate(details.delta.distance);
       },
       child: Stack(
         alignment: Alignment.center,
