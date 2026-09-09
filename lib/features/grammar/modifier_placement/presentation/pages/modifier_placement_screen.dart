@@ -65,38 +65,53 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
     );
   }
 
-  void _submitAnswer(GrammarQuest quest) {
+  void _submitAnswer(
+    GrammarQuest quest,
+    String modifier,
+    List<String> baseWords,
+  ) {
     if (_isAnswered.value || _targetIndex.value == -1 || _pendingJigsaw.value) {
       return;
     }
 
-    final allWords = quest.shuffledWords ?? [];
-    if (allWords.isEmpty) return;
-
-    final modifier = allWords[0];
-    final words = allWords.skip(1).toList();
-
-    final resultingWords = List<String>.from(words);
+    final resultingWords = List<String>.from(baseWords);
     resultingWords.insert(_targetIndex.value, modifier);
 
-    final result = resultingWords
-        .join(' ')
-        .replaceAll(RegExp(r'\s+'), ' ')
-        .trim();
-    bool isCorrect =
-        result.toLowerCase() == (quest.correctAnswer ?? "").toLowerCase();
+    final result = resultingWords.join(' ');
+
+    final normResult = result.toLowerCase().replaceAll(
+      RegExp(r'[^a-z0-9]'),
+      '',
+    );
+    final normAnswer = (quest.correctAnswer ?? "").toLowerCase().replaceAll(
+      RegExp(r'[^a-z0-9]'),
+      '',
+    );
+
+    bool isCorrect = normResult == normAnswer;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      _assembledSentence.value = result;
+      _assembledSentence.value = quest.correctAnswer;
       _pendingJigsaw.value = true;
+
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
       _isAnswered.value = true;
       _isCorrect.value = false;
-      _assembledSentence.value = result;
+      _assembledSentence.value = quest.correctAnswer;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -158,11 +173,47 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
         final quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
             : null;
-        final allWords = quest?.shuffledWords ?? [];
-        if (allWords.isEmpty) return const SizedBox();
+        String modifier = "";
+        List<String> words = [];
+        if (quest != null) {
+          final sentence = quest.sentence ?? "";
+          // Match both single and double quotes for safety
+          final match = RegExp(
+            r'''modifier ['"]([^'"]+)['"]''',
+          ).firstMatch(sentence);
+          modifier = match?.group(1) ?? "";
 
-        final modifier = allWords[0];
-        final words = allWords.skip(1).toList();
+          final answer = quest.correctAnswer ?? "";
+          if (modifier.isNotEmpty) {
+            final modRegex = RegExp(
+              RegExp.escape(modifier),
+              caseSensitive: false,
+            );
+            final answerMatch = modRegex.firstMatch(answer);
+            if (answerMatch != null) {
+              final prefix = answer.substring(0, answerMatch.start);
+              final suffix = answer.substring(answerMatch.end);
+              final combined = "$prefix $suffix";
+              words = combined.split(' ').where((w) {
+                final trimmed = w.trim();
+                return trimmed.isNotEmpty &&
+                    RegExp(r'[a-zA-Z0-9]').hasMatch(trimmed);
+              }).toList();
+            }
+          }
+
+          // ROBUST FALLBACK: If regex fails or modifier not found in correctAnswer,
+          // fall back to shuffledWords so the UI never soft-locks
+          if (modifier.isEmpty || words.isEmpty) {
+            final allWords = quest.shuffledWords ?? [];
+            if (allWords.isNotEmpty) {
+              modifier = allWords[0];
+              words = allWords.skip(1).toList();
+            }
+          }
+        }
+
+        if (modifier.isEmpty || words.isEmpty) return const SizedBox();
 
         String cleanTargetSentence = "";
         if (quest != null) {
@@ -279,12 +330,17 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                             child: ModifierPlacementInstruction(
                                                               primaryColor: theme
                                                                   .primaryColor,
+                                                              instructionText:
+                                                                  quest
+                                                                      .instruction,
                                                             ),
                                                           ),
                                                         )
                                                       : ModifierPlacementInstruction(
                                                           primaryColor: theme
                                                               .primaryColor,
+                                                          instructionText:
+                                                              quest.instruction,
                                                         ),
                                                   SizedBox(height: gapMiddle),
 
@@ -379,7 +435,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                             ),
                                                           ),
                                                           child: Text(
-                                                            "Insert the modifier '$modifier' into the correct position.",
+                                                            quest.sentence ??
+                                                                "",
                                                             textAlign: TextAlign
                                                                 .center,
                                                             style: TextStyle(
@@ -503,6 +560,8 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                                         onTap: () =>
                                                             _submitAnswer(
                                                               quest,
+                                                              modifier,
+                                                              words,
                                                             ),
                                                         child: Container(
                                                           width:
@@ -580,31 +639,39 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                       ],
                                     ),
                                   ),
-                                            if (_pendingJigsaw.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-            SliverToBoxAdapter(
-              child: TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: false,
-                                displayText:
-                                    "Type the complete sentence to lock it in",
-                              ),
-            ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom > 0
-                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                  : 60.h,
-            ),
-          ),
-        ],
+                                  if (_pendingJigsaw.value &&
+                                      !_isAnswered.value &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: cleanTargetSentence,
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(false),
+                                        isPositioned: false,
+                                        displayText:
+                                            "Type the complete sentence to lock it in",
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-
                           ],
                         );
                       },

@@ -711,11 +711,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'modifierplacement': [
       "",
-      "Well done! You are building a strong foundation in modifiers.",
-      "You are decoding modifiers with impressive accuracy.",
-      "50 levels cleared! Your modifiers skills are rock solid.",
-      "Centurion! You have conquered the complexities of modifiers.",
-      "200 levels cleared! Your modifiers abilities are unmatched globally.",
+      "Well done! You're getting the hang of where describing words should go.",
+      "Nice work! You're placing these modifiers exactly where they belong.",
+      "50 levels down! Your sentences are sounding so much clearer and natural.",
+      "Level 100 reached! You've totally mastered how to use describing words.",
+      "Level 200! Honestly, it's incredible. Your sentence flow is flawless.",
     ],
     'partsofspeech': [
       "",

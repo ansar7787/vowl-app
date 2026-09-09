@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ModifierPlacementInstruction extends StatelessWidget {
+  final String instructionText;
   final Color primaryColor;
-  const ModifierPlacementInstruction({super.key, required this.primaryColor});
+
+  const ModifierPlacementInstruction({
+    super.key,
+    required this.primaryColor,
+    required this.instructionText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class ModifierPlacementInstruction extends StatelessWidget {
           Icon(Icons.adjust_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "PICK THE CORRECT CORE",
+            instructionText.toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
