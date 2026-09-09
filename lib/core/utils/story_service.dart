@@ -91,7 +91,7 @@ class StoryServiceImpl implements StoryService {
     'prepositionChoice':
         "Prepositions can be tricky, but you'll get the hang of them! Let's practice putting objects in the right place.",
     'pronounResolution':
-        "Using pronouns like 'he', 'she', or 'it' makes your speaking much faster. Let's practice keeping track of who is who!",
+        "Words like 'he' or 'it' only make sense if we know who they belong to. Let's practice finding the right match!",
     'punctuationMastery':
         "Punctuation isn't just for writing; it tells us when to pause when speaking! Let's get the rhythm right.",
     'relativeClauses':
@@ -501,6 +501,14 @@ class StoryServiceImpl implements StoryService {
       "Level 100! Your sentence structure and syntax are excellent.",
       "Level 200 reached! You have mastered the core rules of the language.",
     ],
+    'pronounresolution': [
+      "",
+      "Nice! You're getting the hang of connecting those tricky little words to the right people and things.",
+      "You're tracking who's who like a natural. Your sentences are flowing so much better!",
+      "50 levels in! You're completely avoiding those confusing pronoun mix-ups now.",
+      "Level 100! You can keep track of complex stories and conversations without missing a single detail.",
+      "Level 200 reached! Your pronoun resolution is flawless. You speak clearly and naturally like a true native speaker.",
+    ],
     'writing': [
       "",
       "Good job! Your writing is starting to flow much better.",
@@ -794,14 +802,7 @@ class StoryServiceImpl implements StoryService {
       "Level 100! You are an absolute master of prepositions.",
       "200 levels cleared! Your prepositions abilities are unmatched globally.",
     ],
-    'pronounresolution': [
-      "",
-      "Excellent start! Your understanding of pronouns is growing.",
-      "You are decoding pronouns with impressive accuracy.",
-      "Level 50! Your command of pronouns is exceptional.",
-      "Level 100! Your execution of pronouns is flawless.",
-      "Level 200! You have transcended the limits of pronouns.",
-    ],
+
     'punctuationmastery': [
       "",
       "Well done! You are building a strong foundation in punctuation.",

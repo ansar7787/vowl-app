@@ -3,35 +3,46 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PronounResolutionGravityPainter extends CustomPainter {
-  final double rotation;
-  final Offset centerPoint;
-  final List<Offset> nodes;
+  final ValueNotifier<double> rotationNotifier;
   final List<String> options;
   final Color primaryColor;
   final bool isAnswered;
   final bool isCorrect;
   final int targetNode;
+  final int correctNode;
   final String pronoun;
   final bool isDark;
   final bool isCompact;
 
   PronounResolutionGravityPainter({
-    required this.rotation,
-    required this.centerPoint,
-    required this.nodes,
+    required this.rotationNotifier,
     required this.options,
     required this.primaryColor,
     required this.isAnswered,
     required this.isCorrect,
     required this.targetNode,
+    required this.correctNode,
     required this.pronoun,
     required this.isDark,
     this.isCompact = false,
-  });
+  }) : super(repaint: rotationNotifier);
 
   @override
   void paint(Canvas canvas, Size size) {
+    final centerPoint = Offset(
+      size.width / 2,
+      size.height / 2 + (isCompact ? 10.h : 20.h),
+    );
     final double orbitRadius = isCompact ? 80.r : 130.r;
+
+    final nodes = List.generate(options.length, (i) {
+      final angle = (i * (2 * pi / options.length)) - (pi / 2);
+      return Offset(
+        centerPoint.dx + cos(angle) * orbitRadius,
+        centerPoint.dy + sin(angle) * orbitRadius,
+      );
+    });
+
     final double nodeW = isCompact ? 75.w : 110.w;
     final double nodeH = isCompact ? 32.h : 45.h;
     final double nodeRadius = isCompact ? 8.r : 12.r;
@@ -51,11 +62,11 @@ class PronounResolutionGravityPainter extends CustomPainter {
         ..strokeWidth = 1.5.r,
     );
 
-    // Draw Antecedents (Orbiting Satellites)
     for (int i = 0; i < nodes.length; i++) {
-      final isHit = isAnswered && targetNode == i;
       final isWrong = isAnswered && !isCorrect && targetNode == i;
-      final nodeColor = isHit
+      final isActuallyCorrect = isAnswered && correctNode == i;
+
+      final nodeColor = isActuallyCorrect
           ? Colors.greenAccent
           : (isWrong ? Colors.redAccent : primaryColor);
 
@@ -86,7 +97,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
             fontFamily: 'Outfit',
             fontSize: labelSize,
             fontWeight: FontWeight.bold,
-            color: isHit
+            color: isActuallyCorrect
                 ? Colors.greenAccent
                 : (isWrong
                       ? Colors.redAccent
@@ -120,8 +131,8 @@ class PronounResolutionGravityPainter extends CustomPainter {
       final beamEnd = isAnswered
           ? nodes[targetNode]
           : Offset(
-              centerPoint.dx + cos(rotation) * beamExtend,
-              centerPoint.dy + sin(rotation) * beamExtend,
+              centerPoint.dx + cos(rotationNotifier.value) * beamExtend,
+              centerPoint.dy + sin(rotationNotifier.value) * beamExtend,
             );
       canvas.drawLine(centerPoint, beamEnd, beamPaint);
       canvas.drawLine(centerPoint, beamEnd, beamCore);
@@ -160,7 +171,7 @@ class PronounResolutionGravityPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant PronounResolutionGravityPainter oldDelegate) =>
-      oldDelegate.rotation != rotation ||
+      oldDelegate.rotationNotifier != rotationNotifier ||
       oldDelegate.isAnswered != isAnswered ||
       oldDelegate.targetNode != targetNode ||
       oldDelegate.isCompact != isCompact;

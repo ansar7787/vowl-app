@@ -1056,18 +1056,18 @@ class GameInstructionService {
           "PRO TIP: Use 'In' for large spaces, 'On' for surfaces, and 'At' for specific points.",
     ),
     GameSubtype.pronounResolution: GameBriefing(
-      title: "Pronoun Pivot",
-      icon: Icons.people_rounded,
+      title: "Pronoun Gravity",
+      icon: Icons.gps_fixed_rounded,
       objective:
-          "Select the correct pronoun that clearly resolves the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
+          "Words like 'he', 'she', or 'it' only make sense if we know who they belong to. Align the gravity well to the matching word, then type it out to lock it in.",
       rules: [
-        "Find the antecedent",
-        "Match gender & number",
-        "Avoid ambiguity",
+        "Read the sentence carefully",
+        "Align beam to the match",
+        "Type the word to lock it in",
       ],
-      actionText: "Resolve Pivot",
+      actionText: "Align Gravity",
       tip:
-          "PRO TIP: If there are two people, 'he' can be confusing. Use their names or clear markers!",
+          "PRO TIP: If you're not sure, try swapping the words! If 'the dog' fits perfectly where 'it' was, you've found your match.",
     ),
     GameSubtype.punctuationMastery: GameBriefing(
       title: "Symbol Scribe",
