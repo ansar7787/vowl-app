@@ -73,7 +73,18 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _targetNode.value = nodeIndex;
+      _isCorrect.value = true;
       _pendingJigsaw.value = true;
+
+      Future.delayed(const Duration(milliseconds: 150), () {
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -81,6 +92,16 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
       _isCorrect.value = false;
       _targetNode.value = nodeIndex;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
+
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            0,
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     }
   }
 
@@ -98,6 +119,17 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
       _soundService.playWrong();
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+
+    // Auto-scroll back up so user can read the explanation/feedback
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          0,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
   }
 
   List<InlineSpan> _buildSentenceWithBlank(
@@ -172,6 +204,15 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             _isCorrect.value = null;
             _targetNode.value = -1;
             _pendingJigsaw.value = false;
+            _points.value = [];
+
+            if (_scrollController.hasClients && _scrollController.offset > 0) {
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                if (_scrollController.hasClients) {
+                  _scrollController.jumpTo(0);
+                }
+              });
+            }
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             _isAnswered.value = true;
             _isCorrect.value = state.answerStatus.asBoolOrNull;
@@ -195,21 +236,6 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             : null;
         final options = quest?.options ?? ["IN", "ON", "AT", "UNDER"];
 
-        String cleanTargetSentence = "";
-        if (quest != null) {
-          final sentence = quest.sentenceWithBlank ?? quest.question ?? "";
-          String fullSentence = sentence;
-          if (sentence.contains("___") && _targetNode.value != -1) {
-            fullSentence = sentence.replaceFirst(
-              RegExp(r'_{3,}'),
-              options[_targetNode.value],
-            );
-          }
-          cleanTargetSentence = fullSentence
-              .replaceAll(RegExp(r'\s+'), ' ')
-              .trim();
-        }
-
         return ListenableBuilder(
           listenable: Listenable.merge([
             _isAnswered,
@@ -220,6 +246,21 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             _points,
           ]),
           builder: (context, _) {
+            String cleanTargetSentence = "";
+            if (quest != null) {
+              final sentence = quest.sentenceWithBlank ?? quest.question ?? "";
+              String fullSentence = sentence;
+              if (sentence.contains("___") && _targetNode.value != -1) {
+                fullSentence = sentence.replaceFirst(
+                  RegExp(r'_{3,}'),
+                  options[_targetNode.value],
+                );
+              }
+              cleanTargetSentence = fullSentence
+                  .replaceAll(RegExp(r'\s+'), ' ')
+                  .trim();
+            }
+
             return GrammarBaseLayout(
               disablePadding: true,
               gameType: widget.gameType,
@@ -238,6 +279,11 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
+                        final isCompact = constraints.maxHeight < 580;
+                        final double gapTop = isCompact ? 10.h : 20.h;
+                        final double gapMiddle = isCompact ? 16.h : 30.h;
+                        final double gapBottom = isCompact ? 16.h : 30.h;
+
                         return Stack(
                           children: [
                             RawScrollbar(
@@ -252,322 +298,194 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
+                                  SliverToBoxAdapter(
                                     child: Column(
                                       children: [
-                                        Expanded(
-                                          child: Builder(
-                                            builder: (context) {
-                                              final maxHeight =
-                                                  constraints.maxHeight;
-                                              final isCompact = maxHeight < 580;
+                                        SizedBox(height: gapTop),
+                                        PrepositionChoiceInstruction(
+                                          primaryColor: theme.primaryColor,
+                                        ),
+                                        SizedBox(height: gapMiddle),
 
-                                              final double
-                                              estimatedContentHeight =
-                                                  (isCompact ? 30.h : 40.h) +
-                                                  (isCompact ? 50.h : 80.h) +
-                                                  (isCompact ? 160.h : 260.h) +
-                                                  40.h;
-                                              final remainingHeight =
-                                                  maxHeight -
-                                                  estimatedContentHeight;
+                                        if (quest.grammarRule != null ||
+                                            quest.prepositionCategory !=
+                                                null) ...[
+                                          Container(
+                                            margin: EdgeInsets.symmetric(
+                                              horizontal: 24.w,
+                                            ),
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: 12.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.1),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                              border: Border.all(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.3),
+                                              ),
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  "RULE: ${(quest.grammarRule ?? quest.prepositionCategory!).toUpperCase()}",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    color: theme.primaryColor,
+                                                    fontWeight: FontWeight.bold,
+                                                    letterSpacing: 1.2,
+                                                  ),
+                                                ),
+                                                if (state is GrammarLoaded &&
+                                                    state.hintUsed &&
+                                                    quest.hint != null) ...[
+                                                  SizedBox(height: 8.h),
+                                                  Text(
+                                                    quest.hint!,
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 13.sp,
+                                                      color: isDark
+                                                          ? Colors.white70
+                                                          : Colors.black87,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      height: 1.3,
+                                                    ),
+                                                  ).animate().fadeIn(),
+                                                ],
+                                              ],
+                                            ),
+                                          ).animate().fadeIn(duration: 400.ms),
+                                          SizedBox(
+                                            height: isCompact ? 16.h : 24.h,
+                                          ),
+                                        ],
 
-                                              final double gapUnit =
-                                                  remainingHeight > 0
-                                                  ? remainingHeight / 5
-                                                  : 0;
-                                              final double gapTop =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(
-                                                      4.0,
-                                                      15.0,
-                                                    )
-                                                  : 4.0;
-                                              final double gapMiddle =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(
-                                                      6.0,
-                                                      20.0,
-                                                    )
-                                                  : 6.0;
-                                              final double gapBottom =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(
-                                                      10.0,
-                                                      30.0,
-                                                    )
-                                                  : 10.0;
-
-                                              return Column(
-                                                children: [
-                                                  SizedBox(height: gapTop),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: PrepositionChoiceInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                            ),
-                                                          ),
+                                        // Context Card
+                                        Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24.w,
+                                              ),
+                                              child: Container(
+                                                width: double.infinity,
+                                                padding: EdgeInsets.all(
+                                                  isCompact ? 14.r : 22.r,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: isDark
+                                                      ? Colors.white.withValues(
+                                                          alpha: 0.05,
                                                         )
-                                                      : PrepositionChoiceInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
+                                                      : Colors.black.withValues(
+                                                          alpha: 0.03,
                                                         ),
-                                                  SizedBox(height: gapMiddle),
-
-                                                  if (quest
-                                                          .prepositionCategory !=
-                                                      null) ...[
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 16.w,
-                                                            vertical: 8.h,
-                                                          ),
-                                                      decoration: BoxDecoration(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.1,
-                                                            ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              16.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.3,
-                                                              ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        isCompact ? 18.r : 28.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(
+                                                          alpha: 0.15,
                                                         ),
-                                                      ),
-                                                      child: Column(
-                                                        children: [
-                                                          Text(
-                                                            "CATEGORY: ${quest.prepositionCategory!.toUpperCase()}",
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 12.sp,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              letterSpacing:
-                                                                  1.2,
-                                                            ),
-                                                          ),
-                                                          SizedBox(height: 4.h),
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              Text(
-                                                                "IN (General) ",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color: theme
-                                                                      .primaryColor
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.5,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Text(
-                                                                "> ON (Specific) ",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color: theme
-                                                                      .primaryColor
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.7,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Text(
-                                                                "> AT (Very Specific)",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ).animate().fadeIn(
-                                                      duration: 400.ms,
+                                                    width: 1.5,
+                                                  ),
+                                                ),
+                                                child: RichText(
+                                                  textAlign: TextAlign.center,
+                                                  text: TextSpan(
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: isCompact
+                                                          ? 16.sp
+                                                          : 20.sp,
+                                                      color: isDark
+                                                          ? Colors.white
+                                                          : Colors.black87,
+                                                      height: 1.5,
                                                     ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
-                                                  ],
-
-                                                  // Context Card
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          horizontal: 24.w,
-                                                        ),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      padding: EdgeInsets.all(
-                                                        isCompact ? 14.r : 22.r,
-                                                      ),
-                                                      decoration: BoxDecoration(
-                                                        color: isDark
-                                                            ? Colors.white
-                                                                  .withValues(
-                                                                    alpha: 0.05,
-                                                                  )
-                                                            : Colors.black
-                                                                  .withValues(
-                                                                    alpha: 0.03,
-                                                                  ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              isCompact
-                                                                  ? 18.r
-                                                                  : 28.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.15,
-                                                              ),
-                                                          width: 1.5,
-                                                        ),
-                                                      ),
-                                                      child: RichText(
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        text: TextSpan(
-                                                          style: TextStyle(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: isCompact
-                                                                ? 15.sp
-                                                                : 20.sp,
-                                                            color: isDark
-                                                                ? Colors.white
-                                                                : Colors
-                                                                      .black87,
-                                                            height: 1.5,
-                                                          ),
-                                                          children: _buildSentenceWithBlank(
-                                                            quest.sentenceWithBlank ??
-                                                                quest
-                                                                    .question ??
-                                                                "____ sentence.",
-                                                            (_isAnswered.value ||
-                                                                        _pendingJigsaw
-                                                                            .value) &&
-                                                                    _targetNode
-                                                                            .value !=
-                                                                        -1
-                                                                ? options[_targetNode
-                                                                      .value]
-                                                                : null,
-                                                            theme.primaryColor,
-                                                            isDark,
-                                                            isCompact,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
-
-                                                  // Result Feedback
-                                                  if (_isAnswered.value) ...[
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 8.h
-                                                          : 24.h,
-                                                    ),
-                                                    _buildResult(
-                                                      quest,
+                                                    children: _buildSentenceWithBlank(
+                                                      quest.sentenceWithBlank ??
+                                                          quest.question ??
+                                                          "____ sentence.",
+                                                      (_isAnswered.value ||
+                                                                  _pendingJigsaw
+                                                                      .value) &&
+                                                              _targetNode
+                                                                      .value !=
+                                                                  -1
+                                                          ? options[_targetNode
+                                                                .value]
+                                                          : null,
                                                       theme.primaryColor,
                                                       isDark,
                                                       isCompact,
                                                     ),
-                                                  ],
-
-                                                  // Path Canvas
-                                                  Builder(
-                                                    builder: (context) {
-                                                      double canvasHeight =
-                                                          remainingHeight -
-                                                          gapTop -
-                                                          gapMiddle -
-                                                          gapBottom;
-                                                      final double
-                                                      minCanvasHeight =
-                                                          isCompact
-                                                          ? 150.0
-                                                          : 200.0;
-                                                      if (canvasHeight <
-                                                          minCanvasHeight) {
-                                                        canvasHeight =
-                                                            minCanvasHeight;
-                                                      }
-                                                      return _buildPathCanvas(
-                                                        options,
-                                                        quest.correctAnswerIndex ??
-                                                            0,
-                                                        theme.primaryColor,
-                                                        isDark,
-                                                        isCompact,
-                                                        constraints.maxWidth,
-                                                        canvasHeight,
-                                                      );
-                                                    },
                                                   ),
+                                                ),
+                                              ),
+                                            )
+                                            .animate()
+                                            .fadeIn(duration: 600.ms)
+                                            .slideY(begin: 0.2, end: 0),
 
-                                                  SizedBox(height: gapBottom),
-                                                ],
-                                              );
-                                            },
+                                        // Result Feedback
+                                        if (_isAnswered.value) ...[
+                                          SizedBox(
+                                            height: isCompact ? 16.h : 24.h,
                                           ),
-                                        ),
+                                          _buildResult(
+                                            quest,
+                                            theme.primaryColor,
+                                            isDark,
+                                            isCompact,
+                                          ),
+                                        ],
+                                        SizedBox(height: gapBottom),
                                       ],
                                     ),
                                   ),
+
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height: isCompact ? 220.h : 300.h,
+                                      child: _buildPathCanvas(
+                                        options,
+                                        quest.correctAnswerIndex ?? 0,
+                                        theme.primaryColor,
+                                        isDark,
+                                        isCompact,
+                                      ),
+                                    ),
+                                  ),
+
                                   if (_pendingJigsaw.value &&
                                       !_isAnswered.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
-                                      child: TypeToConfirmOverlay(
-                                        expectedText: cleanTargetSentence,
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () =>
-                                            _submitFinalAnswer(true),
-                                        onSkipped: () =>
-                                            _submitFinalAnswer(false),
-                                        isPositioned: false,
-                                        displayText:
-                                            "Type the full sentence to lock it in",
+                                      child: Padding(
+                                        padding: EdgeInsets.only(top: 16.h),
+                                        child: TypeToConfirmOverlay(
+                                          expectedText: cleanTargetSentence,
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () =>
+                                              _submitFinalAnswer(true),
+                                          onSkipped: () =>
+                                              _submitFinalAnswer(false),
+                                          isPositioned: false,
+                                          displayText:
+                                              "Type the full sentence to lock it in",
+                                        ),
                                       ),
                                     ),
+
                                   SliverToBoxAdapter(
                                     child: SizedBox(
                                       height:
@@ -602,60 +520,66 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
     Color primaryColor,
     bool isDark,
     bool isCompact,
-    double maxWidth,
-    double maxHeight,
   ) {
-    final startPoint = Offset(maxWidth / 2, isCompact ? 20.h : 40.h);
-    final List<Offset> nodePoints = [];
-    final int count = options.length;
-    final double bottomY = maxHeight - (isCompact ? 40.h : 100.h);
+    return Builder(
+      builder: (context) {
+        return GestureDetector(
+          onPanUpdate: (details) {
+            if (_isAnswered.value || _pendingJigsaw.value) return;
 
-    if (count <= 3) {
-      nodePoints.addAll(
-        [
-          Offset(isCompact ? 50.w : 80.w, bottomY),
-          Offset(maxWidth / 2, bottomY),
-          Offset(maxWidth - (isCompact ? 50.w : 80.w), bottomY),
-        ].take(count),
-      );
-    } else {
-      nodePoints.addAll([
-        Offset(isCompact ? 60.w : 90.w, bottomY - (isCompact ? 50.h : 100.h)),
-        Offset(
-          maxWidth - (isCompact ? 60.w : 90.w),
-          bottomY - (isCompact ? 50.h : 100.h),
-        ),
-        Offset(isCompact ? 60.w : 90.w, bottomY),
-        Offset(maxWidth - (isCompact ? 60.w : 90.w), bottomY),
-      ]);
-    }
+            final RenderBox box = context.findRenderObject() as RenderBox;
+            final size = box.size;
+            final nodePoints = PrepositionPathPainter.getNodePoints(
+              size,
+              options.length,
+              isCompact,
+            );
 
-    return GestureDetector(
-      onPanUpdate: (details) {
-        if (_isAnswered.value || _pendingJigsaw.value) return;
-        _points.value = List.from(_points.value)..add(details.localPosition);
-        for (int i = 0; i < nodePoints.length; i++) {
-          if ((details.localPosition - nodePoints[i]).distance <
-              (isCompact ? 30.r : 50.r)) {
-            _onPathEnd(i, correctIndex);
-          }
-        }
+            _points.value = List.from(_points.value)
+              ..add(details.localPosition);
+            for (int i = 0; i < nodePoints.length; i++) {
+              if ((details.localPosition - nodePoints[i]).distance <
+                  (isCompact ? 30.r : 50.r)) {
+                _onPathEnd(i, correctIndex);
+                break;
+              }
+            }
+          },
+          onPanEnd: (_) => _points.value = [],
+          onTapUp: (details) {
+            if (_isAnswered.value || _pendingJigsaw.value) return;
+
+            final RenderBox box = context.findRenderObject() as RenderBox;
+            final size = box.size;
+            final nodePoints = PrepositionPathPainter.getNodePoints(
+              size,
+              options.length,
+              isCompact,
+            );
+
+            for (int i = 0; i < nodePoints.length; i++) {
+              if ((details.localPosition - nodePoints[i]).distance <
+                  (isCompact ? 40.r : 60.r)) {
+                _onPathEnd(i, correctIndex);
+                break;
+              }
+            }
+          },
+          child: CustomPaint(
+            size: Size.infinite,
+            painter: PrepositionPathPainter(
+              points: _points.value,
+              options: options,
+              primaryColor: primaryColor,
+              isAnswered: _isAnswered.value || _pendingJigsaw.value,
+              isCorrect: _isCorrect.value ?? false,
+              targetNode: _targetNode.value,
+              isDark: isDark,
+              isCompact: isCompact,
+            ),
+          ),
+        );
       },
-      onPanEnd: (_) => _points.value = [],
-      child: CustomPaint(
-        size: Size(maxWidth, maxHeight),
-        painter: PrepositionPathPainter(
-          points: _points.value,
-          startPoint: startPoint,
-          nodes: nodePoints,
-          options: options,
-          primaryColor: primaryColor,
-          isAnswered: _isAnswered.value || _pendingJigsaw.value,
-          isCorrect: _isCorrect.value ?? false,
-          targetNode: _targetNode.value,
-          isDark: isDark,
-        ),
-      ),
     );
   }
 

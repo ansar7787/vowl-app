@@ -3,29 +3,60 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrepositionPathPainter extends CustomPainter {
   final List<Offset> points;
-  final Offset startPoint;
-  final List<Offset> nodes;
   final List<String> options;
   final Color primaryColor;
   final bool isAnswered;
   final bool isCorrect;
   final int targetNode;
   final bool isDark;
+  final bool isCompact;
 
   PrepositionPathPainter({
     required this.points,
-    required this.startPoint,
-    required this.nodes,
     required this.options,
     required this.primaryColor,
     required this.isAnswered,
     required this.isCorrect,
     required this.targetNode,
     required this.isDark,
+    required this.isCompact,
   });
+
+  static Offset getStartPoint(Size size, bool isCompact) {
+    return Offset(size.width / 2, isCompact ? 20.h : 40.h);
+  }
+
+  static List<Offset> getNodePoints(Size size, int count, bool isCompact) {
+    final List<Offset> nodes = [];
+    final double bottomY = size.height - (isCompact ? 40.h : 100.h);
+
+    if (count <= 3) {
+      nodes.addAll(
+        [
+          Offset(isCompact ? 50.w : 80.w, bottomY),
+          Offset(size.width / 2, bottomY),
+          Offset(size.width - (isCompact ? 50.w : 80.w), bottomY),
+        ].take(count),
+      );
+    } else {
+      nodes.addAll([
+        Offset(isCompact ? 60.w : 90.w, bottomY - (isCompact ? 50.h : 100.h)),
+        Offset(
+          size.width - (isCompact ? 60.w : 90.w),
+          bottomY - (isCompact ? 50.h : 100.h),
+        ),
+        Offset(isCompact ? 60.w : 90.w, bottomY),
+        Offset(size.width - (isCompact ? 60.w : 90.w), bottomY),
+      ]);
+    }
+    return nodes;
+  }
 
   @override
   void paint(Canvas canvas, Size size) {
+    final startPoint = getStartPoint(size, isCompact);
+    final nodes = getNodePoints(size, options.length, isCompact);
+
     // Draw Nodes (Holographic Power Cells)
     for (int i = 0; i < nodes.length; i++) {
       final isTarget = isAnswered && targetNode == i;
@@ -55,15 +86,17 @@ class PrepositionPathPainter extends CustomPainter {
           text: options[i % options.length],
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 16.sp,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w900,
             color: isTarget
                 ? Colors.greenAccent
                 : (isDark ? Colors.white : Colors.black87),
+            height: 1.1,
           ),
         ),
+        textAlign: TextAlign.center,
         textDirection: TextDirection.ltr,
-      )..layout();
+      )..layout(maxWidth: 80.r);
       textPainter.paint(
         canvas,
         nodes[i] - Offset(textPainter.width / 2, textPainter.height / 2),

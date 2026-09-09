@@ -17,10 +17,10 @@ class PrepositionChoiceInstruction extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.gesture_rounded, size: 14.r, color: primaryColor),
+          Icon(Icons.touch_app_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "TRACE THE ENERGY PATH",
+            "TRACE OR TAP A NODE",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
