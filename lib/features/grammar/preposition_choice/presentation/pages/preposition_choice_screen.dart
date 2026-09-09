@@ -513,15 +513,34 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                                   ],
 
                                                   // Path Canvas
-                                                  Expanded(
-                                                    child: _buildPathCanvas(
-                                                      options,
-                                                      quest.correctAnswerIndex ??
-                                                          0,
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      isCompact,
-                                                    ),
+                                                  Builder(
+                                                    builder: (context) {
+                                                      double canvasHeight =
+                                                          remainingHeight -
+                                                          gapTop -
+                                                          gapMiddle -
+                                                          gapBottom;
+                                                      final double
+                                                      minCanvasHeight =
+                                                          isCompact
+                                                          ? 150.0
+                                                          : 200.0;
+                                                      if (canvasHeight <
+                                                          minCanvasHeight) {
+                                                        canvasHeight =
+                                                            minCanvasHeight;
+                                                      }
+                                                      return _buildPathCanvas(
+                                                        options,
+                                                        quest.correctAnswerIndex ??
+                                                            0,
+                                                        theme.primaryColor,
+                                                        isDark,
+                                                        isCompact,
+                                                        constraints.maxWidth,
+                                                        canvasHeight,
+                                                      );
+                                                    },
                                                   ),
 
                                                   SizedBox(height: gapBottom),
@@ -533,31 +552,39 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                       ],
                                     ),
                                   ),
-                                            if (_pendingJigsaw.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-            SliverToBoxAdapter(
-              child: TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: false,
-                                displayText:
-                                    "Type the full sentence to lock it in",
-                              ),
-            ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom > 0
-                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                  : 60.h,
-            ),
-          ),
-        ],
+                                  if (_pendingJigsaw.value &&
+                                      !_isAnswered.value &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: cleanTargetSentence,
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(false),
+                                        isPositioned: false,
+                                        displayText:
+                                            "Type the full sentence to lock it in",
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-
                           ],
                         );
                       },
@@ -575,70 +602,60 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
     Color primaryColor,
     bool isDark,
     bool isCompact,
+    double maxWidth,
+    double maxHeight,
   ) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final startPoint = Offset(
-          constraints.maxWidth / 2,
-          isCompact ? 20.h : 40.h,
-        );
-        final List<Offset> nodePoints = [];
-        final int count = options.length;
-        final double bottomY =
-            constraints.maxHeight - (isCompact ? 40.h : 100.h);
+    final startPoint = Offset(maxWidth / 2, isCompact ? 20.h : 40.h);
+    final List<Offset> nodePoints = [];
+    final int count = options.length;
+    final double bottomY = maxHeight - (isCompact ? 40.h : 100.h);
 
-        if (count <= 3) {
-          nodePoints.addAll(
-            [
-              Offset(isCompact ? 50.w : 80.w, bottomY),
-              Offset(constraints.maxWidth / 2, bottomY),
-              Offset(constraints.maxWidth - (isCompact ? 50.w : 80.w), bottomY),
-            ].take(count),
-          );
-        } else {
-          nodePoints.addAll([
-            Offset(
-              isCompact ? 60.w : 90.w,
-              bottomY - (isCompact ? 50.h : 100.h),
-            ),
-            Offset(
-              constraints.maxWidth - (isCompact ? 60.w : 90.w),
-              bottomY - (isCompact ? 50.h : 100.h),
-            ),
-            Offset(isCompact ? 60.w : 90.w, bottomY),
-            Offset(constraints.maxWidth - (isCompact ? 60.w : 90.w), bottomY),
-          ]);
+    if (count <= 3) {
+      nodePoints.addAll(
+        [
+          Offset(isCompact ? 50.w : 80.w, bottomY),
+          Offset(maxWidth / 2, bottomY),
+          Offset(maxWidth - (isCompact ? 50.w : 80.w), bottomY),
+        ].take(count),
+      );
+    } else {
+      nodePoints.addAll([
+        Offset(isCompact ? 60.w : 90.w, bottomY - (isCompact ? 50.h : 100.h)),
+        Offset(
+          maxWidth - (isCompact ? 60.w : 90.w),
+          bottomY - (isCompact ? 50.h : 100.h),
+        ),
+        Offset(isCompact ? 60.w : 90.w, bottomY),
+        Offset(maxWidth - (isCompact ? 60.w : 90.w), bottomY),
+      ]);
+    }
+
+    return GestureDetector(
+      onPanUpdate: (details) {
+        if (_isAnswered.value || _pendingJigsaw.value) return;
+        _points.value = List.from(_points.value)..add(details.localPosition);
+        for (int i = 0; i < nodePoints.length; i++) {
+          if ((details.localPosition - nodePoints[i]).distance <
+              (isCompact ? 30.r : 50.r)) {
+            _onPathEnd(i, correctIndex);
+          }
         }
-
-        return GestureDetector(
-          onPanUpdate: (details) {
-            if (_isAnswered.value || _pendingJigsaw.value) return;
-            _points.value = List.from(_points.value)
-              ..add(details.localPosition);
-            for (int i = 0; i < nodePoints.length; i++) {
-              if ((details.localPosition - nodePoints[i]).distance <
-                  (isCompact ? 30.r : 50.r)) {
-                _onPathEnd(i, correctIndex);
-              }
-            }
-          },
-          onPanEnd: (_) => _points.value = [],
-          child: CustomPaint(
-            size: Size.infinite,
-            painter: PrepositionPathPainter(
-              points: _points.value,
-              startPoint: startPoint,
-              nodes: nodePoints,
-              options: options,
-              primaryColor: primaryColor,
-              isAnswered: _isAnswered.value || _pendingJigsaw.value,
-              isCorrect: _isCorrect.value ?? false,
-              targetNode: _targetNode.value,
-              isDark: isDark,
-            ),
-          ),
-        );
       },
+      onPanEnd: (_) => _points.value = [],
+      child: CustomPaint(
+        size: Size(maxWidth, maxHeight),
+        painter: PrepositionPathPainter(
+          points: _points.value,
+          startPoint: startPoint,
+          nodes: nodePoints,
+          options: options,
+          primaryColor: primaryColor,
+          isAnswered: _isAnswered.value || _pendingJigsaw.value,
+          isCorrect: _isCorrect.value ?? false,
+          targetNode: _targetNode.value,
+          isDark: isDark,
+        ),
+      ),
     );
   }
 
