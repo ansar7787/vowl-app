@@ -273,7 +273,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

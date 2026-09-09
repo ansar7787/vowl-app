@@ -166,7 +166,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

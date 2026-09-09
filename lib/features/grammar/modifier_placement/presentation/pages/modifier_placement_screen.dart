@@ -270,7 +270,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

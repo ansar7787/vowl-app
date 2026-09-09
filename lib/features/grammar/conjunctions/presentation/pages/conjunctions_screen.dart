@@ -205,7 +205,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

@@ -226,7 +226,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

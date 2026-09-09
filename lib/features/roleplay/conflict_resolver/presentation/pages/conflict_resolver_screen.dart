@@ -225,7 +225,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

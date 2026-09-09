@@ -229,7 +229,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

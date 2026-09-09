@@ -231,7 +231,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

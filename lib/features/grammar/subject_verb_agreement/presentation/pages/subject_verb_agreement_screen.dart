@@ -221,7 +221,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(

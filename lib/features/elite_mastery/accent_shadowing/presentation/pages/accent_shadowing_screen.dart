@@ -240,7 +240,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             physics: const BouncingScrollPhysics(),
             slivers: [
               SliverFillRemaining(
-                hasScrollBody: false,
+                hasScrollBody: true,
                 child: Column(
                   children: [
                     Expanded(

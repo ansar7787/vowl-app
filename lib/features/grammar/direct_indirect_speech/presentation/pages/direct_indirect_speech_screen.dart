@@ -241,7 +241,7 @@ class _DirectIndirectSpeechScreenState
                                     : const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: IgnorePointer(
                                       ignoring: _isFirstStagePassed.value,
                                       child: Column(

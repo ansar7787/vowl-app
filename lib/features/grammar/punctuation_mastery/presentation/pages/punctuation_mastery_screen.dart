@@ -303,7 +303,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverFillRemaining(
-                                    hasScrollBody: false,
+                                    hasScrollBody: true,
                                     child: Column(
                                       children: [
                                         Expanded(
