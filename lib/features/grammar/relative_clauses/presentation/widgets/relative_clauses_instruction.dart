@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RelativeClausesInstruction extends StatelessWidget {
+  final String instruction;
   final Color primaryColor;
-  const RelativeClausesInstruction({super.key, required this.primaryColor});
+  const RelativeClausesInstruction({
+    super.key,
+    required this.instruction,
+    required this.primaryColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,7 @@ class RelativeClausesInstruction extends StatelessWidget {
           Icon(Icons.hub_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "ESTABLISH QUANTUM LINK",
+            instruction.toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,

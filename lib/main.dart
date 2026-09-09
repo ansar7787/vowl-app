@@ -26,6 +26,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
+import 'package:vowl/core/utils/production_guard.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -142,6 +143,9 @@ void main() async {
       debugPrint('Critical: Dependency Injection failed: $e');
     }
   }
+
+  // 2.5 Security: Verify Production Keys (will throw in release mode if keys are wrong)
+  ProductionGuard.checkConfiguration();
 
   if (!isSecure) {
     runApp(const InsecureDeviceScreen());

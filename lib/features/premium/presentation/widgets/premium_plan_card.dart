@@ -22,11 +22,21 @@ class PremiumPlanCard extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final accentColor = plan.getColorFromHex();
 
-    final currencyFormat = NumberFormat.currency(
+    final currencyFormat = NumberFormat.simpleCurrency(
       locale: Localizations.localeOf(context).toString(),
-      symbol: '₹',
+      name: plan.currency,
       decimalDigits: 0,
     );
+
+    // Conversion optimization: show price per day and savings %
+    final pricePerDay = plan.price / plan.days;
+    final pricePerDayFormatted = NumberFormat.simpleCurrency(
+      locale: Localizations.localeOf(context).toString(),
+      name: plan.currency,
+      decimalDigits: pricePerDay < 10 ? 1 : 0,
+    ).format(pricePerDay);
+    final savingsPercent = ((plan.oldPrice - plan.price) / plan.oldPrice * 100)
+        .round();
 
     return Semantics(
       button: true,
@@ -142,6 +152,22 @@ class PremiumPlanCard extends StatelessWidget {
                                       ),
                                     ),
                                   ),
+                                  SizedBox(height: 2.h),
+                                  FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      '$pricePerDayFormatted/${context.tr('premium.per_day', fallback: 'day')}',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: accentColor.withValues(
+                                          alpha: 0.8,
+                                        ),
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -186,6 +212,31 @@ class PremiumPlanCard extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                if (savingsPercent > 0) ...[
+                                  SizedBox(height: 4.h),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 6.w,
+                                      vertical: 2.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(
+                                        0xFF10B981,
+                                      ).withValues(alpha: 0.15),
+                                      borderRadius: BorderRadius.circular(6.r),
+                                    ),
+                                    child: Text(
+                                      '${context.tr('premium.save', fallback: 'SAVE')} $savingsPercent%',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: const Color(0xFF10B981),
+                                        fontSize: 9.sp,
+                                        fontWeight: FontWeight.w800,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ],
                             ),
                           ],

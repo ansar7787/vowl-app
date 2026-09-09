@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PremiumFailureOverlay extends StatelessWidget {
   final VoidCallback onRetry;
@@ -156,6 +157,59 @@ class PremiumFailureOverlay extends StatelessWidget {
                     height: 1.4,
                   ),
                 ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2, end: 0),
+                SizedBox(height: 16.h),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.1),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        context.tr(
+                          'premium.need_help',
+                          fallback: 'Need help?',
+                        ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          color: Colors.white.withValues(alpha: 0.6),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 6.h),
+                      GestureDetector(
+                        onTap: () {
+                          final uri = Uri(
+                            scheme: 'mailto',
+                            path: 'support@vowl.app',
+                            queryParameters: {
+                              'subject': 'Premium Payment Issue',
+                              'body': 'Hi, I made a payment but my premium was not activated. Please help.',
+                            },
+                          );
+                          launchUrl(uri);
+                        },
+                        child: Text(
+                          'support@vowl.app',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            color: const Color(0xFF8B9CF7),
+                            fontWeight: FontWeight.w700,
+                            decoration: TextDecoration.underline,
+                            decorationColor: const Color(0xFF8B9CF7),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ).animate().fadeIn(delay: 400.ms),
                 SizedBox(height: 32.h),
                 Row(
                   children: [

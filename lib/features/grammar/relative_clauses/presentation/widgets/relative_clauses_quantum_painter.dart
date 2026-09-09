@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,6 +13,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
   final int targetNode;
   final bool isDark;
   final bool isCompact;
+  final double particleValue;
 
   RelativeClausesQuantumPainter({
     required this.hookPoint,
@@ -24,6 +26,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
     required this.targetNode,
     required this.isDark,
     this.isCompact = false,
+    this.particleValue = 0.0,
   });
 
   @override
@@ -58,10 +61,41 @@ class RelativeClausesQuantumPainter extends CustomPainter {
           ..maskFilter = MaskFilter.blur(BlurStyle.normal, isCompact ? 8 : 12),
       );
 
+      // Particle Burst
+      if (isCaught && isCorrect == true && particleValue > 0) {
+        final maxRadius = bodyRadius * 2.5;
+        final currentRadius =
+            bodyRadius + (maxRadius - bodyRadius) * particleValue;
+        canvas.drawCircle(
+          nodePoints[i],
+          currentRadius,
+          Paint()
+            ..color = Colors.greenAccent.withValues(alpha: 1.0 - particleValue)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 3.r,
+        );
+
+        for (int p = 0; p < 8; p++) {
+          final angle = p * (2 * pi / 8);
+          final distance =
+              bodyRadius + (maxRadius - bodyRadius) * particleValue;
+          final dx = nodePoints[i].dx + distance * cos(angle);
+          final dy = nodePoints[i].dy + distance * sin(angle);
+          canvas.drawCircle(
+            Offset(dx, dy),
+            4.r * (1.0 - particleValue),
+            Paint()
+              ..color = Colors.greenAccent.withValues(
+                alpha: 1.0 - particleValue,
+              ),
+          );
+        }
+      }
+
       // Glass Body
       nodePaint.color = isDark
-          ? Colors.white.withValues(alpha: 0.05)
-          : Colors.black.withValues(alpha: 0.02);
+          ? Colors.white.withValues(alpha: 0.15)
+          : Colors.black.withValues(alpha: 0.08);
       canvas.drawCircle(nodePoints[i], bodyRadius, nodePaint);
 
       // Border
@@ -69,9 +103,9 @@ class RelativeClausesQuantumPainter extends CustomPainter {
         nodePoints[i],
         bodyRadius,
         Paint()
-          ..color = nodeColor.withValues(alpha: 0.3)
+          ..color = nodeColor.withValues(alpha: 0.8)
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 2,
+          ..strokeWidth = 3,
       );
 
       // Label
@@ -84,7 +118,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
             fontWeight: FontWeight.w900,
             color: isCaught
                 ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent)
-                : (isDark ? Colors.white70 : Colors.black87),
+                : (isDark ? Colors.white : Colors.black),
             letterSpacing: isCompact ? 1.0 : 1.5,
           ),
         ),
@@ -95,6 +129,31 @@ class RelativeClausesQuantumPainter extends CustomPainter {
         nodePoints[i] - Offset(textPainter.width / 2, textPainter.height / 2),
       );
     }
+    // Draw Emitter Source
+    final emitterRadius = isCompact ? 12.0 : 18.0;
+
+    canvas.drawCircle(
+      startPoint,
+      emitterRadius,
+      Paint()
+        ..color = primaryColor.withValues(alpha: 0.15)
+        ..style = PaintingStyle.fill,
+    );
+    canvas.drawCircle(
+      startPoint,
+      emitterRadius,
+      Paint()
+        ..color = primaryColor
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2,
+    );
+    canvas.drawCircle(
+      startPoint,
+      emitterRadius / 2,
+      Paint()
+        ..color = primaryColor
+        ..style = PaintingStyle.fill,
+    );
 
     // Draw Kinetic Data Stream
     if (hookPoint != null || isAnswered) {
@@ -159,5 +218,6 @@ class RelativeClausesQuantumPainter extends CustomPainter {
       oldDelegate.isAnswered != isAnswered ||
       oldDelegate.isCorrect != isCorrect ||
       oldDelegate.targetNode != targetNode ||
-      oldDelegate.isCompact != isCompact;
+      oldDelegate.isCompact != isCompact ||
+      oldDelegate.particleValue != particleValue;
 }

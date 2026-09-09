@@ -15,6 +15,7 @@ class SubscriptionPlan {
   final String tag;
   final String color; // Stored as hex string for serialization, e.g. '#F43F5E'
   final int displayOrder;
+  final String currency; // ISO 4217 currency code, e.g. 'INR', 'USD'
 
   /// Fallback color used if [color] cannot be parsed. Chosen to be a neutral,
   /// visually-obvious "something is wrong" indicator without crashing the UI.
@@ -29,6 +30,7 @@ class SubscriptionPlan {
     required this.tag,
     required this.color,
     required this.displayOrder,
+    this.currency = 'INR',
   });
 
   /// Convert to Firebase-friendly map.
@@ -42,6 +44,7 @@ class SubscriptionPlan {
       'tag': tag,
       'color': color,
       'displayOrder': displayOrder,
+      'currency': currency,
     };
   }
 
@@ -62,6 +65,7 @@ class SubscriptionPlan {
         tag: map['tag'] as String,
         color: map['color'] as String,
         displayOrder: map['displayOrder'] as int,
+        currency: (map['currency'] as String?) ?? 'INR',
       );
     } catch (e) {
       throw FormatException(
@@ -100,6 +104,7 @@ class SubscriptionPlan {
     String? tag,
     String? color,
     int? displayOrder,
+    String? currency,
   }) {
     return SubscriptionPlan(
       id: id ?? this.id,
@@ -110,6 +115,7 @@ class SubscriptionPlan {
       tag: tag ?? this.tag,
       color: color ?? this.color,
       displayOrder: displayOrder ?? this.displayOrder,
+      currency: currency ?? this.currency,
     );
   }
 
@@ -124,13 +130,14 @@ class SubscriptionPlan {
         other.days == days &&
         other.tag == tag &&
         other.color == color &&
-        other.displayOrder == displayOrder;
+        other.displayOrder == displayOrder &&
+        other.currency == currency;
   }
 
   @override
   int get hashCode =>
-      Object.hash(id, name, price, oldPrice, days, tag, color, displayOrder);
+      Object.hash(id, name, price, oldPrice, days, tag, color, displayOrder, currency);
 
   @override
-  String toString() => 'SubscriptionPlan($name, ₹$price)';
+  String toString() => 'SubscriptionPlan($name, $currency $price)';
 }

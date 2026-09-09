@@ -222,7 +222,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
   // ─── Purchase Flow ─────────────────────────────────────────────────────────
 
-  void _onPackTap(CoinPack pack) {
+  Future<void> _onPackTap(CoinPack pack) async {
     if (_isProcessing) return;
 
     final user = context.read<AuthBloc>().state.user;
@@ -236,25 +236,50 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
     final packTitle = context.tr(pack.titleKey, fallback: pack.titleFallback);
 
-    final success = _paymentService.openCheckout(
-      amount: pack.price,
-      contact: '', // Optional
-      email: user.email,
-      description: 'Vowl Store - $packTitle',
-    );
+    try {
+      final orderData = await _paymentService.createOrder(packId: pack.id);
+      final orderId = orderData['orderId'] as String;
+      final serverAmount = (orderData['amount'] as num).toDouble() / 100;
+      final serverCurrency = orderData['currency'] as String? ?? 'INR';
 
-    if (!success) {
-      _isProcessing = false;
-      _updateState();
-      _pendingPack = null;
-      CustomSnackBar.show(
-        context: context,
-        message: context.tr(
-          'store.checkout_error',
-          fallback: 'Could not open payment. Please try again.',
-        ),
-        type: CustomSnackBarType.error,
+      final success = _paymentService.openCheckout(
+        amount: serverAmount,
+        contact: '', // Optional
+        email: user.email,
+        orderId: orderId,
+        currency: serverCurrency,
+        description: 'Vowl Store - $packTitle',
       );
+
+      if (!success) {
+        if (mounted) {
+          _isProcessing = false;
+          _updateState();
+          _pendingPack = null;
+          CustomSnackBar.show(
+            context: context,
+            message: context.tr(
+              'store.checkout_error',
+              fallback: 'Could not open payment. Please try again.',
+            ),
+            type: CustomSnackBarType.error,
+          );
+        }
+      }
+    } catch (e) {
+      if (mounted) {
+        _isProcessing = false;
+        _updateState();
+        _pendingPack = null;
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'store.order_error',
+            fallback: 'Failed to create payment order. Please try again.',
+          ),
+          type: CustomSnackBarType.error,
+        );
+      }
     }
   }
 

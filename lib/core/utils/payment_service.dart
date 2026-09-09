@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -32,18 +33,27 @@ abstract class PaymentService {
     required double amount,
     required String contact,
     required String email,
+    String? orderId,
+    String currency = 'INR',
     String description = 'Vowl Premium - 30 Days',
   });
 
+  /// Creates a server-side Razorpay order with the correct amount locked.
+  /// Returns the order details map on success, or throws on failure.
+  Future<Map<String, dynamic>> createOrder({String? planId, String? packId});
+
   /// Triggers a subscription purchase flow.
   ///
+  /// Creates a server-side order first, then opens checkout.
   /// Returns `true` if checkout was actually launched.
-  bool purchaseSubscription({
+  Future<bool> purchaseSubscription({
     required String contact,
     required String email,
+    required String planId,
     required double amount,
     required int days,
     required String planName,
+    String currency = 'INR',
   });
 
   /// Upgrades user subscription validity by calling the secure backend endpoint.
@@ -104,15 +114,12 @@ class RazorpayPaymentService implements PaymentService {
     required double amount,
     required String contact,
     required String email,
+    String? orderId,
+    String currency = 'INR',
     String description = 'Vowl Premium - 30 Days',
   }) {
     final razorpayKey = dotenv.env['RAZORPAY_KEY_ID'];
 
-    // BUG FIX: previously this only *logged* a warning when the key was
-    // missing, then proceeded to call `sdk.open()` anyway with an empty
-    // key — handing the user a confusing native SDK failure instead of a
-    // clean, predictable in-app outcome. Bail out before ever reaching the
-    // SDK so the caller can show a proper "try again later" message.
     if (razorpayKey == null || razorpayKey.isEmpty) {
       if (kDebugMode) {
         debugPrint(
@@ -132,19 +139,16 @@ class RazorpayPaymentService implements PaymentService {
       return false;
     }
 
-    // BUG FIX (currency precision): `(amount * 100).toInt()` truncates
-    // rather than rounds. Due to binary floating-point representation,
-    // amounts like 9.99 can evaluate to 998.999999999, which `.toInt()`
-    // truncates to 998 paise instead of 999 — silently undercharging by a
-    // paisa and risking a mismatch against the price actually shown to the
-    // user. `.round()` resolves to the nearest integer paisa instead.
-    final amountInPaise = (amount * 100).round();
+    final amountInSmallestUnit = (amount * 100).round();
 
     final options = {
       'key': razorpayKey,
-      'amount': amountInPaise, // Razorpay expects amount in paise
+      'amount': amountInSmallestUnit,
+      'currency': currency.toUpperCase(),
       'name': 'Vowl',
       'description': description,
+      // ignore: use_null_aware_elements
+      if (orderId != null) 'order_id': orderId,
       'prefill': {
         if (contact.isNotEmpty) 'contact': contact,
         if (email.isNotEmpty) 'email': email,
@@ -161,17 +165,50 @@ class RazorpayPaymentService implements PaymentService {
   }
 
   @override
-  bool purchaseSubscription({
+  Future<Map<String, dynamic>> createOrder({String? planId, String? packId}) async {
+    assert(planId != null || packId != null, 'Must provide planId or packId');
+    try {
+      final result = await functions
+          .httpsCallable('createOrder')
+          .call({
+            // ignore: use_null_aware_elements
+            if (planId != null) 'planId': planId,
+            // ignore: use_null_aware_elements
+            if (packId != null) 'packId': packId,
+          })
+          .timeout(const Duration(seconds: 30));
+      return Map<String, dynamic>.from(result.data as Map);
+    } on TimeoutException {
+      throw Exception('Order creation timed out. Please try again.');
+    } catch (e) {
+      if (kDebugMode) debugPrint('createOrder error: $e');
+      rethrow;
+    }
+  }
+
+  @override
+  Future<bool> purchaseSubscription({
     required String contact,
     required String email,
+    required String planId,
     required double amount,
     required int days,
     required String planName,
-  }) {
+    String currency = 'INR',
+  }) async {
+    // 1. Create server-side order (amount locked by server)
+    final orderData = await createOrder(planId: planId);
+    final orderId = orderData['orderId'] as String;
+    final serverAmount = (orderData['amount'] as num).toDouble() / 100;
+    final serverCurrency = orderData['currency'] as String? ?? currency;
+
+    // 2. Open checkout with server-generated order
     return openCheckout(
-      amount: amount,
+      amount: serverAmount,
       contact: contact,
       email: email,
+      orderId: orderId,
+      currency: serverCurrency,
       description: 'Vowl Pro - $planName ($days Days)',
     );
   }

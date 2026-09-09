@@ -95,7 +95,7 @@ class StoryServiceImpl implements StoryService {
     'punctuationMastery':
         "Punctuation isn't just for writing; it tells us when to pause when speaking! Let's get the rhythm right.",
     'relativeClauses':
-        "Let's add some extra details! Using words like 'who' or 'which' helps you build rich, descriptive sentences.",
+        "Let's add some color to your sentences! We'll practice using words like 'who' and 'which' to give people exact details without breaking the flow of conversation.",
     'conditionals':
         "What if? Let's practice talking about imaginary situations and possibilities!",
     'conjunctions':
@@ -813,11 +813,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'relativeclauses': [
       "",
-      "Nice work! Conquering relative clauses is a huge step forward.",
-      "Your mastery of relative clauses is noticeably improving daily.",
-      "50 levels cleared! Your relative clauses skills are rock solid.",
-      "Level 100! You are an absolute master of relative clauses.",
-      "Level 200 reached! Your grasp of relative clauses is legendary.",
+      "Great start! You're already linking ideas together much more naturally.",
+      "Look at you go! Your sentences are becoming so much richer and detailed.",
+      "Fifty levels down! You're connecting thoughts like a true native speaker now.",
+      "Level 100! You're officially a natural at giving exactly the right amount of detail.",
+      "Two hundred levels! Your ability to weave complex sentences together is absolutely flawless.",
     ],
     'conditionals': [
       "",

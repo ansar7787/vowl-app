@@ -7,6 +7,8 @@ import 'package:go_router/go_router.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
 import 'dart:ui' as ui;
+import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
@@ -20,6 +22,7 @@ import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
+
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
 
@@ -29,13 +32,16 @@ class PremiumScreen extends StatefulWidget {
 
 class _PremiumScreenState extends State<PremiumScreen> {
   final _paymentService = di.sl<PaymentService>();
-  int _selectedPlanIndexVal = 1;
+  int _selectedPlanIndexVal =
+      2; // Pre-select yearly (best value, highest margin)
   bool _isProcessingVal = false;
   bool _paymentCompletedVal = false;
   bool? _paymentSuccessVal;
   String? _errorMessageVal;
   String? _transactionIdVal;
   Timer? _paymentTimeout;
+  Timer? _cancelButtonTimer;
+  bool _showCancelButton = false;
   late ConfettiController _confettiController;
 
   static const List<SubscriptionPlan> _fallbackPlans = [
@@ -73,10 +79,10 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   List<SubscriptionPlan> _activePlansVal = _fallbackPlans;
 
-  late final ValueNotifier<int> _stateHash = ValueNotifier(0);
-
+  /// Triggers a UI rebuild. Uses setState instead of an orphaned ValueNotifier
+  /// that nothing in the widget tree was listening to.
   void _updateState() {
-    _stateHash.value++;
+    if (mounted) setState(() {});
   }
 
   @override
@@ -108,6 +114,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   void _startPaymentTimeout() {
+    // Show cancel button after 15 seconds so user isn't trapped
+    _cancelButtonTimer = Timer(const Duration(seconds: 15), () {
+      if (mounted && _isProcessingVal) {
+        _showCancelButton = true;
+        _updateState();
+      }
+    });
     // Timeout after 2 minutes if no response
     _paymentTimeout = Timer(const Duration(minutes: 2), () {
       if (mounted && _isProcessingVal) {
@@ -119,6 +132,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
   void _cancelPaymentTimeout() {
     _paymentTimeout?.cancel();
     _paymentTimeout = null;
+    _cancelButtonTimer?.cancel();
+    _cancelButtonTimer = null;
+    _showCancelButton = false;
   }
 
   void _handlePaymentTimeout() {
@@ -212,6 +228,13 @@ class _PremiumScreenState extends State<PremiumScreen> {
     _cancelPaymentTimeout();
     if (mounted) {
       _isProcessingVal = false;
+      _paymentCompletedVal = true;
+      _paymentSuccessVal = false;
+      _errorMessageVal = context.tr(
+        'premium.external_wallet_info',
+        fallback:
+            'External wallet selected. If payment was completed, your premium will activate shortly.',
+      );
       _updateState();
     }
   }
@@ -221,7 +244,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
     _confettiController.dispose();
     _cancelPaymentTimeout();
     _paymentService.dispose();
-    _stateHash.dispose();
     super.dispose();
   }
 
@@ -434,7 +456,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
           _buildCTAButton(),
           SizedBox(height: 20.h),
           _buildSecureTag(),
-          SizedBox(height: 12.h),
+          SizedBox(height: 8.h),
+          _buildTermsAndPolicy(),
+          SizedBox(height: 16.h),
         ],
       ),
     );
@@ -484,6 +508,25 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     fontSize: 12.sp,
                   ),
                 ),
+                if (_showCancelButton) ...[
+                  SizedBox(height: 24.h),
+                  TextButton(
+                    onPressed: () {
+                      _cancelPaymentTimeout();
+                      _isProcessingVal = false;
+                      _updateState();
+                    },
+                    child: Text(
+                      context.tr('common.cancel', fallback: 'Cancel'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white60,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
@@ -538,9 +581,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   Widget _buildCTAButton() {
+    final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
+    final priceFormatted = NumberFormat.simpleCurrency(
+      locale: Localizations.localeOf(context).toString(),
+      name: selectedPlan.currency,
+      decimalDigits: 0,
+    ).format(selectedPlan.price);
+
     final ctaLabel = _isProcessingVal
         ? context.tr('premium.cta_processing', fallback: 'Processing...')
-        : context.tr('premium.cta_activate', fallback: 'Activate Premium');
+        : '${context.tr('premium.cta_activate', fallback: 'Activate Premium')} — $priceFormatted';
 
     return Semantics(
       button: true,
@@ -614,23 +664,56 @@ class _PremiumScreenState extends State<PremiumScreen> {
     );
   }
 
-  void _onActivatePressed() {
+  Future<void> _onActivatePressed() async {
     di.sl<HapticService>().heavy();
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
 
     _isProcessingVal = true;
     _updateState();
-    _startPaymentTimeout();
 
     final plan = _activePlansVal[_selectedPlanIndexVal];
-    _paymentService.purchaseSubscription(
-      contact: '', // Empty is safe - Razorpay will use email if needed
-      email: user.email,
-      amount: plan.price,
-      days: plan.days,
-      planName: plan.name,
-    );
+
+    try {
+      final checkoutOpened = await _paymentService.purchaseSubscription(
+        contact: '',
+        email: user.email,
+        planId: plan.id,
+        amount: plan.price,
+        days: plan.days,
+        planName: plan.name,
+        currency: plan.currency,
+      );
+
+      if (checkoutOpened) {
+        _startPaymentTimeout();
+      } else {
+        // Checkout failed to open (missing key, uninitialized SDK, etc.)
+        if (!mounted) return;
+        di.sl<HapticService>().error();
+        _isProcessingVal = false;
+        _paymentCompletedVal = true;
+        _paymentSuccessVal = false;
+        _errorMessageVal = context.tr(
+          'premium.error_checkout_failed',
+          fallback: 'Could not open payment. Please try again later.',
+        );
+        _updateState();
+      }
+    } catch (e) {
+      // Order creation failed (network, server error, etc.)
+      if (!mounted) return;
+      di.sl<HapticService>().error();
+      _isProcessingVal = false;
+      _paymentCompletedVal = true;
+      _paymentSuccessVal = false;
+      _errorMessageVal = context.tr(
+        'premium.error_order_failed',
+        fallback:
+            'Unable to create payment order. Please check your connection and try again.',
+      );
+      _updateState();
+    }
   }
 
   Widget _buildSecureTag() {
@@ -648,6 +731,108 @@ class _PremiumScreenState extends State<PremiumScreen> {
         fontWeight: FontWeight.w900,
         letterSpacing: 1.5,
       ),
+    );
+  }
+
+  Widget _buildTermsAndPolicy() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final muted = isDark ? Colors.white38 : Colors.black38;
+
+    return Column(
+      children: [
+        Text(
+          context.tr(
+            'premium.cancellation_note',
+            fallback: 'Cancel anytime. No auto-renewal.',
+          ),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            color: muted,
+            fontSize: 11.sp,
+            height: 1.4,
+          ),
+        ),
+        SizedBox(height: 6.h),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {
+                final url = Uri.parse(
+                  'https://ansar7787.github.io/vowl-legal/terms.html',
+                );
+                launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+              child: Text(
+                context.tr('premium.terms', fallback: 'Terms'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: muted,
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w600,
+                  decoration: TextDecoration.underline,
+                  decorationColor: muted,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: Text(
+                '•',
+                style: TextStyle(color: muted, fontSize: 10.sp),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                final url = Uri.parse(
+                  'https://ansar7787.github.io/vowl-legal/privacy.html',
+                );
+                launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+              child: Text(
+                context.tr('premium.privacy', fallback: 'Privacy'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: muted,
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w600,
+                  decoration: TextDecoration.underline,
+                  decorationColor: muted,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: Text(
+                '•',
+                style: TextStyle(color: muted, fontSize: 10.sp),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                // Assuming terms covers refund if there's no specific refund page,
+                // but linking to terms.html as a fallback for refund.
+                final url = Uri.parse(
+                  'https://ansar7787.github.io/vowl-legal/terms.html',
+                );
+                launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+              child: Text(
+                context.tr('premium.refund_policy', fallback: 'Refund Policy'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: muted,
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w600,
+                  decoration: TextDecoration.underline,
+                  decorationColor: muted,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

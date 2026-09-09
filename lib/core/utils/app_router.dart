@@ -21,6 +21,7 @@ import 'package:vowl/features/translation/translation_routes.dart';
 import 'package:vowl/features/daily_challenges/word_mixer/presentation/pages/word_mixer_screen.dart';
 import 'package:vowl/features/daily_challenges/word_snap/presentation/pages/word_snap_screen.dart';
 
+
 class AppRouter {
   AppRouter._(); // Non-instantiable.
 
@@ -54,6 +55,8 @@ class AppRouter {
   static const String questSequenceRoute = '/quest-sequence';
   static const String scanAndLearnRoute = '/scan-and-learn';
   static const String photoVocabularyRoute = '/photo-vocabulary';
+
+
   // Daily Words
   static const String dailyWordsRoute = DailyWordsRoutes.dailyWordsRoute;
   static const String wordBankRoute = DailyWordsRoutes.wordBankRoute;
@@ -62,6 +65,7 @@ class AppRouter {
   static const String translateRoute = '/translate';
   static const String wordSnapRoute = '/word-snap';
   static const String wordMixerRoute = '/word-mixer';
+
 
   // ── Kids Zone routes ──────────────────────────────────────────────────────
 
@@ -128,6 +132,8 @@ class AppRouter {
       ...HomeRoutes.routes,
       ...DailyWordsRoutes.routes,
       ...translationRoutes,
+
+
       GoRoute(
         path: wordSnapRoute,
         builder: (context, state) => const WordSnapScreen(level: 1),
