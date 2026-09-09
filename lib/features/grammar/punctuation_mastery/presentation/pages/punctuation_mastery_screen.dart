@@ -34,7 +34,15 @@ class PunctuationMasteryScreen extends StatefulWidget {
 class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final ValueNotifier<Map<int, String>> _placedStickers = ValueNotifier({});
+
+  // 2N slots (prefix and suffix per word) to ensure proper typographical wrapping
+  final ValueNotifier<Map<int, List<String>>> _prefixStickers = ValueNotifier(
+    {},
+  );
+  final ValueNotifier<Map<int, List<String>>> _suffixStickers = ValueNotifier(
+    {},
+  );
+
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -46,7 +54,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
 
   @override
   void dispose() {
-    _placedStickers.dispose();
+    _prefixStickers.dispose();
+    _suffixStickers.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
@@ -64,40 +73,117 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     );
   }
 
-  void _onStick(int index, String mark) {
+  List<String> _getRequiredMarks(GameQuest? quest) {
+    if (quest == null) return [".", ",", "!", "?", ";", ":"];
+
+    final expected = quest.correctAnswer ?? "";
+    final Set<String> marks = {".", ",", "!", "?", "'", '"'};
+
+    if (expected.contains("...")) marks.add("...");
+    if (expected.contains("—")) marks.add("—");
+
+    final puncs = expected.replaceAll(RegExp(r'[a-zA-Z0-9\s]'), '').split('');
+    for (final p in puncs) {
+      if (p != '.' && p != '-') marks.add(p);
+      if (p == '-') marks.add('-');
+    }
+
+    return marks.toList()..sort();
+  }
+
+  void _onStick(int index, String mark, bool isPrefix) {
     if (_isAnswered.value || _pendingTyping.value) return;
     _hapticService.selection();
-    _placedStickers.value = Map.from(_placedStickers.value)..[index] = mark;
+    final notifier = isPrefix ? _prefixStickers : _suffixStickers;
+    final currentList = notifier.value[index] ?? [];
+    notifier.value = Map.from(notifier.value)..[index] = [...currentList, mark];
+  }
+
+  void _onRemoveStick(int index, bool isPrefix) {
+    if (_isAnswered.value || _pendingTyping.value) return;
+    _hapticService.selection();
+    final notifier = isPrefix ? _prefixStickers : _suffixStickers;
+    final currentList = List<String>.from(notifier.value[index] ?? []);
+    if (currentList.isNotEmpty) {
+      currentList.removeLast();
+      if (currentList.isEmpty) {
+        notifier.value = Map.from(notifier.value)..remove(index);
+      } else {
+        notifier.value = Map.from(notifier.value)..[index] = currentList;
+      }
+    }
+  }
+
+  String _normalizeApostrophes(String s) {
+    String res = s;
+    while (RegExp(r"([a-z])'([a-z])").hasMatch(res)) {
+      res = res.replaceAllMapped(
+        RegExp(r"([a-z])'([a-z])"),
+        (m) => "${m.group(1)}${m.group(2)}'",
+      );
+    }
+    return res;
   }
 
   void _submitAnswer(GameQuest quest) {
     if (_isAnswered.value || _pendingTyping.value) return;
 
     final words = (quest.sentence ?? "").split(" ");
-    String result = "";
+    final StringBuffer resultBuffer = StringBuffer();
+
+    // Construct user string including prefix and suffix slots
     for (int i = 0; i < words.length; i++) {
-      result += words[i];
-      if (_placedStickers.value.containsKey(i)) {
-        result += _placedStickers.value[i]!;
+      if (_prefixStickers.value.containsKey(i)) {
+        resultBuffer.write(_prefixStickers.value[i]!.join(""));
       }
-      if (i < words.length - 1) result += " ";
+      resultBuffer.write(words[i]);
+      if (_suffixStickers.value.containsKey(i)) {
+        resultBuffer.write(_suffixStickers.value[i]!.join(""));
+      }
     }
 
-    bool isCorrect =
-        result.trim().toLowerCase() ==
-        (quest.correctAnswer ?? "").trim().toLowerCase();
+    String uStr = resultBuffer.toString().replaceAll(" ", "").toLowerCase();
+    String eStr = (quest.correctAnswer ?? "").replaceAll(" ", "").toLowerCase();
+
+    bool isCorrect = _normalizeApostrophes(uStr) == _normalizeApostrophes(eStr);
+
+    // To present the sentence elegantly to the user after they submit
+    final StringBuffer displayResultBuffer = StringBuffer();
+    for (int i = 0; i < words.length; i++) {
+      if (_prefixStickers.value.containsKey(i)) {
+        displayResultBuffer.write(_prefixStickers.value[i]!.join(""));
+      }
+      displayResultBuffer.write(words[i]);
+      if (_suffixStickers.value.containsKey(i)) {
+        displayResultBuffer.write(_suffixStickers.value[i]!.join(""));
+      }
+      if (i < words.length - 1) displayResultBuffer.write(" ");
+    }
+
+    final displayResult = displayResultBuffer.toString();
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      _assembledSentence.value = result;
+      _assembledSentence.value = displayResult;
       _pendingTyping.value = true;
+
+      // Auto-scroll to bottom to show the TypeToConfirmOverlay
+      Future.delayed(const Duration(milliseconds: 300), () {
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
       _isAnswered.value = true;
       _isCorrect.value = false;
-      _assembledSentence.value = result;
+      _assembledSentence.value = displayResult;
       context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -136,7 +222,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             _isAnswered.value = false;
             _isCorrect.value = null;
             _pendingTyping.value = false;
-            _placedStickers.value = {};
+            _prefixStickers.value = {};
+            _suffixStickers.value = {};
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             _isAnswered.value = true;
             _isCorrect.value = state.answerStatus.asBoolOrNull;
@@ -158,7 +245,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         final quest = (state is GrammarLoaded)
             ? state.currentQuest as GrammarQuest?
             : null;
-        final marks = [".", ",", "!", "?", ";", ":"];
+
+        final marks = _getRequiredMarks(quest);
 
         String cleanTargetSentence = "";
         if (quest != null) {
@@ -177,7 +265,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             _isAnswered,
             _isCorrect,
             _showConfetti,
-            _placedStickers,
+            _prefixStickers,
+            _suffixStickers,
             _pendingTyping,
             _assembledSentence,
           ]),
@@ -190,7 +279,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-              useScrolling: false, // Required for Stack Overlays
+              useScrolling: false,
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () =>
@@ -254,7 +343,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                                         : 20.h,
                                                   ),
 
-                                                  if (quest.punctuationRule !=
+                                                  if (quest.grammarRule !=
                                                       null) ...[
                                                     Container(
                                                       padding:
@@ -283,7 +372,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                                       child: Column(
                                                         children: [
                                                           Text(
-                                                            "RULE: ${quest.punctuationRule!.toUpperCase()}",
+                                                            "RULE: ${quest.grammarRule!.toUpperCase()}",
                                                             style: TextStyle(
                                                               fontFamily:
                                                                   'Outfit',
@@ -304,7 +393,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                                                     .min,
                                                             children: [
                                                               Text(
-                                                                ", = Pause   |   . = Stop   |   ? = Ask",
+                                                                "Tap to remove misplaced stickers",
                                                                 style: TextStyle(
                                                                   fontSize:
                                                                       10.sp,
@@ -476,7 +565,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                                           ),
                                                           child: Center(
                                                             child: Text(
-                                                              "FINALIZE ARCHITECTURE",
+                                                              "CHECK ANSWER",
                                                               style: TextStyle(
                                                                 fontFamily:
                                                                     'Outfit',
@@ -511,29 +600,37 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                       ],
                                     ),
                                   ),
-                                            if (_pendingTyping.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-            SliverToBoxAdapter(
-              child: TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: false,
-                              ),
-            ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom > 0
-                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                  : 60.h,
-            ),
-          ),
-        ],
+                                  if (_pendingTyping.value &&
+                                      !_isAnswered.value &&
+                                      cleanTargetSentence.isNotEmpty)
+                                    SliverToBoxAdapter(
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: cleanTargetSentence,
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitFinalAnswer(true),
+                                        onSkipped: () =>
+                                            _submitFinalAnswer(false),
+                                        isPositioned: false,
+                                      ),
+                                    ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-
                           ],
                         );
                       },
@@ -552,97 +649,136 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     bool isCompact,
   ) {
     final words = sentence.split(" ");
-    final double slotSize = isCompact ? 26.r : 34.r;
     final double wordFontSize = isCompact ? 15.sp : 20.sp;
-    final double markFontSize = isCompact ? 15.sp : 20.sp;
 
     return Wrap(
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
-      spacing: 4.w,
+      spacing: 0,
       runSpacing: isCompact ? 6.h : 12.h,
-      children: List.generate(words.length * 2, (index) {
-        if (index % 2 == 0) {
-          return Text(
-            words[index ~/ 2],
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: wordFontSize,
-              color: isDark ? Colors.white : Colors.black87,
+      children: List.generate(words.length, (index) {
+        return Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _buildSlot(index, primaryColor, isCompact, isPrefix: true),
+            Text(
+              words[index],
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: wordFontSize,
+                color: isDark ? Colors.white : Colors.black87,
+              ),
             ),
-          );
-        } else {
-          final slotIndex = index ~/ 2;
-          final mark = _placedStickers.value[slotIndex];
-          return DragTarget<String>(
-            onAcceptWithDetails: (details) => _onStick(slotIndex, details.data),
-            builder: (context, candidateData, rejectedData) {
-              final isHighlight = candidateData.isNotEmpty;
-              return Container(
-                    width: slotSize,
-                    height: slotSize,
-                    decoration: BoxDecoration(
-                      color: mark != null
-                          ? primaryColor
-                          : (isHighlight
-                                ? primaryColor.withValues(alpha: 0.3)
-                                : Colors.transparent),
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: isHighlight || mark != null
-                            ? primaryColor
-                            : primaryColor.withValues(alpha: 0.15),
-                        width: isHighlight ? 2 : 1.5,
-                        style: mark != null
-                            ? BorderStyle.none
-                            : BorderStyle.solid,
-                      ),
-                      boxShadow: [
-                        if (mark != null)
-                          BoxShadow(
-                            color: primaryColor.withValues(alpha: 0.3),
-                            blurRadius: 10,
-                            spreadRadius: 1,
-                          ),
-                      ],
-                    ),
-                    child: Center(
-                      child: mark != null
-                          ? GestureDetector(
-                              onTap: () {
-                                if (_isAnswered.value || _pendingTyping.value) {
-                                  return;
-                                }
-                                _hapticService.selection();
-                                _placedStickers.value = Map.from(
-                                  _placedStickers.value,
-                                )..remove(slotIndex);
-                              },
-                              child: Text(
-                                mark,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: markFontSize,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                ),
-                              ).animate().shimmer(duration: 2.seconds),
-                            )
-                          : (isHighlight
-                                ? Icon(
-                                    Icons.add,
-                                    color: primaryColor,
-                                    size: isCompact ? 14.r : 18.r,
-                                  )
-                                : null),
-                    ),
-                  )
-                  .animate(target: mark != null ? 1 : 0)
-                  .scale(duration: 300.ms, curve: Curves.easeOutBack);
-            },
-          );
-        }
+            _buildSlot(index, primaryColor, isCompact, isPrefix: false),
+          ],
+        );
       }),
+    );
+  }
+
+  Widget _buildSlot(
+    int slotIndex,
+    Color primaryColor,
+    bool isCompact, {
+    required bool isPrefix,
+  }) {
+    final double slotSize = isCompact ? 26.r : 34.r;
+    final double markFontSize = isCompact ? 15.sp : 20.sp;
+    final notifier = isPrefix ? _prefixStickers : _suffixStickers;
+    final marks = notifier.value[slotIndex] ?? [];
+
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) =>
+          _onStick(slotIndex, details.data, isPrefix),
+      builder: (context, candidateData, rejectedData) {
+        final isHighlight = candidateData.isNotEmpty;
+        final hasMarks = marks.isNotEmpty;
+
+        final double expandedWidth = (marks.length * markFontSize * 0.8 + 12.w)
+            .clamp(slotSize, double.infinity);
+
+        return GestureDetector(
+          onTap: hasMarks ? () => _onRemoveStick(slotIndex, isPrefix) : null,
+          child: Container(
+            // Huge invisible hit box for dragging!
+            width: hasMarks || isHighlight
+                ? expandedWidth + 4.w
+                : (isCompact ? 14.w : 18.w),
+            height: isCompact ? 35.h : 45.h,
+            color: Colors.transparent,
+            alignment: Alignment.center,
+            child:
+                AnimatedContainer(
+                      duration: 200.ms,
+                      width: hasMarks || isHighlight ? expandedWidth : 4.w,
+                      height: hasMarks || isHighlight ? slotSize : 16.h,
+                      decoration: BoxDecoration(
+                        color: hasMarks
+                            ? primaryColor
+                            : (isHighlight
+                                  ? primaryColor.withValues(alpha: 0.3)
+                                  : Colors.transparent),
+                        borderRadius: BorderRadius.circular(slotSize / 2),
+                        border: Border.all(
+                          color: isHighlight || hasMarks
+                              ? primaryColor
+                              : primaryColor.withValues(
+                                  alpha: 0.0,
+                                ), // Invisible when empty
+                          width: isHighlight ? 2 : 1.5,
+                          style: hasMarks
+                              ? BorderStyle.none
+                              : BorderStyle.solid,
+                        ),
+                        boxShadow: [
+                          if (hasMarks)
+                            BoxShadow(
+                              color: primaryColor.withValues(alpha: 0.3),
+                              blurRadius: 10,
+                              spreadRadius: 1,
+                            ),
+                        ],
+                      ),
+                      child: Center(
+                        child: hasMarks
+                            ? Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: marks
+                                    .map(
+                                      (m) => Text(
+                                        m,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: markFontSize,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    )
+                                    .toList(),
+                              ).animate().shimmer(duration: 2.seconds)
+                            : (isHighlight
+                                  ? Icon(
+                                      Icons.add,
+                                      color: primaryColor,
+                                      size: isCompact ? 14.r : 18.r,
+                                    )
+                                  : null),
+                      ),
+                    )
+                    .animate(target: hasMarks ? 1 : 0)
+                    .scale(
+                      duration: 300.ms,
+                      curve: Curves.easeOutBack,
+                      begin: Offset(
+                        isHighlight ? 1.0 : 0.2,
+                        isHighlight ? 1.0 : 0.8,
+                      ),
+                    ),
+          ),
+        );
+      },
     );
   }
 
