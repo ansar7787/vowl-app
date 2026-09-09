@@ -7,59 +7,128 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class ModalsRotaryDial extends StatefulWidget {
   final List<String> options;
-  final bool isAnswered;
+  final ValueNotifier<bool> isAnsweredNotifier;
+  final ValueNotifier<bool> pendingJigsawNotifier;
+  final ValueNotifier<int> selectedIndexNotifier;
+  final int correctAnswerIndex;
   final bool isDark;
   final Color primaryColor;
-  final ValueChanged<int> onSelectionChanged;
-  final bool isCompact;
 
   const ModalsRotaryDial({
     super.key,
     required this.options,
-    required this.isAnswered,
+    required this.isAnsweredNotifier,
+    required this.pendingJigsawNotifier,
+    required this.selectedIndexNotifier,
+    required this.correctAnswerIndex,
     required this.isDark,
     required this.primaryColor,
-    required this.onSelectionChanged,
-    this.isCompact = false,
   });
 
   @override
   State<ModalsRotaryDial> createState() => _ModalsRotaryDialState();
 }
 
-class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
+class _ModalsRotaryDialState extends State<ModalsRotaryDial>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   double _panStartAngle = 0.0;
-  final ValueNotifier<int> _selectedIndex = ValueNotifier(0);
+  bool _wasAnswered = false;
+
+  late AnimationController _snapController;
+  late Animation<double> _snapAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _wasAnswered = widget.isAnsweredNotifier.value;
+    widget.isAnsweredNotifier.addListener(_onAnsweredChanged);
+
+    _snapController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    );
+    _snapController.addListener(() {
+      _rotation.value = _snapAnimation.value;
+    });
+  }
 
   @override
   void dispose() {
+    _snapController.dispose();
     _rotation.dispose();
-    _selectedIndex.dispose();
     super.dispose();
   }
 
   @override
   void didUpdateWidget(covariant ModalsRotaryDial oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Reset on new question (detected by isAnswered going from true to false)
-    if (!widget.isAnswered && oldWidget.isAnswered) {
-      _rotation.value = 0.0;
-      _selectedIndex.value = 0;
+    if (oldWidget.isAnsweredNotifier != widget.isAnsweredNotifier) {
+      oldWidget.isAnsweredNotifier.removeListener(_onAnsweredChanged);
+      widget.isAnsweredNotifier.addListener(_onAnsweredChanged);
+      _wasAnswered = widget.isAnsweredNotifier.value;
     }
+  }
+
+  void _onAnsweredChanged() {
+    final isAnsweredNow = widget.isAnsweredNotifier.value;
+    if (!isAnsweredNow && _wasAnswered) {
+      _snapController.stop();
+      _rotation.value = 0.0;
+      widget.selectedIndexNotifier.value = 0;
+    }
+    _wasAnswered = isAnsweredNow;
+  }
+
+  bool get _isLocked =>
+      widget.isAnsweredNotifier.value || widget.pendingJigsawNotifier.value;
+
+  void _snapToCurrentIndex() {
+    if (_isLocked) return;
+    final count = widget.options.length;
+    if (count == 0) return;
+
+    final targetNormalized =
+        widget.selectedIndexNotifier.value * (2 * pi / count);
+    final currentRotation = _rotation.value;
+    final remainder = currentRotation % (2 * pi);
+    final positiveRemainder = remainder < 0 ? remainder + 2 * pi : remainder;
+
+    double targetAngle = currentRotation - positiveRemainder + targetNormalized;
+
+    // Shortest path
+    if (targetAngle - currentRotation > pi) {
+      targetAngle -= 2 * pi;
+    } else if (targetAngle - currentRotation < -pi) {
+      targetAngle += 2 * pi;
+    }
+
+    _snapAnimation = Tween<double>(begin: currentRotation, end: targetAngle)
+        .animate(
+          CurvedAnimation(parent: _snapController, curve: Curves.easeOutBack),
+        );
+    _snapController.forward(from: 0);
   }
 
   @override
   Widget build(BuildContext context) {
-    final outerSize = widget.isCompact ? 180.r : 280.r;
-    final physicalDialSize = widget.isCompact ? 110.r : 170.r;
-    final dialOffset = widget.isCompact ? 80.r : 125.r;
+    final outerSize = 280.r;
+    final physicalDialSize = 170.r;
+    final dialOffset = 125.r;
     final gestureCenter = Offset(physicalDialSize / 2, physicalDialSize / 2);
 
     return ListenableBuilder(
-      listenable: Listenable.merge([_rotation, _selectedIndex]),
+      listenable: Listenable.merge([
+        _rotation,
+        widget.selectedIndexNotifier,
+        widget.isAnsweredNotifier,
+        widget.pendingJigsawNotifier,
+      ]),
       builder: (context, _) {
+        final isCorrectSelected =
+            widget.selectedIndexNotifier.value == widget.correctAnswerIndex;
+
         return Stack(
           alignment: Alignment.center,
           children: [
@@ -78,7 +147,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
             // Dial Words (Holographic Ring)
             ...List.generate(widget.options.length, (i) {
               final angle = (i * (2 * pi / widget.options.length)) - (pi / 2);
-              final isSelected = _selectedIndex.value == i;
+              final isSelected = widget.selectedIndexNotifier.value == i;
               return Transform.translate(
                 offset: Offset(
                   cos(angle) * dialOffset,
@@ -86,12 +155,12 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                 ),
                 child: AnimatedScale(
                   duration: 300.ms,
-                  scale: isSelected ? (widget.isCompact ? 1.15 : 1.25) : 0.9,
+                  scale: isSelected ? 1.25 : 0.9,
                   child: AnimatedDefaultTextStyle(
                     duration: 300.ms,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: widget.isCompact ? 12.sp : 16.sp,
+                      fontSize: 16.sp,
                       fontWeight: isSelected
                           ? FontWeight.w900
                           : FontWeight.w600,
@@ -108,7 +177,8 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
             // The Physical Dial (Glass Morph)
             GestureDetector(
               onPanStart: (details) {
-                if (widget.isAnswered) return;
+                if (_isLocked) return;
+                _snapController.stop();
                 final pos = details.localPosition;
                 _panStartAngle =
                     atan2(
@@ -118,7 +188,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                     _rotation.value;
               },
               onPanUpdate: (details) {
-                if (widget.isAnswered) return;
+                if (_isLocked) return;
                 final pos = details.localPosition;
                 final currentAngle = atan2(
                   pos.dy - gestureCenter.dy,
@@ -127,20 +197,22 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                 final newRotation = currentAngle - _panStartAngle;
 
                 final count = widget.options.length;
-                final normalizedRot = (newRotation + pi / 2) % (2 * pi);
+                final normalizedRot = newRotation % (2 * pi);
+                final positiveRot = normalizedRot < 0
+                    ? normalizedRot + 2 * pi
+                    : normalizedRot;
                 final rawIndex =
-                    (count - (normalizedRot / (2 * pi) * count).round()) %
-                    count;
-                final selected = rawIndex.clamp(0, count - 1);
+                    (positiveRot / (2 * pi / count)).round() % count;
 
-                if (selected != _selectedIndex.value) {
+                if (rawIndex != widget.selectedIndexNotifier.value) {
                   _hapticService.selection();
-                  widget.onSelectionChanged(selected);
+                  widget.selectedIndexNotifier.value = rawIndex;
                 }
 
                 _rotation.value = newRotation;
-                _selectedIndex.value = selected;
               },
+              onPanEnd: (_) => _snapToCurrentIndex(),
+              onPanCancel: () => _snapToCurrentIndex(),
               child: Transform.rotate(
                 angle: _rotation.value,
                 child: Container(
@@ -168,7 +240,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withValues(alpha: 0.2),
-                        blurRadius: widget.isCompact ? 10 : 20,
+                        blurRadius: 20,
                         offset: const Offset(5, 5),
                       ),
                       BoxShadow(
@@ -190,10 +262,8 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               width: 2.r,
-                              height: widget.isCompact ? 4.r : 8.r,
-                              margin: EdgeInsets.only(
-                                top: widget.isCompact ? 6.r : 10.r,
-                              ),
+                              height: 8.r,
+                              margin: EdgeInsets.only(top: 10.r),
                               color: widget.primaryColor.withValues(alpha: 0.2),
                             ),
                           ),
@@ -202,24 +272,65 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
                       // The Glowing Pointer
                       Align(
                         alignment: Alignment.topCenter,
-                        child: Container(
-                          width: widget.isCompact ? 4.r : 6.r,
-                          height: widget.isCompact ? 22.r : 35.r,
-                          margin: EdgeInsets.only(
-                            top: widget.isCompact ? 10.r : 15.r,
-                          ),
-                          decoration: BoxDecoration(
-                            color: widget.primaryColor,
-                            borderRadius: BorderRadius.circular(3.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: widget.primaryColor,
-                                blurRadius: 15,
-                                spreadRadius: 1,
+                        child: isCorrectSelected
+                            ? Container(
+                                    width: 6.r,
+                                    height: 35.r,
+                                    margin: EdgeInsets.only(top: 15.r),
+                                    decoration: BoxDecoration(
+                                      color: widget.primaryColor,
+                                      borderRadius: BorderRadius.circular(3.r),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: widget.primaryColor,
+                                          blurRadius: 15,
+                                          spreadRadius: 1,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                  .animate(
+                                    onPlay: (controller) =>
+                                        controller.repeat(reverse: true),
+                                  )
+                                  .scale(
+                                    begin: const Offset(1.0, 1.0),
+                                    end: const Offset(1.2, 1.1),
+                                    duration: 600.ms,
+                                    curve: Curves.easeInOut,
+                                  )
+                                  .boxShadow(
+                                    begin: BoxShadow(
+                                      color: widget.primaryColor,
+                                      blurRadius: 15,
+                                      spreadRadius: 1,
+                                    ),
+                                    end: BoxShadow(
+                                      color: Colors.white.withValues(
+                                        alpha: 0.5,
+                                      ),
+                                      blurRadius: 25,
+                                      spreadRadius: 4,
+                                    ),
+                                    duration: 600.ms,
+                                    curve: Curves.easeInOut,
+                                  )
+                            : Container(
+                                width: 6.r,
+                                height: 35.r,
+                                margin: EdgeInsets.only(top: 15.r),
+                                decoration: BoxDecoration(
+                                  color: widget.primaryColor,
+                                  borderRadius: BorderRadius.circular(3.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: widget.primaryColor,
+                                      blurRadius: 15,
+                                      spreadRadius: 1,
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ],
-                          ),
-                        ),
                       ),
                     ],
                   ),

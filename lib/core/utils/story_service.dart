@@ -780,11 +780,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'modalsselection': [
       "",
-      "Nice work! Conquering modals is a huge step forward.",
-      "You are decoding modals with impressive accuracy.",
-      "Halfway to 100! You are handling modals effortlessly.",
-      "Level 100! You are an absolute master of modals.",
-      "Level 200 reached! Your grasp of modals is legendary.",
+      "Great job! You're starting to get the hang of these subtle words.",
+      "You're getting faster! Choosing the right tone is feeling much more natural.",
+      "Level 50! You're picking up on the tiny emotional details in every sentence.",
+      "Level 100! You can pick the perfect word without even thinking about it.",
+      "Level 200! Your instinct for exactly what to say is completely native.",
     ],
     'prepositionchoice': [
       "",

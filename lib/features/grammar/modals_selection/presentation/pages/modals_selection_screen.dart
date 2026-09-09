@@ -71,6 +71,18 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _pendingJigsaw.value = true;
+
+      // Auto-scroll to show the second stage (TypeToConfirm Jigsaw) at the bottom
+      Future.delayed(const Duration(milliseconds: 150), () {
+        if (!mounted) return;
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.easeOutCubic,
+          );
+        }
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -102,9 +114,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
     Color primaryColor,
     bool isDark,
   ) {
-    final parts = template.contains("____")
-        ? template.split("____")
-        : template.split("___");
+    final parts = template.split(RegExp(r'_{3,}'));
     List<InlineSpan> spans = [];
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(text: parts[i]));
@@ -148,6 +158,189 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
     return spans;
   }
 
+  Widget _buildGrammarRule(String rule, Color primaryColor) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.lightbulb_outline, color: primaryColor, size: 18.sp),
+              SizedBox(width: 8.w),
+              Text(
+                "GRAMMAR RULE",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  color: primaryColor,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.2,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 6.h),
+          Text(
+            rule,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              color: primaryColor.withValues(alpha: 0.8),
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
+    ).animate().fadeIn(duration: 400.ms);
+  }
+
+  Widget _buildContextCard(
+    GrammarQuest quest,
+    List<String> options,
+    Color primaryColor,
+    bool isDark,
+  ) {
+    return ListenableBuilder(
+      listenable: _selectedIndex,
+      builder: (context, _) {
+        return Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(22.r),
+          margin: EdgeInsets.symmetric(horizontal: 24.w),
+          decoration: BoxDecoration(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.05)
+                : Colors.black.withValues(alpha: 0.03),
+            borderRadius: BorderRadius.circular(28.r),
+            border: Border.all(
+              color: primaryColor.withValues(alpha: 0.15),
+              width: 1.5,
+            ),
+          ),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 20.sp,
+                color: isDark ? Colors.white : Colors.black87,
+                height: 1.5,
+              ),
+              children: _buildSentenceWithBlank(
+                quest.question ?? "___ sentence.",
+                options[_selectedIndex.value],
+                primaryColor,
+                isDark,
+              ),
+            ),
+          ),
+        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0);
+      },
+    );
+  }
+
+  Widget _buildSubmitButton(GrammarQuest quest, Color primaryColor) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: ScaleButton(
+        onTap: () => _submitAnswer(quest.correctAnswerIndex ?? 0),
+        child: Container(
+          width: double.infinity,
+          height: 65.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(22.r),
+            gradient: LinearGradient(
+              colors: [primaryColor, primaryColor.withValues(alpha: 0.8)],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.3),
+                blurRadius: 15,
+                offset: const Offset(0, 5),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              "LOCK CONFIGURATION",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+                letterSpacing: 2,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildResult(GameQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect.value == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Container(
+        padding: EdgeInsets.all(24.r),
+        decoration: BoxDecoration(
+          color: displayColor.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(
+            color: displayColor.withValues(alpha: 0.3),
+            width: 2,
+          ),
+        ),
+        child: Column(
+          children: [
+            Icon(
+              correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
+              color: displayColor,
+              size: 40.r,
+            ),
+            SizedBox(height: 12.h),
+            Text(
+              correct
+                  ? context
+                        .tr('games.correct', fallback: 'Correct')
+                        .toUpperCase()
+                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: displayColor,
+                letterSpacing: 2,
+              ),
+            ),
+            if (quest.explanation != null) ...[
+              SizedBox(height: 12.h),
+              Text(
+                quest.explanation!,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    ).animate().shimmer(duration: 2.seconds);
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -189,28 +382,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
             : null;
         final options = quest?.options ?? ["CAN", "COULD", "MUST", "SHOULD"];
 
-        String cleanTargetSentence = "";
-        if (quest != null) {
-          final sentence = quest.sentence ?? quest.question ?? "";
-          String fullSentence = sentence;
-          if (sentence.contains("___")) {
-            fullSentence = sentence.replaceFirst(
-              RegExp(r'_{3,}'),
-              options[_selectedIndex.value],
-            );
-          }
-          cleanTargetSentence = fullSentence
-              .replaceAll(RegExp(r'\s+'), ' ')
-              .trim();
-        }
-
         return ListenableBuilder(
           listenable: Listenable.merge([
             _isAnswered,
             _isCorrect,
             _showConfetti,
-            _selectedIndex,
-            _pendingJigsaw,
           ]),
           builder: (context, _) {
             return GrammarBaseLayout(
@@ -221,498 +397,167 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
               isCorrect: _isCorrect.value,
               isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
               showConfetti: _showConfetti.value,
-              useScrolling:
-                  false, // Stack needs finite space to anchor to bottom
+              useScrolling: false, // Using our own CustomScrollView
               onContinue: () =>
                   context.read<GrammarBloc>().add(const NextQuestion()),
               onHint: () =>
                   context.read<GrammarBloc>().add(const GrammarHintUsed()),
               child: quest == null
                   ? const SizedBox()
-                  : LayoutBuilder(
-                      builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              crossAxisMargin: 2,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: false,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: Builder(
-                                            builder: (context) {
-                                              final maxHeight =
-                                                  constraints.maxHeight;
-                                              final isCompact = maxHeight < 580;
-
-                                              final double
-                                              estimatedContentHeight =
-                                                  (isCompact ? 30.h : 40.h) +
-                                                  (isCompact ? 50.h : 80.h) +
-                                                  (isCompact ? 180.r : 280.r) +
-                                                  (isCompact ? 40.h : 65.h) +
-                                                  40.h;
-                                              final remainingHeight =
-                                                  maxHeight -
-                                                  estimatedContentHeight;
-
-                                              final double gapUnit =
-                                                  remainingHeight > 0
-                                                  ? remainingHeight / 5
-                                                  : 0;
-                                              final double gapTop =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(
-                                                      4.0,
-                                                      15.0,
-                                                    )
-                                                  : 4.0;
-                                              final double gapMiddle =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(
-                                                      6.0,
-                                                      20.0,
-                                                    )
-                                                  : 6.0;
-                                              final double gapBottom =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(
-                                                      10.0,
-                                                      30.0,
-                                                    )
-                                                  : 10.0;
-
-                                              return Column(
-                                                children: [
-                                                  SizedBox(height: gapTop),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: ModalsSelectionInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                            ),
-                                                          ),
-                                                        )
-                                                      : ModalsSelectionInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                        ),
-                                                  SizedBox(height: gapMiddle),
-
-                                                  if (quest.modalMeaning !=
-                                                      null) ...[
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 16.w,
-                                                            vertical: 6.h,
-                                                          ),
-                                                      decoration: BoxDecoration(
-                                                        color: theme
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: 0.1,
-                                                            ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              12.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.3,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      child: Column(
-                                                        children: [
-                                                          Text(
-                                                            "MEANING: ${quest.modalMeaning!.toUpperCase()}",
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 12.sp,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              letterSpacing:
-                                                                  1.2,
-                                                            ),
-                                                          ),
-                                                          SizedBox(height: 4.h),
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              Text(
-                                                                "LOW (might) ",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color: theme
-                                                                      .primaryColor
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.6,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Icon(
-                                                                Icons
-                                                                    .arrow_right_alt,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                size: 16.sp,
-                                                              ),
-                                                              Text(
-                                                                " HIGH (must)",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color: theme
-                                                                      .primaryColor
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.6,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ).animate().fadeIn(
-                                                      duration: 400.ms,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
-                                                  ],
-
-                                                  // Context Card with Fill-in-the-Blank
-                                                  Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 24.w,
-                                                            ),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                isCompact
-                                                                    ? 14.r
-                                                                    : 22.r,
-                                                              ),
-                                                          decoration: BoxDecoration(
-                                                            color: isDark
-                                                                ? Colors.white
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.05,
-                                                                      )
-                                                                : Colors.black
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.03,
-                                                                      ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  isCompact
-                                                                      ? 18.r
-                                                                      : 28.r,
-                                                                ),
-                                                            border: Border.all(
-                                                              color: theme
-                                                                  .primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.15,
-                                                                  ),
-                                                              width: 1.5,
-                                                            ),
-                                                          ),
-                                                          child: RichText(
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            text: TextSpan(
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    isCompact
-                                                                    ? 15.sp
-                                                                    : 20.sp,
-                                                                color: isDark
-                                                                    ? Colors
-                                                                          .white
-                                                                    : Colors
-                                                                          .black87,
-                                                                height: 1.5,
-                                                              ),
-                                                              children: _buildSentenceWithBlank(
-                                                                quest.question ??
-                                                                    "___ sentence.",
-                                                                options[_selectedIndex
-                                                                    .value],
-                                                                theme
-                                                                    .primaryColor,
-                                                                isDark,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 600.ms)
-                                                      .slideY(
-                                                        begin: 0.2,
-                                                        end: 0,
-                                                      ),
-
-                                                  // Result Feedback
-                                                  if (_isAnswered.value) ...[
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 8.h
-                                                          : 24.h,
-                                                    ),
-                                                    _buildResult(
-                                                      quest,
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      isCompact,
-                                                    ),
-                                                  ],
-
-                                                  // Rotary Dial
-                                                  Expanded(
-                                                    child: ModalsRotaryDial(
-                                                      options: options,
-                                                      isAnswered:
-                                                          _isAnswered.value ||
-                                                          _pendingJigsaw.value,
-                                                      isDark: isDark,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      onSelectionChanged:
-                                                          (index) {
-                                                            if (_isAnswered
-                                                                    .value ||
-                                                                _pendingJigsaw
-                                                                    .value) {
-                                                              return;
-                                                            }
-                                                            _selectedIndex
-                                                                    .value =
-                                                                index;
-                                                          },
-                                                      isCompact: isCompact,
-                                                    ),
-                                                  ),
-
-                                                  // Submit Button
-                                                  if (!_isAnswered.value &&
-                                                      !_pendingJigsaw.value)
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 40.w,
-                                                          ),
-                                                      child: ScaleButton(
-                                                        onTap: () => _submitAnswer(
-                                                          quest.correctAnswerIndex ??
-                                                              0,
-                                                        ),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          height: isCompact
-                                                              ? 48.h
-                                                              : 65.h,
-                                                          decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  isCompact
-                                                                      ? 14.r
-                                                                      : 22.r,
-                                                                ),
-                                                            gradient: LinearGradient(
-                                                              colors: [
-                                                                theme
-                                                                    .primaryColor,
-                                                                theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.8,
-                                                                    ),
-                                                              ],
-                                                            ),
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                color: theme
-                                                                    .primaryColor
-                                                                    .withValues(
-                                                                      alpha:
-                                                                          0.3,
-                                                                    ),
-                                                                blurRadius: 15,
-                                                                offset:
-                                                                    const Offset(
-                                                                      0,
-                                                                      5,
-                                                                    ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          child: Center(
-                                                            child: Text(
-                                                              "LOCK CONFIGURATION",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize:
-                                                                    isCompact
-                                                                    ? 12.sp
-                                                                    : 14.sp,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w900,
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    2,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-
-                                                  SizedBox(height: gapBottom),
-                                                ],
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
+                  : Stack(
+                      children: [
+                        RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          crossAxisMargin: 2,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(vertical: 20.h),
+                                sliver: SliverList(
+                                  delegate: SliverChildListDelegate([
+                                    ModalsSelectionInstruction(
+                                      primaryColor: theme.primaryColor,
                                     ),
-                                  ),
-                                            if (_pendingJigsaw.value &&
-                                !_isAnswered.value &&
-                                cleanTargetSentence.isNotEmpty)
-            SliverToBoxAdapter(
-              child: TypeToConfirmOverlay(
-                                expectedText: cleanTargetSentence,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                isPositioned: false,
-                                displayText:
-                                    "Type the full sentence to lock it in",
-                              ),
-            ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: MediaQuery.of(context).viewInsets.bottom > 0
-                  ? MediaQuery.of(context).viewInsets.bottom + 40.h
-                  : 60.h,
-            ),
-          ),
-        ],
-                              ),
-                            ),
+                                    SizedBox(height: 24.h),
 
-                          ],
-                        );
-                      },
+                                    if (quest.grammarRule != null) ...[
+                                      _buildGrammarRule(
+                                        quest.grammarRule!,
+                                        theme.primaryColor,
+                                      ),
+                                      SizedBox(height: 24.h),
+                                    ],
+
+                                    _buildContextCard(
+                                      quest,
+                                      options,
+                                      theme.primaryColor,
+                                      isDark,
+                                    ),
+
+                                    ListenableBuilder(
+                                      listenable: _isAnswered,
+                                      builder: (context, _) {
+                                        if (_isAnswered.value) {
+                                          return Column(
+                                            children: [
+                                              SizedBox(height: 24.h),
+                                              _buildResult(
+                                                quest,
+                                                theme.primaryColor,
+                                                isDark,
+                                              ),
+                                            ],
+                                          );
+                                        }
+                                        return const SizedBox.shrink();
+                                      },
+                                    ),
+
+                                    SizedBox(height: 32.h),
+
+                                    Center(
+                                      child: ModalsRotaryDial(
+                                        options: options,
+                                        isAnsweredNotifier: _isAnswered,
+                                        pendingJigsawNotifier: _pendingJigsaw,
+                                        selectedIndexNotifier: _selectedIndex,
+                                        correctAnswerIndex:
+                                            quest.correctAnswerIndex ?? 0,
+                                        isDark: isDark,
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+
+                                    SizedBox(height: 32.h),
+
+                                    ListenableBuilder(
+                                      listenable: Listenable.merge([
+                                        _isAnswered,
+                                        _pendingJigsaw,
+                                      ]),
+                                      builder: (context, _) {
+                                        if (!_isAnswered.value &&
+                                            !_pendingJigsaw.value) {
+                                          return _buildSubmitButton(
+                                            quest,
+                                            theme.primaryColor,
+                                          );
+                                        }
+                                        return const SizedBox.shrink();
+                                      },
+                                    ),
+                                  ]),
+                                ),
+                              ),
+                              ListenableBuilder(
+                                listenable: Listenable.merge([
+                                  _pendingJigsaw,
+                                  _isAnswered,
+                                ]),
+                                builder: (context, _) {
+                                  if (_pendingJigsaw.value &&
+                                      !_isAnswered.value) {
+                                    final sentence =
+                                        quest.sentence ?? quest.question ?? "";
+                                    String fullSentence = sentence;
+                                    if (sentence.contains(RegExp(r'_{3,}'))) {
+                                      fullSentence = sentence.replaceFirst(
+                                        RegExp(r'_{3,}'),
+                                        options[_selectedIndex.value],
+                                      );
+                                    }
+                                    final cleanTargetSentence = fullSentence
+                                        .replaceAll(RegExp(r'\s+'), ' ')
+                                        .trim();
+
+                                    if (cleanTargetSentence.isNotEmpty) {
+                                      return SliverToBoxAdapter(
+                                        child: TypeToConfirmOverlay(
+                                          expectedText: cleanTargetSentence,
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () =>
+                                              _submitFinalAnswer(true),
+                                          onSkipped: () =>
+                                              _submitFinalAnswer(false),
+                                          isPositioned: false,
+                                          displayText:
+                                              "Type the full sentence to lock it in",
+                                        ),
+                                      );
+                                    }
+                                  }
+                                  return const SliverToBoxAdapter(
+                                    child: SizedBox.shrink(),
+                                  );
+                                },
+                              ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 60.h,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
             );
           },
         );
       },
     );
-  }
-
-  Widget _buildResult(
-    GameQuest quest,
-    Color primaryColor,
-    bool isDark,
-    bool isCompact,
-  ) {
-    final bool correct = _isCorrect.value == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Container(
-        padding: EdgeInsets.all(isCompact ? 12.r : 24.r),
-        decoration: BoxDecoration(
-          color: displayColor.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-          border: Border.all(
-            color: displayColor.withValues(alpha: 0.3),
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Icon(
-              correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-              color: displayColor,
-              size: isCompact ? 24.r : 40.r,
-            ),
-            SizedBox(height: isCompact ? 4.h : 12.h),
-            Text(
-              correct
-                  ? context
-                        .tr('games.correct', fallback: 'Correct')
-                        .toUpperCase()
-                  : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: isCompact ? 12.sp : 16.sp,
-                fontWeight: FontWeight.w900,
-                color: displayColor,
-                letterSpacing: 2,
-              ),
-            ),
-            if (!isCompact && quest.explanation != null) ...[
-              SizedBox(height: 12.h),
-              Text(
-                quest.explanation!,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  color: isDark ? Colors.white60 : Colors.black54,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }
