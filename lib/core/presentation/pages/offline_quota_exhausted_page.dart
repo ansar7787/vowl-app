@@ -56,15 +56,17 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
     if (mounted) _stateHash.value++;
   }
 
+  bool _lastAdState = false;
+
   @override
   void initState() {
     super.initState();
+    _lastAdState = di.sl<AdService>().isRewardedAdLoaded;
     _adPollTimer = Timer.periodic(const Duration(seconds: 2), (_) {
       if (!mounted) return;
-      final adService = di.sl<AdService>();
-      final isLoaded = adService.isRewardedAdLoaded;
-      if (isLoaded) {
-        _adPollTimer?.cancel(); // Stop polling once ad is ready
+      final isLoaded = di.sl<AdService>().isRewardedAdLoaded;
+      if (isLoaded != _lastAdState) {
+        _lastAdState = isLoaded;
         _updateState();
       }
     });

@@ -159,71 +159,80 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
         }
         _wasOffline = isOffline;
 
-        return ValueListenableBuilder(
-          valueListenable: _refreshTrigger,
-          builder: (context, _, child) {
-            return ValueListenableBuilder<String>(
-              valueListenable: _currentLocation,
-              builder: (context, currentLocation, child) {
-                // 1. Check if offline quota is exhausted
-                final bool isQuotaExhausted = gate.isOfflineQuotaExhausted;
+        return ListenableBuilder(
+          listenable: gate,
+          builder: (context, _) {
+            return ValueListenableBuilder(
+              valueListenable: _refreshTrigger,
+              builder: (context, _, child) {
+                return ValueListenableBuilder<String>(
+                  valueListenable: _currentLocation,
+                  builder: (context, currentLocation, child) {
+                    // 1. Check if offline quota is exhausted
+                    final bool isQuotaExhausted = gate.isOfflineQuotaExhausted;
 
-                // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
-                final bool shouldShowQuotaBlock =
-                    isOffline &&
-                    isQuotaExhausted &&
-                    !_nonGameplayRoutes.contains(currentLocation);
+                    // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
+                    final bool shouldShowQuotaBlock =
+                        isOffline &&
+                        isQuotaExhausted &&
+                        !_nonGameplayRoutes.contains(currentLocation);
 
-                // 3. Soft banner: offline but within grace period, not on silent route
-                final bool shouldShowBanner =
-                    isOffline &&
-                    !shouldShowQuotaBlock &&
-                    !_offlineSilentRoutes.contains(currentLocation);
+                    // 3. Soft banner: offline but within grace period, not on silent route
+                    final bool shouldShowBanner =
+                        isOffline &&
+                        !shouldShowQuotaBlock &&
+                        !_offlineSilentRoutes.contains(currentLocation);
 
-                return Stack(
-                  textDirection: TextDirection.ltr,
-                  children: [
-                    widget.child,
-                    Positioned.fill(
-                      child: AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 400),
-                        switchInCurve: Curves.easeInOut,
-                        switchOutCurve: Curves.easeInOut,
-                        transitionBuilder:
-                            (Widget child, Animation<double> animation) {
-                              return FadeTransition(
-                                opacity: animation,
-                                child: child,
-                              );
-                            },
-                        child: shouldShowQuotaBlock
-                            ? OfflineQuotaExhaustedPage(
-                                key: const ValueKey('connectivity_quota_block'),
-                                onRetry: _handleRetry,
-                                onAdWatched: _handleAdWatchedOffline,
-                                onClose: () {
-                                  if (AppRouter.router.canPop()) {
-                                    AppRouter.router.pop();
-                                  } else {
-                                    AppRouter.router.go(AppRouter.homeRoute);
-                                  }
+                    return Stack(
+                      textDirection: TextDirection.ltr,
+                      children: [
+                        widget.child,
+                        Positioned.fill(
+                          child: AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 400),
+                            switchInCurve: Curves.easeInOut,
+                            switchOutCurve: Curves.easeInOut,
+                            transitionBuilder:
+                                (Widget child, Animation<double> animation) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: child,
+                                  );
                                 },
-                              )
-                            : const SizedBox.shrink(
-                                key: ValueKey('connectivity_clear'),
-                              ),
-                      ),
-                    ),
-                    if (shouldShowBanner)
-                      const Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        child: OfflineBanner(
-                          key: ValueKey('connectivity_soft_banner'),
+                            child: shouldShowQuotaBlock
+                                ? OfflineQuotaExhaustedPage(
+                                    key: const ValueKey(
+                                      'connectivity_quota_block',
+                                    ),
+                                    onRetry: _handleRetry,
+                                    onAdWatched: _handleAdWatchedOffline,
+                                    onClose: () {
+                                      if (AppRouter.router.canPop()) {
+                                        AppRouter.router.pop();
+                                      } else {
+                                        AppRouter.router.go(
+                                          AppRouter.homeRoute,
+                                        );
+                                      }
+                                    },
+                                  )
+                                : const SizedBox.shrink(
+                                    key: ValueKey('connectivity_clear'),
+                                  ),
+                          ),
                         ),
-                      ),
-                  ],
+                        if (shouldShowBanner)
+                          const Positioned(
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            child: OfflineBanner(
+                              key: ValueKey('connectivity_soft_banner'),
+                            ),
+                          ),
+                      ],
+                    );
+                  },
                 );
               },
             );

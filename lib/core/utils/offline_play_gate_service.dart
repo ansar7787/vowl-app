@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Tracks and limits offline gameplay for free (non-premium) users.
@@ -27,7 +28,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// The counter and timestamp are persisted to [SharedPreferences] so that
 /// force-killing the app does not reset the quota. If the stored timestamp
 /// is older than 24 hours the quota auto-resets on [init].
-class OfflinePlayGateService {
+class OfflinePlayGateService extends ChangeNotifier {
   OfflinePlayGateService._();
   static final OfflinePlayGateService instance = OfflinePlayGateService._();
 
@@ -74,8 +75,7 @@ class OfflinePlayGateService {
     final storedTimestamp = prefs.getInt(_kOfflineTimestampKey);
 
     if (storedTimestamp != null) {
-      final storedTime =
-          DateTime.fromMillisecondsSinceEpoch(storedTimestamp);
+      final storedTime = DateTime.fromMillisecondsSinceEpoch(storedTimestamp);
       final elapsed = DateTime.now().difference(storedTime);
 
       if (elapsed.inHours >= 24) {
@@ -95,6 +95,7 @@ class OfflinePlayGateService {
   bool recordOfflineLevel() {
     _offlineLevelsPlayed++;
     _persist();
+    notifyListeners();
     return isOfflineQuotaExhausted;
   }
 
@@ -118,6 +119,7 @@ class OfflinePlayGateService {
     _offlineLevelsPlayed = 0;
     _pendingReconnectAdReset = false;
     _persist(clear: true);
+    notifyListeners();
   }
 
   /// Grants additional offline plays after watching a rewarded ad.
@@ -131,6 +133,7 @@ class OfflinePlayGateService {
     );
     _pendingReconnectAdReset = false;
     _persist();
+    notifyListeners();
   }
 
   /// Persists the current counter and timestamp to [SharedPreferences].
