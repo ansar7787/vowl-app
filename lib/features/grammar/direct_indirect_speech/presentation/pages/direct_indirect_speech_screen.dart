@@ -16,7 +16,6 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/direct_indirect_speech/presentation/widgets/direct_indirect_speech_instruction.dart';
 import 'package:vowl/features/grammar/direct_indirect_speech/presentation/widgets/direct_indirect_speech_mirror.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 
 class DirectIndirectSpeechScreen extends StatefulWidget {
   final int level;
@@ -224,361 +223,119 @@ class _DirectIndirectSpeechScreenState
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        return Stack(
-                          children: [
-                            RawScrollbar(
-                              controller: _scrollController,
-                              thumbColor: theme.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                              radius: Radius.circular(8.r),
-                              thickness: 4.w,
-                              crossAxisMargin: 2,
-                              child: CustomScrollView(
-                                controller: _scrollController,
-                                physics: (!_isFirstStagePassed.value)
-                                    ? const NeverScrollableScrollPhysics()
-                                    : const BouncingScrollPhysics(),
-                                slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: IgnorePointer(
-                                      ignoring: _isFirstStagePassed.value,
-                                      child: Column(
-                                        children: [
-                                          Expanded(
-                                            child: Builder(
-                                              builder: (context) {
-                                                final maxHeight =
-                                                    constraints.maxHeight;
-                                                final isCompact =
-                                                    maxHeight < 580;
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 600;
 
-                                                final double
-                                                estimatedContentHeight =
-                                                    (isCompact ? 30.h : 40.h) +
-                                                    (isCompact
-                                                        ? 130.h
-                                                        : 180.h) +
-                                                    (isCompact ? 30.h : 50.h) +
-                                                    40.h;
-                                                final remainingHeight =
-                                                    maxHeight -
-                                                    estimatedContentHeight;
-
-                                                final double gapUnit =
-                                                    remainingHeight > 0
-                                                    ? remainingHeight / 5
-                                                    : 0;
-                                                final double gapTop =
-                                                    remainingHeight > 0
-                                                    ? (gapUnit * 1).clamp(
-                                                        4.0,
-                                                        15.0,
-                                                      )
-                                                    : 4.0;
-                                                final double gapMiddle =
-                                                    remainingHeight > 0
-                                                    ? (gapUnit * 1.5).clamp(
-                                                        6.0,
-                                                        20.0,
-                                                      )
-                                                    : 6.0;
-                                                final double gapBottom =
-                                                    remainingHeight > 0
-                                                    ? (gapUnit * 2.5).clamp(
-                                                        10.0,
-                                                        30.0,
-                                                      )
-                                                    : 10.0;
-
-                                                return Column(
-                                                  children: [
-                                                    SizedBox(height: gapTop),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 25.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: DirectIndirectSpeechInstruction(
-                                                                primaryColor: theme
-                                                                    .primaryColor,
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : DirectIndirectSpeechInstruction(
-                                                            primaryColor: theme
-                                                                .primaryColor,
-                                                          ),
-                                                    SizedBox(height: gapMiddle),
-
-                                                    if (quest.changesList !=
-                                                            null &&
-                                                        quest
-                                                            .changesList!
-                                                            .isNotEmpty) ...[
-                                                      Container(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 16.w,
-                                                              vertical: 8.h,
-                                                            ),
-                                                        decoration: BoxDecoration(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.1,
-                                                              ),
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                16.r,
-                                                              ),
-                                                          border: Border.all(
-                                                            color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.3,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                        child: Column(
-                                                          children: [
-                                                            Text(
-                                                              "REQUIRED CHANGES",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize: 12.sp,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                letterSpacing:
-                                                                    1.2,
-                                                              ),
-                                                            ),
-                                                            SizedBox(
-                                                              height: 6.h,
-                                                            ),
-                                                            Wrap(
-                                                              alignment:
-                                                                  WrapAlignment
-                                                                      .center,
-                                                              spacing: 12.w,
-                                                              runSpacing: 4.h,
-                                                              children: quest.changesList!.map((
-                                                                change,
-                                                              ) {
-                                                                final parts =
-                                                                    change
-                                                                        .split(
-                                                                          '->',
-                                                                        );
-                                                                if (parts
-                                                                        .length !=
-                                                                    2) {
-                                                                  return Text(
-                                                                    change,
-                                                                    style: TextStyle(
-                                                                      fontSize:
-                                                                          10.sp,
-                                                                      color: theme
-                                                                          .primaryColor,
-                                                                    ),
-                                                                  );
-                                                                }
-                                                                return Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .min,
-                                                                  children: [
-                                                                    Text(
-                                                                      parts[0]
-                                                                          .trim(),
-                                                                      style: TextStyle(
-                                                                        fontSize:
-                                                                            11.sp,
-                                                                        color: theme
-                                                                            .primaryColor,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                      ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsets.symmetric(
-                                                                        horizontal:
-                                                                            4.w,
-                                                                      ),
-                                                                      child: Icon(
-                                                                        Icons
-                                                                            .arrow_forward_rounded,
-                                                                        size: 12
-                                                                            .sp,
-                                                                        color: theme
-                                                                            .primaryColor
-                                                                            .withValues(
-                                                                              alpha: 0.6,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                    Text(
-                                                                      parts[1]
-                                                                          .trim(),
-                                                                      style: TextStyle(
-                                                                        fontSize:
-                                                                            11.sp,
-                                                                        color: theme
-                                                                            .primaryColor,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                );
-                                                              }).toList(),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ).animate().fadeIn(
-                                                        duration: 400.ms,
-                                                      ),
-                                                      SizedBox(
-                                                        height: isCompact
-                                                            ? 12.h
-                                                            : 20.h,
-                                                      ),
-                                                    ],
-
-                                                    // Holographic Mirror
-                                                    DirectIndirectSpeechMirror(
-                                                      rotation: _rotation.value,
-                                                      directText: displayDirect,
-                                                      indirectText:
-                                                          displayIndirect,
-                                                      isCorrect:
-                                                          _isCorrect.value,
-                                                      isDark: isDark,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isCompact: isCompact,
-                                                    ),
-
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 30.h,
-                                                    ),
-
-                                                    // Reflection Options
-                                                    Expanded(
-                                                      child: SingleChildScrollView(
-                                                        physics:
-                                                            const BouncingScrollPhysics(),
-                                                        child: Column(
-                                                          children: [
-                                                            Wrap(
-                                                              alignment:
-                                                                  WrapAlignment
-                                                                      .center,
-                                                              spacing: isCompact
-                                                                  ? 8.w
-                                                                  : 12.w,
-                                                              runSpacing:
-                                                                  isCompact
-                                                                  ? 8.h
-                                                                  : 12.h,
-                                                              children: List.generate(
-                                                                options.length,
-                                                                (
-                                                                  i,
-                                                                ) => _buildReflectionChip(
-                                                                  options[i],
-                                                                  i,
-                                                                  quest.correctAnswerIndex ??
-                                                                      0,
-                                                                  theme
-                                                                      .primaryColor,
-                                                                  isDark,
-                                                                  isCompact,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            if (_isAnswered
-                                                                .value) ...[
-                                                              SizedBox(
-                                                                height:
-                                                                    isCompact
-                                                                    ? 12.h
-                                                                    : 30.h,
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsets.symmetric(
-                                                                      horizontal:
-                                                                          24.w,
-                                                                    ),
-                                                                child: _buildCorrectResult(
-                                                                  quest,
-                                                                  theme
-                                                                      .primaryColor,
-                                                                  isDark,
-                                                                  isCompact,
-                                                                ),
-                                                              ),
-                                                            ],
-                                                            SizedBox(
-                                                              height: gapBottom,
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
-                                          ? 180.h
-                                          : 60.h,
-                                    ),
-                                  ),
-                                  if (_isFirstStagePassed.value &&
-                                      !_isAnswered.value)
-                                    SliverToBoxAdapter(
-                                      child: Column(
-                                        children: [
-                                          TypeToConfirmOverlay(
-                                            expectedText:
-                                                options[_selectedReflection
-                                                    .value],
-                                            primaryColor: theme.primaryColor,
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(true),
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(false),
-                                            isPositioned: false,
-                                            displayText:
-                                                "Type the indirect speech to lock it in",
-                                          ),
-                                          SizedBox(height: 60.h),
-                                        ],
-                                      ),
-                                    ),
-                                ],
-                              ),
+                        return RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          crossAxisMargin: 2,
+                          child: CustomScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(
+                              parent: AlwaysScrollableScrollPhysics(),
                             ),
-                          ],
+                            slivers: [
+                              SliverToBoxAdapter(
+                                child: Column(
+                                  children: [
+                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 25.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child:
+                                                  DirectIndirectSpeechInstruction(
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                  ),
+                                            ),
+                                          )
+                                        : DirectIndirectSpeechInstruction(
+                                            primaryColor: theme.primaryColor,
+                                          ),
+                                    SizedBox(height: isCompact ? 12.h : 20.h),
+                                    if (quest.grammarRule != null ||
+                                        (quest.changesList != null &&
+                                            quest.changesList!.isNotEmpty)) ...[
+                                      _buildRuleAndChangesBox(
+                                        quest,
+                                        theme,
+                                        isCompact,
+                                      ),
+                                      SizedBox(height: isCompact ? 12.h : 20.h),
+                                    ],
+                                    DirectIndirectSpeechMirror(
+                                      rotation: _rotation.value,
+                                      directText: displayDirect,
+                                      indirectText: displayIndirect,
+                                      isCorrect: _isCorrect.value,
+                                      isDark: isDark,
+                                      primaryColor: theme.primaryColor,
+                                      isCompact: isCompact,
+                                    ),
+                                    SizedBox(height: isCompact ? 16.h : 30.h),
+                                    Wrap(
+                                      alignment: WrapAlignment.center,
+                                      spacing: isCompact ? 8.w : 12.w,
+                                      runSpacing: isCompact ? 8.h : 12.h,
+                                      children: List.generate(
+                                        options.length,
+                                        (i) => _buildReflectionChip(
+                                          options[i],
+                                          i,
+                                          quest.correctAnswerIndex ?? 0,
+                                          theme.primaryColor,
+                                          isDark,
+                                          isCompact,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      (_isFirstStagePassed.value &&
+                                          !_isAnswered.value)
+                                      ? 32.h
+                                      : 60.h,
+                                ),
+                              ),
+                              if (_isFirstStagePassed.value &&
+                                  !_isAnswered.value)
+                                SliverToBoxAdapter(
+                                  child: TypeToConfirmOverlay(
+                                    expectedText:
+                                        options[_selectedReflection.value],
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () =>
+                                        _submitVerbalEvaluation(true),
+                                    onSkipped: () =>
+                                        _submitVerbalEvaluation(false),
+                                    isPositioned: false,
+                                    displayText:
+                                        "Type the indirect speech to lock it in",
+                                  ),
+                                ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 120.h,
+                                ),
+                              ),
+                            ],
+                          ),
                         );
                       },
                     ),
@@ -587,6 +344,99 @@ class _DirectIndirectSpeechScreenState
         );
       },
     );
+  }
+
+  Widget _buildRuleAndChangesBox(
+    GrammarQuest quest,
+    ThemeResult theme,
+    bool isCompact,
+  ) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: theme.primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+      ),
+      child: Column(
+        children: [
+          if (quest.grammarRule != null)
+            Text(
+              quest.grammarRule!.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: isCompact ? 10.sp : 12.sp,
+                color: theme.primaryColor,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 1.2,
+              ),
+            ),
+          if (quest.grammarRule != null &&
+              quest.changesList != null &&
+              quest.changesList!.isNotEmpty)
+            SizedBox(height: 8.h),
+          if (quest.changesList != null && quest.changesList!.isNotEmpty)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: quest.changesList!.map((change) {
+                final parts = change.split('->');
+                if (parts.length != 2) {
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: 4.h),
+                    child: Text(
+                      change,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: isCompact ? 9.sp : 11.sp,
+                        color: theme.primaryColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  );
+                }
+                return Padding(
+                  padding: EdgeInsets.only(bottom: 4.h),
+                  child: Wrap(
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Text(
+                        parts[0].trim(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 9.sp : 11.sp,
+                          color: theme.primaryColor,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        child: Icon(
+                          Icons.arrow_forward_rounded,
+                          size: isCompact ? 10.sp : 12.sp,
+                          color: theme.primaryColor.withValues(alpha: 0.6),
+                        ),
+                      ),
+                      Text(
+                        parts[1].trim(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 9.sp : 11.sp,
+                          color: theme.primaryColor,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
+        ],
+      ),
+    ).animate().fadeIn(duration: 400.ms);
   }
 
   Widget _buildReflectionChip(
@@ -598,8 +448,32 @@ class _DirectIndirectSpeechScreenState
     bool isCompact,
   ) {
     final isSelected = _selectedReflection.value == index;
-    final isCorrect = _isAnswered.value && index == correctIndex;
+    final isCorrect =
+        (_isAnswered.value || _isFirstStagePassed.value) &&
+        index == correctIndex;
     final isWrong = _isAnswered.value && isSelected && index != correctIndex;
+
+    final displayColor = isCorrect
+        ? Colors.greenAccent
+        : (isWrong
+              ? Colors.redAccent
+              : (isSelected
+                    ? primaryColor
+                    : (isDark ? Colors.white : Colors.black87)));
+
+    final bgColor = isCorrect
+        ? Colors.greenAccent.withValues(alpha: 0.2)
+        : (isWrong
+              ? Colors.redAccent.withValues(alpha: 0.2)
+              : (isSelected ? primaryColor.withValues(alpha: 0.2) : null));
+
+    final borderColor = isCorrect
+        ? Colors.greenAccent
+        : (isWrong
+              ? Colors.redAccent
+              : (isSelected
+                    ? primaryColor
+                    : Colors.white.withValues(alpha: 0.1)));
 
     return ScaleButton(
       onTap: () => _onReflectionSelect(index, correctIndex),
@@ -607,98 +481,46 @@ class _DirectIndirectSpeechScreenState
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 24.w),
         child: GlassTile(
-          padding: EdgeInsets.all(isCompact ? 12.r : 20.r),
-          borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-          color: isCorrect
-              ? Colors.greenAccent.withValues(alpha: 0.2)
-              : (isWrong
-                    ? Colors.redAccent.withValues(alpha: 0.2)
-                    : (isSelected
-                          ? primaryColor.withValues(alpha: 0.2)
-                          : null)),
-          border: Border.all(
-            color: isCorrect
-                ? Colors.greenAccent
-                : (isWrong
-                      ? Colors.redAccent
-                      : (isSelected
-                            ? primaryColor
-                            : Colors.white.withValues(alpha: 0.1))),
-            width: 2,
+          padding: EdgeInsets.symmetric(
+            horizontal: isCompact ? 16.w : 24.w,
+            vertical: isCompact ? 12.h : 20.h,
           ),
-          child: Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: isCompact ? 13.sp : 15.sp,
-              fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
-              color: isCorrect
-                  ? Colors.greenAccent
-                  : (isWrong
-                        ? Colors.redAccent
-                        : (isDark ? Colors.white : Colors.black87)),
-              height: 1.4,
-            ),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(isCompact ? 16.r : 24.r),
+            topRight: Radius.circular(isCompact ? 16.r : 24.r),
+            bottomLeft: Radius.circular(isCompact ? 16.r : 24.r),
+            bottomRight: Radius.circular(4.r), // Speech bubble tail
+          ),
+          color: bgColor,
+          border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
+          child: Row(
+            children: [
+              Icon(
+                isCorrect
+                    ? Icons.check_circle_rounded
+                    : (isWrong
+                          ? Icons.cancel_rounded
+                          : Icons.chat_bubble_outline_rounded),
+                size: isCompact ? 18.r : 24.r,
+                color: displayColor.withValues(alpha: 0.8),
+              ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: isCompact ? 14.sp : 16.sp,
+                    fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+                    color: displayColor,
+                    height: 1.4,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
     );
-  }
-
-  Widget _buildCorrectResult(
-    GrammarQuest quest,
-    Color primaryColor,
-    bool isDark,
-    bool isCompact,
-  ) {
-    final bool correct = _isCorrect.value == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(isCompact ? 10.r : 20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(isCompact ? 16.r : 24.r),
-        border: Border.all(
-          color: displayColor.withValues(alpha: 0.3),
-          width: 2,
-        ),
-      ),
-      child: Column(
-        children: [
-          Icon(
-            correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
-            color: displayColor,
-            size: isCompact ? 24.r : 36.r,
-          ),
-          SizedBox(height: isCompact ? 4.h : 10.h),
-          Text(
-            correct
-                ? context.tr('games.correct', fallback: 'Correct').toUpperCase()
-                : context.tr('games.incorrect_caps', fallback: 'INCORRECT'),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: isCompact ? 12.sp : 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (!isCompact && quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }
