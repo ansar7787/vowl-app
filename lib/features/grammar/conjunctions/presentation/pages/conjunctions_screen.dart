@@ -550,18 +550,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                     ),
                                   ),
                                   SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          MediaQuery.of(
-                                                context,
-                                              ).viewInsets.bottom >
-                                              0
-                                          ? MediaQuery.of(
-                                                  context,
-                                                ).viewInsets.bottom +
-                                                40.h
-                                          : 60.h,
-                                    ),
+                                    child: SizedBox(height: 60.h),
                                   ),
                                   if (_pendingJigsaw.value &&
                                       !_isAnswered.value &&
