@@ -26,7 +26,6 @@ void main() {
 
       final result = ListeningQuestModel.fromJson(jsonMap, tId);
 
-      
       expect(result.transcript, 'Test transcript');
     });
   });

@@ -171,10 +171,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        context.tr(
-                          'premium.need_help',
-                          fallback: 'Need help?',
-                        ),
+                        context.tr('premium.need_help', fallback: 'Need help?'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -190,7 +187,8 @@ class PremiumFailureOverlay extends StatelessWidget {
                             path: 'support@vowl.app',
                             queryParameters: {
                               'subject': 'Premium Payment Issue',
-                              'body': 'Hi, I made a payment but my premium was not activated. Please help.',
+                              'body':
+                                  'Hi, I made a payment but my premium was not activated. Please help.',
                             },
                           );
                           launchUrl(uri);

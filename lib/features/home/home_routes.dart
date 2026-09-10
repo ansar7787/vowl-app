@@ -2,7 +2,6 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/navigation_helpers.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-
 import 'package:vowl/features/splash/presentation/pages/splash_page.dart';
 import 'package:vowl/features/onboarding/presentation/pages/hatching_page.dart';
 import 'package:vowl/features/home/presentation/pages/main_wrapper.dart';
@@ -166,6 +165,5 @@ class HomeRoutes {
         state: state,
       ),
     ),
-
   ];
 }

@@ -165,7 +165,10 @@ class RazorpayPaymentService implements PaymentService {
   }
 
   @override
-  Future<Map<String, dynamic>> createOrder({String? planId, String? packId}) async {
+  Future<Map<String, dynamic>> createOrder({
+    String? planId,
+    String? packId,
+  }) async {
     assert(planId != null || packId != null, 'Must provide planId or packId');
     try {
       final result = await functions

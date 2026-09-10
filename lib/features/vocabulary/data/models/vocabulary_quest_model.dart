@@ -22,7 +22,8 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.synonym,
     super.antonym,
     super.contextSentence,
-    super.explanation,    super.passage,
+    super.explanation,
+    super.passage,
     super.synonyms,
     super.antonyms,
     super.textToSpeak,
@@ -123,7 +124,8 @@ class VocabularyQuestModel extends VocabularyQuest {
               ? "Synthesis complete. The root was modified to form the correct word class."
               : (subtype == GameSubtype.topicVocab
                     ? "Nexus synced. This term is core to the topic's data structure."
-                    : null)),      passage: map['passage'] ?? map['contextSentence'] ?? map['text'],
+                    : null)),
+      passage: map['passage'] ?? map['contextSentence'] ?? map['text'],
       synonyms: map['synonyms'] != null
           ? List<String>.from(map['synonyms'])
           : null,
@@ -201,7 +203,8 @@ class VocabularyQuestModel extends VocabularyQuest {
       'synonym': synonym,
       'antonym': antonym,
       'contextSentence': contextSentence,
-      'explanation': explanation,      'passage': passage,
+      'explanation': explanation,
+      'passage': passage,
       'synonyms': synonyms,
       'antonyms': antonyms,
       'textToSpeak': textToSpeak,

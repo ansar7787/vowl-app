@@ -9,7 +9,6 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
   final List<String> options;
   final int correct;
   final Color color;
-  final String tts;
   final String? emoji;
   final double rotation;
   final int? selectedIndex;
@@ -24,7 +23,6 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
     required this.options,
     required this.correct,
     required this.color,
-    required this.tts,
     this.emoji,
     required this.rotation,
     required this.selectedIndex,
@@ -47,8 +45,8 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
           children: [
             // Orbital Ring
             Container(
-              width: 300.r,
-              height: 300.r,
+              width: 220.r,
+              height: 220.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -66,10 +64,20 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                 height: 100.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: color,
+                  color: isCorrectState == true
+                      ? Colors.greenAccent
+                      : (Theme.of(context).brightness == Brightness.dark
+                            ? color.withValues(alpha: 0.2)
+                            : Colors.white),
+                  border: Border.all(
+                    color: isCorrectState == true ? Colors.greenAccent : color,
+                    width: 4,
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: color.withValues(alpha: 0.4),
+                      color: isCorrectState == true
+                          ? Colors.greenAccent.withValues(alpha: 0.4)
+                          : color.withValues(alpha: 0.4),
                       blurRadius: 20,
                     ),
                   ],
@@ -83,7 +91,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                       )
                     : Icon(
                         Icons.graphic_eq_rounded,
-                        color: Colors.white,
+                        color: isCorrectState == true ? Colors.black87 : color,
                         size: 50.r,
                       ),
               ),
@@ -93,7 +101,7 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
             ...List.generate(options.length, (index) {
               double angle =
                   (index * (2 * 3.14159 / options.length)) + rotation;
-              double radius = 130.r;
+              double radius = 110.r;
               return Align(
                 alignment: Alignment.center,
                 child: Transform.translate(
@@ -114,22 +122,6 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                 ),
               );
             }),
-
-            // Target Zone
-            Positioned(
-              top: 40.h,
-              child:
-                  Container(
-                        width: 40.w,
-                        height: 10.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white24,
-                          borderRadius: BorderRadius.circular(5.r),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .shimmer(duration: 1.seconds),
-            ),
           ],
         ),
       ),

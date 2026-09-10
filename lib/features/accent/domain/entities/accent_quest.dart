@@ -4,7 +4,8 @@ class AccentQuest extends GameQuest {
   final String? word;
   final String? phoneticHint;
   final String? prompt;
-  final String? sampleAnswer;  final List<String>? words;
+  final String? sampleAnswer;
+  final List<String>? words;
   final List<int>? intonationMap;
   final List<String>? syllables;
   final double? targetSpeed;
@@ -60,7 +61,8 @@ class AccentQuest extends GameQuest {
     super.visualConfig,
     this.prompt,
     this.sampleAnswer,
-    super.explanation,    this.words,
+    super.explanation,
+    this.words,
     this.intonationMap,
     this.syllables,
     this.targetSpeed,
@@ -122,7 +124,8 @@ class AccentQuest extends GameQuest {
     String? textToSpeak,
     String? prompt,
     String? sampleAnswer,
-    String? explanation,    List<String>? words,
+    String? explanation,
+    List<String>? words,
     List<int>? intonationMap,
     List<String>? syllables,
     double? targetSpeed,
@@ -180,7 +183,8 @@ class AccentQuest extends GameQuest {
       textToSpeak: textToSpeak ?? this.textToSpeak,
       prompt: prompt ?? this.prompt,
       sampleAnswer: sampleAnswer ?? this.sampleAnswer,
-      explanation: explanation ?? this.explanation,      words: words ?? this.words,
+      explanation: explanation ?? this.explanation,
+      words: words ?? this.words,
       intonationMap: intonationMap ?? this.intonationMap,
       syllables: syllables ?? this.syllables,
       targetSpeed: targetSpeed ?? this.targetSpeed,

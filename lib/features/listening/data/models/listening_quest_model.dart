@@ -16,7 +16,8 @@ class ListeningQuestModel extends ListeningQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
-    super.visualConfig,    super.question,
+    super.visualConfig,
+    super.question,
     super.statement,
     super.textWithBlanks,
     super.audioOptions,
@@ -29,7 +30,8 @@ class ListeningQuestModel extends ListeningQuest {
     super.location,
     super.shuffledSentences,
     super.correctOrder,
-    super.explanation,    super.emoji,
+    super.explanation,
+    super.emoji,
     super.distractorWords,
     super.pauseMarkers,
     super.evidenceQuote,
@@ -86,7 +88,8 @@ class ListeningQuestModel extends ListeningQuest {
           ? VisualConfig.fromJson(
               Map<String, dynamic>.from(map['visual_config'] as Map),
             )
-          : null,      question:
+          : null,
+      question:
           map['question'] as String? ??
           map['sentence'] as String? ??
           map['statement'] as String?,
@@ -117,7 +120,8 @@ class ListeningQuestModel extends ListeningQuest {
                 .map((e) => int.tryParse(e.toString()) ?? 0)
                 .toList()
           : null,
-      explanation: map['explanation'] as String?,      emoji: map['emoji'] as String?,
+      explanation: map['explanation'] as String?,
+      emoji: map['emoji'] as String?,
       distractorWords: parseStringList(map['distractorWords']),
       pauseMarkers: map['pauseMarkers'] != null
           ? (map['pauseMarkers'] as List)
@@ -149,7 +153,8 @@ class ListeningQuestModel extends ListeningQuest {
       'options': options,
       'correctAnswerIndex': correctAnswerIndex,
       'correctAnswer': correctAnswer,
-      'hint': hint,      'question': question,
+      'hint': hint,
+      'question': question,
       'statement': statement,
       'textWithBlanks': textWithBlanks,
       'audioOptions': audioOptions,
@@ -160,7 +165,8 @@ class ListeningQuestModel extends ListeningQuest {
       'location': location,
       'shuffledSentences': shuffledSentences,
       'correctOrder': correctOrder,
-      'explanation': explanation,      'emoji': emoji,
+      'explanation': explanation,
+      'emoji': emoji,
       'distractorWords': distractorWords,
       'pauseMarkers': pauseMarkers,
       'evidenceQuote': evidenceQuote,

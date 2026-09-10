@@ -24,7 +24,8 @@ class AccentQuestModel extends AccentQuest {
     super.textToSpeak,
     super.prompt,
     super.sampleAnswer,
-    super.explanation,    super.words,
+    super.explanation,
+    super.words,
     super.intonationMap,
     super.syllables,
     super.targetSpeed,
@@ -123,7 +124,8 @@ class AccentQuestModel extends AccentQuest {
       ),
       prompt: getString(map['prompt'] ?? map['question'] ?? map['instruction']),
       sampleAnswer: getString(map['sampleAnswer']),
-      explanation: getString(map['explanation']),      words: parseStringList(map['words']),
+      explanation: getString(map['explanation']),
+      words: parseStringList(map['words']),
       intonationMap: map['intonationMap'] != null
           ? (map['intonationMap'] as List)
                 .map((e) => int.tryParse(e.toString()) ?? 0)
@@ -191,7 +193,8 @@ class AccentQuestModel extends AccentQuest {
       'textToSpeak': textToSpeak,
       'prompt': prompt,
       'sampleAnswer': sampleAnswer,
-      'explanation': explanation,      'words': words,
+      'explanation': explanation,
+      'words': words,
       'intonationMap': intonationMap,
       'syllables': syllables,
       'targetSpeed': targetSpeed,

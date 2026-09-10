@@ -126,7 +126,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
   Widget _buildCentralVisual(KidsQuest quest, {bool isHighlighted = false}) {
     final displayValue = widget.centerTextOverride ?? quest.question ?? "?";
     final isEmoji = _isEmoji(displayValue);
-    
+
     return Stack(
           alignment: Alignment.center,
           clipBehavior: Clip.none,
@@ -160,22 +160,19 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
                     child: Text(
-                            displayValue,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: _getCentralFontSize(
-                                displayValue,
-                                isEmoji,
-                              ),
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFF1E293B),
-                              letterSpacing: isEmoji ? 4 : 0,
-                              height: 1.0,
-                            ),
-                            textAlign: TextAlign.center,
-                            softWrap: false,
-                            overflow: TextOverflow.visible,
-                          ),
+                      displayValue,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: _getCentralFontSize(displayValue, isEmoji),
+                        fontWeight: FontWeight.w900,
+                        color: const Color(0xFF1E293B),
+                        letterSpacing: isEmoji ? 4 : 0,
+                        height: 1.0,
+                      ),
+                      textAlign: TextAlign.center,
+                      softWrap: false,
+                      overflow: TextOverflow.visible,
+                    ),
                   ),
                 ),
               ),
@@ -361,4 +358,3 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     return 24.sp;
   }
 }
-

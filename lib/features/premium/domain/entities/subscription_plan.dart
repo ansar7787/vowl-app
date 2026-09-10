@@ -135,8 +135,17 @@ class SubscriptionPlan {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(id, name, price, oldPrice, days, tag, color, displayOrder, currency);
+  int get hashCode => Object.hash(
+    id,
+    name,
+    price,
+    oldPrice,
+    days,
+    tag,
+    color,
+    displayOrder,
+    currency,
+  );
 
   @override
   String toString() => 'SubscriptionPlan($name, $currency $price)';

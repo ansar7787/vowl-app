@@ -53,10 +53,13 @@ class GameInstructionService {
       fallback: baseBriefing.actionText,
     );
 
-    final tipFallback = level == 100
-        ? "🏆 MILESTONE: You've reached Level 100! This is an Elite Mastery test. Show us your best! ${baseBriefing.tip}"
-        : baseBriefing.tip;
-    final tip = context.tr('instructions.$baseKey.tip', fallback: tipFallback);
+    final rawTip = context.tr(
+      'instructions.$baseKey.tip',
+      fallback: baseBriefing.tip,
+    );
+    final tip = level == 100
+        ? "🏆 MILESTONE: You've reached Level 100! This is an Elite Mastery test. Show us your best! $rawTip"
+        : rawTip;
 
     final translatedRules = baseBriefing.rules
         .asMap()
@@ -489,17 +492,18 @@ class GameInstructionService {
           "PRO TIP: Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
     ),
     GameSubtype.audioMultipleChoice: GameBriefing(
-      title: "Sonic Satellites",
+      title: "Missing Word Spinner",
       icon: Icons.track_changes_rounded,
       objective:
-          "Listen to the audio passage and select the correct answer. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+          "Listen carefully to the audio and find the word that belongs in the blank. Picking out missing words trains your ears to naturally separate fast, native speech.",
       rules: [
-        "Spin satellites",
-        "Listen to speaker",
-        "Select correct data match",
+        "Tap the center to listen",
+        "Spin to pick the missing word",
+        "Tap the word in the text to prove it",
       ],
-      actionText: "Lock Signal",
-      tip: "Filter out noise and focus entirely on the speaker's main message.",
+      actionText: "Let's Go!",
+      tip:
+          "PRO TIP: Don't just guess! After picking your answer, you'll need to tap that exact word in the transcript to prove you heard it.",
     ),
     GameSubtype.audioSentenceOrder: GameBriefing(
       title: "Timeline Scrubber",

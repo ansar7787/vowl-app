@@ -26,30 +26,44 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final isSelected = selectedIndex == index;
     final isCorrect = isAnswered && index == correct && isCorrectState == true;
     final isWrong = isAnswered && isSelected && isCorrectState == false;
-    final tileColor = isCorrect
-        ? Colors.greenAccent
-        : (isWrong ? Colors.redAccent : (isSelected ? Colors.white : color));
+
+    Color getBgColor() {
+      if (isCorrect) return Colors.greenAccent;
+      if (isWrong) return Colors.redAccent;
+      if (isSelected) return isDark ? Colors.black87 : Colors.white;
+      return isDark ? color.withValues(alpha: 0.2) : Colors.white;
+    }
+
+    Color getBorderColor() {
+      if (isCorrect) return Colors.greenAccent;
+      if (isWrong) return Colors.redAccent;
+      if (isSelected) return color;
+      return color.withValues(alpha: 0.5);
+    }
+
+    Color getTextColor() {
+      if (isCorrect) return Colors.black87;
+      if (isWrong) return Colors.white;
+      if (isSelected) return color;
+      return isDark ? Colors.white : color;
+    }
 
     return ScaleButton(
       onTap: onTap,
       child: Container(
-        width: 80.r,
-        height: 80.r,
+        width: 100.r,
+        height: 100.r,
         padding: EdgeInsets.all(8.r),
         decoration: BoxDecoration(
-          color: tileColor.withValues(alpha: 0.2),
+          color: getBgColor(),
           shape: BoxShape.circle,
-          border: Border.all(color: tileColor, width: 2),
+          border: Border.all(color: getBorderColor(), width: 2),
           boxShadow: isSelected
-              ? [
-                  BoxShadow(
-                    color: tileColor.withValues(alpha: 0.5),
-                    blurRadius: 15,
-                  ),
-                ]
+              ? [BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 15)]
               : [],
         ),
         child: Center(
@@ -58,9 +72,10 @@ class AudioMultipleChoiceSatellite extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w800,
+              color: getTextColor(),
+              height: 1.2,
             ),
           ),
         ),

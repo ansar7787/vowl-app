@@ -8,7 +8,8 @@ class KidsQuestModel extends KidsQuest {
     required super.instruction,
     super.question,
     super.correctAnswer,
-    super.options,    super.metadata,
+    super.options,
+    super.metadata,
     super.painter,
     super.shader,
     super.emoji,
@@ -39,7 +40,8 @@ class KidsQuestModel extends KidsQuest {
           json['instruction'] as String? ?? 'Look and find the answer!',
       question: json['question'] as String?,
       correctAnswer: json['correctAnswer'] as String?,
-      options: parseStringList(json['options']),      metadata: json['metadata'] != null
+      options: parseStringList(json['options']),
+      metadata: json['metadata'] != null
           ? Map<String, dynamic>.from(json['metadata'] as Map)
           : null,
       painter: json['painter'] as String?,
@@ -64,7 +66,8 @@ class KidsQuestModel extends KidsQuest {
       'instruction': instruction,
       'question': question,
       'correctAnswer': correctAnswer,
-      'options': options,      'metadata': metadata,
+      'options': options,
+      'metadata': metadata,
       'painter': painter,
       'shader': shader,
       'emoji': emoji,

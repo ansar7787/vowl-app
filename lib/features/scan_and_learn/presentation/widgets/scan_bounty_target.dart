@@ -107,7 +107,8 @@ class ScanBountyTarget extends StatelessWidget {
                       Tooltip(
                         message: context.tr(
                           'translation.bounty_info',
-                          fallback: 'Scan real-world text that contains this word to earn bonus XP and Coins! A new word appears each scan.',
+                          fallback:
+                              'Scan real-world text that contains this word to earn bonus XP and Coins! A new word appears each scan.',
                         ),
                         preferBelow: true,
                         child: Padding(

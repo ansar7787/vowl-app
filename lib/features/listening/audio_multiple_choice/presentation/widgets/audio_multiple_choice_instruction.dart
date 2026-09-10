@@ -22,21 +22,20 @@ class AudioMultipleChoiceInstruction extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.track_changes_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Flexible(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                instruction.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
-                  color: color,
-                  letterSpacing: 1.5,
-                ),
+            child: Text(
+              instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 1.5,
               ),
             ),
           ),
