@@ -53,7 +53,7 @@ class MlMonetizationController {
 
     // Free users see the upsell dialog.
     if (!context.mounted) return;
-    showModalBottomSheet(
+    final result = await showModalBottomSheet<String>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
@@ -66,6 +66,23 @@ class MlMonetizationController {
         onSuccess: onSuccess,
       ),
     );
+
+    if (!context.mounted) return;
+
+    if (result == 'premium') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const PremiumScreen()),
+      );
+    } else if (result == 'ad') {
+      di.sl<AdService>().showRewardedAd(
+        context: context,
+        isPremium: false,
+        childSafe: isKidsZone,
+        onUserEarnedReward: (_) => onSuccess(),
+        onDismissed: () {},
+      );
+    }
   }
 }
 
@@ -169,11 +186,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
               // ── Premium button ──────────────────────────────────────
               ScaleButton(
                 onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const PremiumScreen()),
-                  );
+                  Navigator.pop(context, 'premium');
                 },
                 child: Container(
                   width: double.infinity,
@@ -222,14 +235,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
               // ── Watch Ad button ─────────────────────────────────────
               ScaleButton(
                 onTap: () {
-                  Navigator.pop(context);
-                  di.sl<AdService>().showRewardedAd(
-                    context: context,
-                    isPremium: false,
-                    childSafe: isKidsZone,
-                    onUserEarnedReward: (_) => onSuccess(),
-                    onDismissed: () {},
-                  );
+                  Navigator.pop(context, 'ad');
                 },
                 child: Container(
                   width: double.infinity,

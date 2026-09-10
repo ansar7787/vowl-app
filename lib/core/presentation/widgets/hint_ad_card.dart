@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/reward_limit_service.dart';
 
 /// Glassmorphic card that rewards users with a Strategic Hint after watching
 /// a rewarded video ad.
@@ -29,6 +30,22 @@ class HintAdCard extends StatefulWidget {
 
 class _HintAdCardState extends State<HintAdCard> {
   final ValueNotifier<bool> _isLoading = ValueNotifier(false);
+  int _remainingClaims = RewardLimitService.maxClaimsPerDay;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLimits();
+  }
+
+  Future<void> _loadLimits() async {
+    final claims = await RewardLimitService.getRemainingClaims('hints');
+    if (mounted) {
+      setState(() {
+        _remainingClaims = claims;
+      });
+    }
+  }
 
   @override
   void dispose() {
@@ -37,7 +54,7 @@ class _HintAdCardState extends State<HintAdCard> {
   }
 
   Future<void> _showHintAd() async {
-    if (_isLoading.value) return;
+    if (_isLoading.value || _remainingClaims <= 0) return;
     _isLoading.value = true;
 
     bool rewardEarned = false;
@@ -49,21 +66,26 @@ class _HintAdCardState extends State<HintAdCard> {
         isPremium: isPremium,
         onHintEarned: () {
           rewardEarned = true;
-          if (!context.mounted) return;
-          context.read<EconomyBloc>().add(
-            const EconomyPurchaseHintRequested(0, hintAmount: 1),
-          );
         },
-        onDismissed: () {
-          if (rewardEarned && context.mounted) {
-            CustomSnackBar.show(
-              context: context,
-              message: context.tr(
-                'games.hint_earned_snack',
-                fallback: 'Hint Earned! +1 Strategic Hint',
-              ),
-              type: CustomSnackBarType.success,
-            );
+        onDismissed: () async {
+          if (rewardEarned) {
+            await RewardLimitService.incrementClaimCount('hints');
+            if (mounted) await _loadLimits();
+
+            if (mounted) {
+              context.read<EconomyBloc>().add(
+                const EconomyPurchaseHintRequested(0, hintAmount: 1),
+              );
+
+              CustomSnackBar.show(
+                context: context,
+                message: context.tr(
+                  'games.hint_earned_snack',
+                  fallback: 'Hint Earned! +1 Strategic Hint',
+                ),
+                type: CustomSnackBarType.success,
+              );
+            }
           }
         },
       );
@@ -75,6 +97,7 @@ class _HintAdCardState extends State<HintAdCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
 
     return RepaintBoundary(
       child: Container(
@@ -90,10 +113,15 @@ class _HintAdCardState extends State<HintAdCard> {
             children: [
               Text(
                 (widget.title ??
-                        context.tr(
-                          'games.watch_earn_hints_title',
-                          fallback: 'WATCH AND EARN HINTS',
-                        ))
+                        (isPremium
+                            ? context.tr(
+                                'games.claim_free_hints_title',
+                                fallback: 'CLAIM FREE HINTS',
+                              )
+                            : context.tr(
+                                'games.watch_earn_hints_title',
+                                fallback: 'WATCH AND EARN HINTS',
+                              )))
                     .toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -155,15 +183,30 @@ class _HintAdCardState extends State<HintAdCard> {
                   ValueListenableBuilder<bool>(
                     valueListenable: _isLoading,
                     builder: (context, loading, child) {
+                      final isLimitReached =
+                          !isPremium && _remainingClaims <= 0;
+                      final isDisabled = loading || isLimitReached;
+
                       return Semantics(
                         button: true,
-                        enabled: !loading,
-                        label: context.tr(
-                          'games.hint_semantic_label',
-                          fallback: 'Watch ad to earn a strategic hint',
-                        ),
+                        enabled: !isDisabled,
+                        label: isPremium
+                            ? context.tr(
+                                'games.hint_semantic_claim_label',
+                                fallback: 'Claim a free strategic hint',
+                              )
+                            : (isLimitReached
+                                  ? context.tr(
+                                      'games.limit_reached_semantic',
+                                      fallback: 'Daily limit reached',
+                                    )
+                                  : context.tr(
+                                      'games.hint_semantic_label',
+                                      fallback:
+                                          'Watch ad to earn a strategic hint',
+                                    )),
                         child: ScaleButton(
-                          onTap: loading ? null : _showHintAd,
+                          onTap: isDisabled ? null : _showHintAd,
                           child: Container(
                             padding: EdgeInsets.symmetric(
                               horizontal: 16.w,
@@ -171,7 +214,7 @@ class _HintAdCardState extends State<HintAdCard> {
                             ),
                             constraints: BoxConstraints(minHeight: 48.h),
                             decoration: BoxDecoration(
-                              gradient: loading
+                              gradient: isDisabled
                                   ? null
                                   : const LinearGradient(
                                       colors: [
@@ -179,13 +222,13 @@ class _HintAdCardState extends State<HintAdCard> {
                                         Color(0xFFD97706),
                                       ],
                                     ),
-                              color: loading
+                              color: isDisabled
                                   ? const Color(
                                       0xFFF59E0B,
                                     ).withValues(alpha: 0.4)
                                   : null,
                               borderRadius: BorderRadius.circular(20.r),
-                              boxShadow: loading
+                              boxShadow: isDisabled
                                   ? null
                                   : [
                                       BoxShadow(
@@ -205,17 +248,30 @@ class _HintAdCardState extends State<HintAdCard> {
                                 : Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Icon(
-                                        Icons.play_arrow_rounded,
-                                        color: Colors.white,
-                                        size: 20.r,
-                                      ),
-                                      SizedBox(width: 4.w),
-                                      Text(
-                                        context.tr(
-                                          'games.watch_button',
-                                          fallback: 'WATCH',
+                                      if (!isLimitReached)
+                                        Icon(
+                                          isPremium
+                                              ? Icons.redeem_rounded
+                                              : Icons.play_arrow_rounded,
+                                          color: Colors.white,
+                                          size: 20.r,
                                         ),
+                                      if (!isLimitReached) SizedBox(width: 4.w),
+                                      Text(
+                                        isLimitReached
+                                            ? context.tr(
+                                                'games.limit_button',
+                                                fallback: 'LIMIT REACHED',
+                                              )
+                                            : (isPremium
+                                                  ? context.tr(
+                                                      'games.claim_button',
+                                                      fallback: 'CLAIM',
+                                                    )
+                                                  : context.tr(
+                                                      'games.watch_button',
+                                                      fallback: 'WATCH',
+                                                    )),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 12.sp,

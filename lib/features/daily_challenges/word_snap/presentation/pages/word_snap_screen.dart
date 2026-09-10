@@ -138,20 +138,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
     _isAnswered.value = true;
     _markCompleted();
 
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-
-    if (!isPremium) {
-      final adService = di.sl<AdService>();
-      adService.recordLevelCompletion();
-      adService.showInterstitialAd(
-        isPremium: false,
-        onDismissed: () {
-          if (mounted) _grantRewards();
-        },
-      );
-    } else {
-      if (mounted) _grantRewards();
-    }
+    if (mounted) _grantRewards();
   }
 
   void _onBypassed() {

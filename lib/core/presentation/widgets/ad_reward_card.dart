@@ -227,7 +227,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     : const LinearGradient(
                                         colors: [
                                           Color(0xFF6366F1),
-                                          Color(0xFF6366F1),
+                                          Color(0xFF4F46E5),
                                         ],
                                       ),
                                 color: loading

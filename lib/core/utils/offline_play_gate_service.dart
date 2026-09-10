@@ -1,3 +1,5 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
 /// Tracks and limits offline gameplay for free (non-premium) users.
 ///
 /// ### Business Logic
@@ -20,9 +22,20 @@
 ///   loophole where a user could reset the counter without ever seeing an ad.
 /// - [resetQuotaAfterAd] is the sole reset method. There is intentionally
 ///   no "free" reset.
+///
+/// ### Persistence
+/// The counter and timestamp are persisted to [SharedPreferences] so that
+/// force-killing the app does not reset the quota. If the stored timestamp
+/// is older than 24 hours the quota auto-resets on [init].
 class OfflinePlayGateService {
   OfflinePlayGateService._();
   static final OfflinePlayGateService instance = OfflinePlayGateService._();
+
+  /// SharedPreferences key for the offline levels played counter.
+  static const String _kOfflineLevelsKey = 'offline_levels_played';
+
+  /// SharedPreferences key for the timestamp when offline play started.
+  static const String _kOfflineTimestampKey = 'offline_levels_timestamp';
 
   /// Maximum number of levels a free user can complete while offline
   /// before being required to reconnect or watch an ad.
@@ -48,10 +61,40 @@ class OfflinePlayGateService {
   /// Whether a reconnect-triggered ad reset is pending.
   bool get hasPendingReconnectReset => _pendingReconnectAdReset;
 
+  /// Loads the persisted counter from [SharedPreferences].
+  ///
+  /// If the stored timestamp is older than 24 hours the quota is
+  /// automatically reset to 0 — this prevents stale counters from
+  /// blocking users who haven't played in a long time.
+  ///
+  /// Should be called once during app startup (e.g. in `main()`).
+  Future<void> init() async {
+    final prefs = await SharedPreferences.getInstance();
+    final storedCount = prefs.getInt(_kOfflineLevelsKey) ?? 0;
+    final storedTimestamp = prefs.getInt(_kOfflineTimestampKey);
+
+    if (storedTimestamp != null) {
+      final storedTime =
+          DateTime.fromMillisecondsSinceEpoch(storedTimestamp);
+      final elapsed = DateTime.now().difference(storedTime);
+
+      if (elapsed.inHours >= 24) {
+        // Quota expired — auto-reset.
+        _offlineLevelsPlayed = 0;
+        await prefs.remove(_kOfflineLevelsKey);
+        await prefs.remove(_kOfflineTimestampKey);
+        return;
+      }
+    }
+
+    _offlineLevelsPlayed = storedCount;
+  }
+
   /// Records that a level was completed while offline.
   /// Returns `true` if the quota is now exhausted (should block further play).
   bool recordOfflineLevel() {
     _offlineLevelsPlayed++;
+    _persist();
     return isOfflineQuotaExhausted;
   }
 
@@ -74,6 +117,7 @@ class OfflinePlayGateService {
   void resetQuotaAfterAd() {
     _offlineLevelsPlayed = 0;
     _pendingReconnectAdReset = false;
+    _persist(clear: true);
   }
 
   /// Grants additional offline plays after watching a rewarded ad.
@@ -86,5 +130,27 @@ class OfflinePlayGateService {
       999,
     );
     _pendingReconnectAdReset = false;
+    _persist();
+  }
+
+  /// Persists the current counter and timestamp to [SharedPreferences].
+  ///
+  /// When [clear] is `true` the stored values are removed instead
+  /// (used after a full quota reset).
+  ///
+  /// Fire-and-forget — callers do not await this.
+  void _persist({bool clear = false}) {
+    SharedPreferences.getInstance().then((prefs) {
+      if (clear) {
+        prefs.remove(_kOfflineLevelsKey);
+        prefs.remove(_kOfflineTimestampKey);
+      } else {
+        prefs.setInt(_kOfflineLevelsKey, _offlineLevelsPlayed);
+        prefs.setInt(
+          _kOfflineTimestampKey,
+          DateTime.now().millisecondsSinceEpoch,
+        );
+      }
+    });
   }
 }

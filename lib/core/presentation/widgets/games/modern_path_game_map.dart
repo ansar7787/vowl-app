@@ -7,12 +7,11 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/utils/ad_service.dart';
+
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/games/modern_path_painter.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -336,17 +335,11 @@ class ModernPathGameMap extends StatelessWidget {
                   _showLockedFeedback(context, theme.primaryColor);
                   return;
                 }
-                final authState = context.read<AuthBloc>().state;
-                di.sl<AdService>().showInterstitialAd(
-                  onDismissed: () {
-                    if (context.mounted) {
-                      context.push(
-                        '/game?category=${Uri.encodeQueryComponent(categoryId)}&gameType=${Uri.encodeQueryComponent(gameType)}&level=$level',
-                      );
-                    }
-                  },
-                  isPremium: authState.user?.isPremium ?? false,
-                );
+                if (context.mounted) {
+                  context.push(
+                    '/game?category=${Uri.encodeQueryComponent(categoryId)}&gameType=${Uri.encodeQueryComponent(gameType)}&level=$level',
+                  );
+                }
               },
               child: ExcludeSemantics(
                 child: Container(

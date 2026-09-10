@@ -40,6 +40,15 @@ abstract class RemoteConfigService {
 
   /// Gets the difficulty modifier applied to level quest engines.
   double get levelDifficultyModifier;
+
+  /// Gets the dynamic maximum daily limit for rewarded ad claims.
+  int get dailyRewardLimit;
+
+  /// Cooldown between interstitial ads in minutes
+  int get interstitialCooldownMinutes;
+
+  /// Coin cost to purchase a hint
+  int get hintCoinCost;
 }
 
 /// Concrete implementation of [RemoteConfigService] integrated with Firebase Remote Config.
@@ -53,6 +62,10 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
   static const String keyLevelDifficultyModifier = 'level_difficulty_modifier';
   static const String keyCoinsPerVictory = 'coins_per_victory';
   static const String keyKidsCoinsPerVictory = 'kids_coins_per_victory';
+  static const String keyDailyRewardLimit = 'daily_reward_limit';
+  static const String keyInterstitialCooldownMinutes =
+      'interstitial_cooldown_minutes';
+  static const String keyHintCoinCost = 'hint_coin_cost';
 
   FirebaseRemoteConfigService(this._remoteConfig);
 
@@ -72,6 +85,9 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
         keyLevelDifficultyModifier: 1.0,
         keyCoinsPerVictory: 10,
         keyKidsCoinsPerVictory: 5,
+        keyDailyRewardLimit: 5,
+        keyInterstitialCooldownMinutes: 3,
+        keyHintCoinCost: 15,
       });
 
       // 2. Configure fetch settings (instantly flush caches in local dev mode)
@@ -115,4 +131,14 @@ class FirebaseRemoteConfigService implements RemoteConfigService {
   @override
   double get levelDifficultyModifier =>
       _remoteConfig.getDouble(keyLevelDifficultyModifier);
+
+  @override
+  int get dailyRewardLimit => _remoteConfig.getInt(keyDailyRewardLimit);
+
+  @override
+  int get interstitialCooldownMinutes =>
+      _remoteConfig.getInt(keyInterstitialCooldownMinutes);
+
+  @override
+  int get hintCoinCost => _remoteConfig.getInt(keyHintCoinCost);
 }

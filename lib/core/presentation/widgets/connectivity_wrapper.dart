@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/pages/offline_quota_exhausted_page.dart';
 import 'package:vowl/core/presentation/widgets/offline_banner.dart';
@@ -33,6 +35,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
   final ValueNotifier<String> _currentLocation = ValueNotifier('');
   final ValueNotifier<int> _refreshTrigger = ValueNotifier(0);
   bool _wasOffline = false;
+  bool _isShowingReconnectAd = false;
 
   /// Routes where the soft offline banner should be suppressed.
   static const _offlineSilentRoutes = <String>{
@@ -110,14 +113,20 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
   /// Called when the user comes back online after being offline.
   /// Shows an interstitial ad and then resets the offline quota.
   void _handleReconnectWithAd() {
+    if (_isShowingReconnectAd) return;
+
     final gate = OfflinePlayGateService.instance;
     if (!gate.hasPendingReconnectReset) return;
 
+    _isShowingReconnectAd = true;
+
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     final adService = di.sl<AdService>();
     adService.showInterstitialAd(
-      isPremium: false,
+      isPremium: isPremium,
       force: true, // Bypass frequency/cooldown gates on reconnect
       onDismissed: () {
+        _isShowingReconnectAd = false;
         gate.resetQuotaAfterAd();
         if (mounted) _refreshTrigger.value++;
       },

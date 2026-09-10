@@ -19,6 +19,7 @@ import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/consent_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -28,6 +29,7 @@ import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/production_guard.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
+import 'package:vowl/core/utils/offline_play_gate_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
@@ -102,6 +104,7 @@ void main() async {
   final FirebaseApp? firebaseApp = await firebaseFuture;
   final bool isSecure = await securityFuture;
   await ageGateFuture;
+  await OfflinePlayGateService.instance.init();
 
   if (firebaseApp != null) {
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
@@ -240,6 +243,7 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
     }
   }
 
+  await runSafe('ConsentService', () => ConsentService.requestConsent());
   await runSafe('AdService', () => di.sl<AdService>().init());
   await runSafe(
     'RemoteConfigService',

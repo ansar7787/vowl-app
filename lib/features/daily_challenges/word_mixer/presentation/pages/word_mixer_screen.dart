@@ -117,25 +117,13 @@ class _WordMixerScreenState extends State<WordMixerScreen> {
   }
 
   void _onSuccess() {
+    if (_isAnswered.value) return;
     _hapticService.success();
     _soundService.playCorrect();
     _isAnswered.value = true;
     _markCompleted();
 
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-
-    if (!isPremium) {
-      final adService = di.sl<AdService>();
-      adService.recordLevelCompletion();
-      adService.showInterstitialAd(
-        isPremium: false,
-        onDismissed: () {
-          if (mounted) _grantRewards();
-        },
-      );
-    } else {
-      _grantRewards();
-    }
+    if (mounted) _grantRewards();
   }
 
   void _onBypassed() {

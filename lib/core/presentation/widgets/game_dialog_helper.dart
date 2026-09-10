@@ -135,7 +135,18 @@ class GameDialogHelper {
               Navigator.of(dialogCtx).pop();
               if (context.mounted) {
                 context.read<AuthBloc>().add(const AuthRefreshUser());
-                Navigator.of(context).pop(popResult);
+
+                final adService = di.sl<AdService>();
+                adService.recordLevelCompletion();
+
+                adService.showInterstitialAd(
+                  isPremium: isPremium,
+                  onDismissed: () {
+                    if (context.mounted) {
+                      Navigator.of(context).pop(popResult);
+                    }
+                  },
+                );
               }
             },
             onAdAction: enableDoubleUp
@@ -166,6 +177,10 @@ class GameDialogHelper {
                         rewardEarned = true;
                       },
                       onDismissed: () {
+                        // They just watched a rewarded ad, so we definitely record the level
+                        // but we DO NOT show an interstitial.
+                        adService.recordLevelCompletion();
+
                         if (!context.mounted) return;
                         if (rewardEarned) {
                           context.read<EconomyBloc>().add(

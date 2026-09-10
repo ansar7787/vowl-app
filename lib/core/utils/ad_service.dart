@@ -6,6 +6,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/remote_config_service.dart';
+import 'dart:async';
 
 /// Manages interstitial and rewarded ad lifecycles for Vowl.
 ///
@@ -40,11 +43,28 @@ class AdService {
   int _completedLevelsSinceLastAd = 0;
 
   /// Show an interstitial every N completed levels.
-  static const int levelsPerInterstitial = 3;
+  /// Base value is 3, modulated by Remote Config `ad_frequency_multiplier`.
+  /// A multiplier of 2.0 means ads show twice as often (every 1.5 levels → rounds to 2).
+  /// A multiplier of 0.5 means ads show half as often (every 6 levels).
+  static int get levelsPerInterstitial {
+    try {
+      final multiplier = di.sl<RemoteConfigService>().adFrequencyMultiplier;
+      if (multiplier <= 0) return 3; // Safety: avoid division by zero
+      return (3 / multiplier).round().clamp(1, 10);
+    } catch (_) {
+      return 3; // Fallback if RemoteConfigService not yet registered
+    }
+  }
 
   /// Minimum cooldown between interstitials regardless of level count.
-  /// Reduced to 2 minutes to maximize revenue while remaining barely compliant.
-  static const int interstitialCooldownMinutes = 2;
+  /// Modulated by Remote Config to maximize revenue while remaining compliant.
+  static int get interstitialCooldownMinutes {
+    try {
+      return di.sl<RemoteConfigService>().interstitialCooldownMinutes;
+    } catch (_) {
+      return 3;
+    }
+  }
 
   static const int _maxFailedLoadAttempts = 3;
 
@@ -533,11 +553,38 @@ class AdService {
 
     final childSafeRequest = _buildAdRequest(forceChildSafe: true);
 
+    Timer? timeoutTimer;
+    bool hasCompleted = false;
+
+    timeoutTimer = Timer(const Duration(seconds: 10), () {
+      if (hasCompleted) return;
+      hasCompleted = true;
+      if (kDebugMode) {
+        debugPrint('AdService: Child-safe rewarded ad load timed out.');
+      }
+      if (context != null && context.mounted) {
+        CustomSnackBar.show(
+          context: context,
+          message:
+              'Ad is not ready yet. Please wait a few seconds and try again.',
+          type: CustomSnackBarType.error,
+        );
+      }
+      onDismissed();
+    });
+
     RewardedAd.load(
       adUnitId: adUnitId,
       request: childSafeRequest,
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
+          if (hasCompleted) {
+            ad.dispose();
+            return;
+          }
+          hasCompleted = true;
+          timeoutTimer?.cancel();
+
           if (_isDisposed) {
             ad.dispose();
             onDismissed();
@@ -568,6 +615,10 @@ class AdService {
           );
         },
         onAdFailedToLoad: (error) {
+          if (hasCompleted) return;
+          hasCompleted = true;
+          timeoutTimer?.cancel();
+
           if (kDebugMode) {
             debugPrint(
               'AdService: Child-safe rewarded load failed (${error.code}): ${error.message}',

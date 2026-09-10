@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -43,12 +44,36 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
   late final ValueNotifier<int> _stateHash = ValueNotifier(0);
 
+  /// Polls [AdService.isRewardedAdLoaded] every 2 seconds so the
+  /// "Watch Ad" button appears dynamically once a cached ad is ready.
+  Timer? _adPollTimer;
+
+  /// Fallback timeout that resets [_isLoadingAd] after 15 seconds
+  /// in case the ad SDK never fires onDismissed.
+  Timer? _loadingAdTimeout;
+
   void _updateState() {
     if (mounted) _stateHash.value++;
   }
 
   @override
+  void initState() {
+    super.initState();
+    _adPollTimer = Timer.periodic(const Duration(seconds: 2), (_) {
+      if (!mounted) return;
+      final adService = di.sl<AdService>();
+      final isLoaded = adService.isRewardedAdLoaded;
+      if (isLoaded) {
+        _adPollTimer?.cancel(); // Stop polling once ad is ready
+        _updateState();
+      }
+    });
+  }
+
+  @override
   void dispose() {
+    _adPollTimer?.cancel();
+    _loadingAdTimeout?.cancel();
     _stateHash.dispose();
     super.dispose();
   }
@@ -81,6 +106,16 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
     _isLoadingAd = true;
     _updateState();
+
+    // Fallback: reset loading state if ad SDK never fires onDismissed
+    _loadingAdTimeout?.cancel();
+    _loadingAdTimeout = Timer(const Duration(seconds: 15), () {
+      if (mounted) {
+        _isLoadingAd = false;
+        _updateState();
+      }
+    });
+
     adService.showRewardedAd(
       isPremium: false,
       onUserEarnedReward: (_) {
@@ -88,6 +123,7 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
         widget.onAdWatched();
       },
       onDismissed: () {
+        _loadingAdTimeout?.cancel();
         if (mounted) {
           _isLoadingAd = false;
           _updateState();

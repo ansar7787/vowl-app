@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/offline_play_gate_service.dart';
 
 /// A slim, non-blocking banner displayed at the top of the screen when
 /// the device loses internet connectivity during gameplay.
@@ -17,6 +18,8 @@ class OfflineBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final remaining = OfflinePlayGateService.instance.remainingOfflinePlays;
+    final max = OfflinePlayGateService.maxOfflineLevels;
 
     return SafeArea(
       bottom: false,
@@ -61,8 +64,9 @@ class OfflineBanner extends StatelessWidget {
                           Flexible(
                             child: Text(
                               context.tr(
-                                'connectivity.offline_banner',
-                                fallback: 'Playing offline',
+                                'connectivity.offline_banner_with_count',
+                                fallback:
+                                    'Playing offline • $remaining/$max plays left',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
