@@ -55,11 +55,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
-        _focusNode.requestFocus();
-      }
-    });
   }
 
   @override
@@ -466,7 +461,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                               child: Stack(
                                 children: [
                                   TextField(
-                                    autofocus: true,
                                     controller: _textController,
                                     focusNode: _focusNode,
                                     minLines: 1,
