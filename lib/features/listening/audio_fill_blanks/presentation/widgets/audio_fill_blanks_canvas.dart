@@ -74,9 +74,10 @@ class AudioFillBlanksCanvas extends StatelessWidget {
                   ),
                 ),
 
+              // Ensure the canvas is at least as tall as the blobs and wide enough
+              SizedBox(height: _kBlobSize.r, width: double.infinity),
+
               // ── Revealed text ─────────────────────────────────────────────
-              // PERF FIX: animate alpha directly on the text colour instead of
-              // wrapping in Opacity (avoids a compositing layer per frame).
               Text(
                 text,
                 textAlign: TextAlign.center,
@@ -90,7 +91,13 @@ class AudioFillBlanksCanvas extends StatelessWidget {
               ),
 
               // ── Ink blobs (shown while hidden) ────────────────────────────
-              if (revealProgress < 1.0) ..._buildBlobs(context),
+              if (revealProgress < 1.0)
+                Positioned.fill(
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: _buildBlobs(context),
+                  ),
+                ),
             ],
           ),
         ),
@@ -105,22 +112,10 @@ class AudioFillBlanksCanvas extends StatelessWidget {
         : Colors.black87.withValues(alpha: alpha);
 
     return List.generate(_kBlobCount, (i) {
-      // RESPONSIVENESS FIX: use Alignment instead of fixed left-offsets.
-      // Maps blob index to a fraction in [-1, 1] so blobs always fit inside
-      // the canvas regardless of device width.
-      //
-      //  i = 0 → x = -0.8  (10 % from left)
-      //  i = 1 → x = -0.4  (30 %)
-      //  i = 2 → x =  0.0  (centre)
-      //  i = 3 → x =  0.4  (70 %)
-      //  i = 4 → x =  0.8  (90 %)
       final xAlignment = (2.0 * (i + 0.5) / _kBlobCount) - 1.0;
-
       return Align(
         alignment: Alignment(xAlignment, 0),
         child: ExcludeSemantics(
-          // Each blob is decorative — the parent Semantics node already
-          // describes the canvas interaction for screen readers.
           child: RepaintBoundary(
             child: _InkBlob(color: blobColor, index: i),
           ),

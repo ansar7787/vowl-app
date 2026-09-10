@@ -478,15 +478,15 @@ class GameInstructionService {
       title: "Ink Decoder",
       icon: Icons.water_drop_rounded,
       objective:
-          "Listen to the audio feed and type the missing words in the transcript. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+          "Let's train your ears to catch every single word. Listen to the sentence, scratch the ink, and type exactly what you hear!",
       rules: [
-        "Smear the ink",
-        "Listen for the gap",
+        "Scratch the ink",
+        "Listen for the missing word",
         "Type exactly what you hear",
       ],
       actionText: "Start Decoding",
       tip:
-          "Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
+          "PRO TIP: Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
     ),
     GameSubtype.audioMultipleChoice: GameBriefing(
       title: "Sonic Satellites",

@@ -107,7 +107,7 @@ class StoryServiceImpl implements StoryService {
     'ambientId':
         "Listen closely to the background! Identifying everyday sounds helps you build real-world situational awareness.",
     'audioFillBlanks':
-        "Let's train your ears to catch every single word. Listen to the sentence and type out what you hear!",
+        "Let's train your ears to catch every single word! Listen to the sentence, scratch the ink, and type exactly what you hear.",
     'audioMultipleChoice':
         "Listening to a native speaker can be tricky! Let's practice picking out the exact message from the audio.",
     'audioSentenceOrder':
@@ -525,6 +525,7 @@ class StoryServiceImpl implements StoryService {
       "Level 100! You can now express yourself clearly in any conversation.",
       "Level 200 reached! Your speaking skills are truly advanced.",
     ],
+
     'listening': [
       "",
       "Good start! You are picking up on details much faster now.",
@@ -858,11 +859,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'audiofillblanks': [
       "",
-      "Great job! Mastering audio gaps is key to true fluency.",
-      "You are navigating audio gaps with increasing confidence.",
-      "Level 50! Your command of audio gaps is exceptional.",
-      "Centurion! You have conquered the complexities of audio gaps.",
-      "200 levels cleared! Your audio gaps abilities are unmatched globally.",
+      "Great start! You're catching words you would have missed before.",
+      "Your ears are getting sharper! You're hearing the hidden spaces.",
+      "Level 50! You're scratching away the ink like a true detective.",
+      "Level 100! Your hearing is incredible. You catch every single word effortlessly.",
+      "Level 200 reached! You are the ultimate decoder. Nothing gets past you!",
     ],
     'audiomultiplechoice': [
       "",

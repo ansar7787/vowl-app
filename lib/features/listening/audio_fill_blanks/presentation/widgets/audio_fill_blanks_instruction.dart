@@ -27,26 +27,30 @@ class AudioFillBlanksInstruction extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.r),
           border: Border.all(color: color.withValues(alpha: 0.2)),
         ),
-        child: Row(
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Decorative icon — semantics provided by parent container.
-            ExcludeSemantics(
-              child: Icon(Icons.water_drop_rounded, size: 14.r, color: color),
+            Text(
+              instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 1.2,
+              ),
             ),
-            SizedBox(width: 12.w),
-            Flexible(
-              child: Text(
-                instruction.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
-                  color: color,
-                  letterSpacing: 1.2,
-                ),
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
+            SizedBox(height: 4.h),
+            Text(
+              'SCRATCH THE INK TO REVEAL TRANSCRIPTION',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w700,
+                color: color.withValues(alpha: 0.7),
+                letterSpacing: 1.0,
               ),
             ),
           ],

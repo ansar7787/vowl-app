@@ -89,10 +89,19 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
 
   // â”€â”€ Gesture handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
+  double _lastHapticProgress = 0.0;
+
   void _onSmear(double delta) {
     if (_isAnswered.value) return;
-    _revealProgress.value = (_revealProgress.value + delta).clamp(0.0, 1.0);
-    if (_revealProgress.value > 0.05) _hapticService.selection();
+
+    final newProgress = (_revealProgress.value + delta).clamp(0.0, 1.0);
+    _revealProgress.value = newProgress;
+
+    // Play a haptic tick every 10% of reveal
+    if (newProgress - _lastHapticProgress > 0.1) {
+      _hapticService.selection();
+      _lastHapticProgress = newProgress;
+    }
   }
 
   // â”€â”€ Submit answer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -166,6 +175,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     _isAnswered.value = false;
     _isCorrect.value = null;
     _revealProgress.value = 0.0;
+    _lastHapticProgress = 0.0;
     _controller.clear();
   }
 
@@ -229,6 +239,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               useScrolling: false,
+              disablePadding: true,
               onContinue: () =>
                   context.read<ListeningBloc>().add(const NextQuestion()),
               // FIX: Layout now dispatches ListeningHintUsed internally.
@@ -343,7 +354,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             slivers: [
               SliverPadding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
                 sliver: SliverToBoxAdapter(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -359,17 +370,18 @@ class _AudioFillBlanksContent extends StatelessWidget {
                         onTap: onPlayAudio,
                       ),
                       SizedBox(height: 32.h),
-                      SizedBox(
-                        height: 220.h,
-                        child: AudioFillBlanksCanvas(
-                          text: quest.textWithBlanks ?? '',
-                          revealProgress: revealProgress,
-                          onSmear: onSmear,
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          imageUrl: null,
-                          isCorrectState: isCorrect,
-                        ),
+                      AudioFillBlanksCanvas(
+                        text: (isCorrect == true && quest.textToSpeak != null)
+                            ? quest.textToSpeak
+                            : (quest.textWithBlanks ?? ''),
+                        revealProgress: (isAnswered && isCorrect == true)
+                            ? 1.0
+                            : revealProgress,
+                        onSmear: onSmear,
+                        primaryColor: theme.primaryColor,
+                        isDark: isDark,
+                        imageUrl: null,
+                        isCorrectState: isCorrect,
                       ),
                     ],
                   ),
@@ -377,9 +389,13 @@ class _AudioFillBlanksContent extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 16.h,
+                  padding: EdgeInsets.only(
+                    left: 24.w,
+                    right: 24.w,
+                    top: 16.h,
+                    bottom:
+                        (isAnswered ? 200.h : 40.h) +
+                        MediaQuery.of(context).viewInsets.bottom,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -400,7 +416,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                             onTap: onSubmit,
                           ),
                       ],
-                      SizedBox(height: showBlindDictation ? 380.h : 60.h),
+                      if (showBlindDictation) SizedBox(height: 380.h),
                     ],
                   ),
                 ),
