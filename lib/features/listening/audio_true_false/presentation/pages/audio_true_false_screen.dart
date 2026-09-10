@@ -15,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_instruction.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_tuner.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
-import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_polarized_filters.dart';
+import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_verdict_buttons.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -37,7 +37,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<double> _tuningValue = ValueNotifier(0.5);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -48,7 +47,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
 
   @override
   void dispose() {
-    _tuningValue.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
@@ -63,6 +61,18 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     context.read<ListeningBloc>().add(
       FetchListeningQuests(gameType: widget.gameType, level: widget.level),
     );
+  }
+
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _submitFinalAnswer(bool nailedSpeaking, String correct) {
@@ -127,7 +137,12 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme(
+      'listening',
+      level: widget.level,
+      isDark: isDark,
+    );
 
     return BlocConsumer<ListeningBloc, ListeningState>(
       listener: (context, state) {
@@ -141,7 +156,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
-            _tuningValue.value = 0.5;
             _selectedVerdict.value = null;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             _isAnswered.value = true;
@@ -168,7 +182,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
             _isAnswered,
             _isCorrect,
             _showConfetti,
-            _tuningValue,
             _selectedVerdict,
           ]),
           builder: (context, _) {
@@ -179,6 +192,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               useScrolling: false,
+              disablePadding: true,
               onContinue: () =>
                   context.read<ListeningBloc>().add(NextQuestion()),
               onHint: () =>
@@ -198,8 +212,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                             slivers: [
                               SliverPadding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 16.w,
-                                  vertical: 16.h,
+                                  horizontal: 24.w,
+                                  vertical: 24.h,
                                 ),
                                 sliver: SliverToBoxAdapter(
                                   child: Column(
@@ -212,6 +226,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                             InstructionHelper.getInstruction(
                                               quest,
                                             ),
+                                        emoji: quest.emoji,
                                       ),
                                       SizedBox(height: 24.h),
                                       AudioTrueFalseTuner(
@@ -222,17 +237,12 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                           _hapticService.selection();
                                         },
                                         color: theme.primaryColor,
-                                        emoji: quest.emoji,
                                         isCorrectState: _isCorrect.value,
                                       ),
                                       SizedBox(height: 32.h),
-                                      SizedBox(
-                                        height: 180.h,
-                                        child: AudioTrueFalseScreenDisplay(
-                                          statement: quest.statement ?? "",
-                                          color: theme.primaryColor,
-                                          tuningValue: _tuningValue.value,
-                                        ),
+                                      AudioTrueFalseScreenDisplay(
+                                        statement: quest.statement ?? "",
+                                        color: theme.primaryColor,
                                       ),
                                     ],
                                   ),
@@ -241,65 +251,64 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                               SliverToBoxAdapter(
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
+                                    horizontal: 24.w,
                                     vertical: 16.h,
                                   ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      AudioTrueFalsePolarizedFilters(
-                                        tuningValue: _tuningValue.value,
-                                        isAnswered: _isAnswered.value,
-                                        isCorrectState: _isCorrect.value,
-                                        color: theme.primaryColor,
-                                        onChanged: (v) {
-                                          _tuningValue.value = v;
-                                          _hapticService.selection();
-                                        },
-                                        onChangeEnd: (v) {
-                                          if (_isAnswered.value ||
-                                              _selectedVerdict.value != null) {
-                                            return;
-                                          }
-                                          if (v > 0.9) {
-                                            _selectedVerdict.value = true;
-                                          }
-                                          if (v < 0.1) {
-                                            _selectedVerdict.value = false;
-                                          }
-                                        },
-                                      ),
-                                      SizedBox(
-                                        height:
-                                            (_selectedVerdict.value != null &&
-                                                !_isAnswered.value)
-                                            ? 380.h
-                                            : 60.h,
-                                      ),
-                                    ],
+                                  child: AudioTrueFalseVerdictButtons(
+                                    selectedVerdict: _selectedVerdict.value,
+                                    isAnswered: _isAnswered.value,
+                                    isCorrectState: _isCorrect.value,
+                                    color: theme.primaryColor,
+                                    onVerdictSelected: (v) {
+                                      _hapticService.selection();
+                                      _selectedVerdict.value = v;
+                                      _scrollToBottom();
+                                    },
                                   ),
+                                ),
+                              ),
+                              if (_selectedVerdict.value != null &&
+                                  !_isAnswered.value)
+                                SliverToBoxAdapter(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                      top: 20.h,
+                                      bottom: 20.h,
+                                    ),
+                                    child: TypeToConfirmOverlay(
+                                      expectedText:
+                                          quest.evidenceQuote ??
+                                          quest.statement ??
+                                          "",
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () => _submitFinalAnswer(
+                                        true,
+                                        quest.correctAnswer ?? "",
+                                      ),
+                                      onSkipped: () => _submitFinalAnswer(
+                                        false,
+                                        quest.correctAnswer ?? "",
+                                      ),
+                                      allowSkip: true,
+                                      isPositioned: false,
+                                    ),
+                                  ),
+                                ),
+                              SliverToBoxAdapter(
+                                child: SizedBox(
+                                  height:
+                                      MediaQuery.of(context).viewInsets.bottom >
+                                          0
+                                      ? MediaQuery.of(
+                                              context,
+                                            ).viewInsets.bottom +
+                                            40.h
+                                      : 120.h,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        if (_selectedVerdict.value != null &&
-                            !_isAnswered.value)
-                          TypeToConfirmOverlay(
-                            expectedText:
-                                quest.evidenceQuote ?? quest.statement ?? "",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(
-                              true,
-                              quest.correctAnswer ?? "",
-                            ),
-                            onSkipped: () => _submitFinalAnswer(
-                              false,
-                              quest.correctAnswer ?? "",
-                            ),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
                       ],
                     ),
             );

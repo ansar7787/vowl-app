@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class AudioTrueFalseTuner extends StatelessWidget {
   final VoidCallback onTap;
   final Color color;
-  final String? emoji;
   final bool? isCorrectState;
 
   const AudioTrueFalseTuner({
     super.key,
     required this.onTap,
     required this.color,
-    this.emoji,
     this.isCorrectState,
   });
 
@@ -22,18 +19,20 @@ class AudioTrueFalseTuner extends StatelessWidget {
     return ScaleButton(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.all(24.r),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+          color: color.withValues(alpha: 0.15),
+          border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
+          boxShadow: [
+            BoxShadow(
+              color: color.withValues(alpha: 0.1),
+              blurRadius: 16,
+              spreadRadius: 4,
+            ),
+          ],
         ),
-        child: isCorrectState == true && emoji != null
-            ? Text(
-                emoji!,
-                style: TextStyle(fontSize: 48.r),
-              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
-            : Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
+        child: Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
       ),
     );
   }
