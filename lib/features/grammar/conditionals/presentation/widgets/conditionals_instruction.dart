@@ -3,7 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ConditionalsInstruction extends StatelessWidget {
   final Color primaryColor;
-  const ConditionalsInstruction({super.key, required this.primaryColor});
+  final String instruction;
+
+  const ConditionalsInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction = "FUSE THE CONSEQUENCE",
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +25,17 @@ class ConditionalsInstruction extends StatelessWidget {
         children: [
           Icon(Icons.bolt_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "FUSE THE CONSEQUENCE",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

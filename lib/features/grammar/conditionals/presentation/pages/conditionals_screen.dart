@@ -13,7 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/conditionals/presentation/widgets/conditionals_instruction.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
-import 'package:vowl/features/grammar/conditionals/presentation/widgets/conditionals_chain_painter.dart';
+
 import 'package:vowl/core/utils/locale_service.dart';
 
 class ConditionalsScreen extends StatefulWidget {
@@ -33,7 +33,6 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<List<Offset>> _chainPoints = ValueNotifier([]);
   final ValueNotifier<int> _targetIndex = ValueNotifier(-1);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
@@ -43,7 +42,6 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
 
   @override
   void dispose() {
-    _chainPoints.dispose();
     _targetIndex.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
@@ -78,7 +76,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
     );
   }
 
-  void _onConnect(int nodeIndex, int correctIndex) {
+  void _onOptionSelected(int nodeIndex, int correctIndex) {
     if (_isAnswered.value || _isFirstStagePassed.value) return;
 
     bool isCorrect = nodeIndex == correctIndex;
@@ -111,6 +109,17 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
       _soundService.playWrong();
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
+
+    // Scroll back to top so the user can read the Result and Explanation cards.
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          0.0,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
   }
 
   @override
@@ -131,8 +140,8 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
             _isAnswered.value = false;
             _isCorrect.value = null;
             _isFirstStagePassed.value = false;
+            _targetIndex.value = -1;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             _isAnswered.value = true;
             _isCorrect.value = state.answerStatus.asBoolOrNull;
           }
@@ -208,410 +217,372 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                                 controller: _scrollController,
                                 physics: const BouncingScrollPhysics(),
                                 slivers: [
-                                  SliverFillRemaining(
-                                    hasScrollBody: true,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: Builder(
-                                            builder: (context) {
-                                              final maxHeight =
-                                                  constraints.maxHeight;
-                                              final isCompact = maxHeight < 580;
+                                  SliverToBoxAdapter(
+                                    child: Builder(
+                                      builder: (context) {
+                                        final maxHeight = constraints.maxHeight;
+                                        final isCompact = maxHeight < 580;
 
-                                              final double
-                                              estimatedContentHeight =
-                                                  (isCompact ? 30.h : 40.h) +
-                                                  (isCompact ? 70.h : 100.h) +
-                                                  (_isAnswered.value
-                                                      ? (isCompact
-                                                            ? 50.h
-                                                            : 90.h)
-                                                      : 0) +
-                                                  40.h;
-                                              final remainingHeight =
-                                                  maxHeight -
-                                                  estimatedContentHeight;
+                                        final double estimatedContentHeight =
+                                            (isCompact ? 30.h : 40.h) +
+                                            (isCompact ? 70.h : 100.h) +
+                                            (_isAnswered.value
+                                                ? (isCompact ? 50.h : 90.h)
+                                                : 0) +
+                                            40.h;
+                                        final remainingHeight =
+                                            maxHeight - estimatedContentHeight;
 
-                                              final double gapUnit =
-                                                  remainingHeight > 0
-                                                  ? remainingHeight / 5
-                                                  : 0;
-                                              final double gapTop =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1).clamp(
-                                                      4.0,
-                                                      15.0,
-                                                    )
-                                                  : 4.0;
-                                              final double gapMiddle =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 1.5).clamp(
-                                                      6.0,
-                                                      20.0,
-                                                    )
-                                                  : 6.0;
-                                              final double gapBottom =
-                                                  remainingHeight > 0
-                                                  ? (gapUnit * 2.5).clamp(
-                                                      10.0,
-                                                      30.0,
-                                                    )
-                                                  : 10.0;
+                                        final double gapUnit =
+                                            remainingHeight > 0
+                                            ? remainingHeight / 5
+                                            : 0;
+                                        final double gapTop =
+                                            remainingHeight > 0
+                                            ? (gapUnit * 1).clamp(4.0, 15.0)
+                                            : 4.0;
+                                        final double gapMiddle =
+                                            remainingHeight > 0
+                                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                            : 6.0;
+                                        final double gapBottom =
+                                            remainingHeight > 0
+                                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                            : 10.0;
 
-                                              return Column(
-                                                children: [
-                                                  SizedBox(height: gapTop),
-                                                  isCompact
-                                                      ? SizedBox(
-                                                          height: 25.h,
-                                                          child: FittedBox(
-                                                            fit: BoxFit
-                                                                .scaleDown,
-                                                            child: ConditionalsInstruction(
-                                                              primaryColor: theme
-                                                                  .primaryColor,
-                                                            ),
+                                        return Column(
+                                          children: [
+                                            SizedBox(height: gapTop),
+                                            isCompact
+                                                ? SizedBox(
+                                                    height: 25.h,
+                                                    child: FittedBox(
+                                                      fit: BoxFit.scaleDown,
+                                                      child:
+                                                          ConditionalsInstruction(
+                                                            primaryColor: theme
+                                                                .primaryColor,
+                                                            instruction: quest
+                                                                .instruction,
                                                           ),
-                                                        )
-                                                      : ConditionalsInstruction(
-                                                          primaryColor: theme
-                                                              .primaryColor,
+                                                    ),
+                                                  )
+                                                : ConditionalsInstruction(
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                    instruction:
+                                                        quest.instruction,
+                                                  ),
+                                            SizedBox(height: gapMiddle),
+
+                                            if (quest.conditionalType !=
+                                                null) ...[
+                                              Container(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                  vertical: 8.h,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        16.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
+                                                  ),
+                                                ),
+                                                child: Column(
+                                                  children: [
+                                                    Text(
+                                                      "TYPE: ${quest.conditionalType!.toUpperCase()}",
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 12.sp,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        letterSpacing: 1.2,
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 4.h),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Text(
+                                                          "0: Fact  ",
+                                                          style: TextStyle(
+                                                            fontSize: 10.sp,
+                                                            color:
+                                                                quest.conditionalType ==
+                                                                        '0' ||
+                                                                    quest.conditionalType ==
+                                                                        'zero'
+                                                                ? theme
+                                                                      .primaryColor
+                                                                : theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.5,
+                                                                      ),
+                                                            fontWeight:
+                                                                quest.conditionalType ==
+                                                                        '0' ||
+                                                                    quest.conditionalType ==
+                                                                        'zero'
+                                                                ? FontWeight
+                                                                      .bold
+                                                                : FontWeight
+                                                                      .normal,
+                                                          ),
                                                         ),
-                                                  SizedBox(height: gapMiddle),
-
-                                                  if (quest.conditionalType !=
-                                                      null) ...[
-                                                    Container(
-                                                      padding:
-                                                          EdgeInsets.symmetric(
-                                                            horizontal: 16.w,
-                                                            vertical: 8.h,
+                                                        Text(
+                                                          "|  1: Real  ",
+                                                          style: TextStyle(
+                                                            fontSize: 10.sp,
+                                                            color:
+                                                                quest.conditionalType ==
+                                                                        '1' ||
+                                                                    quest.conditionalType ==
+                                                                        'first'
+                                                                ? theme
+                                                                      .primaryColor
+                                                                : theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.5,
+                                                                      ),
+                                                            fontWeight:
+                                                                quest.conditionalType ==
+                                                                        '1' ||
+                                                                    quest.conditionalType ==
+                                                                        'first'
+                                                                ? FontWeight
+                                                                      .bold
+                                                                : FontWeight
+                                                                      .normal,
                                                           ),
-                                                      decoration: BoxDecoration(
+                                                        ),
+                                                        Text(
+                                                          "|  2: Unreal  ",
+                                                          style: TextStyle(
+                                                            fontSize: 10.sp,
+                                                            color:
+                                                                quest.conditionalType ==
+                                                                        '2' ||
+                                                                    quest.conditionalType ==
+                                                                        'second'
+                                                                ? theme
+                                                                      .primaryColor
+                                                                : theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.5,
+                                                                      ),
+                                                            fontWeight:
+                                                                quest.conditionalType ==
+                                                                        '2' ||
+                                                                    quest.conditionalType ==
+                                                                        'second'
+                                                                ? FontWeight
+                                                                      .bold
+                                                                : FontWeight
+                                                                      .normal,
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          "|  3: Past",
+                                                          style: TextStyle(
+                                                            fontSize: 10.sp,
+                                                            color:
+                                                                quest.conditionalType ==
+                                                                        '3' ||
+                                                                    quest.conditionalType ==
+                                                                        'third'
+                                                                ? theme
+                                                                      .primaryColor
+                                                                : theme
+                                                                      .primaryColor
+                                                                      .withValues(
+                                                                        alpha:
+                                                                            0.5,
+                                                                      ),
+                                                            fontWeight:
+                                                                quest.conditionalType ==
+                                                                        '3' ||
+                                                                    quest.conditionalType ==
+                                                                        'third'
+                                                                ? FontWeight
+                                                                      .bold
+                                                                : FontWeight
+                                                                      .normal,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              ).animate().fadeIn(
+                                                duration: 400.ms,
+                                              ),
+                                              SizedBox(
+                                                height: isCompact ? 12.h : 20.h,
+                                              ),
+                                            ],
+
+                                            // Context Card
+                                            Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 24.w,
+                                                  ),
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    padding: EdgeInsets.all(
+                                                      isCompact ? 12.r : 22.r,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: isDark
+                                                          ? Colors.white
+                                                                .withValues(
+                                                                  alpha: 0.05,
+                                                                )
+                                                          : Colors.black
+                                                                .withValues(
+                                                                  alpha: 0.03,
+                                                                ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            24.r,
+                                                          ),
+                                                      border: Border.all(
                                                         color: theme
                                                             .primaryColor
                                                             .withValues(
-                                                              alpha: 0.1,
+                                                              alpha: 0.15,
                                                             ),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                              16.r,
-                                                            ),
-                                                        border: Border.all(
-                                                          color: theme
-                                                              .primaryColor
-                                                              .withValues(
-                                                                alpha: 0.3,
-                                                              ),
+                                                        width: 1.5,
+                                                      ),
+                                                    ),
+                                                    child: Column(
+                                                      children: [
+                                                        Text(
+                                                          "IF CONDITION",
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: isCompact
+                                                                ? 8.sp
+                                                                : 10.sp,
+                                                            fontWeight:
+                                                                FontWeight.w900,
+                                                            color: theme
+                                                                .primaryColor,
+                                                            letterSpacing: 2,
+                                                          ),
                                                         ),
-                                                      ),
-                                                      child: Column(
-                                                        children: [
-                                                          Text(
-                                                            "TYPE: ${quest.conditionalType!.toUpperCase()}",
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'Outfit',
-                                                              fontSize: 12.sp,
-                                                              color: theme
-                                                                  .primaryColor,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                              letterSpacing:
-                                                                  1.2,
-                                                            ),
-                                                          ),
-                                                          SizedBox(height: 4.h),
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: [
-                                                              Text(
-                                                                "0: Fact  ",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color:
-                                                                      quest.conditionalType ==
-                                                                              '0' ||
-                                                                          quest.conditionalType ==
-                                                                              'zero'
-                                                                      ? theme
-                                                                            .primaryColor
-                                                                      : theme.primaryColor.withValues(
-                                                                          alpha:
-                                                                              0.5,
-                                                                        ),
-                                                                  fontWeight:
-                                                                      quest.conditionalType ==
-                                                                              '0' ||
-                                                                          quest.conditionalType ==
-                                                                              'zero'
-                                                                      ? FontWeight
-                                                                            .bold
-                                                                      : FontWeight
-                                                                            .normal,
-                                                                ),
-                                                              ),
-                                                              Text(
-                                                                "|  1: Real  ",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color:
-                                                                      quest.conditionalType ==
-                                                                              '1' ||
-                                                                          quest.conditionalType ==
-                                                                              'first'
-                                                                      ? theme
-                                                                            .primaryColor
-                                                                      : theme.primaryColor.withValues(
-                                                                          alpha:
-                                                                              0.5,
-                                                                        ),
-                                                                  fontWeight:
-                                                                      quest.conditionalType ==
-                                                                              '1' ||
-                                                                          quest.conditionalType ==
-                                                                              'first'
-                                                                      ? FontWeight
-                                                                            .bold
-                                                                      : FontWeight
-                                                                            .normal,
-                                                                ),
-                                                              ),
-                                                              Text(
-                                                                "|  2: Unreal  ",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color:
-                                                                      quest.conditionalType ==
-                                                                              '2' ||
-                                                                          quest.conditionalType ==
-                                                                              'second'
-                                                                      ? theme
-                                                                            .primaryColor
-                                                                      : theme.primaryColor.withValues(
-                                                                          alpha:
-                                                                              0.5,
-                                                                        ),
-                                                                  fontWeight:
-                                                                      quest.conditionalType ==
-                                                                              '2' ||
-                                                                          quest.conditionalType ==
-                                                                              'second'
-                                                                      ? FontWeight
-                                                                            .bold
-                                                                      : FontWeight
-                                                                            .normal,
-                                                                ),
-                                                              ),
-                                                              Text(
-                                                                "|  3: Past",
-                                                                style: TextStyle(
-                                                                  fontSize:
-                                                                      10.sp,
-                                                                  color:
-                                                                      quest.conditionalType ==
-                                                                              '3' ||
-                                                                          quest.conditionalType ==
-                                                                              'third'
-                                                                      ? theme
-                                                                            .primaryColor
-                                                                      : theme.primaryColor.withValues(
-                                                                          alpha:
-                                                                              0.5,
-                                                                        ),
-                                                                  fontWeight:
-                                                                      quest.conditionalType ==
-                                                                              '3' ||
-                                                                          quest.conditionalType ==
-                                                                              'third'
-                                                                      ? FontWeight
-                                                                            .bold
-                                                                      : FontWeight
-                                                                            .normal,
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ).animate().fadeIn(
-                                                      duration: 400.ms,
-                                                    ),
-                                                    SizedBox(
-                                                      height: isCompact
-                                                          ? 12.h
-                                                          : 20.h,
-                                                    ),
-                                                  ],
-
-                                                  // Context Card
-                                                  Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 24.w,
-                                                            ),
-                                                        child: Container(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                isCompact
-                                                                    ? 12.r
-                                                                    : 22.r,
-                                                              ),
-                                                          decoration: BoxDecoration(
+                                                        SizedBox(
+                                                          height: isCompact
+                                                              ? 6.h
+                                                              : 12.h,
+                                                        ),
+                                                        Text(
+                                                          quest.question ?? "",
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: isCompact
+                                                                ? 16.sp
+                                                                : 20.sp,
                                                             color: isDark
                                                                 ? Colors.white
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.05,
-                                                                      )
-                                                                : Colors.black
-                                                                      .withValues(
-                                                                        alpha:
-                                                                            0.03,
-                                                                      ),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                  24.r,
-                                                                ),
-                                                            border: Border.all(
-                                                              color: theme
-                                                                  .primaryColor
-                                                                  .withValues(
-                                                                    alpha: 0.15,
-                                                                  ),
-                                                              width: 1.5,
-                                                            ),
-                                                          ),
-                                                          child: Column(
-                                                            children: [
-                                                              Text(
-                                                                "IF CONDITION",
-                                                                style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      isCompact
-                                                                      ? 8.sp
-                                                                      : 10.sp,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w900,
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  letterSpacing:
-                                                                      2,
-                                                                ),
-                                                              ),
-                                                              SizedBox(
-                                                                height:
-                                                                    isCompact
-                                                                    ? 6.h
-                                                                    : 12.h,
-                                                              ),
-                                                              Text(
-                                                                quest.question ??
-                                                                    "",
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      isCompact
-                                                                      ? 16.sp
-                                                                      : 20.sp,
-                                                                  color: isDark
-                                                                      ? Colors
-                                                                            .white
-                                                                      : Colors
-                                                                            .black87,
-                                                                  height: 1.4,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                              ),
-                                                            ],
+                                                                : Colors
+                                                                      .black87,
+                                                            height: 1.4,
+                                                            fontWeight:
+                                                                FontWeight.w500,
                                                           ),
                                                         ),
-                                                      )
-                                                      .animate()
-                                                      .fadeIn(duration: 600.ms)
-                                                      .slideY(
-                                                        begin: 0.2,
-                                                        end: 0,
-                                                      ),
-
-                                                  // Result
-                                                  if (_isAnswered.value) ...[
-                                                    SizedBox(height: gapMiddle),
-                                                    _buildResult(
-                                                      quest,
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      isCompact,
-                                                    ),
-                                                  ],
-
-                                                  // Chain Arena
-                                                  Expanded(
-                                                    child: _buildChainArena(
-                                                      options,
-                                                      quest.correctAnswerIndex ??
-                                                          0,
-                                                      theme.primaryColor,
-                                                      isDark,
-                                                      isCompact,
+                                                      ],
                                                     ),
                                                   ),
+                                                )
+                                                .animate()
+                                                .fadeIn(duration: 600.ms)
+                                                .slideY(begin: 0.2, end: 0),
 
-                                                  SizedBox(height: gapBottom),
-                                                ],
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SliverToBoxAdapter(
-                                    child: SizedBox(
-                                      height:
-                                          (_isFirstStagePassed.value &&
-                                              !_isAnswered.value)
-                                          ? 180.h
-                                          : 60.h,
+                                            // Result
+                                            if (_isAnswered.value) ...[
+                                              SizedBox(height: gapMiddle),
+                                              _buildResult(
+                                                quest,
+                                                theme.primaryColor,
+                                                isDark,
+                                                isCompact,
+                                              ),
+                                            ],
+
+                                            SizedBox(
+                                              height: isCompact ? 16.h : 32.h,
+                                            ),
+
+                                            // Options List
+                                            Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 24.w,
+                                              ),
+                                              child: _buildOptionsList(
+                                                options,
+                                                quest.correctAnswerIndex ?? 0,
+                                                theme.primaryColor,
+                                                isDark,
+                                              ),
+                                            ),
+
+                                            SizedBox(height: gapBottom),
+                                          ],
+                                        );
+                                      },
                                     ),
                                   ),
                                   if (_isFirstStagePassed.value &&
                                       !_isAnswered.value &&
                                       cleanTargetSentence.isNotEmpty)
                                     SliverToBoxAdapter(
-                                      child: Column(
-                                        children: [
-                                          TypeToConfirmOverlay(
-                                            expectedText: cleanTargetSentence,
-                                            primaryColor: theme.primaryColor,
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(true),
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(false),
-                                            isPositioned: false,
-                                            displayText:
-                                                "Type the full sentence to lock it in",
-                                          ),
-                                          SizedBox(height: 60.h),
-                                        ],
+                                      child: TypeToConfirmOverlay(
+                                        expectedText: cleanTargetSentence,
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
+                                        isPositioned: false,
+                                        displayText:
+                                            "Type the full sentence to lock it in",
                                       ),
                                     ),
+                                  SliverToBoxAdapter(
+                                    child: SizedBox(
+                                      height:
+                                          MediaQuery.of(
+                                                context,
+                                              ).viewInsets.bottom >
+                                              0
+                                          ? MediaQuery.of(
+                                                  context,
+                                                ).viewInsets.bottom +
+                                                40.h
+                                          : 60.h,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -626,70 +597,101 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
     );
   }
 
-  Widget _buildChainArena(
+  Widget _buildOptionsList(
     List<String> options,
     int correctIndex,
     Color primaryColor,
     bool isDark,
-    bool isCompact,
   ) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final startPoint = Offset(
-          constraints.maxWidth / 2,
-          isCompact ? 10.h : 20.h,
+    return Column(
+      children: List.generate(options.length, (i) {
+        return _buildOptionCard(
+          i,
+          options[i],
+          correctIndex,
+          primaryColor,
+          isDark,
         );
-        final double verticalSpace =
-            (constraints.maxHeight - (isCompact ? 60.h : 120.h)).clamp(
-              50.0,
-              450.0,
-            );
-        final nodePoints = List.generate(options.length, (i) {
-          return Offset(
-            constraints.maxWidth / 2,
-            (isCompact ? 40.h : 80.h) +
-                (i * verticalSpace / (options.length - 1)),
-          );
-        });
+      }),
+    );
+  }
 
-        return GestureDetector(
-          onPanUpdate: (details) {
-            if (_isAnswered.value || _isFirstStagePassed.value) return;
+  Widget _buildOptionCard(
+    int i,
+    String text,
+    int correctIndex,
+    Color primaryColor,
+    bool isDark,
+  ) {
+    final isHit =
+        (_isAnswered.value || _isFirstStagePassed.value) &&
+        _targetIndex.value == i;
+    final isWrong = isHit && _isCorrect.value == false;
+    final blockColor = isHit
+        ? (_isCorrect.value == false ? Colors.redAccent : Colors.greenAccent)
+        : primaryColor;
 
-            final newList = List<Offset>.from(_chainPoints.value)
-              ..add(details.localPosition);
-            _chainPoints.value = newList;
-            _hapticService.selection();
-
-            for (int i = 0; i < nodePoints.length; i++) {
-              if ((details.localPosition - nodePoints[i]).distance <
-                  (isCompact ? 40.r : 60.r)) {
-                _onConnect(i, correctIndex);
-              }
-            }
-          },
-          onPanEnd: (_) => _chainPoints.value = [],
-          child: ValueListenableBuilder<List<Offset>>(
-            valueListenable: _chainPoints,
-            builder: (context, points, _) {
-              return CustomPaint(
-                size: Size.infinite,
-                painter: ConditionalsChainPainter(
-                  points: points,
-                  startPoint: startPoint,
-                  nodes: nodePoints,
-                  options: options,
-                  primaryColor: primaryColor,
-                  isAnswered: _isAnswered.value,
-                  isCorrect: _isCorrect.value,
-                  targetNode: _targetIndex.value,
-                  isDark: isDark,
+    return Padding(
+      padding: EdgeInsets.only(bottom: 16.h),
+      child:
+          Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => _onOptionSelected(i, correctIndex),
+                  borderRadius: BorderRadius.circular(16.r),
+                  child: Container(
+                    width: double.infinity,
+                    constraints: BoxConstraints(minHeight: 65.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 16.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.03),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: blockColor.withValues(
+                          alpha: (isHit || isWrong) ? 0.6 : 0.2,
+                        ),
+                        width: 2,
+                      ),
+                      boxShadow: [
+                        if (isHit)
+                          BoxShadow(
+                            color: blockColor.withValues(alpha: 0.1),
+                            blurRadius: 12,
+                            spreadRadius: 2,
+                          ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      text,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: (isHit || isWrong)
+                            ? FontWeight.w800
+                            : FontWeight.w600,
+                        color: isHit
+                            ? (_isCorrect.value == false
+                                  ? Colors.redAccent
+                                  : Colors.greenAccent)
+                            : (isDark ? Colors.white : Colors.black87),
+                      ),
+                    ),
+                  ),
                 ),
-              );
-            },
-          ),
-        );
-      },
+              )
+              .animate(target: isHit ? 1 : 0)
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.02, 1.02),
+                duration: 200.ms,
+              ),
     );
   }
 
@@ -705,6 +707,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
+        width: double.infinity,
         padding: EdgeInsets.all(isCompact ? 10.r : 24.r),
         decoration: BoxDecoration(
           color: displayColor.withValues(alpha: 0.05),
@@ -736,15 +739,38 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                 letterSpacing: 2,
               ),
             ),
-            if (!isCompact && quest.explanation != null) ...[
+            if (quest.grammarRule != null) ...[
+              SizedBox(height: 8.h),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: displayColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: displayColor.withValues(alpha: 0.3),
+                  ),
+                ),
+                child: Text(
+                  quest.grammarRule!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.bold,
+                    color: displayColor,
+                  ),
+                ),
+              ),
+            ],
+            if (quest.explanation != null) ...[
               SizedBox(height: 12.h),
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  color: isDark ? Colors.white60 : Colors.black54,
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white70 : Colors.black87,
+                  height: 1.4,
                 ),
               ),
             ],

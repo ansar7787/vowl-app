@@ -826,6 +826,11 @@ class StoryServiceImpl implements StoryService {
       "50 levels cleared! Your conditionals skills are rock solid.",
       "100 levels beat! You truly dominate conditionals.",
       "Double Centurion! No one knows conditionals better than you.",
+      "Nice start! You're getting the hang of how native speakers talk about imaginary situations.",
+      "You're doing great. Expressing conditions and consequences is feeling much more natural now.",
+      "50 levels down! You're building a really strong instinct for 'if-then' situations.",
+      "Level 100! Your ability to seamlessly jump between real and hypothetical scenarios is incredibly impressive.",
+      "Level 200! You can express the most complex theoretical ideas effortlessly. Absolutely brilliant work!",
     ],
     'conjunctions': [
       "",
