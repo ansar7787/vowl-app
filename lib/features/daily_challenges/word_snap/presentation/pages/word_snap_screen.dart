@@ -14,7 +14,6 @@ import 'package:vowl/core/services/daily_challenge_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/utils/ad_service.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Word Snap Screen — Daily Challenge (10/10 Production Rewrite)
