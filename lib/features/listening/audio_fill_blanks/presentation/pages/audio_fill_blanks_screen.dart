@@ -367,7 +367,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                           onSmear: onSmear,
                           primaryColor: theme.primaryColor,
                           isDark: isDark,
-                          imageUrl: quest.imageUrl,
+                          imageUrl: null,
                           isCorrectState: isCorrect,
                         ),
                       ),

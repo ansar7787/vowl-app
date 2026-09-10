@@ -7,7 +7,6 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_image.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -127,8 +126,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
   Widget _buildCentralVisual(KidsQuest quest, {bool isHighlighted = false}) {
     final displayValue = widget.centerTextOverride ?? quest.question ?? "?";
     final isEmoji = _isEmoji(displayValue);
-    final hasImage = quest.imageUrl != null && quest.imageUrl!.isNotEmpty;
-
+    
     return Stack(
           alignment: Alignment.center,
           clipBehavior: Clip.none,
@@ -158,22 +156,10 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
               ),
               child: Center(
                 child: Padding(
-                  padding: EdgeInsets.all(hasImage ? 25.r : 20.r),
+                  padding: EdgeInsets.all(20.r),
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
-                    child: hasImage
-                        ? SizedBox(
-                            width: 140.r,
-                            height: 140.r,
-                            child: KidsImage(
-                              imageUrl: quest.imageUrl,
-                              fallbackIcon: widget.fallbackIcon,
-                              iconColor: widget.primaryColor.withValues(
-                                alpha: 0.5,
-                              ),
-                            ),
-                          )
-                        : Text(
+                    child: Text(
                             displayValue,
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -375,3 +361,4 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     return 24.sp;
   }
 }
+

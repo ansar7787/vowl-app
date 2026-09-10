@@ -244,7 +244,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                           }
                                           _pendingSelectedIndex.value = index;
                                         },
-                                        imageUrl: quest.imageUrl,
+                                        imageUrl: null,
                                       ),
                                     ],
                                   ),

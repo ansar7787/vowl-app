@@ -6,9 +6,7 @@ class VocabularyQuest extends GameQuest {
   final String? synonym;
   final String? antonym;
   final String? contextSentence;
-  final String? prompt;
-  final String? audioUrl;
-  final String? passage;
+  final String? prompt;  final String? passage;
   final List<String>? synonyms;
   final List<String>? antonyms;
   final String? usageExample;
@@ -48,9 +46,7 @@ class VocabularyQuest extends GameQuest {
     this.prompt,
     super.textToSpeak,
     super.visualConfig,
-    super.explanation,
-    this.audioUrl,
-    this.passage,
+    super.explanation,    this.passage,
     this.synonyms,
     this.antonyms,
     this.topicEmoji,

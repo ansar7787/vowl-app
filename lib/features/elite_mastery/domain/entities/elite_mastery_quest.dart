@@ -5,9 +5,7 @@ class EliteMasteryQuest extends GameQuest {
   final List<int>? correctOrder;
   final String? idiom;
   final String? word;
-  final double? speedMultiplier;
-  final String? audioUrl;
-  final String? text;
+  final double? speedMultiplier;  final String? text;
   final String? shadowingFocus;
   final String? usageContext;
   final String? spellingRule;
@@ -45,9 +43,7 @@ class EliteMasteryQuest extends GameQuest {
     this.correctOrder,
     this.idiom,
     this.word,
-    this.speedMultiplier,
-    this.audioUrl,
-    this.text,
+    this.speedMultiplier,    this.text,
     this.shadowingFocus,
     this.usageContext,
     this.spellingRule,
@@ -80,9 +76,7 @@ class EliteMasteryQuest extends GameQuest {
     List<int>? correctOrder,
     String? idiom,
     String? word,
-    double? speedMultiplier,
-    String? audioUrl,
-    String? text,
+    double? speedMultiplier,    String? text,
     String? explanation,
     String? shadowingFocus,
     String? usageContext,
@@ -115,9 +109,7 @@ class EliteMasteryQuest extends GameQuest {
       correctOrder: correctOrder ?? this.correctOrder,
       idiom: idiom ?? this.idiom,
       word: word ?? this.word,
-      speedMultiplier: speedMultiplier ?? this.speedMultiplier,
-      audioUrl: audioUrl ?? this.audioUrl,
-      text: text ?? this.text,
+      speedMultiplier: speedMultiplier ?? this.speedMultiplier,      text: text ?? this.text,
       explanation: explanation ?? this.explanation,
       shadowingFocus: shadowingFocus ?? this.shadowingFocus,
       usageContext: usageContext ?? this.usageContext,
@@ -139,7 +131,6 @@ class EliteMasteryQuest extends GameQuest {
     idiom,
     word,
     speedMultiplier,
-    audioUrl,
     text,
     explanation,
     shadowingFocus,

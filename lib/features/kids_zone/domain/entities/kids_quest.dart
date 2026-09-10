@@ -7,10 +7,7 @@ class KidsQuest extends Equatable {
   final String instruction;
   final String? question;
   final String? correctAnswer;
-  final List<String>? options;
-  final String? imageUrl;
-  final String? audioUrl;
-  final Map<String, dynamic>? metadata;
+  final List<String>? options;  final Map<String, dynamic>? metadata;
   final String? painter;
   final String? shader;
   final String? emoji;
@@ -32,10 +29,7 @@ class KidsQuest extends Equatable {
     required this.instruction,
     this.question,
     this.correctAnswer,
-    this.options,
-    this.imageUrl,
-    this.audioUrl,
-    this.metadata,
+    this.options,    this.metadata,
     this.painter,
     this.shader,
     this.emoji,
@@ -58,8 +52,6 @@ class KidsQuest extends Equatable {
     question,
     correctAnswer,
     options,
-    imageUrl,
-    audioUrl,
     metadata,
     painter,
     shader,
@@ -81,10 +73,7 @@ class KidsQuest extends Equatable {
     String? instruction,
     String? question,
     String? correctAnswer,
-    List<String>? options,
-    String? imageUrl,
-    String? audioUrl,
-    Map<String, dynamic>? metadata,
+    List<String>? options,    Map<String, dynamic>? metadata,
     String? painter,
     String? shader,
     String? emoji,
@@ -104,10 +93,7 @@ class KidsQuest extends Equatable {
       instruction: instruction ?? this.instruction,
       question: question ?? this.question,
       correctAnswer: correctAnswer ?? this.correctAnswer,
-      options: options ?? this.options,
-      imageUrl: imageUrl ?? this.imageUrl,
-      audioUrl: audioUrl ?? this.audioUrl,
-      metadata: metadata ?? this.metadata,
+      options: options ?? this.options,      metadata: metadata ?? this.metadata,
       painter: painter ?? this.painter,
       shader: shader ?? this.shader,
       emoji: emoji ?? this.emoji,

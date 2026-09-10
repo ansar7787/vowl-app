@@ -1,8 +1,6 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
-class ListeningQuest extends GameQuest {
-  final String? audioUrl;
-  final String? transcription;
+class ListeningQuest extends GameQuest {  final String? transcription;
   final String? statement;
   final List<String>? shuffledSentences;
   final List<int>? correctOrder;
@@ -14,9 +12,7 @@ class ListeningQuest extends GameQuest {
   final String? targetDetail;
   final String? impliedMeaning;
   final String? location;
-  final String? missingWord;
-  final String? imageUrl;
-  final String? emoji;
+  final String? missingWord;  final String? emoji;
   final List<String>? distractorWords;
   final List<int>? pauseMarkers;
   final String? evidenceQuote;
@@ -43,9 +39,7 @@ class ListeningQuest extends GameQuest {
     super.options,
     super.correctAnswerIndex,
     super.correctAnswer,
-    super.hint,
-    this.audioUrl,
-    super.textToSpeak,
+    super.hint,    super.textToSpeak,
     super.visualConfig,
     this.transcription,
     super.question,
@@ -61,9 +55,7 @@ class ListeningQuest extends GameQuest {
     this.targetDetail,
     this.impliedMeaning,
     this.location,
-    this.missingWord,
-    this.imageUrl,
-    this.emoji,
+    this.missingWord,    this.emoji,
     this.distractorWords,
     this.pauseMarkers,
     this.evidenceQuote,
@@ -81,7 +73,6 @@ class ListeningQuest extends GameQuest {
   @override
   List<Object?> get props => [
     ...super.props,
-    audioUrl,
     transcription,
     statement,
     shuffledSentences,
@@ -95,7 +86,6 @@ class ListeningQuest extends GameQuest {
     impliedMeaning,
     location,
     missingWord,
-    imageUrl,
     emoji,
     distractorWords,
     pauseMarkers,

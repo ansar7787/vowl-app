@@ -26,7 +26,7 @@ void main() {
 
       final result = ListeningQuestModel.fromJson(jsonMap, tId);
 
-      expect(result.audioUrl, 'http://test.com/audio.mp3');
+      
       expect(result.transcript, 'Test transcript');
     });
   });
