@@ -3,7 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ConjunctionsInstruction extends StatelessWidget {
   final Color primaryColor;
-  const ConjunctionsInstruction({super.key, required this.primaryColor});
+  final String instruction;
+  const ConjunctionsInstruction({
+    super.key,
+    required this.primaryColor,
+    required this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,7 @@ class ConjunctionsInstruction extends StatelessWidget {
           Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "CONNECT THE LINGUISTIC BRIDGE",
+            instruction.toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,

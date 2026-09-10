@@ -53,10 +53,20 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        _focusNode.requestFocus();
+      }
+    });
+  }
+
+  @override
   void dispose() {
     _scrollController.dispose();
-    _textController.dispose();
     _focusNode.dispose();
+    _textController.dispose();
     _attempts.dispose();
     _result.dispose();
     _isSubmitting.dispose();
@@ -69,6 +79,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
     final text = _textController.text.trim();
     if (text.isEmpty) {
       _result.value = _ConfirmResult.empty;
+      _hapticService.selection();
       return;
     }
 
@@ -455,6 +466,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                               child: Stack(
                                 children: [
                                   TextField(
+                                    autofocus: true,
                                     controller: _textController,
                                     focusNode: _focusNode,
                                     minLines: 1,

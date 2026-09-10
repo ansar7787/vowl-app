@@ -6,8 +6,8 @@ class ConjunctionsBrickSheet extends StatelessWidget {
   final String? placedBrick;
   final Color primaryColor;
   final bool isDark;
-
   final bool isCompact;
+  final Function(String)? onBrickTapped;
 
   const ConjunctionsBrickSheet({
     super.key,
@@ -16,6 +16,7 @@ class ConjunctionsBrickSheet extends StatelessWidget {
     required this.primaryColor,
     required this.isDark,
     this.isCompact = false,
+    this.onBrickTapped,
   });
 
   @override
@@ -30,16 +31,24 @@ class ConjunctionsBrickSheet extends StatelessWidget {
 
   Widget _buildBrick(String text) {
     final isPlaced = placedBrick == text;
-    return Draggable<String>(
-      data: text,
-      feedback: _buildTactileBrick(text, isDragging: true),
-      childWhenDragging: Opacity(opacity: 0.2, child: _buildTactileBrick(text)),
-      child: isPlaced
-          ? SizedBox(
-              width: isCompact ? 60.w : 80.w,
-              height: isCompact ? 35.h : 50.h,
-            )
-          : _buildTactileBrick(text),
+    return GestureDetector(
+      onTap: (!isPlaced && onBrickTapped != null)
+          ? () => onBrickTapped!(text)
+          : null,
+      child: Draggable<String>(
+        data: text,
+        feedback: _buildTactileBrick(text, isDragging: true),
+        childWhenDragging: Opacity(
+          opacity: 0.2,
+          child: _buildTactileBrick(text),
+        ),
+        child: isPlaced
+            ? SizedBox(
+                width: isCompact ? 60.w : 80.w,
+                height: isCompact ? 35.h : 50.h,
+              )
+            : _buildTactileBrick(text),
+      ),
     );
   }
 
