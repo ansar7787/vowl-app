@@ -65,7 +65,10 @@ void main() async {
 
   Future<void> safeLoadDotEnv() async {
     try {
-      await dotenv.load(fileName: '.env');
+      const env = String.fromEnvironment('ENV', defaultValue: 'development');
+      final fileName = env == 'production' ? '.env.production' : '.env';
+      await dotenv.load(fileName: fileName);
+      if (kDebugMode) debugPrint('Loaded environment: $fileName');
     } catch (e) {
       if (kDebugMode) debugPrint('Warning: dotenv failed to load: $e');
     }

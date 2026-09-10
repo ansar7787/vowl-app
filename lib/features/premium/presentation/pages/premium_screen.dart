@@ -22,7 +22,6 @@ import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
-
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
 
@@ -811,10 +810,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
             ),
             GestureDetector(
               onTap: () {
-                // Assuming terms covers refund if there's no specific refund page,
-                // but linking to terms.html as a fallback for refund.
                 final url = Uri.parse(
-                  'https://ansar7787.github.io/vowl-legal/terms.html',
+                  'https://ansar7787.github.io/vowl-legal/refund.html',
                 );
                 launchUrl(url, mode: LaunchMode.externalApplication);
               },

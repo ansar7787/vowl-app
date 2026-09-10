@@ -140,11 +140,18 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
 
   @override
   Widget build(BuildContext context) {
+    final isPremium = context.select(
+      (AuthBloc bloc) => bloc.state.user?.isPremium ?? false,
+    );
+
     return StreamBuilder<AppNetworkStatus>(
       stream: di.sl<NetworkInfo>().onStatusChange,
       builder: (context, snapshot) {
-        final isOffline =
+        final isNetworkOffline =
             snapshot.hasData && snapshot.data == AppNetworkStatus.offline;
+
+        // Ensure premium users are NEVER considered offline
+        final isOffline = isNetworkOffline && !isPremium;
 
         final gate = OfflinePlayGateService.instance;
 
