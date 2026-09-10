@@ -18,6 +18,8 @@ class DynamicJigsawWrapper extends StatefulWidget {
   final int? bonusCoins;
   final bool allowSkip;
   final bool isPositioned;
+  final List<String>? customShuffledWords;
+  final List<int>? customCorrectOrder;
 
   const DynamicJigsawWrapper({
     super.key,
@@ -29,6 +31,8 @@ class DynamicJigsawWrapper extends StatefulWidget {
     this.bonusCoins = 5,
     this.allowSkip = true,
     this.isPositioned = true,
+    this.customShuffledWords,
+    this.customCorrectOrder,
   });
 
   @override
@@ -58,26 +62,50 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   }
 
   void _initGame() {
-    List<String> rawWords = widget.expectedText.trim().split(RegExp(r'\s+'));
-    List<_WordTile?> initPlaced = List.filled(rawWords.length, null);
-    List<_WordTile> initAvailable = [];
+    if (widget.customShuffledWords != null &&
+        widget.customShuffledWords!.isNotEmpty) {
+      List<String> rawWords = widget.customShuffledWords!;
+      List<_WordTile?> initPlaced = List.filled(rawWords.length, null);
+      List<_WordTile> initAvailable = [];
 
-    List<String> cleanedWords = [];
-    for (int i = 0; i < rawWords.length; i++) {
-      String cleanedWord = rawWords[i].toLowerCase().replaceAll(
-        RegExp(r'[.,!?]+$'),
-        '',
-      );
+      for (int i = 0; i < rawWords.length; i++) {
+        initAvailable.add(_WordTile(id: i, word: rawWords[i]));
+      }
 
-      cleanedWords.add(cleanedWord);
-      initAvailable.add(_WordTile(id: i, word: cleanedWord));
+      if (widget.customCorrectOrder != null &&
+          widget.customCorrectOrder!.isNotEmpty) {
+        _targetSentence = widget.customCorrectOrder!
+            .map((idx) => rawWords[idx])
+            .join(' ');
+      } else {
+        _targetSentence = widget.expectedText.trim();
+      }
+
+      initAvailable.shuffle();
+      _availableTiles = ValueNotifier(initAvailable);
+      _placedTiles = ValueNotifier(initPlaced);
+    } else {
+      List<String> rawWords = widget.expectedText.trim().split(RegExp(r'\s+'));
+      List<_WordTile?> initPlaced = List.filled(rawWords.length, null);
+      List<_WordTile> initAvailable = [];
+
+      List<String> cleanedWords = [];
+      for (int i = 0; i < rawWords.length; i++) {
+        String cleanedWord = rawWords[i].toLowerCase().replaceAll(
+          RegExp(r'[.,!?]+$'),
+          '',
+        );
+
+        cleanedWords.add(cleanedWord);
+        initAvailable.add(_WordTile(id: i, word: cleanedWord));
+      }
+
+      _targetSentence = cleanedWords.join(' ');
+
+      initAvailable.shuffle();
+      _availableTiles = ValueNotifier(initAvailable);
+      _placedTiles = ValueNotifier(initPlaced);
     }
-
-    _targetSentence = cleanedWords.join(' ');
-    initAvailable.shuffle();
-
-    _availableTiles = ValueNotifier(initAvailable);
-    _placedTiles = ValueNotifier(initPlaced);
   }
 
   void _onAvailableTileTapped(_WordTile tile) {

@@ -225,7 +225,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
           isCorrect: widget.isCorrect,
           isFinalFailure: widget.isFinalFailure,
           onContinue: widget.onContinue,
-          onHint: () => _dispatchHint(context),
+          onHint: () => _dispatchHint(context, currentQuest?.hint),
           showConfetti: effectiveConfig.showConfetti,
           useScrolling: false, // Handled internally
           disablePadding: true, // Handled internally
@@ -254,7 +254,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               isDark: isDark,
               isAnswered: widget.isAnswered,
               soundService: _soundService,
-              onHint: () => _dispatchHint(context),
+              onHint: () => _dispatchHint(context, currentQuest?.hint),
               onShowBriefing: () {}, // GameBaseLayout handles briefing
               onBack: () => GameDialogHelper.showExitConfirmation(
                 context,
@@ -302,7 +302,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
 
   // ── Helpers ────────────────────────────────────────────────────────────────
 
-  void _dispatchHint(BuildContext context) {
+  void _dispatchHint(BuildContext context, String? customHint) {
     context.read<ListeningBloc>().add(const ListeningHintUsed());
     widget.onHint();
 
@@ -310,7 +310,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
     // Show a custom UI snackbar without clashing with the audio playback
     CustomSnackBar.show(
       context: context,
-      message: "AUDIO CLUE ACTIVATED",
+      message: (customHint ?? "AUDIO CLUE ACTIVATED").toUpperCase(),
       type: CustomSnackBarType.info,
     );
 

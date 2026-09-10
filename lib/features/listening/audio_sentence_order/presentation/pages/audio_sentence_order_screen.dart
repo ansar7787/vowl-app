@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,7 +61,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     );
   }
 
-  void _submitAnswer(String correctFull) {
+  void _submitAnswer() {
     if (_isAnswered.value) return;
 
     _hapticService.success();
@@ -122,6 +121,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               useScrolling: false,
+              disablePadding: true,
               onContinue: () =>
                   context.read<ListeningBloc>().add(NextQuestion()),
               onHint: () =>
@@ -139,7 +139,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                         slivers: [
                           SliverPadding(
                             padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
+                              horizontal: 24.w,
                               vertical: 16.h,
                             ),
                             sliver: SliverToBoxAdapter(
@@ -149,8 +149,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                   SizedBox(height: 6.h),
                                   AudioSentenceOrderInstruction(
                                     color: theme.primaryColor,
-                                    instruction:
-                                        InstructionHelper.getInstruction(quest),
+                                    instruction: 'Listen and arrange the words',
                                   ),
                                   SizedBox(height: 24.h),
                                   AudioSentenceOrderOscilloscope(
@@ -168,11 +167,12 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                   if (!_isAnswered.value)
                                     DynamicJigsawWrapper(
                                       expectedText: quest.textToSpeak ?? "",
+                                      customShuffledWords:
+                                          quest.shuffledSentences,
+                                      customCorrectOrder: quest.correctOrder,
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
-                                      onConfirmed: () => _submitAnswer(
-                                        quest.textToSpeak ?? "",
-                                      ),
+                                      onConfirmed: () => _submitAnswer(),
                                       onSkipped: () {
                                         final authState = context
                                             .read<AuthBloc>()

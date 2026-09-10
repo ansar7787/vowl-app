@@ -1,13 +1,1242 @@
 {
   "instructions": {
+    "numbers": {
+      "title": "Number Fun",
+      "objective": "Houston, we are ready for liftoff! Look out the rocket window to read the clues, and lock the matching planet into the ship.",
+      "rule_0": "Read the space clues",
+      "rule_1": "Find the matching number",
+      "rule_2": "Lock it into the rocket",
+      "actionText": "Start Counting",
+      "tip": "PRO TIP: Count the items carefully if you need to! 🚀"
+    },
+    "alphabet": {
+      "title": "Alphabet Adventure",
+      "objective": "Let's unlock the magic of letters! Tap the mystery box to hear the hidden sound, and stick the correct letter onto the chalkboard.",
+      "rule_0": "Listen to the phonetic sound",
+      "rule_1": "Find the matching letter",
+      "rule_2": "Place it on the board",
+      "actionText": "Play ABCs",
+      "tip": "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵"
+    },
+    "handwriting": {
+      "title": "Write and Learn",
+      "objective": "Unlock your magic pen! Follow the glowing arrows to trace the letter perfectly on the chalkboard.",
+      "rule_0": "Follow the glowing arrows",
+      "rule_1": "Trace inside the lines",
+      "rule_2": "Write the letter yourself",
+      "actionText": "Start Writing",
+      "tip": "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨"
+    },
+    "storybuilder": {
+      "title": "Story Builder",
+      "objective": "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "rule_0": "Identify the starting sentence",
+      "rule_1": "Look for logical transitions",
+      "rule_2": "Build a cohesive paragraph",
+      "actionText": "Build Story",
+      "tip": "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!"
+    },
+    "accentshadowing": {
+      "title": "Accent Shadowing",
+      "objective": "Speak clearly to match the exact accent and rhythm of the speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "rule_0": "Listen to the example",
+      "rule_1": "Record your voice",
+      "rule_2": "Match the accent",
+      "actionText": "Start Shadowing",
+      "tip": "PRO TIP: Pay close attention to which syllables are stressed—it makes a huge difference!"
+    },
+    "speedspelling": {
+      "title": "Speed Spelling",
+      "objective": "Tap the floating letters to spell the target word correctly. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "rule_0": "Spelling must be exact",
+      "rule_1": "Sound out the syllables",
+      "rule_2": "Review before submitting",
+      "actionText": "Start Spelling",
+      "tip": "PRO TIP: Sound the word out slowly in your head before tapping the letters."
+    },
+    "idiommatch": {
+      "title": "Idiom Master",
+      "objective": "Match the idiom to its real meaning. Expanding your vocabulary is the ultimate secret to sounding like a true native speaker.",
+      "rule_0": "Analyze the context clue",
+      "rule_1": "Identify the core meaning",
+      "rule_2": "Match the perfect idiom",
+      "actionText": "Match Idiom",
+      "tip": "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!"
+    },
+    "speaking": {
+      "title": "Voice Mastery",
+      "objective": "Tap mic and repeat the phrase clearly at a natural pace. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Record Now",
+      "tip": "PRO TIP: Record yourself! Comparing your pitch to the model helps master the natural rhythm.",
+      "rule_0": "Find a quiet place",
+      "rule_1": "Speak at a natural pace",
+      "rule_2": "Match the example"
+    },
+    "listening": {
+      "title": "Audio Analysis",
+      "objective": "Listen carefully and choose the correct answer option. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Initialize Feed",
+      "tip": "PRO TIP: Close your eyes! Focusing on pure sound helps catch subtle phoneme changes.",
+      "rule_0": "Use headphones",
+      "rule_1": "Focus on intonation",
+      "rule_2": "Identify keywords"
+    },
+    "reading": {
+      "title": "Text Comprehension",
+      "objective": "Read the passage carefully and answer the comprehension questions. Mastering reading comprehension allows you to quickly extract key information in the real world.",
+      "actionText": "Analyze Text",
+      "tip": "PRO TIP: Scan for keywords first! Don't get stuck on one word; focus on the overall message.",
+      "rule_0": "Read the whole text",
+      "rule_1": "Identify main ideas",
+      "rule_2": "Check details carefully"
+    },
+    "writing": {
+      "title": "Sentence Construction",
+      "objective": "Arrange the words in the correct order to build a complete sentence. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Build Sentence",
+      "tip": "PRO TIP: Start with the verb! Finding the action helps the rest of the sentence fall into place.",
+      "rule_0": "Check your spelling",
+      "rule_1": "Check punctuation",
+      "rule_2": "Structure logically"
+    },
+    "grammar": {
+      "title": "Structural Logic",
+      "objective": "Fix the underlying structural errors to complete the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
+      "actionText": "Fix Structure",
+      "tip": "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is being broken.",
+      "rule_0": "Identify errors",
+      "rule_1": "Choose the correction",
+      "rule_2": "Master the rules"
+    },
+    "vocabulary": {
+      "title": "Word Power",
+      "objective": "Match words to their correct definitions to expand your vocabulary. Expanding your vocabulary is the ultimate secret to sounding like a true native speaker.",
+      "actionText": "Acquire Lexicon",
+      "tip": "PRO TIP: Visual associations help! Try to link the word to a picture in your mind.",
+      "rule_0": "Memorize the meanings",
+      "rule_1": "Understand context",
+      "rule_2": "Build word bank"
+    },
+    "accent": {
+      "title": "Phonetic Drill",
+      "objective": "Focus on rhythm and pitch. Sound exactly like a native speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Start Drill",
+      "tip": "PRO TIP: Over-enunciate! Emphasizing the vowels helps clear up minimal pair confusion.",
+      "rule_0": "Listen to intonation",
+      "rule_1": "Mimic the rhythm",
+      "rule_2": "Repeat until perfect"
+    },
+    "findWordMeaning": {
+      "title": "Word Detective",
+      "objective": "Read the passage and deduce the meaning of the highlighted word from its context. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Find Meaning",
+      "tip": "PRO TIP: Look at the sentence right before and right after the word—they usually hold the biggest clues!",
+      "rule_0": "Read the full passage",
+      "rule_1": "Locate the target word",
+      "rule_2": "Select the correct definition"
+    },
+    "guessTitle": {
+      "title": "Title Generator",
+      "objective": "Read the short story and determine the most appropriate title for it. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Guess Title",
+      "tip": "PRO TIP: A good title captures the main idea, not just a single detail mentioned in passing.",
+      "rule_0": "Read the complete story",
+      "rule_1": "Identify the core theme",
+      "rule_2": "Select the matching title"
+    },
+    "paragraphSummary": {
+      "title": "Summary Synthesis",
+      "objective": "Read the paragraph and select the sentence that best summarizes its main point. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Summarize",
+      "tip": "PRO TIP: The first and last sentences often give away the author's primary argument.",
+      "rule_0": "Read the full text",
+      "rule_1": "Find the central argument",
+      "rule_2": "Choose the best summary"
+    },
+    "readAndAnswer": {
+      "title": "Fact Finder",
+      "objective": "Read the text carefully and answer the specific comprehension questions. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Answer Question",
+      "tip": "PRO TIP: Skim the question first so you know exactly what facts to look for while reading!",
+      "rule_0": "Review the question",
+      "rule_1": "Scan for keywords",
+      "rule_2": "Select the exact fact"
+    },
+    "readAndMatch": {
+      "title": "Connection Maker",
+      "objective": "Read the descriptions and match the related concepts together. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Match Items",
+      "tip": "PRO TIP: Look for synonyms! The answer rarely uses the exact same vocabulary as the text.",
+      "rule_0": "Read the core text",
+      "rule_1": "Identify related concepts",
+      "rule_2": "Confirm the match"
+    },
+    "readingConclusion": {
+      "title": "Logical Leap",
+      "objective": "Read the evidence presented in the text and draw the correct logical conclusion. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Draw Conclusion",
+      "tip": "PRO TIP: Don't guess based on your own knowledge—only use the facts provided in the text.",
+      "rule_0": "Analyze the evidence",
+      "rule_1": "Avoid outside assumptions",
+      "rule_2": "Select logical outcome"
+    },
+    "readingInference": {
+      "title": "Hidden Truth",
+      "objective": "Read between the lines to discover what the author implies but does not explicitly state. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Infer Truth",
+      "tip": "PRO TIP: Pay attention to the author's tone and word choices—they reveal hidden feelings.",
+      "rule_0": "Read the passage carefully",
+      "rule_1": "Analyze the author's tone",
+      "rule_2": "Infer the hidden meaning"
+    },
+    "readingSpeedCheck": {
+      "title": "Speed Reader",
+      "objective": "Read the passage as fast as you can while maintaining full comprehension. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Start Reading",
+      "tip": "PRO TIP: Don't read word-by-word. Try to read blocks of words at a time to increase your speed!",
+      "rule_0": "Focus on text flow",
+      "rule_1": "Grasp the main idea quickly",
+      "rule_2": "Answer to prove understanding"
+    },
+    "sentenceOrderReading": {
+      "title": "Narrative Logic",
+      "objective": "Arrange the scrambled sentences into a logical and cohesive paragraph. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Order Sentences",
+      "tip": "PRO TIP: Look for transition words like 'However', 'Therefore', or 'Finally' to link sentences.",
+      "rule_0": "Find the topic sentence",
+      "rule_1": "Follow the logical flow",
+      "rule_2": "Lock the final sequence"
+    },
+    "trueFalseReading": {
+      "title": "Fact Checker",
+      "objective": "Carefully analyze the text and verify if the provided statement is true or false. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Check Facts",
+      "tip": "PRO TIP: Watch out for absolute words like 'always', 'never', or 'all'—they often make a statement false.",
+      "rule_0": "Read the statement",
+      "rule_1": "Cross-reference the text",
+      "rule_2": "Verify truth or falsehood"
+    },
+    "skimmingScanning": {
+      "title": "Information Scanner",
+      "objective": "Quickly scan the large text block to locate specific requested information. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Start Scan",
+      "tip": "PRO TIP: Use your finger to guide your eyes quickly down the page looking for names or numbers.",
+      "rule_0": "Identify target keywords",
+      "rule_1": "Scan the text rapidly",
+      "rule_2": "Pinpoint exact information"
+    },
+    "clozeTest": {
+      "title": "Blank Filler",
+      "objective": "Use logic and contextual clues to fill in the missing words in the narrative. Mastering reading comprehension accelerates your overall English fluency.",
+      "actionText": "Fill Blanks",
+      "tip": "PRO TIP: Determine if the missing word needs to be a noun, verb, or adjective before looking at options.",
+      "rule_0": "Read the surrounding sentence",
+      "rule_1": "Identify required word type",
+      "rule_2": "Select the perfect fit"
+    },
+    "roleplay": {
+      "title": "Social Simulation",
+      "objective": "Navigate social scenarios by selecting the best conversational response. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Enter Scenario",
+      "tip": "PRO TIP: Be expressive! The tone is just as important as the words in social interactions.",
+      "rule_0": "Stay in character",
+      "rule_1": "Think of the goal",
+      "rule_2": "React naturally"
+    },
+    "minimalPairs": {
+      "title": "Minimal Pairs",
+      "objective": "Listen to the word and select the correct matching sound. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Identify Sound",
+      "tip": "PRO TIP: Pay attention to whether the vowel feels quick and relaxed, or long and stretched!",
+      "rule_0": "Listen to the target word",
+      "rule_1": "Notice vowel length and tension",
+      "rule_2": "Select the exact phonetic match"
+    },
+    "storyBuilder": {
+      "title": "Story Builder",
+      "objective": "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Build Story",
+      "tip": "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
+      "rule_0": "Identify the starting sentence",
+      "rule_1": "Look for logical transitions",
+      "rule_2": "Build a cohesive paragraph"
+    },
+    "essayDrafting": {
+      "title": "Essay Architect",
+      "objective": "Sequence the paragraph blocks into their correct logical structure. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Construct Blueprint",
+      "tip": "PRO TIP: Ensure each body paragraph has a clear topic sentence.",
+      "rule_0": "Find the opening claim",
+      "rule_1": "Sequence supporting reasons",
+      "rule_2": "Lock the structural blueprint"
+    },
+    "idiomMatch": {
+      "title": "Idiom Master",
+      "objective": "Match the idiom to its real meaning. Expanding your vocabulary is the ultimate secret to sounding like a true native speaker.",
+      "actionText": "Match Idiom",
+      "tip": "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!",
+      "rule_0": "Analyze the context clue",
+      "rule_1": "Identify the core meaning",
+      "rule_2": "Match the perfect idiom"
+    },
+    "speedSpelling": {
+      "title": "Speed Spelling",
+      "objective": "Tap the floating letters to spell the target word correctly. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Start Spelling",
+      "tip": "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
+      "rule_0": "Spelling must be exact",
+      "rule_1": "Sound out the syllables",
+      "rule_2": "Review before submitting"
+    },
+    "accentShadowing": {
+      "title": "Accent Shadowing",
+      "objective": "Speak clearly to match the exact accent and rhythm of the speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Start Shadowing",
+      "tip": "PRO TIP: Focus on the stressed syllables and connected speech patterns!",
+      "rule_0": "Listen to the phrase",
+      "rule_1": "Match the exact rhythm",
+      "rule_2": "Speak with clarity"
+    },
+    "consonantClarity": {
+      "title": "Crystal Consonants",
+      "objective": "Identify the target consonant to refine your pronunciation and clear up real-world communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Analyze Sound",
+      "tip": "PRO TIP: Feel where your tongue and lips are placed—physical awareness is key!",
+      "rule_0": "Listen to the target word",
+      "rule_1": "Analyze the mouth position",
+      "rule_2": "Select the precise consonant"
+    },
+    "voiceSwap": {
+      "title": "Voice Swap",
+      "objective": "Learn when to put the doer in the spotlight (Active) or focus on the action itself (Passive). Flip the voice, then type the new sentence to lock it in!",
+      "actionText": "Swap Voice",
+      "tip": "PRO TIP: In Passive voice, the object becomes the star! You can often drop 'by [someone]' if it doesn't matter who did it.",
+      "rule_0": "Find the doer",
+      "rule_1": "Swap the focus",
+      "rule_2": "Type to lock it in"
+    },
+    "directIndirectSpeech": {
+      "title": "Speech Shift",
+      "objective": "Someone just said something, and it's your job to report it! First, pick the correct way to pass the message along. Once you get it right, type it out to lock it into your memory.",
+      "actionText": "Report Speech",
+      "tip": "PRO TIP: When reporting speech, you usually take a step back in time. So 'I am here' becomes 'they were there'!",
+      "rule_0": "Read the exact quote",
+      "rule_1": "Pick the reported speech",
+      "rule_2": "Type it to lock it in"
+    },
+    "tenseMastery": {
+      "title": "Tense Mastery",
+      "objective": "Read the sentence and use the slider to figure out if it happens in the Past, Present, or Future. Once you freeze the timeline, type out the full sentence to lock it into your memory!",
+      "actionText": "Start Journey",
+      "tip": "PRO TIP: Look for hidden time clues! Words like 'yesterday' belong in the Past, 'now' means Present, and 'tomorrow' points to the Future.",
+      "rule_0": "Read the sentence closely",
+      "rule_1": "Slide to the right timeline",
+      "rule_2": "Type to lock in your answer"
+    },
+    "grammarQuest": {
+      "title": "Grammar Quest",
+      "objective": "Read the grammar rule and tap the compass to pick the correct missing word. Once you find it, type out the full sentence to lock in your answer!",
+      "actionText": "Start Quest",
+      "tip": "PRO TIP: If you're stuck on the compass, read the grammar rule card! It explains exactly how to solve the sentence.",
+      "rule_0": "Read the sentence and rule",
+      "rule_1": "Tap the compass to pick the word",
+      "rule_2": "Type the full sentence to lock it in"
+    },
+    "sentenceCorrection": {
+      "title": "Sentence Correction",
+      "objective": "Read the sentence and find the mistake. Tap the wrong word, pick the right repair option, and then type out the final sentence to confirm it.",
+      "actionText": "Start Correcting",
+      "tip": "PRO TIP: Read the sentence out loud! If something sounds a bit awkward or unnatural, that's usually where the mistake is hidden.",
+      "rule_0": "Tap the wrong word",
+      "rule_1": "Choose the right repair",
+      "rule_2": "Type out the sentence"
+    },
+    "wordReorder": {
+      "title": "Sentence Builder",
+      "objective": "First, tap the words to build a natural-sounding English sentence. Once you get it right, type it out to lock it into your muscle memory!",
+      "actionText": "Start Building",
+      "tip": "PRO TIP: Look for capital letters to find the first word, and punctuation for the last!",
+      "rule_0": "Tap words to build",
+      "rule_1": "No changing after check",
+      "rule_2": "Type the exact sentence"
+    },
+    "partsOfSpeech": {
+      "title": "Parts of Speech",
+      "objective": "Read the sentence and figure out what job the highlighted word is doing. Does it show an action? A thing? A description?",
+      "actionText": "Sort Word",
+      "tip": "PRO TIP: Always read the whole sentence first! A word like 'run' can be a noun or a verb depending on how it's used.",
+      "rule_0": "Read the context sentence",
+      "rule_1": "Look at the highlighted word",
+      "rule_2": "Sort it into the right category"
+    },
+    "subjectVerbAgreement": {
+      "title": "Agreement Sync",
+      "objective": "Drag the Quantum Core to the correct verb terminal to complete the sentence! Matching subjects and verbs perfectly is the key to sounding natural.",
+      "actionText": "Sync Core",
+      "tip": "PRO TIP: Watch out for sneaky 'distractor' words! Prepositional phrases between the subject and verb can trick you.",
+      "rule_0": "Find the main subject",
+      "rule_1": "Drag the core to the matching verb",
+      "rule_2": "Release to lock in your answer!"
+    },
+    "clauseConnector": {
+      "title": "Clause Connector",
+      "objective": "Drag the correct connector to link the two clauses. Connecting short sentences makes your English flow much more naturally in real conversations.",
+      "actionText": "Link Clauses",
+      "tip": "PRO TIP: Think about the relationship. Does it show a result, a contrast, or does it add information?",
+      "rule_0": "Read both parts carefully",
+      "rule_1": "Find the logical link",
+      "rule_2": "Drop the correct connector"
+    },
+    "questionFormatter": {
+      "title": "Inquiry Logic",
+      "objective": "Arrange words or choose forms to create an accurate question. Mastering structural rules ensures your English is accurate and easily understood.",
+      "actionText": "Format Inquiry",
+      "tip": "PRO TIP: Remember the 'Qu-A-S-V' rule: Question word, Auxiliary, Subject, Verb!",
+      "rule_0": "Invert subject/verb",
+      "rule_1": "Add auxiliary verbs",
+      "rule_2": "Match the tense"
+    },
+    "articleInsertion": {
+      "title": "Article Orb",
+      "objective": "Choose the correct article ('a', 'an', or 'the') to complete the sentence. Getting these small words right helps your spoken English sound much more natural.",
+      "actionText": "Start Playing",
+      "tip": "PRO TIP: Use 'the' when talking about a specific thing, and 'a' or 'an' when talking about something in general.",
+      "rule_0": "Read the sentence context",
+      "rule_1": "Decide if the noun is specific",
+      "rule_2": "Pop the matching article orb"
+    },
+    "modifierPlacement": {
+      "title": "Modifier Map",
+      "objective": "Let's practice placing describing words (like adjectives and adverbs) exactly where they belong so your sentences are perfectly clear.",
+      "actionText": "Map Modifiers",
+      "tip": "PRO TIP: Place the describing word as close as possible to the thing it's describing!",
+      "rule_0": "Keep it close",
+      "rule_1": "Describe the right thing",
+      "rule_2": "Make the meaning clear"
+    },
+    "modalsSelection": {
+      "title": "Modal Match",
+      "objective": "Pick the right word to set the mood! Words like 'can', 'should', and 'might' completely change the feeling of a sentence.",
+      "actionText": "Lock Answer",
+      "tip": "PRO TIP: Use 'must' for rules you have to follow, and 'should' when you're just giving friendly advice.",
+      "rule_0": "Feel the emotion",
+      "rule_1": "Is it a rule or advice?",
+      "rule_2": "Pick the right tone"
+    },
+    "prepositionChoice": {
+      "title": "Path Finder",
+      "objective": "Drag the energy beam to the correct preposition! Once you connect it, type the full sentence out to lock it into your memory.",
+      "actionText": "Draw Path",
+      "tip": "PRO TIP: Prepositions usually follow patterns! If you're not sure, try saying the sentence out loud—your ears will often catch the right one.",
+      "rule_0": "Trace the path to the right word",
+      "rule_1": "Listen to how it sounds",
+      "rule_2": "Type the sentence to lock it in"
+    },
+    "pronounResolution": {
+      "title": "Pronoun Pivot",
+      "objective": "Select the correct pronoun that clearly resolves the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
+      "actionText": "Resolve Pivot",
+      "tip": "PRO TIP: If there are two people, 'he' can be confusing. Use their names or clear markers!",
+      "rule_0": "Find the antecedent",
+      "rule_1": "Match gender & number",
+      "rule_2": "Avoid ambiguity"
+    },
+    "punctuationMastery": {
+      "title": "Punctuation Mastery",
+      "objective": "Drag and drop the missing punctuation to complete the sentence. Good punctuation ensures others read your writing exactly the way you meant it to be read!",
+      "actionText": "Start Placing",
+      "tip": "PRO TIP: If you're ever stuck, try reading the sentence out loud to find where the natural pauses are!",
+      "rule_0": "Read the sentence out loud",
+      "rule_1": "Pause where commas fit",
+      "rule_2": "Check your quotes and dashes"
+    },
+    "relativeClauses": {
+      "title": "Relative Rail",
+      "objective": "Tap or drag to connect the sentence halves! We'll use words like 'who' and 'which' to stitch extra details smoothly into your thoughts.",
+      "actionText": "Link Clauses",
+      "tip": "PRO TIP: If you're talking about a person, always use 'Who'. If it's an object or an animal, 'Which' is your best bet!",
+      "rule_0": "Find what you're describing",
+      "rule_1": "Pick the right connector",
+      "rule_2": "Attach the extra detail"
+    },
+    "conditionals": {
+      "title": "What If?",
+      "objective": "Tap the correct consequence to finish the sentence, then type the full sentence to lock it in! This helps you naturally practice how to talk about imaginary situations and real-world consequences.",
+      "actionText": "Play Now",
+      "tip": "PRO TIP: When talking about an impossible or imaginary present situation (like 'If I were you'), we use 'were' instead of 'was'!",
+      "rule_0": "Read the 'IF' condition",
+      "rule_1": "Find the logical consequence",
+      "rule_2": "Match the verb tense"
+    },
+    "conjunctions": {
+      "title": "Logic Junction",
+      "objective": "Drag the correct connector to build a bridge between the sentence halves, then type the full sentence to lock it in! Linking your thoughts smoothly makes your English sound much more natural.",
+      "actionText": "Build Bridges",
+      "tip": "PRO TIP: Read both halves out loud. Does the second half add information, contrast, or give a reason? Let that guide you to the right connector!",
+      "rule_0": "Read the sentence islands",
+      "rule_1": "Drag a bridge to connect them",
+      "rule_2": "Type it out to lock it in"
+    },
+    "flashcards": {
+      "title": "Vocabulary Flashcards",
+      "objective": "Let's challenge your memory! Look at the hint and try to remember what the word means. Once you have a guess, tap the card to see the answer. If you got it right, swipe right. Need more practice? Swipe left.",
+      "actionText": "Start Practicing",
+      "tip": "PRO TIP: Honesty is the best policy! If you didn't quite remember it, swipe left. We'll bring it back later so you can try again.",
+      "rule_0": "Think of the answer first",
+      "rule_1": "Tap to flip and check",
+      "rule_2": "Swipe Right for Got It, Left for Again",
+      "swipe_instruction": "SWIPE LEFT (AGAIN) OR RIGHT (GOT IT)",
+      "tap_to_reveal": "TAP TO REVEAL",
+      "definition_revealed": "DID YOU GET IT RIGHT?"
+    },
+    "topicVocab": {
+      "title": "Topic Sorter",
+      "objective": "Flick the vocabulary word into the correct containment bin based on its topic. Grouping words helps you recall them faster during real-world conversations.",
+      "actionText": "Start Sorting",
+      "tip": "PRO TIP: Try to picture the word in your mind before flicking it into the category!",
+      "rule_0": "Analyze the floating word",
+      "rule_1": "Flick it to the correct bin",
+      "rule_2": "Sort the entire batch",
+      "topic_dictionary": "TOPIC DICTIONARY",
+      "words_in_batch": "BATCH PROGRESS"
+    },
+    "prefixSuffix": {
+      "title": "Prefixes & Suffixes",
+      "objective": "Did you know that adding just a few tiny letters can completely change a word's meaning? Choose the right prefix or suffix to build the target word, and then type it out to lock it in.",
+      "actionText": "Start Word Building",
+      "tip": "PRO TIP: Pay close attention to the clues! If the meaning says 'again', look for 're-'. If it says 'without', try '-less'.",
+      "rule_0": "Read the meaning clue",
+      "rule_1": "Select the right word piece",
+      "rule_2": "Type the final word"
+    },
+    "wordFormation": {
+      "title": "Word Builder",
+      "objective": "Native speakers naturally adapt words to fit different situations. Read the clue, choose the correct ending to build your new word, and type it out to confirm!",
+      "actionText": "Start Building",
+      "tip": "PRO TIP: Ask yourself what kind of word you need. Are you turning a noun into an adjective, or a verb into a person?",
+      "rule_0": "Read the meaning clue",
+      "rule_1": "Choose the correct ending",
+      "rule_2": "Type the word to confirm"
+    },
+    "synonymSearch": {
+      "title": "Synonym Warp",
+      "objective": "Find the word that means the exact same thing! Drag the correct shard into the center gate, then read the sentence out loud to see how the word naturally fits in conversation.",
+      "actionText": "Start Warp",
+      "tip": "PRO TIP: Synonyms often have slightly different feelings to them. Reading the hint will help you pick the perfect one!",
+      "rule_0": "Find the matching word",
+      "rule_1": "Drag it to the center",
+      "rule_2": "Read the sentence aloud"
+    },
+    "antonymSearch": {
+      "title": "Antonym Search",
+      "objective": "Identify the core word's exact opposite and snap it into the center core to fuse them. Then, speak the pair aloud to confirm your answer.",
+      "actionText": "Begin Search",
+      "tip": "PRO TIP: Antonyms are completely opposite concepts. If the core says 'hot', you're looking for 'cold' to neutralize it!",
+      "rule_0": "Read the center core word",
+      "rule_1": "Snap the opposite word into the core",
+      "rule_2": "Speak the pair clearly aloud"
+    },
+    "academicWord": {
+      "title": "Academic Vocabulary",
+      "objective": "Read the thesis excerpt and drag the correct academic word into the blank, then spell it to verify your mastery.",
+      "actionText": "Start Analysis",
+      "tip": "PRO TIP: Pay attention to the collocations or surrounding words—they often give a strong hint about which academic term fits best.",
+      "rule_0": "Read the context carefully",
+      "rule_1": "Drag word into the slot",
+      "rule_2": "Spell accurately to win"
+    },
+    "contextClues": {
+      "title": "Context Clues",
+      "objective": "Drag the magnifying glass over the blurred text to figure out the missing word. Once you've solved it, tap the exact words in the sentence that gave you the clue!",
+      "actionText": "Investigate Case",
+      "tip": "PRO TIP: You don't need to know every word! Look for synonyms, opposites, or cause-and-effect clues hiding nearby.",
+      "rule_0": "Drag the lens to read the text",
+      "rule_1": "Choose the missing word",
+      "rule_2": "Tap the evidence in the sentence"
+    },
+    "collocations": {
+      "title": "Collocation Match",
+      "objective": "Drag the correct word bubble to the anchor to form a natural English collocation, then build a sentence using it.",
+      "actionText": "Match Pair",
+      "tip": "PRO TIP: Native speakers use these pairs naturally. Don't translate word-for-word, think about what sounds right!",
+      "rule_0": "Read the anchor word",
+      "rule_1": "Drag the bubble that pairs best",
+      "rule_2": "Build a sentence with the pair"
+    },
+    "phrasalVerbs": {
+      "title": "Verb Vault",
+      "objective": "Phrasal verbs are tricky combinations like 'turn up' or 'break down'. Read the clue, choose the missing word to crack the vault, and then speak the full sentence aloud.",
+      "actionText": "Crack Vault",
+      "tip": "PRO TIP: The second word changes everything! 'Turn up' (increase) means something totally different than 'turn down' (refuse).",
+      "rule_0": "Read the vault's clue",
+      "rule_1": "Choose the missing word",
+      "rule_2": "Speak the full sentence"
+    },
+    "idioms": {
+      "title": "Emojify",
+      "objective": "Read the meaning and the emojis, then choose the idiom that matches. Idioms are phrases that don't mean exactly what the words say, and they are used all the time in everyday conversations.",
+      "actionText": "Decode Idiom",
+      "tip": "PRO TIP: Don't translate idioms word-for-word! Think about the overall feeling or situation they describe.",
+      "rule_0": "Read the meaning and emojis",
+      "rule_1": "Choose the matching idiom",
+      "rule_2": "Say it aloud to confirm"
+    },
+    "contextualUsage": {
+      "title": "Contextual Usage",
+      "objective": "Select the word that best fits the sentence's context, then speak the complete sentence aloud to confirm.",
+      "actionText": "Analyze Context",
+      "tip": "PRO TIP: Pay close attention to the register meter. Sometimes two words mean the same thing, but one is much more formal than the other!",
+      "rule_0": "Read the sentence carefully",
+      "rule_1": "Select the best fitting word",
+      "rule_2": "Speak the full sentence aloud"
+    },
+    "sentenceBuilder": {
+      "title": "Sentence Architect",
+      "objective": "Arrange sentence fragments into a grammatically correct order. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Build Sentence",
+      "tip": "PRO TIP: Start with the 'Who' or 'What', then find the 'Action'!",
+      "rule_0": "Start with Subject",
+      "rule_1": "Identify the Verb",
+      "rule_2": "Check ending punctuation"
+    },
+    "completeSentence": {
+      "title": "Fragment Fixer",
+      "objective": "Launch the correct word fragment into the sentence gap. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Fix Fragment",
+      "tip": "PRO TIP: A complete sentence needs both a Subject and a Verb at minimum!",
+      "rule_0": "Identify missing part",
+      "rule_1": "Maintain the tone",
+      "rule_2": "Verify logical structure"
+    },
+    "describeSituationWriting": {
+      "title": "Context Scribe",
+      "objective": "Tap the floating emojis to discover keywords and write a descriptive paragraph based on the scenario. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Scribe Scene",
+      "tip": "PRO TIP: Use sensory words! Describe what is seen, heard, or felt.",
+      "rule_0": "Tap emojis for keywords",
+      "rule_1": "Use vivid adjectives",
+      "rule_2": "Be specific & clear"
+    },
+    "fixTheSentence": {
+      "title": "Clarity Editor",
+      "objective": "Scrub the logical decay and select the correct replacement word. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Apply Edit",
+      "tip": "PRO TIP: Read the sentence out loud in your head! If it sounds clumsy, revise it.",
+      "rule_0": "Locate the error",
+      "rule_1": "Scrub the decay away",
+      "rule_2": "Select correct replacement"
+    },
+    "shortAnswerWriting": {
+      "title": "Briefing Pro",
+      "objective": "Write a brief, concise, and direct response to the prompt using the required keywords. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Submit Answer",
+      "tip": "PRO TIP: Get straight to the point! Keep it short and accurate.",
+      "rule_0": "Use all required keywords",
+      "rule_1": "Check grammar and punctuation",
+      "rule_2": "Write naturally and clearly"
+    },
+    "opinionWriting": {
+      "title": "Vocal Pen",
+      "objective": "Analyze the statements and categorize them as supporting or opposing the given opinion. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Balance Scale",
+      "tip": "PRO TIP: A 'Pro' always supports the prompt's opinion, while a 'Con' highlights a drawback or opposing view.",
+      "rule_0": "Read the prompt",
+      "rule_1": "Weigh the arguments",
+      "rule_2": "Balance the scale"
+    },
+    "dailyJournal": {
+      "title": "Daily Chronicler",
+      "objective": "Read the prompt and write a short personal journal reflection. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Log Entry",
+      "tip": "PRO TIP: Use sequential markers like 'First', 'Later', and 'Eventually' to organize your thoughts.",
+      "rule_0": "Be reflective",
+      "rule_1": "Use appropriate tenses",
+      "rule_2": "Focus on clear narrative"
+    },
+    "summarizeStoryWriting": {
+      "title": "Essence Extractor",
+      "objective": "Read the story and arrange the key events in chronological order to form a concise summary. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Summarize Now",
+      "tip": "PRO TIP: A good summary only includes events that actually happened in the story!",
+      "rule_0": "Read carefully",
+      "rule_1": "Sequence the events",
+      "rule_2": "Exclude incorrect details"
+    },
+    "writingEmail": {
+      "title": "Email Expert",
+      "objective": "Compose a professional and contextually appropriate email by arranging its key parts. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Send Mail",
+      "tip": "PRO TIP: Clear subject lines and direct greetings set the professional tone.",
+      "rule_0": "Use right greeting",
+      "rule_1": "State clear purpose",
+      "rule_2": "Use formal closing"
+    },
+    "correctionWriting": {
+      "title": "Syntax Auditor",
+      "objective": "Identify and replace the errored syntax phrase. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      "actionText": "Audit Syntax",
+      "tip": "PRO TIP: Read the sentence out loud in your head! Clunky phrasing often reveals the grammatical flaw.",
+      "rule_0": "Identify the error",
+      "rule_1": "Select correct syntax",
+      "rule_2": "Ensure 100% accuracy"
+    },
+    "ambientId": {
+      "title": "Spatial Anchor",
+      "objective": "Sharpen your situational awareness by identifying environments solely through their ambient soundscape, essential for real-world immersion. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Anchor Location",
+      "tip": "PRO TIP: Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
+      "rule_0": "Listen to background noise",
+      "rule_1": "Scan the radar options",
+      "rule_2": "Anchor the correct location"
+    },
     "audioFillBlanks": {
       "title": "Ink Decoder",
-      "objective": "Let's train your ears to catch every single word. Listen to the sentence, scratch the ink, and type exactly what you hear!",
+      "objective": "Listen to the audio feed and type the missing words in the transcript. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       "actionText": "Start Decoding",
       "tip": "PRO TIP: Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
-      "rule_0": "Scratch the ink",
-      "rule_1": "Listen for the missing word",
+      "rule_0": "Smear the ink",
+      "rule_1": "Listen for the gap",
       "rule_2": "Type exactly what you hear"
+    },
+    "audioMultipleChoice": {
+      "title": "Missing Word Spinner",
+      "objective": "Listen carefully to the audio and find the word that belongs in the blank. Picking out missing words trains your ears to naturally separate fast, native speech.",
+      "actionText": "Let's Go!",
+      "tip": "PRO TIP: Don't just guess! After picking your answer, you'll need to tap that exact word in the transcript to prove you heard it.",
+      "rule_0": "Tap the center to listen",
+      "rule_1": "Spin to pick the missing word",
+      "rule_2": "Tap the word in the text to prove it"
+    },
+    "audioSentenceOrder": {
+      "title": "Word by Word",
+      "objective": "Listen to the sentence and drag the words into the exact order you hear them. This trains your brain to process natural English phrasing in real-time.",
+      "actionText": "Let's Go!",
+      "tip": "PRO TIP: Try to arrange the words as you listen, instead of waiting for the sentence to finish!",
+      "rule_0": "Listen to the speaker",
+      "rule_1": "Drag words into place",
+      "rule_2": "Build the sentence"
+    },
+    "audioTrueFalse": {
+      "title": "Signal Validator",
+      "objective": "Listen to the speaker and verify if the claim is true or false. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Begin Validation",
+      "tip": "PRO TIP: Be careful of exact details—names, numbers, and dates must match perfectly.",
+      "rule_0": "Analyze the claim",
+      "rule_1": "Compare with audio data",
+      "rule_2": "Validate or Nullify"
+    },
+    "detailSpotlight": {
+      "title": "Spotlight Search",
+      "objective": "Listen for specific names, numbers, or details within the passage. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Start Search",
+      "tip": "PRO TIP: Note details as you listen—rushing to answer from memory can be tricky!",
+      "rule_0": "Scan details",
+      "rule_1": "Listen for target keywords",
+      "rule_2": "Identify match"
+    },
+    "emotionRecognition": {
+      "title": "Sentiment Prober",
+      "objective": "Identify the speaker's emotional state from their pitch and tone. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Probe Sentiment",
+      "tip": "PRO TIP: Rhythm, volume spikes, and sighing express more than literal words.",
+      "rule_0": "Navigate core",
+      "rule_1": "Analyze pitch & rhythm",
+      "rule_2": "Match exact sentiment"
+    },
+    "fastSpeechDecoder": {
+      "title": "Nuance Calibrator",
+      "objective": "Decode rapid native speech by picking out word boundaries. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Calibrate Gears",
+      "tip": "PRO TIP: Focus on stressed syllables—they carry the core meaning in fast speech.",
+      "rule_0": "Rotate gears",
+      "rule_1": "Listen for speed transitions",
+      "rule_2": "Unfold the meaning"
+    },
+    "listeningInference": {
+      "title": "Inference Lens",
+      "objective": "Infer implications in the spoken passage that are not explicitly stated. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Focus Lens",
+      "tip": "PRO TIP: Listen for hesitation or sarcasm—voice inflections hold crucial keys.",
+      "rule_0": "Read between waves",
+      "rule_1": "Deduce the subtext",
+      "rule_2": "Choose logical conclusion"
+    },
+    "soundImageMatch": {
+      "title": "Thematic Linker",
+      "objective": "Listen to the audio sound and match it with the correct visual image. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+      "actionText": "Confirm Link",
+      "tip": "PRO TIP: Try to describe the sound in one word before selecting your choice.",
+      "rule_0": "Scan tiles",
+      "rule_1": "Match sound to symbol",
+      "rule_2": "Confirm thematic link"
+    },
+    "intonationMimic": {
+      "title": "Intonation Mimic",
+      "objective": "Listen to the sentence and identify its pitch pattern to master the natural melody of the language Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Start Mimicking",
+      "tip": "PRO TIP: Questions often rise at the end, while statements usually fall. Listen closely to the final word!",
+      "rule_0": "Listen to the sentence",
+      "rule_1": "Analyze pitch direction",
+      "rule_2": "Choose correct intonation"
+    },
+    "syllableStress": {
+      "title": "Stress Spotter",
+      "objective": "Identify the stressed syllable in the spoken word by tapping the correct drum pad. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Find Stress",
+      "tip": "PRO TIP: The stressed part of a word is always louder and slightly longer.",
+      "rule_0": "Listen for the loud part",
+      "rule_1": "Check the length",
+      "rule_2": "Select the stressed part"
+    },
+    "wordLinking": {
+      "title": "Fluid Flow",
+      "objective": "Master word boundary linking to speak with native fluid rhythms. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Start Glide",
+      "tip": "PRO TIP: Push end consonants directly into starting vowels of the next word.",
+      "rule_0": "Listen for glides",
+      "rule_1": "Connect consonants",
+      "rule_2": "Avoid choppy phrases"
+    },
+    "shadowingChallenge": {
+      "title": "Shadowing Challenge",
+      "objective": "Listen to the spoken sentence and select the correct phonetic rule that explains how the words link or change. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Identify Pattern",
+      "tip": "PRO TIP: Try saying the sentence aloud exactly as you hear it. Feeling the sounds connect in your mouth will reveal the answer!",
+      "rule_0": "Listen to the phrase closely",
+      "rule_1": "Analyze the sound connection",
+      "rule_2": "Select the matching rule"
+    },
+    "vowelDistinction": {
+      "title": "Vowel Vortex",
+      "objective": "Isolate and master differences between subtle English vowel phonemes. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Sort Vowels",
+      "tip": "PRO TIP: Drop your jaw slightly lower for vowels like /æ/ than for /ɛ/.",
+      "rule_0": "Focus on tongue position",
+      "rule_1": "Identify exact sound",
+      "rule_2": "Select match"
+    },
+    "pitchPatternMatch": {
+      "title": "Musical Melody",
+      "objective": "Replicate the musical timing and pitch contour of the full sentence. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Match Melody",
+      "tip": "PRO TIP: Match the speed transitions—unstressed words are fast, stressed are slow.",
+      "rule_0": "Listen to the melody",
+      "rule_1": "Hum first if needed",
+      "rule_2": "Speak with rhythm"
+    },
+    "speedVariance": {
+      "title": "Speed Variance",
+      "objective": "Listen carefully and identify the speaking speed of the phrase. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Identify Speed",
+      "tip": "PRO TIP: Pay attention to whether the speaker is rushing or speaking carefully to emphasize a point!",
+      "rule_0": "Listen to the phrase",
+      "rule_1": "Analyze the tempo",
+      "rule_2": "Select the correct speed"
+    },
+    "dialectDrill": {
+      "title": "Dialect Drill",
+      "objective": "Identify and distinguish regional pronunciations to master global communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Start Drill",
+      "tip": "PRO TIP: Pay attention to vowel shapes! American English often flattens vowels, while British English rounds them.",
+      "rule_0": "Listen closely",
+      "rule_1": "Compare pronunciations",
+      "rule_2": "Select region"
+    },
+    "connectedSpeech": {
+      "title": "Connected Speech",
+      "objective": "Listen closely to how the words connect and choose the correct sound change card. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Connect Words",
+      "tip": "PRO TIP: Try saying the words fast yourself! If you force every single letter, it feels unnatural. Real speech takes shortcuts.",
+      "rule_0": "Listen to the linked words",
+      "rule_1": "Notice which sound changes or drops",
+      "rule_2": "Select the rule that applies"
+    },
+    "pitchModulation": {
+      "title": "Voice Emotion",
+      "objective": "Listen to the speaker's pitch and select the matching modulation pattern to master how English speakers convey energy and emotion through voice. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      "actionText": "Select Emotion",
+      "tip": "PRO TIP: A rising-falling pitch often shows energy or warmth, while a falling-rising pitch can signal hesitation or mild concern.",
+      "rule_0": "Listen to the pitch",
+      "rule_1": "Analyze the emotion",
+      "rule_2": "Select the correct pattern"
+    },
+    "branchingDialogue": {
+      "title": "Social Simulator",
+      "objective": "Tap an answer or drag the decision probe to select the most natural, context-appropriate conversational response. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Enter Simulation",
+      "tip": "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
+      "rule_0": "Analyze the scene",
+      "rule_1": "Flick decision probe",
+      "rule_2": "React naturally"
+    },
+    "situationalResponse": {
+      "title": "Reflex Responder",
+      "objective": "Choose the most appropriate and polite social response for the scenario. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Respond Now",
+      "tip": "PRO TIP: Use expressions like 'I would appreciate it' or 'Would you mind'!",
+      "rule_0": "Match social tone",
+      "rule_1": "Be polite/direct",
+      "rule_2": "Navigate social nuances"
+    },
+    "jobInterview": {
+      "title": "Career Closer",
+      "objective": "Choose professional responses to nail your high-stakes job interview. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Start Interview",
+      "tip": "PRO TIP: Frame replies to show how your experience solves their business needs.",
+      "rule_0": "Be professional",
+      "rule_1": "Highlight core skills",
+      "rule_2": "Stay confident"
+    },
+    "medicalConsult": {
+      "title": "Health Liaison",
+      "objective": "Clearly explain symptoms or follow a doctor's detailed instructions. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Start Consult",
+      "tip": "PRO TIP: Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
+      "rule_0": "Be accurate",
+      "rule_1": "Describe physical feelings",
+      "rule_2": "Be precise and clear"
+    },
+    "gourmetOrder": {
+      "title": "Order Master",
+      "objective": "Order food, request custom adjustments, and settle restaurant bills. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Place Order",
+      "tip": "PRO TIP: Using 'Could I get...' is the preferred way to place polite orders.",
+      "rule_0": "Be highly polite",
+      "rule_1": "Check details carefully",
+      "rule_2": "Communicate clearly"
+    },
+    "travelDesk": {
+      "title": "Global Traveler",
+      "objective": "Manage check-ins, navigate directions, and handle hotel booking requests. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Start Journey",
+      "tip": "PRO TIP: Confirm directions by repeating them back to check understanding.",
+      "rule_0": "Check travel tickets",
+      "rule_1": "Follow directions",
+      "rule_2": "Ask for support"
+    },
+    "conflictResolver": {
+      "title": "Peace Maker",
+      "objective": "Resolve conversational arguments and misunderstandings using tactful words. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Resolve Conflict",
+      "tip": "PRO TIP: De-escalate early by validating their perspective before replying.",
+      "rule_0": "Use 'I' statements",
+      "rule_1": "Acknowledge feelings",
+      "rule_2": "Find middle ground"
+    },
+    "elevatorPitch": {
+      "title": "Pitch Perfect",
+      "objective": "Deliver a compelling, high-impact business message in 30 seconds. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Start Pitch",
+      "tip": "PRO TIP: Lead with a massive hook that frames a relatable daily problem.",
+      "rule_0": "Be concise",
+      "rule_1": "High emotional impact",
+      "rule_2": "Deliver with confidence"
+    },
+    "socialSpark": {
+      "title": "Charisma Core",
+      "objective": "Initiate and sustain engaging small talk with new acquaintances. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Spark Talk",
+      "tip": "PRO TIP: Ask 'what' or 'how' to keep the conversational partner sharing.",
+      "rule_0": "Ask open questions",
+      "rule_1": "Show high interest",
+      "rule_2": "Keep the tone light"
+    },
+    "emergencyHub": {
+      "title": "Emergency Voice",
+      "objective": "Communicate clearly and stay calm under pressure in crisis scenarios. Mastering situational responses ensures you can navigate social interactions with confidence.",
+      "actionText": "Help Now",
+      "tip": "PRO TIP: Clear, slow, and specific directions save lives in critical moments.",
+      "rule_0": "Stay highly calm",
+      "rule_1": "State location first",
+      "rule_2": "Be exact & concise"
+    },
+    "repeatSentence": {
+      "title": "Echo Master",
+      "objective": "Listen carefully and repeat the sentence matching cadence and wave patterns. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Start Echo",
+      "tip": "PRO TIP: Match the stress rhythm—English flows in stressed clusters!",
+      "rule_0": "Hold mic to record",
+      "rule_1": "Trace sound wave",
+      "rule_2": "Master the cadence"
+    },
+    "pronunciationFocus": {
+      "title": "Phonetic Precision",
+      "objective": "Perfect mouth movements to pronounce challenging sounds and clusters. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Practice Sound",
+      "tip": "PRO TIP: Pay attention to where your tongue touches the roof of your mouth.",
+      "rule_0": "Focus on mouth shape",
+      "rule_1": "Repeat target phoneme",
+      "rule_2": "Analyze feedback waves"
+    },
+    "dailyExpression": {
+      "title": "Social Fluent",
+      "objective": "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Speak Now",
+      "tip": "PRO TIP: Emphasize the keywords that carry the main emotional meaning.",
+      "rule_0": "Swipe to reveal idiom",
+      "rule_1": "Listen to expression",
+      "rule_2": "Review context & usage"
+    },
+    "dialogueRoleplay": {
+      "title": "Scene Architect",
+      "objective": "Speak your roleplay script lines with correct emotion and phrasing. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Enter Scene",
+      "tip": "PRO TIP: Match your voice acting to the simulated character's mood!",
+      "rule_0": "Follow the script",
+      "rule_1": "Speak with feeling",
+      "rule_2": "Keep the flow going"
+    },
+    "sceneDescriptionSpeaking": {
+      "title": "Visual Narrator",
+      "objective": "Describe the image scene clearly using descriptive adjectives. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Describe Scene",
+      "tip": "PRO TIP: Start with foreground actions, then move to background details.",
+      "rule_0": "Analyze the image",
+      "rule_1": "Speak descriptive details",
+      "rule_2": "Build a narrative"
+    },
+    "situationSpeaking": {
+      "title": "Crisis Communicator",
+      "objective": "Orally provide a clear, direct solution to the real-world scenario. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Resolve Now",
+      "tip": "PRO TIP: Focus on direct, simple language to convey your message quickly.",
+      "rule_0": "Understand context",
+      "rule_1": "Speak your solution",
+      "rule_2": "Be clear and direct"
+    },
+    "speakMissingWord": {
+      "title": "Vocal Decoder",
+      "objective": "Read the prompt and speak the missing word clearly to fill the blank. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Speak Word",
+      "tip": "PRO TIP: Look at surrounding nouns and verbs to match singular vs plural context.",
+      "rule_0": "Identify the gap",
+      "rule_1": "Speak the word clearly",
+      "rule_2": "Verify the context"
+    },
+    "speakOpposite": {
+      "title": "Antonym Orator",
+      "objective": "Speak the exact opposite meaning of the prompt word. Thinking of opposites rapidly builds a flexible, expressive vocabulary.",
+      "actionText": "Speak Opposite",
+      "tip": "PRO TIP: Think magnetically: What is the polar opposite of the given word?",
+      "rule_0": "Think of the opposite",
+      "rule_1": "Speak clearly",
+      "rule_2": "Avoid synonyms"
+    },
+    "speakSynonym": {
+      "title": "Lexical Speaker",
+      "objective": "Orally state a word that means the exact same thing. Having multiple words for the same idea gives your speech much more color and variety.",
+      "actionText": "Speak Synonym",
+      "tip": "PRO TIP: Don't stress! Even simple, everyday synonyms are perfectly acceptable.",
+      "rule_0": "Find the twin meaning",
+      "rule_1": "Speak clearly",
+      "rule_2": "Build a rich vocabulary"
+    },
+    "yesNoSpeaking": {
+      "title": "Voice Validator",
+      "objective": "Answer the factual questions firmly with a spoken 'Yes' or 'No'. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+      "actionText": "Validate Voice",
+      "tip": "PRO TIP: Speak with confident, clear pronunciation directly into the mic.",
+      "rule_0": "Listen to the question",
+      "rule_1": "Speak confirmation clearly",
+      "rule_2": "Be quick and clear"
+    },
+    "animals": {
+      "title": "Animal Safari",
+      "objective": "It's safari time! We need to identify the hidden animal. Read the field notes on the clipboard and hand the right tag to the explorer.",
+      "rule_0": "Read the animal field notes",
+      "rule_1": "Look for hidden clues",
+      "rule_2": "Tag the correct species",
+      "actionText": "Go Safari",
+      "tip": "PRO TIP: Think about the sound the animal makes or where it lives! 🦁"
+    },
+    "colors": {
+      "title": "Rainbow World",
+      "objective": "Time to paint a masterpiece! Look at the easel to see what color we are mixing, and squeeze the right paint tube onto the canvas.",
+      "rule_0": "Check the requested color",
+      "rule_1": "Find the matching tube",
+      "rule_2": "Squeeze the paint",
+      "actionText": "Paint Colors",
+      "tip": "PRO TIP: Colors are everywhere! Think about the color of the sky or grass. 🎨"
+    },
+    "fruits": {
+      "title": "Fruit Garden",
+      "objective": "Let's harvest some yummy treats! Check the wooden sign to see what fruit we need, and pack it safely into the picnic basket.",
+      "rule_0": "Identify the fresh fruit",
+      "rule_1": "Pick the matching shape",
+      "rule_2": "Pack it in the basket",
+      "actionText": "Pick Fruits",
+      "tip": "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎"
+    },
+    "shapes": {
+      "title": "Shape Explorer",
+      "objective": "Let's learn about geometry! Look closely at the notebook to see which shape we need, and place the right block on the desk.",
+      "rule_0": "Count the edges carefully",
+      "rule_1": "Match the silhouette",
+      "rule_2": "Drop the shape in place",
+      "actionText": "Explore Shapes",
+      "tip": "PRO TIP: Count the corners or edges if you are stuck! 📐"
+    },
+    "body_parts": {
+      "title": "My Body",
+      "objective": "Time for a quick checkup! Read the symptoms on the doctor's clipboard, and place the healing bandage on the correct body part.",
+      "rule_0": "Read the medical clues",
+      "rule_1": "Identify the body part",
+      "rule_2": "Apply the bandage",
+      "actionText": "Start Learning",
+      "tip": "PRO TIP: Can you point to that body part on yourself? 🧍"
+    },
+    "family": {
+      "title": "Family Tree",
+      "objective": "Let's build our family history! Check the grand banner to see who we are looking for, and hang their portrait on the family tree.",
+      "rule_0": "Read the family title",
+      "rule_1": "Find the right relative",
+      "rule_2": "Hang the portrait",
+      "actionText": "Meet Family",
+      "tip": "PRO TIP: Family words show how people are related, like brother or sister! ❤️"
+    },
+    "food": {
+      "title": "Yummy Food",
+      "objective": "Order up! The customers are hungry. Read the order on the restaurant menu, and serve the correct yummy dish onto the plate.",
+      "rule_0": "Read the hungry order",
+      "rule_1": "Find the tasty dish",
+      "rule_2": "Serve it on the plate",
+      "actionText": "Eat Up",
+      "tip": "PRO TIP: Think about what you eat for breakfast, lunch, or dinner! 🥛"
+    },
+    "clothing": {
+      "title": "Dress Up",
+      "objective": "Let's get dressed for the day! Look at the mirror to see what the weather is like, and put the perfect outfit into the wardrobe.",
+      "rule_0": "Check the weather clue",
+      "rule_1": "Pick the right outfit",
+      "rule_2": "Hang it in the closet",
+      "actionText": "Get Dressed",
+      "tip": "PRO TIP: Think about what you wear when it's hot or cold outside! 👕"
+    },
+    "nature": {
+      "title": "Nature Walk",
+      "objective": "Let's go on a wilderness adventure! Read the wooden trail sign, and collect the correct piece of nature on the tree stump.",
+      "rule_0": "Read the nature guide",
+      "rule_1": "Find the forest item",
+      "rule_2": "Collect it on the stump",
+      "actionText": "Start Walk",
+      "tip": "PRO TIP: Look outside! Nature is everything that grows and lives outside. 🌳"
+    },
+    "transport": {
+      "title": "Zoom Zoom!",
+      "objective": "Beep beep! Let's manage the city traffic. Read the directions on the asphalt, and guide the correct vehicle to the intersection.",
+      "rule_0": "Read the travel clues",
+      "rule_1": "Spot the right vehicle",
+      "rule_2": "Guide it to the road",
+      "actionText": "Start Engine",
+      "tip": "PRO TIP: Think about whether it goes on land, in the water, or in the sky! 🚗"
+    },
+    "emotions": {
+      "title": "Feeling Happy",
+      "objective": "How are you feeling today? Read the feelings banner, and help the actor put on the correct emotion mask on the stage.",
+      "rule_0": "Read the feeling word",
+      "rule_1": "Find the matching expression",
+      "rule_2": "Put on the mask",
+      "actionText": "Share Feelings",
+      "tip": "PRO TIP: Try making that face in a mirror to see how it feels! 😊"
+    },
+    "school": {
+      "title": "School Days",
+      "objective": "Ring ring, time for class! Check the teacher's notepad, and pack the correct school supply onto your desk.",
+      "rule_0": "Check the supply list",
+      "rule_1": "Find your school tool",
+      "rule_2": "Place it on the desk",
+      "actionText": "Go to School",
+      "tip": "PRO TIP: Think about what you carry in your backpack! 🎒"
+    },
+    "home": {
+      "title": "My Sweet Home",
+      "objective": "Let's decorate our dream house! Read the architect's blueprint, and move the correct piece of furniture into the home.",
+      "rule_0": "Read the room blueprint",
+      "rule_1": "Find the furniture box",
+      "rule_2": "Move it into the house",
+      "actionText": "Enter House",
+      "tip": "PRO TIP: Think about which room you would find this item in! 🏠"
+    },
+    "opposites": {
+      "title": "Big and Small",
+      "objective": "Let's find the perfect balance! Read the clue on the golden scale, and drop the exact opposite word to level it out.",
+      "rule_0": "Read the starting word",
+      "rule_1": "Think of its total opposite",
+      "rule_2": "Balance the scale",
+      "actionText": "Match Pairs",
+      "tip": "PRO TIP: Opposites are totally different, like Hot and Cold! 🧊"
+    },
+    "verbs": {
+      "title": "Action Time!",
+      "objective": "Get ready for the big game! Look at the jumbotron scoreboard, and throw the correct action-word sports ball into the stadium.",
+      "rule_0": "Read the action word",
+      "rule_1": "Find the matching ball",
+      "rule_2": "Throw it in the stadium",
+      "actionText": "Get Active",
+      "tip": "PRO TIP: A verb is something you can DO, like jump or run! 🏃"
+    },
+    "prepositions": {
+      "title": "Where is it?",
+      "objective": "Let's go on a treasure hunt! Read the directional banner, and drop the correct arrow block onto the treasure map.",
+      "rule_0": "Read the position clue",
+      "rule_1": "Find the matching arrow",
+      "rule_2": "Place it on the map",
+      "actionText": "Find It",
+      "tip": "PRO TIP: Think about where things are placed, like IN a box or ON a table! 📦"
+    },
+    "routine": {
+      "title": "My Daily Day",
+      "objective": "Let's plan a healthy day! Check the alarm clock to see what time it is, and stick the right daily habit on your calendar.",
+      "rule_0": "Check the time of day",
+      "rule_1": "Find the healthy habit",
+      "rule_2": "Stick it on the schedule",
+      "actionText": "Start Day",
+      "tip": "PRO TIP: Think about what you do when you wake up or go to bed! 🪥"
+    },
+    "phonics": {
+      "title": "Sound Master",
+      "objective": "Turn up the volume! Read the phonetic clue on the speaker, and plug the matching sound wave into the amplifier.",
+      "rule_0": "Read the sound blend",
+      "rule_1": "Find the matching wave",
+      "rule_2": "Plug it into the amp",
+      "actionText": "Make Sounds",
+      "tip": "PRO TIP: Say the sound out loud to help you find the right match! 🗣️"
+    },
+    "time": {
+      "title": "Tick Tock!",
+      "objective": "Tick tock! Look at the time on the chalkboard, and strap the matching digital clock onto the smartwatch.",
+      "rule_0": "Read the chalkboard time",
+      "rule_1": "Find the matching digital clock",
+      "rule_2": "Strap it to the watch",
+      "actionText": "Check Time",
+      "tip": "PRO TIP: Remember, 12:00 can be noon or midnight! ⏰"
+    },
+    "day_night": {
+      "title": "Sun and Moon",
+      "objective": "Look up at the sky! Peer through the telescope to read the clue, and switch the window to show the correct time of day.",
+      "rule_0": "Read the sky clue",
+      "rule_1": "Decide if it's day or night",
+      "rule_2": "Switch the window scene",
+      "actionText": "Switch Sky",
+      "tip": "PRO TIP: Does this happen when it's sunny or dark outside? 🌙"
+    },
+    "weather": {
+      "title": "Sky Explorer",
+      "objective": "Let's become a meteorologist! Read the weather report on the billboard, and float the correct cloud into the sky.",
+      "rule_0": "Read the weather report",
+      "rule_1": "Find the matching cloud",
+      "rule_2": "Float it into the sky",
+      "actionText": "Check Sky",
+      "tip": "PRO TIP: Think about what you wear when it rains or snows! ☁️"
+    },
+    "professions": {
+      "title": "Community Helpers",
+      "objective": "Meet our community heroes! Read the job description on the building, and pin the correct worker badge to the town board.",
+      "rule_0": "Read the job description",
+      "rule_1": "Find the right worker",
+      "rule_2": "Pin their badge",
+      "actionText": "Go to Work",
+      "tip": "PRO TIP: Think about what this person does to help the town! 👩‍🚒"
     }
   },
   "common": {
@@ -1090,7 +2319,7 @@
     "ambientId": "Listen closely and figure out where these background sounds are coming from.",
     "audioFillBlanks": "Let's train your ears to catch every single word! Listen to the sentence, scratch the ink, and type exactly what you hear.",
     "audioMultipleChoice": "Listen to the speaker, spin to find the missing word, and tap the transcript to prove it.",
-    "audioSentenceOrder": "Listen to the clips and put the story in the correct order.",
+    "audioSentenceOrder": "Listen to the speaker and put the words in the exact order you hear them.",
     "audioTrueFalse": "Listen to the statement and decide if it's true or false.",
     "detailSpotlight": "Pay attention to the small details in the conversation.",
     "emotionRecognition": "Listen to the tone of voice and guess how the speaker is feeling.",
@@ -1201,11 +2430,11 @@
     "listening_beat_4": "Level 100! You understand spoken English with great accuracy.",
     "listening_beat_5": "Level 200 reached! You can comprehend native speakers effortlessly.",
     "audiofillblanks_beat_0": "",
-    "audiofillblanks_beat_1": "Great start! You're catching words you would have missed before.",
-    "audiofillblanks_beat_2": "Your ears are getting sharper! You're hearing the hidden spaces.",
-    "audiofillblanks_beat_3": "Level 50! You're scratching away the ink like a true detective.",
-    "audiofillblanks_beat_4": "Level 100! Your hearing is incredible. You catch every single word effortlessly.",
-    "audiofillblanks_beat_5": "Level 200 reached! You are the ultimate decoder. Nothing gets past you!",
+    "audiofillblanks_beat_1": "Great job! Mastering audio gaps is key to true fluency.",
+    "audiofillblanks_beat_2": "You are navigating audio gaps with increasing confidence.",
+    "audiofillblanks_beat_3": "Level 50! Your command of audio gaps is exceptional.",
+    "audiofillblanks_beat_4": "Centurion! You have conquered the complexities of audio gaps.",
+    "audiofillblanks_beat_5": "200 levels cleared! Your audio gaps abilities are unmatched globally.",
     "accent_beat_1": "You sound great! Your speaking is getting much clearer and more natural.",
     "accent_beat_2": "Amazing progress! You are starting to sound just like a local speaker.",
     "accent_beat_3": "Halfway to 100! Your pronunciation is incredibly smooth and easy to understand.",
@@ -1400,11 +2629,6 @@
     "relativeclauses_beat_4": "Level 100! You are an absolute master of relative clauses.",
     "relativeclauses_beat_5": "Level 200 reached! Your grasp of relative clauses is legendary.",
     "conditionals_beat_0": "",
-    "conditionals_beat_1": "Great job! Mastering conditionals is key to true fluency.",
-    "conditionals_beat_2": "Your skills in conditionals are becoming incredibly sharp.",
-    "conditionals_beat_3": "50 levels cleared! Your conditionals skills are rock solid.",
-    "conditionals_beat_4": "100 levels beat! You truly dominate conditionals.",
-    "conditionals_beat_5": "Double Centurion! No one knows conditionals better than you.",
     "conditionals_beat_1": "Nice start! You're getting the hang of how native speakers talk about imaginary situations.",
     "conditionals_beat_2": "You're doing great. Expressing conditions and consequences is feeling much more natural now.",
     "conditionals_beat_3": "50 levels down! You're building a really strong instinct for 'if-then' situations.",
@@ -1428,12 +2652,6 @@
     "ambientid_beat_3": "Level 50! Your command of ambient sounds is exceptional.",
     "ambientid_beat_4": "Level 100! Your execution of ambient sounds is flawless.",
     "ambientid_beat_5": "Double Centurion! No one knows ambient sounds better than you.",
-    "audiofillblanks_beat_0": "",
-    "audiofillblanks_beat_1": "Great job! Mastering audio gaps is key to true fluency.",
-    "audiofillblanks_beat_2": "You are navigating audio gaps with increasing confidence.",
-    "audiofillblanks_beat_3": "Level 50! Your command of audio gaps is exceptional.",
-    "audiofillblanks_beat_4": "Centurion! You have conquered the complexities of audio gaps.",
-    "audiofillblanks_beat_5": "200 levels cleared! Your audio gaps abilities are unmatched globally.",
     "audiomultiplechoice_beat_0": "",
     "audiomultiplechoice_beat_1": "Great start! Catching those missing words will make you a much better listener.",
     "audiomultiplechoice_beat_2": "You're getting really good at picking out specific words from natural speech!",
@@ -1441,11 +2659,11 @@
     "audiomultiplechoice_beat_4": "Level 100! Your ears are practically trained to catch every missing word.",
     "audiomultiplechoice_beat_5": "Level 200! You're a true listening master. Native speakers can't sneak anything past you!",
     "audiosentenceorder_beat_0": "",
-    "audiosentenceorder_beat_1": "Well done! You are building a strong foundation in audio sequencing.",
-    "audiosentenceorder_beat_2": "Your progress in audio sequencing is genuinely impressive.",
-    "audiosentenceorder_beat_3": "Halfway there! You are a rising star in audio sequencing.",
-    "audiosentenceorder_beat_4": "Centurion! You have conquered the complexities of audio sequencing.",
-    "audiosentenceorder_beat_5": "Level 200! You are a supreme grandmaster of audio sequencing.",
+    "audiosentenceorder_beat_1": "Great start! You're already getting the hang of how English sentences flow.",
+    "audiosentenceorder_beat_2": "Nice work! Your ear for English grammar is getting sharper every day.",
+    "audiosentenceorder_beat_3": "Level 50! You're piecing these sentences together like a native speaker.",
+    "audiosentenceorder_beat_4": "Level 100! Your brain is now perfectly tuned to the rhythm of English.",
+    "audiosentenceorder_beat_5": "Level 200! You're an absolute natural. Nothing can trick your ears anymore!",
     "audiotruefalse_beat_0": "",
     "audiotruefalse_beat_1": "Nice work! Conquering audio verification is a huge step forward.",
     "audiotruefalse_beat_2": "Your mastery of audio verification is noticeably improving daily.",
@@ -1858,1246 +3076,6 @@
     "accentshadowing_beat_3": "Halfway to 100! You are conquering the nuances of connected speech.",
     "accentshadowing_beat_4": "Level 100! Your spoken cadence is incredibly natural.",
     "accentshadowing_beat_5": "Level 200 reached! You possess flawless phonetic mimicry."
-  },
-  "instructions": {
-    "numbers": {
-      "title": "Number Fun",
-      "objective": "Houston, we are ready for liftoff! Look out the rocket window to read the clues, and lock the matching planet into the ship.",
-      "rule_0": "Read the space clues",
-      "rule_1": "Find the matching number",
-      "rule_2": "Lock it into the rocket",
-      "actionText": "Start Counting",
-      "tip": "PRO TIP: Count the items carefully if you need to! 🚀"
-    },
-    "alphabet": {
-      "title": "Alphabet Adventure",
-      "objective": "Let's unlock the magic of letters! Tap the mystery box to hear the hidden sound, and stick the correct letter onto the chalkboard.",
-      "rule_0": "Listen to the phonetic sound",
-      "rule_1": "Find the matching letter",
-      "rule_2": "Place it on the board",
-      "actionText": "Play ABCs",
-      "tip": "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵"
-    },
-    "handwriting": {
-      "title": "Write and Learn",
-      "objective": "Unlock your magic pen! Follow the glowing arrows to trace the letter perfectly on the chalkboard.",
-      "rule_0": "Follow the glowing arrows",
-      "rule_1": "Trace inside the lines",
-      "rule_2": "Write the letter yourself",
-      "actionText": "Start Writing",
-      "tip": "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨"
-    },
-    "storybuilder": {
-      "title": "Story Builder",
-      "objective": "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "rule_0": "Identify the starting sentence",
-      "rule_1": "Look for logical transitions",
-      "rule_2": "Build a cohesive paragraph",
-      "actionText": "Build Story",
-      "tip": "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!"
-    },
-    "accentshadowing": {
-      "title": "Accent Shadowing",
-      "objective": "Speak clearly to match the exact accent and rhythm of the speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "rule_0": "Listen to the example",
-      "rule_1": "Record your voice",
-      "rule_2": "Match the accent",
-      "actionText": "Start Shadowing",
-      "tip": "PRO TIP: Pay close attention to which syllables are stressed—it makes a huge difference!"
-    },
-    "speedspelling": {
-      "title": "Speed Spelling",
-      "objective": "Tap the floating letters to spell the target word correctly. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "rule_0": "Spelling must be exact",
-      "rule_1": "Sound out the syllables",
-      "rule_2": "Review before submitting",
-      "actionText": "Start Spelling",
-      "tip": "PRO TIP: Sound the word out slowly in your head before tapping the letters."
-    },
-    "idiommatch": {
-      "title": "Idiom Master",
-      "objective": "Match the idiom to its real meaning. Expanding your vocabulary is the ultimate secret to sounding like a true native speaker.",
-      "rule_0": "Analyze the context clue",
-      "rule_1": "Identify the core meaning",
-      "rule_2": "Match the perfect idiom",
-      "actionText": "Match Idiom",
-      "tip": "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!"
-    },
-    "speaking": {
-      "title": "Voice Mastery",
-      "objective": "Tap mic and repeat the phrase clearly at a natural pace. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Record Now",
-      "tip": "PRO TIP: Record yourself! Comparing your pitch to the model helps master the natural rhythm.",
-      "rule_0": "Find a quiet place",
-      "rule_1": "Speak at a natural pace",
-      "rule_2": "Match the example"
-    },
-    "listening": {
-      "title": "Audio Analysis",
-      "objective": "Listen carefully and choose the correct answer option. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Initialize Feed",
-      "tip": "PRO TIP: Close your eyes! Focusing on pure sound helps catch subtle phoneme changes.",
-      "rule_0": "Use headphones",
-      "rule_1": "Focus on intonation",
-      "rule_2": "Identify keywords"
-    },
-    "reading": {
-      "title": "Text Comprehension",
-      "objective": "Read the passage carefully and answer the comprehension questions. Mastering reading comprehension allows you to quickly extract key information in the real world.",
-      "actionText": "Analyze Text",
-      "tip": "PRO TIP: Scan for keywords first! Don't get stuck on one word; focus on the overall message.",
-      "rule_0": "Read the whole text",
-      "rule_1": "Identify main ideas",
-      "rule_2": "Check details carefully"
-    },
-    "writing": {
-      "title": "Sentence Construction",
-      "objective": "Arrange the words in the correct order to build a complete sentence. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Build Sentence",
-      "tip": "PRO TIP: Start with the verb! Finding the action helps the rest of the sentence fall into place.",
-      "rule_0": "Check your spelling",
-      "rule_1": "Check punctuation",
-      "rule_2": "Structure logically"
-    },
-    "grammar": {
-      "title": "Structural Logic",
-      "objective": "Fix the underlying structural errors to complete the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
-      "actionText": "Fix Structure",
-      "tip": "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is being broken.",
-      "rule_0": "Identify errors",
-      "rule_1": "Choose the correction",
-      "rule_2": "Master the rules"
-    },
-    "vocabulary": {
-      "title": "Word Power",
-      "objective": "Match words to their correct definitions to expand your vocabulary. Expanding your vocabulary is the ultimate secret to sounding like a true native speaker.",
-      "actionText": "Acquire Lexicon",
-      "tip": "PRO TIP: Visual associations help! Try to link the word to a picture in your mind.",
-      "rule_0": "Memorize the meanings",
-      "rule_1": "Understand context",
-      "rule_2": "Build word bank"
-    },
-    "accent": {
-      "title": "Phonetic Drill",
-      "objective": "Focus on rhythm and pitch. Sound exactly like a native speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Start Drill",
-      "tip": "PRO TIP: Over-enunciate! Emphasizing the vowels helps clear up minimal pair confusion.",
-      "rule_0": "Listen to intonation",
-      "rule_1": "Mimic the rhythm",
-      "rule_2": "Repeat until perfect"
-    },
-    "findWordMeaning": {
-      "title": "Word Detective",
-      "objective": "Read the passage and deduce the meaning of the highlighted word from its context. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Find Meaning",
-      "tip": "PRO TIP: Look at the sentence right before and right after the word—they usually hold the biggest clues!",
-      "rule_0": "Read the full passage",
-      "rule_1": "Locate the target word",
-      "rule_2": "Select the correct definition"
-    },
-    "guessTitle": {
-      "title": "Title Generator",
-      "objective": "Read the short story and determine the most appropriate title for it. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Guess Title",
-      "tip": "PRO TIP: A good title captures the main idea, not just a single detail mentioned in passing.",
-      "rule_0": "Read the complete story",
-      "rule_1": "Identify the core theme",
-      "rule_2": "Select the matching title"
-    },
-    "paragraphSummary": {
-      "title": "Summary Synthesis",
-      "objective": "Read the paragraph and select the sentence that best summarizes its main point. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Summarize",
-      "tip": "PRO TIP: The first and last sentences often give away the author's primary argument.",
-      "rule_0": "Read the full text",
-      "rule_1": "Find the central argument",
-      "rule_2": "Choose the best summary"
-    },
-    "readAndAnswer": {
-      "title": "Fact Finder",
-      "objective": "Read the text carefully and answer the specific comprehension questions. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Answer Question",
-      "tip": "PRO TIP: Skim the question first so you know exactly what facts to look for while reading!",
-      "rule_0": "Review the question",
-      "rule_1": "Scan for keywords",
-      "rule_2": "Select the exact fact"
-    },
-    "readAndMatch": {
-      "title": "Connection Maker",
-      "objective": "Read the descriptions and match the related concepts together. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Match Items",
-      "tip": "PRO TIP: Look for synonyms! The answer rarely uses the exact same vocabulary as the text.",
-      "rule_0": "Read the core text",
-      "rule_1": "Identify related concepts",
-      "rule_2": "Confirm the match"
-    },
-    "readingConclusion": {
-      "title": "Logical Leap",
-      "objective": "Read the evidence presented in the text and draw the correct logical conclusion. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Draw Conclusion",
-      "tip": "PRO TIP: Don't guess based on your own knowledge—only use the facts provided in the text.",
-      "rule_0": "Analyze the evidence",
-      "rule_1": "Avoid outside assumptions",
-      "rule_2": "Select logical outcome"
-    },
-    "readingInference": {
-      "title": "Hidden Truth",
-      "objective": "Read between the lines to discover what the author implies but does not explicitly state. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Infer Truth",
-      "tip": "PRO TIP: Pay attention to the author's tone and word choices—they reveal hidden feelings.",
-      "rule_0": "Read the passage carefully",
-      "rule_1": "Analyze the author's tone",
-      "rule_2": "Infer the hidden meaning"
-    },
-    "readingSpeedCheck": {
-      "title": "Speed Reader",
-      "objective": "Read the passage as fast as you can while maintaining full comprehension. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Start Reading",
-      "tip": "PRO TIP: Don't read word-by-word. Try to read blocks of words at a time to increase your speed!",
-      "rule_0": "Focus on text flow",
-      "rule_1": "Grasp the main idea quickly",
-      "rule_2": "Answer to prove understanding"
-    },
-    "sentenceOrderReading": {
-      "title": "Narrative Logic",
-      "objective": "Arrange the scrambled sentences into a logical and cohesive paragraph. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Order Sentences",
-      "tip": "PRO TIP: Look for transition words like 'However', 'Therefore', or 'Finally' to link sentences.",
-      "rule_0": "Find the topic sentence",
-      "rule_1": "Follow the logical flow",
-      "rule_2": "Lock the final sequence"
-    },
-    "trueFalseReading": {
-      "title": "Fact Checker",
-      "objective": "Carefully analyze the text and verify if the provided statement is true or false. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Check Facts",
-      "tip": "PRO TIP: Watch out for absolute words like 'always', 'never', or 'all'—they often make a statement false.",
-      "rule_0": "Read the statement",
-      "rule_1": "Cross-reference the text",
-      "rule_2": "Verify truth or falsehood"
-    },
-    "skimmingScanning": {
-      "title": "Information Scanner",
-      "objective": "Quickly scan the large text block to locate specific requested information. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Start Scan",
-      "tip": "PRO TIP: Use your finger to guide your eyes quickly down the page looking for names or numbers.",
-      "rule_0": "Identify target keywords",
-      "rule_1": "Scan the text rapidly",
-      "rule_2": "Pinpoint exact information"
-    },
-    "clozeTest": {
-      "title": "Blank Filler",
-      "objective": "Use logic and contextual clues to fill in the missing words in the narrative. Mastering reading comprehension accelerates your overall English fluency.",
-      "actionText": "Fill Blanks",
-      "tip": "PRO TIP: Determine if the missing word needs to be a noun, verb, or adjective before looking at options.",
-      "rule_0": "Read the surrounding sentence",
-      "rule_1": "Identify required word type",
-      "rule_2": "Select the perfect fit"
-    },
-    "roleplay": {
-      "title": "Social Simulation",
-      "objective": "Navigate social scenarios by selecting the best conversational response. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Enter Scenario",
-      "tip": "PRO TIP: Be expressive! The tone is just as important as the words in social interactions.",
-      "rule_0": "Stay in character",
-      "rule_1": "Think of the goal",
-      "rule_2": "React naturally"
-    },
-    "minimalPairs": {
-      "title": "Minimal Pairs",
-      "objective": "Listen to the word and select the correct matching sound. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Identify Sound",
-      "tip": "PRO TIP: Pay attention to whether the vowel feels quick and relaxed, or long and stretched!",
-      "rule_0": "Listen to the target word",
-      "rule_1": "Notice vowel length and tension",
-      "rule_2": "Select the exact phonetic match"
-    },
-    "storyBuilder": {
-      "title": "Story Builder",
-      "objective": "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Build Story",
-      "tip": "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
-      "rule_0": "Identify the starting sentence",
-      "rule_1": "Look for logical transitions",
-      "rule_2": "Build a cohesive paragraph"
-    },
-    "essayDrafting": {
-      "title": "Essay Architect",
-      "objective": "Sequence the paragraph blocks into their correct logical structure. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Construct Blueprint",
-      "tip": "PRO TIP: Ensure each body paragraph has a clear topic sentence.",
-      "rule_0": "Find the opening claim",
-      "rule_1": "Sequence supporting reasons",
-      "rule_2": "Lock the structural blueprint"
-    },
-    "idiomMatch": {
-      "title": "Idiom Master",
-      "objective": "Match the idiom to its real meaning. Expanding your vocabulary is the ultimate secret to sounding like a true native speaker.",
-      "actionText": "Match Idiom",
-      "tip": "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!",
-      "rule_0": "Analyze the context clue",
-      "rule_1": "Identify the core meaning",
-      "rule_2": "Match the perfect idiom"
-    },
-    "speedSpelling": {
-      "title": "Speed Spelling",
-      "objective": "Tap the floating letters to spell the target word correctly. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Start Spelling",
-      "tip": "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
-      "rule_0": "Spelling must be exact",
-      "rule_1": "Sound out the syllables",
-      "rule_2": "Review before submitting"
-    },
-    "accentShadowing": {
-      "title": "Accent Shadowing",
-      "objective": "Speak clearly to match the exact accent and rhythm of the speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Start Shadowing",
-      "tip": "PRO TIP: Focus on the stressed syllables and connected speech patterns!",
-      "rule_0": "Listen to the phrase",
-      "rule_1": "Match the exact rhythm",
-      "rule_2": "Speak with clarity"
-    },
-    "consonantClarity": {
-      "title": "Crystal Consonants",
-      "objective": "Identify the target consonant to refine your pronunciation and clear up real-world communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Analyze Sound",
-      "tip": "PRO TIP: Feel where your tongue and lips are placed—physical awareness is key!",
-      "rule_0": "Listen to the target word",
-      "rule_1": "Analyze the mouth position",
-      "rule_2": "Select the precise consonant"
-    },
-    "voiceSwap": {
-      "title": "Voice Swap",
-      "objective": "Learn when to put the doer in the spotlight (Active) or focus on the action itself (Passive). Flip the voice, then type the new sentence to lock it in!",
-      "actionText": "Swap Voice",
-      "tip": "PRO TIP: In Passive voice, the object becomes the star! You can often drop 'by [someone]' if it doesn't matter who did it.",
-      "rule_0": "Find the doer",
-      "rule_1": "Swap the focus",
-      "rule_2": "Type to lock it in"
-    },
-    "directIndirectSpeech": {
-      "title": "Speech Shift",
-      "objective": "Someone just said something, and it's your job to report it! First, pick the correct way to pass the message along. Once you get it right, type it out to lock it into your memory.",
-      "actionText": "Report Speech",
-      "tip": "PRO TIP: When reporting speech, you usually take a step back in time. So 'I am here' becomes 'they were there'!",
-      "rule_0": "Read the exact quote",
-      "rule_1": "Pick the reported speech",
-      "rule_2": "Type it to lock it in"
-    },
-    "tenseMastery": {
-      "title": "Tense Mastery",
-      "objective": "Read the sentence and use the slider to figure out if it happens in the Past, Present, or Future. Once you freeze the timeline, type out the full sentence to lock it into your memory!",
-      "actionText": "Start Journey",
-      "tip": "PRO TIP: Look for hidden time clues! Words like 'yesterday' belong in the Past, 'now' means Present, and 'tomorrow' points to the Future.",
-      "rule_0": "Read the sentence closely",
-      "rule_1": "Slide to the right timeline",
-      "rule_2": "Type to lock in your answer"
-    },
-    "grammarQuest": {
-      "title": "Grammar Quest",
-      "objective": "Read the grammar rule and tap the compass to pick the correct missing word. Once you find it, type out the full sentence to lock in your answer!",
-      "actionText": "Start Quest",
-      "tip": "PRO TIP: If you're stuck on the compass, read the grammar rule card! It explains exactly how to solve the sentence.",
-      "rule_0": "Read the sentence and rule",
-      "rule_1": "Tap the compass to pick the word",
-      "rule_2": "Type the full sentence to lock it in"
-    },
-    "sentenceCorrection": {
-      "title": "Sentence Correction",
-      "objective": "Read the sentence and find the mistake. Tap the wrong word, pick the right repair option, and then type out the final sentence to confirm it.",
-      "actionText": "Start Correcting",
-      "tip": "PRO TIP: Read the sentence out loud! If something sounds a bit awkward or unnatural, that's usually where the mistake is hidden.",
-      "rule_0": "Tap the wrong word",
-      "rule_1": "Choose the right repair",
-      "rule_2": "Type out the sentence"
-    },
-    "wordReorder": {
-      "title": "Sentence Builder",
-      "objective": "First, tap the words to build a natural-sounding English sentence. Once you get it right, type it out to lock it into your muscle memory!",
-      "actionText": "Start Building",
-      "tip": "PRO TIP: Look for capital letters to find the first word, and punctuation for the last!",
-      "rule_0": "Tap words to build",
-      "rule_1": "No changing after check",
-      "rule_2": "Type the exact sentence"
-    },
-    "partsOfSpeech": {
-      "title": "Parts of Speech",
-      "objective": "Read the sentence and figure out what job the highlighted word is doing. Does it show an action? A thing? A description?",
-      "actionText": "Sort Word",
-      "tip": "PRO TIP: Always read the whole sentence first! A word like 'run' can be a noun or a verb depending on how it's used.",
-      "rule_0": "Read the context sentence",
-      "rule_1": "Look at the highlighted word",
-      "rule_2": "Sort it into the right category"
-    },
-    "subjectVerbAgreement": {
-      "title": "Agreement Sync",
-      "objective": "Drag the Quantum Core to the correct verb terminal to complete the sentence! Matching subjects and verbs perfectly is the key to sounding natural.",
-      "actionText": "Sync Core",
-      "tip": "PRO TIP: Watch out for sneaky 'distractor' words! Prepositional phrases between the subject and verb can trick you.",
-      "rule_0": "Find the main subject",
-      "rule_1": "Drag the core to the matching verb",
-      "rule_2": "Release to lock in your answer!"
-    },
-    "clauseConnector": {
-      "title": "Clause Connector",
-      "objective": "Drag the correct connector to link the two clauses. Connecting short sentences makes your English flow much more naturally in real conversations.",
-      "actionText": "Link Clauses",
-      "tip": "PRO TIP: Think about the relationship. Does it show a result, a contrast, or does it add information?",
-      "rule_0": "Read both parts carefully",
-      "rule_1": "Find the logical link",
-      "rule_2": "Drop the correct connector"
-    },
-    "questionFormatter": {
-      "title": "Inquiry Logic",
-      "objective": "Arrange words or choose forms to create an accurate question. Mastering structural rules ensures your English is accurate and easily understood.",
-      "actionText": "Format Inquiry",
-      "tip": "PRO TIP: Remember the 'Qu-A-S-V' rule: Question word, Auxiliary, Subject, Verb!",
-      "rule_0": "Invert subject/verb",
-      "rule_1": "Add auxiliary verbs",
-      "rule_2": "Match the tense"
-    },
-    "articleInsertion": {
-      "title": "Article Orb",
-      "objective": "Choose the correct article ('a', 'an', or 'the') to complete the sentence. Getting these small words right helps your spoken English sound much more natural.",
-      "actionText": "Start Playing",
-      "tip": "PRO TIP: Use 'the' when talking about a specific thing, and 'a' or 'an' when talking about something in general.",
-      "rule_0": "Read the sentence context",
-      "rule_1": "Decide if the noun is specific",
-      "rule_2": "Pop the matching article orb"
-    },
-    "modifierPlacement": {
-      "title": "Modifier Map",
-      "objective": "Let's practice placing describing words (like adjectives and adverbs) exactly where they belong so your sentences are perfectly clear.",
-      "actionText": "Map Modifiers",
-      "tip": "PRO TIP: Place the describing word as close as possible to the thing it's describing!",
-      "rule_0": "Keep it close",
-      "rule_1": "Describe the right thing",
-      "rule_2": "Make the meaning clear"
-    },
-    "modalsSelection": {
-      "title": "Modal Match",
-      "objective": "Pick the right word to set the mood! Words like 'can', 'should', and 'might' completely change the feeling of a sentence.",
-      "actionText": "Lock Answer",
-      "tip": "PRO TIP: Use 'must' for rules you have to follow, and 'should' when you're just giving friendly advice.",
-      "rule_0": "Feel the emotion",
-      "rule_1": "Is it a rule or advice?",
-      "rule_2": "Pick the right tone"
-    },
-    "prepositionChoice": {
-      "title": "Path Finder",
-      "objective": "Drag the energy beam to the correct preposition! Once you connect it, type the full sentence out to lock it into your memory.",
-      "actionText": "Draw Path",
-      "tip": "PRO TIP: Prepositions usually follow patterns! If you're not sure, try saying the sentence out loud—your ears will often catch the right one.",
-      "rule_0": "Trace the path to the right word",
-      "rule_1": "Listen to how it sounds",
-      "rule_2": "Type the sentence to lock it in"
-    },
-    "pronounResolution": {
-      "title": "Pronoun Pivot",
-      "objective": "Select the correct pronoun that clearly resolves the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
-      "actionText": "Resolve Pivot",
-      "tip": "PRO TIP: If there are two people, 'he' can be confusing. Use their names or clear markers!",
-      "rule_0": "Find the antecedent",
-      "rule_1": "Match gender & number",
-      "rule_2": "Avoid ambiguity"
-    },
-    "punctuationMastery": {
-      "title": "Punctuation Mastery",
-      "objective": "Drag and drop the missing punctuation to complete the sentence. Good punctuation ensures others read your writing exactly the way you meant it to be read!",
-      "actionText": "Start Placing",
-      "tip": "PRO TIP: If you're ever stuck, try reading the sentence out loud to find where the natural pauses are!",
-      "rule_0": "Read the sentence out loud",
-      "rule_1": "Pause where commas fit",
-      "rule_2": "Check your quotes and dashes"
-    },
-    "relativeClauses": {
-      "title": "Relative Rail",
-      "objective": "Tap or drag to connect the sentence halves! We'll use words like 'who' and 'which' to stitch extra details smoothly into your thoughts.",
-      "actionText": "Link Clauses",
-      "tip": "PRO TIP: If you're talking about a person, always use 'Who'. If it's an object or an animal, 'Which' is your best bet!",
-      "rule_0": "Find what you're describing",
-      "rule_1": "Pick the right connector",
-      "rule_2": "Attach the extra detail"
-    },
-    "conditionals": {
-      "title": "What If?",
-      "objective": "Tap the correct consequence to finish the sentence, then type the full sentence to lock it in! This helps you naturally practice how to talk about imaginary situations and real-world consequences.",
-      "actionText": "Play Now",
-      "tip": "PRO TIP: When talking about an impossible or imaginary present situation (like 'If I were you'), we use 'were' instead of 'was'!",
-      "rule_0": "Read the 'IF' condition",
-      "rule_1": "Find the logical consequence",
-      "rule_2": "Match the verb tense"
-    },
-    "conjunctions": {
-      "title": "Logic Junction",
-      "objective": "Drag the correct connector to build a bridge between the sentence halves, then type the full sentence to lock it in! Linking your thoughts smoothly makes your English sound much more natural.",
-      "actionText": "Build Bridges",
-      "tip": "PRO TIP: Read both halves out loud. Does the second half add information, contrast, or give a reason? Let that guide you to the right connector!",
-      "rule_0": "Read the sentence islands",
-      "rule_1": "Drag a bridge to connect them",
-      "rule_2": "Type it out to lock it in"
-    },
-    "flashcards": {
-      "title": "Vocabulary Flashcards",
-      "objective": "Let's challenge your memory! Look at the hint and try to remember what the word means. Once you have a guess, tap the card to see the answer. If you got it right, swipe right. Need more practice? Swipe left.",
-      "actionText": "Start Practicing",
-      "tip": "PRO TIP: Honesty is the best policy! If you didn't quite remember it, swipe left. We'll bring it back later so you can try again.",
-      "rule_0": "Think of the answer first",
-      "rule_1": "Tap to flip and check",
-      "rule_2": "Swipe Right for Got It, Left for Again",
-      "swipe_instruction": "SWIPE LEFT (AGAIN) OR RIGHT (GOT IT)",
-      "tap_to_reveal": "TAP TO REVEAL",
-      "definition_revealed": "DID YOU GET IT RIGHT?"
-    },
-    "topicVocab": {
-      "title": "Topic Sorter",
-      "objective": "Flick the vocabulary word into the correct containment bin based on its topic. Grouping words helps you recall them faster during real-world conversations.",
-      "actionText": "Start Sorting",
-      "tip": "PRO TIP: Try to picture the word in your mind before flicking it into the category!",
-      "rule_0": "Analyze the floating word",
-      "rule_1": "Flick it to the correct bin",
-      "rule_2": "Sort the entire batch",
-      "topic_dictionary": "TOPIC DICTIONARY",
-      "words_in_batch": "BATCH PROGRESS"
-    },
-    "prefixSuffix": {
-      "title": "Prefixes & Suffixes",
-      "objective": "Did you know that adding just a few tiny letters can completely change a word's meaning? Choose the right prefix or suffix to build the target word, and then type it out to lock it in.",
-      "actionText": "Start Word Building",
-      "tip": "PRO TIP: Pay close attention to the clues! If the meaning says 'again', look for 're-'. If it says 'without', try '-less'.",
-      "rule_0": "Read the meaning clue",
-      "rule_1": "Select the right word piece",
-      "rule_2": "Type the final word"
-    },
-    "wordFormation": {
-      "title": "Word Builder",
-      "objective": "Native speakers naturally adapt words to fit different situations. Read the clue, choose the correct ending to build your new word, and type it out to confirm!",
-      "actionText": "Start Building",
-      "tip": "PRO TIP: Ask yourself what kind of word you need. Are you turning a noun into an adjective, or a verb into a person?",
-      "rule_0": "Read the meaning clue",
-      "rule_1": "Choose the correct ending",
-      "rule_2": "Type the word to confirm"
-    },
-    "synonymSearch": {
-      "title": "Synonym Warp",
-      "objective": "Find the word that means the exact same thing! Drag the correct shard into the center gate, then read the sentence out loud to see how the word naturally fits in conversation.",
-      "actionText": "Start Warp",
-      "tip": "PRO TIP: Synonyms often have slightly different feelings to them. Reading the hint will help you pick the perfect one!",
-      "rule_0": "Find the matching word",
-      "rule_1": "Drag it to the center",
-      "rule_2": "Read the sentence aloud"
-    },
-    "antonymSearch": {
-      "title": "Antonym Search",
-      "objective": "Identify the core word's exact opposite and snap it into the center core to fuse them. Then, speak the pair aloud to confirm your answer.",
-      "actionText": "Begin Search",
-      "tip": "PRO TIP: Antonyms are completely opposite concepts. If the core says 'hot', you're looking for 'cold' to neutralize it!",
-      "rule_0": "Read the center core word",
-      "rule_1": "Snap the opposite word into the core",
-      "rule_2": "Speak the pair clearly aloud"
-    },
-    "academicWord": {
-      "title": "Academic Vocabulary",
-      "objective": "Read the thesis excerpt and drag the correct academic word into the blank, then spell it to verify your mastery.",
-      "actionText": "Start Analysis",
-      "tip": "PRO TIP: Pay attention to the collocations or surrounding words—they often give a strong hint about which academic term fits best.",
-      "rule_0": "Read the context carefully",
-      "rule_1": "Drag word into the slot",
-      "rule_2": "Spell accurately to win"
-    },
-    "contextClues": {
-      "title": "Context Clues",
-      "objective": "Drag the magnifying glass over the blurred text to figure out the missing word. Once you've solved it, tap the exact words in the sentence that gave you the clue!",
-      "actionText": "Investigate Case",
-      "tip": "PRO TIP: You don't need to know every word! Look for synonyms, opposites, or cause-and-effect clues hiding nearby.",
-      "rule_0": "Drag the lens to read the text",
-      "rule_1": "Choose the missing word",
-      "rule_2": "Tap the evidence in the sentence"
-    },
-    "collocations": {
-      "title": "Collocation Match",
-      "objective": "Drag the correct word bubble to the anchor to form a natural English collocation, then build a sentence using it.",
-      "actionText": "Match Pair",
-      "tip": "PRO TIP: Native speakers use these pairs naturally. Don't translate word-for-word, think about what sounds right!",
-      "rule_0": "Read the anchor word",
-      "rule_1": "Drag the bubble that pairs best",
-      "rule_2": "Build a sentence with the pair"
-    },
-    "phrasalVerbs": {
-      "title": "Verb Vault",
-      "objective": "Phrasal verbs are tricky combinations like 'turn up' or 'break down'. Read the clue, choose the missing word to crack the vault, and then speak the full sentence aloud.",
-      "actionText": "Crack Vault",
-      "tip": "PRO TIP: The second word changes everything! 'Turn up' (increase) means something totally different than 'turn down' (refuse).",
-      "rule_0": "Read the vault's clue",
-      "rule_1": "Choose the missing word",
-      "rule_2": "Speak the full sentence"
-    },
-    "idioms": {
-      "title": "Emojify",
-      "objective": "Read the meaning and the emojis, then choose the idiom that matches. Idioms are phrases that don't mean exactly what the words say, and they are used all the time in everyday conversations.",
-      "actionText": "Decode Idiom",
-      "tip": "PRO TIP: Don't translate idioms word-for-word! Think about the overall feeling or situation they describe.",
-      "rule_0": "Read the meaning and emojis",
-      "rule_1": "Choose the matching idiom",
-      "rule_2": "Say it aloud to confirm"
-    },
-    "contextualUsage": {
-      "title": "Contextual Usage",
-      "objective": "Select the word that best fits the sentence's context, then speak the complete sentence aloud to confirm.",
-      "actionText": "Analyze Context",
-      "tip": "PRO TIP: Pay close attention to the register meter. Sometimes two words mean the same thing, but one is much more formal than the other!",
-      "rule_0": "Read the sentence carefully",
-      "rule_1": "Select the best fitting word",
-      "rule_2": "Speak the full sentence aloud"
-    },
-    "sentenceBuilder": {
-      "title": "Sentence Architect",
-      "objective": "Arrange sentence fragments into a grammatically correct order. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Build Sentence",
-      "tip": "PRO TIP: Start with the 'Who' or 'What', then find the 'Action'!",
-      "rule_0": "Start with Subject",
-      "rule_1": "Identify the Verb",
-      "rule_2": "Check ending punctuation"
-    },
-    "completeSentence": {
-      "title": "Fragment Fixer",
-      "objective": "Launch the correct word fragment into the sentence gap. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Fix Fragment",
-      "tip": "PRO TIP: A complete sentence needs both a Subject and a Verb at minimum!",
-      "rule_0": "Identify missing part",
-      "rule_1": "Maintain the tone",
-      "rule_2": "Verify logical structure"
-    },
-    "describeSituationWriting": {
-      "title": "Context Scribe",
-      "objective": "Tap the floating emojis to discover keywords and write a descriptive paragraph based on the scenario. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Scribe Scene",
-      "tip": "PRO TIP: Use sensory words! Describe what is seen, heard, or felt.",
-      "rule_0": "Tap emojis for keywords",
-      "rule_1": "Use vivid adjectives",
-      "rule_2": "Be specific & clear"
-    },
-    "fixTheSentence": {
-      "title": "Clarity Editor",
-      "objective": "Scrub the logical decay and select the correct replacement word. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Apply Edit",
-      "tip": "PRO TIP: Read the sentence out loud in your head! If it sounds clumsy, revise it.",
-      "rule_0": "Locate the error",
-      "rule_1": "Scrub the decay away",
-      "rule_2": "Select correct replacement"
-    },
-    "shortAnswerWriting": {
-      "title": "Briefing Pro",
-      "objective": "Write a brief, concise, and direct response to the prompt using the required keywords. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Submit Answer",
-      "tip": "PRO TIP: Get straight to the point! Keep it short and accurate.",
-      "rule_0": "Use all required keywords",
-      "rule_1": "Check grammar and punctuation",
-      "rule_2": "Write naturally and clearly"
-    },
-    "opinionWriting": {
-      "title": "Vocal Pen",
-      "objective": "Analyze the statements and categorize them as supporting or opposing the given opinion. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Balance Scale",
-      "tip": "PRO TIP: A 'Pro' always supports the prompt's opinion, while a 'Con' highlights a drawback or opposing view.",
-      "rule_0": "Read the prompt",
-      "rule_1": "Weigh the arguments",
-      "rule_2": "Balance the scale"
-    },
-    "dailyJournal": {
-      "title": "Daily Chronicler",
-      "objective": "Read the prompt and write a short personal journal reflection. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Log Entry",
-      "tip": "PRO TIP: Use sequential markers like 'First', 'Later', and 'Eventually' to organize your thoughts.",
-      "rule_0": "Be reflective",
-      "rule_1": "Use appropriate tenses",
-      "rule_2": "Focus on clear narrative"
-    },
-    "summarizeStoryWriting": {
-      "title": "Essence Extractor",
-      "objective": "Read the story and arrange the key events in chronological order to form a concise summary. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Summarize Now",
-      "tip": "PRO TIP: A good summary only includes events that actually happened in the story!",
-      "rule_0": "Read carefully",
-      "rule_1": "Sequence the events",
-      "rule_2": "Exclude incorrect details"
-    },
-    "writingEmail": {
-      "title": "Email Expert",
-      "objective": "Compose a professional and contextually appropriate email by arranging its key parts. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Send Mail",
-      "tip": "PRO TIP: Clear subject lines and direct greetings set the professional tone.",
-      "rule_0": "Use right greeting",
-      "rule_1": "State clear purpose",
-      "rule_2": "Use formal closing"
-    },
-    "correctionWriting": {
-      "title": "Syntax Auditor",
-      "objective": "Identify and replace the errored syntax phrase. Mastering this skill ensures your written communication is clear, professional, and effective.",
-      "actionText": "Audit Syntax",
-      "tip": "PRO TIP: Read the sentence out loud in your head! Clunky phrasing often reveals the grammatical flaw.",
-      "rule_0": "Identify the error",
-      "rule_1": "Select correct syntax",
-      "rule_2": "Ensure 100% accuracy"
-    },
-    "ambientId": {
-      "title": "Spatial Anchor",
-      "objective": "Sharpen your situational awareness by identifying environments solely through their ambient soundscape, essential for real-world immersion. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Anchor Location",
-      "tip": "PRO TIP: Close your eyes and visualize the scene! Focus on ambient sounds like footsteps, echoes, wind, or humming machinery.",
-      "rule_0": "Listen to background noise",
-      "rule_1": "Scan the radar options",
-      "rule_2": "Anchor the correct location"
-    },
-    "audioFillBlanks": {
-      "title": "Ink Decoder",
-      "objective": "Listen to the audio feed and type the missing words in the transcript. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Start Decoding",
-      "tip": "PRO TIP: Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
-      "rule_0": "Smear the ink",
-      "rule_1": "Listen for the gap",
-      "rule_2": "Type exactly what you hear"
-    },
-    "audioMultipleChoice": {
-      "title": "Missing Word Spinner",
-      "objective": "Listen carefully to the audio and find the word that belongs in the blank. Picking out missing words trains your ears to naturally separate fast, native speech.",
-      "actionText": "Let's Go!",
-      "tip": "PRO TIP: Don't just guess! After picking your answer, you'll need to tap that exact word in the transcript to prove you heard it.",
-      "rule_0": "Tap the center to listen",
-      "rule_1": "Spin to pick the missing word",
-      "rule_2": "Tap the word in the text to prove it"
-    },
-    "audioSentenceOrder": {
-      "title": "Timeline Scrubber",
-      "objective": "Listen and arrange the spoken segments in their correct chronological order. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Calibrate Signal",
-      "tip": "PRO TIP: Logical connectors like 'first', 'then', and 'after that' are your clues.",
-      "rule_0": "Listen to stream",
-      "rule_1": "Snap segments to timeline",
-      "rule_2": "Calibrate sequence"
-    },
-    "audioTrueFalse": {
-      "title": "Signal Validator",
-      "objective": "Listen to the speaker and verify if the claim is true or false. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Begin Validation",
-      "tip": "PRO TIP: Be careful of exact details—names, numbers, and dates must match perfectly.",
-      "rule_0": "Analyze the claim",
-      "rule_1": "Compare with audio data",
-      "rule_2": "Validate or Nullify"
-    },
-    "detailSpotlight": {
-      "title": "Spotlight Search",
-      "objective": "Listen for specific names, numbers, or details within the passage. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Start Search",
-      "tip": "PRO TIP: Note details as you listen—rushing to answer from memory can be tricky!",
-      "rule_0": "Scan details",
-      "rule_1": "Listen for target keywords",
-      "rule_2": "Identify match"
-    },
-    "emotionRecognition": {
-      "title": "Sentiment Prober",
-      "objective": "Identify the speaker's emotional state from their pitch and tone. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Probe Sentiment",
-      "tip": "PRO TIP: Rhythm, volume spikes, and sighing express more than literal words.",
-      "rule_0": "Navigate core",
-      "rule_1": "Analyze pitch & rhythm",
-      "rule_2": "Match exact sentiment"
-    },
-    "fastSpeechDecoder": {
-      "title": "Nuance Calibrator",
-      "objective": "Decode rapid native speech by picking out word boundaries. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Calibrate Gears",
-      "tip": "PRO TIP: Focus on stressed syllables—they carry the core meaning in fast speech.",
-      "rule_0": "Rotate gears",
-      "rule_1": "Listen for speed transitions",
-      "rule_2": "Unfold the meaning"
-    },
-    "listeningInference": {
-      "title": "Inference Lens",
-      "objective": "Infer implications in the spoken passage that are not explicitly stated. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Focus Lens",
-      "tip": "PRO TIP: Listen for hesitation or sarcasm—voice inflections hold crucial keys.",
-      "rule_0": "Read between waves",
-      "rule_1": "Deduce the subtext",
-      "rule_2": "Choose logical conclusion"
-    },
-    "soundImageMatch": {
-      "title": "Thematic Linker",
-      "objective": "Listen to the audio sound and match it with the correct visual image. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
-      "actionText": "Confirm Link",
-      "tip": "PRO TIP: Try to describe the sound in one word before selecting your choice.",
-      "rule_0": "Scan tiles",
-      "rule_1": "Match sound to symbol",
-      "rule_2": "Confirm thematic link"
-    },
-    "intonationMimic": {
-      "title": "Intonation Mimic",
-      "objective": "Listen to the sentence and identify its pitch pattern to master the natural melody of the language Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Start Mimicking",
-      "tip": "PRO TIP: Questions often rise at the end, while statements usually fall. Listen closely to the final word!",
-      "rule_0": "Listen to the sentence",
-      "rule_1": "Analyze pitch direction",
-      "rule_2": "Choose correct intonation"
-    },
-    "syllableStress": {
-      "title": "Stress Spotter",
-      "objective": "Identify the stressed syllable in the spoken word by tapping the correct drum pad. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Find Stress",
-      "tip": "PRO TIP: The stressed part of a word is always louder and slightly longer.",
-      "rule_0": "Listen for the loud part",
-      "rule_1": "Check the length",
-      "rule_2": "Select the stressed part"
-    },
-    "wordLinking": {
-      "title": "Fluid Flow",
-      "objective": "Master word boundary linking to speak with native fluid rhythms. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Start Glide",
-      "tip": "PRO TIP: Push end consonants directly into starting vowels of the next word.",
-      "rule_0": "Listen for glides",
-      "rule_1": "Connect consonants",
-      "rule_2": "Avoid choppy phrases"
-    },
-    "shadowingChallenge": {
-      "title": "Shadowing Challenge",
-      "objective": "Listen to the spoken sentence and select the correct phonetic rule that explains how the words link or change. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Identify Pattern",
-      "tip": "PRO TIP: Try saying the sentence aloud exactly as you hear it. Feeling the sounds connect in your mouth will reveal the answer!",
-      "rule_0": "Listen to the phrase closely",
-      "rule_1": "Analyze the sound connection",
-      "rule_2": "Select the matching rule"
-    },
-    "vowelDistinction": {
-      "title": "Vowel Vortex",
-      "objective": "Isolate and master differences between subtle English vowel phonemes. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Sort Vowels",
-      "tip": "PRO TIP: Drop your jaw slightly lower for vowels like /æ/ than for /ɛ/.",
-      "rule_0": "Focus on tongue position",
-      "rule_1": "Identify exact sound",
-      "rule_2": "Select match"
-    },
-    "pitchPatternMatch": {
-      "title": "Musical Melody",
-      "objective": "Replicate the musical timing and pitch contour of the full sentence. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Match Melody",
-      "tip": "PRO TIP: Match the speed transitions—unstressed words are fast, stressed are slow.",
-      "rule_0": "Listen to the melody",
-      "rule_1": "Hum first if needed",
-      "rule_2": "Speak with rhythm"
-    },
-    "speedVariance": {
-      "title": "Speed Variance",
-      "objective": "Listen carefully and identify the speaking speed of the phrase. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Identify Speed",
-      "tip": "PRO TIP: Pay attention to whether the speaker is rushing or speaking carefully to emphasize a point!",
-      "rule_0": "Listen to the phrase",
-      "rule_1": "Analyze the tempo",
-      "rule_2": "Select the correct speed"
-    },
-    "dialectDrill": {
-      "title": "Dialect Drill",
-      "objective": "Identify and distinguish regional pronunciations to master global communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Start Drill",
-      "tip": "PRO TIP: Pay attention to vowel shapes! American English often flattens vowels, while British English rounds them.",
-      "rule_0": "Listen closely",
-      "rule_1": "Compare pronunciations",
-      "rule_2": "Select region"
-    },
-    "connectedSpeech": {
-      "title": "Connected Speech",
-      "objective": "Listen closely to how the words connect and choose the correct sound change card. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Connect Words",
-      "tip": "PRO TIP: Try saying the words fast yourself! If you force every single letter, it feels unnatural. Real speech takes shortcuts.",
-      "rule_0": "Listen to the linked words",
-      "rule_1": "Notice which sound changes or drops",
-      "rule_2": "Select the rule that applies"
-    },
-    "pitchModulation": {
-      "title": "Voice Emotion",
-      "objective": "Listen to the speaker's pitch and select the matching modulation pattern to master how English speakers convey energy and emotion through voice. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      "actionText": "Select Emotion",
-      "tip": "PRO TIP: A rising-falling pitch often shows energy or warmth, while a falling-rising pitch can signal hesitation or mild concern.",
-      "rule_0": "Listen to the pitch",
-      "rule_1": "Analyze the emotion",
-      "rule_2": "Select the correct pattern"
-    },
-    "branchingDialogue": {
-      "title": "Social Simulator",
-      "objective": "Tap an answer or drag the decision probe to select the most natural, context-appropriate conversational response. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Enter Simulation",
-      "tip": "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
-      "rule_0": "Analyze the scene",
-      "rule_1": "Flick decision probe",
-      "rule_2": "React naturally"
-    },
-    "situationalResponse": {
-      "title": "Reflex Responder",
-      "objective": "Choose the most appropriate and polite social response for the scenario. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Respond Now",
-      "tip": "PRO TIP: Use expressions like 'I would appreciate it' or 'Would you mind'!",
-      "rule_0": "Match social tone",
-      "rule_1": "Be polite/direct",
-      "rule_2": "Navigate social nuances"
-    },
-    "jobInterview": {
-      "title": "Career Closer",
-      "objective": "Choose professional responses to nail your high-stakes job interview. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Start Interview",
-      "tip": "PRO TIP: Frame replies to show how your experience solves their business needs.",
-      "rule_0": "Be professional",
-      "rule_1": "Highlight core skills",
-      "rule_2": "Stay confident"
-    },
-    "medicalConsult": {
-      "title": "Health Liaison",
-      "objective": "Clearly explain symptoms or follow a doctor's detailed instructions. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Start Consult",
-      "tip": "PRO TIP: Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
-      "rule_0": "Be accurate",
-      "rule_1": "Describe physical feelings",
-      "rule_2": "Be precise and clear"
-    },
-    "gourmetOrder": {
-      "title": "Order Master",
-      "objective": "Order food, request custom adjustments, and settle restaurant bills. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Place Order",
-      "tip": "PRO TIP: Using 'Could I get...' is the preferred way to place polite orders.",
-      "rule_0": "Be highly polite",
-      "rule_1": "Check details carefully",
-      "rule_2": "Communicate clearly"
-    },
-    "travelDesk": {
-      "title": "Global Traveler",
-      "objective": "Manage check-ins, navigate directions, and handle hotel booking requests. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Start Journey",
-      "tip": "PRO TIP: Confirm directions by repeating them back to check understanding.",
-      "rule_0": "Check travel tickets",
-      "rule_1": "Follow directions",
-      "rule_2": "Ask for support"
-    },
-    "conflictResolver": {
-      "title": "Peace Maker",
-      "objective": "Resolve conversational arguments and misunderstandings using tactful words. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Resolve Conflict",
-      "tip": "PRO TIP: De-escalate early by validating their perspective before replying.",
-      "rule_0": "Use 'I' statements",
-      "rule_1": "Acknowledge feelings",
-      "rule_2": "Find middle ground"
-    },
-    "elevatorPitch": {
-      "title": "Pitch Perfect",
-      "objective": "Deliver a compelling, high-impact business message in 30 seconds. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Start Pitch",
-      "tip": "PRO TIP: Lead with a massive hook that frames a relatable daily problem.",
-      "rule_0": "Be concise",
-      "rule_1": "High emotional impact",
-      "rule_2": "Deliver with confidence"
-    },
-    "socialSpark": {
-      "title": "Charisma Core",
-      "objective": "Initiate and sustain engaging small talk with new acquaintances. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Spark Talk",
-      "tip": "PRO TIP: Ask 'what' or 'how' to keep the conversational partner sharing.",
-      "rule_0": "Ask open questions",
-      "rule_1": "Show high interest",
-      "rule_2": "Keep the tone light"
-    },
-    "emergencyHub": {
-      "title": "Emergency Voice",
-      "objective": "Communicate clearly and stay calm under pressure in crisis scenarios. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      "actionText": "Help Now",
-      "tip": "PRO TIP: Clear, slow, and specific directions save lives in critical moments.",
-      "rule_0": "Stay highly calm",
-      "rule_1": "State location first",
-      "rule_2": "Be exact & concise"
-    },
-    "repeatSentence": {
-      "title": "Echo Master",
-      "objective": "Listen carefully and repeat the sentence matching cadence and wave patterns. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Start Echo",
-      "tip": "PRO TIP: Match the stress rhythm—English flows in stressed clusters!",
-      "rule_0": "Hold mic to record",
-      "rule_1": "Trace sound wave",
-      "rule_2": "Master the cadence"
-    },
-    "pronunciationFocus": {
-      "title": "Phonetic Precision",
-      "objective": "Perfect mouth movements to pronounce challenging sounds and clusters. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Practice Sound",
-      "tip": "PRO TIP: Pay attention to where your tongue touches the roof of your mouth.",
-      "rule_0": "Focus on mouth shape",
-      "rule_1": "Repeat target phoneme",
-      "rule_2": "Analyze feedback waves"
-    },
-    "dailyExpression": {
-      "title": "Social Fluent",
-      "objective": "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Speak Now",
-      "tip": "PRO TIP: Emphasize the keywords that carry the main emotional meaning.",
-      "rule_0": "Swipe to reveal idiom",
-      "rule_1": "Listen to expression",
-      "rule_2": "Review context & usage"
-    },
-    "dialogueRoleplay": {
-      "title": "Scene Architect",
-      "objective": "Speak your roleplay script lines with correct emotion and phrasing. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Enter Scene",
-      "tip": "PRO TIP: Match your voice acting to the simulated character's mood!",
-      "rule_0": "Follow the script",
-      "rule_1": "Speak with feeling",
-      "rule_2": "Keep the flow going"
-    },
-    "sceneDescriptionSpeaking": {
-      "title": "Visual Narrator",
-      "objective": "Describe the image scene clearly using descriptive adjectives. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Describe Scene",
-      "tip": "PRO TIP: Start with foreground actions, then move to background details.",
-      "rule_0": "Analyze the image",
-      "rule_1": "Speak descriptive details",
-      "rule_2": "Build a narrative"
-    },
-    "situationSpeaking": {
-      "title": "Crisis Communicator",
-      "objective": "Orally provide a clear, direct solution to the real-world scenario. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Resolve Now",
-      "tip": "PRO TIP: Focus on direct, simple language to convey your message quickly.",
-      "rule_0": "Understand context",
-      "rule_1": "Speak your solution",
-      "rule_2": "Be clear and direct"
-    },
-    "speakMissingWord": {
-      "title": "Vocal Decoder",
-      "objective": "Read the prompt and speak the missing word clearly to fill the blank. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Speak Word",
-      "tip": "PRO TIP: Look at surrounding nouns and verbs to match singular vs plural context.",
-      "rule_0": "Identify the gap",
-      "rule_1": "Speak the word clearly",
-      "rule_2": "Verify the context"
-    },
-    "speakOpposite": {
-      "title": "Antonym Orator",
-      "objective": "Speak the exact opposite meaning of the prompt word. Thinking of opposites rapidly builds a flexible, expressive vocabulary.",
-      "actionText": "Speak Opposite",
-      "tip": "PRO TIP: Think magnetically: What is the polar opposite of the given word?",
-      "rule_0": "Think of the opposite",
-      "rule_1": "Speak clearly",
-      "rule_2": "Avoid synonyms"
-    },
-    "speakSynonym": {
-      "title": "Lexical Speaker",
-      "objective": "Orally state a word that means the exact same thing. Having multiple words for the same idea gives your speech much more color and variety.",
-      "actionText": "Speak Synonym",
-      "tip": "PRO TIP: Don't stress! Even simple, everyday synonyms are perfectly acceptable.",
-      "rule_0": "Find the twin meaning",
-      "rule_1": "Speak clearly",
-      "rule_2": "Build a rich vocabulary"
-    },
-    "yesNoSpeaking": {
-      "title": "Voice Validator",
-      "objective": "Answer the factual questions firmly with a spoken 'Yes' or 'No'. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      "actionText": "Validate Voice",
-      "tip": "PRO TIP: Speak with confident, clear pronunciation directly into the mic.",
-      "rule_0": "Listen to the question",
-      "rule_1": "Speak confirmation clearly",
-      "rule_2": "Be quick and clear"
-    },
-    "animals": {
-      "title": "Animal Safari",
-      "objective": "It's safari time! We need to identify the hidden animal. Read the field notes on the clipboard and hand the right tag to the explorer.",
-      "rule_0": "Read the animal field notes",
-      "rule_1": "Look for hidden clues",
-      "rule_2": "Tag the correct species",
-      "actionText": "Go Safari",
-      "tip": "PRO TIP: Think about the sound the animal makes or where it lives! 🦁"
-    },
-    "colors": {
-      "title": "Rainbow World",
-      "objective": "Time to paint a masterpiece! Look at the easel to see what color we are mixing, and squeeze the right paint tube onto the canvas.",
-      "rule_0": "Check the requested color",
-      "rule_1": "Find the matching tube",
-      "rule_2": "Squeeze the paint",
-      "actionText": "Paint Colors",
-      "tip": "PRO TIP: Colors are everywhere! Think about the color of the sky or grass. 🎨"
-    },
-    "fruits": {
-      "title": "Fruit Garden",
-      "objective": "Let's harvest some yummy treats! Check the wooden sign to see what fruit we need, and pack it safely into the picnic basket.",
-      "rule_0": "Identify the fresh fruit",
-      "rule_1": "Pick the matching shape",
-      "rule_2": "Pack it in the basket",
-      "actionText": "Pick Fruits",
-      "tip": "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎"
-    },
-    "shapes": {
-      "title": "Shape Explorer",
-      "objective": "Let's learn about geometry! Look closely at the notebook to see which shape we need, and place the right block on the desk.",
-      "rule_0": "Count the edges carefully",
-      "rule_1": "Match the silhouette",
-      "rule_2": "Drop the shape in place",
-      "actionText": "Explore Shapes",
-      "tip": "PRO TIP: Count the corners or edges if you are stuck! 📐"
-    },
-    "body_parts": {
-      "title": "My Body",
-      "objective": "Time for a quick checkup! Read the symptoms on the doctor's clipboard, and place the healing bandage on the correct body part.",
-      "rule_0": "Read the medical clues",
-      "rule_1": "Identify the body part",
-      "rule_2": "Apply the bandage",
-      "actionText": "Start Learning",
-      "tip": "PRO TIP: Can you point to that body part on yourself? 🧍"
-    },
-    "family": {
-      "title": "Family Tree",
-      "objective": "Let's build our family history! Check the grand banner to see who we are looking for, and hang their portrait on the family tree.",
-      "rule_0": "Read the family title",
-      "rule_1": "Find the right relative",
-      "rule_2": "Hang the portrait",
-      "actionText": "Meet Family",
-      "tip": "PRO TIP: Family words show how people are related, like brother or sister! ❤️"
-    },
-    "food": {
-      "title": "Yummy Food",
-      "objective": "Order up! The customers are hungry. Read the order on the restaurant menu, and serve the correct yummy dish onto the plate.",
-      "rule_0": "Read the hungry order",
-      "rule_1": "Find the tasty dish",
-      "rule_2": "Serve it on the plate",
-      "actionText": "Eat Up",
-      "tip": "PRO TIP: Think about what you eat for breakfast, lunch, or dinner! 🥛"
-    },
-    "clothing": {
-      "title": "Dress Up",
-      "objective": "Let's get dressed for the day! Look at the mirror to see what the weather is like, and put the perfect outfit into the wardrobe.",
-      "rule_0": "Check the weather clue",
-      "rule_1": "Pick the right outfit",
-      "rule_2": "Hang it in the closet",
-      "actionText": "Get Dressed",
-      "tip": "PRO TIP: Think about what you wear when it's hot or cold outside! 👕"
-    },
-    "nature": {
-      "title": "Nature Walk",
-      "objective": "Let's go on a wilderness adventure! Read the wooden trail sign, and collect the correct piece of nature on the tree stump.",
-      "rule_0": "Read the nature guide",
-      "rule_1": "Find the forest item",
-      "rule_2": "Collect it on the stump",
-      "actionText": "Start Walk",
-      "tip": "PRO TIP: Look outside! Nature is everything that grows and lives outside. 🌳"
-    },
-    "transport": {
-      "title": "Zoom Zoom!",
-      "objective": "Beep beep! Let's manage the city traffic. Read the directions on the asphalt, and guide the correct vehicle to the intersection.",
-      "rule_0": "Read the travel clues",
-      "rule_1": "Spot the right vehicle",
-      "rule_2": "Guide it to the road",
-      "actionText": "Start Engine",
-      "tip": "PRO TIP: Think about whether it goes on land, in the water, or in the sky! 🚗"
-    },
-    "emotions": {
-      "title": "Feeling Happy",
-      "objective": "How are you feeling today? Read the feelings banner, and help the actor put on the correct emotion mask on the stage.",
-      "rule_0": "Read the feeling word",
-      "rule_1": "Find the matching expression",
-      "rule_2": "Put on the mask",
-      "actionText": "Share Feelings",
-      "tip": "PRO TIP: Try making that face in a mirror to see how it feels! 😊"
-    },
-    "school": {
-      "title": "School Days",
-      "objective": "Ring ring, time for class! Check the teacher's notepad, and pack the correct school supply onto your desk.",
-      "rule_0": "Check the supply list",
-      "rule_1": "Find your school tool",
-      "rule_2": "Place it on the desk",
-      "actionText": "Go to School",
-      "tip": "PRO TIP: Think about what you carry in your backpack! 🎒"
-    },
-    "home": {
-      "title": "My Sweet Home",
-      "objective": "Let's decorate our dream house! Read the architect's blueprint, and move the correct piece of furniture into the home.",
-      "rule_0": "Read the room blueprint",
-      "rule_1": "Find the furniture box",
-      "rule_2": "Move it into the house",
-      "actionText": "Enter House",
-      "tip": "PRO TIP: Think about which room you would find this item in! 🏠"
-    },
-    "opposites": {
-      "title": "Big and Small",
-      "objective": "Let's find the perfect balance! Read the clue on the golden scale, and drop the exact opposite word to level it out.",
-      "rule_0": "Read the starting word",
-      "rule_1": "Think of its total opposite",
-      "rule_2": "Balance the scale",
-      "actionText": "Match Pairs",
-      "tip": "PRO TIP: Opposites are totally different, like Hot and Cold! 🧊"
-    },
-    "verbs": {
-      "title": "Action Time!",
-      "objective": "Get ready for the big game! Look at the jumbotron scoreboard, and throw the correct action-word sports ball into the stadium.",
-      "rule_0": "Read the action word",
-      "rule_1": "Find the matching ball",
-      "rule_2": "Throw it in the stadium",
-      "actionText": "Get Active",
-      "tip": "PRO TIP: A verb is something you can DO, like jump or run! 🏃"
-    },
-    "prepositions": {
-      "title": "Where is it?",
-      "objective": "Let's go on a treasure hunt! Read the directional banner, and drop the correct arrow block onto the treasure map.",
-      "rule_0": "Read the position clue",
-      "rule_1": "Find the matching arrow",
-      "rule_2": "Place it on the map",
-      "actionText": "Find It",
-      "tip": "PRO TIP: Think about where things are placed, like IN a box or ON a table! 📦"
-    },
-    "routine": {
-      "title": "My Daily Day",
-      "objective": "Let's plan a healthy day! Check the alarm clock to see what time it is, and stick the right daily habit on your calendar.",
-      "rule_0": "Check the time of day",
-      "rule_1": "Find the healthy habit",
-      "rule_2": "Stick it on the schedule",
-      "actionText": "Start Day",
-      "tip": "PRO TIP: Think about what you do when you wake up or go to bed! 🪥"
-    },
-    "phonics": {
-      "title": "Sound Master",
-      "objective": "Turn up the volume! Read the phonetic clue on the speaker, and plug the matching sound wave into the amplifier.",
-      "rule_0": "Read the sound blend",
-      "rule_1": "Find the matching wave",
-      "rule_2": "Plug it into the amp",
-      "actionText": "Make Sounds",
-      "tip": "PRO TIP: Say the sound out loud to help you find the right match! 🗣️"
-    },
-    "time": {
-      "title": "Tick Tock!",
-      "objective": "Tick tock! Look at the time on the chalkboard, and strap the matching digital clock onto the smartwatch.",
-      "rule_0": "Read the chalkboard time",
-      "rule_1": "Find the matching digital clock",
-      "rule_2": "Strap it to the watch",
-      "actionText": "Check Time",
-      "tip": "PRO TIP: Remember, 12:00 can be noon or midnight! ⏰"
-    },
-    "day_night": {
-      "title": "Sun and Moon",
-      "objective": "Look up at the sky! Peer through the telescope to read the clue, and switch the window to show the correct time of day.",
-      "rule_0": "Read the sky clue",
-      "rule_1": "Decide if it's day or night",
-      "rule_2": "Switch the window scene",
-      "actionText": "Switch Sky",
-      "tip": "PRO TIP: Does this happen when it's sunny or dark outside? 🌙"
-    },
-    "weather": {
-      "title": "Sky Explorer",
-      "objective": "Let's become a meteorologist! Read the weather report on the billboard, and float the correct cloud into the sky.",
-      "rule_0": "Read the weather report",
-      "rule_1": "Find the matching cloud",
-      "rule_2": "Float it into the sky",
-      "actionText": "Check Sky",
-      "tip": "PRO TIP: Think about what you wear when it rains or snows! ☁️"
-    },
-    "professions": {
-      "title": "Community Helpers",
-      "objective": "Meet our community heroes! Read the job description on the building, and pin the correct worker badge to the town board.",
-      "rule_0": "Read the job description",
-      "rule_1": "Find the right worker",
-      "rule_2": "Pin their badge",
-      "actionText": "Go to Work",
-      "tip": "PRO TIP: Think about what this person does to help the town! 👩‍🚒"
-    }
   },
   "economy": {
     "insufficient_coins": "Insufficient Vowl Coins! Needed: {}",
