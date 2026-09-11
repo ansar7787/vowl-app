@@ -18,17 +18,58 @@ import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
   const VowlCoinsScreen({super.key});
 
-  static const int _hintPackCost = 5000;
+  static const int _hintPackCost = 750;
   static const int _hintsPerPack = 5;
-  static const int _bulkHintCost = 20000;
-  static const int _bulkHintAmount = 25;
-  static const int _singleHintCost = 1500;
+  static const int _bulkHintCost = 1000;
+  static const int _bulkHintAmount = 10;
+  static const int _singleHintCost = 200;
   static const int _singleHintAmount = 1;
+
+  /// Formats a coin value with locale-aware grouping (e.g. 15000 → "15,000").
+  static String _formatCoins(int value) =>
+      NumberFormat.decimalPattern().format(value);
+
+  /// Returns a human-readable relative time string ("Just now", "2h ago",
+  /// "Yesterday", etc.) for recent transactions.
+  static String _relativeTime(BuildContext context, DateTime date) {
+    final now = DateTime.now();
+    final diff = now.difference(date);
+
+    if (diff.inSeconds < 60) {
+      return context.tr('time.just_now', fallback: 'Just now');
+    }
+    if (diff.inMinutes < 60) {
+      return context.tr(
+        'time.minutes_ago',
+        fallback: '${diff.inMinutes}m ago',
+        args: [diff.inMinutes.toString()],
+      );
+    }
+    if (diff.inHours < 24) {
+      return context.tr(
+        'time.hours_ago',
+        fallback: '${diff.inHours}h ago',
+        args: [diff.inHours.toString()],
+      );
+    }
+    if (diff.inDays == 1) {
+      return context.tr('time.yesterday', fallback: 'Yesterday');
+    }
+    if (diff.inDays < 7) {
+      return context.tr(
+        'time.days_ago',
+        fallback: '${diff.inDays}d ago',
+        args: [diff.inDays.toString()],
+      );
+    }
+    return DateFormat('MMM d').format(date);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +168,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                     ),
                                     SizedBox(width: 4.w),
                                     Text(
-                                      '${user.coins}',
+                                      _formatCoins(user.coins),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,
@@ -152,44 +193,51 @@ class VowlCoinsScreen extends StatelessWidget {
                             SizedBox(height: 32.h),
                             _buildActionSection(
                               context,
-                              title: 'WAYS TO EARN',
+                              title: context.tr(
+                                'economy.ways_to_earn',
+                                fallback: 'Ways to Earn',
+                              ),
                               items: [
                                 _buildActionItem(
                                   context,
                                   _ActionItem(
-                                    title: 'Maintain Daily Streak',
-                                    subtitle: 'Earn up to 5,000+ coins',
+                                    title: context.tr(
+                                      'economy.maintain_streak',
+                                      fallback: 'Maintain Daily Streak',
+                                    ),
+                                    subtitle: context.tr(
+                                      'economy.earn_up_to_coins',
+                                      fallback: 'Earn up to 5,000+ coins',
+                                    ),
                                     icon: Icons.local_fire_department_rounded,
                                     color: const Color(0xFFEF4444),
                                     onTap: () =>
                                         context.push(AppRouter.streakRoute),
                                   ),
                                 ),
-
-                                _buildActionItem(
-                                  context,
-                                  _ActionItem(
-                                    title: 'Watch Rewarded Ads',
-                                    subtitle: 'Earn 20 coins instantly',
-                                    icon: Icons.play_circle_filled_rounded,
-                                    color: Theme.of(context).primaryColor,
-                                    onTap: () {},
-                                    isAdPlaceholder: true,
-                                  ),
-                                ),
+                                const AdRewardCard(margin: EdgeInsets.zero),
                                 const HintAdCard(margin: EdgeInsets.zero),
                               ],
                             ),
                             SizedBox(height: 32.h),
                             _buildActionSection(
                               context,
-                              title: 'WHERE TO SPEND',
+                              title: context.tr(
+                                'economy.where_to_spend',
+                                fallback: 'Where to Spend',
+                              ),
                               items: [
                                 _buildActionItem(
                                   context,
                                   _ActionItem(
-                                    title: 'Streak Boosters',
-                                    subtitle: 'Buy freezes & XP multipliers',
+                                    title: context.tr(
+                                      'streak_boosters.title',
+                                      fallback: 'Streak Boosters',
+                                    ),
+                                    subtitle: context.tr(
+                                      'streak_boosters.subtitle',
+                                      fallback: 'Buy freezes & XP multipliers',
+                                    ),
                                     icon: Icons.bolt_rounded,
                                     color: const Color(0xFF8B5CF6),
                                     onTap: () =>
@@ -212,54 +260,7 @@ class VowlCoinsScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                _buildActionItem(
-                                  context,
-                                  _ActionItem(
-                                    title: 'Single Hint',
-                                    subtitle:
-                                        'Buy 1 hint for $_singleHintCost coins',
-                                    icon: Icons.lightbulb_outline_rounded,
-                                    color: const Color(0xFFFBBF24),
-                                    onTap: () => _purchaseHint(
-                                      context,
-                                      user,
-                                      _singleHintCost,
-                                      _singleHintAmount,
-                                    ),
-                                  ),
-                                ),
-                                _buildActionItem(
-                                  context,
-                                  _ActionItem(
-                                    title: 'Elite Hint Pack',
-                                    subtitle:
-                                        'Get $_hintsPerPack hints for $_hintPackCost coins',
-                                    icon: Icons.lightbulb_rounded,
-                                    color: const Color(0xFFF59E0B),
-                                    onTap: () => _purchaseHint(
-                                      context,
-                                      user,
-                                      _hintPackCost,
-                                      _hintsPerPack,
-                                    ),
-                                  ),
-                                ),
-                                _buildActionItem(
-                                  context,
-                                  _ActionItem(
-                                    title: 'Legendary Hint Pack',
-                                    subtitle:
-                                        'Get $_bulkHintAmount hints for $_bulkHintCost coins',
-                                    icon: Icons.auto_awesome_rounded,
-                                    color: Theme.of(context).primaryColor,
-                                    onTap: () => _purchaseHint(
-                                      context,
-                                      user,
-                                      _bulkHintCost,
-                                      _bulkHintAmount,
-                                    ),
-                                  ),
-                                ),
+                                _buildHintStore(context, user),
                               ],
                             ),
                             SizedBox(height: 32.h),
@@ -291,16 +292,18 @@ class VowlCoinsScreen extends StatelessWidget {
       user: user,
       cost: cost,
       amount: amount,
-      titleBuilder: (amount) => amount > 1
-          ? context.tr('adventure.hint_pack_elite', fallback: 'Elite Hint Pack')
+      titleBuilder: (amount) => amount == 1
+          ? context.tr('economy.unlock_hint_single', fallback: 'Unlock 1 Hint')
           : context.tr(
-              'adventure.hint_pack_strategic_singular',
-              fallback: 'Strategic Hint Pack',
+              'economy.unlock_hints_plural',
+              fallback: 'Unlock $amount Hints',
+              args: [amount.toString()],
             ),
       bodyBuilder: (cost, amount) => context.tr(
-        'adventure.hint_pack_exchange_body_with_hint',
-        fallback: 'Trade coins for hints.',
-        args: ['$cost', '$amount'],
+        'economy.purchase_confirm_body',
+        fallback:
+            'This will deduct ${_formatCoins(cost)} coins from your balance.',
+        args: [_formatCoins(cost)],
       ),
       onConfirm: () {
         context.read<EconomyBloc>().add(
@@ -319,7 +322,7 @@ class VowlCoinsScreen extends StatelessWidget {
 
     return GlassTile(
       padding: EdgeInsets.all(32.r),
-      borderRadius: BorderRadius.circular(40.r),
+      borderRadius: BorderRadius.circular(28.r),
       borderColor: isDark
           ? Colors.white.withValues(alpha: 0.15)
           : const Color(0xFFCBD5E1),
@@ -342,21 +345,20 @@ class VowlCoinsScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: color.withValues(alpha: 0.4),
-                            blurRadius: 40,
-                            spreadRadius: 10,
+                            color: color.withValues(alpha: 0.25),
+                            blurRadius: 30,
+                            spreadRadius: 5,
                           ),
                         ],
                       ),
                     )
-                    .animate(onPlay: (c) => c.repeat())
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
                     .scale(
-                      begin: const Offset(0.8, 0.8),
-                      end: const Offset(1.2, 1.2),
-                      duration: 2.seconds,
+                      begin: const Offset(0.92, 0.92),
+                      end: const Offset(1.08, 1.08),
+                      duration: 3.seconds,
                       curve: Curves.easeInOut,
-                    )
-                    .fadeOut(duration: 2.seconds),
+                    ),
 
                 Container(
                   padding: EdgeInsets.all(28.r),
@@ -385,18 +387,18 @@ class VowlCoinsScreen extends StatelessWidget {
             ),
             SizedBox(height: 24.h),
             Text(
-              "TOTAL BALANCE",
+              context.tr('economy.total_balance', fallback: 'TOTAL BALANCE'),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w900,
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w700,
                 color: color,
-                letterSpacing: 3,
+                letterSpacing: 2,
               ),
             ).animate().fadeIn(delay: 400.ms),
             SizedBox(height: 4.h),
-            Text(
-              "$coins",
+            AutoSizeText(
+              _formatCoins(coins),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 48.sp,
@@ -405,20 +407,13 @@ class VowlCoinsScreen extends StatelessWidget {
                 height: 1.1,
                 letterSpacing: -1,
               ),
+              maxLines: 1,
+              minFontSize: 24,
               textAlign: TextAlign.center,
             ).animate().scale(begin: const Offset(0.9, 0.9)),
-            Text(
-              "VOWL COINS",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white24 : Colors.black26,
-                letterSpacing: 2,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 24.h),
+            SizedBox(height: 8.h),
+            _buildWeeklyEarnings(context, user, color),
+            SizedBox(height: 20.h),
             _buildInventoryGlance(context, coins, user.hintCount),
           ],
         ),
@@ -427,19 +422,31 @@ class VowlCoinsScreen extends StatelessWidget {
   }
 
   Widget _buildInventoryGlance(BuildContext context, int coins, int hints) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.15),
+        color: isDark
+            ? Colors.black.withValues(alpha: 0.15)
+            : const Color(0xFF0F172A).withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.05)
+              : const Color(0xFFCBD5E1).withValues(alpha: 0.5),
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           _glanceItem(
+            context,
             Icons.lightbulb_rounded,
-            "$hints HINTS AVAILABLE",
+            context.tr(
+              'economy.hints_available',
+              fallback: '$hints hints available',
+              args: [hints.toString()],
+            ),
             const Color(0xFFF59E0B),
           ),
         ],
@@ -447,7 +454,13 @@ class VowlCoinsScreen extends StatelessWidget {
     );
   }
 
-  Widget _glanceItem(IconData icon, String value, Color color) {
+  Widget _glanceItem(
+    BuildContext context,
+    IconData icon,
+    String value,
+    Color color,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Row(
       children: [
         Icon(icon, color: color, size: 16.r),
@@ -456,10 +469,10 @@ class VowlCoinsScreen extends StatelessWidget {
           value,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            letterSpacing: 0.5,
+            fontSize: 13.sp,
+            fontWeight: FontWeight.w700,
+            color: isDark ? Colors.white70 : const Color(0xFF334155),
+            letterSpacing: 0.3,
           ),
         ),
       ],
@@ -476,13 +489,13 @@ class VowlCoinsScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          title.toUpperCase(),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w800,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
-            letterSpacing: 1.5,
+            letterSpacing: 1.2,
           ),
         ),
         SizedBox(height: 16.h),
@@ -498,9 +511,6 @@ class VowlCoinsScreen extends StatelessWidget {
 
   Widget _buildActionItem(BuildContext context, _ActionItem item) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    if (item.isAdPlaceholder) {
-      return const AdRewardCard(margin: EdgeInsets.zero);
-    }
     return ScaleButton(
       onTap: item.onTap,
       child: GlassTile(
@@ -558,6 +568,297 @@ class VowlCoinsScreen extends StatelessWidget {
     );
   }
 
+  // ── Weekly Earnings Summary ──
+  Widget _buildWeeklyEarnings(
+    BuildContext context,
+    UserEntity user,
+    Color accentColor,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    // Sum earned coins from the past 7 days
+    final now = DateTime.now();
+    final weekAgo = now.subtract(const Duration(days: 7));
+    int weeklyEarned = 0;
+    for (final txn in user.coinHistory) {
+      final dateStr = txn['date'] as String?;
+      final isEarned = txn['isEarned'] == true;
+      if (dateStr == null || !isEarned) continue;
+      try {
+        final date = DateTime.parse(dateStr);
+        if (date.isAfter(weekAgo)) {
+          weeklyEarned += ((txn['amount'] as num?)?.toInt() ?? 0).abs();
+        }
+      } catch (_) {
+        continue;
+      }
+    }
+
+    if (weeklyEarned == 0) return const SizedBox.shrink();
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: accentColor.withValues(alpha: isDark ? 0.1 : 0.08),
+        borderRadius: BorderRadius.circular(12.r),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.trending_up_rounded, color: accentColor, size: 14.r),
+          SizedBox(width: 6.w),
+          Text(
+            context.tr(
+              'economy.this_week_earnings',
+              fallback: '+${_formatCoins(weeklyEarned)} this week',
+              args: [_formatCoins(weeklyEarned)],
+            ),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w700,
+              color: accentColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ── Hint Store (Grouped Comparison Card) ──
+  Widget _buildHintStore(BuildContext context, UserEntity user) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final packs = [
+      (
+        name: context.tr('economy.hint_single', fallback: '1 Hint'),
+        hints: _singleHintAmount,
+        cost: _singleHintCost,
+        icon: Icons.lightbulb_outline_rounded,
+        color: const Color(0xFFFBBF24),
+        isBest: false,
+      ),
+      (
+        name: context.tr(
+          'economy.hints_amount',
+          fallback: '5 Hints',
+          args: ['5'],
+        ),
+        hints: _hintsPerPack,
+        cost: _hintPackCost,
+        icon: Icons.lightbulb_rounded,
+        color: const Color(0xFFF59E0B),
+        isBest: false,
+      ),
+      (
+        name: context.tr(
+          'economy.hints_amount',
+          fallback: '10 Hints',
+          args: ['10'],
+        ),
+        hints: _bulkHintAmount,
+        cost: _bulkHintCost,
+        icon: Icons.auto_awesome_rounded,
+        color: const Color(0xFFF59E0B),
+        isBest: true,
+      ),
+    ];
+
+    return GlassTile(
+      padding: EdgeInsets.all(20.r),
+      borderRadius: BorderRadius.circular(24.r),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.lightbulb_rounded,
+                color: const Color(0xFFF59E0B),
+                size: 18.r,
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                context.tr('economy.hint_store', fallback: 'Hint Store'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.h),
+          ...packs.map((pack) {
+            final canAfford = user.coins >= pack.cost;
+            final perUnit = (pack.cost / pack.hints).round();
+
+            return Padding(
+              padding: EdgeInsets.only(bottom: 10.h),
+              child: ScaleButton(
+                onTap: canAfford
+                    ? () => _purchaseHint(context, user, pack.cost, pack.hints)
+                    : () {
+                        di.sl<HapticService>().light();
+                        CustomSnackBar.show(
+                          context: context,
+                          message: context.tr(
+                            'economy.insufficient_coins',
+                            fallback: 'Not enough coins',
+                            args: ['${pack.cost}'],
+                          ),
+                          type: CustomSnackBarType.error,
+                        );
+                      },
+                child: Container(
+                  padding: EdgeInsets.all(14.r),
+                  decoration: BoxDecoration(
+                    color: canAfford
+                        ? pack.color.withValues(alpha: isDark ? 0.08 : 0.06)
+                        : (isDark
+                              ? Colors.white.withValues(alpha: 0.03)
+                              : Colors.black.withValues(alpha: 0.02)),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: canAfford
+                          ? pack.color.withValues(alpha: 0.2)
+                          : (isDark
+                                ? Colors.white.withValues(alpha: 0.05)
+                                : Colors.black.withValues(alpha: 0.04)),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8.r),
+                        decoration: BoxDecoration(
+                          color: pack.color.withValues(
+                            alpha: canAfford ? 0.15 : 0.05,
+                          ),
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Icon(
+                          pack.icon,
+                          color: canAfford
+                              ? pack.color
+                              : (isDark ? Colors.white24 : Colors.black26),
+                          size: 20.r,
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  pack.name,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: canAfford
+                                        ? (isDark
+                                              ? Colors.white
+                                              : const Color(0xFF1E293B))
+                                        : (isDark
+                                              ? Colors.white30
+                                              : Colors.black26),
+                                  ),
+                                ),
+                                if (pack.isBest) ...[
+                                  SizedBox(width: 8.w),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 6.w,
+                                      vertical: 2.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF10B981),
+                                      borderRadius: BorderRadius.circular(6.r),
+                                    ),
+                                    child: Text(
+                                      context.tr(
+                                        'economy.best_value',
+                                        fallback: 'BEST VALUE',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 8.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ],
+                            ),
+                            SizedBox(height: 2.h),
+                            Text(
+                              '${_formatCoins(perUnit)} ${context.tr('economy.coins_per_hint', fallback: 'coins/hint')}',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                                color: canAfford
+                                    ? (isDark
+                                          ? Colors.white38
+                                          : const Color(0xFF94A3B8))
+                                    : (isDark
+                                          ? Colors.white12
+                                          : Colors.black12),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            _formatCoins(pack.cost),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w800,
+                              color: canAfford
+                                  ? pack.color
+                                  : (isDark
+                                        ? Colors.white.withValues(alpha: 0.2)
+                                        : Colors.black12),
+                            ),
+                          ),
+                          if (!canAfford)
+                            Text(
+                              context.tr(
+                                'economy.need_x_more',
+                                fallback:
+                                    'Need ${_formatCoins(pack.cost - user.coins)} more',
+                                args: [_formatCoins(pack.cost - user.coins)],
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(
+                                  0xFFEF4444,
+                                ).withValues(alpha: 0.7),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
   // ── Coin History Ledger (Vision 2026) ──
   Widget _buildCoinHistory(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -574,13 +875,13 @@ class VowlCoinsScreen extends StatelessWidget {
         Row(
           children: [
             Text(
-              'COIN LEDGER',
+              context.tr('economy.coin_ledger', fallback: 'COIN LEDGER'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 12.sp,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w800,
                 color: isDark ? Colors.white38 : const Color(0xFF64748B),
-                letterSpacing: 2,
+                letterSpacing: 1.2,
               ),
             ),
             const Spacer(),
@@ -593,11 +894,15 @@ class VowlCoinsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.r),
               ),
               child: Text(
-                'RECENT 10',
+                context.tr(
+                  'economy.recent_n',
+                  fallback: 'RECENT ${recentHistory.length}',
+                  args: [recentHistory.length.toString()],
+                ),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 8.sp,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   color: isDark ? Colors.white24 : Colors.black26,
                 ),
               ),
@@ -608,8 +913,10 @@ class VowlCoinsScreen extends StatelessWidget {
         if (recentHistory.isEmpty)
           GlassTile(
             padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(32.r),
-            borderColor: Colors.white.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(24.r),
+            borderColor: isDark
+                ? Colors.white.withValues(alpha: 0.05)
+                : const Color(0xFFCBD5E1).withValues(alpha: 0.3),
             child: Center(
               child: Column(
                 children: [
@@ -617,26 +924,34 @@ class VowlCoinsScreen extends StatelessWidget {
                     Icons.receipt_long_rounded,
                     color: isDark
                         ? Colors.white10
-                        : Colors.black.withValues(alpha: 0.05),
+                        : Colors.black.withValues(alpha: 0.08),
                     size: 48.r,
                   ),
                   SizedBox(height: 16.h),
                   Text(
-                    'No Data Streams',
+                    context.tr(
+                      'economy.no_transactions',
+                      fallback: 'No Transactions Yet',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w700,
                       color: isDark ? Colors.white24 : const Color(0xFF94A3B8),
                     ),
                   ),
+                  SizedBox(height: 4.h),
                   Text(
-                    'Your transactions will appear here.',
+                    context.tr(
+                      'economy.earn_first_coins',
+                      fallback: 'Complete a quest to earn your first coins!',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
                       color: isDark ? Colors.white10 : const Color(0xFFCBD5E1),
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -668,9 +983,7 @@ class VowlCoinsScreen extends StatelessWidget {
             if (dateStr != null) {
               try {
                 final date = DateTime.parse(dateStr);
-                formattedDate = DateFormat(
-                  'MMM d • h:mm a',
-                ).format(date).toUpperCase();
+                formattedDate = _relativeTime(context, date);
               } catch (_) {
                 formattedDate = '';
               }
@@ -679,6 +992,7 @@ class VowlCoinsScreen extends StatelessWidget {
             return Padding(
               padding: EdgeInsets.only(bottom: 12.h),
               child: GlassTile(
+                blur: 0, // PERFORMANCE FIX: Disabled blur for list items
                 padding: EdgeInsets.all(16.r),
                 borderRadius: BorderRadius.circular(24.r),
                 borderColor: isDark
@@ -766,7 +1080,7 @@ class VowlCoinsScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 6.w),
                           Text(
-                            '${amount.abs()}',
+                            _formatCoins(amount.abs()),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
@@ -913,7 +1227,6 @@ class _ActionItem {
   final IconData icon;
   final Color color;
   final VoidCallback onTap;
-  final bool isAdPlaceholder;
 
   _ActionItem({
     required this.title,
@@ -921,6 +1234,5 @@ class _ActionItem {
     required this.icon,
     required this.color,
     required this.onTap,
-    this.isAdPlaceholder = false,
   });
 }
