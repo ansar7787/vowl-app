@@ -884,11 +884,11 @@ class StoryServiceImpl implements StoryService {
 
     'audiotruefalse': [
       "",
-      "Nice work! Conquering audio verification is a huge step forward.",
-      "Your mastery of audio verification is noticeably improving daily.",
-      "Level 50! Your command of audio verification is exceptional.",
-      "100 levels beat! You truly dominate audio verification.",
-      "Level 200! You have transcended the limits of audio verification.",
+      "Great start! You're picking up on the details when comparing the audio to the statement.",
+      "Nice work! You're getting much sharper at catching the subtle differences.",
+      "Level 50! Your listening skills are getting really reliable. It's hard to trick you now!",
+      "100 levels! You have a fantastic ear for exactly what's being said. Keep it up!",
+      "Level 200 reached! Your listening comprehension is rock solid. Nothing gets past you!",
     ],
     'detailspotlight': [
       "",

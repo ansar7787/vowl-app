@@ -5,13 +5,13 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class AudioTrueFalseTuner extends StatelessWidget {
   final VoidCallback onTap;
   final Color color;
-  final bool? isCorrectState;
+  final AnimationController audioController;
 
   const AudioTrueFalseTuner({
     super.key,
     required this.onTap,
     required this.color,
-    this.isCorrectState,
+    required this.audioController,
   });
 
   @override
@@ -32,7 +32,31 @@ class AudioTrueFalseTuner extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            AnimatedBuilder(
+              animation: audioController,
+              builder: (_, _) {
+                if (!audioController.isAnimating &&
+                    audioController.value == 0) {
+                  return const SizedBox.shrink();
+                }
+                return SizedBox(
+                  width: 56.r,
+                  height: 56.r,
+                  child: CircularProgressIndicator(
+                    value: audioController.value,
+                    strokeWidth: 4,
+                    color: color,
+                    backgroundColor: color.withValues(alpha: 0.2),
+                  ),
+                );
+              },
+            ),
+            Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
+          ],
+        ),
       ),
     );
   }

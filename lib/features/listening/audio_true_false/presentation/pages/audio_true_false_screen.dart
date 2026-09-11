@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -33,10 +34,11 @@ class AudioTrueFalseScreen extends StatefulWidget {
   State<AudioTrueFalseScreen> createState() => _AudioTrueFalseScreenState();
 }
 
-class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
+class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
+    with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -48,8 +50,11 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   final ValueNotifier<bool?> _selectedVerdict = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
+  late AnimationController _audioController;
+
   @override
   void dispose() {
+    _audioController.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
@@ -61,6 +66,10 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   @override
   void initState() {
     super.initState();
+    _audioController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
     context.read<ListeningBloc>().add(
       FetchListeningQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -78,7 +87,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     });
   }
 
-  void _submitFinalAnswer(GameQuest quest) {
+  void _submitFinalAnswer(ListeningQuest quest) {
     if (_isAnswered.value || _selectedVerdict.value == null) return;
     _timerKey.currentState?.stop();
 
@@ -103,7 +112,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: quest.textToSpeak ?? 'Audio True/False',
+          question:
+              'Audio: ${quest.audioTranscript}\nStatement: ${quest.statement}',
           userAnswer: _selectedVerdict.value.toString(),
           correctAnswer: correct,
           level: widget.level,
@@ -116,8 +126,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     }
   }
 
-  
-  void _submitWrongAnswer(dynamic quest) {
+  void _submitWrongAnswer(ListeningQuest quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
 
@@ -125,11 +134,13 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
-        question: quest.textToSpeak ?? 'Timeout',
+        question:
+            'Audio: ${quest.audioTranscript}\nStatement: ${quest.statement}',
         userAnswer: '[Timeout]',
         correctAnswer: '',
         level: widget.level,
@@ -138,6 +149,18 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     _isAnswered.value = true;
     _isCorrect.value = false;
     context.read<ListeningBloc>().add(SubmitAnswer(false));
+  }
+
+  void _playAudio(String? textToSpeak) {
+    final text = textToSpeak?.trim();
+    if (text == null || text.isEmpty) return;
+    if (text.startsWith('http')) {
+      _soundService.playUrl(text);
+    } else {
+      _soundService.playTts(text);
+    }
+    _audioController.forward(from: 0);
+    _hapticService.selection();
   }
 
   @override
@@ -232,7 +255,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                           key: _timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                          onTimeUp: () =>
+                                              _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       AudioTrueFalseInstruction(
@@ -245,14 +269,10 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                       ),
                                       SizedBox(height: 24.h),
                                       AudioTrueFalseTuner(
-                                        onTap: () {
-                                          _soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          _hapticService.selection();
-                                        },
+                                        onTap: () =>
+                                            _playAudio(quest.textToSpeak),
                                         color: theme.primaryColor,
-                                        isCorrectState: _isCorrect.value,
+                                        audioController: _audioController,
                                       ),
                                       SizedBox(height: 32.h),
                                       AudioTrueFalseScreenDisplay(
@@ -273,9 +293,11 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                     selectedVerdict: _selectedVerdict.value,
                                     isAnswered: _isAnswered.value,
                                     isCorrectState: _isCorrect.value,
-                                    color: theme.primaryColor,
                                     onVerdictSelected: (v) {
-                                      if (_isAnswered.value || _selectedVerdict.value != null) return;
+                                      if (_isAnswered.value ||
+                                          _selectedVerdict.value != null) {
+                                        return;
+                                      }
                                       _hapticService.selection();
                                       _selectedVerdict.value = v;
                                       _submitFinalAnswer(quest);

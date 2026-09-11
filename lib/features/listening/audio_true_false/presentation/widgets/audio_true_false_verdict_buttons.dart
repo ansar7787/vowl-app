@@ -6,7 +6,6 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
   final bool? selectedVerdict;
   final bool isAnswered;
   final bool? isCorrectState;
-  final Color color;
   final Function(bool) onVerdictSelected;
 
   const AudioTrueFalseVerdictButtons({
@@ -14,7 +13,6 @@ class AudioTrueFalseVerdictButtons extends StatelessWidget {
     required this.selectedVerdict,
     required this.isAnswered,
     required this.isCorrectState,
-    required this.color,
     required this.onVerdictSelected,
   });
 
