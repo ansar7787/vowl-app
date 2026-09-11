@@ -11,10 +11,12 @@ import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_oscilloscope.dart';
 import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -40,6 +42,8 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   @override
   void dispose() {
@@ -63,6 +67,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
 
   void _submitAnswer() {
     if (_isAnswered.value) return;
+    _timerKey.currentState?.stop();
 
     _hapticService.success();
     _soundService.playCorrect();
@@ -147,9 +152,21 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   SizedBox(height: 6.h),
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 16.h),
+                                    child: SpeedChallengeTimer(
+                                      key: _timerKey,
+                                      durationSeconds: 15,
+                                      primaryColor: theme.primaryColor,
+                                      onTimeUp: () => _submitWrongAnswer(quest),
+                                    ),
+                                  ),
                                   AudioSentenceOrderInstruction(
                                     color: theme.primaryColor,
-                                    instruction: 'Listen and arrange the words',
+                                    instruction: context.tr(
+                                      'games.audioSentenceOrder_instruction',
+                                      fallback: 'Listen and arrange the words',
+                                    ),
                                   ),
                                   SizedBox(height: 24.h),
                                   AudioSentenceOrderOscilloscope(
@@ -173,29 +190,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       onConfirmed: () => _submitAnswer(),
-                                      onSkipped: () {
-                                        final authState = context
-                                            .read<AuthBloc>()
-                                            .state;
-                                        if (authState.status ==
-                                                AuthStatus.authenticated &&
-                                            authState.user != null) {
-                                          ErrorJournalCollector.record(
-                                            userId: authState.user!.id,
-                                            gameType: widget.gameType.name,
-                                            question: 'Sentence Order',
-                                            userAnswer: '[Skipped]',
-                                            correctAnswer:
-                                                quest.textToSpeak ?? "",
-                                            level: widget.level,
-                                          );
-                                        }
-                                        _isAnswered.value = true;
-                                        _isCorrect.value = false;
-                                        context.read<ListeningBloc>().add(
-                                          SubmitAnswer(false),
-                                        );
-                                      },
+                                      onSkipped: () => _submitWrongAnswer(quest),
                                     ),
                                 ],
                               ),
@@ -209,5 +204,28 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
         );
       },
     );
+  }
+
+  void _submitWrongAnswer(dynamic quest) {
+    if (_isAnswered.value) return;
+    _timerKey.currentState?.stop();
+
+    _hapticService.error();
+    _soundService.playWrong();
+
+    final authState = context.read<AuthBloc>().state;
+    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      ErrorJournalCollector.record(
+        userId: authState.user!.id,
+        gameType: widget.gameType.name,
+        question: 'Sentence Order',
+        userAnswer: '[Failed / Timeout]',
+        correctAnswer: quest.textToSpeak ?? "",
+        level: widget.level,
+      );
+    }
+    _isAnswered.value = true;
+    _isCorrect.value = false;
+    context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 }
