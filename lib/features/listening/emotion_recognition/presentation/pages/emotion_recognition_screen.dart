@@ -107,10 +107,13 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: quest.textToSpeak ?? 'Emotion Recognition',
-          userAnswer: quest.options != null && _pendingSelectedIndex.value! < quest.options!.length
+          userAnswer:
+              quest.options != null &&
+                  _pendingSelectedIndex.value! < quest.options!.length
               ? quest.options![_pendingSelectedIndex.value!]
               : _pendingSelectedIndex.value.toString(),
-          correctAnswer: quest.options != null && correct < quest.options!.length
+          correctAnswer:
+              quest.options != null && correct < quest.options!.length
               ? quest.options![correct]
               : correct.toString(),
           level: widget.level,
@@ -140,7 +143,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
         gameType: widget.gameType.name,
         question: quest.textToSpeak ?? 'Emotion Recognition',
         userAnswer: '[Timeout]',
-        correctAnswer: quest.options != null && correctIndex < quest.options!.length
+        correctAnswer:
+            quest.options != null && correctIndex < quest.options!.length
             ? quest.options![correctIndex]
             : correctIndex.toString(),
         level: widget.level,
