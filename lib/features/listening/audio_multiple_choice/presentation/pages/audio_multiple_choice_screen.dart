@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_instruction.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_question.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
-import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -35,6 +35,9 @@ class AudioMultipleChoiceScreen extends StatefulWidget {
 class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   final ValueNotifier<bool> _isAnswered = ValueNotifier(
     false,
@@ -68,37 +71,46 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     );
   }
 
-  void _submitStageOne(int index, int correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
+  void _submitFinalAnswer(int index, int correct, GameQuest quest) {
+    if (_isAnswered.value) return;
+    _timerKey.currentState?.stop();
 
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.selection();
+      _hapticService.success();
       _soundService.playCorrect();
       _isCorrect.value = true;
-      _isFirstStagePassed.value = true;
+      _isAnswered.value = true;
+      context.read<ListeningBloc>().add(SubmitAnswer(true));
 
-      Future.delayed(const Duration(milliseconds: 800), () {
-        if (mounted && _isFirstStagePassed.value) {
+      Future.delayed(const Duration(milliseconds: 200), () {
+        if (mounted) {
           _scrollToBottom();
         }
       });
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated &&
+          authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: quest.textToSpeak ?? 'Audio Multiple Choice',
+          userAnswer: index.toString(),
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+
       _isAnswered.value = true;
       _isCorrect.value = false;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
-  }
-
-  void _submitStageTwo() {
-    if (_isAnswered.value) return;
-    _isAnswered.value = true;
-    _hapticService.success();
-    context.read<ListeningBloc>().add(SubmitAnswer(true));
   }
 
   void _scrollToBottom() {
@@ -172,9 +184,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                     ? quest.options![quest.correctAnswerIndex ?? 0]
                     : '');
 
-            final bool isFirstStageCorrect =
-                _isFirstStagePassed.value || _isCorrect.value == true;
-            final displayQuestion = isFirstStageCorrect
+            final displayQuestion = _isCorrect.value == true
                 ? (quest?.question?.replaceAll('_____', correctWord) ?? "")
                 : (quest?.question ?? "");
 
@@ -212,7 +222,19 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
-                                    children: [
+                                    children: [                                      SizedBox(height: 6.h),
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        child: SpeedChallengeTimer(
+                                          key: _timerKey,
+                                          durationSeconds: 15,
+                                          primaryColor: theme.primaryColor,
+                                          onTimeUp: () {
+                                            if (_isAnswered.value) return;
+                                            _submitFinalAnswer(0, quest.correctAnswerIndex ?? 0, quest);
+                                          },
+                                        ),
+                                      ),
                                       AudioMultipleChoiceInstruction(
                                         instruction: quest.instruction,
                                         color: theme.primaryColor,
@@ -286,22 +308,18 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                       emoji: quest.emoji,
                                       rotation: _rotation.value,
                                       selectedIndex: _selectedIndex.value,
-                                      isAnswered:
-                                          _isFirstStagePassed.value ||
-                                          _isAnswered.value,
-                                      isCorrectState: _isFirstStagePassed.value
-                                          ? true
-                                          : _isCorrect.value,
+                                      isAnswered: _isAnswered.value,
+                                      isCorrectState: _isCorrect.value,
                                       onSpin: (delta) {
-                                        if (!_isAnswered.value &&
-                                            !_isFirstStagePassed.value) {
+                                        if (!_isAnswered.value) {
                                           _rotation.value += delta * 0.01;
                                         }
                                       },
                                       onSelectSatellite: (index) {
-                                        _submitStageOne(
+                                        _submitFinalAnswer(
                                           index,
                                           quest.correctAnswerIndex ?? 0,
+                                          quest,
                                         );
                                       },
                                       onTapCore: () {
@@ -314,49 +332,6 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                   ),
                                 ),
                               ),
-                              if (_isFirstStagePassed.value &&
-                                  !_isAnswered.value &&
-                                  quest.textToSpeak != null)
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: 16.h,
-                                    ),
-                                    child: EvidenceHighlightWrapper(
-                                      passage: quest.textToSpeak!,
-                                      evidenceWords: [
-                                        quest.correctAnswer ??
-                                            quest.options?[quest
-                                                    .correctAnswerIndex ??
-                                                0] ??
-                                            '',
-                                      ],
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onCorrectHighlight: () =>
-                                          _submitStageTwo(),
-                                      onWrongHighlight: () {
-                                        final authState = context
-                                            .read<AuthBloc>()
-                                            .state;
-                                        if (authState.status ==
-                                                AuthStatus.authenticated &&
-                                            authState.user != null) {
-                                          ErrorJournalCollector.record(
-                                            userId: authState.user!.id,
-                                            gameType: widget.gameType.name,
-                                            question: 'Evidence Highlight',
-                                            userAnswer: '[Wrong evidence tap]',
-                                            correctAnswer:
-                                                quest.correctAnswer ?? '',
-                                            level: widget.level,
-                                          );
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                ),
                               SliverToBoxAdapter(
                                 child: SizedBox(height: 100.h),
                               ),
