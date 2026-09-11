@@ -50,6 +50,10 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   final ValueNotifier<double> _rotation = ValueNotifier(0.0);
   final ScrollController _scrollController = ScrollController();
 
+  String? _currentQuestId;
+  List<String> _shuffledOptions = [];
+  int _shuffledCorrectIndex = 0;
+
   @override
   void dispose() {
     _isAnswered.dispose();
@@ -100,8 +104,12 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: quest.textToSpeak ?? 'Audio Multiple Choice',
-          userAnswer: index.toString(),
-          correctAnswer: correct.toString(),
+          userAnswer: _shuffledOptions.isNotEmpty
+              ? _shuffledOptions[index]
+              : index.toString(),
+          correctAnswer: _shuffledOptions.isNotEmpty
+              ? _shuffledOptions[correct]
+              : correct.toString(),
           level: widget.level,
         );
       }
@@ -124,7 +132,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     });
   }
 
-  void _submitWrongAnswer(dynamic quest) {
+  void _submitWrongAnswer(GameQuest quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
 
@@ -134,12 +142,18 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     final authState = context.read<AuthBloc>().state;
     if (authState.status == AuthStatus.authenticated &&
         authState.user != null) {
+      final correctWord =
+          quest.correctAnswer ??
+          (quest.options != null && quest.options!.isNotEmpty
+              ? quest.options![quest.correctAnswerIndex ?? 0]
+              : '');
+
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
         question: quest.textToSpeak ?? 'Timeout',
         userAnswer: '[Timeout]',
-        correctAnswer: '',
+        correctAnswer: correctWord,
         level: widget.level,
       );
     }
@@ -192,14 +206,26 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
 
+        if (quest != null && quest.id != _currentQuestId) {
+          _currentQuestId = quest.id;
+          if (quest.options != null && quest.options!.isNotEmpty) {
+            final List<String> opts = List.from(quest.options!);
+            final originalCorrectWord = opts[quest.correctAnswerIndex ?? 0];
+            opts.shuffle();
+            _shuffledOptions = opts;
+            _shuffledCorrectIndex = opts.indexOf(originalCorrectWord);
+          } else {
+            _shuffledOptions = [];
+            _shuffledCorrectIndex = 0;
+          }
+        }
+
         return ListenableBuilder(
           listenable: Listenable.merge([
             _isAnswered,
             _isCorrect,
             _showConfetti,
             _isFirstStagePassed,
-            _selectedIndex,
-            _rotation,
           ]),
           builder: (context, _) {
             final correctWord =
@@ -261,8 +287,6 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                       Text(
                                         quest.instruction,
                                         textAlign: TextAlign.center,
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 14.sp,
@@ -277,51 +301,6 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                         text: displayQuestion,
                                         isDark: isDark,
                                       ),
-                                      if (_isAnswered.value &&
-                                          _isCorrect.value == false &&
-                                          quest.explanation != null)
-                                        Padding(
-                                          padding: EdgeInsets.only(top: 16.h),
-                                          child: Container(
-                                            padding: EdgeInsets.all(16.r),
-                                            decoration: BoxDecoration(
-                                              color: Colors.amber.withValues(
-                                                alpha: 0.1,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.r),
-                                              border: Border.all(
-                                                color: Colors.amber.withValues(
-                                                  alpha: 0.5,
-                                                ),
-                                              ),
-                                            ),
-                                            child: Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Icon(
-                                                  Icons.lightbulb_outline,
-                                                  color: Colors.amber,
-                                                  size: 24.r,
-                                                ),
-                                                SizedBox(width: 12.w),
-                                                Expanded(
-                                                  child: Text(
-                                                    quest.explanation!,
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 14.sp,
-                                                      color: isDark
-                                                          ? Colors.white
-                                                          : Colors.black87,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
                                     ],
                                   ),
                                 ),
@@ -334,32 +313,40 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                   ),
                                   child: SizedBox(
                                     height: 340.r,
-                                    child: AudioMultipleChoiceSpinner(
-                                      options: quest.options ?? [],
-                                      correct: quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      emoji: quest.emoji,
-                                      rotation: _rotation.value,
-                                      selectedIndex: _selectedIndex.value,
-                                      isAnswered: _isAnswered.value,
-                                      isCorrectState: _isCorrect.value,
-                                      onSpin: (delta) {
-                                        if (!_isAnswered.value) {
-                                          _rotation.value += delta * 0.01;
-                                        }
-                                      },
-                                      onSelectSatellite: (index) {
-                                        _submitFinalAnswer(
-                                          index,
-                                          quest.correctAnswerIndex ?? 0,
-                                          quest,
+                                    child: ListenableBuilder(
+                                      listenable: Listenable.merge([
+                                        _rotation,
+                                        _selectedIndex,
+                                      ]),
+                                      builder: (context, _) {
+                                        return AudioMultipleChoiceSpinner(
+                                          options: _shuffledOptions,
+                                          correct: _shuffledCorrectIndex,
+                                          color: theme.primaryColor,
+                                          emoji: quest.emoji,
+                                          rotation: _rotation.value,
+                                          selectedIndex: _selectedIndex.value,
+                                          isAnswered: _isAnswered.value,
+                                          isCorrectState: _isCorrect.value,
+                                          onSpin: (delta) {
+                                            if (!_isAnswered.value) {
+                                              _rotation.value += delta * 0.01;
+                                            }
+                                          },
+                                          onSelectSatellite: (index) {
+                                            _submitFinalAnswer(
+                                              index,
+                                              _shuffledCorrectIndex,
+                                              quest,
+                                            );
+                                          },
+                                          onTapCore: () {
+                                            _soundService.playTts(
+                                              quest.textToSpeak ?? "",
+                                            );
+                                            _hapticService.selection();
+                                          },
                                         );
-                                      },
-                                      onTapCore: () {
-                                        _soundService.playTts(
-                                          quest.textToSpeak ?? "",
-                                        );
-                                        _hapticService.selection();
                                       },
                                     ),
                                   ),
