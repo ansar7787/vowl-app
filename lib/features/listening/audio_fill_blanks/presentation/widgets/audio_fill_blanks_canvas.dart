@@ -78,14 +78,22 @@ class AudioFillBlanksCanvas extends StatelessWidget {
               SizedBox(height: _kBlobSize.r, width: double.infinity),
 
               // ── Revealed text ─────────────────────────────────────────────
-              Text(
-                text,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  color: (isDark ? Colors.white70 : Colors.black87).withValues(
-                    alpha: revealProgress.clamp(0.0, 1.0),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                transitionBuilder: (child, animation) => FadeTransition(
+                  opacity: animation,
+                  child: child,
+                ),
+                child: Text(
+                  text,
+                  key: ValueKey<String>(text),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    color: (isDark ? Colors.white70 : Colors.black87).withValues(
+                      alpha: revealProgress.clamp(0.0, 1.0),
+                    ),
                   ),
                 ),
               ),

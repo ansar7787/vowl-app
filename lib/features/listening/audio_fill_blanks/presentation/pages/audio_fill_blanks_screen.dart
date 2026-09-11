@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -130,7 +131,6 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // FIX: use widget.gameType.name â€” not the hardcoded 'listening' string.
     final theme = LevelThemeHelper.getTheme(
       widget.gameType.name,
       isDark: isDark,
@@ -141,7 +141,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = _isAnswered.value && !state.answerStatus.isAnswered;
-          // Detect a life-restore (lives increased, e.g. 0 â†’ 1).
+          // Detect a life-restore (lives increased, e.g. 0 -> 1).
           final isLifeRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
@@ -175,7 +175,6 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
             _isAnswered,
             _isCorrect,
             _showConfetti,
-            _revealProgress,
           ]),
           builder: (context, _) {
             return ListeningBaseLayout(
@@ -188,8 +187,6 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
               disablePadding: true,
               onContinue: () =>
                   context.read<ListeningBloc>().add(const NextQuestion()),
-              // FIX: Layout now dispatches ListeningHintUsed internally.
-              // This callback is for screen-level side-effects only.
               onHint: () => _hapticService.selection(),
               child: quest == null
                   ? const SizedBox.shrink()
@@ -197,7 +194,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                       quest: quest,
                       isAnswered: _isAnswered.value,
                       isCorrect: _isCorrect.value,
-                      revealProgress: _revealProgress.value,
+                      revealProgressNotifier: _revealProgress,
                       controller: _controller,
                       scrollController: _scrollController,
                       timerKey: _timerKey,
@@ -216,8 +213,13 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                             ErrorJournalCollector.record(
                               userId: authState.user!.id,
                               gameType: widget.gameType.name,
-                              question: 'Blind Dictation',
-                              userAnswer: '[Failed Dictation]',
+                              question:
+                                  quest.textWithBlanks ??
+                                  quest.textToSpeak ??
+                                  'Audio Fill Blanks',
+                              userAnswer: _controller.text.isNotEmpty
+                                  ? _controller.text
+                                  : '[Failed Dictation]',
                               correctAnswer:
                                   quest.correctAnswer ??
                                   quest.textToSpeak ??
@@ -244,7 +246,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
 // =============================================================================
 // _AudioFillBlanksContent
 //
-// Extracted layout widget â€” handles the adaptive gap / compact-mode logic
+// Extracted layout widget - handles the adaptive gap / compact-mode logic
 // and composes all sub-widgets. Keeping it private (underscore) as it is
 // tightly coupled to this feature's UX.
 // =============================================================================
@@ -253,7 +255,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
   final dynamic quest;
   final bool isAnswered;
   final bool? isCorrect;
-  final double revealProgress;
+  final ValueNotifier<double> revealProgressNotifier;
   final TextEditingController controller;
   final ScrollController scrollController;
   final GlobalKey<SpeedChallengeTimerState> timerKey;
@@ -269,7 +271,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
     required this.quest,
     required this.isAnswered,
     required this.isCorrect,
-    required this.revealProgress,
+    required this.revealProgressNotifier,
     required this.controller,
     required this.scrollController,
     required this.timerKey,
@@ -312,7 +314,9 @@ class _AudioFillBlanksContent extends StatelessWidget {
                           primaryColor: theme.primaryColor,
                           onTimeUp: () {
                             if (isAnswered) return;
-                            onBlindSubmit(false); // Default to wrong on time out
+                            onBlindSubmit(
+                              false,
+                            ); // Default to wrong on time out
                           },
                         ),
                       ),
@@ -326,18 +330,24 @@ class _AudioFillBlanksContent extends StatelessWidget {
                         onTap: onPlayAudio,
                       ),
                       SizedBox(height: 32.h),
-                      AudioFillBlanksCanvas(
-                        text: (isCorrect == true && quest.textToSpeak != null)
-                            ? quest.textToSpeak
-                            : (quest.textWithBlanks ?? ''),
-                        revealProgress: (isAnswered && isCorrect == true)
-                            ? 1.0
-                            : revealProgress,
-                        onSmear: onSmear,
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                        imageUrl: null,
-                        isCorrectState: isCorrect,
+                      ValueListenableBuilder<double>(
+                        valueListenable: revealProgressNotifier,
+                        builder: (context, progress, _) {
+                          return AudioFillBlanksCanvas(
+                            text:
+                                (isCorrect == true && quest.textToSpeak != null)
+                                ? quest.textToSpeak
+                                : (quest.textWithBlanks ?? ''),
+                            revealProgress: (isAnswered && isCorrect == true)
+                                ? 1.0
+                                : progress,
+                            onSmear: onSmear,
+                            primaryColor: theme.primaryColor,
+                            isDark: isDark,
+                            imageUrl: null,
+                            isCorrectState: isCorrect,
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -353,44 +363,77 @@ class _AudioFillBlanksContent extends StatelessWidget {
                         (isAnswered ? 200.h : 40.h) +
                         MediaQuery.of(context).viewInsets.bottom,
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      if (!showBlindDictation) ...[
-                        _buildOptions(context, quest, theme),
+                  child: AnimatedSize(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                    alignment: Alignment.bottomCenter,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          child: showBlindDictation
+                              ? SizedBox(
+                                  key: const ValueKey('spacer'),
+                                  height: 380.h,
+                                )
+                              : _buildOptions(context, quest, theme),
+                        ),
                       ],
-                      if (showBlindDictation) SizedBox(height: 380.h),
-                    ],
+                    ),
                   ),
                 ),
               ),
             ],
           ),
         ),
-        if (showBlindDictation)
-          BlindDictationWrapper(
-            expectedText: quest.correctAnswer ?? quest.textToSpeak ?? '',
-            primaryColor: theme.primaryColor,
-            isPositioned: true,
-            onConfirmed: () => onBlindSubmit(true),
-            onSkipped: () => onBlindSubmit(false),
+        Positioned.fill(
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 300),
+            transitionBuilder: (child, animation) =>
+                FadeTransition(opacity: animation, child: child),
+            child: showBlindDictation
+                ? Align(
+                    key: const ValueKey('dictation'),
+                    alignment: Alignment.bottomCenter,
+                    child: BlindDictationWrapper(
+                      expectedText:
+                          quest.correctAnswer ?? quest.textToSpeak ?? '',
+                      primaryColor: theme.primaryColor,
+                      isPositioned: false,
+                      onConfirmed: () => onBlindSubmit(true),
+                      onSkipped: () => onBlindSubmit(false),
+                    ),
+                  )
+                : const SizedBox.shrink(key: ValueKey('empty')),
           ),
+        ),
       ],
     );
   }
 
   Widget _buildOptions(BuildContext context, dynamic quest, dynamic theme) {
-    if (quest == null || isAnswered) return const SizedBox.shrink();
+    if (quest == null || isAnswered) {
+      return const SizedBox.shrink(key: ValueKey('options_empty'));
+    }
 
     final correctWord = (quest.correctAnswer ?? '').toString().toLowerCase();
-    final distractor1 = (quest.distractorWords != null && quest.distractorWords.length > 0) ? quest.distractorWords[0].toString().toLowerCase() : 'distractor1';
-    final distractor2 = (quest.distractorWords != null && quest.distractorWords.length > 1) ? quest.distractorWords[1].toString().toLowerCase() : 'distractor2';
+    final distractor1 =
+        (quest.distractorWords != null && quest.distractorWords.length > 0)
+        ? quest.distractorWords[0].toString().toLowerCase()
+        : 'distractor1';
+    final distractor2 =
+        (quest.distractorWords != null && quest.distractorWords.length > 1)
+        ? quest.distractorWords[1].toString().toLowerCase()
+        : 'distractor2';
 
-    // Build the list and sort alphabetically to ensure deterministic randomization
+    // Build the list and shuffle using quest id as a deterministic seed
+    final seed = quest.id != null ? quest.id.hashCode : 0;
     final List<String> options = [correctWord, distractor1, distractor2]
-      ..sort((a, b) => a.compareTo(b));
+      ..shuffle(math.Random(seed));
 
     return Column(
+      key: const ValueKey('options_list'),
       children: options.map((option) {
         return Padding(
           padding: EdgeInsets.only(bottom: 12.h),
@@ -411,7 +454,9 @@ class _AudioFillBlanksContent extends StatelessWidget {
                 height: 60.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
-                  color: isDark ? theme.primaryColor.withValues(alpha: 0.2) : Colors.white,
+                  color: isDark
+                      ? theme.primaryColor.withValues(alpha: 0.2)
+                      : Colors.white,
                   border: Border.all(color: theme.primaryColor, width: 2.w),
                 ),
                 child: Center(

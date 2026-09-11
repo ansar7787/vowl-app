@@ -107,7 +107,7 @@ class StoryServiceImpl implements StoryService {
     'ambientId':
         "Listen closely to the background! Identifying everyday sounds helps you build real-world situational awareness.",
     'audioFillBlanks':
-        "Let's train your ears to catch every single word! Listen to the sentence, scratch the ink, and type exactly what you hear.",
+        "Let's train your ears to catch every single word! Listen to the sentence, scratch the ink, and find the missing word.",
     'audioMultipleChoice':
         "Listening to a native speaker can be tricky! Let's practice picking out the exact message from the audio.",
     'audioSentenceOrder':
