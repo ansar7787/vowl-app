@@ -26,16 +26,20 @@ class AudioTrueFalseInstruction extends StatelessWidget {
 
     return Column(
       children: [
-        Text(
-          mainText,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w800,
-            color: isDark ? Colors.white : const Color(0xFF1A1A1A),
-            letterSpacing: 0.2,
-            height: 1.2,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            mainText,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w800,
+              color: isDark ? Colors.white : const Color(0xFF1A1A1A),
+              letterSpacing: 0.2,
+              height: 1.2,
+            ),
           ),
         ),
         if (subText.isNotEmpty) ...[
