@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +35,7 @@ class EmotionRecognitionScreen extends StatefulWidget {
 class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -86,7 +85,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   void _submitFinalAnswer(GameQuest quest) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
     _timerKey.currentState?.stop();
-    
+
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
 
@@ -108,8 +107,12 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: quest.textToSpeak ?? 'Emotion Recognition',
-          userAnswer: _pendingSelectedIndex.value.toString(),
-          correctAnswer: correct.toString(),
+          userAnswer: quest.options != null && _pendingSelectedIndex.value! < quest.options!.length
+              ? quest.options![_pendingSelectedIndex.value!]
+              : _pendingSelectedIndex.value.toString(),
+          correctAnswer: quest.options != null && correct < quest.options!.length
+              ? quest.options![correct]
+              : correct.toString(),
           level: widget.level,
         );
       }
@@ -129,13 +132,17 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
+      int correctIndex = quest.correctAnswerIndex ?? 0;
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
         question: quest.textToSpeak ?? 'Emotion Recognition',
         userAnswer: '[Timeout]',
-        correctAnswer: (quest.correctAnswerIndex ?? 0).toString(),
+        correctAnswer: quest.options != null && correctIndex < quest.options!.length
+            ? quest.options![correctIndex]
+            : correctIndex.toString(),
         level: widget.level,
       );
     }
@@ -235,16 +242,14 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                           key: _timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                          onTimeUp: () =>
+                                              _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       EmotionRecognitionInstruction(
                                         isAnswered: _isAnswered.value,
                                         color: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
+                                        instruction: "DETECT EMOTION",
                                       ),
                                       SizedBox(height: 24.h),
                                       EmotionRecognitionEmitter(
@@ -276,7 +281,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                         height: 350.h,
                                         child: EmotionRecognitionQuadrant(
                                           options: quest.options ?? [],
-                                          optionEmojis: quest.optionEmojis ?? [],
+                                          optionEmojis:
+                                              quest.optionEmojis ?? [],
                                           correctAnswerIndex:
                                               quest.correctAnswerIndex ?? 0,
                                           color: theme.primaryColor,
@@ -297,7 +303,9 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: _isAnswered.value ? 200.h : 60.h,
+                                        height: _isAnswered.value
+                                            ? 200.h
+                                            : 60.h,
                                       ),
                                     ],
                                   ),

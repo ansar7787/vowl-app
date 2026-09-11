@@ -900,11 +900,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'emotionrecognition': [
       "",
-      "Fantastic! Exploring emotion recognition will elevate your skills rapidly.",
-      "Your mastery of emotion recognition is noticeably improving daily.",
-      "Halfway there! You are a rising star in emotion recognition.",
-      "Level 100! Your expertise in emotion recognition is elite.",
-      "Level 200! You have transcended the limits of emotion recognition.",
+      "Great start! Paying attention to tone will make your conversations feel much more natural.",
+      "You're really getting the hang of it! It's getting easier to hear the feelings behind the words.",
+      "Level 50! You have a great ear for picking up subtle emotions.",
+      "Level 100! You can instantly tell exactly how someone is feeling, just like a native speaker.",
+      "Level 200! Your empathy and listening skills are truly off the charts!",
     ],
     'fastspeechdecoder': [
       "",

@@ -51,8 +51,8 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
 
                   // The Neural Grid Targets
                   ...List.generate(options.length, (index) {
-                    double xDist = 110.w;
-                    double yDist = 130.h;
+                    double xDist = 115.w;
+                    double yDist = 135.h;
                     double x = (index % 2 == 0) ? -xDist : xDist;
                     double y = (index < 2) ? -yDist : yDist;
 
@@ -61,7 +61,9 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
                       child: _buildReservoir(
                         index,
                         options[index],
-                        index < optionEmojis.length ? optionEmojis[index] : '🎭',
+                        index < optionEmojis.length
+                            ? optionEmojis[index]
+                            : '🎭',
                         correctAnswerIndex,
                         color,
                       ),
@@ -77,11 +79,11 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
                           onCoreMove(details.delta, constraints),
                       onPanEnd: (_) {
                         for (int i = 0; i < options.length; i++) {
-                          double xDist = 110.w;
-                          double yDist = 130.h;
+                          double xDist = 115.w;
+                          double yDist = 135.h;
                           double x = (i % 2 == 0) ? -xDist : xDist;
                           double y = (i < 2) ? -yDist : yDist;
-                          if ((offset - Offset(x, y)).distance < 60.r) {
+                          if ((offset - Offset(x, y)).distance < 65.r) {
                             onSubmitAnswer(i);
                             return;
                           }
@@ -131,7 +133,13 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
     );
   }
 
-  Widget _buildReservoir(int index, String text, String emoji, int correct, Color color) {
+  Widget _buildReservoir(
+    int index,
+    String text,
+    String emoji,
+    int correct,
+    Color color,
+  ) {
     bool isSelected = selectedIndex == index;
     bool isCorrect = isAnswered && index == correct && isCorrectState == true;
     bool isWrong = isAnswered && isSelected && isCorrectState == false;
@@ -140,62 +148,75 @@ class EmotionRecognitionQuadrant extends StatelessWidget {
         ? Colors.greenAccent
         : (isWrong ? Colors.redAccent : color);
 
-    return AnimatedContainer(
-      duration: 300.ms,
-      width: 90.r,
-      height: 90.r,
-      padding: EdgeInsets.all(4.r),
-      decoration: BoxDecoration(
-        color: tileColor.withValues(alpha: 0.05),
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: tileColor.withValues(
-            alpha: (isCorrect || isWrong) ? 0.8 : 0.2,
+    return GestureDetector(
+      onTap: () {
+        if (isAnswered) return;
+        double xDist = 115.w;
+        double yDist = 135.h;
+        double x = (index % 2 == 0) ? -xDist : xDist;
+        double y = (index < 2) ? -yDist : yDist;
+        coreOffset.value = Offset(x, y);
+        Future.delayed(50.ms, () {
+          onSubmitAnswer(index);
+        });
+      },
+      child: AnimatedContainer(
+        duration: 300.ms,
+        width: 100.r,
+        height: 100.r,
+        padding: EdgeInsets.all(6.r),
+        decoration: BoxDecoration(
+          color: tileColor.withValues(alpha: 0.05),
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: tileColor.withValues(
+              alpha: (isCorrect || isWrong) ? 0.8 : 0.2,
+            ),
+            width: (isCorrect || isWrong) ? 3 : 1.5,
           ),
-          width: (isCorrect || isWrong) ? 3 : 1.5,
+          boxShadow: (isCorrect || isWrong)
+              ? [
+                  BoxShadow(
+                    color: tileColor.withValues(alpha: 0.3),
+                    blurRadius: 15,
+                    spreadRadius: 2,
+                  ),
+                ]
+              : [],
         ),
-        boxShadow: (isCorrect || isWrong)
-            ? [
-                BoxShadow(
-                  color: tileColor.withValues(alpha: 0.3),
-                  blurRadius: 15,
-                  spreadRadius: 2,
-                ),
-              ]
-            : [],
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(emoji, style: TextStyle(fontSize: 22.sp))
-                .animate(target: (isCorrect || isWrong) ? 1 : 0)
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.2, 1.2),
-                  curve: Curves.elasticOut,
-                ),
-            SizedBox(height: 2.h),
-            FittedBox(
-              child: Text(
-                text.toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.w900,
-                  color: tileColor,
-                  letterSpacing: 0.5,
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(emoji, style: TextStyle(fontSize: 22.sp))
+                  .animate(target: (isCorrect || isWrong) ? 1 : 0)
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.2, 1.2),
+                    curve: Curves.elasticOut,
+                  ),
+              SizedBox(height: 2.h),
+              Flexible(
+                child: Text(
+                  text.toUpperCase(),
+                  textAlign: TextAlign.center,
+                  maxLines: 3,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 9.sp,
+                    fontWeight: FontWeight.w900,
+                    color: tileColor,
+                    letterSpacing: 0.5,
+                    height: 1.1,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
-
-
 }
 
 class NeuralGridPainter extends CustomPainter {

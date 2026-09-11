@@ -27,14 +27,16 @@ class EmotionRecognitionInstruction extends StatelessWidget {
         children: [
           Icon(Icons.psychology_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
-          Text(
-            isAnswered ? "ANALYSIS COMPLETE" : instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              isAnswered ? "ANALYSIS COMPLETE" : instruction.toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],
