@@ -21,19 +21,47 @@ class SoundImageMatchEmitter extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaleButton(
       onTap: onTap,
+      scaleDown: 0.9,
       child: Container(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.all(24.r),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+          boxShadow: [
+            BoxShadow(
+              color: color.withValues(alpha: 0.3),
+              blurRadius: 40,
+              spreadRadius: 5,
+            ),
+            BoxShadow(
+              color: Colors.white.withValues(alpha: 0.5),
+              blurRadius: 20,
+              spreadRadius: -10,
+              offset: const Offset(-5, -5),
+            ),
+          ],
+          border: Border.all(
+            color: Colors.white.withValues(alpha: 0.6),
+            width: 2,
+          ),
+          gradient: RadialGradient(
+            colors: [
+              color.withValues(alpha: 0.05),
+              color.withValues(alpha: 0.2),
+            ],
+          ),
         ),
         child: isCorrectState == true && emoji != null
             ? Text(
                 emoji!,
-                style: TextStyle(fontSize: 48.r),
+                style: TextStyle(fontSize: 52.r),
               ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
-            : Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
+            : Icon(Icons.volume_up_rounded, color: color, size: 52.r)
+                  .animate(onPlay: (controller) => controller.repeat())
+                  .shimmer(
+                    duration: 2.seconds,
+                    color: Colors.white.withValues(alpha: 0.6),
+                  ),
       ),
     );
   }

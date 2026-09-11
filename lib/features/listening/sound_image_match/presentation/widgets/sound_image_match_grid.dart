@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SoundImageMatchGrid extends StatelessWidget {
   final List<String> options;
@@ -28,26 +29,52 @@ class SoundImageMatchGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 16.w,
-            mainAxisSpacing: 16.h,
-            childAspectRatio: 1.0,
-          ),
-          itemCount: options.length,
-          itemBuilder: (context, index) {
-            String emoji = '🖼️';
-            if (index < optionEmojis.length) {
-              emoji = optionEmojis[index];
-            }
-            return _buildOptionTile(index, options[index], emoji);
-          },
+        return Column(
+          children: [
+            IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: _buildOptionTile(0, options[0], _getEmoji(0)),
+                  ),
+                  SizedBox(width: 16.w),
+                  Expanded(
+                    child: _buildOptionTile(1, options[1], _getEmoji(1)),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 16.h),
+            if (options.length > 2)
+              IntrinsicHeight(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: _buildOptionTile(2, options[2], _getEmoji(2)),
+                    ),
+                    SizedBox(width: 16.w),
+                    if (options.length > 3)
+                      Expanded(
+                        child: _buildOptionTile(3, options[3], _getEmoji(3)),
+                      )
+                    else
+                      const Spacer(),
+                  ],
+                ),
+              ),
+          ],
         );
       },
     );
+  }
+
+  String _getEmoji(int index) {
+    if (index < optionEmojis.length) {
+      return optionEmojis[index];
+    }
+    return '🖼️';
   }
 
   Widget _buildOptionTile(int index, String text, String emoji) {
@@ -55,68 +82,75 @@ class SoundImageMatchGrid extends StatelessWidget {
     Color tileColor;
     Color borderColor;
 
+    final Color modernCorrect = const Color(0xFF00C896);
+    final Color modernIncorrect = const Color(0xFFFF5E5E);
+
     if (isAnswered && isSelected) {
       tileColor = isCorrectState == true
-          ? Colors.greenAccent.withValues(alpha: 0.2)
-          : Colors.redAccent.withValues(alpha: 0.2);
-      borderColor = isCorrectState == true
-          ? Colors.greenAccent
-          : Colors.redAccent;
+          ? modernCorrect.withValues(alpha: 0.15)
+          : modernIncorrect.withValues(alpha: 0.15);
+      borderColor = isCorrectState == true ? modernCorrect : modernIncorrect;
     } else if (isAnswered &&
         index == correctAnswerIndex &&
         isCorrectState == false) {
-      tileColor = Colors.greenAccent.withValues(alpha: 0.2);
-      borderColor = Colors.greenAccent;
+      tileColor = modernCorrect.withValues(alpha: 0.15);
+      borderColor = modernCorrect;
     } else if (isSelected) {
-      tileColor = color.withValues(alpha: 0.3);
+      tileColor = color.withValues(alpha: 0.25);
       borderColor = color;
     } else {
-      tileColor = color.withValues(alpha: 0.05);
-      borderColor = color.withValues(alpha: 0.15);
+      tileColor = color.withValues(alpha: 0.08);
+      borderColor = Colors.white.withValues(alpha: 0.5);
     }
 
-    return GestureDetector(
-      onTap: () {
-        if (!isAnswered) {
-          onSelect(index);
-        }
-      },
-      child: GlassTile(
-        padding: EdgeInsets.all(12.r),
-        borderRadius: BorderRadius.circular(20.r),
-        color: tileColor,
-        border: Border.all(color: borderColor, width: isSelected ? 2 : 1),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Center(
-                child: Text(
+    return ScaleButton(
+      onTap: isAnswered ? null : () => onSelect(index),
+      scaleDown: 0.95,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 16.h),
+        decoration: BoxDecoration(
+          color: tileColor,
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: borderColor, width: isSelected ? 2.5 : 1.5),
+          boxShadow: [
+            BoxShadow(
+              color: borderColor.withValues(alpha: 0.2),
+              blurRadius: 15,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: 110.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
                   emoji,
                   style: TextStyle(fontSize: 48.r),
                   textAlign: TextAlign.center,
                 ),
-              ),
-            ),
-            SizedBox(height: 8.h),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                text.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isAnswered && index == correctAnswerIndex
-                      ? Colors.green.shade700
-                      : isAnswered && isSelected && isCorrectState == false
-                      ? Colors.red.shade700
-                      : color,
+                SizedBox(height: 12.h),
+                Text(
+                  text.toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w800,
+                    color: isAnswered && index == correctAnswerIndex
+                        ? modernCorrect
+                        : isAnswered && isSelected && isCorrectState == false
+                        ? modernIncorrect
+                        : color,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

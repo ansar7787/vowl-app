@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SoundImageMatchInstruction extends StatelessWidget {
+
+  String _shortenInstruction(String text) {
+    if (text.toLowerCase().contains('tap the picture')) {
+      return 'LISTEN & MATCH';
+    }
+    return text.toUpperCase();
+  }
   final Color color;
   final String instruction;
 
@@ -26,16 +33,20 @@ class SoundImageMatchInstruction extends StatelessWidget {
           Icon(Icons.headphones_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Flexible(
-            child: Text(
-              instruction.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: color,
-                letterSpacing: 1.5,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                _shortenInstruction(instruction),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w900,
+                  color: color,
+                  letterSpacing: 1.5,
+                ),
+                maxLines: 1,
               ),
-              textAlign: TextAlign.center,
             ),
           ),
         ],

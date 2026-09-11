@@ -67,34 +67,10 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     );
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking, GameQuest quest) {
+  void _submitFinalAnswer(GameQuest quest) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
     _timerKey.currentState?.stop();
     final correct = quest.correctAnswerIndex ?? 0;
-
-    if (!nailedSpeaking) {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: quest.textToSpeak ?? 'Sound Image Match',
-          userAnswer: '[Failed Speaking]',
-          correctAnswer: correct.toString(),
-          level: widget.level,
-        );
-      }
-
-      _isAnswered.value = true;
-      _isCorrect.value = false;
-      _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
-      return;
-    }
 
     bool isCorrect = _pendingSelectedIndex.value == correct;
 
@@ -129,7 +105,6 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     }
   }
 
-  
   void _submitWrongAnswer(dynamic quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
@@ -137,14 +112,21 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     _hapticService.error();
     _soundService.playWrong();
 
+    final correct = (quest is GameQuest)
+        ? (quest.correctAnswerIndex ?? 0).toString()
+        : '';
+
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
-        question: quest.textToSpeak ?? 'Timeout',
+        question: (quest is GameQuest)
+            ? (quest.textToSpeak ?? 'Timeout')
+            : 'Timeout',
         userAnswer: '[Timeout]',
-        correctAnswer: '',
+        correctAnswer: correct,
         level: widget.level,
       );
     }
@@ -181,7 +163,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'THEMATIC LINKER!',
+            title: 'SOUND IMAGE MATCH!',
             enableDoubleUp: true,
           );
         }
@@ -242,7 +224,8 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                             key: _timerKey,
                                             durationSeconds: 15,
                                             primaryColor: theme.primaryColor,
-                                            onTimeUp: () => _submitWrongAnswer(quest),
+                                            onTimeUp: () =>
+                                                _submitWrongAnswer(quest),
                                           ),
                                         ),
                                       SoundImageMatchInstruction(
@@ -296,7 +279,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                             }
                                             _timerKey.currentState?.pause();
                                             _pendingSelectedIndex.value = index;
-                                            _submitFinalAnswer(true, quest);
+                                            _submitFinalAnswer(quest);
                                           },
                                         ),
                                       ),
