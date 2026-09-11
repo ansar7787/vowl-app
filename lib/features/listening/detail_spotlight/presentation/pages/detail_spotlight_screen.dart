@@ -16,7 +16,7 @@ import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/de
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_emitter.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_prompt.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_dark_field.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -36,6 +36,9 @@ class DetailSpotlightScreen extends StatefulWidget {
 class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
@@ -68,33 +71,11 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     );
   }
 
-  void _submitFinalAnswer(bool typedCorrectly, int correct) {
+  void _submitFinalAnswer(GameQuest quest) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
+    _timerKey.currentState?.stop();
 
-    if (!typedCorrectly) {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: 'Detail Spotlight',
-          userAnswer: '[Failed Typing]',
-          correctAnswer: correct.toString(),
-          level: widget.level,
-        );
-      }
-
-      _isAnswered.value = true;
-      _isCorrect.value = false;
-      _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
-      return;
-    }
-
+    final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
 
     if (isCorrect) {
@@ -114,7 +95,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: 'Detail Spotlight',
+          question: quest.textToSpeak ?? 'Detail Spotlight',
           userAnswer: _pendingSelectedIndex.value.toString(),
           correctAnswer: correct.toString(),
           level: widget.level,
@@ -210,6 +191,19 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: 6.h),
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        child: SpeedChallengeTimer(
+                                          key: _timerKey,
+                                          durationSeconds: 15,
+                                          primaryColor: theme.primaryColor,
+                                          onTimeUp: () {
+                                            if (_isAnswered.value) return;
+                                            _pendingSelectedIndex.value = 0;
+                                            _submitFinalAnswer(quest);
+                                          },
+                                        ),
+                                      ),
                                       DetailSpotlightInstruction(
                                         isAnswered: _isAnswered.value,
                                         color: theme.primaryColor,
@@ -272,16 +266,12 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                               return;
                                             }
                                             _pendingSelectedIndex.value = index;
+                                            _submitFinalAnswer(quest);
                                           },
                                         ),
                                       ),
                                       SizedBox(
-                                        height:
-                                            (_pendingSelectedIndex.value !=
-                                                    null &&
-                                                !_isAnswered.value)
-                                            ? 380.h
-                                            : 60.h,
+                                        height: _isAnswered.value ? 200.h : 60.h,
                                       ),
                                     ],
                                   ),
@@ -290,23 +280,6 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                             ],
                           ),
                         ),
-                        if (_pendingSelectedIndex.value != null &&
-                            !_isAnswered.value)
-                          TypeToConfirmOverlay(
-                            expectedText:
-                                quest.options![_pendingSelectedIndex.value!],
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(
-                              true,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            onSkipped: () => _submitFinalAnswer(
-                              false,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
                       ],
                     ),
             );
