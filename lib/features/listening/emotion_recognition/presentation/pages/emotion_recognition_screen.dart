@@ -12,6 +12,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_instruction.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_emitter.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_quadrant.dart';
@@ -35,6 +36,9 @@ class EmotionRecognitionScreen extends StatefulWidget {
 class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   final ValueNotifier<Offset> _coreOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
@@ -81,6 +85,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
 
   void _submitFinalAnswer(GameQuest quest) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
+    _timerKey.currentState?.stop();
     
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
@@ -114,6 +119,30 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
       _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _submitWrongAnswer(GameQuest quest) {
+    if (_isAnswered.value) return;
+    _timerKey.currentState?.stop();
+
+    _hapticService.error();
+    _soundService.playWrong();
+
+    final authState = context.read<AuthBloc>().state;
+    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      ErrorJournalCollector.record(
+        userId: authState.user!.id,
+        gameType: widget.gameType.name,
+        question: quest.textToSpeak ?? 'Emotion Recognition',
+        userAnswer: '[Timeout]',
+        correctAnswer: (quest.correctAnswerIndex ?? 0).toString(),
+        level: widget.level,
+      );
+    }
+
+    _isAnswered.value = true;
+    _isCorrect.value = false;
+    context.read<ListeningBloc>().add(SubmitAnswer(false));
   }
 
   @override
@@ -198,6 +227,15 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: 6.h),
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        child: SpeedChallengeTimer(
+                                          key: _timerKey,
+                                          durationSeconds: 15,
+                                          primaryColor: theme.primaryColor,
+                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                        ),
+                                      ),
                                       EmotionRecognitionInstruction(
                                         isAnswered: _isAnswered.value,
                                         color: theme.primaryColor,
