@@ -247,18 +247,16 @@ class _DetailSpotlightDarkFieldState extends State<DetailSpotlightDarkField> {
                                 ),
                               ),
                               child: Center(
-                                child: FittedBox(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(8.r),
-                                    child: Text(
-                                      widget.options[index],
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: tileColor,
-                                      ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(8.r),
+                                  child: Text(
+                                    widget.options[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: tileColor,
                                     ),
                                   ),
                                 ),

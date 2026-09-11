@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -182,7 +181,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'SPECIFIC PULSER!',
+            title: 'DETAIL DETECTIVE!',
             enableDoubleUp: true,
           );
         }
@@ -248,9 +247,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                         isAnswered: _isAnswered.value,
                                         color: theme.primaryColor,
                                         instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
+                                            'Wipe and tap what you hear',
                                       ),
                                       SizedBox(height: 24.h),
                                       DetailSpotlightEmitter(
