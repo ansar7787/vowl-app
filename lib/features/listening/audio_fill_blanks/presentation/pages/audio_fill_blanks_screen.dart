@@ -16,8 +16,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_instruction.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_jar.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_canvas.dart';
-import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_input.dart';
-import 'package:vowl/core/utils/gibberish_detector_service.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/core/presentation/game_mechanics/blind_dictation_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -28,9 +27,6 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 /// Height threshold below which the compact layout variant is used.
 const double _kCompactHeightThreshold = 580.0;
-
-/// Maximum character length for the transcription input.
-const int _kMaxInputLength = 120;
 
 // =============================================================================
 // AudioFillBlanksScreen
@@ -61,6 +57,8 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   @override
   void dispose() {
@@ -105,59 +103,6 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
   }
 
   // â”€â”€ Submit answer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-  void _submitAnswer(String? correct) {
-    // Guard: already answered, empty / whitespace-only input, or no answer key.
-    final input = _controller.text.trim();
-    if (_isAnswered.value ||
-        input.isEmpty ||
-        correct == null ||
-        correct.isEmpty) {
-      return;
-    }
-
-    if (!GibberishDetectorService.isNaturalSentence(context, input)) {
-      return;
-    }
-
-    String cleanInput = input
-        .replaceAll(RegExp(r'[.,!?]'), '')
-        .trim()
-        .toLowerCase();
-    String cleanCorrect = correct
-        .replaceAll(RegExp(r'[.,!?]'), '')
-        .trim()
-        .toLowerCase();
-
-    final isCorrect = cleanInput == cleanCorrect;
-
-    if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: 'Audio Fill Blanks',
-          userAnswer: input,
-          correctAnswer: correct,
-          level: widget.level,
-        );
-      }
-    }
-
-    _isAnswered.value = true;
-    _isCorrect.value = isCorrect;
-
-    // Bloc dispatches analytics internally via ListeningAnalytics.
-    context.read<ListeningBloc>().add(SubmitAnswer(isCorrect));
-  }
 
   // â”€â”€ TTS playback â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -254,15 +199,15 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                       revealProgress: _revealProgress.value,
                       controller: _controller,
                       scrollController: _scrollController,
+                      timerKey: _timerKey,
                       theme: theme,
                       isDark: isDark,
-                      maxInputLength: _kMaxInputLength,
                       compactThreshold: _kCompactHeightThreshold,
                       level: widget.level,
                       onSmear: _onSmear,
                       onPlayAudio: () => _playAudio(quest.textToSpeak),
-                      onSubmit: () => _submitAnswer(quest.correctAnswer),
                       onBlindSubmit: (bool correct) {
+                        _timerKey.currentState?.stop();
                         if (!correct) {
                           final authState = context.read<AuthBloc>().state;
                           if (authState.status == AuthStatus.authenticated &&
@@ -310,14 +255,13 @@ class _AudioFillBlanksContent extends StatelessWidget {
   final double revealProgress;
   final TextEditingController controller;
   final ScrollController scrollController;
+  final GlobalKey<SpeedChallengeTimerState> timerKey;
   final dynamic theme;
   final bool isDark;
-  final int maxInputLength;
   final double compactThreshold;
   final int level;
   final void Function(double) onSmear;
   final VoidCallback onPlayAudio;
-  final VoidCallback onSubmit;
   final void Function(bool) onBlindSubmit;
 
   const _AudioFillBlanksContent({
@@ -327,14 +271,13 @@ class _AudioFillBlanksContent extends StatelessWidget {
     required this.revealProgress,
     required this.controller,
     required this.scrollController,
+    required this.timerKey,
     required this.theme,
     required this.isDark,
-    required this.maxInputLength,
     required this.compactThreshold,
     required this.level,
     required this.onSmear,
     required this.onPlayAudio,
-    required this.onSubmit,
     required this.onBlindSubmit,
   });
 
@@ -360,6 +303,18 @@ class _AudioFillBlanksContent extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       SizedBox(height: 6.h),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 16.h),
+                        child: SpeedChallengeTimer(
+                          key: timerKey,
+                          durationSeconds: 15,
+                          primaryColor: theme.primaryColor,
+                          onTimeUp: () {
+                            if (isAnswered) return;
+                            onBlindSubmit(false); // Default to wrong on time out
+                          },
+                        ),
+                      ),
                       AudioFillBlanksInstruction(
                         instruction: InstructionHelper.getInstruction(quest),
                         color: theme.primaryColor,
@@ -401,20 +356,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       if (!showBlindDictation) ...[
-                        AudioFillBlanksInput(
-                          controller: controller,
-                          isAnswered: isAnswered,
-                          primaryColor: theme.primaryColor,
-                          maxLength: maxInputLength,
-                          onSubmitted: (_) => onSubmit(),
-                        ),
-                        SizedBox(height: 16.h),
-                        if (!isAnswered)
-                          _SubmitButton(
-                            isCompact: false,
-                            primaryColor: theme.primaryColor,
-                            onTap: onSubmit,
-                          ),
+                        _buildOptions(context, quest, theme),
                       ],
                       if (showBlindDictation) SizedBox(height: 380.h),
                     ],
@@ -435,54 +377,62 @@ class _AudioFillBlanksContent extends StatelessWidget {
       ],
     );
   }
-}
 
-// =============================================================================
-// _SubmitButton
-// =============================================================================
+  Widget _buildOptions(BuildContext context, dynamic quest, dynamic theme) {
+    if (quest == null || isAnswered) return const SizedBox.shrink();
 
-class _SubmitButton extends StatelessWidget {
-  final bool isCompact;
-  final Color primaryColor;
-  final VoidCallback onTap;
+    final correctWord = (quest.correctAnswer ?? '').toString().toLowerCase();
+    final distractor1 = (quest.distractorWords != null && quest.distractorWords.length > 0) ? quest.distractorWords[0].toString().toLowerCase() : 'distractor1';
+    final distractor2 = (quest.distractorWords != null && quest.distractorWords.length > 1) ? quest.distractorWords[1].toString().toLowerCase() : 'distractor2';
 
-  const _SubmitButton({
-    required this.isCompact,
-    required this.primaryColor,
-    required this.onTap,
-  });
+    // Build the list and sort alphabetically to ensure deterministic randomization
+    final List<String> options = [correctWord, distractor1, distractor2]
+      ..sort((a, b) => a.compareTo(b));
 
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      label: 'Submit transcription',
-      child: ScaleButton(
-        onTap: onTap,
-        child: Container(
-          width: double.infinity,
-          height: isCompact ? 50.h : 60.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.r),
-            color: primaryColor,
-          ),
-          child: Center(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                'SUBMIT TRANSCRIPTION',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  letterSpacing: 2,
+    return Column(
+      children: options.map((option) {
+        return Padding(
+          padding: EdgeInsets.only(bottom: 12.h),
+          child: Semantics(
+            button: true,
+            child: ScaleButton(
+              onTap: () {
+                final isCorrect = option == correctWord;
+                if (isCorrect) {
+                  onBlindSubmit(true);
+                } else {
+                  controller.text = option; // For ErrorJournalCollector
+                  onBlindSubmit(false);
+                }
+              },
+              child: Container(
+                width: double.infinity,
+                height: 60.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.r),
+                  color: isDark ? theme.primaryColor.withValues(alpha: 0.2) : Colors.white,
+                  border: Border.all(color: theme.primaryColor, width: 2.w),
+                ),
+                child: Center(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      option.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w900,
+                        color: theme.primaryColor,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-      ),
+        );
+      }).toList(),
     );
   }
 }
