@@ -1,0 +1,63 @@
+const fs = require('fs');
+const path = require('path');
+const dir = 'c:/Users/asus/Documents/App Projects/vowl/assets/curriculum/listening';
+const emojiMap = {
+  'airport': '??', 'algorithm': '??', 'ambassador': '??', 'antibody': '???', 'antidote': '??', 
+  'apple': '??', 'architect': '??', 'archive': '???', 'asteroid': '??', 'baby': '??', 
+  'backpack': '??', 'badge': '??', 'bakery': '??', 'ball': '?', 'banana': '??', 
+  'bandage': '??', 'bandwidth': '??', 'beach': '???', 'bed': '???', 'bicycle': '??', 
+  'bird': '??', 'blizzard': '???', 'book': '??', 'boots': '??', 'bread': '??', 
+  'briefcase': '??', 'brochure': '??', 'broom': '??', 'brother': '??', 'bucket': '??', 
+  'budget': '??', 'bus': '??', 'calculator': '??', 'calendar': '??', 'camera': '??', 
+  'candle': '???', 'cargo': '??', 'cashier': '??', 'cat': '??', 'cave': '??', 
+  'chair': '??', 'checkpoint': '??', 'chef': '?????', 'chip': '??', 'circuit': '??', 
+  'clock': '???', 'coalition': '??', 'code': '?????', 'coin': '??', 'compass': '??', 
+  'concert': '??', 'conservation': '??', 'contract': '??', 'coral': '??', 'cryptocurrency': '??', 
+  'customer': '???', 'customs': '??', 'data': '??', 'database': '???', 'delegate': '??', 
+  'delivery': '??', 'device': '??', 'diagnosis': '??', 'discount': '???', 'dividend': '??', 
+  'doctor': '?????', 'dog': '??', 'doorbell': '??', 'drone': '??', 'drought': '???', 
+  'drum': '??', 'ecosystem': '??', 'egg': '??', 'elevator': '??', 'embargo': '??', 
+  'emission': '??', 'encryption': '??', 'engine': '??', 'entrepreneur': '??', 'evidence': '??', 
+  'farm': '??', 'father': '??', 'faucet': '??', 'festival': '??', 'folder': '??', 
+  'forest': '??', 'franchise': '??', 'furniture': '???', 'garden': '??', 'generator': '?', 
+  'glacier': '??', 'guitar': '??', 'habitat': '??', 'hammer': '??', 'hat': '??', 
+  'headphones': '??', 'hospital': '??', 'hotel': '??', 'hurricane': '??', 'iceberg': '??', 
+  'immunity': '???', 'inflation': '??', 'infrastructure': '???', 'interview': '??', 'itinerary': '???', 
+  'jacket': '??', 'juice': '??', 'jury': '??', 'key': '??', 'kitchen': '??', 
+  'laboratory': '??', 'ladder': '??', 'lamp': '???', 'legislation': '??', 'library': '??', 
+  'market': '??', 'medicine': '??', 'menu': '??', 'meteor': '??', 'microscope': '??', 
+  'milk': '??', 'mirror': '??', 'module': '??', 'monopoly': '??', 'mother': '??', 
+  'mountain': '??', 'museum': '???', 'network': '???', 'node': '??', 'notebook': '??', 
+  'nurse': '?????', 'office': '??', 'outbreak': '??', 'painting': '???', 'paperclip': '??', 
+  'park': '???', 'passport': '??', 'patent': '??', 'pencil': '??', 'pharmacy': '??', 
+  'pizza': '??', 'portal': '??', 'prescription': '??', 'printer': '???', 'projector': '???', 
+  'prosthetic': '??', 'protocol': '??', 'prototype': '???', 'quarantine': '??', 'rainforest': '??', 
+  'receipt': '??', 'recession': '??', 'referendum': '???', 'rehabilitation': '??', 'restaurant': '???', 
+  'resume': '??', 'river': '???', 'runway': '??', 'sandwich': '??', 'satellite': '???', 
+  'sensor': '??', 'shareholder': '??', 'shipment': '??', 'shoe': '??', 'signal': '??', 
+  'sister': '??', 'soap': '??', 'software': '??', 'song': '??', 'spoon': '??', 
+  'stadium': '???', 'startup': '??', 'subscription': '??', 'subway': '??', 'suitcase': '??', 
+  'sustainability': '??', 'system': '??', 'tariff': '??', 'telescope': '??', 'terminal': '??', 
+  'theater': '??', 'ticket': '???', 'toolbox': '??', 'tornado': '???', 'trademark': '™?', 
+  'train': '??', 'treaty': '??', 'umbrella': '??', 'vaccination': '??', 'verdict': '??', 
+  'visa': '??', 'volcano': '??', 'warehouse': '??', 'warranty': '???', 'wheelchair': '?', 
+  'wildfire': '??', 'wildlife': '??', 'window': '??', 'wrench': '??', 'zoo': '??'
+};
+const files = fs.readdirSync(dir).filter(f => f.startsWith('soundImageMatch_'));
+let updatedCount = 0;
+for (const f of files) {
+  const filePath = path.join(dir, f);
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  let modified = false;
+  for (const quest of data.quests) {
+    if (quest.options && quest.options.length > 0) {
+      quest.optionEmojis = quest.options.map(word => emojiMap[word.toLowerCase()] || '???');
+      modified = true;
+    }
+  }
+  if (modified) {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 4), 'utf8');
+    updatedCount++;
+  }
+}
+console.log('Updated ' + updatedCount + ' files');

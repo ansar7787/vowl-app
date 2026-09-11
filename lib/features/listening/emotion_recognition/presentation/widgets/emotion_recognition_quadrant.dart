@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-class EmotionRecognitionNeuralField extends StatelessWidget {
+class EmotionRecognitionQuadrant extends StatelessWidget {
   final List<String> options;
+  final List<String> optionEmojis;
   final int correctAnswerIndex;
   final Color color;
   final bool isAnswered;
@@ -13,9 +14,10 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
   final Function(Offset, BoxConstraints) onCoreMove;
   final Function(int) onSubmitAnswer;
 
-  const EmotionRecognitionNeuralField({
+  const EmotionRecognitionQuadrant({
     super.key,
     required this.options,
+    required this.optionEmojis,
     required this.correctAnswerIndex,
     required this.color,
     required this.isAnswered,
@@ -59,6 +61,7 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
                       child: _buildReservoir(
                         index,
                         options[index],
+                        index < optionEmojis.length ? optionEmojis[index] : '🎭',
                         correctAnswerIndex,
                         color,
                       ),
@@ -128,7 +131,7 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
     );
   }
 
-  Widget _buildReservoir(int index, String text, int correct, Color color) {
+  Widget _buildReservoir(int index, String text, String emoji, int correct, Color color) {
     bool isSelected = selectedIndex == index;
     bool isCorrect = isAnswered && index == correct && isCorrectState == true;
     bool isWrong = isAnswered && isSelected && isCorrectState == false;
@@ -165,7 +168,7 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(_getEmotionEmoji(text), style: TextStyle(fontSize: 22.sp))
+            Text(emoji, style: TextStyle(fontSize: 22.sp))
                 .animate(target: (isCorrect || isWrong) ? 1 : 0)
                 .scale(
                   begin: const Offset(1, 1),
@@ -192,39 +195,7 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
     );
   }
 
-  String _getEmotionEmoji(String emotion) {
-    switch (emotion.toLowerCase()) {
-      case 'angry':
-      case 'anger':
-        return '😡';
-      case 'excited':
-      case 'excitement':
-        return '🤩';
-      case 'sad':
-      case 'sadness':
-        return '😢';
-      case 'bored':
-      case 'boredom':
-        return '😑';
-      case 'happy':
-      case 'happiness':
-        return '😊';
-      case 'surprised':
-      case 'surprise':
-        return '😲';
-      case 'curious':
-        return '🤔';
-      case 'neutral':
-        return '😐';
-      case 'fear':
-      case 'afraid':
-        return '😨';
-      case 'confident':
-        return '😎';
-      default:
-        return '🎭';
-    }
-  }
+
 }
 
 class NeuralGridPainter extends CustomPainter {
