@@ -23,7 +23,7 @@ class SoundImageMatchInstruction extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.biotech_rounded, size: 14.r, color: color),
+          Icon(Icons.headphones_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
@@ -35,6 +35,7 @@ class SoundImageMatchInstruction extends StatelessWidget {
                 color: color,
                 letterSpacing: 1.5,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
         ],

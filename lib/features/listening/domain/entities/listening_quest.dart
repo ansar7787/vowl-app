@@ -18,7 +18,7 @@ class ListeningQuest extends GameQuest {
   final List<String>? distractorWords;
   final List<int>? pauseMarkers;
   final String? evidenceQuote;
-  final List<String>? imageDescriptions;
+  final List<String>? optionEmojis;
 
   // D3 Additions (Games 16-20)
   final String? slowVersion;
@@ -63,7 +63,7 @@ class ListeningQuest extends GameQuest {
     this.distractorWords,
     this.pauseMarkers,
     this.evidenceQuote,
-    this.imageDescriptions,
+    this.optionEmojis,
     this.slowVersion,
     this.emotionScale,
     this.detailCategory,
@@ -94,7 +94,7 @@ class ListeningQuest extends GameQuest {
     distractorWords,
     pauseMarkers,
     evidenceQuote,
-    imageDescriptions,
+    optionEmojis,
     slowVersion,
     emotionScale,
     detailCategory,

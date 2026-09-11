@@ -6,7 +6,7 @@
         {
             "id": "LIS_SOUNDIMAGEMATCH_L121_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen for the precise term, since the options are closely related.",
             "explanation": "Portal is the key word here. It means an online gateway used to access a website or service. That part goes: log their hours through the company portal.",
             "textToSpeak": "Employees log their hours through the company portal.",
@@ -19,17 +19,17 @@
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
             "emoji": "🚪",
-            "imageDescriptions": [
-                "Image of satellite",
-                "Image of brochure",
-                "Image of portal",
-                "Image of node"
+            "optionEmojis": [
+                "🛰️",
+                "📰",
+                "🌀",
+                "🔵"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L121_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "All four options are plausible — only one was actually said aloud.",
             "explanation": "Terminal is right. Think of it as a screen and keyboard used to type commands into a computer system. From the audio: typed several commands into the terminal.",
             "textToSpeak": "The IT technician typed several commands into the terminal.",
@@ -42,17 +42,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "⌨️",
-            "imageDescriptions": [
-                "Image of terminal",
-                "Image of archive",
-                "Image of portal",
-                "Image of visa"
+            "optionEmojis": [
+                "🚉",
+                "🗄️",
+                "🌀",
+                "🛂"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L121_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen for the noun connected to the main action of the sentence.",
             "explanation": "Protocol fits best here — a set of official rules for how something should be done.",
             "textToSpeak": "The hospital follows a strict protocol for handling emergencies.",
@@ -65,17 +65,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "📋",
-            "imageDescriptions": [
-                "Image of circuit",
-                "Image of terminal",
-                "Image of visa",
-                "Image of protocol"
+            "optionEmojis": [
+                "🔌",
+                "🚉",
+                "🛂",
+                "📋"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L122_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The distractors share a category with the answer — listen carefully.",
             "explanation": "You were listening for database: an organized collection of information stored electronically for easy access.",
             "textToSpeak": "The clinic updated its database with the new patient records.",
@@ -88,17 +88,17 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "🗃️",
-            "imageDescriptions": [
-                "Image of circuit",
-                "Image of database",
-                "Image of itinerary",
-                "Image of terminal"
+            "optionEmojis": [
+                "🔌",
+                "🗄️",
+                "🗺️",
+                "🚉"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L122_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen past the introduction for the specific detail.",
             "explanation": "The correct answer is compass: a tool that shows direction, used for finding your way. Listen again: used a compass to find their way back.",
             "textToSpeak": "The hikers used a compass to find their way back.",
@@ -111,17 +111,17 @@
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
             "emoji": "🧭",
-            "imageDescriptions": [
-                "Image of node",
-                "Image of visa",
-                "Image of compass",
-                "Image of brochure"
+            "optionEmojis": [
+                "🔵",
+                "🛂",
+                "🧭",
+                "📰"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L122_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen for what the sentence says was updated, checked, or used.",
             "explanation": "Nice work if you chose visa — an official mark in a passport that allows entry to a country.",
             "textToSpeak": "He applied for a visa three months before the trip.",
@@ -134,17 +134,17 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "📘",
-            "imageDescriptions": [
-                "Image of compass",
-                "Image of visa",
-                "Image of customs",
-                "Image of module"
+            "optionEmojis": [
+                "🧭",
+                "🛂",
+                "🛃",
+                "🧩"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L123_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The sentence gives one precise clue among several similar options.",
             "explanation": "Customs is the word actually spoken — the airport checkpoint where officials inspect travelers' goods. The line was: waited nearly an hour to clear customs.",
             "textToSpeak": "They waited nearly an hour to clear customs.",
@@ -157,17 +157,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "🛃",
-            "imageDescriptions": [
-                "Image of compass",
-                "Image of visa",
-                "Image of sensor",
-                "Image of customs"
+            "optionEmojis": [
+                "🧭",
+                "🛂",
+                "📡",
+                "🛃"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L123_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Pay close attention — the options are easy to confuse with each other.",
             "explanation": "Listen for checkpoint — a place where travelers or vehicles are stopped and checked. The line was: stopped every vehicle at the checkpoint.",
             "textToSpeak": "Guards stopped every vehicle at the checkpoint.",
@@ -180,17 +180,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🚧",
-            "imageDescriptions": [
-                "Image of checkpoint",
-                "Image of brochure",
-                "Image of cargo",
-                "Image of itinerary"
+            "optionEmojis": [
+                "🛂",
+                "📰",
+                "🚢",
+                "🗺️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L123_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Don't rely on the topic alone — the exact word matters here.",
             "explanation": "Brochure fits best here — a small printed booklet that gives information, often about a trip. Specifically: picked up a brochure about local tours.",
             "textToSpeak": "She picked up a brochure about local tours.",
@@ -203,17 +203,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "📗",
-            "imageDescriptions": [
-                "Image of runway",
-                "Image of circuit",
-                "Image of checkpoint",
-                "Image of brochure"
+            "optionEmojis": [
+                "🛫",
+                "🔌",
+                "🛂",
+                "📰"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L124_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The correct word may be tucked inside a longer clause.",
             "explanation": "Shipment means a batch of goods sent to a customer or another location. Reference: arrived two days later than expected.",
             "textToSpeak": "The shipment arrived two days later than expected.",
@@ -226,17 +226,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🚢",
-            "imageDescriptions": [
-                "Image of shipment",
-                "Image of warehouse",
-                "Image of cargo",
-                "Image of module"
+            "optionEmojis": [
+                "🚢",
+                "🏭",
+                "🚢",
+                "🧩"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L124_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The correct word fits the sentence exactly, not just loosely.",
             "explanation": "You were listening for circuit: a closed path that lets electricity flow to power a device. Straight from the audio: caused the lights to go out.",
             "textToSpeak": "A short circuit caused the lights to go out.",
@@ -249,17 +249,17 @@
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
             "emoji": "🔌",
-            "imageDescriptions": [
-                "Image of checkpoint",
-                "Image of satellite",
-                "Image of circuit",
-                "Image of portal"
+            "optionEmojis": [
+                "🛂",
+                "🛰️",
+                "🔌",
+                "🌀"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L124_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The sentence uses formal language — focus on the core noun.",
             "explanation": "Archive fits best here — a collection of stored records or files kept for future reference. In the sentence: spent weeks searching through the city archive.",
             "textToSpeak": "The historian spent weeks searching through the city archive.",
@@ -272,17 +272,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🗄️",
-            "imageDescriptions": [
-                "Image of archive",
-                "Image of node",
-                "Image of itinerary",
-                "Image of database"
+            "optionEmojis": [
+                "🗄️",
+                "🔵",
+                "🗺️",
+                "🗄️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L125_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The right answer is the specific object, system, or document named.",
             "explanation": "Itinerary is the key word here. It means a planned schedule of a trip. As heard in the audio: planned a detailed itinerary for their trip to Japan.",
             "textToSpeak": "She planned a detailed itinerary for their trip to Japan.",
@@ -295,17 +295,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "🗺️",
-            "imageDescriptions": [
-                "Image of circuit",
-                "Image of brochure",
-                "Image of visa",
-                "Image of itinerary"
+            "optionEmojis": [
+                "🔌",
+                "📰",
+                "🛂",
+                "🗺️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L125_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Focus on the exact term used, not a related idea.",
             "explanation": "The right choice is runway, meaning the long strip an airplane uses to take off and land. Listen again: waited on the runway for clearance to take off.",
             "textToSpeak": "The plane waited on the runway for clearance to take off.",
@@ -318,17 +318,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "🛫",
-            "imageDescriptions": [
-                "Image of itinerary",
-                "Image of cargo",
-                "Image of customs",
-                "Image of runway"
+            "optionEmojis": [
+                "🗺️",
+                "🚢",
+                "🛃",
+                "🛫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L125_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The sentence gives one precise clue among several similar options.",
             "explanation": "The right choice is sensor, meaning a device that detects change and sends the information onward. Straight from the audio: turns the lights on automatically.",
             "textToSpeak": "The sensor in the hallway turns the lights on automatically.",
@@ -341,17 +341,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "🌡️",
-            "imageDescriptions": [
-                "Image of warehouse",
-                "Image of terminal",
-                "Image of portal",
-                "Image of sensor"
+            "optionEmojis": [
+                "🏭",
+                "🚉",
+                "🌀",
+                "📡"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L126_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen past the introduction for the specific detail.",
             "explanation": "Node is the answer — a single connection point within a larger network. Listen again: fails, traffic reroutes automatically.",
             "textToSpeak": "If one node in the network fails, traffic reroutes automatically.",
@@ -364,17 +364,17 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "📍",
-            "imageDescriptions": [
-                "Image of satellite",
-                "Image of node",
-                "Image of itinerary",
-                "Image of protocol"
+            "optionEmojis": [
+                "🛰️",
+                "🔵",
+                "🗺️",
+                "📋"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L126_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen for what the sentence says was updated, checked, or used.",
             "explanation": "Listen for satellite — a device sent into space to orbit the earth and relay signals.",
             "textToSpeak": "The satellite sends weather images back to earth every hour.",
@@ -387,17 +387,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "🛰️",
-            "imageDescriptions": [
-                "Image of sensor",
-                "Image of shipment",
-                "Image of module",
-                "Image of satellite"
+            "optionEmojis": [
+                "📡",
+                "🚢",
+                "🧩",
+                "🛰️"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L126_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "All four options are plausible — only one was actually said aloud.",
             "explanation": "You were listening for module: a separate section that is part of a larger system, course, or program.",
             "textToSpeak": "Students must complete this module before moving to the next one.",
@@ -410,17 +410,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🧩",
-            "imageDescriptions": [
-                "Image of module",
-                "Image of itinerary",
-                "Image of sensor",
-                "Image of portal"
+            "optionEmojis": [
+                "🧩",
+                "🗺️",
+                "📡",
+                "🌀"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L127_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen for the noun connected to the main action of the sentence.",
             "explanation": "Cargo means goods that are transported by truck, ship, or plane. Recall: carried cargo from three different countries.",
             "textToSpeak": "The ship carried cargo from three different countries.",
@@ -433,17 +433,17 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "🚛",
-            "imageDescriptions": [
-                "Image of runway",
-                "Image of cargo",
-                "Image of warehouse",
-                "Image of shipment"
+            "optionEmojis": [
+                "🛫",
+                "🚢",
+                "🏭",
+                "🚢"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L127_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen for the precise term, since the options are closely related.",
             "explanation": "The audio names warehouse, which means a large building used to store goods before they are sold. Recall: stores its extra stock in a large warehouse.",
             "textToSpeak": "The company stores its extra stock in a large warehouse.",
@@ -456,17 +456,17 @@
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
             "emoji": "🏭",
-            "imageDescriptions": [
-                "Image of shipment",
-                "Image of cargo",
-                "Image of warehouse",
-                "Image of terminal"
+            "optionEmojis": [
+                "🚢",
+                "🚢",
+                "🏭",
+                "🚉"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L127_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The sentence uses formal language — focus on the core noun.",
             "explanation": "Itinerary is the answer — a planned schedule of a trip. Here's the detail: included two days in the mountains.",
             "textToSpeak": "Their itinerary included two days in the mountains.",
@@ -479,17 +479,17 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "🗺️",
-            "imageDescriptions": [
-                "Image of terminal",
-                "Image of itinerary",
-                "Image of customs",
-                "Image of runway"
+            "optionEmojis": [
+                "🚉",
+                "🗺️",
+                "🛃",
+                "🛫"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L128_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Pay close attention — the options are easy to confuse with each other.",
             "explanation": "The correct answer is warehouse: a large building used to store goods before they are sold. Reference: loaded pallets onto trucks outside the warehouse.",
             "textToSpeak": "Workers loaded pallets onto trucks outside the warehouse.",
@@ -502,17 +502,17 @@
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
             "emoji": "🏭",
-            "imageDescriptions": [
-                "Image of database",
-                "Image of cargo",
-                "Image of shipment",
-                "Image of warehouse"
+            "optionEmojis": [
+                "🗄️",
+                "🚢",
+                "🚢",
+                "🏭"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L128_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The right answer is the specific object, system, or document named.",
             "explanation": "Compass is correct — a tool that shows direction, used for finding your way. Recall: gave her an old brass compass.",
             "textToSpeak": "Her grandfather gave her an old brass compass.",
@@ -525,17 +525,17 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "🧭",
-            "imageDescriptions": [
-                "Image of node",
-                "Image of compass",
-                "Image of customs",
-                "Image of visa"
+            "optionEmojis": [
+                "🔵",
+                "🧭",
+                "🛃",
+                "🛂"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L128_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The correct word fits the sentence exactly, not just loosely.",
             "explanation": "Protocol fits best here — a set of official rules for how something should be done. The line was: updated the safety protocol after the inspection.",
             "textToSpeak": "They updated the safety protocol after the inspection.",
@@ -548,17 +548,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "📋",
-            "imageDescriptions": [
-                "Image of protocol",
-                "Image of node",
-                "Image of module",
-                "Image of visa"
+            "optionEmojis": [
+                "📋",
+                "🔵",
+                "🧩",
+                "🛂"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L129_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The correct word may be tucked inside a longer clause.",
             "explanation": "Portal is correct — an online gateway used to access a website or service. Straight from the audio: launched a new portal for course registration.",
             "textToSpeak": "The university launched a new portal for course registration.",
@@ -571,17 +571,17 @@
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
             "emoji": "🚪",
-            "imageDescriptions": [
-                "Image of node",
-                "Image of cargo",
-                "Image of portal",
-                "Image of circuit"
+            "optionEmojis": [
+                "🔵",
+                "🚢",
+                "🌀",
+                "🔌"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L129_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The distractors share a category with the answer — listen carefully.",
             "explanation": "The word you needed was satellite — a device sent into space to orbit the earth and relay signals. The audio included: can sometimes interrupt the satellite connection.",
             "textToSpeak": "A storm can sometimes interrupt the satellite connection.",
@@ -594,17 +594,17 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "🛰️",
-            "imageDescriptions": [
-                "Image of archive",
-                "Image of satellite",
-                "Image of itinerary",
-                "Image of circuit"
+            "optionEmojis": [
+                "🗄️",
+                "🛰️",
+                "🗺️",
+                "🔌"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L129_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Don't rely on the topic alone — the exact word matters here.",
             "explanation": "Database fits best here — an organized collection of information stored electronically for easy access.",
             "textToSpeak": "Someone accidentally deleted a file from the shared database.",
@@ -617,17 +617,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🗃️",
-            "imageDescriptions": [
-                "Image of database",
-                "Image of circuit",
-                "Image of module",
-                "Image of compass"
+            "optionEmojis": [
+                "🗄️",
+                "🔌",
+                "🧩",
+                "🧭"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L130_Q1",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "Listen past the introduction for the specific detail.",
             "explanation": "Listen for shipment — a batch of goods sent to a customer or another location. Context: tracked the shipment online after placing the order.",
             "textToSpeak": "She tracked the shipment online after placing the order.",
@@ -640,17 +640,17 @@
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
             "emoji": "🚢",
-            "imageDescriptions": [
-                "Image of cargo",
-                "Image of compass",
-                "Image of shipment",
-                "Image of warehouse"
+            "optionEmojis": [
+                "🚢",
+                "🧭",
+                "🚢",
+                "🏭"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L130_Q2",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The sentence uses formal language — focus on the core noun.",
             "explanation": "Archive is correct — a collection of stored records or files kept for future reference. Recall: are kept in the archive.",
             "textToSpeak": "Old newspapers from the 1950s are kept in the archive.",
@@ -663,17 +663,17 @@
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🗄️",
-            "imageDescriptions": [
-                "Image of archive",
-                "Image of sensor",
-                "Image of compass",
-                "Image of terminal"
+            "optionEmojis": [
+                "🗄️",
+                "📡",
+                "🧭",
+                "🚉"
             ]
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L130_Q3",
             "interactionType": "match",
-            "instruction": "Listen to the audio and select the matching image.",
+            "instruction": "Listen and match.",
             "hint": "The sentence gives one precise clue among several similar options.",
             "explanation": "Runway fits best here — the long strip an airplane uses to take off and land. Recall: delayed flights leaving the runway.",
             "textToSpeak": "Heavy fog delayed flights leaving the runway.",
@@ -686,11 +686,11 @@
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "🛫",
-            "imageDescriptions": [
-                "Image of brochure",
-                "Image of runway",
-                "Image of terminal",
-                "Image of itinerary"
+            "optionEmojis": [
+                "📰",
+                "🛫",
+                "🚉",
+                "🗺️"
             ]
         }
     ]

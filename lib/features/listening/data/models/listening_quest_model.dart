@@ -35,7 +35,7 @@ class ListeningQuestModel extends ListeningQuest {
     super.distractorWords,
     super.pauseMarkers,
     super.evidenceQuote,
-    super.imageDescriptions,
+    super.optionEmojis,
     super.slowVersion,
     super.emotionScale,
     super.detailCategory,
@@ -129,9 +129,7 @@ class ListeningQuestModel extends ListeningQuest {
                 .toList()
           : null,
       evidenceQuote: map['evidenceQuote'] as String?,
-      imageDescriptions: parseStringList(
-        map['imageDescriptions'] ?? map['descriptions'],
-      ),
+      optionEmojis: parseStringList(map['optionEmojis']),
       slowVersion: map['slowVersion'] as String?,
       emotionScale: (map['emotionScale'] as num?)?.toInt(),
       detailCategory: map['detailCategory'] as String?,
@@ -170,7 +168,7 @@ class ListeningQuestModel extends ListeningQuest {
       'distractorWords': distractorWords,
       'pauseMarkers': pauseMarkers,
       'evidenceQuote': evidenceQuote,
-      'imageDescriptions': imageDescriptions,
+      'optionEmojis': optionEmojis,
       'slowVersion': slowVersion,
       'emotionScale': emotionScale,
       'detailCategory': detailCategory,
