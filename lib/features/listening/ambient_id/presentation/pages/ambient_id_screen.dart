@@ -36,7 +36,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -108,7 +108,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     }
   }
 
-  
   void _submitWrongAnswer(dynamic quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
@@ -117,7 +116,8 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
@@ -224,16 +224,20 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                           key: _timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                          onTimeUp: () =>
+                                              _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       AmbientIdInstruction(
                                         color: theme.primaryColor,
-                                        instruction: context.tr(
-                                          'games.ambientId_instruction',
-                                          fallback:
-                                              'Listen and tap the location.',
-                                        ),
+                                        instruction:
+                                            quest.instruction.isNotEmpty
+                                            ? quest.instruction
+                                            : context.tr(
+                                                'games.ambientId_instruction',
+                                                fallback:
+                                                    'Listen and tap the location.',
+                                              ),
                                       ),
                                       SizedBox(height: 24.h),
                                       AmbientIdSonarField(

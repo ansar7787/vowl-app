@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class AmbientIdSonarField extends StatelessWidget {
@@ -33,44 +34,55 @@ class AmbientIdSonarField extends StatelessWidget {
     return SizedBox(
       height: 380.h,
       width: double.infinity,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Image Background
-          if (imageUrl != null)
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 800),
-              width: 320.r,
-              height: 320.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: NetworkImage(imageUrl!),
-                  fit: BoxFit.cover,
-                  colorFilter: isCorrectState == true
-                      ? null
-                      : ColorFilter.mode(
-                          Colors.black.withValues(alpha: 0.6),
-                          BlendMode.darken,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: SizedBox(
+          width: 380.r,
+          height: 380.r,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Image Background
+              if (imageUrl != null)
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 800),
+                  width: 320.r,
+                  height: 320.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage(imageUrl!),
+                      fit: BoxFit.cover,
+                      colorFilter: isCorrectState == true
+                          ? null
+                          : ColorFilter.mode(
+                              Colors.black.withValues(alpha: 0.6),
+                              BlendMode.darken,
+                            ),
+                    ),
+                  ),
+                  child: isCorrectState == true
+                      ? const SizedBox()
+                      : ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: 25.0,
+                              sigmaY: 25.0,
+                            ),
+                            child: Container(color: Colors.transparent),
+                          ),
                         ),
                 ),
-              ),
-              child: isCorrectState == true
-                  ? const SizedBox()
-                  : ClipOval(
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 25.0, sigmaY: 25.0),
-                        child: Container(color: Colors.transparent),
-                      ),
-                    ),
-            ),
 
-          // Radar Sweep Animation
-          AnimatedBuilder(
-            animation: radarController,
-            builder: (context, child) {
-              return Transform.rotate(
-                angle: radarController.value * 6.28,
+              // Radar Sweep Animation
+              AnimatedBuilder(
+                animation: radarController,
+                builder: (context, child) {
+                  return Transform.rotate(
+                    angle: radarController.value * 6.28,
+                    child: child,
+                  );
+                },
                 child: Container(
                   width: 380.r,
                   height: 380.r,
@@ -85,33 +97,33 @@ class AmbientIdSonarField extends StatelessWidget {
                     ),
                   ),
                 ),
-              );
-            },
-          ),
-
-          // Spatial Rings
-          ...List.generate(
-            3,
-            (i) => Container(
-              width: (i + 1) * 120.r,
-              height: (i + 1) * 120.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: color.withValues(alpha: 0.1)),
               ),
-            ),
-          ),
 
-          // Location Hubs
-          ...List.generate(options.length, (index) {
-            double angle = (index * 6.28 / options.length) - 1.57;
-            double dist = 135.r;
-            return Transform.translate(
-              offset: Offset(dist * cos(angle), dist * sin(angle)),
-              child: _buildLocationHub(index, options[index]),
-            );
-          }),
-        ],
+              // Spatial Rings
+              ...List.generate(
+                3,
+                (i) => Container(
+                  width: (i + 1) * 120.r,
+                  height: (i + 1) * 120.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: color.withValues(alpha: 0.1)),
+                  ),
+                ),
+              ),
+
+              // Location Hubs
+              ...List.generate(options.length, (index) {
+                double angle = (index * 6.28 / options.length) - 1.57;
+                double dist = 135.r;
+                return Transform.translate(
+                  offset: Offset(dist * cos(angle), dist * sin(angle)),
+                  child: _buildLocationHub(index, options[index]),
+                );
+              }),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -124,66 +136,80 @@ class AmbientIdSonarField extends StatelessWidget {
 
     return ScaleButton(
       onTap: () => onSubmitAnswer(index),
-      child: Container(
-        width: 90.r,
-        height: 90.r,
-        decoration: BoxDecoration(
-          color: isChoiceCorrect
-              ? Colors.greenAccent
-              : (isChoiceWrong
-                    ? Colors.redAccent
-                    : (isSelected ? color : const Color(0xFF1E1E24))),
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: isChoiceCorrect || isChoiceWrong || isSelected
-                ? Colors.white.withValues(alpha: 0.5)
-                : color.withValues(alpha: 0.3),
-            width: 2,
-          ),
-          boxShadow: [
-            if (isSelected || isChoiceCorrect || isChoiceWrong)
-              BoxShadow(
-                color:
-                    (isChoiceCorrect
-                            ? Colors.greenAccent
-                            : (isChoiceWrong ? Colors.redAccent : color))
-                        .withValues(alpha: 0.4),
-                blurRadius: 15,
-                spreadRadius: 2,
-              ),
-            // Permanent subtle base shadow
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
-              offset: const Offset(0, 4),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(_getLocationIcon(text), color: Colors.white, size: 22.r),
-              SizedBox(height: 4.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: FittedBox(
-                  child: Text(
-                    text.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 8.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
+      child:
+          Container(
+                width: 90.r,
+                height: 90.r,
+                decoration: BoxDecoration(
+                  color: isChoiceCorrect
+                      ? Colors.greenAccent
+                      : (isChoiceWrong
+                            ? Colors.redAccent
+                            : (isSelected ? color : const Color(0xFF1E1E24))),
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: isChoiceCorrect || isChoiceWrong || isSelected
+                        ? Colors.white.withValues(alpha: 0.5)
+                        : color.withValues(alpha: 0.3),
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    if (isSelected || isChoiceCorrect || isChoiceWrong)
+                      BoxShadow(
+                        color:
+                            (isChoiceCorrect
+                                    ? Colors.greenAccent
+                                    : (isChoiceWrong
+                                          ? Colors.redAccent
+                                          : color))
+                                .withValues(alpha: 0.4),
+                        blurRadius: 15,
+                        spreadRadius: 2,
+                      ),
+                    // Permanent subtle base shadow
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.3),
+                      offset: const Offset(0, 4),
+                      blurRadius: 10,
                     ),
+                  ],
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        _getLocationIcon(text),
+                        color: Colors.white,
+                        size: 22.r,
+                      ),
+                      SizedBox(height: 4.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        child: Text(
+                          text.toUpperCase(),
+                          textAlign: TextAlign.center,
+                          maxLines: 3,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            height: 1.1,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: 1500.ms,
+                delay: (index * 300).ms,
               ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 

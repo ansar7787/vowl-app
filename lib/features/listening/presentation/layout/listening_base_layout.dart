@@ -22,6 +22,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
 // =============================================================================
 // ListeningBaseLayout
@@ -289,6 +290,23 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
                 ? null
                 : explanation;
 
+            Widget? vocabWidget;
+            if (quest.vocabularyWords != null &&
+                quest.vocabularyWords!.isNotEmpty) {
+              vocabWidget = PedagogicalRuleBox(
+                icon: Icons.auto_awesome_rounded,
+                capsKey: 'games.vocabulary_caps',
+                capsFallback: 'VOCABULARY',
+                titleKey: 'games.vocabulary',
+                titleFallback: 'Key Vocabulary',
+                rule: (quest.vocabularyWords as List<dynamic>).join(', '),
+                shadowColor: isDark
+                    ? Colors.white24
+                    : theme.primaryColor.withValues(alpha: 0.2),
+                isDark: isDark,
+              );
+            }
+
             return GameFeedbackCard(
               isCorrect: widget.isCorrect,
               isFinalFailure: resolvedIsFinalFailure,
@@ -299,6 +317,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               explanation: finalExplanation,
               ruleTitle: 'LISTENING TRANSCRIPT',
               ruleContent: ruleContent,
+              customContent: vocabWidget,
             );
           },
         );
