@@ -6,33 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L161_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch offer versus quote, and 'coulda' versus 'shoulda'.",
             "explanation": "This sentence stacks 'reckon', 'coulda', and 'jus'' across a longer reflection on a business decision, so hold the whole thought together as you listen. 'Coulda' (it was possible) and 'shoulda' (it would have been wiser) suggest slightly different regrets.",
             "textToSpeak": "I reckon we coulda negotiated a better rate if we hadn't jus' accepted the first offer.",
             "options": [
-                "I reckon we coulda negotiated a better rate if we hadn't jus' accepted the first quote.",
-                "I reckon we shoulda negotiated a better rate if we hadn't jus' accepted the first offer.",
                 "I reckon we coulda negotiated a better rate if we hadn't jus' accepted the first offer.",
                 "I reckon we coulda negotiated a better deal if we hadn't jus' accepted the first offer."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L161_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch numbers versus figures, and he versus she.",
-            "explanation": "This sentence layers the hidden 'n't' in 'wouldn't've' with the elided 'jus'', explaining a careful decision. 'Numbers' and 'figures' are near-synonyms, so listen for the specific word used.",
-            "textToSpeak": "She wouldn't've signed off on it if she hadn't jus' double-checked the numbers herself.",
-            "options": [
-                "She wouldn't've signed off on it if she hadn't jus' double-checked the numbers herself.",
-                "She wouldn't've signed off on it if she hadn't jus' double-checked the figures herself.",
-                "She woulda signed off on it if she hadn't jus' double-checked the numbers herself.",
-                "He wouldn't've signed off on it if she hadn't jus' double-checked the numbers herself."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -40,19 +20,33 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L161_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch numbers versus figures, and he versus she.",
+            "explanation": "This sentence layers the hidden 'n't' in 'wouldn't've' with the elided 'jus'', explaining a careful decision. 'Numbers' and 'figures' are near-synonyms, so listen for the specific word used.",
+            "textToSpeak": "She wouldn't've signed off on it if she hadn't jus' double-checked the numbers herself.",
+            "options": [
+                "She wouldn't've signed off on it if she hadn't jus' double-checked the figures herself.",
+                "She wouldn't've signed off on it if she hadn't jus' double-checked the numbers herself."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L161_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch day versus week, and 'woulda' versus 'coulda'.",
             "explanation": "This dense question stacks five separate reductions - 'whatcha', 'reckon', 'woulda', 'jus'', and the timing detail at the end - genuinely rapid native speech. Break it into its full words if you need to: what have you, reckon, would have, and just.",
             "textToSpeak": "Whatcha reckon woulda happened if we hadn't jus' pushed back on the deadline that day?",
             "options": [
-                "Whatcha reckon woulda happened if we hadn't jus' pushed back on the deadline that week?",
-                "Whatcha think woulda happened if we hadn't jus' pushed back on the deadline that day?",
                 "Whatcha reckon coulda happened if we hadn't jus' pushed back on the deadline that day?",
                 "Whatcha reckon woulda happened if we hadn't jus' pushed back on the deadline that day?"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -60,15 +54,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L162_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch years versus months, and 'didn't' versus 'couldn't'.",
             "explanation": "'Didn't jus' talk' (chose not to) and 'couldn't jus' talk' (weren't able to) suggest different reasons for the silence. This sentence also ends with the discourse marker 'to be honest', a common way to soften an admission.",
             "textToSpeak": "I dunno why we didn't jus' talk about this properly years ago, to be honest.",
             "options": [
                 "I dunno why we didn't jus' talk about this properly months ago, to be honest.",
-                "I dunno why we didn't jus' talk about this properly years ago, to be honest.",
-                "I dunno why we couldn't jus' talk about this properly years ago, to be honest.",
-                "We dunno why we didn't jus' talk about this properly years ago, to be honest."
+                "I dunno why we didn't jus' talk about this properly years ago, to be honest."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -78,17 +70,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L162_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Pin down 'worried' against 'curious', and confirm the subject: he or she.",
             "explanation": "'Worried' and 'curious' suggest very different motivations for raising a difficult topic. That hidden 'n't' in 'wouldn't've' is what confirms the concern was genuine, not idle curiosity.",
             "textToSpeak": "She wouldn't've brought it up if she hadn't jus' been genuinely worried about you.",
             "options": [
-                "She wouldn't've brought it up if she hadn't jus' been genuinely worried about you.",
                 "She wouldn't've brought it up if she hadn't jus' been genuinely curious about you.",
-                "She woulda brought it up if she hadn't jus' been genuinely worried about you.",
-                "He wouldn't've brought it up if she hadn't jus' been genuinely worried about you."
+                "She wouldn't've brought it up if she hadn't jus' been genuinely worried about you."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -96,15 +86,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L162_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'best' versus 'easiest', and 'at once' versus 'at first'.",
             "explanation": "'Best' (overall wisest) and 'easiest' (least effort) suggest different priorities for a difficult conversation. This sentence stacks 'whatcha', 'reckon's', and 'jus'' across a genuinely thoughtful, careful question.",
             "textToSpeak": "Whatcha reckon's the best way to bring it up without jus' upsetting everyone at once?",
             "options": [
                 "Whatcha reckon's the best way to bring it up without jus' upsetting everyone at first?",
-                "Whatcha reckon's the best way to bring it up without jus' upsetting everyone at once?",
-                "Whatcha think's the best way to bring it up without jus' upsetting everyone at once?",
-                "Whatcha reckon's the easiest way to bring it up without jus' upsetting everyone at once?"
+                "Whatcha reckon's the best way to bring it up without jus' upsetting everyone at once?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -114,87 +102,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L163_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch money versus time, and 'coulda' versus 'shoulda'.",
             "explanation": "This sentence stacks 'reckon', 'coulda', 'lotta', and 'jus'' together, a real showcase of how naturally these reductions pile up in casual reflection. Money versus time is also worth catching precisely.",
             "textToSpeak": "I reckon we coulda saved a lotta money if we hadn't jus' bought everything at once.",
             "options": [
-                "I reckon we coulda saved a lotta money if we hadn't jus' bought everything at full price.",
-                "I reckon we shoulda saved a lotta money if we hadn't jus' bought everything at once.",
                 "I reckon we coulda saved a lotta time if we hadn't jus' bought everything at once.",
                 "I reckon we coulda saved a lotta money if we hadn't jus' bought everything at once."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L163_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'disappointing' versus 'poor', and he versus she.",
-            "explanation": "'Disappointing' and 'poor' are near-synonyms describing bad quality, so listen for the precise word. That hidden 'n't' in 'wouldn't've' is what confirms this was a genuine letdown, not just a minor gripe.",
-            "textToSpeak": "He wouldn't've returned it if the quality hadn't jus' been genuinely disappointing for the price.",
-            "options": [
-                "He wouldn't've returned it if the quality hadn't jus' been genuinely disappointing for the price.",
-                "He wouldn't've returned it if the quality hadn't jus' been genuinely poor for the price.",
-                "He woulda returned it if the quality hadn't jus' been genuinely disappointing for the price.",
-                "She wouldn't've returned it if the quality hadn't jus' been genuinely disappointing for the price."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L163_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'straight away' versus 'eventually', and 'woulda' versus 'coulda'.",
-            "explanation": "This dense question stacks several reductions across a genuinely long, natural sentence about a consumer complaint. The timing detail at the end, straight away or eventually, is easy to lose in the rush.",
-            "textToSpeak": "Whatcha reckon woulda happened if we hadn't jus' complained about the faulty item straight away?",
-            "options": [
-                "Whatcha reckon woulda happened if we hadn't jus' complained about the faulty item eventually?",
-                "Whatcha think woulda happened if we hadn't jus' complained about the faulty item straight away?",
-                "Whatcha reckon coulda happened if we hadn't jus' complained about the faulty item straight away?",
-                "Whatcha reckon woulda happened if we hadn't jus' complained about the faulty item straight away?"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L164_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'good' versus 'average', and this versus that.",
-            "explanation": "This sentence balances a mild criticism, 'coulda used more seasoning', with genuine praise at the end, so hold both halves in mind. 'Good' and 'average' are very different final verdicts.",
-            "textToSpeak": "I reckon this dish coulda used a lotta more seasoning, but it's still pretty good.",
-            "options": [
-                "I reckon this dish coulda used a lotta more seasoning, but it's still pretty average.",
-                "I reckon this dish shoulda used a lotta more seasoning, but it's still pretty good.",
-                "I reckon that dish coulda used a lotta more seasoning, but it's still pretty good.",
-                "I reckon this dish coulda used a lotta more seasoning, but it's still pretty good."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L164_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'warmly' versus 'highly', and he versus she.",
-            "explanation": "'Warmly' and 'highly' both describe enthusiasm but in slightly different ways, so listen for the exact word. This longer sentence also stacks the hidden 'n't' with 'jus'' and 'genuinely'.",
-            "textToSpeak": "He wouldn't've ordered the special if the waiter hadn't jus' genuinely recommended it so warmly.",
-            "options": [
-                "She wouldn't've ordered the special if the waiter hadn't jus' genuinely recommended it so highly.",
-                "He wouldn't've ordered the special if the waiter hadn't jus' genuinely recommended it so warmly.",
-                "She woulda ordered the special if the waiter hadn't jus' genuinely recommended it so warmly.",
-                "She wouldn't've ordered the special if the waiter hadn't jus' genuinely recommended it so warmly."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -202,17 +116,79 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L163_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'disappointing' versus 'poor', and he versus she.",
+            "explanation": "'Disappointing' and 'poor' are near-synonyms describing bad quality, so listen for the precise word. That hidden 'n't' in 'wouldn't've' is what confirms this was a genuine letdown, not just a minor gripe.",
+            "textToSpeak": "He wouldn't've returned it if the quality hadn't jus' been genuinely disappointing for the price.",
+            "options": [
+                "He wouldn't've returned it if the quality hadn't jus' been genuinely poor for the price.",
+                "He wouldn't've returned it if the quality hadn't jus' been genuinely disappointing for the price."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L163_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'straight away' versus 'eventually', and 'woulda' versus 'coulda'.",
+            "explanation": "This dense question stacks several reductions across a genuinely long, natural sentence about a consumer complaint. The timing detail at the end, straight away or eventually, is easy to lose in the rush.",
+            "textToSpeak": "Whatcha reckon woulda happened if we hadn't jus' complained about the faulty item straight away?",
+            "options": [
+                "Whatcha reckon coulda happened if we hadn't jus' complained about the faulty item straight away?",
+                "Whatcha reckon woulda happened if we hadn't jus' complained about the faulty item straight away?"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L164_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'good' versus 'average', and this versus that.",
+            "explanation": "This sentence balances a mild criticism, 'coulda used more seasoning', with genuine praise at the end, so hold both halves in mind. 'Good' and 'average' are very different final verdicts.",
+            "textToSpeak": "I reckon this dish coulda used a lotta more seasoning, but it's still pretty good.",
+            "options": [
+                "I reckon that dish coulda used a lotta more seasoning, but it's still pretty good.",
+                "I reckon this dish coulda used a lotta more seasoning, but it's still pretty good."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L164_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'warmly' versus 'highly', and he versus she.",
+            "explanation": "'Warmly' and 'highly' both describe enthusiasm but in slightly different ways, so listen for the exact word. This longer sentence also stacks the hidden 'n't' with 'jus'' and 'genuinely'.",
+            "textToSpeak": "He wouldn't've ordered the special if the waiter hadn't jus' genuinely recommended it so warmly.",
+            "options": [
+                "He wouldn't've ordered the special if the waiter hadn't jus' genuinely recommended it so warmly.",
+                "She wouldn't've ordered the special if the waiter hadn't jus' genuinely recommended it so highly."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L164_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'everywhere' versus 'anywhere', and this versus that.",
             "explanation": "'Everywhere' and 'anywhere' are close enough to blur together at speed, but they subtly change the comparison being made. This sentence is genuinely long and natural, so let the rhythm carry you through it.",
             "textToSpeak": "Whatcha reckon's the secret ingredient that makes this taste so different from everywhere else?",
             "options": [
                 "Whatcha reckon's the secret ingredient that makes this taste so different from anywhere else?",
-                "Whatcha reckon's the secret ingredient that makes this taste so different from everywhere else?",
-                "Whatcha think's the secret ingredient that makes this taste so different from everywhere else?",
-                "Whatcha reckon's the secret ingredient that makes that taste so different from everywhere else?"
+                "Whatcha reckon's the secret ingredient that makes this taste so different from everywhere else?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -222,141 +198,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L165_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch planning versus packing, and 'a lot' versus 'a little'.",
             "explanation": "This reflective sentence stacks 'reckon', 'coulda', and 'jus'' across a genuine travel regret. 'A lot more' and 'a little more' suggest very different sizes of missed opportunity.",
             "textToSpeak": "I reckon we coulda explored a lot more if we hadn't jus' spent so long planning.",
             "options": [
-                "I reckon we coulda explored a lot more if we hadn't jus' spent so long packing.",
-                "I reckon we shoulda explored a lot more if we hadn't jus' spent so long planning.",
-                "I reckon we coulda explored a lot more if we hadn't jus' spent so long planning.",
-                "I reckon we coulda explored a little more if we hadn't jus' spent so long planning."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L165_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'worth it' versus 'necessary', and he versus she.",
-            "explanation": "'Worth it' (a good trade-off) and 'necessary' (essential) frame the decision quite differently, so listen for the exact phrase. That hidden 'n't' also confirms this really was a satisfying choice.",
-            "textToSpeak": "He wouldn't've upgraded the flight if the extra legroom hadn't jus' been genuinely worth it.",
-            "options": [
-                "He wouldn't've upgraded the flight if the extra legroom hadn't jus' been genuinely necessary.",
-                "He woulda upgraded the flight if the extra legroom hadn't jus' been genuinely worth it.",
-                "He wouldn't've upgraded the flight if the extra legroom hadn't jus' been genuinely worth it.",
-                "She wouldn't've upgraded the flight if the extra legroom hadn't jus' been genuinely worth it."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L165_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'crowds' versus 'tourists', and 'visit' versus 'go'.",
-            "explanation": "'Crowds' and 'tourists' are related but not identical, so listen for the precise word used. This sentence flows naturally through several stacked reductions, so let the rhythm guide your ear.",
-            "textToSpeak": "Whatcha reckon's the best time of year to visit without jus' battling all the crowds?",
-            "options": [
-                "Whatcha reckon's the best time of year to visit without jus' battling all the tourists?",
-                "Whatcha think's the best time of year to visit without jus' battling all the crowds?",
-                "Whatcha reckon's the best time of year to go without jus' battling all the crowds?",
-                "Whatcha reckon's the best time of year to visit without jus' battling all the crowds?"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L166_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch outage versus delay, and backup versus testing.",
-            "explanation": "This sentence stacks 'reckon', 'coulda', and 'jus'' across a genuine technical postmortem. 'Outage' (a real failure) and 'delay' (just slower) are very different problems, so listen precisely.",
-            "textToSpeak": "I reckon we coulda avoided the whole outage if we hadn't jus' skipped the backup step.",
-            "options": [
-                "I reckon we coulda avoided the whole outage if we hadn't jus' skipped the testing step.",
-                "I reckon we shoulda avoided the whole outage if we hadn't jus' skipped the backup step.",
-                "I reckon we coulda avoided the whole outage if we hadn't jus' skipped the backup step.",
-                "I reckon we coulda avoided the whole delay if we hadn't jus' skipped the backup step."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L166_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'frustrating' versus 'slow', and he versus she.",
-            "explanation": "'Frustrating' and 'slow' both describe bad service but at different intensities, so listen for the exact word. This is one of the longer sentences in the course, so trust your ear to catch the details in sequence.",
-            "textToSpeak": "She wouldn't've switched providers if the customer service hadn't jus' been genuinely frustrating to deal with.",
-            "options": [
-                "She wouldn't've switched providers if the customer service hadn't jus' been genuinely slow to deal with.",
-                "She woulda switched providers if the customer service hadn't jus' been genuinely frustrating to deal with.",
-                "She wouldn't've switched providers if the customer service hadn't jus' been genuinely frustrating to deal with.",
-                "He wouldn't've switched providers if the customer service hadn't jus' been genuinely frustrating to deal with."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L166_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch lag versus delay, and 'device itself' versus 'device speed'.",
-            "explanation": "This sentence poses a genuine either-or question, so track both possibilities carefully: the connection, or the device. 'Lag' and 'delay' are near-synonyms too, so listen for the specific word.",
-            "textToSpeak": "Whatcha reckon's actually causing the lag, is it the connection or jus' the device itself?",
-            "options": [
-                "Whatcha reckon's actually causing the lag, is it the connection or jus' the device itself?",
-                "Whatcha reckon's actually causing the lag, is it the connection or jus' the device speed?",
-                "Whatcha think's actually causing the lag, is it the connection or jus' the device itself?",
-                "Whatcha reckon's actually causing the delay, is it the connection or jus' the device itself?"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L167_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch flare-up versus setback, and pain versus tiredness.",
-            "explanation": "This sentence stacks 'reckon', 'coulda', and 'jus'' across genuine health advice. 'Flare-up' and 'setback' are related but different kinds of health problems, so listen for the precise word.",
-            "textToSpeak": "I reckon you coulda avoided the whole flare-up if you hadn't jus' pushed through the pain.",
-            "options": [
-                "I reckon you coulda avoided the whole flare-up if you hadn't jus' pushed through the pain.",
-                "I reckon you coulda avoided the whole flare-up if you hadn't jus' pushed through the tiredness.",
-                "I reckon you shoulda avoided the whole flare-up if you hadn't jus' pushed through the pain.",
-                "I reckon you coulda avoided the whole setback if you hadn't jus' pushed through the pain."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L167_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'reassured' versus 'surprised', and he versus she.",
-            "explanation": "'Reassured' (comforted by good news) and 'surprised' (caught off guard) suggest different reactions to the same results. That hidden 'n't' confirms she genuinely felt better after seeing them.",
-            "textToSpeak": "She wouldn't've mentioned the results if she hadn't jus' been genuinely reassured by them herself.",
-            "options": [
-                "She wouldn't've mentioned the results if she hadn't jus' been genuinely surprised by them herself.",
-                "She wouldn't've mentioned the results if she hadn't jus' been genuinely reassured by them herself.",
-                "She woulda mentioned the results if she hadn't jus' been genuinely reassured by them herself.",
-                "He wouldn't've mentioned the results if she hadn't jus' been genuinely reassured by them herself."
+                "I reckon we coulda explored a little more if we hadn't jus' spent so long planning.",
+                "I reckon we coulda explored a lot more if we hadn't jus' spent so long planning."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -364,19 +212,129 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L165_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'worth it' versus 'necessary', and he versus she.",
+            "explanation": "'Worth it' (a good trade-off) and 'necessary' (essential) frame the decision quite differently, so listen for the exact phrase. That hidden 'n't' also confirms this really was a satisfying choice.",
+            "textToSpeak": "He wouldn't've upgraded the flight if the extra legroom hadn't jus' been genuinely worth it.",
+            "options": [
+                "She wouldn't've upgraded the flight if the extra legroom hadn't jus' been genuinely worth it.",
+                "He wouldn't've upgraded the flight if the extra legroom hadn't jus' been genuinely worth it."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L165_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'crowds' versus 'tourists', and 'visit' versus 'go'.",
+            "explanation": "'Crowds' and 'tourists' are related but not identical, so listen for the precise word used. This sentence flows naturally through several stacked reductions, so let the rhythm guide your ear.",
+            "textToSpeak": "Whatcha reckon's the best time of year to visit without jus' battling all the crowds?",
+            "options": [
+                "Whatcha reckon's the best time of year to go without jus' battling all the crowds?",
+                "Whatcha reckon's the best time of year to visit without jus' battling all the crowds?"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L166_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch outage versus delay, and backup versus testing.",
+            "explanation": "This sentence stacks 'reckon', 'coulda', and 'jus'' across a genuine technical postmortem. 'Outage' (a real failure) and 'delay' (just slower) are very different problems, so listen precisely.",
+            "textToSpeak": "I reckon we coulda avoided the whole outage if we hadn't jus' skipped the backup step.",
+            "options": [
+                "I reckon we coulda avoided the whole outage if we hadn't jus' skipped the backup step.",
+                "I reckon we coulda avoided the whole delay if we hadn't jus' skipped the backup step."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L166_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'frustrating' versus 'slow', and he versus she.",
+            "explanation": "'Frustrating' and 'slow' both describe bad service but at different intensities, so listen for the exact word. This is one of the longer sentences in the course, so trust your ear to catch the details in sequence.",
+            "textToSpeak": "She wouldn't've switched providers if the customer service hadn't jus' been genuinely frustrating to deal with.",
+            "options": [
+                "He wouldn't've switched providers if the customer service hadn't jus' been genuinely frustrating to deal with.",
+                "She wouldn't've switched providers if the customer service hadn't jus' been genuinely frustrating to deal with."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L166_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch lag versus delay, and 'device itself' versus 'device speed'.",
+            "explanation": "This sentence poses a genuine either-or question, so track both possibilities carefully: the connection, or the device. 'Lag' and 'delay' are near-synonyms too, so listen for the specific word.",
+            "textToSpeak": "Whatcha reckon's actually causing the lag, is it the connection or jus' the device itself?",
+            "options": [
+                "Whatcha reckon's actually causing the lag, is it the connection or jus' the device speed?",
+                "Whatcha reckon's actually causing the lag, is it the connection or jus' the device itself?"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L167_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch flare-up versus setback, and pain versus tiredness.",
+            "explanation": "This sentence stacks 'reckon', 'coulda', and 'jus'' across genuine health advice. 'Flare-up' and 'setback' are related but different kinds of health problems, so listen for the precise word.",
+            "textToSpeak": "I reckon you coulda avoided the whole flare-up if you hadn't jus' pushed through the pain.",
+            "options": [
+                "I reckon you coulda avoided the whole flare-up if you hadn't jus' pushed through the tiredness.",
+                "I reckon you coulda avoided the whole flare-up if you hadn't jus' pushed through the pain."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L167_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'reassured' versus 'surprised', and he versus she.",
+            "explanation": "'Reassured' (comforted by good news) and 'surprised' (caught off guard) suggest different reactions to the same results. That hidden 'n't' confirms she genuinely felt better after seeing them.",
+            "textToSpeak": "She wouldn't've mentioned the results if she hadn't jus' been genuinely reassured by them herself.",
+            "options": [
+                "She wouldn't've mentioned the results if she hadn't jus' been genuinely reassured by them herself.",
+                "She wouldn't've mentioned the results if she hadn't jus' been genuinely surprised by them herself."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L167_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'agree with' versus 'sit right with', and 'cause' versus 'reason'.",
             "explanation": "This is one of the longest, most natural-sounding sentences yet, weaving together several reductions across a genuine either-or question. 'Agree with' and 'sit right with' mean almost the same thing, so listen for the exact phrase.",
             "textToSpeak": "Whatcha reckon's the actual cause, is it stress or jus' something you ate that didn't agree with you?",
             "options": [
-                "Whatcha reckon's the actual cause, is it stress or jus' something you ate that didn't sit right with you?",
-                "Whatcha think's the actual cause, is it stress or jus' something you ate that didn't agree with you?",
                 "Whatcha reckon's the actual reason, is it stress or jus' something you ate that didn't agree with you?",
                 "Whatcha reckon's the actual cause, is it stress or jus' something you ate that didn't agree with you?"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -384,15 +342,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L168_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch revision versus admin, and 'a lot' versus 'a little'.",
             "explanation": "This sentence stacks 'reckon', 'coulda', and 'jus'' across a genuine reflection on how class time was spent. 'A lot more' and 'a little more' suggest very different amounts of missed content.",
             "textToSpeak": "I reckon we coulda covered a lot more if we hadn't jus' spent so long on revision.",
             "options": [
                 "I reckon we coulda covered a lot more if we hadn't jus' spent so long on admin.",
-                "I reckon we coulda covered a lot more if we hadn't jus' spent so long on revision.",
-                "I reckon we shoulda covered a lot more if we hadn't jus' spent so long on revision.",
-                "I reckon we coulda covered a little more if we hadn't jus' spent so long on revision."
+                "I reckon we coulda covered a lot more if we hadn't jus' spent so long on revision."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -402,17 +358,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L168_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'unmanageable' versus 'heavy', and he versus she.",
             "explanation": "'Unmanageable' and 'heavy' both describe a difficult workload, but at very different levels of severity. That hidden 'n't' confirms this was a genuinely serious situation, not just a busy week.",
             "textToSpeak": "He wouldn't've asked for an extension if the workload hadn't jus' been genuinely unmanageable that week.",
             "options": [
-                "He wouldn't've asked for an extension if the workload hadn't jus' been genuinely heavy that week.",
-                "He woulda asked for an extension if the workload hadn't jus' been genuinely unmanageable that week.",
                 "He wouldn't've asked for an extension if the workload hadn't jus' been genuinely unmanageable that week.",
                 "She wouldn't've asked for an extension if the workload hadn't jus' been genuinely unmanageable that week."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -420,15 +374,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L168_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'fairest' versus 'best', and 'pull their weight' versus 'do their share'.",
             "explanation": "'Fairest' (about equal treatment) and 'best' (about overall quality) frame this group-work question differently. 'Pull their weight' and 'do their share' mean almost the same thing, so listen for the exact idiom.",
             "textToSpeak": "Whatcha reckon's the fairest way to handle it when jus' one person didn't pull their weight?",
             "options": [
                 "Whatcha reckon's the fairest way to handle it when jus' one person didn't pull their weight?",
-                "Whatcha reckon's the fairest way to handle it when jus' one person didn't do their share?",
-                "Whatcha think's the fairest way to handle it when jus' one person didn't pull their weight?",
-                "Whatcha reckon's the best way to handle it when jus' one person didn't pull their weight?"
+                "Whatcha reckon's the fairest way to handle it when jus' one person didn't do their share?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -438,33 +390,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L169_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch season versus episode, and this versus that.",
             "explanation": "This sentence stacks 'reckon', 'coulda', and 'jus'' across a genuine opinion about a show's ending. 'Season' and 'episode' are very different scales, so listen for the precise word.",
             "textToSpeak": "I reckon that show coulda ended a lot stronger if they hadn't jus' rushed the final season.",
             "options": [
-                "I reckon that show coulda ended a lot stronger if they hadn't jus' rushed the final season.",
                 "I reckon that show coulda ended a lot stronger if they hadn't jus' rushed the final episode.",
-                "I reckon that show shoulda ended a lot stronger if they hadn't jus' rushed the final season.",
-                "I reckon this show coulda ended a lot stronger if they hadn't jus' rushed the final season."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L169_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'worth the wait' versus 'worth the read', and he versus she.",
-            "explanation": "'Worth the wait' and 'worth the read' are both praise but frame the payoff slightly differently. That hidden 'n't' confirms this really was a satisfying ending, not a disappointing one.",
-            "textToSpeak": "He wouldn't've recommended the book if the ending hadn't jus' been genuinely worth the wait.",
-            "options": [
-                "She wouldn't've recommended the book if the ending hadn't jus' been genuinely worth the read.",
-                "He wouldn't've recommended the book if the ending hadn't jus' been genuinely worth the wait.",
-                "She woulda recommended the book if the ending hadn't jus' been genuinely worth the wait.",
-                "She wouldn't've recommended the book if the ending hadn't jus' been genuinely worth the wait."
+                "I reckon that show coulda ended a lot stronger if they hadn't jus' rushed the final season."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -472,19 +404,33 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L169_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'worth the wait' versus 'worth the read', and he versus she.",
+            "explanation": "'Worth the wait' and 'worth the read' are both praise but frame the payoff slightly differently. That hidden 'n't' confirms this really was a satisfying ending, not a disappointing one.",
+            "textToSpeak": "He wouldn't've recommended the book if the ending hadn't jus' been genuinely worth the wait.",
+            "options": [
+                "He wouldn't've recommended the book if the ending hadn't jus' been genuinely worth the wait.",
+                "She wouldn't've recommended the book if the ending hadn't jus' been genuinely worth the read."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L169_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch project versus show, and 'real' versus 'actual'.",
             "explanation": "This is a long, natural-sounding question packed with speculation, so let the rhythm of the reductions carry you through it. 'Real' and 'actual' are near-synonyms, so listen for the specific word used.",
             "textToSpeak": "Whatcha reckon's the real reason the whole cast decided to jus' walk away from the project?",
             "options": [
-                "Whatcha reckon's the real reason the whole cast decided to jus' walk away from the show?",
-                "Whatcha think's the real reason the whole cast decided to jus' walk away from the project?",
-                "Whatcha reckon's the real reason the whole cast decided to jus' walk away from the project?",
-                "Whatcha reckon's the actual reason the whole cast decided to jus' walk away from the project?"
+                "Whatcha reckon's the actual reason the whole cast decided to jus' walk away from the project?",
+                "Whatcha reckon's the real reason the whole cast decided to jus' walk away from the project?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -492,17 +438,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L170_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch week versus month, and 'a lot' versus 'a little'.",
             "explanation": "This review question is one of the longest sentences in the whole course so far, stacking 'reckon', 'coulda', and 'jus'' across a genuine reflection. Trust your ear to follow the natural rhythm through each detail.",
             "textToSpeak": "I reckon we coulda handled that whole week a lot better if we hadn't jus' left everything so late.",
             "options": [
-                "I reckon we coulda handled that whole month a lot better if we hadn't jus' left everything so late.",
-                "I reckon we shoulda handled that whole week a lot better if we hadn't jus' left everything so late.",
                 "I reckon we coulda handled that whole week a lot better if we hadn't jus' left everything so late.",
                 "I reckon we coulda handled that whole week a little better if we hadn't jus' left everything so late."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -510,17 +454,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L170_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'mattered' versus 'helped', and he versus she.",
             "explanation": "'Mattered' and 'helped' suggest slightly different reasons for speaking up, so listen for the exact word. That hidden 'n't' in 'wouldn't've' is once again the detail that decides whether this is genuine conviction or casual mention.",
             "textToSpeak": "She wouldn't've brought it up at all if she hadn't jus' been genuinely certain it mattered.",
             "options": [
-                "She wouldn't've brought it up at all if she hadn't jus' been genuinely certain it helped.",
-                "She woulda brought it up at all if she hadn't jus' been genuinely certain it mattered.",
-                "He wouldn't've brought it up at all if she hadn't jus' been genuinely certain it mattered.",
-                "She wouldn't've brought it up at all if she hadn't jus' been genuinely certain it mattered."
+                "She wouldn't've brought it up at all if she hadn't jus' been genuinely certain it mattered.",
+                "He wouldn't've brought it up at all if she hadn't jus' been genuinely certain it mattered."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -528,15 +470,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L170_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Track 'sooner' versus 'later', and make sure it's 'woulda', not 'coulda'.",
             "explanation": "This closing question of the Advanced+ tier is the longest and most demanding yet, combining a full hypothetical with five stacked reductions. If you followed this smoothly from start to finish, the Expert tier ahead will feel like a natural next step, not a huge leap.",
             "textToSpeak": "Whatcha reckon woulda happened if nobody had jus' spoken up sooner about how they were really feeling?",
             "options": [
                 "Whatcha reckon woulda happened if nobody had jus' spoken up later about how they were really feeling?",
-                "Whatcha reckon woulda happened if nobody had jus' spoken up sooner about how they were really feeling?",
-                "Whatcha think woulda happened if nobody had jus' spoken up sooner about how they were really feeling?",
-                "Whatcha reckon coulda happened if nobody had jus' spoken up sooner about how they were really feeling?"
+                "Whatcha reckon woulda happened if nobody had jus' spoken up sooner about how they were really feeling?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",

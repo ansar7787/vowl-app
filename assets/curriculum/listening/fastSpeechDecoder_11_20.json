@@ -6,69 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L11_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the street name, and whether it's 'is' or 'was'.",
             "explanation": "'There's' packs 'there is' into one quick sound, and swapping it for 'there was' shifts the sentence into the past. Also lock in the exact street name.",
             "textToSpeak": "There's a new café on Main Street.",
             "options": [
-                "There's a new café on Church Street.",
-                "There's a new bakery on Main Street.",
                 "There's a new café on Main Street.",
                 "There was a new café on Main Street."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L11_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch what's waiting, and whether it's happening now or already happened.",
-            "explanation": "In fast speech, 'there are' often reduces to a quick, blurred sound close to 'therer'. Swap it for 'there were' and you've shifted from present to past, so listen for that small vowel change.",
-            "textToSpeak": "There are a few emails waiting for you.",
-            "options": [
-                "There are a few messages waiting for you.",
-                "There are a few emails waiting for you.",
-                "There were a few emails waiting for you.",
-                "There are a few emails waiting for her."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L11_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice 'nothing' versus 'something', and whose order it is.",
-            "explanation": "'Nothing' and 'something' are opposites hiding inside a similar-sounding word, so listen for that middle sound carefully. Also catch 'your' versus 'our' - both light, unstressed words.",
-            "textToSpeak": "There's nothing wrong with your order.",
-            "options": [
-                "There's nothing wrong with your account.",
-                "There's something wrong with your order.",
-                "There's nothing wrong with your order.",
-                "There's nothing wrong with our order."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L12_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch which sibling, and whether it's a photo or a video.",
-            "explanation": "'That's' condenses 'that is' into one syllable, so it gives almost nothing away by itself. Everything depends on the details that follow: youngest or oldest, brother or sister, photo or video.",
-            "textToSpeak": "That's my youngest brother in the photo.",
-            "options": [
-                "That's my youngest brother in the photo.",
-                "That's my oldest brother in the photo.",
-                "That's my youngest sister in the photo.",
-                "That's my youngest brother in the video."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -76,17 +20,63 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L11_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch what's waiting, and whether it's happening now or already happened.",
+            "explanation": "In fast speech, 'there are' often reduces to a quick, blurred sound close to 'therer'. Swap it for 'there were' and you've shifted from present to past, so listen for that small vowel change.",
+            "textToSpeak": "There are a few emails waiting for you.",
+            "options": [
+                "There are a few emails waiting for you.",
+                "There are a few messages waiting for you."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L11_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Notice 'nothing' versus 'something', and whose order it is.",
+            "explanation": "'Nothing' and 'something' are opposites hiding inside a similar-sounding word, so listen for that middle sound carefully. Also catch 'your' versus 'our' - both light, unstressed words.",
+            "textToSpeak": "There's nothing wrong with your order.",
+            "options": [
+                "There's nothing wrong with our order.",
+                "There's nothing wrong with your order."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L12_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch which sibling, and whether it's a photo or a video.",
+            "explanation": "'That's' condenses 'that is' into one syllable, so it gives almost nothing away by itself. Everything depends on the details that follow: youngest or oldest, brother or sister, photo or video.",
+            "textToSpeak": "That's my youngest brother in the photo.",
+            "options": [
+                "That's my oldest brother in the photo.",
+                "That's my youngest brother in the photo."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L12_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Listen for whose house it is, and what happened there.",
             "explanation": "'We' and 'they' are both light, quickly-spoken pronouns that can blur together at speed. 'House' versus 'flat' is a clearer content-word swap worth catching too.",
             "textToSpeak": "That's the house we grew up in.",
             "options": [
                 "That's the house we grew up in.",
-                "That's the house we moved into.",
-                "That's the flat we grew up in.",
-                "That's the house they grew up in."
+                "That's the house we moved into."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -96,17 +86,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L12_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Listen for the negative, then catch 'meant' versus 'said'.",
             "explanation": "Drop 'not' and the meaning flips entirely - a common trap in fast, defensive speech. 'Meant' and 'said' are also different verbs, so don't let familiarity make you assume which one you heard.",
             "textToSpeak": "That's not what I meant at all.",
             "options": [
-                "That's what I meant at all.",
                 "That's not what I meant at all.",
-                "That's not what I said at all.",
-                "That's not what I meant after all."
+                "That's what I meant at all."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -114,17 +102,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L13_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact day being asked about.",
             "explanation": "'What's' reduces 'what is' to a single quick sound, so your ear has to work harder on what comes after it - here, exactly which day is meant.",
             "textToSpeak": "What's the weather like tomorrow?",
             "options": [
-                "What's the weather like today?",
-                "What's the forecast like tomorrow?",
                 "What's the weather like tomorrow?",
                 "What's the weather like this weekend?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -132,15 +118,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L13_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice 'inside' versus 'outside', and 'is' versus 'was'.",
             "explanation": "'What's' usually means 'what is', but a careless listener can confuse it with 'what was' if the tense isn't tracked closely. Then confirm inside or outside.",
             "textToSpeak": "What's the temperature outside right now?",
             "options": [
                 "What's the temperature inside right now?",
-                "What's the temperature outside right now?",
-                "What's the humidity outside right now?",
-                "What was the temperature outside right now?"
+                "What's the temperature outside right now?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -150,15 +134,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L13_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the goal - dry or warm - and the exact adjective describing the way.",
             "explanation": "'Stay dry' and 'keep dry' mean almost the same thing, which is exactly why you need the precise wording rather than just the general idea. 'Best' versus 'fastest' changes what's being promised too.",
             "textToSpeak": "What's the best way to stay dry?",
             "options": [
                 "What's the best way to stay warm?",
-                "What's the best way to stay dry?",
-                "What's the fastest way to stay dry?",
-                "What's the best way to keep dry?"
+                "What's the best way to stay dry?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -168,17 +150,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L14_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the meal, the verb, and the day.",
             "explanation": "'Who's' packs 'who is' into one syllable, so the question word gives little away by itself. The real answer is in the details that follow, like the meal and the day.",
             "textToSpeak": "Who's cooking dinner for us tonight?",
             "options": [
-                "Who's cooking lunch for us tonight?",
-                "Who's making dinner for us tonight?",
                 "Who's cooking dinner for us tonight?",
                 "Who's cooking dinner for us tomorrow?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -186,17 +166,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L14_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice what's being brought, and to which event.",
             "explanation": "'Party' and 'picnic' sound different once you focus, but at speed with background noise they can blend together. Also catch 'bringing' versus 'buying' - similar shape, different meaning.",
             "textToSpeak": "Who's bringing the drinks to the party?",
             "options": [
-                "Who's bringing the snacks to the party?",
                 "Who's bringing the drinks to the party?",
-                "Who's bringing the drinks to the picnic?",
-                "Who's buying the drinks to the party?"
+                "Who's bringing the snacks to the party?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -204,15 +182,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L14_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch whether they're being picked up or dropped off, and from where.",
             "explanation": "'Picking up' and 'dropping off' are opposite actions in everyday routines, so this word pair is essential to get right. Then confirm the location: school or practice.",
             "textToSpeak": "Who's picking the kids up from school?",
             "options": [
                 "Who's dropping the kids off at school?",
-                "Who's picking the kids up from school?",
-                "Who's picking the kids up from practice?",
-                "Who's picking her kids up from school?"
+                "Who's picking the kids up from school?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -222,17 +198,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L15_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Listen for 'does' versus 'did', and cash versus cards.",
             "explanation": "'Doesn't' (now) and 'didn't' (before) share almost the same rushed sound, so the vowel is your main clue. Also make sure it's 'cash' and not 'cards'.",
             "textToSpeak": "This shop doesn't accept cash.",
             "options": [
-                "This shop doesn't accept cards.",
-                "This shop didn't accept cash.",
                 "That shop doesn't accept cash.",
                 "This shop doesn't accept cash."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -240,17 +214,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L15_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch whether it's happening now or already happened, and what was done about it.",
             "explanation": "'Didn't' versus 'doesn't' signals past versus present, and a single vowel sound carries that whole difference. 'Returned' and 'exchanged' describe different actions too.",
             "textToSpeak": "It didn't fit, so I returned it.",
             "options": [
-                "It didn't fit, so I exchanged it.",
-                "It doesn't fit, so I returned it.",
-                "It didn't fit, so I returned it.",
-                "It didn't suit, so I returned it."
+                "It didn't suit, so I returned it.",
+                "It didn't fit, so I returned it."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -258,17 +230,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L15_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice the tense, and 'know' versus 'care'.",
             "explanation": "'Know' (lack of information) and 'care' (lack of concern) tell very different stories about the assistant, so listen past the familiar sentence shape to that one key word.",
             "textToSpeak": "The shop assistant didn't seem to know.",
             "options": [
-                "The shop assistant didn't seem to know.",
                 "The shop assistant doesn't seem to know.",
-                "The shop assistant didn't seem to care.",
-                "The sales assistant didn't seem to know."
+                "The shop assistant didn't seem to know."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -276,17 +246,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L16_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch what the app wants, and singular versus plural.",
             "explanation": "'App's' ('app is', singular) and 'apps are' (plural) can sound close together in fast speech, so listen for that final consonant. 'Update' and 'upgrade' are also easy to mix up.",
             "textToSpeak": "The app's asking for an update.",
             "options": [
-                "The app's asking for a password.",
-                "The app's asking for an upgrade.",
-                "The app's asking for an update.",
-                "The apps are asking for an update."
+                "The apps are asking for an update.",
+                "The app's asking for an update."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -294,17 +262,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L16_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice what's being synced, and exactly when.",
             "explanation": "'We're' and 'they're' reduce almost the same way, so track the vowel closely to tell them apart. 'Right now' versus 'right after' also completely changes the timing.",
             "textToSpeak": "We're syncing the files right now.",
             "options": [
-                "We're syncing the photos right now.",
-                "We're syncing the files right after.",
-                "We're syncing the files right now.",
-                "They're syncing the files right now."
+                "They're syncing the files right now.",
+                "We're syncing the files right now."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -312,17 +278,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L16_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch faster versus slower, and 'a bit' versus 'a lot'.",
             "explanation": "'Slower' and 'faster' are opposites, so that's the most important word to catch first. 'A bit' and 'a lot' then tell you exactly how noticeable the change really is.",
             "textToSpeak": "It's loading a bit slower than usual.",
             "options": [
-                "It's loading a bit faster than usual.",
-                "It's running a bit slower than usual.",
-                "It's loading a lot slower than usual.",
-                "It's loading a bit slower than usual."
+                "It's loading a bit slower than usual.",
+                "It's loading a lot slower than usual."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -330,17 +294,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L17_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch delayed versus cancelled, and how certain the speaker sounds.",
             "explanation": "'Flight'll' squeezes 'flight will' together, and singular 'flight'll' versus plural 'flights'll' hides inside that same rushed sound. Then catch 'delayed' versus the more serious 'cancelled'.",
             "textToSpeak": "The flight'll probably be delayed.",
             "options": [
-                "The flight'll probably be cancelled.",
-                "The flight'll definitely be delayed.",
                 "The flight'll probably be delayed.",
                 "The flights'll probably be delayed."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -348,15 +310,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L17_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Listen for the exact number, and board versus land.",
             "explanation": "'Twenty' and 'thirty' share that same '-ty' ending, a classic number mix-up at natural speed. 'Board' and 'land' are opposite ends of a flight, so don't mix those up either.",
             "textToSpeak": "We'll board in about twenty minutes.",
             "options": [
                 "We'll board in about thirty minutes.",
-                "We'll board in about twenty minutes.",
-                "We'll land in about twenty minutes.",
-                "We'll board in about twenty seconds."
+                "We'll board in about twenty minutes."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -366,33 +326,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L17_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'in' versus 'out', and singular versus plural.",
             "explanation": "'Check in' and 'check out' are opposite actions at an airport, so this small preposition matters enormously. Also listen closely for 'bag' versus 'bags'.",
             "textToSpeak": "I'll need to check my bag in.",
             "options": [
-                "I'll need to check my bag out.",
-                "I'll need to check my bags in.",
-                "I'll want to check my bag in.",
-                "I'll need to check my bag in."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L18_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch booked versus cancelled, and the exact day.",
-            "explanation": "'I've' packs 'I have' into one light sound, so focus your attention on the action and the day. 'Friday' and 'Thursday' start similarly, so listen for the full word.",
-            "textToSpeak": "I've booked an appointment for Friday.",
-            "options": [
-                "I've booked an appointment for Friday.",
-                "I've booked an appointment for Monday.",
-                "I've cancelled an appointment for Friday.",
-                "I've booked an appointment for Thursday."
+                "I'll need to check my bag in.",
+                "I'll want to check my bag in."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -400,17 +340,31 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L18_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch booked versus cancelled, and the exact day.",
+            "explanation": "'I've' packs 'I have' into one light sound, so focus your attention on the action and the day. 'Friday' and 'Thursday' start similarly, so listen for the full word.",
+            "textToSpeak": "I've booked an appointment for Friday.",
+            "options": [
+                "I've booked an appointment for Monday.",
+                "I've booked an appointment for Friday."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L18_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice better versus worse, and 'a bit' versus 'a lot'.",
             "explanation": "'Better' and 'worse' are direct opposites, so that's the word to prioritise first. Then 'a bit' versus 'a lot' tells you exactly how much things have changed.",
             "textToSpeak": "He's finally feeling a bit better.",
             "options": [
                 "She's finally feeling a lot better.",
-                "He's finally feeling a bit better.",
-                "She's finally feeling a bit better.",
-                "She's finally feeling a bit worse."
+                "He's finally feeling a bit better."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -420,17 +374,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L18_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch how much medicine, and whether it's 'we've' or 'we'd'.",
             "explanation": "'All' versus 'some' completely changes how much is left. 'We've' (have) and 'we'd' (had) also sound close together, so listen for which one connects to right now.",
             "textToSpeak": "We've already taken all the medicine.",
             "options": [
-                "We've already taken some of the medicine.",
-                "We've already thrown out the medicine.",
-                "We'd already taken all the medicine.",
-                "We've already taken all the medicine."
+                "We've already taken all the medicine.",
+                "We'd already taken all the medicine."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -438,15 +390,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L19_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch picked up versus given up, and who's doing it.",
             "explanation": "'Picked up' (started again) and 'given up' (stopped) are opposite actions hiding inside similar sentence shapes. 'He's' and 'she's' also reduce almost the same way, so listen for the vowel.",
             "textToSpeak": "He's picked up painting again lately.",
             "options": [
                 "He's picked up painting again lately.",
-                "He's picked up painting again recently.",
-                "He's given up painting again lately.",
-                "She's picked up painting again lately."
+                "He's picked up painting again recently."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -456,15 +406,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L19_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice which week, and 'practising' versus 'preparing'.",
             "explanation": "'This week' and 'next week' sound alike in a rush but mean very different deadlines. 'Practising' and 'preparing' overlap in meaning, so catch the exact verb used.",
             "textToSpeak": "They're practising for the show this week.",
             "options": [
                 "They're practising for the show next week.",
-                "They're practising for the show this week.",
-                "They're preparing for the show this week.",
-                "We're practising for the show this week."
+                "They're practising for the show this week."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -474,17 +422,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L19_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Check for 'not' first, then the exact type of game.",
             "explanation": "Miss the quiet 'not' and the opinion flips completely, from dislike to genuine interest. Then confirm the kind of game, since board, card, and video games are all common answers.",
             "textToSpeak": "I'm not really into board games.",
             "options": [
-                "I'm not really into board games.",
                 "I'm really into board games.",
-                "I'm not really into card games.",
-                "I'm not really into video games."
+                "I'm not really into board games."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -492,17 +438,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L20_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Check for 'not', and whether it's 'we've' or 'we'd'.",
             "explanation": "Losing 'not' turns confidence into doubt, so listen for it even though it's barely stressed. 'We've' (have) and 'we'd' (had) are also a close, easy-to-miss pair.",
             "textToSpeak": "I'm pretty sure we've met before.",
             "options": [
-                "I'm pretty sure we've met already.",
-                "I'm not sure we've met before.",
                 "I'm pretty sure we've met before.",
                 "I'm pretty sure we'd met before."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -510,17 +454,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L20_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact day, and 'everything' versus 'almost everything'.",
             "explanation": "'Everything' and 'almost everything' look similar on paper but mean completely different levels of readiness. 'You'll' and 'you'd' also reduce closely, so track that small sound too.",
             "textToSpeak": "That's everything you'll need for today.",
             "options": [
-                "That's everything you'll need for tomorrow.",
-                "That's everything you'd need for today.",
-                "That's almost everything you'll need for today.",
-                "That's everything you'll need for today."
+                "That's everything you'll need for today.",
+                "That's almost everything you'll need for today."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -528,17 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L20_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Listen for 'not', and 'without' versus 'with'.",
             "explanation": "This sentence leans on two small words doing a lot of work: 'not' (which flips the whole statement) and 'without' versus 'with' (which flips who's included). Catch both and the meaning is clear.",
             "textToSpeak": "We're not going anywhere without you.",
             "options": [
-                "We're going anywhere without you.",
-                "We're not going anywhere without her.",
                 "We're not going anywhere without you.",
                 "We're not going anywhere with you."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."

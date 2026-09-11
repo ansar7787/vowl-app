@@ -6,17 +6,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L111_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'falls through' versus 'works out', and 'should' versus 'could'.",
             "explanation": "Before a word starting with a consonant like 'case', the 'n' in 'in' often shifts forward in the mouth to match it, so 'in case' can sound closer to 'ing case'. 'Falls through' and 'works out' are opposite outcomes, so that phrase is essential.",
             "textToSpeak": "We should have a backup plan in case it falls through.",
             "options": [
-                "We should have a backup plan in case it falls through.",
                 "We should have a backup plan in case it works out.",
-                "We should have a contingency plan in case it falls through.",
-                "We could have a backup plan in case it falls through."
+                "We should have a backup plan in case it falls through."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -24,33 +22,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L111_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice report versus document, and 'progress' versus 'review'.",
             "explanation": "'In progress' often comes out sounding like 'im progress' in fast speech, because the 'n' shifts to match the 'p' sound that follows it - both made with closed lips. That's a pronunciation shift only, though; the spelling never changes. 'Progress' and 'review' are different stages entirely.",
             "textToSpeak": "This report's still in progress, so don't send it yet.",
             "options": [
-                "This report's still in progress, so don't send it out.",
                 "This report's still in progress, so don't send it yet.",
-                "This document's still in progress, so don't send it yet.",
-                "This report's still in review, so don't send it yet."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L111_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'officially' versus 'finally', and announced versus confirmed.",
-            "explanation": "Before 'confidence', which starts with a 'k' sound, the 'n' in 'in' shifts back in the mouth to match it, giving a nasal sound closer to the 'ng' in 'sing'. This is the same assimilation pattern as 'in progress', just adjusting to a different following sound.",
-            "textToSpeak": "Keep this in confidence, please, until it's officially announced.",
-            "options": [
-                "Keep this in confidence, please, until it's officially announced.",
-                "Keep this in confidence, please, until it's finally announced.",
-                "Keep this in confidence, please, until it's officially confirmed.",
-                "Keep that in confidence, please, until it's officially announced."
+                "This report's still in progress, so don't send it out."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -58,35 +36,15 @@
             "slowVersion": "Slow down the speech here."
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L112_Q1",
+            "id": "LIS_FASTSPEECHDECODER_L111_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch the exact day, dinner versus lunch, and the number.",
-            "explanation": "'Ten people' often comes out sounding like 'tem people' in fast, connected speech, since the 'n' shifts to match the 'p' sound right after it. Numbers are especially easy to mishear this way, so always double-check the exact one.",
-            "textToSpeak": "We've got ten people coming for dinner this Sunday.",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'officially' versus 'finally', and announced versus confirmed.",
+            "explanation": "Before 'confidence', which starts with a 'k' sound, the 'n' in 'in' shifts back in the mouth to match it, giving a nasal sound closer to the 'ng' in 'sing'. This is the same assimilation pattern as 'in progress', just adjusting to a different following sound.",
+            "textToSpeak": "Keep this in confidence, please, until it's officially announced.",
             "options": [
-                "We've got ten people coming for dinner this Saturday.",
-                "We've got ten people coming for lunch this Sunday.",
-                "We've got nine people coming for dinner this Sunday.",
-                "We've got ten people coming for dinner this Sunday."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L112_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice the exact month, cousin versus sister, and first versus second.",
-            "explanation": "'First' loses its 't' before 'baby', another consonant-cluster simplification like the ones you've already practised. The month and the relative are the details that carry the real news here.",
-            "textToSpeak": "My cousin's expecting her firs' baby sometime in March.",
-            "options": [
-                "My cousin's expecting her firs' baby sometime in April.",
-                "My cousin's expecting her firs' baby sometime in March.",
-                "My sister's expecting her firs' baby sometime in March.",
-                "My cousin's expecting her second baby sometime in March."
+                "Keep this in confidence, please, until it's finally announced.",
+                "Keep this in confidence, please, until it's officially announced."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -94,17 +52,47 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L112_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch the exact day, dinner versus lunch, and the number.",
+            "explanation": "'Ten people' often comes out sounding like 'tem people' in fast, connected speech, since the 'n' shifts to match the 'p' sound right after it. Numbers are especially easy to mishear this way, so always double-check the exact one.",
+            "textToSpeak": "We've got ten people coming for dinner this Sunday.",
+            "options": [
+                "We've got ten people coming for dinner this Sunday.",
+                "We've got nine people coming for dinner this Sunday."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L112_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Notice the exact month, cousin versus sister, and first versus second.",
+            "explanation": "'First' loses its 't' before 'baby', another consonant-cluster simplification like the ones you've already practised. The month and the relative are the details that carry the real news here.",
+            "textToSpeak": "My cousin's expecting her firs' baby sometime in March.",
+            "options": [
+                "My cousin's expecting her firs' baby sometime in March.",
+                "My cousin's expecting her firs' baby sometime in April."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L112_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact number, and grandma versus grandpa.",
             "explanation": "'Ten' can shift toward a 'tem' sound before 'days', since the following 'd' pulls the 'n' forward slightly - but that's a pronunciation detail only, not a spelling change. Focus on the actual number and which grandparent is visiting.",
             "textToSpeak": "Grandma's coming to stay for a whole ten days.",
             "options": [
                 "Grandma's coming to stay for a whole ten days.",
-                "Grandma's coming to stay for a whole two weeks.",
-                "Grandma's coming to stay for a whole nine days.",
-                "Grandpa's coming to stay for a whole ten days."
+                "Grandma's coming to stay for a whole two weeks."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -114,17 +102,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch this versus these, and brown versus plain.",
             "explanation": "'Brown paper' often blurs together at speed, since the 'n' at the end of 'brown' shifts slightly to match the 'p' that follows. 'This' and 'these' are also quick, light words worth listening for carefully.",
             "textToSpeak": "Can I get a brown paper bag for this one?",
             "options": [
-                "Can I get a brown paper bag for these ones?",
                 "Can I get a brown paper bag for this one?",
-                "Can I get a plain paper bag for this one?",
-                "Could I get a brown paper bag for this one?"
+                "Can I get a brown paper bag for these ones?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -132,17 +118,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice one versus two, and 'in stock' versus 'in store'.",
             "explanation": "Numbers like 'one' can shift slightly before certain sounds too, so don't rely on the shape of the word alone, listen for the actual vowel. 'In stock' and 'in store' are close enough in meaning that you need the exact phrase.",
             "textToSpeak": "I'll take one more if you've still got it in stock.",
             "options": [
-                "I'll take one more if you've still got it in store.",
-                "I'll take two more if you've still got it in stock.",
-                "I'll take one more if you've already got it in stock.",
-                "I'll take one more if you've still got it in stock."
+                "I'll take one more if you've still got it in stock.",
+                "I'll take one more if you've already got it in stock."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -150,17 +134,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L113_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch select versus certain, and apparently versus unfortunately.",
             "explanation": "'Select' and 'certain' mean almost the same thing here, so the exact word takes real focus rather than the general idea. 'Apparently' (based on what you've heard) and 'unfortunately' (expressing regret) also carry a different tone.",
             "textToSpeak": "This coupon only works on select items, apparently.",
             "options": [
-                "This coupon only works on certain items, apparently.",
-                "This voucher only works on select items, apparently.",
-                "This coupon only works on select items, unfortunately.",
-                "This coupon only works on select items, apparently."
+                "This coupon only works on select items, apparently.",
+                "This coupon only works on select items, unfortunately."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -168,15 +150,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact time, course versus dish, and 'or so' versus 'exactly'.",
             "explanation": "'Main course' can sound like 'maing course' since the 'n' shifts to match the 'k' sound in 'course', a subtle nasal shift rather than a change in spelling. The timing and the precise dish name are what really matter here.",
             "textToSpeak": "The main course still needs another ten minutes or so.",
             "options": [
                 "The main course still needs another ten minutes or so.",
-                "The main course still needs another five minutes or so.",
-                "The main dish still needs another ten minutes or so.",
-                "The main course still needs another ten minutes exactly."
+                "The main course still needs another five minutes or so."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -186,15 +166,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice more versus less, and green versus runner.",
             "explanation": "'Green beans' often blends into 'greem beans' at speed, the 'n' shifting to match the 'b' sound. 'More' and 'less' seasoning are opposites, so that word decides the whole comment.",
             "textToSpeak": "These green beans could use a bit more seasoning.",
             "options": [
                 "These green beans could use a bit more seasoning.",
-                "These green beans could use a bit less seasoning.",
-                "These runner beans could use a bit more seasoning.",
-                "These green beans should use a bit more seasoning."
+                "These green beans could use a bit less seasoning."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -204,17 +182,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L114_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'quick' versus 'proper', and bite versus snack.",
             "explanation": "'Jus' enough' (barely enough) and 'almost enough' (not quite enough) carry a subtly different meaning, so listen closely. 'Bite' and 'snack' are near-synonyms too, so pin down the exact word.",
             "textToSpeak": "We've got jus' enough time to grab a quick bite.",
             "options": [
-                "We've got jus' enough time to grab a proper bite.",
-                "We've got almost enough time to grab a quick bite.",
-                "We've got jus' enough time to grab a quick snack.",
-                "We've got jus' enough time to grab a quick bite."
+                "We've got jus' enough time to grab a quick bite.",
+                "We've got jus' enough time to grab a quick snack."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -222,17 +198,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L115_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch twenty versus thirty, and this versus that.",
             "explanation": "This longer sentence stacks 'dunno' with a tricky number comparison, ten versus twenty versus thirty, all sharing that same '-ty' ending that blurs at speed. Take your time separating each piece.",
             "textToSpeak": "I dunno if we've got ten minutes or twenty to catch this train.",
             "options": [
-                "I dunno if we've got ten minutes or twenty to catch that train.",
-                "I dunno if we've got ten minutes or thirty to catch this train.",
                 "I dunno if we've got ten minutes or twenty to catch this train.",
                 "We dunno if we've got ten minutes or twenty to catch this train."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -240,17 +214,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L115_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch packed versus late, and next versus last.",
             "explanation": "This sentence stacks four separate reductions - 'nex'', 'prolly', 'gonna', and 'jus'' - about as dense as casual speech gets. Decode it piece by piece: next, probably, going to, and just.",
             "textToSpeak": "The nex' train's prolly gonna be packed, jus' so you know.",
             "options": [
-                "The nex' train's prolly gonna be late, jus' so you know.",
-                "The las' train's prolly gonna be packed, jus' so you know.",
                 "The nex' train's prolly gonna be packed, jus' so you know.",
                 "The nex' train's prolly gonna be packed, jus' so you're aware."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -258,17 +230,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L115_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch behind versus ahead, and 'mus' versus 'could'.",
             "explanation": "'Behind' and 'ahead' of schedule are opposites, so that word decides whether this is stressful news or good news. 'Mus' be' (a confident guess) and 'could be' (just a possibility) also carry different levels of certainty.",
             "textToSpeak": "We mus' be running about ten minutes behind schedule now.",
             "options": [
-                "We mus' be running about ten minutes behind schedule now.",
                 "We mus' be running about ten minutes ahead of schedule now.",
-                "We mus' be running about twenty minutes behind schedule now.",
-                "We could be running about ten minutes behind schedule now."
+                "We mus' be running about ten minutes behind schedule now."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -276,17 +246,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L116_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch crashing versus freezing, and the exact interval.",
             "explanation": "'Every ten minutes' packs a number into the middle of a sentence, exactly where it's easiest to lose focus. Crashing and freezing are different tech problems too, so listen for the specific word.",
             "textToSpeak": "I dunno why this keeps crashing every ten minutes or so.",
             "options": [
-                "I dunno why this keeps crashing every ten minutes or so.",
                 "I dunno why this keeps crashing every twenty minutes or so.",
-                "I dunno why this keeps freezing every ten minutes or so.",
-                "We dunno why this keeps crashing every ten minutes or so."
+                "I dunno why this keeps crashing every ten minutes or so."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -294,17 +262,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L116_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice firmware versus software, and update versus upgrade.",
             "explanation": "'Firmware' and 'software' are related but different things, so the exact word really matters here. 'Update' and 'upgrade' are also close enough in meaning to require careful listening.",
             "textToSpeak": "This'll prolly need a firmware update before it'll work properly.",
             "options": [
-                "This'll prolly need a firmware update before it'll work again.",
-                "This'll prolly need a software update before it'll work properly.",
-                "This'll prolly need a firmware upgrade before it'll work properly.",
-                "This'll prolly need a firmware update before it'll work properly."
+                "This'll prolly need a firmware update before it'll work properly.",
+                "This'll prolly need a firmware upgrade before it'll work properly."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -312,15 +278,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L116_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch next versus last, and everyone versus most people.",
             "explanation": "This sentence stacks 'jus'' with the elided 'nex'', two consonant-cluster reductions close together. 'Everyone' and 'most people' describe very different rollout sizes, so listen for the precise phrase.",
             "textToSpeak": "We jus' got the nex' version rolled out to everyone.",
             "options": [
                 "We jus' got the nex' version rolled out to most people.",
-                "We jus' got the nex' version rolled out to everyone.",
-                "We jus' got the las' version rolled out to everyone.",
-                "We've jus' got the nex' version rolled out to everyone."
+                "We jus' got the nex' version rolled out to everyone."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -330,15 +294,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch soon versus now, and 'due' versus 'overdue'.",
             "explanation": "'Due' (on schedule) and 'overdue' (past the schedule) suggest slightly different levels of urgency, so listen for the precise word. Doctor versus nurse is also worth confirming.",
             "textToSpeak": "The doctor said I mus' be due for a check-up soon.",
             "options": [
                 "The doctor said I mus' be due for a check-up soon.",
-                "The doctor said I mus' be due for a check-up now.",
-                "The nurse said I mus' be due for a check-up soon.",
-                "The doctor said I mus' be overdue for a check-up soon."
+                "The doctor said I mus' be due for a check-up now."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -348,17 +310,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch ate versus touched, and rash versus mark.",
             "explanation": "This longer sentence stacks 'dunno' and 'jus'' together while also asking you to catch the cause: something eaten or something touched, both plausible triggers for a reaction.",
             "textToSpeak": "I dunno if this rash is jus' a reaction to something I ate.",
             "options": [
-                "I dunno if this rash is jus' a reaction to something I touched.",
-                "I dunno if this mark is jus' a reaction to something I ate.",
                 "We dunno if this rash is jus' a reaction to something I ate.",
                 "I dunno if this rash is jus' a reaction to something I ate."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -366,17 +326,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L117_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch days versus weeks, and 'prolly' versus 'definitely'.",
             "explanation": "'Prolly' (a likely guess) and 'definitely' (a certainty) suggest very different confidence levels in the prediction. 'Days' and 'weeks' are also wildly different recovery times.",
             "textToSpeak": "You'll prolly feel a bit sore for the nex' couple days.",
             "options": [
-                "You'll prolly feel a bit sore for the nex' couple weeks.",
-                "You'll prolly feel a bit stiff for the nex' couple days.",
-                "You'll prolly feel a bit sore for the nex' couple days.",
-                "You'll definitely feel a bit sore for the nex' couple days."
+                "You'll definitely feel a bit sore for the nex' couple days.",
+                "You'll prolly feel a bit sore for the nex' couple days."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -384,17 +342,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L118_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact numbers, and I versus we.",
             "explanation": "This sentence buries two numbers close together, ten and fifteen, exactly the kind of detail fast speech loves to blur. Slow each one down separately as you listen.",
             "textToSpeak": "I dunno if we've got ten minutes or fifteen left for this test.",
             "options": [
-                "I dunno if we've got ten minutes or twenty left for this test.",
-                "I dunno if we've got five minutes or fifteen left for this test.",
-                "We dunno if we've got ten minutes or fifteen left for this test.",
-                "I dunno if we've got ten minutes or fifteen left for this test."
+                "I dunno if we've got ten minutes or fifteen left for this test.",
+                "We dunno if we've got ten minutes or fifteen left for this test."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -402,15 +358,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L118_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact number, and redo versus review.",
             "explanation": "'Redo' (do it again) and 'review' (check it over) require different amounts of effort, so listen for the exact verb. He versus she is also worth confirming.",
             "textToSpeak": "He'll prolly need to redo the nex' two questions.",
             "options": [
                 "He'll prolly need to redo the nex' two questions.",
-                "She'll prolly need to redo the nex' three questions.",
-                "She'll prolly need to review the nex' two questions.",
-                "She'll prolly need to redo the nex' two questions."
+                "She'll prolly need to redo the nex' three questions."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -420,69 +374,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L118_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch updated versus shortened, and read versus see.",
             "explanation": "This sentence stacks 'jus'' with the elided 'mus'', two reductions layered together in a school context. 'Updated' and 'shortened' describe very different changes to the list.",
             "textToSpeak": "We jus' found out the mus'-read list got updated again.",
             "options": [
-                "We jus' found out the mus'-read list got shortened again.",
-                "We jus' found out the mus'-see list got updated again.",
                 "We've jus' found out the mus'-read list got updated again.",
                 "We jus' found out the mus'-read list got updated again."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L119_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch the exact time, next versus last, and 'prolly' versus 'definitely'.",
-            "explanation": "This sentence layers three reductions - 'nex'', 'prolly', and 'gonna' - alongside a tricky number right at the end. Take it apart carefully: next, probably, going to, and ten minutes.",
-            "textToSpeak": "The nex' concert's prolly gonna sell out within ten minutes.",
-            "options": [
-                "The nex' concert's prolly gonna sell out within ten minutes.",
-                "The nex' concert's prolly gonna sell out within twenty minutes.",
-                "The las' concert's prolly gonna sell out within ten minutes.",
-                "The nex' concert's definitely gonna sell out within ten minutes."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L119_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch better versus worse, and season versus episode.",
-            "explanation": "'Better' and 'worse' are opposites, so that word decides the whole opinion being shared. 'Season' and 'episode' are also different scales of a show, so listen for the exact one.",
-            "textToSpeak": "I dunno why this show only gets better with the nex' season.",
-            "options": [
-                "I dunno why this show only gets worse with the nex' season.",
-                "I dunno why this show only gets better with the nex' episode.",
-                "We dunno why this show only gets better with the nex' season.",
-                "I dunno why this show only gets better with the nex' season."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L119_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch summer versus year, and tickets versus seats.",
-            "explanation": "This sentence stacks 'jus'' with the elided 'mus'-see', a natural pairing of reductions in excited, casual speech. 'Summer' and 'year' describe very different timeframes.",
-            "textToSpeak": "We jus' got tickets for the mus'-see show of the summer.",
-            "options": [
-                "We jus' got tickets for the mus'-see show of the year.",
-                "We jus' got tickets for the mus'-see show of the summer.",
-                "We jus' got seats for the mus'-see show of the summer.",
-                "We've jus' got tickets for the mus'-see show of the summer."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -490,17 +388,63 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L119_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch the exact time, next versus last, and 'prolly' versus 'definitely'.",
+            "explanation": "This sentence layers three reductions - 'nex'', 'prolly', and 'gonna' - alongside a tricky number right at the end. Take it apart carefully: next, probably, going to, and ten minutes.",
+            "textToSpeak": "The nex' concert's prolly gonna sell out within ten minutes.",
+            "options": [
+                "The nex' concert's prolly gonna sell out within twenty minutes.",
+                "The nex' concert's prolly gonna sell out within ten minutes."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L119_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch better versus worse, and season versus episode.",
+            "explanation": "'Better' and 'worse' are opposites, so that word decides the whole opinion being shared. 'Season' and 'episode' are also different scales of a show, so listen for the exact one.",
+            "textToSpeak": "I dunno why this show only gets better with the nex' season.",
+            "options": [
+                "We dunno why this show only gets better with the nex' season.",
+                "I dunno why this show only gets better with the nex' season."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L119_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch summer versus year, and tickets versus seats.",
+            "explanation": "This sentence stacks 'jus'' with the elided 'mus'-see', a natural pairing of reductions in excited, casual speech. 'Summer' and 'year' describe very different timeframes.",
+            "textToSpeak": "We jus' got tickets for the mus'-see show of the summer.",
+            "options": [
+                "We jus' got tickets for the mus'-see show of the summer.",
+                "We jus' got tickets for the mus'-see show of the year."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L120_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch longest versus shortest, and next versus last.",
             "explanation": "This review question layers 'dunno' with the elided 'nex'' and a number right in the middle. 'Longest' and 'shortest' are opposites, so that word wraps up the whole feeling being described.",
             "textToSpeak": "I dunno why the nex' ten minutes always feel the longest.",
             "options": [
                 "I dunno why the nex' ten minutes always feel the shortest.",
-                "I dunno why the nex' ten minutes always feel the longest.",
-                "I dunno why the las' ten minutes always feel the longest.",
-                "We dunno why the nex' ten minutes always feel the longest."
+                "I dunno why the nex' ten minutes always feel the longest."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -510,17 +454,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact time, 'wrap up' versus 'start', and 'prolly' versus 'definitely'.",
             "explanation": "'Wrap up' (finish) and 'start' are opposite points in a task, so that verb decides the whole meaning. This sentence also stacks 'prolly' and 'jus'' together, a very natural combination in casual speech.",
             "textToSpeak": "It'll prolly jus' take me another ten minutes to wrap up.",
             "options": [
-                "It'll prolly jus' take me another twenty minutes to wrap up.",
-                "It'll prolly jus' take me another ten minutes to start.",
-                "It'll prolly jus' take me another ten minutes to wrap up.",
-                "It'll definitely jus' take me another ten minutes to wrap up."
+                "It'll definitely jus' take me another ten minutes to wrap up.",
+                "It'll prolly jus' take me another ten minutes to wrap up."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -528,17 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L120_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Zero in on 'now' versus 'soon', and whether it's 'jus' about' or 'almost'.",
             "explanation": "This closing question stacks three reductions in a row - 'mus'', 'jus'', and 'nex'' - the densest sentence in the tier so far. If you can decode all three smoothly, you're ready to move into even faster, more natural speech.",
             "textToSpeak": "We mus' be jus' about ready for the nex' step now.",
             "options": [
-                "We mus' be jus' about ready for the nex' step soon.",
-                "We mus' be almost ready for the nex' step now.",
                 "They mus' be jus' about ready for the nex' step now.",
                 "We mus' be jus' about ready for the nex' step now."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."

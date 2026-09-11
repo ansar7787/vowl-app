@@ -6,17 +6,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact time, and report versus email versus summary.",
             "explanation": "'Supposta' is the fast, spoken version of 'supposed to' - so reduced that the middle sounds almost disappear. Since the reduction itself doesn't change meaning, focus on the real details: the deadline and the document.",
             "textToSpeak": "You're supposta send that report by five.",
             "options": [
-                "You're supposta send that report by four.",
-                "You're supposta send that email by five.",
-                "You're supposta send that summary by five.",
-                "You're supposta send that report by five."
+                "You're supposta send that report by five.",
+                "You're supposta send that summary by five."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -24,17 +22,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice the exact time, and meet versus call.",
             "explanation": "'Meet' and 'call' lead to very different afternoons, so that verb is essential. 'Client' and 'manager' are also different people entirely, so listen carefully.",
             "textToSpeak": "We're supposta meet the client at three.",
             "options": [
-                "We're supposta meet the client at two.",
                 "We're supposta meet the client at three.",
-                "We're supposta call the client at three.",
-                "We're supposta meet the manager at three."
+                "We're supposta meet the client at two."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -42,17 +38,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L71_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch lead versus join, and today versus tomorrow.",
             "explanation": "'Lead' (be in charge) and 'join' (just attend) are very different roles in a meeting, so listen for the specific verb. He versus she is also worth double-checking.",
             "textToSpeak": "He's supposta lead the meeting today, right?",
             "options": [
-                "She's supposta join the meeting today, right?",
                 "He's supposta lead the meeting today, right?",
-                "She's supposta lead the meeting tomorrow, right?",
-                "She's supposta lead the meeting today, right?"
+                "She's supposta join the meeting today, right?"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -60,17 +54,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch summer versus winter, and visit versus call.",
             "explanation": "'Usta' is how 'used to' sounds in fast speech, describing a habit from the past that's no longer true. The season and the action are what actually carry the story here.",
             "textToSpeak": "We usta visit my grandparents every summer.",
             "options": [
-                "We usta visit my grandparents every winter.",
-                "We usta call my grandparents every summer.",
                 "They usta visit my grandparents every summer.",
                 "We usta visit my grandparents every summer."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -78,17 +70,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice kid versus teen, and dark versus spiders.",
             "explanation": "'Usta be' (a past habit, now gone) is very different from 'am usta being' (a current tolerance) - a subtle but real grammar difference. 'Kid' and 'teen' also place the memory at different ages.",
             "textToSpeak": "I usta be scared of the dark as a kid.",
             "options": [
-                "I usta be scared of the dark as a teen.",
-                "I usta be scared of spiders as a kid.",
-                "I usta be scared of the dark as a kid.",
-                "I'm usta being scared of the dark as a kid."
+                "I'm usta being scared of the dark as a kid.",
+                "I usta be scared of the dark as a kid."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -96,15 +86,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L72_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch argue versus laugh, and parents versus grandparents.",
             "explanation": "'Argue' and 'laugh' paint completely different pictures of the same memory, so that verb is essential. 'Strangest' and 'smallest' are also close enough that you need to hear the exact word.",
             "textToSpeak": "My parents usta argue about the strangest things.",
             "options": [
                 "My parents usta argue about the strangest things.",
-                "My parents usta argue about the smallest things.",
-                "My grandparents usta argue about the strangest things.",
-                "My parents usta laugh about the strangest things."
+                "My parents usta argue about the smallest things."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -114,33 +102,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L73_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch jackets versus coats, and these versus those.",
             "explanation": "'Tryna' packs 'trying to' into one fast syllable, a very common reduction in casual speech. 'Decide' and 'choose' are near-synonyms, so listen for the specific verb used.",
             "textToSpeak": "I'm tryna decide between these two jackets.",
             "options": [
-                "I'm tryna decide between these two jackets.",
                 "I'm tryna decide between these two coats.",
-                "I'm tryna choose between these two jackets.",
-                "I'm tryna decide between those two jackets."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L73_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice month versus year, and budget versus plan.",
-            "explanation": "'This month' and 'this year' describe very different timeframes for the same goal, so listen carefully. 'Budget' and 'plan' are related but different things too.",
-            "textToSpeak": "We're tryna stick to a budget this month.",
-            "options": [
-                "We're tryna stick to a budget this year.",
-                "We're tryna stick to a budget this month.",
-                "We're tryna stick to a plan this month.",
-                "They're tryna stick to a budget this month."
+                "I'm tryna decide between these two jackets."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -148,19 +116,33 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L73_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Notice month versus year, and budget versus plan.",
+            "explanation": "'This month' and 'this year' describe very different timeframes for the same goal, so listen carefully. 'Budget' and 'plan' are related but different things too.",
+            "textToSpeak": "We're tryna stick to a budget this month.",
+            "options": [
+                "We're tryna stick to a budget this month.",
+                "We're tryna stick to a budget this year."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L73_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch return versus exchange, and receipt versus packaging.",
             "explanation": "'Return' (get money back) and 'exchange' (swap for something else) are different requests entirely, so listen for the exact verb. 'Receipt' and 'packaging' are also easy to mix up quickly.",
             "textToSpeak": "She's tryna return this without the receipt.",
             "options": [
-                "She's tryna return this without the packaging.",
-                "She's tryna exchange this without the receipt.",
-                "She's tryna return that without the receipt.",
-                "She's tryna return this without the receipt."
+                "She's tryna return this without the receipt.",
+                "She's tryna return that without the receipt."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -168,17 +150,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact number, and serve versus feed.",
             "explanation": "'Serve' and 'feed' mean almost the same thing here, so listen for the precise word rather than the general idea. The number of people is also worth locking in exactly.",
             "textToSpeak": "This recipe's supposta serve about six people.",
             "options": [
-                "This recipe's supposta serve about eight people.",
-                "This recipe's supposta feed about six people.",
-                "That recipe's supposta serve about six people.",
-                "This recipe's supposta serve about six people."
+                "This recipe's supposta serve about six people.",
+                "That recipe's supposta serve about six people."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -186,15 +166,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice rest versus rise, and dough versus sauce.",
             "explanation": "'Rest' and 'rise' are different steps in baking, so that verb genuinely matters. 'An hour' versus 'a while' is also a big difference if you're following a recipe closely.",
             "textToSpeak": "You're supposta let the dough rest for an hour.",
             "options": [
                 "You're supposta let the dough rest for an hour.",
-                "You're supposta let the dough rest for a while.",
-                "You're supposta let the dough rise for an hour.",
-                "You're supposta let the sauce rest for an hour."
+                "You're supposta let the dough rest for a while."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -204,105 +182,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L74_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch tonight versus tomorrow versus later, and dish versus drink.",
             "explanation": "'Dish' and 'drink' are very different contributions to a gathering, so listen for the exact word. The timing words here all sound short and quick, so catch them precisely.",
             "textToSpeak": "We're supposta bring a dish to share tonight.",
             "options": [
-                "We're supposta bring a dish to share tomorrow.",
-                "We're supposta bring a drink to share tonight.",
-                "We're supposta bring a dish to share later.",
-                "We're supposta bring a dish to share tonight."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L75_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch quieter versus busier, and area versus street.",
-            "explanation": "'Quieter' and 'busier' are opposites, so that's the word that decides the whole comment about how the place has changed. 'A lot' and 'a little' also describe how big that change really was.",
-            "textToSpeak": "This area usta be a lot quieter.",
-            "options": [
-                "This area usta be a lot busier.",
-                "This street usta be a lot quieter.",
-                "This area usta be a little quieter.",
-                "This area usta be a lot quieter."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L75_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice fly versus drive, and 'all the time' versus 'every year'.",
-            "explanation": "'Fly' and 'drive' describe completely different journeys, so that verb is the real content here. 'All the time' and 'every year' also suggest very different levels of frequency.",
-            "textToSpeak": "We usta fly this route all the time.",
-            "options": [
-                "We usta fly this route every year.",
-                "We usta drive this route all the time.",
-                "We usta fly this route all the time.",
-                "They usta fly this route all the time."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L75_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch terrible versus mild, and jet lag versus motion sickness.",
-            "explanation": "'Terrible' and 'mild' describe very different levels of discomfort, so listen for the exact adjective. 'Jet lag' and 'motion sickness' are also different travel problems entirely.",
-            "textToSpeak": "I usta get terrible jet lag on this trip.",
-            "options": [
-                "I usta get terrible jet lag on that trip.",
-                "I usta get terrible jet lag on this trip.",
-                "I usta get mild jet lag on this trip.",
-                "I usta get terrible motion sickness on this trip."
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L76_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch crashing versus freezing, and this versus that.",
-            "explanation": "'Crashing' and 'freezing' are different tech problems, so listen for the exact word describing the issue. 'Figure out' and 'work out' are near-synonyms too, so catch the specific phrase.",
-            "textToSpeak": "I'm tryna figure out why this keeps crashing.",
-            "options": [
-                "I'm tryna figure out why this keeps freezing.",
-                "I'm tryna work out why this keeps crashing.",
-                "I'm tryna figure out why this keeps crashing.",
-                "I'm tryna figure out why that keeps crashing."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L76_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice the exact day, and 'all' versus 'some'.",
-            "explanation": "'All' and 'some' of the data are very different amounts of work, so that word really matters. 'Migrate' and 'transfer' are close synonyms in tech talk, so listen for the specific one used.",
-            "textToSpeak": "We're tryna migrate all the data by Friday.",
-            "options": [
-                "We're tryna migrate all the data by Friday.",
-                "We're tryna migrate all the data by Monday.",
-                "We're tryna transfer all the data by Friday.",
-                "We're tryna migrate some of the data by Friday."
+                "We're supposta bring a dish to share tonight.",
+                "We're supposta bring a dish to share later."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -310,17 +196,95 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L75_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch quieter versus busier, and area versus street.",
+            "explanation": "'Quieter' and 'busier' are opposites, so that's the word that decides the whole comment about how the place has changed. 'A lot' and 'a little' also describe how big that change really was.",
+            "textToSpeak": "This area usta be a lot quieter.",
+            "options": [
+                "This area usta be a lot quieter.",
+                "This area usta be a little quieter."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L75_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Notice fly versus drive, and 'all the time' versus 'every year'.",
+            "explanation": "'Fly' and 'drive' describe completely different journeys, so that verb is the real content here. 'All the time' and 'every year' also suggest very different levels of frequency.",
+            "textToSpeak": "We usta fly this route all the time.",
+            "options": [
+                "We usta fly this route all the time.",
+                "They usta fly this route all the time."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L75_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch terrible versus mild, and jet lag versus motion sickness.",
+            "explanation": "'Terrible' and 'mild' describe very different levels of discomfort, so listen for the exact adjective. 'Jet lag' and 'motion sickness' are also different travel problems entirely.",
+            "textToSpeak": "I usta get terrible jet lag on this trip.",
+            "options": [
+                "I usta get terrible jet lag on this trip.",
+                "I usta get terrible jet lag on that trip."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L76_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch crashing versus freezing, and this versus that.",
+            "explanation": "'Crashing' and 'freezing' are different tech problems, so listen for the exact word describing the issue. 'Figure out' and 'work out' are near-synonyms too, so catch the specific phrase.",
+            "textToSpeak": "I'm tryna figure out why this keeps crashing.",
+            "options": [
+                "I'm tryna figure out why that keeps crashing.",
+                "I'm tryna figure out why this keeps crashing."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L76_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Notice the exact day, and 'all' versus 'some'.",
+            "explanation": "'All' and 'some' of the data are very different amounts of work, so that word really matters. 'Migrate' and 'transfer' are close synonyms in tech talk, so listen for the specific one used.",
+            "textToSpeak": "We're tryna migrate all the data by Friday.",
+            "options": [
+                "We're tryna migrate all the data by Monday.",
+                "We're tryna migrate all the data by Friday."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L76_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch office versus meeting, and set up versus fix.",
             "explanation": "'Set up' (install fresh) and 'fix' (repair something broken) describe different tasks entirely, so listen for the exact verb. He versus she is also worth double-checking.",
             "textToSpeak": "She's tryna set up the printer for the office.",
             "options": [
                 "She's tryna set up the printer for the office.",
-                "She's tryna set up the printer for the meeting.",
-                "She's tryna fix the printer for the office.",
-                "He's tryna set up the printer for the office."
+                "She's tryna set up the printer for the meeting."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -330,17 +294,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L77_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch with versus before, and food versus water.",
             "explanation": "'With food' and 'before food' completely change how this medicine should be taken, so that preposition is critical. 'This' and 'that' medicine also need to be told apart clearly.",
             "textToSpeak": "You're supposta take this medicine with food.",
             "options": [
-                "You're supposta take this medicine before food.",
-                "You're supposta take that medicine with food.",
-                "You're supposta take this medicine with water.",
-                "You're supposta take this medicine with food."
+                "You're supposta take this medicine with food.",
+                "You're supposta take this medicine with water."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -348,17 +310,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L77_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'more often' versus 'less often', and headaches versus stomach aches.",
             "explanation": "'More often' and 'less often' are opposites, so that phrase tells you whether things have gotten better or worse. 'Headaches' and 'stomach aches' are also different complaints entirely.",
             "textToSpeak": "I usta get headaches a lot more often.",
             "options": [
-                "I usta get headaches a lot less often.",
-                "I usta get migraines a lot more often.",
                 "I usta get headaches a lot more often.",
                 "I usta get stomach aches a lot more often."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -366,51 +326,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L77_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice 'cut down on' versus 'cut out', and processed versus sugary.",
             "explanation": "'Cut down on' (reduce) and 'cut out' (stop completely) are different levels of commitment, so listen for the exact phrase. 'Processed' and 'sugary' food are related but distinct categories too.",
             "textToSpeak": "We're tryna cut down on processed food.",
             "options": [
-                "We're tryna cut down on sugary food.",
-                "We're tryna cut out processed food.",
-                "We're tryna cut down on processed food.",
-                "They're tryna cut down on processed food."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L78_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch the exact time, and submit versus finish.",
-            "explanation": "'Submit' (hand it in) and 'finish' (just complete it) are different stages of the same task, so listen for the precise verb. 'Midnight' and 'noon' are also very different deadlines.",
-            "textToSpeak": "We're supposta submit this before midnight.",
-            "options": [
-                "We're supposta submit this before noon.",
-                "We're supposta submit that before midnight.",
-                "We're supposta finish this before midnight.",
-                "We're supposta submit this before midnight."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L78_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice struggle versus enjoy, and maths versus science.",
-            "explanation": "'Struggle with' and 'enjoy' describe opposite feelings about the same subject, so that verb changes the whole story. 'Maths' and 'science' are also different subjects entirely.",
-            "textToSpeak": "I usta struggle with maths a lot more.",
-            "options": [
-                "I usta struggle with science a lot more.",
-                "I usta struggle with maths a lot more.",
-                "I usta struggle with maths a little more.",
-                "I usta enjoy maths a lot more."
+                "They're tryna cut down on processed food.",
+                "We're tryna cut down on processed food."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -418,19 +340,49 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L78_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch the exact time, and submit versus finish.",
+            "explanation": "'Submit' (hand it in) and 'finish' (just complete it) are different stages of the same task, so listen for the precise verb. 'Midnight' and 'noon' are also very different deadlines.",
+            "textToSpeak": "We're supposta submit this before midnight.",
+            "options": [
+                "We're supposta finish this before midnight.",
+                "We're supposta submit this before midnight."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L78_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Notice struggle versus enjoy, and maths versus science.",
+            "explanation": "'Struggle with' and 'enjoy' describe opposite feelings about the same subject, so that verb changes the whole story. 'Maths' and 'science' are also different subjects entirely.",
+            "textToSpeak": "I usta struggle with maths a lot more.",
+            "options": [
+                "I usta struggle with maths a lot more.",
+                "I usta struggle with science a lot more."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L78_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch classes versus work, and missed versus skipped.",
             "explanation": "'Missed' (couldn't attend) and 'skipped' (chose not to attend) suggest very different reasons for falling behind. He versus she is also worth confirming.",
             "textToSpeak": "She's tryna catch up on the classes she missed.",
             "options": [
-                "She's tryna catch up on the classes she skipped.",
-                "She's tryna catch up on the work she missed.",
                 "He's tryna catch up on the classes she missed.",
                 "She's tryna catch up on the classes she missed."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -438,17 +390,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'sell out' versus 'run out', and tickets versus seats.",
             "explanation": "'Sell out' and 'run out' mean almost the same thing here, so listen for the precise phrase rather than the general idea. 'Tickets' and 'seats' are also close enough to require careful listening.",
             "textToSpeak": "We're supposta get tickets before they sell out.",
             "options": [
-                "We're supposta get tickets before they run out.",
-                "We're supposta buy tickets before they sell out.",
                 "We're supposta get seats before they sell out.",
                 "We're supposta get tickets before they sell out."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -456,15 +406,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice constantly versus occasionally, and listen versus play.",
             "explanation": "'Constantly' and 'occasionally' are near-opposites in frequency, so that adverb really matters. 'Listen to' and 'play' are also different actions, so catch the exact verb.",
             "textToSpeak": "I usta listen to this song constantly.",
             "options": [
                 "I usta listen to this song constantly.",
-                "I usta listen to this song occasionally.",
-                "I usta listen to that song constantly.",
-                "I usta play this song constantly."
+                "I usta listen to this song occasionally."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -474,15 +422,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L79_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch season versus series, and 'this weekend' versus 'this week'.",
             "explanation": "'Season' and 'series' are close terms for TV shows, so listen for the exact one used. 'This weekend' and 'this week' also describe different amounts of time.",
             "textToSpeak": "They're tryna get through the whole season this weekend.",
             "options": [
                 "They're tryna get through the whole series this weekend.",
-                "They're tryna get through the whole season this weekend.",
-                "They're tryna get through half the season this weekend.",
-                "They're tryna get through the whole season this week."
+                "They're tryna get through the whole season this weekend."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -492,15 +438,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact frequency, and these versus those.",
             "explanation": "'Twice' and 'once' a week are very different care instructions, so that number is essential. 'Water' and 'feed' are also different actions when it comes to plants.",
             "textToSpeak": "You're supposta water these plants twice a week.",
             "options": [
                 "You're supposta water these plants once a week.",
-                "You're supposta water these plants twice a week.",
-                "You're supposta water those plants twice a week.",
-                "You're supposta feed these plants twice a week."
+                "You're supposta water these plants twice a week."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -510,17 +454,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice hate versus love, and early versus late.",
             "explanation": "This sentence contrasts a past feeling with a present one, so both halves matter: what you 'usta' feel, and how things stand now. Catch 'hate' or 'love', and 'early' or 'late', at each end.",
             "textToSpeak": "I usta hate waking up early, but now I don't mind.",
             "options": [
-                "I usta hate waking up early, but now I don't mind.",
                 "I usta hate waking up early, but now I love it.",
-                "I usta love waking up early, but now I don't mind.",
-                "I usta hate waking up late, but now I don't mind."
+                "I usta hate waking up early, but now I don't mind."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -528,17 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L80_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch arrive versus leave, and sorted versus ready.",
             "explanation": "'Arrive' and 'leave' are opposite moments for your guests, so that verb decides the urgency here. 'Sorted' and 'ready' are near-synonyms too, so listen for the exact word.",
             "textToSpeak": "We're tryna get everything sorted before the guests arrive.",
             "options": [
-                "We're tryna get everything sorted before the guests leave.",
-                "We're tryna get everything ready before the guests arrive.",
                 "We're tryna get everything sorted before the guests arrive.",
                 "We're tryna get most things sorted before the guests arrive."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."

@@ -6,15 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L61_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch sooner versus later, and 'coulda' versus 'couldn't have'.",
             "explanation": "'Coulda' is how 'could have' sounds in fast, casual speech - a soft 'uh' where 'have' used to be. Notice how different that is from 'couldn't have', which keeps an extra, audible negative syllable.",
             "textToSpeak": "I coulda finished it sooner if I'd known.",
             "options": [
                 "I coulda finished it sooner if I'd known.",
-                "I coulda finished it sooner if I'd asked.",
-                "I coulda finished it later if I'd known.",
-                "I couldn't have finished it sooner if I'd known."
+                "I coulda finished it sooner if I'd asked."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -24,15 +22,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L61_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch taxi versus bus, and walking versus driving.",
             "explanation": "'Coulda' packs 'could have' into one relaxed sound, useful to recognise, but the real content here is in the nouns: taxi or bus, walking or driving.",
             "textToSpeak": "We coulda taken a taxi instead of walking.",
             "options": [
                 "We coulda taken a bus instead of walking.",
-                "We coulda taken a taxi instead of walking.",
-                "We coulda taken a taxi instead of driving.",
-                "They coulda taken a taxi instead of walking."
+                "We coulda taken a taxi instead of walking."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -42,15 +38,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L61_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice earlier versus sooner, and this versus that.",
             "explanation": "'Earlier' and 'sooner' are near-synonyms, both meaning 'before now', so the exact word matters here. Also confirm he versus she, and this versus that - small words carrying real meaning.",
             "textToSpeak": "He coulda mentioned that detail a bit earlier.",
             "options": [
                 "She coulda mentioned that detail a bit sooner.",
-                "He coulda mentioned that detail a bit earlier.",
-                "She coulda mentioned this detail a bit earlier.",
-                "She coulda mentioned that detail a bit earlier."
+                "He coulda mentioned that detail a bit earlier."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -60,17 +54,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L62_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch called versus texted, and before versus after.",
             "explanation": "'Shoulda' softens 'should have' the same way 'coulda' softens 'could have' - a light 'uh' replacing 'have'. 'Before' and 'after' flip the timing completely, so listen carefully.",
             "textToSpeak": "I shoulda called first before coming over.",
             "options": [
-                "I shoulda called first before dropping by.",
-                "I shoulda texted first before coming over.",
                 "I shoulda called first after coming over.",
                 "I shoulda called first before coming over."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -78,17 +70,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L62_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice months versus weeks, and this versus that.",
             "explanation": "'Months ago' and 'weeks ago' both describe the past but very different lengths of it, so that detail really matters. 'Booked' and 'visited' are also different actions entirely.",
             "textToSpeak": "We shoulda booked this place months ago.",
             "options": [
-                "We shoulda booked this place weeks ago.",
-                "We shoulda visited this place months ago.",
                 "We shoulda booked that place months ago.",
                 "We shoulda booked this place months ago."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -96,15 +86,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L62_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch change versus delay, and us versus me.",
             "explanation": "'Change' and 'delay' are related family-planning words but describe different problems. 'Us' and 'me' also change how many people were actually affected.",
             "textToSpeak": "They shoulda told us about the change sooner.",
             "options": [
                 "They shoulda told us about the change earlier.",
-                "They shoulda told us about the change sooner.",
-                "They shoulda told us about the delay sooner.",
-                "They shoulda told me about the change sooner."
+                "They shoulda told us about the change sooner."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -114,17 +102,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L63_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch bigger versus cheaper, bought versus tried, and it versus that.",
             "explanation": "'Woulda' is 'would have' relaxed into one quick sound, used for a hypothetical about something that didn't happen. The real decision-maker in this sentence is the reason given: cheaper or bigger.",
             "textToSpeak": "I woulda bought it if it was cheaper.",
             "options": [
-                "I woulda bought it if it was bigger.",
-                "I woulda bought that if it was cheaper.",
-                "I woulda tried it if it was cheaper.",
-                "I woulda bought it if it was cheaper."
+                "I woulda bought it if it was cheaper.",
+                "I woulda tried it if it was cheaper."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -132,17 +118,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L63_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice called versus texted, and needed versus wanted.",
             "explanation": "'Needed' (a requirement) and 'wanted' (a preference) suggest slightly different levels of urgency, so listen for the exact word. He versus she is also a quick, easy swap to miss.",
             "textToSpeak": "She woulda called if she needed anything.",
             "options": [
-                "She woulda called if she wanted anything.",
-                "She woulda texted if she needed anything.",
                 "He woulda called if she needed anything.",
                 "She woulda called if she needed anything."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -150,17 +134,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L63_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch bigger versus smaller, and size versus option.",
             "explanation": "'Bigger' and 'smaller' are opposites, so nail that word down first. 'Size' and 'option' are also close enough in this context that you need to hear the actual word.",
             "textToSpeak": "We woulda gone with the bigger size.",
             "options": [
-                "We woulda gone with the smaller size.",
-                "We woulda gone with the bigger option.",
-                "We woulda gone with the bigger size.",
-                "They woulda gone with the bigger size."
+                "They woulda gone with the bigger size.",
+                "We woulda gone with the bigger size."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -168,15 +150,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L64_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'a lot' versus 'a little', and 'musta' versus 'must'.",
             "explanation": "'Musta' expresses a confident guess about the past, 'must have put in effort', while plain 'must' would be a rule about right now. That reduced 'have' changes the whole meaning.",
             "textToSpeak": "You musta put a lot of effort into this.",
             "options": [
                 "You musta put a little effort into this.",
-                "You musta put a lot of effort into this.",
-                "You musta put a lot of effort into that.",
-                "You must put a lot of effort into this."
+                "You musta put a lot of effort into this."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -186,17 +166,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L64_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice spice versus sugar, and tonight versus today.",
             "explanation": "'Spice' and 'sugar' would make the dish taste completely different, so that noun is the real clue. 'Chef' and 'waiter' also play very different roles in a kitchen.",
             "textToSpeak": "The chef musta added extra spice tonight.",
             "options": [
-                "The chef musta added extra spice tonight.",
                 "The chef musta added extra sugar tonight.",
-                "The chef musta added extra spice today.",
-                "The waiter musta added extra spice tonight."
+                "The chef musta added extra spice tonight."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -204,15 +182,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L64_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch save versus book, and remembered versus forgotten.",
             "explanation": "'Remembered' and 'forgotten' are direct opposites, so that verb decides the whole story. 'Table' and 'seats' are close enough in meaning that you need the exact word too.",
             "textToSpeak": "They musta forgotten to save our table.",
             "options": [
                 "They musta forgotten to save our table.",
-                "They musta forgotten to book our table.",
-                "They musta forgotten to save our seats.",
-                "They musta remembered to save our table."
+                "They musta forgotten to book our table."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -222,15 +198,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L65_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch flights versus hotels, and 'coulda' versus 'shoulda'.",
             "explanation": "'Coulda' (it was possible) and 'shoulda' (it would have been wise) suggest slightly different regrets. 'Flights' and 'hotels' also completely change what's being discussed.",
             "textToSpeak": "We coulda gotten a better deal on flights.",
             "options": [
                 "We coulda gotten a better deal on hotels.",
-                "We coulda gotten a better deal on flights.",
-                "We coulda gotten a cheaper deal on flights.",
-                "We shoulda gotten a better deal on flights."
+                "We coulda gotten a better deal on flights."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -240,15 +214,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L65_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice shoes versus socks, and packed versus brought.",
             "explanation": "'Packed' and 'brought' overlap in meaning around travel, so listen for the exact verb. 'Shoes' and 'socks' are also easy to mix up if you're not paying full attention.",
             "textToSpeak": "I shoulda packed an extra pair of shoes.",
             "options": [
                 "I shoulda packed an extra pair of shoes.",
-                "I shoulda packed an extra pair of socks.",
-                "I shoulda packed one extra pair of shoes.",
-                "I shoulda brought an extra pair of shoes."
+                "I shoulda packed an extra pair of socks."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -258,17 +230,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L65_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch security versus customs, and queue versus crowd.",
             "explanation": "'Security' and 'customs' are different parts of an airport, so that noun really matters. 'Shoulda' and 'coulda' also sound close, so listen for the exact modal.",
             "textToSpeak": "You shoulda seen the queue at security.",
             "options": [
-                "You shoulda seen the queue at customs.",
-                "You shoulda seen the crowd at security.",
                 "You shoulda seen the queue at security.",
                 "You coulda seen the queue at security."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -276,51 +246,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L66_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice sooner versus later, and 'realised' versus 'known'.",
             "explanation": "'Realised' and 'known' are close synonyms for understanding something, so the exact word takes real focus. 'Woulda' (a hypothetical choice) and 'musta' (a guess) also mean very different things here.",
             "textToSpeak": "I woulda upgraded sooner if I'd realised.",
             "options": [
-                "I woulda upgraded sooner if I'd known.",
-                "I woulda upgraded later if I'd realised.",
                 "I musta upgraded sooner if I'd realised.",
                 "I woulda upgraded sooner if I'd realised."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L66_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch weeks versus months, and bug versus error.",
-            "explanation": "'Weeks' and 'months' both describe a length of time but very different ones. 'Bug' and 'error' are near-synonyms in tech talk too, so listen for the specific word.",
-            "textToSpeak": "This bug musta been there for weeks.",
-            "options": [
-                "This bug musta been there for months.",
-                "This error musta been there for weeks.",
-                "This bug musta gone there for weeks.",
-                "This bug musta been there for weeks."
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L66_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch mattered versus worked, and it versus that.",
-            "explanation": "'Mattered' and 'worked' lead to different conclusions about why she stayed quiet. He versus she, and it versus that, are also small words worth double-checking.",
-            "textToSpeak": "She woulda mentioned it if it mattered.",
-            "options": [
-                "She woulda mentioned it if it worked.",
-                "She woulda mentioned it if it mattered.",
-                "She woulda mentioned that if it mattered.",
-                "He woulda mentioned it if it mattered."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -328,19 +260,49 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L66_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch weeks versus months, and bug versus error.",
+            "explanation": "'Weeks' and 'months' both describe a length of time but very different ones. 'Bug' and 'error' are near-synonyms in tech talk too, so listen for the specific word.",
+            "textToSpeak": "This bug musta been there for weeks.",
+            "options": [
+                "This bug musta been there for weeks.",
+                "This bug musta gone there for weeks."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L66_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch mattered versus worked, and it versus that.",
+            "explanation": "'Mattered' and 'worked' lead to different conclusions about why she stayed quiet. He versus she, and it versus that, are also small words worth double-checking.",
+            "textToSpeak": "She woulda mentioned it if it mattered.",
+            "options": [
+                "She woulda mentioned it if it mattered.",
+                "She woulda mentioned it if it worked."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L67_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch eat versus have, and the exact meal.",
             "explanation": "'Whaddya' packs 'what do you' into one quick, tapped sound - so common in natural speech that the individual words almost disappear. Focus on the verb and the meal that follow it.",
             "textToSpeak": "Whaddya usually eat for breakfast these days?",
             "options": [
-                "Whaddya usually have for breakfast these days?",
-                "Whaddya usually eat for lunch these days?",
                 "Whaddya usually eat for breakfast these days?",
                 "Whaddya usually eat for dinner these days?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -348,17 +310,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L67_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice diet versus exercise, and this versus that.",
             "explanation": "'Whaddya think' is extremely common in casual speech, so recognising the reduction itself isn't the hard part - catching 'diet' versus 'exercise' plan is.",
             "textToSpeak": "Whaddya think of this new diet plan?",
             "options": [
-                "Whaddya think of this new exercise plan?",
-                "Whaddya think of that new diet plan?",
-                "Whaddya think about this new diet plan?",
-                "Whaddya think of this new diet plan?"
+                "Whaddya think of this new diet plan?",
+                "Whaddya think about this new diet plan?"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -366,15 +326,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L67_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch headaches versus dizziness, singular versus plural, and 'reckon's' versus 'think's'.",
             "explanation": "'Reckon' is an informal way of saying 'think' or 'guess', often used in casual health chats. 'Reckon's' packs 'reckon is' together too, so there's a lot of quick reduction stacked into one word.",
             "textToSpeak": "Whaddya reckon's really been causing the headaches?",
             "options": [
                 "Whaddya reckon's really been causing the headaches?",
-                "Whaddya reckon's really been causing the dizziness?",
-                "Whaddya reckon's really been causing the headache?",
-                "Whaddya think's really been causing the headaches?"
+                "Whaddya reckon's really been causing the dizziness?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -384,17 +342,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L68_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch test versus exam, and 'think' versus 'reckon'.",
             "explanation": "This sentence stacks two reductions, 'whaddya' (what do you) and 'gonna' (going to), exactly how a quick, casual question sounds between classmates. 'Think' and 'reckon' are near-synonyms too, so listen closely.",
             "textToSpeak": "Whaddya think the test's actually gonna cover?",
             "options": [
-                "Whaddya think the test's actually gonna include?",
-                "Whaddya think the exam's actually gonna cover?",
                 "Whaddya think the test's actually gonna cover?",
                 "Whaddya reckon the test's actually gonna cover?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -402,17 +358,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L68_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice tonight versus tomorrow, and study versus revise.",
             "explanation": "'Whaddya say' is a common casual way to suggest something, packing 'what do you' into one quick run of sound. The real proposal is in the details after it: when, and doing what exactly.",
             "textToSpeak": "Whaddya say we study together later tonight?",
             "options": [
-                "Whaddya say we study together later tomorrow?",
-                "Whaddya say we revise together later tonight?",
                 "Whaddya think we study together later tonight?",
                 "Whaddya say we study together later tonight?"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -420,17 +374,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L68_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch passing versus failing, and my versus her.",
             "explanation": "'Passing' and 'failing' are opposites, so that word decides the entire tone of the question. 'My' and 'her' are also quick, light pronouns easy to mishear in a rush.",
             "textToSpeak": "Whaddya reckon my chances are of passing?",
             "options": [
-                "Whaddya reckon my chances are of failing?",
-                "Whaddya reckon her chances are of passing?",
-                "Whaddya think my chances are of passing?",
-                "Whaddya reckon my chances are of passing?"
+                "Whaddya reckon my chances are of passing?",
+                "Whaddya think my chances are of passing?"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -438,17 +390,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L69_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch movie versus show, and 'coulda' versus 'shoulda'.",
             "explanation": "'Coulda been better' (it had potential) and 'shoulda been better' (it was a letdown given expectations) carry a slightly different tone. Also confirm movie versus show, and 'so much' versus 'a little' better.",
             "textToSpeak": "That movie coulda been so much better.",
             "options": [
-                "That movie coulda been a little better.",
-                "That show coulda been so much better.",
                 "That movie coulda been so much better.",
                 "That movie shoulda been so much better."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -456,15 +406,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L69_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice spent versus saved, and effects versus costume.",
             "explanation": "'Spent' and 'saved' are opposites, so that verb changes the whole comment about the budget. 'A fortune' and 'a lot' both mean a large amount, so listen for the specific phrase.",
             "textToSpeak": "They musta spent a fortune on those effects.",
             "options": [
                 "They musta spent a fortune on that costume.",
-                "They musta spent a fortune on those effects.",
-                "They musta saved a fortune on those effects.",
-                "They musta spent a lot on those effects."
+                "They musta spent a fortune on those effects."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -474,15 +422,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L69_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch cried versus laughed, and too versus anyway.",
             "explanation": "'Cried' and 'laughed' are opposite reactions to the same scene, so that verb is the whole point. 'I' and 'you' are also easy to mix up when spoken quickly and quietly.",
             "textToSpeak": "I woulda cried at that ending too.",
             "options": [
                 "I woulda cried at that ending too.",
-                "I woulda laughed at that ending too.",
-                "I woulda cried at that ending anyway.",
-                "You woulda cried at that ending too."
+                "I woulda laughed at that ending too."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -492,17 +438,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L70_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch time versus money, and 'coulda' versus 'shoulda'.",
             "explanation": "'Coulda saved' (it was possible) and 'shoulda saved' (it would have been the smart choice) carry slightly different regrets. 'Time' and 'money' also completely change what's actually being discussed.",
             "textToSpeak": "We coulda saved a lot of time honestly.",
             "options": [
-                "We coulda saved a little time honestly.",
-                "We shoulda saved a lot of time honestly.",
                 "We coulda saved a lot of money honestly.",
                 "We coulda saved a lot of time honestly."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -510,15 +454,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L70_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Notice already versus anyway, and known versus guessed.",
             "explanation": "'Known' (had real information) and 'guessed' (made an assumption) suggest very different levels of certainty. 'Already' and 'anyway' also change the tone of the question.",
             "textToSpeak": "You musta known about that already, right?",
             "options": [
                 "You musta known about that anyway, right?",
-                "You musta known about that already, right?",
-                "You musta guessed about that already, right?",
-                "She musta known about that already, right?"
+                "You musta known about that already, right?"
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -528,17 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L70_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'shoulda' versus 'coulda', and we versus they.",
             "explanation": "'Shoulda done differently' (a clear regret) and 'coulda done differently' (just a possibility) frame the reflection in different ways. This sentence also stacks 'whaddya' right alongside it, so slow the whole thing down in your head.",
             "textToSpeak": "Whaddya reckon we really shoulda done differently?",
             "options": [
-                "Whaddya reckon we really coulda done differently?",
-                "Whaddya think we really shoulda done differently?",
-                "Whaddya reckon they really shoulda done differently?",
-                "Whaddya reckon we really shoulda done differently?"
+                "Whaddya reckon we really shoulda done differently?",
+                "Whaddya reckon they really shoulda done differently?"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."

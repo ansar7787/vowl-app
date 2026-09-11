@@ -6,17 +6,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch tonight versus tomorrow, and he versus she.",
             "explanation": "'He'd' can mean either 'he would' or 'he had' depending on context - here it's a promise about the future, reported secondhand. Report versus proposal is also worth catching precisely.",
             "textToSpeak": "He said she'd finish the report by tonight, jus' so you know.",
             "options": [
-                "She said she'd finish the report by tomorrow, jus' so you know.",
-                "She said she'd finish the proposal by tonight, jus' so you know.",
                 "He said she'd finish the report by tonight, jus' so you know.",
                 "She said she'd finish the report by tonight, jus' so you know."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -24,17 +22,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch sent versus signed, and he versus she (as the one telling you).",
             "explanation": "This sentence reports someone else's claim while also expressing doubt about it, so track both layers: what was said, and how much you trust it. 'Sent' and 'signed' are different actions on a document too.",
             "textToSpeak": "He told me he'd already sent it, but I dunno if that's true.",
             "options": [
-                "He told me he'd already sent it, but I dunno if that's right.",
-                "He told me he'd already signed it, but I dunno if that's true.",
-                "She told me he'd already sent it, but I dunno if that's true.",
-                "He told me he'd already sent it, but I dunno if that's true."
+                "He told me he'd already sent it, but I dunno if that's true.",
+                "She told me he'd already sent it, but I dunno if that's true."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -42,15 +38,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact day, and 'prolly' versus 'definitely'.",
             "explanation": "'Reckon' introduces someone else's guess, and 'prolly' inside that guess adds a second layer of uncertainty, so the whole sentence is really just a hopeful estimate, not a promise.",
             "textToSpeak": "They reckon they'll prolly have an answer for us by Friday.",
             "options": [
                 "They reckon they'll prolly have an answer for us by Monday.",
-                "They reckon they'll prolly have an answer for us by Friday.",
-                "They reckon they'll definitely have an answer for us by Friday.",
-                "They reckon we'll prolly have an answer for us by Friday."
+                "They reckon they'll prolly have an answer for us by Friday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -60,17 +54,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch call versus text, and mum versus dad.",
             "explanation": "'She'd call' reports a promise made earlier, using the reduced 'she would'. The instruction that follows, keeping your phone on or charged, is a separate detail worth catching just as carefully.",
             "textToSpeak": "Mum said she'd call once she landed, so keep your phone on.",
             "options": [
-                "Mum said she'd call once she landed, so keep your phone charged.",
-                "Mum said she'd text once she landed, so keep your phone on.",
-                "Dad said she'd call once she landed, so keep your phone on.",
-                "Mum said she'd call once she landed, so keep your phone on."
+                "Mum said she'd call once she landed, so keep your phone on.",
+                "Dad said she'd call once she landed, so keep your phone on."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -78,17 +70,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch party versus dinner, and 'prolly' versus 'definitely'.",
             "explanation": "'Reckons' introduces a casual prediction, and 'prolly' softens it even further into a light guess. He versus she is also worth confirming as the one making the prediction.",
             "textToSpeak": "He reckons they'll prolly be late for the party, knowing them.",
             "options": [
-                "He reckons they'll prolly be late for the dinner, knowing them.",
-                "He reckons they'll definitely be late for the party, knowing them.",
-                "He reckons they'll prolly be late for the party, knowing them.",
-                "She reckons they'll prolly be late for the party, knowing them."
+                "She reckons they'll prolly be late for the party, knowing them.",
+                "He reckons they'll prolly be late for the party, knowing them."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -96,17 +86,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch closer versus further, and he versus she.",
             "explanation": "'Movin'' drops its final 'g', the same casual pattern you saw with 'runnin''. 'Closer' and 'further' are opposites, so that word decides the whole direction of the news.",
             "textToSpeak": "I heard she's thinking about movin' closer to the family.",
             "options": [
-                "I heard she's thinking about movin' closer to the city.",
-                "I heard she's thinking about movin' further from the family.",
-                "I heard she's thinking about movin' closer to the family.",
-                "I heard he's thinking about movin' closer to the family."
+                "I heard he's thinking about movin' closer to the family.",
+                "I heard she's thinking about movin' closer to the family."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -114,15 +102,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch sale versus offer, and 'should' versus 'could'.",
             "explanation": "'Should' (weighing what's wise) and 'could' (weighing what's possible) frame this decision slightly differently, so listen for the exact modal. 'Sale' and 'offer' are near-synonyms too.",
             "textToSpeak": "I dunno if I should jus' get the one that's on sale.",
             "options": [
                 "I dunno if I should jus' get the one that's on offer.",
-                "I dunno if I should jus' get the one that's on sale.",
-                "I dunno if I could jus' get the one that's on sale.",
-                "We dunno if I should jus' get the one that's on sale."
+                "I dunno if I should jus' get the one that's on sale."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -132,17 +118,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch smaller versus bigger, and 'probably' versus 'definitely'.",
             "explanation": "'It'd' packs 'it would' into a light, quick sound inside someone else's reported advice. 'Smaller' and 'bigger' point in opposite directions, so that word is the whole recommendation.",
             "textToSpeak": "The assistant reckoned it'd probably fit better in a size smaller.",
             "options": [
-                "The assistant reckoned it'd probably fit better in a size bigger.",
                 "The assistant reckoned it'd probably fit better in a size smaller.",
-                "The assistant reckoned it'd definitely fit better in a size smaller.",
-                "The manager reckoned it'd probably fit better in a size smaller."
+                "The assistant reckoned it'd probably fit better in a size bigger."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -150,15 +134,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch late versus early, and 'em versus 'im.",
             "explanation": "This sentence stacks 'couldya', 'jus'', and the h-dropped 'em together, a genuinely dense casual request. 'Late' and 'early' are opposites too, so that word matters most.",
             "textToSpeak": "Couldya jus' let 'em know we'll be a few minutes late?",
             "options": [
                 "Couldya jus' let 'em know we'll be a few minutes late?",
-                "Couldya jus' let 'em know we'll be a few minutes early?",
-                "Wouldya jus' let 'em know we'll be a few minutes late?",
-                "Couldya jus' let 'im know we'll be a few minutes late?"
+                "Couldya jus' let 'em know we'll be a few minutes early?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -168,15 +150,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L134_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch tonight versus tomorrow, and whether it's a he or a she doing the telling.",
             "explanation": "This sentence reports a casual plan, softened by 'probably', so it's a likely choice rather than a firm decision. 'Order in' and 'cooking' are opposite approaches to dinner.",
             "textToSpeak": "She mentioned she'd probably jus' order in instead of cooking tonight.",
             "options": [
                 "She mentioned she'd probably jus' order in instead of cooking tonight.",
-                "She mentioned she'd probably jus' order in instead of cooking tomorrow.",
-                "She mentioned she'd definitely jus' order in instead of cooking tonight.",
-                "He mentioned she'd probably jus' order in instead of cooking tonight."
+                "She mentioned she'd probably jus' order in instead of cooking tomorrow."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -186,17 +166,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L134_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch more versus less, and 'coulda' versus 'shoulda'.",
             "explanation": "'Coulda used less' (a mild opinion) and 'shoulda used less' (a firmer criticism) carry slightly different tones. 'More' and 'less' sugar are opposites too, so that word decides the whole comment.",
             "textToSpeak": "I reckon this recipe coulda used a bit less sugar, honestly.",
             "options": [
-                "I reckon this recipe coulda used a bit more sugar, honestly.",
                 "I reckon this recipe coulda used a bit less sugar, honestly.",
-                "I reckon this recipe shoulda used a bit less sugar, honestly.",
-                "I reckon that recipe coulda used a bit less sugar, honestly."
+                "I reckon this recipe coulda used a bit more sugar, honestly."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -204,33 +182,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L134_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'to share' versus 'to start', and 'should' versus 'could'.",
             "explanation": "'Should' (seeking a real recommendation) and 'could' (just brainstorming options) frame this question slightly differently. 'To share' and 'to start' are also very different parts of a meal.",
             "textToSpeak": "Whatcha reckon we should order for the table to share?",
             "options": [
-                "Whatcha reckon we should order for the table to start?",
-                "Whatcha think we should order for the table to share?",
                 "Whatcha reckon we could order for the table to share?",
                 "Whatcha reckon we should order for the table to share?"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L135_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch hotel versus hostel, and airport versus station.",
-            "explanation": "This reported plan hinges entirely on the two locations mentioned, so both need your full attention. 'They'd' (they would/had) is now a familiar reduction, so let it guide you rather than confuse you.",
-            "textToSpeak": "They said they'd meet us at the hotel instead of the airport.",
-            "options": [
-                "They said they'd meet us at the hostel instead of the airport.",
-                "They said they'd meet us at the hotel instead of the airport.",
-                "They said they'd meet us at the hotel instead of the station.",
-                "We said they'd meet us at the hotel instead of the airport."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -238,17 +196,31 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L135_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch hotel versus hostel, and airport versus station.",
+            "explanation": "This reported plan hinges entirely on the two locations mentioned, so both need your full attention. 'They'd' (they would/had) is now a familiar reduction, so let it guide you rather than confuse you.",
+            "textToSpeak": "They said they'd meet us at the hotel instead of the airport.",
+            "options": [
+                "They said they'd meet us at the hotel instead of the airport.",
+                "They said they'd meet us at the hostel instead of the airport."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L135_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch earlier versus later, and 'shoulda' versus 'coulda'.",
             "explanation": "'Shoulda booked' expresses real regret about a choice already made, while 'coulda booked' just notes it was possible. 'Earlier' and 'later' are opposites too, deciding the whole direction of the regret.",
             "textToSpeak": "I reckon we shoulda booked the earlier flight after all.",
             "options": [
                 "I reckon we shoulda booked the earlier flight after all.",
-                "I reckon we shoulda booked the earlier train after all.",
-                "I reckon we coulda booked the earlier flight after all.",
-                "I reckon we shoulda booked the later flight after all."
+                "I reckon we shoulda booked the earlier train after all."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -258,15 +230,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L135_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'best' versus 'fastest', and here versus there.",
             "explanation": "'Best' (overall quality) and 'fastest' (pure speed) suggest different priorities for the journey, so listen for the specific word. 'Here' and 'there' also change where the question is actually being asked from.",
             "textToSpeak": "Whatcha reckon's the best way to get downtown from here?",
             "options": [
                 "Whatcha reckon's the best way to get downtown from here?",
-                "Whatcha reckon's the fastest way to get downtown from here?",
-                "Whatcha think's the best way to get downtown from here?",
-                "Whatcha reckon's the best way to get downtown from there?"
+                "Whatcha reckon's the fastest way to get downtown from here?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -276,17 +246,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch next versus this, and fix versus update.",
             "explanation": "'Fix'd' packs 'fix would' into a light sound, a reduction pattern that works the same way as 'she'd' or 'they'd'. He versus she is also worth confirming here.",
             "textToSpeak": "He mentioned the fix'd probably be ready sometime nex' week.",
             "options": [
-                "He mentioned the fix'd probably be ready sometime this week.",
-                "He mentioned the update'd probably be ready sometime nex' week.",
                 "She mentioned the fix'd probably be ready sometime nex' week.",
                 "He mentioned the fix'd probably be ready sometime nex' week."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -294,17 +262,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'coulda' versus 'shoulda', and 'a lot' versus 'a little'.",
             "explanation": "'Coulda lasted longer' (a simple observation) and 'shoulda lasted longer' (a real complaint about quality) carry different levels of frustration. 'A lot' and 'a little' also change how big the disappointment really is.",
             "textToSpeak": "I reckon this laptop coulda lasted a lot longer, honestly.",
             "options": [
-                "I reckon this laptop shoulda lasted a lot longer, honestly.",
-                "I reckon this laptop coulda lasted a little longer, honestly.",
                 "I reckon that laptop coulda lasted a lot longer, honestly.",
                 "I reckon this laptop coulda lasted a lot longer, honestly."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -312,17 +278,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch login versus loading, and we versus they.",
             "explanation": "'Oughta' (ought to) is another casual modal reduction, similar in feel to 'gotta' or 'hafta', suggesting a mild obligation. 'Login' and 'loading' are different tech problems too, so listen precisely.",
             "textToSpeak": "Whatcha reckon we oughta do about the login issue?",
             "options": [
-                "Whatcha reckon we oughta do about the loading issue?",
-                "Whatcha think we oughta do about the login issue?",
-                "Whatcha reckon we oughta do about the login issue?",
-                "Whatcha reckon they oughta do about the login issue?"
+                "Whatcha reckon they oughta do about the login issue?",
+                "Whatcha reckon we oughta do about the login issue?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -330,15 +294,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L137_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch week versus month, and 'probably' versus 'definitely'.",
             "explanation": "'It'd' (it would) softens this into a likely outcome rather than a promise, especially paired with 'probably'. Doctor versus nurse, and the exact timeframe, are the real details to catch.",
             "textToSpeak": "The doctor mentioned it'd probably clear up within a week or so.",
             "options": [
                 "The doctor mentioned it'd probably clear up within a month or so.",
-                "The doctor mentioned it'd probably clear up within a week or so.",
-                "The nurse mentioned it'd probably clear up within a week or so.",
-                "The doctor mentioned it'd definitely clear up within a week or so."
+                "The doctor mentioned it'd probably clear up within a week or so."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -348,17 +310,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L137_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'shoulda' versus 'coulda', and 'jumping back in' versus 'slowing back down'.",
             "explanation": "'Shoulda rested' expresses genuine concern about the choice made, more direct than 'coulda rested'. 'Jumping back in' and 'slowing back down' also describe opposite approaches to recovery.",
             "textToSpeak": "I reckon you shoulda rested a bit more before jumping back in.",
             "options": [
-                "I reckon you shoulda rested a bit longer before jumping back in.",
                 "I reckon you shoulda rested a bit more before jumping back in.",
-                "I reckon you coulda rested a bit more before jumping back in.",
-                "I reckon you shoulda rested a bit more before slowing back down."
+                "I reckon you shoulda rested a bit longer before jumping back in."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -366,15 +326,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L137_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'em versus 'im, and tell versus ask.",
             "explanation": "'Oughta' carries a similar weight to 'should', a mild sense of obligation, layered here with the h-dropped 'em. 'Tell' and 'ask' are opposite directions of communication too.",
             "textToSpeak": "Whatcha reckon we oughta tell 'em about the results?",
             "options": [
                 "Whatcha reckon we oughta tell 'em about the results?",
-                "Whatcha reckon we oughta tell 'im about the results?",
-                "Whatcha think we oughta tell 'em about the results?",
-                "Whatcha reckon we oughta ask 'em about the results?"
+                "Whatcha reckon we oughta tell 'im about the results?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -384,33 +342,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L138_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch next versus this term, and he versus she.",
             "explanation": "This sentence layers a reported plan, 'she'd probably', with the elided 'jus'' and 'nex'', a lot of natural reduction packed together. The exact timing is what really matters here.",
             "textToSpeak": "She told me she'd probably jus' retake the exam nex' term.",
             "options": [
-                "She told me she'd probably jus' retake the exam this term.",
-                "She told me she'd definitely jus' retake the exam nex' term.",
                 "She told me she'd probably jus' retake the exam nex' term.",
                 "He told me she'd probably jus' retake the exam nex' term."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L138_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'coulda' versus 'shoulda', and he versus she.",
-            "explanation": "'Coulda explained' (a mild observation) and 'shoulda explained' (a real criticism of the teaching) suggest different levels of frustration. He versus she is also worth confirming.",
-            "textToSpeak": "I reckon he coulda explained that a lot more clearly, honestly.",
-            "options": [
-                "I reckon he coulda explained that a lot more clearly, honestly.",
-                "I reckon he shoulda explained that a lot more clearly, honestly.",
-                "I reckon he coulda explained that a little more clearly, honestly.",
-                "I reckon she coulda explained that a lot more clearly, honestly."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -418,17 +356,15 @@
             "slowVersion": "Slow down the speech here."
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L138_Q3",
+            "id": "LIS_FASTSPEECHDECODER_L138_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'fair' versus 'good', and project versus work.",
-            "explanation": "'Fair' (about equal treatment) and 'good' (about a general quality) are subtly different standards for the same decision. 'Project' and 'work' are near-synonyms too, so listen for the specific word.",
-            "textToSpeak": "Whatcha reckon's a fair way to split up the group project?",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'coulda' versus 'shoulda', and he versus she.",
+            "explanation": "'Coulda explained' (a mild observation) and 'shoulda explained' (a real criticism of the teaching) suggest different levels of frustration. He versus she is also worth confirming.",
+            "textToSpeak": "I reckon he coulda explained that a lot more clearly, honestly.",
             "options": [
-                "Whatcha reckon's a fair way to split up the group work?",
-                "Whatcha reckon's a fair way to split up the group project?",
-                "Whatcha think's a fair way to split up the group project?",
-                "Whatcha reckon's a good way to split up the group project?"
+                "I reckon he shoulda explained that a lot more clearly, honestly.",
+                "I reckon he coulda explained that a lot more clearly, honestly."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -436,17 +372,31 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L138_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'fair' versus 'good', and project versus work.",
+            "explanation": "'Fair' (about equal treatment) and 'good' (about a general quality) are subtly different standards for the same decision. 'Project' and 'work' are near-synonyms too, so listen for the specific word.",
+            "textToSpeak": "Whatcha reckon's a fair way to split up the group project?",
+            "options": [
+                "Whatcha reckon's a fair way to split up the group project?",
+                "Whatcha reckon's a fair way to split up the group work?"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L139_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch next versus this year, and sequel versus reboot.",
             "explanation": "'Sequel'd' packs 'sequel would' into a light sound, the same contraction pattern working on a noun instead of a pronoun. He versus she is also worth confirming.",
             "textToSpeak": "He mentioned the sequel'd probably come out sometime nex' year.",
             "options": [
                 "He mentioned the sequel'd probably come out sometime this year.",
-                "He mentioned the sequel'd probably come out sometime nex' year.",
-                "He mentioned the reboot'd probably come out sometime nex' year.",
-                "She mentioned the sequel'd probably come out sometime nex' year."
+                "He mentioned the sequel'd probably come out sometime nex' year."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -456,17 +406,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L139_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'coulda' versus 'shoulda', and this versus that.",
             "explanation": "'Coulda been more satisfying' (a mild wish) and 'shoulda been more satisfying' (a firmer complaint) carry a slightly different tone. This versus that ending also matters, so listen closely.",
             "textToSpeak": "I reckon that ending coulda been a lot more satisfying.",
             "options": [
-                "I reckon that ending shoulda been a lot more satisfying.",
-                "I reckon that ending coulda been a little more satisfying.",
-                "I reckon this ending coulda been a lot more satisfying.",
-                "I reckon that ending coulda been a lot more satisfying."
+                "I reckon that ending coulda been a lot more satisfying.",
+                "I reckon this ending coulda been a lot more satisfying."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -474,33 +422,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L139_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch tonight versus tomorrow, and 'heavy' versus 'serious'.",
             "explanation": "'Heavy' and 'serious' both describe intense content but aren't identical words, so listen for the specific one used. This sentence also gives you a genuine choice to track: light, or something more demanding.",
             "textToSpeak": "Whatcha reckon we oughta watch tonight, something light or something heavy?",
             "options": [
-                "Whatcha reckon we oughta watch tonight, something light or something serious?",
-                "Whatcha think we oughta watch tonight, something light or something heavy?",
                 "Whatcha reckon we oughta watch tomorrow, something light or something heavy?",
                 "Whatcha reckon we oughta watch tonight, something light or something heavy?"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L140_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'off' versus 'tired', and he versus she.",
-            "explanation": "This review question stacks a reported plan with 'jus'' and a vague feeling at the end, so hold the whole sentence together as you listen. 'Off' (something's not quite right) and 'tired' (simply sleepy) are subtly different complaints.",
-            "textToSpeak": "She said she'd probably jus' head home early tonight, feeling a bit off.",
-            "options": [
-                "She said she'd probably jus' head home early tonight, feeling a bit tired.",
-                "She said she'd probably jus' head home early tonight, feeling a bit off.",
-                "She said she'd definitely jus' head home early tonight, feeling a bit off.",
-                "He said she'd probably jus' head home early tonight, feeling a bit off."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -508,17 +436,31 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L140_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'off' versus 'tired', and he versus she.",
+            "explanation": "This review question stacks a reported plan with 'jus'' and a vague feeling at the end, so hold the whole sentence together as you listen. 'Off' (something's not quite right) and 'tired' (simply sleepy) are subtly different complaints.",
+            "textToSpeak": "She said she'd probably jus' head home early tonight, feeling a bit off.",
+            "options": [
+                "She said she'd probably jus' head home early tonight, feeling a bit off.",
+                "She said she'd probably jus' head home early tonight, feeling a bit tired."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L140_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'coulda' versus 'shoulda', and we versus they.",
             "explanation": "'Coulda handled it better' (a neutral reflection) and 'shoulda handled it better' (a real regret) frame the same situation quite differently. We versus they also changes who's actually being reflected on.",
             "textToSpeak": "I reckon we coulda handled that whole situation a lot better.",
             "options": [
                 "I reckon we shoulda handled that whole situation a lot better.",
-                "I reckon we coulda handled that whole situation a lot better.",
-                "I reckon we coulda handled that whole situation a little better.",
-                "I reckon they coulda handled that whole situation a lot better."
+                "I reckon we coulda handled that whole situation a lot better."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -528,17 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L140_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Pin down 'sooner' against 'later', and don't mix up 'woulda' with 'coulda'.",
             "explanation": "This closing question of the tier is the longest, most layered sentence yet, combining a hypothetical with four stacked reductions. If you caught all the details here, you're genuinely ready for the Advanced levels ahead.",
             "textToSpeak": "Whatcha reckon woulda happened if we'd jus' spoken up sooner about it?",
             "options": [
-                "Whatcha reckon woulda happened if we'd jus' spoken up later about it?",
-                "Whatcha think woulda happened if we'd jus' spoken up sooner about it?",
-                "Whatcha reckon coulda happened if we'd jus' spoken up sooner about it?",
-                "Whatcha reckon woulda happened if we'd jus' spoken up sooner about it?"
+                "Whatcha reckon woulda happened if we'd jus' spoken up sooner about it?",
+                "Whatcha reckon coulda happened if we'd jus' spoken up sooner about it?"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."

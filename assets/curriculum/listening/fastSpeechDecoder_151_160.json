@@ -6,17 +6,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L151_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Listen for the hidden 'n't', and he versus she reporting it.",
             "explanation": "This sentence nests a negative modal+have reduction inside reported speech, so track two layers at once: who said it, and what they actually claimed. 'Backing her up' and 'backing her plan' are close but not identical support.",
             "textToSpeak": "He said she couldn't've done it without the whole team backing her up.",
             "options": [
-                "She said she couldn't've done it without the whole team backing her plan.",
-                "She said she coulda done it without the whole team backing her up.",
                 "She said she couldn't've done it without the whole team backing her up.",
                 "He said she couldn't've done it without the whole team backing her up."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -24,17 +22,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L151_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'added up' versus 'checked out', and he versus she.",
             "explanation": "'Added up' and 'checked out' both mean the numbers made sense, so the exact phrase matters less here than catching the hidden 'n't' correctly. He versus she also needs your attention.",
             "textToSpeak": "He mentioned they wouldn't've approved the budget if the numbers hadn't added up.",
             "options": [
-                "He mentioned they wouldn't've approved the budget if the numbers hadn't checked out.",
-                "He mentioned they woulda approved the budget if the numbers hadn't added up.",
                 "He mentioned they wouldn't've approved the budget if the numbers hadn't added up.",
                 "She mentioned they wouldn't've approved the budget if the numbers hadn't added up."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -42,17 +38,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L151_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch launch versus release, and 'properly' versus 'thoroughly'.",
             "explanation": "'Properly' and 'thoroughly' are near-synonyms describing careful testing, so listen for the exact word. This whole sentence is a criticism of rushing, which depends on that hidden 'n't' surviving the fast speech.",
             "textToSpeak": "They reckoned we shouldn't've rushed the launch without testing it properly first.",
             "options": [
-                "They reckoned we shouldn't've rushed the launch without testing it thoroughly first.",
-                "They reckoned we shoulda rushed the launch without testing it properly first.",
-                "They reckoned we shouldn't've rushed the release without testing it properly first.",
-                "They reckoned we shouldn't've rushed the launch without testing it properly first."
+                "They reckoned we shouldn't've rushed the launch without testing it properly first.",
+                "They reckoned we shouldn't've rushed the release without testing it properly first."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -60,17 +54,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L152_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch day versus week, and mum versus dad.",
             "explanation": "'Couldn't've been prouder' is the highest possible praise, but that meaning only survives if the hidden 'n't' comes through clearly. Mum versus dad, and the exact timeframe, are also worth catching.",
             "textToSpeak": "Mum said she couldn't've been prouder of how everyone pulled together that day.",
             "options": [
-                "Mum said she couldn't've been prouder of how everyone pulled together that week.",
-                "Mum said she coulda been prouder of how everyone pulled together that day.",
-                "Dad said she couldn't've been prouder of how everyone pulled together that day.",
-                "Mum said she couldn't've been prouder of how everyone pulled together that day."
+                "Mum said she couldn't've been prouder of how everyone pulled together that day.",
+                "Dad said she couldn't've been prouder of how everyone pulled together that day."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -78,15 +70,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L152_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch reunion versus wedding, and he versus she.",
             "explanation": "This is a strong statement of commitment, which flips entirely if that hidden 'n't' disappears. The occasion itself, reunion or wedding, is also a key detail to catch.",
             "textToSpeak": "He told me he wouldn't've missed the reunion for anything in the world.",
             "options": [
                 "He told me he wouldn't've missed the reunion for anything in the world.",
-                "He told me he wouldn't've missed the wedding for anything in the world.",
-                "He told me he woulda missed the reunion for anything in the world.",
-                "She told me he wouldn't've missed the reunion for anything in the world."
+                "He told me he wouldn't've missed the wedding for anything in the world."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -96,17 +86,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L152_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch news versus plans, and listen for the hidden 'n't'.",
             "explanation": "'News' and 'plans' are different things to keep secret, so listen for the specific word. This whole sentence is gentle criticism, which only works with that quiet 'n't' intact.",
             "textToSpeak": "They reckoned we shouldn't've kept the news to ourselves for quite so long.",
             "options": [
-                "They reckoned we shouldn't've kept the news to ourselves for quite so many years.",
-                "They reckoned we shoulda kept the news to ourselves for quite so long.",
-                "They reckoned we shouldn't've kept the news to ourselves for quite so long.",
-                "They reckoned we shouldn't've kept the plans to ourselves for quite so long."
+                "They reckoned we shouldn't've kept the plans to ourselves for quite so long.",
+                "They reckoned we shouldn't've kept the news to ourselves for quite so long."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -114,17 +102,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L153_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch day versus week, and 'better' versus 'bigger'.",
             "explanation": "This longer sentence adds a hypothetical, 'even if I'd spent all day looking', on top of the negative modal+have, so hold the whole structure together. 'Better' and 'bigger' describe different qualities of a deal too.",
             "textToSpeak": "I couldn't've found a better deal anywhere else, even if I'd spent all day looking.",
             "options": [
-                "I couldn't've found a better deal anywhere else, even if I'd spent all week looking.",
-                "I coulda found a better deal anywhere else, even if I'd spent all day looking.",
-                "I couldn't've found a better deal anywhere else, even if I'd spent all day looking.",
-                "I couldn't've found a bigger deal anywhere else, even if I'd spent all day looking."
+                "I couldn't've found a bigger deal anywhere else, even if I'd spent all day looking.",
+                "I couldn't've found a better deal anywhere else, even if I'd spent all day looking."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -132,17 +118,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L153_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch tomorrow versus today, and assistant versus manager.",
             "explanation": "This sentence explains a genuine regret about bad timing, using reported speech from a staff member. Assistant versus manager, and the exact timing of the sale, are the details to catch.",
             "textToSpeak": "The assistant said we shouldn't've paid full price since there's a sale starting tomorrow.",
             "options": [
-                "The assistant said we shouldn't've paid full price since there's a sale starting today.",
-                "The assistant said we shoulda paid full price since there's a sale starting tomorrow.",
                 "The manager said we shouldn't've paid full price since there's a sale starting tomorrow.",
                 "The assistant said we shouldn't've paid full price since there's a sale starting tomorrow."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -150,17 +134,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L153_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch inside versus outside, and we versus they.",
             "explanation": "'Inside' and 'outside' completely change where the better option actually was, so that word is essential. We versus they is also worth confirming, alongside that hidden 'n't'.",
             "textToSpeak": "We wouldn't've queued this long if we'd known there was a shorter line inside.",
             "options": [
-                "We wouldn't've queued this long if we'd known there was a shorter line outside.",
-                "We woulda queued this long if we'd known there was a shorter line inside.",
-                "They wouldn't've queued this long if we'd known there was a shorter line inside.",
-                "We wouldn't've queued this long if we'd known there was a shorter line inside."
+                "We wouldn't've queued this long if we'd known there was a shorter line inside.",
+                "They wouldn't've queued this long if we'd known there was a shorter line inside."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -168,17 +150,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L154_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch restaurant versus café, and 'incredible' versus 'friendly'.",
             "explanation": "'Incredible' and 'friendly' are both positive but at very different intensities, so listen for the exact word. This whole sentence only works as praise if that hidden 'n't' survives the fast delivery.",
             "textToSpeak": "I couldn't've asked for a warmer welcome at that restaurant, the staff were incredible.",
             "options": [
-                "I couldn't've asked for a warmer welcome at that restaurant, the staff were friendly.",
-                "I coulda asked for a warmer welcome at that restaurant, the staff were incredible.",
                 "I couldn't've asked for a warmer welcome at that restaurant, the staff were incredible.",
                 "I couldn't've asked for a warmer welcome at that café, the staff were incredible."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -186,17 +166,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L154_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch main course versus starter, and he versus she.",
             "explanation": "This sentence reports gentle advice about pacing a meal, so track both the food detail and who gave the advice. That hidden 'n't' is what makes it advice rather than encouragement.",
             "textToSpeak": "She mentioned we shouldn't've filled up on bread before the main course even arrived.",
             "options": [
-                "She mentioned we shouldn't've filled up on bread before the starter even arrived.",
-                "She mentioned we shoulda filled up on bread before the main course even arrived.",
                 "She mentioned we shouldn't've filled up on bread before the main course even arrived.",
                 "He mentioned we shouldn't've filled up on bread before the main course even arrived."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -204,17 +182,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L154_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'tried' versus 'ordered', and 'highly' versus 'strongly'.",
             "explanation": "'Tried' and 'ordered' overlap closely in meaning here, so the exact verb matters less than that essential hidden 'n't'. 'Highly' and 'strongly' are also near-synonyms worth catching precisely.",
             "textToSpeak": "We wouldn't've tried the tasting menu if the waiter hadn't recommended it so highly.",
             "options": [
-                "We wouldn't've tried the tasting menu if the waiter hadn't recommended it so strongly.",
-                "We woulda tried the tasting menu if the waiter hadn't recommended it so highly.",
                 "We wouldn't've ordered the tasting menu if the waiter hadn't recommended it so highly.",
                 "We wouldn't've tried the tasting menu if the waiter hadn't recommended it so highly."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -222,17 +198,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L155_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch week versus time, and trip versus holiday.",
             "explanation": "This is enthusiastic praise about good luck with timing, which only works with the hidden 'n't' from 'couldn't've' intact. The exact wording at the end is also worth catching.",
             "textToSpeak": "I couldn't've timed that trip any better, the weather was perfect the whole week.",
             "options": [
-                "I couldn't've timed that trip any better, the weather was perfect the whole time.",
-                "I coulda timed that trip any better, the weather was perfect the whole week.",
                 "I couldn't've timed that trip any better, the weather was perfect the whole week.",
                 "I couldn't've timed that holiday any better, the weather was perfect the whole week."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -240,17 +214,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L155_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'cheaper' versus 'better', and 'skipped' versus 'missed'.",
             "explanation": "'Cheaper' and 'better' give different reasons for the same recommendation, so listen for the exact word. 'Skipped' (chose not to go) and 'missed' (couldn't make it) also suggest different situations.",
             "textToSpeak": "The guide said we shouldn't've skipped the early tour, since it's quieter and cheaper.",
             "options": [
-                "The guide said we shouldn't've skipped the early tour, since it's quieter and better.",
-                "The guide said we shoulda skipped the early tour, since it's quieter and cheaper.",
                 "The guide said we shouldn't've skipped the early tour, since it's quieter and cheaper.",
                 "The guide said we shouldn't've missed the early tour, since it's quieter and cheaper."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -258,15 +230,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L155_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'early' versus 'on time', and we versus they.",
             "explanation": "This longer sentence stacks the negative modal+have with the elided 'jus'', a genuinely dense combination. We versus they, and the exact wake-up detail, both need your attention.",
             "textToSpeak": "We wouldn't've made the sunrise hike if the hotel hadn't jus' woken us up early.",
             "options": [
                 "We wouldn't've made the sunrise hike if the hotel hadn't jus' woken us up early.",
-                "We wouldn't've made the sunrise hike if the hotel hadn't jus' woken us up on time.",
-                "We woulda made the sunrise hike if the hotel hadn't jus' woken us up early.",
-                "They wouldn't've made the sunrise hike if the hotel hadn't jus' woken us up early."
+                "We wouldn't've made the sunrise hike if the hotel hadn't jus' woken us up on time."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -276,17 +246,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L156_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'sent over' versus 'sent through', and this versus that issue.",
             "explanation": "'Sent over' and 'sent through' mean almost the same thing, so the exact phrase matters less than catching the hidden 'n't' correctly. This is genuine appreciation, which only reads that way with 'couldn't've' intact.",
             "textToSpeak": "I couldn't've diagnosed the issue that quickly without the error logs you sent over.",
             "options": [
-                "I couldn't've diagnosed the issue that quickly without the error logs you sent over.",
                 "I couldn't've diagnosed the issue that quickly without the error logs you sent through.",
-                "I coulda diagnosed the issue that quickly without the error logs you sent over.",
-                "I couldn't've diagnosed that issue that quickly without the error logs you sent over."
+                "I couldn't've diagnosed the issue that quickly without the error logs you sent over."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -294,15 +262,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L156_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "The hidden 'n't' is the key here - also confirm who's reporting this, he or she.",
             "explanation": "This sentence reports a fair criticism about a mistake, which only works as criticism if the 'n't' in 'shouldn't've' comes through. He versus she also needs confirming.",
             "textToSpeak": "He said we shouldn't've ignored that warning message for as long as we did.",
             "options": [
                 "She said we shouldn't've ignored that warning message for as long as we thought.",
-                "He said we shouldn't've ignored that warning message for as long as we did.",
-                "She said we shoulda ignored that warning message for as long as we did.",
-                "She said we shouldn't've ignored that warning message for as long as we did."
+                "He said we shouldn't've ignored that warning message for as long as we did."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -312,15 +278,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L156_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch bug versus error, and 'first' versus 'early'.",
             "explanation": "'Bug' and 'error' are near-synonyms in this context, so listen for the specific word used. This longer sentence also stacks the negative modal+have with 'jus'', so keep tracking the whole structure.",
             "textToSpeak": "We wouldn't've caught the bug in time if the tests hadn't jus' flagged it first.",
             "options": [
                 "We wouldn't've caught the bug in time if the tests hadn't jus' flagged it early.",
-                "We wouldn't've caught the bug in time if the tests hadn't jus' flagged it first.",
-                "We woulda caught the bug in time if the tests hadn't jus' flagged it first.",
-                "We wouldn't've caught the error in time if the tests hadn't jus' flagged it first."
+                "We wouldn't've caught the bug in time if the tests hadn't jus' flagged it first."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -330,15 +294,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L157_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'constantly' versus 'occasionally', and this versus that.",
             "explanation": "'Constantly' and 'occasionally' describe very different levels of support, so listen for the exact adverb. This whole sentence is gratitude, which only makes sense with the hidden 'n't' intact.",
             "textToSpeak": "I couldn't've recovered this fast without everyone checking in on me constantly.",
             "options": [
                 "I couldn't've recovered this fast without everyone checking in on me constantly.",
-                "I couldn't've recovered this fast without everyone checking in on me occasionally.",
-                "I coulda recovered this fast without everyone checking in on me constantly.",
-                "I couldn't've recovered that fast without everyone checking in on me constantly."
+                "I couldn't've recovered this fast without everyone checking in on me occasionally."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -348,17 +310,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L157_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch injury versus surgery, and doctor versus nurse.",
             "explanation": "This sentence reports professional advice about returning too early, so hold onto both the timing detail and who gave the warning. That hidden 'n't' is what makes it a genuine caution.",
             "textToSpeak": "The doctor mentioned I shouldn't've gone back to training quite so soon after the injury.",
             "options": [
-                "The doctor mentioned I shouldn't've gone back to training quite so soon after the surgery.",
-                "The doctor mentioned I shoulda gone back to training quite so soon after the injury.",
                 "The nurse mentioned I shouldn't've gone back to training quite so soon after the injury.",
                 "The doctor mentioned I shouldn't've gone back to training quite so soon after the injury."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -366,17 +326,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L157_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch check-up versus test, and this versus that.",
             "explanation": "This longer sentence expresses genuine relief and gratitude, hinging on the hidden 'n't' plus the elided 'jus''. The exact appointment type is also worth confirming.",
             "textToSpeak": "We wouldn't've caught it this early if you hadn't jus' insisted on the check-up.",
             "options": [
-                "We wouldn't've caught it this early if you hadn't jus' insisted on the test.",
-                "We woulda caught it this early if you hadn't jus' insisted on the check-up.",
                 "We wouldn't've caught it this early if you hadn't jus' insisted on the check-up.",
                 "We wouldn't've caught that this early if you hadn't jus' insisted on the check-up."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -384,17 +342,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L158_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'closing' versus 'midnight', and 'written' versus 'finished'.",
             "explanation": "'Written' and 'finished' overlap closely in meaning, so focus more on the hidden 'n't' and the exact closing detail. This whole sentence is an admission of how close it really was.",
             "textToSpeak": "I couldn't've written that essay in time without staying at the library till closing.",
             "options": [
-                "I couldn't've written that essay in time without staying at the library till midnight.",
-                "I coulda written that essay in time without staying at the library till closing.",
                 "I couldn't've written that essay in time without staying at the library till closing.",
                 "I couldn't've finished that essay in time without staying at the library till closing."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -402,15 +358,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L158_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch week versus day, and he versus she.",
             "explanation": "This sentence reports fair criticism about poor planning, which only works with 'shouldn't've' keeping its hidden 'n't'. He versus she, and the exact timeframe, are also worth catching.",
             "textToSpeak": "She said we shouldn't've left the group project discussion until the week it was due.",
             "options": [
                 "She said we shouldn't've left the group project discussion until the day it was due.",
-                "She said we shouldn't've left the group project discussion until the week it was due.",
-                "She said we shoulda left the group project discussion until the week it was due.",
-                "He said we shouldn't've left the group project discussion until the week it was due."
+                "She said we shouldn't've left the group project discussion until the week it was due."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -420,17 +374,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L158_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch twice versus once, and we versus they.",
             "explanation": "This longer sentence combines the negative modal+have with 'jus'' and a number, so there's a lot to track at once. The number of times something was explained really matters here too.",
             "textToSpeak": "We wouldn't've understood the topic at all if the teacher hadn't jus' explained it twice.",
             "options": [
-                "We wouldn't've understood the topic at all if the teacher hadn't jus' explained it once.",
-                "We woulda understood the topic at all if the teacher hadn't jus' explained it twice.",
-                "We wouldn't've understood the topic at all if the teacher hadn't jus' explained it twice.",
-                "They wouldn't've understood the topic at all if the teacher hadn't jus' explained it twice."
+                "They wouldn't've understood the topic at all if the teacher hadn't jus' explained it twice.",
+                "We wouldn't've understood the topic at all if the teacher hadn't jus' explained it twice."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -438,33 +390,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L159_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch twice versus once, and 'guessed' versus 'predicted'.",
             "explanation": "'Guessed' and 'predicted' are near-synonyms, so listen for the exact verb rather than the general idea. This sentence is genuine amazement, which depends entirely on that hidden 'n't'.",
             "textToSpeak": "I couldn't've guessed that twist coming, even after watching the whole thing twice.",
             "options": [
-                "I couldn't've guessed that twist coming, even after watching the whole thing once.",
-                "I coulda guessed that twist coming, even after watching the whole thing twice.",
                 "I couldn't've guessed that twist coming, even after watching the whole thing twice.",
                 "I couldn't've predicted that twist coming, even after watching the whole thing twice."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L159_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'really' versus 'pretty', and he versus she.",
-            "explanation": "'Really good' and 'pretty good' are both positive but at slightly different strengths, so listen for the exact word. He versus she also needs confirming in this reported opinion.",
-            "textToSpeak": "He mentioned we shouldn't've judged the film by its trailer, since it's actually really good.",
-            "options": [
-                "He mentioned we shouldn't've judged the film by its trailer, since it's actually really good.",
-                "He mentioned we shouldn't've judged the film by its trailer, since it's actually pretty good.",
-                "He mentioned we shoulda judged the film by its trailer, since it's actually really good.",
-                "She mentioned we shouldn't've judged the film by its trailer, since it's actually really good."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -472,19 +404,33 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L159_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'really' versus 'pretty', and he versus she.",
+            "explanation": "'Really good' and 'pretty good' are both positive but at slightly different strengths, so listen for the exact word. He versus she also needs confirming in this reported opinion.",
+            "textToSpeak": "He mentioned we shouldn't've judged the film by its trailer, since it's actually really good.",
+            "options": [
+                "He mentioned we shouldn't've judged the film by its trailer, since it's actually pretty good.",
+                "He mentioned we shouldn't've judged the film by its trailer, since it's actually really good."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L159_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'cheering' versus 'asking', and we versus they.",
             "explanation": "'Cheering for' and 'asking for' more describe slightly different levels of crowd enthusiasm, so listen for the exact verb. This longer sentence also stacks the negative modal+have with 'jus'', so keep tracking carefully.",
             "textToSpeak": "We wouldn't've stayed for the encore if the crowd hadn't jus' kept cheering for more.",
             "options": [
-                "We wouldn't've stayed for the encore if the crowd hadn't jus' kept asking for more.",
-                "We woulda stayed for the encore if the crowd hadn't jus' kept cheering for more.",
-                "They wouldn't've stayed for the encore if the crowd hadn't jus' kept cheering for more.",
-                "We wouldn't've stayed for the encore if the crowd hadn't jus' kept cheering for more."
+                "We wouldn't've stayed for the encore if the crowd hadn't jus' kept cheering for more.",
+                "They wouldn't've stayed for the encore if the crowd hadn't jus' kept cheering for more."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -492,17 +438,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L160_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch year versus month, and 'would' versus 'could' change.",
             "explanation": "This closing review question packs a timeframe, a modal choice, and the hidden 'n't' all into one reflective sentence. Take it slowly and separate each layer.",
             "textToSpeak": "I couldn't've imagined how much things would change in jus' a single year, honestly.",
             "options": [
-                "I couldn't've imagined how much things would change in jus' a single month, honestly.",
-                "I coulda imagined how much things would change in jus' a single year, honestly.",
                 "I couldn't've imagined how much things could change in jus' a single year, honestly.",
                 "I couldn't've imagined how much things would change in jus' a single year, honestly."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -510,15 +454,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L160_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'first' versus 'longer', and they versus we.",
             "explanation": "This sentence reports advice about taking time before big decisions, which only makes sense as advice with the hidden 'n't' from 'shouldn't've' intact. They versus we is also worth double-checking.",
             "textToSpeak": "They said we shouldn't've made such a big decision without sleeping on it first.",
             "options": [
                 "They said we shouldn't've made such a big decision without sleeping on it longer.",
-                "They said we shouldn't've made such a big decision without sleeping on it first.",
-                "They said we shoulda made such a big decision without sleeping on it first.",
-                "We said we shouldn't've made such a big decision without sleeping on it first."
+                "They said we shouldn't've made such a big decision without sleeping on it first."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -528,17 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L160_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch started versus ended, and we versus they.",
             "explanation": "This final question of the Advanced tier is the most demanding sentence yet, layering a hidden 'n't', a reduced 'we'd', and the elided 'jus'' all together. If you decoded this smoothly, you're ready for even faster, more natural speech ahead.",
             "textToSpeak": "You wouldn't've believed how far we'd come if you'd jus' seen where we started.",
             "options": [
-                "You wouldn't've believed how far we'd come if you'd jus' seen where we ended.",
-                "You woulda believed how far we'd come if you'd jus' seen where we started.",
                 "You wouldn't've believed how far we'd come if you'd jus' seen where we started.",
                 "You wouldn't've believed how far they'd come if you'd jus' seen where we started."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."

@@ -16,7 +16,7 @@ import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_gauges.dart';
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_core.dart';
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_steam_vents.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -37,6 +37,9 @@ class FastSpeechDecoderScreen extends StatefulWidget {
 class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   final ValueNotifier<double> _dialRotation = ValueNotifier(
     0.33,
@@ -81,33 +84,11 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     }
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking, int correct) {
+  void _submitFinalAnswer(GameQuest quest) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
-
-    if (!nailedSpeaking) {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: 'Fast Speech Decoder',
-          userAnswer: '[Failed Speaking]',
-          correctAnswer: correct.toString(),
-          level: widget.level,
-        );
-      }
-
-      _isAnswered.value = true;
-      _isCorrect.value = false;
-      _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
-      return;
-    }
-
+    _timerKey.currentState?.stop();
+    
+    final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
 
     if (isCorrect) {
@@ -116,7 +97,6 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
       _isAnswered.value = true;
       _isCorrect.value = true;
       _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -128,7 +108,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: 'Fast Speech Decoder',
+          question: quest.textToSpeak ?? 'Fast Speech Decoder',
           userAnswer: _pendingSelectedIndex.value.toString(),
           correctAnswer: correct.toString(),
           level: widget.level,
@@ -226,6 +206,19 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: 6.h),
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        child: SpeedChallengeTimer(
+                                          key: _timerKey,
+                                          durationSeconds: 15,
+                                          primaryColor: theme.primaryColor,
+                                          onTimeUp: () {
+                                            if (_isAnswered.value) return;
+                                            _pendingSelectedIndex.value = 0;
+                                            _submitFinalAnswer(quest);
+                                          },
+                                        ),
+                                      ),
                                       FastSpeechDecoderInstruction(
                                         color: theme.primaryColor,
                                         instruction:
@@ -291,15 +284,11 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                             return;
                                           }
                                           _pendingSelectedIndex.value = index;
+                                          _submitFinalAnswer(quest);
                                         },
                                       ),
                                       SizedBox(
-                                        height:
-                                            (_pendingSelectedIndex.value !=
-                                                    null &&
-                                                !_isAnswered.value)
-                                            ? 380.h
-                                            : 60.h,
+                                        height: _isAnswered.value ? 200.h : 60.h,
                                       ),
                                     ],
                                   ),
@@ -308,23 +297,6 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                             ],
                           ),
                         ),
-                        if (_pendingSelectedIndex.value != null &&
-                            !_isAnswered.value)
-                          SpeakToConfirmOverlay(
-                            expectedText:
-                                quest.options![_pendingSelectedIndex.value!],
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(
-                              true,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            onSkipped: () => _submitFinalAnswer(
-                              false,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
                       ],
                     ),
             );

@@ -6,15 +6,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L121_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch promoted versus transferred, and guy versus girl.",
             "explanation": "'Who's' packs 'who is' into one syllable inside a relative clause, so don't lose track of the subject as the sentence runs on. 'Promoted' and 'transferred' are different career moves entirely, so listen for the exact word.",
             "textToSpeak": "The guy who's handling our account jus' got promoted.",
             "options": [
                 "The guy who's handling our account jus' got transferred.",
-                "The guy who's handling our account jus' got promoted.",
-                "The girl who's handling our account jus' got promoted.",
-                "The guy who's handling our account almost got promoted."
+                "The guy who's handling our account jus' got promoted."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -24,51 +22,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L121_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch behind versus ahead, and budget versus timeline.",
             "explanation": "This sentence buries the real reason inside a longer structure, 'the reason...is jus' that...', so you have to track the whole clause rather than just the first few words. 'Behind' and 'ahead' are opposites too.",
             "textToSpeak": "The reason they're behind is jus' that the budget got cut.",
             "options": [
-                "The reason they're behind is jus' that the budget got cut.",
                 "The reason they're behind is jus' that the budget got delayed.",
-                "The reason they're behind is jus' that the timeline got cut.",
-                "The reason they're ahead is jus' that the budget got cut."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L121_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'should' versus 'could', and 'em versus 'im.",
-            "explanation": "This longer sentence tucks the h-dropped 'em into the middle of a warning, so don't lose focus halfway through. 'Should' (a recommendation) and 'could' (a mere option) also carry different levels of urgency.",
-            "textToSpeak": "We should probably let 'em know before they find out some other way.",
-            "options": [
-                "We should probably let 'em know before they find out some other time.",
-                "We could probably let 'em know before they find out some other way.",
-                "We should probably let 'em know before they find out some other way.",
-                "We should probably let 'im know before they find out some other way."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L122_Q1",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch more versus less, and 'woulda' versus 'coulda'.",
-            "explanation": "This conditional sentence hides two separate reductions - 'she'd' (she had) at the start and 'woulda' (would have) later on - so track the whole structure, not just the opening words. 'More' and 'less' are opposites too.",
-            "textToSpeak": "If she'd known you were coming, she woulda cooked more.",
-            "options": [
-                "If she'd known you were coming, she woulda cooked less.",
-                "If she'd known you were coming, she woulda cooked more.",
-                "If she'd known you were coming, she coulda cooked more.",
-                "If he'd known you were coming, she woulda cooked more."
+                "The reason they're behind is jus' that the budget got cut."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -76,17 +36,31 @@
             "slowVersion": "Slow down the speech here."
         },
         {
-            "id": "LIS_FASTSPEECHDECODER_L122_Q2",
+            "id": "LIS_FASTSPEECHDECODER_L121_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch called versus texted, and change versus delay.",
-            "explanation": "This conditional sentence is longer and more layered than earlier levels, so hold the whole 'if...then' structure in mind as you listen, not just the first half. 'Change' and 'delay' are related but different pieces of news.",
-            "textToSpeak": "If they hadn't called, we wouldn't have known about the change at all.",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'should' versus 'could', and 'em versus 'im.",
+            "explanation": "This longer sentence tucks the h-dropped 'em into the middle of a warning, so don't lose focus halfway through. 'Should' (a recommendation) and 'could' (a mere option) also carry different levels of urgency.",
+            "textToSpeak": "We should probably let 'em know before they find out some other way.",
             "options": [
-                "If they hadn't called, we wouldn't have known about the change at all.",
-                "If they hadn't called, we wouldn't have known about the change until later.",
-                "If they hadn't texted, we wouldn't have known about the change at all.",
-                "If they hadn't called, we wouldn't have known about the delay at all."
+                "We should probably let 'im know before they find out some other way.",
+                "We should probably let 'em know before they find out some other way."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
+            "id": "LIS_FASTSPEECHDECODER_L122_Q1",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch more versus less, and 'woulda' versus 'coulda'.",
+            "explanation": "This conditional sentence hides two separate reductions - 'she'd' (she had) at the start and 'woulda' (would have) later on - so track the whole structure, not just the opening words. 'More' and 'less' are opposites too.",
+            "textToSpeak": "If she'd known you were coming, she woulda cooked more.",
+            "options": [
+                "If she'd known you were coming, she woulda cooked more.",
+                "If she'd known you were coming, she woulda cooked less."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -94,17 +68,31 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L122_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch called versus texted, and change versus delay.",
+            "explanation": "This conditional sentence is longer and more layered than earlier levels, so hold the whole 'if...then' structure in mind as you listen, not just the first half. 'Change' and 'delay' are related but different pieces of news.",
+            "textToSpeak": "If they hadn't called, we wouldn't have known about the change at all.",
+            "options": [
+                "If they hadn't called, we wouldn't have known about the change until later.",
+                "If they hadn't called, we wouldn't have known about the change at all."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L122_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch on time versus late, and traffic versus weather.",
             "explanation": "'Would've' (a certain outcome) and 'could've' (just a possibility) suggest slightly different levels of confidence about what almost happened. Traffic and weather are also different reasons for the delay.",
             "textToSpeak": "If it hadn't been for the traffic, we would've been on time.",
             "options": [
                 "If it hadn't been for the traffic, we would've been on time.",
-                "If it hadn't been for the traffic, we would've been late.",
-                "If it hadn't been for the weather, we would've been on time.",
-                "If it hadn't been for the traffic, we could've been on time."
+                "If it hadn't been for the traffic, we would've been late."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -114,17 +102,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L123_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch sale versus offer, and 'good deal' versus 'worth buying'.",
             "explanation": "'Fact that' loses its final 't' before 'that', the same cluster-simplification pattern you've seen with 'next', 'must', and 'just'. 'Sale' and 'offer' are near-synonyms, so listen for the specific word.",
             "textToSpeak": "The fac' that it's on sale doesn't mean it's a good deal.",
             "options": [
-                "The fac' that it's on sale doesn't mean it's a great deal.",
                 "The fac' that it's on sale doesn't mean it's a good deal.",
-                "The fac' that it's on offer doesn't mean it's a good deal.",
-                "The fac' that it's on sale doesn't mean it's worth buying."
+                "The fac' that it's on sale doesn't mean it's a great deal."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -132,15 +118,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L123_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact act number, and story versus plot.",
             "explanation": "'Act three' loses its final 't' before 'three', another example of that same consonant-cluster pattern showing up in a completely different context. The number is easy to lose in the rush, so listen carefully.",
             "textToSpeak": "In ac' three, the whole story finally comes together.",
             "options": [
                 "In ac' three, the whole story finally comes together.",
-                "In ac' three, the whole plot finally comes together.",
-                "In ac' two, the whole story finally comes together.",
-                "In ac' three, the whole story slowly comes together."
+                "In ac' three, the whole plot finally comes together."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -150,17 +134,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L123_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch refund versus credit, and 'coulda' versus 'shoulda'.",
             "explanation": "'Coulda' (it was an option) and 'shoulda' (it would have been smarter) suggest slightly different regrets about the choice made. 'Refund', 'credit', and 'exchange' are all different outcomes too, so listen precisely.",
             "textToSpeak": "We coulda jus' asked for a refund instead of a replacement.",
             "options": [
-                "We coulda jus' asked for a refund instead of an exchange.",
                 "We coulda jus' asked for a refund instead of a replacement.",
-                "We shoulda jus' asked for a refund instead of a replacement.",
-                "We coulda jus' asked for a credit instead of a replacement."
+                "We coulda jus' asked for a refund instead of an exchange."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -168,17 +150,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L124_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch Fridays versus Sundays, and 'jus' closed' versus 'almost closed'.",
             "explanation": "This sentence buries the key details, the day and the outcome, inside a longer relative clause structure. 'Jus' closed down' (it's gone) and 'almost closed down' (it survived) are very different endings to the story.",
             "textToSpeak": "The place that we usta go to on Fridays jus' closed down.",
             "options": [
-                "The place that we usta go to on Sundays jus' closed down.",
                 "The place that we usta go to on Fridays jus' closed down.",
-                "The café that we usta go to on Fridays jus' closed down.",
-                "The place that we usta go to on Fridays almost closed down."
+                "The place that we usta go to on Sundays jus' closed down."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -186,17 +166,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L124_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch cooking versus baking, and 'in there' versus 'down there'.",
             "explanation": "'Incredible' and 'amazing' are both strong compliments, so listen for the specific word used rather than assuming. 'Cooking' and 'baking' are also different techniques, so catch the exact verb.",
             "textToSpeak": "Whatever it is that they're cooking in there smells incredible.",
             "options": [
-                "Whatever it is that they're cooking in there smells amazing.",
-                "Whatever it is that they're baking in there smells incredible.",
-                "Whatever it is that they're cooking down there smells incredible.",
-                "Whatever it is that they're cooking in there smells incredible."
+                "Whatever it is that they're cooking in there smells incredible.",
+                "Whatever it is that they're cooking down there smells incredible."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -204,17 +182,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L124_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch amazing versus okay, and this versus that.",
             "explanation": "'Amazing' and 'okay' are wildly different levels of praise, so that word carries the entire opinion. This sentence also stacks 'dunno' and 'jus'' together, a very natural pairing in enthusiastic, casual speech.",
             "textToSpeak": "I dunno what's in this sauce, but it's jus' amazing.",
             "options": [
-                "I dunno what's in this sauce, but it's jus' okay.",
                 "I dunno what's in this sauce, but it's jus' amazing.",
-                "I dunno what's in that sauce, but it's jus' amazing.",
-                "We dunno what's in this sauce, but it's jus' amazing."
+                "I dunno what's in this sauce, but it's jus' okay."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -222,17 +198,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L125_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch taxi versus bus, and 'on time' versus 'at all'.",
             "explanation": "'Runnin'' drops its final 'g' sound in casual speech, alongside the already-familiar 'cause for 'because'. 'On time' (eventually arrived late) and 'at all' (never arrived) are very different problems.",
             "textToSpeak": "We're runnin' late 'cause the taxi never showed up on time.",
             "options": [
-                "We're runnin' late 'cause the taxi never showed up at all.",
-                "We're runnin' late 'cause the bus never showed up on time.",
                 "We're runnin' late 'cause the taxi never showed up on time.",
                 "We were runnin' late 'cause the taxi never showed up on time."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -240,15 +214,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L125_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch relax versus sleep, and thinking versus worrying.",
             "explanation": "'Relax' and 'sleep' are related but different activities, so listen for the exact verb rather than the general idea. 'Thinking about' and 'worrying about' also carry a different emotional weight.",
             "textToSpeak": "I couldn't relax 'cause I kept thinking about the connecting flight.",
             "options": [
                 "I couldn't relax 'cause I kept thinking about the connecting flight.",
-                "I couldn't relax 'cause I kept thinking about the connecting train.",
-                "I couldn't sleep 'cause I kept thinking about the connecting flight.",
-                "I couldn't relax 'cause I kept worrying about the connecting flight."
+                "I couldn't relax 'cause I kept thinking about the connecting train."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -258,15 +230,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L125_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch cancelled versus postponed, and signed up versus showed up.",
             "explanation": "'Cancelled' (called off entirely) and 'postponed' (delayed to later) lead to very different next steps, so that verb is essential. 'Signed up' and 'showed up' are also different stages of joining a tour.",
             "textToSpeak": "The tour got cancelled 'cause not enough people signed up for it.",
             "options": [
                 "The tour got postponed 'cause not enough people signed up for it.",
-                "The tour got cancelled 'cause not enough people signed up for it.",
-                "The tour got cancelled 'cause not enough people showed up for it.",
-                "The trip got cancelled 'cause not enough people signed up for it."
+                "The tour got cancelled 'cause not enough people signed up for it."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -276,33 +246,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L126_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch now versus later, and backed up versus saved.",
             "explanation": "This conditional stacks two reductions, 'you'd' (you had) and 'wouldn't', across a longer sentence, so keep the whole structure in mind rather than just the ending. 'Backed up' and 'saved' overlap in meaning but aren't identical.",
             "textToSpeak": "If you'd backed it up, you wouldn't be in this mess now.",
             "options": [
-                "If you'd backed it up, you wouldn't be in this mess now.",
                 "If you'd backed it up, you wouldn't be in this mess later.",
-                "If you'd saved it, you wouldn't be in this mess now.",
-                "If you'd backed it up, you wouldn't be in that mess now."
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L126_Q2",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch 'at all' versus 'again', and update versus patch.",
-            "explanation": "'Wasn't for' and 'hadn't been for' both introduce the same kind of hypothetical, so don't worry if you can't tell them apart instantly, focus on what actually caused the problem. 'At all' and 'again' describe very different histories with this issue.",
-            "textToSpeak": "If it wasn't for the update, this wouldn't have happened at all.",
-            "options": [
-                "If it wasn't for the update, this wouldn't have happened again.",
-                "If it wasn't for the update, this wouldn't have happened at all.",
-                "If it wasn't for the patch, this wouldn't have happened at all.",
-                "If it hadn't been for the update, this wouldn't have happened at all."
+                "If you'd backed it up, you wouldn't be in this mess now."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -310,19 +260,33 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L126_Q2",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch 'at all' versus 'again', and update versus patch.",
+            "explanation": "'Wasn't for' and 'hadn't been for' both introduce the same kind of hypothetical, so don't worry if you can't tell them apart instantly, focus on what actually caused the problem. 'At all' and 'again' describe very different histories with this issue.",
+            "textToSpeak": "If it wasn't for the update, this wouldn't have happened at all.",
+            "options": [
+                "If it wasn't for the update, this wouldn't have happened at all.",
+                "If it wasn't for the update, this wouldn't have happened again."
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L126_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch ignored versus read, and 'woulda' versus 'coulda'.",
             "explanation": "This sentence stacks four reductions across a full hypothetical question: 'whatcha', 'reckon', 'woulda', and 'jus''. Breaking it into its full words helps: what have you, reckon, would have, and just.",
             "textToSpeak": "Whatcha reckon woulda happened if we'd jus' ignored the warning?",
             "options": [
-                "Whatcha reckon woulda happened if we'd jus' ignored the warning?",
                 "Whatcha reckon woulda happened if we'd jus' read the warning?",
-                "Whatcha think woulda happened if we'd jus' ignored the warning?",
-                "Whatcha reckon coulda happened if we'd jus' ignored the warning?"
+                "Whatcha reckon woulda happened if we'd jus' ignored the warning?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -330,17 +294,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L127_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch sleep versus rest, and 'switch off' versus 'slow down'.",
             "explanation": "This sentence buries the real explanation inside a longer 'the reason...is jus' that...' structure, so hold onto the whole clause. 'Switch off' and 'slow down' describe different kinds of restlessness.",
             "textToSpeak": "The reason I couldn't sleep is jus' that my mind wouldn't switch off.",
             "options": [
-                "The reason I couldn't sleep is jus' that my mind wouldn't slow down.",
-                "The reason I couldn't rest is jus' that my mind wouldn't switch off.",
-                "The reason I couldn't sleep is jus' that my mind wouldn't switch off.",
-                "The reason I couldn't sleep was jus' that my mind wouldn't switch off."
+                "The reason I couldn't sleep was jus' that my mind wouldn't switch off.",
+                "The reason I couldn't sleep is jus' that my mind wouldn't switch off."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -348,33 +310,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L127_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch he versus she, and allergy versus intolerance.",
             "explanation": "'Allergy' and 'intolerance' are related but medically different, so listen for the exact word used. He versus she is also worth confirming in this longer conditional sentence.",
             "textToSpeak": "If she hadn't mentioned the allergy, they woulda served it anyway.",
             "options": [
-                "If she hadn't mentioned the allergy, they woulda served it regardless.",
-                "If he hadn't mentioned the allergy, they woulda served it anyway.",
                 "If she hadn't mentioned the allergy, they woulda served it anyway.",
                 "If she hadn't mentioned the intolerance, they woulda served it anyway."
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "fastSpeechDecoder",
-            "emoji": "⚡",
-            "slowVersion": "Slow down the speech here."
-        },
-        {
-            "id": "LIS_FASTSPEECHDECODER_L127_Q3",
-            "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch stress versus tiredness, and 'checked out' versus 'looked at'.",
-            "explanation": "This longer sentence stacks 'dunno' and 'jus'' while also presenting two possible explanations, so track both halves of the comparison: stress, or something more serious.",
-            "textToSpeak": "I dunno whether it's jus' stress or something I should get checked out.",
-            "options": [
-                "I dunno whether it's jus' stress or something I should get checked out.",
-                "I dunno whether it's jus' stress or something I should get looked at.",
-                "I dunno whether it's jus' tiredness or something I should get checked out.",
-                "We dunno whether it's jus' stress or something I should get checked out."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -382,19 +324,33 @@
             "slowVersion": "Slow down the speech here."
         },
         {
+            "id": "LIS_FASTSPEECHDECODER_L127_Q3",
+            "interactionType": "choice",
+            "instruction": "Listen and match the exact sentence.",
+            "hint": "Catch stress versus tiredness, and 'checked out' versus 'looked at'.",
+            "explanation": "This longer sentence stacks 'dunno' and 'jus'' while also presenting two possible explanations, so track both halves of the comparison: stress, or something more serious.",
+            "textToSpeak": "I dunno whether it's jus' stress or something I should get checked out.",
+            "options": [
+                "I dunno whether it's jus' stress or something I should get looked at.",
+                "I dunno whether it's jus' stress or something I should get checked out."
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "fastSpeechDecoder",
+            "emoji": "⚡",
+            "slowVersion": "Slow down the speech here."
+        },
+        {
             "id": "LIS_FASTSPEECHDECODER_L128_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch strict versus fair, and essays versus papers.",
             "explanation": "'Strict' and 'fair' paint very different pictures of the same teacher, so that adjective is the whole point. 'Marking' and 'grading' are near-synonyms too, so listen for the exact verb.",
             "textToSpeak": "The teacher who's marking our essays is jus' really strict.",
             "options": [
-                "The teacher who's marking our essays is jus' really fair.",
-                "The teacher who's marking our papers is jus' really strict.",
                 "The teacher who's marking our essays is jus' really strict.",
                 "The teacher who's grading our essays is jus' really strict."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -402,17 +358,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L128_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch help versus advice, and 'woulda' versus 'coulda'.",
             "explanation": "'Woulda failed' (a certainty) and 'coulda failed' (a real risk, but not certain) suggest different levels of how close the situation really was. 'Help' and 'advice' are near-synonyms too.",
             "textToSpeak": "If I hadn't asked for help, I woulda failed that module completely.",
             "options": [
-                "If I hadn't asked for help, I woulda failed that module eventually.",
-                "If I hadn't asked for advice, I woulda failed that module completely.",
                 "If I hadn't asked for help, I coulda failed that module completely.",
                 "If I hadn't asked for help, I woulda failed that module completely."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -420,15 +374,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L128_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch the exact number, and 'fastest' versus 'best'.",
             "explanation": "'Fastest' (speed) and 'best' (quality) suggest different priorities for how to catch up, so listen for the precise word. The chapter count is also easy to lose track of in a longer sentence.",
             "textToSpeak": "Whatcha reckon's the fastest way to catch up on the nex' three chapters?",
             "options": [
                 "Whatcha reckon's the fastest way to catch up on the nex' three chapters?",
-                "Whatcha reckon's the fastest way to catch up on the nex' two chapters?",
-                "Whatcha think's the fastest way to catch up on the nex' three chapters?",
-                "Whatcha reckon's the best way to catch up on the nex' three chapters?"
+                "Whatcha reckon's the fastest way to catch up on the nex' two chapters?"
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -438,17 +390,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L129_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch director versus producer, and action movie versus comedy.",
             "explanation": "This sentence uses a relative clause to build up expectation before delivering the surprising news at the end, so hold your attention through the whole structure. 'Director' and 'producer' are different roles too.",
             "textToSpeak": "The director who's known for slow, artsy films jus' announced an action movie.",
             "options": [
-                "The director who's known for slow, artsy films jus' announced a comedy.",
-                "The producer who's known for slow, artsy films jus' announced an action movie.",
-                "The director who's known for fast, artsy films jus' announced an action movie.",
-                "The director who's known for slow, artsy films jus' announced an action movie."
+                "The director who's known for slow, artsy films jus' announced an action movie.",
+                "The director who's known for fast, artsy films jus' announced an action movie."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -456,17 +406,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L129_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch ending versus opening, and 'leaked' versus 'spoiled'.",
             "explanation": "'Leaked' and 'spoiled' both ruin a surprise but in slightly different ways, so listen for the exact verb. 'Ending' and 'opening' are also opposite parts of the story.",
             "textToSpeak": "If they hadn't leaked the ending, I woulda been genuinely surprised.",
             "options": [
-                "If they hadn't leaked the ending, I woulda been genuinely shocked.",
                 "If they hadn't leaked the ending, I woulda been genuinely surprised.",
-                "If they hadn't spoiled the ending, I woulda been genuinely surprised.",
-                "If they hadn't leaked the opening, I woulda been genuinely surprised."
+                "If they hadn't leaked the ending, I woulda been genuinely shocked."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -474,17 +422,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L129_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'woulda' versus 'coulda', and 'split up' versus 'broken up'.",
             "explanation": "'Split up' and 'broken up' mean almost the same thing, so the exact phrase matters less than catching 'woulda' versus 'coulda' correctly, since that changes how certain this hypothetical really is.",
             "textToSpeak": "Whatcha reckon woulda happened if the band hadn't jus' split up?",
             "options": [
-                "Whatcha reckon woulda happened if the band hadn't jus' broken up?",
-                "Whatcha think woulda happened if the band hadn't jus' split up?",
                 "Whatcha reckon woulda happened if the band hadn't jus' split up?",
                 "Whatcha reckon coulda happened if the band hadn't jus' split up?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -492,17 +438,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L130_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'get ready' versus 'get up', and the tense.",
             "explanation": "This review question buries the real cause inside a longer 'the reason...is that...' structure, testing whether you can hold onto meaning across a full sentence. 'Get ready' and 'get up' are different parts of a morning routine.",
             "textToSpeak": "The reason we're jus' running late is that the kids wouldn't get ready.",
             "options": [
-                "The reason we're jus' running late is that the kids wouldn't get up.",
-                "The reason we're jus' running late is that the traffic wouldn't clear.",
-                "The reason we were jus' running late is that the kids wouldn't get ready.",
-                "The reason we're jus' running late is that the kids wouldn't get ready."
+                "The reason we're jus' running late is that the kids wouldn't get ready.",
+                "The reason we were jus' running late is that the kids wouldn't get ready."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
@@ -510,15 +454,13 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L130_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'in time' versus 'at all', and checked versus looked.",
             "explanation": "'In time' (just barely) and 'at all' (never) describe very different near-misses, so that ending phrase really matters. This conditional also stacks 'jus'' inside a longer clause, so keep tracking the whole sentence.",
             "textToSpeak": "If we hadn't jus' checked, we wouldn't have caught the mistake in time.",
             "options": [
                 "If we hadn't jus' checked, we wouldn't have caught the mistake at all.",
-                "If we hadn't jus' checked, we wouldn't have caught the mistake in time.",
-                "If we hadn't jus' looked, we wouldn't have caught the mistake in time.",
-                "If they hadn't jus' checked, we wouldn't have caught the mistake in time."
+                "If we hadn't jus' checked, we wouldn't have caught the mistake in time."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -528,17 +470,15 @@
         {
             "id": "LIS_FASTSPEECHDECODER_L130_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and select the exact spoken sentence.",
+            "instruction": "Listen and match the exact sentence.",
             "hint": "Catch 'about it' versus 'sooner', and 'woulda' versus 'coulda'.",
             "explanation": "This closing question of the tier combines a hypothetical with several stacked reductions - 'whatcha', 'reckon', 'jus'', and 'woulda' - the most demanding sentence structure so far. If this feels manageable now, the tier ahead will build on exactly this skill.",
             "textToSpeak": "Whatcha reckon woulda happened if nobody had jus' spoken up about it?",
             "options": [
-                "Whatcha reckon woulda happened if nobody had jus' spoken up sooner?",
-                "Whatcha think woulda happened if nobody had jus' spoken up about it?",
-                "Whatcha reckon woulda happened if nobody had jus' spoken up about it?",
-                "Whatcha reckon coulda happened if nobody had jus' spoken up about it?"
+                "Whatcha reckon coulda happened if nobody had jus' spoken up about it?",
+                "Whatcha reckon woulda happened if nobody had jus' spoken up about it?"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡",
             "slowVersion": "Slow down the speech here."
