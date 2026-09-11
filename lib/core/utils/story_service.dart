@@ -916,11 +916,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'listeninginference': [
       "",
-      "Excellent start! Your understanding of audio inference is growing.",
-      "You are decoding audio inference with impressive accuracy.",
-      "50 levels cleared! Your audio inference skills are rock solid.",
-      "Level 100! You are an absolute master of audio inference.",
-      "200 levels cleared! Your audio inference abilities are unmatched globally.",
+      "Great job! You're really starting to pick up on those hidden meanings.",
+      "Wow! Nothing gets past you. You're reading between the lines like a pro.",
+      "50 levels cleared! Your ability to catch the subtle tone is amazing.",
+      "Level 100! You can practically read minds at this point!",
+      "200 levels! You're an absolute mind reader. Native speakers can't hide anything from you!",
     ],
     'soundimagematch': [
       "",

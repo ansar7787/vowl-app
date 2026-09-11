@@ -585,15 +585,15 @@ class GameInstructionService {
       title: "Inference Lens",
       icon: Icons.biotech_rounded,
       objective:
-          "Infer implications in the spoken passage that are not explicitly stated. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+          "Listen carefully and figure out what the speaker really means, even if they don't say it directly. This helps you understand real-world English conversations!",
       rules: [
-        "Read between waves",
-        "Deduce the subtext",
-        "Choose logical conclusion",
+        "Listen to the tone",
+        "Understand the context",
+        "Pick the hidden meaning",
       ],
       actionText: "Focus Lens",
       tip:
-          "Listen for hesitation or sarcasm—voice inflections hold crucial keys.",
+          "Pay close attention to how the speaker sounds, not just the exact words they use!",
     ),
     GameSubtype.ambientId: GameBriefing(
       title: "Spatial Anchor",

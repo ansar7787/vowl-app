@@ -18,6 +18,7 @@ import 'package:vowl/features/listening/listening_inference/presentation/widgets
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_explanation.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
   final int level;
@@ -37,7 +38,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -73,9 +74,10 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     );
   }
 
-  void _submitFinalAnswer(int index, int correct, GameQuest quest) {
+  void _submitFinalAnswer(int index, int correct, dynamic quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
+    _pulseController.stop();
 
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
@@ -97,8 +99,13 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: quest.textToSpeak ?? 'Listening Inference',
-          userAnswer: index.toString(),
-          correctAnswer: correct.toString(),
+          userAnswer: (quest.options != null && quest.options.length > index)
+              ? quest.options[index]
+              : index.toString(),
+          correctAnswer:
+              (quest.options != null && quest.options.length > correct)
+              ? quest.options[correct]
+              : correct.toString(),
           level: widget.level,
         );
       }
@@ -109,16 +116,17 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     }
   }
 
-  
   void _submitWrongAnswer(dynamic quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
+    _pulseController.stop();
 
     _hapticService.error();
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
@@ -131,6 +139,84 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     _isAnswered.value = true;
     _isCorrect.value = false;
     context.read<ListeningBloc>().add(SubmitAnswer(false));
+  }
+
+  void _showTranscriptBottomSheet(
+    BuildContext context,
+    String text,
+    dynamic theme,
+  ) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+      ),
+      builder: (context) {
+        return SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(24.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.closed_caption_rounded,
+                      color: theme.primaryColor,
+                    ),
+                    SizedBox(width: 12.w),
+                    Text(
+                      "AUDIO TRANSCRIPT",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w900,
+                        color: theme.primaryColor,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500,
+                    height: 1.5,
+                    color: Colors.black87,
+                  ),
+                ),
+                SizedBox(height: 24.h),
+                ElevatedButton(
+                  onPressed: () => Navigator.pop(context),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: theme.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 16.h),
+                    elevation: 0,
+                  ),
+                  child: Text(
+                    "CLOSE",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -151,9 +237,11 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
             _timerKey.currentState?.start();
             _isCorrect.value = null;
             _selectedIndex.value = null;
+            _pulseController.repeat();
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             _isAnswered.value = true;
             _isCorrect.value = state.answerStatus.asBoolOrNull;
+            _pulseController.stop();
           }
           _lastLives = state.livesRemaining;
         }
@@ -220,7 +308,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           key: _timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                          onTimeUp: () =>
+                                              _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       ListeningInferenceInstruction(
@@ -243,14 +332,59 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         emoji: quest.emoji,
                                         isCorrectState: _isCorrect.value,
                                       ),
-                                      SizedBox(height: 32.h),
+                                      SizedBox(height: 16.h),
+                                      GestureDetector(
+                                        onTap: () {
+                                          _hapticService.selection();
+                                          _showTranscriptBottomSheet(
+                                            context,
+                                            quest.textToSpeak ?? '',
+                                            theme,
+                                          );
+                                        },
+                                        child: Container(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 16.w,
+                                            vertical: 8.h,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.1),
+                                            borderRadius: BorderRadius.circular(
+                                              30.r,
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Icons.closed_caption_rounded,
+                                                size: 16.r,
+                                                color: theme.primaryColor,
+                                              ),
+                                              SizedBox(width: 6.w),
+                                              Text(
+                                                'SHOW TEXT',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 12.sp,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 1.0,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 16.h),
                                       Padding(
                                         padding: EdgeInsets.symmetric(
                                           horizontal: 16.w,
                                         ),
                                         child: Text(
                                           quest.question?.toUpperCase() ??
-                                              "INFER THE ACTOR",
+                                              "INFER THE MEANING",
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily: 'Outfit',
@@ -290,6 +424,25 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           );
                                         },
                                       ),
+                                      if (_isAnswered.value &&
+                                          quest.explanation != null)
+                                        AnimatedSize(
+                                          duration: const Duration(
+                                            milliseconds: 400,
+                                          ),
+                                          curve: Curves.easeOutBack,
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                            ),
+                                            child:
+                                                ListeningInferenceExplanation(
+                                                  explanation:
+                                                      quest.explanation!,
+                                                  color: theme.primaryColor,
+                                                ),
+                                          ),
+                                        ),
                                     ],
                                   ),
                                 ),

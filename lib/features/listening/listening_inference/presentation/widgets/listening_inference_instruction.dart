@@ -22,17 +22,21 @@ class ListeningInferenceInstruction extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.radar_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
-          Text(
-            instruction.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              instruction.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: color,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],
