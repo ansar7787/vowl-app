@@ -37,7 +37,7 @@ class FastSpeechDecoderScreen extends StatefulWidget {
 class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -87,7 +87,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   void _submitFinalAnswer(GameQuest quest) {
     if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
     _timerKey.currentState?.stop();
-    
+
     final correct = quest.correctAnswerIndex ?? 0;
     bool isCorrect = _pendingSelectedIndex.value == correct;
 
@@ -122,7 +122,6 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     }
   }
 
-  
   void _submitWrongAnswer(dynamic quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
@@ -131,7 +130,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
@@ -193,10 +193,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
             _showConfetti,
             _selectedIndex,
             _pendingSelectedIndex,
-            _dialRotation,
           ]),
           builder: (context, _) {
-            double rotation = _dialRotation.value;
             return ListeningBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
@@ -238,7 +236,8 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                           key: _timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                          onTimeUp: () =>
+                                              _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       FastSpeechDecoderInstruction(
@@ -249,40 +248,45 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                             ),
                                       ),
                                       SizedBox(height: 24.h),
-                                      (() {
-                                        double speed = 0.3 + (rotation * 0.6);
-                                        return Column(
-                                          children: [
-                                            FastSpeechDecoderGauges(
-                                              speed: speed * 2,
-                                              color: theme.primaryColor,
-                                            ),
-                                            SizedBox(height: 20.h),
-                                            FastSpeechDecoderCore(
-                                              textToSpeak:
-                                                  quest.textToSpeak ?? "",
-                                              speed: speed,
-                                              color: theme.primaryColor,
-                                              rotation: rotation,
-                                              onRotate: _onRotate,
-                                              onTapTts: () {
-                                                _soundService.playTts(
-                                                  quest.textToSpeak ?? "",
-                                                  speed: speed,
-                                                );
-                                                _hapticService.selection();
-                                              },
-                                              emoji: quest.emoji,
-                                              isCorrectState: _isCorrect.value,
-                                            ),
-                                          ],
-                                        );
-                                      })(),
+                                      ValueListenableBuilder<double>(
+                                        valueListenable: _dialRotation,
+                                        builder: (context, rotation, child) {
+                                          double speed = 0.3 + (rotation * 0.6);
+                                          return Column(
+                                            children: [
+                                              FastSpeechDecoderGauges(
+                                                speed: speed * 2,
+                                                color: theme.primaryColor,
+                                              ),
+                                              SizedBox(height: 20.h),
+                                              FastSpeechDecoderCore(
+                                                textToSpeak:
+                                                    quest.textToSpeak ?? "",
+                                                speed: speed,
+                                                color: theme.primaryColor,
+                                                rotation: rotation,
+                                                onRotate: _onRotate,
+                                                onTapTts: () {
+                                                  _soundService.playTts(
+                                                    quest.textToSpeak ?? "",
+                                                    speed: speed,
+                                                  );
+                                                  _hapticService.selection();
+                                                },
+                                                emoji: quest.emoji,
+                                                isCorrectState:
+                                                    _isCorrect.value,
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
-                              SliverToBoxAdapter(
+                              SliverFillRemaining(
+                                hasScrollBody: false,
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 16.w,
@@ -310,7 +314,9 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                         },
                                       ),
                                       SizedBox(
-                                        height: _isAnswered.value ? 200.h : 60.h,
+                                        height: _isAnswered.value
+                                            ? 200.h
+                                            : 60.h,
                                       ),
                                     ],
                                   ),

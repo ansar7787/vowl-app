@@ -27,118 +27,141 @@ class FastSpeechDecoderCore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onPanUpdate: (details) => onRotate(details.delta.dx + details.delta.dy),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // The Outer Gear Background
-          Transform.rotate(
-            angle: rotation * 4,
-            child: Icon(
-              Icons.settings_suggest_rounded,
-              size: 180.r,
-              color: color.withValues(alpha: 0.05),
+    return Semantics(
+      label:
+          'Speech speed dial. Current speed: ${(speed * 2).toStringAsFixed(1)}x',
+      hint: 'Swipe horizontally or vertically to adjust speech speed',
+      slider: true,
+      value: (speed * 2).toStringAsFixed(1),
+      child: GestureDetector(
+        onPanUpdate: (details) {
+          final RenderBox renderBox = context.findRenderObject() as RenderBox;
+          final center = Offset(
+            renderBox.size.width / 2,
+            renderBox.size.height / 2,
+          );
+          final R = details.localPosition - center;
+          final D = details.delta;
+          final distanceSquared = R.distanceSquared;
+          if (distanceSquared > 1) {
+            final deltaTheta = (R.dx * D.dy - R.dy * D.dx) / distanceSquared;
+            onRotate(deltaTheta * 90);
+          }
+        },
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // The Outer Gear Background
+            Transform.rotate(
+              angle: rotation * 4,
+              child:
+                  Icon(
+                        Icons.settings_suggest_rounded,
+                        size: 180.r,
+                        color: color.withValues(alpha: 0.05),
+                      )
+                      .animate(onPlay: (controller) => controller.repeat())
+                      .rotate(duration: 30.seconds, begin: 0, end: 1),
             ),
-          ),
 
-          // Outer Ring Indicator
-          Container(
-            width: 150.r,
-            height: 150.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: color.withValues(alpha: 0.1),
-                width: 6.r,
-              ),
-            ),
-          ),
-
-          // Playable Dial
-          ScaleButton(
-            onTap: onTapTts,
-            child: Container(
-              width: 110.r,
-              height: 110.r,
+            // Outer Ring Indicator
+            Container(
+              width: 150.r,
+              height: 150.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    color,
-                    color.withValues(alpha: 0.8),
-                    color.withValues(alpha: 0.9),
-                  ],
-                  stops: const [0.2, 0.8, 1.0],
+                border: Border.all(
+                  color: color.withValues(alpha: 0.1),
+                  width: 6.r,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.5),
-                    blurRadius: 25,
-                    spreadRadius: 2,
-                  ),
-                  BoxShadow(
-                    color: Colors.white.withValues(alpha: 0.2),
-                    blurRadius: 10,
-                    offset: const Offset(0, -5),
-                  ),
-                ],
-              ),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  if (isCorrectState == true && emoji != null)
-                    Text(emoji!, style: TextStyle(fontSize: 48.r))
-                        .animate()
-                        .scale(duration: 400.ms, curve: Curves.easeOutBack)
-                  else ...[
-                    Icon(
-                      Icons.play_arrow_rounded,
-                      color: Colors.white,
-                      size: 60.r,
-                    ),
-                    Positioned(
-                      bottom: 20.r,
-                      child: Text(
-                        "LISTEN",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 7.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white70,
-                        ),
-                      ),
-                    ),
-                  ],
-                ],
               ),
             ),
-          ),
 
-          // Tactical Needle
-          Transform.rotate(
-            angle: (rotation - 0.5) * 3.5,
-            child: Container(
-              height: 170.h,
-              width: 4.w,
-              alignment: Alignment.topCenter,
+            // Playable Dial
+            ScaleButton(
+              onTap: onTapTts,
               child: Container(
-                width: 4.w,
-                height: 20.h,
+                width: 110.r,
+                height: 110.r,
                 decoration: BoxDecoration(
-                  color: Colors.orangeAccent,
-                  borderRadius: BorderRadius.circular(2.r),
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      color,
+                      color.withValues(alpha: 0.8),
+                      color.withValues(alpha: 0.9),
+                    ],
+                    stops: const [0.2, 0.8, 1.0],
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.orangeAccent.withValues(alpha: 0.5),
-                      blurRadius: 8,
+                      color: color.withValues(alpha: 0.5),
+                      blurRadius: 25,
+                      spreadRadius: 2,
                     ),
+                    BoxShadow(
+                      color: Colors.white.withValues(alpha: 0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, -5),
+                    ),
+                  ],
+                ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    if (isCorrectState == true && emoji != null)
+                      Text(emoji!, style: TextStyle(fontSize: 48.r))
+                          .animate()
+                          .scale(duration: 400.ms, curve: Curves.easeOutBack)
+                    else ...[
+                      Icon(
+                        Icons.play_arrow_rounded,
+                        color: Colors.white,
+                        size: 60.r,
+                      ),
+                      Positioned(
+                        bottom: 20.r,
+                        child: Text(
+                          "LISTEN",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 7.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ),
+                    ],
                   ],
                 ),
               ),
             ),
-          ),
-        ],
+
+            // Tactical Needle
+            Transform.rotate(
+              angle: (rotation - 0.5) * 3.5,
+              child: Container(
+                height: 170.h,
+                width: 4.w,
+                alignment: Alignment.topCenter,
+                child: Container(
+                  width: 4.w,
+                  height: 20.h,
+                  decoration: BoxDecoration(
+                    color: Colors.orangeAccent,
+                    borderRadius: BorderRadius.circular(2.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.orangeAccent.withValues(alpha: 0.5),
+                        blurRadius: 8,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
