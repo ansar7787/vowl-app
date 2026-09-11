@@ -125,6 +125,30 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     });
   }
 
+  
+  void _submitWrongAnswer(dynamic quest) {
+    if (_isAnswered.value) return;
+    _timerKey.currentState?.stop();
+
+    _hapticService.error();
+    _soundService.playWrong();
+
+    final authState = context.read<AuthBloc>().state;
+    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+      ErrorJournalCollector.record(
+        userId: authState.user!.id,
+        gameType: widget.gameType.name,
+        question: quest.textToSpeak ?? 'Timeout',
+        userAnswer: '[Timeout]',
+        correctAnswer: '',
+        level: widget.level,
+      );
+    }
+    _isAnswered.value = true;
+    _isCorrect.value = false;
+    context.read<ListeningBloc>().add(SubmitAnswer(false));
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -229,10 +253,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                           key: _timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () {
-                                            if (_isAnswered.value) return;
-                                            _submitFinalAnswer(0, quest.correctAnswerIndex ?? 0, quest);
-                                          },
+                                          onTimeUp: () => _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       AudioMultipleChoiceInstruction(
