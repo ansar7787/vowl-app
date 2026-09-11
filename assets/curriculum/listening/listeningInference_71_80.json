@@ -6,16 +6,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L71_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'the meeting had been moved' tell you about its status?",
             "explanation": "'Moved' = relocated (time or place), not cancelled. 'Only to find' = she discovered unexpectedly. 'A note on her desk' = an informal way of being informed. The meeting still exists but is at a different time or location. This is a common office miscommunication scenario.",
             "textToSpeak": "She arrived at the office only to find a note saying the meeting had been moved.",
             "question": "What happened to her meeting?",
             "options": [
                 "It was moved to a different time or place",
-                "It was cancelled permanently",
-                "It was held at her desk",
-                "She forgot about it"
+                "It was cancelled permanently"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -26,18 +24,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L71_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'just as the others were leaving' tell you about his timing?",
             "explanation": "'Just as the others were leaving' = at the exact moment of their departure. He arrived when others were already going - so he was too late to participate with the group. 'Just as' marks simultaneous events: his arrival and their departure coincided.",
             "textToSpeak": "He walked in just as the others were leaving.",
             "question": "What is the intended meaning?",
             "options": [
-                "He was early",
-                "He arrived exactly on time",
                 "He was too late to join the group activity",
                 "He left with the others"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔍",
             "literalMeaning": "What is actually said.",
@@ -46,18 +42,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L71_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what applauding before the end of a speech normally communicates.",
             "explanation": "Applauding before the end = the audience was so impressed or moved they couldn't wait. This is a sign of exceptional enthusiasm, not rudeness. In concerts and speeches, early applause (before the end) is a sign of strong positive reaction rather than a desire for the speaker to stop.",
             "textToSpeak": "The audience applauded before he had finished speaking.",
             "question": "What is the takeaway here?",
             "options": [
-                "They were being impolite",
-                "They misunderstood his speech",
                 "They were very enthusiastic",
                 "They wanted him to stop"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🤔",
             "literalMeaning": "What is actually said.",
@@ -66,18 +60,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L72_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'unlike' tell you about the two sisters' choices?",
             "explanation": "'Unlike her sister' = in contrast to her sister. If she chose arts and her sister is unlike her in career terms, her sister chose something different - probably a non-arts field. 'Unlike' is a contrast marker: two people, two different choices.",
             "textToSpeak": "Unlike her sister, she chose a career in the arts.",
             "question": "What can be inferred about her sister?",
             "options": [
-                "Her sister also chose the arts",
                 "Her sister chose a different career path",
-                "Her sister hasn't chosen a career yet",
-                "Her sister is much older"
+                "Her sister hasn't chosen a career yet"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "👨‍👩‍👧",
             "literalMeaning": "What is actually said.",
@@ -86,18 +78,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L72_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'less so' mean in this comparative context?",
             "explanation": "'Less so' = less [excellent] = not as good as the first half. The first half gets 'excellent'; the second gets 'less so'. By implication, the second half was a disappointment relative to the first. The film declined in quality. 'Less so' is an elliptical comparative.",
             "textToSpeak": "The first half of the film was excellent - the second, less so.",
             "question": "What is the speaker's overall opinion?",
             "options": [
-                "The whole film was excellent",
-                "The second half was the best part",
-                "The film was consistently good throughout",
-                "The second half was disappointing by comparison"
+                "The second half was disappointing by comparison",
+                "The whole film was excellent"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🎬",
             "literalMeaning": "What is actually said.",
@@ -106,18 +96,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L72_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What was the opposite of his expectation?",
             "explanation": "He expected to hate it (= difficult, frustrating) but found it 'quite intuitive' (= easy to understand without instruction). The surprise = the opposite of his expectation. 'Actually' marks the contrast between expectation and reality. 'Intuitive' = natural and easy to use.",
             "textToSpeak": "He expected to hate the new system but actually found it quite intuitive.",
             "question": "What surprised him?",
             "options": [
-                "How complicated it was",
-                "How long it took to learn",
-                "How easy and user-friendly it was",
-                "How expensive the training was"
+                "How expensive the training was",
+                "How easy and user-friendly it was"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "😲",
             "literalMeaning": "What is actually said.",
@@ -126,16 +114,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L73_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would nobody believe her when she said 'fine'?",
             "explanation": "If nobody believed her, her 'fine' must have been unconvincing - contradicted by her appearance or tone. This reveals the gap between verbal claim and visible emotional state. 'Fine' is very frequently used to deflect concern when someone is not actually fine.",
             "textToSpeak": "When she said she was fine, nobody believed her.",
             "question": "What conclusion can you draw from this?",
             "options": [
                 "She was hiding her true feelings",
-                "She was obviously fine and everyone could see it",
-                "She often says she's fine when she isn't",
-                "She said she was fine and was right"
+                "She was obviously fine and everyone could see it"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -146,18 +132,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L73_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'manageable' imply, and why does the speaker say it 'tells you everything'?",
             "explanation": "'Manageable' = barely coping, able to handle but not comfortably. 'Which tells you everything' = saying it was only 'manageable' reveals how hard things are - because someone who was doing well wouldn't use such a minimal word. The understatement reveals the difficulty.",
             "textToSpeak": "He told me it was manageable - which tells you everything.",
             "question": "What does the speaker imply about the situation?",
             "options": [
-                "It was extremely difficult",
                 "It was going very well",
-                "It was going smoothly",
-                "It was excellent"
+                "It was extremely difficult"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💬",
             "literalMeaning": "What is actually said.",
@@ -166,18 +150,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L73_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What can 'lively' be a polite way of describing?",
             "explanation": "'Lively' = full of activity, noise, people. In real estate or neighbourhood descriptions, 'lively' is often a polite euphemism for noisy, busy, or chaotic. Truly desirable quiet neighbourhoods are described as 'peaceful', 'tranquil', or 'quiet'. 'Lively' raises a flag that it may not be ideal for everyone.",
             "textToSpeak": "She described the neighbourhood as lively.",
             "question": "What might this actually suggest?",
             "options": [
                 "The neighbourhood is very quiet and peaceful",
-                "The neighbourhood is boring",
-                "The neighbourhood is dangerous",
                 "The neighbourhood is probably noisy or busy"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🪞",
             "literalMeaning": "What is actually said.",
@@ -186,16 +168,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L74_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'I had a feeling you'd say that' communicate?",
             "explanation": "'I had a feeling you'd say that' = B anticipated this conversation. It means B had already sensed the budget problem was coming. This shows B is perceptive - not surprised at all. The phrase often implies mild resignation alongside the accurate prediction.",
             "textToSpeak": "A: We're going to have to revisit the budget. B: I had a feeling you'd say that.",
             "question": "What does B imply?",
             "options": [
-                "B is very surprised",
-                "B had already anticipated this",
                 "B strongly disagrees",
-                "B doesn't understand why"
+                "B had already anticipated this"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -206,18 +186,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L74_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'bold' with a hesitation communicate in a professional context?",
             "explanation": "'Well...' = hesitation (buying time, choosing words). 'Certainly bold' = acknowledging it's a dramatic move without calling it good. 'Bold' can mean brave or reckless. The hesitation + cautious praise-word signals scepticism or uncertainty rather than genuine enthusiasm.",
             "textToSpeak": "A: What do you think of the new direction? B: Well... it's certainly bold.",
             "question": "What is B's likely opinion of the new direction?",
             "options": [
-                "Cautiously uncertain or sceptical",
                 "Strongly enthusiastic",
-                "Completely negative",
-                "Fully committed to it"
+                "Cautiously uncertain or sceptical"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔦",
             "literalMeaning": "What is actually said.",
@@ -226,18 +204,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L74_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does the idiom 'above my pay grade' mean in a workplace context?",
             "explanation": "'Above my pay grade' = a decision that should be made by someone more senior. It's an idiomatic way of saying 'I'm not the right person to decide this' or 'this is beyond my authority'. It's not about literal salary - it's about hierarchy and decision-making authority.",
             "textToSpeak": "A: Should we push the launch date? B: That's above my pay grade.",
             "question": "What does B mean?",
             "options": [
-                "B is too junior to make that decision",
                 "B earns too little for this type of decision",
-                "B disagrees with launching",
-                "B is offended by the question"
+                "B is too junior to make that decision"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💰",
             "literalMeaning": "What is actually said.",
@@ -246,18 +222,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L75_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why might a promotion cause sleep problems?",
             "explanation": "Promotion → more responsibility → potential stress → poor sleep. The temporal link ('since the promotion') connects the sleep problems to the job change. New responsibilities, higher expectations, and adjustment challenges are common causes of work-related stress after promotion.",
             "textToSpeak": "She hasn't been sleeping well since the promotion.",
             "question": "What might this suggest?",
             "options": [
-                "The promotion made her very happy",
-                "She works in the healthcare sector",
-                "She doesn't want the promotion",
-                "The promotion brought new stress or pressure"
+                "The promotion brought new stress or pressure",
+                "The promotion made her very happy"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -266,18 +240,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L75_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What might cause someone to check their phone constantly, even at meals?",
             "explanation": "Constant phone-checking, especially at meals, suggests anxiety about missing important messages. This could be from a demanding job, a difficult personal situation, or high stakes circumstances. It's compulsive behaviour driven by urgency, not just social habit.",
             "textToSpeak": "He checks his phone constantly - even at dinner.",
             "question": "What does this line reveal?",
             "options": [
-                "He is very sociable and popular",
-                "He is simply showing bad manners",
-                "He particularly enjoys texting",
-                "He has a demanding job or is stressed about something"
+                "He has a demanding job or is stressed about something",
+                "He is very sociable and popular"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📱",
             "literalMeaning": "What is actually said.",
@@ -286,18 +258,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L75_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would someone keep heating on high even in warm weather?",
             "explanation": "Keeping heating high in summer is unusual - summer is warm, so most people don't need extra heat. The most direct inference: she feels cold even when others are warm. This could be a circulation issue, personal preference, or a medical condition. The behaviour directly suggests she needs more warmth than average.",
             "textToSpeak": "She keeps the thermostat set high even in summer.",
             "question": "What does this get at?",
             "options": [
-                "She has a high electricity bill by choice",
-                "She forgets to adjust the thermostat",
-                "She is always cold and needs extra warmth",
-                "She doesn't feel temperature changes"
+                "She doesn't feel temperature changes",
+                "She is always cold and needs extra warmth"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔍",
             "literalMeaning": "What is actually said.",
@@ -306,18 +276,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L76_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'let me stop you there' signal in a conversation?",
             "explanation": "'Let me stop you there' is a polite interruption. The speaker cuts in to prevent repetition ('we've already covered this'). This is a discourse management function - controlling the flow of conversation to avoid wasting time on already-covered ground.",
             "textToSpeak": "Let me stop you there - we've already covered this.",
             "question": "What is taking place in this moment?",
             "options": [
-                "Starting a new topic",
-                "Agreeing enthusiastically",
-                "Interrupting to avoid unnecessary repetition",
-                "Asking for clarification"
+                "Asking for clarification",
+                "Interrupting to avoid unnecessary repetition"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🤔",
             "literalMeaning": "What is actually said.",
@@ -326,18 +294,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L76_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'cut a long story short' signal about what follows?",
             "explanation": "'Cut a long story short' = I'm going to summarise rather than give every detail. It signals a coming summary. The speaker had a longer story to tell but is choosing brevity. 'It didn't work out' is the concise conclusion of that longer story.",
             "textToSpeak": "To cut a long story short, it didn't work out.",
             "question": "What is the speaker doing?",
             "options": [
-                "Telling an exhaustive, detailed story",
-                "Asking for help understanding something",
-                "Avoiding the topic entirely",
-                "Summarising a longer story briefly"
+                "Summarising a longer story briefly",
+                "Telling an exhaustive, detailed story"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⚖️",
             "literalMeaning": "What is actually said.",
@@ -346,18 +312,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L76_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the social function of 'with respect' in English?",
             "explanation": "'With respect' is a polite formulaic phrase used before disagreeing or correcting someone. It softens the disagreement ('I think you may have misunderstood') by acknowledging the other person's position. 'May have misunderstood' is also softened - not 'you are wrong' but 'you may have'.",
             "textToSpeak": "With respect, I think you may have misunderstood.",
             "question": "What is being described here?",
             "options": [
-                "Politely disagreeing or correcting",
                 "Apologising for a mistake",
-                "Asking a question",
-                "Ending the discussion"
+                "Politely disagreeing or correcting"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🎯",
             "literalMeaning": "What is actually said.",
@@ -366,18 +330,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L77_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does staying in a long queue without complaint reveal about character?",
             "explanation": "Waiting an hour in a queue without complaining requires patience and a low tendency to make a fuss about discomfort. This is a character observation - she tolerates frustration well without externalising it. It's a positive character inference: patient, uncomplaining.",
             "textToSpeak": "She queued for over an hour without complaining once.",
             "question": "What does this show about her?",
             "options": [
-                "She is patient and doesn't make a fuss",
                 "She is used to much longer queues",
-                "She didn't notice how long she waited",
-                "She had someone else with her to talk to"
+                "She is patient and doesn't make a fuss"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📊",
             "literalMeaning": "What is actually said.",
@@ -386,18 +348,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L77_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does knowing and using neighbours' names communicate?",
             "explanation": "Using someone's name when greeting them shows recognition, respect, and engagement. Combined with 'always' (habitual), it suggests a warm, community-minded personality who values connection with those around him. This is a positive social behaviour inference.",
             "textToSpeak": "He always greets his neighbours by name when he passes them.",
             "question": "What does this suggest about his state of mind?",
             "options": [
-                "He is nosy about his neighbours' lives",
-                "He has an unusually good memory for names",
                 "He is friendly and engaged with his community",
                 "He is trying to impress people"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔎",
             "literalMeaning": "What is actually said.",
@@ -406,18 +366,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L77_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does successfully hosting twelve people alone demonstrate?",
             "explanation": "Organising and executing a dinner for twelve unassisted requires significant capability, planning, and organisational skill. The inference is about competence: she is capable of managing a demanding task independently. The scale (twelve people) makes this particularly impressive.",
             "textToSpeak": "She hosted a dinner for twelve people entirely on her own.",
             "question": "What does this indicate about her?",
             "options": [
                 "She prefers not to ask for help",
-                "She wanted to prove something to others",
-                "She didn't know many people to invite",
                 "She is capable and well-organised"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🍽️",
             "literalMeaning": "What is actually said.",
@@ -426,18 +384,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L78_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What's surprising about this combination of good reviews but low sales?",
             "explanation": "Good reviews normally drive audience interest. 'Despite' signals the unexpected - the reviews didn't produce the expected result. Low sales despite warm reviews suggests a disconnect: people liked what critics said but didn't go to see it (possibly due to price, timing, or other factors).",
             "textToSpeak": "Despite warm reviews, ticket sales remained low.",
             "question": "What is one meant to understand from this?",
             "options": [
-                "Good reviews always drive ticket sales",
                 "The positive reviews didn't translate into audiences",
-                "The show was commercially successful",
-                "The reviews came too early"
+                "The show was commercially successful"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🧩",
             "literalMeaning": "What is actually said.",
@@ -446,18 +402,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L78_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would someone record both food and feelings together?",
             "explanation": "Recording food AND feelings together suggests she's looking for a connection - does certain food make her feel better or worse? This is a systematic self-observation exercise, likely to identify food sensitivities, mood patterns, or dietary effects. The pairing of inputs and outcomes is the key.",
             "textToSpeak": "She kept a journal of everything she ate and how she felt afterwards.",
             "question": "What was she probably trying to do?",
             "options": [
-                "Write a cookbook based on her experiences",
-                "Prove she had a healthy diet",
-                "Track the relationship between food and how she felt",
-                "Lose weight quickly"
+                "Lose weight quickly",
+                "Track the relationship between food and how she felt"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -466,16 +420,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L78_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does a competitor going into administration mean for other companies?",
             "explanation": "Administration = a competitor is financially failing. When a rival exits the market (or weakens), other companies gain potential customers, reduced competition, and market share. The timing - launching when a rival collapses - was advantageous, not harmful. This is a business inference.",
             "textToSpeak": "The company launched a new product just as their main competitor went into administration.",
             "question": "What situation did the company find itself in?",
             "options": [
-                "A terrible timing for their launch",
-                "A favourable moment to gain market share",
                 "A legal challenge from the administrator",
-                "A period of rapid decline"
+                "A favourable moment to gain market share"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -486,18 +438,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L79_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What function does 'bringing this to our attention' serve?",
             "explanation": "'Bringing this to our attention' = informing us of something we didn't know. 'We appreciate' = expressing thanks. Together: formally thanking someone for reporting an issue. This is customer service or professional language used when someone has flagged a problem or concern.",
             "textToSpeak": "We appreciate you bringing this to our attention.",
             "question": "What is currently happening?",
             "options": [
                 "Giving criticism",
-                "Starting a difficult conversation",
-                "Making a complaint",
                 "Thanking someone for reporting or informing them of something"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔍",
             "literalMeaning": "What is actually said.",
@@ -506,18 +456,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L79_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'bear in mind' actually commit the speaker to?",
             "explanation": "'Bear in mind' = keep in memory as a consideration. It's non-committal - it doesn't promise action, only remembering. Like 'take it under consideration', it's a polite acknowledgement without guarantee. Less certain than 'I'll do it'; less dismissive than 'I'll think about it'.",
             "textToSpeak": "I'll bear that in mind.",
             "question": "What does this expression typically mean?",
             "options": [
                 "I completely agree with you",
-                "I will definitely follow your advice",
-                "I strongly disagree",
                 "I will keep it as a consideration"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🤔",
             "literalMeaning": "What is actually said.",
@@ -526,18 +474,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L79_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "In what context would a company say they're 'always looking to improve'?",
             "explanation": "Companies typically use 'we're always looking to improve' as a defensive response to criticism - acknowledging that improvement is needed without admitting specific failure. This is a PR-style response to a complaint, designed to sound proactive rather than defensive.",
             "textToSpeak": "We're always looking at ways to improve our service.",
             "question": "What might this response be to?",
             "options": [
-                "A compliment",
-                "A request for information",
-                "A question about opening hours",
-                "A complaint"
+                "A complaint",
+                "A compliment"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💬",
             "literalMeaning": "What is actually said.",
@@ -546,18 +492,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L80_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the significance of the contrast between words and tone?",
             "explanation": "Tone contradicting words = masked feelings. She said 'happy to help' (polite compliance) but her tone was not happy. This is a social performance - agreeing verbally while feeling reluctant. The speaker infers the real feeling from the non-verbal signal.",
             "textToSpeak": "She said she was happy to help but her tone said otherwise.",
             "question": "What does a careful listener pick up on here?",
             "options": [
-                "She was genuinely happy to help",
-                "She didn't understand the request",
-                "She refused to help directly",
-                "She didn't want to help but said she did to be polite"
+                "She didn't want to help but said she did to be polite",
+                "She was genuinely happy to help"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🎯",
             "literalMeaning": "What is actually said.",
@@ -566,18 +510,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L80_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What do small post-meeting objections suggest about his real feelings?",
             "explanation": "Agreeing in the meeting (social compliance) + raising objections privately = he wasn't genuinely comfortable but didn't say so in the group setting. The small objections are indirect expressions of his real discomfort. This is a passive-disagreement pattern - appearing to agree while actually dissenting.",
             "textToSpeak": "He agreed to the plan in the meeting but kept raising small objections afterwards.",
             "question": "What was he probably feeling?",
             "options": [
-                "Fully satisfied with the plan",
                 "Uncomfortable but trying to maintain politeness",
-                "Very enthusiastic about the new direction",
-                "Completely indifferent to the plan"
+                "Very enthusiastic about the new direction"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -586,18 +528,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L80_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does talking about 'everything except' the main subject suggest?",
             "explanation": "Talking around a topic = avoidance behaviour. If the problem 'brought them together' (it's the reason for the meeting) but isn't being discussed, it's being deliberately avoided. Avoidance often signals that a topic feels uncomfortable, contentious, or emotionally difficult.",
             "textToSpeak": "They kept talking about everything except the problem that had brought them together.",
             "question": "What were they avoiding?",
             "options": [
                 "The agreement they'd already reached",
-                "Their true feelings about each other",
-                "The decision they had to make",
                 "A difficult or uncomfortable topic"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "⚖️",
             "literalMeaning": "What is actually said.",

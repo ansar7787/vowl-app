@@ -16,6 +16,7 @@ import 'package:vowl/features/listening/listening_inference/presentation/widgets
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
@@ -36,6 +37,9 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   late AnimationController _pulseController;
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
@@ -69,8 +73,9 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     );
   }
 
-  void _submitFinalAnswer(int index, int correct) {
+  void _submitFinalAnswer(int index, int correct, GameQuest quest) {
     if (_isAnswered.value) return;
+    _timerKey.currentState?.stop();
 
     _selectedIndex.value = index;
     bool isCorrect = index == correct;
@@ -91,7 +96,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: 'Listening Inference',
+          question: quest.textToSpeak ?? 'Listening Inference',
           userAnswer: index.toString(),
           correctAnswer: correct.toString(),
           level: widget.level,
@@ -183,6 +188,18 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: 6.h),
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        child: SpeedChallengeTimer(
+                                          key: _timerKey,
+                                          durationSeconds: 15,
+                                          primaryColor: theme.primaryColor,
+                                          onTimeUp: () {
+                                            if (_isAnswered.value) return;
+                                            _submitFinalAnswer(0, quest.correctAnswerIndex ?? 0, quest);
+                                          },
+                                        ),
+                                      ),
                                       ListeningInferenceInstruction(
                                         color: theme.primaryColor,
                                         instruction:
@@ -246,6 +263,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           _submitFinalAnswer(
                                             index,
                                             quest.correctAnswerIndex ?? 0,
+                                            quest,
                                           );
                                         },
                                       ),

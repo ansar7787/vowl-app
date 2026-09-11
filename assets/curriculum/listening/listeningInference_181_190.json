@@ -6,18 +6,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L181_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Where does the real dispute in this argument lie?",
             "explanation": "Valid argument = if premises are true, conclusion must follow. The observation: the logic is fine (conclusion follows from premise). The real dispute: the premise itself. Arguments can be logically valid while resting on contested assumptions. The weak point is before the argument even starts - in what is granted as given.",
             "textToSpeak": "If the premise is conceded, the conclusion follows - yet the premise itself is far from obvious.",
             "question": "What is the key issue?",
             "options": [
-                "The logic is faulty",
-                "The argument has no weaknesses",
-                "The conclusion is obviously wrong",
-                "The argument is valid but the starting assumption is questionable"
+                "The argument is valid but the starting assumption is questionable",
+                "The logic is faulty"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -26,18 +24,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L181_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what paying to be listed might do to the independence of a rating.",
             "explanation": "A rating from a platform the hotel pays to appear on doesn't necessarily mean the score is fabricated, but the financial relationship is exactly the kind of thing that can quietly bias an evaluation.",
             "textToSpeak": "The hotel's five-star rating came from a review site the hotel itself had paid to be listed on.",
             "question": "What does this raise a concern about?",
             "options": [
-                "The price of a night's stay",
                 "Whether the rating reflects independent, unbiased opinion",
-                "The location of the hotel",
-                "The comfort of the hotel rooms"
+                "The location of the hotel"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🏨",
             "literalMeaning": "What is actually said.",
@@ -46,16 +42,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L181_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what the condition attached to the offer actually asks for.",
             "explanation": "Generous compensation tied to a non-disclosure condition means the payment isn't just resolving the incident — it's also purchasing the passenger's silence about it, which changes what the offer really represents.",
             "textToSpeak": "The airline's compensation offer was generous, on condition that she agreed not to discuss the incident publicly.",
             "question": "What is the real trade-off being offered?",
             "options": [
                 "Money in exchange for the passenger's silence",
-                "Compensation with no conditions attached",
-                "A refusal to offer any compensation",
-                "A public apology instead of money"
+                "Compensation with no conditions attached"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -66,18 +60,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L182_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what leaving one department out, right after its bad news, might be doing.",
             "explanation": "A conspicuous, single omission — right after a significant loss — is rarely random. Leaving out exactly the department with the worst news is a quiet way to avoid highlighting it.",
             "textToSpeak": "The quarterly update mentioned every department's achievements except the one that had just lost its biggest client.",
             "question": "What does this omission likely signal?",
             "options": [
-                "The department was closed down entirely",
-                "Every department was mentioned equally",
-                "An attempt to avoid drawing attention to a setback",
-                "That department had no news to report"
+                "That department had no news to report",
+                "An attempt to avoid drawing attention to a setback"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -86,18 +78,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L182_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the sophisticated skill of appearing neutral while actually advocating?",
             "explanation": "This is a high-level rhetorical technique: framing, word choice, selection of emphasis, question formulation all allow a speaker to guide audiences toward a conclusion while appearing to present 'just the facts'. The appearance of neutrality makes the advocacy more effective because it's invisible.",
             "textToSpeak": "The speaker managed to take a strong position without appearing to have taken any position at all.",
             "question": "What rhetorical skill is being described?",
             "options": [
-                "Genuine indecisiveness",
-                "Stating opinions with complete clarity",
-                "Avoiding all controversy",
-                "The ability to communicate a view while maintaining an appearance of neutrality"
+                "The ability to communicate a view while maintaining an appearance of neutrality",
+                "Genuine indecisiveness"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔍",
             "literalMeaning": "What is actually said.",
@@ -106,18 +96,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L182_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what kind of news is typically softened with a phrase like this before it's delivered.",
             "explanation": "'Not what we hoped for' is a common way clinicians ease into disappointing results — signalling that something less positive is coming before stating the specifics, to soften the impact.",
             "textToSpeak": "The doctor said the results were 'not what we hoped for' before explaining what they actually showed.",
             "question": "What is this phrasing likely preparing the listener for?",
             "options": [
-                "A request for more test samples",
-                "A change of doctor",
-                "Unexpectedly excellent news",
-                "Difficult or disappointing news to follow"
+                "Difficult or disappointing news to follow",
+                "A request for more test samples"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🩺",
             "literalMeaning": "What is actually said.",
@@ -126,18 +114,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would more knowledge make understanding the past harder in one specific way?",
             "explanation": "More knowledge = more context, more subsequent events, more hindsight. But those who lived through a period had none of that subsequent knowledge - they experienced only the present of their time. The expert's knowledge is precisely what removes them from the perspective of ignorance and uncertainty that characterised the lived experience.",
             "textToSpeak": "The historian's dilemma: the more you know about a period, the harder it becomes to see it as those who lived through it did.",
             "question": "What is the paradox?",
             "options": [
-                "Historical knowledge makes understanding easier",
-                "Historical sources are always reliable and sufficient",
-                "Historians always understand the past perfectly",
-                "Expertise can create distance from the lived experience being studied"
+                "Expertise can create distance from the lived experience being studied",
+                "Historical knowledge makes understanding easier"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📊",
             "literalMeaning": "What is actually said.",
@@ -146,18 +132,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the relationship between focus and exclusion in interpretation?",
             "explanation": "Interpretation requires selection: what to attend to, what to emphasise, what to connect. By choosing what to interpret, you simultaneously choose what not to interpret. Every reading of a text, situation, or event has its constitutive outside - what it leaves out to maintain its coherence. No interpretation is total.",
             "textToSpeak": "Every interpretation is also a choice of what not to interpret.",
             "question": "What can you infer from this?",
             "options": [
-                "Interpretations cover everything",
-                "We should avoid interpreting",
-                "The best interpretations are always total",
-                "Every act of interpretation necessarily focuses some things while setting others aside"
+                "Every act of interpretation necessarily focuses some things while setting others aside",
+                "Interpretations cover everything"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔦",
             "literalMeaning": "What is actually said.",
@@ -166,18 +150,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L183_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the significance of discipline-specific evidence standards?",
             "explanation": "A randomised controlled trial is gold standard in medicine; ethnographic immersion in anthropology; mathematical proof in mathematics. These aren't interchangeable. When disciplines engage, conflicts often stem from different, unarticulated standards. The observation: this difference exists and matters, but isn't often named or examined.",
             "textToSpeak": "What counts as evidence varies significantly between disciplines, and those differences are rarely acknowledged.",
             "question": "What is being pointed out?",
             "options": [
-                "All disciplines use identical standards",
-                "Evidence is always objective",
                 "Different fields have different standards for evidence, which is rarely discussed openly",
                 "Disciplines always agree on methods"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔬",
             "literalMeaning": "What is actually said.",
@@ -186,16 +168,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L184_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why is claiming methodological neutrality a theoretical position?",
             "explanation": "Claiming neutrality isn't neutral - it's a stance that refuses to acknowledge its own assumptions. Every methodology embeds assumptions about what counts as evidence, what questions are worth asking, what counts as rigour. Claiming to have no such assumptions is itself an assumption. Neutrality is a claim requiring examination, not a default state.",
             "textToSpeak": "The field assumes its own methodology to be neutral, which is itself a theoretical position.",
             "question": "What is the speaker communicating?",
             "options": [
-                "The methodology is genuinely neutral",
-                "Claiming neutrality is itself a form of methodological bias",
                 "The field has no methodology",
-                "Theoretical positions are unimportant"
+                "Claiming neutrality is itself a form of methodological bias"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -206,16 +186,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L184_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What prerequisite knowledge is needed even for formulating good questions?",
             "explanation": "Formulating the right question = knowing enough to know where the gaps are. A complete novice doesn't know what they don't know - they can't identify the right question because they don't have the framework within which the question makes sense. Knowing what you don't know requires knowing what you do know.",
             "textToSpeak": "To ask the right questions, you must already understand enough to know what you don't know.",
             "question": "What does this reveal about inquiry?",
             "options": [
                 "Knowing your own ignorance requires a foundation of knowledge",
-                "Understanding and questioning are completely independent",
-                "The most ignorant ask the best questions",
-                "Questions are always obvious and simple"
+                "Understanding and questioning are completely independent"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -226,18 +204,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L184_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why does engaging with objections make an argument more persuasive?",
             "explanation": "Ignoring objections makes an argument look weak or evasive. Engaging with the strongest objections and responding to them shows: the speaker has considered other views seriously; the argument can survive challenge; the conclusion is more reliable for having been tested. This pre-empts objections and demonstrates intellectual confidence.",
             "textToSpeak": "The most persuasive arguments are not those that leave no room for doubt, but those that anticipate and answer the best objections.",
             "question": "What is one supposed to gather from this?",
             "options": [
-                "Certainty is the most persuasive quality",
                 "Addressing strong objections proactively is more persuasive than projecting certainty",
-                "Arguments should simply ignore objections",
-                "Simple arguments are always most persuasive"
+                "Arguments should simply ignore objections"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🗣️",
             "literalMeaning": "What is actually said.",
@@ -246,16 +222,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L185_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is a dialectical 'change of terms'?",
             "explanation": "Conceding a specific point while reframing the larger debate is a sophisticated move: you accept the criticism at one level to contest at a higher or different level. This prevents full defeat while maintaining the substantive position. The terms of the debate are shifted to ground where the speaker has advantage.",
             "textToSpeak": "He concedes the point but changes the terms of the debate - a classic dialectical move.",
             "question": "What is happening?",
             "options": [
                 "He accepts one point while shifting the discussion to more favourable ground",
-                "He is giving up his argument entirely",
-                "He agrees completely with the opposition",
-                "He ends the debate"
+                "He is giving up his argument entirely"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -266,18 +240,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L185_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what 'thanking' a question and then not answering it usually means.",
             "explanation": "Praising a question as 'interesting' is a common, polite stalling technique — it buys a moment of goodwill before pivoting to a more comfortable topic instead of engaging with what was actually asked.",
             "textToSpeak": "The spokesperson thanked the journalist for the 'interesting question' before answering a different one entirely.",
             "question": "What is the spokesperson likely doing?",
             "options": [
-                "Refusing to speak with the press at all",
-                "Directly and fully answering what was asked",
-                "Asking the journalist to repeat the question",
-                "Politely avoiding the original question"
+                "Politely avoiding the original question",
+                "Refusing to speak with the press at all"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⚖️",
             "literalMeaning": "What is actually said.",
@@ -286,18 +258,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L185_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does introducing something quietly before a long weekend suggest strategically?",
             "explanation": "A holiday weekend = reduced media attention, reduced public engagement, fewer people working to respond. Introducing significant measures at such times can minimise initial scrutiny and debate. 'Quietly' + 'before a holiday' = the conjunction is suspicious, suggesting deliberate low-profile rollout. Strategic timing is a form of political management.",
             "textToSpeak": "The reform was introduced quietly just before a holiday weekend.",
             "question": "What can be inferred about the timing?",
             "options": [
-                "The timing appears strategic - designed to reduce public scrutiny",
                 "The timing was entirely coincidental",
-                "The government was being efficient",
-                "The reform was unimportant enough to avoid scrutiny"
+                "The timing appears strategic - designed to reduce public scrutiny"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🗺️",
             "literalMeaning": "What is actually said.",
@@ -306,18 +276,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why might the intensity of a denial be informative?",
             "explanation": "The most emphatic denials targeting the most significant accusations may reflect the stakes of those specific accusations rather than the falseness of others. Emphasis can signal: this is where the real vulnerability is. Vehement denial isn't proof of guilt, but can indicate where the greatest exposure lies. It's worth noticing which denials attract most energy.",
             "textToSpeak": "His most emphatic denials came precisely in response to the accusations he had most reason to deny.",
             "question": "What is really being said here?",
             "options": [
-                "His denials prove his innocence",
-                "Denial always proves guilt",
                 "The intensity of certain denials may itself be revealing",
                 "He was honest about everything"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🧭",
             "literalMeaning": "What is actually said.",
@@ -326,16 +294,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the rhetorical difference between 'concession as generosity' vs 'acknowledgement of error'?",
             "explanation": "Framing a concession as generosity = 'I chose to give this'. Framing it as error = 'I was wrong and had to change'. The first preserves agency and face; the second admits failure. Same outcome, entirely different meaning. Framing choices reveal attempts to manage perception and maintain power even in defeat.",
             "textToSpeak": "She framed the concession as a generous offer rather than an acknowledgement of error.",
             "question": "What is the speaker doing?",
             "options": [
                 "Reframing a defeat as a voluntary choice to preserve her position",
-                "Being genuinely generous",
-                "Making a genuine apology",
-                "Admitting full responsibility"
+                "Being genuinely generous"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -346,18 +312,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L186_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "How can opening questions be more valuable than providing answers?",
             "explanation": "Opening questions = expanding what's knowable, creating new research directions, identifying new problems. Providing wrong or premature answers = closing down inquiry. In early stages of a field, the right questions may be more valuable than available answers. The paper's contribution is generative - it grows what can be asked.",
             "textToSpeak": "The paper's most valuable contribution may be the questions it opens rather than the answers it provides.",
             "question": "What conclusion can you draw from this?",
             "options": [
-                "The paper answers all questions definitively",
-                "The paper has no answers",
                 "The paper's value lies primarily in generating further inquiry",
                 "The paper is not valuable"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🎯",
             "literalMeaning": "What is actually said.",
@@ -366,18 +330,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L187_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "How can the research question itself introduce bias before data is collected?",
             "explanation": "The research question determines what is looked for, what data is collected, what counts as relevant. A question framed to look for X will find X-type evidence. The question embeds assumptions about what matters, what to compare, and what an answer would look like. Methodology can be impeccable while the question is already skewed.",
             "textToSpeak": "While the methodology is sound, the framing of the research question itself may introduce bias.",
             "question": "What is the speaker's main point?",
             "options": [
-                "The methodology is the main source of bias",
-                "The research question is perfect",
-                "Even with good methods, how the question is asked can affect what is found",
-                "Framing never affects research outcomes"
+                "Framing never affects research outcomes",
+                "Even with good methods, how the question is asked can affect what is found"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔬",
             "literalMeaning": "What is actually said.",
@@ -386,18 +348,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L187_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what it means when even specialists struggle with a piece of text.",
             "explanation": "If trained lawyers — people whose job is reading contracts — ask for a clause to be reworded, that's a strong signal the language was unusually convoluted, not just difficult for a layperson.",
             "textToSpeak": "The clause was written in language dense enough that even the lawyers in the room asked for it to be reworded.",
             "question": "What does this reveal about the clause?",
             "options": [
-                "It was unusually hard to understand, even for experts",
                 "It was written in very simple, plain language",
-                "No one in the room noticed any issue with it",
-                "It had already been removed from the contract"
+                "It was unusually hard to understand, even for experts"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💬",
             "literalMeaning": "What is actually said.",
@@ -406,16 +366,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L187_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what 'complex history' allows a guide to gesture at without actually describing.",
             "explanation": "'Complex history' is vague enough to acknowledge that difficult things happened without naming them specifically — it signals awareness while avoiding the more uncomfortable, concrete details.",
             "textToSpeak": "The tour guide's script praised the palace's 'complex history' without mentioning whose suffering had built it.",
             "question": "What does this phrasing avoid confronting directly?",
             "options": [
-                "The tour's ticket price",
-                "The harder, less comfortable parts of the history",
                 "The architecture of the palace",
-                "The palace's age"
+                "The harder, less comfortable parts of the history"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -426,18 +384,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the distinction between manufactured and discovered consensus?",
             "explanation": "Discovered consensus = independent agreement arising organically from evidence. Manufactured consensus = strategically constructed through media, messaging, framing to create the appearance of agreement that doesn't naturally exist. The critique: what looks like widespread agreement may be an artefact of coordination, not genuine convergence.",
             "textToSpeak": "The consensus is manufactured, not discovered.",
             "question": "What can we reasonably conclude from this?",
             "options": [
-                "There is genuine widespread agreement on this topic",
-                "Manufacturing consensus is impossible",
-                "Consensus is always genuine",
-                "The appearance of agreement has been constructed rather than emerging naturally"
+                "The appearance of agreement has been constructed rather than emerging naturally",
+                "There is genuine widespread agreement on this topic"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💭",
             "literalMeaning": "What is actually said.",
@@ -446,18 +402,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why is power most effective when it appears natural?",
             "explanation": "Power that seems natural is unquestioned - it looks like 'just the way things are', not like someone's interest being served. When people internalise it as normal, they reproduce it without coercion. Explicit power requires enforcement; naturalised power reproduces itself. This is the insight about ideology: power through normalisation.",
             "textToSpeak": "Power rarely announces itself - it operates most effectively when it appears most natural.",
             "question": "What's the hidden meaning here?",
             "options": [
-                "The most effective power is that which seems inevitable and natural rather than imposed",
                 "Power is always visible and explicit",
-                "Natural-seeming things have no power",
-                "Power only operates through explicit force"
+                "The most effective power is that which seems inevitable and natural rather than imposed"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📖",
             "literalMeaning": "What is actually said.",
@@ -466,18 +420,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L188_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "How does a word's history affect its current use?",
             "explanation": "Words accumulate connotations, associations, and histories through use. A word associated with significant historical events, ideologies, or struggles cannot be fully stripped of those associations by individual users. Attempting neutral use still activates the historical resonance - hearers bring that history to the word whether speakers intend it or not.",
             "textToSpeak": "The word carries so much historical baggage that using it neutrally is now impossible.",
             "question": "What is the speaker getting across?",
             "options": [
-                "The word's history is irrelevant to its current use",
                 "Historical associations make neutral use of the word impossible",
-                "Words can always be used neutrally",
-                "Historical usage is unimportant"
+                "The word's history is irrelevant to its current use"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔍",
             "literalMeaning": "What is actually said.",
@@ -486,16 +438,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "How does language shape what can be conceived?",
             "explanation": "The Sapir-Whorf hypothesis (moderate version): the language available to us partly determines what we can easily think, categorise, and communicate. Concepts without words are harder to sustain and share. Language provides cognitive scaffolding - not just labels for pre-existing concepts but structures that enable certain thoughts and make others harder.",
             "textToSpeak": "Language not only describes reality - it also shapes what we can conceive of.",
             "question": "What is this claim about?",
             "options": [
                 "Language both reflects and constrains the possibilities of thought",
-                "Description is language's only function",
-                "Language is a passive tool",
-                "Thinking requires no language"
+                "Description is language's only function"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -506,18 +456,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what saying 'I understand' does when nothing changes afterward.",
             "explanation": "A scripted empathy line can sound caring, but if it isn't followed by any actual resolution, its real function is to manage the customer's emotion in the moment rather than to solve the underlying issue.",
             "textToSpeak": "The airline's customer service script instructed staff to say 'I understand your frustration' before offering no actual solution.",
             "question": "What is this phrase functioning as here?",
             "options": [
-                "A scripted way to sound empathetic without resolving the problem",
                 "A guaranteed promise of a refund",
-                "A genuine, spontaneous apology",
-                "An admission of legal responsibility"
+                "A scripted way to sound empathetic without resolving the problem"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "😠",
             "literalMeaning": "What is actually said.",
@@ -526,18 +474,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L189_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why might certainty signal insufficient thought?",
             "explanation": "Deep thinking reveals complexity, exceptions, and alternative perspectives that simple thinking misses. Complete certainty may mean the thinker hasn't encountered these complications - hasn't gone deep enough to find the difficulties. 'The more I know, the more I know I don't know' is the epistemology here. Expertise often increases not certainty but appreciated uncertainty.",
             "textToSpeak": "To be certain about something is sometimes a sign of not having thought carefully enough.",
             "question": "What does this phrase really convey?",
             "options": [
-                "Certainty is always a reliable sign of knowledge",
                 "Genuine deep thinking often reveals complexity that reduces certainty",
-                "Thinking carefully always leads to certainty",
-                "Uncertainty is always negative"
+                "Thinking carefully always leads to certainty"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📝",
             "literalMeaning": "What is actually said.",
@@ -546,18 +492,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "How can the pursuit of objectivity become ideological?",
             "explanation": "If you commit to objectivity as an absolute value - refusing to acknowledge that perspectives always exist - this itself becomes a dogmatic position. Ironically, extreme objectivism is a subjective commitment that can't examine itself critically. It becomes a closed system: the claim to objectivity protects itself from the critique that no perspective is truly objective.",
             "textToSpeak": "Objectivity, pursued too absolutely, becomes a kind of ideology.",
             "question": "What can be inferred here?",
             "options": [
                 "Objectivity is always valuable",
-                "Ideology is always positive",
-                "Objectivity is never valuable",
                 "Extreme commitment to objectivity can itself become a rigid and unreflective stance"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -566,16 +510,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the relationship between observation and interpretation?",
             "explanation": "What we call 'pure observation' always involves interpretation: selecting what to attend to, categorising what we see, recognising patterns. There is no raw, pre-interpretive observation available to us. This challenges the naive distinction between 'objective fact' (observed) and 'subjective opinion' (interpreted). The two are always intertwined.",
             "textToSpeak": "We are always interpreting, even when we believe we are merely observing.",
             "question": "What does this challenge?",
             "options": [
-                "The value of interpretation",
-                "The possibility of pure unmediated observation",
                 "The distinction between good and bad interpreters",
-                "The scientific method as a whole"
+                "The possibility of pure unmediated observation"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -586,18 +528,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L190_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the distinction between freedom as condition versus freedom as practice?",
             "explanation": "Freedom as condition = a state granted by law, protected by rights (you either have it or you don't). Freedom as practice = actively exercised, lived, enacted in daily choices and self-determination. The observation reframes freedom from passive possession to active exercise - you don't just have it; you do it, and it can atrophy without being practised.",
             "textToSpeak": "Freedom, it turns out, is less a condition than a practice - less something you have than something you do.",
             "question": "What does this line really mean?",
             "options": [
-                "Freedom is purely a legal status",
-                "Freedom is impossible to achieve",
-                "Freedom is better understood as an ongoing activity or mode of existence",
-                "Freedom depends only on external conditions"
+                "Freedom depends only on external conditions",
+                "Freedom is better understood as an ongoing activity or mode of existence"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💬",
             "literalMeaning": "What is actually said.",

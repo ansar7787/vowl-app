@@ -6,18 +6,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L11_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what flattened ears and hiding usually show in an animal.",
             "explanation": "Flattened ears and retreating to hide are classic signs that a cat feels frightened or threatened, not relaxed or playful.",
             "textToSpeak": "The cat's ears flattened and it backed slowly under the sofa.",
             "question": "How does the cat feel?",
             "options": [
-                "Sleepy",
-                "Hungry",
-                "Frightened",
-                "Playful"
+                "Playful",
+                "Frightened"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🐾",
             "literalMeaning": "What is actually said.",
@@ -26,18 +24,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L11_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would check every house number while driving around the same area.",
             "explanation": "Checking house numbers while circling a block is exactly what someone does when they're searching for a particular address they haven't found yet.",
             "textToSpeak": "She circled the same block three times, checking every house number.",
             "question": "What is she probably trying to do?",
             "options": [
-                "Get some exercise",
-                "Wait for a friend",
                 "Find a specific address",
                 "Avoid going home"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -46,16 +42,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L11_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why running shoes and an early alarm would be prepared together.",
             "explanation": "An early alarm paired with running shoes laid out is clear preparation for an early morning run. Someone planning to sleep in wouldn't set an alarm for five.",
             "textToSpeak": "He set his alarm for five, laid out his running shoes, and went to bed early.",
             "question": "What is he probably planning to do?",
             "options": [
                 "Go for an early run",
-                "Go to a party",
-                "Stay up all night",
-                "Sleep in late"
+                "Go to a party"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -66,18 +60,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L12_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what red cheeks and pulling at an ear might signal in a baby.",
             "explanation": "Red cheeks and pulling at an ear can be signs of discomfort or illness in a baby, such as a fever or an earache, rather than happiness or playfulness.",
             "textToSpeak": "The baby's cheeks were bright red and she kept pulling at her ear.",
             "question": "What can you infer about the baby?",
             "options": [
-                "She might not be feeling well",
                 "She is not tired at all",
-                "She wants to play",
-                "She is very happy"
+                "She might not be feeling well"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "👨‍👩‍👧",
             "literalMeaning": "What is actually said.",
@@ -86,18 +78,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L12_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what crossing out a whole page and throwing down a pencil usually shows.",
             "explanation": "Crossing out an entire page and throwing down a pencil are actions that show frustration with the work, not pride or amusement.",
             "textToSpeak": "He crossed out the whole page and threw his pencil down.",
             "question": "How does he feel about his work?",
             "options": [
-                "Relaxed",
-                "Amused",
-                "Frustrated",
-                "Proud"
+                "Proud",
+                "Frustrated"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🤔",
             "literalMeaning": "What is actually said.",
@@ -106,18 +96,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L12_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about where a nurse would be calling out names from a waiting room.",
             "explanation": "A nurse calling names from a waiting room is a scene typical of a doctor's clinic or hospital, not a cinema or supermarket.",
             "textToSpeak": "The waiting room was full, and a nurse called out a name every few minutes.",
             "question": "Where is this most likely happening?",
             "options": [
-                "At a doctor's clinic",
                 "At a train station",
-                "At a supermarket",
-                "At a cinema"
+                "At a doctor's clinic"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🩺",
             "literalMeaning": "What is actually said.",
@@ -126,18 +114,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L13_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would refresh a page and check their phone so often.",
             "explanation": "Constantly refreshing a page and checking a phone are signs of anxious anticipation — waiting for a message, result, or update to appear.",
             "textToSpeak": "He kept refreshing the page and glancing at his phone every few seconds.",
             "question": "What can you infer about him?",
             "options": [
-                "He has lost his phone",
-                "He is falling asleep",
-                "He is anxiously waiting for news",
-                "He is completely relaxed"
+                "He is completely relaxed",
+                "He is anxiously waiting for news"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📱",
             "literalMeaning": "What is actually said.",
@@ -146,18 +132,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L13_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about which season is linked to orange and red falling leaves.",
             "explanation": "Orange and red fallen leaves are a classic sign of autumn, when leaves change colour and drop from the trees.",
             "textToSpeak": "The garden was full of fallen leaves in shades of orange and red.",
             "question": "What season is it probably?",
             "options": [
-                "Winter",
                 "Autumn",
-                "Summer",
-                "Spring"
+                "Summer"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🌷",
             "literalMeaning": "What is actually said.",
@@ -166,18 +150,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L13_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what covering someone with a blanket and lowering noise for them shows.",
             "explanation": "Covering a sleeping person with a blanket and quietening the television are small, caring gestures meant to keep him comfortable, not actions of anger.",
             "textToSpeak": "She placed a blanket over her sleeping grandfather and turned down the television.",
             "question": "What can you infer about her?",
             "options": [
-                "She wants to wake him up",
-                "She is leaving the house",
-                "She is angry with him",
-                "She is being thoughtful and caring"
+                "She is being thoughtful and caring",
+                "She wants to wake him up"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🧩",
             "literalMeaning": "What is actually said.",
@@ -186,18 +168,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L14_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what would make an entire crowd cheer and jump up together.",
             "explanation": "A crowd erupting into cheers and jumping up together usually happens right after an exciting moment, like a goal or a win — not after a cancellation or bad news.",
             "textToSpeak": "The stadium erupted into cheers as everyone jumped to their feet.",
             "question": "What probably just happened?",
             "options": [
-                "Everyone was leaving early",
-                "It started raining",
                 "Something exciting happened in the game",
                 "The game was cancelled"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⚖️",
             "literalMeaning": "What is actually said.",
@@ -206,18 +186,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L14_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would fuss over their appearance right before going somewhere.",
             "explanation": "Adjusting a tie and checking a reflection carefully are signs someone wants to look their best, usually before something important like an interview or event.",
             "textToSpeak": "He kept adjusting his tie and checking his reflection in the shop window.",
             "question": "What can you infer about him?",
             "options": [
-                "He wants to look his best for something important",
                 "He is about to go for a run",
-                "He just woke up",
-                "He dislikes his tie"
+                "He wants to look his best for something important"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🛍️",
             "literalMeaning": "What is actually said.",
@@ -226,18 +204,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L14_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what an almost-empty fridge tells you about what needs to happen next.",
             "explanation": "An almost bare fridge is a clear sign that food supplies have run low and a grocery trip is needed soon.",
             "textToSpeak": "The fridge was completely empty except for a jar of pickles.",
             "question": "What can you infer?",
             "options": [
-                "The fridge is broken",
-                "They don't eat much food",
-                "They need to go grocery shopping",
-                "They just returned from shopping"
+                "They just returned from shopping",
+                "They need to go grocery shopping"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔍",
             "literalMeaning": "What is actually said.",
@@ -246,18 +222,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L15_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would re-read a letter and then need to sit down.",
             "explanation": "Reading something twice and then sitting down slowly suggests the news was significant enough to need a moment to process — not something trivial like an advertisement.",
             "textToSpeak": "She read the letter twice, then sat down slowly on the sofa.",
             "question": "What can you infer about the letter's news?",
             "options": [
-                "It was a boring advertisement",
-                "It was addressed to someone else",
-                "It contained something serious or surprising",
-                "It made her want to dance"
+                "It made her want to dance",
+                "It contained something serious or surprising"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -266,18 +240,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L15_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about who uses a whistle and where players line up on painted lines.",
             "explanation": "A coach, a whistle, and a painted line are all details that point to a sports field or court, not a library or a shop.",
             "textToSpeak": "The coach blew the whistle and everyone lined up along the white paint.",
             "question": "Where does this scene most likely take place?",
             "options": [
-                "In a library",
-                "At a supermarket checkout",
-                "In a doctor's waiting room",
-                "On a sports field"
+                "On a sports field",
+                "In a library"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔦",
             "literalMeaning": "What is actually said.",
@@ -286,18 +258,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L15_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would carefully keep a receipt, box, and tags together.",
             "explanation": "Keeping the receipt, box, and tags together is exactly what someone does when they might need to return an item, since shops usually require all three.",
             "textToSpeak": "He kept the receipt, the box, and the tags all together on the counter.",
             "question": "What can you infer he might do next?",
             "options": [
-                "Throw the item in the bin",
                 "Return the item to the shop",
-                "Use the item straight away",
-                "Give the item away as a gift"
+                "Use the item straight away"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🗣️",
             "literalMeaning": "What is actually said.",
@@ -306,18 +276,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L16_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why a dog would stare so intently at someone eating.",
             "explanation": "A dog sitting still and staring at each bite is a familiar sign of hoping for a scrap of food, not fear or disinterest.",
             "textToSpeak": "The dog sat perfectly still by the table, staring at every bite he took.",
             "question": "What can you infer about the dog?",
             "options": [
-                "It is hoping for some food",
                 "It wants to go outside",
-                "It is afraid of the table",
-                "It is completely uninterested in the meal"
+                "It is hoping for some food"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🐾",
             "literalMeaning": "What is actually said.",
@@ -326,18 +294,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L16_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what arriving early and sitting at the front usually shows about someone's attitude.",
             "explanation": "Arriving early and choosing a front seat both suggest enthusiasm and preparation, the opposite of someone planning to slip out or who isn't interested.",
             "textToSpeak": "She arrived twenty minutes early and chose a seat right at the front.",
             "question": "What can you infer about her?",
             "options": [
-                "She got lost on the way",
-                "She dislikes the event",
-                "She is keen and well prepared",
-                "She is planning to leave early"
+                "She is planning to leave early",
+                "She is keen and well prepared"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "⏰",
             "literalMeaning": "What is actually said.",
@@ -346,18 +312,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L16_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would open every window and point a fan at themselves.",
             "explanation": "Open windows and a fan aimed directly at someone are both attempts to cool down, which only makes sense if the weather is very hot.",
             "textToSpeak": "Every window in the flat was open and a fan was blowing directly on him.",
             "question": "What is the weather probably like?",
             "options": [
-                "Snowy",
-                "Very cold",
                 "Very hot",
                 "Freezing"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🌦️",
             "literalMeaning": "What is actually said.",
@@ -366,18 +330,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L17_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what hesitating and taking a deep breath before an action usually shows.",
             "explanation": "Hesitating and taking a deep breath before doing something are both signs of nervousness, a small pause people take before something that makes them uneasy.",
             "textToSpeak": "He hesitated at the door, took a deep breath, and finally knocked.",
             "question": "How does he feel about knocking on the door?",
             "options": [
-                "Excited and eager",
                 "Nervous about it",
-                "Completely confident",
-                "Bored by it"
+                "Completely confident"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🧩",
             "literalMeaning": "What is actually said.",
@@ -386,18 +348,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L17_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about which game involves music stopping and people freezing.",
             "explanation": "Music stopping and everyone freezing in place is the exact pattern of musical statues, a well-known children's game.",
             "textToSpeak": "The music stopped suddenly and everyone froze in place.",
             "question": "What game are the children most likely playing?",
             "options": [
-                "Musical statues",
                 "Hide and seek",
-                "A reading game",
-                "A board game"
+                "Musical statues"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "⚽",
             "literalMeaning": "What is actually said.",
@@ -406,18 +366,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L17_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would mark job listings and update their resume.",
             "explanation": "Circling job listings and updating a resume are both clear preparation steps for applying to a new job.",
             "textToSpeak": "She circled three job listings in red pen and updated her resume.",
             "question": "What can you infer she is planning to do?",
             "options": [
-                "Take a long holiday",
-                "Start a diet",
-                "Quit working altogether",
-                "Apply for a new job"
+                "Apply for a new job",
+                "Take a long holiday"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -426,18 +384,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L18_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what a crumpling face and a shaking lip usually lead to in a young child.",
             "explanation": "A crumpling face and a trembling lip are classic warning signs in a toddler that crying is about to start.",
             "textToSpeak": "The toddler's face crumpled and his bottom lip started to shake.",
             "question": "What is about to happen?",
             "options": [
-                "He is about to sneeze",
-                "He is about to laugh",
-                "He is about to fall asleep",
-                "He is about to cry"
+                "He is about to cry",
+                "He is about to sneeze"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🍼",
             "literalMeaning": "What is actually said.",
@@ -446,18 +402,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L18_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what a long queue an hour before opening usually shows about interest in something.",
             "explanation": "A long queue forming a full hour before opening is a strong sign of high demand and excitement for the film, not a lack of interest.",
             "textToSpeak": "The queue outside the cinema wrapped around the building an hour before opening.",
             "question": "What can you infer about the film?",
             "options": [
-                "Nobody wants to watch it",
-                "Tickets are not needed",
-                "It is a highly anticipated release",
-                "It has been cancelled"
+                "It has been cancelled",
+                "It is a highly anticipated release"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🎬",
             "literalMeaning": "What is actually said.",
@@ -466,18 +420,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L18_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would keep tasting and adjusting a dish rather than just serving it.",
             "explanation": "Repeated tasting and small adjustments show someone is being careful to get the flavour exactly right, not someone who is bored or already finished.",
             "textToSpeak": "He kept stirring the pot and tasting it, adding a pinch of salt each time.",
             "question": "What can you infer about him?",
             "options": [
-                "He has already finished cooking",
-                "He is bored in the kitchen",
                 "He wants the dish to taste just right",
                 "He dislikes cooking"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⏰",
             "literalMeaning": "What is actually said.",
@@ -486,18 +438,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L19_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would stay near the phone and double-check the sound.",
             "explanation": "Hovering near the phone and checking the volume repeatedly are strong signs that someone doesn't want to miss an important call.",
             "textToSpeak": "She hovered near the phone all evening, checking it wasn't on silent.",
             "question": "What can you infer about her?",
             "options": [
-                "She is going to bed early",
-                "She has no interest in calls",
-                "She hates her phone",
-                "She is expecting an important call"
+                "She is expecting an important call",
+                "She is going to bed early"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📱",
             "literalMeaning": "What is actually said.",
@@ -506,18 +456,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L19_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what bare shelves so early in the day usually mean for a shop.",
             "explanation": "Empty shelves by nine in the morning suggest the bakery's items are popular enough to be bought up quickly, not that the shop is unpopular.",
             "textToSpeak": "The bakery's shelves were already bare by nine in the morning.",
             "question": "What can you infer about the bakery?",
             "options": [
-                "It never opens in the morning",
-                "Nobody visits the shop",
-                "It only sells one item",
-                "Its bread and pastries sell out quickly"
+                "Its bread and pastries sell out quickly",
+                "It never opens in the morning"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🥐",
             "literalMeaning": "What is actually said.",
@@ -526,18 +474,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L19_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what reading instructions three times before acting shows about someone's approach.",
             "explanation": "Reading instructions multiple times before doing anything shows real caution, the opposite of rushing in without care.",
             "textToSpeak": "He read the instructions three times before pressing a single button.",
             "question": "What can you infer about him?",
             "options": [
-                "He is in a great hurry",
-                "He already knows the device well",
-                "He doesn't care about the result",
-                "He is being extra careful"
+                "He is being extra careful",
+                "He is in a great hurry"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔍",
             "literalMeaning": "What is actually said.",
@@ -546,18 +492,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L20_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what wide eyes and a dropped-open mouth usually show when someone unwraps a gift.",
             "explanation": "Wide eyes and an open mouth are common reactions to a wonderful surprise, showing delight rather than disappointment.",
             "textToSpeak": "The birthday girl's eyes went wide and her mouth fell open when she saw the gift.",
             "question": "How does she feel?",
             "options": [
-                "Disappointed",
-                "Embarrassed",
                 "Amazed and delighted",
                 "Unimpressed"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🧭",
             "literalMeaning": "What is actually said.",
@@ -566,18 +510,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L20_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what dark clouds over a mountain peak would make careful hikers do.",
             "explanation": "Dark clouds gathering over a peak are a warning sign of a coming storm, which is a sensible reason for hikers to turn back before reaching the top.",
             "textToSpeak": "The hikers turned back when the clouds above the peak turned almost black.",
             "question": "Why did the hikers turn back?",
             "options": [
                 "They reached the summit already",
-                "They were bored of hiking",
-                "They ran out of water",
                 "They expected bad weather ahead"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🧩",
             "literalMeaning": "What is actually said.",
@@ -586,18 +528,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L20_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would set multiple alarms and prepare formal clothes the night before.",
             "explanation": "Setting three alarms and laying out a suit are both signs of serious preparation, the kind reserved for something important the next day, not a relaxed, ordinary one.",
             "textToSpeak": "He set three alarms and laid his suit out on the chair before bed.",
             "question": "What can you infer about the next day?",
             "options": [
-                "He plans to sleep in",
-                "He is going on holiday",
-                "It's an ordinary lazy day",
-                "Something important is happening"
+                "Something important is happening",
+                "He plans to sleep in"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🛏️",
             "literalMeaning": "What is actually said.",

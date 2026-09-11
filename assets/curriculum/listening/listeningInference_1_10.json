@@ -6,16 +6,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what laughing and clapping usually show.",
             "explanation": "Laughing and clapping are things people do when they're happy or excited. Nothing in the sentence says 'happy' directly — you have to read her actions to know her feeling.",
             "textToSpeak": "She was laughing and clapping her hands.",
             "question": "How does she feel?",
             "options": [
-                "Angry",
-                "Happy",
                 "Tired",
-                "Sad"
+                "Happy"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -26,18 +24,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would wear all three of those things together.",
             "explanation": "A coat, hat, and gloves are all worn to stay warm. Putting on all three at once is a strong clue that it's cold outside, even though the word 'cold' is never said.",
             "textToSpeak": "He put on his coat, his hat, and his gloves before going outside.",
             "question": "What is the weather probably like?",
             "options": [
-                "Hot",
-                "Sunny and warm",
                 "Cold",
                 "Mild"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🌦️",
             "literalMeaning": "What is actually said.",
@@ -46,18 +42,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what a wagging tail usually means.",
             "explanation": "A wagging tail and running to the door are signs of excitement, not fear or tiredness. Dogs often react this way when they know a walk or their owner's return is coming.",
             "textToSpeak": "The dog wagged its tail and ran straight to the door when it heard the keys.",
             "question": "How does the dog feel?",
             "options": [
-                "Sick",
-                "Scared",
-                "Sleepy",
-                "Excited"
+                "Excited",
+                "Sick"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🐾",
             "literalMeaning": "What is actually said.",
@@ -66,18 +60,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L2_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about who gives instructions about books and pages.",
             "explanation": "A teacher giving an instruction about a book and a page number is something that happens in a classroom. No other place fits a teacher and a textbook together.",
             "textToSpeak": "The teacher told everyone to open their books to page ten.",
             "question": "Where is this most likely happening?",
             "options": [
-                "In a kitchen",
-                "At a train station",
-                "In a classroom",
-                "In a hospital"
+                "In a hospital",
+                "In a classroom"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🏫",
             "literalMeaning": "What is actually said.",
@@ -86,18 +78,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L2_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what causes steam and the smell of eggs.",
             "explanation": "Steam from a pan and the smell of eggs both point to cooking. Eggs are a common breakfast food, so cooking breakfast is the best explanation for both clues together.",
             "textToSpeak": "Steam rose from the pan, and the smell of eggs filled the kitchen.",
             "question": "What is most likely happening?",
             "options": [
-                "Someone is cooking breakfast",
                 "Someone is watching television",
-                "Someone is cleaning the floor",
-                "Someone is doing homework"
+                "Someone is cooking breakfast"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🍳",
             "literalMeaning": "What is actually said.",
@@ -106,18 +96,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L2_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about who usually tucks a child into bed at night.",
             "explanation": "Tucking a child into bed and kissing them goodnight is a caring, parental action. While it could be another close relative, a mother is the most natural fit for this bedtime routine.",
             "textToSpeak": "She tucked the little boy into bed and kissed him goodnight.",
             "question": "What is her relationship to the boy?",
             "options": [
-                "She is his doctor",
-                "She is his teacher",
-                "She is a stranger",
-                "She is likely his mother"
+                "She is likely his mother",
+                "She is his doctor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🛏️",
             "literalMeaning": "What is actually said.",
@@ -126,18 +114,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would check the time again and again.",
             "explanation": "Checking a watch repeatedly and staring down an empty road are signs that someone is waiting for something that hasn't arrived yet — a clear sign of impatience.",
             "textToSpeak": "He kept checking his watch and looking down the empty road.",
             "question": "How does he feel?",
             "options": [
-                "Bored",
-                "Proud",
                 "Impatient",
                 "Relaxed"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⌚",
             "literalMeaning": "What is actually said.",
@@ -146,18 +132,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what leaves the ground wet with puddles.",
             "explanation": "Wet ground and puddles are typical after rain. Snow would leave the ground white and cold, not simply wet, so rain is the better explanation.",
             "textToSpeak": "The ground was wet and there were puddles all along the path.",
             "question": "What probably happened earlier?",
             "options": [
-                "It snowed",
-                "The sun was very hot",
                 "It rained",
                 "Someone was cleaning"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🌧️",
             "literalMeaning": "What is actually said.",
@@ -166,18 +150,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about when you usually see balloons and a big cake together.",
             "explanation": "Balloons and a cake together are classic signs of a celebration, most often a birthday party. Neither item fits a meeting, an appointment, or an exam.",
             "textToSpeak": "Balloons hung from the ceiling and a big cake sat in the middle of the table.",
             "question": "What is most likely happening?",
             "options": [
-                "A birthday party",
                 "A business meeting",
-                "A doctor's appointment",
-                "A school exam"
+                "A birthday party"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🍰",
             "literalMeaning": "What is actually said.",
@@ -186,18 +168,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what rubbing your eyes and yawning usually mean.",
             "explanation": "Rubbing the eyes and yawning are common signs of tiredness. People don't usually do these things when they feel excited or angry.",
             "textToSpeak": "She rubbed her eyes and yawned during the meeting.",
             "question": "How does she feel?",
             "options": [
-                "Angry",
-                "Excited",
-                "Tired",
-                "Nervous"
+                "Nervous",
+                "Tired"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "😴",
             "literalMeaning": "What is actually said.",
@@ -206,18 +186,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about where you find sand and waves together.",
             "explanation": "Sand and waves together point clearly to the beach. No other listed place has both of these features.",
             "textToSpeak": "The kids ran onto the sand and straight into the waves.",
             "question": "Where are the kids?",
             "options": [
-                "At the dentist",
-                "At school",
                 "At the beach",
                 "In a supermarket"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🏖️",
             "literalMeaning": "What is actually said.",
@@ -226,18 +204,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what holding your stomach and making a face after a bite usually shows.",
             "explanation": "Making a face and reacting badly right after tasting something usually means the food isn't pleasant to that person. Someone who loved it wouldn't react this way.",
             "textToSpeak": "He held his stomach and made a face after taking a bite.",
             "question": "What does he probably think of the food?",
             "options": [
-                "He isn't hungry",
-                "He wants more",
-                "He doesn't like it",
-                "He loves it"
+                "He loves it",
+                "He doesn't like it"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🧭",
             "literalMeaning": "What is actually said.",
@@ -246,18 +222,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L5_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what a long line outside a shop usually means.",
             "explanation": "A line stretching out of the door and around the corner shows that many people are waiting to get in — a clear sign that the shop is busy, not empty or closed.",
             "textToSpeak": "The line of people stretched out of the door and around the corner.",
             "question": "What can you infer about the shop?",
             "options": [
-                "It is very busy",
                 "It is empty",
-                "It is very small",
-                "It is closed"
+                "It is very busy"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🛍️",
             "literalMeaning": "What is actually said.",
@@ -266,18 +240,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L5_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about when someone would need a swimsuit and a towel together.",
             "explanation": "A swimsuit, sunglasses, and a towel are exactly what someone packs for swimming, most likely at a beach or pool. None of these items belong in an office or classroom bag.",
             "textToSpeak": "He packed his swimsuit, sunglasses, and a big towel into his bag.",
             "question": "Where is he probably going?",
             "options": [
                 "To the office",
-                "To school",
-                "To the dentist",
                 "To the beach or a pool"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🏖️",
             "literalMeaning": "What is actually said.",
@@ -286,18 +258,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L5_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would make a nursery dark and quiet.",
             "explanation": "Turning off the TV and dimming the lights in a nursery are both things a parent does to create a calm, sleepy environment, not to wake a baby or clean a room.",
             "textToSpeak": "She turned off the television and dimmed the lights in the nursery.",
             "question": "What is she probably trying to do?",
             "options": [
-                "Clean the room",
                 "Help the baby fall asleep",
-                "Watch a movie quietly",
-                "Wake the baby up"
+                "Watch a movie quietly"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🍼",
             "literalMeaning": "What is actually said.",
@@ -306,18 +276,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L6_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what a red face and clenched fists usually show.",
             "explanation": "A red face and clenched fists are physical signs the body shows when someone is angry. Calm or happy people don't usually react this way.",
             "textToSpeak": "His face turned red and his hands became fists.",
             "question": "How does he feel?",
             "options": [
-                "Calm",
-                "Sleepy",
                 "Angry",
                 "Happy"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "😠",
             "literalMeaning": "What is actually said.",
@@ -326,18 +294,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L6_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what the sign in the window tells you.",
             "explanation": "A 'Closed for the day' sign directly tells us the shop isn't open, and the empty shelves support the idea that no customers are currently being served.",
             "textToSpeak": "The shelves were empty and a sign in the window said 'Closed for the day'.",
             "question": "What can you infer about the shop?",
             "options": [
-                "It is extremely busy",
-                "It just opened",
-                "It is having a big sale",
-                "It isn't open for customers right now"
+                "It isn't open for customers right now",
+                "It is extremely busy"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📝",
             "literalMeaning": "What is actually said.",
@@ -346,18 +312,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L6_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what dark windows and a missing car usually mean.",
             "explanation": "Lights off and no car in the driveway are both clues that the people who live there are out. If someone were home, at least one light would likely be on.",
             "textToSpeak": "Every light in the house was off and the car wasn't in the driveway.",
             "question": "What can you infer?",
             "options": [
-                "A party is happening",
-                "Someone is cooking dinner",
                 "Nobody is home",
                 "Someone is sleeping"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🚗",
             "literalMeaning": "What is actually said.",
@@ -366,18 +330,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would watch the clock and pack early.",
             "explanation": "Watching the clock and packing up early are both signs that someone is ready to go and looking forward to leaving, not planning to stay.",
             "textToSpeak": "She kept glancing at the clock and packing her bag early.",
             "question": "What can you infer about her?",
             "options": [
-                "She wants to stay longer",
                 "She is eager to leave",
-                "She has forgotten something",
-                "She is very relaxed"
+                "She has forgotten something"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⏰",
             "literalMeaning": "What is actually said.",
@@ -386,18 +348,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what thunder and dark skies usually come before.",
             "explanation": "Thunder and dark grey skies are classic warning signs of an approaching storm. Sunny weather doesn't come with thunder.",
             "textToSpeak": "Thunder rumbled in the distance and the sky turned dark grey.",
             "question": "What is about to happen?",
             "options": [
-                "A snowstorm in summer",
-                "Nothing unusual",
                 "A storm",
                 "A sunny afternoon"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⛈️",
             "literalMeaning": "What is actually said.",
@@ -406,16 +366,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what sniffling and sneezing usually mean.",
             "explanation": "Sniffling, sneezing, and needing a tissue are classic signs of a cold. None of these are linked to happiness, hunger, or boredom.",
             "textToSpeak": "He sniffled, sneezed twice, and reached for a tissue.",
             "question": "What is probably wrong with him?",
             "options": [
-                "He is bored",
-                "He has a cold",
                 "He is very happy",
-                "He is hungry"
+                "He has a cold"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -426,18 +384,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L8_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why a teacher gives out a gold star.",
             "explanation": "A gold star from a teacher is a reward for good work. Teachers don't give stars for incorrect, late, or missing work.",
             "textToSpeak": "The teacher smiled and put a gold star on top of his paper.",
             "question": "What can you infer about his work?",
             "options": [
-                "It was very good",
                 "It was incorrect",
-                "It was missing",
-                "It was late"
+                "It was very good"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🏫",
             "literalMeaning": "What is actually said.",
@@ -446,18 +402,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L8_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would cover their ears.",
             "explanation": "Covering your ears is a natural reaction to a sound that feels too loud or uncomfortable, not something you'd do if you were enjoying the volume.",
             "textToSpeak": "She covered her ears as the music grew louder and louder.",
             "question": "How does she feel about the music?",
             "options": [
-                "She cannot hear it at all",
-                "She loves the volume",
-                "She wants it louder",
-                "She finds it too loud"
+                "She finds it too loud",
+                "She cannot hear it at all"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🎵",
             "literalMeaning": "What is actually said.",
@@ -466,18 +420,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L8_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would move so carefully and slowly.",
             "explanation": "Tiptoeing and turning a handle slowly are both careful, quiet actions. Someone moving this carefully is almost always trying not to disturb a person who might be sleeping nearby.",
             "textToSpeak": "He tiptoed past the bedroom door and turned the handle very slowly.",
             "question": "What can you infer he is trying to do?",
             "options": [
-                "Slam the door shut",
                 "Enter quietly without waking someone",
-                "Lock the door from outside",
-                "Make as much noise as possible"
+                "Lock the door from outside"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🛏️",
             "literalMeaning": "What is actually said.",
@@ -486,18 +438,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what would make shoes and coats wet enough to drip.",
             "explanation": "Dripping shoes and coats suggest the children were recently outside in wet weather. Indoor activities like sleeping or watching a movie wouldn't leave clothes dripping wet.",
             "textToSpeak": "The children's shoes and coats were scattered by the front door, still dripping.",
             "question": "What had the children probably been doing?",
             "options": [
-                "Watching a movie",
-                "Sleeping in their beds",
                 "Playing outside in the rain",
                 "Doing a quiet indoor puzzle"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🧠",
             "literalMeaning": "What is actually said.",
@@ -506,16 +456,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why counting coins would lead to putting an item back.",
             "explanation": "Counting coins carefully and then returning the toy suggests he checked his money and found he couldn't afford it. If he disliked the toy, he wouldn't have counted his coins for it at all.",
             "textToSpeak": "He counted his coins twice, then put the toy back on the shelf.",
             "question": "What can you infer?",
             "options": [
-                "He already owns the toy",
-                "He didn't have enough money for it",
                 "He didn't like the toy",
-                "The shop was closed"
+                "He didn't have enough money for it"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -526,16 +474,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about why someone would keep checking behind them while speeding up.",
             "explanation": "Looking over your shoulder while walking faster is a common sign of feeling nervous or uneasy, as if you think something might be behind you.",
             "textToSpeak": "She kept looking over her shoulder as she walked faster down the street.",
             "question": "How does she feel?",
             "options": [
                 "Nervous",
-                "Cheerful",
-                "Bored",
-                "Sleepy"
+                "Cheerful"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -546,18 +492,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what a beeping smoke alarm usually means, and why people would rush outside.",
             "explanation": "A beeping smoke alarm followed by everyone hurrying outside points directly to the alarm being triggered by something like smoke or heat, not a happy or routine event.",
             "textToSpeak": "The smoke alarm beeped and everyone hurried outside onto the lawn.",
             "question": "What most likely triggered this?",
             "options": [
                 "A delivery arriving",
-                "A birthday surprise",
-                "A phone call",
                 "Something set off the smoke alarm"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🚨",
             "literalMeaning": "What is actually said.",
@@ -566,18 +510,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what finishing food quickly and asking for more usually shows.",
             "explanation": "Eating quickly and then asking for a second helping are strong signs of hunger. Someone who disliked the food or felt full wouldn't ask for more.",
             "textToSpeak": "Her plate was empty in minutes and she asked for a second helping.",
             "question": "What can you infer about her?",
             "options": [
-                "She didn't like the food",
-                "She was full already",
-                "She was very hungry",
-                "She wasn't hungry at all"
+                "She wasn't hungry at all",
+                "She was very hungry"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "⏰",
             "literalMeaning": "What is actually said.",
@@ -586,18 +528,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Think about what makes someone sweaty and very thirsty.",
             "explanation": "A wiped forehead and gulping down water suggest physical effort that caused sweating and thirst, like exercise. Quiet activities like reading don't usually cause this.",
             "textToSpeak": "He wiped his forehead and drank his whole bottle of water in one go.",
             "question": "What had he probably just been doing?",
             "options": [
-                "Reading quietly",
                 "Exercising hard",
-                "Watching television",
-                "Sleeping"
+                "Watching television"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💧",
             "literalMeaning": "What is actually said.",

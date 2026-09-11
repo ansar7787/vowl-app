@@ -6,18 +6,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Track what 'not again', 'just fix it last week', and 'apparently not' together tell you.",
             "explanation": "'Not again' = it has happened before. 'Didn't they just fix it?' = a repair was made very recently. 'Apparently not' = the repair clearly didn't work. Inference: the system was repaired last week but has failed again. This is a pattern of recurring technical failure.",
             "textToSpeak": "A: The system's been down all morning. B: Not again - didn't they just fix it last week? A: Apparently not.",
             "question": "What does the dialogue reveal?",
             "options": [
-                "This is the first time the system has gone down",
-                "The system was fixed and is working fine",
-                "The system was repaired recently but has broken again",
-                "The repair will be scheduled for next week"
+                "The repair will be scheduled for next week",
+                "The system was repaired recently but has broken again"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💭",
             "literalMeaning": "What is actually said.",
@@ -26,18 +24,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'like a different person' after leaving the job imply?",
             "explanation": "'Like a different person' since leaving = she changed significantly. The change is positive ('looks really well'). The implication: the job was causing unhappiness or stress that showed in her appearance/demeanour. Leaving removed that cause and she improved noticeably.",
             "textToSpeak": "A: I bumped into Sarah - she looks really well. B: Yes, since she left that job she's like a different person.",
             "question": "What is implied about the job she left?",
             "options": [
-                "The job suited her perfectly",
-                "It paid very well",
-                "She left because of illness",
-                "The job was making her unhappy or unwell"
+                "The job was making her unhappy or unwell",
+                "The job suited her perfectly"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -46,18 +42,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would someone suggest waiting until after a presentation to mention a delay?",
             "explanation": "Timing is strategic: mentioning bad news (delay) before a presentation could undermine it. Waiting until after protects the presentation's impact. A agrees ('Good point'). This is practical communication management - choosing the optimal moment for difficult information.",
             "textToSpeak": "A: We should probably mention the delay. B: Let's wait until after the presentation. A: Good point.",
             "question": "What does this suggest about the speakers?",
             "options": [
                 "They want to hide the delay permanently",
-                "They have already mentioned the delay",
-                "They don't think the delay matters",
                 "They are choosing a better moment to mention the delay"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -66,18 +60,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'I'd love to, but' structure communicate?",
             "explanation": "'I'd love to' = expresses desire (positive opening). 'But I've already committed' = explains impossibility. This is the classic polite decline structure: positive statement + but + reason. The 'I'd love to' softens the refusal. This is an indirect 'no' - common in social English.",
             "textToSpeak": "I'd love to, but I've already committed to something else that evening.",
             "question": "What is going on here?",
             "options": [
-                "Accepting an invitation enthusiastically",
-                "Making an excuse to leave a party early",
                 "Declining politely with an explanation",
                 "Asking for more details about the event"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📖",
             "literalMeaning": "What is actually said.",
@@ -86,18 +78,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "In professional settings, what does 'explore it further' often signal?",
             "explanation": "'Explore it further' is non-committal - it doesn't promise action. 'Definitely' sounds positive but often accompanies vague language in corporate contexts. 'Interesting idea' + 'explore further' without a specific next step is often corporate politeness for deprioritising a suggestion.",
             "textToSpeak": "That's a really interesting idea - we'll definitely explore it further.",
             "question": "What might this actually mean in a business context?",
             "options": [
-                "The idea may not progress any further",
                 "The idea is being enthusiastically adopted by the team",
-                "The idea will be implemented immediately",
-                "The team fully agrees with the idea"
+                "The idea may not progress any further"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🪞",
             "literalMeaning": "What is actually said.",
@@ -106,18 +96,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'I think I'll manage' communicate about accepting help?",
             "explanation": "'I think I'll manage' = I can handle it myself. 'But' signals rejection of the offer. 'Appreciate the offer' softens the refusal with gratitude. Together: a polite rejection of offered help while maintaining social harmony. 'Manage' = cope without assistance.",
             "textToSpeak": "I appreciate the offer, but I think I'll manage.",
             "question": "What is the speaker in the middle of doing?",
             "options": [
-                "Accepting help gratefully",
                 "Declining help politely",
-                "Asking for more help",
-                "Thanking someone for help already given"
+                "Asking for more help"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🧩",
             "literalMeaning": "What is actually said.",
@@ -126,18 +114,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would both the person AND others avoid a topic?",
             "explanation": "Both the person avoiding a topic and others tiptoeing around it suggests the topic carries emotional weight for her. The collective silence is protective - people sense she doesn't want to discuss it. This is a social dynamic of protecting someone from a difficult subject.",
             "textToSpeak": "She hasn't mentioned it since that day, and nobody brings it up around her.",
             "question": "What does this hint at?",
             "options": [
-                "The topic is no longer relevant",
                 "The topic is emotionally sensitive for her",
-                "Everyone has forgotten about it",
-                "She asked people not to discuss it"
+                "Everyone has forgotten about it"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💬",
             "literalMeaning": "What is actually said.",
@@ -146,16 +132,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would a new employee volunteer for everything?",
             "explanation": "Volunteering for everything as a new employee signals eagerness to prove oneself, gain experience, and make a positive impression. It's impression management - showing enthusiasm and reliability to establish a reputation quickly. This is common career-building behaviour.",
             "textToSpeak": "He volunteered for every project available in his first few months.",
             "question": "What can be inferred about his motivation?",
             "options": [
-                "He had nothing else to do with his time",
-                "He was eager to make a strong impression",
                 "He was being told to volunteer by management",
-                "He only likes hard work"
+                "He was eager to make a strong impression"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
@@ -166,18 +150,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does the combination of reading AND taking notes on negative reviews suggest?",
             "explanation": "Reading criticism carefully + taking notes = treating feedback as useful information, not as a personal attack. This is a growth mindset approach - extracting learning from negative feedback. Taking notes shows she intends to act on the information, not just react emotionally.",
             "textToSpeak": "She read every negative review carefully and took detailed notes.",
             "question": "What does this reveal about her?",
             "options": [
-                "She is upset and wounded by criticism",
-                "She wants to respond to every reviewer",
-                "She uses criticism constructively to improve",
-                "She enjoys reading negative content"
+                "She enjoys reading negative content",
+                "She uses criticism constructively to improve"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🎯",
             "literalMeaning": "What is actually said.",
@@ -186,18 +168,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would someone specifically request the original over a summary?",
             "explanation": "Asking for the original contract rather than a summary suggests he wants to see the precise wording, not an interpretation. Summaries can omit or simplify. He's being thorough - wanting direct access to the source document. This suggests caution, detail-orientation, or distrust of summaries.",
             "textToSpeak": "He asked to see the original contract, not just the summary.",
             "question": "What does this phrase really convey?",
             "options": [
-                "He trusts the summary and wants a quicker read",
-                "He lost his copy of the summary",
                 "He wants to verify details for himself",
                 "He needs to send the contract to someone else"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📝",
             "literalMeaning": "What is actually said.",
@@ -206,18 +186,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does asking for clarification before agreeing reveal about decision-making style?",
             "explanation": "Asking clarifying questions before committing shows she understands what she's agreeing to before she agrees. This is careful, deliberate decision-making - not impulsive. 'Before agreeing to anything' emphasises she won't commit without full information.",
             "textToSpeak": "She asked several clarifying questions before agreeing to anything.",
             "question": "What can we conclude about her?",
             "options": [
-                "She was trying to slow down the process",
-                "She was being obstructive",
-                "She didn't understand the proposal",
-                "She is careful about what she commits to"
+                "She is careful about what she commits to",
+                "She was trying to slow down the process"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🤔",
             "literalMeaning": "What is actually said.",
@@ -226,18 +204,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would someone suddenly change their arrival habits?",
             "explanation": "A sudden change in behaviour - specifically becoming earlier rather than gradually - often follows feedback or a specific incident. 'Started arriving ten minutes early' suggests a behaviour change prompted by external feedback (perhaps being told he was consistently late). This is a corrective response.",
             "textToSpeak": "He started arriving ten minutes early to every meeting.",
             "question": "What had probably happened?",
             "options": [
-                "He moved closer to the office",
-                "He started going to bed earlier",
-                "He bought a faster car",
-                "He received feedback about his punctuality"
+                "He received feedback about his punctuality",
+                "He moved closer to the office"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⏰",
             "literalMeaning": "What is actually said.",
@@ -246,18 +222,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L85_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why might a group agree unanimously and immediately with a manager?",
             "explanation": "Unanimous agreement without debate in a hierarchical context often signals power imbalance - people may fear disagreeing with a manager. Genuine agreement through discussion looks different; silence without pushback can indicate suppression of dissent rather than actual consensus.",
             "textToSpeak": "Everyone agreed with the manager's suggestion without any debate.",
             "question": "What does this imply about the team dynamic?",
             "options": [
-                "The idea was universally excellent",
-                "The team is exceptionally collaborative",
                 "People felt uncomfortable disagreeing",
                 "The meeting was too short for debate"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -266,18 +240,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L85_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would a senior person specifically name junior colleagues in an acceptance speech?",
             "explanation": "Naming junior colleagues specifically by name shows recognition of their contribution when he didn't have to - acceptances could easily credit 'the team' anonymously. This is genuine acknowledgement of others' work. It signals modesty, generosity, and appreciation.",
             "textToSpeak": "He thanked three junior colleagues by name in his acceptance speech.",
             "question": "What does this say about him?",
             "options": [
-                "He remembers names very well",
-                "He managed them very closely",
-                "He is modest and acknowledges others' contributions",
-                "He wanted to appear humble"
+                "He wanted to appear humble",
+                "He is modest and acknowledges others' contributions"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🗣️",
             "literalMeaning": "What is actually said.",
@@ -286,18 +258,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L85_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does proactively ensuring everyone is introduced reveal?",
             "explanation": "Proactively facilitating introductions shows social awareness and consideration for others' comfort. She's making sure nobody feels excluded or awkward through not knowing people. This is the behaviour of a thoughtful host - prioritising others' social experience over her own.",
             "textToSpeak": "She went around the room and made sure everyone had been introduced.",
             "question": "What does this tell us about her?",
             "options": [
-                "She is the most senior person present",
-                "She was avoiding a particular person",
-                "She doesn't know anyone herself",
-                "She is a thoughtful and considerate host"
+                "She is a thoughtful and considerate host",
+                "She is the most senior person present"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -306,18 +276,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L86_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does a small sample size mean for research conclusions?",
             "explanation": "A small sample = fewer participants/data points. The more limited the sample, the less confident you can be that findings apply beyond that specific group. This is a key research methods concept: small samples limit generalisability (external validity). It doesn't make the findings wrong, just limited in scope.",
             "textToSpeak": "The sample size was small, which limits how broadly the findings can be applied.",
             "question": "What is the issue with the research?",
             "options": [
                 "The findings are definitely wrong",
-                "The sample was the wrong type",
-                "The research was too costly",
                 "The findings can't easily be generalised to larger populations"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔬",
             "literalMeaning": "What is actually said.",
@@ -326,18 +294,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L86_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What do inconsistent results across multiple studies indicate?",
             "explanation": "Inconsistent results = different studies found different things. This means no clear, reliable conclusion has emerged. The field is unresolved - different conditions, methods, or populations may produce different results. This signals ongoing uncertainty or complexity in the area.",
             "textToSpeak": "Previous studies in this area have shown inconsistent results.",
             "question": "What does this suggest about the research field?",
             "options": [
-                "The topic is well understood",
                 "Results in this field are not yet conclusive",
-                "There is little scientific interest in this area",
-                "All previous studies agree with each other"
+                "There is little scientific interest in this area"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🔬",
             "literalMeaning": "What is actually said.",
@@ -346,18 +312,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L86_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is a conflict of interest in research funding?",
             "explanation": "When a company funds research on its own product, there's a financial incentive for positive results. This creates a potential conflict of interest - the funder may consciously or unconsciously influence the study design, interpretation, or reporting. Independent research is generally considered more credible.",
             "textToSpeak": "The study was funded by the company whose product was being tested.",
             "question": "Why might this be a concern?",
             "options": [
-                "There could be a conflict of interest affecting objectivity",
                 "Company-funded research is always reliable",
-                "The study is therefore more credible",
-                "The results will be published sooner"
+                "There could be a conflict of interest affecting objectivity"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔬",
             "literalMeaning": "What is actually said.",
@@ -366,18 +330,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L87_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does a long pause before answering typically signal?",
             "explanation": "A long pause = processing time. This suggests the question requires thought - possibly because it's difficult, sensitive, or the answer is uncertain. Immediate answers suggest easy/automatic responses; pauses suggest complexity, care, or hesitation.",
             "textToSpeak": "He gave a long pause before answering.",
             "question": "What does this mean?",
             "options": [
-                "He was thinking carefully or was uncertain",
                 "He didn't hear the question",
-                "He was bored by the question",
-                "He immediately agreed"
+                "He was thinking carefully or was uncertain"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "🔎",
             "literalMeaning": "What is actually said.",
@@ -386,18 +348,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L87_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What level of commitment does 'We'll see' express?",
             "explanation": "'We'll see' = I'm not committing either way - the outcome is undecided. It's non-committal. In social contexts, it's often used as a gentle way of not promising something. It leaves the door open without saying yes or no. The smile might make it feel positive, but no commitment is made.",
             "textToSpeak": "She smiled and said 'We'll see'.",
             "question": "What does 'We'll see' typically mean?",
             "options": [
-                "An uncertain or non-committal response",
                 "A firm no",
-                "A definite yes",
-                "She will ask someone else"
+                "An uncertain or non-committal response"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "😊",
             "literalMeaning": "What is actually said.",
@@ -406,18 +366,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L87_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "Why would someone specifically wait until others had left?",
             "explanation": "Waiting for privacy to raise an issue suggests he wanted a one-to-one conversation - not a public one. The issue may be sensitive, personal, or about someone specific. Choosing privacy is deliberate and strategic: he wanted to avoid audience or public discussion.",
             "textToSpeak": "He waited until everyone else had left before raising the issue.",
             "question": "What is being implied?",
             "options": [
-                "He was being secretive and dishonest",
-                "He forgot to raise it earlier",
-                "He wanted a private one-to-one conversation",
-                "He was shy about speaking in groups"
+                "He was shy about speaking in groups",
+                "He wanted a private one-to-one conversation"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "💭",
             "literalMeaning": "What is actually said.",
@@ -426,18 +384,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L88_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What level of certainty does 'a possibility... depending on circumstances' express?",
             "explanation": "'A possibility' = not certain, not impossible. 'Could be' = conditional future. 'Depending on circumstances' = contingent on conditions. Together: it might happen if conditions allow - neither a promise nor a refusal. This is careful, hedged language managing expectations.",
             "textToSpeak": "There's a possibility the deadline could be extended, depending on circumstances.",
             "question": "What should you take from this?",
             "options": [
-                "The deadline is definitely extended",
                 "The deadline might be extended under certain conditions",
-                "The deadline cannot be extended",
-                "The deadline has been cancelled"
+                "The deadline cannot be extended"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -446,16 +402,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L88_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does 'exploring options' tell you about the decision-making process?",
             "explanation": "'Exploring options' = still investigating possibilities, no decision made. 'At this stage' = right now, with the implication that it may change. This is very early-stage language - they're looking, not deciding. Companies use this to avoid commitment while keeping options open.",
             "textToSpeak": "We're exploring options at this stage.",
             "question": "What stage is the company at?",
             "options": [
                 "They are in early stages of deciding",
-                "They have made a firm decision",
-                "They have rejected all options",
-                "They are about to announce a final plan"
+                "They have made a firm decision"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -466,18 +420,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L88_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the purpose of 'results may vary' in advertising or product information?",
             "explanation": "'Results may vary' is a disclaimer that the outcome shown or described is not guaranteed for all users. What works for one person may not work for another. It's legal protection against specific claims while acknowledging variability in outcomes.",
             "textToSpeak": "Results may vary.",
             "question": "What does this disclaimer communicate?",
             "options": [
-                "The results are guaranteed for everyone",
                 "The outcome can be different for different people",
-                "The product always works perfectly",
-                "The product rarely works"
+                "The product always works perfectly"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "🪞",
             "literalMeaning": "What is actually said.",
@@ -486,18 +438,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What is the normal social consequence of disappearing without telling anyone?",
             "explanation": "Leaving without informing anyone is likely to cause worry, especially if he's expected somewhere. People who were waiting or expecting him will not know where he is or when he'll return. The absence of information causes concern - a natural social consequence of unexplained departure.",
             "textToSpeak": "He left without telling anyone where he was going.",
             "question": "What is likely to happen?",
             "options": [
-                "He will return within minutes",
-                "Nobody will notice he's gone",
                 "People will be worried about him",
                 "Someone will immediately follow him"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "⚖️",
             "literalMeaning": "What is actually said.",
@@ -506,18 +456,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What's the logical response to a misdirected email discovered immediately?",
             "explanation": "Realising immediately that an email was misdirected creates urgency: contact either the wrong recipient (to explain/retract) or the right one (to send correctly), or both. Sending a follow-up correction or apology is the most professional and immediate response - damage control.",
             "textToSpeak": "She sent the email to the wrong person and realised immediately.",
             "question": "What would you expect to happen next?",
             "options": [
-                "Send a follow-up correction or apology",
                 "Ignore it and hope it's overlooked",
-                "Wait to see if anything happens",
-                "Delete the original email"
+                "Send a follow-up correction or apology"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
             "emoji": "📜",
             "literalMeaning": "What is actually said.",
@@ -526,18 +474,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What happens when you miss a grant submission deadline?",
             "explanation": "Grant deadlines are typically firm - missing them means the application is not considered in that funding round. 'Final submission deadline' emphasises finality. Unlike some academic deadlines, funding deadlines rarely allow late submissions. The consequence: no funding in this cycle.",
             "textToSpeak": "They missed the final submission deadline for the grant application.",
             "question": "What is the consequence?",
             "options": [
-                "They can submit the following week instead",
-                "They will get an automatic extension",
-                "They can still submit with a late penalty",
-                "They will not receive funding in this cycle"
+                "They will not receive funding in this cycle",
+                "They can submit the following week instead"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💼",
             "literalMeaning": "What is actually said.",
@@ -546,16 +492,14 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q1",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What do all three details together suggest about her new way of life?",
             "explanation": "Three changes: city → village (location), grows food (self-sufficiency), keeps chickens (rural practice), rarely uses phone (disconnecting from digital life). Together, these paint a picture of intentional simplification - choosing a slower, more self-sufficient rural life over an urban, connected one.",
             "textToSpeak": "She moved from the city to a small village. She grows her own vegetables, keeps chickens, and rarely uses her phone.",
             "question": "What lifestyle change has she made?",
             "options": [
                 "She has adopted a simpler, rural lifestyle",
-                "She is working harder than before",
-                "She is planning to move back to the city",
-                "She is on an extended holiday"
+                "She is working harder than before"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
@@ -566,18 +510,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q2",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does the combination of study, sacrifice, and financial planning suggest?",
             "explanation": "Three simultaneous changes (learning, reducing social spending, budgeting) that all involve sacrifice and focus suggest a deliberate plan - he's investing time and money into something important. This is purposeful self-improvement behaviour: studying for a better qualification, career, or goal.",
             "textToSpeak": "He started evening classes, cut back on socialising, and restructured his budget.",
             "question": "What is he working towards?",
             "options": [
-                "He is having a difficult time socially",
-                "He is preparing for retirement",
                 "He is making deliberate changes to improve his situation",
                 "He is experiencing a health problem"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "💰",
             "literalMeaning": "What is actually said.",
@@ -586,18 +528,16 @@
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q3",
             "interactionType": "choice",
-            "instruction": "Listen to the audio and answer the question.",
+            "instruction": "Listen and make a split decision.",
             "hint": "What does losing two of three supermarkets over a decade suggest?",
             "explanation": "Two closures out of three in ten years indicates retail decline - shops closing because they're not profitable. The remaining one has changed hands, which can also signal difficulty. Together, these suggest a struggling local economy or reduced customer base. This is inference about economic context from specific data points.",
             "textToSpeak": "The area had three supermarkets ten years ago. Two have closed, and the third is now under new management.",
             "question": "What does this suggest about the area?",
             "options": [
-                "The area is growing rapidly",
                 "The local retail environment has become more challenging",
-                "The supermarkets moved to larger premises",
-                "The community no longer needs supermarkets"
+                "The supermarkets moved to larger premises"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
             "emoji": "📊",
             "literalMeaning": "What is actually said.",
