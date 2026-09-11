@@ -15,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_instruction.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_sonar_field.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_emitter_node.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -36,6 +36,9 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey =
+      GlobalKey<SpeedChallengeTimerState>();
 
   late AnimationController _radarController;
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
@@ -44,7 +47,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
   int _lastProcessedIndex = -1;
   int? _lastLives;
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -54,7 +56,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     _isCorrect.dispose();
     _showConfetti.dispose();
     _selectedIndex.dispose();
-    _pendingSelectedIndex.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -71,42 +72,18 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     );
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking, int correct) {
-    if (_isAnswered.value || _pendingSelectedIndex.value == null) return;
+  void _submitFinalAnswer(int index, int correct, GameQuest quest) {
+    if (_isAnswered.value) return;
+    _timerKey.currentState?.stop();
 
-    if (!nailedSpeaking) {
-      _hapticService.error();
-      _soundService.playWrong();
-
-      final authState = context.read<AuthBloc>().state;
-      if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
-        ErrorJournalCollector.record(
-          userId: authState.user!.id,
-          gameType: widget.gameType.name,
-          question: 'Ambient ID',
-          userAnswer: '[Failed Speaking]',
-          correctAnswer: correct.toString(),
-          level: widget.level,
-        );
-      }
-
-      _isAnswered.value = true;
-      _isCorrect.value = false;
-      _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
-      return;
-    }
-
-    bool isCorrect = _pendingSelectedIndex.value == correct;
+    _selectedIndex.value = index;
+    bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
       _isAnswered.value = true;
       _isCorrect.value = true;
-      _selectedIndex.value = _pendingSelectedIndex.value;
-      context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -118,8 +95,8 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: 'Ambient ID',
-          userAnswer: _pendingSelectedIndex.value.toString(),
+          question: quest.textToSpeak ?? 'Ambient ID',
+          userAnswer: index.toString(),
           correctAnswer: correct.toString(),
           level: widget.level,
         );
@@ -127,7 +104,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
 
       _isAnswered.value = true;
       _isCorrect.value = false;
-      _selectedIndex.value = _pendingSelectedIndex.value;
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -149,7 +125,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
             _isAnswered.value = false;
             _isCorrect.value = null;
             _selectedIndex.value = null;
-            _pendingSelectedIndex.value = null;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             _isAnswered.value = true;
             _isCorrect.value = state.answerStatus.asBoolOrNull;
@@ -176,7 +151,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
             _isCorrect,
             _showConfetti,
             _selectedIndex,
-            _pendingSelectedIndex,
           ]),
           builder: (context, _) {
             return ListeningBaseLayout(
@@ -218,12 +192,24 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: 6.h),
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 16.h),
+                                        child: SpeedChallengeTimer(
+                                          key: _timerKey,
+                                          durationSeconds: 15,
+                                          primaryColor: theme.primaryColor,
+                                          onTimeUp: () {
+                                            if (_isAnswered.value) return;
+                                            _submitFinalAnswer(0, quest.correctAnswerIndex ?? 0, quest);
+                                          },
+                                        ),
+                                      ),
                                       AmbientIdInstruction(
                                         color: theme.primaryColor,
                                         instruction: context.tr(
                                           'games.ambientId_instruction',
                                           fallback:
-                                              'Listen to the sounds and find the location.',
+                                              'Listen and tap the location.',
                                         ),
                                       ),
                                       SizedBox(height: 24.h),
@@ -237,12 +223,11 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         isCorrectState: _isCorrect.value,
                                         selectedIndex: _selectedIndex.value,
                                         onSubmitAnswer: (index) {
-                                          if (_isAnswered.value ||
-                                              _pendingSelectedIndex.value !=
-                                                  null) {
-                                            return;
-                                          }
-                                          _pendingSelectedIndex.value = index;
+                                          _submitFinalAnswer(
+                                            index,
+                                            quest.correctAnswerIndex ?? 0,
+                                            quest,
+                                          );
                                         },
                                         imageUrl: null,
                                       ),
@@ -268,14 +253,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                         },
                                         color: theme.primaryColor,
                                       ),
-                                      SizedBox(
-                                        height:
-                                            (_pendingSelectedIndex.value !=
-                                                    null &&
-                                                !_isAnswered.value)
-                                            ? 380.h
-                                            : 100.h,
-                                      ),
+                                      SizedBox(height: 100.h),
                                     ],
                                   ),
                                 ),
@@ -283,23 +261,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                             ],
                           ),
                         ),
-                        if (_pendingSelectedIndex.value != null &&
-                            !_isAnswered.value)
-                          SpeakToConfirmOverlay(
-                            expectedText:
-                                quest.options![_pendingSelectedIndex.value!],
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(
-                              true,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            onSkipped: () => _submitFinalAnswer(
-                              false,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            allowSkip: true,
-                            isPositioned: true,
-                          ),
                       ],
                     ),
             );
