@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class DetailSpotlightPrompt extends StatelessWidget {
   final bool isAnswered;
@@ -16,19 +15,24 @@ class DetailSpotlightPrompt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-      borderRadius: BorderRadius.circular(30.r),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
+      ),
       child: Text(
         isAnswered
             ? "TARGET: ${detail.toUpperCase()}"
             : "SCAN FOR AUDITORY TARGET",
+        textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w900,
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w800,
           color: color,
-          letterSpacing: 1,
+          letterSpacing: 1.2,
         ),
       ),
     );

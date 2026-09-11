@@ -36,7 +36,7 @@ class DetailSpotlightScreen extends StatefulWidget {
 class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -92,12 +92,22 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
           authState.user != null) {
+        String uAns =
+            _pendingSelectedIndex.value != null &&
+                quest.options != null &&
+                _pendingSelectedIndex.value! < quest.options!.length
+            ? quest.options![_pendingSelectedIndex.value!]
+            : '[None]';
+        String cAns = quest.options != null && correct < quest.options!.length
+            ? quest.options![correct]
+            : '';
+
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: quest.textToSpeak ?? 'Detail Spotlight',
-          userAnswer: _pendingSelectedIndex.value.toString(),
-          correctAnswer: correct.toString(),
+          userAnswer: uAns,
+          correctAnswer: cAns,
           level: widget.level,
         );
       }
@@ -109,7 +119,6 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     }
   }
 
-  
   void _submitWrongAnswer(dynamic quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
@@ -118,13 +127,21 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
+      String cAns =
+          quest.correctAnswerIndex != null &&
+              quest.options != null &&
+              quest.correctAnswerIndex < quest.options!.length
+          ? quest.options![quest.correctAnswerIndex]
+          : '';
+
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
         question: quest.textToSpeak ?? 'Timeout',
         userAnswer: '[Timeout]',
-        correctAnswer: '',
+        correctAnswer: cAns,
         level: widget.level,
       );
     }
@@ -221,9 +238,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
                                           key: _timerKey,
-                                          durationSeconds: 15,
+                                          durationSeconds: 30,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                          onTimeUp: () =>
+                                              _submitWrongAnswer(quest),
                                         ),
                                       ),
                                       DetailSpotlightInstruction(
@@ -293,7 +311,9 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: _isAnswered.value ? 200.h : 60.h,
+                                        height: _isAnswered.value
+                                            ? 200.h
+                                            : 60.h,
                                       ),
                                     ],
                                   ),

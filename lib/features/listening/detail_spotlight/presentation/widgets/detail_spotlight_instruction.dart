@@ -28,17 +28,20 @@ class DetailSpotlightInstruction extends StatelessWidget {
           Icon(Icons.flashlight_on_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
           Flexible(
-            child: Text(
-              instruction.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: color,
-                letterSpacing: 0.5,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                instruction.toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w900,
+                  color: color,
+                  letterSpacing: 0.5,
+                ),
+                maxLines: 1,
               ),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 1,
             ),
           ),
         ],

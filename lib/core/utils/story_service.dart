@@ -115,7 +115,7 @@ class StoryServiceImpl implements StoryService {
     'audioTrueFalse':
         "Listen to the statement carefully. Did they actually say that, or is it a trick? Let's find out!",
     'detailSpotlight':
-        "Native speakers talk fast and hide important details. Let's practice laser-focusing on the exact information we need!",
+        "Native speakers talk fast and sometimes hide important details. Let's practice catching those tricky details so nothing slips past you!",
     'emotionRecognition':
         "It's not just what they say, it's *how* they say it. Can you hear if the speaker is happy, angry, or confused?",
     'fastSpeechDecoder':
@@ -892,11 +892,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'detailspotlight': [
       "",
-      "Excellent start! Your understanding of audio details is growing.",
-      "Your mastery of audio details is noticeably improving daily.",
-      "Amazing! You manipulate audio details with natural ease.",
-      "Centurion! You have conquered the complexities of audio details.",
-      "Level 200 reached! Your grasp of audio details is legendary.",
+      "Great start! You are getting much better at picking out exactly what you need to hear.",
+      "Nice work! It is getting harder to hide details from you.",
+      "Halfway to 100! Your ears are getting incredibly sharp at catching those subtle words.",
+      "Level 100! You can easily filter out the noise and focus on exactly what is important.",
+      "Level 200 reached! You have a truly native-level ear for detail. Nothing gets past you!",
     ],
     'emotionrecognition': [
       "",

@@ -22,18 +22,26 @@ class DetailSpotlightEmitter extends StatelessWidget {
     return ScaleButton(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.all(16.r),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+          color: color.withValues(alpha: 0.15),
+          border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
+          boxShadow: [
+            BoxShadow(
+              color: color.withValues(alpha: 0.2),
+              blurRadius: 12.r,
+              spreadRadius: 2.r,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
         child: isCorrectState == true && emoji != null
             ? Text(
                 emoji!,
-                style: TextStyle(fontSize: 48.r),
+                style: TextStyle(fontSize: 32.r),
               ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
-            : Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
+            : Icon(Icons.volume_up_rounded, color: color, size: 36.r),
       ),
     );
   }
