@@ -18,45 +18,48 @@ class AudioTrueFalseTuner extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaleButton(
       onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.15),
-          border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
-          boxShadow: [
-            BoxShadow(
-              color: color.withValues(alpha: 0.1),
-              blurRadius: 16,
-              spreadRadius: 4,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          AnimatedBuilder(
+            animation: audioController,
+            builder: (_, _) {
+              if (!audioController.isAnimating && audioController.value == 0) {
+                return const SizedBox.shrink();
+              }
+              return SizedBox(
+                width: 80.r,
+                height: 80.r,
+                child: CircularProgressIndicator(
+                  value: audioController.value,
+                  strokeWidth: 3,
+                  color: color,
+                  backgroundColor: color.withValues(alpha: 0.15),
+                ),
+              );
+            },
+          ),
+          Container(
+            width: 64.r,
+            height: 64.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color,
+              boxShadow: [
+                BoxShadow(
+                  color: color.withValues(alpha: 0.3),
+                  blurRadius: 16,
+                  offset: const Offset(0, 6),
+                ),
+              ],
             ),
-          ],
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            AnimatedBuilder(
-              animation: audioController,
-              builder: (_, _) {
-                if (!audioController.isAnimating &&
-                    audioController.value == 0) {
-                  return const SizedBox.shrink();
-                }
-                return SizedBox(
-                  width: 56.r,
-                  height: 56.r,
-                  child: CircularProgressIndicator(
-                    value: audioController.value,
-                    strokeWidth: 4,
-                    color: color,
-                    backgroundColor: color.withValues(alpha: 0.2),
-                  ),
-                );
-              },
+            child: Icon(
+              Icons.volume_up_rounded,
+              color: Colors.white,
+              size: 32.r,
             ),
-            Icon(Icons.volume_up_rounded, color: color, size: 48.r),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -25,7 +25,9 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
         color: isDark ? const Color(0xFF1A1A1A) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: isDark ? color.withValues(alpha: 0.2) : color.withValues(alpha: 0.15),
+          color: isDark
+              ? color.withValues(alpha: 0.2)
+              : color.withValues(alpha: 0.15),
           width: 1.5,
         ),
         boxShadow: [
