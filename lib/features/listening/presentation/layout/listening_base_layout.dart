@@ -21,6 +21,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 // =============================================================================
 // ListeningBaseLayout
@@ -278,7 +279,12 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               }
             }
 
-            final ruleContent = quest.audioTranscript ?? explanation;
+            var ruleContent = quest.audioTranscript;
+            if (ruleContent == 'This is a transcript of the audio.') {
+              ruleContent = quest.textToSpeak;
+            }
+            ruleContent ??= explanation;
+
             final finalExplanation = (ruleContent == explanation)
                 ? null
                 : explanation;
@@ -310,7 +316,13 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
     // Show a custom UI snackbar without clashing with the audio playback
     CustomSnackBar.show(
       context: context,
-      message: (customHint ?? "AUDIO CLUE ACTIVATED").toUpperCase(),
+      message:
+          (customHint ??
+                  context.tr(
+                    'game.audio_clue_activated',
+                    fallback: 'AUDIO CLUE ACTIVATED',
+                  ))
+              .toUpperCase(),
       type: CustomSnackBarType.info,
     );
 

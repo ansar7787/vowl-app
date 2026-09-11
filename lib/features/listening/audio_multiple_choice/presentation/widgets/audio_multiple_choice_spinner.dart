@@ -45,8 +45,8 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
           children: [
             // Orbital Ring
             Container(
-              width: 220.r,
-              height: 220.r,
+              width: 230.r,
+              height: 230.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -56,52 +56,11 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
               ),
             ),
 
-            // Central Core
-            ScaleButton(
-              onTap: onTapCore,
-              child: Container(
-                width: 100.r,
-                height: 100.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isCorrectState == true
-                      ? Colors.greenAccent
-                      : (Theme.of(context).brightness == Brightness.dark
-                            ? color.withValues(alpha: 0.2)
-                            : Colors.white),
-                  border: Border.all(
-                    color: isCorrectState == true ? Colors.greenAccent : color,
-                    width: 4,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: isCorrectState == true
-                          ? Colors.greenAccent.withValues(alpha: 0.4)
-                          : color.withValues(alpha: 0.4),
-                      blurRadius: 20,
-                    ),
-                  ],
-                ),
-                child: isCorrectState == true && emoji != null
-                    ? Center(
-                        child: Text(emoji!, style: TextStyle(fontSize: 50.r)),
-                      ).animate().scale(
-                        duration: 400.ms,
-                        curve: Curves.easeOutBack,
-                      )
-                    : Icon(
-                        Icons.graphic_eq_rounded,
-                        color: isCorrectState == true ? Colors.black87 : color,
-                        size: 50.r,
-                      ),
-              ),
-            ),
-
             // Satellite Options
             ...List.generate(options.length, (index) {
               double angle =
                   (index * (2 * 3.14159 / options.length)) + rotation;
-              double radius = 110.r;
+              double radius = 115.r;
               return Align(
                 alignment: Alignment.center,
                 child: Transform.translate(
@@ -122,6 +81,73 @@ class AudioMultipleChoiceSpinner extends StatelessWidget {
                 ),
               );
             }),
+
+            // Central Core (Listen Button)
+            ScaleButton(
+              onTap: onTapCore,
+              child: Container(
+                width: 80.r,
+                height: 80.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: isCorrectState == true ? Colors.greenAccent : color,
+                  border: Border.all(
+                    color: isCorrectState == true
+                        ? Colors.white
+                        : Colors.white.withValues(alpha: 0.5),
+                    width: 4,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: isCorrectState == true
+                          ? Colors.greenAccent.withValues(alpha: 0.6)
+                          : color.withValues(alpha: 0.6),
+                      blurRadius: 24,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
+                ),
+                child: isCorrectState == true && emoji != null
+                    ? Center(
+                        child: Text(emoji!, style: TextStyle(fontSize: 36.r)),
+                      ).animate().scale(
+                        duration: 400.ms,
+                        curve: Curves.easeOutBack,
+                      )
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.graphic_eq_rounded,
+                            color: isCorrectState == true
+                                ? Colors.black87
+                                : Colors.white,
+                            size: 30.r,
+                          ),
+                          SizedBox(height: 2.h),
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 4.w),
+                              child: Text(
+                                "LISTEN",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: isCorrectState == true
+                                      ? Colors.black87
+                                      : Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+              ),
+            ),
           ],
         ),
       ),

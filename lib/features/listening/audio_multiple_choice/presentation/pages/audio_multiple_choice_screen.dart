@@ -11,7 +11,6 @@ import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_instruction.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_question.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
 import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
@@ -35,7 +34,7 @@ class AudioMultipleChoiceScreen extends StatefulWidget {
 class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -93,7 +92,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      
+
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
           authState.user != null) {
@@ -125,7 +124,6 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     });
   }
 
-  
   void _submitWrongAnswer(dynamic quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
@@ -134,7 +132,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
@@ -247,19 +246,31 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
-                                    children: [                                      SizedBox(height: 6.h),
+                                    children: [
+                                      SizedBox(height: 6.h),
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 16.h),
                                         child: SpeedChallengeTimer(
                                           key: _timerKey,
                                           durationSeconds: 15,
                                           primaryColor: theme.primaryColor,
-                                          onTimeUp: () => _submitWrongAnswer(quest),
+                                          onTimeUp: () =>
+                                              _submitWrongAnswer(quest),
                                         ),
                                       ),
-                                      AudioMultipleChoiceInstruction(
-                                        instruction: quest.instruction,
-                                        color: theme.primaryColor,
+                                      Text(
+                                        quest.instruction,
+                                        textAlign: TextAlign.center,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: isDark
+                                              ? Colors.white70
+                                              : Colors.black54,
+                                        ),
                                       ),
                                       SizedBox(height: 24.h),
                                       AudioMultipleChoiceQuestion(
@@ -322,7 +333,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                     vertical: 16.h,
                                   ),
                                   child: SizedBox(
-                                    height: 320.h,
+                                    height: 340.r,
                                     child: AudioMultipleChoiceSpinner(
                                       options: quest.options ?? [],
                                       correct: quest.correctAnswerIndex ?? 0,
