@@ -47,7 +47,12 @@ abstract class SoundService {
   Future<void> playFile(String filePath);
 
   /// Triggers synthesized speech generation using Text-to-Speech.
-  Future<void> playTts(String text, {double speed = 0.4, String? locale});
+  Future<void> playTts(
+    String text, {
+    double speed = 0.4,
+    String? locale,
+    List<int>? pauseMarkers,
+  });
 
   /// Aborts all active synthesized speech playback.
   Future<void> stopTts();
@@ -271,11 +276,17 @@ class SoundServiceImpl implements SoundService {
     String text, {
     double speed = 0.4,
     String? locale,
+    List<int>? pauseMarkers,
   }) async {
     await _initFuture;
     if (_isMuted) return;
     try {
-      await _ttsService.speak(text, rate: speed, locale: locale);
+      await _ttsService.speak(
+        text,
+        rate: speed,
+        locale: locale,
+        pauseMarkers: pauseMarkers,
+      );
     } catch (e) {
       di.sl<AppLogger>().error('SoundService: Error playing TTS', error: e);
       rethrow;

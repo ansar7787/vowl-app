@@ -506,18 +506,18 @@ class GameInstructionService {
           "PRO TIP: Don't just guess! After picking your answer, you'll need to tap that exact word in the transcript to prove you heard it.",
     ),
     GameSubtype.audioSentenceOrder: GameBriefing(
-      title: "Timeline Scrubber",
+      title: "Sentence Builder",
       icon: Icons.waves_rounded,
       objective:
-          "Listen and arrange the spoken segments in their correct chronological order. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
+          "Let's put the puzzle pieces together! Listen closely to the speaker and build the exact sentence by placing the scrambled words in the order you hear them.",
       rules: [
-        "Listen to stream",
-        "Snap segments to timeline",
-        "Calibrate sequence",
+        "Listen to the audio clip",
+        "Find the first word you hear",
+        "Snap the words together in order",
       ],
-      actionText: "Calibrate Signal",
+      actionText: "Let's Build!",
       tip:
-          "Logical connectors like 'first', 'then', and 'after that' are your clues.",
+          "PRO TIP: Don't just guess the grammar! Listen closely to the rhythm and how the speaker links words together.",
     ),
     GameSubtype.audioTrueFalse: GameBriefing(
       title: "Signal Validator",

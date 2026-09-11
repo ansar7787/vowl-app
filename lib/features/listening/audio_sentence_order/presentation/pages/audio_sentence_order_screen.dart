@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/listening/domain/entities/listening_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -144,9 +146,13 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                         physics: const BouncingScrollPhysics(),
                         slivers: [
                           SliverPadding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 24.w,
-                              vertical: 16.h,
+                            padding: EdgeInsets.only(
+                              left: 24.w,
+                              right: 24.w,
+                              top: 16.h,
+                              bottom:
+                                  (_isAnswered.value ? 200.h : 40.h) +
+                                  MediaQuery.of(context).viewInsets.bottom,
                             ),
                             sliver: SliverToBoxAdapter(
                               child: Column(
@@ -166,7 +172,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                     color: theme.primaryColor,
                                     instruction: context.tr(
                                       'games.audioSentenceOrder_instruction',
-                                      fallback: 'Listen and arrange the words',
+                                      fallback: quest.instruction,
                                     ),
                                   ),
                                   SizedBox(height: 24.h),
@@ -174,6 +180,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                     onTap: () {
                                       _soundService.playTts(
                                         quest.textToSpeak ?? "",
+                                        pauseMarkers: quest.pauseMarkers,
                                       );
                                       _hapticService.selection();
                                     },
@@ -182,17 +189,20 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                     isCorrectState: _isCorrect.value,
                                   ),
                                   SizedBox(height: 32.h),
-                                  if (!_isAnswered.value)
-                                    DynamicJigsawWrapper(
-                                      expectedText: quest.textToSpeak ?? "",
-                                      customShuffledWords:
-                                          quest.shuffledSentences,
-                                      customCorrectOrder: quest.correctOrder,
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      onConfirmed: () => _submitAnswer(),
-                                      onSkipped: () => _submitWrongAnswer(quest),
-                                    ),
+                                  DynamicJigsawWrapper(
+                                    key: ValueKey(quest.id),
+                                    expectedText: quest.textToSpeak ?? "",
+                                    customShuffledWords:
+                                        quest.shuffledSentences,
+                                    customCorrectOrder: quest.correctOrder,
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    allowSkip:
+                                        false, // Disables the bypass feature for this game
+                                    onConfirmed: () => _submitAnswer(),
+                                    onBypassed: () => _submitAnswer(),
+                                    onSkipped: () => _submitWrongAnswer(quest),
+                                  ),
                                 ],
                               ),
                             ),
@@ -207,7 +217,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     );
   }
 
-  void _submitWrongAnswer(dynamic quest) {
+  void _submitWrongAnswer(ListeningQuest quest) {
     if (_isAnswered.value) return;
     _timerKey.currentState?.stop();
 
@@ -215,11 +225,12 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     _soundService.playWrong();
 
     final authState = context.read<AuthBloc>().state;
-    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+    if (authState.status == AuthStatus.authenticated &&
+        authState.user != null) {
       ErrorJournalCollector.record(
         userId: authState.user!.id,
         gameType: widget.gameType.name,
-        question: 'Sentence Order',
+        question: quest.id,
         userAnswer: '[Failed / Timeout]',
         correctAnswer: quest.textToSpeak ?? "",
         level: widget.level,

@@ -11,7 +11,12 @@ abstract class TtsService {
   factory TtsService() = TtsServiceImpl;
 
   /// Synthesizes text aloud using native speech synthesis engines.
-  Future<void> speak(String text, {double? rate, String? locale});
+  Future<void> speak(
+    String text, {
+    double? rate,
+    String? locale,
+    List<int>? pauseMarkers,
+  });
 
   /// Aborts active audio speech outputs immediately.
   Future<void> stop();
@@ -56,7 +61,12 @@ class TtsServiceImpl implements TtsService {
   }
 
   @override
-  Future<void> speak(String text, {double? rate, String? locale}) async {
+  Future<void> speak(
+    String text, {
+    double? rate,
+    String? locale,
+    List<int>? pauseMarkers,
+  }) async {
     if (text.isEmpty) return;
 
     await _initFuture;
@@ -66,20 +76,7 @@ class TtsServiceImpl implements TtsService {
     if (isMuted) return;
 
     // Clean emojis and symbols from text for pristine phonetic engine results.
-    // BUG FIX: the original range list covered the main pictograph blocks
-    // but missed several ranges that commonly appear as PART of composite
-    // emoji: regional-indicator letter pairs (flag emoji, e.g. 🇺🇸 =
-    // U+1F1FA U+1F1F8 - outside every range below), the zero-width joiner
-    // used to combine emoji (e.g. family/profession emoji), skin-tone
-    // modifiers, and variation selectors. Missing these left stray,
-    // unpronounceable characters behind after stripping - the TTS engine
-    // would then try to read out leftover regional-indicator letters or
-    // modifier characters. Given this app ships 18 locales including
-    // several with flag icons in-app (see LocaleService.supportedLocales),
-    // and quest/UI copy elsewhere in this codebase routinely embeds emoji
-    // in strings passed to TTS, this is a real, reachable gap, not a
-    // theoretical one.
-    final cleanText = text
+    String cleanText = text
         .replaceAll(
           RegExp(
             r'[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1F5FF}\u{1F600}-\u{1F64F}'
@@ -91,18 +88,26 @@ class TtsServiceImpl implements TtsService {
           ),
           '',
         )
-        // Collapse whitespace left behind by the removals above (e.g.
-        // "Great job 🎉 well done" -> "Great job  well done" would
-        // otherwise read as an unnatural double pause).
         .replaceAll(RegExp(r'\s+'), ' ')
         .trim();
 
-    // DEFENSIVE FIX: if `text` was entirely emoji/symbols (e.g. a reaction
-    // string like "🎉🎊"), `cleanText` can now legitimately end up empty.
-    // Skip the platform call rather than asking the native TTS engine to
-    // speak an empty string, whose behavior isn't guaranteed identical
-    // across every Android/iOS TTS engine this app may run on.
     if (cleanText.isEmpty) return;
+
+    // Inject native SSML tags if pause markers are provided
+    if (pauseMarkers != null && pauseMarkers.isNotEmpty) {
+      final words = cleanText.split(' ');
+      final StringBuffer ssmlBuilder = StringBuffer('<speak>');
+      for (int i = 0; i < words.length; i++) {
+        ssmlBuilder.write(words[i]);
+        if (pauseMarkers.contains(i) && i != words.length - 1) {
+          ssmlBuilder.write(' <break time="400ms"/> ');
+        } else if (i != words.length - 1) {
+          ssmlBuilder.write(' ');
+        }
+      }
+      ssmlBuilder.write('</speak>');
+      cleanText = ssmlBuilder.toString();
+    }
 
     try {
       if (locale != null) {

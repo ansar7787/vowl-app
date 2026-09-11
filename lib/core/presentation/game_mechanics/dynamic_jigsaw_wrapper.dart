@@ -218,9 +218,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                     padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
                     decoration: BoxDecoration(
                       color: bgColor,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(32.r),
-                      ),
+                      borderRadius: widget.isPositioned
+                          ? BorderRadius.vertical(top: Radius.circular(32.r))
+                          : BorderRadius.circular(24.r),
                       border: Border.all(
                         color: hasError
                             ? errorColor.withValues(alpha: 0.5)
@@ -248,15 +248,17 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         // Handle bar
-                        Container(
-                          width: 48.w,
-                          height: 4.h,
-                          decoration: BoxDecoration(
-                            color: subtitleColor.withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(2.r),
+                        if (widget.isPositioned) ...[
+                          Container(
+                            width: 48.w,
+                            height: 4.h,
+                            decoration: BoxDecoration(
+                              color: subtitleColor.withValues(alpha: 0.3),
+                              borderRadius: BorderRadius.circular(2.r),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 16.h),
+                          SizedBox(height: 16.h),
+                        ],
 
                         // Header
                         Row(

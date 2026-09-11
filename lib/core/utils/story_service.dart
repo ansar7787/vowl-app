@@ -542,6 +542,14 @@ class StoryServiceImpl implements StoryService {
       "Level 100! You're a natural at breaking down fast native speech.",
       "Level 200 reached! You can comprehend any audio exactly like a local.",
     ],
+    'audiosentenceorder': [
+      "",
+      "Great start! You're already getting the hang of how English sentences flow.",
+      "Nice work! Your ear for English grammar is getting sharper every day.",
+      "Level 50! You're piecing these sentences together like a native speaker.",
+      "Level 100! Your brain is now perfectly tuned to the rhythm of English.",
+      "Level 200! You're an absolute natural. Nothing can trick your ears anymore!",
+    ],
     'accent': [
       "",
       "You sound great! Your speaking is getting much clearer and more natural.",
@@ -874,14 +882,6 @@ class StoryServiceImpl implements StoryService {
       "Level 200 reached! You are the ultimate decoder. Nothing gets past you!",
     ],
 
-    'audiosentenceorder': [
-      "",
-      "Well done! You are building a strong foundation in audio sequencing.",
-      "Your progress in audio sequencing is genuinely impressive.",
-      "Halfway there! You are a rising star in audio sequencing.",
-      "Centurion! You have conquered the complexities of audio sequencing.",
-      "Level 200! You are a supreme grandmaster of audio sequencing.",
-    ],
     'audiotruefalse': [
       "",
       "Nice work! Conquering audio verification is a huge step forward.",
