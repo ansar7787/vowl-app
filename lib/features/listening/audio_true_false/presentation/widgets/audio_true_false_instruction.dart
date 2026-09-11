@@ -4,23 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AudioTrueFalseInstruction extends StatelessWidget {
   final Color color;
   final String instruction;
-  final String? emoji;
 
   const AudioTrueFalseInstruction({
     super.key,
     required this.color,
     required this.instruction,
-    this.emoji,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (emoji != null && emoji!.isNotEmpty)
-          Text(emoji!, style: TextStyle(fontSize: 48.sp))
-        else
-          Icon(Icons.headphones_rounded, size: 36.r, color: color),
+        Icon(Icons.headphones_rounded, size: 36.r, color: color),
         SizedBox(height: 12.h),
         Text(
           instruction,

@@ -265,14 +265,14 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
                                             InstructionHelper.getInstruction(
                                               quest,
                                             ),
-                                        emoji: quest.emoji,
                                       ),
-                                      SizedBox(height: 24.h),
+                                      SizedBox(height: 32.h),
                                       AudioTrueFalseTuner(
                                         onTap: () =>
                                             _playAudio(quest.textToSpeak),
                                         color: theme.primaryColor,
                                         audioController: _audioController,
+                                        emoji: quest.emoji,
                                       ),
                                       SizedBox(height: 32.h),
                                       AudioTrueFalseScreenDisplay(
