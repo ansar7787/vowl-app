@@ -188,6 +188,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               useScrolling: false,
+              disablePadding: true,
               onContinue: () =>
                   context.read<ListeningBloc>().add(NextQuestion()),
               onHint: () =>

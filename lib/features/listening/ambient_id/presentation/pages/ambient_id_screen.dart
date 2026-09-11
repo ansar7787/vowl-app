@@ -184,6 +184,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
               isCorrect: _isCorrect.value,
               showConfetti: _showConfetti.value,
               useScrolling: false,
+              disablePadding: true,
               onContinue: () =>
                   context.read<ListeningBloc>().add(NextQuestion()),
               onHint: () {
