@@ -160,6 +160,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
           if (isNewQuestion || isRetry || livesChanged) {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
+            _timerKey.currentState?.start();
             _isCorrect.value = null;
             _selectedVerdict.value = null;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {

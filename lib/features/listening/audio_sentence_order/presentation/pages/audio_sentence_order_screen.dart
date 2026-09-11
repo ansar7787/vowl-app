@@ -91,6 +91,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
           if (isNewQuestion || isRetry || livesChanged) {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
+            _timerKey.currentState?.start();
             _isCorrect.value = null;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {
             _isAnswered.value = true;

@@ -148,6 +148,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
           if (isNewQuestion || isRetry || livesChanged) {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
+            _timerKey.currentState?.start();
             _isCorrect.value = null;
             _selectedIndex.value = null;
           } else if (state.answerStatus.isAnswered && !_isAnswered.value) {

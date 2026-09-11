@@ -160,6 +160,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           if (isNewQuestion || isRetry || livesChanged) {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
+            _timerKey.currentState?.start();
             _isCorrect.value = null;
             _selectedIndex.value = null;
             _pendingSelectedIndex.value = null;

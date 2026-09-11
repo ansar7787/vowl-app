@@ -122,6 +122,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     _revealProgress.value = 0.0;
     _lastHapticProgress = 0.0;
     _controller.clear();
+    _timerKey.currentState?.start();
   }
 
   // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€

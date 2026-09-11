@@ -165,6 +165,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
           if (isNewQuestion || isRetry || livesChanged) {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
+            _timerKey.currentState?.start();
             _isCorrect.value = null;
             _isFirstStagePassed.value = false;
             _selectedIndex.value = null;
