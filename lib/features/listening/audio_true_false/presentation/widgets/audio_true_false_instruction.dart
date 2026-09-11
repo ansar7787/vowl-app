@@ -15,8 +15,6 @@ class AudioTrueFalseInstruction extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(Icons.headphones_rounded, size: 36.r, color: color),
-        SizedBox(height: 12.h),
         Text(
           instruction,
           textAlign: TextAlign.center,

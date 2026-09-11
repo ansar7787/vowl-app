@@ -4,17 +4,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AudioTrueFalseScreenDisplay extends StatelessWidget {
   final String statement;
   final Color color;
+  final String? emoji;
 
   const AudioTrueFalseScreenDisplay({
     super.key,
     required this.statement,
     required this.color,
+    this.emoji,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Container(
       width: double.infinity,
       constraints: BoxConstraints(minHeight: 120.h),
@@ -34,19 +36,27 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(
-        child: Text(
-          statement,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 22.sp,
-            fontWeight: FontWeight.w700,
-            color: isDark ? Colors.white : Colors.black87,
-            letterSpacing: 0.5,
-            height: 1.3,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (emoji != null && emoji!.isNotEmpty) ...[
+            Text(emoji!, style: TextStyle(fontSize: 48.sp)),
+            SizedBox(height: 16.h),
+          ],
+          Text(
+            statement,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 22.sp,
+              fontWeight: FontWeight.w700,
+              color: isDark ? Colors.white : Colors.black87,
+              letterSpacing: 0.5,
+              height: 1.3,
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

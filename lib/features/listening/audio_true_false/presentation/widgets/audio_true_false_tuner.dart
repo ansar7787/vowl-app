@@ -6,14 +6,12 @@ class AudioTrueFalseTuner extends StatelessWidget {
   final VoidCallback onTap;
   final Color color;
   final AnimationController audioController;
-  final String? emoji;
 
   const AudioTrueFalseTuner({
     super.key,
     required this.onTap,
     required this.color,
     required this.audioController,
-    this.emoji,
   });
 
   @override
@@ -56,10 +54,7 @@ class AudioTrueFalseTuner extends StatelessWidget {
                 );
               },
             ),
-            if (emoji != null && emoji!.isNotEmpty)
-              Text(emoji!, style: TextStyle(fontSize: 40.sp))
-            else
-              Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
+            Icon(Icons.volume_up_rounded, color: color, size: 48.r),
           ],
         ),
       ),
