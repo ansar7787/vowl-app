@@ -42,7 +42,7 @@ class PitchPatternMatchPulseSpeaker extends StatelessWidget {
                   ),
               SizedBox(height: 6.h),
               Text(
-                "HEAR\nSTRESS",
+                "HEAR\nPATTERN",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',

@@ -36,9 +36,12 @@ class PitchPatternMatchVerticalFader extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _buildPitchOption(options[0], 0, Icons.trending_up_rounded),
-              SizedBox(height: 16.h),
-              _buildPitchOption(options[1], 1, Icons.trending_down_rounded),
+              if (options.isNotEmpty)
+                _buildPitchOption(options[0], 0, Icons.arrow_upward_rounded),
+              if (options.length > 1) ...[
+                SizedBox(height: 16.h),
+                _buildPitchOption(options[1], 1, Icons.arrow_downward_rounded),
+              ],
             ],
           ),
         ),

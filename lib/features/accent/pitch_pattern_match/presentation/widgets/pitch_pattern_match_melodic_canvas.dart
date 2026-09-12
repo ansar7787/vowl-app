@@ -79,7 +79,7 @@ class _BlueprintPainter extends CustomPainter {
     if (pattern.length == 1) {
       final y = size.height - (pattern[0] / 4.0 * size.height);
       path.moveTo(0, y);
-      path.lineTo(size.width, y);
+      path.lineTo(size.width * progress, y);
       canvas.drawPath(path, paint);
       return;
     }
@@ -88,8 +88,25 @@ class _BlueprintPainter extends CustomPainter {
     path.moveTo(0, size.height - (pattern[0] / 4.0 * size.height));
 
     for (int i = 1; i < pattern.length; i++) {
-      if (i / (pattern.length - 1) > progress) break;
-      path.lineTo(i * dx, size.height - (pattern[i] / 4.0 * size.height));
+      double sectionStart = (i - 1) / (pattern.length - 1);
+      double sectionEnd = i / (pattern.length - 1);
+
+      if (progress < sectionStart) break;
+
+      double startX = (i - 1) * dx;
+      double startY = size.height - (pattern[i - 1] / 4.0 * size.height);
+      double targetX = i * dx;
+      double targetY = size.height - (pattern[i] / 4.0 * size.height);
+
+      if (progress >= sectionEnd) {
+        path.lineTo(targetX, targetY);
+      } else {
+        double t = (progress - sectionStart) / (sectionEnd - sectionStart);
+        path.lineTo(
+          startX + (targetX - startX) * t,
+          startY + (targetY - startY) * t,
+        );
+      }
     }
     canvas.drawPath(path, paint);
   }
