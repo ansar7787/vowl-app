@@ -704,11 +704,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'connectedspeech': [
       "",
-      "Fantastic! Exploring connected speech will elevate your skills rapidly.",
-      "You are navigating connected speech with increasing confidence.",
-      "50 levels cleared! Your connected speech skills are rock solid.",
-      "Level 100! Your execution of connected speech is flawless.",
-      "Level 200! You have transcended the limits of connected speech.",
+      "Great start! Linking your words smoothly is the secret to sounding totally natural.",
+      "Nice work! You're really getting the hang of how native speakers blend their sounds together.",
+      "50 levels cleared! Your sentences are starting to flow beautifully without any awkward pauses.",
+      "Level 100! Your connected speech is incredibly smooth. You're sounding more like a local every day!",
+      "Level 200 reached! Honestly, it's amazing. Your rhythm and flow are absolutely perfect!",
     ],
     'articleinsertion': [
       "",

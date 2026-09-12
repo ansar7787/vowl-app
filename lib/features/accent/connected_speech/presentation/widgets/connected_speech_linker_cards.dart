@@ -72,7 +72,9 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             curve: Curves.easeOutCubic,
-            height: isCompact ? 80.h : 110.h,
+            constraints: BoxConstraints(
+              minHeight: isCompact ? 80.h : 110.h,
+            ),
             padding: EdgeInsets.symmetric(
               horizontal: 12.w,
               vertical: isCompact ? 6.h : 12.h,
@@ -101,6 +103,7 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
                   icon,
@@ -112,7 +115,6 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
                   child: Text(
                     text,
                     textAlign: TextAlign.center,
-                    maxLines: 2,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: isCompact ? 12.sp : 14.sp,

@@ -74,7 +74,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 300), () {
-      if (_scrollController.hasClients) {
+      if (mounted && _scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 400),
@@ -99,15 +99,6 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       _hapticService.selection();
       _isFirstStagePassed.value = true;
       _scrollToBottom();
-      Future.delayed(const Duration(milliseconds: 300), () {
-        if (mounted && _scrollController.hasClients) {
-          _scrollController.animateTo(
-            _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 600),
-            curve: Curves.easeOutCubic,
-          );
-        }
-      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -269,7 +260,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!_isFirstStagePassed.value)
+                              physics:
+                                  (!_isFirstStagePassed.value &&
+                                      remainingHeight >= 0)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
                               slivers: [

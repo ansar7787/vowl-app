@@ -65,64 +65,71 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12.r),
                     ),
                     child: Row(
-                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              "WRITTEN",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.bold,
-                                color: color.withValues(alpha: 0.7),
-                                letterSpacing: 1,
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "WRITTEN",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: color.withValues(alpha: 0.7),
+                                  letterSpacing: 1,
+                                ),
                               ),
-                            ),
-                            Text(
-                              word.toUpperCase(),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: isCompact ? 14.sp : 16.sp,
-                                fontWeight: FontWeight.w600,
-                                color: isDark ? Colors.white54 : Colors.black54,
-                                decoration: TextDecoration.lineThrough,
+                              Text(
+                                word.toUpperCase(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isCompact ? 14.sp : 16.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark
+                                      ? Colors.white54
+                                      : Colors.black54,
+                                  decoration: TextDecoration.lineThrough,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
+                          padding: EdgeInsets.symmetric(horizontal: 8.w),
                           child: Icon(
                             Icons.arrow_forward_rounded,
                             color: color,
                             size: 20.r,
                           ),
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              "SPOKEN",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.bold,
-                                color: color.withValues(alpha: 0.7),
-                                letterSpacing: 1,
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "SPOKEN",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: color.withValues(alpha: 0.7),
+                                  letterSpacing: 1,
+                                ),
                               ),
-                            ),
-                            Text(
-                              spokenForm!.toUpperCase(),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: isCompact ? 16.sp : 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: color,
+                              Text(
+                                spokenForm!.toUpperCase(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: isCompact ? 16.sp : 18.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: color,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
