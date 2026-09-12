@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
-class WordLinkingSentenceField extends StatelessWidget {
+class WordLinkingSentenceField extends StatefulWidget {
   final List<String> words;
   final String correctPair;
   final String? linkingType;
@@ -26,34 +26,71 @@ class WordLinkingSentenceField extends StatelessWidget {
   });
 
   @override
+  State<WordLinkingSentenceField> createState() =>
+      _WordLinkingSentenceFieldState();
+}
+
+class _WordLinkingSentenceFieldState extends State<WordLinkingSentenceField> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     List<Widget> children = [];
 
-    for (int i = 0; i < words.length; i++) {
-      children.add(_buildWordChip(words[i], color, isDark));
+    for (int i = 0; i < widget.words.length; i++) {
+      children.add(
+        _buildWordChip(widget.words[i], widget.color, widget.isDark),
+      );
 
-      if (i < words.length - 1) {
-        children.add(_buildLinkNode(i, correctPair, words, color, isDark));
+      if (i < widget.words.length - 1) {
+        children.add(SizedBox(width: 8.w));
+        children.add(
+          _buildLinkNode(
+            i,
+            widget.correctPair,
+            widget.words,
+            widget.color,
+            widget.isDark,
+          ),
+        );
+        children.add(SizedBox(width: 8.w));
       }
     }
 
     return Container(
-      width: 342.w,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+      width: double.infinity,
+      clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-        color: isDark
+        color: widget.isDark
             ? Colors.white.withValues(alpha: 0.02)
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+        border: Border.all(
+          color: widget.isDark ? Colors.white10 : Colors.black12,
+        ),
       ),
-      child: Center(
-        child: Wrap(
-          spacing: 8.w,
-          runSpacing: 12.h,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          alignment: WrapAlignment.center,
-          children: children,
+      child: RawScrollbar(
+        controller: _scrollController,
+        thumbVisibility: true,
+        thumbColor: widget.color.withValues(alpha: 0.4),
+        radius: Radius.circular(8.r),
+        thickness: 4.h,
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: children,
+          ),
         ),
       ),
     );
@@ -88,48 +125,47 @@ class WordLinkingSentenceField extends StatelessWidget {
     Color color,
     bool isDark,
   ) {
-    final bool isSelected = selectedNodeIndex == index;
+    final bool isSelected = widget.selectedNodeIndex == index;
 
-    // Check if this node represents the correct linking pair
     String selectedPair = "${words[index]} ${words[index + 1]}";
     final bool correct =
         selectedPair.toLowerCase().trim() == correctPair.toLowerCase().trim();
 
     Color nodeColor = color.withValues(alpha: 0.5);
-    if (isAnswered) {
+    if (widget.isAnswered) {
       if (correct) {
         nodeColor = Colors.greenAccent;
       } else if (isSelected) {
         nodeColor = Colors.redAccent;
       } else {
-        nodeColor = color.withValues(alpha: 0.15); // dim unselected ones
+        nodeColor = color.withValues(alpha: 0.15);
       }
     } else if (isSelected) {
       nodeColor = color;
     }
 
     return ScaleButton(
-      onTap: () => onNodeTap(index, correctPair, words),
+      onTap: () => widget.onNodeTap(index, correctPair, words),
       child:
           Container(
                 width: 44.r,
                 height: 44.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isSelected || (isAnswered && correct)
+                  color: isSelected || (widget.isAnswered && correct)
                       ? nodeColor.withValues(alpha: 0.2)
                       : isDark
                       ? color.withValues(alpha: 0.15)
                       : color.withValues(alpha: 0.08),
                   border: Border.all(
-                    color: isAnswered && !correct && !isSelected
+                    color: widget.isAnswered && !correct && !isSelected
                         ? Colors.transparent
-                        : isSelected || isAnswered
+                        : isSelected || widget.isAnswered
                         ? nodeColor
                         : color.withValues(alpha: 0.4),
                     width: 2,
                   ),
-                  boxShadow: isSelected || (isAnswered && correct)
+                  boxShadow: isSelected || (widget.isAnswered && correct)
                       ? [
                           BoxShadow(
                             color: nodeColor.withValues(alpha: 0.4),
@@ -139,7 +175,7 @@ class WordLinkingSentenceField extends StatelessWidget {
                       : [],
                 ),
                 child: Center(
-                  child: isAnswered && correct
+                  child: widget.isAnswered && correct
                       ? Stack(
                           clipBehavior: Clip.none,
                           alignment: Alignment.center,
@@ -149,7 +185,7 @@ class WordLinkingSentenceField extends StatelessWidget {
                               size: 24.r,
                               color: nodeColor,
                             ),
-                            if (linkingType != null)
+                            if (widget.linkingType != null)
                               Positioned(
                                 top: -24.h,
                                 child:
@@ -172,7 +208,7 @@ class WordLinkingSentenceField extends StatelessWidget {
                                         ),
                                       ),
                                       child: Text(
-                                        _formatLinkingType(linkingType!),
+                                        _formatLinkingType(widget.linkingType!),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 10.sp,
@@ -189,7 +225,7 @@ class WordLinkingSentenceField extends StatelessWidget {
                           ],
                         )
                       : Icon(
-                          isSelected || isAnswered
+                          isSelected || widget.isAnswered
                               ? Icons.link_rounded
                               : Icons.add_link_rounded,
                           size: 22.r,
@@ -199,7 +235,7 @@ class WordLinkingSentenceField extends StatelessWidget {
               )
               .animate(
                 onPlay: (c) => c.repeat(reverse: true),
-                target: isAnswered ? 0 : 1,
+                target: widget.isAnswered ? 0 : 1,
               )
               .shimmer(
                 duration: 2.seconds,

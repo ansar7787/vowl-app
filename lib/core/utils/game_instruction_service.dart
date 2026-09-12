@@ -336,15 +336,15 @@ class GameInstructionService {
       title: "Word Linking",
       icon: Icons.link_rounded,
       objective:
-          "Master word boundary linking to speak with native fluid rhythms. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Native speakers don't pause between every word. They link sounds together to create a smooth, continuous flow. Your goal is to identify exactly where this happens.",
       rules: [
-        "Listen to the phrase",
-        "Find where sounds fuse",
-        "Select the linked words",
+        "Listen to the natural flow",
+        "Tap the link between the words",
+        "Record yourself saying it",
       ],
-      actionText: "Identify Link",
+      actionText: "Find the Link",
       tip:
-          "PRO TIP: Pay attention to where the final consonant of one word connects directly to the opening vowel of the next!",
+          "PRO TIP: If a word ends in a consonant and the next starts with a vowel, they usually merge into one smooth sound.",
     ),
 
     // 2. Speaking

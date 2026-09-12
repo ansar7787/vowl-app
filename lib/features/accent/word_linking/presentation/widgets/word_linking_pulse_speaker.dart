@@ -19,42 +19,42 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaleButton(
       onTap: () => onPlayTts(text),
-      child: Container(
-        width: 80.r,
-        height: 80.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
-          boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
-          ],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.graphic_eq_rounded, color: color, size: 28.r)
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 72.r,
+            height: 72.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color.withValues(alpha: 0.1),
+              border: Border.all(color: color, width: 3),
+              boxShadow: [
+                BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20),
+              ],
+            ),
+            child: Center(
+              child: Icon(Icons.graphic_eq_rounded, color: color, size: 32.r)
                   .animate(onPlay: (c) => c.repeat(reverse: true))
                   .scale(
                     begin: const Offset(1, 1),
                     end: const Offset(1.2, 1.2),
                   ),
-              SizedBox(height: 6.h),
-              Text(
-                "HEAR\nLINKING",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: color,
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.5,
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+          SizedBox(height: 12.h),
+          Text(
+            "HEAR LINKING",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: color,
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 1.5,
+            ),
+          ),
+        ],
       ),
     );
   }

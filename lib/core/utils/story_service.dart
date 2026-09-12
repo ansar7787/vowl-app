@@ -688,11 +688,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'wordlinking': [
       "",
-      "Nice work! Conquering word linking is a huge step forward.",
-      "Your mastery of word linking is noticeably improving daily.",
-      "Halfway to 100! You are handling word linking effortlessly.",
-      "100 levels beat! You truly dominate word linking.",
-      "Level 200! You are a supreme grandmaster of word linking.",
+      "Awesome start! Linking words is the secret to sounding like a native speaker.",
+      "Great job! Your speech is starting to flow together so much more naturally.",
+      "Level 50! You're sliding through those word connections without even hesitating.",
+      "Level 100! Your sentences are beautifully fluid. No more robotic pauses!",
+      "Level 200! Your connected speech is flawless. You sound incredibly natural!",
     ],
     'pitchmodulation': [
       "",
