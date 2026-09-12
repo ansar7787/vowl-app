@@ -43,7 +43,7 @@ class ConsonantClarityInstruction extends StatelessWidget {
               maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 10.sp,
+                fontSize: 12.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,
                 letterSpacing: 1.5,

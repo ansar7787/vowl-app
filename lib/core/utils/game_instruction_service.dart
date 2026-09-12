@@ -280,15 +280,15 @@ class GameInstructionService {
       title: "Consonant Clarity",
       icon: Icons.record_voice_over_rounded,
       objective:
-          "Identify the target consonant, then speak the word aloud to confirm your pronunciation. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Let's make your consonants crystal clear! Identify the missing sound, then say the word out loud to practice your pronunciation.",
       rules: [
         "Listen to the target word",
         "Tap the matching consonant",
         "Speak to confirm your answer",
       ],
-      actionText: "Identify Sound",
+      actionText: "Start Playing",
       tip:
-          "PRO TIP: Pay attention to whether your vocal cords vibrate (voiced) or not (voiceless) when you make the sound!",
+          "PRO TIP: Pay attention to whether your throat vibrates (voiced) or stays still (voiceless) when you make the sound!",
     ),
     GameSubtype.pitchModulation: GameBriefing(
       title: "Pitch Modulation",

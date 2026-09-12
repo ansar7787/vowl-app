@@ -42,13 +42,15 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
                   ),
               SizedBox(height: 6.h),
               Text(
-                "HEAR CONSONANT",
+                "HEAR\nCONSONANT",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: color,
-                  fontSize: 8.sp,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1,
+                  height: 1.1,
                 ),
               ),
             ],
