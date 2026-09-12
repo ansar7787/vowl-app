@@ -13,6 +13,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
   final double sliderValue;
   final Function(int, int) onSubmitChoice;
   final Function(double, int) onSliderUpdate;
+  final Function(double, int)? onSliderEnd;
 
   const VowelDistinctionSpectralSlider({
     super.key,
@@ -25,6 +26,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
     required this.sliderValue,
     required this.onSubmitChoice,
     required this.onSliderUpdate,
+    this.onSliderEnd,
   });
 
   @override
@@ -135,7 +137,12 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
         ),
         child: Slider(
           value: sliderValue,
-          onChanged: (v) => onSliderUpdate(v, correct),
+          onChanged: (v) => onSliderUpdate(v, correctIndex),
+          onChangeEnd: (v) {
+            if (onSliderEnd != null) {
+              onSliderEnd!(v, correctIndex);
+            }
+          },
         ),
       ),
     );

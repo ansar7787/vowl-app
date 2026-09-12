@@ -217,7 +217,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                     : LayoutBuilder(
                         builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
-                          final maxWidth = constraints.maxWidth;
                           final bool isCompact = maxHeight < 580;
 
                           final double estimatedContentHeight =
@@ -267,6 +266,16 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                   sliderValue: _sliderValue.value,
                                   onSubmitChoice: _submitChoice,
                                   onSliderUpdate: _onSliderUpdate,
+                                  onSliderEnd: (value, correct) {
+                                    if (_isAnswered.value ||
+                                        _isFirstStagePassed.value) {
+                                      return;
+                                    }
+                                    if (value > 0.1 && value < 0.9) {
+                                      _sliderValue.value =
+                                          0.5; // Snap back to center if not committed
+                                    }
+                                  },
                                 );
                               },
                             );
@@ -288,9 +297,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!_isFirstStagePassed.value)
-                                  ? const NeverScrollableScrollPhysics()
-                                  : const BouncingScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
                                   child: IgnorePointer(
@@ -314,65 +321,19 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                       MainAxisSize.min,
                                                   children: [
                                                     SizedBox(height: gapTop),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 32.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: VowelDistinctionInstruction(
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  instruction:
-                                                                      getInstruction(),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : VowelDistinctionInstruction(
-                                                            color: theme
-                                                                .primaryColor,
-                                                            instruction:
-                                                                getInstruction(),
-                                                          ),
+                                                    VowelDistinctionInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          getInstruction(),
+                                                    ),
                                                     SizedBox(
                                                       height: gapInstruction,
                                                     ),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 90.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child: VowelDistinctionPromptCard(
-                                                                  word:
-                                                                      quest
-                                                                          .word ??
-                                                                      "",
-                                                                  color: theme
-                                                                      .primaryColor,
-                                                                  isDark:
-                                                                      isDark,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : VowelDistinctionPromptCard(
-                                                            word:
-                                                                quest.word ??
-                                                                "",
-                                                            color: theme
-                                                                .primaryColor,
-                                                            isDark: isDark,
-                                                          ),
+                                                    VowelDistinctionPromptCard(
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
                                                     SizedBox(height: gapPrompt),
                                                     if (_isFirstStagePassed
                                                             .value &&
@@ -410,22 +371,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                     SizedBox(
                                                       height: gapSpeaker,
                                                     ),
-                                                    isCompact
-                                                        ? SizedBox(
-                                                            height: 110.h,
-                                                            child: FittedBox(
-                                                              fit: BoxFit
-                                                                  .scaleDown,
-                                                              child: SizedBox(
-                                                                width:
-                                                                    maxWidth -
-                                                                    48.w,
-                                                                child:
-                                                                    buildSlider(),
-                                                              ),
-                                                            ),
-                                                          )
-                                                        : buildSlider(),
+                                                    buildSlider(),
                                                     SizedBox(height: gapBottom),
                                                   ],
                                                 ),

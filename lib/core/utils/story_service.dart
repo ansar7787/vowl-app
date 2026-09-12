@@ -680,11 +680,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'voweldistinction': [
       "",
-      "Well done! You are building a strong foundation in vowels.",
-      "Your mastery of vowels is noticeably improving daily.",
-      "Halfway there! You are a rising star in vowels.",
-      "Centurion! You have conquered the complexities of vowels.",
-      "Level 200! You have transcended the limits of vowels.",
+      "Great job! You're really starting to hear the subtle differences between these vowels.",
+      "Nice work! Your ear for English vowels is getting sharper every day.",
+      "Level 50! You're distinguishing tricky sounds like a true native speaker now.",
+      "Level 100! Your vowel pronunciation and listening skills are absolutely fantastic.",
+      "Level 200 reached! Honestly, it's incredible. You've completely mastered English vowels!",
     ],
     'wordlinking': [
       "",

@@ -1328,15 +1328,15 @@ class GameInstructionService {
       title: "Vowel Distinction",
       icon: Icons.tune_rounded,
       objective:
-          "Isolate subtle English vowel phonemes, select the exact match, then speak it aloud to solidify your pronunciation. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Vowels can be tricky! Listen to the native speaker, slide the fader to pick the right sound, and then say the word out loud to confirm it.",
       rules: [
-        "Listen to the target word",
-        "Select the exact match",
-        "Speak to confirm your answer",
+        "Listen to the word carefully",
+        "Slide to match the vowel",
+        "Speak out loud to confirm",
       ],
-      actionText: "Identify Sound",
+      actionText: "Start Playing",
       tip:
-          "PRO TIP: Pay attention to whether the vowel feels short and relaxed, or long and tense!",
+          "PRO TIP: Don't just listen—pay attention to the mouth shape in the chart! It'll help you pronounce it perfectly.",
     ),
 
     GameSubtype.speedVariance: GameBriefing(

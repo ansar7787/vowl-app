@@ -32,6 +32,7 @@ class VowelDistinctionPromptCard extends StatelessWidget {
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Center(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   "TARGET WORD",
@@ -44,14 +45,17 @@ class VowelDistinctionPromptCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 8.h),
-                Text(
-                  word.toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : Colors.black87,
-                    letterSpacing: 4,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    word.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 28.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : Colors.black87,
+                      letterSpacing: 4,
+                    ),
                   ),
                 ),
               ],
