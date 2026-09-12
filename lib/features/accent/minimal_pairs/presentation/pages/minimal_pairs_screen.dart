@@ -267,9 +267,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                               thickness: 4.w,
                               child: CustomScrollView(
                                 controller: _scrollController,
-                                physics: (!_isFirstStagePassed.value)
-                                    ? const NeverScrollableScrollPhysics()
-                                    : const BouncingScrollPhysics(),
+                                physics: const BouncingScrollPhysics(),
                                 slivers: [
                                   SliverToBoxAdapter(
                                     child: IgnorePointer(
@@ -299,7 +297,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                         instruction:
                                                             _isFirstStagePassed
                                                                 .value
-                                                            ? "Great job! Now confirm by speaking the word."
+                                                            ? context.tr(
+                                                                'games.minimal_pairs_confirm',
+                                                                fallback:
+                                                                    "Great job! Now confirm by speaking the word.",
+                                                              )
                                                             : context.tr(
                                                                 'games.minimal_pairs_instruction',
                                                                 fallback: quest
