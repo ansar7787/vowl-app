@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -193,7 +194,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                 }
               },
               child: quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         // Prevent the layout from crushing when the keyboard opens

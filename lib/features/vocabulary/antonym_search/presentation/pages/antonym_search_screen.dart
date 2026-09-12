@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -164,7 +165,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
               useScrolling: false,
               disablePadding: true,
               child: quest == null
-                  ? const SizedBox.shrink()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         _lastConstraints = constraints;

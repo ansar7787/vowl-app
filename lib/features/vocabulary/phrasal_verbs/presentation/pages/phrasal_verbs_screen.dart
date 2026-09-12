@@ -1,5 +1,6 @@
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -246,7 +247,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
               useScrolling: false,
               disablePadding: true,
               child: quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : _PhrasalVerbsStageLayout(
                       quest: quest,
                       level: widget.level,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -135,7 +136,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
               onHint: () =>
                   context.read<ListeningBloc>().add(ListeningHintUsed()),
               child: quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : RawScrollbar(
                       controller: _scrollController,
                       thumbColor: theme.primaryColor.withValues(alpha: 0.5),

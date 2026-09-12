@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -189,7 +190,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                   context.read<ListeningBloc>().add(const NextQuestion()),
               onHint: () => _hapticService.selection(),
               child: quest == null
-                  ? const SizedBox.shrink()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : _AudioFillBlanksContent(
                       quest: quest,
                       isAnswered: _isAnswered.value,

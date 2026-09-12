@@ -1,5 +1,6 @@
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -293,7 +294,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                   context.read<RoleplayBloc>().add(RoleplayHintUsed()),
               useScrolling: false,
               child: quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         return Stack(

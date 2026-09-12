@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -218,7 +219,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
               onHint: () =>
                   context.read<ListeningBloc>().add(ListeningHintUsed()),
               child: quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(
