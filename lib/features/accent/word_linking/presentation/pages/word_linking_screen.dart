@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -196,7 +197,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                 onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
                 useScrolling: false,
                 child: quest == null
-                    ? const SizedBox()
+                    ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : RawScrollbar(
                         controller: _scrollController,
                         thumbColor: theme.primaryColor.withValues(alpha: 0.5),

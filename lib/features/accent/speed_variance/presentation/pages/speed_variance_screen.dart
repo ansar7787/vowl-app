@@ -18,6 +18,7 @@ import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_v
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_speed_toggle.dart';
 import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class SpeedVarianceScreen extends StatefulWidget {
   final int level;
@@ -234,7 +235,16 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
         }
       },
       builder: (context, state) {
-        if (state is! AccentLoaded) return const SizedBox();
+        if (state is! AccentLoaded) {
+          return AccentBaseLayout(
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: false,
+            onContinue: () {},
+            onHint: () {},
+            child: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
         final quest = state.currentQuest;
         final options = quest.options ?? [];
         if (options.length < 2) return const SizedBox();
