@@ -35,32 +35,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: _buildConnectedSpeechOrb(
-                options[0],
-                0,
-                correctIndex,
-                color,
-                isDark,
-              ),
-            ),
-            SizedBox(width: 12.w),
-            _buildChromeDial(correctIndex, color, isDark),
-            SizedBox(width: 12.w),
-            Expanded(
-              child: _buildConnectedSpeechOrb(
-                options[1],
-                1,
-                correctIndex,
-                color,
-                isDark,
-              ),
-            ),
-          ],
-        ),
+        _buildChromeDial(correctIndex, color, isDark),
         SizedBox(height: 24.h),
         Text(
           isDragging ? "MAINTAINING SPEED..." : "ROTATE DIAL OR TAP PREFERENCE",
@@ -71,6 +46,16 @@ class SpeedVarianceTempoDial extends StatelessWidget {
             color: color.withValues(alpha: 0.8),
             letterSpacing: 1,
           ),
+        ),
+        SizedBox(height: 24.h),
+        _buildConnectedSpeechOrb(options[0], 0, correctIndex, color, isDark),
+        SizedBox(height: 12.h),
+        _buildConnectedSpeechOrb(
+          options.length > 1 ? options[1] : '',
+          1,
+          correctIndex,
+          color,
+          isDark,
         ),
       ],
     );
@@ -133,19 +118,36 @@ class SpeedVarianceTempoDial extends StatelessWidget {
     Color color,
     bool isDark,
   ) {
+    if (text.isEmpty) return const SizedBox();
+
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
 
     Color orbColor = color.withValues(alpha: 0.1);
     Color textColor = color;
+    Color descColor = isDark ? Colors.white70 : Colors.black87;
+
     if (isAnswered && isSelected) {
       orbColor = correct
           ? Colors.greenAccent.withValues(alpha: 0.2)
           : Colors.redAccent.withValues(alpha: 0.2);
       textColor = correct ? Colors.greenAccent : Colors.redAccent;
+      descColor = textColor.withValues(alpha: 0.9);
     } else if (isSelected) {
       orbColor = color;
       textColor = Colors.white;
+      descColor = Colors.white.withValues(alpha: 0.9);
+    }
+
+    String title = text;
+    String description = '';
+    final int parenIndex = text.indexOf(' (');
+    if (parenIndex != -1) {
+      title = text.substring(0, parenIndex);
+      description = text.substring(
+        parenIndex + 2,
+        text.length - (text.endsWith(')') ? 1 : 0),
+      );
     }
 
     return ScaleButton(
@@ -154,7 +156,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
           AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
                 alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
                 decoration: BoxDecoration(
                   color: orbColor,
                   borderRadius: BorderRadius.circular(20.r),
@@ -175,24 +177,60 @@ class SpeedVarianceTempoDial extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Center(
-                  child: Text(
-                    text,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.bold,
-                      color: textColor,
-                      height: 1.2,
+                child: Row(
+                  children: [
+                    if (index == 0) ...[
+                      Icon(Icons.rotate_left, color: textColor, size: 28.r),
+                      SizedBox(width: 16.w),
+                    ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: index == 0
+                            ? CrossAxisAlignment.start
+                            : CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            title,
+                            textAlign: index == 0
+                                ? TextAlign.left
+                                : TextAlign.right,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                              color: textColor,
+                            ),
+                          ),
+                          if (description.isNotEmpty) ...[
+                            SizedBox(height: 6.h),
+                            Text(
+                              description,
+                              textAlign: index == 0
+                                  ? TextAlign.left
+                                  : TextAlign.right,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w500,
+                                color: descColor,
+                                height: 1.4,
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
                     ),
-                  ),
+                    if (index == 1) ...[
+                      SizedBox(width: 16.w),
+                      Icon(Icons.rotate_right, color: textColor, size: 28.r),
+                    ],
+                  ],
                 ),
               )
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .scale(
                 begin: const Offset(1, 1),
-                end: const Offset(1.05, 1.05),
+                end: const Offset(1.02, 1.02),
                 duration: (2 + index).seconds,
               ),
     );

@@ -664,11 +664,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'speedvariance': [
       "",
-      "Great job! Mastering speech speed is key to true fluency.",
-      "Your skills in speech speed are becoming incredibly sharp.",
-      "50 levels cleared! Your speech speed skills are rock solid.",
-      "100 levels beat! You truly dominate speech speed.",
-      "200 levels cleared! Your speech speed abilities are unmatched globally.",
+      "Great start! Catching the exact speed of natural speech is a huge step forward.",
+      "You're really getting an ear for this! You can tell exactly how a speaker feels just by their speed.",
+      "50 levels cleared! You're picking up on natural speech speeds incredibly well.",
+      "100 levels beat! You're an absolute pro at understanding native speaker pacing.",
+      "200 levels! Your feel for conversational speed is completely natural now.",
     ],
     'syllablestress': [
       "",
