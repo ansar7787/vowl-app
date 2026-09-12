@@ -114,6 +114,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
       _soundService.playWrong();
       _isAnswered.value = true;
       _isCorrect.value = false;
+      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -188,8 +189,6 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
           correctAnswerIndex: _shuffledCorrectIndex,
         );
 
-        final bool isHintUnlocked = (state is AccentLoaded) && state.hintUsed;
-
         String instructionText = quest?.instruction ?? "";
 
         String brPr = "";
@@ -240,24 +239,26 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!_isFirstStagePassed.value)
+                              physics:
+                                  (!_isFirstStagePassed.value &&
+                                      !_isAnswered.value)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
-                                  child: IgnorePointer(
-                                    ignoring: _isFirstStagePassed.value,
-                                    child: ConstrainedBox(
-                                      constraints: BoxConstraints(
-                                        minHeight: constraints.maxHeight,
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 16.w,
-                                              vertical: 24.h,
-                                            ),
+                                  child: ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minHeight: constraints.maxHeight,
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 16.w,
+                                            vertical: 24.h,
+                                          ),
+                                          child: IgnorePointer(
+                                            ignoring: _isFirstStagePassed.value,
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
@@ -312,116 +313,109 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                               ],
                                             ),
                                           ),
-                                          AnimatedSize(
-                                            duration: const Duration(
-                                              milliseconds: 400,
-                                            ),
-                                            curve: Curves.easeOut,
-                                            child:
-                                                (_isAnswered.value ||
-                                                    _isFirstStagePassed.value)
-                                                ? Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          horizontal: 16.w,
-                                                        ).copyWith(
-                                                          bottom: 24.h,
-                                                        ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        Builder(
-                                                          builder: (context) {
-                                                            final bool
-                                                            isSuccess =
-                                                                _isCorrect
-                                                                        .value ==
-                                                                    true ||
-                                                                _isFirstStagePassed
-                                                                    .value;
-                                                            final bool
-                                                            isFinalFailure =
-                                                                state
-                                                                    is AccentGameOver;
-                                                            final bool
-                                                            showExplanation =
-                                                                isSuccess ||
-                                                                isFinalFailure;
-                                                            return DialectFeedbackPanel(
-                                                              isCorrect:
-                                                                  _isCorrect
-                                                                      .value ??
-                                                                  _isFirstStagePassed
-                                                                      .value,
-                                                              word:
-                                                                  quest.word ??
-                                                                  "",
-                                                              britishPronunciation:
-                                                                  brPr.isEmpty
-                                                                  ? (quest.word ??
-                                                                        "")
-                                                                  : brPr,
-                                                              americanPronunciation:
-                                                                  amPr.isEmpty
-                                                                  ? (quest.word ??
-                                                                        "")
-                                                                  : amPr,
-                                                              hint:
-                                                                  isHintUnlocked
-                                                                  ? quest.hint
-                                                                  : null,
-                                                              explanation:
-                                                                  showExplanation
-                                                                  ? quest
-                                                                        .explanation
-                                                                  : null,
-                                                              dialectNote:
-                                                                  showExplanation
-                                                                  ? quest
-                                                                        .dialectNote
-                                                                  : null,
-                                                              isDark: isDark,
-                                                              isMidnight: false,
-                                                              onPlayAudio:
-                                                                  (
-                                                                    text,
-                                                                    locale,
-                                                                  ) {
-                                                                    _soundService
-                                                                        .playTts(
-                                                                          text,
-                                                                          locale:
-                                                                              locale,
-                                                                        );
-                                                                  },
-                                                            );
-                                                          },
-                                                        ),
-                                                        SizedBox(
-                                                          height:
-                                                              (_isFirstStagePassed
-                                                                      .value &&
-                                                                  !_isAnswered
-                                                                      .value)
-                                                              ? 40.h
-                                                              : 160.h,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  )
-                                                : SizedBox(
-                                                    width: double.infinity,
-                                                    height:
-                                                        (_isFirstStagePassed
-                                                                .value &&
-                                                            !_isAnswered.value)
-                                                        ? 40.h
-                                                        : 160.h,
-                                                  ),
+                                        ),
+                                        AnimatedSize(
+                                          duration: const Duration(
+                                            milliseconds: 400,
                                           ),
-                                        ],
-                                      ),
+                                          curve: Curves.easeOut,
+                                          child:
+                                              (_isAnswered.value ||
+                                                  _isFirstStagePassed.value)
+                                              ? Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 16.w,
+                                                  ).copyWith(bottom: 24.h),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      Builder(
+                                                        builder: (context) {
+                                                          final bool isSuccess =
+                                                              _isCorrect
+                                                                      .value ==
+                                                                  true ||
+                                                              _isFirstStagePassed
+                                                                  .value;
+                                                          final bool
+                                                          isFinalFailure =
+                                                              (state
+                                                                  is AccentGameOver) ||
+                                                              (state is AccentLoaded &&
+                                                                  state.isFinalFailure);
+                                                          final bool
+                                                          showExplanation =
+                                                              isSuccess ||
+                                                              isFinalFailure;
+                                                          return DialectFeedbackPanel(
+                                                            isCorrect:
+                                                                _isCorrect
+                                                                    .value ??
+                                                                _isFirstStagePassed
+                                                                    .value,
+                                                            word:
+                                                                quest.word ??
+                                                                "",
+                                                            britishPronunciation:
+                                                                brPr.isEmpty
+                                                                ? (quest.word ??
+                                                                      "")
+                                                                : brPr,
+                                                            americanPronunciation:
+                                                                amPr.isEmpty
+                                                                ? (quest.word ??
+                                                                      "")
+                                                                : amPr,
+                                                            hint:
+                                                                null, // Replaced by SnackBar
+                                                            explanation:
+                                                                showExplanation
+                                                                ? quest
+                                                                      .explanation
+                                                                : null,
+                                                            dialectNote:
+                                                                !showExplanation
+                                                                ? quest
+                                                                      .dialectNote
+                                                                : null,
+                                                            isDark: isDark,
+                                                            isMidnight: false,
+                                                            onPlayAudio:
+                                                                (text, locale) {
+                                                                  _soundService
+                                                                      .playTts(
+                                                                        text,
+                                                                        locale:
+                                                                            locale,
+                                                                      );
+                                                                },
+                                                          );
+                                                        },
+                                                      ),
+                                                      SizedBox(
+                                                        height:
+                                                            (_isFirstStagePassed
+                                                                    .value &&
+                                                                !_isAnswered
+                                                                    .value)
+                                                            ? 40.h
+                                                            : 160.h,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
+                                              : SizedBox(
+                                                  width: double.infinity,
+                                                  height:
+                                                      (_isFirstStagePassed
+                                                              .value &&
+                                                          !_isAnswered.value)
+                                                      ? 40.h
+                                                      : 160.h,
+                                                ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),

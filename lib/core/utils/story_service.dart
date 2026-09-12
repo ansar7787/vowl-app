@@ -624,11 +624,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'dialectdrill': [
       "",
-      "Nice work! Conquering dialects is a huge step forward.",
-      "Your skills in dialects are becoming incredibly sharp.",
-      "Halfway to 100! You are handling dialects effortlessly.",
-      "Level 100! You are an absolute master of dialects.",
-      "Level 200! You have transcended the limits of dialects.",
+      "Nice work! Tuning your ear to different accents takes real practice.",
+      "You're getting so good at noticing those subtle regional differences!",
+      "Halfway to 100! You can comfortably understand native speakers from anywhere now.",
+      "Level 100! Your ear for accents is absolutely incredible. You sound like a true global citizen!",
+      "Level 200! Honestly, it's amazing. Nothing can trick your ears anymore!",
     ],
     'intonationmimic': [
       "",

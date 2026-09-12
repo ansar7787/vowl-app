@@ -1357,11 +1357,15 @@ class GameInstructionService {
       title: "Dialect Drill",
       icon: Icons.public_rounded,
       objective:
-          "Identify and distinguish regional pronunciations to master global communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
-      rules: ["Listen closely", "Compare pronunciations", "Select region"],
+          "English sounds different depending on where you are in the world! Let's train your ears to pick up on those regional differences.",
+      rules: [
+        "Listen to the speaker",
+        "Notice the accent",
+        "Match them to the map",
+      ],
       actionText: "Start Drill",
       tip:
-          "PRO TIP: Pay attention to vowel shapes! American English often flattens vowels, while British English rounds them.",
+          "PRO TIP: Pay attention to the vowels! American English often flattens them, while British English rounds them out.",
     ),
     GameSubtype.connectedSpeech: GameBriefing(
       title: "Connected Speech",

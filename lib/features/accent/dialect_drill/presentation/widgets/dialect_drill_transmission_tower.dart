@@ -37,17 +37,8 @@ class DialectDrillTransmissionTower extends StatelessWidget {
       towerColor = color.withValues(alpha: 0.35);
     }
 
-    String displayLabel = label;
-    IconData regionIcon = Icons.public;
-    if (label.toLowerCase().contains('british')) {
-      displayLabel = "British";
-      regionIcon = Icons.language_rounded;
-    } else if (label.toLowerCase().contains('american')) {
-      displayLabel = "American";
-      regionIcon = Icons.public_rounded;
-    } else {
-      displayLabel = label.replaceAll(RegExp(r'\(.*\)'), '').trim();
-    }
+    String displayLabel = label.replaceAll(RegExp(r'\(.*\)'), '').trim();
+    IconData regionIcon = Icons.record_voice_over_rounded;
 
     return Stack(
       alignment: Alignment.center,
@@ -112,8 +103,6 @@ class DialectDrillTransmissionTower extends StatelessWidget {
                       ? towerColor
                       : (isDark ? Colors.white70 : Colors.black87),
                 ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),
