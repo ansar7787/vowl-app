@@ -108,7 +108,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               useScrolling: false,
               onHint: _controller.requestHint,
               child: quest == null
-                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
+                  ? GameShimmerLoading(primaryColor: Theme.of(context).primaryColor)
                   : FlashcardGameBody(
                       key: ValueKey(quest.id),
                       quest: quest,

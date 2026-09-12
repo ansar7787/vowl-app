@@ -251,7 +251,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             ]),
             builder: (context, _) {
               return activeQuest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(

@@ -235,7 +235,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
             ]),
             builder: (context, _) {
               return quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(

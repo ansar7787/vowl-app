@@ -211,7 +211,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
           useScrolling: false,
           disablePadding: true,
           child: quest == null
-                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
+              ? GameShimmerLoading(primaryColor: Theme.of(context).primaryColor)
               : LayoutBuilder(
                   builder: (context, constraints) {
                     final keyboardHeight = MediaQuery.of(
@@ -223,7 +223,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                       children: [
                         RawScrollbar(
                           controller: _scrollController,
-                          thumbColor: _cachedTheme.primaryColor.withValues(
+                          thumbColor: _cachedTheme.of(context).primaryColor.withValues(
                             alpha: 0.5,
                           ),
                           radius: Radius.circular(8.r),
@@ -265,7 +265,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                                 _activeShardIndex.value,
                                             dragOffset: _dragOffset.value,
                                             themeColor:
-                                                _cachedTheme.primaryColor,
+                                                _cachedTheme.of(context).primaryColor,
                                             onShardTap: (i) =>
                                                 _attemptThrust(i, quest),
                                             onDragStart: _onShardDragStart,

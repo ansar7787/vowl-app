@@ -221,7 +221,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           child: (state is WritingLoading || _lastQuest == null)
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : quest == null
-              ? const SizedBox.shrink()
+              ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : ListenableBuilder(
                   listenable: Listenable.merge([
                     _showConfetti,

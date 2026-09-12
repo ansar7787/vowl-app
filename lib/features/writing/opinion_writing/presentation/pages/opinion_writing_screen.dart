@@ -218,7 +218,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                   _leftPanArgs.value.length + _rightPanArgs.value.length;
 
               return quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(

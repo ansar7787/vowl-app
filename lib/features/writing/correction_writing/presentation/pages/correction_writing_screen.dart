@@ -211,7 +211,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
             ]),
             builder: (context, _) {
               return activeQuest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(

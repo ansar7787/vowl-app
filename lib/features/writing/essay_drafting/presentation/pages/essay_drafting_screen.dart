@@ -205,7 +205,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                   _blueprintSlots.value.isNotEmpty;
 
               return activeQuest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(

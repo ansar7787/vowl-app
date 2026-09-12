@@ -219,7 +219,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
-                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
+                    ? GameShimmerLoading(primaryColor: theme.primaryColor)
                     : Stack(
                         children: [
                           RawScrollbar(

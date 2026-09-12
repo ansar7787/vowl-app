@@ -226,7 +226,7 @@ class _SummarizeStoryWritingScreenState
                   _slots.value.every((s) => s.sentence != null);
 
               return quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         LayoutBuilder(

@@ -356,7 +356,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             ]),
             builder: (context, _) {
               return activeQuest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(

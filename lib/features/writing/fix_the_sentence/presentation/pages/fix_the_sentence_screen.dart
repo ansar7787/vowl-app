@@ -185,7 +185,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
             ]),
             builder: (context, _) {
               return quest == null
-                  ? const SizedBox()
+                  ? GameShimmerLoading(primaryColor: theme.primaryColor)
                   : Stack(
                       children: [
                         RawScrollbar(
