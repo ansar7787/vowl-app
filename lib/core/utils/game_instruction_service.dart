@@ -266,15 +266,15 @@ class GameInstructionService {
       title: "Minimal Pairs",
       icon: Icons.hearing_rounded,
       objective:
-          "Listen to the word, select the correct matching sound, then speak it aloud to lock in the pronunciation. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Some English words sound almost exactly the same! Listen carefully, pick the right word, and then say it out loud to lock in the correct pronunciation.",
       rules: [
-        "Listen to the target word",
-        "Select the exact phonetic match",
-        "Speak the answer to confirm",
+        "Listen to the word",
+        "Pick the matching sound",
+        "Speak to confirm your answer",
       ],
-      actionText: "Identify Sound",
+      actionText: "Start Listening",
       tip:
-          "PRO TIP: Pay attention to whether the vowel feels quick and relaxed, or long and stretched!",
+          "PRO TIP: Pay close attention to the vowels! Notice if they sound quick and relaxed, or long and stretched out.",
     ),
     GameSubtype.consonantClarity: GameBriefing(
       title: "Consonant Clarity",

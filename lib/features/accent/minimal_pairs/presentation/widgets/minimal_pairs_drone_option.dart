@@ -34,7 +34,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
     final bool isSelected = selectedDroneIndex == index;
     final bool correct = index == correctIndex;
 
-    Color borderColor = color.withValues(alpha: 0.3);
+    Color borderColor = color.withValues(alpha: isDark ? 0.4 : 0.3);
     if (isAnswered && isSelected) {
       borderColor = correct ? Colors.greenAccent : Colors.redAccent;
     } else if (isSelected) {
