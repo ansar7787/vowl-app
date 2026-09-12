@@ -56,64 +56,68 @@ class SyllableStressDrumConsole extends StatelessWidget {
       contentColor = Colors.greenAccent;
     }
 
-    return ScaleButton(
-      onTap: () => onPadTap(index, correct),
-      child: AnimatedContainer(
-        duration: 150.milliseconds,
-        width: 90.r,
-        height: 90.r,
-        decoration: BoxDecoration(
-          color: isSelected
-              ? padColor.withValues(alpha: 0.2)
-              : (isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.black.withValues(alpha: 0.03)),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: isSelected || (isAnswered && index == correct)
-                ? padColor
-                : color.withValues(alpha: 0.3),
-            width: 3,
+    return Semantics(
+      button: true,
+      label: text,
+      child: ScaleButton(
+        onTap: () => onPadTap(index, correct),
+        child: AnimatedContainer(
+          duration: 150.milliseconds,
+          width: 90.r,
+          height: 90.r,
+          decoration: BoxDecoration(
+            color: isSelected
+                ? padColor.withValues(alpha: 0.2)
+                : (isDark
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : Colors.black.withValues(alpha: 0.03)),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: isSelected || (isAnswered && index == correct)
+                  ? padColor
+                  : color.withValues(alpha: 0.3),
+              width: 3,
+            ),
+            boxShadow: isSelected
+                ? [
+                    BoxShadow(
+                      color: padColor.withValues(alpha: 0.3),
+                      blurRadius: 15,
+                    ),
+                  ]
+                : [],
           ),
-          boxShadow: isSelected
-              ? [
-                  BoxShadow(
-                    color: padColor.withValues(alpha: 0.3),
-                    blurRadius: 15,
-                  ),
-                ]
-              : [],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    text.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.bold,
-                      color: isSelected || (isAnswered && index == correct)
-                          ? contentColor
-                          : (isDark ? Colors.white : Colors.black87),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      text.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: isSelected || (isAnswered && index == correct)
+                            ? contentColor
+                            : (isDark ? Colors.white : Colors.black87),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              if (index == correct && isAnswered) ...[
-                SizedBox(height: 4.h),
-                Icon(
-                  Icons.bolt_rounded,
-                  color: Colors.greenAccent,
-                  size: 18.r,
-                ).animate().scale(),
+                if (index == correct && isAnswered) ...[
+                  SizedBox(height: 4.h),
+                  Icon(
+                    Icons.bolt_rounded,
+                    color: Colors.greenAccent,
+                    size: 18.r,
+                  ).animate().scale(),
+                ],
               ],
-            ],
+            ),
           ),
         ),
       ),

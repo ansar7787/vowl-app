@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,7 +15,7 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_instruction.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_prompt_card.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_pulse_speaker.dart';
-import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_block_visualizer.dart';
+import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_drum_console.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class SyllableStressScreen extends StatefulWidget {
@@ -274,7 +275,11 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                                   instruction:
                                                                       _isFirstStagePassed
                                                                           .value
-                                                                      ? "Great job! Now record yourself saying the word."
+                                                                      ? context.tr(
+                                                                          'games.syllable_stress_phase2',
+                                                                          fallback:
+                                                                              'Great job! Now record yourself saying the word.',
+                                                                        )
                                                                       : quest
                                                                             .instruction,
                                                                 ),
@@ -287,7 +292,11 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                             instruction:
                                                                 _isFirstStagePassed
                                                                     .value
-                                                                ? "Great job! Now record yourself saying the word."
+                                                                ? context.tr(
+                                                                    'games.syllable_stress_phase2',
+                                                                    fallback:
+                                                                        'Great job! Now record yourself saying the word.',
+                                                                  )
                                                                 : quest
                                                                       .instruction,
                                                           ),
@@ -354,7 +363,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                                 width:
                                                                     maxWidth -
                                                                     48.w,
-                                                                child: SyllableBlockVisualizer(
+                                                                child: SyllableStressDrumConsole(
                                                                   syllables:
                                                                       syllables,
                                                                   correctIndex:
@@ -379,7 +388,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                               ),
                                                             ),
                                                           )
-                                                        : SyllableBlockVisualizer(
+                                                        : SyllableStressDrumConsole(
                                                             syllables:
                                                                 syllables,
                                                             correctIndex:
@@ -429,7 +438,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                           SpeakToConfirmOverlay(
                                             expectedText: quest.word ?? "",
                                             displayText:
-                                                "Speak the word with the correct stress:\n${quest.word ?? ""}",
+                                                "${context.tr('games.speak_word_correct_stress', fallback: 'Speak the word with the correct stress:')}\n${quest.word ?? ""}",
                                             primaryColor: theme.primaryColor,
                                             onConfirmed: () =>
                                                 _submitVerbalEvaluation(true),
