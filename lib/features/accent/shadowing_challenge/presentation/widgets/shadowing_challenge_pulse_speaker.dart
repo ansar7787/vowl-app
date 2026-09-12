@@ -47,7 +47,7 @@ class ShadowingChallengePulseSpeaker extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: color,
-                  fontSize: 8.sp,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1,
                 ),

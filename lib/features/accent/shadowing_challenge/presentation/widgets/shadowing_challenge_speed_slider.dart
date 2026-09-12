@@ -37,10 +37,10 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
                 "PLAYBACK SPEED",
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w800,
                   color: color,
-                  letterSpacing: 1.5,
+                  letterSpacing: 1.2,
                 ),
               ),
               Text(

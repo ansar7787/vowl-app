@@ -49,7 +49,7 @@ class StoryServiceImpl implements StoryService {
     'pitchPatternMatch':
         "Every sentence has a rhythm! Let's slide the fader to match the exact melody and flow of the words.",
     'shadowingChallenge':
-        "Let's act like an echo! Listen carefully and find the chat bubble that matches exactly what you just heard.",
+        "Let's figure out how native speakers actually talk! Listen closely to the sentence, pick the correct pronunciation habit you hear, and then try saying it yourself.",
     'speedVariance':
         "Native speakers can talk fast! Let's train your ears to catch every word, whether it's spoken quickly or slowly.",
     'syllableStress':
@@ -656,11 +656,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'shadowingchallenge': [
       "",
-      "Fantastic! Exploring shadowing will elevate your skills rapidly.",
-      "Your progress in shadowing is genuinely impressive.",
-      "50 levels cleared! Your shadowing skills are rock solid.",
-      "Level 100! Your execution of shadowing is flawless.",
-      "Level 200! You are a supreme grandmaster of shadowing.",
+      "Great job! Listening closely and mimicking native speakers is the best way to improve.",
+      "You're getting really good at this! Your pronunciation is sounding much more natural.",
+      "50 levels cleared! Your ability to catch native speaking habits is awesome.",
+      "100 levels beat! You're imitating natural English flow like a total pro.",
+      "200 levels! Your accent and flow are sounding incredibly authentic now.",
     ],
     'speedvariance': [
       "",

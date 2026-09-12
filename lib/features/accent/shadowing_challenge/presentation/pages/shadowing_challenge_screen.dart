@@ -179,9 +179,13 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
         final options = List<String>.from(rawOptions)
           ..shuffle(Random(quest?.id.hashCode ?? 0));
 
-        final correctIndex = quest?.correctAnswer != null
-            ? options.indexOf(quest!.correctAnswer!)
-            : (quest?.correctAnswerIndex ?? 0);
+        final originalCorrectAnswer =
+            quest?.correctAnswer ??
+            ((quest?.options != null && quest!.options!.isNotEmpty)
+                ? quest.options![quest.correctAnswerIndex ?? 0]
+                : "A");
+
+        final correctIndex = options.indexOf(originalCorrectAnswer);
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -221,9 +225,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!_isFirstStagePassed.value)
-                                  ? const NeverScrollableScrollPhysics()
-                                  : const BouncingScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
                                   child: IgnorePointer(
