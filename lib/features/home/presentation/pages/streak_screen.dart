@@ -81,7 +81,38 @@ class _StreakScreenState extends State<StreakScreen> {
                         RepaintBoundary(child: StreakMilestones(user: user)),
                         SizedBox(height: 32.h),
                         RepaintBoundary(child: StreakBoostersShop(user: user)),
-                        SizedBox(height: 24.h),
+                        SizedBox(height: 32.h),
+                        // Earn More Coins section — contextualizes the ad card
+                        // within the streak/booster economy
+                        Text(
+                          context.tr(
+                            'streak.earn_more_coins_title',
+                            fallback: 'EARN MORE COINS',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: -0.5,
+                          ),
+                        ),
+                        SizedBox(height: 4.h),
+                        Text(
+                          context.tr(
+                            'streak.earn_more_coins_subtitle',
+                            fallback:
+                                'Fuel your boosters and protect your streak.',
+                          ),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark
+                                ? Colors.white54
+                                : const Color(0xFF64748B),
+                          ),
+                        ),
+                        SizedBox(height: 16.h),
                         const RepaintBoundary(
                           child: AdRewardCard(margin: EdgeInsets.zero),
                         ),
@@ -223,8 +254,8 @@ class _StreakScreenState extends State<StreakScreen> {
                   ],
                 ),
               ),
-              // Coins Info Pill
-              _buildCoinsChip(context, user),
+              // Streak Freeze Inventory Pill
+              _buildStreakFreezeChip(context, user),
             ],
           ),
         ),
@@ -232,39 +263,38 @@ class _StreakScreenState extends State<StreakScreen> {
     );
   }
 
-  Widget _buildCoinsChip(BuildContext context, UserEntity user) {
+  Widget _buildStreakFreezeChip(BuildContext context, UserEntity user) {
+    final freezeCount = user.streakFreezes;
+    final color = freezeCount > 0
+        ? const Color(0xFF38BDF8)
+        : const Color(0xFF64748B);
+
     return Semantics(
       label: context.tr(
-        'home.coins_value_label',
-        fallback: 'Coins',
-        args: [user.coins.toString()],
+        'streak.freeze_count_label',
+        args: [freezeCount.toString()],
+        fallback: '$freezeCount streak shields',
       ),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: const Color(0xFF10B981).withValues(alpha: 0.15),
+          color: color.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: const Color(0xFF10B981).withValues(alpha: 0.2),
-          ),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
         ),
         child: ExcludeSemantics(
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                Icons.monetization_on_rounded,
-                color: const Color(0xFF10B981),
-                size: 16.r,
-              ),
+              Icon(Icons.shield_rounded, color: color, size: 16.r),
               SizedBox(width: 6.w),
               Text(
-                '${user.coins}',
+                'x$freezeCount',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w800,
-                  color: const Color(0xFF10B981),
+                  color: color,
                 ),
                 maxLines: 1,
               ),

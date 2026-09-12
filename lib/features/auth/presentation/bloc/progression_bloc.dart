@@ -52,15 +52,12 @@ class ProgressionActivateDoubleXPRequested extends ProgressionEvent {
 class ProgressionClaimStreakMilestoneRequested extends ProgressionEvent {
   final int milestone;
 
-  /// Retained on the event for backwards API compatibility with existing
-  /// call sites, but no longer used by the handler — see
-  /// [ProgressionBloc._onClaimStreakMilestone]'s doc comment. The reward is
+  /// The reward field was removed from this event. The reward is
   /// now looked up server-side from `UserGameConstants.kStreakMilestoneRewards`
   /// rather than trusted from whatever dispatched this event.
-  final int reward;
-  const ProgressionClaimStreakMilestoneRequested(this.milestone, this.reward);
+  const ProgressionClaimStreakMilestoneRequested(this.milestone);
   @override
-  List<Object?> get props => [milestone, reward];
+  List<Object?> get props => [milestone];
 }
 
 class ProgressionClaimLevelMilestoneRequested extends ProgressionEvent {

@@ -33,7 +33,7 @@ class StreakCalendar extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
-                  LucideIcons.calendar,
+                  LucideIcons.calendarDays,
                   size: 14.r,
                   color: isDark ? Colors.blueAccent : Colors.blue,
                 ),
@@ -41,10 +41,7 @@ class StreakCalendar extends StatelessWidget {
               SizedBox(width: 10.w),
               Flexible(
                 child: AutoSizeText(
-                  context.tr(
-                    'streak.activity_heatmap',
-                    fallback: 'ACTIVITY HEATMAP',
-                  ),
+                  context.tr('streak.this_week', fallback: 'THIS WEEK'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 11.sp,
@@ -110,253 +107,261 @@ class StreakCalendar extends StatelessWidget {
                 ),
             ],
           ),
-          SizedBox(height: 6.h),
-          Text(
-            context.tr(
-              'streak.heatmap_description',
-              fallback:
-                  'Complete a quest and earn XP to light your daily flame.',
-            ),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: isDark ? Colors.white54 : const Color(0xFF64748B),
+          SizedBox(height: 12.h),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              context.tr(
+                'streak.heatmap_description',
+                fallback: 'Earn XP to light your daily flame.',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white54 : const Color(0xFF64748B),
+              ),
             ),
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 12.h),
           _buildModernCalendar(context),
         ],
       ),
     ).animate().fadeIn(delay: 200.ms).slideX(begin: 0.05);
   }
 
+  /// Determines whether [day] falls within the user's current streak window.
+  static bool computeIsStreakDay({
+    required DateTime day,
+    required DateTime now,
+    required DateTime? lastLoginDate,
+    required int currentStreak,
+  }) {
+    final nowAtMidnight = DateTime(now.year, now.month, now.day);
+    final dayAtMidnight = DateTime(day.year, day.month, day.day);
+    final daysAgo = nowAtMidnight.difference(dayAtMidnight).inDays;
+    if (daysAgo < 0) return false;
+
+    final isSameLoginDay =
+        lastLoginDate != null &&
+        lastLoginDate.day == now.day &&
+        lastLoginDate.month == now.month &&
+        lastLoginDate.year == now.year;
+
+    if (isSameLoginDay) {
+      return daysAgo < currentStreak;
+    } else {
+      return daysAgo > 0 && daysAgo <= currentStreak;
+    }
+  }
+
   Widget _buildModernCalendar(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final locale = Localizations.localeOf(context).toString();
     final now = DateTime.now();
-    final startOfHeatmap = now.subtract(const Duration(days: 6));
     final history = user.dailyXpHistory;
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: List.generate(7, (index) {
-        final day = startOfHeatmap.add(Duration(days: index));
-        final dateKey = DateFormat('yyyy-MM-dd').format(day);
-        final xp = history[dateKey] ?? 0;
-        final isToday =
-            day.day == now.day &&
-            day.month == now.month &&
-            day.year == now.year;
+    // Calculate start: align to Monday of the current week
+    final todayWeekday = now.weekday; // 1=Mon, 7=Sun
+    final startDate = now.subtract(
+      Duration(days: todayWeekday - 1),
+    ); // This Monday
 
-        final bool isSameLoginDay =
-            user.lastLoginDate != null &&
-            user.lastLoginDate!.day == now.day &&
-            user.lastLoginDate!.month == now.month &&
-            user.lastLoginDate!.year == now.year;
+    // Day name headers
+    final dayHeaders = List.generate(7, (i) {
+      final d = startDate.add(Duration(days: i));
+      return DateFormat('E', locale).format(d);
+    });
 
-        final nowAtMidnight = DateTime(now.year, now.month, now.day);
-        final dayAtMidnight = DateTime(day.year, day.month, day.day);
-        final daysAgo = nowAtMidnight.difference(dayAtMidnight).inDays;
-
-        bool isStreakDay = false;
-        if (daysAgo >= 0) {
-          if (isSameLoginDay) {
-            // User played today, so streak counts from today (daysAgo = 0) backwards
-            isStreakDay = daysAgo < user.currentStreak;
-          } else {
-            // User hasn't played today yet, so streak counts from yesterday (daysAgo = 1) backwards
-            isStreakDay = daysAgo > 0 && daysAgo <= user.currentStreak;
-          }
-        }
-
-        final bool isPlayed = xp > 0 || isStreakDay;
-        final bool isFrozen = xp == 0 && isStreakDay && daysAgo > 0;
-        final isFuture = day.isAfter(now);
-
-        // BUG FIX: truncating the locale-formatted weekday name to its
-        // first character only makes sense for Latin-script abbreviations
-        // (M/T/W...). For CJK locales it produces a meaningless or
-        // ambiguous fragment (e.g. Chinese abbreviates every weekday
-        // starting with "周"), and combining surrogate-pair characters
-        // could even be cut mid-codepoint. Showing the full short-form
-        // weekday name (still compact: 2-3 chars in nearly every
-        // supported language) inside a width-safe Flexible+FittedBox is
-        // correct for every script.
-        final dayName = DateFormat('E', locale).format(day);
-
-        final dayLabel = isFuture
-            ? context.tr('streak.day_upcoming', fallback: 'Upcoming')
-            : (isFrozen
-                  ? context.tr(
-                      'streak.day_frozen',
-                      fallback: 'Streak freeze used',
-                    )
-                  : (isPlayed
-                        ? context.tr(
-                            'streak.day_completed',
-                            fallback: 'Completed',
-                          )
-                        : (isToday
-                              ? context.tr(
-                                  'streak.day_today_pending',
-                                  fallback: "Today, not played yet",
-                                )
-                              : context.tr(
-                                  'streak.day_missed',
-                                  fallback: 'Missed',
-                                ))));
-
-        return Expanded(
-          child: Semantics(
-            label:
-                '${DateFormat('EEEE, MMMM d', locale).format(day)}: $dayLabel',
-            child: ExcludeSemantics(
-              child: Column(
-                children: [
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      dayName,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        color: isToday
-                            ? Colors.blueAccent
-                            : (isDark
-                                  ? Colors.white.withValues(alpha: 0.3)
-                                  : Colors.black.withValues(alpha: 0.35)),
-                        letterSpacing: 1,
-                      ),
-                      maxLines: 1,
+    return Column(
+      children: [
+        // Day name headers
+        Row(
+          children: dayHeaders.map((name) {
+            return Expanded(
+              child: Center(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    name.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.4)
+                          : Colors.black.withValues(alpha: 0.4),
+                      letterSpacing: 1.0,
                     ),
+                    maxLines: 1,
                   ),
-                  SizedBox(height: 10.h),
-                  _buildDayIndicator(
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+        SizedBox(height: 12.h),
+        // 1 row of 7 days
+        Row(
+          children: List.generate(7, (dayOfWeek) {
+            final day = startDate.add(Duration(days: dayOfWeek));
+            final dateKey = DateFormat('yyyy-MM-dd').format(day);
+            final xp = history[dateKey] ?? 0;
+            final isToday =
+                day.day == now.day &&
+                day.month == now.month &&
+                day.year == now.year;
+            final isFuture = day.isAfter(now);
+
+            final isStreakDay = computeIsStreakDay(
+              day: day,
+              now: now,
+              lastLoginDate: user.lastLoginDate,
+              currentStreak: user.currentStreak,
+            );
+
+            final bool isPlayed = xp > 0 || isStreakDay;
+            final bool isFrozen = xp == 0 && isStreakDay && !isToday;
+
+            final dayLabel = isFuture
+                ? context.tr('streak.day_upcoming', fallback: 'Upcoming')
+                : (isFrozen
+                      ? context.tr(
+                          'streak.day_frozen',
+                          fallback: 'Streak freeze used',
+                        )
+                      : (isPlayed
+                            ? context.tr(
+                                'streak.day_completed',
+                                fallback: 'Completed',
+                              )
+                            : (isToday
+                                  ? context.tr(
+                                      'streak.day_today_pending',
+                                      fallback: "Today, not played yet",
+                                    )
+                                  : context.tr(
+                                      'streak.day_missed',
+                                      fallback: 'Missed',
+                                    ))));
+
+            return Expanded(
+              child: Semantics(
+                label:
+                    '${DateFormat('EEEE, MMMM d', locale).format(day)}: $dayLabel',
+                child: ExcludeSemantics(
+                  child: _buildGridCell(
                     context,
                     isPlayed,
                     isToday,
                     isFuture,
                     xp,
                     isFrozen,
+                    day.day,
                   ),
-                  SizedBox(height: 10.h),
-                  Text(
-                    '${day.day}',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: isToday ? FontWeight.w900 : FontWeight.w500,
-                      color: isToday ? Colors.blueAccent : null,
-                    ),
-                    maxLines: 1,
-                  ),
-                ],
+                ),
               ),
-            ),
-          ),
-        );
-      }),
+            );
+          }),
+        ),
+      ],
     );
   }
 
-  Widget _buildDayIndicator(
+  Widget _buildGridCell(
     BuildContext context,
     bool isPlayed,
     bool isToday,
     bool isFuture,
     int xp,
     bool isFrozen,
+    int dayNumber,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Determine the gradient based on whether it's frozen or played
     Gradient? dayGradient;
     if (!isFuture && isPlayed) {
-      if (isFrozen) {
-        dayGradient = const LinearGradient(
-          colors: [Color(0xFF38BDF8), Color(0xFF3B82F6)],
-        ); // Ice Blue
-      } else {
-        dayGradient = const LinearGradient(
-          colors: [Color(0xFFF97316), Color(0xFFEF4444)],
-        ); // Fire Orange
-      }
+      dayGradient = isFrozen
+          ? const LinearGradient(colors: [Color(0xFF38BDF8), Color(0xFF3B82F6)])
+          : const LinearGradient(
+              colors: [Color(0xFFF97316), Color(0xFFEF4444)],
+            );
     }
 
-    return Container(
-      width: 36.r,
-      height: 36.r,
-      decoration: BoxDecoration(
-        gradient: dayGradient,
-        color: isFuture
-            ? (isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.black.withValues(alpha: 0.05))
-            : (!isPlayed
-                  ? (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.05))
-                  : null),
-        shape: BoxShape.circle,
-        border: (isToday && !isFuture)
-            ? Border.all(color: Colors.blueAccent, width: 2)
-            : (isFuture
-                  ? Border.all(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.05),
-                    )
-                  : (isPlayed
-                        ? null
-                        : Border.all(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.1)
-                                : Colors.black.withValues(alpha: 0.05),
-                          ))),
-        boxShadow: (!isFuture && isPlayed)
-            ? [
-                BoxShadow(
-                  color: isFrozen
-                      ? const Color(0xFF38BDF8).withValues(alpha: 0.3)
-                      : const Color(0xFFF97316).withValues(alpha: 0.3),
-                  blurRadius: 10,
-                  spreadRadius: 2,
-                  offset: const Offset(0, 4),
-                ),
-              ]
-            : (isToday && !isFuture
-                  ? [
-                      BoxShadow(
-                        color: Colors.blueAccent.withValues(alpha: 0.3),
-                        blurRadius: 12,
-                        spreadRadius: 2,
-                      ),
-                    ]
-                  : null),
-      ),
-      child: Center(
-        child: isFuture
-            ? null
-            : (isPlayed
-                  ? Icon(
-                      isFrozen ? LucideIcons.snowflake : LucideIcons.flame,
-                      color: Colors.white,
-                      size: isFrozen ? 16.r : 18.r,
-                    )
-                  : (isToday
-                        ? Icon(
-                            LucideIcons.circle,
-                            color: Colors.blueAccent,
-                            size: 8.r,
-                          ).animate().scale(
-                            begin: const Offset(0.5, 0.5),
-                            end: const Offset(1, 1),
-                            duration: 800.ms,
-                            curve: Curves.easeOutBack,
-                          )
-                        : null)),
-      ),
+    return Column(
+      children: [
+        Container(
+          width: 36.r,
+          height: 36.r,
+          decoration: BoxDecoration(
+            gradient: dayGradient,
+            color: isFuture
+                ? (isDark
+                      ? Colors.white.withValues(alpha: 0.03)
+                      : const Color(0xFFF1F5F9))
+                : (!isPlayed
+                      ? (isDark
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : const Color(0xFFE2E8F0))
+                      : null),
+            shape: BoxShape.circle,
+            border: (isToday && !isFuture)
+                ? Border.all(color: Colors.blueAccent, width: 2)
+                : null,
+            boxShadow: (!isFuture && isPlayed)
+                ? [
+                    BoxShadow(
+                      color: isFrozen
+                          ? const Color(0xFF38BDF8).withValues(alpha: 0.25)
+                          : const Color(0xFFF97316).withValues(alpha: 0.35),
+                      blurRadius: 8,
+                      spreadRadius: 2,
+                    ),
+                  ]
+                : null,
+          ),
+          child: Center(
+            child: isFuture
+                ? null
+                : (isPlayed
+                      ? Icon(
+                          isFrozen ? LucideIcons.snowflake : LucideIcons.flame,
+                          color: Colors.white,
+                          size: isFrozen ? 14.r : 16.r,
+                        )
+                      : (isToday
+                            ? Icon(
+                                LucideIcons.circle,
+                                color: Colors.blueAccent,
+                                size: 8.r,
+                              ).animate().scale(
+                                begin: const Offset(0.5, 0.5),
+                                end: const Offset(1, 1),
+                                duration: 800.ms,
+                                curve: Curves.easeOutBack,
+                              )
+                            : null)),
+          ),
+        ),
+        SizedBox(height: 4.h),
+        Text(
+          '$dayNumber',
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 9.sp,
+            fontWeight: isToday ? FontWeight.w900 : FontWeight.w500,
+            color: isToday
+                ? Colors.blueAccent
+                : (isFuture
+                      ? (isDark
+                            ? Colors.white.withValues(alpha: 0.15)
+                            : Colors.black.withValues(alpha: 0.2))
+                      : null),
+          ),
+          maxLines: 1,
+        ),
+      ],
     );
   }
 }
