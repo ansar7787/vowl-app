@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +14,6 @@ import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_instruction.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_hologram_console.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_region_map.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
 
 class DialectDrillScreen extends StatefulWidget {
@@ -93,7 +91,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   }
 
   void _triggerAutoPlay(AccentQuest quest) {
-    final instruction = InstructionHelper.getInstruction(quest).toLowerCase();
+    final instruction = quest.instruction.toLowerCase();
     final String targetLocale = instruction.contains('british')
         ? "en-GB"
         : "en-US";
@@ -192,17 +190,6 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
         final bool isHintUnlocked = (state is AccentLoaded) && state.hintUsed;
 
         String instructionText = quest?.instruction ?? "";
-        if (instructionText.toLowerCase().contains('british')) {
-          instructionText = context.tr(
-            'games.dialect_drill_instruction_uk',
-            fallback: 'Identify the British pronunciation.',
-          );
-        } else if (instructionText.toLowerCase().contains('american')) {
-          instructionText = context.tr(
-            'games.dialect_drill_instruction_us',
-            fallback: 'Identify the American pronunciation.',
-          );
-        }
 
         String brPr = "";
         String amPr = "";
@@ -241,248 +228,230 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                 useScrolling: false,
                 child: quest == null
                     ? const SizedBox()
-                    : Stack(
-                        children: [
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              return RawScrollbar(
-                                controller: _scrollController,
-                                thumbColor: theme.primaryColor.withValues(
-                                  alpha: 0.5,
-                                ),
-                                radius: Radius.circular(8.r),
-                                thickness: 4.w,
-                                child: CustomScrollView(
-                                  controller: _scrollController,
-                                  physics: (!_isFirstStagePassed.value)
-                                      ? const NeverScrollableScrollPhysics()
-                                      : const BouncingScrollPhysics(),
-                                  slivers: [
-                                    SliverToBoxAdapter(
-                                      child: IgnorePointer(
-                                        ignoring: _isFirstStagePassed.value,
-                                        child: ConstrainedBox(
-                                          constraints: BoxConstraints(
-                                            minHeight: constraints.maxHeight,
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: 24.h,
-                                                ),
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                    : LayoutBuilder(
+                        builder: (context, constraints) {
+                          return RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: (!_isFirstStagePassed.value)
+                                  ? const NeverScrollableScrollPhysics()
+                                  : const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverToBoxAdapter(
+                                  child: IgnorePointer(
+                                    ignoring: _isFirstStagePassed.value,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: 24.h,
+                                            ),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
                                                   children: [
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        DialectDrillInstruction(
-                                                          instruction:
-                                                              _isFirstStagePassed
-                                                                  .value
-                                                              ? "Great job! Now record yourself saying the word."
-                                                              : instructionText,
-                                                          accentColor: theme
-                                                              .primaryColor,
-                                                        ),
-                                                        if (quest
-                                                                .dialectRegion !=
-                                                            null) ...[
-                                                          SizedBox(
-                                                            height: 16.h,
+                                                    DialectDrillInstruction(
+                                                      instruction:
+                                                          _isFirstStagePassed
+                                                              .value
+                                                          ? "Great job! Now record yourself saying the word."
+                                                          : instructionText,
+                                                      accentColor:
+                                                          theme.primaryColor,
+                                                    ),
+                                                    if (quest.dialectRegion !=
+                                                        null) ...[
+                                                      SizedBox(height: 16.h),
+                                                      DialectDrillRegionMap(
+                                                        region: quest
+                                                            .dialectRegion!,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                      ),
+                                                    ],
+                                                    SizedBox(height: 24.h),
+                                                    DialectDrillHologramConsole(
+                                                      quest: quest,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered:
+                                                          _isAnswered.value ||
+                                                          _isFirstStagePassed
+                                                              .value,
+                                                      isCorrect:
+                                                          _isFirstStagePassed
+                                                              .value
+                                                          ? true
+                                                          : _isCorrect.value,
+                                                      onPlayTargetAudio: () =>
+                                                          _triggerAutoPlay(
+                                                            quest,
                                                           ),
-                                                          DialectDrillRegionMap(
-                                                            region: quest
-                                                                .dialectRegion!,
-                                                            color: theme
-                                                                .primaryColor,
-                                                            isDark: isDark,
-                                                          ),
-                                                        ],
-                                                        SizedBox(height: 24.h),
-                                                        DialectDrillHologramConsole(
-                                                          quest: quest,
-                                                          color: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                          isAnswered:
-                                                              _isAnswered
-                                                                  .value ||
-                                                              _isFirstStagePassed
-                                                                  .value,
-                                                          isCorrect:
-                                                              _isFirstStagePassed
-                                                                  .value
-                                                              ? true
-                                                              : _isCorrect
-                                                                    .value,
-                                                          onPlayTargetAudio: () =>
-                                                              _triggerAutoPlay(
-                                                                quest,
-                                                              ),
-                                                          onSubmitAnswer:
-                                                              _submitAnswer,
-                                                        ),
-                                                      ],
+                                                      onSubmitAnswer:
+                                                          _submitAnswer,
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                              AnimatedSize(
-                                                duration: const Duration(
-                                                  milliseconds: 400,
-                                                ),
-                                                curve: Curves.easeOut,
-                                                child:
-                                                    (_isAnswered.value ||
-                                                        _isFirstStagePassed
-                                                            .value)
-                                                    ? Padding(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 16.w,
-                                                            ).copyWith(
-                                                              bottom: 24.h,
-                                                            ),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: [
-                                                            Builder(
-                                                              builder: (context) {
-                                                                final bool
-                                                                isSuccess =
-                                                                    _isCorrect
-                                                                            .value ==
-                                                                        true ||
-                                                                    _isFirstStagePassed
-                                                                        .value;
-                                                                final bool
-                                                                isFinalFailure =
-                                                                    state
-                                                                        is AccentGameOver;
-                                                                final bool
-                                                                showExplanation =
-                                                                    isSuccess ||
-                                                                    isFinalFailure;
-                                                                return DialectFeedbackPanel(
-                                                                  isCorrect:
-                                                                      _isCorrect
-                                                                          .value ??
-                                                                      _isFirstStagePassed
-                                                                          .value,
-                                                                  word:
-                                                                      quest
-                                                                          .word ??
-                                                                      "",
-                                                                  britishPronunciation:
-                                                                      brPr.isEmpty
-                                                                      ? (quest.word ??
-                                                                            "")
-                                                                      : brPr,
-                                                                  americanPronunciation:
-                                                                      amPr.isEmpty
-                                                                      ? (quest.word ??
-                                                                            "")
-                                                                      : amPr,
-                                                                  hint:
-                                                                      isHintUnlocked
-                                                                      ? quest
-                                                                            .hint
-                                                                      : null,
-                                                                  explanation:
-                                                                      showExplanation
-                                                                      ? quest
-                                                                            .explanation
-                                                                      : null,
-                                                                  dialectNote:
-                                                                      showExplanation
-                                                                      ? quest
-                                                                            .dialectNote
-                                                                      : null,
-                                                                  isDark:
-                                                                      isDark,
-                                                                  isMidnight:
-                                                                      false,
-                                                                  onPlayAudio:
-                                                                      (
-                                                                        text,
-                                                                        locale,
-                                                                      ) {
-                                                                        _soundService.playTts(
+                                              ],
+                                            ),
+                                          ),
+                                          AnimatedSize(
+                                            duration: const Duration(
+                                              milliseconds: 400,
+                                            ),
+                                            curve: Curves.easeOut,
+                                            child:
+                                                (_isAnswered.value ||
+                                                    _isFirstStagePassed.value)
+                                                ? Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 16.w,
+                                                        ).copyWith(
+                                                          bottom: 24.h,
+                                                        ),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Builder(
+                                                          builder: (context) {
+                                                            final bool
+                                                            isSuccess =
+                                                                _isCorrect
+                                                                        .value ==
+                                                                    true ||
+                                                                _isFirstStagePassed
+                                                                    .value;
+                                                            final bool
+                                                            isFinalFailure =
+                                                                state
+                                                                    is AccentGameOver;
+                                                            final bool
+                                                            showExplanation =
+                                                                isSuccess ||
+                                                                isFinalFailure;
+                                                            return DialectFeedbackPanel(
+                                                              isCorrect:
+                                                                  _isCorrect
+                                                                      .value ??
+                                                                  _isFirstStagePassed
+                                                                      .value,
+                                                              word:
+                                                                  quest.word ??
+                                                                  "",
+                                                              britishPronunciation:
+                                                                  brPr.isEmpty
+                                                                  ? (quest.word ??
+                                                                        "")
+                                                                  : brPr,
+                                                              americanPronunciation:
+                                                                  amPr.isEmpty
+                                                                  ? (quest.word ??
+                                                                        "")
+                                                                  : amPr,
+                                                              hint:
+                                                                  isHintUnlocked
+                                                                  ? quest.hint
+                                                                  : null,
+                                                              explanation:
+                                                                  showExplanation
+                                                                  ? quest
+                                                                        .explanation
+                                                                  : null,
+                                                              dialectNote:
+                                                                  showExplanation
+                                                                  ? quest
+                                                                        .dialectNote
+                                                                  : null,
+                                                              isDark: isDark,
+                                                              isMidnight: false,
+                                                              onPlayAudio:
+                                                                  (
+                                                                    text,
+                                                                    locale,
+                                                                  ) {
+                                                                    _soundService
+                                                                        .playTts(
                                                                           text,
                                                                           locale:
                                                                               locale,
                                                                         );
-                                                                      },
-                                                                );
-                                                              },
-                                                            ),
-                                                            SizedBox(
-                                                              height:
-                                                                  (_isFirstStagePassed
-                                                                          .value &&
-                                                                      !_isAnswered
-                                                                          .value)
-                                                                  ? 380.h
-                                                                  : 160.h,
-                                                            ),
-                                                          ],
+                                                                  },
+                                                            );
+                                                          },
                                                         ),
-                                                      )
-                                                    : SizedBox(
-                                                        width: double.infinity,
-                                                        height:
-                                                            (_isFirstStagePassed
-                                                                    .value &&
-                                                                !_isAnswered
-                                                                    .value)
-                                                            ? 380.h
-                                                            : 160.h,
-                                                      ),
-                                              ),
-                                            ],
+                                                        SizedBox(
+                                                          height:
+                                                              (_isFirstStagePassed
+                                                                      .value &&
+                                                                  !_isAnswered
+                                                                      .value)
+                                                              ? 40.h
+                                                              : 160.h,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  )
+                                                : SizedBox(
+                                                    width: double.infinity,
+                                                    height:
+                                                        (_isFirstStagePassed
+                                                                .value &&
+                                                            !_isAnswered.value)
+                                                        ? 40.h
+                                                        : 160.h,
+                                                  ),
                                           ),
-                                        ),
+                                        ],
                                       ),
                                     ),
-
-                                    if (_isFirstStagePassed.value &&
-                                        !_isAnswered.value)
-                                      SliverToBoxAdapter(
-                                        child: Column(
-                                          children: [
-                                            if (_isFirstStagePassed.value &&
-                                                !_isAnswered.value)
-                                              ShadowPlaybackCompare(
-                                                expectedText: quest.word ?? "",
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                isPositioned: false,
-                                                onConfirmed: () {
-                                                  _submitVerbalEvaluation(true);
-                                                },
-                                                onSkipped: () {
-                                                  _submitVerbalEvaluation(
-                                                    false,
-                                                  );
-                                                },
-                                              ),
-
-                                            SizedBox(height: 60.h),
-                                          ],
-                                        ),
-                                      ),
-                                  ],
+                                  ),
                                 ),
-                              );
-                            },
-                          ),
-                        ],
+
+                                if (_isFirstStagePassed.value &&
+                                    !_isAnswered.value)
+                                  SliverToBoxAdapter(
+                                    child: Column(
+                                      children: [
+                                        if (_isFirstStagePassed.value &&
+                                            !_isAnswered.value)
+                                          ShadowPlaybackCompare(
+                                            expectedText: quest.word ?? "",
+                                            primaryColor: theme.primaryColor,
+                                            isPositioned: false,
+                                            onConfirmed: () {
+                                              _submitVerbalEvaluation(true);
+                                            },
+                                            onSkipped: () {
+                                              _submitVerbalEvaluation(false);
+                                            },
+                                          ),
+
+                                        SizedBox(height: 60.h),
+                                      ],
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
               );
             },

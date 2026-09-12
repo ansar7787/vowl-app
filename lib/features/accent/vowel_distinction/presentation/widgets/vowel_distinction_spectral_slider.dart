@@ -66,66 +66,77 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
       textColor = Colors.white;
     }
 
-    return ScaleButton(
-      onTap: () => onSubmitChoice(index, correctIndex),
-      child:
-          Container(
-                width: 100.r,
-                height: 100.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: orbColor,
-                  border: Border.all(
-                    color: isAnswered && isSelected
-                        ? textColor
-                        : color.withValues(alpha: isSelected ? 1.0 : 0.3),
-                    width: 3,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: isSelected
-                          ? (correct
-                                ? Colors.greenAccent.withValues(alpha: 0.3)
-                                : color.withValues(alpha: 0.3))
-                          : Colors.transparent,
-                      blurRadius: 15,
+    return Semantics(
+      label: 'Option ${index + 1}: $text',
+      button: true,
+      selected: isSelected,
+      child: ScaleButton(
+        onTap: () => onSubmitChoice(index, correctIndex),
+        child:
+            Container(
+                  width: 100.r,
+                  height: 100.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: orbColor,
+                    border: Border.all(
+                      color: isAnswered && isSelected
+                          ? textColor
+                          : color.withValues(alpha: isSelected ? 1.0 : 0.3),
+                      width: 3,
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.bold,
-                      color: textColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: isSelected
+                            ? (correct
+                                  ? Colors.greenAccent.withValues(alpha: 0.3)
+                                  : color.withValues(alpha: 0.3))
+                            : Colors.transparent,
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                      ),
                     ),
                   ),
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.05, 1.05),
+                  duration: (2 + index).seconds,
                 ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.05, 1.05),
-                duration: (2 + index).seconds,
-              ),
+      ),
     );
   }
 
   Widget _buildSliderBar(int correct, Color color) {
-    return SliderTheme(
-      data: SliderThemeData(
-        activeTrackColor: color,
-        inactiveTrackColor: color.withValues(alpha: 0.1),
-        thumbColor: color,
-        overlayColor: color.withValues(alpha: 0.2),
-        trackHeight: 10.h,
-        thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
-      ),
-      child: Slider(
-        value: sliderValue,
-        onChanged: (v) => onSliderUpdate(v, correct),
+    return Semantics(
+      label:
+          'Spectral Slider to select vowel. Slide left for ${options[0]}, right for ${options[1]}',
+      slider: true,
+      value: (sliderValue * 100).round().toString(),
+      child: SliderTheme(
+        data: SliderThemeData(
+          activeTrackColor: color,
+          inactiveTrackColor: color.withValues(alpha: 0.1),
+          thumbColor: color,
+          overlayColor: color.withValues(alpha: 0.2),
+          trackHeight: 10.h,
+          thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
+        ),
+        child: Slider(
+          value: sliderValue,
+          onChanged: (v) => onSliderUpdate(v, correct),
+        ),
       ),
     );
   }

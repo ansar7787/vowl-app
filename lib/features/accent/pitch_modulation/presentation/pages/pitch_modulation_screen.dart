@@ -7,7 +7,6 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -233,223 +232,191 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                 useScrolling: false,
                 child: quest == null
                     ? const SizedBox()
-                    : Stack(
-                        children: [
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              final maxHeight = constraints.maxHeight;
+                    : LayoutBuilder(
+                        builder: (context, constraints) {
+                          final maxHeight = constraints.maxHeight;
 
-                              final double estimatedContentHeight =
-                                  24.h + 90.h + 80.h + 140.h;
-                              final remainingHeight =
-                                  maxHeight - estimatedContentHeight;
+                          final double estimatedContentHeight =
+                              24.h + 90.h + 80.h + 140.h;
+                          final remainingHeight =
+                              maxHeight - estimatedContentHeight;
 
-                              final double gapUnit = remainingHeight > 0
-                                  ? remainingHeight / 8
-                                  : 0;
-                              final double gapTop = remainingHeight > 0
-                                  ? (gapUnit * 1).clamp(8.0, 24.0)
-                                  : 8.0;
-                              final double gapInstruction = remainingHeight > 0
-                                  ? (gapUnit * 1).clamp(8.0, 24.0)
-                                  : 8.0;
-                              final double gapPrompt = remainingHeight > 0
-                                  ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                                  : 12.0;
-                              final double gapSpeaker = remainingHeight > 0
-                                  ? (gapUnit * 2).clamp(16.0, 48.0)
-                                  : 16.0;
+                          final double gapUnit = remainingHeight > 0
+                              ? remainingHeight / 8
+                              : 0;
+                          final double gapTop = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              : 8.0;
+                          final double gapInstruction = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              : 8.0;
+                          final double gapPrompt = remainingHeight > 0
+                              ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                              : 12.0;
+                          final double gapSpeaker = remainingHeight > 0
+                              ? (gapUnit * 2).clamp(16.0, 48.0)
+                              : 16.0;
 
-                              final double gapBottom = remainingHeight > 0
-                                  ? (gapUnit * 1).clamp(12.0, 40.0)
-                                  : 12.0;
+                          final double gapBottom = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(12.0, 40.0)
+                              : 12.0;
 
-                              return RawScrollbar(
-                                controller: _scrollController,
-                                thumbColor: theme.primaryColor.withValues(
-                                  alpha: 0.5,
-                                ),
-                                radius: Radius.circular(8.r),
-                                thickness: 4.w,
-                                child: CustomScrollView(
-                                  controller: _scrollController,
-                                  physics: (!_isFirstStagePassed.value)
-                                      ? const NeverScrollableScrollPhysics()
-                                      : const BouncingScrollPhysics(),
-                                  slivers: [
-                                    SliverToBoxAdapter(
-                                      child: IgnorePointer(
-                                        ignoring: _isFirstStagePassed.value,
-                                        child: ConstrainedBox(
-                                          constraints: BoxConstraints(
-                                            minHeight: constraints.maxHeight,
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 24.w,
-                                                ),
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                          return RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: (!_isFirstStagePassed.value)
+                                  ? const NeverScrollableScrollPhysics()
+                                  : const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverToBoxAdapter(
+                                  child: IgnorePointer(
+                                    ignoring: _isFirstStagePassed.value,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 24.w,
+                                            ),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
                                                   children: [
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        SizedBox(
-                                                          height: gapTop,
-                                                        ),
-                                                        PitchModulationInstruction(
-                                                          color: theme
-                                                              .primaryColor,
-                                                          instruction:
-                                                              _isFirstStagePassed
-                                                                  .value
-                                                              ? "Great job! Now record yourself saying the word."
-                                                              : context.tr(
-                                                                  'games.pitch_modulation_instruction',
-                                                                  fallback:
-                                                                      "Listen carefully and choose the pitch pattern you hear.",
-                                                                ),
-                                                        ),
-                                                        SizedBox(
-                                                          height:
-                                                              gapInstruction,
-                                                        ),
-
-                                                        PitchModulationPromptCard(
-                                                          word:
-                                                              quest.word ?? "",
-                                                          color: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                        ),
-                                                        SizedBox(
-                                                          height: gapPrompt,
-                                                        ),
-
-                                                        PitchModulationPulseSpeaker(
-                                                          text:
-                                                              quest
-                                                                  .textToSpeak ??
-                                                              "",
-                                                          color: theme
-                                                              .primaryColor,
-                                                          onPlayTts: _playTts,
-                                                        ),
-                                                      ],
+                                                    SizedBox(height: gapTop),
+                                                    PitchModulationInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction:
+                                                          _isFirstStagePassed
+                                                              .value
+                                                          ? "Great job! Now record yourself saying the word."
+                                                          : quest.instruction,
                                                     ),
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        SizedBox(
-                                                          height: gapSpeaker,
-                                                        ),
-                                                        PitchModulationDialControl(
-                                                          options: options,
-                                                          correctIndex:
-                                                              quest
-                                                                  .correctAnswerIndex ??
-                                                              0,
-                                                          color: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                          isAnswered:
-                                                              _isAnswered
-                                                                  .value ||
-                                                              _isFirstStagePassed
-                                                                  .value,
-                                                          isDragging:
-                                                              _isDragging.value,
-                                                          dialRotation:
-                                                              _dialRotation
-                                                                  .value,
-                                                          selectedIndex:
-                                                              _selectedIndex
-                                                                  .value,
-                                                          onDialRotate:
-                                                              _onDialRotate,
-                                                          onDialRelease:
-                                                              _onDialRelease,
-                                                          onSubmitChoice:
-                                                              _submitChoice,
-                                                        ),
+                                                    SizedBox(
+                                                      height: gapInstruction,
+                                                    ),
 
-                                                        SizedBox(
-                                                          height: gapBottom,
-                                                        ),
-                                                      ],
+                                                    PitchModulationPromptCard(
+                                                      word: quest.word ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                                    SizedBox(height: gapPrompt),
+
+                                                    PitchModulationPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
                                                     ),
                                                   ],
                                                 ),
-                                              ),
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: gapSpeaker,
+                                                    ),
+                                                    PitchModulationDialControl(
+                                                      options: options,
+                                                      correctIndex:
+                                                          quest
+                                                              .correctAnswerIndex ??
+                                                          0,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered:
+                                                          _isAnswered.value ||
+                                                          _isFirstStagePassed
+                                                              .value,
+                                                      isDragging:
+                                                          _isDragging.value,
+                                                      dialRotation:
+                                                          _dialRotation.value,
+                                                      selectedIndex:
+                                                          _selectedIndex.value,
+                                                      onDialRotate:
+                                                          _onDialRotate,
+                                                      onDialRelease:
+                                                          _onDialRelease,
+                                                      onSubmitChoice:
+                                                          _submitChoice,
+                                                    ),
 
-                                              SizedBox(
-                                                height:
-                                                    (_isFirstStagePassed
-                                                            .value &&
-                                                        !_isAnswered.value)
-                                                    ? 380.h
-                                                    : 160.h,
-                                              ),
-                                            ],
+                                                    SizedBox(height: gapBottom),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
+
+                                          SizedBox(
+                                            height:
+                                                (_isFirstStagePassed.value &&
+                                                    !_isAnswered.value)
+                                                ? 40.h
+                                                : 160.h,
+                                          ),
+                                        ],
                                       ),
                                     ),
-
-                                    if (_isFirstStagePassed.value &&
-                                        !_isAnswered.value)
-                                      SliverToBoxAdapter(
-                                        child: Column(
-                                          children: [
-                                            if (_isFirstStagePassed.value &&
-                                                !_isAnswered.value)
-                                              SpeakToConfirmOverlay(
-                                                expectedText:
-                                                    quest.textToSpeak ?? "",
-                                                displayText:
-                                                    '${quest.textToSpeak ?? ""}\n\n(Meaning: ${options[_spokenMeaningsCount.value]})',
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                isPositioned: false,
-                                                onConfirmed: () {
-                                                  if (_spokenMeaningsCount
-                                                          .value ==
-                                                      0) {
-                                                    _spokenMeaningsCount.value =
-                                                        1;
-                                                    _soundService.playCorrect();
-                                                  } else {
-                                                    context.read<AccentBloc>().add(
-                                                      const AccentSpeakConfirmed(
-                                                        10,
-                                                      ),
-                                                    );
-                                                    _submitVerbalEvaluation(
-                                                      true,
-                                                    );
-                                                  }
-                                                },
-                                                onSkipped: () =>
-                                                    _submitVerbalEvaluation(
-                                                      false,
-                                                    ),
-                                              ),
-
-                                            SizedBox(height: 60.h),
-                                          ],
-                                        ),
-                                      ),
-                                  ],
+                                  ),
                                 ),
-                              );
-                            },
-                          ),
-                        ],
+
+                                if (_isFirstStagePassed.value &&
+                                    !_isAnswered.value)
+                                  SliverToBoxAdapter(
+                                    child: Column(
+                                      children: [
+                                        if (_isFirstStagePassed.value &&
+                                            !_isAnswered.value)
+                                          SpeakToConfirmOverlay(
+                                            expectedText:
+                                                quest.textToSpeak ?? "",
+                                            displayText:
+                                                '${quest.textToSpeak ?? ""}\n\n(Meaning: ${options[_spokenMeaningsCount.value]})',
+                                            primaryColor: theme.primaryColor,
+                                            isPositioned: false,
+                                            onConfirmed: () {
+                                              if (_spokenMeaningsCount.value ==
+                                                  0) {
+                                                _spokenMeaningsCount.value = 1;
+                                                _soundService.playCorrect();
+                                              } else {
+                                                context.read<AccentBloc>().add(
+                                                  const AccentSpeakConfirmed(
+                                                    10,
+                                                  ),
+                                                );
+                                                _submitVerbalEvaluation(true);
+                                              }
+                                            },
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                          ),
+
+                                        SizedBox(height: 60.h),
+                                      ],
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
               );
             },

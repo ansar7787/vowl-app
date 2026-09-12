@@ -1,4 +1,3 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -9,7 +8,6 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
@@ -212,148 +210,124 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                 useScrolling: false,
                 child: quest == null
                     ? const SizedBox()
-                    : Stack(
-                        children: [
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              return RawScrollbar(
-                                controller: _scrollController,
-                                thumbColor: theme.primaryColor.withValues(
-                                  alpha: 0.5,
-                                ),
-                                radius: Radius.circular(8.r),
-                                thickness: 4.w,
-                                child: CustomScrollView(
-                                  controller: _scrollController,
-                                  physics: (!_isFirstStagePassed.value)
-                                      ? const NeverScrollableScrollPhysics()
-                                      : const BouncingScrollPhysics(),
-                                  slivers: [
-                                    SliverToBoxAdapter(
-                                      child: IgnorePointer(
-                                        ignoring: _isFirstStagePassed.value,
-                                        child: ConstrainedBox(
-                                          constraints: BoxConstraints(
-                                            minHeight: constraints.maxHeight,
+                    : LayoutBuilder(
+                        builder: (context, constraints) {
+                          return RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: (!_isFirstStagePassed.value)
+                                  ? const NeverScrollableScrollPhysics()
+                                  : const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverToBoxAdapter(
+                                  child: IgnorePointer(
+                                    ignoring: _isFirstStagePassed.value,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 24.w,
+                                              vertical: 24.h,
+                                            ),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                ShadowingChallengeInstruction(
+                                                  color: theme.primaryColor,
+                                                  instruction:
+                                                      _isFirstStagePassed.value
+                                                      ? "Great job! Now record yourself saying the phrase."
+                                                      : quest.instruction,
+                                                ),
+                                                SizedBox(height: 16.h),
+                                                ShadowingChallengePromptCard(
+                                                  word: quest.word ?? "",
+                                                  ipa: quest.phonetic ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
+                                                SizedBox(height: 24.h),
+                                                ShadowingChallengePulseSpeaker(
+                                                  text: quest.textToSpeak ?? "",
+                                                  color: theme.primaryColor,
+                                                  onPlayTts: _playTts,
+                                                ),
+                                                SizedBox(height: 16.h),
+                                                ShadowingChallengeSpeedSlider(
+                                                  speed: _currentSpeed.value,
+                                                  onChanged: (val) {
+                                                    _currentSpeed.value = val;
+                                                  },
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
+                                                SizedBox(height: 32.h),
+                                                ShadowingChallengeDialogueList(
+                                                  options: options,
+                                                  correctIndex: correctIndex,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered:
+                                                      _isAnswered.value ||
+                                                      _isFirstStagePassed.value,
+                                                  selectedIndex:
+                                                      _selectedIndex.value,
+                                                  onSubmitChoice: _submitChoice,
+                                                ),
+                                                SizedBox(height: 24.h),
+                                              ],
+                                            ),
                                           ),
-                                          child: Column(
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 24.w,
-                                                  vertical: 24.h,
-                                                ),
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    ShadowingChallengeInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction:
-                                                          _isFirstStagePassed
-                                                              .value
-                                                          ? "Great job! Now record yourself saying the phrase."
-                                                          : context.tr(
-                                                              'games.shadowing_challenge_instruction',
-                                                              fallback:
-                                                                  InstructionHelper.getInstruction(
-                                                                    quest,
-                                                                  ),
-                                                            ),
-                                                    ),
-                                                    SizedBox(height: 16.h),
-                                                    ShadowingChallengePromptCard(
-                                                      word: quest.word ?? "",
-                                                      ipa: quest.phonetic ?? "",
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                                    SizedBox(height: 24.h),
-                                                    ShadowingChallengePulseSpeaker(
-                                                      text:
-                                                          quest.textToSpeak ??
-                                                          "",
-                                                      color: theme.primaryColor,
-                                                      onPlayTts: _playTts,
-                                                    ),
-                                                    SizedBox(height: 16.h),
-                                                    ShadowingChallengeSpeedSlider(
-                                                      speed:
-                                                          _currentSpeed.value,
-                                                      onChanged: (val) {
-                                                        _currentSpeed.value =
-                                                            val;
-                                                      },
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                                    SizedBox(height: 32.h),
-                                                    ShadowingChallengeDialogueList(
-                                                      options: options,
-                                                      correctIndex:
-                                                          correctIndex,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
-                                                              .value,
-                                                      selectedIndex:
-                                                          _selectedIndex.value,
-                                                      onSubmitChoice:
-                                                          _submitChoice,
-                                                    ),
-                                                    SizedBox(height: 24.h),
-                                                  ],
-                                                ),
-                                              ),
 
-                                              SizedBox(
-                                                height:
-                                                    (_isAnswered.value ||
-                                                        _isFirstStagePassed
-                                                            .value)
-                                                    ? 10.h
-                                                    : 60.h,
-                                              ),
-                                            ],
+                                          SizedBox(
+                                            height:
+                                                (_isAnswered.value ||
+                                                    _isFirstStagePassed.value)
+                                                ? 10.h
+                                                : 60.h,
                                           ),
-                                        ),
+                                        ],
                                       ),
                                     ),
-                                    if (_isFirstStagePassed.value &&
-                                        (!_isAnswered.value ||
-                                            _isCorrect.value == null))
-                                      SliverToBoxAdapter(
-                                        child: Column(
-                                          children: [
-                                            SizedBox(height: 32.h),
-                                            ShadowPlaybackCompare(
-                                              expectedText:
-                                                  quest.textToSpeak ?? "",
-                                              displayText:
-                                                  quest.textToSpeak ?? "",
-                                              primaryColor: theme.primaryColor,
-                                              isPositioned: false,
-                                              speedMultiplier:
-                                                  _currentSpeed.value,
-                                              onConfirmed: () =>
-                                                  _submitVerbalEvaluation(true),
-                                              onSkipped: () =>
-                                                  _submitVerbalEvaluation(
-                                                    false,
-                                                  ),
-                                            ),
-                                            SizedBox(height: 60.h),
-                                          ],
-                                        ),
-                                      ),
-                                  ],
+                                  ),
                                 ),
-                              );
-                            },
-                          ),
-                        ],
+                                if (_isFirstStagePassed.value &&
+                                    (!_isAnswered.value ||
+                                        _isCorrect.value == null))
+                                  SliverToBoxAdapter(
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 32.h),
+                                        ShadowPlaybackCompare(
+                                          expectedText: quest.textToSpeak ?? "",
+                                          displayText: quest.textToSpeak ?? "",
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          speedMultiplier: _currentSpeed.value,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                        ),
+                                        SizedBox(height: 60.h),
+                                      ],
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
               );
             },

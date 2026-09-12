@@ -50,7 +50,10 @@ class MinimalPairsMouthDiagram extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  context.tr('games.mouth_position_caps', fallback: "MOUTH & TONGUE"),
+                  context.tr(
+                    'games.mouth_position_caps',
+                    fallback: "MOUTH & TONGUE",
+                  ),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,

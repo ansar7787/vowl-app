@@ -7,7 +7,6 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -190,289 +189,263 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                 useScrolling: false,
                 child: quest == null
                     ? const SizedBox()
-                    : Stack(
-                        children: [
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              final maxHeight = constraints.maxHeight;
-                              final maxWidth = constraints.maxWidth;
-                              final bool isCompact = maxHeight < 580;
+                    : LayoutBuilder(
+                        builder: (context, constraints) {
+                          final maxHeight = constraints.maxHeight;
+                          final maxWidth = constraints.maxWidth;
+                          final bool isCompact = maxHeight < 580;
 
-                              final double estimatedContentHeight =
-                                  24.h +
-                                  (isCompact ? 90.h : 120.h) +
-                                  100.h +
-                                  (isCompact ? 130.h : 172.h);
-                              final remainingHeight =
-                                  maxHeight - estimatedContentHeight;
+                          final double estimatedContentHeight =
+                              24.h +
+                              (isCompact ? 90.h : 120.h) +
+                              100.h +
+                              (isCompact ? 130.h : 172.h);
+                          final remainingHeight =
+                              maxHeight - estimatedContentHeight;
 
-                              final double gapUnit = remainingHeight > 0
-                                  ? remainingHeight / 8
-                                  : 0;
-                              final double gapTop = remainingHeight > 0
-                                  ? (gapUnit * 1).clamp(8.0, 24.0)
-                                  : 8.0;
-                              final double gapInstruction = remainingHeight > 0
-                                  ? (gapUnit * 1).clamp(8.0, 24.0)
-                                  : 8.0;
-                              final double gapPrompt = remainingHeight > 0
-                                  ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                                  : 12.0;
-                              final double gapSpeaker = remainingHeight > 0
-                                  ? (gapUnit * 2).clamp(16.0, 48.0)
-                                  : 16.0;
+                          final double gapUnit = remainingHeight > 0
+                              ? remainingHeight / 8
+                              : 0;
+                          final double gapTop = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              : 8.0;
+                          final double gapInstruction = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              : 8.0;
+                          final double gapPrompt = remainingHeight > 0
+                              ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                              : 12.0;
+                          final double gapSpeaker = remainingHeight > 0
+                              ? (gapUnit * 2).clamp(16.0, 48.0)
+                              : 16.0;
 
-                              final double gapBottom = remainingHeight > 0
-                                  ? (gapUnit * 1).clamp(12.0, 40.0)
-                                  : 12.0;
+                          final double gapBottom = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(12.0, 40.0)
+                              : 12.0;
 
-                              return RawScrollbar(
-                                controller: _scrollController,
-                                thumbColor: theme.primaryColor.withValues(
-                                  alpha: 0.5,
-                                ),
-                                radius: Radius.circular(8.r),
-                                thickness: 4.w,
-                                child: CustomScrollView(
-                                  controller: _scrollController,
-                                  physics: (!_isFirstStagePassed.value)
-                                      ? const NeverScrollableScrollPhysics()
-                                      : const BouncingScrollPhysics(),
-                                  slivers: [
-                                    SliverToBoxAdapter(
-                                      child: IgnorePointer(
-                                        ignoring: _isFirstStagePassed.value,
-                                        child: ConstrainedBox(
-                                          constraints: BoxConstraints(
-                                            minHeight: constraints.maxHeight,
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 24.w,
-                                                ),
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                          return RawScrollbar(
+                            controller: _scrollController,
+                            thumbColor: theme.primaryColor.withValues(
+                              alpha: 0.5,
+                            ),
+                            radius: Radius.circular(8.r),
+                            thickness: 4.w,
+                            child: CustomScrollView(
+                              controller: _scrollController,
+                              physics: (!_isFirstStagePassed.value)
+                                  ? const NeverScrollableScrollPhysics()
+                                  : const BouncingScrollPhysics(),
+                              slivers: [
+                                SliverToBoxAdapter(
+                                  child: IgnorePointer(
+                                    ignoring: _isFirstStagePassed.value,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minHeight: constraints.maxHeight,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 24.w,
+                                            ),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
                                                   children: [
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        SizedBox(
-                                                          height: gapTop,
-                                                        ),
-                                                        isCompact
-                                                            ? SizedBox(
-                                                                height: 32.h,
-                                                                child: FittedBox(
-                                                                  fit: BoxFit
-                                                                      .scaleDown,
-                                                                  child: SizedBox(
-                                                                    width:
-                                                                        maxWidth -
-                                                                        48.w,
-                                                                    child: SyllableStressInstruction(
-                                                                      color: theme
-                                                                          .primaryColor,
-                                                                      instruction:
-                                                                          _isFirstStagePassed
-                                                                              .value
-                                                                          ? "Great job! Now record yourself saying the word."
-                                                                          : context.tr(
-                                                                              'games.syllable_stress_instruction',
-                                                                              fallback: 'Identify the stressed syllable',
-                                                                            ),
-                                                                    ),
-                                                                  ),
+                                                    SizedBox(height: gapTop),
+                                                    isCompact
+                                                        ? SizedBox(
+                                                            height: 32.h,
+                                                            child: FittedBox(
+                                                              fit: BoxFit
+                                                                  .scaleDown,
+                                                              child: SizedBox(
+                                                                width:
+                                                                    maxWidth -
+                                                                    48.w,
+                                                                child: SyllableStressInstruction(
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  instruction:
+                                                                      _isFirstStagePassed
+                                                                          .value
+                                                                      ? "Great job! Now record yourself saying the word."
+                                                                      : quest
+                                                                            .instruction,
                                                                 ),
-                                                              )
-                                                            : SyllableStressInstruction(
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                instruction:
-                                                                    _isFirstStagePassed
-                                                                        .value
-                                                                    ? "Great job! Now record yourself saying the word."
-                                                                    : context.tr(
-                                                                        'games.syllable_stress_instruction',
-                                                                        fallback:
-                                                                            'Identify the stressed syllable',
-                                                                      ),
                                                               ),
-                                                        SizedBox(
-                                                          height:
-                                                              gapInstruction,
-                                                        ),
-
-                                                        isCompact
-                                                            ? SizedBox(
-                                                                height: 90.h,
-                                                                child: FittedBox(
-                                                                  fit: BoxFit
-                                                                      .scaleDown,
-                                                                  child: SizedBox(
-                                                                    width:
-                                                                        maxWidth -
-                                                                        48.w,
-                                                                    child: SyllableStressPromptCard(
-                                                                      word:
-                                                                          quest
-                                                                              .word ??
-                                                                          "",
-                                                                      color: theme
-                                                                          .primaryColor,
-                                                                      isDark:
-                                                                          isDark,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              )
-                                                            : SyllableStressPromptCard(
-                                                                word:
-                                                                    quest
-                                                                        .word ??
-                                                                    "",
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                isDark: isDark,
-                                                              ),
-                                                        SizedBox(
-                                                          height: gapPrompt,
-                                                        ),
-
-                                                        SyllableStressPulseSpeaker(
-                                                          text:
-                                                              quest
-                                                                  .textToSpeak ??
-                                                              "",
-                                                          color: theme
-                                                              .primaryColor,
-                                                          onPlayTts: _playTts,
-                                                        ),
-                                                      ],
+                                                            ),
+                                                          )
+                                                        : SyllableStressInstruction(
+                                                            color: theme
+                                                                .primaryColor,
+                                                            instruction:
+                                                                _isFirstStagePassed
+                                                                    .value
+                                                                ? "Great job! Now record yourself saying the word."
+                                                                : quest
+                                                                      .instruction,
+                                                          ),
+                                                    SizedBox(
+                                                      height: gapInstruction,
                                                     ),
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        SizedBox(
-                                                          height: gapSpeaker,
-                                                        ),
-                                                        isCompact
-                                                            ? SizedBox(
-                                                                height: 110.h,
-                                                                child: FittedBox(
-                                                                  fit: BoxFit
-                                                                      .scaleDown,
-                                                                  child: SizedBox(
-                                                                    width:
-                                                                        maxWidth -
-                                                                        48.w,
-                                                                    child: SyllableBlockVisualizer(
-                                                                      syllables:
-                                                                          syllables,
-                                                                      correctIndex:
-                                                                          quest
-                                                                              .correctAnswerIndex ??
-                                                                          0,
-                                                                      color: theme
-                                                                          .primaryColor,
-                                                                      isDark:
-                                                                          isDark,
-                                                                      isAnswered:
-                                                                          _isAnswered
-                                                                              .value ||
-                                                                          _isFirstStagePassed
-                                                                              .value,
-                                                                      selectedIndex:
-                                                                          _selectedIndex
-                                                                              .value,
-                                                                      onPadTap:
-                                                                          _onPadTap,
-                                                                    ),
-                                                                  ),
+
+                                                    isCompact
+                                                        ? SizedBox(
+                                                            height: 90.h,
+                                                            child: FittedBox(
+                                                              fit: BoxFit
+                                                                  .scaleDown,
+                                                              child: SizedBox(
+                                                                width:
+                                                                    maxWidth -
+                                                                    48.w,
+                                                                child: SyllableStressPromptCard(
+                                                                  word:
+                                                                      quest
+                                                                          .word ??
+                                                                      "",
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  isDark:
+                                                                      isDark,
                                                                 ),
-                                                              )
-                                                            : SyllableBlockVisualizer(
-                                                                syllables:
-                                                                    syllables,
-                                                                correctIndex:
-                                                                    quest
-                                                                        .correctAnswerIndex ??
-                                                                    0,
-                                                                color: theme
-                                                                    .primaryColor,
-                                                                isDark: isDark,
-                                                                isAnswered:
-                                                                    _isAnswered
-                                                                        .value ||
-                                                                    _isFirstStagePassed
-                                                                        .value,
-                                                                selectedIndex:
-                                                                    _selectedIndex
-                                                                        .value,
-                                                                onPadTap:
-                                                                    _onPadTap,
                                                               ),
-                                                        SizedBox(
-                                                          height: gapBottom,
-                                                        ),
-                                                      ],
+                                                            ),
+                                                          )
+                                                        : SyllableStressPromptCard(
+                                                            word:
+                                                                quest.word ??
+                                                                "",
+                                                            color: theme
+                                                                .primaryColor,
+                                                            isDark: isDark,
+                                                          ),
+                                                    SizedBox(height: gapPrompt),
+
+                                                    SyllableStressPulseSpeaker(
+                                                      text:
+                                                          quest.textToSpeak ??
+                                                          "",
+                                                      color: theme.primaryColor,
+                                                      onPlayTts: _playTts,
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-
-                                              SizedBox(
-                                                height:
-                                                    (_isFirstStagePassed
-                                                            .value &&
-                                                        !_isAnswered.value)
-                                                    ? 380.h
-                                                    : 160.h,
-                                              ),
-                                            ],
+                                                Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: gapSpeaker,
+                                                    ),
+                                                    isCompact
+                                                        ? SizedBox(
+                                                            height: 110.h,
+                                                            child: FittedBox(
+                                                              fit: BoxFit
+                                                                  .scaleDown,
+                                                              child: SizedBox(
+                                                                width:
+                                                                    maxWidth -
+                                                                    48.w,
+                                                                child: SyllableBlockVisualizer(
+                                                                  syllables:
+                                                                      syllables,
+                                                                  correctIndex:
+                                                                      quest
+                                                                          .correctAnswerIndex ??
+                                                                      0,
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  isDark:
+                                                                      isDark,
+                                                                  isAnswered:
+                                                                      _isAnswered
+                                                                          .value ||
+                                                                      _isFirstStagePassed
+                                                                          .value,
+                                                                  selectedIndex:
+                                                                      _selectedIndex
+                                                                          .value,
+                                                                  onPadTap:
+                                                                      _onPadTap,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          )
+                                                        : SyllableBlockVisualizer(
+                                                            syllables:
+                                                                syllables,
+                                                            correctIndex:
+                                                                quest
+                                                                    .correctAnswerIndex ??
+                                                                0,
+                                                            color: theme
+                                                                .primaryColor,
+                                                            isDark: isDark,
+                                                            isAnswered:
+                                                                _isAnswered
+                                                                    .value ||
+                                                                _isFirstStagePassed
+                                                                    .value,
+                                                            selectedIndex:
+                                                                _selectedIndex
+                                                                    .value,
+                                                            onPadTap: _onPadTap,
+                                                          ),
+                                                    SizedBox(height: gapBottom),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
+
+                                          SizedBox(
+                                            height:
+                                                (_isFirstStagePassed.value &&
+                                                    !_isAnswered.value)
+                                                ? 40.h
+                                                : 160.h,
+                                          ),
+                                        ],
                                       ),
                                     ),
-
-                                    if (_isFirstStagePassed.value &&
-                                        !_isAnswered.value)
-                                      SliverToBoxAdapter(
-                                        child: Column(
-                                          children: [
-                                            if (_isFirstStagePassed.value &&
-                                                !_isAnswered.value)
-                                              SpeakToConfirmOverlay(
-                                                expectedText: quest.word ?? "",
-                                                displayText:
-                                                    "Speak the word with the correct stress:\n${quest.word ?? ""}",
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                onConfirmed: () =>
-                                                    _submitVerbalEvaluation(
-                                                      true,
-                                                    ),
-                                                onSkipped: () =>
-                                                    _submitVerbalEvaluation(
-                                                      false,
-                                                    ),
-                                                isPositioned: false,
-                                              ),
-
-                                            SizedBox(height: 60.h),
-                                          ],
-                                        ),
-                                      ),
-                                  ],
+                                  ),
                                 ),
-                              );
-                            },
-                          ),
-                        ],
+
+                                if (_isFirstStagePassed.value &&
+                                    !_isAnswered.value)
+                                  SliverToBoxAdapter(
+                                    child: Column(
+                                      children: [
+                                        if (_isFirstStagePassed.value &&
+                                            !_isAnswered.value)
+                                          SpeakToConfirmOverlay(
+                                            expectedText: quest.word ?? "",
+                                            displayText:
+                                                "Speak the word with the correct stress:\n${quest.word ?? ""}",
+                                            primaryColor: theme.primaryColor,
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(true),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(false),
+                                            isPositioned: false,
+                                          ),
+
+                                        SizedBox(height: 60.h),
+                                      ],
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
               );
             },
