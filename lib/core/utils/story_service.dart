@@ -696,11 +696,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'pitchmodulation': [
       "",
-      "Excellent start! Your understanding of pitch modulation is growing.",
-      "Your progress in pitch modulation is genuinely impressive.",
-      "Amazing! You manipulate pitch modulation with natural ease.",
-      "Centurion! You have conquered the complexities of pitch modulation.",
-      "Level 200 reached! Your grasp of pitch modulation is legendary.",
+      "Great start! You're getting the hang of making your voice match your emotion.",
+      "Nice work! Your pitch is sounding a lot more natural.",
+      "Halfway to 100! You're really mastering how pitch changes meaning.",
+      "100 levels cleared! Your control over pitch modulation is absolutely fantastic.",
+      "Level 200 reached! You naturally shift your pitch like a true native speaker. Amazing work!",
     ],
     'connectedspeech': [
       "",

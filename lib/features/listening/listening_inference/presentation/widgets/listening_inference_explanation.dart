@@ -20,21 +20,14 @@ class ListeningInferenceExplanation extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-          width: 1.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.lightbulb_outline_rounded,
-                color: color,
-                size: 20.r,
-              ),
+              Icon(Icons.lightbulb_outline_rounded, color: color, size: 20.r),
               SizedBox(width: 8.w),
               Text(
                 "WHY?",

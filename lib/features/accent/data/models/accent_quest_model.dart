@@ -60,6 +60,7 @@ class AccentQuestModel extends AccentQuest {
     super.dialectRegion,
     super.phenomenonType,
     super.spokenForm,
+    super.meaningShift,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -170,6 +171,7 @@ class AccentQuestModel extends AccentQuest {
       dialectRegion: map['dialectRegion'] as String?,
       phenomenonType: map['phenomenonType'] as String?,
       spokenForm: map['spokenForm'] as String?,
+      meaningShift: getString(map['meaningShift']),
     );
   }
 
@@ -229,6 +231,7 @@ class AccentQuestModel extends AccentQuest {
       if (dialectRegion != null) 'dialectRegion': dialectRegion,
       if (phenomenonType != null) 'phenomenonType': phenomenonType,
       if (spokenForm != null) 'spokenForm': spokenForm,
+      if (meaningShift != null) 'meaningShift': meaningShift,
     };
   }
 }

@@ -40,6 +40,7 @@ class AccentQuest extends GameQuest {
   final String? dialectRegion;
   final String? phenomenonType;
   final String? spokenForm;
+  final String? meaningShift;
 
   const AccentQuest({
     required super.id,
@@ -96,6 +97,7 @@ class AccentQuest extends GameQuest {
     this.dialectRegion,
     this.phenomenonType,
     this.spokenForm,
+    this.meaningShift,
     super.targetWord,
     super.question,
     super.sentence,
@@ -160,6 +162,7 @@ class AccentQuest extends GameQuest {
     String? dialectRegion,
     String? phenomenonType,
     String? spokenForm,
+    String? meaningShift,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -218,6 +221,7 @@ class AccentQuest extends GameQuest {
       dialectRegion: dialectRegion ?? this.dialectRegion,
       phenomenonType: phenomenonType ?? this.phenomenonType,
       spokenForm: spokenForm ?? this.spokenForm,
+      meaningShift: meaningShift ?? this.meaningShift,
     );
   }
 
@@ -263,5 +267,6 @@ class AccentQuest extends GameQuest {
     dialectRegion,
     phenomenonType,
     spokenForm,
+    meaningShift,
   ];
 }

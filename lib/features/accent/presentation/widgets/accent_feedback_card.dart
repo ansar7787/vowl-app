@@ -233,6 +233,15 @@ class AccentFeedbackCard extends StatelessWidget {
                       titleFallback: 'Stress Rule',
                       rule: state.currentQuest.stressRule!,
                     ),
+                  if (state.currentQuest.meaningShift != null)
+                    (
+                      icon: Icons.compare_arrows_rounded,
+                      capsKey: 'games.meaning_shift_caps',
+                      capsFallback: 'MEANING SHIFT',
+                      titleKey: 'games.meaning_shift',
+                      titleFallback: 'Meaning Shift',
+                      rule: state.currentQuest.meaningShift!,
+                    ),
                 ]
                 .map(
                   (ruleData) => Padding(

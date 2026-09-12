@@ -17,6 +17,54 @@ import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_dial_control.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
+class PitchModulationState {
+  final bool isAnswered;
+  final bool? isCorrect;
+  final bool showConfetti;
+  final double dialRotation;
+  final bool isDragging;
+  final int? selectedIndex;
+  final bool isFirstStagePassed;
+  final int spokenMeaningsCount;
+
+  const PitchModulationState({
+    this.isAnswered = false,
+    this.isCorrect,
+    this.showConfetti = false,
+    this.dialRotation = 0.0,
+    this.isDragging = false,
+    this.selectedIndex,
+    this.isFirstStagePassed = false,
+    this.spokenMeaningsCount = 0,
+  });
+
+  PitchModulationState copyWith({
+    bool? isAnswered,
+    bool? isCorrect,
+    bool? showConfetti,
+    double? dialRotation,
+    bool? isDragging,
+    int? selectedIndex,
+    bool? isFirstStagePassed,
+    int? spokenMeaningsCount,
+    bool clearCorrect = false,
+    bool clearSelectedIndex = false,
+  }) {
+    return PitchModulationState(
+      isAnswered: isAnswered ?? this.isAnswered,
+      isCorrect: clearCorrect ? null : (isCorrect ?? this.isCorrect),
+      showConfetti: showConfetti ?? this.showConfetti,
+      dialRotation: dialRotation ?? this.dialRotation,
+      isDragging: isDragging ?? this.isDragging,
+      selectedIndex: clearSelectedIndex
+          ? null
+          : (selectedIndex ?? this.selectedIndex),
+      isFirstStagePassed: isFirstStagePassed ?? this.isFirstStagePassed,
+      spokenMeaningsCount: spokenMeaningsCount ?? this.spokenMeaningsCount,
+    );
+  }
+}
+
 class PitchModulationScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -37,27 +85,16 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
 
   int _lastProcessedIndex = -1;
   int _lastLives = 3;
-  final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
-  final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
-  final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
-  final ValueNotifier<double> _dialRotation = ValueNotifier(0.0);
-  final ValueNotifier<bool> _isDragging = ValueNotifier(false);
-  final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
-  final ValueNotifier<bool> _isFirstStagePassed = ValueNotifier(false);
-  final ValueNotifier<int> _spokenMeaningsCount = ValueNotifier(0);
   AccentQuest? _lastQuest;
+
+  final ValueNotifier<PitchModulationState> _state = ValueNotifier(
+    const PitchModulationState(),
+  );
 
   @override
   void dispose() {
     _scrollController.dispose();
-    _isAnswered.dispose();
-    _isCorrect.dispose();
-    _showConfetti.dispose();
-    _dialRotation.dispose();
-    _isDragging.dispose();
-    _selectedIndex.dispose();
-    _isFirstStagePassed.dispose();
-    _spokenMeaningsCount.dispose();
+    _state.dispose();
     super.dispose();
   }
 
@@ -87,57 +124,73 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
-    _isDragging.value = true;
-    _dialRotation.value = (_dialRotation.value - details.delta.dy / 150.0)
-        .clamp(-1.0, 1.0);
+    final state = _state.value;
+    if (state.isAnswered || state.isFirstStagePassed) return;
+
+    // Increased sensitivity so it tracks 1:1 with the physical track height
+    double newRotation = (state.dialRotation - details.delta.dy / 75.0).clamp(
+      -1.0,
+      1.0,
+    );
+
+    _state.value = state.copyWith(isDragging: true, dialRotation: newRotation);
 
     // Auto-lock when reaching ends
-    if (_dialRotation.value < -0.8) {
+    if (newRotation < -0.8) {
       _submitChoice(0, correct);
-    } else if (_dialRotation.value > 0.8) {
+    } else if (newRotation > 0.8) {
       _submitChoice(1, correct);
     }
   }
 
   void _onDialRelease() {
-    if (_isAnswered.value || _isFirstStagePassed.value || !_isDragging.value) {
+    final state = _state.value;
+    if (state.isAnswered || state.isFirstStagePassed || !state.isDragging) {
       return;
     }
-    _isDragging.value = false;
-    if (!_isAnswered.value) {
-      _dialRotation.value = 0.0;
-    }
+
+    _state.value = state.copyWith(
+      isDragging: false,
+      dialRotation: !state.isAnswered ? 0.0 : state.dialRotation,
+    );
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered.value || _isFirstStagePassed.value) return;
-    _selectedIndex.value = index;
-    _dialRotation.value = index == 0 ? -0.8 : 0.8;
-    _isDragging.value = false;
+    final state = _state.value;
+    if (state.isAnswered || state.isFirstStagePassed) return;
 
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      _isFirstStagePassed.value = true;
+      _state.value = state.copyWith(
+        selectedIndex: index,
+        dialRotation: index == 0 ? -0.8 : 0.8,
+        isDragging: false,
+        isFirstStagePassed: true,
+      );
       _scrollToBottom();
       // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      _isAnswered.value = true;
-      _isCorrect.value = false;
+      _state.value = state.copyWith(
+        selectedIndex: index,
+        dialRotation: index == 0 ? -0.8 : 0.8,
+        isDragging: false,
+        isAnswered: true,
+        isCorrect: false,
+      );
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
   void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered.value) return;
+    final state = _state.value;
+    if (state.isAnswered) return;
 
-    _isAnswered.value = true;
-    _isCorrect.value = nailedIt;
+    _state.value = state.copyWith(isAnswered: true, isCorrect: nailedIt);
 
     if (nailedIt) {
       _hapticService.success();
@@ -162,15 +215,10 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (!state.answerStatus.isAnswered && _isAnswered.value)) {
+              (!state.answerStatus.isAnswered && _state.value.isAnswered)) {
             _lastProcessedIndex = state.currentIndex;
-            _isAnswered.value = false;
-            _isCorrect.value = null;
-            _dialRotation.value = 0.0;
-            _selectedIndex.value = null;
-            _isDragging.value = false;
-            _isFirstStagePassed.value = false;
-            _spokenMeaningsCount.value = 0;
+            _state.value = const PitchModulationState(); // Reset state entirely
+
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
             if (quest != null) {
@@ -187,7 +235,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
           _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
-          _showConfetti.value = true;
+          _state.value = _state.value.copyWith(showConfetti: true);
           GameDialogHelper.showCompletion(
             context,
             xp: state.xpEarned,
@@ -208,24 +256,15 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: ListenableBuilder(
-            listenable: Listenable.merge([
-              _isAnswered,
-              _isCorrect,
-              _showConfetti,
-              _dialRotation,
-              _isDragging,
-              _selectedIndex,
-              _isFirstStagePassed,
-              _spokenMeaningsCount,
-            ]),
-            builder: (context, _) {
+          child: ValueListenableBuilder<PitchModulationState>(
+            valueListenable: _state,
+            builder: (context, uiState, _) {
               return AccentBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
-                isAnswered: _isAnswered.value,
-                isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                isAnswered: uiState.isAnswered,
+                isCorrect: uiState.isCorrect,
+                showConfetti: uiState.showConfetti,
                 onContinue: () =>
                     context.read<AccentBloc>().add(NextQuestion()),
                 onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
@@ -270,13 +309,13 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!_isFirstStagePassed.value)
+                              physics: (!uiState.isFirstStagePassed)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
                               slivers: [
                                 SliverToBoxAdapter(
                                   child: IgnorePointer(
-                                    ignoring: _isFirstStagePassed.value,
+                                    ignoring: uiState.isFirstStagePassed,
                                     child: ConstrainedBox(
                                       constraints: BoxConstraints(
                                         minHeight: constraints.maxHeight,
@@ -299,9 +338,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                                     PitchModulationInstruction(
                                                       color: theme.primaryColor,
                                                       instruction:
-                                                          _isFirstStagePassed
-                                                              .value
-                                                          ? "Great job! Now record yourself saying the word."
+                                                          uiState
+                                                              .isFirstStagePassed
+                                                          ? "Great job! Now practice saying it with both meanings."
                                                           : quest.instruction,
                                                     ),
                                                     SizedBox(
@@ -331,6 +370,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                                     SizedBox(
                                                       height: gapSpeaker,
                                                     ),
+                                                    // Dial Control is now fully driven by uiState
                                                     PitchModulationDialControl(
                                                       options: options,
                                                       correctIndex:
@@ -340,15 +380,15 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
-                                                              .value,
+                                                          uiState.isAnswered ||
+                                                          uiState
+                                                              .isFirstStagePassed,
                                                       isDragging:
-                                                          _isDragging.value,
+                                                          uiState.isDragging,
                                                       dialRotation:
-                                                          _dialRotation.value,
+                                                          uiState.dialRotation,
                                                       selectedIndex:
-                                                          _selectedIndex.value,
+                                                          uiState.selectedIndex,
                                                       onDialRotate:
                                                           _onDialRotate,
                                                       onDialRelease:
@@ -356,7 +396,6 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                                       onSubmitChoice:
                                                           _submitChoice,
                                                     ),
-
                                                     SizedBox(height: gapBottom),
                                                   ],
                                                 ),
@@ -366,8 +405,8 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
 
                                           SizedBox(
                                             height:
-                                                (_isFirstStagePassed.value &&
-                                                    !_isAnswered.value)
+                                                (uiState.isFirstStagePassed &&
+                                                    !uiState.isAnswered)
                                                 ? 40.h
                                                 : 160.h,
                                           ),
@@ -377,37 +416,70 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                   ),
                                 ),
 
-                                if (_isFirstStagePassed.value &&
-                                    !_isAnswered.value)
+                                if (uiState.isFirstStagePassed &&
+                                    !uiState.isAnswered)
                                   SliverToBoxAdapter(
                                     child: Column(
                                       children: [
-                                        if (_isFirstStagePassed.value &&
-                                            !_isAnswered.value)
-                                          SpeakToConfirmOverlay(
-                                            expectedText:
-                                                quest.textToSpeak ?? "",
-                                            displayText:
-                                                '${quest.textToSpeak ?? ""}\n\n(Meaning: ${options[_spokenMeaningsCount.value]})',
-                                            primaryColor: theme.primaryColor,
-                                            isPositioned: false,
-                                            onConfirmed: () {
-                                              if (_spokenMeaningsCount.value ==
-                                                  0) {
-                                                _spokenMeaningsCount.value = 1;
-                                                _soundService.playCorrect();
-                                              } else {
-                                                context.read<AccentBloc>().add(
-                                                  const AccentSpeakConfirmed(
-                                                    10,
-                                                  ),
-                                                );
-                                                _submitVerbalEvaluation(true);
+                                        if (uiState.isFirstStagePassed &&
+                                            !uiState.isAnswered) ...[
+                                          Builder(
+                                            builder: (context) {
+                                              String currentOption =
+                                                  options[uiState
+                                                      .spokenMeaningsCount];
+                                              String currentMeaning =
+                                                  currentOption;
+                                              if (currentOption.contains(
+                                                    " (",
+                                                  ) &&
+                                                  currentOption.endsWith(")")) {
+                                                currentMeaning = currentOption
+                                                    .split(" (")[1];
+                                                currentMeaning = currentMeaning
+                                                    .substring(
+                                                      0,
+                                                      currentMeaning.length - 1,
+                                                    );
                                               }
+
+                                              return SpeakToConfirmOverlay(
+                                                expectedText:
+                                                    quest.textToSpeak ?? "",
+                                                displayText:
+                                                    '${quest.textToSpeak ?? ""}\n\n(Meaning: $currentMeaning)',
+                                                primaryColor:
+                                                    theme.primaryColor,
+                                                isPositioned: false,
+                                                onConfirmed: () {
+                                                  if (uiState
+                                                          .spokenMeaningsCount ==
+                                                      0) {
+                                                    _state.value = _state.value
+                                                        .copyWith(
+                                                          spokenMeaningsCount:
+                                                              1,
+                                                        );
+                                                    _soundService.playCorrect();
+                                                  } else {
+                                                    context.read<AccentBloc>().add(
+                                                      const AccentSpeakConfirmed(
+                                                        10,
+                                                      ),
+                                                    );
+                                                    _submitVerbalEvaluation(
+                                                      true,
+                                                    );
+                                                  }
+                                                },
+                                                onSkipped: () =>
+                                                    _submitVerbalEvaluation(
+                                                      false,
+                                                    ),
+                                              );
                                             },
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(false),
                                           ),
+                                        ],
 
                                         SizedBox(height: 60.h),
                                       ],

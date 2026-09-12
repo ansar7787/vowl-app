@@ -20,8 +20,8 @@ class PitchModulationPulseSpeaker extends StatelessWidget {
     return ScaleButton(
       onTap: () => onPlayTts(text),
       child: Container(
-        width: 80.r,
-        height: 80.r,
+        width: 96.r,
+        height: 96.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color.withValues(alpha: 0.1),
@@ -41,15 +41,21 @@ class PitchModulationPulseSpeaker extends StatelessWidget {
                     end: const Offset(1.2, 1.2),
                   ),
               SizedBox(height: 6.h),
-              Text(
-                "HEAR\nMODULATION",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: color,
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.w),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    "HEAR\nMODULATION",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: color,
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.w800,
+                      height: 1.1,
+                    ),
+                  ),
                 ),
               ),
             ],

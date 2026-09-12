@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SoundImageMatchInstruction extends StatelessWidget {
-
   String _shortenInstruction(String text) {
     if (text.toLowerCase().contains('tap the picture')) {
       return 'LISTEN & MATCH';
     }
     return text.toUpperCase();
   }
+
   final Color color;
   final String instruction;
 

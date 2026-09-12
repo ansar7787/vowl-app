@@ -56,87 +56,100 @@ class PitchModulationDialControl extends StatelessWidget {
   }
 
   Widget _buildVerticalFader(int correct, Color color, bool isDark) {
-    return GestureDetector(
-      onPanUpdate: (details) => onDialRotate(details, correct),
-      onPanEnd: (_) => onDialRelease(),
-      child: Container(
-        height: 180.h,
-        width: 60.w,
-        decoration: BoxDecoration(
-          color: isDark ? Colors.black45 : Colors.grey.shade200,
-          borderRadius: BorderRadius.circular(30.r),
-          border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 5,
-              offset: Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // Center track line
-            Container(
-              width: 4.w,
-              height: 150.h,
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.3),
-                borderRadius: BorderRadius.circular(2.r),
+    return Semantics(
+      slider: true,
+      label: "Pitch modulation dial",
+      value: dialRotation > 0.5
+          ? "Top selected"
+          : (dialRotation < -0.5 ? "Bottom selected" : "Neutral"),
+      onIncrease: () => onSubmitChoice(1, correct),
+      onDecrease: () => onSubmitChoice(0, correct),
+      child: GestureDetector(
+        onPanUpdate: (details) => onDialRotate(details, correct),
+        onPanEnd: (_) => onDialRelease(),
+        child: Container(
+          height: 180.h,
+          width: 60.w,
+          decoration: BoxDecoration(
+            color: isDark ? Colors.black45 : Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(30.r),
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 5,
+                offset: Offset(0, 2),
               ),
-            ),
+            ],
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Center track line
+              Container(
+                width: 4.w,
+                height: 150.h,
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.3),
+                  borderRadius: BorderRadius.circular(2.r),
+                ),
+              ),
 
-            // Fader thumb
-            TweenAnimationBuilder<double>(
-              duration: isDragging
-                  ? Duration.zero
-                  : const Duration(milliseconds: 300),
-              curve: Curves.easeOutBack,
-              // dialRotation: -1.0 is bottom (Option 0), +1.0 is top (Option 1).
-              // Alignment.y goes from -1.0 (top) to +1.0 (bottom).
-              // Therefore, we negate dialRotation for Alignment.y.
-              tween: Tween<double>(begin: -dialRotation, end: -dialRotation),
-              builder: (context, rotation, child) {
-                return Align(
-                  alignment: Alignment(0, rotation),
-                  child: Container(
-                    width: 48.r,
-                    height: 48.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          isDark ? Colors.grey.shade700 : Colors.white,
-                          isDark ? Colors.grey.shade900 : Colors.grey.shade300,
-                        ],
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 8,
-                          offset: Offset(0, 4),
+              // Fader thumb
+              TweenAnimationBuilder<double>(
+                duration: isDragging
+                    ? Duration.zero
+                    : const Duration(milliseconds: 300),
+                curve: Curves.easeOutBack,
+                // dialRotation: -1.0 is bottom (Option 0), +1.0 is top (Option 1).
+                // Alignment.y goes from -1.0 (top) to +1.0 (bottom).
+                // Therefore, we negate dialRotation for Alignment.y.
+                tween: Tween<double>(begin: -dialRotation, end: -dialRotation),
+                builder: (context, rotation, child) {
+                  return Align(
+                    alignment: Alignment(0, rotation),
+                    child: Container(
+                      width: 48.r,
+                      height: 48.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            isDark ? Colors.grey.shade700 : Colors.white,
+                            isDark
+                                ? Colors.grey.shade900
+                                : Colors.grey.shade300,
+                          ],
                         ),
-                      ],
-                      border: Border.all(
-                        color: color.withValues(alpha: isDragging ? 0.8 : 0.4),
-                        width: 2,
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black45,
+                            blurRadius: 8,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
+                        border: Border.all(
+                          color: color.withValues(
+                            alpha: isDragging ? 0.8 : 0.4,
+                          ),
+                          width: 2,
+                        ),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.drag_handle_rounded,
+                          color: color,
+                          size: 24.r,
+                        ),
                       ),
                     ),
-                    child: Center(
-                      child: Icon(
-                        Icons.drag_handle_rounded,
-                        color: color,
-                        size: 24.r,
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ],
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -176,67 +189,75 @@ class PitchModulationDialControl extends StatelessWidget {
       subText = parts[1].substring(0, parts[1].length - 1);
     }
 
-    return ScaleButton(
+    return Semantics(
+      button: true,
+      label: "$mainText${subText.isNotEmpty ? ', Meaning: $subText' : ''}",
       onTap: () => onSubmitChoice(index, correctIndex),
-      child:
-          AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                decoration: BoxDecoration(
-                  color: cardColor,
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: borderColor,
-                    width: isSelected ? 3 : 2,
+      child: ScaleButton(
+        onTap: () => onSubmitChoice(index, correctIndex),
+        child:
+            AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 16.h,
                   ),
-                  boxShadow: [
-                    if (isSelected)
-                      BoxShadow(
-                        color: borderColor.withValues(alpha: 0.2),
-                        blurRadius: 15,
-                        spreadRadius: 2,
-                      ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      mainText,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold,
-                        color: textColor,
-                        letterSpacing: 1,
-                      ),
+                  decoration: BoxDecoration(
+                    color: cardColor,
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: borderColor,
+                      width: isSelected ? 3 : 2,
                     ),
-                    if (subText.isNotEmpty) ...[
-                      SizedBox(height: 4.h),
+                    boxShadow: [
+                      if (isSelected)
+                        BoxShadow(
+                          color: borderColor.withValues(alpha: 0.2),
+                          blurRadius: 15,
+                          spreadRadius: 2,
+                        ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Text(
-                        subText,
+                        mainText,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark
-                              ? Colors.grey.shade400
-                              : Colors.grey.shade700,
-                          height: 1.3,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: textColor,
+                          letterSpacing: 1,
                         ),
                       ),
+                      if (subText.isNotEmpty) ...[
+                        SizedBox(height: 4.h),
+                        Text(
+                          subText,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: isDark
+                                ? Colors.grey.shade400
+                                : Colors.grey.shade700,
+                            height: 1.3,
+                          ),
+                        ),
+                      ],
                     ],
-                  ],
+                  ),
+                )
+                .animate(target: isSelected ? 1 : 0)
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.02, 1.02),
+                  duration: 150.ms,
                 ),
-              )
-              .animate(target: isSelected ? 1 : 0)
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.02, 1.02),
-                duration: 150.ms,
-              ),
+      ),
     );
   }
 }

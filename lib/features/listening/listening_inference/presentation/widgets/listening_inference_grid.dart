@@ -51,9 +51,8 @@ class ListeningInferenceGrid extends StatelessWidget {
 
   Widget _buildOptionItem(BuildContext context, int index) {
     bool isSelected = selectedIndex == index;
-    bool isChoiceCorrect = isAnswered &&
-        index == correctAnswerIndex &&
-        isCorrectState == true;
+    bool isChoiceCorrect =
+        isAnswered && index == correctAnswerIndex && isCorrectState == true;
     bool isChoiceWrong = isAnswered && isSelected && isCorrectState == false;
 
     return ScaleButton(
@@ -64,8 +63,8 @@ class ListeningInferenceGrid extends StatelessWidget {
           color: isChoiceCorrect
               ? Colors.greenAccent
               : (isChoiceWrong
-                  ? Colors.redAccent
-                  : (isSelected ? color : const Color(0xFF1E1E24))),
+                    ? Colors.redAccent
+                    : (isSelected ? color : const Color(0xFF1E1E24))),
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(
             color: isChoiceCorrect || isChoiceWrong || isSelected
@@ -81,10 +80,11 @@ class ListeningInferenceGrid extends StatelessWidget {
             ),
             if (isSelected || isChoiceCorrect || isChoiceWrong)
               BoxShadow(
-                color: (isChoiceCorrect
-                        ? Colors.greenAccent
-                        : (isChoiceWrong ? Colors.redAccent : color))
-                    .withValues(alpha: 0.3),
+                color:
+                    (isChoiceCorrect
+                            ? Colors.greenAccent
+                            : (isChoiceWrong ? Colors.redAccent : color))
+                        .withValues(alpha: 0.3),
                 blurRadius: 15,
                 spreadRadius: 2,
               ),
@@ -97,8 +97,8 @@ class ListeningInferenceGrid extends StatelessWidget {
               isChoiceCorrect
                   ? Icons.verified_user_rounded
                   : (isChoiceWrong
-                      ? Icons.report_problem_rounded
-                      : Icons.bubble_chart_rounded),
+                        ? Icons.report_problem_rounded
+                        : Icons.bubble_chart_rounded),
               color: Colors.white,
               size: 18.r,
             ),

@@ -72,9 +72,7 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             curve: Curves.easeOutCubic,
-            constraints: BoxConstraints(
-              minHeight: isCompact ? 80.h : 110.h,
-            ),
+            constraints: BoxConstraints(minHeight: isCompact ? 80.h : 110.h),
             padding: EdgeInsets.symmetric(
               horizontal: 12.w,
               vertical: isCompact ? 6.h : 12.h,
