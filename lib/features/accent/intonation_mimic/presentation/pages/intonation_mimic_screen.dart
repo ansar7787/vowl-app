@@ -260,7 +260,6 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
               _showConfetti,
               _selectedIndex,
               _isFirstStagePassed,
-              _sliderValue,
             ]),
             builder: (context, _) {
               return AccentBaseLayout(
@@ -314,7 +313,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                             thickness: 4.w,
                             child: CustomScrollView(
                               controller: _scrollController,
-                              physics: (!_isFirstStagePassed.value)
+                              physics:
+                                  (!_isFirstStagePassed.value &&
+                                      remainingHeight > 50)
                                   ? const NeverScrollableScrollPhysics()
                                   : const BouncingScrollPhysics(),
                               slivers: [
@@ -447,40 +448,52 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                     SizedBox(
                                                       height: gapSpeaker,
                                                     ),
-                                                    IntonationMimicVerticalFader(
-                                                      options: options,
-                                                      correctIndex:
-                                                          quest
-                                                              .correctAnswerIndex ??
-                                                          0,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isAnswered:
-                                                          _isAnswered.value ||
-                                                          _isFirstStagePassed
-                                                              .value,
-                                                      selectedIndex:
-                                                          _selectedIndex.value,
-                                                      sliderValue:
-                                                          _sliderValue.value,
-                                                      topIndex: topIndex,
-                                                      bottomIndex: bottomIndex,
-                                                      onSubmitChoice:
-                                                          (idx, correct) =>
-                                                              _submitChoice(
-                                                                idx,
-                                                                correct,
-                                                                topIndex,
-                                                                bottomIndex,
-                                                              ),
-                                                      onSliderUpdate:
-                                                          (val, correct) =>
-                                                              _onSliderUpdate(
-                                                                val,
-                                                                correct,
-                                                                topIndex,
-                                                                bottomIndex,
-                                                              ),
+                                                    ValueListenableBuilder<
+                                                      double
+                                                    >(
+                                                      valueListenable:
+                                                          _sliderValue,
+                                                      builder: (context, sliderValue, _) {
+                                                        return IntonationMimicVerticalFader(
+                                                          options: options,
+                                                          correctIndex:
+                                                              quest
+                                                                  .correctAnswerIndex ??
+                                                              0,
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                          isAnswered:
+                                                              _isAnswered
+                                                                  .value ||
+                                                              _isFirstStagePassed
+                                                                  .value,
+                                                          selectedIndex:
+                                                              _selectedIndex
+                                                                  .value,
+                                                          sliderValue:
+                                                              sliderValue,
+                                                          topIndex: topIndex,
+                                                          bottomIndex:
+                                                              bottomIndex,
+                                                          onSubmitChoice:
+                                                              (idx, correct) =>
+                                                                  _submitChoice(
+                                                                    idx,
+                                                                    correct,
+                                                                    topIndex,
+                                                                    bottomIndex,
+                                                                  ),
+                                                          onSliderUpdate:
+                                                              (val, correct) =>
+                                                                  _onSliderUpdate(
+                                                                    val,
+                                                                    correct,
+                                                                    topIndex,
+                                                                    bottomIndex,
+                                                                  ),
+                                                        );
+                                                      },
                                                     ),
 
                                                     SizedBox(height: gapBottom),

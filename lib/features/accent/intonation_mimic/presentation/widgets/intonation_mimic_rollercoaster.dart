@@ -22,7 +22,7 @@ class IntonationMimicRollercoaster extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 342.w,
-      height: 60.h,
+      height: 70.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: isDark
@@ -31,33 +31,51 @@ class IntonationMimicRollercoaster extends StatelessWidget {
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
       ),
-      child: Stack(
-        children: [
-          // Rails
-          Center(
-            child: CustomPaint(
-              size: Size(0.7.sw, 100.h),
-              painter: _TrackPainter(contour, color.withValues(alpha: 0.2)),
-            ),
-          ),
-          // Progress Glow
-          if (isRiding)
-            Center(
-              child: CustomPaint(
-                size: Size(0.7.sw, 100.h),
-                painter: _TrackPainter(contour, color, progress: cartPosition),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final width = constraints.maxWidth;
+          final height = constraints.maxHeight;
+          return Stack(
+            children: [
+              // Rails
+              Center(
+                child: CustomPaint(
+                  size: Size(width, height),
+                  painter: _TrackPainter(contour, color.withValues(alpha: 0.2)),
+                ),
               ),
-            ),
-          // Cart (Glowing Spaceship)
-          _buildCart(contour, color),
-        ],
+              // Progress Glow
+              if (isRiding)
+                Center(
+                  child: CustomPaint(
+                    size: Size(width, height),
+                    painter: _TrackPainter(
+                      contour,
+                      color,
+                      progress: cartPosition,
+                    ),
+                  ),
+                ),
+              // Cart (Glowing Spaceship)
+              _buildCart(contour, color, width, height),
+            ],
+          );
+        },
       ),
     );
   }
 
-  Widget _buildCart(List<int> contour, Color color) {
-    double posX = 0.12.sw + (cartPosition * 0.7.sw) - 20.w;
-    double posY = _getYForPosition(cartPosition, contour) * 40.h + 10.h;
+  Widget _buildCart(
+    List<int> contour,
+    Color color,
+    double width,
+    double height,
+  ) {
+    double posX = (cartPosition * width) - 18.r;
+    double posY = _getYForPosition(cartPosition, contour) * height - 18.r;
+    if (posX < 0) posX = 0;
+    if (posX > width - 36.r) posX = width - 36.r;
+    if (posY < 0) posY = 0;
 
     return Positioned(
       left: posX,

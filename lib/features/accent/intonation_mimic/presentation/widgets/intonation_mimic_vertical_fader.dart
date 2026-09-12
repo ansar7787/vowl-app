@@ -145,9 +145,17 @@ class IntonationMimicVerticalFader extends StatelessWidget {
           ),
           child: IgnorePointer(
             ignoring: isAnswered,
-            child: Slider(
-              value: sliderValue,
-              onChanged: (v) => onSliderUpdate(v, correct),
+            child: Semantics(
+              slider: true,
+              value: sliderValue >= 0.5
+                  ? options[topIndex]
+                  : options[bottomIndex],
+              increasedValue: options[topIndex],
+              decreasedValue: options[bottomIndex],
+              child: Slider(
+                value: sliderValue,
+                onChanged: (v) => onSliderUpdate(v, correct),
+              ),
             ),
           ),
         ),

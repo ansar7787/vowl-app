@@ -632,11 +632,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'intonationmimic': [
       "",
-      "Nice work! Conquering intonation is a huge step forward.",
-      "Your skills in intonation are becoming incredibly sharp.",
-      "Amazing! You manipulate intonation with natural ease.",
-      "Level 100! Your execution of intonation is flawless.",
-      "Level 200! You have transcended the limits of intonation.",
+      "Nice work! Getting the hang of English melody makes a huge difference.",
+      "Your ear for pitch is getting incredibly sharp.",
+      "Amazing! You're matching the speaker's rhythm with natural ease.",
+      "Level 100! Your spoken melody is perfectly on pitch and sounds completely natural.",
+      "Level 200! You've completely mastered the musical flow of everyday English.",
     ],
     'minimalpairs': [
       "",
