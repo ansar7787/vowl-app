@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
@@ -303,11 +304,14 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
 
                           return Column(
                             children: [
-                              Text(
+                              AutoSizeText(
                                 hasError
                                     ? 'Heard: "$spokenText"'
                                     : '"$spokenText"',
                                 textAlign: TextAlign.center,
+                                maxLines: 2,
+                                minFontSize: 8,
+                                overflow: TextOverflow.visible,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 14.sp,
@@ -317,7 +321,7 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                                       ? Colors.redAccent
                                       : (widget.isDark
                                             ? Colors.white70
-                                            : Colors.black87),
+                                            : Colors.black54),
                                 ),
                               ),
                               if (hasError)
@@ -370,10 +374,13 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                   ),
                 ),
               ),
-              child: Text(
+              child: AutoSizeText(
                 hasError
                     ? 'Did we mishear you? Evaluate manually'
                     : 'Evaluate myself manually',
+                maxLines: 1,
+                minFontSize: 8,
+                overflow: TextOverflow.visible,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,

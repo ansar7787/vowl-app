@@ -87,7 +87,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   String? _recordingPath;
   int _playbackSessionId = 0;
   bool _isProcessingAudioAction = false;
-  
+
   StreamSubscription<Amplitude>? _amplitudeSub;
 
   // Simulated waveform data for visual representation
@@ -175,18 +175,18 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
           _isRecording.value = true;
           _hasRecorded.value = false;
           _recordingPath = null;
-          
+
           _amplitudeSub?.cancel();
           _amplitudeSub = _audioRecorder
               .onAmplitudeChanged(const Duration(milliseconds: 50))
               .listen((Amplitude amp) {
-            // Amp max is usually 0, min is often -160. But actual speech happens between -50 and 0.
-            final double level = amp.current;
-            final double normalized = ((level + 50) / 50).clamp(0.0, 1.0);
-            if (mounted) {
-              _soundLevel.value = normalized;
-            }
-          });
+                // Amp max is usually 0, min is often -160. But actual speech happens between -50 and 0.
+                final double level = amp.current;
+                final double normalized = ((level + 50) / 50).clamp(0.0, 1.0);
+                if (mounted) {
+                  _soundLevel.value = normalized;
+                }
+              });
         }
       }
     } finally {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -466,8 +467,12 @@ class _SpeakingSelfEvaluationControlsState
                 ],
               ),
               SizedBox(height: 16.h),
-              Text(
+              AutoSizeText(
                 "Be honest! Did you match the native speaker?",
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                minFontSize: 6,
+                overflow: TextOverflow.visible,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
@@ -502,8 +507,11 @@ class _SpeakingSelfEvaluationControlsState
           children: [
             Icon(icon, color: color, size: 24.sp),
             SizedBox(height: 4.h),
-            Text(
+            AutoSizeText(
               title,
+              maxLines: 1,
+              minFontSize: 8,
+              overflow: TextOverflow.visible,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
