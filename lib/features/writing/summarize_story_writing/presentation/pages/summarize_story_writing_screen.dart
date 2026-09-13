@@ -21,8 +21,8 @@ import 'package:vowl/features/writing/summarize_story_writing/presentation/widge
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_film_strip.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_frame_vault.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
 class SummarizeStoryWritingScreen extends StatefulWidget {
   final int level;

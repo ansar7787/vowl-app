@@ -17,7 +17,7 @@ import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_pain
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat_bubbles.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_origin_card.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;

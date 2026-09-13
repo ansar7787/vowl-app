@@ -15,7 +15,7 @@ import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_floating_passage.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;

@@ -18,8 +18,8 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_instruction.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_jar.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_canvas.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
-import 'package:vowl/core/presentation/game_mechanics/blind_dictation_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/blind_dictation_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 

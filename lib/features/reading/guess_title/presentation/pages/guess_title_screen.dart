@@ -16,7 +16,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_result.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_options.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 
 class GuessTitleScreen extends StatefulWidget {

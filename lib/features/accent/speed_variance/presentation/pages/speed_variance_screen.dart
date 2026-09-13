@@ -16,8 +16,8 @@ import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_v
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_pulse_speaker.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_tempo_dial.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_speed_toggle.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class SpeedVarianceScreen extends StatefulWidget {

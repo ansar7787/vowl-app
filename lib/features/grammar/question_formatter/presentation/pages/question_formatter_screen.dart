@@ -16,7 +16,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_instruction.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_crank.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class QuestionFormatterScreen extends StatefulWidget {
   final int level;

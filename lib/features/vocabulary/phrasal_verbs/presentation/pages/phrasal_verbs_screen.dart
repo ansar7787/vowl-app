@@ -20,7 +20,7 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phra
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_literal_comparison.dart';
-import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
+import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
 class PhrasalVerbsScreen extends StatefulWidget {
   final int level;

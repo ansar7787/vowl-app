@@ -20,7 +20,7 @@ import 'package:vowl/features/writing/writing_email/presentation/widgets/writing
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_hex_slot.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_data_stream.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_keyboard_input.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class WritingEmailScreen extends StatefulWidget {
   final int level;

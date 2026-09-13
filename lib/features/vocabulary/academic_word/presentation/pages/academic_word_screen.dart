@@ -17,7 +17,7 @@ import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/acad
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_thesis_paper.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_shard.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_field_collocations.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────

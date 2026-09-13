@@ -15,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_insertion_instruction.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_floating_orb.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class ArticleInsertionScreen extends StatefulWidget {
   final int level;

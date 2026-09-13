@@ -15,7 +15,7 @@ import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_instruction.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_hologram_console.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_region_map.dart';
-import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
 class DialectDrillScreen extends StatefulWidget {
   final int level;

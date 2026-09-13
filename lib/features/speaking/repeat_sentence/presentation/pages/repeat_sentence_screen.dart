@@ -16,7 +16,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_audition_card.dart';
-import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -42,6 +42,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
+  final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _autoplayTimer;
   final ScrollController _scrollController = ScrollController();
 
@@ -59,14 +60,33 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
+    _ttsFinished.dispose();
     _scrollController.dispose();
     super.dispose();
   }
 
-  void _triggerAutoPlay(GameQuest quest) {
+  Future<void> _triggerAutoPlay(GameQuest quest) async {
     if (quest.textToSpeak != null) {
-      _soundService.playTts(quest.textToSpeak!);
+      try {
+        await _soundService.playTts(quest.textToSpeak!);
+      } catch (_) {}
     }
+    if (mounted) {
+      _ttsFinished.value = true;
+      _scrollToBottom();
+    }
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
@@ -120,6 +140,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
+            _ttsFinished.value = false;
             _autoplayTimer?.cancel();
             _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -161,6 +182,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
               _isAnswered,
               _isCorrect,
               _showConfetti,
+              _ttsFinished,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
@@ -170,72 +192,77 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
+                disablePadding:
+                    true, // Fixes "width not fully used" and "scroll bar not edge"
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        RepeatSentenceInstruction(
-                                          primaryColor: theme.primaryColor,
-                                          instruction:
-                                              InstructionHelper.getInstruction(
-                                                quest,
-                                              ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        RepeatSentenceAuditionCard(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onPlayTts: () => _soundService
-                                              .playTts(quest.textToSpeak ?? ""),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: SizedBox(
-                                    height: !_isAnswered.value ? 380.h : 60.h,
-                                  ),
-                                ),
-                              ],
-                            ),
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
                           ),
-                          if (!_isAnswered.value)
-                            ShadowPlaybackCompare(
-                              expectedText: quest.textToSpeak ?? "",
-                              primaryColor: theme.primaryColor,
-                              isPositioned: true,
-                              onConfirmed: () =>
-                                  _submitVerbalEvaluation(true, quest),
-                              onSkipped: () =>
-                                  _submitVerbalEvaluation(false, quest),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _ttsFinished.value,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      RepeatSentenceInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      RepeatSentenceAuditionCard(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onPlayTts: () => _soundService.playTts(
+                                          quest.textToSpeak ?? "",
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                        ],
+                            if (!_isAnswered.value && _ttsFinished.value)
+                              SliverToBoxAdapter(
+                                child: ShadowPlaybackCompare(
+                                  expectedText: quest.textToSpeak ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  showExpectedText: false,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true, quest),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false, quest),
+                                ),
+                              ),
+                            SliverToBoxAdapter(
+                              child: SizedBox(
+                                height: 120.h,
+                              ), // Provide enough padding for feedback card
+                            ),
+                          ],
+                        ),
                       ),
               );
             },

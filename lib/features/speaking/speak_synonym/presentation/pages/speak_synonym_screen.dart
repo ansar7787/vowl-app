@@ -13,7 +13,7 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -47,6 +47,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
+  final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
+  Timer? _ttsTimer;
+
   late AnimationController _swingController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   final ScrollController _scrollController = ScrollController();
@@ -77,7 +80,21 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     _showConfetti.dispose();
     _timeVal.dispose();
     _scrollController.dispose();
+    _ttsFinished.dispose();
+    _ttsTimer?.cancel();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _triggerAutoPlay(GameQuest quest) {
@@ -148,8 +165,16 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
             _isAnswered.value = false;
             _isCorrect.value = null;
             _bloomProgress.value = 0.0;
+            _ttsFinished.value = false;
+            _ttsTimer?.cancel();
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+            _ttsTimer = Timer(const Duration(seconds: 3), () {
+              if (mounted) {
+                _ttsFinished.value = true;
+                _scrollToBottom();
+              }
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
@@ -185,10 +210,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
           );
         }
 
-        final expectedText = _acceptedSyns.isNotEmpty
-            ? _acceptedSyns.first
-            : "";
-
         return MediaQuery(
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
@@ -200,6 +221,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
               _showConfetti,
               _bloomProgress,
               _timeVal,
+              _ttsFinished,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
@@ -209,81 +231,86 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SpeakSynonymHeader(
-                                          primaryColor: theme.primaryColor,
-                                          instruction:
-                                              InstructionHelper.getInstruction(
-                                                quest,
-                                              ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        SpeakSynonymSentencePanel(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onPlayTts: () =>
-                                              _soundService.playTts(
-                                                (quest.textToSpeak ?? "")
-                                                    .replaceAll('*', ''),
-                                              ),
-                                        ),
-                                        SizedBox(height: 32.h),
-                                        SpeakSynonymGardenPanel(
-                                          bloomProgress: _bloomProgress.value,
-                                          primaryColor: theme.primaryColor,
-                                          isListening: false,
-                                          timeVal: _timeVal.value,
-                                          isDark: isDark,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: SizedBox(
-                                    height: !_isAnswered.value ? 380.h : 60.h,
-                                  ),
-                                ),
-                              ],
-                            ),
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
                           ),
-                          if (!_isAnswered.value)
-                            ShadowPlaybackCompare(
-                              expectedText: expectedText,
-                              primaryColor: theme.primaryColor,
-                              isPositioned: true,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _ttsFinished.value,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SpeakSynonymHeader(
+                                        primaryColor: theme.primaryColor,
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      SpeakSynonymSentencePanel(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onPlayTts: () => _soundService.playTts(
+                                          (quest.textToSpeak ?? "").replaceAll(
+                                            '*',
+                                            '',
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      SpeakSynonymGardenPanel(
+                                        bloomProgress: _bloomProgress.value,
+                                        primaryColor: theme.primaryColor,
+                                        isListening: false,
+                                        timeVal: _timeVal.value,
+                                        isDark: isDark,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                        ],
+                            if (_ttsFinished.value && !_isAnswered.value)
+                              SliverToBoxAdapter(
+                                child: SpeakToConfirmOverlay(
+                                  expectedText: _acceptedSyns.join(', '),
+                                  acceptedSynonyms: _acceptedSyns,
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  hideExpectedText: true,
+                                  title: 'SPEAK A SYNONYM',
+                                  subtitle: 'Say your answer aloud to confirm',
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                              ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          ],
+                        ),
                       ),
               );
             },

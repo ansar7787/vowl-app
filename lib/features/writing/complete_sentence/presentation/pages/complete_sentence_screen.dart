@@ -17,7 +17,7 @@ import 'package:vowl/features/writing/complete_sentence/presentation/widgets/com
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_ballista_ammo.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_trajectory_painter.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_keyboard_input.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_anagram_wrapper.dart';
 
 // ---------------------------------------------------------------------------
 // Immutable record for drag state â€” replaces two nullable Offset fields.

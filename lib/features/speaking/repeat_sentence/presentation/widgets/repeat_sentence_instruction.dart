@@ -28,7 +28,7 @@ class RepeatSentenceInstruction extends StatelessWidget {
               Icon(Icons.graphic_eq_rounded, size: 12.r, color: primaryColor),
               SizedBox(width: 8.w),
               Text(
-                "HOLD TO TRACE SOUND WAVE",
+                "TAP TO RECORD SOUND WAVE",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,

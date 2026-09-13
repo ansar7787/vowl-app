@@ -19,7 +19,7 @@ import 'package:vowl/features/writing/correction_writing/presentation/widgets/co
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_sentence_card.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_vault.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_keyboard_input.dart';
-import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
 class CorrectionWritingScreen extends StatefulWidget {
   final int level;

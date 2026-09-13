@@ -19,7 +19,7 @@ import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sent
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_workbench.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_piece_pool.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_keyboard_input.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class SentenceBuilderScreen extends StatefulWidget {
   final int level;

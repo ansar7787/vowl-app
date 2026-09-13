@@ -13,7 +13,7 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -79,6 +79,18 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     super.dispose();
   }
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   void _handleScratchUpdate(double delta) {
     if (_scratchProgress.value >= 1.0) return;
     _scratchProgress.value += delta;
@@ -86,6 +98,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
       _scratchProgress.value = 1.0;
       _hapticService.selection();
       _soundService.playTts(_targetExpression);
+      _scrollToBottom();
     }
   }
 
@@ -193,153 +206,135 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                 level: widget.level,
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        DailyExpressionHeader(
-                                          primaryColor: theme.primaryColor,
-                                          instruction: context.tr(
-                                            'games.daily_expression_instruction',
-                                            fallback: 'Speak the daily idiom',
-                                          ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        if (hintUsed && quest.hint != null)
-                                          Container(
-                                                width: double.infinity,
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 16.w,
-                                                  vertical: 12.h,
-                                                ),
-                                                margin: EdgeInsets.only(
-                                                  bottom: 24.h,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: theme.primaryColor
-                                                      .withValues(alpha: 0.1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                        16.r,
-                                                      ),
-                                                  border: Border.all(
-                                                    color: theme.primaryColor
-                                                        .withValues(alpha: 0.3),
-                                                  ),
-                                                ),
-                                                child: Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .lightbulb_outline_rounded,
-                                                      color: theme.primaryColor,
-                                                      size: 18.r,
-                                                    ),
-                                                    SizedBox(width: 8.w),
-                                                    Expanded(
-                                                      child: Text(
-                                                        quest.hint!,
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 14.sp,
-                                                          color: isDark
-                                                              ? Colors.white70
-                                                              : Colors.black87,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              )
-                                              .animate()
-                                              .fadeIn(duration: 300.ms)
-                                              .slideY(begin: -0.1),
-                                        DailyExpressionScratchPanel(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          scratchProgress:
-                                              _scratchProgress.value,
-                                          isListening: false,
-                                          timeVal: _timeVal.value,
-                                          onPlayTts: () => _soundService
-                                              .playTts(quest.expression ?? ""),
-                                          onScratchUpdate: _handleScratchUpdate,
-                                        ),
-                                        SizedBox(height: 32.h),
-                                        if (_scratchProgress.value > 0.3)
-                                          DailyExpressionUsagePanel(
-                                                quest: quest,
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                isDark: isDark,
-                                                isListening: false,
-                                              )
-                                              .animate()
-                                              .fadeIn(duration: 300.ms)
-                                              .slideY(begin: 0.1),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: 16.h,
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        SizedBox(
-                                          height:
-                                              (!_isAnswered.value &&
-                                                  _scratchProgress.value >= 1.0)
-                                              ? 380.h
-                                              : 60.h,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
                           ),
-                          if (!_isAnswered.value &&
-                              _scratchProgress.value >= 1.0)
-                            SpeakToConfirmOverlay(
-                              expectedText: _targetExpression,
-                              primaryColor: theme.primaryColor,
-                              isPositioned: true,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _scratchProgress.value >= 1.0,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      DailyExpressionHeader(
+                                        primaryColor: theme.primaryColor,
+                                        instruction: context.tr(
+                                          'games.daily_expression_instruction',
+                                          fallback: 'Speak the daily idiom',
+                                        ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      if (hintUsed && quest.hint != null)
+                                        Container(
+                                              width: double.infinity,
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 16.w,
+                                                vertical: 12.h,
+                                              ),
+                                              margin: EdgeInsets.only(
+                                                bottom: 24.h,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.1),
+                                                borderRadius:
+                                                    BorderRadius.circular(16.r),
+                                                border: Border.all(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.3),
+                                                ),
+                                              ),
+                                              child: Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons
+                                                        .lightbulb_outline_rounded,
+                                                    color: theme.primaryColor,
+                                                    size: 18.r,
+                                                  ),
+                                                  SizedBox(width: 8.w),
+                                                  Expanded(
+                                                    child: Text(
+                                                      quest.hint!,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 14.sp,
+                                                        color: isDark
+                                                            ? Colors.white70
+                                                            : Colors.black87,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                            .animate()
+                                            .fadeIn(duration: 300.ms)
+                                            .slideY(begin: -0.1),
+                                      DailyExpressionScratchPanel(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        scratchProgress: _scratchProgress.value,
+                                        isListening: false,
+                                        timeVal: _timeVal.value,
+                                        onPlayTts: () => _soundService.playTts(
+                                          quest.expression ?? "",
+                                        ),
+                                        onScratchUpdate: _handleScratchUpdate,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      if (_scratchProgress.value > 0.3)
+                                        DailyExpressionUsagePanel(
+                                              quest: quest,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              isListening: false,
+                                            )
+                                            .animate()
+                                            .fadeIn(duration: 300.ms)
+                                            .slideY(begin: 0.1),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                        ],
+                            if (!_isAnswered.value &&
+                                _scratchProgress.value >= 1.0)
+                              SliverToBoxAdapter(
+                                child: ShadowPlaybackCompare(
+                                  expectedText: _targetExpression,
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  showExpectedText: false,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                              ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          ],
+                        ),
                       ),
               );
             },

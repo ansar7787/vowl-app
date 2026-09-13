@@ -17,7 +17,7 @@ import 'package:vowl/features/accent/connected_speech/presentation/widgets/conne
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_prompt_card.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_pulse_speaker.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_linker_cards.dart';
-import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
 class ConnectedSpeechScreen extends StatefulWidget {
   final int level;

@@ -17,7 +17,7 @@ import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_a
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/laser_bridge_painter.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class ReadAndMatchScreen extends StatefulWidget {
   final int level;

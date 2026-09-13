@@ -6,14 +6,19 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speaking_self_evaluation_controls.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// A self-evaluation overlay for speaking tasks.
 ///
 /// Uses [SpeakingSelfEvaluationControls] inside a floating bottom-sheet design.
 class SpeakToConfirmOverlay extends StatefulWidget {
   final String expectedText;
+  final List<String> acceptedSynonyms;
   final String? displayText;
+  final bool hideExpectedText;
+  final String title;
+  final String subtitle;
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
@@ -27,7 +32,11 @@ class SpeakToConfirmOverlay extends StatefulWidget {
   const SpeakToConfirmOverlay({
     super.key,
     required this.expectedText,
+    this.acceptedSynonyms = const [],
     this.displayText,
+    this.hideExpectedText = false,
+    this.title = 'NOW SAY IT',
+    this.subtitle = 'Speak the answer to confirm',
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
@@ -130,10 +139,13 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                               SizedBox(width: 12.w),
                               Expanded(
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      'NOW SAY IT',
+                                    AutoSizeText(
+                                      widget.title,
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      minFontSize: 10,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,
@@ -143,8 +155,11 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                                       ),
                                     ),
                                     SizedBox(height: 2.h),
-                                    Text(
-                                      'Speak the answer to confirm',
+                                    AutoSizeText(
+                                      widget.subtitle,
+                                      textAlign: TextAlign.center,
+                                      maxLines: 2,
+                                      minFontSize: 9,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 11.sp,
@@ -196,40 +211,43 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                           ),
                           SizedBox(height: 24.h),
 
-                          // ── Expected text display ──
-                          Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 16.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.02),
-                              borderRadius: BorderRadius.circular(16.r),
-                              border: Border.all(
-                                color: widget.primaryColor.withValues(
-                                  alpha: 0.15,
+                          if (!widget.hideExpectedText) ...[
+                            // ── Expected text display ──
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.02),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: widget.primaryColor.withValues(
+                                    alpha: 0.15,
+                                  ),
+                                ),
+                              ),
+                              child: Text(
+                                widget.displayText ?? widget.expectedText,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: textColor,
+                                  letterSpacing: 0.5,
                                 ),
                               ),
                             ),
-                            child: Text(
-                              widget.displayText ?? widget.expectedText,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 20.sp,
-                                fontWeight: FontWeight.w800,
-                                color: textColor,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 24.h),
+                            SizedBox(height: 24.h),
+                          ],
 
                           SpeakingSelfEvaluationControls(
                             expectedText: widget.expectedText,
+                            acceptedSynonyms: widget.acceptedSynonyms,
                             primaryColor: widget.primaryColor,
                             onConfirmed: () {
                               if (_isSubmitting.value) return;

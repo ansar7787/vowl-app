@@ -15,7 +15,7 @@ import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 import '../widgets/story_builder_narrative_tile.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class StoryBuilderScreen extends StatefulWidget {
   final int level;

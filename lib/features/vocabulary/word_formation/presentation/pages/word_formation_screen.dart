@@ -18,7 +18,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/morph_injection_rail.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/reaction_core.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/instruction_panel.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/controllers/word_formation_controller.dart';
 
 class WordFormationScreen extends StatefulWidget {

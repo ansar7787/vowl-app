@@ -14,7 +14,7 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -78,6 +78,18 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     }
   }
 
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
   void _onTiltDragged(DragUpdateDetails details, double trackWidth) {
     if (_isAnswered.value || _isSnapped.value) return;
 
@@ -91,11 +103,13 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
       _isSnapped.value = true;
       _soundService.playClick();
       _hapticService.selection();
+      _scrollToBottom();
     } else if (_tiltValue.value >= 0.85) {
       _tiltValue.value = 1.0;
       _isSnapped.value = true;
       _soundService.playClick();
       _hapticService.selection();
+      _scrollToBottom();
     }
   }
 
@@ -215,89 +229,91 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        YesNoSpeakingHeaderInstruction(
-                                          primaryColor: theme.primaryColor,
-                                          isSnapped: _isSnapped.value,
-                                          instruction:
-                                              InstructionHelper.getInstruction(
-                                                quest,
-                                              ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        YesNoSpeakingAuditionCard(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onPlayTts: () => _soundService
-                                              .playTts(quest.prompt ?? ""),
-                                        ),
-                                        SizedBox(height: 32.h),
-                                        YesNoSpeakingTiltArena(
-                                          tiltValue: _tiltValue.value,
-                                          isSnapped: _isSnapped.value,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onTiltDragged: _onTiltDragged,
-                                          onTiltDragEnd: () {
-                                            if (!_isSnapped.value) {
-                                              _tiltValue.value = 0.0;
-                                            }
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: SizedBox(
-                                    height:
-                                        (!_isAnswered.value && _isSnapped.value)
-                                        ? 380.h
-                                        : 60.h,
-                                  ),
-                                ),
-                              ],
-                            ),
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
                           ),
-                          if (_isSnapped.value && !_isAnswered.value)
-                            TypeToConfirmOverlay(
-                              expectedText: quest.sampleAnswer ?? "",
-                              primaryColor: theme.primaryColor,
-                              isPositioned: true,
-                              onConfirmed: () =>
-                                  _submitVerbalEvaluation(true, doTheyMatch),
-                              onSkipped: () =>
-                                  _submitVerbalEvaluation(false, doTheyMatch),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _isSnapped.value,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      YesNoSpeakingHeaderInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        isSnapped: _isSnapped.value,
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      YesNoSpeakingAuditionCard(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onPlayTts: () => _soundService.playTts(
+                                          quest.prompt ?? "",
+                                        ),
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      YesNoSpeakingTiltArena(
+                                        tiltValue: _tiltValue.value,
+                                        isSnapped: _isSnapped.value,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onTiltDragged: _onTiltDragged,
+                                        onTiltDragEnd: () {
+                                          if (!_isSnapped.value) {
+                                            _tiltValue.value = 0.0;
+                                          }
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                        ],
+                            if (_isSnapped.value && !_isAnswered.value)
+                              SliverToBoxAdapter(
+                                child: SpeakToConfirmOverlay(
+                                  expectedText: quest.sampleAnswer ?? "",
+                                  acceptedSynonyms:
+                                      quest.acceptedSynonyms ?? [],
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  onConfirmed: () => _submitVerbalEvaluation(
+                                    true,
+                                    doTheyMatch,
+                                  ),
+                                  onSkipped: () => _submitVerbalEvaluation(
+                                    false,
+                                    doTheyMatch,
+                                  ),
+                                ),
+                              ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          ],
+                        ),
                       ),
               );
             },

@@ -17,9 +17,9 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_instruction.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_pulse_zone.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_question_area.dart';
-import 'package:vowl/core/presentation/game_mechanics/reading_self_evaluation_card.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading/reading_self_evaluation_card.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
 class ReadingSpeedCheckScreen extends StatefulWidget {
   final int level;

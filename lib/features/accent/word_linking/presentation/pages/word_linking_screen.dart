@@ -15,7 +15,7 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_instruction.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_pulse_speaker.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_sentence_field.dart';
-import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
 class WordLinkingScreen extends StatefulWidget {

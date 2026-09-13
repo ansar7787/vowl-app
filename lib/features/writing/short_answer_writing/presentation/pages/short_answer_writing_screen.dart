@@ -21,7 +21,7 @@ import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_quill_prompt.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_booster_tokens.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_inkwell.dart';
-import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
+import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
 class ShortAnswerScreen extends StatefulWidget {
   final int level;

@@ -15,7 +15,7 @@ import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_lay
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
-import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
 // Extracted Optimized Widgets
 import '../widgets/context_clues_case_header.dart';

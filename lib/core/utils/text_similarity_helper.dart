@@ -161,7 +161,14 @@ class TextSimilarityHelperImpl implements TextSimilarityHelper {
     if (s == t) return true;
     if (s.isEmpty || t.isEmpty) return false;
 
-    // Direct containment is a strong signal
+    // Word boundary containment check.
+    // This allows "big" to match "very big", but prevents "he" from matching "hello".
+    final RegExp wordBoundaryRegExp = RegExp(r'\b' + RegExp.escape(t) + r'\b');
+    if (wordBoundaryRegExp.hasMatch(s)) {
+      return true;
+    }
+
+    // Direct containment fallback for very short or non-standard characters
     if (s.contains(t) || t.contains(s)) {
       final double lengthRatio =
           min(s.length, t.length) / max(s.length, t.length);

@@ -17,7 +17,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_target_badge.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_terminal.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 
 class SkimmingScanningScreen extends StatefulWidget {
   final int level;

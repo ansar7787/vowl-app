@@ -18,7 +18,7 @@ import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
@@ -48,6 +48,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
+
+  final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
+  Timer? _ttsTimer;
 
   late AnimationController _synapticController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
@@ -82,7 +85,21 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     _smartReplies.dispose();
     _chosenReply.dispose();
     _scrollController.dispose();
+    _ttsFinished.dispose();
+    _ttsTimer?.cancel();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _triggerAutoPlay(SpeakingQuest quest) async {
@@ -114,7 +131,17 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
           }
         }
         _smartReplies.value = newReplies;
+        _ttsTimer?.cancel();
+        _ttsTimer = Timer(const Duration(seconds: 2), () {
+          if (mounted) {
+            _ttsFinished.value = true;
+            _scrollToBottom();
+          }
+        });
       }
+    } else {
+      _ttsFinished.value = true;
+      _scrollToBottom();
     }
   }
 
@@ -185,6 +212,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             _isCorrect.value = null;
             _smartReplies.value = [];
             _chosenReply.value = "";
+            _ttsFinished.value = false;
+            _ttsTimer?.cancel();
             if (state.currentIndex == 0) {
               di.sl<SmartReplyService>().clearConversation();
             }
@@ -234,6 +263,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
               _timeVal,
               _smartReplies,
               _chosenReply,
+              _ttsFinished,
             ]),
             builder: (context, _) {
               final expectedText = _chosenReply.value.isNotEmpty
@@ -248,135 +278,127 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                 level: widget.level,
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
-                showConfetti: _showConfetti.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        DialogueRoleplayHeader(
-                                          primaryColor: theme.primaryColor,
-                                          instruction:
-                                              InstructionHelper.getInstruction(
-                                                quest,
-                                              ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        DialogueRoleplayExchangeStage(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          timeVal: _timeVal.value,
-                                          isAnswered: _isAnswered.value,
-                                          isCorrect: _isCorrect.value ?? false,
-                                        ),
-                                        if (_smartReplies.value.isNotEmpty &&
-                                            !_isAnswered.value) ...[
-                                          SizedBox(height: 16.h),
-                                          SizedBox(
-                                            height: 44.h,
-                                            child: ListView.builder(
-                                              scrollDirection: Axis.horizontal,
-                                              itemCount:
-                                                  _smartReplies.value.length,
-                                              itemBuilder: (context, index) {
-                                                final reply =
-                                                    _smartReplies.value[index];
-                                                final isPremium =
-                                                    context
-                                                        .read<AuthBloc>()
-                                                        .state
-                                                        .user
-                                                        ?.isPremium ??
-                                                    false;
-                                                return SmartReplyChip(
-                                                  text: reply,
-                                                  isPremium: isPremium,
-                                                  onTap: () {
-                                                    MlMonetizationController.attemptFeature(
-                                                      context,
-                                                      featureIcon: Icons
-                                                          .auto_awesome_rounded,
-                                                      featureTitle: context.tr(
-                                                        'translation.smart_reply_title',
-                                                        fallback:
-                                                            'AI Smart Reply',
-                                                      ),
-                                                      featureSubtitle: context.tr(
-                                                        'translation.smart_reply_desc',
-                                                        fallback:
-                                                            'Get AI-powered conversation suggestions',
-                                                      ),
-                                                      adButtonLabel: context.tr(
-                                                        'translation.smart_reply_ad',
-                                                        fallback:
-                                                            'Watch Ad (1 Suggestion)',
-                                                      ),
-                                                      onSuccess: () {
-                                                        _chosenReply.value =
-                                                            reply;
-                                                      },
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ],
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: 16.h,
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        if (!_isAnswered.value)
-                                          SpeakingSelfEvaluationControls(
-                                            expectedText: expectedText,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(true),
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(false),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
                           ),
-                        ],
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _ttsFinished.value,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      DialogueRoleplayHeader(
+                                        primaryColor: theme.primaryColor,
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      DialogueRoleplayExchangeStage(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        timeVal: _timeVal.value,
+                                        isAnswered: _isAnswered.value,
+                                        isCorrect: _isCorrect.value ?? false,
+                                      ),
+                                      if (_smartReplies.value.isNotEmpty &&
+                                          !_isAnswered.value) ...[
+                                        SizedBox(height: 16.h),
+                                        SizedBox(
+                                          height: 44.h,
+                                          child: ListView.builder(
+                                            scrollDirection: Axis.horizontal,
+                                            itemCount:
+                                                _smartReplies.value.length,
+                                            itemBuilder: (context, index) {
+                                              final reply =
+                                                  _smartReplies.value[index];
+                                              final isPremium =
+                                                  context
+                                                      .read<AuthBloc>()
+                                                      .state
+                                                      .user
+                                                      ?.isPremium ??
+                                                  false;
+                                              return SmartReplyChip(
+                                                text: reply,
+                                                isPremium: isPremium,
+                                                onTap: () {
+                                                  MlMonetizationController.attemptFeature(
+                                                    context,
+                                                    featureIcon: Icons
+                                                        .auto_awesome_rounded,
+                                                    featureTitle: context.tr(
+                                                      'translation.smart_reply_title',
+                                                      fallback:
+                                                          'AI Smart Reply',
+                                                    ),
+                                                    featureSubtitle: context.tr(
+                                                      'translation.smart_reply_desc',
+                                                      fallback:
+                                                          'Get AI-powered conversation suggestions',
+                                                    ),
+                                                    adButtonLabel: context.tr(
+                                                      'translation.smart_reply_ad',
+                                                      fallback:
+                                                          'Watch Ad (1 Suggestion)',
+                                                    ),
+                                                    onSuccess: () {
+                                                      _chosenReply.value =
+                                                          reply;
+                                                    },
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            if (_ttsFinished.value && !_isAnswered.value)
+                              SliverToBoxAdapter(
+                                child: SpeakToConfirmOverlay(
+                                  expectedText: expectedText,
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  hideExpectedText: true,
+                                  title: 'SPEAK YOUR LINE',
+                                  subtitle: 'Say the selected option aloud',
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                              ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          ],
+                        ),
                       ),
               );
             },

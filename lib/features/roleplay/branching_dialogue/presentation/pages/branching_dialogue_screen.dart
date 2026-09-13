@@ -18,7 +18,7 @@ import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/b
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_persona_console.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_console_board.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_relationship_meter.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class BranchingDialogueScreen extends StatefulWidget {
   final int level;

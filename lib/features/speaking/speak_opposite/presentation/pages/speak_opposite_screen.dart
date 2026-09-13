@@ -13,8 +13,8 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -49,6 +49,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
+  final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
+  Timer? _ttsTimer;
+
   final GlobalKey<SpeedChallengeTimerState> _timerKey =
       GlobalKey<SpeedChallengeTimerState>();
 
@@ -82,7 +85,21 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     _showConfetti.dispose();
     _timeVal.dispose();
     _scrollController.dispose();
+    _ttsFinished.dispose();
+    _ttsTimer?.cancel();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _triggerAutoPlay(GameQuest quest) {
@@ -155,9 +172,17 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             _isAnswered.value = false;
             _isCorrect.value = null;
             _pullProgress.value = 0.0;
-            _timerKey.currentState?.start();
+            _ttsFinished.value = false;
+            _ttsTimer?.cancel();
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+            _ttsTimer = Timer(const Duration(seconds: 3), () {
+              if (mounted) {
+                _ttsFinished.value = true;
+                _scrollToBottom();
+                _timerKey.currentState?.start();
+              }
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
@@ -205,6 +230,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
               _showConfetti,
               _pullProgress,
               _timeVal,
+              _ttsFinished,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
@@ -214,115 +240,119 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
+                          ),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _ttsFinished.value,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SpeakOppositeHeader(
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      SpeakOppositePositivePolePanel(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onPlayTts: () => _soundService.playTts(
+                                          (quest.textToSpeak ?? "").replaceAll(
+                                            '*',
+                                            '',
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      SpeakOppositePlasmaConduitPanel(
+                                        pullProgress: _pullProgress.value,
+                                        primaryColor: theme.primaryColor,
+                                        isListening: false,
+                                        timeVal: _timeVal.value,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      SpeakOppositeNegativePolePanel(
+                                        pullProgress: _pullProgress.value,
+                                        isDark: isDark,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
+                            if (_ttsFinished.value && !_isAnswered.value)
+                              SliverToBoxAdapter(
+                                child: Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 16.w,
                                     vertical: 16.h,
                                   ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SpeakOppositeHeader(
-                                          instruction:
-                                              InstructionHelper.getInstruction(
-                                                quest,
-                                              ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        SpeakOppositePositivePolePanel(
-                                          quest: quest,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 24.h),
+                                        child: SpeedChallengeTimer(
+                                          key: _timerKey,
+                                          durationSeconds: 30,
                                           primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onPlayTts: () =>
-                                              _soundService.playTts(
-                                                (quest.textToSpeak ?? "")
-                                                    .replaceAll('*', ''),
-                                              ),
+                                          onTimeUp: () =>
+                                              _onTimeUp(expectedText),
+                                          autoStart: true,
                                         ),
-                                        SizedBox(height: 32.h),
-                                        SpeakOppositePlasmaConduitPanel(
-                                          pullProgress: _pullProgress.value,
-                                          primaryColor: theme.primaryColor,
-                                          isListening: false,
-                                          timeVal: _timeVal.value,
-                                          isDark: isDark,
-                                        ),
-                                        SizedBox(height: 32.h),
-                                        SpeakOppositeNegativePolePanel(
-                                          pullProgress: _pullProgress.value,
-                                          isDark: isDark,
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                      SpeakToConfirmOverlay(
+                                        expectedText: expectedText,
+                                        acceptedSynonyms: _acceptedAntonyms,
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        hideExpectedText: true,
+                                        title: 'SPEAK AN ANTONYM',
+                                        subtitle:
+                                            'Say the opposite aloud to confirm',
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              expectedText,
+                                            ),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(
+                                              false,
+                                              expectedText,
+                                            ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: 16.h,
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        if (!_isAnswered.value) ...[
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                              bottom: 24.h,
-                                            ),
-                                            child: SpeedChallengeTimer(
-                                              key: _timerKey,
-                                              durationSeconds: 30,
-                                              primaryColor: theme.primaryColor,
-                                              onTimeUp: () =>
-                                                  _onTimeUp(expectedText),
-                                              autoStart: true,
-                                            ),
-                                          ),
-                                          SpeakingSelfEvaluationControls(
-                                            expectedText: expectedText,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(
-                                                  true,
-                                                  expectedText,
-                                                ),
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(
-                                                  false,
-                                                  expectedText,
-                                                ),
-                                          ),
-                                        ],
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                              ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          ],
+                        ),
                       ),
               );
             },

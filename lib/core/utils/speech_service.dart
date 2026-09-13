@@ -54,6 +54,7 @@ abstract class SpeechService {
   Future<void> listen({
     required Function(List<String>, bool) onResult,
     required VoidCallback onDone,
+    Function(double)? onSoundLevelChange,
     String? localeId,
     Duration? pauseFor,
     ListenMode listenMode = ListenMode.dictation,
@@ -235,6 +236,7 @@ class SpeechServiceImpl implements SpeechService {
   Future<void> listen({
     required Function(List<String>, bool) onResult,
     required VoidCallback onDone,
+    Function(double)? onSoundLevelChange,
     String? localeId,
     Duration? pauseFor,
     ListenMode listenMode = ListenMode.dictation,
@@ -259,6 +261,7 @@ class SpeechServiceImpl implements SpeechService {
           }
           onResult(candidates.toList(), result.finalResult);
         },
+        onSoundLevelChange: onSoundLevelChange,
         listenOptions: SpeechListenOptions(
           localeId: localeId,
           listenFor: const Duration(seconds: 45),

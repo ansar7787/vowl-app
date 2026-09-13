@@ -17,7 +17,7 @@ import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/cons
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_pulse_speaker.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_tactile_grid.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_throat_indicator.dart';
-import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 
 class ConsonantClarityScreen extends StatefulWidget {
   final int level;

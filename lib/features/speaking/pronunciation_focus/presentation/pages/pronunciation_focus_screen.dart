@@ -12,7 +12,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -49,6 +49,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
+  final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
+  Timer? _ttsTimer;
+
   late AnimationController _tickerController;
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
 
@@ -80,7 +83,21 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     _timeVal.dispose();
     _showGuide.dispose();
     _scrollController.dispose();
+    _ttsFinished.dispose();
+    _ttsTimer?.cancel();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _triggerAutoPlay(GameQuest quest) {
@@ -147,8 +164,16 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             _isCorrect.value = null;
             _heatLevel.value = 0.0;
             _showGuide.value = false;
+            _ttsFinished.value = false;
+            _ttsTimer?.cancel();
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
+            });
+            _ttsTimer = Timer(const Duration(seconds: 3), () {
+              if (mounted) {
+                _ttsFinished.value = true;
+                _scrollToBottom();
+              }
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
@@ -189,6 +214,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
               _heatLevel,
               _timeVal,
               _showGuide,
+              _ttsFinished,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
@@ -198,90 +224,89 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        PronunciationFocusHeader(
-                                          primaryColor: theme.primaryColor,
-                                          instruction:
-                                              InstructionHelper.getInstruction(
-                                                quest,
-                                              ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        PronunciationFocusPhonemeCrucible(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          heatLevel: _heatLevel.value,
-                                          showGuide: _showGuide.value,
-                                          onToggleGuide: () {
-                                            _hapticService.selection();
-                                            _showGuide.value =
-                                                !_showGuide.value;
-                                          },
-                                        ),
-                                        SizedBox(height: 32.h),
-                                        PronunciationFocusThermalGrid(
-                                          heatLevel: _heatLevel.value,
-                                          isListening: false,
-                                          timeVal: _timeVal.value,
-                                          isDark: isDark,
-                                        ),
-                                        SizedBox(height: 32.h),
-                                        PronunciationFocusHighlightedSentence(
-                                          quest: quest,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: SizedBox(
-                                    height: !_isAnswered.value ? 380.h : 60.h,
-                                  ),
-                                ),
-                              ],
-                            ),
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
                           ),
-                          if (!_isAnswered.value)
-                            ShadowPlaybackCompare(
-                              expectedText: quest.targetWord ?? "",
-                              displayText:
-                                  '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
-                              primaryColor: theme.primaryColor,
-                              isPositioned: true,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _ttsFinished.value,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      PronunciationFocusHeader(
+                                        primaryColor: theme.primaryColor,
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      PronunciationFocusPhonemeCrucible(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        heatLevel: _heatLevel.value,
+                                        showGuide: _showGuide.value,
+                                        onToggleGuide: () {
+                                          _hapticService.selection();
+                                          _showGuide.value = !_showGuide.value;
+                                        },
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      PronunciationFocusThermalGrid(
+                                        heatLevel: _heatLevel.value,
+                                        isListening: false,
+                                        timeVal: _timeVal.value,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      PronunciationFocusHighlightedSentence(
+                                        quest: quest,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                        ],
+                            if (_ttsFinished.value && !_isAnswered.value)
+                              SliverToBoxAdapter(
+                                child: ShadowPlaybackCompare(
+                                  expectedText: quest.targetWord ?? "",
+                                  displayText:
+                                      '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                              ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          ],
+                        ),
                       ),
               );
             },

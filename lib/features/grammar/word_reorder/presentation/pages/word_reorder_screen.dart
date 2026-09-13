@@ -14,7 +14,7 @@ import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reo
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_floating_tile.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_assembly_card.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_check_button.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 class WordReorderScreen extends StatefulWidget {
   final int level;

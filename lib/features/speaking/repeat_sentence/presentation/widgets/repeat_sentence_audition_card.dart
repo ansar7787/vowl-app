@@ -39,35 +39,39 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              ScaleButton(
-                onTap: onPlayTts,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.w,
-                    vertical: 6.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: primaryColor.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.volume_up_rounded,
-                        color: primaryColor,
-                        size: 16.r,
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        "LISTEN",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
+              Semantics(
+                button: true,
+                label: 'Listen to the target sentence again',
+                child: ScaleButton(
+                  onTap: onPlayTts,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: primaryColor.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.volume_up_rounded,
                           color: primaryColor,
-                          fontWeight: FontWeight.bold,
+                          size: 16.r,
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 6.w),
+                        Text(
+                          "LISTEN",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            color: primaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

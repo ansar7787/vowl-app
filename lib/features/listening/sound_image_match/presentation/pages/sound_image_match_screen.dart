@@ -16,7 +16,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_instruction.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_emitter.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_grid.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 

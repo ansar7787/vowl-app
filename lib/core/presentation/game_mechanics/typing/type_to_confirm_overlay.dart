@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/smart_typo_evaluator.dart';
 
 class TypeToConfirmOverlay extends StatefulWidget {
   final String expectedText;
@@ -42,9 +43,40 @@ class TypeToConfirmOverlay extends StatefulWidget {
   State<TypeToConfirmOverlay> createState() => _TypeToConfirmOverlayState();
 }
 
+class _SmartTypoController extends TextEditingController {
+  final String expectedText;
+  bool showDiff = false;
+  Color correctColor = Colors.green;
+  Color incorrectColor = Colors.redAccent;
+
+  _SmartTypoController({required this.expectedText});
+
+  @override
+  TextSpan buildTextSpan({
+    required BuildContext context,
+    TextStyle? style,
+    required bool withComposing,
+  }) {
+    if (!showDiff || text.isEmpty) {
+      return super.buildTextSpan(
+        context: context,
+        style: style,
+        withComposing: withComposing,
+      );
+    }
+    return SmartTypoEvaluator.buildDiffSpan(
+      text,
+      expectedText,
+      baseStyle: style ?? const TextStyle(),
+      correctColor: correctColor,
+      incorrectColor: incorrectColor,
+    );
+  }
+}
+
 class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   final _hapticService = di.sl<HapticService>();
-  final _textController = TextEditingController();
+  late final _SmartTypoController _textController;
   final _focusNode = FocusNode();
   final _scrollController = ScrollController();
 
@@ -55,6 +87,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   @override
   void initState() {
     super.initState();
+    _textController = _SmartTypoController(expectedText: widget.expectedText);
+    _textController.addListener(() {
+      if (_textController.showDiff) {
+        _textController.showDiff = false;
+        // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+        _textController.notifyListeners();
+      }
+    });
   }
 
   @override
@@ -80,6 +120,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
 
     if (!GibberishDetectorService.isNaturalSentence(context, text)) {
       _result.value = _ConfirmResult.mismatch;
+      _textController.showDiff = true;
       _attempts.value++;
       _hapticService.error();
       return;
@@ -95,12 +136,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
     _result.value = matched ? _ConfirmResult.success : _ConfirmResult.mismatch;
 
     if (matched) {
+      _textController.showDiff = false;
       _isSubmitting.value = true;
       _hapticService.success();
       _focusNode.unfocus();
       await Future.delayed(const Duration(milliseconds: 800));
       if (mounted) widget.onConfirmed();
     } else {
+      _textController.showDiff = true;
       _hapticService.error();
       if (_attempts.value >= widget.maxAttempts) {
         _focusNode.unfocus();

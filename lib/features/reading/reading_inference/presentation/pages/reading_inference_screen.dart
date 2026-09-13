@@ -15,8 +15,8 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/reading_self_evaluation_card.dart';
-import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading/reading_self_evaluation_card.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 
 class ReadingInferenceScreen extends StatefulWidget {
   final int level;

@@ -21,7 +21,7 @@ import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_j
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_prompt.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_booster_tokens.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_scratch_area.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 
 class DailyJournalScreen extends StatefulWidget {
   final int level;

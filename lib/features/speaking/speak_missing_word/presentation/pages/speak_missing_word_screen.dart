@@ -13,7 +13,7 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -82,6 +82,18 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     _showConfetti.dispose();
     _scrollController.dispose();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (mounted && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _triggerAutoPlay(GameQuest quest) {
@@ -164,6 +176,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
       _hapticService.success();
       _soundService.playClick();
       _isWordPlaced.value = true;
+      _scrollToBottom();
     } else {
       _pullForce.value = 0.0;
       _selectedWord.value = null;
@@ -313,104 +326,91 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
+                disablePadding: true,
                 onContinue: () =>
                     context.read<SpeakingBloc>().add(const NextQuestion()),
                 onHint: () =>
                     context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
                 child: quest == null
                     ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                    : Stack(
-                        children: [
-                          RawScrollbar(
-                            controller: _scrollController,
-                            thumbColor: theme.primaryColor.withValues(
-                              alpha: 0.5,
-                            ),
-                            radius: Radius.circular(8.r),
-                            thickness: 4.w,
-                            child: CustomScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              slivers: [
-                                SliverPadding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  sliver: SliverToBoxAdapter(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SpeakMissingWordInstruction(
-                                          primaryColor: theme.primaryColor,
-                                          isWordPlaced: _isWordPlaced.value,
-                                          instruction:
-                                              InstructionHelper.getInstruction(
-                                                quest,
-                                              ),
-                                        ),
-                                        SizedBox(height: 24.h),
-                                        SpeakMissingWordVortexSentence(
-                                          text: _isWordPlaced.value
-                                              ? completedSentence
-                                              : initialBlankSentence,
-                                          insertedWord: _isWordPlaced.value
-                                              ? (_selectedWord.value ?? "")
-                                              : "",
+                    : RawScrollbar(
+                        controller: _scrollController,
+                        thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                        radius: Radius.circular(8.r),
+                        thickness: 4.w,
+                        child: CustomScrollView(
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
+                          ),
+                          slivers: [
+                            SliverPadding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 16.h,
+                              ),
+                              sliver: SliverToBoxAdapter(
+                                child: AbsorbPointer(
+                                  absorbing: _isWordPlaced.value,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SpeakMissingWordInstruction(
+                                        primaryColor: theme.primaryColor,
+                                        isWordPlaced: _isWordPlaced.value,
+                                        instruction:
+                                            InstructionHelper.getInstruction(
+                                              quest,
+                                            ),
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      SpeakMissingWordVortexSentence(
+                                        text: _isWordPlaced.value
+                                            ? completedSentence
+                                            : initialBlankSentence,
+                                        insertedWord: _isWordPlaced.value
+                                            ? (_selectedWord.value ?? "")
+                                            : "",
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: 32.h),
+                                      if (!_isWordPlaced.value)
+                                        SpeakMissingWordMagnetArena(
+                                          dynamicOptions: _dynamicOptions.value,
+                                          selectedWord: _selectedWord.value,
+                                          pullForce: _pullForce.value,
                                           primaryColor: theme.primaryColor,
                                           isDark: isDark,
+                                          vortexController: _vortexController,
+                                          onPullStart: _onPullStart,
+                                          onPullEnd: _onPullEnd,
                                         ),
-                                        SizedBox(height: 32.h),
-                                        if (!_isWordPlaced.value)
-                                          SpeakMissingWordMagnetArena(
-                                            dynamicOptions:
-                                                _dynamicOptions.value,
-                                            selectedWord: _selectedWord.value,
-                                            pullForce: _pullForce.value,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            vortexController: _vortexController,
-                                            onPullStart: _onPullStart,
-                                            onPullEnd: _onPullEnd,
-                                          ),
-                                      ],
-                                    ),
+                                    ],
                                   ),
                                 ),
-                                SliverToBoxAdapter(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: 16.h,
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        if (_isWordPlaced.value &&
-                                            !_isAnswered.value)
-                                          SpeakingSelfEvaluationControls(
-                                            expectedText: completedSentence,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onConfirmed: () =>
-                                                _submitVerbalEvaluation(
-                                                  true,
-                                                  missingWord,
-                                                ),
-                                            onSkipped: () =>
-                                                _submitVerbalEvaluation(
-                                                  false,
-                                                  missingWord,
-                                                ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ],
+                            if (_isWordPlaced.value && !_isAnswered.value)
+                              SliverToBoxAdapter(
+                                child: ShadowPlaybackCompare(
+                                  expectedText: completedSentence,
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  showExpectedText: false,
+                                  onConfirmed: () => _submitVerbalEvaluation(
+                                    true,
+                                    missingWord,
+                                  ),
+                                  onSkipped: () => _submitVerbalEvaluation(
+                                    false,
+                                    missingWord,
+                                  ),
+                                ),
+                              ),
+                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                          ],
+                        ),
                       ),
               );
             },

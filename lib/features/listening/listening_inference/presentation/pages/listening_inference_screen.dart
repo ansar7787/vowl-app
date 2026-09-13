@@ -17,7 +17,7 @@ import 'package:vowl/features/listening/listening_inference/presentation/widgets
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
-import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_explanation.dart';
 

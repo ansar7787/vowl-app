@@ -18,7 +18,7 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_statement.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {

@@ -19,7 +19,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/syn
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_warp_gate.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_shard.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_nuance_scale.dart';
-import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
+import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
 class SynonymSearchScreen extends StatefulWidget {
   final int level;

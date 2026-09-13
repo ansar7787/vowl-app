@@ -49,6 +49,9 @@ class ShadowPlaybackCompare extends StatefulWidget {
   /// Whether to wrap in a Positioned widget (for Stack layouts).
   final bool isPositioned;
 
+  /// Whether to show the expected text (useful to hide if already displayed elsewhere).
+  final bool showExpectedText;
+
   const ShadowPlaybackCompare({
     super.key,
     required this.expectedText,
@@ -59,6 +62,7 @@ class ShadowPlaybackCompare extends StatefulWidget {
     this.showWaveform = true,
     this.speedMultiplier = 1.0,
     this.isPositioned = true,
+    this.showExpectedText = true,
   });
 
   @override
@@ -313,6 +317,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                 padding: EdgeInsets.only(
                   left: widget.isPositioned ? 0 : 20.w,
                   right: widget.isPositioned ? 0 : 20.w,
+                  bottom: widget.isPositioned ? 0 : 16.h,
                 ),
                 child: Container(
                   padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
@@ -403,36 +408,40 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                         SizedBox(height: 20.h),
 
                         // Expected text display
-                        Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20.w,
-                            vertical: 16.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.04)
-                                : Colors.black.withValues(alpha: 0.03),
-                            borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: widget.primaryColor.withValues(alpha: 0.1),
+                        if (widget.showExpectedText) ...[
+                          Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20.w,
+                              vertical: 16.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.04)
+                                  : Colors.black.withValues(alpha: 0.03),
+                              borderRadius: BorderRadius.circular(16.r),
+                              border: Border.all(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.1,
+                                ),
+                              ),
+                            ),
+                            child: AutoSizeText(
+                              widget.displayText ?? widget.expectedText,
+                              textAlign: TextAlign.center,
+                              maxLines: 4,
+                              minFontSize: 10,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w700,
+                                color: textColor,
+                                height: 1.4,
+                              ),
                             ),
                           ),
-                          child: AutoSizeText(
-                            widget.displayText ?? widget.expectedText,
-                            textAlign: TextAlign.center,
-                            maxLines: 4,
-                            minFontSize: 10,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w700,
-                              color: textColor,
-                              height: 1.4,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 24.h),
+                          SizedBox(height: 24.h),
+                        ],
 
                         // Main interaction area
                         ValueListenableBuilder<bool>(

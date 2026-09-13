@@ -17,7 +17,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_anchor_bubble.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_option_bubble.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocations_wrong_pairs.dart';
-import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
+import 'package:vowl/core/presentation/game_mechanics/arranging/context_sentence_builder.dart';
 
 class CollocationsScreen extends StatefulWidget {
   final int level;

@@ -7,9 +7,11 @@ import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/presentation/game_mechanics/speaking/stt_auto_pass_wrapper.dart';
 
 class SpeakingSelfEvaluationControls extends StatefulWidget {
   final String expectedText;
+  final List<String> acceptedSynonyms;
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
@@ -18,6 +20,7 @@ class SpeakingSelfEvaluationControls extends StatefulWidget {
   const SpeakingSelfEvaluationControls({
     super.key,
     required this.expectedText,
+    this.acceptedSynonyms = const [],
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
@@ -230,9 +233,15 @@ class _SpeakingSelfEvaluationControlsState
   Widget build(BuildContext context) {
     final subtitleColor = widget.isDark ? Colors.white60 : Colors.black54;
 
-    return ValueListenableBuilder<bool>(
-      valueListenable: _hasRecorded,
-      builder: (context, hasRecorded, _) {
+    return SttAutoPassWrapper(
+      expectedText: widget.expectedText,
+      acceptedSynonyms: widget.acceptedSynonyms,
+      onAutoPass: widget.onConfirmed,
+      primaryColor: widget.primaryColor,
+      isDark: widget.isDark,
+      child: ValueListenableBuilder<bool>(
+        valueListenable: _hasRecorded,
+        builder: (context, hasRecorded, _) {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -470,6 +479,7 @@ class _SpeakingSelfEvaluationControlsState
           ],
         );
       },
+      ),
     );
   }
 
