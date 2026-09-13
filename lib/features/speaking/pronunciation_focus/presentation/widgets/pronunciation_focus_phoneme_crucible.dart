@@ -148,6 +148,31 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                       fontStyle: FontStyle.italic,
                     ),
                   ),
+                  if (quest.commonMistakes != null &&
+                      quest.commonMistakes!.isNotEmpty) ...[
+                    SizedBox(height: 12.h),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.warning_amber_rounded,
+                          color: Colors.orangeAccent,
+                          size: 14.r,
+                        ),
+                        SizedBox(width: 6.w),
+                        Expanded(
+                          child: Text(
+                            "Watch out: ${quest.commonMistakes!.join(', ')}",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              color: Colors.orangeAccent.withValues(alpha: 0.9),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ],
               ),
             ),

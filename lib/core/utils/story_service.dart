@@ -1124,11 +1124,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'pronunciationfocus': [
       "",
-      "Great job! Mastering pronunciation is key to true fluency.",
-      "You are decoding pronunciation with impressive accuracy.",
-      "50 levels cleared! Your pronunciation skills are rock solid.",
-      "Level 100! You are an absolute master of pronunciation.",
-      "Level 200 reached! Your grasp of pronunciation is legendary.",
+      "Great start! You're really getting a feel for how these sounds are made.",
+      "Nice work! Your accent is already starting to sound much more natural.",
+      "50 levels cleared! You're nailing these tricky sounds without even hesitating.",
+      "Level 100! Your pronunciation is incredibly clear and easy to understand.",
+      "Level 200 reached! Honestly, you sound amazing. It's like listening to a native speaker!",
     ],
     'repeatsentence': [
       "",

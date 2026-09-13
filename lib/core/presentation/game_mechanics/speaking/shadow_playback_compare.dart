@@ -54,6 +54,9 @@ class ShadowPlaybackCompare extends StatefulWidget {
   /// Whether to show the expected text (useful to hide if already displayed elsewhere).
   final bool showExpectedText;
 
+  /// Optional callback for when recording state changes.
+  final ValueChanged<bool>? onRecordingStateChanged;
+
   const ShadowPlaybackCompare({
     super.key,
     required this.expectedText,
@@ -65,6 +68,7 @@ class ShadowPlaybackCompare extends StatefulWidget {
     this.speedMultiplier = 1.0,
     this.isPositioned = true,
     this.showExpectedText = true,
+    this.onRecordingStateChanged,
   });
 
   @override
@@ -179,6 +183,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
         final started = await _audioRecorder.startRecording();
         if (started && mounted) {
           _isRecording.value = true;
+          widget.onRecordingStateChanged?.call(true);
           _hasRecorded.value = false;
           _recordingPath = null;
           _recordStartTime = DateTime.now();
@@ -219,6 +224,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
 
       if (mounted) {
         _isRecording.value = false;
+        widget.onRecordingStateChanged?.call(false);
         if (path != null) {
           _recordingPath = path;
           _hasRecorded.value = true;

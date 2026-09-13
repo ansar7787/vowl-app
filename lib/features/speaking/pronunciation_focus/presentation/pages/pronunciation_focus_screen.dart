@@ -56,6 +56,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
 
   final ValueNotifier<bool> _showGuide = ValueNotifier(false);
+  final ValueNotifier<bool> _isUserRecording = ValueNotifier(false);
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -82,6 +83,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     _showConfetti.dispose();
     _timeVal.dispose();
     _showGuide.dispose();
+    _isUserRecording.dispose();
     _scrollController.dispose();
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
@@ -100,9 +102,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     });
   }
 
-  void _triggerAutoPlay(GameQuest quest) {
+  Future<void> _triggerAutoPlay(GameQuest quest) async {
     if (quest.textToSpeak != null) {
-      _soundService.playTts(quest.textToSpeak!);
+      await _soundService.playTts(quest.textToSpeak!);
     }
   }
 
@@ -124,12 +126,17 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
           authState.user != null) {
+        // Find quest from state to log details accurately
+        final state = context.read<SpeakingBloc>().state;
+        final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: widget.gameType.name,
+          question: quest?.textToSpeak ?? widget.gameType.name,
           userAnswer: '[Failed Pronunciation]',
-          correctAnswer: 'Shadow Playback Compare Target',
+          correctAnswer:
+              quest?.targetPhoneme ?? 'Shadow Playback Compare Target',
           level: widget.level,
         );
       }
@@ -156,15 +163,18 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             _isCorrect.value = null;
             _heatLevel.value = 0.0;
             _showGuide.value = false;
+            _isUserRecording.value = false;
             _ttsFinished.value = false;
             _ttsTimer?.cancel();
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
-            _ttsTimer = Timer(const Duration(seconds: 3), () {
+
+            // Fix: Await TTS completion properly
+            Future.delayed(const Duration(milliseconds: 300), () async {
               if (mounted) {
-                _ttsFinished.value = true;
-                _scrollToBottom();
+                await _triggerAutoPlay(state.currentQuest);
+                if (mounted) {
+                  _ttsFinished.value = true;
+                  _scrollToBottom();
+                }
               }
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
@@ -200,7 +210,6 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
               _isCorrect,
               _showConfetti,
               _heatLevel,
-              _timeVal,
               _showGuide,
               _ttsFinished,
             ]),
@@ -236,7 +245,8 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                               ),
                               sliver: SliverToBoxAdapter(
                                 child: AbsorbPointer(
-                                  absorbing: _ttsFinished.value,
+                                  absorbing: !_ttsFinished
+                                      .value, // BUG FIX: block while playing, unlock after
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -260,11 +270,21 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                         },
                                       ),
                                       SizedBox(height: 32.h),
-                                      PronunciationFocusThermalGrid(
-                                        heatLevel: _heatLevel.value,
-                                        isListening: false,
-                                        timeVal: _timeVal.value,
-                                        isDark: isDark,
+                                      ValueListenableBuilder<bool>(
+                                        valueListenable: _isUserRecording,
+                                        builder: (context, isRecording, _) {
+                                          return ValueListenableBuilder<double>(
+                                            valueListenable: _timeVal,
+                                            builder: (context, timeVal, _) {
+                                              return PronunciationFocusThermalGrid(
+                                                heatLevel: _heatLevel.value,
+                                                isListening: isRecording,
+                                                timeVal: timeVal,
+                                                isDark: isDark,
+                                              );
+                                            },
+                                          );
+                                        },
                                       ),
                                       SizedBox(height: 32.h),
                                       PronunciationFocusHighlightedSentence(
@@ -285,11 +305,16 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                   child: AbsorbPointer(
                                     absorbing: !_ttsFinished.value,
                                     child: ShadowPlaybackCompare(
-                                      expectedText: quest.targetWord ?? "",
-                                      displayText:
-                                          '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
+                                      expectedText:
+                                          quest.textToSpeak ??
+                                          "", // BUG FIX: targetWord was null
+                                      showExpectedText:
+                                          false, // BUG FIX: do not repeat text
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
+                                      onRecordingStateChanged: (isRecording) {
+                                        _isUserRecording.value = isRecording;
+                                      },
                                       onConfirmed: () =>
                                           _submitVerbalEvaluation(true),
                                       onSkipped: () =>
@@ -298,7 +323,11 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                   ),
                                 ),
                               ),
-                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
+                            SliverSafeArea(
+                              sliver: SliverToBoxAdapter(
+                                child: SizedBox(height: 120.h),
+                              ),
+                            ),
                           ],
                         ),
                       ),
