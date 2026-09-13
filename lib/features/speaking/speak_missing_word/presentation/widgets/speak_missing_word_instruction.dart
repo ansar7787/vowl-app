@@ -44,7 +44,9 @@ class SpeakMissingWordInstruction extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         Text(
-          isWordPlaced ? "Read the full sentence aloud." : instruction,
+          isWordPlaced
+              ? "Read the full sentence aloud."
+              : "$instruction\n(Tap or hold a word to select)",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Outfit',

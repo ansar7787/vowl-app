@@ -1,5 +1,4 @@
 import 'package:vowl/core/utils/instruction_helper.dart';
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,6 +15,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_instruction.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_vortex_sentence.dart';
@@ -40,6 +40,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
   final _soundService = di.sl<SoundService>();
 
   late AnimationController _vortexController;
+  late AnimationController _pullController;
 
   int _lastProcessedIndex = -1;
   int? _lastLives;
@@ -47,7 +48,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
   // Option states
   final ValueNotifier<List<String>> _dynamicOptions = ValueNotifier([]);
   final ValueNotifier<String?> _selectedWord = ValueNotifier(null);
-  final ValueNotifier<double> _pullForce = ValueNotifier(0.0);
   final ValueNotifier<bool> _isListening = ValueNotifier(false);
   final ValueNotifier<bool> _isWordPlaced = ValueNotifier(false);
 
@@ -64,6 +64,38 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
       duration: const Duration(seconds: 4),
     )..repeat();
 
+    _pullController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 400),
+    );
+
+    _pullController.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        if (_isAnswered.value || _isWordPlaced.value) return;
+        _isWordPlaced.value = true;
+
+        final state = context.read<SpeakingBloc>().state;
+        if (state is SpeakingLoaded) {
+          final expectedWord = state.currentQuest.missingWord ?? "";
+          final wordIsCorrect =
+              _selectedWord.value?.toLowerCase() == expectedWord.toLowerCase();
+
+          if (!wordIsCorrect) {
+            _submitVerbalEvaluation(
+              false,
+              expectedWord,
+              forceImmediateFail: true,
+            );
+            return;
+          }
+        }
+
+        _hapticService.success();
+        _soundService.playClick();
+        _scrollToBottom();
+      }
+    });
+
     context.read<SpeakingBloc>().add(
       FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -72,9 +104,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
   @override
   void dispose() {
     _vortexController.dispose();
+    _pullController.dispose();
     _dynamicOptions.dispose();
     _selectedWord.dispose();
-    _pullForce.dispose();
     _isListening.dispose();
     _isWordPlaced.dispose();
     _isAnswered.dispose();
@@ -96,70 +128,72 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     });
   }
 
-  void _triggerAutoPlay(GameQuest quest) {
-    if (quest.textToSpeak != null) {
-      _soundService.playTts(quest.textToSpeak!);
+  void _triggerAutoPlay(SpeakingQuest quest) {
+    if (quest.textToSpeak != null && quest.missingWord != null) {
+      // The JSON's textToSpeak already contains underscores (e.g. "___")
+      // We read the underscores as "blank" so the voice doesn't read symbol names
+      final blankedText = quest.textToSpeak!.replaceAll(RegExp(r'_+'), "blank");
+      _soundService.playTts(blankedText);
     }
   }
 
   void _generateDynamicOptions(String correctWord) {
-    final List<String> distractors = [
-      "satellite",
-      "reactor",
-      "circuit",
-      "database",
+    final List<String> commonWords = [
+      "apple",
+      "car",
+      "book",
+      "house",
+      "friend",
+      "time",
+      "day",
+      "night",
+      "water",
+      "food",
+      "money",
+      "family",
+      "school",
+      "city",
+      "music",
+      "happy",
+      "sad",
+      "fast",
+      "slow",
+      "good",
+      "run",
+      "walk",
+      "read",
+      "write",
+      "speak",
+      "bread",
+      "coffee",
+      "doctor",
+      "kitchen",
+      "beautiful",
+      "delicious",
+      "expensive",
+      "phone",
+      "bag",
+      "key",
       "system",
+      "module",
       "portal",
       "shield",
       "drone",
-      "module",
     ];
 
-    distractors.remove(correctWord.toLowerCase());
-    distractors.shuffle(math.Random(widget.level));
+    commonWords.removeWhere(
+      (w) => w.toLowerCase() == correctWord.toLowerCase(),
+    );
+    commonWords.shuffle();
 
     final newOptions = [
       correctWord.toLowerCase(),
-      distractors[0],
-      distractors[1],
+      commonWords[0],
+      commonWords[1],
     ];
 
-    newOptions.shuffle(math.Random(widget.level));
+    newOptions.shuffle();
     _dynamicOptions.value = newOptions;
-  }
-
-  String _formatBlankSentence(String text, String missingWord) {
-    final String cleanText = text;
-    final List<String> nouns = [
-      missingWord.toLowerCase(),
-      "circuit",
-      "database",
-      "satellite",
-      "shield",
-      "reactor",
-      "module",
-      "engine",
-      "network",
-      "laser",
-      "drone",
-      "system",
-      "portal",
-      "archive",
-      "data",
-    ];
-
-    for (var noun in nouns) {
-      final int index = cleanText.toLowerCase().indexOf(noun);
-      if (index != -1) {
-        return cleanText.replaceRange(
-          index,
-          index + noun.length,
-          " [ ______ ] ",
-        );
-      }
-    }
-
-    return cleanText.replaceAll(missingWord, " [ ______ ] ");
   }
 
   void _onPullStart(String word) {
@@ -167,28 +201,36 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     _hapticService.selection();
     _selectedWord.value = word;
     _isListening.value = true;
+    _pullController.forward();
   }
 
   void _onPullEnd() {
     if (_isAnswered.value || _isWordPlaced.value) return;
     _isListening.value = false;
-    if (_pullForce.value >= 1.0) {
-      _hapticService.success();
-      _soundService.playClick();
-      _isWordPlaced.value = true;
-      _scrollToBottom();
-    } else {
-      _pullForce.value = 0.0;
+    if (_pullController.status != AnimationStatus.completed) {
+      _pullController.reverse();
       _selectedWord.value = null;
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt, String expectedWord) {
+  void _onTap(String word) {
+    if (_isAnswered.value || _isWordPlaced.value) return;
+    _hapticService.selection();
+    _selectedWord.value = word;
+    _pullController.value = 1.0; // Instantly complete the pull
+  }
+
+  void _submitVerbalEvaluation(
+    bool nailedIt,
+    String expectedWord, {
+    bool forceImmediateFail = false,
+  }) {
     if (_isAnswered.value) return;
 
     final bool wordIsCorrect =
         _selectedWord.value?.toLowerCase() == expectedWord.toLowerCase();
-    final bool isOverallCorrect = wordIsCorrect && nailedIt;
+    final bool isOverallCorrect =
+        wordIsCorrect && nailedIt && !forceImmediateFail;
 
     _isAnswered.value = true;
     _isCorrect.value = isOverallCorrect;
@@ -218,27 +260,11 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     }
   }
 
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
     final mediaQuery = MediaQuery.of(context);
-
-    if (_isListening.value && _pullForce.value < 1.0) {
-      Future.delayed(const Duration(milliseconds: 16), () {
-        if (mounted && _isListening.value) {
-          _pullForce.value = (_pullForce.value + 0.045).clamp(0.0, 1.0);
-          _hapticService.selection();
-        }
-      });
-    }
 
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listener: (context, state) {
@@ -251,7 +277,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             _isAnswered.value = false;
             _isCorrect.value = null;
             _isListening.value = false;
-            _pullForce.value = 0.0;
+            _pullController.reset();
             _selectedWord.value = null;
             _isWordPlaced.value = false;
             _generateDynamicOptions(state.currentQuest.missingWord ?? "drone");
@@ -289,16 +315,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
-        final String rawSentence =
-            quest?.textToSpeak ?? "The robot operates the system safely.";
-        final String missingWord = quest?.missingWord ?? "robot";
-
-        final String initialBlankSentence = _formatBlankSentence(
-          rawSentence,
-          missingWord,
-        );
-        final String completedSentence = rawSentence;
-
         return MediaQuery(
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
@@ -310,13 +326,33 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
               _showConfetti,
               _dynamicOptions,
               _selectedWord,
-              _pullForce,
+              _pullController,
               _isWordPlaced,
               _isListening,
             ]),
             builder: (context, _) {
+              final String rawSentence =
+                  quest?.textToSpeak ?? "The robot operates the system safely.";
+              final String missingWord = quest?.missingWord ?? "robot";
+
+              // The JSON's textToSpeak already contains underscores (e.g. "___")
+              final String initialBlankSentence = rawSentence;
+
+              final bool isSelectedCorrect =
+                  _selectedWord.value?.toLowerCase() ==
+                  missingWord.toLowerCase();
+
+              final String userCompletedSentence =
+                  _isWordPlaced.value && _selectedWord.value != null
+                  ? (isSelectedCorrect && quest?.correctAnswer != null
+                        ? quest!.correctAnswer!
+                        : initialBlankSentence.replaceFirst(
+                            RegExp(r'_+'),
+                            _selectedWord.value!,
+                          ))
+                  : initialBlankSentence;
+
               return SpeakingBaseLayout(
-                onTutorPass: _tutorPass,
                 gameType: widget.gameType,
                 level: widget.level,
                 isAnswered: _isAnswered.value,
@@ -362,7 +398,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                       SizedBox(height: 24.h),
                                       SpeakMissingWordVortexSentence(
                                         text: _isWordPlaced.value
-                                            ? completedSentence
+                                            ? userCompletedSentence
                                             : initialBlankSentence,
                                         insertedWord: _isWordPlaced.value
                                             ? (_selectedWord.value ?? "")
@@ -375,12 +411,13 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                         SpeakMissingWordMagnetArena(
                                           dynamicOptions: _dynamicOptions.value,
                                           selectedWord: _selectedWord.value,
-                                          pullForce: _pullForce.value,
+                                          pullForce: _pullController.value,
                                           primaryColor: theme.primaryColor,
                                           isDark: isDark,
                                           vortexController: _vortexController,
                                           onPullStart: _onPullStart,
                                           onPullEnd: _onPullEnd,
+                                          onTap: _onTap,
                                         ),
                                     ],
                                   ),
@@ -390,7 +427,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                             if (_isWordPlaced.value && !_isAnswered.value)
                               SliverToBoxAdapter(
                                 child: ShadowPlaybackCompare(
-                                  expectedText: completedSentence,
+                                  expectedText: userCompletedSentence,
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
                                   showExpectedText: false,

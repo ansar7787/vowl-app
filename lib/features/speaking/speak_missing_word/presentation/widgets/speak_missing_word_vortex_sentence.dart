@@ -49,18 +49,16 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 4.h),
               decoration: BoxDecoration(
-                color: Colors.greenAccent.withValues(alpha: 0.15),
+                color: primaryColor.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(
-                  color: Colors.greenAccent.withValues(alpha: 0.4),
-                ),
+                border: Border.all(color: primaryColor.withValues(alpha: 0.4)),
               ),
               child: Text(
                 "LOCKED OPTION: ${insertedWord.toUpperCase()}",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
-                  color: Colors.greenAccent,
+                  color: primaryColor,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1,
                 ),

@@ -17,8 +17,8 @@ class VortexPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final double radius = size.width / 2;
-    final Offset center = Offset(radius, radius);
+    final double radius = math.min(size.width, size.height) / 2;
+    final Offset center = Offset(size.width / 2, size.height / 2);
 
     // 1. Draw glowing vortex rings
     final Paint ringPaint = Paint()

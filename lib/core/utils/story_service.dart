@@ -187,7 +187,7 @@ class StoryServiceImpl implements StoryService {
     'situationSpeaking':
         "Different situations require different tones. Let's practice adapting your speech so you always sound perfectly appropriate.",
     'speakMissingWord':
-        "Let's test your real-time thinking! Practice finding and speaking the missing word without pausing the conversation.",
+        "Let's test your real-time thinking! Tap to fill the blank, and then speak the full sentence aloud to master the rhythm of the language.",
     'speakOpposite':
         "Let's train your linguistic reflexes! Instantly providing the opposite word is a fantastic way to sharpen your active recall.",
     'speakSynonym':
