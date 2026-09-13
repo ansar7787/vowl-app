@@ -126,13 +126,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     _submitVerbalEvaluation(false, textToSpeak);
   }
 
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
-  }
-
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
@@ -179,11 +172,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            } else {
-              _isAnswered.value = false;
-            }
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
           _lastLives = state.livesRemaining;
         }
@@ -218,7 +207,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
-                onTutorPass: _tutorPass,
                 gameType: widget.gameType,
                 level: widget.level,
                 isAnswered: _isAnswered.value,

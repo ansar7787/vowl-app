@@ -82,7 +82,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
           builder: (context, isExiting, _) {
             return Stack(
               children: [
-                // Background dim overlay
+                // Background dim overlay (Solid for maximum performance)
                 Positioned.fill(
                   child: ColoredBox(color: Colors.black.withValues(alpha: 0.85))
                       .animate(target: isExiting ? 1 : 0)
@@ -104,7 +104,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                 borderRadius: BorderRadius.circular(40.r),
                                 border: Border.all(
                                   color: Colors.white.withValues(alpha: 0.2),
-                                  width: 1.5,
+                                  width: 1.0, // Sleek 1px hairline border
                                 ),
                                 boxShadow: [
                                   BoxShadow(
@@ -128,13 +128,28 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                                 gradient: LinearGradient(
                                                   colors: [
                                                     widget.primaryColor,
-                                                    widget.primaryColor
-                                                        .withValues(alpha: 0.6),
+                                                    HSLColor.fromColor(
+                                                          widget.primaryColor,
+                                                        )
+                                                        .withLightness(
+                                                          (HSLColor.fromColor(
+                                                                    widget
+                                                                        .primaryColor,
+                                                                  ).lightness -
+                                                                  0.12)
+                                                              .clamp(0.0, 1.0),
+                                                        )
+                                                        .toColor(),
                                                   ],
-                                                  begin: Alignment.topLeft,
-                                                  end: Alignment.bottomRight,
+                                                  begin: Alignment.topCenter,
+                                                  end: Alignment.bottomCenter,
                                                 ),
                                                 shape: BoxShape.circle,
+                                                border: Border.all(
+                                                  color: Colors.white
+                                                      .withValues(alpha: 0.3),
+                                                  width: 1.0,
+                                                ),
                                                 boxShadow: [
                                                   BoxShadow(
                                                     color: widget.primaryColor
@@ -290,10 +305,27 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                             gradient: LinearGradient(
                                               colors: [
                                                 widget.primaryColor,
-                                                widget.primaryColor.withValues(
-                                                  alpha: 0.8,
-                                                ),
+                                                HSLColor.fromColor(
+                                                      widget.primaryColor,
+                                                    )
+                                                    .withLightness(
+                                                      (HSLColor.fromColor(
+                                                                widget
+                                                                    .primaryColor,
+                                                              ).lightness -
+                                                              0.12)
+                                                          .clamp(0.0, 1.0),
+                                                    )
+                                                    .toColor(),
                                               ],
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                            ),
+                                            border: Border.all(
+                                              color: Colors.white.withValues(
+                                                alpha: 0.2,
+                                              ),
+                                              width: 1.0,
                                             ),
                                             borderRadius: BorderRadius.circular(
                                               20.r,

@@ -73,7 +73,6 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     on<SpeakingHintUsed>(_onHint);
     on<RestoreLife>(_onRestoreLife);
     on<AddHint>(_onAddHint);
-    on<SpeakingTutorPass>(_onTutorPass);
     on<SubmitAnswer>(_onSubmit);
     on<NextQuestion>(_onNext);
   }
@@ -382,43 +381,4 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   // AddHint (intentional no-op — see event doc)
   // ---------------------------------------------------------------------------
   void _onAddHint(AddHint event, Emitter<SpeakingState> emit) {}
-
-  // ---------------------------------------------------------------------------
-  // TutorPass
-  // ---------------------------------------------------------------------------
-
-  void _onTutorPass(SpeakingTutorPass event, Emitter<SpeakingState> emit) {
-    final s = state;
-
-    if (s is SpeakingLoaded) {
-      final newLives = (s.livesRemaining + 1).clamp(0, _kMaxLives);
-      final updated = List<SpeakingQuest>.from(s.quests);
-      if (updated.length > _kMaxQuestsPerLevel) updated.removeLast();
-
-      unawaited(soundService.playCorrect());
-      unawaited(hapticService.success());
-
-      emit(
-        s.copyWith(
-          livesRemaining: newLives,
-          answerStatus: AnswerStatus.correct,
-          quests: updated,
-        ),
-      );
-    } else if (s is SpeakingGameOver) {
-      unawaited(soundService.playCorrect());
-      unawaited(hapticService.success());
-
-      emit(
-        SpeakingLoaded(
-          quests: s.quests,
-          currentIndex: s.currentIndex,
-          livesRemaining: 1,
-          gameType: s.gameType,
-          level: s.level,
-          answerStatus: AnswerStatus.correct,
-        ),
-      );
-    }
-  }
 }

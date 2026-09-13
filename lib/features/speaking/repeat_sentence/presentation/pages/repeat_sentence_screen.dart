@@ -119,13 +119,6 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     }
   }
 
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -184,7 +177,6 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
-                onTutorPass: _tutorPass,
                 gameType: widget.gameType,
                 level: widget.level,
                 isAnswered: _isAnswered.value,

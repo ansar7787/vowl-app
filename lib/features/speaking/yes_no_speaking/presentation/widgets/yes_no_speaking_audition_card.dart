@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class YesNoSpeakingAuditionCard extends StatelessWidget {
@@ -20,24 +20,48 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassTile(
-      padding: EdgeInsets.all(22.r),
-      borderRadius: BorderRadius.circular(32.r),
+    return Container(
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
+        borderRadius: BorderRadius.circular(32.r),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black45
+                : Colors.black.withValues(alpha: 0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+          BoxShadow(
+            color: primaryColor.withValues(alpha: isDark ? 0.15 : 0.05),
+            blurRadius: 30,
+            spreadRadius: -5,
+          ),
+        ],
+        border: Border.all(
+          color: primaryColor.withValues(alpha: isDark ? 0.3 : 0.15),
+          width: 1.5,
+        ),
+      ),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "COMPARE PHRASE STRUCTURES",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: primaryColor,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  "COMPARE PHRASE STRUCTURES",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    color: primaryColor,
+                    letterSpacing: 1.5,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
+              SizedBox(width: 8.w),
               ScaleButton(
                 onTap: onPlayTts,
                 child: Container(
@@ -88,9 +112,11 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              color: isDark ? Colors.white : Colors.black87,
+              fontSize: 22.sp,
+              fontWeight: FontWeight.w600,
+              color: isDark ? Colors.white : const Color(0xFF1E293B),
               height: 1.35,
+              letterSpacing: 0.5,
             ),
           ),
         ],

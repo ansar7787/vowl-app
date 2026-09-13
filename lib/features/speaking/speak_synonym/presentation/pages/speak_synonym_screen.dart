@@ -137,14 +137,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     }
   }
 
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    _bloomProgress.value = 1.0;
-    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
-  }
-
   void _extractTargetWord(String text, List<String> synonyms) {
     _acceptedSyns = synonyms;
   }
@@ -222,7 +214,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
-                onTutorPass: _tutorPass,
                 gameType: widget.gameType,
                 level: widget.level,
                 isAnswered: _isAnswered.value,

@@ -13,7 +13,7 @@ import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_game_header.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mascot.dart';
-import 'package:vowl/features/speaking/presentation/widgets/speaking_voice_pulse_bg.dart';
+
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
@@ -39,7 +39,7 @@ class SpeakingBaseLayout extends StatelessWidget {
   /// Optional service overrides — inject mocks in widget tests to avoid
   /// requiring a live DI container. Production code leaves these null and
   /// the State falls back to [di.sl].
-  final VoidCallback? onTutorPass;
+
   final TtsService? ttsService;
   final SoundService? soundService;
   final HapticService? hapticService;
@@ -53,7 +53,7 @@ class SpeakingBaseLayout extends StatelessWidget {
     required this.onContinue,
     required this.onHint,
     this.showHintButton = true,
-    this.onTutorPass,
+
     this.isCorrect,
     this.isFinalFailure = false,
     this.showConfetti = false,
@@ -96,19 +96,7 @@ class SpeakingBaseLayout extends StatelessWidget {
       ),
       onRestoreLife: () =>
           context.read<SpeakingBloc>().add(const RestoreLife()),
-      backgroundOverlay: Builder(
-        builder: (context) {
-          final isDark = Theme.of(context).brightness == Brightness.dark;
-          final theme = LevelThemeHelper.getTheme(
-            'speaking',
-            level: level,
-            isDark: isDark,
-          );
-          return SpeakingVoicePulseBg(
-            color: (theme.primaryColor).withValues(alpha: 0.15),
-          );
-        },
-      ),
+
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final currentQuest = state is SpeakingLoaded
@@ -187,7 +175,6 @@ class SpeakingBaseLayout extends StatelessWidget {
           ),
           ruleContent: ruleContent,
           sampleAnswer: quest.sampleAnswer,
-          onTutorPass: onTutorPass,
         );
       },
     );

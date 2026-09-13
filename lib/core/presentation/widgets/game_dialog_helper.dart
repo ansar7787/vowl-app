@@ -229,7 +229,6 @@ class GameDialogHelper {
     String? buttonText,
     VoidCallback? onRestore,
     String? adButtonText,
-    VoidCallback? onTutorPass,
   }) {
     if (!context.mounted) return;
     // Removed _sound.playWrong() and _haptic.error() here to prevent double
@@ -309,16 +308,6 @@ class GameDialogHelper {
               }
             : null,
         adButtonText: onRestore != null ? resolvedAdButtonText : null,
-        onSecondaryPressed: onTutorPass != null
-            ? () {
-                Navigator.of(dialogCtx).pop();
-                onTutorPass();
-              }
-            : null,
-        secondaryButtonText: context.tr(
-          'games.spoke_correctly_button',
-          fallback: 'I SPOKE CORRECTLY! 🌟',
-        ),
       ),
     );
   }

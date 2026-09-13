@@ -92,7 +92,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
     on<NextQuestion>(_onNext);
     on<AccentHintUsed>(_onHint);
     on<RestoreLife>(_onRestoreLife);
-    on<AccentTutorPass>(_onTutorPass);
+
     on<RestartLevel>(_onRestart);
     on<AccentSpeakConfirmed>(_onSpeakConfirmed);
   }
@@ -325,47 +325,6 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
           quests: s.quests,
           currentIndex: s.currentIndex,
           livesRemaining: 1,
-          gameType: s.gameType,
-          level: s.level,
-        ),
-      );
-    }
-  }
-
-  // ── AccentTutorPass ──────────────────────────────────────────────────────
-
-  void _onTutorPass(AccentTutorPass event, Emitter<AccentState> emit) {
-    final s = state;
-
-    if (s is AccentLoaded) {
-      final newLives = (s.livesRemaining + 1).clamp(
-        0,
-        AccentGameConstants.maxLives,
-      );
-      final updatedQuests = s.quests.length > AccentGameConstants.questLimit
-          ? (List<AccentQuest>.from(s.quests)..removeLast())
-          : s.quests;
-
-      soundService.playCorrect();
-      hapticService.success();
-
-      emit(
-        s.copyWith(
-          livesRemaining: newLives,
-          answerStatus: AnswerStatus.correct,
-          quests: updatedQuests,
-        ),
-      );
-    } else if (s is AccentGameOver) {
-      soundService.playCorrect();
-      hapticService.success();
-
-      emit(
-        AccentLoaded(
-          quests: s.quests,
-          currentIndex: s.currentIndex,
-          livesRemaining: 1,
-          answerStatus: AnswerStatus.correct,
           gameType: s.gameType,
           level: s.level,
         ),

@@ -68,11 +68,6 @@ class PreloadBatch extends AccentEvent {
   List<Object?> get props => [gameType, currentLevel];
 }
 
-/// AI tutor has intervened: treat the current question as passed and restore a life.
-class AccentTutorPass extends AccentEvent {
-  const AccentTutorPass();
-}
-
 /// The user successfully passed the speak-to-confirm overlay.
 class AccentSpeakConfirmed extends AccentEvent {
   final int bonusCoins;

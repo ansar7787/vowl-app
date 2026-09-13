@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
-import 'package:vowl/core/presentation/painters/visual_config_background.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
@@ -31,7 +30,7 @@ class EliteBaseLayout extends StatelessWidget {
   final bool isFinalFailure;
   final VisualConfig? visualConfig;
   final EliteMasteryState state;
-  final VoidCallback? onTutorPass;
+
   final bool useScrolling;
   final ScrollController? scrollController;
   final bool disablePadding;
@@ -49,7 +48,7 @@ class EliteBaseLayout extends StatelessWidget {
     required this.onHint,
     this.showConfetti = false,
     this.visualConfig,
-    this.onTutorPass,
+
     this.useScrolling = true,
     this.scrollController,
     this.disablePadding = false,
@@ -113,18 +112,7 @@ class EliteBaseLayout extends StatelessWidget {
       ),
       onRestoreLife: () =>
           context.read<EliteMasteryBloc>().add(const RestoreEliteLife()),
-      backgroundOverlay: Builder(
-        builder: (context) {
-          return Stack(
-            children: [
-              if (visualConfig != null)
-                VisualConfigBackground(config: visualConfig!)
-              else if (quest?.visualConfig != null)
-                VisualConfigBackground(config: quest!.visualConfig!),
-            ],
-          );
-        },
-      ),
+
       headerBuilder: (context, dynamicState, progress, lives) {
         return EliteGameHeader(
           level: level,
@@ -163,7 +151,6 @@ class EliteBaseLayout extends StatelessWidget {
           isCorrect: isCorrect,
           onContinue: onContinue,
           isDark: isDark,
-          onTutorPass: onTutorPass,
         );
       },
     );

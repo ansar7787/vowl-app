@@ -23,7 +23,6 @@ class GameFeedbackCard extends StatelessWidget {
   final VoidCallback onContinue;
 
   /// Called when the user taps "Pass to Tutor" (optional, used in some games).
-  final VoidCallback? onTutorPass;
 
   /// Whether the app is currently in dark mode.
   final bool isDark;
@@ -58,7 +57,7 @@ class GameFeedbackCard extends StatelessWidget {
     required this.isFinalFailure,
     required this.livesRemaining,
     required this.onContinue,
-    this.onTutorPass,
+
     required this.isDark,
     required this.primaryColor,
     this.explanation,
@@ -200,26 +199,6 @@ class GameFeedbackCard extends StatelessWidget {
 
               SizedBox(height: 28.h),
               _buildActionButton(buttonText, gradient, shadowColor),
-
-              if (onTutorPass != null && isFinalFailure) ...[
-                SizedBox(height: 16.h),
-                ScaleButton(
-                  onTap: onTutorPass,
-                  child: Text(
-                    context.tr(
-                      'games.pass_to_tutor',
-                      fallback: 'Pass to Tutor',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: shadowColor,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                ),
-              ],
             ],
           ),
         ),

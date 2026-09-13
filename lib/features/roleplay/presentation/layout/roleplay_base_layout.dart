@@ -5,7 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
+
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -30,7 +30,7 @@ class RoleplayBaseLayout extends StatelessWidget {
   final bool isFinalFailure;
   final VoidCallback onContinue;
   final VoidCallback onHint;
-  final VoidCallback? onTutorPass;
+
   final bool showConfetti;
   final ScrollController? scrollController;
   final bool useScrolling;
@@ -48,7 +48,7 @@ class RoleplayBaseLayout extends StatelessWidget {
     this.isFinalFailure = false,
     required this.onContinue,
     required this.onHint,
-    this.onTutorPass,
+
     this.showConfetti = false,
     this.scrollController,
     this.useScrolling = false,
@@ -89,17 +89,7 @@ class RoleplayBaseLayout extends StatelessWidget {
       ),
       onRestoreLife: () =>
           context.read<RoleplayBloc>().add(const RestoreLife()),
-      backgroundOverlay: Builder(
-        builder: (context) {
-          final theme = LevelThemeHelper.getTheme('roleplay', level: level);
-          return RepaintBoundary(
-            child: HarmonicWaves(
-              color: (theme.primaryColor).withValues(alpha: 0.3),
-              height: 150.h,
-            ),
-          );
-        },
-      ),
+
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme('roleplay', level: level);
@@ -160,7 +150,6 @@ class RoleplayBaseLayout extends StatelessWidget {
           ruleTitle: 'SCENARIO CONTEXT',
           ruleContent: ruleContent,
           sampleAnswer: quest.sampleAnswer,
-          onTutorPass: onTutorPass,
         );
       },
     );

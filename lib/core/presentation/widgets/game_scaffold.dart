@@ -4,7 +4,7 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 import 'package:vowl/core/presentation/painters/visual_config_background.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
-import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 import 'package:vowl/core/presentation/widgets/game_error_view.dart';
@@ -79,13 +79,10 @@ class GameScaffold<S> extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.backgroundColors[1],
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           // ── Layer 1: Background ─────────────────────────────────────────
-          ColoredBox(color: theme.backgroundColors[1]),
-          MeshGradientBackground(colors: theme.backgroundColors),
-
           ?backgroundOverlay,
 
           if (currentQuest?.visualConfig != null)

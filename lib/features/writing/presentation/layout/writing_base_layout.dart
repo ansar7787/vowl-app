@@ -11,7 +11,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
-import 'package:vowl/core/presentation/widgets/writing/ink_streak.dart';
+
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -81,19 +81,7 @@ class WritingBaseLayout extends StatelessWidget {
         FetchWritingQuests(gameType: gameType, level: level),
       ),
       onRestoreLife: () => context.read<WritingBloc>().add(const RestoreLife()),
-      backgroundOverlay: Builder(
-        builder: (context) {
-          final isDark = Theme.of(context).brightness == Brightness.dark;
-          final theme = LevelThemeHelper.getTheme(
-            'writing',
-            level: level,
-            isDark: isDark,
-          );
-          return Positioned.fill(
-            child: InkStreak(color: theme.primaryColor.withValues(alpha: 0.15)),
-          );
-        },
-      ),
+
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme(

@@ -78,10 +78,6 @@ class RestoreLife extends RoleplayEvent {
 // ── Tutor Pass ─────────────────────────────────────────────────────────────
 
 /// The player invoked the tutor pass (I spoke correctly).
-class RoleplayTutorPass extends RoleplayEvent {
-  const RoleplayTutorPass();
-}
-
 // ── Speaking Bonus ─────────────────────────────────────────────────────────
 
 class RoleplaySpeakConfirmed extends RoleplayEvent {

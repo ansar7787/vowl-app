@@ -14,7 +14,7 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking/shadow_playback_compare.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
@@ -94,37 +94,63 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   void _onTiltDragged(DragUpdateDetails details, double trackWidth) {
     if (_isAnswered.value || _isSnapped.value) return;
 
+    final state = context.read<SpeakingBloc>().state;
+    if (state is! SpeakingLoaded) return;
+
+    final quest = state.currentQuest;
+    final String rawPrompt = quest.prompt ?? "";
+    final String rawSample = quest.sampleAnswer ?? "";
+    final bool doTheyMatch =
+        rawPrompt.trim().toLowerCase() == rawSample.trim().toLowerCase();
+
     final double deltaNormalized = details.delta.dx / (trackWidth / 2);
     _hapticService.selection();
 
     _tiltValue.value = (_tiltValue.value + deltaNormalized).clamp(-1.0, 1.0);
 
-    if (_tiltValue.value <= -0.85) {
-      _tiltValue.value = -1.0;
+    if (_tiltValue.value <= -0.85 || _tiltValue.value >= 0.85) {
+      final bool chosenMatch = _tiltValue.value >= 0.85;
+      _tiltValue.value = chosenMatch ? 1.0 : -1.0;
       _isSnapped.value = true;
-      _soundService.playClick();
-      _hapticService.selection();
       _scrollToBottom();
-    } else if (_tiltValue.value >= 0.85) {
-      _tiltValue.value = 1.0;
-      _isSnapped.value = true;
-      _soundService.playClick();
-      _hapticService.selection();
-      _scrollToBottom();
+
+      final bool binaryIsCorrect = chosenMatch == doTheyMatch;
+
+      if (!binaryIsCorrect) {
+        _isAnswered.value = true;
+        _isCorrect.value = false;
+        _hapticService.error();
+        _soundService.playWrong();
+
+        final authState = context.read<AuthBloc>().state;
+        if (authState.status == AuthStatus.authenticated &&
+            authState.user != null) {
+          ErrorJournalCollector.record(
+            userId: authState.user!.id,
+            gameType: widget.gameType.name,
+            question: 'Yes/No Listening Match',
+            userAnswer: chosenMatch ? 'Yes' : 'No',
+            correctAnswer: doTheyMatch ? 'Yes' : 'No',
+            level: widget.level,
+          );
+        }
+
+        context.read<SpeakingBloc>().add(const SubmitAnswer(false));
+      } else {
+        // Correctly answered the Phase 1 interaction. Proceed to Phase 2 (Speaking).
+        _soundService.playClick();
+        _hapticService.selection();
+      }
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt, bool expectedMatch) {
+  void _submitVerbalEvaluation(bool nailedIt, String expectedText) {
     if (_isAnswered.value || !_isSnapped.value) return;
 
-    final bool chosenMatch = _tiltValue.value > 0;
-    final bool binaryIsCorrect = chosenMatch == expectedMatch;
-    final bool isOverallCorrect = binaryIsCorrect && nailedIt;
-
     _isAnswered.value = true;
-    _isCorrect.value = isOverallCorrect;
+    _isCorrect.value = nailedIt;
 
-    if (isOverallCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<SpeakingBloc>().add(const SubmitAnswer(true));
@@ -138,22 +164,15 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: 'Explain why (Yes/No)',
+          question: expectedText,
           userAnswer: '[Failed Self-Evaluation]',
-          correctAnswer: 'Expected match',
+          correctAnswer: expectedText,
           level: widget.level,
         );
       }
 
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
-  }
-
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
   }
 
   @override
@@ -180,11 +199,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            } else {
-              _isAnswered.value = false;
-            }
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
           _lastLives = state.livesRemaining;
         }
@@ -205,11 +220,6 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
-        final String rawPrompt = quest?.prompt ?? "";
-        final String rawSample = quest?.sampleAnswer ?? "";
-        final bool doTheyMatch =
-            rawPrompt.trim().toLowerCase() == rawSample.trim().toLowerCase();
-
         return MediaQuery(
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
@@ -220,11 +230,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
               _isCorrect,
               _showConfetti,
               _isSnapped,
-              _tiltValue,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
-                onTutorPass: _tutorPass,
                 gameType: widget.gameType,
                 level: widget.level,
                 isAnswered: _isAnswered.value,
@@ -284,16 +292,21 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                         },
                                       ),
                                       SizedBox(height: 32.h),
-                                      YesNoSpeakingTiltArena(
-                                        tiltValue: _tiltValue.value,
-                                        isSnapped: _isSnapped.value,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onTiltDragged: _onTiltDragged,
-                                        onTiltDragEnd: () {
-                                          if (!_isSnapped.value) {
-                                            _tiltValue.value = 0.0;
-                                          }
+                                      ValueListenableBuilder<double>(
+                                        valueListenable: _tiltValue,
+                                        builder: (context, tiltValue, _) {
+                                          return YesNoSpeakingTiltArena(
+                                            tiltValue: tiltValue,
+                                            isSnapped: _isSnapped.value,
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            onTiltDragged: _onTiltDragged,
+                                            onTiltDragEnd: () {
+                                              if (!_isSnapped.value) {
+                                                _tiltValue.value = 0.0;
+                                              }
+                                            },
+                                          );
                                         },
                                       ),
                                     ],
@@ -303,19 +316,19 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                             ),
                             if (_isSnapped.value && !_isAnswered.value)
                               SliverToBoxAdapter(
-                                child: SpeakToConfirmOverlay(
+                                child: ShadowPlaybackCompare(
+                                  key: ValueKey(quest.id),
                                   expectedText: quest.sampleAnswer ?? "",
-                                  acceptedSynonyms:
-                                      quest.acceptedSynonyms ?? [],
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
+                                  showExpectedText: false,
                                   onConfirmed: () => _submitVerbalEvaluation(
                                     true,
-                                    doTheyMatch,
+                                    quest.sampleAnswer ?? "",
                                   ),
                                   onSkipped: () => _submitVerbalEvaluation(
                                     false,
-                                    doTheyMatch,
+                                    quest.sampleAnswer ?? "",
                                   ),
                                 ),
                               ),

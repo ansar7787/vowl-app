@@ -57,7 +57,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     on<MarkEliteHintUsed>(_onMarkEliteHintUsed);
     on<AddLifeFromAd>(_onAddLifeFromAd);
     on<RestoreEliteLife>(_onRestoreEliteLife);
-    on<EliteTutorPass>(_onEliteTutorPass);
+
     on<EliteSpeakConfirmed>(_onSpeakConfirmed);
   }
 
@@ -389,8 +389,8 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       // FIX: previously unclamped — repeated ad-grants (or a grant stacked
       // on top of an already-full life bar) could push `livesRemaining`
       // above `_maxLives`, desyncing the heart count from the header's
-      // `_kMaxLives`-based UI and from `EliteTutorPass`'s own clamped logic
-      // just below.
+
+      // `_kMaxLives`-based UI.
       emit(
         s.copyWith(livesRemaining: (s.livesRemaining + 1).clamp(0, _maxLives)),
       );
@@ -403,50 +403,6 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   ) {
     if (state is EliteMasteryGameOver) {
       emit(_restoreFromGameOver(state as EliteMasteryGameOver));
-    }
-  }
-
-  Future<void> _onEliteTutorPass(
-    EliteTutorPass event,
-    Emitter<EliteMasteryState> emit,
-  ) async {
-    final currentState = state;
-
-    if (currentState is EliteMasteryLoaded) {
-      final newLives = (currentState.livesRemaining + 1).clamp(0, _maxLives);
-
-      soundService.playCorrect();
-      hapticService.success();
-
-      emit(
-        currentState.copyWith(
-          livesRemaining: newLives,
-          answerStatus: AnswerStatus.correct,
-          quests: _trimRequeuedFailure(currentState.quests),
-        ),
-      );
-    } else if (currentState is EliteMasteryGameOver) {
-      soundService.playCorrect();
-      hapticService.success();
-
-      emit(
-        EliteMasteryLoaded(
-          gameType: currentState.gameType,
-          level: currentState.level,
-          // FIX: a final failure pushes a duplicate of the failed quest to
-          // the end of the list (see `_onSubmitEliteAnswer`) so it can be
-          // retried later. The Loaded-state branch above already trims that
-          // duplicate when Tutor Pass overrides a failure, but this
-          // Game-Over branch — reached via the "Restore"/"Tutor Pass" dialog
-          // after lives hit zero — previously did not, silently forcing the
-          // player to repeat the exact same sentence a second time later in
-          // the same session despite having been told it was marked correct.
-          quests: _trimRequeuedFailure(currentState.quests),
-          currentIndex: currentState.currentIndex,
-          livesRemaining: 1,
-          answerStatus: AnswerStatus.correct,
-        ),
-      );
     }
   }
 
@@ -480,14 +436,5 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       currentIndex: s.currentIndex,
       livesRemaining: 1,
     );
-  }
-
-  /// Removes the trailing requeued-failure duplicate that
-  /// [_onSubmitEliteAnswer] appends when a quest is failed for good, if
-  /// present. Shared by both branches of [_onEliteTutorPass] so an honesty-
-  /// nudge override never leaves the player to repeat the same quest twice.
-  List<EliteMasteryQuest> _trimRequeuedFailure(List<EliteMasteryQuest> quests) {
-    if (quests.length <= _questsPerLevel) return quests;
-    return List<EliteMasteryQuest>.from(quests)..removeLast();
   }
 }

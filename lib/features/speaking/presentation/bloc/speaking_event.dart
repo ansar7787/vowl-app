@@ -73,9 +73,3 @@ class AddHint extends SpeakingEvent {
   @override
   List<Object?> get props => [count];
 }
-
-/// Called by the AI Tutor to pass the student on the current quest,
-/// restoring one life and clearing the mastery-loop re-queue.
-class SpeakingTutorPass extends SpeakingEvent {
-  const SpeakingTutorPass();
-}

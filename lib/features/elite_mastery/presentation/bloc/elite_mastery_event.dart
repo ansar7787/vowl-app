@@ -50,10 +50,6 @@ class AddLifeFromAd extends EliteMasteryEvent {
   const AddLifeFromAd();
 }
 
-class EliteTutorPass extends EliteMasteryEvent {
-  const EliteTutorPass();
-}
-
 class EliteSpeakConfirmed extends EliteMasteryEvent {
   final int bonusCoins;
   const EliteSpeakConfirmed(this.bonusCoins);

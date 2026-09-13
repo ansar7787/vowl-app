@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
+
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
@@ -29,7 +28,7 @@ class AccentBaseLayout extends StatelessWidget {
   final bool? isCorrect;
   final VoidCallback onContinue;
   final VoidCallback onHint;
-  final VoidCallback? onTutorPass;
+
   final bool showConfetti;
   final bool useScrolling;
   final bool disablePadding;
@@ -43,7 +42,7 @@ class AccentBaseLayout extends StatelessWidget {
     this.isCorrect,
     required this.onContinue,
     required this.onHint,
-    this.onTutorPass,
+
     this.showConfetti = false,
     this.useScrolling = false,
     this.disablePadding = false,
@@ -89,12 +88,7 @@ class AccentBaseLayout extends StatelessWidget {
         FetchAccentQuests(gameType: gameType, level: level),
       ),
       onRestoreLife: () => context.read<AccentBloc>().add(const RestoreLife()),
-      backgroundOverlay: ClipRect(
-        child: HarmonicWaves(
-          color: theme.primaryColor.withValues(alpha: 0.3),
-          height: 150.h,
-        ),
-      ),
+
       headerBuilder: (context, state, progress, lives) {
         return AccentHeader(
           level: level,
@@ -132,7 +126,6 @@ class AccentBaseLayout extends StatelessWidget {
           isDark: isDark,
           isCorrect: isCorrect,
           onContinue: onContinue,
-          onTutorPass: onTutorPass,
         );
       },
     );

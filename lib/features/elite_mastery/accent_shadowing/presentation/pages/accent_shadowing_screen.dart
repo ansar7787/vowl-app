@@ -84,14 +84,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     }
   }
 
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    _matchedIndices.value = Set.from(Iterable.generate(100)); // Highlight all
-    context.read<EliteMasteryBloc>().add(EliteTutorPass());
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -143,7 +135,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           ]),
           builder: (context, _) {
             return EliteBaseLayout(
-              onTutorPass: _tutorPass,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,

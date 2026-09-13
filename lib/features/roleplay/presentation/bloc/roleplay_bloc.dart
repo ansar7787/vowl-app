@@ -41,7 +41,6 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     on<NextQuestion>(_onNextQuestion);
     on<RoleplayHintUsed>(_onHintUsed);
     on<RestoreLife>(_onRestoreLife);
-    on<RoleplayTutorPass>(_onTutorPass);
     on<RestartLevel>(_onRestart);
     on<PreloadNextBatch>(_onPreload);
     on<RoleplaySpeakConfirmed>(_onSpeakConfirmed);
@@ -323,25 +322,6 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
 
   void _onRestart(RestartLevel event, Emitter<RoleplayState> emit) =>
       emit(const RoleplayInitial());
-
-  // ── ─────────────────────────────────────────────────────────────────────
-
-  void _onTutorPass(RoleplayTutorPass event, Emitter<RoleplayState> emit) {
-    if (state is! RoleplayLoaded) return;
-    final s = state as RoleplayLoaded;
-
-    emit(
-      s.copyWith(
-        answerStatus: AnswerStatus.correct,
-        wrongCount: 0,
-        isFinalFailure: false,
-      ),
-    );
-    soundService.playCorrect();
-    hapticService.success();
-  }
-
-  // ── ─────────────────────────────────────────────────────────────────────
 
   Future<void> _onPreload(
     PreloadNextBatch event,

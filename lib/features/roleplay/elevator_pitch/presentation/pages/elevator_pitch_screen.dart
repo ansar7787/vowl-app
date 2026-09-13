@@ -85,13 +85,6 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
     }
   }
 
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    context.read<RoleplayBloc>().add(const RoleplayTutorPass());
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -135,7 +128,6 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
           ]),
           builder: (context, _) {
             return RoleplayBaseLayout(
-              onTutorPass: _tutorPass,
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered.value,

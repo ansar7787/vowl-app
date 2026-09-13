@@ -5,7 +5,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/core/presentation/widgets/grammar/logic_circuit.dart';
+
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_game_header.dart';
@@ -61,21 +61,7 @@ class GrammarBaseLayout extends StatelessWidget {
     return GameBaseLayout<GrammarBloc, GrammarState>(
       config: config,
       stateMapper: (state) => state,
-      backgroundOverlay: Builder(
-        builder: (context) {
-          final isDark = Theme.of(context).brightness == Brightness.dark;
-          final theme = LevelThemeHelper.getTheme(
-            'grammar',
-            level: level,
-            isDark: isDark,
-          );
-          return Positioned.fill(
-            child: LogicCircuit(
-              color: (theme.primaryColor).withValues(alpha: 0.2),
-            ),
-          );
-        },
-      ),
+
       onRetry: () => context.read<GrammarBloc>().add(
         FetchGrammarQuests(gameType: gameType, level: level),
       ),

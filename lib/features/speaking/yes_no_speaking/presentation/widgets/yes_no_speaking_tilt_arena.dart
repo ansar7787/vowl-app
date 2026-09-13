@@ -55,20 +55,12 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
 
           // 2. Boundary gate zones
           Positioned(
-            left: 12.w,
-            child: _buildGateZone(
-              "NO (MISMATCH)",
-              Colors.redAccent,
-              tiltValue <= -0.85,
-            ),
+            left: 20.w,
+            child: _buildGateZone("NO", Colors.redAccent, tiltValue <= -0.85),
           ),
           Positioned(
-            right: 12.w,
-            child: _buildGateZone(
-              "YES (MATCH)",
-              Colors.greenAccent,
-              tiltValue >= 0.85,
-            ),
+            right: 20.w,
+            child: _buildGateZone("YES", Colors.greenAccent, tiltValue >= 0.85),
           ),
 
           // 3. Central dragging glowing sphere
@@ -126,7 +118,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
 
   Widget _buildGateZone(String label, Color color, bool isActive) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isActive ? color : color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20.r),
@@ -142,8 +134,9 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
         label,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 10.sp,
-          fontWeight: FontWeight.bold,
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w800,
+          letterSpacing: 1.5,
           color: isActive ? Colors.white : color,
         ),
       ),

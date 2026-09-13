@@ -134,14 +134,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     }
   }
 
-  void _tutorPass() {
-    GameDialogHelper.showHonestyNudge(context);
-    _isAnswered.value = true;
-    _isCorrect.value = true;
-    _scratchProgress.value = 1.0;
-    context.read<SpeakingBloc>().add(const SpeakingTutorPass());
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -162,7 +154,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
             // Removed Future.delayed auto-play to preserve scratch card mystery
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            _isAnswered.value = true;
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
           _lastLives = state.livesRemaining;
         }
@@ -202,7 +194,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
-                onTutorPass: _tutorPass,
                 gameType: widget.gameType,
                 level: widget.level,
                 isAnswered: _isAnswered.value,

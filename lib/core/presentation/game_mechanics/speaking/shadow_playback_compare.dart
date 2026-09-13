@@ -169,6 +169,10 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     _isProcessingAudioAction = true;
 
     try {
+      // Aggressively stop any background TTS/audio so the mic doesn't catch it
+      await _soundService.stopTts();
+      await _soundService.stopAudio();
+
       final hasPermission = await _audioRecorder.hasPermission();
       if (hasPermission) {
         _hapticService.selection();
