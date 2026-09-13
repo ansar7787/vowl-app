@@ -1,10 +1,10 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -20,7 +20,6 @@ import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_header.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_sentence_panel.dart';
-import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_garden_panel.dart';
 
 class SpeakSynonymScreen extends StatefulWidget {
   final int level;
@@ -51,11 +50,10 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
 
-  late AnimationController _swingController;
-  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   final ScrollController _scrollController = ScrollController();
 
   List<String> _acceptedSyns = [];
+  SpeakingQuest? _currentQuest;
 
   @override
   void initState() {
@@ -63,23 +61,14 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     context.read<SpeakingBloc>().add(
       FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
     );
-
-    _swingController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 8))
-          ..addListener(() {
-            _timeVal.value = _swingController.value;
-          });
-    _swingController.repeat();
   }
 
   @override
   void dispose() {
-    _swingController.dispose();
     _bloomProgress.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
-    _timeVal.dispose();
     _scrollController.dispose();
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
@@ -122,13 +111,16 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
 
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
-          authState.user != null) {
+          authState.user != null &&
+          _currentQuest != null) {
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: _acceptedSyns.join(', '),
+          question: _currentQuest!.textToSpeak ?? 'Unknown',
           userAnswer: '[Failed Synonym]',
-          correctAnswer: _acceptedSyns.isNotEmpty ? _acceptedSyns.first : '',
+          correctAnswer:
+              _currentQuest!.correctAnswer ??
+              (_acceptedSyns.isNotEmpty ? _acceptedSyns.first : ''),
           level: widget.level,
         );
       }
@@ -191,8 +183,10 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+        final hintUsed = (state is SpeakingLoaded) ? state.hintUsed : false;
 
         if (quest != null) {
+          _currentQuest = quest;
           _extractTargetWord(
             quest.textToSpeak ?? "",
             quest.acceptedSynonyms ?? [],
@@ -209,7 +203,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
               _isCorrect,
               _showConfetti,
               _bloomProgress,
-              _timeVal,
               _ttsFinished,
             ]),
             builder: (context, _) {
@@ -243,73 +236,113 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                 vertical: 16.h,
                               ),
                               sliver: SliverToBoxAdapter(
-                                child: AbsorbPointer(
-                                  absorbing: _ttsFinished.value,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SpeakSynonymHeader(
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SpeakSynonymHeader(
+                                      primaryColor: theme.primaryColor,
+                                      instruction:
+                                          "Say a different word with the same meaning",
+                                    ),
+                                    SizedBox(height: 24.h),
+                                    SpeakSynonymSentencePanel(
+                                      quest: quest,
+                                      primaryColor: theme.primaryColor,
+                                      isDark: isDark,
+                                      onPlayTts: () {
+                                        if (di
+                                            .sl<AudioRecordingService>()
+                                            .isRecording) {
+                                          return;
+                                        }
+                                        _soundService.playTts(
+                                          (quest.textToSpeak ?? "").replaceAll(
+                                            '*',
+                                            '',
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    if (hintUsed && quest.hint != null) ...[
+                                      SizedBox(height: 16.h),
+                                      Container(
+                                        padding: EdgeInsets.all(16.r),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.1,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            16.r,
+                                          ),
+                                          border: Border.all(
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.3),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Icon(
+                                              Icons.lightbulb_outline,
+                                              color: theme.primaryColor,
+                                              size: 20.r,
                                             ),
-                                      ),
-                                      SizedBox(height: 24.h),
-                                      SpeakSynonymSentencePanel(
-                                        quest: quest,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onPlayTts: () {
-                                          if (di
-                                              .sl<AudioRecordingService>()
-                                              .isRecording) {
-                                            return;
-                                          }
-                                          _soundService.playTts(
-                                            (quest.textToSpeak ?? "")
-                                                .replaceAll('*', ''),
-                                          );
-                                        },
-                                      ),
-                                      SizedBox(height: 32.h),
-                                      SpeakSynonymGardenPanel(
-                                        bloomProgress: _bloomProgress.value,
-                                        primaryColor: theme.primaryColor,
-                                        isListening: false,
-                                        timeVal: _timeVal.value,
-                                        isDark: isDark,
+                                            SizedBox(width: 12.w),
+                                            Expanded(
+                                              child: Text(
+                                                quest.hint!,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 14.sp,
+                                                  color: isDark
+                                                      ? Colors.white70
+                                                      : Colors.black87,
+                                                  height: 1.4,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ],
-                                  ),
+                                    SizedBox(height: 32.h),
+                                  ],
                                 ),
                               ),
                             ),
                             if (!_isAnswered.value)
-                              SliverToBoxAdapter(
-                                child: AnimatedOpacity(
-                                  opacity: _ttsFinished.value ? 1.0 : 0.4,
-                                  duration: const Duration(milliseconds: 300),
-                                  child: AbsorbPointer(
-                                    absorbing: !_ttsFinished.value,
-                                    child: SpeakToConfirmOverlay(
-                                      expectedText: _acceptedSyns.join(', '),
-                                      acceptedSynonyms: _acceptedSyns,
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      hideExpectedText: true,
-                                      title: 'SPEAK A SYNONYM',
-                                      subtitle:
-                                          'Say your answer aloud to confirm',
-                                      onConfirmed: () =>
-                                          _submitVerbalEvaluation(true),
-                                      onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                              SliverPadding(
+                                padding: EdgeInsets.only(bottom: 120.h),
+                                sliver: SliverToBoxAdapter(
+                                  child: AnimatedOpacity(
+                                    opacity: _ttsFinished.value ? 1.0 : 0.4,
+                                    duration: const Duration(milliseconds: 300),
+                                    child: AbsorbPointer(
+                                      absorbing: !_ttsFinished.value,
+                                      child: SpeakToConfirmOverlay(
+                                        expectedText: _acceptedSyns.join(', '),
+                                        acceptedSynonyms: _acceptedSyns,
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        hideExpectedText: true,
+                                        allowSkip: false,
+                                        title: 'SPEAK A SYNONYM',
+                                        subtitle:
+                                            'Say your answer aloud to confirm',
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
+                                      ),
                                     ),
                                   ),
                                 ),
+                              )
+                            else
+                              SliverToBoxAdapter(
+                                child: SizedBox(height: 120.h),
                               ),
-                            SliverToBoxAdapter(child: SizedBox(height: 120.h)),
                           ],
                         ),
                       ),

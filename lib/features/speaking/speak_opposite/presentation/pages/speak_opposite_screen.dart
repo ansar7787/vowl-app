@@ -333,6 +333,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                             primaryColor: theme.primaryColor,
                                             isPositioned: false,
                                             hideExpectedText: true,
+                                            allowSkip: false,
                                             title: 'SPEAK AN ANTONYM',
                                             subtitle:
                                                 'Say the opposite aloud to confirm',

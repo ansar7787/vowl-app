@@ -291,6 +291,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
                                   hideExpectedText: true,
+                                  allowSkip: false,
                                   title: 'SPEAK THE SITUATION',
                                   subtitle: 'Say your answer aloud',
                                   onConfirmed: () {

@@ -28,29 +28,6 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
       borderRadius: BorderRadius.circular(26.r),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "SUBSTITUTE HIGHLIGHTED SEED",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: Colors.grey.shade400,
-                  letterSpacing: 1.0,
-                ),
-              ),
-              ScaleButton(
-                onTap: onPlayTts,
-                child: Icon(
-                  Icons.volume_up_rounded,
-                  color: primaryColor,
-                  size: 18.r,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 16.h),
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
@@ -100,6 +77,26 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
                   return TextSpan(text: e.value);
                 }
               }).toList(),
+            ),
+          ),
+          SizedBox(height: 16.h),
+          ScaleButton(
+            onTap: onPlayTts,
+            child: Container(
+              padding: EdgeInsets.all(8.r),
+              decoration: BoxDecoration(
+                color: primaryColor.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: primaryColor.withValues(alpha: 0.2),
+                  width: 1.5,
+                ),
+              ),
+              child: Icon(
+                Icons.volume_up_rounded,
+                color: primaryColor,
+                size: 20.r,
+              ),
             ),
           ),
         ],

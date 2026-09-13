@@ -381,6 +381,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                       primaryColor: theme.primaryColor,
                                       isPositioned: false,
                                       hideExpectedText: true,
+                                      allowSkip: false,
                                       title: 'SPEAK YOUR LINE',
                                       subtitle: 'Say the selected option aloud',
                                       onConfirmed: () =>

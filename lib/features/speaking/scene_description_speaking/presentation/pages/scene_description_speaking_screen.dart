@@ -372,6 +372,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
                                   hideExpectedText: true,
+                                  allowSkip: false,
                                   title: 'DESCRIBE THE SCENE',
                                   subtitle: 'Speak your description aloud',
                                   onConfirmed: () =>

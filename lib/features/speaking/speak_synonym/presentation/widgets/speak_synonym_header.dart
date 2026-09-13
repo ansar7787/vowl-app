@@ -28,7 +28,7 @@ class SpeakSynonymHeader extends StatelessWidget {
               Icon(Icons.eco_rounded, size: 14.r, color: Colors.greenAccent),
               SizedBox(width: 8.w),
               Text(
-                "LEXICAL SYNONYM SEED",
+                "SYNONYM CHALLENGE",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
