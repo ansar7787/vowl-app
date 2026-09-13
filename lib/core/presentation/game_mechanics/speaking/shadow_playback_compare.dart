@@ -513,20 +513,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                                             borderRadius: BorderRadius.circular(
                                               isRecording ? 30.r : 40.r,
                                             ),
-                                            boxShadow: [
+                                            boxShadow: isRecording ? null : [
                                               BoxShadow(
-                                                color:
-                                                    (isRecording
-                                                            ? Colors.redAccent
-                                                            : widget
-                                                                  .primaryColor)
-                                                        .withValues(alpha: 0.3),
-                                                blurRadius: isRecording
-                                                    ? 24
-                                                    : 16,
-                                                spreadRadius: isRecording
-                                                    ? 4
-                                                    : 0,
+                                                color: widget.primaryColor.withValues(alpha: 0.3),
+                                                blurRadius: 16,
+                                                spreadRadius: 0,
                                               ),
                                             ],
                                           ),
