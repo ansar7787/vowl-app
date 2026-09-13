@@ -312,144 +312,157 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
 
     final content = Material(
       type: MaterialType.transparency,
-      child:
-          Padding(
-                padding: EdgeInsets.only(
-                  left: widget.isPositioned ? 0 : 20.w,
-                  right: widget.isPositioned ? 0 : 20.w,
-                  bottom: widget.isPositioned ? 0 : 16.h,
-                ),
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: widget.isPositioned ? 0 : 20.w,
+          right: widget.isPositioned ? 0 : 20.w,
+          bottom: widget.isPositioned ? 0 : 16.h,
+        ),
+        child: Container(
+          padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+          decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: widget.isPositioned
+                ? BorderRadius.vertical(top: Radius.circular(32.r))
+                : BorderRadius.circular(32.r),
+            border: Border.all(
+              color: widget.primaryColor.withValues(alpha: 0.2),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: widget.primaryColor.withValues(alpha: 0.15),
+                blurRadius: 30,
+                offset: const Offset(0, -8),
+              ),
+            ],
+          ),
+          child: SafeArea(
+            top: false,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Handle bar
+                Container(
+                  width: 48.w,
+                  height: 4.h,
                   decoration: BoxDecoration(
-                    color: bgColor,
-                    borderRadius: widget.isPositioned
-                        ? BorderRadius.vertical(top: Radius.circular(32.r))
-                        : BorderRadius.circular(32.r),
-                    border: Border.all(
-                      color: widget.primaryColor.withValues(alpha: 0.2),
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: widget.primaryColor.withValues(alpha: 0.15),
-                        blurRadius: 30,
-                        offset: const Offset(0, -8),
-                      ),
-                    ],
+                    color: subtitleColor.withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(2.r),
                   ),
-                  child: SafeArea(
-                    top: false,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // Handle bar
-                        Container(
-                          width: 48.w,
-                          height: 4.h,
-                          decoration: BoxDecoration(
-                            color: subtitleColor.withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(2.r),
-                          ),
-                        ),
-                        SizedBox(height: 16.h),
+                ),
+                SizedBox(height: 16.h),
 
-                        // Header
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(10.r),
-                              decoration: BoxDecoration(
-                                color: widget.primaryColor.withValues(
-                                  alpha: 0.12,
-                                ),
-                                borderRadius: BorderRadius.circular(14.r),
-                              ),
-                              child: Icon(
-                                Icons.compare_arrows_rounded,
-                                color: widget.primaryColor,
-                                size: 22.r,
-                              ),
-                            ),
-                            SizedBox(width: 12.w),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  AutoSizeText(
-                                    'SHADOW & COMPARE',
-                                    maxLines: 1,
-                                    minFontSize: 8,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: widget.primaryColor,
-                                      letterSpacing: 2,
-                                    ),
-                                  ),
-                                  SizedBox(height: 2.h),
-                                  AutoSizeText(
-                                    'Record yourself, then compare with the model',
-                                    maxLines: 2,
-                                    minFontSize: 6,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w500,
-                                      color: subtitleColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 20.h),
-
-                        // Expected text display
-                        if (widget.showExpectedText) ...[
-                          Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 16.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.04)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(16.r),
-                              border: Border.all(
-                                color: widget.primaryColor.withValues(
-                                  alpha: 0.1,
-                                ),
-                              ),
-                            ),
-                            child: AutoSizeText(
-                              widget.displayText ?? widget.expectedText,
-                              textAlign: TextAlign.center,
-                              maxLines: 4,
-                              minFontSize: 10,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w700,
-                                color: textColor,
-                                height: 1.4,
-                              ),
+                // Header
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10.r),
+                      decoration: BoxDecoration(
+                        color: widget.primaryColor.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(14.r),
+                      ),
+                      child: Icon(
+                        Icons.compare_arrows_rounded,
+                        color: widget.primaryColor,
+                        size: 22.r,
+                      ),
+                    ),
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          AutoSizeText(
+                            'SHADOW & COMPARE',
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            minFontSize: 6,
+                            overflow: TextOverflow.visible,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: widget.primaryColor,
+                              letterSpacing: 2,
                             ),
                           ),
-                          SizedBox(height: 24.h),
+                          SizedBox(height: 2.h),
+                          AutoSizeText(
+                            'Record yourself, then compare with the model',
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            minFontSize: 6,
+                            overflow: TextOverflow.visible,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w500,
+                              color: subtitleColor,
+                            ),
+                          ),
                         ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.h),
 
-                        // Main interaction area
-                        ValueListenableBuilder<bool>(
-                          valueListenable: _hasRecorded,
-                          builder: (context, hasRecorded, _) {
-                            if (!hasRecorded) {
-                              // Recording phase
-                              return ValueListenableBuilder<bool>(
+                // Expected text display
+                if (widget.showExpectedText) ...[
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 16.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.04)
+                          : Colors.black.withValues(alpha: 0.03),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: widget.primaryColor.withValues(alpha: 0.1),
+                      ),
+                    ),
+                    child: AutoSizeText(
+                      widget.displayText ?? widget.expectedText,
+                      textAlign: TextAlign.center,
+                      maxLines: 4,
+                      minFontSize: 10,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w700,
+                        color: textColor,
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 24.h),
+                ],
+
+                // Main interaction area
+                AnimatedSize(
+                  duration: const Duration(milliseconds: 400),
+                  curve: Curves.easeInOutCubic,
+                  child: ValueListenableBuilder<bool>(
+                    valueListenable: _hasRecorded,
+                    builder: (context, hasRecorded, _) {
+                      return AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        layoutBuilder: (currentChild, previousChildren) {
+                          return Stack(
+                            alignment: Alignment.topCenter,
+                            children: <Widget>[
+                              ...previousChildren,
+                              ?currentChild,
+                            ],
+                          );
+                        },
+                        child: !hasRecorded
+                            ? ValueListenableBuilder<bool>(
+                                key: const ValueKey('recording_phase'),
                                 valueListenable: _isRecording,
                                 builder: (context, isRecording, _) {
                                   return Column(
@@ -462,69 +475,79 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                                             _startRecording();
                                           }
                                         },
-                                        child:
-                                            Container(
-                                                  width: 80.r,
-                                                  height: 80.r,
-                                                  decoration: BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    color: isRecording
-                                                        ? Colors.redAccent
-                                                        : widget.primaryColor,
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        color:
-                                                            (isRecording
-                                                                    ? Colors
-                                                                          .redAccent
-                                                                    : widget
-                                                                          .primaryColor)
-                                                                .withValues(
-                                                                  alpha: 0.4,
-                                                                ),
-                                                        blurRadius: 20,
-                                                        spreadRadius:
-                                                            isRecording ? 8 : 0,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  child: Icon(
-                                                    isRecording
-                                                        ? Icons.stop_rounded
-                                                        : Icons.mic_rounded,
-                                                    color: Colors.white,
-                                                    size: 40.r,
-                                                  ),
-                                                )
-                                                .animate(
-                                                  target: isRecording ? 1 : 0,
-                                                )
-                                                .scale(
-                                                  begin: const Offset(1, 1),
-                                                  end: const Offset(1.1, 1.1),
-                                                ),
+                                        child: AnimatedContainer(
+                                          duration: const Duration(
+                                            milliseconds: 300,
+                                          ),
+                                          curve: Curves.easeInOutCubic,
+                                          width: isRecording ? 180.w : 80.r,
+                                          height: isRecording ? 60.h : 80.r,
+                                          decoration: BoxDecoration(
+                                            color: isRecording
+                                                ? Colors.redAccent
+                                                : widget.primaryColor,
+                                            borderRadius: BorderRadius.circular(
+                                              isRecording ? 30.r : 40.r,
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color:
+                                                    (isRecording
+                                                            ? Colors.redAccent
+                                                            : widget
+                                                                  .primaryColor)
+                                                        .withValues(alpha: 0.3),
+                                                blurRadius: isRecording
+                                                    ? 24
+                                                    : 16,
+                                                spreadRadius: isRecording
+                                                    ? 4
+                                                    : 0,
+                                              ),
+                                            ],
+                                          ),
+                                          child: Center(
+                                            child: AnimatedSwitcher(
+                                              duration: const Duration(
+                                                milliseconds: 300,
+                                              ),
+                                              child: isRecording
+                                                  ? _buildFakeVisualizer()
+                                                  : Icon(
+                                                      Icons.mic_rounded,
+                                                      color: Colors.white,
+                                                      size: 40.r,
+                                                    ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                      SizedBox(height: 12.h),
-                                      Text(
-                                        isRecording
-                                            ? 'Recording... Tap to stop'
-                                            : 'Tap to Record',
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: isRecording
-                                              ? Colors.redAccent
-                                              : subtitleColor,
+                                      SizedBox(height: 16.h),
+                                      AnimatedSwitcher(
+                                        duration: const Duration(
+                                          milliseconds: 300,
+                                        ),
+                                        child: Text(
+                                          isRecording
+                                              ? 'Recording... Tap to stop'
+                                              : 'Tap to Record',
+                                          key: ValueKey(isRecording),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: isRecording
+                                                ? Colors.redAccent
+                                                : subtitleColor,
+                                          ),
                                         ),
                                       ),
                                     ],
                                   );
                                 },
-                              );
-                            } else {
-                              // Comparison phase
-                              return ListenableBuilder(
+                              )
+                            : ListenableBuilder(
+                                key: const ValueKey('comparison_phase'),
                                 listenable: Listenable.merge([
                                   _isPlaying,
                                   _playingLabel,
@@ -685,23 +708,16 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                                     ],
                                   );
                                 },
-                              );
-                            }
-                          },
-                        ),
-                      ],
-                    ),
+                              ),
+                      );
+                    },
                   ),
                 ),
-              )
-              .animate()
-              .slideY(
-                begin: 1.0,
-                end: 0,
-                duration: 400.ms,
-                curve: Curves.easeOut,
-              )
-              .fadeIn(duration: 300.ms),
+              ],
+            ),
+          ),
+        ),
+      ).animate().slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut).fadeIn(duration: 300.ms),
     );
 
     if (widget.isPositioned) {
@@ -709,6 +725,33 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     }
 
     return content;
+  }
+
+  Widget _buildFakeVisualizer() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: List.generate(5, (index) {
+        final delays = [0, 150, 300, 150, 0];
+        return Container(
+              margin: EdgeInsets.symmetric(horizontal: 3.w),
+              width: 4.w,
+              height: 12.h,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scaleY(
+              begin: 1.0,
+              end: 2.5,
+              duration: 350.ms,
+              delay: delays[index].ms,
+              curve: Curves.easeInOutSine,
+            );
+      }),
+    );
   }
 
   Widget _buildWaveformRow({
@@ -815,6 +858,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
               title,
               maxLines: 1,
               minFontSize: 8,
+              overflow: TextOverflow.visible,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
