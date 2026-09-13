@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:math' as math;
+import 'package:record/record.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -80,10 +82,13 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   final ValueNotifier<bool> _isPlaying = ValueNotifier(false);
   final ValueNotifier<String> _playingLabel = ValueNotifier('');
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
+  final ValueNotifier<double> _soundLevel = ValueNotifier(0.0);
 
   String? _recordingPath;
   int _playbackSessionId = 0;
   bool _isProcessingAudioAction = false;
+  
+  StreamSubscription<Amplitude>? _amplitudeSub;
 
   // Simulated waveform data for visual representation
   late List<double> _modelWaveform;
@@ -111,6 +116,8 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
 
   @override
   void dispose() {
+    _amplitudeSub?.cancel();
+    _soundLevel.dispose();
     _pulseController.dispose();
     _waveAnimController.dispose();
     if (_audioRecorder.isRecording) {
@@ -168,6 +175,18 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
           _isRecording.value = true;
           _hasRecorded.value = false;
           _recordingPath = null;
+          
+          _amplitudeSub?.cancel();
+          _amplitudeSub = _audioRecorder
+              .onAmplitudeChanged(const Duration(milliseconds: 50))
+              .listen((Amplitude amp) {
+            // Amp max is usually 0, min is often -160. But actual speech happens between -50 and 0.
+            final double level = amp.current;
+            final double normalized = ((level + 50) / 50).clamp(0.0, 1.0);
+            if (mounted) {
+              _soundLevel.value = normalized;
+            }
+          });
         }
       }
     } finally {
@@ -182,6 +201,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     try {
       _hapticService.selection();
       final path = await _audioRecorder.stopRecording();
+      _amplitudeSub?.cancel();
+      _amplitudeSub = null;
+      if (mounted) {
+        _soundLevel.value = 0.0;
+      }
 
       if (mounted) {
         _isRecording.value = false;
@@ -512,7 +536,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                                                 milliseconds: 300,
                                               ),
                                               child: isRecording
-                                                  ? _buildFakeVisualizer()
+                                                  ? _buildRealVisualizer()
                                                   : Icon(
                                                       Icons.mic_rounded,
                                                       color: Colors.white,
@@ -727,30 +751,31 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     return content;
   }
 
-  Widget _buildFakeVisualizer() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: List.generate(5, (index) {
-        final delays = [0, 150, 300, 150, 0];
-        return Container(
+  Widget _buildRealVisualizer() {
+    return ValueListenableBuilder<double>(
+      valueListenable: _soundLevel,
+      builder: (context, normalized, _) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: List.generate(5, (index) {
+            final modifier = const [0.4, 0.8, 1.0, 0.8, 0.4][index];
+            final targetHeight = 12.h + (36.h * normalized * modifier);
+
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 100),
+              curve: Curves.easeOutQuad,
               margin: EdgeInsets.symmetric(horizontal: 3.w),
               width: 4.w,
-              height: 12.h,
+              height: targetHeight,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(2.r),
               ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scaleY(
-              begin: 1.0,
-              end: 2.5,
-              duration: 350.ms,
-              delay: delays[index].ms,
-              curve: Curves.easeInOutSine,
             );
-      }),
+          }),
+        );
+      },
     );
   }
 

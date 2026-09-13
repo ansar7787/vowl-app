@@ -13,6 +13,7 @@ abstract class AudioRecordingService {
   Future<String?> stopRecording();
   Future<void> dispose();
   bool get isRecording;
+  Stream<Amplitude> onAmplitudeChanged(Duration interval);
 }
 
 class AudioRecordingServiceImpl implements AudioRecordingService {
@@ -22,6 +23,11 @@ class AudioRecordingServiceImpl implements AudioRecordingService {
 
   @override
   bool get isRecording => _isRecording;
+
+  @override
+  Stream<Amplitude> onAmplitudeChanged(Duration interval) {
+    return _audioRecorder.onAmplitudeChanged(interval);
+  }
 
   @override
   Future<bool> hasPermission() async {
