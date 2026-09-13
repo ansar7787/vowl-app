@@ -29,16 +29,19 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "TARGET STATEMENT TO REPEAT",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: primaryColor,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  "TARGET STATEMENT TO REPEAT",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    color: primaryColor,
+                    letterSpacing: 1.5,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
+              SizedBox(width: 8.w),
               Semantics(
                 button: true,
                 label: 'Listen to the target sentence again',
@@ -79,7 +82,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
           ),
           SizedBox(height: 16.h),
           Text(
-            quest.correctAnswer ?? "",
+            quest.textToSpeak ?? quest.correctAnswer ?? "",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -111,7 +114,9 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Expanded(
                     child: Text(
-                      (quest as SpeakingQuest).pronunciationTips!,
+                      (quest as SpeakingQuest).pronunciationTips!
+                          .replaceAll('[IPA Tip] ', '')
+                          .trim(),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,

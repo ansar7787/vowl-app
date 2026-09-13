@@ -27,6 +27,7 @@ class SpeakingGameHeader extends StatelessWidget {
   final SoundService soundService;
 
   final bool isDark;
+  final bool showHintButton;
   final VoidCallback onBack;
   final VoidCallback onHintTap;
   final VoidCallback onInfoTap;
@@ -42,6 +43,7 @@ class SpeakingGameHeader extends StatelessWidget {
     required this.hintUsed,
     required this.soundService,
     required this.isDark,
+    this.showHintButton = true,
     required this.onBack,
     required this.onHintTap,
     required this.onInfoTap,
@@ -75,27 +77,29 @@ class SpeakingGameHeader extends StatelessWidget {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _HintButton(
-                  hintUsed: hintUsed,
-                  hintShouldGlow: hintShouldGlow,
-                  primaryColor: primaryColor,
-                  hintText: quest!.hint,
-                  soundService: soundService,
-                  onTap: onHintTap,
-                ),
-                if (quest!.hint != null && hintUsed) ...[
-                  SizedBox(width: 8.w),
-                  TranslateButtonWidget(
-                    originalText: quest!.hint!,
-                    onTranslationComplete: (translated) {
-                      CustomSnackBar.show(
-                        context: context,
-                        message: translated,
-                        type: CustomSnackBarType.info,
-                        duration: const Duration(seconds: 8),
-                      );
-                    },
+                if (showHintButton) ...[
+                  _HintButton(
+                    hintUsed: hintUsed,
+                    hintShouldGlow: hintShouldGlow,
+                    primaryColor: primaryColor,
+                    hintText: quest!.hint,
+                    soundService: soundService,
+                    onTap: onHintTap,
                   ),
+                  if (quest!.hint != null && hintUsed) ...[
+                    SizedBox(width: 8.w),
+                    TranslateButtonWidget(
+                      originalText: quest!.hint!,
+                      onTranslationComplete: (translated) {
+                        CustomSnackBar.show(
+                          context: context,
+                          message: translated,
+                          type: CustomSnackBarType.info,
+                          duration: const Duration(seconds: 8),
+                        );
+                      },
+                    ),
+                  ],
                 ],
               ],
             ),

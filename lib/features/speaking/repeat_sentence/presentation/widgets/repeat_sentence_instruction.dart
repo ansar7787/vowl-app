@@ -48,7 +48,9 @@ class RepeatSentenceInstruction extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white70
+                : Colors.black54,
           ),
         ),
       ],

@@ -177,11 +177,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            } else {
-              _isAnswered.value = false;
-            }
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
           _lastLives = state.livesRemaining;
         }
@@ -290,18 +286,25 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                 ),
                               ),
                             ),
-                            if (_ttsFinished.value && !_isAnswered.value)
+                            if (!_isAnswered.value)
                               SliverToBoxAdapter(
-                                child: ShadowPlaybackCompare(
-                                  expectedText: quest.targetWord ?? "",
-                                  displayText:
-                                      '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
+                                child: AnimatedOpacity(
+                                  opacity: _ttsFinished.value ? 1.0 : 0.4,
+                                  duration: const Duration(milliseconds: 300),
+                                  child: AbsorbPointer(
+                                    absorbing: !_ttsFinished.value,
+                                    child: ShadowPlaybackCompare(
+                                      expectedText: quest.targetWord ?? "",
+                                      displayText:
+                                          '${quest.targetWord ?? ""}\n\n/${quest.phoneticHint ?? ""}/',
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () =>
+                                          _submitVerbalEvaluation(true),
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false),
+                                    ),
+                                  ),
                                 ),
                               ),
                             SliverToBoxAdapter(child: SizedBox(height: 120.h)),

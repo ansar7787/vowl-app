@@ -17,6 +17,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_header_instruction.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_audition_card.dart';
@@ -271,9 +272,15 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
-                                        onPlayTts: () => _soundService.playTts(
-                                          quest.prompt ?? "",
-                                        ),
+                                        onPlayTts: () {
+                                          if (di
+                                              .sl<AudioRecordingService>()
+                                              .isRecording)
+                                            return;
+                                          _soundService.playTts(
+                                            quest.prompt ?? "",
+                                          );
+                                        },
                                       ),
                                       SizedBox(height: 32.h),
                                       YesNoSpeakingTiltArena(

@@ -87,6 +87,8 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   String? _recordingPath;
   int _playbackSessionId = 0;
   bool _isProcessingAudioAction = false;
+  DateTime? _recordStartTime;
+  Duration _recordDuration = Duration.zero;
 
   StreamSubscription<Amplitude>? _amplitudeSub;
 
@@ -175,6 +177,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
           _isRecording.value = true;
           _hasRecorded.value = false;
           _recordingPath = null;
+          _recordStartTime = DateTime.now();
 
           _amplitudeSub?.cancel();
           _amplitudeSub = _audioRecorder
@@ -201,6 +204,9 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     try {
       _hapticService.selection();
       final path = await _audioRecorder.stopRecording();
+      if (_recordStartTime != null) {
+        _recordDuration = DateTime.now().difference(_recordStartTime!);
+      }
       _amplitudeSub?.cancel();
       _amplitudeSub = null;
       if (mounted) {
@@ -258,7 +264,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     } catch (_) {}
 
     if (sessionId != _playbackSessionId) return;
-    await Future.delayed(const Duration(milliseconds: 600));
+    await Future.delayed(_recordDuration + const Duration(milliseconds: 300));
 
     if (mounted && sessionId == _playbackSessionId) {
       _isPlaying.value = false;
@@ -298,7 +304,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     }
 
     if (sessionId != _playbackSessionId) return;
-    await Future.delayed(const Duration(milliseconds: 600));
+    await Future.delayed(_recordDuration + const Duration(milliseconds: 300));
 
     if (mounted && sessionId == _playbackSessionId) {
       _isPlaying.value = false;
@@ -491,53 +497,61 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                                 builder: (context, isRecording, _) {
                                   return Column(
                                     children: [
-                                      GestureDetector(
-                                        onTap: () {
-                                          if (isRecording) {
-                                            _stopRecording();
-                                          } else {
-                                            _startRecording();
-                                          }
-                                        },
-                                        child: AnimatedContainer(
-                                          duration: const Duration(
-                                            milliseconds: 300,
-                                          ),
-                                          curve: Curves.easeInOutCubic,
-                                          width: isRecording ? 180.w : 80.r,
-                                          height: isRecording ? 60.h : 80.r,
-                                          decoration: BoxDecoration(
-                                            color: isRecording
-                                                ? Colors.redAccent
-                                                : widget.primaryColor,
-                                            borderRadius: BorderRadius.circular(
-                                              isRecording ? 30.r : 40.r,
+                                      Semantics(
+                                        button: true,
+                                        label: isRecording
+                                            ? 'Stop recording'
+                                            : 'Start recording',
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            if (isRecording) {
+                                              _stopRecording();
+                                            } else {
+                                              _startRecording();
+                                            }
+                                          },
+                                          child: AnimatedContainer(
+                                            duration: const Duration(
+                                              milliseconds: 300,
                                             ),
-                                            boxShadow: isRecording
-                                                ? null
-                                                : [
-                                                    BoxShadow(
-                                                      color: widget.primaryColor
-                                                          .withValues(
-                                                            alpha: 0.3,
-                                                          ),
-                                                      blurRadius: 16,
-                                                      spreadRadius: 0,
-                                                    ),
-                                                  ],
-                                          ),
-                                          child: Center(
-                                            child: AnimatedSwitcher(
-                                              duration: const Duration(
-                                                milliseconds: 300,
+                                            curve: Curves.easeInOutCubic,
+                                            width: isRecording ? 180.w : 80.r,
+                                            height: isRecording ? 60.h : 80.r,
+                                            decoration: BoxDecoration(
+                                              color: isRecording
+                                                  ? Colors.redAccent
+                                                  : widget.primaryColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                    isRecording ? 30.r : 40.r,
+                                                  ),
+                                              boxShadow: isRecording
+                                                  ? null
+                                                  : [
+                                                      BoxShadow(
+                                                        color: widget
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.3,
+                                                            ),
+                                                        blurRadius: 16,
+                                                        spreadRadius: 0,
+                                                      ),
+                                                    ],
+                                            ),
+                                            child: Center(
+                                              child: AnimatedSwitcher(
+                                                duration: const Duration(
+                                                  milliseconds: 300,
+                                                ),
+                                                child: isRecording
+                                                    ? _buildRealVisualizer()
+                                                    : Icon(
+                                                        Icons.mic_rounded,
+                                                        color: Colors.white,
+                                                        size: 40.r,
+                                                      ),
                                               ),
-                                              child: isRecording
-                                                  ? _buildRealVisualizer()
-                                                  : Icon(
-                                                      Icons.mic_rounded,
-                                                      color: Colors.white,
-                                                      size: 40.r,
-                                                    ),
                                             ),
                                           ),
                                         ),
@@ -755,7 +769,13 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: List.generate(5, (index) {
-            final modifier = const [0.4, 0.8, 1.0, 0.8, 0.4][index];
+            final baseModifier = const [0.4, 0.8, 1.0, 0.8, 0.4][index];
+            // Add slight organic jitter when the user is speaking to simulate frequency variance
+            final jitter = normalized > 0.05
+                ? (math.Random().nextDouble() * 0.3 - 0.15)
+                : 0.0;
+            final modifier = (baseModifier + jitter).clamp(0.1, 1.2);
+
             final targetHeight = 12.h + (36.h * normalized * modifier);
 
             return AnimatedContainer(
@@ -862,32 +882,36 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     required Color color,
     required VoidCallback onTap,
   }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
-        ),
-        child: Column(
-          children: [
-            Icon(icon, color: color, size: 24.sp),
-            SizedBox(height: 4.h),
-            AutoSizeText(
-              title,
-              maxLines: 1,
-              minFontSize: 8,
-              overflow: TextOverflow.visible,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: color,
+    return Semantics(
+      button: true,
+      label: title,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+          ),
+          child: Column(
+            children: [
+              Icon(icon, color: color, size: 24.sp),
+              SizedBox(height: 4.h),
+              AutoSizeText(
+                title,
+                maxLines: 1,
+                minFontSize: 8,
+                overflow: TextOverflow.visible,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w800,
+                  color: color,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

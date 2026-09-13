@@ -222,11 +222,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            } else {
-              _isAnswered.value = false;
-            }
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
           _lastLives = state.livesRemaining;
         }
@@ -381,19 +377,26 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                 ),
                               ),
                             ),
-                            if (_ttsFinished.value && !_isAnswered.value)
+                            if (!_isAnswered.value)
                               SliverToBoxAdapter(
-                                child: SpeakToConfirmOverlay(
-                                  expectedText: expectedText,
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  hideExpectedText: true,
-                                  title: 'SPEAK YOUR LINE',
-                                  subtitle: 'Say the selected option aloud',
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
+                                child: AnimatedOpacity(
+                                  opacity: _ttsFinished.value ? 1.0 : 0.4,
+                                  duration: const Duration(milliseconds: 300),
+                                  child: AbsorbPointer(
+                                    absorbing: !_ttsFinished.value,
+                                    child: SpeakToConfirmOverlay(
+                                      expectedText: expectedText,
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      hideExpectedText: true,
+                                      title: 'SPEAK YOUR LINE',
+                                      subtitle: 'Say the selected option aloud',
+                                      onConfirmed: () =>
+                                          _submitVerbalEvaluation(true),
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false),
+                                    ),
+                                  ),
                                 ),
                               ),
                             SliverToBoxAdapter(child: SizedBox(height: 120.h)),

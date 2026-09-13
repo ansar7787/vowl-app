@@ -260,11 +260,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            } else {
-              _isAnswered.value = false;
-            }
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
           _lastLives = state.livesRemaining;
 

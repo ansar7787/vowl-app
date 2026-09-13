@@ -128,9 +128,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             _matchedIndices.value = {};
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            }
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
         }
       },

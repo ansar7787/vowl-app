@@ -34,6 +34,8 @@ class SpeakingBaseLayout extends StatelessWidget {
   final bool useScrolling;
   final bool disablePadding;
 
+  final bool showHintButton;
+
   /// Optional service overrides — inject mocks in widget tests to avoid
   /// requiring a live DI container. Production code leaves these null and
   /// the State falls back to [di.sl].
@@ -50,6 +52,7 @@ class SpeakingBaseLayout extends StatelessWidget {
     required this.isAnswered,
     required this.onContinue,
     required this.onHint,
+    this.showHintButton = true,
     this.onTutorPass,
     this.isCorrect,
     this.isFinalFailure = false,
@@ -124,6 +127,7 @@ class SpeakingBaseLayout extends StatelessWidget {
           hintUsed: hintUsed,
           soundService: soundService ?? di.sl<SoundService>(),
           isDark: isDark,
+          showHintButton: showHintButton,
           onBack: () => GameDialogHelper.showExitConfirmation(
             context,
             onQuit: () => Navigator.of(context).pop(),

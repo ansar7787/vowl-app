@@ -211,7 +211,9 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                   context.read<RoleplayBloc>().add(RoleplayHintUsed()),
               useScrolling: false,
               child: quest == null
-                  ? GameShimmerLoading(primaryColor: Theme.of(context).primaryColor)
+                  ? GameShimmerLoading(
+                      primaryColor: Theme.of(context).primaryColor,
+                    )
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         return Stack(

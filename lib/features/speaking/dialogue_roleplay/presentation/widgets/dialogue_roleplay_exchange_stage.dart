@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 class DialogueRoleplayExchangeStage extends StatelessWidget {
   final SpeakingQuest quest;
@@ -147,7 +148,11 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                     ),
                     if (!isUser)
                       ScaleButton(
-                        onTap: () => soundService.playTts(content),
+                        onTap: () {
+                          if (di.sl<AudioRecordingService>().isRecording)
+                            return;
+                          soundService.playTts(content);
+                        },
                         child: Icon(
                           Icons.volume_up_rounded,
                           color: color,

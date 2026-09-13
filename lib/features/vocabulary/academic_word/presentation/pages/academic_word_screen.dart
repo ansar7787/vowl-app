@@ -223,9 +223,10 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                       children: [
                         RawScrollbar(
                           controller: _scrollController,
-                          thumbColor: _cachedTheme.of(context).primaryColor.withValues(
-                            alpha: 0.5,
-                          ),
+                          thumbColor: _cachedTheme
+                              .of(context)
+                              .primaryColor
+                              .withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
                           child: CustomScrollView(
@@ -264,8 +265,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                             activeShardIndex:
                                                 _activeShardIndex.value,
                                             dragOffset: _dragOffset.value,
-                                            themeColor:
-                                                _cachedTheme.of(context).primaryColor,
+                                            themeColor: _cachedTheme
+                                                .of(context)
+                                                .primaryColor,
                                             onShardTap: (i) =>
                                                 _attemptThrust(i, quest),
                                             onDragStart: _onShardDragStart,

@@ -18,6 +18,7 @@ import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_fog_scrubber_panel.dart';
@@ -265,9 +266,15 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                       scrubProgress: _scrubProgress.value,
                                       timeVal: _timeVal.value,
                                       onScrubUpdate: _onScrubUpdate,
-                                      onPlayTts: () => _soundService.playTts(
-                                        quest.situationText ?? "",
-                                      ),
+                                      onPlayTts: () {
+                                        if (di
+                                            .sl<AudioRecordingService>()
+                                            .isRecording)
+                                          return;
+                                        _soundService.playTts(
+                                          quest.situationText ?? "",
+                                        );
+                                      },
                                     ),
                                   ],
                                 ),

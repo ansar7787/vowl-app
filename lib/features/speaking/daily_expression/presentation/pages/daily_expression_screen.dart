@@ -20,6 +20,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_header.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratch_panel.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_usage_panel.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 class DailyExpressionScreen extends StatefulWidget {
   final int level;
@@ -297,9 +298,15 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                         scratchProgress: _scratchProgress.value,
                                         isListening: false,
                                         timeVal: _timeVal.value,
-                                        onPlayTts: () => _soundService.playTts(
-                                          quest.expression ?? "",
-                                        ),
+                                        onPlayTts: () {
+                                          if (di
+                                              .sl<AudioRecordingService>()
+                                              .isRecording)
+                                            return;
+                                          _soundService.playTts(
+                                            quest.expression ?? "",
+                                          );
+                                        },
                                         onScratchUpdate: _handleScratchUpdate,
                                       ),
                                       SizedBox(height: 32.h),

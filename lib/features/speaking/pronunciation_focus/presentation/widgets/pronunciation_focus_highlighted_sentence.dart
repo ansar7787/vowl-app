@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 class PronunciationFocusHighlightedSentence extends StatelessWidget {
   final SpeakingQuest quest;
@@ -38,7 +39,10 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
           cleanWord.contains(phonemeChar) && phonemeChar.isNotEmpty;
 
       return GestureDetector(
-        onTap: () => soundService.playTts(word),
+        onTap: () {
+          if (di.sl<AudioRecordingService>().isRecording) return;
+          soundService.playTts(word);
+        },
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
           padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
@@ -101,7 +105,10 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
                 ),
               ),
               ScaleButton(
-                onTap: () => soundService.playTts(quest.textToSpeak ?? ""),
+                onTap: () {
+                  if (di.sl<AudioRecordingService>().isRecording) return;
+                  soundService.playTts(quest.textToSpeak ?? "");
+                },
                 child: Icon(
                   Icons.volume_up_rounded,
                   color: primaryColor,

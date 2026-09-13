@@ -13,6 +13,7 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_audition_card.dart';
@@ -147,11 +148,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            } else {
-              _isAnswered.value = false;
-            }
+            _isAnswered.value =
+                true; // Always show feedback card on incorrect (Try Again or Continue)
           }
           _lastLives = state.livesRemaining;
         }
@@ -192,6 +190,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
+                showHintButton:
+                    false, // Hidden because hint text is directly available as pronunciationTips
                 disablePadding:
                     true, // Fixes "width not fully used" and "scroll bar not edge"
                 onContinue: () =>
@@ -218,7 +218,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                               ),
                               sliver: SliverToBoxAdapter(
                                 child: AbsorbPointer(
-                                  absorbing: _ttsFinished.value,
+                                  absorbing: !_ttsFinished
+                                      .value, // Prevent interaction only while initial TTS is playing
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -234,26 +235,40 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
-                                        onPlayTts: () => _soundService.playTts(
-                                          quest.textToSpeak ?? "",
-                                        ),
+                                        onPlayTts: () {
+                                          if (di
+                                              .sl<AudioRecordingService>()
+                                              .isRecording)
+                                            return;
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
+                                        },
                                       ),
                                     ],
                                   ),
                                 ),
                               ),
                             ),
-                            if (!_isAnswered.value && _ttsFinished.value)
+                            if (!_isAnswered.value)
                               SliverToBoxAdapter(
-                                child: ShadowPlaybackCompare(
-                                  expectedText: quest.textToSpeak ?? "",
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  showExpectedText: false,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true, quest),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false, quest),
+                                child: AnimatedOpacity(
+                                  opacity: _ttsFinished.value ? 1.0 : 0.4,
+                                  duration: const Duration(milliseconds: 300),
+                                  child: AbsorbPointer(
+                                    absorbing: !_ttsFinished.value,
+                                    child: ShadowPlaybackCompare(
+                                      key: ValueKey(quest.id),
+                                      expectedText: quest.textToSpeak ?? "",
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      showExpectedText: false,
+                                      onConfirmed: () =>
+                                          _submitVerbalEvaluation(true, quest),
+                                      onSkipped: () =>
+                                          _submitVerbalEvaluation(false, quest),
+                                    ),
+                                  ),
                                 ),
                               ),
                             SliverToBoxAdapter(

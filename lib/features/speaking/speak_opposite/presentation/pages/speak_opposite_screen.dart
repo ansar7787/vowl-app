@@ -17,6 +17,7 @@ import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_header.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
@@ -186,11 +187,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
-            if (state.isFinalFailure || state.livesRemaining <= 0) {
-              _isAnswered.value = true;
-            } else {
-              _isAnswered.value = false;
-            }
+            _isAnswered.value = true; // Always show feedback card on incorrect
           }
           _lastLives = state.livesRemaining;
         }
@@ -280,12 +277,16 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                         quest: quest,
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
-                                        onPlayTts: () => _soundService.playTts(
-                                          (quest.textToSpeak ?? "").replaceAll(
-                                            '*',
-                                            '',
-                                          ),
-                                        ),
+                                        onPlayTts: () {
+                                          if (di
+                                              .sl<AudioRecordingService>()
+                                              .isRecording)
+                                            return;
+                                          _soundService.playTts(
+                                            (quest.textToSpeak ?? "")
+                                                .replaceAll('*', ''),
+                                          );
+                                        },
                                       ),
                                       SizedBox(height: 32.h),
                                       SpeakOppositePlasmaConduitPanel(
@@ -305,48 +306,58 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                 ),
                               ),
                             ),
-                            if (_ttsFinished.value && !_isAnswered.value)
+                            if (!_isAnswered.value)
                               SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                    vertical: 16.h,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(bottom: 24.h),
-                                        child: SpeedChallengeTimer(
-                                          key: _timerKey,
-                                          durationSeconds: 30,
-                                          primaryColor: theme.primaryColor,
-                                          onTimeUp: () =>
-                                              _onTimeUp(expectedText),
-                                          autoStart: true,
-                                        ),
+                                child: AnimatedOpacity(
+                                  opacity: _ttsFinished.value ? 1.0 : 0.4,
+                                  duration: const Duration(milliseconds: 300),
+                                  child: AbsorbPointer(
+                                    absorbing: !_ttsFinished.value,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: 16.h,
                                       ),
-                                      SpeakToConfirmOverlay(
-                                        expectedText: expectedText,
-                                        acceptedSynonyms: _acceptedAntonyms,
-                                        primaryColor: theme.primaryColor,
-                                        isPositioned: false,
-                                        hideExpectedText: true,
-                                        title: 'SPEAK AN ANTONYM',
-                                        subtitle:
-                                            'Say the opposite aloud to confirm',
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(
-                                              true,
-                                              expectedText,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                              bottom: 24.h,
                                             ),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(
-                                              false,
-                                              expectedText,
+                                            child: SpeedChallengeTimer(
+                                              key: _timerKey,
+                                              durationSeconds: 30,
+                                              primaryColor: theme.primaryColor,
+                                              onTimeUp: () =>
+                                                  _onTimeUp(expectedText),
+                                              autoStart: true,
                                             ),
+                                          ),
+                                          SpeakToConfirmOverlay(
+                                            expectedText: expectedText,
+                                            acceptedSynonyms: _acceptedAntonyms,
+                                            primaryColor: theme.primaryColor,
+                                            isPositioned: false,
+                                            hideExpectedText: true,
+                                            title: 'SPEAK AN ANTONYM',
+                                            subtitle:
+                                                'Say the opposite aloud to confirm',
+                                            onConfirmed: () =>
+                                                _submitVerbalEvaluation(
+                                                  true,
+                                                  expectedText,
+                                                ),
+                                            onSkipped: () =>
+                                                _submitVerbalEvaluation(
+                                                  false,
+                                                  expectedText,
+                                                ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ),

@@ -17,6 +17,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_header.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_scenic_radar_map.dart';
@@ -105,7 +106,9 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   void _onHotspotTap(int index) {
     if (_isAnswered.value || _inspectedHotspots.value.contains(index)) return;
     _hapticService.selection();
-    _soundService.playTts(_hotspotLabels[index]);
+    if (!di.sl<AudioRecordingService>().isRecording) {
+      _soundService.playTts(_hotspotLabels[index]);
+    }
     _activeHotspot.value = index;
     _scrollToBottom();
   }

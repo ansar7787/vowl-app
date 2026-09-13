@@ -4,6 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 /// Abstract contract defining standard audio effects and Text-to-Speech triggers.
@@ -243,6 +244,9 @@ class SoundServiceImpl implements SoundService {
   Future<void> playUrl(String url) async {
     await _initFuture;
     if (_isMuted) return;
+    if (di.sl.isRegistered<AudioRecordingService>() &&
+        di.sl<AudioRecordingService>().isRecording)
+      return;
     try {
       if (_player.state == PlayerState.playing) await _player.stop();
       await _player.setSource(UrlSource(url));
@@ -259,6 +263,9 @@ class SoundServiceImpl implements SoundService {
   Future<void> playFile(String filePath) async {
     await _initFuture;
     if (_isMuted) return;
+    if (di.sl.isRegistered<AudioRecordingService>() &&
+        di.sl<AudioRecordingService>().isRecording)
+      return;
     try {
       if (_player.state == PlayerState.playing) await _player.stop();
       await _player.setSource(DeviceFileSource(filePath));
@@ -280,6 +287,9 @@ class SoundServiceImpl implements SoundService {
   }) async {
     await _initFuture;
     if (_isMuted) return;
+    if (di.sl.isRegistered<AudioRecordingService>() &&
+        di.sl<AudioRecordingService>().isRecording)
+      return;
     try {
       await _ttsService.speak(
         text,
