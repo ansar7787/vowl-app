@@ -415,18 +415,14 @@ class GameInstructionService {
           "PRO TIP: Speak with confident, clear pronunciation directly into the mic.",
     ),
     GameSubtype.speakSynonym: GameBriefing(
-      title: "Lexical Speaker",
+      title: "Synonym Challenge",
       icon: Icons.library_books_rounded,
       objective:
-          "Orally state a word that means the exact same thing. Having multiple words for the same idea gives your speech much more color and variety.",
-      rules: [
-        "Find the twin meaning",
-        "Speak clearly",
-        "Build a rich vocabulary",
-      ],
-      actionText: "Speak Synonym",
+          "Say a different word that means the exact same thing. Having multiple words for the same idea makes your speaking much more interesting and natural!",
+      rules: ["Think of a similar word", "Say it out loud", "Speak clearly"],
+      actionText: "Start Speaking",
       tip:
-          "PRO TIP: Don't stress! Even simple, everyday synonyms are perfectly acceptable.",
+          "PRO TIP: Keep it simple! You don't need to use big fancy words—everyday words work perfectly.",
     ),
     GameSubtype.dialogueRoleplay: GameBriefing(
       title: "Scene Architect",
