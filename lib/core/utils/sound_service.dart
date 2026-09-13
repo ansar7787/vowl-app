@@ -245,8 +245,9 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted) return;
     if (di.sl.isRegistered<AudioRecordingService>() &&
-        di.sl<AudioRecordingService>().isRecording)
+        di.sl<AudioRecordingService>().isRecording) {
       return;
+    }
     try {
       if (_player.state == PlayerState.playing) await _player.stop();
       await _player.setSource(UrlSource(url));
@@ -264,8 +265,9 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted) return;
     if (di.sl.isRegistered<AudioRecordingService>() &&
-        di.sl<AudioRecordingService>().isRecording)
+        di.sl<AudioRecordingService>().isRecording) {
       return;
+    }
     try {
       if (_player.state == PlayerState.playing) await _player.stop();
       await _player.setSource(DeviceFileSource(filePath));
@@ -288,8 +290,9 @@ class SoundServiceImpl implements SoundService {
     await _initFuture;
     if (_isMuted) return;
     if (di.sl.isRegistered<AudioRecordingService>() &&
-        di.sl<AudioRecordingService>().isRecording)
+        di.sl<AudioRecordingService>().isRecording) {
       return;
+    }
     try {
       await _ttsService.speak(
         text,

@@ -280,8 +280,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                         onPlayTts: () {
                                           if (di
                                               .sl<AudioRecordingService>()
-                                              .isRecording)
+                                              .isRecording) {
                                             return;
+                                          }
                                           _soundService.playTts(
                                             (quest.textToSpeak ?? "")
                                                 .replaceAll('*', ''),

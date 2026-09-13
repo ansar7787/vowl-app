@@ -275,8 +275,9 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                         onPlayTts: () {
                                           if (di
                                               .sl<AudioRecordingService>()
-                                              .isRecording)
+                                              .isRecording) {
                                             return;
+                                          }
                                           _soundService.playTts(
                                             quest.prompt ?? "",
                                           );

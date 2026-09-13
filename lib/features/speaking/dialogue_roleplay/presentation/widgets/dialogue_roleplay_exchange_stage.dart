@@ -149,8 +149,9 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                     if (!isUser)
                       ScaleButton(
                         onTap: () {
-                          if (di.sl<AudioRecordingService>().isRecording)
+                          if (di.sl<AudioRecordingService>().isRecording) {
                             return;
+                          }
                           soundService.playTts(content);
                         },
                         child: Icon(

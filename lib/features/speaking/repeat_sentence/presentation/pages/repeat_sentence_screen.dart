@@ -238,8 +238,9 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                         onPlayTts: () {
                                           if (di
                                               .sl<AudioRecordingService>()
-                                              .isRecording)
+                                              .isRecording) {
                                             return;
+                                          }
                                           _soundService.playTts(
                                             quest.textToSpeak ?? "",
                                           );

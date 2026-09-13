@@ -1132,11 +1132,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'repeatsentence': [
       "",
-      "Great job! Mastering sentence repetition is key to true fluency.",
-      "You are navigating sentence repetition with increasing confidence.",
-      "50 levels cleared! Your sentence repetition skills are rock solid.",
-      "Level 100! Your execution of sentence repetition is flawless.",
-      "Level 200! You are a supreme grandmaster of sentence repetition.",
+      "Great job! Shadowing native speakers like this is the fastest way to build real fluency.",
+      "You're getting the hang of it! Your rhythm and tone are sounding much more natural.",
+      "50 levels down! Your listening and speaking reflexes are getting seriously good.",
+      "Level 100! You're picking up the tiny details and mimicking them beautifully.",
+      "Level 200! You're matching the native speaker's flow and rhythm with total confidence.",
     ],
     'scenedescriptionspeaking': [
       "",

@@ -269,8 +269,9 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                       onPlayTts: () {
                                         if (di
                                             .sl<AudioRecordingService>()
-                                            .isRecording)
+                                            .isRecording) {
                                           return;
+                                        }
                                         _soundService.playTts(
                                           quest.situationText ?? "",
                                         );

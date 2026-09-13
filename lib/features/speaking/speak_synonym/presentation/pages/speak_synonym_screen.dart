@@ -272,8 +272,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                         onPlayTts: () {
                                           if (di
                                               .sl<AudioRecordingService>()
-                                              .isRecording)
+                                              .isRecording) {
                                             return;
+                                          }
                                           _soundService.playTts(
                                             (quest.textToSpeak ?? "")
                                                 .replaceAll('*', ''),
