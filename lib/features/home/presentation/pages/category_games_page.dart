@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,6 +23,9 @@ import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+/// Configuration for category games scaling and rules
+const int _kMaxLevelsPerGame = 200;
+
 class CategoryGamesPage extends StatefulWidget {
   const CategoryGamesPage({super.key, required this.categoryId});
   final String categoryId;
@@ -32,11 +36,30 @@ class CategoryGamesPage extends StatefulWidget {
 
 class _CategoryGamesPageState extends State<CategoryGamesPage> {
   late List<GameSubtype> _games;
+  final ScrollController _scrollController = ScrollController();
+  final ValueNotifier<double> _scrollOffset = ValueNotifier(0.0);
 
   @override
   void initState() {
     super.initState();
-    _games = _getGamesForCategory(widget.categoryId);
+    _initData();
+    _scrollController.addListener(_onScroll);
+  }
+
+  void _onScroll() {
+    _scrollOffset.value = _scrollController.offset;
+  }
+
+  @override
+  void didUpdateWidget(CategoryGamesPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.categoryId != widget.categoryId) {
+      _initData();
+    }
+  }
+
+  void _initData() {
+    _games = _CategoryGamesLogic.getGamesForCategory(widget.categoryId);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       CurriculumService.prewarmCache(_games.map((g) => g.name).toList());
@@ -44,27 +67,29 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   }
 
   @override
-  void didUpdateWidget(CategoryGamesPage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.categoryId != widget.categoryId) {
-      _games = _getGamesForCategory(widget.categoryId);
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (!mounted) return;
-        CurriculumService.prewarmCache(_games.map((g) => g.name).toList());
-      });
-    }
+  void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
+    _scrollOffset.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    // 10/10 Optimization: Select precise state slices instead of watching entire objects
+    // This prevents the page from rebuilding entirely if an unrelated state property changes.
+    final isMidnight = context.select(
+      (ThemeCubit cubit) => cubit.state.isMidnight,
+    );
+    final user = context.select((AuthBloc bloc) => bloc.state.user);
+
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
       isDark: isDark,
-      isMidnight: context.watch<ThemeCubit>().state.isMidnight,
+      isMidnight: isMidnight,
     );
-    final authState = context.watch<AuthBloc>().state;
-    final user = authState.user;
 
     if (user == null) {
       return Scaffold(
@@ -77,265 +102,289 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       );
     }
 
-    final games = _games;
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final hasBlueprint =
+        PedagogicalBlueprintMap.getBlueprint(widget.categoryId) != null;
 
     return Scaffold(
       backgroundColor: theme.backgroundColors[1],
-      body: Stack(
-        children: [
-          // 1. Immersive Mesh Background
-          const MeshGradientBackground(showLetters: false),
+      // 10/10 UI Polish: Ensure the system status bar icons (battery, wifi) have correct
+      // contrast over our custom MeshBackground and Glass Appbar regardless of app theme.
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
+        child: Stack(
+          children: [
+            // 1. Immersive Mesh Background
+            const MeshGradientBackground(showLetters: false),
 
-          Builder(
-            builder: (context) {
-              final hasBlueprint =
-                  PedagogicalBlueprintMap.getBlueprint(widget.categoryId) !=
-                  null;
-              return CustomScrollView(
-                physics: const BouncingScrollPhysics(),
-                slivers: [
-                  // Responsive spacer matching the dynamic floating App Bar
-                  SliverToBoxAdapter(
-                    child: SizedBox(
-                      height: MediaQuery.of(context).padding.top + 90.h,
-                    ),
+            // 2. Scrollable Content
+            CustomScrollView(
+              controller: _scrollController,
+              physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics(),
+              ),
+              slivers: [
+                // Responsive spacer matching the dynamic floating App Bar
+                SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: MediaQuery.of(context).padding.top + 90.h,
                   ),
+                ),
 
-                  // 3. Mastery Dashboard Header
+                // 3. Mastery Dashboard Header
+                SliverToBoxAdapter(
+                  child: _buildMasteryDashboard(theme, user, _games, isDark),
+                ),
+
+                // 3.5 Global Adaptive Learning Dashboard
+                if (hasBlueprint) ...[
                   SliverToBoxAdapter(
-                    child: _buildMasteryDashboard(theme, user, games, isDark),
-                  ),
-
-                  // 3.5 Global Adaptive Learning Dashboard
-                  if (hasBlueprint) ...[
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 24.h),
-                        child: CategoryRadarChart(
-                          user: user,
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          categoryId: widget.categoryId,
-                        ),
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: AdaptiveSmartMixWidget(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 24.h),
+                      child: CategoryRadarChart(
                         user: user,
+                        primaryColor: theme.primaryColor,
                         isDark: isDark,
                         categoryId: widget.categoryId,
                       ),
                     ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24.w,
-                          vertical: 16.h,
+                  ),
+                  SliverToBoxAdapter(
+                    child: AdaptiveSmartMixWidget(
+                      user: user,
+                      isDark: isDark,
+                      categoryId: widget.categoryId,
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24.w,
+                        vertical: 16.h,
+                      ),
+                      child: Text(
+                        context.tr(
+                          'category.practice_library',
+                          fallback: 'PRACTICE LIBRARY',
                         ),
-                        child: Text(
-                          context.tr(
-                            'category.practice_library',
-                            fallback: 'PRACTICE LIBRARY',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white70 : Colors.black54,
-                            letterSpacing: 2,
-                          ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark ? Colors.white70 : Colors.black54,
+                          letterSpacing: 2,
                         ),
                       ),
                     ),
-                  ],
-
-                  // 4. Game Grid/List
-                  SliverPadding(
-                    padding: EdgeInsets.fromLTRB(
-                      24.w,
-                      hasBlueprint ? 8.h : 32.h,
-                      24.w,
-                      100.h,
-                    ),
-                    sliver: SliverList(
-                      delegate: SliverChildBuilderDelegate((context, index) {
-                        return Padding(
-                          padding: EdgeInsets.only(bottom: 24.h),
-                          child: _buildSpatialGameCard(
-                            context,
-                            user,
-                            games[index],
-                            isDark,
-                            index,
-                          ),
-                        );
-                      }, childCount: games.length),
-                    ),
                   ),
                 ],
-              );
-            },
-          ),
 
-          // 5. Floating Glass Island AppBar
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: RepaintBoundary(
-              child: _buildFloatingGlassAppBar(
-                context,
-                theme,
-                isDark,
-                contentColor,
-              ),
+                // 4. Game Grid/List (Staggered Entrance)
+                SliverPadding(
+                  padding: EdgeInsets.fromLTRB(
+                    24.w,
+                    hasBlueprint ? 8.h : 32.h,
+                    24.w,
+                    // 10/10 Optimization: Replaced hardcoded 100.h with dynamic safe area calculations
+                    MediaQuery.of(context).padding.bottom + 32.h,
+                  ),
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate((context, index) {
+                      return Padding(
+                        padding: EdgeInsets.only(bottom: 24.h),
+                        child: _buildSpatialGameCard(
+                          context: context,
+                          user: user,
+                          subtype: _games[index],
+                          isDark: isDark,
+                          index: index,
+                        ),
+                      );
+                    }, childCount: _games.length),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+
+            // 5. Scroll-Reactive Floating Glass Island AppBar
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: _buildReactiveGlassAppBar(theme, isDark, contentColor),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildFloatingGlassAppBar(
-    BuildContext context,
+  Widget _buildReactiveGlassAppBar(
     ThemeResult theme,
     bool isDark,
     Color contentColor,
   ) {
     final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final displayColor = isDark
+        ? theme.primaryColor
+        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
 
-    return ClipRRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-        child: Container(
-          padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + 12.h,
-            bottom: 16.h,
-            left: 20.w,
-            right: 20.w,
-          ),
-          decoration: BoxDecoration(
-            color: (isDark ? Colors.black : Colors.white).withValues(
-              alpha: 0.1,
-            ),
-            border: Border(
-              bottom: BorderSide(
-                color: (isDark ? Colors.white : Colors.black).withValues(
-                  alpha: 0.05,
-                ),
+    return ValueListenableBuilder<double>(
+      valueListenable: _scrollOffset,
+      builder: (context, offset, child) {
+        // Calculate dynamic properties based on scroll
+        final double scrollProgress = (offset / 100).clamp(0.0, 1.0);
+        final double blurAmount =
+            8.0 + (12.0 * scrollProgress); // Blur increases as you scroll
+        final double bgAlpha = isDark
+            ? 0.1 + (0.6 * scrollProgress)
+            : 0.1 + (0.7 * scrollProgress);
+        final double borderAlpha = isDark
+            ? 0.05 + (0.1 * scrollProgress)
+            : 0.05 + (0.15 * scrollProgress);
+
+        return ClipRRect(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: blurAmount, sigmaY: blurAmount),
+            child: Container(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).padding.top + 12.h,
+                bottom: 16.h,
+                left: 20.w,
+                right: 20.w,
               ),
+              decoration: BoxDecoration(
+                color: (isDark ? Colors.black : Colors.white).withValues(
+                  alpha: bgAlpha,
+                ),
+                border: Border(
+                  bottom: BorderSide(
+                    color: (isDark ? Colors.white : Colors.black).withValues(
+                      alpha: borderAlpha,
+                    ),
+                  ),
+                ),
+                boxShadow: [
+                  if (scrollProgress > 0)
+                    BoxShadow(
+                      // 10/10 Dark Mode Polish: Stronger drop shadow in dark mode to actually create depth against dark content
+                      color: Colors.black.withValues(
+                        alpha: (isDark ? 0.5 : 0.1) * scrollProgress,
+                      ),
+                      blurRadius: 12 * scrollProgress,
+                      offset: const Offset(0, 4),
+                    ),
+                ],
+              ),
+              child: child,
             ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Semantics(
-                button: true,
-                label: context.tr('common.back', fallback: 'Back'),
-                child: ScaleButton(
-                  onTap: () {
-                    if (context.canPop()) {
-                      context.pop();
-                    } else {
-                      context.go(AppRouter.homeRoute);
-                    }
-                  },
+        );
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Semantics(
+            button: true,
+            label: context.tr('common.back', fallback: 'Back'),
+            child: ScaleButton(
+              onTap: () {
+                HapticFeedback.lightImpact();
+                if (context.canPop()) {
+                  context.pop();
+                } else {
+                  context.go(AppRouter.homeRoute);
+                }
+              },
+              child: Container(
+                constraints: BoxConstraints(minWidth: 48.r, minHeight: 48.r),
+                alignment: Alignment.center,
+                child: ExcludeSemantics(
                   child: Container(
-                    constraints: BoxConstraints(
-                      minWidth: 48.r,
-                      minHeight: 48.r,
-                    ),
-                    alignment: Alignment.center,
-                    child: ExcludeSemantics(
-                      child: Container(
-                        padding: EdgeInsets.all(10.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.03),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: (isDark ? Colors.white : Colors.black)
-                                .withValues(alpha: 0.1),
-                          ),
-                        ),
-                        child: Icon(
-                          isRtl
-                              ? Icons.arrow_forward_ios_rounded
-                              : Icons.arrow_back_ios_new_rounded,
-                          color: contentColor,
-                          size: 20.r,
-                        ),
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.03),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: (isDark ? Colors.white : Colors.black)
+                            .withValues(alpha: 0.1),
                       ),
+                    ),
+                    child: Icon(
+                      isRtl
+                          ? Icons.arrow_forward_ios_rounded
+                          : Icons.arrow_back_ios_new_rounded,
+                      color: contentColor,
+                      size: 20.r,
                     ),
                   ),
                 ),
               ),
-              // Centered Glass Capsule
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 8.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: theme.primaryColor.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: theme.primaryColor.withValues(alpha: 0.2),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(theme.icon, color: theme.primaryColor, size: 16.r),
-                      SizedBox(width: 8.w),
-                      Flexible(
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            widget.categoryId.toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: contentColor,
-                              letterSpacing: 1.5,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              // User Progress/Stats Pill (decorative)
-              ExcludeSemantics(
-                child: Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.03),
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: (isDark ? Colors.white : Colors.black).withValues(
-                        alpha: 0.1,
-                      ),
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.auto_awesome_rounded,
-                    color: theme.primaryColor,
-                    size: 20.r,
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+
+          // Centered Glass Capsule
+          Flexible(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: theme.primaryColor.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: theme.primaryColor.withValues(alpha: 0.2),
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(theme.icon, color: displayColor, size: 16.r),
+                  SizedBox(width: 8.w),
+                  Flexible(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        widget.categoryId.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w900,
+                          color: contentColor,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // User Progress/Stats Pill (decorative)
+          ExcludeSemantics(
+            child: Container(
+              padding: EdgeInsets.all(10.r),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.03),
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: (isDark ? Colors.white : Colors.black).withValues(
+                    alpha: 0.1,
+                  ),
+                ),
+              ),
+              child: Icon(
+                Icons.auto_awesome_rounded,
+                color: displayColor,
+                size: 20.r,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -347,17 +396,23 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     bool isDark,
   ) {
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    final displayColor = isDark
+        ? theme.primaryColor
+        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
 
-    // Calculate Progress (200 levels per game)
+    // Calculate Progress dynamically
     int clearedLevels = 0;
     for (var g in games) {
       final completed = user.completedLevels[g.name]?.length ?? 0;
-      clearedLevels += completed.clamp(0, 200);
+      clearedLevels += completed.clamp(0, _kMaxLevelsPerGame);
     }
-    final totalLevels = games.length * 200;
+
+    final totalLevels = games.length * _kMaxLevelsPerGame;
+    // 10/10 Safeguard: Prevents NaN crashes if a category has no mapped games
     final targetProgress = totalLevels > 0
         ? (clearedLevels / totalLevels)
         : 0.0;
+    final rankText = _CategoryGamesLogic.getRank(context, targetProgress);
 
     return Semantics(
           label: context.tr(
@@ -383,8 +438,11 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 20,
+                    // 10/10 Dark Mode Polish: Replaced invisible black shadow with a subtle ambient theme color glow in dark mode
+                    color: isDark
+                        ? theme.primaryColor.withValues(alpha: 0.08)
+                        : Colors.black.withValues(alpha: 0.05),
+                    blurRadius: isDark ? 30 : 20,
                     offset: const Offset(0, 10),
                   ),
                 ],
@@ -410,7 +468,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w800,
-                                    color: theme.primaryColor,
+                                    color: displayColor,
                                     letterSpacing: 2,
                                   ),
                                 ),
@@ -424,7 +482,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                     begin: 0.0,
                                     end: targetProgress,
                                   ),
-                                  duration: const Duration(milliseconds: 1000),
+                                  duration: const Duration(milliseconds: 1200),
                                   curve: Curves.easeOutExpo,
                                   builder: (context, value, child) {
                                     final percentLabel = (value * 100)
@@ -469,7 +527,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                   begin: 0.0,
                                   end: clearedLevels.toDouble(),
                                 ),
-                                duration: const Duration(milliseconds: 1000),
+                                duration: const Duration(milliseconds: 1200),
                                 curve: Curves.easeOutExpo,
                                 builder: (context, value, child) {
                                   return Text(
@@ -485,7 +543,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                       fontFamily: 'Outfit',
                                       fontSize: 10.sp,
                                       fontWeight: FontWeight.w900,
-                                      color: theme.primaryColor,
+                                      color: displayColor,
                                     ),
                                     maxLines: 1,
                                   );
@@ -498,36 +556,36 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     ),
                     SizedBox(height: 20.h),
                     _buildLiquidProgressBar(
-                      theme.primaryColor,
-                      clearedLevels + 1,
-                      total: totalLevels,
+                      color: displayColor,
+                      progress: targetProgress,
                     ),
                     SizedBox(height: 20.h),
                     Row(
                       children: [
                         Expanded(
                           child: _buildStatMini(
-                            Icons.bolt_rounded,
-                            context.tr(
+                            icon: Icons.bolt_rounded,
+                            label: context.tr(
                               'category_games.power',
                               fallback: 'Power',
                             ),
-                            '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
-                            theme.primaryColor,
-                            isDark,
+                            value:
+                                '${clearedLevels * 10} ${context.tr('common.xp_suffix', fallback: 'XP')}',
+                            color: displayColor,
+                            isDark: isDark,
                           ),
                         ),
                         Expanded(
                           child: Center(
                             child: _buildStatMini(
-                              Icons.sports_esports_rounded,
-                              context.tr(
+                              icon: Icons.sports_esports_rounded,
+                              label: context.tr(
                                 'category_games.games',
                                 fallback: 'Games',
                               ),
-                              '${games.length}',
-                              theme.primaryColor,
-                              isDark,
+                              value: '${games.length}',
+                              color: displayColor,
+                              isDark: isDark,
                             ),
                           ),
                         ),
@@ -535,11 +593,11 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                           child: Align(
                             alignment: AlignmentDirectional.centerEnd,
                             child: _buildStatMini(
-                              Icons.stars_rounded,
-                              context.tr('home.rank', fallback: 'Rank'),
-                              _getRank(targetProgress),
-                              theme.primaryColor,
-                              isDark,
+                              icon: Icons.stars_rounded,
+                              label: context.tr('home.rank', fallback: 'Rank'),
+                              value: rankText,
+                              color: displayColor,
+                              isDark: isDark,
                             ),
                           ),
                         ),
@@ -556,40 +614,13 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         .slideY(begin: 0.05, end: 0, curve: Curves.easeOutCubic);
   }
 
-  String _getRank(double progress) {
-    if (progress <= 0.0) {
-      return context.tr('category_games.rank_beginner', fallback: 'Beginner');
-    }
-    if (progress < 0.15) {
-      return context.tr('category_games.rank_novice', fallback: 'Novice');
-    }
-    if (progress < 0.35) {
-      return context.tr('category_games.rank_scholar', fallback: 'Scholar');
-    }
-    if (progress < 0.55) {
-      return context
-          .tr('home.discovery_diff_expert', fallback: 'Expert')
-          .toUpperCase();
-    }
-    if (progress < 0.80) {
-      return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
-    }
-    if (progress < 0.99) {
-      return context.tr(
-        'quest_archive.status_grandmaster',
-        fallback: 'Grandmaster',
-      );
-    }
-    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
-  }
-
-  Widget _buildStatMini(
-    IconData icon,
-    String label,
-    String value,
-    Color color,
-    bool isDark,
-  ) {
+  Widget _buildStatMini({
+    required IconData icon,
+    required String label,
+    required String value,
+    required Color color,
+    required bool isDark,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -599,9 +630,6 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           children: [
             Icon(icon, color: color, size: 12.r),
             SizedBox(width: 4.w),
-            // Flexible + maxLines/ellipsis: a longer translation of POWER /
-            // GAMES / RANK (this row has 3 mini-stats sharing the available
-            // width) could otherwise overflow this Row horizontally.
             Flexible(
               child: FittedBox(
                 fit: BoxFit.scaleDown,
@@ -639,23 +667,28 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     );
   }
 
-  Widget _buildSpatialGameCard(
-    BuildContext context,
-    UserEntity user,
-    GameSubtype subtype,
-    bool isDark,
-    int index,
-  ) {
+  Widget _buildSpatialGameCard({
+    required BuildContext context,
+    required UserEntity user,
+    required GameSubtype subtype,
+    required bool isDark,
+    required int index,
+  }) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final currentLevel = (user.completedLevels[subtype.name]?.length ?? 0) + 1;
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
+
     final displayColor = isDark
         ? theme.primaryColor
         : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
-    final missionPercent = (((currentLevel - 1).clamp(0, 200)) / 200 * 100)
-        .toInt();
+
+    // Abstract the math out of the widget parameters to ensure raw floats are clean
+    final double cardProgress =
+        ((currentLevel - 1).clamp(0, _kMaxLevelsPerGame)) /
+        _kMaxLevelsPerGame.toDouble();
+    final missionPercent = (cardProgress * 100).toInt();
 
     return Semantics(
           button: true,
@@ -663,9 +696,12 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
               '${theme.title}, ${context.tr('category_games.mission_progress', fallback: 'Mission Progress', args: [missionPercent.toString()])}',
           child: RepaintBoundary(
             child: ScaleButton(
-              onTap: () => context.push(
-                '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
-              ),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                context.push(
+                  '${AppRouter.levelsRoute}?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(subtype.name)}',
+                );
+              },
               child: ExcludeSemantics(
                 child: Stack(
                   clipBehavior: Clip.none,
@@ -679,7 +715,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       usePremiumStyle: true,
                       child: Row(
                         children: [
-                          SizedBox(width: 60.r),
+                          SizedBox(width: 60.r), // Spacer for the floating icon
                           SizedBox(width: 20.w),
                           Expanded(
                             child: Column(
@@ -701,8 +737,8 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                                 ),
                                 SizedBox(height: 8.h),
                                 _buildLiquidProgressBar(
-                                  displayColor,
-                                  currentLevel,
+                                  color: displayColor,
+                                  progress: cardProgress,
                                 ),
                                 SizedBox(height: 8.h),
                                 FittedBox(
@@ -734,7 +770,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       ),
                     ),
 
-                    // Floating Spatial Icon
+                    // Floating Spatial Icon (Automatically handles RTL layout positioning)
                     PositionedDirectional(
                       start: 20.w,
                       top: -15.h,
@@ -783,18 +819,15 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           ),
         )
         .animate()
-        .fadeIn(delay: (index < 5 ? index * 80 : 0).ms, duration: 400.ms)
+        .fadeIn(delay: (index < 8 ? index * 60 : 0).ms, duration: 400.ms)
         .slideY(begin: 0.1, end: 0, curve: Curves.easeOutBack)
         .scaleXY(begin: 0.95, end: 1.0, curve: Curves.easeOutBack);
   }
 
-  Widget _buildLiquidProgressBar(
-    Color color,
-    int currentLevel, {
-    int total = 200,
+  Widget _buildLiquidProgressBar({
+    required Color color,
+    required double progress,
   }) {
-    final targetProgress =
-        ((currentLevel - 1).clamp(0, total)) / total.toDouble();
     return Container(
       height: 8.h,
       width: double.infinity,
@@ -803,10 +836,16 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: TweenAnimationBuilder<double>(
-        tween: Tween<double>(begin: 0.0, end: targetProgress.clamp(0.05, 1.0)),
+        // Avoid clamping to 0.05 at the start so empty bars look empty,
+        // but ensure a tiny minimum if progress > 0
+        tween: Tween<double>(
+          begin: 0.0,
+          end: progress <= 0.0 ? 0.0 : progress.clamp(0.02, 1.0),
+        ),
         duration: const Duration(milliseconds: 1000),
         curve: Curves.easeOutExpo,
         builder: (context, value, child) {
+          if (value == 0) return const SizedBox.shrink();
           return FractionallySizedBox(
             alignment: AlignmentDirectional.centerStart,
             widthFactor: value,
@@ -873,134 +912,137 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       ),
     );
   }
+}
 
-  List<GameSubtype> _getGamesForCategory(String category) {
+/// Extracted Domain / Presentation Logic to keep the Widget clean
+class _CategoryGamesLogic {
+  static const Map<String, List<GameSubtype>> _journeyOrder = {
+    'vocabulary': [
+      GameSubtype.flashcards,
+      GameSubtype.topicVocab,
+      GameSubtype.wordFormation,
+      GameSubtype.prefixSuffix,
+      GameSubtype.synonymSearch,
+      GameSubtype.antonymSearch,
+      GameSubtype.contextClues,
+      GameSubtype.collocations,
+      GameSubtype.phrasalVerbs,
+      GameSubtype.idioms,
+      GameSubtype.academicWord,
+      GameSubtype.contextualUsage,
+    ],
+    'grammar': [
+      GameSubtype.partsOfSpeech,
+      GameSubtype.grammarQuest,
+      GameSubtype.wordReorder,
+      GameSubtype.sentenceCorrection,
+      GameSubtype.tenseMastery,
+      GameSubtype.subjectVerbAgreement,
+      GameSubtype.articleInsertion,
+      GameSubtype.questionFormatter,
+      GameSubtype.clauseConnector,
+      GameSubtype.voiceSwap,
+      GameSubtype.punctuationMastery,
+      GameSubtype.modifierPlacement,
+      GameSubtype.modalsSelection,
+      GameSubtype.prepositionChoice,
+      GameSubtype.pronounResolution,
+      GameSubtype.relativeClauses,
+      GameSubtype.conditionals,
+      GameSubtype.conjunctions,
+      GameSubtype.directIndirectSpeech,
+    ],
+    'listening': [
+      GameSubtype.audioFillBlanks,
+      GameSubtype.audioMultipleChoice,
+      GameSubtype.audioSentenceOrder,
+      GameSubtype.audioTrueFalse,
+      GameSubtype.soundImageMatch,
+      GameSubtype.detailSpotlight,
+      GameSubtype.emotionRecognition,
+      GameSubtype.fastSpeechDecoder,
+      GameSubtype.listeningInference,
+      GameSubtype.ambientId,
+    ],
+    'reading': [
+      GameSubtype.readAndAnswer,
+      GameSubtype.findWordMeaning,
+      GameSubtype.trueFalseReading,
+      GameSubtype.sentenceOrderReading,
+      GameSubtype.guessTitle,
+      GameSubtype.readAndMatch,
+      GameSubtype.skimmingScanning,
+      GameSubtype.paragraphSummary,
+      GameSubtype.readingSpeedCheck,
+      GameSubtype.readingInference,
+      GameSubtype.readingConclusion,
+      GameSubtype.clozeTest,
+    ],
+    'writing': [
+      GameSubtype.sentenceBuilder,
+      GameSubtype.completeSentence,
+      GameSubtype.fixTheSentence,
+      GameSubtype.describeSituationWriting,
+      GameSubtype.summarizeStoryWriting,
+      GameSubtype.shortAnswerWriting,
+      GameSubtype.opinionWriting,
+      GameSubtype.dailyJournal,
+      GameSubtype.writingEmail,
+      GameSubtype.correctionWriting,
+      GameSubtype.essayDrafting,
+    ],
+    'speaking': [
+      GameSubtype.repeatSentence,
+      GameSubtype.speakMissingWord,
+      GameSubtype.yesNoSpeaking,
+      GameSubtype.pronunciationFocus,
+      GameSubtype.speakSynonym,
+      GameSubtype.speakOpposite,
+      GameSubtype.dailyExpression,
+      GameSubtype.situationSpeaking,
+      GameSubtype.sceneDescriptionSpeaking,
+      GameSubtype.dialogueRoleplay,
+    ],
+    'accent': [
+      GameSubtype.minimalPairs,
+      GameSubtype.vowelDistinction,
+      GameSubtype.consonantClarity,
+      GameSubtype.syllableStress,
+      GameSubtype.wordLinking,
+      GameSubtype.connectedSpeech,
+      GameSubtype.intonationMimic,
+      GameSubtype.pitchModulation,
+      GameSubtype.pitchPatternMatch,
+      GameSubtype.speedVariance,
+      GameSubtype.shadowingChallenge,
+      GameSubtype.dialectDrill,
+    ],
+    'roleplay': [
+      GameSubtype.situationalResponse,
+      GameSubtype.branchingDialogue,
+      GameSubtype.socialSpark,
+      GameSubtype.travelDesk,
+      GameSubtype.gourmetOrder,
+      GameSubtype.jobInterview,
+      GameSubtype.medicalConsult,
+      GameSubtype.conflictResolver,
+      GameSubtype.elevatorPitch,
+      GameSubtype.emergencyHub,
+    ],
+    'elitemastery': [
+      GameSubtype.storyBuilder,
+      GameSubtype.idiomMatch,
+      GameSubtype.speedSpelling,
+      GameSubtype.accentShadowing,
+    ],
+  };
+
+  static List<GameSubtype> getGamesForCategory(String category) {
     final List<GameSubtype> allGames = GameSubtype.values
         .where((s) => s.category.name == category && !s.isLegacy)
         .toList();
 
-    final Map<String, List<GameSubtype>> journeyOrder = {
-      'vocabulary': [
-        GameSubtype.flashcards,
-        GameSubtype.topicVocab,
-        GameSubtype.wordFormation,
-        GameSubtype.prefixSuffix,
-        GameSubtype.synonymSearch,
-        GameSubtype.antonymSearch,
-        GameSubtype.contextClues,
-        GameSubtype.collocations,
-        GameSubtype.phrasalVerbs,
-        GameSubtype.idioms,
-        GameSubtype.academicWord,
-        GameSubtype.contextualUsage,
-      ],
-      'grammar': [
-        GameSubtype.partsOfSpeech,
-        GameSubtype.grammarQuest,
-        GameSubtype.wordReorder,
-        GameSubtype.sentenceCorrection,
-        GameSubtype.tenseMastery,
-        GameSubtype.subjectVerbAgreement,
-        GameSubtype.articleInsertion,
-        GameSubtype.questionFormatter,
-        GameSubtype.clauseConnector,
-        GameSubtype.voiceSwap,
-        GameSubtype.punctuationMastery,
-        GameSubtype.modifierPlacement,
-        GameSubtype.modalsSelection,
-        GameSubtype.prepositionChoice,
-        GameSubtype.pronounResolution,
-        GameSubtype.relativeClauses,
-        GameSubtype.conditionals,
-        GameSubtype.conjunctions,
-        GameSubtype.directIndirectSpeech,
-      ],
-      'listening': [
-        GameSubtype.audioFillBlanks,
-        GameSubtype.audioMultipleChoice,
-        GameSubtype.audioSentenceOrder,
-        GameSubtype.audioTrueFalse,
-        GameSubtype.soundImageMatch,
-        GameSubtype.detailSpotlight,
-        GameSubtype.emotionRecognition,
-        GameSubtype.fastSpeechDecoder,
-        GameSubtype.listeningInference,
-        GameSubtype.ambientId,
-      ],
-      'reading': [
-        GameSubtype.readAndAnswer,
-        GameSubtype.findWordMeaning,
-        GameSubtype.trueFalseReading,
-        GameSubtype.sentenceOrderReading,
-        GameSubtype.guessTitle,
-        GameSubtype.readAndMatch,
-        GameSubtype.skimmingScanning,
-        GameSubtype.paragraphSummary,
-        GameSubtype.readingSpeedCheck,
-        GameSubtype.readingInference,
-        GameSubtype.readingConclusion,
-        GameSubtype.clozeTest,
-      ],
-      'writing': [
-        GameSubtype.sentenceBuilder,
-        GameSubtype.completeSentence,
-        GameSubtype.fixTheSentence,
-        GameSubtype.describeSituationWriting,
-        GameSubtype.summarizeStoryWriting,
-        GameSubtype.shortAnswerWriting,
-        GameSubtype.opinionWriting,
-        GameSubtype.dailyJournal,
-        GameSubtype.writingEmail,
-        GameSubtype.correctionWriting,
-        GameSubtype.essayDrafting,
-      ],
-      'speaking': [
-        GameSubtype.repeatSentence,
-        GameSubtype.speakMissingWord,
-        GameSubtype.yesNoSpeaking,
-        GameSubtype.pronunciationFocus,
-        GameSubtype.speakSynonym,
-        GameSubtype.speakOpposite,
-        GameSubtype.dailyExpression,
-        GameSubtype.situationSpeaking,
-        GameSubtype.sceneDescriptionSpeaking,
-        GameSubtype.dialogueRoleplay,
-      ],
-      'accent': [
-        GameSubtype.minimalPairs,
-        GameSubtype.vowelDistinction,
-        GameSubtype.consonantClarity,
-        GameSubtype.syllableStress,
-        GameSubtype.wordLinking,
-        GameSubtype.connectedSpeech,
-        GameSubtype.intonationMimic,
-        GameSubtype.pitchModulation,
-        GameSubtype.pitchPatternMatch,
-        GameSubtype.speedVariance,
-        GameSubtype.shadowingChallenge,
-        GameSubtype.dialectDrill,
-      ],
-      'roleplay': [
-        GameSubtype.situationalResponse,
-        GameSubtype.branchingDialogue,
-        GameSubtype.socialSpark,
-        GameSubtype.travelDesk,
-        GameSubtype.gourmetOrder,
-        GameSubtype.jobInterview,
-        GameSubtype.medicalConsult,
-        GameSubtype.conflictResolver,
-        GameSubtype.elevatorPitch,
-        GameSubtype.emergencyHub,
-      ],
-      'elitemastery': [
-        GameSubtype.storyBuilder,
-        GameSubtype.idiomMatch,
-        GameSubtype.speedSpelling,
-        GameSubtype.accentShadowing,
-      ],
-    };
-
-    final order = journeyOrder[category];
+    final order = _journeyOrder[category];
     if (order != null) {
       allGames.sort((a, b) {
         final indexA = order.indexOf(a);
@@ -1013,5 +1055,32 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     }
 
     return allGames;
+  }
+
+  static String getRank(BuildContext context, double progress) {
+    if (progress <= 0.0) {
+      return context.tr('category_games.rank_beginner', fallback: 'Beginner');
+    }
+    if (progress < 0.15) {
+      return context.tr('category_games.rank_novice', fallback: 'Novice');
+    }
+    if (progress < 0.35) {
+      return context.tr('category_games.rank_scholar', fallback: 'Scholar');
+    }
+    if (progress < 0.55) {
+      return context
+          .tr('home.discovery_diff_expert', fallback: 'Expert')
+          .toUpperCase();
+    }
+    if (progress < 0.80) {
+      return context.tr('category_games.rank_virtuoso', fallback: 'Virtuoso');
+    }
+    if (progress < 0.99) {
+      return context.tr(
+        'quest_archive.status_grandmaster',
+        fallback: 'Grandmaster',
+      );
+    }
+    return context.tr('quest_archive.status_legendary', fallback: 'Legendary');
   }
 }

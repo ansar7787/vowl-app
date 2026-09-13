@@ -103,6 +103,10 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
   Widget build(BuildContext context) {
     if (_blueprint == null) return const SizedBox.shrink();
 
+    final displayColor = widget.isDark
+        ? widget.primaryColor
+        : HSLColor.fromColor(widget.primaryColor).withLightness(0.4).toColor();
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w),
       padding: EdgeInsets.all(24.r),
@@ -137,7 +141,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                   letterSpacing: 2,
                 ),
               ),
-              Icon(Icons.radar_rounded, color: widget.primaryColor, size: 20.r),
+              Icon(Icons.radar_rounded, color: displayColor, size: 20.r),
             ],
           ),
           SizedBox(height: 24.h),
@@ -158,7 +162,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                       size: Size(double.infinity, 200.r),
                       painter: _RadarChartPainter(
                         scores: animatedScores,
-                        primaryColor: widget.primaryColor,
+                        primaryColor: displayColor,
                         isDark: widget.isDark,
                         bgAnimValue: animValue.clamp(0.0, 1.0),
                       ),
@@ -177,7 +181,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                 builder: (context, scores, _) => Expanded(
                   child: _buildLegend(
                     _blueprint!.radarAxes[0],
-                    widget.primaryColor,
+                    displayColor,
                     scores[0],
                   ),
                 ),
@@ -187,7 +191,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                 builder: (context, scores, _) => Expanded(
                   child: _buildLegend(
                     _blueprint!.radarAxes[1],
-                    widget.primaryColor,
+                    displayColor,
                     scores[1],
                   ),
                 ),
@@ -197,7 +201,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                 builder: (context, scores, _) => Expanded(
                   child: _buildLegend(
                     _blueprint!.radarAxes[2],
-                    widget.primaryColor,
+                    displayColor,
                     scores[2],
                   ),
                 ),
@@ -207,7 +211,7 @@ class _CategoryRadarChartState extends State<CategoryRadarChart> {
                 builder: (context, scores, _) => Expanded(
                   child: _buildLegend(
                     _blueprint!.radarAxes[3],
-                    widget.primaryColor,
+                    displayColor,
                     scores[3],
                   ),
                 ),

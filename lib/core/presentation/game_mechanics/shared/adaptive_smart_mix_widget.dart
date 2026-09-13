@@ -106,6 +106,9 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
       widget.categoryId,
       isDark: widget.isDark,
     );
+    final displayColor = widget.isDark
+        ? theme.primaryColor
+        : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
@@ -114,7 +117,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
         children: [
           Row(
             children: [
-              Icon(Icons.auto_awesome, color: theme.primaryColor, size: 20.r)
+              Icon(Icons.auto_awesome, color: displayColor, size: 20.r)
                   .animate(onPlay: (controller) => controller.repeat())
                   .shimmer(duration: 2000.ms, color: Colors.white54),
               SizedBox(width: 8.w),
