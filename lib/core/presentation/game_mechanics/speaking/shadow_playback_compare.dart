@@ -75,8 +75,7 @@ class ShadowPlaybackCompare extends StatefulWidget {
   State<ShadowPlaybackCompare> createState() => _ShadowPlaybackCompareState();
 }
 
-class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
-    with TickerProviderStateMixin {
+class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
   final _audioRecorder = di.sl<AudioRecordingService>();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
@@ -93,6 +92,8 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   bool _isProcessingAudioAction = false;
   DateTime? _recordStartTime;
   Duration _recordDuration = Duration.zero;
+  double _maxSoundLevel = 0.0;
+  bool _showMicWarning = false;
 
   StreamSubscription<Amplitude>? _amplitudeSub;
 
@@ -100,21 +101,9 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   late List<double> _modelWaveform;
   late List<double> _userWaveform;
 
-  late final AnimationController _pulseController;
-  late final AnimationController _waveAnimController;
-
   @override
   void initState() {
     super.initState();
-    _pulseController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    )..repeat(reverse: true);
-
-    _waveAnimController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 2000),
-    );
 
     // Generate deterministic waveform based on text
     _generateWaveforms();
@@ -124,8 +113,6 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
   void dispose() {
     _amplitudeSub?.cancel();
     _soundLevel.dispose();
-    _pulseController.dispose();
-    _waveAnimController.dispose();
     if (_audioRecorder.isRecording) {
       _audioRecorder.stopRecording();
     }
@@ -188,6 +175,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
           _recordingPath = null;
           _recordStartTime = DateTime.now();
 
+          setState(() {
+            _maxSoundLevel = 0.0;
+            _showMicWarning = false;
+          });
+
           _amplitudeSub?.cancel();
           _amplitudeSub = _audioRecorder
               .onAmplitudeChanged(const Duration(milliseconds: 50))
@@ -197,6 +189,9 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                 final double normalized = ((level + 50) / 50).clamp(0.0, 1.0);
                 if (mounted) {
                   _soundLevel.value = normalized;
+                  if (normalized > _maxSoundLevel) {
+                    _maxSoundLevel = normalized;
+                  }
                 }
               });
         }
@@ -225,9 +220,23 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
       if (mounted) {
         _isRecording.value = false;
         widget.onRecordingStateChanged?.call(false);
-        if (path != null) {
+
+        // Validation for empty or failed capture
+        if (_recordDuration.inMilliseconds < 500 ||
+            _maxSoundLevel < 0.05 ||
+            path == null) {
+          setState(() {
+            _showMicWarning = true;
+          });
+          // Do not transition to the compare phase, let them try again
+          _recordingPath = null;
+          _hasRecorded.value = false;
+        } else {
           _recordingPath = path;
           _hasRecorded.value = true;
+          setState(() {
+            _showMicWarning = false;
+          });
         }
       }
     } finally {
@@ -242,7 +251,6 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
 
     _playingLabel.value = 'MODEL';
     _isPlaying.value = true;
-    _waveAnimController.forward(from: 0.0);
 
     try {
       await _soundService
@@ -265,7 +273,6 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
 
     _playingLabel.value = 'YOU';
     _isPlaying.value = true;
-    _waveAnimController.forward(from: 0.0);
 
     try {
       await _soundService
@@ -289,7 +296,6 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     // Play model first
     _playingLabel.value = 'MODEL';
     _isPlaying.value = true;
-    _waveAnimController.forward(from: 0.0);
 
     try {
       await _soundService
@@ -304,7 +310,6 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
     // Then play user
     if (mounted) {
       _playingLabel.value = 'YOU';
-      _waveAnimController.forward(from: 0.0);
 
       try {
         await _soundService
@@ -571,19 +576,82 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare>
                                         duration: const Duration(
                                           milliseconds: 300,
                                         ),
-                                        child: Text(
-                                          isRecording
-                                              ? 'Recording... Tap to stop'
-                                              : 'Tap to Record',
-                                          key: ValueKey(isRecording),
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.w600,
-                                            color: isRecording
-                                                ? Colors.redAccent
-                                                : subtitleColor,
+                                        child: Column(
+                                          key: ValueKey(
+                                            '${isRecording}_$_showMicWarning',
                                           ),
+                                          children: [
+                                            Text(
+                                              isRecording
+                                                  ? 'Recording... Tap to stop'
+                                                  : 'Tap to Record',
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 14.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: isRecording
+                                                    ? Colors.redAccent
+                                                    : subtitleColor,
+                                              ),
+                                            ),
+                                            if (!isRecording &&
+                                                _showMicWarning) ...[
+                                              SizedBox(height: 8.h),
+                                              Container(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 12.w,
+                                                          vertical: 6.h,
+                                                        ),
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.orange
+                                                          .withValues(
+                                                            alpha: 0.1,
+                                                          ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            8.r,
+                                                          ),
+                                                      border: Border.all(
+                                                        color: Colors.orange
+                                                            .withValues(
+                                                              alpha: 0.3,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.mic_off_rounded,
+                                                          size: 14.r,
+                                                          color: Colors.orange,
+                                                        ),
+                                                        SizedBox(width: 6.w),
+                                                        Text(
+                                                          "We couldn't hear you. Try again?",
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: 11.sp,
+                                                            color:
+                                                                Colors.orange,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  )
+                                                  .animate()
+                                                  .shake(
+                                                    hz: 3,
+                                                    curve: Curves.easeInOut,
+                                                  )
+                                                  .fadeIn(),
+                                            ],
+                                          ],
                                         ),
                                       ),
                                     ],

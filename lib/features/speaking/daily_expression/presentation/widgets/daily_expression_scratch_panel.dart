@@ -9,9 +9,9 @@ class DailyExpressionScratchPanel extends StatelessWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
   final bool isDark;
-  final double scratchProgress;
-  final bool isListening;
-  final double timeVal;
+  final ValueNotifier<double> scratchProgressNotifier;
+  final ValueNotifier<double> timeValNotifier;
+  final bool reduceComplexGestures;
   final VoidCallback onPlayTts;
   final ValueChanged<double> onScratchUpdate;
 
@@ -20,9 +20,9 @@ class DailyExpressionScratchPanel extends StatelessWidget {
     required this.quest,
     required this.primaryColor,
     required this.isDark,
-    required this.scratchProgress,
-    required this.isListening,
-    required this.timeVal,
+    required this.scratchProgressNotifier,
+    required this.timeValNotifier,
+    this.reduceComplexGestures = false,
     required this.onPlayTts,
     required this.onScratchUpdate,
   });
@@ -40,89 +40,94 @@ class DailyExpressionScratchPanel extends StatelessWidget {
           border: Border.all(color: Colors.white10),
           boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.r)],
         ),
-        child: Stack(
-          children: [
-            // Underlying Revealed Golden Card (Sets the height of the stack)
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: isDark
-                      ? [const Color(0xFF1E1E38), const Color(0xFF111124)]
-                      : [primaryColor.withValues(alpha: 0.2), Colors.white],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-              ),
-              padding: EdgeInsets.all(22.r),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "DAILY IDIOM",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          color: primaryColor,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                      ScaleButton(
-                        onTap: onPlayTts,
-                        child: Icon(
-                          Icons.volume_up_rounded,
-                          color: primaryColor,
-                          size: 18.r,
-                        ),
-                      ),
-                    ],
+        child: ValueListenableBuilder<double>(
+          valueListenable: scratchProgressNotifier,
+          builder: (context, scratchProgress, child) {
+            return Stack(
+              children: [
+                // Underlying Revealed Golden Card (Sets the height of the stack)
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: isDark
+                          ? [const Color(0xFF1E1E38), const Color(0xFF111124)]
+                          : [primaryColor.withValues(alpha: 0.2), Colors.white],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
                   ),
-                  SizedBox(height: 20.h),
-                  if (scratchProgress == 1.0)
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 4.h,
-                      ),
-                      margin: EdgeInsets.only(bottom: 8.h),
-                      decoration: BoxDecoration(
-                        color: primaryColor.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(
-                          color: primaryColor.withValues(alpha: 0.3),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                  padding: EdgeInsets.all(22.r),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                                Icons.mic_rounded,
-                                size: 12.r,
-                                color: primaryColor,
-                              )
-                              .animate(onPlay: (c) => c.repeat(reverse: true))
-                              .scale(
-                                begin: const Offset(1, 1),
-                                end: const Offset(1.2, 1.2),
-                              ),
-                          SizedBox(width: 4.w),
                           Text(
-                            "SPEAK THIS",
+                            "DAILY IDIOM",
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 9.sp,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 10.sp,
                               color: primaryColor,
-                              letterSpacing: 1.0,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                          ScaleButton(
+                            onTap: onPlayTts,
+                            child: Icon(
+                              Icons.volume_up_rounded,
+                              color: primaryColor,
+                              size: 18.r,
                             ),
                           ),
                         ],
                       ),
-                    ).animate().fadeIn().slideY(begin: 0.5),
-                  Text(
+                      SizedBox(height: 20.h),
+                      if (scratchProgress == 1.0)
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          margin: EdgeInsets.only(bottom: 8.h),
+                          decoration: BoxDecoration(
+                            color: primaryColor.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(20.r),
+                            border: Border.all(
+                              color: primaryColor.withValues(alpha: 0.3),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                    Icons.mic_rounded,
+                                    size: 12.r,
+                                    color: primaryColor,
+                                  )
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .scale(
+                                    begin: const Offset(1, 1),
+                                    end: const Offset(1.2, 1.2),
+                                  ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                "SPEAK THIS",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: primaryColor,
+                                  letterSpacing: 1.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ).animate().fadeIn().slideY(begin: 0.5),
+                      Text(
                         quest.expression ?? "Bite the bullet",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -132,103 +137,106 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           color: primaryColor,
                           shadows: [
                             Shadow(
-                              color: primaryColor.withValues(
-                                alpha: isListening ? 0.8 : 0.3,
-                              ),
-                              blurRadius: isListening ? 20.r : 10.r,
+                              color: primaryColor.withValues(alpha: 0.3),
+                              blurRadius: 10.r,
                             ),
                           ],
                         ),
-                      )
-                      .animate(target: isListening ? 1 : 0)
-                      .scale(
-                        begin: const Offset(1.0, 1.0),
-                        end: const Offset(1.05, 1.05),
-                        duration: 200.ms,
-                        curve: Curves.easeOutCubic,
                       ),
-                  SizedBox(height: 10.h),
-                  AnimatedOpacity(
-                    opacity:
-                        1.0, // Reverted dimming so educational context is always visible
-                    duration: const Duration(milliseconds: 300),
-                    child: Text(
-                      (quest.meaning ?? "Meaning").toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.white70 : Colors.black87,
-                        height: 1.3,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                ],
-              ),
-            ),
-
-            // Scratch Foil Overlay
-            if (scratchProgress < 1.0)
-              Positioned.fill(
-                child: GestureDetector(
-                  onPanUpdate: (details) {
-                    final double dx = details.delta.dx;
-                    final double dy = details.delta.dy;
-                    final double dist =
-                        (dx.abs() + dy.abs()) /
-                        300.0; // scale distance to 0-1 range
-                    onScratchUpdate(dist);
-                  },
-                  child: CustomPaint(
-                    painter: ScratchPainter(
-                      progress: scratchProgress,
-                      isListening: isListening,
-                      time: timeVal,
-                      primaryColor: primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-
-            // Scratch Instructions Overlay
-            if (scratchProgress == 0.0)
-              Positioned.fill(
-                child: IgnorePointer(
-                  child: Container(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                                Icons.swipe_rounded,
-                                color: Colors.white,
-                                size: 30.r,
-                              )
-                              .animate(onPlay: (c) => c.repeat())
-                              .shake(hz: 2, curve: Curves.easeInOut)
-                              .then()
-                              .fadeOut(),
-                          SizedBox(height: 8.h),
-                          Text(
-                            "SWIPE TO REVEAL IDIOM",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1.0,
-                            ),
+                      SizedBox(height: 10.h),
+                      AnimatedOpacity(
+                        opacity: 1.0,
+                        duration: const Duration(milliseconds: 300),
+                        child: Text(
+                          (quest.meaning ?? "Meaning").toUpperCase(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white70 : Colors.black87,
+                            height: 1.3,
                           ),
-                        ],
+                        ),
+                      ),
+                      SizedBox(height: 10.h),
+                    ],
+                  ),
+                ),
+
+                // Scratch Foil Overlay
+                if (scratchProgress < 1.0)
+                  Positioned.fill(
+                    child: GestureDetector(
+                      onTap: reduceComplexGestures
+                          ? () => onScratchUpdate(1.0)
+                          : null,
+                      onPanUpdate: reduceComplexGestures
+                          ? null
+                          : (details) {
+                              final double dx = details.delta.dx;
+                              final double dy = details.delta.dy;
+                              final double dist = (dx.abs() + dy.abs()) / 300.0;
+                              onScratchUpdate(dist);
+                            },
+                      child: ValueListenableBuilder<double>(
+                        valueListenable: timeValNotifier,
+                        builder: (context, timeVal, _) {
+                          return CustomPaint(
+                            painter: ScratchPainter(
+                              progress: scratchProgress,
+                              time: timeVal,
+                              primaryColor: primaryColor,
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
-                ),
-              ),
-          ],
+
+                // Scratch Instructions Overlay
+                if (scratchProgress == 0.0)
+                  Positioned.fill(
+                    child: IgnorePointer(
+                      child: Container(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                    reduceComplexGestures
+                                        ? Icons.touch_app_rounded
+                                        : Icons.swipe_rounded,
+                                    color: Colors.white,
+                                    size: 30.r,
+                                  )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .shake(hz: 2, curve: Curves.easeInOut)
+                                  .then()
+                                  .fadeOut(),
+                              SizedBox(height: 8.h),
+                              Text(
+                                reduceComplexGestures
+                                    ? "TAP TO REVEAL IDIOM"
+                                    : "SWIPE TO REVEAL IDIOM",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            );
+          },
         ),
       ),
     );

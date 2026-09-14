@@ -1108,11 +1108,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'dailyexpression': [
       "",
-      "Well done! You are building a strong foundation in daily expressions.",
-      "Your skills in daily expressions are becoming incredibly sharp.",
-      "Halfway there! You are a rising star in daily expressions.",
-      "Level 100! Your execution of daily expressions is flawless.",
-      "200 levels cleared! Your daily expressions abilities are unmatched globally.",
+      "Great start! You're already picking up some really useful everyday phrases.",
+      "Nice! You're starting to sound a lot more like a native speaker.",
+      "50 idioms down! Your conversational English is getting so much more colorful.",
+      "100 expressions! You can now chat naturally in almost any everyday situation.",
+      "200 levels! You know all the insider phrases. You speak exactly like a local!",
     ],
     'dialogueroleplay': [
       "",

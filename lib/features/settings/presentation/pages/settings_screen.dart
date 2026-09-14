@@ -40,6 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _buildNumberVal = '1';
   bool _notificationsEnabledVal = true;
   bool _soundEnabledVal = true;
+  bool _reduceComplexGesturesVal = false;
   bool _isLoadingVal = true;
   String? _translationLanguageNameVal;
 
@@ -69,12 +70,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final isGranted = await Permission.notification.isGranted;
     final savedPref = prefs.getBool('notifications_enabled') ?? true;
     final soundPref = prefs.getBool('sound_enabled') ?? true;
+    final gesturesPref = prefs.getBool('reduce_complex_gestures') ?? false;
 
     if (!mounted) return;
     _appVersionVal = info.version;
     _buildNumberVal = info.buildNumber;
     _notificationsEnabledVal = savedPref && isGranted;
     _soundEnabledVal = soundPref;
+    _reduceComplexGesturesVal = gesturesPref;
     _isLoadingVal = false;
     _updateState();
   }
@@ -126,6 +129,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
       await di.sl<KidsAudioService>().stopBgm();
       await di.sl<KidsTTSService>().stop();
     }
+  }
+
+  Future<void> _toggleGestures(bool value) async {
+    _reduceComplexGesturesVal = value;
+    _updateState();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('reduce_complex_gestures', value);
   }
 
   Future<void> _handleSupportLink(BuildContext context) async {
@@ -319,10 +329,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                               soundEnabled: _soundEnabledVal,
                                               notificationsEnabled:
                                                   _notificationsEnabledVal,
+                                              reduceComplexGestures:
+                                                  _reduceComplexGesturesVal,
                                               isLoading: _isLoadingVal,
                                               onToggleSound: _toggleSound,
                                               onToggleNotifications:
                                                   _toggleNotifications,
+                                              onToggleGestures: _toggleGestures,
                                               onTapTranslationLanguage: () async {
                                                 await LanguageSelectionBottomSheet.show(
                                                   context,
@@ -522,21 +535,25 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final bool isDark;
   final bool soundEnabled;
   final bool notificationsEnabled;
+  final bool reduceComplexGestures;
   final bool isLoading;
   final String? translationLanguageName;
   final VoidCallback onTapTranslationLanguage;
   final ValueChanged<bool> onToggleSound;
   final ValueChanged<bool> onToggleNotifications;
+  final ValueChanged<bool> onToggleGestures;
 
   const _SettingsPreferencesGroup({
     required this.isDark,
     required this.soundEnabled,
     required this.notificationsEnabled,
+    required this.reduceComplexGestures,
     required this.isLoading,
     required this.translationLanguageName,
     required this.onTapTranslationLanguage,
     required this.onToggleSound,
     required this.onToggleNotifications,
+    required this.onToggleGestures,
   });
 
   @override
@@ -582,6 +599,21 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               value: notificationsEnabled,
               isLoading: isLoading,
               onChanged: onToggleNotifications,
+            ),
+            SettingsSwitchTile(
+              title: context.tr(
+                'settings.reduce_complex_gestures',
+                fallback: 'Reduce Complex Gestures',
+              ),
+              subtitle: context.tr(
+                'settings.reduce_complex_gestures_subtitle',
+                fallback: 'Replace swiping with tapping for accessibility',
+              ),
+              icon: Icons.accessibility_new_rounded,
+              color: const Color(0xFF10B981),
+              value: reduceComplexGestures,
+              isLoading: isLoading,
+              onChanged: onToggleGestures,
             ),
             if (isDark)
               SettingsSwitchTile(

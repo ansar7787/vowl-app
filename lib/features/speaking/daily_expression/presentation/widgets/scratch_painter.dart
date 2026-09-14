@@ -4,13 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScratchPainter extends CustomPainter {
   final double progress;
-  final bool isListening;
   final double time;
   final Color primaryColor;
 
   ScratchPainter({
     required this.progress,
-    required this.isListening,
     required this.time,
     required this.primaryColor,
   });
@@ -102,8 +100,6 @@ class ScratchPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant ScratchPainter oldDelegate) {
-    return oldDelegate.progress != progress ||
-        oldDelegate.isListening != isListening ||
-        oldDelegate.time != time;
+    return oldDelegate.progress != progress || oldDelegate.time != time;
   }
 }

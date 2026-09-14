@@ -6,14 +6,12 @@ class DailyExpressionUsagePanel extends StatelessWidget {
   final SpeakingQuest quest;
   final Color primaryColor;
   final bool isDark;
-  final bool isListening;
 
   const DailyExpressionUsagePanel({
     super.key,
     required this.quest,
     required this.primaryColor,
     required this.isDark,
-    this.isListening = false,
   });
 
   @override
@@ -33,6 +31,42 @@ class DailyExpressionUsagePanel extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         child: Column(
           children: [
+            if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.history_edu_rounded,
+                    color: primaryColor,
+                    size: 16.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "ORIGIN / EXPLANATION",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      color: Colors.grey,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.h),
+              Text(
+                quest.explanation!,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white70 : Colors.black87,
+                  height: 1.35,
+                ),
+              ),
+              SizedBox(height: 20.h),
+              Divider(color: Colors.white10, height: 1.h),
+              SizedBox(height: 20.h),
+            ],
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
