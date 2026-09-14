@@ -15,13 +15,12 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
-import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_fog_scrubber_panel.dart';
+import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_briefing_card.dart';
 
 class SituationSpeakingScreen extends StatefulWidget {
   final int level;
@@ -38,23 +37,17 @@ class SituationSpeakingScreen extends StatefulWidget {
       _SituationSpeakingScreenState();
 }
 
-class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
-    with SingleTickerProviderStateMixin {
+class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<double> _scrubProgress = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isBriefingComplete = ValueNotifier(false);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
-  late AnimationController _shimmerController;
-  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
-
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -63,23 +56,14 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     context.read<SpeakingBloc>().add(
       FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
     );
-
-    _shimmerController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 4))
-          ..addListener(() {
-            _timeVal.value = _shimmerController.value;
-          });
-    _shimmerController.repeat();
   }
 
   @override
   void dispose() {
-    _shimmerController.dispose();
-    _scrubProgress.dispose();
+    _isBriefingComplete.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
-    _timeVal.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -121,11 +105,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     }
   }
 
-  void _onTimeUp(String textToSpeak) {
-    if (_isAnswered.value) return;
-    _submitVerbalEvaluation(false, textToSpeak);
-  }
-
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (mounted && _scrollController.hasClients) {
@@ -138,15 +117,10 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     });
   }
 
-  void _onScrubUpdate(double delta) {
-    if (_isAnswered.value || _scrubProgress.value >= 1.0) return;
-    _scrubProgress.value = (_scrubProgress.value + delta).clamp(0.0, 1.0);
-    if (_scrubProgress.value > 0) _hapticService.selection();
-    if (_scrubProgress.value >= 1.0) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      _scrollToBottom();
-    }
+  void _onBriefingComplete() {
+    if (_isAnswered.value || _isBriefingComplete.value) return;
+    _isBriefingComplete.value = true;
+    _scrollToBottom();
   }
 
   @override
@@ -165,8 +139,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
-            _scrubProgress.value = 0.0;
-            _timerKey.currentState?.start();
+            _isBriefingComplete.value = false;
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
@@ -192,6 +165,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+        final hintUsed = (state is SpeakingLoaded) ? state.hintUsed : false;
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -202,8 +176,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
               _isAnswered,
               _isCorrect,
               _showConfetti,
-              _scrubProgress,
-              _timeVal,
+              _isBriefingComplete,
             ]),
             builder: (context, _) {
               return SpeakingBaseLayout(
@@ -247,13 +220,13 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                           ),
                                     ),
                                     SizedBox(height: 24.h),
-                                    SituationSpeakingFogScrubberPanel(
+                                    SituationSpeakingBriefingCard(
                                       quest: quest,
                                       primaryColor: theme.primaryColor,
                                       isDark: isDark,
-                                      scrubProgress: _scrubProgress.value,
-                                      timeVal: _timeVal.value,
-                                      onScrubUpdate: _onScrubUpdate,
+                                      isAnswered: _isAnswered.value,
+                                      hintUsed: hintUsed,
+                                      onBriefingComplete: _onBriefingComplete,
                                       onPlayTts: () {
                                         if (di
                                             .sl<AudioRecordingService>()
@@ -269,43 +242,35 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                 ),
                               ),
                             ),
-                            if (!_isAnswered.value)
-                              SliverToBoxAdapter(
-                                child: Padding(
-                                  padding: EdgeInsets.only(bottom: 24.h),
-                                  child: SpeedChallengeTimer(
-                                    key: _timerKey,
-                                    durationSeconds: 20,
-                                    primaryColor: theme.primaryColor,
-                                    onTimeUp: () =>
-                                        _onTimeUp(quest.textToSpeak ?? ""),
-                                    autoStart: true,
-                                  ),
-                                ),
-                              ),
-                            if (!_isAnswered.value &&
-                                _scrubProgress.value >= 1.0)
+                            if (!_isAnswered.value && _isBriefingComplete.value)
                               SliverToBoxAdapter(
                                 child: SpeakToConfirmOverlay(
-                                  expectedText: quest.textToSpeak ?? "",
+                                  expectedText:
+                                      quest.correctAnswer ??
+                                      quest.textToSpeak ??
+                                      "",
+                                  acceptedSynonyms:
+                                      quest.acceptedSynonyms ?? [],
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
                                   hideExpectedText: true,
                                   allowSkip: false,
                                   title: 'SPEAK THE SITUATION',
-                                  subtitle: 'Say your answer aloud',
+                                  subtitle: 'Hold the microphone to answer',
                                   onConfirmed: () {
-                                    _timerKey.currentState?.stop();
                                     _submitVerbalEvaluation(
                                       true,
-                                      quest.textToSpeak ?? "",
+                                      quest.correctAnswer ??
+                                          quest.textToSpeak ??
+                                          "",
                                     );
                                   },
                                   onSkipped: () {
-                                    _timerKey.currentState?.stop();
                                     _submitVerbalEvaluation(
                                       false,
-                                      quest.textToSpeak ?? "",
+                                      quest.correctAnswer ??
+                                          quest.textToSpeak ??
+                                          "",
                                     );
                                   },
                                 ),

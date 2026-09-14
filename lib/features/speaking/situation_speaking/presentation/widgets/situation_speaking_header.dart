@@ -24,7 +24,7 @@ class SituationSpeakingHeader extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
-            Icons.cleaning_services_rounded,
+            Icons.record_voice_over_rounded,
             size: 14.r,
             color: primaryColor,
           ),
