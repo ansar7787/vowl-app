@@ -183,7 +183,7 @@ class StoryServiceImpl implements StoryService {
     'repeatSentence':
         "Shadowing is a powerful technique! By mimicking a native speaker's rhythm and tone, you'll naturally improve your own fluency.",
     'sceneDescriptionSpeaking':
-        "Can you paint a picture with your words? Let's practice describing what you see clearly and vividly!",
+        "Let's build your active vocabulary! Tap the radar hotspots and practice describing specific objects out loud.",
     'situationSpeaking':
         "Different situations require different tones. Let's practice adapting your speech so you always sound perfectly appropriate.",
     'speakMissingWord':
@@ -1140,11 +1140,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'scenedescriptionspeaking': [
       "",
-      "Excellent start! Your understanding of scene description is growing.",
-      "Your progress in scene description is genuinely impressive.",
-      "Amazing! You manipulate scene description with natural ease.",
-      "Centurion! You have conquered the complexities of scene description.",
-      "Double Centurion! No one knows scene description better than you.",
+      "Great start! You're getting much faster at recalling the exact words for things.",
+      "Nice work! Your everyday vocabulary is sounding so much more natural now.",
+      "50 levels cleared! You can describe your surroundings effortlessly without hesitating.",
+      "Level 100! Your descriptive vocabulary is incredibly sharp and fluid.",
+      "Level 200 reached! You sound completely natural identifying and describing anything.",
     ],
     'situationspeaking': [
       "",

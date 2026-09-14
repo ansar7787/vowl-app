@@ -123,7 +123,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
         ..add(_activeHotspot.value);
       _activeHotspot.value = -1;
 
-      if (_inspectedHotspots.value.length >= 3) {
+      if (_inspectedHotspots.value.length >= _hotspotLabels.length) {
         _isAnswered.value = true;
         _isCorrect.value = true;
         context.read<SpeakingBloc>().add(const SubmitAnswer(true));
@@ -140,7 +140,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
           gameType: widget.gameType.name,
           question: _hotspotPrompts[_activeHotspot.value],
           userAnswer: '[Failed Self-Evaluation]',
-          correctAnswer: _hotspotPrompts[_activeHotspot.value],
+          correctAnswer: _hotspotLabels[_activeHotspot.value],
           level: widget.level,
         );
       }
@@ -153,6 +153,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
 
   void _parseQuestData(SpeakingQuest quest) {
     _hotspotLabels = quest.options ?? ["Object A", "Object B", "Object C"];
+    final int count = _hotspotLabels.length;
 
     final String text =
         quest.sceneText ??
@@ -161,7 +162,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     _sceneTitle = parts[0];
 
     _hotspotPrompts = [];
-    for (int i = 1; i <= 3; i++) {
+    for (int i = 1; i <= count; i++) {
       _hotspotPrompts.add(
         parts.length > i ? parts[i] : "Describe this scenic component.",
       );
@@ -169,8 +170,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
 
     _hotspotKeywords = [];
     final List<String> list =
-        quest.acceptedSynonyms ?? ["feature", "object", "item"];
-    for (int i = 0; i < 3; i++) {
+        quest.acceptedSynonyms ?? List.filled(count, "feature,object,item");
+    for (int i = 0; i < count; i++) {
       final String keywordsString = list.length > i ? list[i] : "feature,item";
       _hotspotKeywords.add(keywordsString.split(','));
     }
@@ -367,8 +368,19 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                 _activeHotspot.value != -1)
                               SliverToBoxAdapter(
                                 child: SpeakToConfirmOverlay(
+                                  key: ValueKey(_activeHotspot.value),
                                   expectedText:
-                                      _hotspotPrompts[_activeHotspot.value],
+                                      _hotspotKeywords[_activeHotspot.value]
+                                          .join(" "),
+                                  ttsText:
+                                      _hotspotKeywords[_activeHotspot.value]
+                                          .join(" "),
+                                  acceptedSynonyms: [
+                                    _hotspotKeywords[_activeHotspot.value].join(
+                                      " ",
+                                    ),
+                                    _hotspotLabels[_activeHotspot.value],
+                                  ],
                                   primaryColor: theme.primaryColor,
                                   isPositioned: false,
                                   hideExpectedText: true,
@@ -379,6 +391,112 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                       _submitVerbalEvaluation(true),
                                   onSkipped: () =>
                                       _submitVerbalEvaluation(false),
+                                ),
+                              ),
+                            if (_isAnswered.value &&
+                                _isCorrect.value == true &&
+                                quest.sampleAnswer != null)
+                              SliverPadding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.w,
+                                  vertical: 16.h,
+                                ),
+                                sliver: SliverToBoxAdapter(
+                                  child: Container(
+                                    padding: EdgeInsets.all(20.r),
+                                    decoration: BoxDecoration(
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(24.r),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.3,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.auto_awesome_rounded,
+                                              color: theme.primaryColor,
+                                              size: 18.r,
+                                            ),
+                                            SizedBox(width: 8.w),
+                                            Text(
+                                              "FULL SCENE DESCRIPTION",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.bold,
+                                                color: theme.primaryColor,
+                                                letterSpacing: 1.0,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 12.h),
+                                        Text(
+                                          quest.sampleAnswer!,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 16.sp,
+                                            height: 1.4,
+                                            fontWeight: FontWeight.w500,
+                                            color: isDark
+                                                ? Colors.white
+                                                : Colors.black87,
+                                          ),
+                                        ),
+                                        SizedBox(height: 16.h),
+                                        GestureDetector(
+                                          onTap: () {
+                                            di.sl<HapticService>().selection();
+                                            di.sl<SoundService>().playTts(
+                                              quest.sampleAnswer!,
+                                            );
+                                          },
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 16.w,
+                                              vertical: 8.h,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.15),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.r),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Icon(
+                                                  Icons.volume_up_rounded,
+                                                  color: theme.primaryColor,
+                                                  size: 16.r,
+                                                ),
+                                                SizedBox(width: 6.w),
+                                                Text(
+                                                  "LISTEN",
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: theme.primaryColor,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             SliverToBoxAdapter(child: SizedBox(height: 120.h)),

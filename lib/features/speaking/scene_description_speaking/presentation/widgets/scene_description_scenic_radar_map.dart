@@ -26,6 +26,8 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final disableAnimations = MediaQuery.of(context).disableAnimations;
+
     return Container(
       width: 1.sw,
       height: 230.h,
@@ -38,21 +40,22 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
       child: Stack(
         children: [
           // Background atmospheric visualizer waves
-          Positioned.fill(
-            child: AnimatedBuilder(
-              animation: radarController,
-              builder: (context, child) {
-                return CustomPaint(
-                  painter: RadarBeaconPainter(
-                    progress: radarController.value,
-                    isActive: false,
-                    isCompleted: false,
-                    primaryColor: primaryColor,
-                  ),
-                );
-              },
+          if (!disableAnimations)
+            Positioned.fill(
+              child: AnimatedBuilder(
+                animation: radarController,
+                builder: (context, child) {
+                  return CustomPaint(
+                    painter: RadarBeaconPainter(
+                      progress: radarController.value,
+                      isActive: false,
+                      isCompleted: false,
+                      primaryColor: primaryColor,
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
 
           // Central Scene Title
           Center(
@@ -80,11 +83,11 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                   ),
                   SizedBox(height: 6.h),
                   Text(
-                    "${inspectedHotspots.length} OF 3 FEATURES STABILIZED",
+                    "${inspectedHotspots.length} OF ${hotspotLabels.length} FEATURES STABILIZED",
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
-                      color: inspectedHotspots.length == 3
+                      color: inspectedHotspots.length == hotspotLabels.length
                           ? Colors.greenAccent
                           : Colors.grey,
                       fontWeight: FontWeight.bold,
@@ -96,15 +99,19 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
           ),
 
           // 3 Dynamic Sonar Hotspots in top-left, top-right, bottom-center
-          _buildPulsingBeacon(0, Alignment.topLeft),
-          _buildPulsingBeacon(1, Alignment.topRight),
-          _buildPulsingBeacon(2, Alignment.bottomCenter),
+          _buildPulsingBeacon(0, Alignment.topLeft, disableAnimations),
+          _buildPulsingBeacon(1, Alignment.topRight, disableAnimations),
+          _buildPulsingBeacon(2, Alignment.bottomCenter, disableAnimations),
         ],
       ),
     );
   }
 
-  Widget _buildPulsingBeacon(int index, Alignment alignment) {
+  Widget _buildPulsingBeacon(
+    int index,
+    Alignment alignment,
+    bool disableAnimations,
+  ) {
     if (hotspotLabels.length <= index) return const SizedBox();
 
     final isInspected = inspectedHotspots.contains(index);
@@ -122,23 +129,24 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  AnimatedBuilder(
-                    animation: radarController,
-                    builder: (context, child) {
-                      return SizedBox(
-                        width: 52.r,
-                        height: 52.r,
-                        child: CustomPaint(
-                          painter: RadarBeaconPainter(
-                            progress: radarController.value,
-                            isActive: isActive,
-                            isCompleted: isInspected,
-                            primaryColor: primaryColor,
+                  if (!disableAnimations)
+                    AnimatedBuilder(
+                      animation: radarController,
+                      builder: (context, child) {
+                        return SizedBox(
+                          width: 52.r,
+                          height: 52.r,
+                          child: CustomPaint(
+                            painter: RadarBeaconPainter(
+                              progress: radarController.value,
+                              isActive: isActive,
+                              isCompleted: isInspected,
+                              primaryColor: primaryColor,
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                  ),
+                        );
+                      },
+                    ),
                   // Icon indicator
                   Container(
                     width: 32.r,

@@ -23,7 +23,7 @@ class SceneDescriptionHeader extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.gps_fixed_rounded, size: 14.r, color: Colors.cyanAccent),
+          Icon(Icons.gps_fixed_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 8.w),
           Text(
             instruction.toUpperCase(),
@@ -31,7 +31,7 @@ class SceneDescriptionHeader extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
-              color: Colors.cyanAccent,
+              color: primaryColor,
               letterSpacing: 1.5,
             ),
           ),
