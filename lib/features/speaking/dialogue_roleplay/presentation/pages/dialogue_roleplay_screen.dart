@@ -169,12 +169,17 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
       final authState = context.read<AuthBloc>().state;
       if (authState.status == AuthStatus.authenticated &&
           authState.user != null) {
+        final currentState = context.read<SpeakingBloc>().state;
+        final actualQuestion =
+            (currentState is SpeakingLoaded &&
+                currentState.currentQuestOrNull != null)
+            ? (currentState.currentQuestOrNull!.partnerDialogue ?? 'Roleplay')
+            : 'Roleplay';
+
         ErrorJournalCollector.record(
           userId: authState.user!.id,
           gameType: widget.gameType.name,
-          question: _chosenReply.value.isNotEmpty
-              ? _chosenReply.value
-              : 'Roleplay',
+          question: actualQuestion,
           userAnswer: '[Failed Dialogue]',
           correctAnswer: _chosenReply.value.isNotEmpty
               ? _chosenReply.value
@@ -310,12 +315,17 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                         timeVal: _timeVal.value,
                                         isAnswered: _isAnswered.value,
                                         isCorrect: _isCorrect.value ?? false,
+                                        userDisplayAnswer:
+                                            _chosenReply.value.isNotEmpty
+                                            ? _chosenReply.value
+                                            : (quest.sampleAnswer ??
+                                                  expectedText),
                                       ),
                                       if (_smartReplies.value.isNotEmpty &&
                                           !_isAnswered.value) ...[
                                         SizedBox(height: 16.h),
                                         SizedBox(
-                                          height: 44.h,
+                                          height: 54.h,
                                           child: ListView.builder(
                                             scrollDirection: Axis.horizontal,
                                             itemCount:
@@ -376,18 +386,29 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                   duration: const Duration(milliseconds: 300),
                                   child: AbsorbPointer(
                                     absorbing: !_ttsFinished.value,
-                                    child: SpeakToConfirmOverlay(
-                                      expectedText: expectedText,
-                                      primaryColor: theme.primaryColor,
-                                      isPositioned: false,
-                                      hideExpectedText: true,
-                                      allowSkip: false,
-                                      title: 'SPEAK YOUR LINE',
-                                      subtitle: 'Say the selected option aloud',
-                                      onConfirmed: () =>
-                                          _submitVerbalEvaluation(true),
-                                      onSkipped: () =>
-                                          _submitVerbalEvaluation(false),
+                                    child: Builder(
+                                      builder: (context) {
+                                        final currentSynonyms = [
+                                          ..._acceptedSynonyms,
+                                          ..._smartReplies.value,
+                                        ].toSet().toList();
+
+                                        return SpeakToConfirmOverlay(
+                                          expectedText: expectedText,
+                                          acceptedSynonyms: currentSynonyms,
+                                          primaryColor: theme.primaryColor,
+                                          isPositioned: false,
+                                          hideExpectedText: true,
+                                          allowSkip: false,
+                                          title: 'SPEAK YOUR LINE',
+                                          subtitle:
+                                              'Say the selected option aloud',
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                        );
+                                      },
                                     ),
                                   ),
                                 ),

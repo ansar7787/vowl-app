@@ -15,6 +15,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
   final double timeVal;
   final bool isAnswered;
   final bool isCorrect;
+  final String userDisplayAnswer;
 
   const DialogueRoleplayExchangeStage({
     super.key,
@@ -24,6 +25,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
     required this.timeVal,
     required this.isAnswered,
     required this.isCorrect,
+    required this.userDisplayAnswer,
   });
 
   @override
@@ -65,9 +67,9 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
         _buildBubbleCard(
           title: context.tr(
             'speaking_games.your_response',
-            fallback: "YOUR RESPONSE OBLIGATION",
+            fallback: "YOUR RESPONSE",
           ),
-          content: quest.sampleAnswer ?? "Expected response.",
+          content: userDisplayAnswer,
           avatarIcon: Icons.face_rounded,
           color: Colors.greenAccent,
           isUser: true,
