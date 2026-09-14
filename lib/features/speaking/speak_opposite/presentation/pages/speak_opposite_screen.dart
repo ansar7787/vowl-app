@@ -1,6 +1,6 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,15 +14,12 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
-import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
 import 'package:vowl/core/services/error_journal_collector.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
 
-import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_header.dart';
+import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_parser.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
-import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_plasma_conduit_panel.dart';
-import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_negative_pole_panel.dart';
 
 class SpeakOppositeScreen extends StatefulWidget {
   final int level;
@@ -38,12 +35,10 @@ class SpeakOppositeScreen extends StatefulWidget {
   State<SpeakOppositeScreen> createState() => _SpeakOppositeScreenState();
 }
 
-class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
-    with SingleTickerProviderStateMixin {
+class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<double> _pullProgress = ValueNotifier(0.0);
   final ValueNotifier<bool> _isAnswered = ValueNotifier(false);
   final ValueNotifier<bool?> _isCorrect = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -52,12 +47,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
 
   final ValueNotifier<bool> _ttsFinished = ValueNotifier(false);
   Timer? _ttsTimer;
-
-  final GlobalKey<SpeedChallengeTimerState> _timerKey =
-      GlobalKey<SpeedChallengeTimerState>();
-
-  late AnimationController _sparkController;
-  final ValueNotifier<double> _timeVal = ValueNotifier(0.0);
   final ScrollController _scrollController = ScrollController();
 
   List<String> _acceptedAntonyms = [];
@@ -68,23 +57,13 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     context.read<SpeakingBloc>().add(
       FetchSpeakingQuests(gameType: widget.gameType, level: widget.level),
     );
-
-    _sparkController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 10))
-          ..addListener(() {
-            _timeVal.value = _sparkController.value;
-          });
-    _sparkController.repeat();
   }
 
   @override
   void dispose() {
-    _sparkController.dispose();
-    _pullProgress.dispose();
     _isAnswered.dispose();
     _isCorrect.dispose();
     _showConfetti.dispose();
-    _timeVal.dispose();
     _scrollController.dispose();
     _ttsFinished.dispose();
     _ttsTimer?.cancel();
@@ -103,9 +82,14 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     });
   }
 
-  void _triggerAutoPlay(GameQuest quest) {
-    if (quest.textToSpeak != null) {
-      final String cleanSentence = quest.textToSpeak!.replaceAll('*', '');
+  void _triggerAutoPlay(String targetWord) {
+    if (targetWord.isNotEmpty && targetWord != "?") {
+      final String cleanSentence = targetWord.replaceAll('*', '');
+      // ignore: deprecated_member_use
+      SemanticsService.announce(
+        "Listen carefully: $cleanSentence",
+        TextDirection.ltr,
+      );
       _soundService.playTts(cleanSentence);
     }
   }
@@ -113,10 +97,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   void _submitVerbalEvaluation(bool nailedIt, String expectedText) {
     if (_isAnswered.value) return;
 
-    _timerKey.currentState?.stop();
     _isAnswered.value = true;
     _isCorrect.value = nailedIt;
-    _pullProgress.value = nailedIt ? 1.0 : 0.0;
 
     if (nailedIt) {
       _hapticService.success();
@@ -143,11 +125,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     }
   }
 
-  void _onTimeUp(String expectedText) {
-    if (_isAnswered.value) return;
-    _submitVerbalEvaluation(false, expectedText);
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -164,17 +141,21 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
-            _pullProgress.value = 0.0;
             _ttsFinished.value = false;
             _ttsTimer?.cancel();
             Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
+              if (mounted) {
+                final parsed = SpeakOppositeParser.parseQuestTexts(
+                  textToSpeak: state.currentQuest.textToSpeak ?? "",
+                  fallbackInstruction: state.currentQuest.instruction,
+                );
+                _triggerAutoPlay(parsed.targetWord);
+              }
             });
             _ttsTimer = Timer(const Duration(seconds: 3), () {
               if (mounted) {
                 _ttsFinished.value = true;
                 _scrollToBottom();
-                _timerKey.currentState?.start();
               }
             });
           } else if (state.answerStatus == AnswerStatus.incorrect) {
@@ -190,8 +171,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             xp: state.xpEarned,
             coins: state.coinsEarned,
             title: context.tr(
-              'speaking_games.polar_antipode',
-              fallback: 'POLAR ANTIPODE FUSED!',
+              'speaking_games.lesson_complete',
+              fallback: 'LESSON COMPLETE!',
             ),
             enableDoubleUp: true,
           );
@@ -200,13 +181,32 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
-        if (quest != null) {
-          _acceptedAntonyms = quest.acceptedSynonyms ?? [];
-        }
+        String expectedText = "";
+        String targetWord = "?";
+        String contextText = "";
 
-        final expectedText = _acceptedAntonyms.isNotEmpty
-            ? _acceptedAntonyms.first
-            : "";
+        if (quest != null) {
+          _acceptedAntonyms = List<String>.from(quest.acceptedSynonyms ?? []);
+          if (_acceptedAntonyms.isEmpty && quest.correctAnswer != null) {
+            String cleaned = quest.correctAnswer!
+                .replaceAll(RegExp(r'[^\w\s]'), '')
+                .trim();
+            if (cleaned.isNotEmpty) {
+              _acceptedAntonyms = [cleaned];
+            }
+          }
+
+          expectedText = _acceptedAntonyms.isNotEmpty
+              ? _acceptedAntonyms.first
+              : "";
+
+          final parsed = SpeakOppositeParser.parseQuestTexts(
+            textToSpeak: quest.textToSpeak ?? "",
+            fallbackInstruction: quest.instruction,
+          );
+          targetWord = parsed.targetWord;
+          contextText = parsed.contextText;
+        }
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -217,8 +217,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
               _isAnswered,
               _isCorrect,
               _showConfetti,
-              _pullProgress,
-              _timeVal,
               _ttsFinished,
             ]),
             builder: (context, _) {
@@ -252,49 +250,26 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                 vertical: 16.h,
                               ),
                               sliver: SliverToBoxAdapter(
-                                child: AbsorbPointer(
-                                  absorbing: _ttsFinished.value,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SpeakOppositeHeader(
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
-                                      ),
-                                      SizedBox(height: 24.h),
-                                      SpeakOppositePositivePolePanel(
-                                        quest: quest,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onPlayTts: () {
-                                          if (di
-                                              .sl<AudioRecordingService>()
-                                              .isRecording) {
-                                            return;
-                                          }
-                                          _soundService.playTts(
-                                            (quest.textToSpeak ?? "")
-                                                .replaceAll('*', ''),
-                                          );
-                                        },
-                                      ),
-                                      SizedBox(height: 32.h),
-                                      SpeakOppositePlasmaConduitPanel(
-                                        pullProgress: _pullProgress.value,
-                                        primaryColor: theme.primaryColor,
-                                        isListening: false,
-                                        timeVal: _timeVal.value,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 32.h),
-                                      SpeakOppositeNegativePolePanel(
-                                        pullProgress: _pullProgress.value,
-                                        isDark: isDark,
-                                      ),
-                                    ],
-                                  ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: 24.h),
+                                    SpeakOppositePositivePolePanel(
+                                      targetWord: targetWord,
+                                      contextText: contextText,
+                                      primaryColor: theme.primaryColor,
+                                      isDark: isDark,
+                                      onPlayTts: () {
+                                        if (di
+                                            .sl<AudioRecordingService>()
+                                            .isRecording) {
+                                          return;
+                                        }
+                                        _soundService.playTts(targetWord);
+                                      },
+                                    ),
+                                    SizedBox(height: 48.h),
+                                  ],
                                 ),
                               ),
                             ),
@@ -314,19 +289,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         children: [
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                              bottom: 24.h,
-                                            ),
-                                            child: SpeedChallengeTimer(
-                                              key: _timerKey,
-                                              durationSeconds: 30,
-                                              primaryColor: theme.primaryColor,
-                                              onTimeUp: () =>
-                                                  _onTimeUp(expectedText),
-                                              autoStart: true,
-                                            ),
-                                          ),
                                           SpeakToConfirmOverlay(
                                             expectedText: expectedText,
                                             acceptedSynonyms: _acceptedAntonyms,
@@ -334,9 +296,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                             isPositioned: false,
                                             hideExpectedText: true,
                                             allowSkip: false,
-                                            title: 'SPEAK AN ANTONYM',
+                                            title: 'SAY THE OPPOSITE',
                                             subtitle:
-                                                'Say the opposite aloud to confirm',
+                                                'Hold the mic and speak aloud',
                                             onConfirmed: () =>
                                                 _submitVerbalEvaluation(
                                                   true,

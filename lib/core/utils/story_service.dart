@@ -189,7 +189,7 @@ class StoryServiceImpl implements StoryService {
     'speakMissingWord':
         "Let's test your real-time thinking! Tap to fill the blank, and then speak the full sentence aloud to master the rhythm of the language.",
     'speakOpposite':
-        "Let's train your linguistic reflexes! Instantly providing the opposite word is a fantastic way to sharpen your active recall.",
+        "Ready to think on your feet? Saying the opposite word out loud is a fantastic way to train your brain to recall English words faster!",
     'speakSynonym':
         "Why use the same word twice? Let's expand your active vocabulary by finding completely new ways to say the same thing.",
     'yesNoSpeaking':
@@ -1164,11 +1164,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'speakopposite': [
       "",
-      "Great start! Speaking exact opposites forces you to think twice as fast.",
-      "You're getting so quick at identifying and speaking opposite meanings!",
-      "Halfway to a hundred! Your brain is making word connections faster than ever.",
-      "Level 100! That takes serious dedication. You should be really proud of your spoken vocabulary.",
-      "Level 200! Honestly, your spoken vocabulary is incredible. You understand the absolute edges of the English language.",
+      "Great start! Thinking of opposites on the spot is a brilliant way to build your confidence.",
+      "You're getting so fast at this! It's amazing how quickly you're pulling these words together.",
+      "Level 50! Halfway to a hundred! You're making connections faster than ever.",
+      "Level 100! That takes serious dedication. You should be incredibly proud of how far your speaking skills have come.",
+      "Level 200! Honestly, you're a natural. Your ability to find the perfect word on the spot is truly impressive.",
     ],
     'speaksynonym': [
       "",
