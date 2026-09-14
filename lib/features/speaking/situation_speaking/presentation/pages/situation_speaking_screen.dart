@@ -95,7 +95,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
           userId: authState.user!.id,
           gameType: widget.gameType.name,
           question: 'Situation Speaking',
-          userAnswer: '[Failed Context/Timer]',
+          userAnswer: '[Self-Evaluation: Needs Work]',
           correctAnswer: textToSpeak,
           level: widget.level,
         );
@@ -132,17 +132,22 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
     return BlocConsumer<SpeakingBloc, SpeakingState>(
       listener: (context, state) {
         if (state is SpeakingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesRestored = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
+              livesRestored ||
               (!state.answerStatus.isAnswered && _isAnswered.value)) {
+            final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+
             _lastProcessedIndex = state.currentIndex;
             _isAnswered.value = false;
             _isCorrect.value = null;
-            _isBriefingComplete.value = false;
-            Future.delayed(const Duration(milliseconds: 300), () {
-              if (mounted) _triggerAutoPlay(state.currentQuest);
-            });
+
+            if (isNewQuestion || livesRestored) {
+              _isBriefingComplete.value = false;
+              Future.delayed(const Duration(milliseconds: 300), () {
+                if (mounted) _triggerAutoPlay(state.currentQuest);
+              });
+            }
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             _isCorrect.value = false;
             _isAnswered.value = true; // Always show feedback card on incorrect
@@ -249,6 +254,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen> {
                                       quest.correctAnswer ??
                                       quest.textToSpeak ??
                                       "",
+                                  ttsText:
+                                      quest.textToSpeak ?? quest.correctAnswer,
                                   acceptedSynonyms:
                                       quest.acceptedSynonyms ?? [],
                                   primaryColor: theme.primaryColor,

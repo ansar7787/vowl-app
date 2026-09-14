@@ -161,6 +161,12 @@ class SpeakingBaseLayout extends StatelessWidget {
             ? null
             : explanation;
 
+        final finalSampleAnswer =
+            (quest.sampleAnswer != null &&
+                quest.sampleAnswer!.startsWith('Here is a sample response'))
+            ? quest.correctAnswer
+            : quest.sampleAnswer;
+
         return GameFeedbackCard(
           isCorrect: isCorrect,
           isFinalFailure: resolvedIsFinalFailure,
@@ -174,7 +180,7 @@ class SpeakingBaseLayout extends StatelessWidget {
             fallback: 'SPEAKING TIP',
           ),
           ruleContent: ruleContent,
-          sampleAnswer: quest.sampleAnswer,
+          sampleAnswer: finalSampleAnswer,
         );
       },
     );

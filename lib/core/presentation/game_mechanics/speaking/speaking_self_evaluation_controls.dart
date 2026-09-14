@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/game_mechanics/speaking/stt_auto_pass_wra
 
 class SpeakingSelfEvaluationControls extends StatefulWidget {
   final String expectedText;
+  final String? ttsText;
   final List<String> acceptedSynonyms;
   final Color primaryColor;
   final VoidCallback onConfirmed;
@@ -21,6 +22,7 @@ class SpeakingSelfEvaluationControls extends StatefulWidget {
   const SpeakingSelfEvaluationControls({
     super.key,
     required this.expectedText,
+    this.ttsText,
     this.acceptedSynonyms = const [],
     required this.primaryColor,
     required this.onConfirmed,
@@ -146,7 +148,7 @@ class _SpeakingSelfEvaluationControlsState
 
     try {
       await _soundService
-          .playTts(widget.expectedText)
+          .playTts(widget.ttsText ?? widget.expectedText)
           .timeout(const Duration(seconds: 45));
     } catch (e) {
       // Ignore TTS errors
@@ -184,7 +186,7 @@ class _SpeakingSelfEvaluationControlsState
 
     try {
       await _soundService
-          .playTts(widget.expectedText)
+          .playTts(widget.ttsText ?? widget.expectedText)
           .timeout(const Duration(seconds: 45));
       if (sessionId != _playbackSessionId) return;
       await Future.delayed(const Duration(milliseconds: 1200));

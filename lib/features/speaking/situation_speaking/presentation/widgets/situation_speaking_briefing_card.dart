@@ -43,6 +43,12 @@ class _SituationSpeakingBriefingCardState
       setState(() {
         _isFinishedTyping = false;
       });
+    } else if (oldWidget.isAnswered && !widget.isAnswered) {
+      if (_isFinishedTyping) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) widget.onBriefingComplete();
+        });
+      }
     }
   }
 
@@ -113,29 +119,39 @@ class _SituationSpeakingBriefingCardState
                     // Header Row
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            Icon(
-                                  Icons.assignment_late_rounded,
-                                  color: widget.primaryColor,
-                                  size: 16.r,
-                                )
-                                .animate(onPlay: (c) => c.repeat())
-                                .shake(hz: 2, curve: Curves.easeInOut)
-                                .then(delay: 2.seconds),
-                            SizedBox(width: 8.w),
-                            Text(
-                              "SCENARIO BRIEFING",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.bold,
-                                color: widget.primaryColor,
-                                letterSpacing: 1.5,
+                        Expanded(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: 2.h),
+                                child:
+                                    Icon(
+                                          Icons.assignment_late_rounded,
+                                          color: widget.primaryColor,
+                                          size: 16.r,
+                                        )
+                                        .animate(onPlay: (c) => c.repeat())
+                                        .shake(hz: 2, curve: Curves.easeInOut)
+                                        .then(delay: 2.seconds),
                               ),
-                            ),
-                          ],
+                              SizedBox(width: 8.w),
+                              Expanded(
+                                child: Text(
+                                  "SCENARIO BRIEFING",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: widget.primaryColor,
+                                    letterSpacing: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         if (_isFinishedTyping || widget.isAnswered)
                           ScaleButton(
@@ -221,24 +237,34 @@ class _SituationSpeakingBriefingCardState
                                                 CrossAxisAlignment.stretch,
                                             children: [
                                               Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons
-                                                        .lightbulb_outline_rounded,
-                                                    color: widget.primaryColor,
-                                                    size: 16.r,
-                                                  ),
-                                                  SizedBox(width: 6.w),
-                                                  Text(
-                                                    "SPEAKING GUIDE",
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 10.sp,
-                                                      fontWeight:
-                                                          FontWeight.bold,
+                                                  Padding(
+                                                    padding: EdgeInsets.only(
+                                                      top: 1.h,
+                                                    ),
+                                                    child: Icon(
+                                                      Icons
+                                                          .lightbulb_outline_rounded,
                                                       color:
                                                           widget.primaryColor,
-                                                      letterSpacing: 1.2,
+                                                      size: 16.r,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 6.w),
+                                                  Expanded(
+                                                    child: Text(
+                                                      "SPEAKING GUIDE",
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 10.sp,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            widget.primaryColor,
+                                                        letterSpacing: 1.2,
+                                                      ),
                                                     ),
                                                   ),
                                                 ],

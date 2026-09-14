@@ -373,18 +373,18 @@ class GameInstructionService {
           "PRO TIP: Look at surrounding nouns and verbs to match singular vs plural context.",
     ),
     GameSubtype.situationSpeaking: GameBriefing(
-      title: "Crisis Communicator",
-      icon: Icons.emergency_rounded,
+      title: "Situation Speaking",
+      icon: Icons.forum_rounded,
       objective:
-          "Orally provide a clear, direct solution to the real-world scenario. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+          "Read the scenario, decide what you would say in real life, and speak your response. Mastering this helps you sound natural, polite, and confident in everyday English conversations.",
       rules: [
-        "Understand context",
-        "Speak your solution",
-        "Be clear and direct",
+        "Listen to the scenario context",
+        "Think about what you would say",
+        "Hold the mic and speak naturally",
       ],
-      actionText: "Resolve Now",
+      actionText: "Start Situation",
       tip:
-          "PRO TIP: Focus on direct, simple language to convey your message quickly.",
+          "PRO TIP: Don't stress about being perfect. Focus on being polite and clear, just like you would with a real person!",
     ),
     GameSubtype.sceneDescriptionSpeaking: GameBriefing(
       title: "Visual Narrator",
@@ -1134,6 +1134,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: 'Present' becomes 'Past'! If someone said 'I am here', report 'they were there'.",
     ),
+
     // 6. Vocabulary
     GameSubtype.flashcards: GameBriefing(
       title: "Vocabulary Flashcards",

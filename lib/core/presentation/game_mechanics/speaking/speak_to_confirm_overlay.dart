@@ -14,6 +14,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 /// Uses [SpeakingSelfEvaluationControls] inside a floating bottom-sheet design.
 class SpeakToConfirmOverlay extends StatefulWidget {
   final String expectedText;
+  final String? ttsText;
   final List<String> acceptedSynonyms;
   final String? displayText;
   final bool hideExpectedText;
@@ -32,6 +33,7 @@ class SpeakToConfirmOverlay extends StatefulWidget {
   const SpeakToConfirmOverlay({
     super.key,
     required this.expectedText,
+    this.ttsText,
     this.acceptedSynonyms = const [],
     this.displayText,
     this.hideExpectedText = false,
@@ -247,6 +249,7 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
 
                           SpeakingSelfEvaluationControls(
                             expectedText: widget.expectedText,
+                            ttsText: widget.ttsText,
                             acceptedSynonyms: widget.acceptedSynonyms,
                             primaryColor: widget.primaryColor,
                             onConfirmed: () {
