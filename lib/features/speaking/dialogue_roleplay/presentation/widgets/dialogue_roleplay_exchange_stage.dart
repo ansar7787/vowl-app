@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
+import 'package:vowl/core/utils/ml_monetization_controller.dart';
 
 class DialogueRoleplayExchangeStage extends StatelessWidget {
   final SpeakingQuest quest;
@@ -36,6 +37,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
       children: [
         // AI Partner Speech Card
         _buildBubbleCard(
+          context,
           title: context.tr(
             'speaking_games.roleplay_partner',
             fallback: "ROLEPLAY PARTNER",
@@ -65,6 +67,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
 
         // User Spoken Target Card
         _buildBubbleCard(
+          context,
           title: context.tr(
             'speaking_games.your_response',
             fallback: "YOUR RESPONSE",
@@ -79,7 +82,8 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
     );
   }
 
-  Widget _buildBubbleCard({
+  Widget _buildBubbleCard(
+    BuildContext context, {
     required String title,
     required String content,
     required IconData avatarIcon,
@@ -148,13 +152,36 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                         letterSpacing: 1.0,
                       ),
                     ),
-                    if (!isUser)
+                    if (content.isNotEmpty)
                       ScaleButton(
                         onTap: () {
                           if (di.sl<AudioRecordingService>().isRecording) {
                             return;
                           }
-                          soundService.playTts(content);
+                          if (isUser) {
+                            MlMonetizationController.attemptFeature(
+                              context,
+                              featureIcon: Icons.volume_up_rounded,
+                              featureTitle: context.tr(
+                                'translation.pronunciation_title',
+                                fallback: 'Native Pronunciation',
+                              ),
+                              featureSubtitle: context.tr(
+                                'translation.pronunciation_desc',
+                                fallback:
+                                    'Listen to the perfect native pronunciation of your line',
+                              ),
+                              adButtonLabel: context.tr(
+                                'translation.pronunciation_ad',
+                                fallback: 'Watch Ad (1 Listen)',
+                              ),
+                              onSuccess: () {
+                                soundService.playTts(content);
+                              },
+                            );
+                          } else {
+                            soundService.playTts(content);
+                          }
                         },
                         child: Container(
                           color: Colors.transparent,

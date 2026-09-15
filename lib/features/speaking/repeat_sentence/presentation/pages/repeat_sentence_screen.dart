@@ -182,8 +182,6 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                 isAnswered: _isAnswered.value,
                 isCorrect: _isCorrect.value,
                 showConfetti: _showConfetti.value,
-                showHintButton:
-                    false, // Hidden because hint text is directly available as pronunciationTips
                 disablePadding:
                     true, // Fixes "width not fully used" and "scroll bar not edge"
                 onContinue: () =>

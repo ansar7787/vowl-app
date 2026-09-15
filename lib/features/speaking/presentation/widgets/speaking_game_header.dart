@@ -72,6 +72,7 @@ class SpeakingGameHeader extends StatelessWidget {
             ),
           ),
           if (showQuestControls) ...[
+            SizedBox(width: 8.w),
             _InfoButton(primaryColor: primaryColor, onTap: onInfoTap),
             SizedBox(width: 8.w),
             Row(
