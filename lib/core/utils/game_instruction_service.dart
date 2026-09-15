@@ -737,14 +737,14 @@ class GameInstructionService {
       title: "Sentence Architect",
       icon: Icons.architecture_rounded,
       objective:
-          "Arrange sentence fragments into a grammatically correct order. Mastering this skill ensures your written communication is clear, professional, and effective.",
+          "Connect the scattered word fragments to build a natural-sounding sentence. It's a great way to develop an instinctive feel for how native speakers put words together.",
       rules: [
-        "Start with Subject",
-        "Identify the Verb",
-        "Check ending punctuation",
+        "Find the main subject",
+        "Identify the verb",
+        "Complete the thought",
       ],
       actionText: "Build Sentence",
-      tip: "PRO TIP: Start with the 'Who' or 'What', then find the 'Action'!",
+      tip: "PRO TIP: Start with 'who' or 'what' the sentence is about, then look for the action word!",
     ),
     GameSubtype.completeSentence: GameBriefing(
       title: "Fragment Fixer",
