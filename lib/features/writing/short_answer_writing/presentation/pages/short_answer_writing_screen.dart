@@ -387,7 +387,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                                         ),
                                       ],
                                       SizedBox(
-                                        height: !isAnswered ? 380.h : 160.h,
+                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
                                       ),
                                     ],
                                   ),

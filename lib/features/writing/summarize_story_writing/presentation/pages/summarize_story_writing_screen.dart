@@ -99,6 +99,7 @@ class _SummarizeStoryWritingScreenState
   void _submitAnswer(bool isAnswered) {
     if (isAnswered) return;
     _pendingSubmit.value = true;
+    _scrollToBottom();
   }
 
   void _submitFinalAnswer(bool nailedTyping) {
@@ -138,6 +139,18 @@ class _SummarizeStoryWritingScreenState
     if (_pendingSubmit.value) return;
     _hapticService.error();
     context.read<WritingBloc>().add(const SubmitAnswer(false));
+  }
+
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
   }
 
   @override
@@ -210,6 +223,7 @@ class _SummarizeStoryWritingScreenState
           isCorrect: isCorrect,
           showConfetti: _showConfetti.value,
           useScrolling: false,
+          disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -227,11 +241,7 @@ class _SummarizeStoryWritingScreenState
 
               return quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        LayoutBuilder(
-                          builder: (context, constraints) {
-                            return RawScrollbar(
+                  : RawScrollbar(
                               controller: _scrollController,
                               thumbColor: theme.primaryColor.withValues(
                                 alpha: 0.5,
@@ -247,149 +257,152 @@ class _SummarizeStoryWritingScreenState
                                       horizontal: 24.w,
                                     ),
                                     sliver: SliverToBoxAdapter(
-                                      child: Column(
-                                        children: [
-                                          SizedBox(height: 16.h),
-                                          SummarizeStoryWritingInstruction(
-                                            instruction: context.tr(
-                                              'games.summarizeStoryWriting_instruction',
-                                              fallback:
-                                                  InstructionHelper.getInstruction(
-                                                    quest,
-                                                  ),
+                                      child: AbsorbPointer(
+                                        absorbing: _pendingSubmit.value && !isAnswered,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(height: 16.h),
+                                            SummarizeStoryWritingInstruction(
+                                              instruction: context.tr(
+                                                'games.summarizeStoryWriting_instruction',
+                                                fallback:
+                                                    InstructionHelper.getInstruction(
+                                                      quest,
+                                                    ),
+                                              ),
+                                              primaryColor: theme.primaryColor,
                                             ),
-                                            primaryColor: theme.primaryColor,
-                                          ),
-                                          SizedBox(height: 24.h),
+                                            SizedBox(height: 24.h),
 
-                                          SummarizeStoryManuscript(
-                                            story: quest.story ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                          SizedBox(height: 24.h),
+                                            SummarizeStoryManuscript(
+                                              story: quest.story ?? "",
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                            ),
+                                            SizedBox(height: 24.h),
 
-                                          if (quest.storyKeyEvents != null)
-                                            Container(
-                                              margin: EdgeInsets.only(
-                                                bottom: 24.h,
-                                              ),
-                                              padding: EdgeInsets.all(16.r),
-                                              decoration: BoxDecoration(
-                                                color: theme.primaryColor
-                                                    .withValues(alpha: 0.1),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.r),
-                                                border: Border.all(
-                                                  color: theme.primaryColor
-                                                      .withValues(alpha: 0.3),
+                                            if (quest.storyKeyEvents != null)
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                  bottom: 24.h,
                                                 ),
-                                              ),
-                                              child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Icon(
-                                                        Icons.checklist_rtl,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        size: 16.sp,
-                                                      ),
-                                                      SizedBox(width: 8.w),
-                                                      Text(
-                                                        "KEY EVENTS CHECKLIST",
-                                                        style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 10.sp,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                          color: theme
-                                                              .primaryColor,
-                                                          letterSpacing: 2,
-                                                        ),
-                                                      ),
-                                                    ],
+                                                padding: EdgeInsets.all(16.r),
+                                                decoration: BoxDecoration(
+                                                  color: theme.primaryColor
+                                                      .withValues(alpha: 0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(16.r),
+                                                  border: Border.all(
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.3),
                                                   ),
-                                                  SizedBox(height: 12.h),
-                                                  ...quest.storyKeyEvents!.map(
-                                                    (event) => Padding(
-                                                      padding: EdgeInsets.only(
-                                                        bottom: 6.h,
-                                                      ),
-                                                      child: Row(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Icon(
-                                                            Icons
-                                                                .check_circle_outline,
+                                                ),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.checklist_rtl,
+                                                          color:
+                                                              theme.primaryColor,
+                                                          size: 16.sp,
+                                                        ),
+                                                        SizedBox(width: 8.w),
+                                                        Text(
+                                                          "KEY EVENTS CHECKLIST",
+                                                          style: TextStyle(
+                                                            fontFamily: 'Outfit',
+                                                            fontSize: 10.sp,
+                                                            fontWeight:
+                                                                FontWeight.w800,
                                                             color: theme
-                                                                .primaryColor
-                                                                .withValues(
-                                                                  alpha: 0.7,
-                                                                ),
-                                                            size: 14.sp,
+                                                                .primaryColor,
+                                                            letterSpacing: 2,
                                                           ),
-                                                          SizedBox(width: 8.w),
-                                                          Expanded(
-                                                            child: Text(
-                                                              event,
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize: 12.sp,
-                                                                color: isDark
-                                                                    ? Colors
-                                                                          .white70
-                                                                    : Colors
-                                                                          .black87,
-                                                                height: 1.3,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(height: 12.h),
+                                                    ...quest.storyKeyEvents!.map(
+                                                      (event) => Padding(
+                                                        padding: EdgeInsets.only(
+                                                          bottom: 6.h,
+                                                        ),
+                                                        child: Row(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Icon(
+                                                              Icons
+                                                                  .check_circle_outline,
+                                                              color: theme
+                                                                  .primaryColor
+                                                                  .withValues(
+                                                                    alpha: 0.7,
+                                                                  ),
+                                                              size: 14.sp,
+                                                            ),
+                                                            SizedBox(width: 8.w),
+                                                            Expanded(
+                                                              child: Text(
+                                                                event,
+                                                                style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize: 12.sp,
+                                                                  color: isDark
+                                                                      ? Colors
+                                                                            .white70
+                                                                      : Colors
+                                                                            .black87,
+                                                                  height: 1.3,
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-
-                                          SummarizeStoryFilmStrip(
-                                            slots: _slots.value,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            onDropFrame: (idx, sentence) =>
-                                                _onDropFrame(
-                                                  idx,
-                                                  sentence,
-                                                  isAnswered,
+                                                  ],
                                                 ),
-                                            onRemoveFrame: (idx) =>
-                                                _removeFrame(idx, isAnswered),
-                                          ),
-                                          SizedBox(height: 24.h),
+                                              ),
 
-                                          SummarizeStoryFrameVault(
-                                            options: options,
-                                            slots: _slots.value,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            onTapOption: (text) =>
-                                                _onTapOption(text, isAnswered),
-                                          ),
-                                          SizedBox(height: 32.h),
-                                          if (!isAnswered)
-                                            SpeedChallengeTimer(
-                                              durationSeconds: 90,
-                                              primaryColor: theme.primaryColor,
-                                              onTimeUp: _onTimerExpired,
+                                            SummarizeStoryFilmStrip(
+                                              slots: _slots.value,
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              onDropFrame: (idx, sentence) =>
+                                                  _onDropFrame(
+                                                    idx,
+                                                    sentence,
+                                                    isAnswered,
+                                                  ),
+                                              onRemoveFrame: (idx) =>
+                                                  _removeFrame(idx, isAnswered),
                                             ),
-                                          SizedBox(height: 32.h),
-                                        ],
+                                            SizedBox(height: 24.h),
+
+                                            SummarizeStoryFrameVault(
+                                              options: options,
+                                              slots: _slots.value,
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              onTapOption: (text) =>
+                                                  _onTapOption(text, isAnswered),
+                                            ),
+                                            SizedBox(height: 32.h),
+                                            if (!isAnswered)
+                                              SpeedChallengeTimer(
+                                                durationSeconds: 90,
+                                                primaryColor: theme.primaryColor,
+                                                onTimeUp: _onTimerExpired,
+                                              ),
+                                            SizedBox(height: 32.h),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -449,8 +462,21 @@ class _SummarizeStoryWritingScreenState
                                                 ),
                                               ),
                                             ),
+                                          if (_pendingSubmit.value && !isAnswered)
+                                            TypeToConfirmOverlay(
+                                              expectedText: _slots.value.isNotEmpty
+                                                  ? (_slots.value[0].sentence ?? "")
+                                                  : "",
+                                              displayText:
+                                                  "Type the first sentence to finalize your summary",
+                                              primaryColor: theme.primaryColor,
+                                              onConfirmed: () => _submitFinalAnswer(true),
+                                              onSkipped: () => _submitFinalAnswer(false),
+                                              allowSkip: true,
+                                              isPositioned: false,
+                                            ),
                                           SizedBox(
-                                            height: !isAnswered ? 380.h : 160.h,
+                                            height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
                                           ),
                                         ],
                                       ),
@@ -459,22 +485,6 @@ class _SummarizeStoryWritingScreenState
                                 ],
                               ),
                             );
-                          },
-                        ),
-                        if (_pendingSubmit.value && !isAnswered)
-                          TypeToConfirmOverlay(
-                            expectedText: _slots.value.isNotEmpty
-                                ? (_slots.value[0].sentence ?? "")
-                                : "",
-                            displayText:
-                                "Type the first sentence to finalize your summary",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                            allowSkip: true,
-                          ),
-                      ],
-                    );
             },
           ),
         );

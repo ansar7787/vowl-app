@@ -169,6 +169,95 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
     );
   }
 
+  Widget _buildPartialMatchRichText(String spokenText, bool hasError) {
+    if (!hasError) {
+      return AutoSizeText(
+        '"$spokenText"',
+        textAlign: TextAlign.center,
+        maxLines: 2,
+        minFontSize: 8,
+        overflow: TextOverflow.visible,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
+          fontStyle: FontStyle.italic,
+          color: (Theme.of(context).brightness == Brightness.dark)
+              ? Colors.white70
+              : Colors.black54,
+        ),
+      );
+    }
+
+    final targetWords = TextSimilarityHelper.normalize(
+      widget.expectedText,
+    ).split(' ');
+    final spokenWordsRaw = spokenText.split(' ');
+
+    List<TextSpan> spans = [];
+
+    for (int i = 0; i < spokenWordsRaw.length; i++) {
+      String raw = spokenWordsRaw[i];
+      final normalized = TextSimilarityHelper.normalize(raw);
+      bool isMatch = false;
+      if (normalized.isNotEmpty) {
+        for (String tw in targetWords) {
+          if (tw.isNotEmpty &&
+              (tw == normalized ||
+                  TextSimilarityHelper.levenshteinSimilarity(tw, normalized) >
+                      0.8)) {
+            isMatch = true;
+            break;
+          }
+        }
+      }
+
+      spans.add(
+        TextSpan(
+          text: raw + (i < spokenWordsRaw.length - 1 ? ' ' : ''),
+          style: TextStyle(
+            color: isMatch ? Colors.green : Colors.redAccent,
+            decoration: isMatch ? null : TextDecoration.underline,
+          ),
+        ),
+      );
+    }
+
+    return AutoSizeText.rich(
+      TextSpan(
+        children: [
+          TextSpan(
+            text: context.tr('stt.heard_prefix', fallback: 'Heard: "'),
+            style: TextStyle(
+              color: (Theme.of(context).brightness == Brightness.dark)
+                  ? Colors.white70
+                  : Colors.black54,
+            ),
+          ),
+          ...spans,
+          TextSpan(
+            text: '"',
+            style: TextStyle(
+              color: (Theme.of(context).brightness == Brightness.dark)
+                  ? Colors.white70
+                  : Colors.black54,
+            ),
+          ),
+        ],
+      ),
+      textAlign: TextAlign.center,
+      maxLines: 2,
+      minFontSize: 8,
+      overflow: TextOverflow.visible,
+      style: TextStyle(
+        fontFamily: 'Outfit',
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.italic,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_showFallback) {
@@ -317,30 +406,9 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
 
                             return Column(
                               children: [
-                                AutoSizeText(
-                                  hasError
-                                      ? context.tr(
-                                          'stt.heard',
-                                          args: [spokenText],
-                                          fallback: 'Heard: "$spokenText"',
-                                        )
-                                      : '"$spokenText"',
-                                  textAlign: TextAlign.center,
-                                  maxLines: 2,
-                                  minFontSize: 8,
-                                  overflow: TextOverflow.visible,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FontStyle.italic,
-                                    color: hasError
-                                        ? Colors.redAccent
-                                        : ((Theme.of(context).brightness ==
-                                                  Brightness.dark)
-                                              ? Colors.white70
-                                              : Colors.black54),
-                                  ),
+                                _buildPartialMatchRichText(
+                                  spokenText,
+                                  hasError,
                                 ),
                                 if (hasError)
                                   Padding(
@@ -348,13 +416,12 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
                                     child: Text(
                                       context.tr(
                                         'stt.incorrect',
-                                        fallback:
-                                            'Incorrect. Tap mic to try again.',
+                                        fallback: 'Not quite right. Try again!',
                                       ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 12.sp,
-                                        fontWeight: FontWeight.w700,
+                                        fontWeight: FontWeight.w600,
                                         color: Colors.redAccent,
                                       ),
                                     ),

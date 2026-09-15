@@ -51,6 +51,9 @@ class _SpeakingSelfEvaluationControlsState
   String? _recordingPath;
   int _playbackSessionId = 0;
 
+  DateTime? _recordStartTime;
+  Duration _recordDuration = const Duration(milliseconds: 1200);
+
   @override
   void dispose() {
     if (_audioRecorder.isRecording) {
@@ -99,6 +102,7 @@ class _SpeakingSelfEvaluationControlsState
           _isRecording.value = true;
           _hasRecorded.value = false;
           _recordingPath = null;
+          _recordStartTime = DateTime.now();
         }
       }
     } finally {
@@ -113,6 +117,11 @@ class _SpeakingSelfEvaluationControlsState
     try {
       _hapticService.selection();
       final path = await _audioRecorder.stopRecording();
+      if (_recordStartTime != null) {
+        _recordDuration = DateTime.now().difference(_recordStartTime!);
+      } else {
+        _recordDuration = const Duration(milliseconds: 1200);
+      }
 
       if (mounted) {
         _isRecording.value = false;
@@ -156,7 +165,7 @@ class _SpeakingSelfEvaluationControlsState
       }
 
       if (sessionId != _playbackSessionId) return;
-      await Future.delayed(const Duration(milliseconds: 1200));
+      await Future.delayed(_recordDuration + const Duration(milliseconds: 300));
     }
 
     if (mounted && sessionId == _playbackSessionId) {
@@ -200,7 +209,7 @@ class _SpeakingSelfEvaluationControlsState
           .playFile(_recordingPath!)
           .timeout(const Duration(seconds: 45));
       if (sessionId != _playbackSessionId) return;
-      await Future.delayed(const Duration(milliseconds: 1200));
+      await Future.delayed(_recordDuration + const Duration(milliseconds: 300));
     } catch (e) {
       // Ignore playback/TTS errors so UI doesn't get stuck
     } finally {

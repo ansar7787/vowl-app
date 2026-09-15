@@ -227,6 +227,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti.value,
           useScrolling: false,
+          disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
@@ -457,7 +458,7 @@ class _CompleteSentenceBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               SizedBox(
-                height: !isAnswered ? 380.h : 60.h,
+                height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 60.h,
               ), // Bottom docking padding
             ],
           ),

@@ -88,6 +88,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   void _submitAnswer(bool isAnswered) {
     if (isAnswered) return;
     _pendingSubmit.value = true;
+    _scrollToBottom();
   }
 
   void _submitFinalAnswer(bool nailedTyping) {
@@ -126,6 +127,18 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
         isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct;
 
     context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+  }
+
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
   }
 
   @override
@@ -188,6 +201,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti.value,
           useScrolling: false,
+          disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -206,9 +220,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
 
               return activeQuest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
+                  : RawScrollbar(
                           controller: _scrollController,
                           thumbColor: theme.primaryColor.withValues(alpha: 0.5),
                           radius: Radius.circular(8.r),
@@ -220,103 +232,106 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                               SliverPadding(
                                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                                 sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      EssayDraftingInstruction(
-                                        primaryColor: theme.primaryColor,
-                                        instruction: activeQuest.instruction,
-                                      ),
-                                      SizedBox(height: 24.h),
-
-                                      EssayDraftingTopicBanner(
-                                        topic: activeQuest.essayTopic ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      if (activeQuest.thesisStatement != null)
-                                        Container(
-                                          margin: EdgeInsets.only(bottom: 16.h),
-                                          padding: EdgeInsets.all(12.r),
-                                          decoration: BoxDecoration(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              12.r,
-                                            ),
-                                            border: Border.all(
-                                              color: theme.primaryColor
-                                                  .withValues(alpha: 0.3),
-                                            ),
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Icon(
-                                                    Icons.center_focus_strong,
-                                                    color: theme.primaryColor,
-                                                    size: 14.sp,
-                                                  ),
-                                                  SizedBox(width: 8.w),
-                                                  Text(
-                                                    "THESIS STATEMENT",
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 10.sp,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: theme.primaryColor,
-                                                      letterSpacing: 1.5,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(height: 8.h),
-                                              Text(
-                                                activeQuest.thesisStatement!,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 14.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: isDark
-                                                      ? Colors.white
-                                                      : Colors.black87,
-                                                  fontStyle: FontStyle.italic,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                  child: AbsorbPointer(
+                                    absorbing: _pendingSubmit.value && !isAnswered,
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 16.h),
+                                        EssayDraftingInstruction(
+                                          primaryColor: theme.primaryColor,
+                                          instruction: activeQuest.instruction,
                                         ),
-                                      SizedBox(height: 8.h),
+                                        SizedBox(height: 24.h),
 
-                                      ..._blueprintSlots.value.keys.map(
-                                        (k) => EssayDraftingHexSlot(
-                                          slotKey: k,
-                                          slotValue: _blueprintSlots.value[k],
+                                        EssayDraftingTopicBanner(
+                                          topic: activeQuest.essayTopic ?? "",
                                           color: theme.primaryColor,
                                           isDark: isDark,
-                                          onSlot: (key, data) =>
-                                              _onSlot(key, data, isAnswered),
-                                          onClearSlot: (key) =>
-                                              _clearSlot(key, isAnswered),
                                         ),
-                                      ),
-                                      SizedBox(height: 24.h),
+                                        SizedBox(height: 16.h),
+                                        if (activeQuest.thesisStatement != null)
+                                          Container(
+                                            margin: EdgeInsets.only(bottom: 16.h),
+                                            padding: EdgeInsets.all(12.r),
+                                            decoration: BoxDecoration(
+                                              color: theme.primaryColor
+                                                  .withValues(alpha: 0.1),
+                                              borderRadius: BorderRadius.circular(
+                                                12.r,
+                                              ),
+                                              border: Border.all(
+                                                color: theme.primaryColor
+                                                    .withValues(alpha: 0.3),
+                                              ),
+                                            ),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.center_focus_strong,
+                                                      color: theme.primaryColor,
+                                                      size: 14.sp,
+                                                    ),
+                                                    SizedBox(width: 8.w),
+                                                    Text(
+                                                      "THESIS STATEMENT",
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 10.sp,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color: theme.primaryColor,
+                                                        letterSpacing: 1.5,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(height: 8.h),
+                                                Text(
+                                                  activeQuest.thesisStatement!,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 14.sp,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: isDark
+                                                        ? Colors.white
+                                                        : Colors.black87,
+                                                    fontStyle: FontStyle.italic,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        SizedBox(height: 8.h),
 
-                                      EssayDraftingDataStream(
-                                        items: _shuffledOptions.value.isNotEmpty
-                                            ? _shuffledOptions.value
-                                            : options,
-                                        slots: _blueprintSlots.value,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
-                                      SizedBox(height: 16.h),
-                                    ],
+                                        ..._blueprintSlots.value.keys.map(
+                                          (k) => EssayDraftingHexSlot(
+                                            slotKey: k,
+                                            slotValue: _blueprintSlots.value[k],
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            onSlot: (key, data) =>
+                                                _onSlot(key, data, isAnswered),
+                                            onClearSlot: (key) =>
+                                                _clearSlot(key, isAnswered),
+                                          ),
+                                        ),
+                                        SizedBox(height: 24.h),
+
+                                        EssayDraftingDataStream(
+                                          items: _shuffledOptions.value.isNotEmpty
+                                              ? _shuffledOptions.value
+                                              : options,
+                                          slots: _blueprintSlots.value,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
+                                        SizedBox(height: 16.h),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -365,8 +380,23 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                                             ),
                                           ),
                                         ),
+                                      if (_pendingSubmit.value && !isAnswered)
+                                        TypeToConfirmOverlay(
+                                          expectedText:
+                                              _blueprintSlots.value.isNotEmpty &&
+                                                  _blueprintSlots.value.values.first != null
+                                              ? _blueprintSlots.value.values.first!
+                                              : "",
+                                          displayText:
+                                              "Type the first point to finalize the outline",
+                                          primaryColor: theme.primaryColor,
+                                          onConfirmed: () => _submitFinalAnswer(true),
+                                          onSkipped: () => _submitFinalAnswer(false),
+                                          allowSkip: true,
+                                          isPositioned: false,
+                                        ),
                                       SizedBox(
-                                        height: !isAnswered ? 380.h : 160.h,
+                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
                                       ),
                                     ],
                                   ),
@@ -374,23 +404,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                               ),
                             ],
                           ),
-                        ),
-                        if (_pendingSubmit.value && !isAnswered)
-                          TypeToConfirmOverlay(
-                            expectedText:
-                                _blueprintSlots.value.isNotEmpty &&
-                                    _blueprintSlots.value.values.first != null
-                                ? _blueprintSlots.value.values.first!
-                                : "",
-                            displayText:
-                                "Type the first point to finalize the outline",
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
-                            allowSkip: true,
-                          ),
-                      ],
-                    );
+                        );
             },
           ),
         );

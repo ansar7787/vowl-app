@@ -1,17 +1,19 @@
 import 'dart:async';
-import 'dart:math' as math;
 import 'package:record/record.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/presentation/game_mechanics/shared/game_eval_button.dart';
 
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+
+import 'components/shadow_waveform_visualizer.dart';
+import 'components/shadow_playback_button.dart';
+import 'components/shadow_eval_controls.dart';
 
 /// Enhanced speaking self-evaluation with visual waveform comparison.
 ///
@@ -547,7 +549,9 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                   milliseconds: 300,
                                                 ),
                                                 child: isRecording
-                                                    ? _buildRealVisualizer()
+                                                    ? ShadowWaveformVisualizer(
+                                                        soundLevel: _soundLevel,
+                                                      )
                                                     : Icon(
                                                         Icons.mic_rounded,
                                                         color: Colors.white,
@@ -661,7 +665,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                     children: [
                                       if (widget.showWaveform) ...[
                                         // Model waveform
-                                        _buildPlaybackButton(
+                                        ShadowPlaybackButton(
                                           label: context.tr(
                                             'eval.native',
                                             fallback: 'NATIVE',
@@ -677,7 +681,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                         SizedBox(height: 12.h),
 
                                         // User waveform
-                                        _buildPlaybackButton(
+                                        ShadowPlaybackButton(
                                           label: context.tr(
                                             'eval.you',
                                             fallback: 'YOU',
@@ -783,38 +787,10 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                       SizedBox(height: 20.h),
 
                                       // Self-evaluation buttons
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Expanded(
-                                            child: GameEvalButton(
-                                              title: context.tr(
-                                                'eval.needs_work',
-                                                fallback: 'Needs Work',
-                                              ),
-                                              icon: Icons.close_rounded,
-                                              color: Colors.redAccent,
-                                              onTap: isSubmitting
-                                                  ? () {}
-                                                  : _handleNeedsWork,
-                                            ),
-                                          ),
-                                          SizedBox(width: 16.w),
-                                          Expanded(
-                                            child: GameEvalButton(
-                                              title: context.tr(
-                                                'eval.nailed_it',
-                                                fallback: 'Nailed It',
-                                              ),
-                                              icon: Icons.check_rounded,
-                                              color: Colors.greenAccent,
-                                              onTap: isSubmitting
-                                                  ? () {}
-                                                  : _handleNailedIt,
-                                            ),
-                                          ),
-                                        ],
+                                      ShadowEvalControls(
+                                        isSubmitting: isSubmitting,
+                                        onNeedsWork: _handleNeedsWork,
+                                        onNailedIt: _handleNailedIt,
                                       ),
                                       SizedBox(height: 12.h),
                                       Text(
@@ -850,97 +826,5 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
     }
 
     return content;
-  }
-
-  Widget _buildRealVisualizer() {
-    return ValueListenableBuilder<double>(
-      valueListenable: _soundLevel,
-      builder: (context, normalized, _) {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: List.generate(5, (index) {
-            final baseModifier = const [0.4, 0.8, 1.0, 0.8, 0.4][index];
-            // Add slight organic jitter when the user is speaking to simulate frequency variance
-            final jitter = normalized > 0.05
-                ? (math.Random().nextDouble() * 0.3 - 0.15)
-                : 0.0;
-            final modifier = (baseModifier + jitter).clamp(0.1, 1.2);
-
-            final targetHeight = 12.h + (36.h * normalized * modifier);
-
-            return AnimatedContainer(
-              duration: const Duration(milliseconds: 100),
-              curve: Curves.easeOutQuad,
-              margin: EdgeInsets.symmetric(horizontal: 3.w),
-              width: 4.w,
-              height: targetHeight,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-            );
-          }),
-        );
-      },
-    );
-  }
-
-  Widget _buildPlaybackButton({
-    required String label,
-    required Color color,
-    required bool isActive,
-    required VoidCallback onPlay,
-    required bool isDark,
-    required bool isPlaying,
-  }) {
-    return Semantics(
-      button: true,
-      label: 'Play $label audio',
-      child: GestureDetector(
-        onTap: isPlaying ? null : onPlay,
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: isActive
-                ? color.withValues(alpha: 0.1)
-                : (isDark
-                      ? Colors.white.withValues(alpha: 0.04)
-                      : Colors.black.withValues(alpha: 0.02)),
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(
-              color: isActive
-                  ? color.withValues(alpha: 0.4)
-                  : Colors.transparent,
-              width: 1.5,
-            ),
-          ),
-          child: Row(
-            children: [
-              // Label
-              AutoSizeText(
-                label,
-                maxLines: 1,
-                minFontSize: 10,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w800,
-                  color: color,
-                  letterSpacing: 1,
-                ),
-              ),
-              const Spacer(),
-              // Play icon
-              Icon(
-                isActive ? Icons.graphic_eq_rounded : Icons.play_arrow_rounded,
-                color: color,
-                size: 24.r,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }

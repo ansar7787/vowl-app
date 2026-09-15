@@ -26,7 +26,10 @@ class SpeedChallengeTimer extends StatefulWidget {
   final int durationSeconds;
 
   /// Theme accent colour.
-  final Color primaryColor;
+  ///
+  /// **Note**: The timer bar starts with this color, transitioning to
+  /// yellow and then red as time runs out. Defaults to green if null.
+  final Color? primaryColor;
 
   /// Fires when the timer reaches zero.
   final VoidCallback onTimeUp;
@@ -50,7 +53,7 @@ class SpeedChallengeTimer extends StatefulWidget {
   const SpeedChallengeTimer({
     super.key,
     this.durationSeconds = 30,
-    required this.primaryColor,
+    this.primaryColor,
     required this.onTimeUp,
     this.onTick,
     this.bonusCoinsForSpeed = 10,
@@ -233,11 +236,13 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
           valueListenable: _remainingSecondsNotifier,
           builder: (context, remainingSec, _) {
             final remainingFraction = remainingSec / widget.durationSeconds;
+            final Color startColor =
+                widget.primaryColor ?? const Color(0xFF22C55E);
 
             Color barColor;
             if (remainingFraction > 0.5) {
               barColor = Color.lerp(
-                const Color(0xFF22C55E),
+                startColor,
                 const Color(0xFFFBBF24),
                 (1.0 - remainingFraction) * 2.0,
               )!;

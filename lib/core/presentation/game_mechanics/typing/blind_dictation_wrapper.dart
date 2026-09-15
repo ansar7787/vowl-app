@@ -10,6 +10,8 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
+import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
+
 class BlindDictationWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;
@@ -46,14 +48,30 @@ class BlindDictationWrapper extends StatefulWidget {
 }
 
 class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
+  /// Strips all non-word, non-space characters (punctuation, quotes, etc.)
+  /// Matches behavior of TextSimilarityHelper.normalizeText.
+  static final _punctuationPattern = RegExp(r'[^\w\s]');
+  static final _whitespacePattern = RegExp(r'\s+');
+
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final TextEditingController _controller = TextEditingController();
+  late final SmartTypoController _controller;
   final FocusNode _focusNode = FocusNode();
 
   final ValueNotifier<bool> _hasError = ValueNotifier(false);
   final ValueNotifier<int> _attempts = ValueNotifier(0);
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = SmartTypoController(expectedText: widget.expectedText);
+    _controller.addListener(() {
+      if (_controller.showDiff) {
+        _controller.showDiff = false;
+      }
+    });
+  }
 
   @override
   void dispose() {
@@ -76,6 +94,7 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
 
     if (!GibberishDetectorService.isNaturalSentence(context, input)) {
       _hasError.value = true;
+      _controller.showDiff = true;
       _attempts.value++;
       _hapticService.error();
       if (_attempts.value >= widget.maxAttempts) {
@@ -85,17 +104,18 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
     }
 
     String cleanInput = input
-        .replaceAll(RegExp(r'[.,!?]'), '')
-        .replaceAll(RegExp(r'\s+'), ' ')
+        .replaceAll(_punctuationPattern, '')
+        .replaceAll(_whitespacePattern, ' ')
         .trim()
         .toLowerCase();
     String cleanCorrect = widget.expectedText
-        .replaceAll(RegExp(r'[.,!?]'), '')
-        .replaceAll(RegExp(r'\s+'), ' ')
+        .replaceAll(_punctuationPattern, '')
+        .replaceAll(_whitespacePattern, ' ')
         .trim()
         .toLowerCase();
 
     if (cleanInput == cleanCorrect) {
+      _controller.showDiff = false;
       _isSubmitting.value = true;
       _hasError.value = false;
       _hapticService.success();
@@ -115,6 +135,7 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       _hapticService.error();
       _soundService.playWrong();
       _hasError.value = true;
+      _controller.showDiff = true;
       _attempts.value++;
       if (_attempts.value >= widget.maxAttempts) {
         _focusNode.unfocus();

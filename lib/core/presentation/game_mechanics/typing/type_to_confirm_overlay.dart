@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
-import 'package:vowl/core/utils/smart_typo_evaluator.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/presentation/game_mechanics/typing/smart_typo_controller.dart';
 
 class TypeToConfirmOverlay extends StatefulWidget {
   final String expectedText;
@@ -41,57 +43,9 @@ class TypeToConfirmOverlay extends StatefulWidget {
   State<TypeToConfirmOverlay> createState() => _TypeToConfirmOverlayState();
 }
 
-class _SmartTypoController extends TextEditingController {
-  final String expectedText;
-  bool _showDiff = false;
-  Color correctColor = Colors.green;
-  Color incorrectColor = Colors.redAccent;
-
-  _SmartTypoController({required this.expectedText});
-
-  bool get showDiff => _showDiff;
-
-  set showDiff(bool val) {
-    if (_showDiff != val) {
-      _showDiff = val;
-      notifyListeners();
-    }
-  }
-
-  @override
-  set value(TextEditingValue newValue) {
-    if (_showDiff && newValue.text != value.text) {
-      _showDiff = false;
-    }
-    super.value = newValue;
-  }
-
-  @override
-  TextSpan buildTextSpan({
-    required BuildContext context,
-    TextStyle? style,
-    required bool withComposing,
-  }) {
-    if (!_showDiff || text.isEmpty) {
-      return super.buildTextSpan(
-        context: context,
-        style: style,
-        withComposing: withComposing,
-      );
-    }
-    return SmartTypoEvaluator.buildDiffSpan(
-      text,
-      expectedText,
-      baseStyle: style ?? const TextStyle(),
-      correctColor: correctColor,
-      incorrectColor: incorrectColor,
-    );
-  }
-}
-
 class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   final _hapticService = di.sl<HapticService>();
-  late final _SmartTypoController _textController;
+  late final SmartTypoController _textController;
   final _focusNode = FocusNode();
   final _scrollController = ScrollController();
 
@@ -102,7 +56,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   @override
   void initState() {
     super.initState();
-    _textController = _SmartTypoController(expectedText: widget.expectedText);
+    _textController = SmartTypoController(expectedText: widget.expectedText);
     _textController.addListener(() {
       if (_textController.showDiff) {
         _textController.showDiff = false;
@@ -155,6 +109,16 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
       _isSubmitting.value = true;
       _hapticService.success();
       _focusNode.unfocus();
+
+      // Award bonus coins if earned within attempt limit
+      if (widget.bonusCoins != null &&
+          widget.bonusCoins! > 0 &&
+          _attempts.value < widget.maxAttempts) {
+        context.read<EconomyBloc>().add(
+          EconomyAddCoinsRequested(widget.bonusCoins!),
+        );
+      }
+
       await Future.delayed(const Duration(milliseconds: 800));
       if (mounted) widget.onConfirmed();
     } else {

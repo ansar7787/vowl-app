@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 /// A text passage with tappable words for evidence-based highlighting.
@@ -90,6 +91,20 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
     super.initState();
     _targetCount = widget.requiredHighlights ?? widget.evidenceWords.length;
     _parsePassage();
+  }
+
+  @override
+  void didUpdateWidget(EvidenceHighlightWrapper oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.passage != widget.passage ||
+        oldWidget.evidenceWords != widget.evidenceWords) {
+      _targetCount = widget.requiredHighlights ?? widget.evidenceWords.length;
+      _highlightedIndices.value = {};
+      _wrongTapIndex.value = -1;
+      _isComplete.value = false;
+      _isSubmitting.value = false;
+      _parsePassage();
+    }
   }
 
   @override
@@ -455,7 +470,10 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                           ),
                                           SizedBox(width: 8.w),
                                           AutoSizeText(
-                                            'EVIDENCE FOUND! 🎯',
+                                            context.tr(
+                                              'game.evidence_found',
+                                              fallback: 'EVIDENCE FOUND! 🎯',
+                                            ),
                                             maxLines: 1,
                                             minFontSize: 8,
                                             style: TextStyle(

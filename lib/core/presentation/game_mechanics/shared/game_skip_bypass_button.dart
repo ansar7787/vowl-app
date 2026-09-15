@@ -28,7 +28,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 ///   onSubmittingChanged: (v) => _isSubmitting.value = v,
 /// )
 /// ```
-class GameSkipBypassButton extends StatelessWidget {
+class GameSkipBypassButton extends StatefulWidget {
   /// Text/icon color.
   final Color subtitleColor;
 
@@ -69,24 +69,34 @@ class GameSkipBypassButton extends StatelessWidget {
     this.skipLabel,
   });
 
+  @override
+  State<GameSkipBypassButton> createState() => _GameSkipBypassButtonState();
+}
+
+class _GameSkipBypassButtonState extends State<GameSkipBypassButton> {
+  bool _isPressed = false;
+
   void _handleTap(BuildContext context, int currentAttempts) {
-    if (maxAttempts != null && currentAttempts >= maxAttempts!) {
-      onSubmittingChanged(true);
+    // Guard: prevent double-taps while submitting
+    if (widget.isSubmitting.value) return;
+
+    if (widget.maxAttempts != null && currentAttempts >= widget.maxAttempts!) {
+      widget.onSubmittingChanged(true);
       di.sl<AnalyticsService>().logGameSkipped(false);
-      onSkipped();
+      widget.onSkipped();
       return;
     }
 
-    onSubmittingChanged(true);
+    widget.onSubmittingChanged(true);
     final user = context.read<AuthBloc>().state.user;
     final isPremium = user?.isPremium ?? false;
 
     if (isPremium) {
       di.sl<AnalyticsService>().logGameSkipped(false);
-      if (onBypassed != null) {
-        onBypassed!();
+      if (widget.onBypassed != null) {
+        widget.onBypassed!();
       } else {
-        onConfirmed();
+        widget.onConfirmed();
       }
     } else {
       di.sl<AdService>().showRewardedAd(
@@ -94,14 +104,14 @@ class GameSkipBypassButton extends StatelessWidget {
         isPremium: false,
         onUserEarnedReward: (_) {
           di.sl<AnalyticsService>().logGameSkipped(true);
-          if (onBypassed != null) {
-            onBypassed!();
+          if (widget.onBypassed != null) {
+            widget.onBypassed!();
           } else {
-            onConfirmed();
+            widget.onConfirmed();
           }
         },
         onDismissed: () {
-          onSubmittingChanged(false);
+          widget.onSubmittingChanged(false);
         },
       );
     }
@@ -111,7 +121,7 @@ class GameSkipBypassButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget buildButton(int currentAttempts) {
       final outOfAttempts =
-          maxAttempts != null && currentAttempts >= maxAttempts!;
+          widget.maxAttempts != null && currentAttempts >= widget.maxAttempts!;
 
       return Semantics(
         button: true,
@@ -122,58 +132,73 @@ class GameSkipBypassButton extends StatelessWidget {
                 fallback: 'Skip and watch an ad',
               ),
         child: GestureDetector(
+          onTapDown: (_) => setState(() => _isPressed = true),
+          onTapUp: (_) => setState(() => _isPressed = false),
+          onTapCancel: () => setState(() => _isPressed = false),
           onTap: () {
+            setState(() => _isPressed = false);
             _handleTap(context, currentAttempts);
           },
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: subtitleColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  outOfAttempts
-                      ? context.tr('game.continue_button', fallback: 'CONTINUE')
-                      : (skipLabel ??
-                            context.tr('game.skip_button', fallback: 'SKIP')),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
-                    color: subtitleColor.withValues(alpha: 0.8),
+          child: AnimatedScale(
+            scale: _isPressed ? 0.95 : 1.0,
+            duration: const Duration(milliseconds: 100),
+            curve: Curves.easeInOut,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 100),
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+              decoration: BoxDecoration(
+                color: widget.subtitleColor.withValues(
+                  alpha: _isPressed ? 0.2 : 0.1,
+                ),
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    outOfAttempts
+                        ? context.tr(
+                            'game.continue_button',
+                            fallback: 'CONTINUE',
+                          )
+                        : (widget.skipLabel ??
+                              context.tr('game.skip_button', fallback: 'SKIP')),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w700,
+                      color: widget.subtitleColor.withValues(alpha: 0.8),
+                    ),
                   ),
-                ),
-                Builder(
-                  builder: (context) {
-                    final isPremium =
-                        context.watch<AuthBloc>().state.user?.isPremium ??
-                        false;
-                    if (!isPremium && !outOfAttempts) {
-                      return Padding(
-                        padding: EdgeInsets.only(left: 4.w),
-                        child: Icon(
-                          Icons.ondemand_video_rounded,
-                          size: 12.r,
-                          color: subtitleColor.withValues(alpha: 0.8),
-                        ),
-                      );
-                    }
-                    return const SizedBox.shrink();
-                  },
-                ),
-              ],
+                  Builder(
+                    builder: (context) {
+                      final isPremium =
+                          context.watch<AuthBloc>().state.user?.isPremium ??
+                          false;
+                      if (!isPremium && !outOfAttempts) {
+                        return Padding(
+                          padding: EdgeInsets.only(left: 4.w),
+                          child: Icon(
+                            Icons.ondemand_video_rounded,
+                            size: 12.r,
+                            color: widget.subtitleColor.withValues(alpha: 0.8),
+                          ),
+                        );
+                      }
+                      return const SizedBox.shrink();
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),
       );
     }
 
-    if (attempts != null) {
+    if (widget.attempts != null) {
       return ValueListenableBuilder<int>(
-        valueListenable: attempts!,
+        valueListenable: widget.attempts!,
         builder: (context, currentAttempts, _) {
           return buildButton(currentAttempts);
         },

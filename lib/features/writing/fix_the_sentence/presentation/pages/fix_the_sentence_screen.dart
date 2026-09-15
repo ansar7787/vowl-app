@@ -111,6 +111,18 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     }
   }
 
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -186,140 +198,141 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
             builder: (context, _) {
               return quest == null
                   ? GameShimmerLoading(primaryColor: theme.primaryColor)
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: theme.primaryColor.withValues(alpha: 0.5),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const BouncingScrollPhysics(),
-                            slivers: [
-                              SliverPadding(
-                                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                sliver: SliverToBoxAdapter(
-                                  child: Column(
-                                    children: [
-                                      SizedBox(height: 16.h),
-                                      FixTheSentenceInstruction(
-                                        isWiped: _isWiped.value,
-                                        primaryColor: theme.primaryColor,
-                                        instruction:
-                                            InstructionHelper.getInstruction(
-                                              quest,
-                                            ),
-                                      ),
-                                      SizedBox(height: 16.h),
-                                      if (quest.errorType != null)
-                                        Container(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 12.w,
-                                            vertical: 6.h,
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            sliver: SliverToBoxAdapter(
+                              child: AbsorbPointer(
+                                absorbing: _pendingSelectedOption.value != null && !isAnswered,
+                                child: Column(
+                                  children: [
+                                    SizedBox(height: 16.h),
+                                    FixTheSentenceInstruction(
+                                      isWiped: _isWiped.value,
+                                      primaryColor: theme.primaryColor,
+                                      instruction:
+                                          InstructionHelper.getInstruction(
+                                            quest,
                                           ),
-                                          decoration: BoxDecoration(
+                                    ),
+                                    SizedBox(height: 16.h),
+                                    if (quest.errorType != null)
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 12.w,
+                                          vertical: 6.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor
+                                              .withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
+                                          ),
+                                          border: Border.all(
                                             color: theme.primaryColor
-                                                .withValues(alpha: 0.1),
-                                            borderRadius: BorderRadius.circular(
-                                              12.r,
-                                            ),
-                                            border: Border.all(
-                                              color: theme.primaryColor
-                                                  .withValues(alpha: 0.3),
-                                            ),
-                                          ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Icon(
-                                                Icons.bug_report,
-                                                color: theme.primaryColor,
-                                                size: 14.sp,
-                                              ),
-                                              SizedBox(width: 8.w),
-                                              Text(
-                                                quest.errorType!.toUpperCase(),
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 10.sp,
-                                                  fontWeight: FontWeight.w800,
-                                                  color: theme.primaryColor,
-                                                  letterSpacing: 2,
-                                                ),
-                                              ),
-                                            ],
+                                                .withValues(alpha: 0.3),
                                           ),
                                         ),
-                                      SizedBox(height: 32.h),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Icon(
+                                              Icons.bug_report,
+                                              color: theme.primaryColor,
+                                              size: 14.sp,
+                                            ),
+                                            SizedBox(width: 8.w),
+                                            Text(
+                                              quest.errorType!.toUpperCase(),
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w800,
+                                                color: theme.primaryColor,
+                                                letterSpacing: 2,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    SizedBox(height: 32.h),
 
-                                      FixTheSentenceDigitalBlackboard(
-                                        fullText: quest.passage ?? "",
-                                        targetWord: quest.missingWord ?? "",
-                                        selectedReplacement:
-                                            _selectedOption.value ??
-                                            _pendingSelectedOption.value,
-                                        isWiped: _isWiped.value,
-                                        erasePoints: _erasePoints.value,
-                                        onErase: (pos) =>
-                                            _onErase(pos, isAnswered),
+                                    FixTheSentenceDigitalBlackboard(
+                                      fullText: quest.passage ?? "",
+                                      targetWord: quest.missingWord ?? "",
+                                      selectedReplacement:
+                                          _selectedOption.value ??
+                                          _pendingSelectedOption.value,
+                                      isWiped: _isWiped.value,
+                                      erasePoints: _erasePoints.value,
+                                      onErase: (pos) =>
+                                          _onErase(pos, isAnswered),
+                                      color: theme.primaryColor,
+                                      isDark: isDark,
+                                    ),
+                                    SizedBox(height: 32.h),
+
+                                    if (_isWiped.value && !isAnswered)
+                                      FixTheSentenceWipedAlert(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    if (_isWiped.value && !isAnswered)
+                                      SizedBox(height: 16.h),
+
+                                    if (_isWiped.value)
+                                      FixTheSentenceCorrectionOptions(
+                                        options:
+                                            _shuffledOptions.value ??
+                                            quest.options ??
+                                            [],
+                                        correct: quest.correctAnswer ?? "",
                                         color: theme.primaryColor,
                                         isDark: isDark,
+                                        onSelect: (selected, correct) {
+                                          if (isAnswered ||
+                                              _pendingSelectedOption.value !=
+                                                  null) {
+                                            return;
+                                          }
+                                          _pendingSelectedOption.value =
+                                              selected;
+                                          _scrollToBottom();
+                                        },
                                       ),
-                                      SizedBox(height: 32.h),
-
-                                      if (_isWiped.value && !isAnswered)
-                                        FixTheSentenceWipedAlert(
-                                          primaryColor: theme.primaryColor,
-                                        ),
-                                      if (_isWiped.value && !isAnswered)
-                                        SizedBox(height: 16.h),
-
-                                      if (_isWiped.value)
-                                        FixTheSentenceCorrectionOptions(
-                                          options:
-                                              _shuffledOptions.value ??
-                                              quest.options ??
-                                              [],
-                                          correct: quest.correctAnswer ?? "",
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                          onSelect: (selected, correct) {
-                                            if (isAnswered ||
-                                                _pendingSelectedOption.value !=
-                                                    null) {
-                                              return;
-                                            }
-                                            _pendingSelectedOption.value =
-                                                selected;
-                                          },
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    SizedBox(
-                                      height: !isAnswered ? 380.h : 160.h,
-                                    ),
                                   ],
                                 ),
                               ),
-                            ],
+                            ),
                           ),
-                        ),
-                        if (_pendingSelectedOption.value != null && !isAnswered)
-                          TypeToConfirmOverlay(
-                            expectedText: _pendingSelectedOption.value!,
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true, quest),
-                            onSkipped: () => _submitFinalAnswer(false, quest),
-                            allowSkip: true,
+                          SliverToBoxAdapter(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                if (_pendingSelectedOption.value != null && !isAnswered)
+                                  TypeToConfirmOverlay(
+                                    expectedText: _pendingSelectedOption.value!,
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () => _submitFinalAnswer(true, quest),
+                                    onSkipped: () => _submitFinalAnswer(false, quest),
+                                    allowSkip: true,
+                                    isPositioned: false,
+                                  ),
+                                SizedBox(
+                                  height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                ),
+                              ],
+                            ),
                           ),
-                      ],
+                        ],
+                      ),
                     );
             },
           ),

@@ -197,6 +197,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti.value,
           useScrolling: false,
+          disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -359,7 +360,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                                           ),
                                         ),
                                       SizedBox(
-                                        height: !isAnswered ? 380.h : 160.h,
+                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
                                       ),
                                     ],
                                   ),

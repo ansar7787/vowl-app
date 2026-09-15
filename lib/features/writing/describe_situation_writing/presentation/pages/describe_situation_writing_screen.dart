@@ -343,6 +343,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti.value,
           useScrolling: false,
+          disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: ListenableBuilder(
@@ -511,7 +512,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                                           ),
                                         ),
                                       SizedBox(
-                                        height: !isAnswered ? 380.h : 160.h,
+                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
                                       ),
                                     ],
                                   ),

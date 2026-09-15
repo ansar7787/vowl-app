@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/services.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
@@ -17,6 +18,7 @@ class DynamicJigsawWrapper extends StatefulWidget {
   final bool isPositioned;
   final List<String>? customShuffledWords;
   final List<int>? customCorrectOrder;
+  final int maxAttempts;
 
   const DynamicJigsawWrapper({
     super.key,
@@ -30,6 +32,7 @@ class DynamicJigsawWrapper extends StatefulWidget {
     this.isPositioned = true,
     this.customShuffledWords,
     this.customCorrectOrder,
+    this.maxAttempts = 3,
   });
 
   @override
@@ -42,6 +45,8 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   late String _targetSentence;
   final ValueNotifier<bool> _hasError = ValueNotifier(false);
   final ValueNotifier<bool> _isSubmitting = ValueNotifier(false);
+  final ValueNotifier<int> _attempts = ValueNotifier(0);
+  final ValueNotifier<List<bool?>?> _positionalFeedback = ValueNotifier(null);
 
   @override
   void initState() {
@@ -55,6 +60,8 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     _placedTiles.dispose();
     _hasError.dispose();
     _isSubmitting.dispose();
+    _attempts.dispose();
+    _positionalFeedback.dispose();
     super.dispose();
   }
 
@@ -109,6 +116,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     if (_isSubmitting.value) return;
     if (!_availableTiles.value.contains(tile)) return; // Anti-double-tap guard
     if (_hasError.value) _hasError.value = false;
+    _positionalFeedback.value = null;
     HapticFeedback.lightImpact();
 
     final currentPlaced = List<_WordTile?>.from(_placedTiles.value);
@@ -122,13 +130,8 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
       _availableTiles.value = currentAvail;
 
       if (!currentPlaced.contains(null)) {
-        String currentSentence = currentPlaced.map((t) => t!.word).join(' ');
-        if (currentSentence == _targetSentence) {
-          _onSubmit();
-        } else {
-          HapticFeedback.heavyImpact();
-          _hasError.value = true;
-        }
+        // Auto-submit when the last tile is placed
+        _onSubmit();
       }
     }
   }
@@ -136,6 +139,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   void _onPlacedTileTapped(int index) {
     if (_isSubmitting.value) return;
     if (_hasError.value) _hasError.value = false;
+    _positionalFeedback.value = null;
 
     final currentPlaced = List<_WordTile?>.from(_placedTiles.value);
     _WordTile? tile = currentPlaced[index];
@@ -153,6 +157,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   void _onTileDropped(int index, _WordTile tile) {
     if (_isSubmitting.value) return;
     _hasError.value = false;
+    _positionalFeedback.value = null;
 
     final currentPlaced = List<_WordTile?>.from(_placedTiles.value);
     final currentAvail = List<_WordTile>.from(_availableTiles.value);
@@ -178,11 +183,16 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     _placedTiles.value = currentPlaced;
     _availableTiles.value = currentAvail;
     HapticFeedback.lightImpact();
+
+    if (!currentPlaced.contains(null)) {
+      _onSubmit();
+    }
   }
 
   void _clearAll() {
     if (_isSubmitting.value) return;
     _hasError.value = false;
+    _positionalFeedback.value = null;
 
     final currentPlaced = List<_WordTile?>.from(_placedTiles.value);
     final currentAvail = List<_WordTile>.from(_availableTiles.value);
@@ -215,7 +225,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     if (currentSentence == _targetSentence) {
       HapticFeedback.mediumImpact();
       _isSubmitting.value = true;
-      if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
+      if (widget.bonusCoins != null &&
+          widget.bonusCoins! > 0 &&
+          _attempts.value < widget.maxAttempts) {
         context.read<EconomyBloc>().add(
           EconomyAddCoinsRequested(widget.bonusCoins!),
         );
@@ -224,6 +236,25 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     } else {
       HapticFeedback.heavyImpact();
       _hasError.value = true;
+      _attempts.value++;
+
+      // POSITIONAL FEEDBACK
+      List<String> targetWords = _targetSentence.split(' ');
+      List<bool?> feedback = List.filled(currentPlaced.length, null);
+      for (int i = 0; i < currentPlaced.length; i++) {
+        if (currentPlaced[i] != null) {
+          feedback[i] = (currentPlaced[i]!.word == targetWords[i]);
+        }
+      }
+      _positionalFeedback.value = feedback;
+
+      if (_attempts.value >= widget.maxAttempts) {
+        _isSubmitting.value = true;
+        Future.delayed(400.ms, () {
+          if (!mounted) return;
+          widget.onSkipped();
+        });
+      }
     }
   }
 
@@ -398,148 +429,166 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                     return ValueListenableBuilder<List<_WordTile?>>(
                       valueListenable: _placedTiles,
                       builder: (context, placedTiles, _) {
-                        return Container(
-                              width: double.infinity,
-                              constraints: BoxConstraints(minHeight: 60.h),
-                              padding: EdgeInsets.all(12.r),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.02),
-                                borderRadius: BorderRadius.circular(12.r),
-                                border: Border.all(
-                                  color: hasError
-                                      ? errorColor.withValues(alpha: 0.5)
-                                      : Colors.transparent,
-                                ),
-                              ),
-                              child: Wrap(
-                                spacing: 8.w,
-                                runSpacing: 8.h,
-                                children: List.generate(placedTiles.length, (
-                                  index,
-                                ) {
-                                  final tile = placedTiles[index];
+                        return ValueListenableBuilder<List<bool?>?>(
+                          valueListenable: _positionalFeedback,
+                          builder: (context, positionalFeedback, _) {
+                            return Container(
+                                  width: double.infinity,
+                                  constraints: BoxConstraints(minHeight: 60.h),
+                                  padding: EdgeInsets.all(12.r),
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.05)
+                                        : Colors.black.withValues(alpha: 0.02),
+                                    borderRadius: BorderRadius.circular(12.r),
+                                    border: Border.all(
+                                      color: hasError
+                                          ? errorColor.withValues(alpha: 0.5)
+                                          : Colors.transparent,
+                                    ),
+                                  ),
+                                  child: Wrap(
+                                    spacing: 8.w,
+                                    runSpacing: 8.h,
+                                    children: List.generate(placedTiles.length, (
+                                      index,
+                                    ) {
+                                      final tile = placedTiles[index];
 
-                                  return DragTarget<_WordTile>(
-                                    onAcceptWithDetails: (details) =>
-                                        _onTileDropped(index, details.data),
-                                    builder: (context, candidateData, rejectedData) {
-                                      final isHovering =
-                                          candidateData.isNotEmpty;
+                                      return DragTarget<_WordTile>(
+                                        onAcceptWithDetails: (details) =>
+                                            _onTileDropped(index, details.data),
+                                        builder: (context, candidateData, rejectedData) {
+                                          final isHovering =
+                                              candidateData.isNotEmpty;
 
-                                      if (tile == null) {
-                                        return Container(
-                                          key: ValueKey('empty_$index'),
-                                          height: 36.h,
-                                          width: isHovering ? 80.w : 50.w,
-                                          decoration: BoxDecoration(
-                                            color: widget.primaryColor
-                                                .withValues(
-                                                  alpha: isHovering
-                                                      ? 0.2
-                                                      : 0.05,
+                                          if (tile == null) {
+                                            return Container(
+                                              key: ValueKey('empty_$index'),
+                                              height: 36.h,
+                                              width: isHovering ? 80.w : 50.w,
+                                              decoration: BoxDecoration(
+                                                color: widget.primaryColor
+                                                    .withValues(
+                                                      alpha: isHovering
+                                                          ? 0.2
+                                                          : 0.05,
+                                                    ),
+                                                borderRadius:
+                                                    BorderRadius.circular(18.r),
+                                                border: Border.all(
+                                                  color: widget.primaryColor
+                                                      .withValues(
+                                                        alpha: isHovering
+                                                            ? 0.8
+                                                            : 0.2,
+                                                      ),
+                                                  style: BorderStyle.solid,
                                                 ),
-                                            borderRadius: BorderRadius.circular(
-                                              18.r,
-                                            ),
-                                            border: Border.all(
-                                              color: widget.primaryColor
-                                                  .withValues(
-                                                    alpha: isHovering
-                                                        ? 0.8
-                                                        : 0.2,
-                                                  ),
-                                              style: BorderStyle.solid,
-                                            ),
-                                          ),
-                                        );
-                                      }
+                                              ),
+                                            );
+                                          }
 
-                                      return Draggable<_WordTile>(
-                                        data: tile,
-                                        childWhenDragging: Opacity(
-                                          opacity: 0.3,
-                                          child: _buildTile(
-                                            tile,
-                                            isDark,
-                                            subtitleColor,
-                                            textColor,
-                                          ),
-                                        ),
-                                        feedback: Material(
-                                          color: Colors.transparent,
-                                          child: _buildTile(
-                                            tile,
-                                            isDark,
-                                            subtitleColor,
-                                            textColor,
-                                            scale: 1.1,
-                                          ),
-                                        ),
-                                        child: GestureDetector(
-                                          key: ValueKey('placed_${tile.id}'),
-                                          onTap: () =>
-                                              _onPlacedTileTapped(index),
-                                          child:
-                                              Container(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                          horizontal: 16.w,
-                                                          vertical: 8.h,
-                                                        ),
-                                                    decoration: BoxDecoration(
-                                                      color: widget.primaryColor
-                                                          .withValues(
-                                                            alpha: isHovering
-                                                                ? 0.3
-                                                                : 0.15,
-                                                          ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                            18.r,
-                                                          ),
-                                                      border: Border.all(
-                                                        color: widget
-                                                            .primaryColor
-                                                            .withValues(
-                                                              alpha: isHovering
-                                                                  ? 1.0
-                                                                  : 0.5,
+                                          final bool? isCorrectPos =
+                                              positionalFeedback?[index];
+                                          final Color tileColor =
+                                              isCorrectPos == true
+                                              ? Colors.greenAccent
+                                              : isCorrectPos == false
+                                              ? Colors.redAccent
+                                              : widget.primaryColor;
+
+                                          return Draggable<_WordTile>(
+                                            data: tile,
+                                            childWhenDragging: Opacity(
+                                              opacity: 0.3,
+                                              child: _buildTile(
+                                                tile,
+                                                isDark,
+                                                subtitleColor,
+                                                textColor,
+                                              ),
+                                            ),
+                                            feedback: Material(
+                                              color: Colors.transparent,
+                                              child: _buildTile(
+                                                tile,
+                                                isDark,
+                                                subtitleColor,
+                                                textColor,
+                                                scale: 1.1,
+                                              ),
+                                            ),
+                                            child: GestureDetector(
+                                              key: ValueKey(
+                                                'placed_${tile.id}',
+                                              ),
+                                              onTap: () =>
+                                                  _onPlacedTileTapped(index),
+                                              child:
+                                                  Container(
+                                                        padding:
+                                                            EdgeInsets.symmetric(
+                                                              horizontal: 16.w,
+                                                              vertical: 8.h,
                                                             ),
+                                                        decoration: BoxDecoration(
+                                                          color: tileColor
+                                                              .withValues(
+                                                                alpha:
+                                                                    isHovering
+                                                                    ? 0.3
+                                                                    : 0.15,
+                                                              ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                18.r,
+                                                              ),
+                                                          border: Border.all(
+                                                            color: tileColor
+                                                                .withValues(
+                                                                  alpha:
+                                                                      isHovering
+                                                                      ? 1.0
+                                                                      : 0.5,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        child: Text(
+                                                          tile.word,
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: 16.sp,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: textColor,
+                                                          ),
+                                                        ),
+                                                      )
+                                                      .animate(
+                                                        key: ValueKey(
+                                                          'anim_placed_${tile.id}',
+                                                        ),
+                                                      )
+                                                      .scaleXY(
+                                                        begin: 0.8,
+                                                        end: 1.0,
+                                                        curve:
+                                                            Curves.easeOutBack,
+                                                        duration: 250.ms,
                                                       ),
-                                                    ),
-                                                    child: Text(
-                                                      tile.word,
-                                                      style: TextStyle(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 16.sp,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: textColor,
-                                                      ),
-                                                    ),
-                                                  )
-                                                  .animate(
-                                                    key: ValueKey(
-                                                      'anim_placed_${tile.id}',
-                                                    ),
-                                                  )
-                                                  .scaleXY(
-                                                    begin: 0.8,
-                                                    end: 1.0,
-                                                    curve: Curves.easeOutBack,
-                                                    duration: 250.ms,
-                                                  ),
-                                        ),
+                                            ),
+                                          );
+                                        },
                                       );
-                                    },
-                                  );
-                                }),
-                              ),
-                            )
-                            .animate(target: hasError ? 1 : 0)
-                            .shakeX(amount: 5, duration: 400.ms);
+                                    }),
+                                  ),
+                                )
+                                .animate(target: hasError ? 1 : 0)
+                                .shakeX(amount: 5, duration: 400.ms);
+                          },
+                        );
                       },
                     );
                   },
@@ -665,7 +714,10 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                       ),
                                     ),
                                     child: Text(
-                                      'Submit',
+                                      context.tr(
+                                        'game.submit_button',
+                                        fallback: 'Submit',
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 16.sp,
@@ -691,11 +743,16 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                     child: GameSkipBypassButton(
                       subtitleColor: subtitleColor,
                       isSubmitting: _isSubmitting,
+                      attempts: _attempts,
+                      maxAttempts: widget.maxAttempts,
                       onBypassed: widget.onBypassed,
                       onConfirmed: widget.onSkipped,
                       onSkipped: widget.onSkipped,
                       onSubmittingChanged: (v) => _isSubmitting.value = v,
-                      skipLabel: 'SKIP',
+                      skipLabel: context.tr(
+                        'game.skip_button',
+                        fallback: 'SKIP',
+                      ),
                     ),
                   ),
               ],
