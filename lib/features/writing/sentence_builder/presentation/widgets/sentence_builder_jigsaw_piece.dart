@@ -20,20 +20,9 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
     this.isDragging = false,
   });
 
-  String _formatText(String word) {
-    if (word == 'I' ||
-        word == "I'm" ||
-        word == "I'll" ||
-        word == "I've" ||
-        word == "I'd") {
-      return word;
-    }
-    return word.toLowerCase();
-  }
-
   @override
   Widget build(BuildContext context) {
-    final displayText = _formatText(text);
+    final displayText = text;
 
     final piece = Semantics(
       label: isAssembled

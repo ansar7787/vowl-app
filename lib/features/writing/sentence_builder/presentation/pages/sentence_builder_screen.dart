@@ -141,7 +141,12 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 
     if (isCorrect) {
       _hapticService.success();
-      _showTypeToConfirm.value = true;
+      if (isHardMode) {
+        // They already typed it manually, no need to type to confirm.
+        context.read<WritingBloc>().add(const SubmitAnswer(true));
+      } else {
+        _showTypeToConfirm.value = true;
+      }
     } else {
       _hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
@@ -430,7 +435,9 @@ class _SentenceBuilderBody extends StatelessWidget {
               children: [
                 SizedBox(height: 40.h),
                 if (!isAnswered) _SubmitButton(theme: theme, onTap: onSubmit),
-                SizedBox(height: !isAnswered ? 380.h : 160.h),
+                SizedBox(
+                  height: !isAnswered ? (level >= 6 ? 380.h : 60.h) : 160.h,
+                ),
               ],
             ),
           ),
