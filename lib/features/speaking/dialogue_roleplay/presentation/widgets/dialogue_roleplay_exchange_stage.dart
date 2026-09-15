@@ -156,10 +156,14 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                           }
                           soundService.playTts(content);
                         },
-                        child: Icon(
-                          Icons.volume_up_rounded,
-                          color: color,
-                          size: 16.r,
+                        child: Container(
+                          color: Colors.transparent,
+                          padding: EdgeInsets.all(12.r),
+                          child: Icon(
+                            Icons.volume_up_rounded,
+                            color: color,
+                            size: 16.r,
+                          ),
                         ),
                       ),
                   ],
