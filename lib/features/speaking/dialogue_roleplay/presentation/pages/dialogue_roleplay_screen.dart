@@ -388,10 +388,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                     absorbing: !_ttsFinished.value,
                                     child: Builder(
                                       builder: (context) {
-                                        final currentSynonyms = [
+                                        final currentSynonyms = {
                                           ..._acceptedSynonyms,
                                           ..._smartReplies.value,
-                                        ].toSet().toList();
+                                        }.toList();
 
                                         return SpeakToConfirmOverlay(
                                           expectedText: expectedText,
