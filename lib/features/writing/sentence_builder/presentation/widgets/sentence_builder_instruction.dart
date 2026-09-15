@@ -50,8 +50,7 @@ class SentenceBuilderInstruction extends StatelessWidget {
                       .tr(
                         'games.sentenceBuilder_instruction',
                         fallback:
-                            instruction ??
-                            'Put the words in the right order',
+                            instruction ?? 'Put the words in the right order',
                       )
                       .toUpperCase(),
                   textAlign: TextAlign.center,
