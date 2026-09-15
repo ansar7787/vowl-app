@@ -99,6 +99,18 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     _assembledPieces.value = List.from(_assembledPieces.value)..removeAt(index);
   }
 
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+        );
+      }
+    });
+  }
+
   void _submitAnswer(String correct, bool isAnswered) {
     final isHardMode = widget.level >= 6;
     if (isAnswered ||
@@ -146,6 +158,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         context.read<WritingBloc>().add(const SubmitAnswer(true));
       } else {
         _showTypeToConfirm.value = true;
+        _scrollToBottom();
       }
     } else {
       _hapticService.error();
@@ -231,11 +244,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti.value,
           useScrolling: false,
+          disablePadding: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
-          // FIX: WritingHintUsed is already dispatched inside WritingGameHeader.
-          // Passing it here too caused a double dispatch. onHint() is reserved
-          // for any screen-specific side effects (currently none needed).
           onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
@@ -246,48 +257,37 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
             builder: (context, _) {
               return quest == null
                   ? const SizedBox.shrink()
-                  : Stack(
-                      children: [
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: _theme.primaryColor.withValues(
-                            alpha: 0.5,
-                          ),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: _SentenceBuilderBody(
-                            quest: quest,
-                            pool: pool,
-                            level: widget.level,
-                            textController: _textController,
-                            assembledPieces: _assembledPieces.value,
-                            isAnswered: isAnswered,
-                            isCorrect: isCorrect,
-                            theme: _theme,
-                            isDark: isDark,
-                            scrollController: _scrollController,
-                            onSnap: (piece) => _onSnap(piece, isAnswered),
-                            onRemovePiece: (idx) =>
-                                _onRemovePiece(idx, isAnswered),
-                            onSubmit: () => _submitAnswer(
-                              quest.correctAnswer ?? '',
-                              isAnswered,
-                            ),
-                          ),
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: _theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: _SentenceBuilderBody(
+                        quest: quest,
+                        pool: pool,
+                        level: widget.level,
+                        textController: _textController,
+                        assembledPieces: _assembledPieces.value,
+                        isAnswered: isAnswered,
+                        isCorrect: isCorrect,
+                        theme: _theme,
+                        isDark: isDark,
+                        scrollController: _scrollController,
+                        showTypeToConfirm: _showTypeToConfirm.value,
+                        onSnap: (piece) => _onSnap(piece, isAnswered),
+                        onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
+                        onSubmit: () => _submitAnswer(
+                          quest.correctAnswer ?? '',
+                          isAnswered,
                         ),
-                        if (_showTypeToConfirm.value && !isAnswered)
-                          TypeToConfirmOverlay(
-                            expectedText: quest.correctAnswer ?? '',
-                            primaryColor: _theme.primaryColor,
-                            onConfirmed: _onTypeConfirmed,
-                            onSkipped: () {
-                              _showTypeToConfirm.value = false;
-                              context.read<WritingBloc>().add(
-                                const SubmitAnswer(false),
-                              );
-                            },
-                          ),
-                      ],
+                        onTypeConfirmed: _onTypeConfirmed,
+                        onSkipped: () {
+                          _showTypeToConfirm.value = false;
+                          context.read<WritingBloc>().add(
+                            const SubmitAnswer(false),
+                          );
+                        },
+                      ),
                     );
             },
           ),
@@ -314,9 +314,12 @@ class _SentenceBuilderBody extends StatelessWidget {
   final dynamic theme;
   final bool isDark;
   final ScrollController scrollController;
+  final bool showTypeToConfirm;
   final ValueChanged<String> onSnap;
   final ValueChanged<int> onRemovePiece;
   final VoidCallback onSubmit;
+  final VoidCallback onTypeConfirmed;
+  final VoidCallback onSkipped;
 
   const _SentenceBuilderBody({
     required this.quest,
@@ -329,9 +332,12 @@ class _SentenceBuilderBody extends StatelessWidget {
     required this.theme,
     required this.isDark,
     required this.scrollController,
+    required this.showTypeToConfirm,
     required this.onSnap,
     required this.onRemovePiece,
     required this.onSubmit,
+    required this.onTypeConfirmed,
+    required this.onSkipped,
   });
 
   @override
@@ -343,103 +349,119 @@ class _SentenceBuilderBody extends StatelessWidget {
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           sliver: SliverToBoxAdapter(
-            child: Column(
-              children: [
-                SizedBox(height: 16.h),
-                SentenceBuilderInstruction(
-                  primaryColor: theme.primaryColor,
-                  instruction: InstructionHelper.getInstruction(quest),
-                ),
-                SizedBox(height: 16.h),
-                if (quest.sentenceType != null)
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 6.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: theme.primaryColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: theme.primaryColor.withValues(alpha: 0.3),
-                      ),
-                    ),
-                    child: Text(
-                      quest.sentenceType!.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: theme.primaryColor,
-                        letterSpacing: 2,
-                      ),
-                    ),
+            child: AbsorbPointer(
+              absorbing: showTypeToConfirm,
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  SentenceBuilderInstruction(
+                    primaryColor: theme.primaryColor,
+                    instruction: InstructionHelper.getInstruction(quest),
                   ),
-                SizedBox(height: 32.h),
-
-                if (level >= 6) ...[
-                  GestureDetector(
-                    onTap: () {
-                      CustomSnackBar.show(
-                        context: context,
-                        message:
-                            "Hard Mode! Dragging is disabled. Please type your answer below.",
-                        type: CustomSnackBarType.info,
-                      );
-                    },
-                    child: AbsorbPointer(
-                      child: Opacity(
-                        opacity: 0.8,
-                        child: SentenceBuilderPiecePool(
-                          pool: pool,
-                          assembledPieces: const [],
+                  SizedBox(height: 16.h),
+                  if (quest.sentenceType != null)
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                        vertical: 6.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: theme.primaryColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(
+                          color: theme.primaryColor.withValues(alpha: 0.3),
+                        ),
+                      ),
+                      child: Text(
+                        quest.sentenceType!.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
                           color: theme.primaryColor,
-                          isDark: isDark,
-                          onSnap: (_) {},
+                          letterSpacing: 2,
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 16.h),
-                  SentenceBuilderKeyboardInput(
-                    controller: textController,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                ] else ...[
-                  SentenceBuilderWorkbench(
-                    assembledPieces: assembledPieces,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    onSnap: onSnap,
-                    onRemovePiece: onRemovePiece,
-                  ),
                   SizedBox(height: 32.h),
-                  SentenceBuilderPiecePool(
-                    pool: pool,
-                    assembledPieces: assembledPieces,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    onSnap: onSnap,
-                  ),
+
+                  if (level >= 6) ...[
+                    GestureDetector(
+                      onTap: () {
+                        CustomSnackBar.show(
+                          context: context,
+                          message:
+                              "Hard Mode! Dragging is disabled. Please type your answer below.",
+                          type: CustomSnackBarType.info,
+                        );
+                      },
+                      child: AbsorbPointer(
+                        child: Opacity(
+                          opacity: 0.8,
+                          child: SentenceBuilderPiecePool(
+                            pool: pool,
+                            assembledPieces: const [],
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            onSnap: (_) {},
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 16.h),
+                    SentenceBuilderKeyboardInput(
+                      controller: textController,
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                    ),
+                  ] else ...[
+                    SentenceBuilderWorkbench(
+                      assembledPieces: assembledPieces,
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      onSnap: onSnap,
+                      onRemovePiece: onRemovePiece,
+                    ),
+                    SizedBox(height: 32.h),
+                    SentenceBuilderPiecePool(
+                      pool: pool,
+                      assembledPieces: assembledPieces,
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      onSnap: onSnap,
+                    ),
+                  ],
                 ],
-              ],
+              ),
             ),
           ),
         ),
         SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                SizedBox(height: 40.h),
-                if (!isAnswered) _SubmitButton(theme: theme, onTap: onSubmit),
-                SizedBox(
-                  height: !isAnswered ? (level >= 6 ? 380.h : 60.h) : 160.h,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SizedBox(height: 40.h),
+              if (!isAnswered && !showTypeToConfirm)
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: _SubmitButton(theme: theme, onTap: onSubmit),
                 ),
-              ],
-            ),
+              if (showTypeToConfirm && !isAnswered)
+                TypeToConfirmOverlay(
+                  expectedText: quest.correctAnswer ?? '',
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: onTypeConfirmed,
+                  onSkipped: onSkipped,
+                  isPositioned: false, // Renders inline instead of stacked!
+                ),
+              SizedBox(
+                height: !isAnswered
+                    ? ((level >= 6 || showTypeToConfirm)
+                          ? MediaQuery.viewInsetsOf(context).bottom + 40.h
+                          : 60.h)
+                    : 160.h,
+              ),
+            ],
           ),
         ),
       ],
