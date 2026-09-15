@@ -237,7 +237,8 @@ class StoryServiceImpl implements StoryService {
     'opinionWriting':
         "Your voice matters! Let's practice sharing your opinions clearly and persuasively so others understand your perspective.",
     'sentenceBuilder':
-        "Connect the scattered word fragments to build a natural-sounding sentence. It's a great way to develop an instinctive feel for how native speakers put words together.",
+        "Let's put the puzzle together! Practice combining different parts of speech to form perfectly structured sentences.",
+    "Connect the scattered word fragments to build a natural-sounding sentence. It's a great way to develop an instinctive feel for how native speakers put words together.",
     'shortAnswerWriting':
         "Sometimes less is more! Let's practice answering questions clearly and concisely to deliver your message perfectly.",
     'summarizeStoryWriting':
@@ -1310,6 +1311,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'sentencebuilder': [
       "",
+      "Excellent start! Your understanding of sentence building is growing.",
+      "You are decoding sentence building with impressive accuracy.",
+      "Amazing! You manipulate sentence building with natural ease.",
+      "100 levels beat! You truly dominate sentence building.",
+      "Double Centurion! No one knows sentence building better than you.",
       "Great start! You're really getting a feel for how native speakers put words together.",
       "Look at you go! Your sentences are flowing much more naturally now.",
       "Halfway to 100! You're building sentences with true confidence and rhythm.",

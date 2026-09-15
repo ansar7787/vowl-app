@@ -744,7 +744,8 @@ class GameInstructionService {
         "Complete the thought",
       ],
       actionText: "Build Sentence",
-      tip: "PRO TIP: Start with 'who' or 'what' the sentence is about, then look for the action word!",
+      tip:
+          "PRO TIP: Start with 'who' or 'what' the sentence is about, then look for the action word!",
     ),
     GameSubtype.completeSentence: GameBriefing(
       title: "Fragment Fixer",

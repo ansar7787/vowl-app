@@ -211,7 +211,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             sliver: SliverToBoxAdapter(
                               child: AbsorbPointer(
-                                absorbing: _pendingSelectedOption.value != null && !isAnswered,
+                                absorbing:
+                                    _pendingSelectedOption.value != null &&
+                                    !isAnswered,
                                 child: Column(
                                   children: [
                                     SizedBox(height: 16.h),
@@ -231,8 +233,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                                           vertical: 6.h,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: theme.primaryColor
-                                              .withValues(alpha: 0.1),
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.1,
+                                          ),
                                           borderRadius: BorderRadius.circular(
                                             12.r,
                                           ),
@@ -316,17 +319,25 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                if (_pendingSelectedOption.value != null && !isAnswered)
+                                if (_pendingSelectedOption.value != null &&
+                                    !isAnswered)
                                   TypeToConfirmOverlay(
                                     expectedText: _pendingSelectedOption.value!,
                                     primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _submitFinalAnswer(true, quest),
-                                    onSkipped: () => _submitFinalAnswer(false, quest),
+                                    onConfirmed: () =>
+                                        _submitFinalAnswer(true, quest),
+                                    onSkipped: () =>
+                                        _submitFinalAnswer(false, quest),
                                     allowSkip: true,
                                     isPositioned: false,
                                   ),
                                 SizedBox(
-                                  height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                  height: !isAnswered
+                                      ? MediaQuery.viewInsetsOf(
+                                              context,
+                                            ).bottom +
+                                            40.h
+                                      : 160.h,
                                 ),
                               ],
                             ),
