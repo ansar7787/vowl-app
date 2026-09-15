@@ -3,12 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/game_eval_button.dart';
 
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/game_mechanics/speaking/stt_auto_pass_wrapper.dart';
+import 'package:vowl/core/utils/analytics_service.dart';
 
 class SpeakingSelfEvaluationControls extends StatefulWidget {
   final String expectedText;
@@ -17,7 +20,6 @@ class SpeakingSelfEvaluationControls extends StatefulWidget {
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
-  final bool isDark;
 
   const SpeakingSelfEvaluationControls({
     super.key,
@@ -27,7 +29,6 @@ class SpeakingSelfEvaluationControls extends StatefulWidget {
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
-    required this.isDark,
   });
 
   @override
@@ -36,8 +37,7 @@ class SpeakingSelfEvaluationControls extends StatefulWidget {
 }
 
 class _SpeakingSelfEvaluationControlsState
-    extends State<SpeakingSelfEvaluationControls>
-    with SingleTickerProviderStateMixin {
+    extends State<SpeakingSelfEvaluationControls> {
   final _audioRecorder = di.sl<AudioRecordingService>();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
@@ -51,20 +51,8 @@ class _SpeakingSelfEvaluationControlsState
   String? _recordingPath;
   int _playbackSessionId = 0;
 
-  late final AnimationController _pulseController;
-
-  @override
-  void initState() {
-    super.initState();
-    _pulseController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    )..repeat(reverse: true);
-  }
-
   @override
   void dispose() {
-    _pulseController.dispose();
     if (_audioRecorder.isRecording) {
       _audioRecorder.stopRecording();
     }
@@ -226,6 +214,7 @@ class _SpeakingSelfEvaluationControlsState
     _playbackSessionId++;
     _isPlaying.value = false;
     _soundService.stopTts();
+    di.sl<AnalyticsService>().logSelfEvaluation('nailed_it');
     widget.onConfirmed();
   }
 
@@ -233,19 +222,20 @@ class _SpeakingSelfEvaluationControlsState
     _playbackSessionId++;
     _isPlaying.value = false;
     _soundService.stopTts();
+    di.sl<AnalyticsService>().logSelfEvaluation('needs_work');
     widget.onSkipped();
   }
 
   @override
   Widget build(BuildContext context) {
-    final subtitleColor = widget.isDark ? Colors.white60 : Colors.black54;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
     return SttAutoPassWrapper(
       expectedText: widget.expectedText,
       acceptedSynonyms: widget.acceptedSynonyms,
       onAutoPass: widget.onConfirmed,
       primaryColor: widget.primaryColor,
-      isDark: widget.isDark,
       child: ValueListenableBuilder<bool>(
         valueListenable: _hasRecorded,
         builder: (context, hasRecorded, _) {
@@ -391,9 +381,12 @@ class _SpeakingSelfEvaluationControlsState
                         children: [
                           _buildIsolatedPlaybackButton(
                             icon: Icons.record_voice_over_rounded,
-                            label: "NATIVE",
+                            label: context.tr(
+                              'eval.native',
+                              fallback: "NATIVE",
+                            ),
                             onTap: _playNative,
-                            isDark: widget.isDark,
+                            isDark: isDark,
                           ),
                           SizedBox(width: 16.w),
                           Column(
@@ -426,7 +419,7 @@ class _SpeakingSelfEvaluationControlsState
                               ),
                               SizedBox(height: 6.h),
                               Text(
-                                "COMPARE",
+                                context.tr('eval.compare', fallback: "COMPARE"),
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
                                   fontSize: 10.sp,
@@ -440,9 +433,11 @@ class _SpeakingSelfEvaluationControlsState
                           SizedBox(width: 16.w),
                           _buildIsolatedPlaybackButton(
                             icon: Icons.headphones_rounded,
-                            label: "YOU",
+                            label: context.tr('eval.you', fallback: "YOU"),
                             onTap: _playUser,
-                            isDark: widget.isDark,
+                            isDark:
+                                (Theme.of(context).brightness ==
+                                Brightness.dark),
                           ),
                         ],
                       );
@@ -454,8 +449,11 @@ class _SpeakingSelfEvaluationControlsState
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
-                      child: _buildEvalButton(
-                        title: "Needs Work",
+                      child: GameEvalButton(
+                        title: context.tr(
+                          'eval.needs_work',
+                          fallback: "Needs Work",
+                        ),
                         icon: LucideIcons.x,
                         color: Colors.redAccent,
                         onTap: _handleNeedsWork,
@@ -463,8 +461,11 @@ class _SpeakingSelfEvaluationControlsState
                     ),
                     SizedBox(width: 16.w),
                     Expanded(
-                      child: _buildEvalButton(
-                        title: "Nailed It",
+                      child: GameEvalButton(
+                        title: context.tr(
+                          'eval.nailed_it',
+                          fallback: "Nailed It",
+                        ),
                         icon: LucideIcons.check,
                         color: Colors.greenAccent,
                         onTap: _handleNailedIt,
@@ -474,7 +475,10 @@ class _SpeakingSelfEvaluationControlsState
                 ),
                 SizedBox(height: 16.h),
                 AutoSizeText(
-                  "Be honest! Did you match the native speaker?",
+                  context.tr(
+                    'eval.be_honest_native',
+                    fallback: "Be honest! Did you match the native speaker?",
+                  ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
                   minFontSize: 6,
@@ -490,43 +494,6 @@ class _SpeakingSelfEvaluationControlsState
             ],
           );
         },
-      ),
-    );
-  }
-
-  Widget _buildEvalButton({
-    required String title,
-    required IconData icon,
-    required Color color,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
-        ),
-        child: Column(
-          children: [
-            Icon(icon, color: color, size: 24.sp),
-            SizedBox(height: 4.h),
-            AutoSizeText(
-              title,
-              maxLines: 1,
-              minFontSize: 8,
-              overflow: TextOverflow.visible,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: color,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

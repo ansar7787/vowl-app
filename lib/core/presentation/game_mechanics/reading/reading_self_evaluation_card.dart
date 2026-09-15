@@ -79,8 +79,11 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
     super.dispose();
   }
 
+  DateTime? _revealTime;
+
   void _reveal() {
     _hapticService.selection();
+    _revealTime = DateTime.now();
     _isRevealed.value = true;
   }
 
@@ -92,7 +95,14 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
       _hapticService.success();
       _soundService.playCorrect();
       // Award bonus coins
-      if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
+      // Cheat detection: If they evaluated themselves in under 1.5 seconds,
+      // they probably didn't actually read and compare the answer.
+      final bool isCheating =
+          _revealTime != null &&
+          DateTime.now().difference(_revealTime!).inMilliseconds < 1500;
+
+      // Award bonus coins only if not cheating
+      if (!isCheating && widget.bonusCoins != null && widget.bonusCoins! > 0) {
         context.read<EconomyBloc>().add(
           EconomyAddCoinsRequested(widget.bonusCoins!),
         );

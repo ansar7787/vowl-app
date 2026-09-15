@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 /// A text passage with tappable words for evidence-based highlighting.
 ///
@@ -156,6 +158,14 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
       if (evidenceFound >= _targetCount) {
         _isComplete.value = true;
         _isSubmitting.value = true;
+
+        // Award bonus coins for finding all evidence
+        if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
+          context.read<EconomyBloc>().add(
+            EconomyAddCoinsRequested(widget.bonusCoins!),
+          );
+        }
+
         Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted) widget.onCorrectHighlight();
         });

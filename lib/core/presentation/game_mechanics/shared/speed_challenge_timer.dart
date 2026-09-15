@@ -34,10 +34,14 @@ class SpeedChallengeTimer extends StatefulWidget {
   /// Optional callback on each second tick with remaining seconds.
   final ValueChanged<int>? onTick;
 
-  /// Bonus coins label shown. Set to 0 to hide.
+  /// Display-only bonus coins label value. Set to 0 to hide.
+  ///
+  /// **Important**: This widget does NOT award coins itself. The parent
+  /// widget must listen to [onTimeUp] and award coins via [EconomyBloc]
+  /// when the user answers before time expires.
   final int bonusCoinsForSpeed;
 
-  /// Whether to show the "+X Coins" bonus label.
+  /// Whether to show the "+X Speed Bonus" label. Display-only.
   final bool showBonusLabel;
 
   /// Whether to auto-start the timer on mount. Default true.

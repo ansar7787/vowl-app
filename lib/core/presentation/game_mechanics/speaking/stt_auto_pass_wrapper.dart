@@ -1,8 +1,9 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
@@ -15,7 +16,6 @@ class SttAutoPassWrapper extends StatefulWidget {
   final List<String> acceptedSynonyms;
   final VoidCallback onAutoPass;
   final Color primaryColor;
-  final bool isDark;
 
   const SttAutoPassWrapper({
     super.key,
@@ -24,7 +24,6 @@ class SttAutoPassWrapper extends StatefulWidget {
     this.acceptedSynonyms = const [],
     required this.onAutoPass,
     required this.primaryColor,
-    required this.isDark,
   });
 
   @override
@@ -133,7 +132,8 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
       builder: (context, level, child) {
         // Normalize level for iOS (-50 to 0) and Android (-2 to ~10)
         double normalized = 0.0;
-        if (Platform.isIOS || Platform.isMacOS) {
+        if (defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.macOS) {
           normalized = (level + 50) / 50.0;
         } else {
           // Android typically outputs RMS between -2 (silence) and 10 (loud)
@@ -185,163 +185,186 @@ class _SttAutoPassWrapperState extends State<SttAutoPassWrapper> {
             final isListening = _isListening.value;
             final hasError = _hasError.value;
 
-            return GestureDetector(
-              onTap: () {
-                if (isListening) {
-                  _stopListening();
-                } else {
-                  _startListening();
-                }
-              },
-              child: Animate(
-                target: hasError ? 1 : 0,
-                effects: const [
-                  ShakeEffect(
-                    curve: Curves.easeInOutCubic,
-                    duration: Duration(milliseconds: 400),
-                  ),
-                ],
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeInOutCubic,
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 24.h,
-                    horizontal: 20.w,
-                  ),
-                  decoration: BoxDecoration(
-                    color: hasError
-                        ? Colors.redAccent.withValues(alpha: 0.1)
-                        : (isListening
-                              ? widget.primaryColor.withValues(alpha: 0.15)
-                              : (widget.isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.03))),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: hasError
-                          ? Colors.redAccent
-                          : (isListening
-                                ? widget.primaryColor
-                                : widget.primaryColor.withValues(alpha: 0.3)),
-                      width: isListening || hasError ? 2 : 1,
+            return Semantics(
+              button: true,
+              label: isListening ? 'Stop recording' : 'Start recording',
+              child: GestureDetector(
+                onTap: () {
+                  if (isListening) {
+                    _stopListening();
+                  } else {
+                    _startListening();
+                  }
+                },
+                child: Animate(
+                  target: hasError ? 1 : 0,
+                  effects: const [
+                    ShakeEffect(
+                      curve: Curves.easeInOutCubic,
+                      duration: Duration(milliseconds: 400),
                     ),
-                    boxShadow: isListening && !hasError
-                        ? [
-                            BoxShadow(
-                              color: widget.primaryColor.withValues(alpha: 0.2),
-                              blurRadius: 24,
-                              spreadRadius: 2,
-                            ),
-                          ]
-                        : [],
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        transitionBuilder: (child, animation) =>
-                            ScaleTransition(
-                              scale: animation,
-                              child: FadeTransition(
-                                opacity: animation,
-                                child: child,
-                              ),
-                            ),
-                        child: isListening
-                            ? SizedBox(
-                                key: const ValueKey('visualizer'),
-                                height: 48.sp,
-                                child: Center(child: _buildModernVisualizer()),
-                              )
-                            : Icon(
-                                Icons.mic_rounded,
-                                key: const ValueKey('mic_icon'),
-                                color: widget.primaryColor,
-                                size: 48.sp,
-                              ),
+                  ],
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOutCubic,
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      vertical: 24.h,
+                      horizontal: 20.w,
+                    ),
+                    decoration: BoxDecoration(
+                      color: hasError
+                          ? Colors.redAccent.withValues(alpha: 0.1)
+                          : (isListening
+                                ? widget.primaryColor.withValues(alpha: 0.15)
+                                : ((Theme.of(context).brightness ==
+                                          Brightness.dark)
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03))),
+                      borderRadius: BorderRadius.circular(24.r),
+                      border: Border.all(
+                        color: hasError
+                            ? Colors.redAccent
+                            : (isListening
+                                  ? widget.primaryColor
+                                  : widget.primaryColor.withValues(alpha: 0.3)),
+                        width: isListening || hasError ? 2 : 1,
                       ),
-                      SizedBox(height: 16.h),
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        child: Text(
-                          isListening
-                              ? 'Listening... Tap to stop'
-                              : 'Tap to Speak',
-                          key: ValueKey(isListening),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w800,
-                            color: widget.primaryColor,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                      AnimatedBuilder(
-                        animation: Listenable.merge([
-                          _currentSpokenText,
-                          _hasError,
-                        ]),
-                        builder: (context, _) {
-                          final spokenText = _currentSpokenText.value;
-                          final hasError = _hasError.value;
-
-                          if (spokenText.isEmpty) {
-                            return Text(
-                              'Matches instantly when correct',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: widget.isDark
-                                    ? Colors.white54
-                                    : Colors.black54,
+                      boxShadow: isListening && !hasError
+                          ? [
+                              BoxShadow(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.2,
+                                ),
+                                blurRadius: 24,
+                                spreadRadius: 2,
                               ),
-                            );
-                          }
-
-                          return Column(
-                            children: [
-                              AutoSizeText(
-                                hasError
-                                    ? 'Heard: "$spokenText"'
-                                    : '"$spokenText"',
-                                textAlign: TextAlign.center,
-                                maxLines: 2,
-                                minFontSize: 8,
-                                overflow: TextOverflow.visible,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
-                                  fontStyle: FontStyle.italic,
-                                  color: hasError
-                                      ? Colors.redAccent
-                                      : (widget.isDark
-                                            ? Colors.white70
-                                            : Colors.black54),
+                            ]
+                          : [],
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          transitionBuilder: (child, animation) =>
+                              ScaleTransition(
+                                scale: animation,
+                                child: FadeTransition(
+                                  opacity: animation,
+                                  child: child,
                                 ),
                               ),
-                              if (hasError)
-                                Padding(
-                                  padding: EdgeInsets.only(top: 4.h),
-                                  child: Text(
-                                    'Incorrect. Tap mic to try again.',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.redAccent,
-                                    ),
+                          child: isListening
+                              ? SizedBox(
+                                  key: const ValueKey('visualizer'),
+                                  height: 48.sp,
+                                  child: Center(
+                                    child: _buildModernVisualizer(),
                                   ),
-                                ).animate().fadeIn().slideY(begin: -0.2),
-                            ],
-                          );
-                        },
-                      ),
-                    ],
+                                )
+                              : Icon(
+                                  Icons.mic_rounded,
+                                  key: const ValueKey('mic_icon'),
+                                  color: widget.primaryColor,
+                                  size: 48.sp,
+                                ),
+                        ),
+                        SizedBox(height: 16.h),
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          child: Text(
+                            isListening
+                                ? 'Listening... Tap to stop'
+                                : 'Tap to Speak',
+                            key: ValueKey(isListening),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w800,
+                              color: widget.primaryColor,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 8.h),
+                        AnimatedBuilder(
+                          animation: Listenable.merge([
+                            _currentSpokenText,
+                            _hasError,
+                          ]),
+                          builder: (context, _) {
+                            final spokenText = _currentSpokenText.value;
+                            final hasError = _hasError.value;
+
+                            if (spokenText.isEmpty) {
+                              return Text(
+                                context.tr(
+                                  'stt.matches_instantly',
+                                  fallback: 'Matches instantly when correct',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color:
+                                      (Theme.of(context).brightness ==
+                                          Brightness.dark)
+                                      ? Colors.white54
+                                      : Colors.black54,
+                                ),
+                              );
+                            }
+
+                            return Column(
+                              children: [
+                                AutoSizeText(
+                                  hasError
+                                      ? context.tr(
+                                          'stt.heard',
+                                          args: [spokenText],
+                                          fallback: 'Heard: "$spokenText"',
+                                        )
+                                      : '"$spokenText"',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  minFontSize: 8,
+                                  overflow: TextOverflow.visible,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FontStyle.italic,
+                                    color: hasError
+                                        ? Colors.redAccent
+                                        : ((Theme.of(context).brightness ==
+                                                  Brightness.dark)
+                                              ? Colors.white70
+                                              : Colors.black54),
+                                  ),
+                                ),
+                                if (hasError)
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 4.h),
+                                    child: Text(
+                                      context.tr(
+                                        'stt.incorrect',
+                                        fallback:
+                                            'Incorrect. Tap mic to try again.',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
+                                  ).animate().fadeIn().slideY(begin: -0.2),
+                              ],
+                            );
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

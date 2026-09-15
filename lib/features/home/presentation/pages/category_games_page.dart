@@ -18,7 +18,7 @@ import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/category_radar_chart.dart';
-import 'package:vowl/core/presentation/game_mechanics/shared/adaptive_smart_mix_widget.dart';
+import 'package:vowl/features/home/presentation/widgets/adaptive_smart_mix_widget.dart';
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -152,7 +152,6 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                   SliverToBoxAdapter(
                     child: AdaptiveSmartMixWidget(
                       user: user,
-                      isDark: isDark,
                       categoryId: widget.categoryId,
                     ),
                   ),

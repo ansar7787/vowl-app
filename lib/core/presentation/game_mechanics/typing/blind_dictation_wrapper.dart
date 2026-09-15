@@ -8,8 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
 class BlindDictationWrapper extends StatefulWidget {
   final String expectedText;
@@ -17,6 +16,7 @@ class BlindDictationWrapper extends StatefulWidget {
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
   final VoidCallback? onBypassed;
+  final VoidCallback? onReplayAudio;
   final int? bonusCoins;
   final bool allowSkip;
 
@@ -34,6 +34,7 @@ class BlindDictationWrapper extends StatefulWidget {
     required this.onConfirmed,
     required this.onSkipped,
     this.onBypassed,
+    this.onReplayAudio,
     this.bonusCoins = 5,
     this.allowSkip = true,
     this.isPositioned = true,
@@ -119,90 +120,6 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
         _focusNode.unfocus();
       }
     }
-  }
-
-  Widget _buildSkipButton(Color subtitleColor) {
-    return ValueListenableBuilder<int>(
-      valueListenable: _attempts,
-      builder: (context, attempts, _) {
-        return GestureDetector(
-          onTap: () {
-            if (_isSubmitting.value) return;
-            if (attempts >= widget.maxAttempts) {
-              _isSubmitting.value = true;
-              widget.onSkipped();
-              return;
-            }
-            _isSubmitting.value = true;
-            final user = context.read<AuthBloc>().state.user;
-            final isPremium = user?.isPremium ?? false;
-            if (isPremium) {
-              if (widget.onBypassed != null) {
-                widget.onBypassed!();
-              } else {
-                widget.onConfirmed();
-              }
-            } else {
-              di.sl<AdService>().showRewardedAd(
-                context: context,
-                isPremium: false,
-                onUserEarnedReward: (_) {
-                  if (mounted) {
-                    if (widget.onBypassed != null) {
-                      widget.onBypassed!();
-                    } else {
-                      widget.onConfirmed();
-                    }
-                  }
-                },
-                onDismissed: () {
-                  if (mounted) _isSubmitting.value = false;
-                },
-              );
-            }
-          },
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: subtitleColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  attempts >= widget.maxAttempts ? 'CONTINUE' : 'SKIP',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w700,
-                    color: subtitleColor.withValues(alpha: 0.8),
-                  ),
-                ),
-                Builder(
-                  builder: (context) {
-                    final isPremium =
-                        context.watch<AuthBloc>().state.user?.isPremium ??
-                        false;
-                    if (!isPremium && attempts < widget.maxAttempts) {
-                      return Padding(
-                        padding: EdgeInsets.only(left: 4.w),
-                        child: Icon(
-                          Icons.ondemand_video_rounded,
-                          size: 12.r,
-                          color: subtitleColor.withValues(alpha: 0.8),
-                        ),
-                      );
-                    }
-                    return const SizedBox.shrink();
-                  },
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
   }
 
   @override
@@ -311,6 +228,33 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                     ],
                                   ),
                                 ),
+                                if (widget.onReplayAudio != null) ...[
+                                  SizedBox(width: 8.w),
+                                  Semantics(
+                                    button: true,
+                                    label: 'Replay audio',
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        _hapticService.selection();
+                                        widget.onReplayAudio!();
+                                      },
+                                      child: Container(
+                                        padding: EdgeInsets.all(8.r),
+                                        decoration: BoxDecoration(
+                                          color: widget.primaryColor.withValues(
+                                            alpha: 0.1,
+                                          ),
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Icon(
+                                          Icons.replay_rounded,
+                                          color: widget.primaryColor,
+                                          size: 20.r,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                                 if (widget.bonusCoins != null)
                                   Container(
                                     padding: EdgeInsets.symmetric(
@@ -342,7 +286,17 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                 if (widget.allowSkip)
                                   Padding(
                                     padding: EdgeInsets.only(left: 8.w),
-                                    child: _buildSkipButton(subtitleColor),
+                                    child: GameSkipBypassButton(
+                                      subtitleColor: subtitleColor,
+                                      isSubmitting: _isSubmitting,
+                                      attempts: _attempts,
+                                      maxAttempts: widget.maxAttempts,
+                                      onBypassed: widget.onBypassed,
+                                      onConfirmed: widget.onConfirmed,
+                                      onSkipped: widget.onSkipped,
+                                      onSubmittingChanged: (v) =>
+                                          _isSubmitting.value = v,
+                                    ),
                                   ),
                               ],
                             ),

@@ -9,9 +9,8 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 
 class ContextSentenceBuilder extends StatefulWidget {
   final String targetKeyword;
@@ -144,80 +143,14 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   }
 
   Widget _buildSkipButton(Color subtitleColor) {
-    return Builder(
-      builder: (context) {
-        return GestureDetector(
-          onTap: () {
-            if (_isSubmitting.value) return;
-            _isSubmitting.value = true;
-            final user = context.read<AuthBloc>().state.user;
-            final isPremium = user?.isPremium ?? false;
-            if (isPremium) {
-              if (widget.onBypassed != null) {
-                widget.onBypassed!();
-              } else {
-                widget.onConfirmed();
-              }
-            } else {
-              di.sl<AdService>().showRewardedAd(
-                context: context,
-                isPremium: false,
-                onUserEarnedReward: (_) {
-                  if (mounted) {
-                    if (widget.onBypassed != null) {
-                      widget.onBypassed!();
-                    } else {
-                      widget.onConfirmed();
-                    }
-                  }
-                },
-                onDismissed: () {
-                  if (mounted) _isSubmitting.value = false;
-                },
-              );
-            }
-          },
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: subtitleColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                AutoSizeText(
-                  ContextSentenceStrings.skipButton(context),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
-                    color: subtitleColor.withValues(alpha: 0.8),
-                  ),
-                ),
-                Builder(
-                  builder: (context) {
-                    final isPremium =
-                        context.watch<AuthBloc>().state.user?.isPremium ??
-                        false;
-                    if (!isPremium) {
-                      return Padding(
-                        padding: EdgeInsets.only(left: 4.w),
-                        child: Icon(
-                          Icons.ondemand_video_rounded,
-                          size: 12.r,
-                          color: subtitleColor.withValues(alpha: 0.8),
-                        ),
-                      );
-                    }
-                    return const SizedBox.shrink();
-                  },
-                ),
-              ],
-            ),
-          ),
-        );
-      },
+    return GameSkipBypassButton(
+      subtitleColor: subtitleColor,
+      isSubmitting: _isSubmitting,
+      onBypassed: widget.onBypassed,
+      onConfirmed: widget.onConfirmed,
+      onSkipped: widget.onSkipped,
+      onSubmittingChanged: (v) => _isSubmitting.value = v,
+      skipLabel: ContextSentenceStrings.skipButton(context),
     );
   }
 

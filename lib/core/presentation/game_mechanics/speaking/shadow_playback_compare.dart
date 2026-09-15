@@ -3,8 +3,10 @@ import 'dart:math' as math;
 import 'package:record/record.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/presentation/game_mechanics/shared/game_eval_button.dart';
 
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -97,16 +99,9 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
 
   StreamSubscription<Amplitude>? _amplitudeSub;
 
-  // Simulated waveform data for visual representation
-  late List<double> _modelWaveform;
-  late List<double> _userWaveform;
-
   @override
   void initState() {
     super.initState();
-
-    // Generate deterministic waveform based on text
-    _generateWaveforms();
   }
 
   @override
@@ -142,15 +137,7 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
       _isPlaying.value = false;
       _recordingPath = null;
       _isSubmitting.value = false;
-
-      _generateWaveforms();
     }
-  }
-
-  void _generateWaveforms() {
-    final random = math.Random(widget.expectedText.hashCode);
-    _modelWaveform = List.generate(40, (_) => 0.3 + random.nextDouble() * 0.7);
-    _userWaveform = List.generate(40, (_) => 0.2 + random.nextDouble() * 0.6);
   }
 
   Future<void> _startRecording() async {
@@ -674,9 +661,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                     children: [
                                       if (widget.showWaveform) ...[
                                         // Model waveform
-                                        _buildWaveformRow(
-                                          label: 'MODEL',
-                                          waveform: _modelWaveform,
+                                        _buildPlaybackButton(
+                                          label: context.tr(
+                                            'eval.native',
+                                            fallback: 'NATIVE',
+                                          ),
                                           color: widget.primaryColor,
                                           isActive:
                                               isPlaying &&
@@ -688,9 +677,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                         SizedBox(height: 12.h),
 
                                         // User waveform
-                                        _buildWaveformRow(
-                                          label: 'YOU',
-                                          waveform: _userWaveform,
+                                        _buildPlaybackButton(
+                                          label: context.tr(
+                                            'eval.you',
+                                            fallback: 'YOU',
+                                          ),
                                           color: const Color(0xFF22C55E),
                                           isActive:
                                               isPlaying &&
@@ -703,47 +694,59 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
 
                                         // Compare button
                                         if (!isPlaying)
-                                          GestureDetector(
-                                            onTap: _playBothCompare,
-                                            child: Container(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 20.w,
-                                                vertical: 10.h,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: widget.primaryColor
-                                                    .withValues(alpha: 0.1),
-                                                borderRadius:
-                                                    BorderRadius.circular(20.r),
-                                                border: Border.all(
-                                                  color: widget.primaryColor
-                                                      .withValues(alpha: 0.3),
+                                          Semantics(
+                                            button: true,
+                                            label: 'Play comparison',
+                                            child: GestureDetector(
+                                              onTap: _playBothCompare,
+                                              child: Container(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 20.w,
+                                                  vertical: 10.h,
                                                 ),
-                                              ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Icon(
-                                                    Icons.play_arrow_rounded,
-                                                    color: widget.primaryColor,
-                                                    size: 20.r,
+                                                decoration: BoxDecoration(
+                                                  color: widget.primaryColor
+                                                      .withValues(alpha: 0.1),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                        20.r,
+                                                      ),
+                                                  border: Border.all(
+                                                    color: widget.primaryColor
+                                                        .withValues(alpha: 0.3),
                                                   ),
-                                                  SizedBox(width: 6.w),
-                                                  AutoSizeText(
-                                                    'PLAY COMPARISON',
-                                                    maxLines: 1,
-                                                    minFontSize: 8,
-                                                    style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 12.sp,
-                                                      fontWeight:
-                                                          FontWeight.w800,
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.play_arrow_rounded,
                                                       color:
                                                           widget.primaryColor,
-                                                      letterSpacing: 1,
+                                                      size: 20.r,
                                                     ),
-                                                  ),
-                                                ],
+                                                    SizedBox(width: 6.w),
+                                                    AutoSizeText(
+                                                      context.tr(
+                                                        'eval.play_comparison',
+                                                        fallback:
+                                                            'PLAY COMPARISON',
+                                                      ),
+                                                      maxLines: 1,
+                                                      minFontSize: 8,
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 12.sp,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color:
+                                                            widget.primaryColor,
+                                                        letterSpacing: 1,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -785,8 +788,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                             MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Expanded(
-                                            child: _buildEvalButton(
-                                              title: 'Needs Work',
+                                            child: GameEvalButton(
+                                              title: context.tr(
+                                                'eval.needs_work',
+                                                fallback: 'Needs Work',
+                                              ),
                                               icon: Icons.close_rounded,
                                               color: Colors.redAccent,
                                               onTap: isSubmitting
@@ -796,8 +802,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                           ),
                                           SizedBox(width: 16.w),
                                           Expanded(
-                                            child: _buildEvalButton(
-                                              title: 'Nailed It',
+                                            child: GameEvalButton(
+                                              title: context.tr(
+                                                'eval.nailed_it',
+                                                fallback: 'Nailed It',
+                                              ),
                                               icon: Icons.check_rounded,
                                               color: Colors.greenAccent,
                                               onTap: isSubmitting
@@ -809,7 +818,11 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                       ),
                                       SizedBox(height: 12.h),
                                       Text(
-                                        'Be honest! Did you match the native speaker?',
+                                        context.tr(
+                                          'eval.be_honest_native',
+                                          fallback:
+                                              'Be honest! Did you match the native speaker?',
+                                        ),
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 12.sp,
@@ -873,120 +886,56 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
     );
   }
 
-  Widget _buildWaveformRow({
+  Widget _buildPlaybackButton({
     required String label,
-    required List<double> waveform,
     required Color color,
     required bool isActive,
     required VoidCallback onPlay,
     required bool isDark,
     required bool isPlaying,
   }) {
-    return GestureDetector(
-      onTap: isPlaying ? null : onPlay,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
-        decoration: BoxDecoration(
-          color: isActive
-              ? color.withValues(alpha: 0.1)
-              : (isDark
-                    ? Colors.white.withValues(alpha: 0.04)
-                    : Colors.black.withValues(alpha: 0.02)),
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(
-            color: isActive ? color.withValues(alpha: 0.4) : Colors.transparent,
-            width: 1.5,
-          ),
-        ),
-        child: Row(
-          children: [
-            // Label
-            SizedBox(
-              width: 44.w,
-              child: AutoSizeText(
-                label,
-                maxLines: 1,
-                minFontSize: 6,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
-                  color: color,
-                  letterSpacing: 1,
-                ),
-              ),
-            ),
-            SizedBox(width: 8.w),
-            // Waveform bars
-            Expanded(
-              child: SizedBox(
-                height: 30.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: List.generate(waveform.length.clamp(0, 30), (i) {
-                    final amplitude = waveform[i];
-                    return AnimatedContainer(
-                      duration: Duration(milliseconds: 100 + i * 10),
-                      width: 2.w,
-                      height: isActive
-                          ? (amplitude * 28.h)
-                          : (amplitude * 16.h),
-                      decoration: BoxDecoration(
-                        color: isActive ? color : color.withValues(alpha: 0.3),
-                        borderRadius: BorderRadius.circular(1.r),
-                      ),
-                    );
-                  }),
-                ),
-              ),
-            ),
-            SizedBox(width: 8.w),
-            // Play icon
-            Icon(
-              isActive ? Icons.graphic_eq_rounded : Icons.play_arrow_rounded,
-              color: color,
-              size: 20.r,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildEvalButton({
-    required String title,
-    required IconData icon,
-    required Color color,
-    required VoidCallback onTap,
-  }) {
     return Semantics(
       button: true,
-      label: title,
+      label: 'Play $label audio',
       child: GestureDetector(
-        onTap: onTap,
+        onTap: isPlaying ? null : onPlay,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+            color: isActive
+                ? color.withValues(alpha: 0.1)
+                : (isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.black.withValues(alpha: 0.02)),
+            borderRadius: BorderRadius.circular(12.r),
+            border: Border.all(
+              color: isActive
+                  ? color.withValues(alpha: 0.4)
+                  : Colors.transparent,
+              width: 1.5,
+            ),
           ),
-          child: Column(
+          child: Row(
             children: [
-              Icon(icon, color: color, size: 24.sp),
-              SizedBox(height: 4.h),
+              // Label
               AutoSizeText(
-                title,
+                label,
                 maxLines: 1,
-                minFontSize: 8,
-                overflow: TextOverflow.visible,
+                minFontSize: 10,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w800,
                   color: color,
+                  letterSpacing: 1,
                 ),
+              ),
+              const Spacer(),
+              // Play icon
+              Icon(
+                isActive ? Icons.graphic_eq_rounded : Icons.play_arrow_rounded,
+                color: color,
+                size: 24.r,
               ),
             ],
           ),

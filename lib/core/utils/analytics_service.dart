@@ -118,4 +118,14 @@ class AnalyticsService {
   Future<void> logPurchaseAttempt(String productId) async {
     await _safeLog(_kEventPurchaseAttempt, {_kParamProductId: productId});
   }
+
+  /// Reports when a game mechanic is skipped or bypassed.
+  Future<void> logGameSkipped(bool bypassedWithAd) async {
+    await _safeLog('game_skipped', {'bypassed_with_ad': bypassedWithAd});
+  }
+
+  /// Reports a self-evaluation result.
+  Future<void> logSelfEvaluation(String evaluation) async {
+    await _safeLog('self_evaluation', {'evaluation': evaluation});
+  }
 }

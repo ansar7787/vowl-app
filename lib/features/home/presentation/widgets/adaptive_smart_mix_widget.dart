@@ -18,12 +18,10 @@ class AdaptiveSmartMixWidget extends StatefulWidget {
   const AdaptiveSmartMixWidget({
     super.key,
     required this.user,
-    required this.isDark,
     required this.categoryId,
   });
 
   final UserEntity user;
-  final bool isDark;
   final String categoryId;
 
   @override
@@ -102,11 +100,12 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
   Widget build(BuildContext context) {
     if (_blueprint == null) return const SizedBox.shrink();
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
-      isDark: widget.isDark,
+      isDark: isDark,
     );
-    final displayColor = widget.isDark
+    final displayColor = isDark
         ? theme.primaryColor
         : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
 
@@ -129,7 +128,9 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
-                  color: widget.isDark ? Colors.white : const Color(0xFF0F172A),
+                  color: (Theme.of(context).brightness == Brightness.dark)
+                      ? Colors.white
+                      : const Color(0xFF0F172A),
                   letterSpacing: 2,
                 ),
               ),
@@ -148,7 +149,9 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              color: widget.isDark ? Colors.white70 : Colors.black54,
+              color: (Theme.of(context).brightness == Brightness.dark)
+                  ? Colors.white70
+                  : Colors.black54,
             ),
           ).animate().fadeIn(delay: 100.ms, duration: 400.ms),
           SizedBox(height: 16.h),
@@ -198,14 +201,12 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     Color accentColor,
     String tierLabel,
   ) {
-    final theme = LevelThemeHelper.getTheme(
-      subtype.name,
-      isDark: widget.isDark,
-    );
-    final displayColor = widget.isDark
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
+    final displayColor = isDark
         ? theme.primaryColor
         : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
-    final contentColor = widget.isDark ? Colors.white : const Color(0xFF0F172A);
+    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
     return ScaleButton(
       onTap: () async {

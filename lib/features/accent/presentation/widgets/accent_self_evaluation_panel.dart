@@ -21,8 +21,6 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Column(
       children: [
         Divider(color: primaryColor.withValues(alpha: 0.2), thickness: 2),
@@ -94,7 +92,6 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
           primaryColor: primaryColor,
           onConfirmed: () => onEvaluate(true),
           onSkipped: () => onEvaluate(false),
-          isDark: isDark,
         ),
       ],
     ).animate().slideY(begin: 0.2).fadeIn();

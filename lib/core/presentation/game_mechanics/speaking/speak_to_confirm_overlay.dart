@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/presentation/game_mechanics/shared/game_skip_bypass_button.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speaking_self_evaluation_controls.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -262,79 +258,20 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay> {
                               _isSubmitting.value = true;
                               widget.onSkipped();
                             },
-                            isDark: isDark,
                           ),
 
                           // Skip button
                           if (widget.allowSkip)
                             Padding(
                               padding: EdgeInsets.only(top: 16.h),
-                              child: ValueListenableBuilder<bool>(
-                                valueListenable: _isSubmitting,
-                                builder: (context, isSubmitting, _) {
-                                  return ScaleButton(
-                                    onTap: () {
-                                      if (isSubmitting) return;
-                                      _isSubmitting.value = true;
-
-                                      final user = context
-                                          .read<AuthBloc>()
-                                          .state
-                                          .user;
-                                      final isPremium =
-                                          user?.isPremium ?? false;
-                                      if (isPremium) {
-                                        if (widget.onBypassed != null) {
-                                          widget.onBypassed!();
-                                        } else {
-                                          widget.onConfirmed();
-                                        }
-                                      } else {
-                                        di.sl<AdService>().showRewardedAd(
-                                          context: context,
-                                          isPremium: false,
-                                          onUserEarnedReward: (_) {
-                                            if (mounted) {
-                                              if (widget.onBypassed != null) {
-                                                widget.onBypassed!();
-                                              } else {
-                                                widget.onConfirmed();
-                                              }
-                                            }
-                                          },
-                                          onDismissed: () {
-                                            if (mounted) {
-                                              _isSubmitting.value = false;
-                                            }
-                                          },
-                                        );
-                                      }
-                                    },
-                                    child: Builder(
-                                      builder: (context) {
-                                        final isPremium =
-                                            context
-                                                .watch<AuthBloc>()
-                                                .state
-                                                .user
-                                                ?.isPremium ??
-                                            false;
-                                        return Text(
-                                          isPremium
-                                              ? 'SKIP'
-                                              : 'WATCH AD TO BYPASS',
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 11.sp,
-                                            fontWeight: FontWeight.w700,
-                                            color: subtitleColor,
-                                            letterSpacing: 1.5,
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  );
-                                },
+                              child: GameSkipBypassButton(
+                                subtitleColor: subtitleColor,
+                                isSubmitting: _isSubmitting,
+                                onBypassed: widget.onBypassed,
+                                onConfirmed: widget.onConfirmed,
+                                onSkipped: widget.onSkipped,
+                                onSubmittingChanged: (v) =>
+                                    _isSubmitting.value = v,
                               ),
                             ),
                         ],

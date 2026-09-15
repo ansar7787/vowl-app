@@ -402,6 +402,7 @@ class _AudioFillBlanksContent extends StatelessWidget {
                           quest.correctAnswer ?? quest.textToSpeak ?? '',
                       primaryColor: theme.primaryColor,
                       isPositioned: false,
+                      onReplayAudio: onPlayAudio,
                       onConfirmed: () => onBlindSubmit(true),
                       onSkipped: () => onBlindSubmit(false),
                     ),
