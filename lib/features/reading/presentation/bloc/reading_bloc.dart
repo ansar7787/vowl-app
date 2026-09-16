@@ -233,9 +233,8 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
 
     if (s.answerStatus == AnswerStatus.correct) {
       soundService.playLevelComplete();
-      // Await persistence BEFORE emitting completion to prevent UI race condition
-      // where AuthRefreshUser is dispatched before the transaction completes.
-      await _persistLevelCompletion(s.livesRemaining);
+      
+      // 1. Instant UI feedback
       emit(
         ReadingGameComplete(
           xpEarned: ReadingGameConfig.xpPerLevel,
@@ -243,6 +242,9 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
           questCount: s.quests.length,
         ),
       );
+      
+      // 2. Background persistence (fire-and-forget)
+      _persistLevelCompletion(s.livesRemaining);
     } else {
       emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }

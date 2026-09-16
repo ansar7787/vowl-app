@@ -1,4 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'package:dartz/dartz.dart';
+import 'package:vowl/core/error/failures.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -264,6 +266,10 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   // Private Helpers
   // ---------------------------------------------------------------------------
 
+  /// Silently absorbs a [Failure] from a persistence use-case so that individual
+  /// reward failures never crash an in-progress game session.
+  Either<Failure, void> _swallow(Object _) => const Right(null);
+
   /// Persists rewards in the background before emitting [WritingGameComplete].
   /// A failing background save will still emit completion so it never
   /// disrupts the user's completion experience.
@@ -273,33 +279,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   ) async {
     soundService.playLevelComplete();
 
-    // 1. Background persistence — all saves run in parallel.
-    try {
-      await Future.wait([
-        updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: s.gameType.name,
-            level: s.level,
-            xpIncrease: _rewardXp,
-            coinIncrease: _rewardCoins,
-            starsEarned: s.livesRemaining,
-          ),
-        ),
-        updateCategoryStats(
-          UpdateCategoryStatsParams(
-            categoryId: s.gameType.name,
-            isCorrect: true,
-          ),
-        ),
-        awardBadge(_writingBadgeId),
-      ]);
-    } catch (e, st) {
-      if (kDebugMode) {
-        debugPrint('[WritingBloc] Background reward save failed: $e\n$st');
-      }
-    }
-
-    // 2. Instant UI — emit after awaited I/O.
+    // 1. Instant UI feedback
     emit(
       WritingGameComplete(
         xpEarned: _rewardXp,
@@ -309,5 +289,25 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
         level: s.level,
       ),
     );
+
+    // 2. Background persistence — all saves run in parallel (fire-and-forget)
+    Future.wait([
+      updateUserRewards(
+        UpdateUserRewardsParams(
+          gameType: s.gameType.name,
+          level: s.level,
+          xpIncrease: _rewardXp,
+          coinIncrease: _rewardCoins,
+          starsEarned: s.livesRemaining,
+        ),
+      ).catchError(_swallow),
+      updateCategoryStats(
+        UpdateCategoryStatsParams(
+          categoryId: s.gameType.name,
+          isCorrect: true,
+        ),
+      ).catchError(_swallow),
+      awardBadge(_writingBadgeId).catchError(_swallow),
+    ]);
   }
 }
