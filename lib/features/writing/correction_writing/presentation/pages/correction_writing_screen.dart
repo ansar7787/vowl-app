@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -168,13 +168,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           );
         }
 
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
+
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
@@ -385,7 +379,12 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                                           ),
                                         ),
                                       SizedBox(
-                                        height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 160.h,
+                                        height: !isAnswered
+                                            ? MediaQuery.viewInsetsOf(
+                                                    context,
+                                                  ).bottom +
+                                                  40.h
+                                            : 160.h,
                                       ),
                                     ],
                                   ),
@@ -418,3 +417,4 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     );
   }
 }
+

@@ -47,34 +47,26 @@ class CompleteSentenceTargetWall extends StatelessWidget {
             const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
             Padding(
               padding: EdgeInsets.all(16.r),
-              child: // NOTE: DragTarget is preserved as a future integration point.
-                  // Currently it cannot be triggered because the ammo widget uses
-                  // GestureDetector.onPanEnd (not Draggable<String>), so no
-                  // Draggable exists in the tree to satisfy this target.
-                  // To activate: convert ammo to Draggable<String> in a future pass.
-                  DragTarget<String>(
-                    onAcceptWithDetails: (details) {
-                      // FIX: was onFire(details.data, details.data) — both args were
-                      // the same dragged word, making this always evaluate as correct.
-                      // Now only reports the dragged word; screen compares to correct.
-                      onFire(details.data);
-                    },
-                    builder: (context, candidateData, rejectedData) {
-                      return Text(
-                        displayText,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          color: injected != null
-                              ? color
-                              : (isDark ? Colors.white70 : Colors.black87),
-                          fontWeight: FontWeight.bold,
-                          height: 1.4,
-                        ),
-                      );
-                    },
-                  ),
+              child: DragTarget<String>(
+                onAcceptWithDetails: (details) {
+                  onFire(details.data);
+                },
+                builder: (context, candidateData, rejectedData) {
+                  return Text(
+                    displayText,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 20.sp,
+                      color: injected != null
+                          ? color
+                          : (isDark ? Colors.white70 : Colors.black87),
+                      fontWeight: FontWeight.bold,
+                      height: 1.4,
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

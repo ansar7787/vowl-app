@@ -1,4 +1,4 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
+﻿import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -221,13 +221,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
             title: 'SOCIAL GENIUS!',
             enableDoubleUp: true,
           );
-        } else if (state is RoleplayGameOver) {
-          _stopTimer();
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () => context.read<RoleplayBloc>().add(RestoreLife()),
-          );
-        }
+}
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
@@ -449,3 +443,4 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     );
   }
 }
+

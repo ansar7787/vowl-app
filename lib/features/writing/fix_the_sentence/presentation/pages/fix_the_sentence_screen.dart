@@ -1,4 +1,4 @@
-import 'package:vowl/core/utils/instruction_helper.dart';
+﻿import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -152,13 +152,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           );
         }
 
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
+
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
@@ -352,3 +346,4 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     );
   }
 }
+

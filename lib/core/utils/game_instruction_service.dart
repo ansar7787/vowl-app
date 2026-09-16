@@ -748,18 +748,18 @@ class GameInstructionService {
           "PRO TIP: Start with 'who' or 'what' the sentence is about, then look for the action word!",
     ),
     GameSubtype.completeSentence: GameBriefing(
-      title: "Fragment Fixer",
-      icon: Icons.healing_rounded,
+      title: "Fill in the Blank",
+      icon: Icons.edit_note_rounded,
       objective:
-          "Launch the correct word fragment into the sentence gap. Mastering this skill ensures your written communication is clear, professional, and effective.",
+          "Read the sentence and figure out what word is missing. Once you pick the right word, you'll need to spell it out to prove you know it!",
       rules: [
-        "Identify missing part",
-        "Maintain the tone",
-        "Verify logical structure",
+        "Read the whole sentence",
+        "Pick the missing word",
+        "Spell it correctly",
       ],
-      actionText: "Fix Fragment",
+      actionText: "Let's Go!",
       tip:
-          "PRO TIP: A complete sentence needs both a Subject and a Verb at minimum!",
+          "PRO TIP: Read the sentence out loud in your head. Usually, your brain will naturally guess the missing word before you even look at the options!",
     ),
     GameSubtype.describeSituationWriting: GameBriefing(
       title: "Context Scribe",

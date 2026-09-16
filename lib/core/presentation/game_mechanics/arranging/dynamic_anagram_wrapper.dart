@@ -273,9 +273,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                 padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
                 decoration: BoxDecoration(
                   color: bgColor,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(32.r),
-                  ),
+                  borderRadius: widget.isPositioned
+                      ? BorderRadius.vertical(top: Radius.circular(32.r))
+                      : BorderRadius.circular(32.r),
                   border: Border.all(
                     color: hasError
                         ? errorColor.withValues(alpha: 0.5)

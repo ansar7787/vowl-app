@@ -1254,11 +1254,11 @@ class StoryServiceImpl implements StoryService {
     'contextualusage_beat_deleted': [],
     'completesentence': [
       "",
-      "Excellent start! Your understanding of sentence completion is growing.",
-      "You are navigating sentence completion with increasing confidence.",
-      "Amazing! You manipulate sentence completion with natural ease.",
-      "Level 100! Your expertise in sentence completion is elite.",
-      "Level 200! You have transcended the limits of sentence completion.",
+      "Great start! You're getting the hang of how sentences flow together naturally.",
+      "You're doing fantastic! Dropping the right words into place is starting to become second nature.",
+      "50 levels down! Your brain is doing a great job figuring out what makes a sentence sound exactly right.",
+      "Level 100! That's a huge milestone. You've built a really strong intuition for how English is put together.",
+      "Level 200! Honestly, incredible. You don't even have to think about grammar anymore, you just know what fits.",
     ],
     'correctionwriting': [
       "",

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -15,19 +15,10 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_instruction.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_target_wall.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_ballista_ammo.dart';
-import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_trajectory_painter.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_keyboard_input.dart';
 import 'package:vowl/core/presentation/game_mechanics/arranging/dynamic_anagram_wrapper.dart';
 
 // ---------------------------------------------------------------------------
-// Immutable record for drag state â€” replaces two nullable Offset fields.
-// ---------------------------------------------------------------------------
-class _DragState {
-  final Offset start;
-  final Offset current;
-  const _DragState({required this.start, required this.current});
-}
-
 class CompleteSentenceScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -45,15 +36,8 @@ class CompleteSentenceScreen extends StatefulWidget {
 class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  // PERF FIX: theme cached â€” not recomputed on every build().
+  // PERF FIX: theme cached Ã¢â‚¬â€ not recomputed on every build().
   late dynamic _theme;
-
-  final _stackKey = GlobalKey();
-
-  // PERF FIX: drag state moved to ValueNotifier so _onBridgeUpdate never
-  // calls setState. Only the ValueListenableBuilder around the CustomPaint
-  // rebuilds on each pointer-move event (~60fps), not the entire widget tree.
-  final _dragNotifier = ValueNotifier<_DragState?>(null);
 
   final ValueNotifier<String?> _selectedProjectile = ValueNotifier(null);
   final ValueNotifier<bool> _showConfetti = ValueNotifier(false);
@@ -84,40 +68,22 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
-    _dragNotifier.dispose();
     _selectedProjectile.dispose();
     _showConfetti.dispose();
     _showAnagram.dispose();
     super.dispose();
   }
 
-  // ---------------------------------------------------------------------------
-  // Drag / trajectory handlers
-  // ---------------------------------------------------------------------------
-
-  void _onBridgeStart(Offset globalPosition, bool isAnswered) {
-    if (isAnswered) return;
-    // FIX: Use the stack's render box, not the screen's, to ensure the
-    // trajectory start point aligns with the dragged card exactly.
-    final renderBox =
-        _stackKey.currentContext?.findRenderObject() as RenderBox?;
-    if (renderBox == null) return;
-    final localPos = renderBox.globalToLocal(globalPosition);
-    // No setState â€” only update the notifier. Only the painter redraws.
-    _dragNotifier.value = _DragState(start: localPos, current: localPos);
-    _hapticService.selection();
-  }
-
-  void _onBridgeUpdate(Offset globalPosition, bool isAnswered) {
-    if (isAnswered || _dragNotifier.value == null) return;
-    final renderBox =
-        _stackKey.currentContext?.findRenderObject() as RenderBox?;
-    if (renderBox == null) return;
-    // PERF FIX: no setState â€” ValueNotifier update only repaints the CustomPaint.
-    _dragNotifier.value = _DragState(
-      start: _dragNotifier.value!.start,
-      current: renderBox.globalToLocal(globalPosition),
-    );
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   // ---------------------------------------------------------------------------
@@ -133,13 +99,11 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
         selected.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '') ==
         correct.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
 
-    // Clear trajectory immediately on fire â€” no lingering aim line.
-    _dragNotifier.value = null;
-
     // We let the BLoC handle all state now! No local timers hiding the continue button!
     if (isCorrect) {
       _hapticService.success();
       _showAnagram.value = true;
+      _scrollToBottom();
     } else {
       _hapticService.error();
       context.read<WritingBloc>().add(const SubmitAnswer(false));
@@ -171,9 +135,8 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
-          // New question loaded or retry triggered â€” clear the selected option.
+          // New question loaded or retry triggered Ã¢â‚¬â€ clear the selected option.
           _selectedProjectile.value = null;
-          _dragNotifier.value = null;
           _showAnagram.value = false;
         }
         if (state is WritingGameComplete) {
@@ -186,13 +149,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
             enableDoubleUp: true,
           );
         }
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
+
       },
       // PERF FIX: only rebuild when quest changes, not on hint/wrong-count updates.
       buildWhen: (prev, curr) =>
@@ -231,7 +188,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
-          // Passing it here caused a double dispatch — now a no-op.
+          // Passing it here caused a double dispatch â€” now a no-op.
           onHint: () {},
           child: ListenableBuilder(
             listenable: Listenable.merge([
@@ -244,68 +201,31 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                   ? (_lastQuest == null
                         ? GameShimmerLoading(primaryColor: _theme.primaryColor)
                         : const SizedBox.shrink())
-                  : Stack(
-                      key: _stackKey,
-                      children: [
-                        // Scrollable body content — extracted to reduce build() size.
-                        RawScrollbar(
-                          controller: _scrollController,
-                          thumbColor: _theme.primaryColor.withValues(
-                            alpha: 0.5,
-                          ),
-                          radius: Radius.circular(8.r),
-                          thickness: 4.w,
-                          child: _CompleteSentenceBody(
-                            quest: quest,
-                            options: options,
-                            level: widget.level,
-                            selectedProjectile: _selectedProjectile.value,
-                            isAnswered: isAnswered,
-                            isCorrect: isCorrect,
-                            theme: _theme,
-                            isDark: isDark,
-                            scrollController: _scrollController,
-                            onBridgeStart: (pos) =>
-                                _onBridgeStart(pos, isAnswered),
-                            onBridgeUpdate: (pos) =>
-                                _onBridgeUpdate(pos, isAnswered),
-                            // FIX: screen owns correctAnswer — widgets only report selected.
-                            onFire: (selected) => _onFire(
-                              selected,
-                              quest.correctAnswer ?? '',
-                              isAnswered,
-                            ),
-                          ),
+                  : RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: _theme.primaryColor.withValues(alpha: 0.5),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      child: _CompleteSentenceBody(
+                        quest: quest,
+                        options: options,
+                        level: widget.level,
+                        selectedProjectile: _selectedProjectile.value,
+                        isAnswered: isAnswered,
+                        isCorrect: isCorrect,
+                        theme: _theme,
+                        isDark: isDark,
+                        scrollController: _scrollController,
+                        showAnagram: _showAnagram.value,
+                        onAnagramSuccess: _onAnagramSuccess,
+                        onAnagramFailed: _onAnagramFailed,
+                        // FIX: screen owns correctAnswer â€” widgets only report selected.
+                        onFire: (selected) => _onFire(
+                          selected,
+                          quest.correctAnswer ?? '',
+                          isAnswered,
                         ),
-                        // PERF FIX: ValueListenableBuilder isolates repaints to this
-                        // subtree only. The RepaintBoundary prevents the parent layer
-                        // from being invalidated on each drag-move frame.
-                        ValueListenableBuilder<_DragState?>(
-                          valueListenable: _dragNotifier,
-                          builder: (_, drag, _) {
-                            if (drag == null) return const SizedBox.shrink();
-                            return IgnorePointer(
-                              child: RepaintBoundary(
-                                child: CustomPaint(
-                                  painter: CompleteSentenceTrajectoryPainter(
-                                    start: drag.start,
-                                    end: drag.current,
-                                    color: _theme.primaryColor,
-                                  ),
-                                  size: Size.infinite,
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                        if (_showAnagram.value && !isAnswered)
-                          DynamicAnagramWrapper(
-                            expectedText: quest.correctAnswer ?? '',
-                            primaryColor: _theme.primaryColor,
-                            onConfirmed: _onAnagramSuccess,
-                            onFailed: _onAnagramFailed,
-                          ),
-                      ],
+                      ),
                     );
             },
           ),
@@ -330,8 +250,9 @@ class _CompleteSentenceBody extends StatelessWidget {
   final dynamic theme;
   final bool isDark;
   final ScrollController scrollController;
-  final ValueChanged<Offset> onBridgeStart;
-  final ValueChanged<Offset> onBridgeUpdate;
+  final bool showAnagram;
+  final VoidCallback onAnagramSuccess;
+  final VoidCallback onAnagramFailed;
   final ValueChanged<String> onFire;
 
   const _CompleteSentenceBody({
@@ -344,8 +265,9 @@ class _CompleteSentenceBody extends StatelessWidget {
     required this.theme,
     required this.isDark,
     required this.scrollController,
-    required this.onBridgeStart,
-    required this.onBridgeUpdate,
+    required this.showAnagram,
+    required this.onAnagramSuccess,
+    required this.onAnagramFailed,
     required this.onFire,
   });
 
@@ -358,112 +280,127 @@ class _CompleteSentenceBody extends StatelessWidget {
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           sliver: SliverToBoxAdapter(
-            child: Column(
-              children: [
-                SizedBox(height: 16.h),
-                CompleteSentenceInstruction(primaryColor: theme.primaryColor),
-                if (quest.grammarFocus != null) ...[
-                  SizedBox(height: 12.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 8.h,
+            child: AbsorbPointer(
+              absorbing: showAnagram,
+              child: Opacity(
+                opacity: showAnagram ? 0.5 : 1.0,
+                child: Column(
+                  children: [
+                    SizedBox(height: 16.h),
+                    CompleteSentenceInstruction(
+                      primaryColor: theme.primaryColor,
                     ),
-                    decoration: BoxDecoration(
-                      color: theme.primaryColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: theme.primaryColor.withValues(alpha: 0.3),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.rule,
-                          color: theme.primaryColor,
-                          size: 16.sp,
+                    if (quest.grammarFocus != null) ...[
+                      SizedBox(height: 12.h),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 8.h,
                         ),
-                        SizedBox(width: 8.w),
-                        Text(
-                          quest.grammarFocus!,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w700,
-                            color: theme.primaryColor,
+                        decoration: BoxDecoration(
+                          color: theme.primaryColor.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: theme.primaryColor.withValues(alpha: 0.3),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                ],
-                SizedBox(height: 32.h),
-                CompleteSentenceTargetWall(
-                  text: quest.partialSentence ?? '',
-                  injected: selectedProjectile,
-                  color: theme.primaryColor,
-                  isDark: isDark,
-                  // FIX: onFire now receives only the selected word.
-                  // correctAnswer comparison is handled in the screen.
-                  onFire: onFire,
-                ),
-                SizedBox(height: 32.h),
-                if (level >= 6) ...[
-                  GestureDetector(
-                    onTap: () {
-                      CustomSnackBar.show(
-                        context: context,
-                        message:
-                            "Hard Mode! Dragging is disabled. Please type your answer below.",
-                        type: CustomSnackBarType.info,
-                      );
-                    },
-                    child: AbsorbPointer(
-                      child: Opacity(
-                        opacity: 0.8,
-                        child: CompleteSentenceBallistaAmmo(
-                          options: options,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          onBridgeStart: (_) {},
-                          onBridgeUpdate: (_) {},
-                          onFire: (_) {},
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.rule,
+                              color: theme.primaryColor,
+                              size: 16.sp,
+                            ),
+                            SizedBox(width: 8.w),
+                            Text(
+                              quest.grammarFocus!,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w700,
+                                color: theme.primaryColor,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
+                    ],
+                    SizedBox(height: 32.h),
+                    CompleteSentenceTargetWall(
+                      text: quest.partialSentence ?? '',
+                      injected: selectedProjectile,
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      // FIX: onFire now receives only the selected word.
+                      // correctAnswer comparison is handled in the screen.
+                      onFire: onFire,
                     ),
-                  ),
-                  SizedBox(height: 16.h),
-                  CompleteSentenceKeyboardInput(
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    onFire: onFire,
-                  ),
-                ] else
-                  CompleteSentenceBallistaAmmo(
-                    options: options,
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                    onBridgeStart: onBridgeStart,
-                    onBridgeUpdate: onBridgeUpdate,
-                    // FIX: onFire now receives only the fired word.
-                    onFire: onFire,
-                  ),
-              ],
+                    SizedBox(height: 32.h),
+                    if (level >= 6) ...[
+                      GestureDetector(
+                        onTap: () {
+                          CustomSnackBar.show(
+                            context: context,
+                            message:
+                                "Hard Mode! Dragging is disabled. Please type your answer below.",
+                            type: CustomSnackBarType.info,
+                          );
+                        },
+                        child: AbsorbPointer(
+                          child: Opacity(
+                            opacity: 0.8,
+                            child: CompleteSentenceBallistaAmmo(
+                              options: options,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              onFire: (_) {},
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16.h),
+                      CompleteSentenceKeyboardInput(
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        onFire: onFire,
+                      ),
+                    ] else
+                      CompleteSentenceBallistaAmmo(
+                        options: options,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        // FIX: onFire now receives only the fired word.
+                        onFire: onFire,
+                      ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
-        SliverToBoxAdapter(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              SizedBox(
-                height: !isAnswered ? MediaQuery.viewInsetsOf(context).bottom + 40.h : 60.h,
-              ), // Bottom docking padding
-            ],
+        if (showAnagram && !isAnswered)
+          SliverPadding(
+            padding: EdgeInsets.only(top: 32.h, left: 24.w, right: 24.w),
+            sliver: SliverToBoxAdapter(
+              child: DynamicAnagramWrapper(
+                expectedText: quest.correctAnswer ?? '',
+                primaryColor: theme.primaryColor,
+                onConfirmed: onAnagramSuccess,
+                onFailed: onAnagramFailed,
+                isPositioned: false,
+              ),
+            ),
           ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: !isAnswered
+                ? MediaQuery.viewInsetsOf(context).bottom + 40.h
+                : 60.h,
+          ), // Bottom docking padding
         ),
       ],
     );
   }
 }
+
