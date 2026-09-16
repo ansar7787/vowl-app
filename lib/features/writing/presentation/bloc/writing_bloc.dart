@@ -264,8 +264,8 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   // Private Helpers
   // ---------------------------------------------------------------------------
 
-  /// Emits [WritingGameComplete] immediately for instant UI feedback, then
-  /// persists rewards in the background. A failing background save never
+  /// Persists rewards in the background before emitting [WritingGameComplete].
+  /// A failing background save will still emit completion so it never
   /// disrupts the user's completion experience.
   Future<void> _completeLevel(
     WritingLoaded s,
@@ -273,18 +273,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   ) async {
     soundService.playLevelComplete();
 
-    // 1. Instant UI — emit before any awaited I/O.
-    emit(
-      WritingGameComplete(
-        xpEarned: _rewardXp,
-        coinsEarned: _rewardCoins,
-        questCount: s.quests.length,
-        gameType: s.gameType, // FIX: reads from state, not mutable field
-        level: s.level, // FIX: reads from state, not mutable field
-      ),
-    );
-
-    // 2. Background persistence — all 4 saves run in parallel.
+    // 1. Background persistence — all saves run in parallel.
     try {
       await Future.wait([
         updateUserRewards(
@@ -305,11 +294,20 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
         awardBadge(_writingBadgeId),
       ]);
     } catch (e, st) {
-      // FIX: guarded by kDebugMode — no sensitive error details in release logs.
-      // Replace with FirebaseCrashlytics.instance.recordError(e, st) in production.
       if (kDebugMode) {
         debugPrint('[WritingBloc] Background reward save failed: $e\n$st');
       }
     }
+
+    // 2. Instant UI — emit after awaited I/O.
+    emit(
+      WritingGameComplete(
+        xpEarned: _rewardXp,
+        coinsEarned: _rewardCoins,
+        questCount: s.quests.length,
+        gameType: s.gameType,
+        level: s.level,
+      ),
+    );
   }
 }

@@ -262,8 +262,9 @@ class GameDialogHelper {
         isSuccess: false,
         isRescueLife: onRestore != null,
         onButtonPressed: () {
+          final nav = Navigator.of(context);
           Navigator.of(dialogCtx).pop();
-          if (context.mounted) Navigator.of(context).pop();
+          nav.pop();
         },
         onAdAction: onRestore != null
             ? () {
