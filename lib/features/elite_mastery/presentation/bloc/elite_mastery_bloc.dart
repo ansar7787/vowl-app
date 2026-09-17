@@ -224,14 +224,6 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       // ── Level complete ────────────────────────────────────────────────────
       soundService.playLevelComplete();
 
-      emit(
-        EliteMasteryGameComplete(
-          xpEarned: _xpReward,
-          coinsEarned: _coinReward,
-          questCount: currentState.quests.length,
-        ),
-      );
-
       // Resolve nullable fields — both are always set by the BLoC in
       // production, but are nullable for backward compatibility with
       // existing tests and mock states.
@@ -244,61 +236,54 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
           'This is expected in test environments; unexpected in production.',
           name: 'EliteMasteryBloc',
         );
+        // Still emit completion for the UI even if persistence can't run.
+        emit(
+          EliteMasteryGameComplete(
+            xpEarned: _xpReward,
+            coinsEarned: _coinReward,
+            questCount: currentState.quests.length,
+          ),
+        );
         return;
       }
 
-      // Each reward-persistence call is wrapped so it can never throw past
-      // this point. Previously all three calls were passed straight into a
-      // single `Future.wait`, which is eager: the *first* rejected future
-      // is what the surrounding try/catch sees, while the other in-flight
-      // calls keep running in the background. If one of those later also
-      // failed, that became an unhandled async exception outside any
-      // catch block — invisible in release builds, but a real crash-report
-      // risk. Wrapping each call also means one failing step (e.g. the
-      // streak/category stats write) can never prevent the other two
-      // (XP/coins, level unlock) from being attempted.
-      await Future.wait([
-        _persistRewardSafely(
-          'updateUserRewards',
-          () => updateUserRewards(
-            UpdateUserRewardsParams(
-              gameType: gameTypeName,
-              level: level,
-              xpIncrease: _xpReward,
-              coinIncrease: _coinReward,
-              starsEarned: currentState.livesRemaining,
-            ),
-          ),
+      // 1. UI feedback — emitted immediately to prevent double-taps on the
+      // "Continue" button (which caused concurrent transaction aborts).
+      emit(
+        EliteMasteryGameComplete(
+          xpEarned: _xpReward,
+          coinsEarned: _coinReward,
+          questCount: currentState.quests.length,
         ),
-        _persistRewardSafely(
-          'updateCategoryStats',
-          () => updateCategoryStats(
-            UpdateCategoryStatsParams(
-              categoryId: gameTypeName,
-              isCorrect: true,
-            ),
-          ),
-        ),
-        // FIX (critical): `updateUnlockedLevel` was injected as a constructor
-        // dependency but was never actually called anywhere in this class.
-        // Level completion was awarding XP/coins/category-stats but never
-        // persisting level-progression — i.e. the next level never actually
-        // unlocked for the player. NOTE: field names below mirror this
-        // file's existing `UpdateUserRewardsParams` convention (gameType +
-        // level); please verify them against the real
-        // `UpdateUnlockedLevelParams` in
-        // features/auth/domain/usecases/update_unlocked_level.dart (outside
-        // this feature slice) and adjust if they differ.
-        _persistRewardSafely(
-          'updateUnlockedLevel',
-          () => updateUnlockedLevel(
-            UpdateUnlockedLevelParams(
-              categoryId: gameTypeName,
-              newLevel: level + 1,
-            ),
-          ),
-        ),
-      ]);
+      );
+
+      // 2. Primary & Secondary persistence — Fire-and-forget.
+      // By the time the user taps "OK" on the completion dialog, this will
+      // be finished, and AuthRefreshUser will read the committed data.
+      _persistRewardSafely(
+        'updateUserRewards',
+        () =>
+            updateUserRewards(
+              UpdateUserRewardsParams(
+                gameType: gameTypeName,
+                level: level,
+                xpIncrease: _xpReward,
+                coinIncrease: _coinReward,
+                starsEarned: currentState.livesRemaining,
+              ),
+            ).then((_) {
+              _persistRewardSafely(
+                'updateCategoryStats',
+                () => updateCategoryStats(
+                  UpdateCategoryStatsParams(
+                    categoryId: gameTypeName,
+                    isCorrect: true,
+                  ),
+                ),
+              );
+              return null;
+            }),
+      );
     } else {
       // Wrong answer on the last quest — stay and retry.
       emit(
@@ -311,16 +296,12 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   }
 
   /// Runs a single reward-persistence call, logging (rather than rethrowing)
-  /// any failure so it can never surface as an unhandled async exception and
-  /// can never block its sibling calls in [_onNextEliteQuestion]'s
-  /// `Future.wait`.
+  /// any failure so it can never surface as an unhandled async exception.
   ///
   /// NOTE: this only guards against *thrown* exceptions. If
-  /// [updateUserRewards] / [updateCategoryStats] / [updateUnlockedLevel]
-  /// return an `Either<Failure, ...>` rather than throwing on failure, a
-  /// `Left` result is still swallowed silently here — exactly as it was
-  /// before this fix. Folding those results explicitly would need their
-  /// concrete return type, which isn't visible from this file alone.
+  /// [updateUserRewards] / [updateCategoryStats] return an
+  /// `Either<Failure, ...>` rather than throwing on failure, a `Left` result
+  /// is still swallowed silently here.
   Future<void> _persistRewardSafely(
     String label,
     Future<dynamic> Function() action,

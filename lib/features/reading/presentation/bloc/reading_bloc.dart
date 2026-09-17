@@ -1,3 +1,5 @@
+import 'package:vowl/core/errors/failures.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:vowl/features/reading/presentation/constants/reading_constants.dart';
@@ -287,36 +289,33 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   ///
   /// Called AFTER [ReadingGameComplete] is emitted — a failure here never
   /// affects the UI. Offline guard prevents pointless requests.
-  Future<void> _persistLevelCompletion(int starsEarned) async {
+  void _persistLevelCompletion(int starsEarned) {
     if (currentGameType == null || currentLevel == null) return;
 
-    final isOnline = await networkInfo.isConnected;
-    if (!isOnline) {
-      //  Enqueue for offline retry via a PendingRewardsQueue service.
-      return;
-    }
+    networkInfo.isConnected.then((isOnline) {
+      if (!isOnline) {
+        //  Enqueue for offline retry via a PendingRewardsQueue service.
+        return;
+      }
 
-    try {
-      await Future.wait([
-        updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: currentGameType!,
-            level: currentLevel!,
-            xpIncrease: ReadingGameConfig.xpPerLevel,
-            coinIncrease: ReadingGameConfig.coinsPerLevel,
-            starsEarned: starsEarned,
-          ),
+      updateUserRewards(
+        UpdateUserRewardsParams(
+          gameType: currentGameType!,
+          level: currentLevel!,
+          xpIncrease: ReadingGameConfig.xpPerLevel,
+          coinIncrease: ReadingGameConfig.coinsPerLevel,
+          starsEarned: starsEarned,
         ),
+      ).catchError((_) => const Right<Failure, void>(null)).then((_) {
         updateCategoryStats(
           UpdateCategoryStatsParams(
             categoryId: currentGameType!,
             isCorrect: true,
           ),
-        ),
-        awardBadge('reading_master'),
-      ]);
-    } catch (e) {
-      // logger?.error('Level completion save failed', error: e, stackTrace: st);
-    }
+        ).catchError((_) => const Right<Failure, void>(null)).then((_) {
+          awardBadge('reading_master').catchError((_) => const Right<Failure, void>(null));
+        });
+      });
+    });
   }
 }

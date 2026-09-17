@@ -223,7 +223,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
 
     if (isLastQuestion) {
       if (wasCorrect) {
-        await _handleLevelComplete(s, emit);
+        _handleLevelComplete(s, emit);
       } else {
         emit(
           s.copyWith(
@@ -261,12 +261,16 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     }
   }
 
-  /// Emits [SpeakingGameComplete] immediately then persists rewards in the
-  /// background. Failures are silent because the UI has already advanced.
-  Future<void> _handleLevelComplete(
+  /// Emits [SpeakingGameComplete] immediately to prevent double-taps on the
+  /// "Continue" button, then persists rewards in the background.
+  ///
+  /// [updateUserRewards] already atomically updates `completedLevels` and
+  /// `unlockedLevels` inside [_computeRewardUpdates], so a separate
+  /// [updateUnlockedLevel] call is intentionally omitted.
+  void _handleLevelComplete(
     SpeakingLoaded s,
     Emitter<SpeakingState> emit,
-  ) async {
+  ) {
     unawaited(soundService.playLevelComplete());
 
     // : Derive xp/coins from quest metadata (q.xpReward ?? _kDefaultXp)
@@ -274,6 +278,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     const xp = _kDefaultXp;
     const coins = _kDefaultCoins;
 
+    // 1. UI feedback — emitted immediately to prevent double-taps.
     emit(
       SpeakingGameComplete(
         xpEarned: xp,
@@ -282,33 +287,45 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       ),
     );
 
-    try {
-      await Future.wait([
-        updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: s.gameType.name,
-            level: s.level,
-            xpIncrease: xp,
-            coinIncrease: coins,
-            starsEarned: s.livesRemaining,
-          ),
+    // 2. Primary & Secondary persistence — Fire-and-forget.
+    updateUserRewards(
+      UpdateUserRewardsParams(
+        gameType: s.gameType.name,
+        level: s.level,
+        xpIncrease: xp,
+        coinIncrease: coins,
+        starsEarned: s.livesRemaining,
+      ),
+    ).then((_) {
+      updateCategoryStats(
+        UpdateCategoryStatsParams(
+          categoryId: s.gameType.name,
+          isCorrect: true,
         ),
-        updateCategoryStats(
-          UpdateCategoryStatsParams(
-            categoryId: s.gameType.name,
-            isCorrect: true,
-          ),
-        ),
-        awardBadge(_kSpeakingMasterBadge),
-      ]);
-    } catch (e, st) {
+      ).catchError((_, __) {  
+        _logger.error(
+          'Secondary persistence (stats) failed',
+          error: e,
+          stackTrace: st,
+          tag: 'SpeakingBloc',
+        );
+       return const Right<Failure, void>(null);  });
+      awardBadge(_kSpeakingMasterBadge).catchError((_, __) {  
+        _logger.error(
+          'Secondary persistence (badge) failed',
+          error: e,
+          stackTrace: st,
+          tag: 'SpeakingBloc',
+        );
+       return const Right<Failure, void>(null);  });
+    }).catchError((_, __) {  
       _logger.error(
-        'Background save failed after level complete',
+        'Primary persistence failed after level complete',
         error: e,
         stackTrace: st,
         tag: 'SpeakingBloc',
       );
-    }
+     return const Right<Failure, void>(null);  });
   }
 
   // ---------------------------------------------------------------------------

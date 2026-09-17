@@ -1,3 +1,5 @@
+import 'package:vowl/core/errors/failures.dart';
+import 'package:dartz/dartz.dart';
 import 'dart:async';
 
 import 'package:equatable/equatable.dart';
@@ -187,7 +189,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     _userSubscription = _getUserStream().listen(
       (user) => add(AuthUserChanged(user)),
-      // Previously `onError: (_) {}` — silently discarded every error from
+      // Previously `onError: (_) => const Right<Failure, void>(null)` — silently discarded every error from
       // the user stream with no logging and no signal to the UI. The
       // repository layer already filters out the one *expected* noisy case
       // (permission-denied immediately after logout) before it ever reaches

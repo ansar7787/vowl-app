@@ -243,13 +243,15 @@ class WritingBaseLayout extends StatelessWidget {
       message = "$mascotName is waiting! 🦉";
     }
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
                 borderRadius: BorderRadius.circular(12.r),
                 boxShadow: [
                   BoxShadow(
@@ -264,7 +266,7 @@ class WritingBaseLayout extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blueAccent,
+                  color: isDark ? Colors.white70 : Colors.blueAccent,
                 ),
               ),
             )

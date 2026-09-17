@@ -1,3 +1,4 @@
+import 'package:vowl/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,7 @@ export 'vocabulary_state.dart';
 
 /// Silently absorbs a [Failure] from a persistence use-case so that individual
 /// reward failures never crash an in-progress game session.
-Either<Failure, void> _swallow(Object _) => const Right(null);
+Either<Failure, void> _swallow(Object _) => const Right<Failure, void>(null);
 
 // ─── BLoC ─────────────────────────────────────────────────────────────────────
 
@@ -213,7 +214,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     final isLast = s.currentIndex >= s.quests.length - 1;
     if (isLast) {
       if (s.answerStatus == AnswerStatus.correct) {
-        await _handleLevelComplete(s, emit);
+        _handleLevelComplete(s, emit);
       } else {
         emit(
           s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
@@ -237,15 +238,17 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     }
   }
 
-  Future<void> _handleLevelComplete(
+  void _handleLevelComplete(
     VocabularyLoaded s,
     Emitter<VocabularyState> emit,
-  ) async {
-    await soundService.playLevelComplete();
+  ) {
+    soundService.playLevelComplete();
 
     const xp = VocabularyRewardConstants.baseXp;
     const coins = VocabularyRewardConstants.baseCoins;
 
+    // 1. UI feedback — emitted immediately to prevent double-taps on the
+    // "Continue" button (which caused concurrent transaction aborts).
     emit(
       VocabularyGameComplete(
         xpEarned: xp,
@@ -254,30 +257,27 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       ),
     );
 
+    // 2. Primary & Secondary persistence — Fire-and-forget.
     if (_currentGameType != null && _currentLevel != null) {
       final gameType = _currentGameType!;
       final level = _currentLevel!;
 
-      // Parallel persistence — O(1) concurrent dispatch vs O(4) sequential.
-      await Future.wait([
-        updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: gameType,
-            level: level,
-            xpIncrease: xp,
-            coinIncrease: coins,
-            starsEarned: s.livesRemaining,
-          ),
-        ).catchError(_swallow),
+      updateUserRewards(
+        UpdateUserRewardsParams(
+          gameType: gameType,
+          level: level,
+          xpIncrease: xp,
+          coinIncrease: coins,
+          starsEarned: s.livesRemaining,
+        ),
+      ).catchError(_swallow).then((_) {
         updateCategoryStats(
           UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
-        ).catchError(_swallow),
-        // NOTE: AwardBadge must be idempotent at the use-case level —
-        // it is called on every level completion.
+        ).catchError(_swallow);
         awardBadge(
           VocabularyRewardConstants.masteryBadgeId,
-        ).catchError(_swallow),
-      ]);
+        ).catchError(_swallow);
+      });
     }
   }
 
@@ -323,7 +323,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     if (state is! VocabularyLoaded) return;
     final s = state as VocabularyLoaded;
     if (s.hintUsed) return;
-    (await useHint(NoParams())).fold((_) {}, (_) {
+    (await useHint(NoParams())).fold((_) => const Right<Failure, void>(null), (_) {
       emit(s.copyWith(hintUsed: true));
       hapticService.selection();
     });

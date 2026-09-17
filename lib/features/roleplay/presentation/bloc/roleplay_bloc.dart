@@ -1,3 +1,5 @@
+import 'package:vowl/core/errors/failures.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
@@ -243,21 +245,15 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
       return;
     }
 
-    // ── Level complete — emit terminal state before async calls to
-    // prevent double-tap advancing past the completion screen.
-    emit(
-      RoleplayGameComplete(
-        xpEarned: kRoleplayLevelCompleteXp,
-        coinsEarned: kRoleplayLevelCompleteCoins,
-        questCount: s.quests.length,
-        lastState: s,
-      ),
-    );
-
+    // ── Level complete ─────────────────────────────────────────────────
     soundService.playLevelComplete();
 
-    // Sequential awaits match the original pattern and avoid Future.wait<T>
-    // inference failures when use-cases have mixed or void return types.
+    // 1. Primary persistence — must complete before UI shows the dialog
+    //    so that AuthRefreshUser reads committed data.
+    //    updateUserRewards already atomically updates completedLevels and
+    //    unlockedLevels inside _computeRewardUpdates, so a separate
+    //    updateUnlockedLevel call is intentionally omitted to avoid
+    //    Firestore transaction contention on the same document.
     await updateUserRewards(
       UpdateUserRewardsParams(
         gameType: s.gameType.name,
@@ -267,10 +263,44 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         starsEarned: s.livesRemaining,
       ),
     );
+
+    // 2. UI feedback — emitted after persistence to prevent double-tap
+    //    advancing past the completion screen.
+    // 1. UI feedback — emitted immediately to prevent double-taps.
+    emit(
+      RoleplayGameComplete(
+        xpEarned: kRoleplayLevelCompleteXp,
+        coinsEarned: kRoleplayLevelCompleteCoins,
+        questCount: s.quests.length,
+        lastState: s,
+      ),
+    );
+
+    // 3. Secondary persistence — non-critical, sequenced.
     await updateCategoryStats(
       UpdateCategoryStatsParams(categoryId: s.gameType.name, isCorrect: true),
     );
     await awardBadge(kRoleplayBadgeId);
+    // 2. Primary & Secondary persistence — Fire-and-forget.
+    updateUserRewards(
+          UpdateUserRewardsParams(
+            gameType: s.gameType.name,
+            level: s.level,
+            xpIncrease: kRoleplayLevelCompleteXp,
+            coinIncrease: kRoleplayLevelCompleteCoins,
+            starsEarned: s.livesRemaining,
+          ),
+        )
+        .then((_) {
+          updateCategoryStats(
+            UpdateCategoryStatsParams(
+              categoryId: s.gameType.name,
+              isCorrect: true,
+            ),
+          ).catchError((_) => const Right<Failure, void>(null));
+          awardBadge(kRoleplayBadgeId).catchError((_) => const Right<Failure, void>(null));
+        })
+        .catchError((_) => const Right<Failure, void>(null));
   }
 
   // ── ─────────────────────────────────────────────────────────────────────

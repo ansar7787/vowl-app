@@ -1,3 +1,4 @@
+import 'package:vowl/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:vowl/core/error/failures.dart';
 
@@ -268,7 +269,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
 
   /// Silently absorbs a [Failure] from a persistence use-case so that individual
   /// reward failures never crash an in-progress game session.
-  Either<Failure, void> _swallow(Object _) => const Right(null);
+  Either<Failure, void> _swallow(Object _) => const Right<Failure, void>(null);
 
   /// Persists rewards in the background before emitting [WritingGameComplete].
   /// A failing background save will still emit completion so it never
@@ -290,24 +291,25 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
       ),
     );
 
-    // 2. Background persistence — all saves run in parallel (fire-and-forget)
-    Future.wait([
-      updateUserRewards(
-        UpdateUserRewardsParams(
-          gameType: s.gameType.name,
-          level: s.level,
-          xpIncrease: _rewardXp,
-          coinIncrease: _rewardCoins,
-          starsEarned: s.livesRemaining,
-        ),
-      ).catchError(_swallow),
+    // 2. Background persistence — sequenced to prevent transaction contention
+    // on the same user document. (Running in Future.wait caused aborts).
+    updateUserRewards(
+      UpdateUserRewardsParams(
+        gameType: s.gameType.name,
+        level: s.level,
+        xpIncrease: _rewardXp,
+        coinIncrease: _rewardCoins,
+        starsEarned: s.livesRemaining,
+      ),
+    ).catchError(_swallow).then((_) {
       updateCategoryStats(
         UpdateCategoryStatsParams(
           categoryId: s.gameType.name,
           isCorrect: true,
         ),
-      ).catchError(_swallow),
-      awardBadge(_writingBadgeId).catchError(_swallow),
-    ]);
+      ).catchError(_swallow).then((_) {
+        awardBadge(_writingBadgeId).catchError(_swallow);
+      });
+    });
   }
 }

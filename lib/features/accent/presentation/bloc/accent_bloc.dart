@@ -1,3 +1,5 @@
+import 'package:vowl/core/errors/failures.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -253,6 +255,14 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       // All quests complete → level won.
       soundService.playLevelComplete();
 
+      onAnalyticsEvent?.call('accent_level_complete', {
+        'level': _currentLevel,
+        'quest_count': s.quests.length,
+        'lives_remaining': s.livesRemaining,
+      });
+
+      // 1. UI feedback — emitted immediately to prevent double-taps on the
+      // "Continue" button (which caused concurrent transaction aborts).
       emit(
         AccentGameComplete(
           xpEarned: AccentGameConstants.rewardXp,
@@ -262,16 +272,12 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         ),
       );
 
-      onAnalyticsEvent?.call('accent_level_complete', {
-        'level': _currentLevel,
-        'quest_count': s.quests.length,
-        'lives_remaining': s.livesRemaining,
-      });
-
+      // 2. Primary & Secondary persistence — Fire-and-forget.
+      // By the time the user taps "OK" on the completion dialog (which takes
+      // 2-3s for animation), this will be finished, and AuthRefreshUser will
+      // read the committed data.
       if (_currentGameType != null && _currentLevel != null) {
-        try {
-          await Future.wait([
-            updateUserRewards(
+        updateUserRewards(
               UpdateUserRewardsParams(
                 gameType: _currentGameType!,
                 level: _currentLevel!,
@@ -279,20 +285,19 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
                 coinIncrease: AccentGameConstants.rewardCoins,
                 starsEarned: s.livesRemaining,
               ),
-            ),
-            updateCategoryStats(
-              UpdateCategoryStatsParams(
-                categoryId: _currentGameType!,
-                isCorrect: true,
-              ),
-            ),
-            awardBadge(AccentGameConstants.accentMasterBadge),
-          ]);
-        } catch (e, stack) {
-          // Reward sync failures must never degrade game-completion UX.
-          // The error reporter (if wired) handles retry / logging.
-          errorReporter?.call(e, stack);
-        }
+            )
+            .then((_) {
+              updateCategoryStats(
+                UpdateCategoryStatsParams(
+                  categoryId: _currentGameType!,
+                  isCorrect: true,
+                ),
+              ).catchError((e, stack) { errorReporter?.call(e, stack); return const Right<Failure, void>(null); });
+              awardBadge(
+                AccentGameConstants.accentMasterBadge,
+              ).catchError((e, stack) { errorReporter?.call(e, stack); return const Right<Failure, void>(null); });
+            })
+            .catchError((e, stack) { errorReporter?.call(e, stack); return const Right<Failure, void>(null); });
       }
     } else {
       // Wrong answer on the final quest — stay for retry.

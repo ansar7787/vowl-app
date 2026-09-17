@@ -1,6 +1,8 @@
+import 'package:vowl/core/errors/failures.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import '../../../../core/domain/entities/game_quest.dart';
@@ -211,7 +213,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
           questCount: GrammarConstants.questsPerLevel,
         ),
       );
-      await _persistLevelCompletion(currentState.livesRemaining);
+      _persistLevelCompletion(currentState.livesRemaining);
     } else {
       // Wrong answer on the very last question — allow retry.
       emit(
@@ -226,33 +228,36 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
   /// Persists level completion atomically. Errors are caught and logged rather
   /// than surfaced to the UI since [GrammarGameComplete] is already emitted.
   /// The use-case layer is responsible for retry / offline queuing.
-  Future<void> _persistLevelCompletion(int starsEarned) async {
+  void _persistLevelCompletion(int starsEarned) {
     if (_currentGameType == null || _currentLevel == null) return;
 
-    try {
-      await Future.wait([
-        updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: _currentGameType!.name,
-            level: _currentLevel!,
-            xpIncrease: GrammarConstants.xpPerLevel,
-            coinIncrease: GrammarConstants.coinsPerLevel,
-            starsEarned: starsEarned,
-          ),
-        ),
-        updateCategoryStats(
-          UpdateCategoryStatsParams(
-            categoryId: _currentGameType!.name,
-            isCorrect: true,
-          ),
-        ),
-        awardBadge('grammar_master'),
-      ]);
-    } catch (e, st) {
-      // Persistence failed after the game completed. The user still sees the
-      // completion screen. Log for monitoring; do NOT re-emit an error state.
+    updateUserRewards(
+      UpdateUserRewardsParams(
+        gameType: _currentGameType!.name,
+        level: _currentLevel!,
+        xpIncrease: GrammarConstants.xpPerLevel,
+        coinIncrease: GrammarConstants.coinsPerLevel,
+        starsEarned: starsEarned,
+      ),
+    ).catchError((e, st) {
       debugPrint('[GrammarBloc] Persistence error: $e\n$st');
-    }
+      return const Right<Failure, void>(null);
+    }).then((_) {
+      updateCategoryStats(
+        UpdateCategoryStatsParams(
+          categoryId: _currentGameType!.name,
+          isCorrect: true,
+        ),
+      ).catchError((e, st) {
+        debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+        return const Right<Failure, void>(null);
+      }).then((_) {
+        awardBadge('grammar_master').catchError((e, st) {
+          debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+          return const Right<Failure, void>(null);
+        });
+      });
+    });
   }
 
   void _onRetryQuestion(

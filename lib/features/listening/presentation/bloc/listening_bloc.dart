@@ -192,7 +192,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
               ),
       );
     } else if (s.answerStatus == AnswerStatus.correct) {
-      await _completeLevel(s, emit);
+      _completeLevel(s, emit);
     } else {
       // Wrong on the final question — allow one more attempt.
       emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
@@ -287,18 +287,11 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   /// Emits [ListeningGameComplete] immediately for snappy UI, then persists
   /// rewards in the background with up to [_kMaxSaveRetries] retries using
   /// exponential back-off so transient network errors don't silently lose XP.
-  Future<void> _completeLevel(
+  void _completeLevel(
     ListeningLoaded s,
     Emitter<ListeningState> emit,
-  ) async {
+  ) {
     soundService.playLevelComplete();
-    emit(
-      const ListeningGameComplete(
-        xpEarned: _kXpReward,
-        coinsEarned: _kCoinReward,
-        questCount: _kQuestionsPerLevel,
-      ),
-    );
 
     analytics.onLevelComplete(
       gameType: _currentGameType ?? '',
@@ -307,31 +300,51 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
       coinsEarned: _kCoinReward,
     );
 
-    if (_currentGameType == null || _currentLevel == null) return;
-    await _saveWithRetry(s.livesRemaining);
+    // 1. UI feedback — emitted immediately to prevent double-taps on the
+    // "Continue" button (which caused concurrent transaction aborts).
+    emit(
+      const ListeningGameComplete(
+        xpEarned: _kXpReward,
+        coinsEarned: _kCoinReward,
+        questCount: _kQuestionsPerLevel,
+      ),
+    );
+
+    // 2. Primary & Secondary persistence — Fire-and-forget.
+    if (_currentGameType != null && _currentLevel != null) {
+      _savePrimaryWithRetry(s.livesRemaining).then((_) {
+        updateCategoryStats(
+          UpdateCategoryStatsParams(
+            categoryId: _currentGameType!,
+            isCorrect: true,
+          ),
+        ).catchError((e, stack) {  
+          debugPrint('[ListeningBloc] Stats save failed: $e\n$stack');
+         return const Right<Failure, void>(null);  });
+        awardBadge(_kListeningBadge).catchError((e, stack) {  
+          debugPrint('[ListeningBloc] Badge failed: $e\n$stack');
+         return const Right<Failure, void>(null);  });
+      });
+    }
   }
 
-  Future<void> _saveWithRetry(int starsEarned) async {
+  /// Persists the primary reward (updateUserRewards) with retry.
+  /// updateUserRewards already atomically updates completedLevels and
+  /// unlockedLevels inside _computeRewardUpdates, so a separate
+  /// updateUnlockedLevel call is intentionally omitted to avoid
+  /// Firestore transaction contention on the same document.
+  Future<void> _savePrimaryWithRetry(int starsEarned) async {
     for (int attempt = 1; attempt <= _kMaxSaveRetries; attempt++) {
       try {
-        await Future.wait([
-          updateUserRewards(
-            UpdateUserRewardsParams(
-              gameType: _currentGameType!,
-              level: _currentLevel!,
-              xpIncrease: _kXpReward,
-              coinIncrease: _kCoinReward,
-              starsEarned: starsEarned,
-            ),
+        await updateUserRewards(
+          UpdateUserRewardsParams(
+            gameType: _currentGameType!,
+            level: _currentLevel!,
+            xpIncrease: _kXpReward,
+            coinIncrease: _kCoinReward,
+            starsEarned: starsEarned,
           ),
-          updateCategoryStats(
-            UpdateCategoryStatsParams(
-              categoryId: _currentGameType!,
-              isCorrect: true,
-            ),
-          ),
-          awardBadge(_kListeningBadge),
-        ]);
+        );
         return; // success
       } catch (e, stack) {
         debugPrint(
