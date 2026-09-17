@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -52,6 +53,9 @@ class SignUpNameInput extends StatelessWidget {
             },
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.name,
+            inputFormatters: [
+              FilteringTextInputFormatter.allow(RegExp(r"[a-zA-Z\s\-\']")),
+            ],
             autofillHints: const [AutofillHints.name],
             style: TextStyle(color: contrastColor),
             decoration: buildAuthDecoration(
@@ -115,6 +119,10 @@ class SignUpEmailInput extends StatelessWidget {
             },
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
+            inputFormatters: [
+              FilteringTextInputFormatter.deny(RegExp(r'\s')),
+              FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+            ],
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
             decoration: buildAuthDecoration(
@@ -187,6 +195,10 @@ class SignUpPasswordInput extends StatelessWidget {
                 textInputAction: TextInputAction.done,
                 obscureText: !state.isPasswordVisible,
                 keyboardType: TextInputType.visiblePassword,
+                inputFormatters: [
+                  FilteringTextInputFormatter.deny(RegExp(r'\s')),
+                  FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+                ],
                 autofillHints: const [AutofillHints.newPassword],
                 style: TextStyle(color: contrastColor),
                 decoration: buildAuthDecoration(

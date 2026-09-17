@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -62,6 +63,10 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         },
         textInputAction: TextInputAction.done,
         keyboardType: TextInputType.emailAddress,
+        inputFormatters: [
+          FilteringTextInputFormatter.deny(RegExp(r'\s')),
+          FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+        ],
         autofillHints: const [AutofillHints.email],
         style: TextStyle(color: contrastColor),
         decoration: buildAuthDecoration(

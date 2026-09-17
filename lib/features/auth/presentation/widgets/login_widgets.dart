@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,6 +55,10 @@ class LoginEmailInput extends StatelessWidget {
             },
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
+            inputFormatters: [
+              FilteringTextInputFormatter.deny(RegExp(r'\s')),
+              FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+            ],
             autofillHints: const [AutofillHints.email],
             style: TextStyle(color: contrastColor),
             decoration: buildAuthDecoration(
@@ -126,6 +131,10 @@ class LoginPasswordInput extends StatelessWidget {
             obscureText: !state.isPasswordVisible,
             textInputAction: TextInputAction.done,
             keyboardType: TextInputType.visiblePassword,
+            inputFormatters: [
+              FilteringTextInputFormatter.deny(RegExp(r'\s')),
+              FilteringTextInputFormatter.allow(RegExp(r'[\x21-\x7E]')),
+            ],
             autofillHints: const [AutofillHints.password],
             style: TextStyle(color: contrastColor),
             decoration: buildAuthDecoration(
